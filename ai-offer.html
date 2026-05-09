@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zavient | I Find the AI Bets That Move Your P&L</title>
+<meta name="description" content="AI strategy consulting for CEOs and PE-backed companies. $20M+ in ML revenue impact. I find the 2–3 AI bets that actually move EBITDA — then spec the system. Not slides. Not POCs. Production ML tied to the P&L.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0F1E33;
+    --navy-mid: #162A47;
+    --navy-light: #1E3658;
+    --gold: #C4943A;
+    --gold-glow: rgba(196,148,58,0.15);
+    --gold-border: rgba(196,148,58,0.3);
+    --cream: #F5F1EA;
+    --cream-dark: #EBE5DA;
+    --text: #D8DDE6;
+    --text-soft: #94A1B5;
+    --text-dim: #5A6D88;
+    --white: #FAFAF8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  ::selection { background: rgba(196,148,58,0.3); color: var(--cream); }
+
+  body {
+    background: var(--navy);
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .serif { font-family: 'Instrument Serif', serif; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+
+  /* ─── Animations ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .a1 { animation: fadeUp 0.7s 0.1s cubic-bezier(.16,1,.3,1) both; }
+  .a2 { animation: fadeUp 0.7s 0.22s cubic-bezier(.16,1,.3,1) both; }
+  .a3 { animation: fadeUp 0.7s 0.34s cubic-bezier(.16,1,.3,1) both; }
+  .a4 { animation: fadeUp 0.7s 0.46s cubic-bezier(.16,1,.3,1) both; }
+
+  .reveal {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(.16,1,.3,1), transform 0.6s cubic-bezier(.16,1,.3,1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── Layout ─── */
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--navy-light), transparent);
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  /* ─── Section label ─── */
+  .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .label::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
+  }
+
+  /* ─── Nav ─── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 32px;
+    background: rgba(15,30,51,0.88);
+    backdrop-filter: blur(20px) saturate(1.4);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .logo {
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    color: var(--cream);
+    text-decoration: none;
+  }
+  .logo em { color: var(--gold); font-style: normal; }
+  .nav-cta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--gold);
+    padding: 10px 24px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .nav-cta:hover { background: #b88530; transform: translateY(-1px); }
+
+  /* ─── Hero ─── */
+  .hero {
+    padding: 100px 0 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -40%; right: -10%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(196,148,58,0.06), transparent 65%);
+    pointer-events: none;
+  }
+  .hero h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(42px, 5.5vw, 68px);
+    font-weight: 400;
+    color: var(--cream);
+    letter-spacing: -0.02em;
+    line-height: 1.08;
+    margin-bottom: 28px;
+  }
+  .hero h1 em {
+    color: var(--gold);
+    font-style: italic;
+  }
+  .hero .sub {
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--text-soft);
+    max-width: 540px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+
+  /* ─── Stats ─── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 0;
+  }
+  .stat {
+    padding: 28px 24px;
+    text-align: center;
+    background: var(--navy);
+  }
+  .stat-num {
+    font-family: 'Instrument Serif', serif;
+    font-size: 36px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  /* ─── Positioning section ─── */
+  .positioning {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .pos-card {
+    padding: 32px;
+    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.02);
+  }
+  .pos-card h3 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    color: var(--cream);
+    margin-bottom: 12px;
+    font-weight: 400;
+  }
+  .pos-card p {
+    font-size: 14px;
+    color: var(--text-soft);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .x-mark { color: #D46A6A; font-weight: 600; margin-right: 8px; }
+  .check { color: #5CB88A; font-weight: 600; margin-right: 8px; }
+
+  /* ─── Services ─── */
+  .services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(255,255,255,0.04);
+  }
+  .service {
+    padding: 36px 28px;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+  }
+  .service-tier {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .service h3 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 6px;
+  }
+  .service-price {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+  }
+  .service p {
+    font-size: 14px;
+    color: var(--text-soft);
+    line-height: 1.7;
+    font-weight: 300;
+    flex-grow: 1;
+  }
+  .service-out {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: var(--gold);
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  /* ─── Track record ─── */
+  .track {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .track-card {
+    padding: 28px;
+    background: var(--navy);
+  }
+  .track-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+  }
+  .track-metric {
+    font-family: 'Instrument Serif', serif;
+    font-size: 32px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .track-desc {
+    font-size: 13px;
+    color: var(--text-soft);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  /* ─── About ─── */
+  .about-section {
+    background: var(--cream);
+    color: var(--navy);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .about-section h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(32px, 3.5vw, 46px);
+    font-weight: 400;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .about-section h2 em {
+    color: var(--text-dim);
+    font-style: italic;
+    font-size: 0.72em;
+  }
+  .about-section p {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(15,30,51,0.6);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+  .cred-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 20px;
+    background: var(--cream-dark);
+    margin-bottom: 3px;
+  }
+  .cred-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    min-width: 90px;
+    padding-top: 2px;
+  }
+  .cred-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--navy);
+  }
+
+  /* ─── CTA ─── */
+  .final-cta {
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    bottom: -20%; left: 50%; transform: translateX(-50%);
+    width: 700px; height: 400px;
+    background: radial-gradient(ellipse, rgba(196,148,58,0.08), transparent 60%);
+    pointer-events: none;
+  }
+  .final-cta h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 400;
+    color: var(--cream);
+    letter-spacing: -0.02em;
+    line-height: 1.06;
+    margin-bottom: 20px;
+  }
+  .final-cta h2 em { color: var(--gold); font-style: italic; }
+  .final-cta .sub-cta {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-soft);
+    margin-bottom: 40px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+  .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 20px 44px;
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+  .btn-gold:hover { background: #b88530; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(196,148,58,0.25); }
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--gold-border);
+    color: var(--gold);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 18px 36px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-ghost:hover { background: var(--gold-glow); }
+
+  .contact-row {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+    margin-top: 28px;
+  }
+  .contact-row a { color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+  .contact-row a:hover { color: var(--gold); }
+
+  /* ─── Footer ─── */
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 32px;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+  }
+  footer a { color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--gold); }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 768px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .positioning { grid-template-columns: 1fr; gap: 16px; }
+    .services { grid-template-columns: 1fr; }
+    .track { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; gap: 32px; }
+    .hero { padding: 64px 0 48px; }
+    nav { padding: 14px 20px; }
+    .wrap { padding: 0 20px; }
+    .final-cta { padding: 64px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Zavient<em>.</em></a>
+  <a href="mailto:rmiller@zavient.com" class="nav-cta">Get in touch</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="label a1">AI Strategy &middot; Revenue Impact</div>
+    <h1 class="a2">
+      I find the AI bets that<br>
+      actually move <em>your P&L.</em>
+    </h1>
+    <p class="sub a3">
+      Not slides. Not POCs. I find the 2–3 AI bets that move your P&amp;L,
+      build the board-ready narrative around them, and give you a 90-day plan
+      your team can actually execute.<br><br>
+      Flagship offer: 30-day AI Leverage Sprint for PE-backed and
+      AI-native B2B companies.
+    </p>
+    <div class="a4" style="display:flex; gap:16px; flex-wrap:wrap;">
+      <a href="https://calendly.com/zavient/call" target="_blank" class="btn-gold">
+        Book a Strategy Call &rarr;
+      </a>
+      <a href="#track" class="btn-ghost">See the work</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section style="padding-bottom:80px;">
+  <div class="wrap">
+    <div class="stats a4">
+      <div class="stat">
+        <div class="stat-num">$20M+</div>
+        <div class="stat-label">ML Revenue Impact</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">$8M+</div>
+        <div class="stat-label">EBITDA Contribution</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">18%</div>
+        <div class="stat-label">Conversion Lift</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5x</div>
+        <div class="stat-label">CTR Improvement</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- POSITIONING: WHAT I AM / WHAT I'M NOT -->
+<section style="padding:72px 0;" class="reveal">
+  <div class="wrap">
+    <div class="label">How I Work</div>
+    <h2 class="serif" style="font-size:clamp(28px,3vw,38px); color:var(--cream); letter-spacing:-0.02em; line-height:1.15; margin-bottom:40px;">
+      Sage, not architect.<br>
+      <span style="color:var(--text-dim); font-style:italic;">I find the angle. I guide the build.</span>
+    </h2>
+    <div class="positioning">
+      <div class="pos-card">
+        <h3>What you get</h3>
+        <p>
+          <span class="check">&#10003;</span> Deep investigation of your data for hidden AI revenue opportunities<br>
+          <span class="check">&#10003;</span> The 2–3 highest-ROI AI bets tied directly to your P&L<br>
+          <span class="check">&#10003;</span> Full system specs your engineering team can execute on<br>
+          <span class="check">&#10003;</span> Ongoing advisory through execution — I stay in the room until it ships<br>
+          <span class="check">&#10003;</span> Board-ready narrative connecting AI initiatives to EBITDA
+        </p>
+      </div>
+      <div class="pos-card">
+        <h3>What I don't do</h3>
+        <p>
+          <span class="x-mark">&#10007;</span> Become a permanent member of your engineering team<br>
+          <span class="x-mark">&#10007;</span> Own and maintain production systems after handoff<br>
+          <span class="x-mark">&#10007;</span> Deliver 200-page slide decks nobody reads<br>
+          <span class="x-mark">&#10007;</span> Run AI "experiments" without P&L accountability<br>
+          <span class="x-mark">&#10007;</span> Charge for AI theater. If I can't find the ROI, I'll tell you.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SERVICES -->
+<section style="padding:72px 0;" class="reveal">
+  <div class="wrap">
+    <div class="label">Engagement Models</div>
+    <h2 class="serif" style="font-size:clamp(28px,3vw,38px); color:var(--cream); letter-spacing:-0.02em; line-height:1.15; margin-bottom:40px;">
+      Three ways to work together.
+    </h2>
+    <div class="services" style="border: 1px solid rgba(255,255,255,0.06);">
+      <div class="service">
+        <div class="service-tier">Flagship</div>
+        <h3>AI Leverage Sprint</h3>
+        <div class="service-price">$10K &middot; 30 days</div>
+        <p>
+          Four weeks. Fixed scope. You walk away with a plan your board believes
+          and a 90-day sequence your team can execute.<br><br>
+          → Week 1: Deep discovery — 2 sessions with CEO/Product/Rev leaders<br>
+          → Week 2: AI Leverage Map — 3–5 prioritized plays, impact/effort scored<br>
+          → Week 3: Board-ready narrative — positioning, before/after, risk framing<br>
+          → Week 4: 90-day execution plan — owners, milestones, "do NOT do" list
+        </p>
+        <div class="service-out">
+          Deliverables: AI leverage map · board-ready narrative · 90-day plan<br>
+          <span style="color:var(--text-dim); font-size:9px; margin-top:6px; display:inline-block;">Not a fit: pre-seed, no product yet, or you want execution run for you.</span>
+        </div>
+      </div>
+      <div class="service" style="border-left: 1px solid rgba(255,255,255,0.04); border-right: 1px solid rgba(255,255,255,0.04);">
+        <div class="service-tier">Ongoing</div>
+        <h3>Ongoing Advisory</h3>
+        <div class="service-price">$5–10K/mo &middot; Quarterly commitment, renewable</div>
+        <p>
+          For companies where the Sprint surfaces a bigger opportunity,
+          I take a small number of ongoing advisory roles.<br><br>
+          What this looks like:<br>
+          → 2 sessions/month (strategy, roadmap, board prep, competitive intelligence)<br>
+          → Async availability for founder/leadership questions<br>
+          → Clear monthly focus area agreed upfront<br>
+          → Quarterly renewal — no auto-roll, both sides recommit<br><br>
+          In select cases I'll structure this with an equity or success-based component
+          instead of (or alongside) cash.
+        </p>
+        <div class="service-out">
+          → Usually comes out of a completed Sprint. Cold inquiries considered
+          if the company and problem are a strong fit.
+        </div>
+      </div>
+      <div class="service">
+        <div class="service-tier">Portfolio</div>
+        <h3>PE AI Value Creation</h3>
+        <div class="service-price">$15–25K/mo &middot; 6–12 months</div>
+        <p>
+          AI value creation across your portfolio. I assess each portco,
+          prioritize by EBITDA impact, design shared playbooks, and roll up results
+          for LP communication and exit materials.
+        </p>
+        <div class="service-out">→ EBITDA lift across multiple companies</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TRACK RECORD -->
+<section id="track" style="padding:72px 0;" class="reveal">
+  <div class="wrap">
+    <div class="label">Track Record</div>
+    <h2 class="serif" style="font-size:clamp(28px,3vw,38px); color:var(--cream); letter-spacing:-0.02em; line-height:1.15; margin-bottom:40px;">
+      Production systems, not prototypes.
+    </h2>
+    <div class="track">
+      <div class="track-card">
+        <div class="track-meta">ML Optimization &middot; PE Portfolio Company</div>
+        <div class="track-metric">$20M+</div>
+        <div class="track-desc">
+          Built ML bidding platform using gradient descent optimization. 10K+ lines of production code.
+          Automated decisioning across millions of daily transactions. Direct EBITDA contribution of $8M+.
+        </div>
+      </div>
+      <div class="track-card">
+        <div class="track-meta">AI Personalization &middot; B2B Marketplace</div>
+        <div class="track-metric">18% CTR lift</div>
+        <div class="track-desc">
+          Architected agentic AI system for real-time content optimization.
+          LLM-driven headline rewriting with feature extraction.
+          Generated $900K+ incremental pipeline.
+        </div>
+      </div>
+      <div class="track-card">
+        <div class="track-meta">ML Ad Optimization &middot; Automotive Marketplace</div>
+        <div class="track-metric">5x CTR &middot; 40% cost cut</div>
+        <div class="track-desc">
+          Designed ML platform for dynamic ad generation using n-armed bandit methodology.
+          18% conversion lift. Company doubled traffic and revenue during tenure.
+        </div>
+      </div>
+      <div class="track-card">
+        <div class="track-meta">COO Turnaround &middot; E-Commerce SaaS</div>
+        <div class="track-metric">Successful exit</div>
+        <div class="track-desc">
+          Recruited to turn around PE-backed email automation company.
+          Launched AI recommendation engine and email copy generator.
+          Led product and commercial transformation through successful sale.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" style="padding:80px 0;">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="label" style="color:var(--gold);">About</div>
+        <h2>
+          Russell Miller<br>
+          <em>Founder, Zavient</em>
+        </h2>
+        <p>
+          20 years at the intersection of B2B SaaS, AI/ML, and private equity.
+          COO of a company I turned around and sold. Five years as an independent
+          sponsor with CIVC, Stonehenge, and BlackRock — deals from $7M to $300M+ enterprise value.
+        </p>
+        <p>
+          I've written 10,000+ lines of production ML code AND presented to
+          investment committees. Most AI consultants do one or the other.
+        </p>
+        <p style="color:rgba(15,30,51,0.45); font-size:14px;">
+          Remote-first. Pragmatic. I work with a handful of clients at a time — so you get me, not a team of juniors.
+        </p>
+      </div>
+      <div class="reveal" style="transition-delay:0.1s;">
+        <div class="cred-row">
+          <span class="cred-label">Education</span>
+          <span class="cred-text">MIT Mathematics &middot; Texas A&M MBA</span>
+        </div>
+        <div class="cred-row">
+          <span class="cred-label">AI / ML</span>
+          <span class="cred-text">LLMs &middot; RAG &middot; Agent Architecture &middot; Gradient Descent &middot; Predictive Analytics &middot; Embeddings</span>
+        </div>
+        <div class="cred-row">
+          <span class="cred-label">PE Fluency</span>
+          <span class="cred-text">CIVC &middot; Stonehenge &middot; BlackRock &middot; IRR/MOIC &middot; IC Presentations &middot; LP Communication</span>
+        </div>
+        <div class="cred-row">
+          <span class="cred-label">Shipped</span>
+          <span class="cred-text">Baryo (multi-model AI router) &middot; Cast (AI financial calculator) &middot; PageGenie.ai (RAG platform)</span>
+        </div>
+        <div class="cred-row">
+          <span class="cred-label">Approach</span>
+          <span class="cred-text">Find the angle in the data. Spec the system. Advise through execution. Move to the next problem.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta reveal">
+  <div class="wrap" style="position:relative; z-index:1;">
+    <div class="label" style="justify-content:center;">
+      <span style="display:inline-block; width:24px; height:1px; background:var(--gold); opacity:0.5;"></span>
+      Let's Talk
+      <span style="display:inline-block; width:24px; height:1px; background:var(--gold); opacity:0.5;"></span>
+    </div>
+    <h2>
+      Ready to find out if the<br><em>Sprint is a fit?</em>
+    </h2>
+    <p class="sub-cta" style="text-align:left; max-width:520px;">
+      Send me three things:<br><br>
+      1. Your company URL<br>
+      2. Two sentences on your current AI experiments<br>
+      3. One sentence on what success looks like in 12 months<br><br>
+      I'll reply with a straight yes/no and a quick pattern read on where I'd look first.<br><br>
+      No form. No funnel.
+    </p>
+    <a href="mailto:rmiller@zavient.com" class="btn-gold">
+      Email rmiller@zavient.com &rarr;
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="logo" style="font-size:18px;">Zavient<em>.</em></a>
+  <span>&copy; 2026 Zavient LLC &middot; AI Strategy Consulting</span>
+  <a href="https://linkedin.com/in/russellmiller" target="_blank">LinkedIn &nearr;</a>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
