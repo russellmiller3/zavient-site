@@ -1,0 +1,36 @@
+---
+// api-docs-read: static layout — no external API/protocol surface, only a font stylesheet link + mailto.
+// Shared shell for every Insights page: head, fonts, nav, footer.
+const { title, description } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/insights/article.css" />
+</head>
+<body>
+  <nav>
+    <a href="/" class="logo">Zavient<em>.</em></a>
+    <div class="nav-links">
+      <a href="/insights">Insights</a><!-- api-docs-read: static nav href fix, no API/protocol surface -->
+      <a href="mailto:rmiller@zavient.com" class="nav-cta">Get in touch</a>
+    </div>
+  </nav>
+
+  <slot />
+
+  <footer>
+    <a href="/" class="logo" style="font-size:18px;">Zavient<em>.</em></a>
+    <span>&copy; 2026 Zavient LLC &middot; AI Value Creation for Private Equity</span>
+    <a href="https://linkedin.com/in/russellmiller" target="_blank" rel="noreferrer">LinkedIn &nearr;</a>
+  </footer>
+</body>
+</html>
