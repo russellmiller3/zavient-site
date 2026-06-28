@@ -6,12 +6,22 @@ import Article from '../../layouts/Article.astro';
 
 export async function getStaticPaths() {
   const articles = await getCollection('insights');
-  return articles.map((article) => ({ params: { slug: article.id }, props: { article } }));
+  return articles.map((article) => {
+    const related = articles
+      .filter((other) => other.id !== article.id)
+      .sort((a, b) => {
+        if (a.data.flagship !== b.data.flagship) return a.data.flagship ? -1 : 1;
+        return a.data.order - b.data.order;
+      })
+      .slice(0, 4)
+      .map((other) => ({ id: other.id, title: other.data.title, tag: other.data.tag, blurb: other.data.blurb }));
+    return { params: { slug: article.id }, props: { article, related } };
+  });
 }
 
-const { article } = Astro.props;
+const { article, related } = Astro.props;
 const { Content } = await render(article);
 ---
-<Article {...article.data}>
+<Article {...article.data} related={related}>
   <Content />
 </Article>

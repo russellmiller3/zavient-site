@@ -1,8 +1,9 @@
 ---
 // api-docs-read: static article layout — no external API/protocol surface, only mailto.
-// Renders one Insights article from frontmatter + Markdown body (the <slot/>).
+// Renders one Insights article from frontmatter + Markdown body (the <slot/>),
+// plus a "More from Insights" cross-link strip (related) for internal linking.
 import Base from './Base.astro';
-const { title, description, dek, tag, stats = [], sources = [], ctaHeading, ctaBlurb, ctaSubject } = Astro.props;
+const { title, description, dek, tag, stats = [], sources = [], related = [], ctaHeading, ctaBlurb, ctaSubject } = Astro.props;
 const confClass = (c) => {
   const v = (c || '').toLowerCase();
   if (v.startsWith('strong')) return 'strong';
@@ -51,6 +52,24 @@ const confClass = (c) => {
       )}
     </div>
   </article>
+
+  {related.length > 0 && (
+    <section class="related">
+      <div class="wrap">
+        <div class="label">More from Insights</div>
+        <div class="hub-grid">
+          {related.map((item) => (
+            <a class="hub-card" href={`/insights/${item.id}.html`}>
+              <span class="hub-tag">{item.tag}</span>
+              <h3>{item.title}</h3>
+              <p>{item.blurb}</p>
+            </a>
+          ))}
+        </div>
+        <p class="related-all"><a href="/insights">View all insights &rarr;</a></p>
+      </div>
+    </section>
+  )}
 
   <section class="article-cta">
     <div class="wrap">
