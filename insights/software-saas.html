@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- api-docs-read: static article page — no external API/protocol surface, only hyperlinks + a font stylesheet link -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Value Creation in PE-Backed SaaS: The Real Playbook | Zavient</title>
+<meta name="description" content="Where AI actually moves EBITDA and the multiple in PE-backed software, what real value looks like vs. a thin GPT wrapper, and the questions to ask before you bet.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./article.css">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Zavient<em>.</em></a>
+  <div class="nav-links">
+    <a href="/insights/">Insights</a>
+    <a href="mailto:rmiller@zavient.com" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<header class="article-hero">
+  <div class="wrap">
+    <div class="label">Industry &middot; Software &amp; SaaS</div>
+    <h1>AI Value Creation in PE-Backed SaaS: Multiple, Cost-Out, and the Diligence Test</h1>
+    <p class="dek">Every sponsor has an "AI thesis." Most are slideware. Here's where AI genuinely lifts software EBITDA and valuation, where it quietly destroys gross margin, and how to tell a real moat from a wrapper before you wire the money.</p>
+    <p class="byline">Zavient &middot; AI Value Creation for Private Equity</p>
+  </div>
+</header>
+
+<section class="stats">
+  <div class="stat"><div class="stat-num">&gt;80%</div><div class="stat-label">Orgs seeing no EBIT impact from gen AI (McKinsey)</div></div>
+  <div class="stat"><div class="stat-num">+26% / −19%</div><div class="stat-label">Copilot PRs up (juniors) / experienced devs slower on legacy</div></div>
+  <div class="stat"><div class="stat-num">~$230K</div><div class="stat-label">Inference cost per $1M of AI revenue</div></div>
+  <div class="stat"><div class="stat-num">120% NRR</div><div class="stat-label">Usage/outcome pricing vs. ~110% subscription-only</div></div>
+</section>
+
+<article class="article-body">
+  <div class="wrap">
+
+    <h2>The two levers, and why operators confuse them</h2>
+    <p>There are exactly two ways AI creates value in a software business, and they pull different levers. <strong>Multiple expansion:</strong> AI features that raise pricing power, retention, and addressable market, so the business earns a higher exit multiple. <strong>Cost-out:</strong> AI that deflects support tickets, lifts engineering throughput, and makes go-to-market cheaper. Confusing them is the most common operating-partner error — a chatbot that deflects tickets does nothing for your multiple, and a flashy copilot nobody pays more for does nothing for EBITDA.</p>
+    <p>The brutal baseline: McKinsey's State of AI 2025 found <strong>more than 80% of organizations report no tangible EBIT impact from generative AI</strong>, and only ~6% achieve more than 5% EBIT impact. The single biggest differentiator wasn't buying more AI — it was redesigning the workflow rather than bolting AI on top, yet only ~21% had redesigned any workflow (<a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai">McKinsey</a>). That gap is the entire opportunity for a disciplined sponsor.</p>
+
+    <h2>Lever 1 — AI as multiple expansion: pricing power, not features</h2>
+    <p>The money is in changing the unit you sell from "access" to "work done." Intercom's Fin charges <strong>$0.99 per ticket resolved</strong> — not per seat — and scaled to nine-figure revenue (<a href="https://www.ibbaka.com/ibbaka-market-blog/comparing-the-value-model-and-pricing-model-of-intercoms-fin-ai-agent">Ibbaka</a>). Why this moves the multiple: usage- and outcome-priced SaaS runs <strong>~120% median net revenue retention versus ~110%</strong> for subscription-only peers (<a href="https://www.saasmag.com/how-saas-companies-monetizing-ai-agents/">SaaS Mag</a>). Higher NRR and consumption that grows with the customer are exactly the inputs a buyer pays a higher multiple for — but the premium is conditional on demonstrated economics, not a press release.</p>
+
+    <h2>Lever 2 — AI as cost-out: real, but messier than the demos</h2>
+    <p>Support deflection is the most proven play, and Klarna is the headline: its AI assistant handled <strong>two-thirds of chats in month one</strong>, did the work of ~700 agents, and was projected to add ~$40M in profit (<a href="https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/">Klarna</a>). But read the second chapter: by 2025 Klarna <strong>reversed course and re-hired humans</strong> after the all-AI model degraded quality on disputes and fraud (<a href="https://www.customerexperiencedive.com/news/klarna-reinvests-human-talent-customer-service-AI-chatbot/747586/">CX Dive</a>). Model deflection as a margin on routine tickets, not headcount-to-zero.</p>
+    <p>Engineering productivity is genuinely split — distrust anyone quoting only the good number. A large RCT (~4,800 developers) found GitHub Copilot users completed <strong>~26% more pull requests</strong> (<a href="https://cacm.acm.org/research/measuring-github-copilots-impact-on-productivity/">CACM</a>). The contrarian case: METR's 2025 RCT found experienced developers were <strong>19% slower</strong> with AI on mature codebases — while believing they were 20% faster (<a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">METR</a>). Both are true: AI accelerates greenfield and junior work, drags on senior work in complex legacy systems. The perception gap is the trap — self-reported productivity is worthless.</p>
+
+    <div class="ask">
+      <span class="ask-label">Ask your CEO</span>
+      <p>"Show me support cost per ticket and engineering cost per shipped feature, before and after AI, measured — not surveyed. If your only proof is that the team 'feels faster,' you have no proof."</p>
+    </div>
+
+    <h2>The hidden tax: inference COGS is eating SaaS gross margin</h2>
+    <p>Classic SaaS ran 78–82% gross margin. AI features carry a variable cost per use — inference — that flat per-seat pricing doesn't recover. <strong>For every $1M of AI product revenue, roughly $230K can walk out as inference cost</strong>, compressing post-AI gross margins into the 60–70% range (<a href="https://www.thesaascfo.com/your-ai-feature-is-quietly-destroying-your-gross-margin/">The SaaS CFO</a>). This is why usage-based pricing isn't just a revenue play — it's a margin-defense play. A sponsor underwriting an AI feature on a flat-fee plan is underwriting margin compression as adoption grows. Vista understood this well enough to build in-house lower-cost inference infrastructure for its portfolio (<a href="https://www.privatemarketsinsights.com/post/vista-s-ai-playbook-building-the-software-transformation-factory">Private Markets Insights</a>).</p>
+
+    <div class="ask">
+      <span class="ask-label">The diligence box</span>
+      <p>"If OpenAI doubled its API price tomorrow, what happens to this company's product and margin? What does it own that a competitor with a ChatGPT key can't ship in a weekend — proprietary data, a re-engineered workflow, or distribution?" No durable answer means you're paying an AI multiple for a wrapper.</p>
+    </div>
+
+    <h2>The diligence test: real AI value vs. a thin GPT wrapper</h2>
+    <p>The stakes are concrete: <strong>AI-washing can trigger 20–40% valuation cuts during diligence</strong>, and CB Insights pegs ~73% of AI startups as lacking a defensible moat (<a href="https://www.dealsuite.com/en/blogs/unlocking-real-ai-value-a-due-diligence-guide-for-pe-investors">Dealsuite</a>). Firms with exclusive data and embedded workflow lock-in command roughly 9–12x ARR; pure API-reliant wrappers get 3–4x and live or die on a vendor's pricing whims. And watch the metric games: net revenue retention can mask seat contraction hidden under AI add-on expansion — disaggregate by cohort and lean on gross revenue retention for near-term defensibility (<a href="https://www.oliverwyman.com/our-expertise/insights/2026/apr/how-agentic-ai-reshaping-saas-valuations.html">Oliver Wyman</a>).</p>
+
+    <div class="kills">
+      <h2>What kills these initiatives</h2>
+      <ul>
+        <li><strong>No workflow redesign.</strong> Bolting AI onto an unchanged process is the ~80% that get zero EBIT. The redesign is the value, not the model.</li>
+        <li><strong>Pricing AI on flat seat fees.</strong> Adoption grows, inference cost grows, margin shrinks. You've monetized the upside to your vendor.</li>
+        <li><strong>Believing self-reported productivity.</strong> The METR perception gap — teams feel faster while shipping slower.</li>
+        <li><strong>All-AI with no quality floor.</strong> Klarna's reversal. Complex, high-stakes tickets still need humans.</li>
+        <li><strong>A wrapper priced like a moat.</strong> No proprietary data, full exposure to a foundation-model vendor — diligence cuts 20–40%.</li>
+      </ul>
+    </div>
+
+    <div class="sources">
+      <h2>Sources</h2>
+      <table class="sources-table">
+        <thead><tr><th>Source</th><th>What it told us</th><th>Confidence</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai">McKinsey — State of AI 2025</a></td><td>&gt;80% no EBIT impact; ~6% high performers; workflow redesign is #1 driver</td><td class="conf strong">STRONG</td></tr>
+          <tr><td><a href="https://cacm.acm.org/research/measuring-github-copilots-impact-on-productivity/">CACM — Copilot RCT</a></td><td>+26% PRs across ~4,800 devs</td><td class="conf strong">STRONG</td></tr>
+          <tr><td><a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">METR</a></td><td>Experienced devs 19% slower on mature code; 20% perceived speedup</td><td class="conf strong">STRONG</td></tr>
+          <tr><td><a href="https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/">Klarna</a></td><td>2/3 chats, 700 agents, $40M profit</td><td class="conf medium">MEDIUM</td></tr>
+          <tr><td><a href="https://www.customerexperiencedive.com/news/klarna-reinvests-human-talent-customer-service-AI-chatbot/747586/">CX Dive — Klarna reversal</a></td><td>Re-hired humans; all-AI degraded quality</td><td class="conf strong">STRONG</td></tr>
+          <tr><td><a href="https://www.ibbaka.com/ibbaka-market-blog/comparing-the-value-model-and-pricing-model-of-intercoms-fin-ai-agent">Ibbaka — Intercom Fin</a></td><td>$0.99/resolution; outcome pricing</td><td class="conf medium">MEDIUM</td></tr>
+          <tr><td><a href="https://www.thesaascfo.com/your-ai-feature-is-quietly-destroying-your-gross-margin/">The SaaS CFO</a></td><td>~$230K inference per $1M rev; margins to 60–70%</td><td class="conf medium">MEDIUM</td></tr>
+          <tr><td><a href="https://www.saasmag.com/how-saas-companies-monetizing-ai-agents/">SaaS Mag</a></td><td>Usage/hybrid ~120% NRR vs ~110% sub-only</td><td class="conf medium">MEDIUM</td></tr>
+          <tr><td><a href="https://www.privatemarketsinsights.com/post/vista-s-ai-playbook-building-the-software-transformation-factory">Private Markets Insights — Vista</a></td><td>In-house low-cost inference to protect portco margin</td><td class="conf medium">MEDIUM</td></tr>
+          <tr><td><a href="https://www.dealsuite.com/en/blogs/unlocking-real-ai-value-a-due-diligence-guide-for-pe-investors">Dealsuite</a></td><td>AI-washing → 20–40% cuts; 73% lack moat (CB Insights)</td><td class="conf medium">MEDIUM</td></tr>
+          <tr><td><a href="https://www.oliverwyman.com/our-expertise/insights/2026/apr/how-agentic-ai-reshaping-saas-valuations.html">Oliver Wyman</a></td><td>NRR masks seat contraction; disaggregate; use GRR</td><td class="conf medium">MEDIUM</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</article>
+
+<section class="article-cta">
+  <div class="wrap">
+    <div class="label">Start here</div>
+    <h2>Send me the company and the AI thesis.</h2>
+    <p>I'll tell you whether it's multiple expansion, cost-out, or a wrapper priced like a moat — and where the inference cost is hiding. I've written 10,000+ lines of production ML and presented to ICs.</p>
+    <a href="mailto:rmiller@zavient.com?subject=SaaS%20AI" class="btn-gold">Email rmiller@zavient.com &rarr;</a>
+  </div>
+</section>
+
+<footer>
+  <a href="/" class="logo" style="font-size:18px;">Zavient<em>.</em></a>
+  <span>&copy; 2026 Zavient LLC &middot; AI Value Creation for Private Equity</span>
+  <a href="https://linkedin.com/in/russellmiller" target="_blank" rel="noreferrer">LinkedIn &nearr;</a>
+</footer>
+
+</body>
+</html>
