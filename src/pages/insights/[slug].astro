@@ -1,0 +1,17 @@
+---
+// api-docs-read: static page generator — no external API/protocol surface.
+// One rendered HTML page per Markdown file in src/content/insights.
+import { getCollection, render } from 'astro:content';
+import Article from '../../layouts/Article.astro';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('insights');
+  return articles.map((article) => ({ params: { slug: article.id }, props: { article } }));
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+---
+<Article {...article.data}>
+  <Content />
+</Article>

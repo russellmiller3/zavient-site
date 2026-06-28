@@ -1,0 +1,43 @@
+---
+// api-docs-read: static hub page — no external API/protocol surface, only mailto.
+// The Insights landing grid, generated from the collection (flagship first, then by `order`).
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const articles = (await getCollection('insights')).sort((a, b) => {
+  if (a.data.flagship !== b.data.flagship) return a.data.flagship ? -1 : 1;
+  return a.data.order - b.data.order;
+});
+---
+<Base title="Insights | Zavient — AI Value Creation for Private Equity" description="Where AI actually moves EBITDA in PE-backed companies, by industry. Named examples, real numbers, and the AI theater to avoid. From Zavient.">
+  <header class="article-hero">
+    <div class="hub-wrap">
+      <div class="label">Insights</div>
+      <h1>Where AI actually moves EBITDA — by industry.</h1>
+      <p class="dek">Named companies, real numbers, sourced and confidence-rated. No AI theater, no dashboards — just the plays that touch the P&amp;L, and the ones that quietly fail. Start with the cross-portfolio playbook, then go deep on your sector.</p>
+    </div>
+  </header>
+
+  <section class="hub">
+    <div class="hub-wrap">
+      <div class="hub-grid">
+        {articles.map((article) => (
+          <a class="hub-card" href={`/insights/${article.id}.html`}>
+            <span class="hub-tag">{article.data.tag}</span>
+            <h3>{article.data.title}</h3>
+            <p>{article.data.blurb}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="article-cta">
+    <div class="wrap">
+      <div class="label">Start here</div>
+      <h2>Send me the metric you want to move.</h2>
+      <p>Company URL, revenue motion, the number that matters. I'll tell you where I'd look first and whether an engagement is worth it.</p>
+      <a class="btn-gold" href="mailto:rmiller@zavient.com?subject=AI%20Value%20Creation">Email rmiller@zavient.com &rarr;</a>
+    </div>
+  </section>
+</Base>

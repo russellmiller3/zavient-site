@@ -1,0 +1,54 @@
+backend:
+  name: github
+  repo: russellmiller3/zavient-site
+  branch: master
+  # OAuth handled by the Vercel serverless functions at /api/auth and /api/callback.
+  base_url: https://zavient.com
+  auth_endpoint: /api/auth
+
+# Edits commit straight to master; Vercel rebuilds the Astro site on each commit.
+publish_mode: simple
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: insights
+    label: Insights Articles
+    label_singular: Article
+    folder: src/content/insights
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    summary: "{{title}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: SEO description, name: description, widget: text }
+      - { label: Dek (standfirst under the headline), name: dek, widget: text }
+      - { label: Tag (e.g. "Industry · Healthcare Services"), name: tag, widget: string }
+      - { label: Flagship (pin to top of hub), name: flagship, widget: boolean, default: false, required: false }
+      - { label: Sort order (lower = earlier), name: order, widget: number, default: 50, value_type: int }
+      - { label: Hub card blurb, name: blurb, widget: text }
+      - { label: CTA heading, name: ctaHeading, widget: string, required: false }
+      - { label: CTA blurb, name: ctaBlurb, widget: text, required: false }
+      - { label: CTA email subject, name: ctaSubject, widget: string, required: false }
+      - label: Stat cards (the 4 numbers across the top)
+        name: stats
+        widget: list
+        required: false
+        fields:
+          - { label: Number, name: num, widget: string }
+          - { label: Label, name: label, widget: string }
+      - label: Sources
+        name: sources
+        widget: list
+        required: false
+        fields:
+          - { label: Name, name: name, widget: string }
+          - { label: URL, name: url, widget: string }
+          - { label: What it told us, name: what, widget: string }
+          - { label: Confidence, name: conf, widget: select, options: ["STRONG", "MEDIUM", "WEAK", "VENDOR", "THESIS"] }
+      - label: Body
+        name: body
+        widget: markdown
+        hint: "Section headers (##), prose, and bullet lists. For an 'Ask your CEO' callout, paste a <div class=\"ask\"> block (copy one from an existing article)."

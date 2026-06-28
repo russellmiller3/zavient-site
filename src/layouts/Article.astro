@@ -1,0 +1,63 @@
+---
+// api-docs-read: static article layout — no external API/protocol surface, only mailto.
+// Renders one Insights article from frontmatter + Markdown body (the <slot/>).
+import Base from './Base.astro';
+const { title, description, dek, tag, stats = [], sources = [], ctaHeading, ctaBlurb, ctaSubject } = Astro.props;
+const confClass = (c) => {
+  const v = (c || '').toLowerCase();
+  if (v.startsWith('strong')) return 'strong';
+  if (v.startsWith('med')) return 'medium';
+  return 'weak';
+};
+---
+<Base title={`${title} | Zavient`} description={description}>
+  <header class="article-hero">
+    <div class="wrap">
+      <div class="label">{tag}</div>
+      <h1>{title}</h1>
+      <p class="dek">{dek}</p>
+      <p class="byline">Zavient &middot; AI Value Creation for Private Equity</p>
+    </div>
+  </header>
+
+  {stats.length > 0 && (
+    <section class="stats">
+      {stats.map((s) => (
+        <div class="stat"><div class="stat-num" set:html={s.num}></div><div class="stat-label" set:html={s.label}></div></div>
+      ))}
+    </section>
+  )}
+
+  <article class="article-body">
+    <div class="wrap">
+      <slot />
+
+      {sources.length > 0 && (
+        <div class="sources">
+          <h2>Sources</h2>
+          <table class="sources-table">
+            <thead><tr><th>Source</th><th>What it told us</th><th>Confidence</th></tr></thead>
+            <tbody>
+              {sources.map((src) => (
+                <tr>
+                  <td><a href={src.url}>{src.name}</a></td>
+                  <td set:html={src.what}></td>
+                  <td class={`conf ${confClass(src.conf)}`}>{src.conf}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  </article>
+
+  <section class="article-cta">
+    <div class="wrap">
+      <div class="label">Start here</div>
+      <h2>{ctaHeading}</h2>
+      <p>{ctaBlurb}</p>
+      <a class="btn-gold" href={`mailto:rmiller@zavient.com?subject=${encodeURIComponent(ctaSubject)}`}>Email rmiller@zavient.com &rarr;</a>
+    </div>
+  </section>
+</Base>
