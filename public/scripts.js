@@ -93,7 +93,7 @@
   function drawDataRain() {
     const alphabet = "010101$%LRVMCBIDROUTEPRICE";
     ctx.save();
-    ctx.font = "700 11px JetBrains Mono, monospace";
+    ctx.font = "700 11px IBM Plex Mono, monospace";
     streams.forEach((stream, streamIndex) => {
       const yOffset = reducedMotion ? stream.y : (stream.y + frame * stream.speed) % (height + 240);
       for (let j = 0; j < 18; j += 1) {
@@ -134,7 +134,7 @@
     }
 
     ctx.fillStyle = "rgba(255, 253, 247, 0.42)";
-    ctx.font = "700 10px JetBrains Mono, monospace";
+    ctx.font = "700 10px IBM Plex Mono, monospace";
     ctx.fillText("CONFIDENCE", left, top - 14);
     ctx.save();
     ctx.translate(left + plotWidth + 18, top + plotHeight);
@@ -189,7 +189,7 @@
     ctx.stroke();
 
     ctx.fillStyle = "rgba(214, 176, 107, 0.66)";
-    ctx.font = "700 10px JetBrains Mono, monospace";
+    ctx.font = "700 10px IBM Plex Mono, monospace";
     ctx.fillText("SCANNING TRANSACTION HISTORY", scanX - 78, top - 12);
     ctx.restore();
   }
@@ -217,7 +217,7 @@
     });
 
     ctx.fillStyle = colors.bone;
-    ctx.font = "800 10px JetBrains Mono, monospace";
+    ctx.font = "800 10px IBM Plex Mono, monospace";
     ctx.fillText(`TARGET 0${index + 1}`, point.x + size + 10, point.y - 14);
 
     ctx.fillStyle = colors.bronze;
@@ -239,7 +239,7 @@
     ctx.fillRect(x, y, w, h);
     ctx.strokeRect(x, y, w, h);
 
-    ctx.font = "800 10px JetBrains Mono, monospace";
+    ctx.font = "800 10px IBM Plex Mono, monospace";
     ctx.fillStyle = colors.bronze;
     ctx.fillText("MODEL RUN 0487", x + 14, y + 22);
     ctx.fillStyle = colors.bone;
