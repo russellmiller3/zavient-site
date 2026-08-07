@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Pile You Never Open — Zavient</title>
+<meta name="description" content="The deals you passed on are the largest dataset your firm owns, and nobody has modeled them. A method for using them.">
+<link rel="canonical" href="https://zavient.com/insights/the-pile-you-never-open.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Pile You Never Open">
+<meta property="og:description" content="The deals you passed on are the largest dataset your firm owns. Nobody has ever modeled them.">
+<meta property="og:url" content="https://zavient.com/insights/the-pile-you-never-open.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14110f; --ink-soft:#302a25; --muted:#756c61;
+  --paper:#f1eee7; --white:#fffdf7; --line:#d8d0c4;
+  --line-dark:rgba(255,255,255,.18);
+  --teal:#6d7f7c; --teal-dark:#4c5b58;
+  --gold:#b88746; --gold-soft:#d6b06b;
+  --clay:#8d3329; --hero:#15110f; --radius:2px;
+}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);background:var(--paper);
+  font-family:"Newsreader",Georgia,serif;font-size:17px;line-height:1.55;
+  text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,p{margin-top:0}
+a{color:inherit}
+
+/* ---------- header ---------- */
+.site-header{position:absolute;top:0;left:0;right:0;z-index:3;
+  display:flex;align-items:center;justify-content:space-between;
+  width:min(1120px,calc(100% - 48px));margin:0 auto;padding:28px 0}
+.brand{font-family:"Fraunces",Georgia,serif;font-size:26px;color:var(--white);text-decoration:none}
+.hdr-nav{display:flex;gap:22px}
+.hdr-nav a{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;color:rgba(255,253,247,.62);text-decoration:none}
+.hdr-nav a:hover{color:var(--gold-soft)}
+@media(max-width:640px){.hdr-nav a:not(:last-child){display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;color:var(--white);
+  background:linear-gradient(135deg,rgba(20,17,15,.98),rgba(20,17,15,.84)),var(--hero)}
+.hero-shade{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(90deg,rgba(20,17,15,.98) 0%,rgba(20,17,15,.74) 42%,rgba(20,17,15,.24) 68%,rgba(20,17,15,.08) 100%),
+             linear-gradient(180deg,rgba(20,17,15,.06) 0%,rgba(20,17,15,.86) 100%)}
+.hero-inner{position:relative;z-index:2;width:min(1120px,calc(100% - 48px));margin:0 auto;padding:150px 0 64px}
+.eyebrow{margin:0 0 20px;font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:15px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-soft)}
+h1{width:min(820px,100%);margin-bottom:24px;font-family:"Fraunces",Georgia,serif;
+  font-size:70px;line-height:1.0;font-weight:600;letter-spacing:-.015em}
+.hero-copy{width:min(650px,100%);margin-bottom:8px;color:rgba(255,253,247,.78);font-size:20px;line-height:1.55}
+.byline{margin-top:28px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;
+  font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,253,247,.55)}
+.hero-proof{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);
+  width:min(1120px,calc(100% - 48px));margin:0 auto;transform:translateY(1px);
+  border:1px solid var(--line-dark);background:rgba(20,17,15,.72)}
+.hero-proof div{min-height:118px;padding:24px;border-right:1px solid var(--line-dark)}
+.hero-proof div:last-child{border-right:0}
+.hero-proof strong{display:block;margin-bottom:6px;color:var(--gold-soft);
+  font-family:"Fraunces",Georgia,serif;font-size:40px;line-height:1;font-weight:400}
+.hero-proof span{color:rgba(255,253,247,.68);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.02em}
+
+/* ---------- sections ---------- */
+.section{width:min(1120px,calc(100% - 48px));margin:0 auto;padding:78px 0}
+.section.tight{padding:56px 0}
+.section-heading{display:grid;grid-template-columns:.72fr 1fr;gap:64px;align-items:start;margin-bottom:40px}
+.section-heading.compact{grid-template-columns:1fr;gap:0;max-width:780px;margin-bottom:28px}
+h2{font-family:"Fraunces",Georgia,serif;font-size:40px;line-height:1.1;font-weight:600;letter-spacing:-.012em;margin-bottom:0}
+h3{font-family:"Fraunces",Georgia,serif;font-size:22px;line-height:1.28;font-weight:600;margin-bottom:10px}
+.sec-num{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:13px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--clay);margin-bottom:14px}
+.prose{max-width:720px}
+.prose p{font-size:18px;line-height:1.62;color:var(--ink-soft);margin-bottom:20px}
+.prose p.lede{font-size:22px;line-height:1.5;color:var(--ink)}
+.prose strong{color:var(--ink)}
+hr.rule{border:0;border-top:1px solid var(--line);margin:0}
+
+/* ---------- callout ---------- */
+.callout{border-left:4px solid var(--clay);background:var(--white);
+  border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  border-radius:var(--radius);padding:26px 30px;margin:32px 0;max-width:760px}
+.callout .lbl{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--clay);margin-bottom:10px}
+.callout p{font-size:19px;line-height:1.5;margin:0;color:var(--ink)}
+.callout.teal{border-left-color:var(--teal-dark)}
+.callout.teal .lbl{color:var(--teal-dark)}
+
+/* ---------- figure ---------- */
+.figure{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:30px 32px 26px;margin:8px 0 0}
+.fig-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;
+  padding-bottom:14px;margin-bottom:20px;border-bottom:1px dashed var(--line);
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.grid-dots{display:grid;grid-template-columns:repeat(25,1fr);gap:8px}
+.dot{aspect-ratio:1;border-radius:50%;width:100%}
+.dot.p{box-shadow:inset 0 0 0 2px var(--line);background:transparent}
+.dot.d{background:var(--ink)}
+.dot.w{background:var(--teal-dark)}
+.fig-legend{display:flex;gap:34px;flex-wrap:wrap;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.lg{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--muted)}
+.lg i{width:14px;height:14px;border-radius:50%;display:block;flex:none}
+.lg i.p{box-shadow:inset 0 0 0 2px var(--line)}
+.lg i.d{background:var(--ink)}
+.lg i.w{background:var(--teal-dark)}
+.fig-note{margin-top:16px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;color:var(--muted)}
+
+/* ---------- two-up ---------- */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.card .tag{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.card.now{border-top:3px solid var(--teal-dark)}
+.card.now .tag{color:var(--teal-dark)}
+.card.later{border-top:3px solid var(--gold)}
+.card.later .tag{color:var(--gold)}
+.card p{font-size:16px;line-height:1.55;color:var(--ink-soft);margin-bottom:12px}
+.card p:last-child{margin-bottom:0}
+
+/* ---------- ordered list ---------- */
+ol.steps{counter-reset:s;list-style:none;padding:0;margin:8px 0 0;max-width:760px}
+ol.steps li{counter-increment:s;position:relative;padding:0 0 22px 54px;margin-bottom:22px;
+  border-bottom:1px solid var(--line)}
+ol.steps li:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+ol.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:2px;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:14px;font-weight:700;color:var(--clay)}
+ol.steps p{font-size:17px;line-height:1.58;color:var(--ink-soft);margin:0}
+
+ul.plain{max-width:760px;padding-left:20px;margin:0 0 20px}
+ul.plain li{font-size:17px;line-height:1.6;color:var(--ink-soft);margin-bottom:12px}
+
+/* ---------- cta ---------- */
+.final-cta{background:var(--hero);color:var(--white);margin-top:20px}
+.final-cta .inner{width:min(1120px,calc(100% - 48px));margin:0 auto;padding:80px 0;text-align:center}
+.final-cta h2{font-family:"Fraunces",Georgia,serif;font-size:48px;font-weight:600;
+  line-height:1.04;margin:0 auto 20px;max-width:720px}
+.final-cta p{color:rgba(255,253,247,.74);font-size:19px;max-width:620px;margin:0 auto 30px}
+.primary-button{display:inline-block;padding:15px 30px;border-radius:var(--radius);
+  background:var(--gold);color:var(--hero);font-size:15px;font-weight:700;text-decoration:none;
+  letter-spacing:.01em}
+.site-footer{background:var(--hero);color:rgba(255,253,247,.5);
+  border-top:1px solid var(--line-dark);font-size:13px}
+.site-footer .inner{width:min(1120px,calc(100% - 48px));margin:0 auto;padding:26px 0;
+  display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+@media(max-width:900px){
+  .hero-inner{padding:120px 0 52px}
+  h1{font-size:44px}
+  h2{font-size:30px}
+  .section-heading{grid-template-columns:1fr;gap:18px}
+  .hero-proof{grid-template-columns:repeat(2,1fr)}
+  .hero-proof div:nth-child(2){border-right:0}
+  .hero-proof div{border-bottom:1px solid var(--line-dark)}
+  .two{grid-template-columns:1fr}
+  .grid-dots{grid-template-columns:repeat(20,1fr);gap:6px}
+  .prose p{font-size:17px}
+  .final-cta h2{font-size:34px}
+  .section{padding:56px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="/">Zavient</a>
+  <nav class="hdr-nav">
+    <a href="/">Home</a>
+    <a href="/insights">Insights</a>
+    <a href="/ai-offer.html">The engagement</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <p class="eyebrow">Deal selection · Method note</p>
+    <h1>The pile you never open</h1>
+    <p class="hero-copy">The deals you passed on are the largest dataset your firm owns. Nobody has ever modeled them. Here is what they are worth and how to use them.</p>
+    <p class="byline">Russell Miller · Zavient</p>
+  </div>
+</section>
+<div class="hero-proof">
+  <div><strong>200</strong><span>Deals seen</span></div>
+  <div><strong>3</strong><span>Deals tracked</span></div>
+  <div><strong>48%</strong><span>Performance left on the table</span></div>
+  <div><strong>50</strong><span>Funds before skill is legible</span></div>
+</div>
+
+<!-- 01 -->
+<section class="section">
+  <div class="section-heading">
+    <div>
+      <div class="sec-num">01 — The asset</div>
+      <h2>You document what you buy. You forget what you decline.</h2>
+    </div>
+    <div class="prose">
+      <p class="lede">Every deal you closed is documented to the decimal. Revenue, EBITDA, multiple, board decks, exit. Years of it.</p>
+      <p>The ones you passed on have no file. Nobody checked which got bought, at what price, or which quietly died. The record simply stops at the moment you said no.</p>
+      <p>That pile is fifty times larger than your portfolio, and it is the only dataset in the building with enough rows in it to learn anything from.</p>
+    </div>
+  </div>
+
+  <div class="figure">
+    <div class="fig-head"><span>Deal flow — one year</span><span>n = 200</span></div>
+    <div class="grid-dots" id="g"></div>
+    <div class="fig-legend">
+      <div class="lg"><i class="d"></i>3 &nbsp;Closed — tracked forever</div>
+      <div class="lg"><i class="p"></i>197 &nbsp;Passed — no file</div>
+      <div class="lg"><i class="w"></i>? &nbsp;Passed, and went on to win</div>
+    </div>
+    <p class="fig-note">Winner count shown illustratively. The real number is unknown, which is the argument.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- 02 -->
+<section class="section">
+  <div class="section-heading">
+    <div>
+      <div class="sec-num">02 — Why not the closed deals</div>
+      <h2>Your track record is too small to learn from. Everyone's is.</h2>
+    </div>
+    <div class="prose">
+      <p>The obvious idea is to take every deal you did, attach the outcome, and train a model to spot the next winner. It does not work, and the reason is not effort.</p>
+      <p>Private equity returns are extraordinarily noisy. Research separating skill from luck found that after observing <strong>five funds</strong>, only about 37 to 51 percent of top-quartile venture performers actually had top-quartile skill. After <strong>fifty funds</strong> — more than any firm has ever fully liquidated — it was still only 53 to 61 percent.</p>
+      <p>That is fifty <em>funds</em>, each holding many deals. A single firm's closed-deal history is a rounding error against that. A model trained on it will produce confident numbers, and those numbers will be noise wearing a lab coat.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="lbl">The trap</div>
+    <p>With fifteen rows and forty variables you can fit anything. The backtest will look extraordinary. That is the symptom, not the achievement.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- 03 -->
+<section class="section">
+  <div class="section-heading">
+    <div>
+      <div class="sec-num">03 — The missing half</div>
+      <h2>Lenders solved this in the 1950s and gave it a name.</h2>
+    </div>
+    <div class="prose">
+      <p>A bank only sees repayment behaviour on the loans it approved. The declined applications have no outcome — nobody ever finds out whether they would have paid. Train on approvals alone and the model learns the shape of your own past approvals rather than the shape of creditworthiness. The bias compounds with every retrain.</p>
+      <p>The discipline built to patch this is called <strong>reject inference</strong>, and the credit bureaus have worked on it for seventy years. Your deal pipeline is the same problem in a different suit.</p>
+      <p>Worth knowing before you reach for it: recent work found the standard statistical fixes mostly produce what the authors call an illusion of improvement. Your metrics get better while your actual decisions do not. So do not infer the counterfactual. Go and get it.</p>
+    </div>
+  </div>
+
+  <div class="callout teal">
+    <div class="lbl">What it is worth</div>
+    <p>Researchers studied venture selection using French tax records, which cover every company whether it raised money or not. Had those investors dropped the bottom half of their own portfolio by model prediction, average performance would have risen <strong>48 percent</strong>. The model found more winners. The humans kept backing founders who fit the picture.</p>
+  </div>
+
+  <div class="prose">
+    <p style="margin-top:32px">There is a business precedent too. Capital One was built on this exact insight. Fairbank and Morris were turned down by bank after bank pitching the idea that incumbents modeled only the customers they already had and treated everyone else as one undifferentiated risk bucket. The declined pile held the alpha. Nobody was looking, because nobody had outcome data on it.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- 04 -->
+<section class="section">
+  <div class="section-heading compact">
+    <div>
+      <div class="sec-num">04 — What to build</div>
+      <h2>Two models. Build them in this order.</h2>
+    </div>
+  </div>
+  <div class="two">
+    <div class="card now">
+      <div class="tag">Build first</div>
+      <h3>The fit model</h3>
+      <p><strong>Question:</strong> does this deal look like the ones we pursue?</p>
+      <p><strong>Why it works:</strong> it needs no outcome data at all. The label is your own past decision, which you already have for every deal you ever saw. Hundreds of rows instead of fifteen.</p>
+      <p><strong>What it buys:</strong> triage. Two hundred deals arrive, the model ranks them, a partner seriously reads the top twenty. It also never gets tired on a Friday afternoon or falls for a founder who looks the part.</p>
+      <p><strong>Be honest about the limit:</strong> it predicts fit with your revealed preferences, not returns. If those preferences are wrong, it reproduces them faithfully — which is precisely why the second model has to follow.</p>
+    </div>
+    <div class="card later">
+      <div class="tag">Build second</div>
+      <h3>The outcome model</h3>
+      <p><strong>Question:</strong> across the deals we did and the passed deals we can now track, what actually predicted a good result?</p>
+      <p><strong>Blocked on:</strong> roughly a hundred labelled rows. You reach that by working the passed pile, not by waiting for more exits.</p>
+      <p><strong>Define the target before the model:</strong> "did well" is not a column. Pick one measure and adjust it for vintage, because a 3× in 2019 and a 3× in 2024 are not the same achievement — one of them is mostly the market.</p>
+      <p>At small sample sizes a binary target, top half against bottom half of the vintage, is more honest than predicting a continuous multiple.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- 05 -->
+<section class="section">
+  <div class="section-heading">
+    <div>
+      <div class="sec-num">05 — The factors</div>
+      <h2>Write the schema once, by hand. Then stop changing it.</h2>
+    </div>
+    <div class="prose">
+      <p>The proprietary part of this is not the algorithm. It is that every deal you ever saw arrived with a memo, a CIM, or a set of notes, and nobody else has yours.</p>
+      <p>The instinct to have a model read those documents and generate factors is right. Run naively it fails: ask for a free description of each deal and you get two hundred one-off columns, where one deal is tagged "founder seems tired" and another "owner nearing retirement." Those are the same factor wearing different words. It is not a table and you cannot train on it.</p>
+    </div>
+    <ol class="steps">
+      <li><p><strong>Write the schema once.</strong> Feed a model twenty or thirty deal documents and have it propose thirty to sixty factors, each with a name, a plain definition, and allowed values. Then edit that list by hand. This is the highest-value hour in the entire project.</p></li>
+      <li><p><strong>Extract against the fixed schema.</strong> Every document runs through the same columns. Missing values are fine and modern methods handle them natively.</p></li>
+      <li><p><strong>Verify thirty rows by hand.</strong> Extraction errors are silent and they poison everything downstream.</p></li>
+    </ol>
+    <div class="prose" style="margin-top:30px">
+      <p>The factors worth having are the ones a data vendor cannot sell your competitor: owner situation, management depth below the CEO, quality of the financial records, systems maturity, whether the business has ever successfully raised price, whether the seller already has a number in mind, and how the deal reached you. Those live only in the documents.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- 06 -->
+<section class="section">
+  <div class="section-heading">
+    <div>
+      <div class="sec-num">06 — The failure mode</div>
+      <h2>Leakage is what will quietly ruin this.</h2>
+    </div>
+    <div class="prose">
+      <p>If any factor is drawn from a document that did not exist on the decision date, the model learns the answer instead of the signal. The backtest looks brilliant. Production is worthless.</p>
+    </div>
+    <ul class="plain">
+      <li><strong>Only documents that existed at the decision date.</strong> No post-close material, ever.</li>
+      <li><strong>Watch for revised memos.</strong> A note edited in 2021 to explain a 2018 decision is contaminated.</li>
+      <li><strong>Watch for hindsight language.</strong> Anything containing "we were right to pass" is poison.</li>
+      <li><strong>Split by time, never at random.</strong> Train on the early years, test on the later ones. A random split lets the model see the future.</li>
+    </ul>
+    <div class="callout">
+      <div class="lbl">Rule of thumb</div>
+      <p>If the model scores above roughly 85 percent on a first pass, assume contamination before you assume genius. That is almost always what it is.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- 07 -->
+<section class="section">
+  <div class="section-heading">
+    <div>
+      <div class="sec-num">07 — Why now</div>
+      <h2>Small data stopped being a disqualification.</h2>
+    </div>
+    <div class="prose">
+      <p>Large language models work because they read the internet before you ever typed a word. They arrive already knowing language.</p>
+      <p>Someone has now built the same thing for spreadsheets. It is called a <strong>tabular foundation model</strong> — "tabular" just meaning rows and columns. It was pre-trained on millions of synthetic tables, so it arrives already knowing what patterns in a spreadsheet look like. You hand it your deal history and it answers. No training run, no tuning, no data science hire.</p>
+      <p>The part that matters for a firm your size: it is built for small data. A few hundred rows is enough, and the published results have it outperforming carefully tuned gradient boosting in a single pass.</p>
+      <p>You do not have a million deals. You have a few hundred. Two years ago that ruled you out. It does not anymore.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- 08 -->
+<section class="section">
+  <div class="section-heading">
+    <div>
+      <div class="sec-num">08 — Explaining it</div>
+      <h2>Show the comparable deals, not the bar chart.</h2>
+    </div>
+    <div class="prose">
+      <p>These models return a probability, not a reason. Getting to "why" takes a second step, and there are two options.</p>
+      <p>The standard answer splits each prediction into per-factor contributions and draws the bar chart everyone expects. It works, but at small sample sizes the attributions are unstable — change two rows and the ranking shifts.</p>
+      <p>The better answer for this audience is to show the five most similar deals from history and what happened to them. <em>This looks like these five you have seen. Two worked, three did not, and all three that failed had the same customer concentration problem.</em></p>
+      <p>An investor will trust that, because it is how they already think — by analogy to deals they remember. It is also more honest at low sample size, since you are showing the evidence rather than a statistic that implies more precision than you have.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- 09 -->
+<section class="section">
+  <div class="section-heading compact">
+    <div>
+      <div class="sec-num">09 — Sequence</div>
+      <h2>What the first ninety days look like.</h2>
+    </div>
+  </div>
+  <ol class="steps">
+    <li><p><strong>Schema and target — about a week.</strong> Write the factor list by hand from a document sample. Define what "did well" means and adjust it for vintage. Set the leakage rules before anyone touches data.</p></li>
+    <li><p><strong>The fit model — about two weeks.</strong> Extract factors for every deal you ever saw. The label is your own past decision, so no outcome data is required. Split by time. Ship it with the comparable-deals explainer.</p></li>
+    <li><p><strong>Work the passed pile — ongoing.</strong> Attach real outcomes to the deals you declined. This is the slow, unglamorous, valuable part, and it is the reason nobody else has done this.</p></li>
+    <li><p><strong>The outcome model — once the rows exist.</strong> Only after the passed pile has produced enough labelled history. Binary target first. Continuous later, if ever.</p></li>
+  </ol>
+</section>
+
+<section class="final-cta">
+  <div class="inner">
+    <h2>The 197 know exactly what you are systematically wrong about.</h2>
+    <p>I am building this on my own deal history from my years as an independent sponsor. If you want to talk through what it would look like on yours, I am happy to walk through the business case and the working demo.</p>
+    <a class="primary-button" href="mailto:rmiller@zavient.com">rmiller@zavient.com</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="inner">
+    <span>Zavient — Moneyball for revenue systems</span>
+    <span><a href="/insights" style="text-decoration:none">More insights</a> · <a href="/" style="text-decoration:none">zavient.com</a></span>
+  </div>
+</footer>
+
+<script>
+  var g=document.getElementById('g');
+  var done={31:1,118:1,176:1};
+  var win={9:1,44:1,61:1,80:1,102:1,129:1,147:1,168:1,188:1,195:1};
+  for(var i=0;i<200;i++){
+    var d=document.createElement('div');
+    d.className='dot '+(done[i]?'d':(win[i]?'w':'p'));
+    g.appendChild(d);
+  }
+</script>
+</body>
+</html>

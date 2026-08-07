@@ -907,3 +907,69 @@ h3 {
     padding: 16px;
   }
 }
+
+
+/* ---------- featured read (homepage) ---------- */
+.featured-section { padding-top: 0; }
+.featured-read {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--clay);
+  border-radius: var(--radius);
+  background: var(--white);
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  transition: border-color .15s ease, transform .15s ease;
+}
+.featured-read:hover { border-color: var(--clay); transform: translateY(-2px); }
+.featured-copy { padding: 38px 40px; }
+.featured-kicker {
+  display: block;
+  margin-bottom: 14px;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--clay);
+}
+.featured-copy h2 { margin-bottom: 14px; font-size: 38px; line-height: 1.06; }
+.featured-copy p { margin-bottom: 20px; max-width: 60ch; color: var(--ink-soft); font-size: 17px; line-height: 1.6; }
+.featured-cta {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--clay);
+  border-bottom: 2px solid var(--clay);
+  padding-bottom: 3px;
+}
+.featured-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 38px 34px;
+  border-left: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(184,135,70,.07), rgba(184,135,70,.02));
+}
+.featured-stat strong {
+  display: block;
+  margin-bottom: 10px;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 62px;
+  line-height: 1;
+  font-weight: 600;
+  color: var(--gold);
+}
+.featured-stat span { font-size: 14px; line-height: 1.5; color: var(--muted); }
+@media (max-width: 860px) {
+  .featured-read { grid-template-columns: 1fr; }
+  .featured-copy { padding: 28px 26px; }
+  .featured-copy h2 { font-size: 30px; }
+  .featured-stat { border-left: 0; border-top: 1px solid var(--line); padding: 26px; }
+  .featured-stat strong { font-size: 48px; }
+}
