@@ -189,3 +189,23 @@ footer a:hover { color: var(--gold); text-decoration: none; }
   .nav-links { gap: 16px; }
   .sources-table { font-size: 12px; }
 }
+
+
+/* ---------- featured method note on the hub ---------- */
+.hub-featured {
+  display: block;
+  margin-bottom: 26px;
+  border-left: 4px solid var(--clay, #8d3329);
+}
+.hub-featured h3 { font-size: 32px; line-height: 1.1; }
+.hub-featured p { max-width: 70ch; }
+
+/* ---------- secondary CTA under the mailto button ---------- */
+.cta-secondary {
+  margin: 20px auto 0;
+  max-width: 62ch;
+  font-size: 15px;
+  line-height: 1.55;
+  opacity: .78;
+}
+.cta-secondary a { text-decoration: underline; text-underline-offset: 3px; }

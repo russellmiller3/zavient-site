@@ -20,6 +20,16 @@ const articles = (await getCollection('insights')).sort((a, b) => {
 
   <section class="hub">
     <div class="hub-wrap">
+      <a class="hub-card hub-featured" href="/insights/the-pile-you-never-open.html">
+        <span class="hub-tag">Method note &middot; Deal selection</span>
+        <h3>The pile you never open</h3>
+        <p>The deals you passed on are the largest dataset your firm owns, and nobody has ever modeled them. The full method: which model to build first, why the closed deals are too few to learn from, and the leakage trap that quietly ruins it.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="hub">
+    <div class="hub-wrap">
       <div class="hub-grid">
         {articles.map((article) => (
           <a class="hub-card" href={`/insights/${article.id}.html`}>
