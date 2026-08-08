@@ -973,3 +973,24 @@ h3 {
   .featured-stat { border-left: 0; border-top: 1px solid var(--line); padding: 26px; }
   .featured-stat strong { font-size: 48px; }
 }
+
+
+/* ---------- sector links (homepage) ---------- */
+.sector-section { padding-bottom: 0; }
+.sector-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0;
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); overflow: hidden; }
+.sector-link { display: block; padding: 20px 24px; border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line); text-decoration: none; color: inherit; transition: background .12s ease; }
+.sector-link:nth-child(2n) { border-right: 0; }
+.sector-link:nth-last-child(-n+2) { border-bottom: 0; }
+.sector-link:hover { background: rgba(184, 135, 70, .07); }
+.sector-link span { display: block; margin-bottom: 6px; font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--clay); }
+.sector-link strong { font-weight: 600; font-size: 17px; line-height: 1.35; }
+.sector-all { margin-top: 18px; font-size: 15px; }
+.sector-all a { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 720px) {
+  .sector-grid { grid-template-columns: 1fr; }
+  .sector-link { border-right: 0; }
+  .sector-link:last-child { border-bottom: 0; }
+}

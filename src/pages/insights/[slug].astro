@@ -7,14 +7,23 @@ import Article from '../../layouts/Article.astro';
 export async function getStaticPaths() {
   const articles = await getCollection('insights');
   return articles.map((article) => {
-    const related = articles
-      .filter((other) => other.id !== article.id)
-      .sort((a, b) => {
-        if (a.data.flagship !== b.data.flagship) return a.data.flagship ? -1 : 1;
-        return a.data.order - b.data.order;
-      })
-      .slice(0, 4)
-      .map((other) => ({ id: other.id, title: other.data.title, tag: other.data.tag, blurb: other.data.blurb }));
+    // Flagship first (it is the hub-and-spoke centre), then the next three by
+    // circular order. A fixed top-4 meant articles ordered 5+ were never linked
+    // from any other article — six of ten were orphans, reachable only via the hub.
+    const ordered = articles.slice().sort((a, b) => a.data.order - b.data.order);
+    const self = ordered.findIndex((o) => o.id === article.id);
+    const flagship = ordered.find((o) => o.data.flagship && o.id !== article.id);
+    const rotation = [];
+    for (let step = 1; rotation.length < 3 && step < ordered.length; step += 1) {
+      const candidate = ordered[(self + step) % ordered.length];
+      if (candidate.id === article.id) continue;
+      if (flagship && candidate.id === flagship.id) continue;
+      rotation.push(candidate);
+    }
+    const related = [flagship, ...rotation]
+      .filter(Boolean)
+      .map((o) => ({ id: o.id, title: o.data.title, tag: o.data.tag, blurb: o.data.blurb }));
+
     return { params: { slug: article.id }, props: { article, related } };
   });
 }
