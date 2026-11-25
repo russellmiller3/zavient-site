@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 const { page, related } = Astro.props;
 const d = page.data;
 ---
-<Base title={`${d.title} | Zavient`} description={d.description}>
+<Base title={`${d.title} | Zavient`} description={d.description} noindex>
   <header class="article-hero">
     <div class="wrap">
       <div class="label">AI work &middot; {d.job}{d.industry !== 'any industry' ? ` · ${d.industry}` : ''}</div>

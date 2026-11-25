@@ -1,7 +1,7 @@
 ---
 // api-docs-read: static layout — no external API/protocol surface, only a font stylesheet link + mailto.
 // Shared shell for every Insights page: head, fonts, nav, footer.
-const { title, description } = Astro.props;
+const { title, description, noindex = false } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +10,7 @@ const { title, description } = Astro.props;
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  {noindex && <meta name="robots" content="noindex, follow" />}
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

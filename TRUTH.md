@@ -56,6 +56,10 @@ Last reconciled 25 Nov 2026, on branch `feature/ai-work-pages`.
   articles, 20 AI-work pages, 5 data stories with embeddable SVG charts and CSVs (4 bar charts, 1 trend line),
   hubs at /ai-work.html and /data.html, menu links, a second sitemap. All 56 built files answered 200 live.
   Checks: 4 site tests, 4 mention-counter tests, a source-link checker. All pass.
+- **AI-work pages hidden from Google (25 Nov 2026):** Russell judged the 20 pages "low value slop, likely to
+  be penalized by google". All 21 (pages and hub) carry `noindex` and are out of `sitemap-ai.xml`; they stay
+  reachable by link. Google's own guidance: many AI-written pages that add no value can break its
+  scaled-content spam policy. A new approach is with Russell for a decision; the master plan changes after it.
 - **Trend story:** the share of US job postings that mention AI, monthly from January 2019 to October 2026,
   from Indeed Hiring Lab's free data (CC BY 4.0): 2.74% in January 2025, 7.60% in October 2026.
   Evidence: `docs/ai-work-site/job-data/indeed/monthly.json`.
