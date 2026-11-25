@@ -42,6 +42,36 @@
         MODEL PAGES (600+, built by script from free data)
 ```
 
+**Site architecture (shown to Russell on 25 Nov 2026):** about 1,000 pages, built from one data folder.
+
+```
+zavient.com                          pages
+├─ /ai-work/<job>                     165
+│   └─ /ai-work/<job>/<industry>       ~20
+├─ /industries/<industry>              14
+├─ /software/<name>-ai                 87
+├─ /ai-tools/<tool>                   ~150
+│   (pricing · alternatives · vs)
+├─ /models/<model>                    ~200
+│   └─ /compare/<a>-vs-<b>            top 300
+├─ /benchmarks/<test>                  our results
+├─ /guides/  definitions, rules, costs  ~50
+├─ /news/<model or rollout>            weekly
+└─ /benchmark-your-documents   ← every page links here
+```
+
+```
+ENGINE
+data/*.json  ──►  Astro build  ──►  host (planned Cloudflare; live today on Vercel)
+  ▲                 │ checks: schema, sources, links
+  │                 ▼ fails → nothing ships
+scheduled tasks: new models, prices, news, refresh
+keyword skill: picks which pages to add next
+```
+
+Status on 25 Nov 2026: built so far are 20 /ai-work pages, 5 /data stories and /benchmark-your-documents.
+Russell judged the 20 /ai-work pages low value; they are hidden from Google until the approach is decided.
+
 ## What companies search for: by type of work
 
 These are US Google searches a month, checked 25 Nov 2026, with junk and duplicate phrases removed. Breadth is the ad value of all a group's phrases except its single biggest one. It shows whether demand is broad or rests on one phrase.
