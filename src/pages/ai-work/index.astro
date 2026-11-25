@@ -6,7 +6,7 @@ import Base from '../../layouts/Base.astro';
 import BenchmarkCta from '../../components/BenchmarkCta.astro';
 const pages = (await getCollection('aiwork')).sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
-<Base title="AI work, job by job | Zavient" description="Which AI jobs are worth doing, how to test AI on each one before you buy, and when to buy or build. One page per job.">
+<Base title="AI work, job by job | Zavient" description="Which AI jobs are worth doing, how to test AI on each one before you buy, and when to buy or build. One page per job." noindex>
   <header class="article-hero"><div class="wrap">
     <div class="label">AI work</div>
     <h1>AI work, job by job</h1>
