@@ -11,6 +11,11 @@ The public site for Zavient LLC. Pushing to `master` on GitHub publishes it thro
 
 ## Change log
 
+- 2026-11-25, after going live: Fixed the menu's Insights, AI work and Data links, which returned 404 on
+  zavient.com because Vercel serves only exact file paths (/data.html, never /data). The Insights link had been
+  broken before this work too. Added a site test that every internal link names a real file; it failed on the 3
+  menu links (about 75 pages each) before the fix and passes after. Why: readers clicking the menu hit a dead end.
+
 - 2026-11-25, later (same branch): Added a trend story, the share of US job ads that mention AI from 2019 to
   October 2026 (Indeed Hiring Lab data, credited on the chart), drawn by a new line chart. Added a monthly
   store that counts which AI models, software and skills job ads name (`docs/ai-work-site/job-data/mentions.py`).
