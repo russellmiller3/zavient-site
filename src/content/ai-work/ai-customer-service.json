@@ -1,0 +1,32 @@
+{
+ "title": "AI customer service: what works, what fails, and how to test it",
+ "description": "How AI answers customer questions in chat, email and phone, what a federal regulator found about chatbot failures, and how to test one before launch.",
+ "job": "answering customer questions",
+ "summary": "AI customer service software answers customer questions in chat, email or by phone and hands the hard cases to a person. It works best on simple, repeated questions and worst on unusual problems.",
+ "example": {"input": "A customer writes: I was charged twice for my order last week and I want one charge refunded.", "output": "The AI finds the order, confirms the duplicate charge, explains the refund steps and timing, and passes it to a person if the refund is above your set limit."},
+ "howToTest": [
+  "Pull 200 real past conversations and sort them by type: simple, tricky and angry.",
+  "Replay the questions and have your best support agent grade each answer as correct, wrong or incomplete.",
+  "Test hand-off. Ask for a person in many ways and confirm the customer reaches one fast.",
+  "Try to trick it into a false promise, such as a refund outside your policy, and see if it holds.",
+  "After a small live launch, compare resolution rate, repeat contacts and customer ratings against humans only."
+ ],
+ "buyVsBuild": {"buy": "Buy when you use a standard help desk and want to start with your most common questions in weeks.", "build": "Build when the answers depend on complex internal data or you need strict control over every sentence."},
+ "watchOuts": [
+  "The CFPB's 2023 report found chatbots may be useful for basic inquiries but their effectiveness wanes as problems get more complex.",
+  "The same report says companies may be liable for legal violations when a chatbot fails to comply with consumer laws.",
+  "Customers stuck in a loop with no human are a real harm. Always offer a person.",
+  "A wrong answer stated with confidence is worse than saying it does not know."
+ ],
+ "resources": [
+  {"name": "NIST AI Risk Management Framework", "url": "https://www.nist.gov/itl/ai-risk-management-framework", "what": "A voluntary U.S. government framework for managing the risks of AI systems."},
+  {"name": "CFPB: Chatbots in consumer finance", "url": "https://www.consumerfinance.gov/data-research/research-reports/chatbots-in-consumer-finance/chatbots-in-consumer-finance/", "what": "A 2023 federal report on how chatbots are used in banking and the harm they can cause."}
+ ],
+ "sources": [
+  {"name": "CFPB: Chatbots in consumer finance (June 2023)", "url": "https://www.consumerfinance.gov/data-research/research-reports/chatbots-in-consumer-finance/chatbots-in-consumer-finance/", "what": "Finds chatbots may resolve basic inquiries but are less effective as problems grow more complex, and that institutions risk violating legal obligations and eroding trust. It estimates about 37% of the U.S. population interacted with a bank's chatbot in 2022."},
+  {"name": "NIST AI Risk Management Framework", "url": "https://www.nist.gov/itl/ai-risk-management-framework", "what": "Describes the framework, released January 26, 2023, as voluntary and meant to build trustworthiness into AI design, use and evaluation."}
+ ],
+ "related": ["rag-chatbot", "ai-voice-agents", "ai-agents-for-business"],
+ "keyword": {"phrase": "ai customer service", "searches": 4400, "cpc": 107.06, "difficulty": 39},
+ "updated": "2026-11-25"
+}

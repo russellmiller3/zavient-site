@@ -4,3 +4,10 @@ dist/
 .vercel/
 .DS_Store
 *.log
+
+# Per-ad job data stays on this Mac (provider data; see TRUTH.md "How the data is made")
+docs/ai-work-site/job-data/mentions/ads/
+docs/ai-work-site/job-data/jobs.csv
+docs/ai-work-site/job-data/employers.json
+__pycache__/
+.pytest_cache/

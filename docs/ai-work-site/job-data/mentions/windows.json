@@ -1,0 +1,518 @@
+{
+ "terms_version": 1,
+ "unit": "distinct employers; makers' own ads left out of their own model's count",
+ "windows": [
+  {
+   "pulled": "2026-11-25",
+   "posted_from": "2026-11-21",
+   "posted_to": "2026-11-25",
+   "ads_pulled": 3000,
+   "ads": 2046,
+   "employers": 1172,
+   "terms": {
+    "model": {
+     "Anthropic / Claude": {
+      "employers": 206,
+      "share_of_employers": 17.6
+     },
+     "OpenAI / GPT": {
+      "employers": 192,
+      "share_of_employers": 16.4
+     },
+     "Google Gemini": {
+      "employers": 53,
+      "share_of_employers": 4.5
+     },
+     "Meta Llama": {
+      "employers": 23,
+      "share_of_employers": 2.0
+     },
+     "Mistral": {
+      "employers": 13,
+      "share_of_employers": 1.1
+     },
+     "DeepSeek": {
+      "employers": 3,
+      "share_of_employers": 0.3
+     },
+     "Microsoft Copilot": {
+      "employers": 97,
+      "share_of_employers": 8.3
+     }
+    },
+    "platform": {
+     "AWS Bedrock": {
+      "employers": 78,
+      "share_of_employers": 6.7
+     },
+     "Azure OpenAI / AI Foundry": {
+      "employers": 94,
+      "share_of_employers": 8.0
+     },
+     "Google Vertex AI": {
+      "employers": 66,
+      "share_of_employers": 5.6
+     },
+     "Databricks": {
+      "employers": 167,
+      "share_of_employers": 14.2
+     },
+     "Snowflake": {
+      "employers": 122,
+      "share_of_employers": 10.4
+     },
+     "LangChain / LangGraph": {
+      "employers": 210,
+      "share_of_employers": 17.9
+     },
+     "LlamaIndex": {
+      "employers": 67,
+      "share_of_employers": 5.7
+     },
+     "Hugging Face": {
+      "employers": 61,
+      "share_of_employers": 5.2
+     },
+     "PyTorch": {
+      "employers": 297,
+      "share_of_employers": 25.3
+     },
+     "MCP (Model Context Protocol)": {
+      "employers": 159,
+      "share_of_employers": 13.6
+     }
+    },
+    "work": {
+     "AI agents": {
+      "employers": 569,
+      "share_of_employers": 48.5
+     },
+     "RAG and retrieval": {
+      "employers": 360,
+      "share_of_employers": 30.7
+     },
+     "Fine-tuning and post-training": {
+      "employers": 197,
+      "share_of_employers": 16.8
+     },
+     "Evaluation (evals)": {
+      "employers": 202,
+      "share_of_employers": 17.2
+     },
+     "Prompt engineering": {
+      "employers": 203,
+      "share_of_employers": 17.3
+     },
+     "Claude Code / coding agents": {
+      "employers": 147,
+      "share_of_employers": 12.5
+     }
+    }
+   },
+   "top_skills": [
+    {
+     "skill": "Python (computer programming)",
+     "employers": 876,
+     "share_of_employers": 74.7
+    },
+    {
+     "skill": "machine learning",
+     "employers": 663,
+     "share_of_employers": 56.6
+    },
+    {
+     "skill": "communication",
+     "employers": 576,
+     "share_of_employers": 49.1
+    },
+    {
+     "skill": "SQL",
+     "employers": 458,
+     "share_of_employers": 39.1
+    },
+    {
+     "skill": "statistics",
+     "employers": 374,
+     "share_of_employers": 31.9
+    },
+    {
+     "skill": "data extraction, transformation and loading tools",
+     "employers": 311,
+     "share_of_employers": 26.5
+    },
+    {
+     "skill": "computer vision",
+     "employers": 292,
+     "share_of_employers": 24.9
+    },
+    {
+     "skill": "algorithms",
+     "employers": 244,
+     "share_of_employers": 20.8
+    },
+    {
+     "skill": "data analytics",
+     "employers": 237,
+     "share_of_employers": 20.2
+    },
+    {
+     "skill": "deep learning",
+     "employers": 193,
+     "share_of_employers": 16.5
+    },
+    {
+     "skill": "natural language processing",
+     "employers": 186,
+     "share_of_employers": 15.9
+    },
+    {
+     "skill": "Java (computer programming)",
+     "employers": 165,
+     "share_of_employers": 14.1
+    },
+    {
+     "skill": "TypeScript",
+     "employers": 158,
+     "share_of_employers": 13.5
+    },
+    {
+     "skill": "tools for software configuration management",
+     "employers": 151,
+     "share_of_employers": 12.9
+    },
+    {
+     "skill": "ICT project management methodologies",
+     "employers": 139,
+     "share_of_employers": 11.9
+    },
+    {
+     "skill": "lean manufacturing",
+     "employers": 126,
+     "share_of_employers": 10.8
+    },
+    {
+     "skill": "C++",
+     "employers": 124,
+     "share_of_employers": 10.6
+    },
+    {
+     "skill": "cyber security",
+     "employers": 109,
+     "share_of_employers": 9.3
+    },
+    {
+     "skill": "DevOps",
+     "employers": 99,
+     "share_of_employers": 8.4
+    },
+    {
+     "skill": "JavaScript",
+     "employers": 98,
+     "share_of_employers": 8.4
+    },
+    {
+     "skill": "risk management",
+     "employers": 92,
+     "share_of_employers": 7.8
+    },
+    {
+     "skill": "think analytically",
+     "employers": 88,
+     "share_of_employers": 7.5
+    },
+    {
+     "skill": "project management",
+     "employers": 87,
+     "share_of_employers": 7.4
+    },
+    {
+     "skill": "supply chain management",
+     "employers": 76,
+     "share_of_employers": 6.5
+    },
+    {
+     "skill": "PostgreSQL",
+     "employers": 63,
+     "share_of_employers": 5.4
+    },
+    {
+     "skill": "NoSQL",
+     "employers": 61,
+     "share_of_employers": 5.2
+    },
+    {
+     "skill": "C#",
+     "employers": 46,
+     "share_of_employers": 3.9
+    },
+    {
+     "skill": "customer service",
+     "employers": 46,
+     "share_of_employers": 3.9
+    },
+    {
+     "skill": "distributed directory information services",
+     "employers": 46,
+     "share_of_employers": 3.9
+    },
+    {
+     "skill": "Scala",
+     "employers": 44,
+     "share_of_employers": 3.8
+    },
+    {
+     "skill": "customer relationship management",
+     "employers": 39,
+     "share_of_employers": 3.3
+    },
+    {
+     "skill": "business intelligence",
+     "employers": 37,
+     "share_of_employers": 3.2
+    },
+    {
+     "skill": "data warehouse",
+     "employers": 35,
+     "share_of_employers": 3.0
+    },
+    {
+     "skill": "business analysis",
+     "employers": 31,
+     "share_of_employers": 2.6
+    },
+    {
+     "skill": "computer programming",
+     "employers": 31,
+     "share_of_employers": 2.6
+    },
+    {
+     "skill": "Hadoop",
+     "employers": 30,
+     "share_of_employers": 2.6
+    },
+    {
+     "skill": "accounting",
+     "employers": 29,
+     "share_of_employers": 2.5
+    },
+    {
+     "skill": "alter management",
+     "employers": 27,
+     "share_of_employers": 2.3
+    },
+    {
+     "skill": "MATLAB",
+     "employers": 24,
+     "share_of_employers": 2.0
+    },
+    {
+     "skill": "clinical science",
+     "employers": 24,
+     "share_of_employers": 2.0
+    }
+   ],
+   "top_tech": [
+    {
+     "tech": "python",
+     "employers": 876,
+     "share_of_employers": 74.7
+    },
+    {
+     "tech": "sql",
+     "employers": 458,
+     "share_of_employers": 39.1
+    },
+    {
+     "tech": "aws",
+     "employers": 392,
+     "share_of_employers": 33.4
+    },
+    {
+     "tech": "azure",
+     "employers": 351,
+     "share_of_employers": 29.9
+    },
+    {
+     "tech": "pytorch",
+     "employers": 292,
+     "share_of_employers": 24.9
+    },
+    {
+     "tech": "gcp",
+     "employers": 241,
+     "share_of_employers": 20.6
+    },
+    {
+     "tech": "tensorflow",
+     "employers": 218,
+     "share_of_employers": 18.6
+    },
+    {
+     "tech": "openai",
+     "employers": 186,
+     "share_of_employers": 15.9
+    },
+    {
+     "tech": "kubernetes",
+     "employers": 183,
+     "share_of_employers": 15.6
+    },
+    {
+     "tech": "docker",
+     "employers": 165,
+     "share_of_employers": 14.1
+    },
+    {
+     "tech": "java",
+     "employers": 165,
+     "share_of_employers": 14.1
+    },
+    {
+     "tech": "databricks",
+     "employers": 162,
+     "share_of_employers": 13.8
+    },
+    {
+     "tech": "langchain",
+     "employers": 161,
+     "share_of_employers": 13.7
+    },
+    {
+     "tech": "typescript",
+     "employers": 158,
+     "share_of_employers": 13.5
+    },
+    {
+     "tech": "git",
+     "employers": 151,
+     "share_of_employers": 12.9
+    },
+    {
+     "tech": "anthropic",
+     "employers": 143,
+     "share_of_employers": 12.2
+    },
+    {
+     "tech": "c++",
+     "employers": 124,
+     "share_of_employers": 10.6
+    },
+    {
+     "tech": "snowflake",
+     "employers": 115,
+     "share_of_employers": 9.8
+    },
+    {
+     "tech": "pandas",
+     "employers": 100,
+     "share_of_employers": 8.5
+    },
+    {
+     "tech": "react",
+     "employers": 100,
+     "share_of_employers": 8.5
+    },
+    {
+     "tech": "javascript",
+     "employers": 98,
+     "share_of_employers": 8.4
+    },
+    {
+     "tech": "copilot",
+     "employers": 96,
+     "share_of_employers": 8.2
+    },
+    {
+     "tech": "tableau",
+     "employers": 89,
+     "share_of_employers": 7.6
+    },
+    {
+     "tech": "numpy",
+     "employers": 86,
+     "share_of_employers": 7.3
+    },
+    {
+     "tech": "linux",
+     "employers": 78,
+     "share_of_employers": 6.7
+    },
+    {
+     "tech": "github",
+     "employers": 74,
+     "share_of_employers": 6.3
+    },
+    {
+     "tech": "apache-spark",
+     "employers": 73,
+     "share_of_employers": 6.2
+    },
+    {
+     "tech": "terraform",
+     "employers": 73,
+     "share_of_employers": 6.2
+    },
+    {
+     "tech": "power-bi",
+     "employers": 71,
+     "share_of_employers": 6.1
+    },
+    {
+     "tech": "mlflow",
+     "employers": 67,
+     "share_of_employers": 5.7
+    },
+    {
+     "tech": "llamaindex",
+     "employers": 63,
+     "share_of_employers": 5.4
+    },
+    {
+     "tech": "postgresql",
+     "employers": 63,
+     "share_of_employers": 5.4
+    },
+    {
+     "tech": "apache-airflow",
+     "employers": 54,
+     "share_of_employers": 4.6
+    },
+    {
+     "tech": "fastapi",
+     "employers": 53,
+     "share_of_employers": 4.5
+    },
+    {
+     "tech": "gemini",
+     "employers": 53,
+     "share_of_employers": 4.5
+    },
+    {
+     "tech": "hugging-face",
+     "employers": 53,
+     "share_of_employers": 4.5
+    },
+    {
+     "tech": "node.js",
+     "employers": 49,
+     "share_of_employers": 4.2
+    },
+    {
+     "tech": "excel",
+     "employers": 48,
+     "share_of_employers": 4.1
+    },
+    {
+     "tech": "vllm",
+     "employers": 47,
+     "share_of_employers": 4.0
+    },
+    {
+     "tech": "c#",
+     "employers": 46,
+     "share_of_employers": 3.9
+    }
+   ]
+  }
+ ]
+}

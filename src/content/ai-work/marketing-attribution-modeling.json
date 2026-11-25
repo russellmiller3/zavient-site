@@ -1,0 +1,32 @@
+{
+ "title": "Attribution modeling: how it works and how to test it honestly",
+ "description": "How attribution models credit marketing channels for sales, why the free open-source tools use totals instead of tracking, and how to check the answer.",
+ "job": "measuring which marketing works",
+ "summary": "Attribution modeling estimates how much each marketing channel contributed to sales, so you know where to spend. One family of methods, marketing mix modeling, uses weekly totals instead of tracking individual people.",
+ "example": {"input": "Two years of weekly sales and weekly spend for search ads, social ads, email and trade shows.", "output": "An estimate of each channel's contribution to sales and its return on spend, with ranges, plus a suggested budget split."},
+ "howToTest": [
+  "Hold back the last 8 weeks of data. Build the model on everything before.",
+  "Ask the model to predict those 8 weeks and compare with what happened.",
+  "Run a real experiment, such as switching off one channel in one region for a month, and see if sales move as the model said.",
+  "Re-run the model with slightly different settings. If the channel ranking flips, the answer is not stable enough to act on.",
+  "Check that it reports a range, not a single number."
+ ],
+ "buyVsBuild": {"buy": "Buy a service when you want results fast and have no analyst. Insist on seeing the method and the ranges.", "build": "Build with a free open-source package when you have an analyst and want to see and own every assumption."},
+ "watchOuts": [
+  "The model finds patterns, not proof. Two channels that always move together cannot be told apart.",
+  "Seasonality, price changes and promotions can look like marketing effects if you leave them out.",
+  "Treat a model as a guide for experiments, not a replacement for them."
+ ],
+ "resources": [
+  {"name": "Google Meridian", "url": "https://github.com/google/meridian", "what": "An Apache 2.0 licensed marketing mix modeling framework that lets advertisers run models in-house."},
+  {"name": "Meta Robyn", "url": "https://github.com/facebookexperimental/Robyn", "what": "An MIT licensed, open-source marketing mix modeling package from Meta Marketing Science."},
+  {"name": "PyMC-Marketing", "url": "https://github.com/pymc-labs/pymc-marketing", "what": "An Apache 2.0 licensed Bayesian toolkit for marketing mix models and customer lifetime value."}
+ ],
+ "sources": [
+  {"name": "Google Meridian README", "url": "https://github.com/google/meridian", "what": "Defines marketing mix modeling as a statistical technique that measures the impact of marketing using aggregated data, and says it uses no cookie or user-level information."},
+  {"name": "Meta Robyn README", "url": "https://github.com/facebookexperimental/Robyn", "what": "Describes Robyn as an open-source marketing mix modeling package from Meta Marketing Science."}
+ ],
+ "related": ["marketing-mix-modeling", "ai-sales-development-rep"],
+ "keyword": {"phrase": "attribution modeling", "searches": 2080, "cpc": 44.39, "difficulty": null},
+ "updated": "2026-11-25"
+}

@@ -1,0 +1,56 @@
+---
+// api-docs-read: static page generator — no external API/protocol surface.
+// One page per JSON file in src/content/ai-work: what the job is, how to test AI on it, buy vs build, resources, sources.
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import BenchmarkCta from '../../components/BenchmarkCta.astro';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('aiwork');
+  const byId = Object.fromEntries(pages.map((p) => [p.id, p.data.title]));
+  return pages.map((page) => ({
+    params: { slug: page.id },
+    props: { page, related: page.data.related.filter((r) => byId[r]).map((r) => ({ id: r, title: byId[r] })) },
+  }));
+}
+const { page, related } = Astro.props;
+const d = page.data;
+---
+<Base title={`${d.title} | Zavient`} description={d.description}>
+  <header class="article-hero">
+    <div class="wrap">
+      <div class="label">AI work &middot; {d.job}{d.industry !== 'any industry' ? ` · ${d.industry}` : ''}</div>
+      <h1>{d.title}</h1>
+      <p class="dek">{d.summary}</p>
+      <p class="byline">Zavient &middot; updated {d.updated}</p>
+    </div>
+  </header>
+  <article class="article-body">
+    <div class="wrap">
+      <h2>What it looks like</h2>
+      <table class="sources-table">
+        <thead><tr><th>Goes in</th><th>Comes out</th></tr></thead>
+        <tbody><tr><td>{d.example.input}</td><td>{d.example.output}</td></tr></tbody>
+      </table>
+      <p><em>Illustrative example.</em></p>
+      <h2>How to test AI on this job before you buy</h2>
+      <ol>{d.howToTest.map((s) => <li>{s}</li>)}</ol>
+      <h2>Buy or build</h2>
+      <p><strong>Buy:</strong> {d.buyVsBuild.buy}</p>
+      <p><strong>Build:</strong> {d.buyVsBuild.build}</p>
+      <h2>What goes wrong</h2>
+      <ul>{d.watchOuts.map((s) => <li>{s}</li>)}</ul>
+      <h2>Useful resources</h2>
+      <ul>{d.resources.map((r) => <li><a href={r.url}>{r.name}</a>: {r.what}</li>)}</ul>
+      <div class="sources">
+        <h2>Sources</h2>
+        <table class="sources-table">
+          <thead><tr><th>Source</th><th>What it says</th></tr></thead>
+          <tbody>{d.sources.map((s) => <tr><td><a href={s.url}>{s.name}</a></td><td>{s.what}</td></tr>)}</tbody>
+        </table>
+      </div>
+      {related.length > 0 && (<p>Related: {related.map((r, i) => <>{i > 0 && ' · '}<a href={`/ai-work/${r.id}.html`}>{r.title}</a></>)}</p>)}
+    </div>
+  </article>
+  <BenchmarkCta job={d.job} />
+</Base>

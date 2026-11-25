@@ -1,0 +1,29 @@
+{
+ "title": "AI document processing: reading invoices, forms and files",
+ "description": "How AI reads invoices, forms and reports into structured data, how to test accuracy on your own documents, and buy versus build.",
+ "job": "document processing",
+ "summary": "AI document processing reads documents such as invoices, claim forms and reports and turns them into structured data. The question that matters is not whether it reads a clean sample, but how many fields it gets exactly right on your messiest files.",
+ "example": {"input": "A scanned supplier invoice, two pages, with a handwritten note.", "output": "Supplier, invoice number, date, line items, tax and total, each with a confidence flag and the page it came from."},
+ "howToTest": [
+  "Pick 50 real documents, including your worst scans and odd layouts.",
+  "Have your team type the correct value for every field; that is the answer key.",
+  "Score each model field by field: one wrong total matters more than ten right addresses.",
+  "Compare cost per document, and count how many documents still need a person."
+ ],
+ "buyVsBuild": {"buy": "Buy when your documents are standard types (invoices, receipts, IDs) that vendors already train on.", "build": "Build when your documents are specific to your business and the fields feed your own systems."},
+ "watchOuts": [
+  "Accuracy on a vendor's demo set says little about your documents.",
+  "A model that writes a plausible wrong number is worse than one that leaves the field blank.",
+  "Costs rise fast on long documents; measure cost per document, not per page."
+ ],
+ "resources": [
+  {"name": "DocVQA", "url": "https://www.docvqa.org", "what": "A public benchmark for answering questions about document images."}
+ ],
+ "sources": [
+  {"name": "a16z, enterprise CIO survey (2025)", "url": "https://a16z.com/ai-enterprise-2025/", "what": "Enterprises test models on their own internal benchmark sets rather than trusting public scores."},
+  {"name": "AI//COST, cost per task", "url": "https://aicost.tools/blog/llm-cost-per-task/", "what": "A model listed 25% cheaper per token billed 2.6 times more, because of its hidden reasoning steps."}
+ ],
+ "related": ["ai-underwriting", "ai-contract-review", "rag-chatbot", "invoice-processing-automation"],
+ "keyword": {"phrase": "ai document processing", "searches": 2400, "cpc": 55.19, "difficulty": 27},
+ "updated": "2026-11-25"
+}

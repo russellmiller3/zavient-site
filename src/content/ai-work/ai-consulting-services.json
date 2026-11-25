@@ -1,0 +1,29 @@
+{
+ "title": "AI consulting services: what you should get",
+ "description": "What AI consulting should deliver, how to test a firm's claims on your own documents, and when to hire help versus build an in-house team.",
+ "job": "AI consulting",
+ "summary": "Good AI consulting turns one business problem into a tested, working system. Before anything is built, the right AI model is chosen by testing it on your own documents, not on a demo or a public leaderboard.",
+ "example": {"input": "A mid-sized insurer wants AI to read incoming claim files and route them.", "output": "A test of several AI models on 50 of the insurer's own claim files, the cost per file for each, a working pilot with the winner, and a plan to keep it accurate as models change."},
+ "howToTest": [
+  "Ask the firm to test its approach on 20 to 50 of your own documents before you sign for a full build.",
+  "Agree the right answers first with your own team, so the result is graded against your standard, not theirs.",
+  "Ask for cost per correct answer, not price per token: the cheapest-looking model is not always the cheapest to run.",
+  "Ask for a client reference where the system has run for at least six months."
+ ],
+ "buyVsBuild": {"buy": "Hire a firm when you need one system working this quarter and have no AI engineers. Pay for a fixed scope with a test you can check.", "build": "Hire in-house when AI is core to what you sell and you will run many systems. Expect months to hire and a higher fixed cost."},
+ "watchOuts": [
+  "Firms that resell one software vendor's product and call it a recommendation.",
+  "Demos on clean sample data that never meet your real documents.",
+  "No answer key: without agreed right answers, nobody can show the system works."
+ ],
+ "resources": [
+  {"name": "a16z: how enterprise CIOs build and buy AI (2025)", "url": "https://a16z.com/ai-enterprise-2025/", "what": "How large companies choose models: internal benchmarks first, public leaderboards only as a first filter."}
+ ],
+ "sources": [
+  {"name": "a16z, enterprise CIO survey (2025)", "url": "https://a16z.com/ai-enterprise-2025/", "what": "Enterprises compare models against their own internal benchmark sets."},
+  {"name": "AI//COST, cost per task", "url": "https://aicost.tools/blog/llm-cost-per-task/", "what": "Three models with the same listed price billed $0.079, $0.111 and $0.303 for the same 82 tasks; the cheapest failed 10."}
+ ],
+ "related": ["ai-consulting-companies", "ai-document-processing", "ai-agents-for-business"],
+ "keyword": {"phrase": "ai consulting services", "searches": 1600, "cpc": 94.77, "difficulty": 8},
+ "updated": "2026-11-25"
+}

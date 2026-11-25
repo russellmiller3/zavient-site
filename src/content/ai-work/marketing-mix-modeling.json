@@ -1,0 +1,54 @@
+{
+  "title": "Marketing mix modeling: which ad spend drives sales",
+  "description": "Marketing mix modeling uses past sales and ad spend to estimate what each channel adds. Here is how it works, how to test it, and when to buy or build.",
+  "job": "Find out which marketing channels bring in sales, and where the next dollar should go.",
+  "industry": "any industry",
+  "summary": "Marketing mix modeling (MMM) is a statistical method. It looks at your past sales and your past spending in each channel, such as search, social, TV and email. It then estimates how much each channel added to sales and what your return on investment was. It uses totals by week or by region. It does not track individual people or use cookies. The goal is a budget plan you can defend: spend more where the return is high and less where it is low.",
+  "example": {
+    "input": "Two years of weekly sales, plus weekly spend in five channels: search, social, TV, email and affiliate. Also holidays, price changes and promotions.",
+    "output": "A table that shows, for each channel, the estimated sales it added and its return per dollar. It also shows a suggested budget split, with a range of uncertainty around each number."
+  },
+  "howToTest": [
+    "Hold back the most recent three months of data. Build the model on the earlier data only. Then check whether it predicted those last three months of sales well.",
+    "Compare the model's advice to a real experiment. Turn one channel down in one region for a few weeks. Check whether sales moved the way the model said they would.",
+    "Run the model twice with slightly different settings or time windows. If the channel rankings flip, do not trust the advice yet.",
+    "Ask the builder to list every non-marketing factor in the model, such as seasons, price and promotions. Missing factors are the most common reason an MMM misleads."
+  ],
+  "buyVsBuild": {
+    "buy": "Buy if you have no analyst who knows statistics. A vendor or consultant can set up the data feeds, run the model and explain the results. Ask what they will hand over, so you can reuse the model later and are not locked in.",
+    "build": "Build if you have an analyst and clean weekly data. Meta's Robyn and Google's Meridian are free, open-source tools made for this. The software costs nothing. The real cost is the analyst's time and the work of cleaning the data."
+  },
+  "watchOuts": [
+    "The model finds patterns in totals. It cannot prove cause. Two channels that always move together are hard to tell apart.",
+    "Too little history gives weak answers. Check how many weeks of data the model used before you act on it.",
+    "A tool built by an ad platform is free to use, but check what it assumes. Test its advice against an experiment before you move a large budget.",
+    "Results describe the past. A big change, such as a new product or a new competitor, can make old patterns stop holding."
+  ],
+  "resources": [
+    {
+      "name": "Robyn, from Meta Marketing Science",
+      "url": "https://github.com/facebookexperimental/Robyn",
+      "what": "A free, open-source marketing mix modeling package from Meta. Its page describes it as experimental and semi-automated, and it carries an MIT license."
+    },
+    {
+      "name": "Meridian, from Google",
+      "url": "https://github.com/google/meridian",
+      "what": "A free, open-source framework that lets advertisers run their own marketing mix models in-house. It uses Bayesian methods, needs Python, and carries an Apache 2.0 license."
+    }
+  ],
+  "sources": [
+    {
+      "name": "Meridian README on GitHub",
+      "url": "https://github.com/google/meridian",
+      "what": "Defines marketing mix modeling, says it uses aggregated data with no cookies or user-level information, and lists the questions it answers: channel contribution, return on investment and budget allocation."
+    },
+    {
+      "name": "Robyn README on GitHub",
+      "url": "https://github.com/facebookexperimental/Robyn",
+      "what": "Describes Robyn as a semi-automated, open-source MMM package and explains that MMM was once affordable only to large companies."
+    }
+  ],
+  "related": ["predictive-maintenance", "ai-consulting-companies"],
+  "keyword": { "phrase": "marketing mix modeling", "searches": 2900, "cpc": 47.81, "difficulty": 23 },
+  "updated": "2026-11-25"
+}

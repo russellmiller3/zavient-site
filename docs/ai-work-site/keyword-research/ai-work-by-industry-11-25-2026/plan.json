@@ -1,0 +1,111 @@
+{
+  "name": "ai-work-by-industry",
+  "country": "us",
+  "language": "en",
+  "max_cost_per_call": 0.05,
+  "themes": {
+    "pe_investing": {
+      "seeds": ["ai in private equity", "ai due diligence", "deal sourcing ai", "ai for investment analysis", "ai for venture capital", "ai portfolio management", "machine learning trading", "ai for hedge funds", "ai investment research", "ai for m&a", "ai asset management"],
+      "keep": ["^(?=.*\\b(ai|artificial intelligence|machine learning|ml|predictive|llms?|gpt|chatgpt|chatbots?|automat\\w*|computer vision|agents?|algorithms?|algorithmic|neural|deep learning|generative|genai|intelligent|analytics|models?)\\b)(?=.*(private equity|venture|due diligence|deal sourc|investment|invest\\w*|portfolio|hedge fund|m&a|merger|acquisition|trading|asset management|wealth))"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|\\bstocks?\\b|\\betf\\b|crypto|bitcoin|forex|\\bbot\\b|app\\b|free"]
+    },
+    "insurance": {
+      "seeds": ["ai in insurance", "ai claims processing", "insurance underwriting ai", "claims automation", "insurance fraud detection ai", "ai for insurance agents", "ai policy administration", "subrogation ai", "ai for insurance agencies"],
+      "keep": ["^(?=.*\\b(ai|artificial intelligence|machine learning|ml|predictive|llms?|gpt|chatgpt|chatbots?|automat\\w*|computer vision|agents?|algorithms?|neural|deep learning|generative|genai|intelligent|analytics|models?)\\b)(?=.*(insur|claim|actuar|subrogation|reinsur|policy admin))"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|\\bstocks?\\b|\\betf\\b"]
+    },
+    "banking_lending": {
+      "seeds": ["ai in banking", "credit risk machine learning", "ai credit scoring", "ai loan underwriting", "aml ai", "kyc automation", "fraud detection machine learning", "ai fraud detection", "ai for mortgage lenders", "ai debt collection", "ai for credit unions"],
+      "keep": ["^(?=.*\\b(ai|artificial intelligence|machine learning|ml|predictive|llms?|gpt|chatgpt|chatbots?|automat\\w*|computer vision|agents?|algorithms?|neural|deep learning|generative|genai|intelligent|analytics|models?)\\b)(?=.*(bank|credit|loan|lend|underwrit|mortgage|\\baml\\b|money laundering|\\bkyc\\b|fraud|collection|fintech|payment))"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|\\bstocks?\\b|\\betf\\b|credit card for|credits? (ai|free)|credit score app"]
+    },
+    "healthcare": {
+      "seeds": ["ai in healthcare", "medical coding ai", "ai medical scribe", "clinical documentation ai", "prior authorization ai", "revenue cycle management ai", "ai medical billing", "ai in radiology", "ai patient scheduling", "ai for hospitals", "ai for dental practices"],
+      "keep": ["^(?=.*\\b(ai|artificial intelligence|machine learning|ml|predictive|llms?|gpt|chatgpt|chatbots?|automat\\w*|computer vision|agents?|algorithms?|neural|deep learning|generative|genai|intelligent|analytics|models?)\\b)(?=.*(health|medical|clinic|patient|hospital|radiolog|scribe|prior auth|revenue cycle|\\behr\\b|nurs|doctor|physician|dental|dentist))"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|\\bstocks?\\b|\\betf\\b|mental health app|therapist chatbot|symptom checker"]
+    },
+    "pharma_life_sciences": {
+      "seeds": ["ai drug discovery", "ai clinical trials", "ai in pharma", "machine learning drug discovery", "ai in life sciences", "pharmacovigilance ai", "ai in biotech"],
+      "keep": ["^(?=.*\\b(ai|artificial intelligence|machine learning|ml|predictive|llms?|gpt|chatgpt|chatbots?|automat\\w*|computer vision|agents?|algorithms?|neural|deep learning|generative|genai|intelligent|analytics|models?)\\b)(?=.*(drug|pharma|clinical trial|life science|biotech|pharmacovigil|molecul|protein))"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|\\bstocks?\\b|\\betf\\b"]
+    },
+    "retail_ecommerce": {
+      "seeds": ["ai in retail", "dynamic pricing ai", "product recommendation engine", "ai for ecommerce", "ai demand forecasting retail", "ai inventory management", "ecommerce personalization ai", "ai product descriptions", "ai for shopify", "ai pricing optimization"],
+      "keep": ["^(?=.*\\b(ai|artificial intelligence|machine learning|ml|predictive|llms?|gpt|chatgpt|chatbots?|automat\\w*|computer vision|agents?|algorithms?|neural|deep learning|generative|genai|intelligent|analytics|models?|recommendation engine|recommender)\\b)(?=.*(retail|e-?commerce|shopify|amazon seller|store|pric|recommend|inventory|merchandis|product|personaliz|cart|consumer goods|cpg))"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|\\bstocks?\\b|\\betf\\b|chatgpt (plus|pro) price|openai pric|api pric|claude pric|gemini pric|ai tools? pric|product manager|product photo|photo editor"]
+    },
+    "manufacturing": {
+      "seeds": ["ai in manufacturing", "predictive maintenance", "predictive maintenance machine learning", "ai quality inspection", "computer vision defect detection", "ai production planning", "industrial ai", "ai process optimization manufacturing", "ai for machine shops"],
+      "keep": ["^(?=.*\\b(ai|artificial intelligence|machine learning|ml|predictive|llms?|gpt|chatgpt|chatbots?|automat\\w*|computer vision|agents?|algorithms?|neural|deep learning|generative|genai|intelligent|analytics|models?)\\b)(?=.*(manufactur|maintenance|quality (inspection|control)|defect|factory|industrial|production|plant|machine shop|cnc|oee))"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|\\bstocks?\\b|\\betf\\b|content production|video production|music production"]
+    },
+    "supply_chain_logistics": {
+      "seeds": ["ai in supply chain", "ai demand forecasting", "route optimization ai", "ai in logistics", "ai freight", "ai procurement", "ai warehouse management", "supply chain machine learning", "ai for trucking companies", "ai fleet management"],
+      "keep": ["^(?=.*\\b(ai|artificial intelligence|machine learning|ml|predictive|llms?|gpt|chatgpt|chatbots?|automat\\w*|computer vision|agents?|algorithms?|neural|deep learning|generative|genai|intelligent|analytics|models?)\\b)(?=.*(supply chain|logistic|freight|route|warehouse|procure|demand (forecast|plan)|forecast|shipping|trucking|fleet|transport|sourcing))"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|\\bstocks?\\b|\\betf\\b|weather forecast|stock forecast|price forecast crypto"]
+    },
+    "legal": {
+      "seeds": ["ai for law firms", "ai contract review", "legal ai", "ai legal research", "ai for lawyers", "ediscovery ai", "contract analysis ai", "ai for personal injury lawyers", "ai compliance software"],
+      "keep": ["^(?=.*\\b(ai|artificial intelligence|machine learning|ml|predictive|llms?|gpt|chatgpt|chatbots?|automat\\w*|computer vision|agents?|algorithms?|neural|deep learning|generative|genai|intelligent|analytics|models?)\\b)(?=.*(legal|\\blaw\\b|law firm|lawyer|attorney|contract|e-?discovery|litigation|paralegal|compliance|regulatory))"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|\\bstocks?\\b|\\betf\\b|ai act|ai law\\b|ai regulation|laws? (on|about|regarding) ai|is (it )?legal to|copyright"]
+    },
+    "accounting_finance_ops": {
+      "seeds": ["ai for accounting", "ai bookkeeping", "invoice processing ai", "accounts payable automation", "ai for cfos", "ai financial forecasting", "ai fp&a", "ai audit", "ai for tax preparation", "ai for accounting firms", "ai month end close"],
+      "keep": ["^(?=.*\\b(ai|artificial intelligence|machine learning|ml|predictive|llms?|gpt|chatgpt|chatbots?|automat\\w*|computer vision|agents?|algorithms?|neural|deep learning|generative|genai|intelligent|analytics|models?)\\b)(?=.*(account|bookkeep|invoice|payable|receivable|\\bcfo|fp&a|financ|audit|\\btax|expense|month.?end|close))"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|\\bstocks?\\b|\\betf\\b|account (login|sign)|openai account|chatgpt account|delete account|close (ai|chatgpt)"]
+    },
+    "real_estate": {
+      "seeds": ["ai in real estate", "property valuation ai", "ai for real estate agents", "ai property management", "ai real estate investing", "automated valuation model", "ai for commercial real estate", "ai for realtors"],
+      "keep": ["^(?=.*\\b(ai|artificial intelligence|machine learning|ml|predictive|llms?|gpt|chatgpt|chatbots?|automat\\w*|computer vision|agents?|algorithms?|neural|deep learning|generative|genai|intelligent|analytics|models?|avm)\\b)(?=.*(real estate|property|propert|realtor|housing|valuation|rental|tenant|landlord|\\bcre\\b|home (value|price)))"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|\\bstocks?\\b|\\betf\\b|intellectual property|virtual staging free|ai (generated )?house design|interior design"]
+    },
+    "sales_marketing": {
+      "seeds": ["ai lead scoring", "ai sales forecasting", "churn prediction", "customer lifetime value prediction", "ai for sales teams", "marketing mix modeling", "ai for b2b sales", "propensity model", "ai sdr", "predictive analytics marketing", "ai lead generation"],
+      "keep": ["^(?=.*\\b(ai|artificial intelligence|machine learning|ml|predictive|llms?|gpt|chatgpt|chatbots?|automat\\w*|computer vision|agents?|algorithms?|neural|deep learning|generative|genai|intelligent|analytics|models?|modeling)\\b)(?=.*(lead|sales|churn|lifetime value|\\bltv\\b|\\bclv\\b|marketing|campaign|propensity|\\bcrm\\b|prospect|\\bsdr\\b|outbound|advertis|customer (retention|segment)))"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|\\bstocks?\\b|\\betf\\b|\\bseo\\b|image|video|logo|social media post|instagram|tiktok|youtube"]
+    },
+    "customer_service": {
+      "seeds": ["ai customer service", "ai chatbot for business", "ai customer support agent", "ai call center", "ai voice agent", "conversational ai", "ai help desk", "ai receptionist", "ai phone answering service"],
+      "keep": ["^(?=.*\\b(ai|artificial intelligence|machine learning|ml|predictive|llms?|gpt|chatgpt|chatbots?|automat\\w*|computer vision|agents?|algorithms?|neural|deep learning|generative|genai|intelligent|analytics|models?|conversational)\\b)(?=.*(customer (service|support|experience|care)|call cent|contact cent|help ?desk|receptionist|voice (agent|ai|assistant)|chat ?bots?|conversational|support (agent|ticket)|answering|phone))"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|\\bstocks?\\b|\\betf\\b|chatgpt customer service|openai (customer|support)|nsfw|girlfriend|character|roleplay|free ai chat\\b|talk to ai|phone (number|case)|iphone|android app"]
+    },
+    "hr_recruiting": {
+      "seeds": ["ai recruiting", "ai resume screening", "ai in hr", "ai interview software", "ai for talent acquisition", "ai employee onboarding", "ai for staffing agencies"],
+      "keep": ["^(?=.*\\b(ai|artificial intelligence|machine learning|ml|predictive|llms?|gpt|chatgpt|chatbots?|automat\\w*|computer vision|agents?|algorithms?|neural|deep learning|generative|genai|intelligent|analytics|models?)\\b)(?=.*(recruit|resume screen|hiring|\\bhr\\b|human resources|talent|interview (software|platform|tool)|onboard|staffing|workforce|payroll))"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|\\bstocks?\\b|\\betf\\b|resume (builder|writer|maker)|cover letter|interview (questions|prep|practice)|for job seekers"]
+    },
+    "energy_utilities": {
+      "seeds": ["ai in energy", "ai for utilities", "energy forecasting machine learning", "ai grid optimization", "ai in oil and gas", "ai for solar companies", "load forecasting machine learning"],
+      "keep": ["^(?=.*\\b(ai|artificial intelligence|machine learning|ml|predictive|llms?|gpt|chatgpt|chatbots?|automat\\w*|computer vision|agents?|algorithms?|neural|deep learning|generative|genai|intelligent|analytics|models?)\\b)(?=.*(energy|utilit|\\bgrid\\b|oil|\\bgas\\b|solar|wind|power|electric|load forecast))"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|\\bstocks?\\b|\\betf\\b|energy consumption of ai|ai (energy|power) (use|consumption|demand)|data cent|powerpoint|power bi|power automate|powerful"]
+    },
+    "construction_agriculture": {
+      "seeds": ["ai in construction", "ai construction estimating", "ai for contractors", "ai in agriculture", "precision agriculture ai", "ai for construction bids"],
+      "keep": ["^(?=.*\\b(ai|artificial intelligence|machine learning|ml|predictive|llms?|gpt|chatgpt|chatbots?|automat\\w*|computer vision|agents?|algorithms?|neural|deep learning|generative|genai|intelligent|analytics|models?)\\b)(?=.*(construct|estimat|contractor|\\bbids?\\b|agricult|\\bfarm|\\bcrop|agtech))"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|\\bstocks?\\b|\\betf\\b|prompt construct|sentence construct|time estimat"]
+    },
+    "document_processing": {
+      "seeds": ["intelligent document processing", "ai document extraction", "ai ocr", "document automation ai", "ai data extraction from pdf", "ai form processing", "ai data entry automation"],
+      "keep": ["^(?=.*\\b(ai|artificial intelligence|machine learning|ml|predictive|llms?|gpt|chatgpt|chatbots?|automat\\w*|computer vision|agents?|algorithms?|neural|deep learning|generative|genai|intelligent|analytics|models?)\\b)(?=.*(document|\\bocr\\b|\\bpdf\\b|extract|\\bidp\\b|\\bforms?\\b|data entry))"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|\\bstocks?\\b|\\betf\\b|chat with pdf|pdf summarizer|summarize pdf|pdf reader|free pdf"]
+    },
+    "buy_ai_services": {
+      "seeds": ["ai consulting", "ai consulting services", "machine learning consulting", "ai development company", "ai implementation services", "ai strategy consulting", "hire ai consultant", "ai consultant cost", "custom ai solutions", "ai agency for businesses", "ai readiness assessment", "fractional chief ai officer"],
+      "keep": ["^(?=.*\\b(ai|artificial intelligence|machine learning|ml|predictive|llms?|gpt|chatgpt|chatbots?|automat\\w*|computer vision|agents?|algorithms?|neural|deep learning|generative|genai|intelligent|analytics|models?|data science)\\b)(?=.*(consult|agency|agencies|development (company|companies|services|firm)|implement|strateg|\\bhire\\b|services|solutions|\\bfirms?\\b|partner|readiness|chief ai officer|caio))"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|\\bstocks?\\b|\\betf\\b|aws|azure|google cloud|ibm watson|openai|chatgpt|career|become an? ai consultant|how to start an? ai"]
+    }
+  },
+  "facets": {
+    "buy_intent": "consult|company|companies|services|agency|agencies|software|platform|tools?\\b|vendor|solutions?|cost|price|pricing|hire|firm",
+    "how_to": "^how|how to|guide|tutorial|step",
+    "question": "^(what|which|why|can|is|should|does|when|how)\\b",
+    "examples": "use cases?|examples?|applications?|benefits",
+    "broad": "^(ai|artificial intelligence|machine learning) (in|for) [a-z&]+$",
+    "brand_tool": "chatgpt|gemini|copilot|claude|harvey|salesforce|hubspot|zendesk|einstein|abridge|nuance|dax"
+  },
+  "report": {
+    "core_exclude_facets": ["brand_tool"],
+    "title": "What AI work companies search to buy, by industry",
+    "question": "Which AI and machine-learning work do companies search for most, and which searches carry buyers, across industries?"
+  }
+}

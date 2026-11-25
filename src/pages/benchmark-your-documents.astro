@@ -1,0 +1,25 @@
+---
+// api-docs-read: static offer page — no external API/protocol surface, only mailto.
+// The page every AI-work page's offer links to.
+import Base from '../layouts/Base.astro';
+---
+<Base title="Benchmark AI on your own documents | Zavient" description="Test the leading AI models on your own documents before you buy. See which one gets your work right and what each costs per document.">
+  <header class="article-hero"><div class="wrap">
+    <div class="label">Custom benchmark</div>
+    <h1>Benchmark AI on your own documents</h1>
+    <p class="dek">Public leaderboards test models on someone else's questions. This tests them on yours.</p>
+  </div></header>
+  <article class="article-body"><div class="wrap">
+    <h2>How it works</h2>
+    <ol>
+      <li>You send 20 to 50 real examples of one job, such as invoices, claim files or contracts.</li>
+      <li>Your team checks the right answer for each one. That becomes the answer key.</li>
+      <li>I run the leading AI models on every example and grade each answer against the key.</li>
+      <li>You get one table: which model got it right, how often, and what each costs per document.</li>
+      <li>If you want, we then build the winner into your workflow and re-test it as new models come out.</li>
+    </ol>
+    <h2>Why your own documents</h2>
+    <p>Public scores often do not match real work. In Zavient's October 2026 benchmark of 26 models on private code, a low-cost model scored 9 of 10 on an advice task for $0.0021. A model costing 69 times more scored 8.</p>
+    <p><a class="btn" href="mailto:rmiller@zavient.com?subject=Custom%20benchmark">Ask about a custom benchmark &rarr;</a></p>
+  </div></article>
+</Base>

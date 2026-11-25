@@ -4,9 +4,28 @@ The public site for Zavient LLC. Pushing to `master` on GitHub publishes it thro
 
 - The home page is one file: `public/index.html`, styled by `public/styles.css`.
 - Articles live in `src/content/insights/` and are built by Astro.
+- AI-work pages live in `src/content/ai-work/` and data stories in `src/content/data-stories/`, one JSON file each.
+  The schema in `src/content/config.ts` refuses a page without sources. Run `npm test` before every commit and
+  `node scripts/check-links.mjs` after adding sources.
 - The brand line "Moneyball for revenue systems" is frozen. Do not change it.
 
 ## Change log
+
+- 2026-11-25, later (same branch): Added a trend story, the share of US job ads that mention AI from 2019 to
+  October 2026 (Indeed Hiring Lab data, credited on the chart), drawn by a new line chart. Added a monthly
+  store that counts which AI models, software and skills job ads name (`docs/ai-work-site/job-data/mentions.py`).
+  Fixed a wrong date range on the 4 job-ad stories: the ads were posted 21 to 25 Nov 2026, not over 30 days.
+  Per-ad job data no longer goes into git. Why: Russell asked for trends over time of what job ads mention.
+  Proof: site tests 3 of 3 and mention-counter tests 4 of 4 pass through Runner; removing the maker exclusion
+  made a test fail. Not checked: Vercel preview.
+
+- 2026-11-25 (branch feature/ai-work-pages, not live): Added 20 "AI work" pages (one per job companies buy AI
+  for, each ending with the custom-benchmark offer), 4 data stories from 2,046 US AI job ads (each with an
+  embeddable chart and CSV), hubs at /ai-work and /data, a menu link to each, a second sitemap, and 3 tests.
+  Why: turn search demand for AI work into consulting leads, and earn links with original data. Proof: `npm test`
+  passes 3 of 3 and fails when the offer block is removed; the link check finds 0 broken links (ftc.gov,
+  jamanetwork.com and dl.acm.org block checkers). Checked in a browser at desktop and 390-pixel width: no
+  sideways scroll. Not checked: Vercel preview. Next step: Russell reviews, then merge to master to publish.
 
 - 2026-11-22: Added a "Data evaluation" section to the home page, with a menu link. It offers a test of a
   company's records before the company licenses them to an AI buyer: a counted inventory, and one model scored

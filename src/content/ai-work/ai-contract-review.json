@@ -1,0 +1,29 @@
+{
+ "title": "AI contract review: what it catches and how to test it",
+ "description": "How AI reviews contracts for clauses, risks and obligations, which public benchmarks exist, and how to test it on your own contracts.",
+ "job": "contract review",
+ "summary": "AI contract review reads an agreement, finds the clauses that matter, and flags terms that differ from your standard. It speeds up first review; a lawyer still signs off.",
+ "example": {"input": "A 40-page supplier agreement and your company's standard positions.", "output": "Every clause that departs from your standard, with the page, the risk in one line, and a suggested redline."},
+ "howToTest": [
+  "Pick 20 past contracts your lawyers already reviewed, with their marked-up issues.",
+  "Run each model and count how many of the lawyers' issues it finds, and how many false alarms it raises.",
+  "Check that every flag points to the exact clause and page.",
+  "Compare cost and time per contract."
+ ],
+ "buyVsBuild": {"buy": "Buy a legal AI product when your contracts are common types and you want lawyers using it this month.", "build": "Build when your playbook is specific and you review high volumes of one contract type."},
+ "watchOuts": [
+  "Missed issues cost more than false alarms; count both.",
+  "Long contracts can exceed what a model reads reliably in one pass.",
+  "Results on public legal tests may not match your contract types."
+ ],
+ "resources": [
+  {"name": "LegalBench", "url": "https://github.com/HazyResearch/legalbench", "what": "An open collection of legal reasoning tasks for testing AI models."},
+  {"name": "Vals AI legal benchmarks", "url": "https://www.vals.ai/benchmarks", "what": "Independent results for AI models on legal tasks."}
+ ],
+ "sources": [
+  {"name": "Vals AI Legal Index", "url": "https://www.vals.ai/benchmarks/legal_index", "what": "Publishes accuracy, cost per test and time per test for AI models on legal work."}
+ ],
+ "related": ["ai-document-processing", "rag-chatbot", "ai-legal-research"],
+ "keyword": {"phrase": "ai contract review", "searches": 880, "cpc": 118.51, "difficulty": 17},
+ "updated": "2026-11-25"
+}

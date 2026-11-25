@@ -1,0 +1,100 @@
+{
+  "name": "ai-work-types",
+  "country": "us",
+  "language": "en",
+  "max_cost_per_call": 0.05,
+  "themes": {
+    "fraud_anomaly": {
+      "seeds": ["fraud detection machine learning", "anomaly detection machine learning", "ai fraud detection software", "transaction monitoring ai", "anomaly detection software", "fraud detection model"],
+      "keep": ["fraud|anomal|transaction monitoring|money laundering|\\baml\\b"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|\\bstocks?\\b|\\betf\\b|report fraud|scam call|identity theft"]
+    },
+    "forecasting": {
+      "seeds": ["demand forecasting machine learning", "ai forecasting software", "sales forecasting ai", "time series forecasting", "predictive analytics software", "ai demand planning", "machine learning forecasting"],
+      "keep": ["forecast|predictive analytic|demand plan|time series"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|\\bstocks?\\b|\\betf\\b|weather|crypto|bitcoin|stock (price|market)|hurricane|snow|rain"]
+    },
+    "document_extraction": {
+      "seeds": ["intelligent document processing", "ai document extraction", "ai ocr", "ai data extraction", "invoice data extraction ai", "document ai", "ai pdf data extraction"],
+      "keep": ["document|\\bocr\\b|extract|\\bidp\\b|data entry"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|chat with pdf|summari[sz]|pdf reader|free pdf|hair|extraction (tooth|teeth)|vanilla|coffee"]
+    },
+    "chatbots_agents": {
+      "seeds": ["ai agents for business", "ai chatbot for business", "ai customer service agent", "build ai agent", "ai voice agent", "ai agent development", "enterprise ai agents", "ai assistant for business"],
+      "keep": ["\\bagents?\\b|chat ?bots?|assistant|conversational|voice ai|virtual (agent|receptionist)"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|nsfw|girlfriend|character|roleplay|real estate agent|insurance agent|travel agent|free ai chat\\b|talk to ai|google assistant|siri|alexa"]
+    },
+    "recommendation_personalization": {
+      "seeds": ["recommendation engine", "recommendation system machine learning", "ai personalization", "product recommendation ai", "personalization engine", "recommender system"],
+      "keep": ["recommend|personaliz"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|letter of recommendation|recommendation letter|book recommend|movie recommend|music recommend"]
+    },
+    "pricing_optimization": {
+      "seeds": ["dynamic pricing ai", "price optimization software", "ai pricing", "pricing optimization machine learning", "ai revenue management"],
+      "keep": ["pric|revenue management|yield management"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|chatgpt|openai|claude|gemini|api pric|ai tools? pric|subscription|\\bplus\\b price|stock price"]
+    },
+    "predictive_maintenance": {
+      "seeds": ["predictive maintenance", "predictive maintenance ai", "predictive maintenance software", "condition monitoring machine learning", "asset performance management ai"],
+      "keep": ["maintenance|condition monitoring|asset (performance|health)|failure prediction"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|car maintenance|lawn|pool"]
+    },
+    "computer_vision": {
+      "seeds": ["computer vision quality inspection", "ai visual inspection", "computer vision software", "computer vision consulting", "object detection ai", "ai video analytics"],
+      "keep": ["computer vision|visual inspection|object detection|video analytic|image recognition|defect detection|machine vision"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|syndrome|eye|glasses|apple vision"]
+    },
+    "lead_churn_propensity": {
+      "seeds": ["ai lead scoring", "churn prediction model", "propensity modeling", "customer lifetime value model", "predictive lead scoring", "customer churn prediction"],
+      "keep": ["lead scor|churn|propensity|lifetime value|\\bclv\\b|\\bltv\\b|next best (action|offer)|uplift"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|butter churn|churn butter"]
+    },
+    "risk_underwriting_scoring": {
+      "seeds": ["credit risk model", "ai underwriting", "risk scoring model", "credit scoring machine learning", "ai risk assessment", "automated underwriting"],
+      "keep": ["underwrit|credit (risk|scor)|risk (scor|model|assessment)|scoring model"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|credit score (app|check|free)|ai risk management framework|risks of ai|ai act"]
+    },
+    "knowledge_search_rag": {
+      "seeds": ["rag chatbot", "enterprise search ai", "ai knowledge base", "retrieval augmented generation", "chat with company documents", "ai search for business", "private gpt for company"],
+      "keep": ["\\brag\\b|retrieval|knowledge (base|management)|enterprise search|internal (search|docs|documents)|company (documents|data|knowledge)|private gpt"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|rag doll|ragdoll|rag rug|ragtime"]
+    },
+    "process_automation": {
+      "seeds": ["ai process automation", "ai workflow automation", "business process automation ai", "intelligent automation", "rpa ai", "ai automation agency", "back office automation ai"],
+      "keep": ["automat|\\brpa\\b|workflow"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|home automation|smart home|automatic transmission|social media automation|instagram|tiktok|youtube|n8n|zapier|make\\.com"]
+    },
+    "speech_voice": {
+      "seeds": ["speech to text ai", "call transcription ai", "speech analytics", "ai call analysis", "conversation intelligence", "voice ai for business"],
+      "keep": ["speech|transcri|call (analys|analytic|recording|summar)|conversation intelligence|voice"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|free|voice (changer|clone|generator|over|cover)|text to speech|song|music|celebrity|youtube"]
+    },
+    "optimization_scheduling": {
+      "seeds": ["ai scheduling software", "route optimization", "ai optimization software", "workforce scheduling ai", "operations research ai", "supply chain optimization ai"],
+      "keep": ["optimi[sz]|schedul|operations research|route planning"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|\\bseo\\b|search engine optim|website optim|pc optim|resume optim|prompt optim|instagram|social media"]
+    },
+    "generative_content": {
+      "seeds": ["generative ai for business", "ai content generation for enterprise", "ai proposal writing", "ai rfp response", "ai report generation", "ai marketing content generation"],
+      "keep": ["generat|proposal|\\brfp\\b|report writ|content (creat|generat)|copywrit"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|image|video|art\\b|logo|picture|photo|anime|song|music|nsfw|free|name generator|meme"]
+    },
+    "custom_model_build": {
+      "seeds": ["fine tune llm", "custom ai model", "train custom ai model", "machine learning model development", "custom llm development", "build machine learning model", "mlops consulting"],
+      "keep": ["fine.?tun|custom (ai|llm|model|gpt|machine learning)|train (a |an |your own |custom )?(ai|llm|model)|model development|mlops|build (a |an )?(machine learning|ml|ai) model"],
+      "drop": ["\\bjobs?\\b|salar|course|certif|degree|internship|careers?|\\bppt\\b|essay|lora (image|art)|stable diffusion|character|voice model|model (kit|train set|railroad)"]
+    }
+  },
+  "facets": {
+    "buy_intent": "consult|company|companies|services|agency|agencies|software|platform|tools?\\b|vendor|solutions?|cost|price|pricing|hire|firm",
+    "how_to": "^how|how to|guide|tutorial|step",
+    "question": "^(what|which|why|can|is|should|does|when|how)\\b",
+    "examples": "use cases?|examples?|applications?|benefits",
+    "brand_tool": "chatgpt|gemini|copilot|claude|salesforce|hubspot|zendesk|einstein|uipath|automation anywhere|aws|azure|google cloud|ibm"
+  },
+  "report": {
+    "core_exclude_facets": ["brand_tool"],
+    "title": "Which kinds of AI work companies search for",
+    "question": "Which types of AI and machine-learning work do companies search to do or buy, regardless of industry?"
+  }
+}

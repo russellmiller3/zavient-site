@@ -1,0 +1,94 @@
+{
+  "name": "open-models-and-custom-evals",
+  "country": "us",
+  "language": "en",
+  "max_cost_per_call": 0.05,
+  "themes": {
+    "build_own_benchmark": {
+      "seeds": ["create llm benchmark", "custom llm benchmark", "build evaluation dataset", "golden dataset llm", "llm eval dataset", "how to create evals", "custom evals", "llm test cases", "domain specific benchmark llm", "build your own benchmark"],
+      "keep": ["(creat|build|custom|make|design|own|domain|writ).{0,30}(benchmark|eval|test set|test case|dataset)", "golden (data|test)", "eval(uation)? (data ?set|set)", "llm test cases?"],
+      "drop": ["image|video|music|pc benchmark|gpu benchmark|cpu|3dmark|cinebench|geekbench", "^creating a dataset$"]
+    },
+    "benchmark_own_data": {
+      "seeds": ["evaluate llm on my own data", "llm evaluation", "how to evaluate llm", "compare llms", "llm comparison", "which llm is best", "test llm on custom dataset", "rag evaluation", "llm evaluation tools", "llm benchmark", "llm as a judge", "ai model comparison"],
+      "keep": ["eval", "benchmark", "compar", "\\btest", "judge", "leaderboard", "which (llm|ai|model)", "best (llm|ai model|model)", "\\bvs\\b"],
+      "drop": ["image|video|music|gpu|cpu|3dmark|cinebench|geekbench|car|phone|laptop|stock"]
+    },
+    "switch_to_open_models": {
+      "seeds": ["open source llm", "open source alternative to chatgpt", "openai alternatives", "self host llm", "replace openai api", "switch from openai to open source", "migrate from openai to llama", "llama vs gpt", "deepseek vs chatgpt", "qwen vs gpt", "open weight models", "local llm for business", "private llm", "on premise llm", "fine tune open source llm", "cost of self hosting llm", "best open source llm"],
+      "keep": ["open.?(source|weight)", "self.?host", "local (llm|ai|model)", "on.?prem", "private (llm|ai|gpt)", "llama", "mistral", "qwen", "deepseek", "gemma", "alternative", "replace", "switch", "migrat", "fine.?tun"],
+      "drop": ["image|video|music|stable diffusion|porn|nsfw|uncensored|roleplay|game|minecraft|llama (animal|farm|drama|pajama)|alpaca"]
+    }
+  },
+  "facets": {
+    "comparison": "\\bvs\\b|versus|compar|alternative",
+    "how_to": "^how|how to|guide|tutorial|step",
+    "cost": "cost|price|pricing|cheap",
+    "tools": "tool|platform|software|framework|library|service",
+    "business": "enterprise|business|company|companies|private|on.?prem|secure",
+    "best_ranking": "leaderboard|ranking|\\bbest\\b|\\btop\\b",
+    "question": "^(what|which|why|can|is|should|does|when)\\b",
+    "brand_tool": "ollama|llama ai|lm studio|llama gpt",
+    "academic": "paper|arxiv",
+    "unclear": "^ai benchmark$|deepseek vs chatgpt"
+  },
+  "report": {
+    "core_exclude_facets": ["brand_tool", "academic", "unclear"],
+    "title": "Who searches for open models and custom AI tests",
+    "question": "How many people want to move off paid AI models, test models on their own data, or build their own test?",
+    "theme_names": {
+      "switch_to_open_models": "Move to open or private models",
+      "benchmark_own_data": "Compare or test models",
+      "build_own_benchmark": "Build your own test (benchmark)"
+    },
+    "bottom_line": "The opening is companies running AI on their own machines: 'on premise llm' and 'self host llm' get 6,500 searches a month between them, are among the easiest to rank for (difficulty 1 and 2), and page one is held by small vendor guides, Reddit and Medium, not big names. Comparing models (about 22,500 a month) belongs to public ranking sites, and building your own test gets almost no searches, so lead with private, on-site AI and offer the custom test as the way to pick a model.",
+    "findings": [
+      "Easiest big wins: 'on premise llm' (2,900 a month, difficulty 1, up 2,011% in a year), 'self host llm' (3,600, difficulty 2) and 'openai api alternatives' (2,400, difficulty 0, $27.12 a click, 6 ads on the page, the most of any phrase checked).",
+      "Page one for those is open: 'on premise llm' shows a Medium post, a Reddit thread and Iternal AI's guide; 'self host llm' shows Reddit, Towards Data Science and Onyx. Big tech holds 4% of page-one spots across the 6 switching phrases checked.",
+      "'private llm' (3,600 a month) is the wrong crowd: page one is a consumer iPhone app and its App Store page. Skip it or target 'private llm for business'.",
+      "'open weight models' (5,400 a month, up 3,671%) is people asking what the term means: Stanford HAI and Wikipedia hold the top two. Good for one explainer page, not for leads.",
+      "Testing your own system is a smaller, paid-for market: 'llm evaluation' gets 1,000 a month at $19.93 a click with 4 ads on the page. Page one is IBM, Microsoft Azure and SuperAnnotate, then evaluation-tool makers (Databricks, Evidently, MLflow). Crowded with software companies.",
+      "'llm benchmark' and 'llm comparison' (5,400 and 590 a month) belong to public ranking sites: Artificial Analysis, BenchLM and LiveBench hold the top three for both. People checking scores, not testing their own data.",
+      "Building your own test has almost no searches (about 80 a month), yet 5 of the 6 phrases checked carry 4 ads each. Page one is practitioner guides: Product Talk, Eugene Yan, Anthropic, LangChain, Hugging Face. Few searchers, but they are worth money to advertisers.",
+      "Nobody searches the move itself: 'switch from openai to open source' and 'migrate from openai to llama' show no measurable volume. People search for where they want to end up."
+    ],
+    "caveats": [
+      "Numbers are Google's rounded monthly averages for the US, placed in buckets; compare them with each other, do not quote them as exact.",
+      "Totals add up phrases, and one person may search several, so they are an upper bound on searches, not a count of people.",
+      "Left out of the headline: 'ollama' (165,000 a month, a free tool most people use at home), 'llama ai', papers, and two unclear phrases ('ai benchmark' may be a phone speed app).",
+      "Difficulty (0 to 100) is DataForSEO's estimate of how hard page one is to reach; it has no score for 125 of the 247 searched phrases, all small ones.",
+      "Who ranks is a sample: page one of Google for the 6 biggest phrases of each need, read in Chrome in San Francisco on 25 Nov 2026 (a signed-in browser can see slightly personal results). Two paid results services returned a different top 10 for the same phrases, so the real page was used. Sites are sorted into kinds by name rules, so a few may be misfiled.",
+      "Most questions people ask AI assistants match no search phrase (65% to 85% in one 17-month study, cited by Seerly, Aug 2026), so long, specific needs such as building a test on company data are under-counted here."
+    ],
+    "sources": ["Google Ads volumes and keyword difficulty via DataForSEO and Google autocomplete via AnyAPI, all through treg, read 25 Nov 2026; Google results pages read in Chrome, 25 Nov 2026", "Ahrefs, 'There's No Such Thing as Accurate Search Volume' (2024)", "Seerly, 'Keyword Research as a Proxy for AI Search Demand' (Aug 2026)"]
+  },
+  "report_v2": {
+    "title": "Which AI pages are worth writing",
+    "intro": "Google search demand for three needs a consulting site could serve: moving off paid AI models, testing models, and building your own AI test. US searches, checked 25 Nov 2026.",
+    "answer": "Write three pages about running AI on your own computers: “on premise llm”, “self host llm” and “openai api alternatives”. Together they get about 8,900 Google searches a month, and small sites hold Google's first page today. Skip pages about building your own AI test: only about 80 searches a month.",
+    "own_sites": ["zavient.com", "zarlent.com"],
+    "needs": {
+      "switch_to_open_models": {"verdict": "Write it", "why": "Most searches, easiest to rank, and small company blogs hold page one."},
+      "benchmark_own_data": {"verdict": "Maybe", "why": "Mostly people reading public scoreboards. Big companies hold the rest."},
+      "build_own_benchmark": {"verdict": "Skip", "why": "Almost nobody searches for it. Offer it inside the other pages instead."}
+    },
+    "picks": [
+      {"phrase": "open weight models", "verdict": "Maybe", "ease": "medium", "why": "Big audience, but page one is definitions from Stanford and Wikipedia. Worth a page only with a buyer's angle, such as which open model fits a company."},
+      {"phrase": "self host llm", "verdict": "Write it", "why": "Page one is a Reddit thread, a Towards Data Science post and small vendors. No big tech company in the top three."},
+      {"phrase": "private llm", "verdict": "Skip", "ease": "easy, but taken", "why": "Page one is about an iPhone app called Private LLM, so searchers mostly want that app."},
+      {"phrase": "on premise llm", "verdict": "Write it", "why": "Easiest phrase in the study. Page one is a Medium post, a Reddit thread and small vendors, and 3 companies buy ads on it."},
+      {"phrase": "openai api alternatives", "verdict": "Write it", "why": "6 companies buy ads here, the most of any phrase, at about $27 a click. Page one is small vendors' comparison lists and a Reddit thread."},
+      {"phrase": "llm benchmark", "verdict": "Skip", "why": "Page one is public scoreboards such as Artificial Analysis and BenchLM. Searchers want scores, not help."},
+      {"phrase": "llm evaluation", "verdict": "Maybe", "ease": "hard in practice", "why": "4 companies buy ads at about $20 a click, but IBM, Microsoft and Databricks hold page one. Harder than its difficulty score says."},
+      {"phrase": "how to create evals", "verdict": "Skip", "ease": "too small", "why": "About 10 searches a month. Page one is guides from Product Talk, Eugene Yan and Anthropic."}
+    ],
+    "site_note": "Zavient scores 8 and Zarlent scores 1 (it is 4 days old and nothing links to it yet). The sites on page one for “on premise llm” score 32 to 41. So even the easy phrases need some sites linking to the new pages; expect months, not weeks.",
+    "caveats": [
+      "Search counts are Google's rounded monthly averages for the US. Compare phrases with each other; do not quote one as exact.",
+      "Google's first page was read in one US browser on 25 Nov 2026. It changes by place and over time.",
+      "The paid results service listed different sites than Google showed for the same phrases, so this page uses Google's own page.",
+      "Most questions people ask AI assistants match no search phrase (65% to 85% in one 17-month study, cited by Seerly, Aug 2026), so demand for building a custom test is under-counted here."
+    ],
+    "sources": ["Google Ads search counts and difficulty scores from DataForSEO, through treg, 25 Nov 2026", "Google's first page, read in Chrome, 25 Nov 2026", "Moz site-strength scores, through treg, 25 Nov 2026", "Seerly, 'Keyword Research as a Proxy for AI Search Demand' (Aug 2026)"]
+  }
+}

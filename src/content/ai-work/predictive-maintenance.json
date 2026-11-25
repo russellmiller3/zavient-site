@@ -1,0 +1,49 @@
+{
+  "title": "Predictive maintenance: fix machines before they fail",
+  "description": "Predictive maintenance uses sensor data to warn you before a machine breaks. Learn how it works, how to test a vendor's claims, and when to buy or build.",
+  "job": "Predict when a machine will fail, so you can repair it on your schedule and not during a rush order.",
+  "industry": "manufacturing",
+  "summary": "Predictive maintenance reads data from sensors on a machine, such as heat, vibration and power draw. A model learns what the data looks like in the weeks before a past failure. It then warns you when a machine starts to look like that. The work is called prognostics when the model also estimates how much working life is left. The warning gives your crew time to order parts and plan the repair.",
+  "example": {
+    "input": "Eighteen months of vibration and temperature readings from a line of packaging machines, plus the repair log that shows the date and cause of each breakdown.",
+    "output": "A daily list of machines ranked by risk of failure in the next 14 days. Each row names the sensor reading that triggered the warning, so a technician knows where to look first."
+  },
+  "howToTest": [
+    "Give the vendor your old data with the last few failures removed. Ask which machines they would have flagged. Then check the flags against your repair log.",
+    "Count two things: failures the model caught, and false alarms. Ask how many warnings your crew can handle in a week, and test against that number.",
+    "Ask how early the warning came. A warning one hour before a failure is not useful if parts take three days to arrive.",
+    "Run the system in watch-only mode for one to three months. Compare its warnings to what actually broke before you change any maintenance plan."
+  ],
+  "buyVsBuild": {
+    "buy": "Buy if the machines are common types, such as motors, pumps or compressors, and you want sensors, software and alerts in one package. Ask the vendor to test on your own data first.",
+    "build": "Build only if you already collect sensor data, keep good failure records, and have a data analyst. Most of the work is cleaning the data and matching readings to repair dates, not the model itself."
+  },
+  "watchOuts": [
+    "You need examples of failures. If a machine rarely breaks, there is little for a model to learn from.",
+    "Repair logs are often incomplete. If the log says only 'fixed', the model cannot learn what went wrong.",
+    "A model trained on one machine may not work on a different model of machine. Test each type.",
+    "Too many false alarms teach the crew to ignore the system. Set the alert level with the maintenance team."
+  ],
+  "resources": [
+    {
+      "name": "NASA Prognostics Data Repository",
+      "url": "https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/",
+      "what": "A free collection of data sets donated by universities, agencies and companies. Most are time-series data that run from normal operation to failure, so people can build and test prognostic models."
+    }
+  ],
+  "sources": [
+    {
+      "name": "NASA Prognostics Data Repository",
+      "url": "https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/",
+      "what": "States that the repository holds data sets for developing prognostic algorithms, mostly from a nominal state to a failed state, and that users employ the data at their own risk."
+    },
+    {
+      "name": "NASA Prognostics Center of Excellence",
+      "url": "https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/",
+      "what": "Describes prognostics work at NASA Ames: modeling damage at the component level and building algorithms that estimate remaining component life."
+    }
+  ],
+  "related": ["ai-agents-for-business", "ai-consulting-companies"],
+  "keyword": { "phrase": "predictive maintenance", "searches": 1900, "cpc": 33.92, "difficulty": 24 },
+  "updated": "2026-11-25"
+}

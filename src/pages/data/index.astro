@@ -1,0 +1,17 @@
+---
+// api-docs-read: static hub page — no external API/protocol surface.
+// Hub listing every data story.
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+const stories = (await getCollection('datastory')).sort((a, b) => b.data.updated.localeCompare(a.data.updated));
+---
+<Base title="AI job market data | Zavient" description="Charts and numbers from US AI job ads: which AI models employers ask for, which jobs are growing, and what they pay.">
+  <header class="article-hero"><div class="wrap">
+    <div class="label">Data</div>
+    <h1>The AI job market, in numbers</h1>
+    <p class="dek">What employers ask for in AI job ads: models, tools, job titles and pay. Every chart is free to republish with a link.</p>
+  </div></header>
+  <article class="article-body"><div class="wrap">
+    <ul>{stories.map((s) => <li><a href={`/data/${s.id}.html`}>{s.data.title}</a>: {s.data.description}</li>)}</ul>
+  </div></article>
+</Base>

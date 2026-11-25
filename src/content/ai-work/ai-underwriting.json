@@ -1,0 +1,30 @@
+{
+ "title": "AI underwriting for lenders and insurers",
+ "description": "How AI reads applications and supporting documents for underwriting, how to test it on your own files, and the rules on explaining decisions.",
+ "job": "underwriting",
+ "industry": "lending and insurance",
+ "summary": "AI underwriting reads the application and supporting documents, pulls out the facts an underwriter needs, and scores the risk. The underwriter still makes the decision, and the reasons must be explainable to the applicant.",
+ "example": {"input": "A small-business loan application, 12 months of bank statements and two years of tax returns.", "output": "Average monthly revenue, existing debt payments, two flagged risks with page references, and a draft risk score with its main reasons."},
+ "howToTest": [
+  "Take 50 past files where the outcome is known, with the facts your underwriters extracted.",
+  "Run each AI model on the same files and count the facts it gets exactly right.",
+  "Check whether each model can state the reasons behind a score in plain words.",
+  "Measure cost per file, including retries on files the model reads badly."
+ ],
+ "buyVsBuild": {"buy": "Buy underwriting software when your products are standard and the vendor's data covers your market.", "build": "Build on a model when your own loss history is your edge and you need the score to use it."},
+ "watchOuts": [
+  "US lenders must give specific reasons when they deny credit, even when a complex model made the decision.",
+  "Models trained on past approvals can repeat past bias; test results across applicant groups.",
+  "Handwritten or scanned documents lower accuracy; test on your worst files, not your best."
+ ],
+ "resources": [
+  {"name": "FinanceBench", "url": "https://github.com/patronus-ai/financebench", "what": "Open questions on company financial filings; the open sample is for non-commercial use."}
+ ],
+ "sources": [
+  {"name": "CFPB Circular 2022-03", "url": "https://www.consumerfinance.gov/compliance/circulars/circular-2022-03-adverse-action-notification-requirements-in-connection-with-credit-decisions-based-on-complex-algorithms/", "what": "Lenders must give specific reasons for credit denials, including when they use complex algorithms."},
+  {"name": "AI//COST, cost per task", "url": "https://aicost.tools/blog/llm-cost-per-task/", "what": "Same listed price, very different cost per finished task; the cheapest model failed 10 of 82 tasks."}
+ ],
+ "related": ["ai-document-processing", "ai-consulting-services"],
+ "keyword": {"phrase": "ai underwriting", "searches": 390, "cpc": 65.21, "difficulty": 9},
+ "updated": "2026-11-25"
+}

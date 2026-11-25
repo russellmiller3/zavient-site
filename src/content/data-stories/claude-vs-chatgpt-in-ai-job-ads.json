@@ -1,0 +1,37 @@
+{
+ "title": "Claude has caught ChatGPT in US AI job ads",
+ "description": "Which AI models US employers name in AI job ads: Claude and OpenAI tie on ads, and more employers now name Claude. Data from 2,046 ads.",
+ "dek": "In 2,046 US AI job ads posted between 21 and 25 Nov 2026, Claude and OpenAI's models appear in the same number of ads, and slightly more employers name Claude.",
+ "findings": [
+  "Claude (Anthropic) and OpenAI's GPT models each appear in 268 of the 2,046 ads. Counted by employer, 206 employers name Claude and 192 name OpenAI.",
+  "Google's Gemini trails far behind, at 53 employers. Open models are rare: Meta's Llama at 23 employers, Mistral at 13 and DeepSeek at 3.",
+  "Much of Claude's showing comes from coding: ads often ask for experience with Claude Code alongside Cursor or GitHub Copilot.",
+  "The job ads match what spending data shows. Ramp's AI Index put Anthropic ahead of OpenAI in US business adoption in October 2026, at 44.8% to 40.6%."
+ ],
+ "chart": {
+  "title": "Employers naming each AI in their AI job ads",
+  "subtitle": "US, ads posted between 21 and 25 Nov 2026; 1,172 employers; makers' own ads excluded",
+  "unit": "count",
+  "bars": [
+   {"label": "Anthropic / Claude", "value": 206, "note": "268 ads"},
+   {"label": "OpenAI / GPT", "value": 192, "note": "268 ads"},
+   {"label": "Microsoft Copilot", "value": 97, "note": "111 ads"},
+   {"label": "Google Gemini", "value": 53, "note": "69 ads"},
+   {"label": "Meta Llama", "value": 23, "note": "24 ads"},
+   {"label": "Mistral", "value": 13, "note": "13 ads"},
+   {"label": "DeepSeek", "value": 3, "note": "3 ads"}
+  ]
+ },
+ "method": [
+  "I pulled the 3,000 newest US job ads with AI or machine-learning job titles posted between 21 and 25 Nov 2026, from the jobspipe job index.",
+  "I removed reposts (the same title from the same company), leaving 2,046 ads from 1,172 employers.",
+  "A model counts when the ad's description names it as a whole word, for example 'Claude', 'Anthropic', 'OpenAI', 'ChatGPT' or 'GPT-4'.",
+  "Each maker's own job ads are left out of its count, because every Anthropic ad names Anthropic. I hand-checked samples of the matches.",
+  "The 3,000 newest ads were all posted from 21 to 25 Nov 2026, so this is a five-day snapshot, not a month. A monthly pull now tracks how these counts change."
+ ],
+ "sources": [
+  {"name": "Ramp AI Index", "url": "https://ramp.com/data/ai-index", "what": "In October 2026, 44.8% of US businesses on Ramp paid for Anthropic and 40.6% for OpenAI."},
+  {"name": "Menlo Ventures, State of Generative AI in the Enterprise (2025)", "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/", "what": "Anthropic held 40% of enterprise LLM spending in 2025, against OpenAI's 27%."}
+ ],
+ "updated": "2026-11-25"
+}

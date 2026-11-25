@@ -22,4 +22,51 @@ const insights = defineCollection({
   }),
 });
 
-export const collections = { insights };
+// One AI-work page = one JSON file in src/content/ai-work. The schema is strict on purpose: these pages are
+// written and refreshed by an AI, so a missing source, a missing offer or a malformed field fails the build
+// instead of shipping. Keyword fields are for planning and are never rendered.
+const link = z.object({ name: z.string().min(2), url: z.string().url(), what: z.string().min(10) });
+const aiwork = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: './src/content/ai-work' }),
+  schema: z.object({
+    title: z.string().min(10).max(70),
+    description: z.string().min(50).max(160),
+    job: z.string(),
+    industry: z.string().default('any industry'),
+    summary: z.string().min(80),
+    example: z.object({ input: z.string(), output: z.string() }),
+    howToTest: z.array(z.string()).min(3),
+    buyVsBuild: z.object({ buy: z.string(), build: z.string() }),
+    watchOuts: z.array(z.string()).min(2),
+    resources: z.array(link).min(1),
+    sources: z.array(link).min(1),
+    related: z.array(z.string()).default([]),
+    keyword: z.object({ phrase: z.string(), searches: z.number(), cpc: z.number(), difficulty: z.number().nullable() }),
+    updated: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  }),
+});
+
+// One data story = one JSON file in src/content/data-stories: a finding, one chart, the method and the sources.
+// Each story also ships its chart as an embeddable SVG and its numbers as CSV, so other sites can cite and link it.
+const datastory = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: './src/content/data-stories' }),
+  schema: z.object({
+    title: z.string().min(20).max(90),
+    description: z.string().min(50).max(160),
+    dek: z.string().min(40),
+    findings: z.array(z.string()).min(2),
+    chart: z.object({
+      title: z.string(), subtitle: z.string().default(''), unit: z.enum(['count', 'usd', 'percent']),
+      // 'bar' compares categories; 'line' shows one series over time (labels are YYYY-MM).
+      kind: z.enum(['bar', 'line']).default('bar'),
+      // Named first in the chart's credit line when the numbers come from someone else's data (CC BY needs it).
+      creditSource: z.string().optional(),
+      bars: z.array(z.object({ label: z.string(), value: z.number(), note: z.string().optional() })).min(3),
+    }),
+    method: z.array(z.string()).min(2),
+    sources: z.array(link).min(1),
+    updated: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  }),
+});
+
+export const collections = { insights, aiwork, datastory };

@@ -1,0 +1,47 @@
+---
+// api-docs-read: static page generator — no external API/protocol surface.
+// One data-story page per JSON file in src/content/data-stories: headline finding, the chart (inline SVG with
+// hover titles), a table view, embed code, CSV download, method, sources and the custom-benchmark offer.
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import BenchmarkCta from '../../components/BenchmarkCta.astro';
+import { storySvg, fmt } from '../../lib/storyChart.js';
+
+export async function getStaticPaths() {
+  const stories = await getCollection('datastory');
+  return stories.map((s) => ({ params: { slug: s.id }, props: { story: s, others: stories.filter((o) => o.id !== s.id) } }));
+}
+const { story, others } = Astro.props;
+const d = story.data;
+const svg = storySvg(story.id, d.chart);
+const f = fmt(d.chart.unit);
+const embed = `<a href="https://zavient.com/data/${story.id}.html"><img src="https://zavient.com/data/${story.id}.svg" alt="${d.chart.title}" width="760"></a>`;
+---
+<Base title={`${d.title} | Zavient`} description={d.description}>
+  <header class="article-hero"><div class="wrap">
+    <div class="label">Data &middot; AI job market</div>
+    <h1>{d.title}</h1>
+    <p class="dek">{d.dek}</p>
+    <p class="byline">Russell Miller, Zavient &middot; updated {d.updated}</p>
+  </div></header>
+  <article class="article-body"><div class="wrap">
+    <figure class="data-chart" style="margin:0 0 8px;max-width:100%;overflow:hidden"><div style="max-width:100%" set:html={svg.replace('width="760"', 'width="100%"').replace(/height="\d+"/, '')} /></figure>
+    <details><summary>See the numbers as a table</summary>
+      <table class="sources-table"><thead><tr><th>{d.chart.title}</th><th>Value</th></tr></thead>
+        <tbody>{d.chart.bars.map((b) => <tr><td>{b.label}{b.note ? ` (${b.note})` : ''}</td><td>{f(b.value)}</td></tr>)}</tbody></table>
+    </details>
+    <p><a href={`/data/${story.id}.svg`}>Chart image (SVG)</a> &middot; <a href={`/data/${story.id}.csv`}>Data (CSV)</a></p>
+    <h2>What I found</h2>
+    {d.findings.map((p) => <p>{p}</p>)}
+    <h2>Use this chart</h2>
+    <p>Free to republish with a link back. Copy this code:</p>
+    <pre style="white-space:pre-wrap;word-break:break-all;font-size:13px"><code>{embed}</code></pre>
+    <h2>How I counted</h2>
+    <ul>{d.method.map((m) => <li>{m}</li>)}</ul>
+    <div class="sources"><h2>Sources</h2>
+      <table class="sources-table"><thead><tr><th>Source</th><th>What it says</th></tr></thead>
+        <tbody>{d.sources.map((s) => <tr><td><a href={s.url}>{s.name}</a></td><td>{s.what}</td></tr>)}</tbody></table></div>
+    {others.length > 0 && (<p>More data: {others.map((o, i) => <>{i > 0 && ' · '}<a href={`/data/${o.id}.html`}>{o.data.title}</a></>)}</p>)}
+  </div></article>
+  <BenchmarkCta job="your AI work" />
+</Base>

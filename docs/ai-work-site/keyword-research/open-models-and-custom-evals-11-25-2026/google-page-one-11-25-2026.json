@@ -1,0 +1,56 @@
+{
+  "_about": "Google's real first page for 18 phrases, read in Russell's Chrome (US English, signed-in browser, San Francisco) on 25 Nov 2026 by scripts/browser_serp_batch.py. 'ads' = paid ads Google showed; 'd' = the organic sites in order (ads skipped); 'top' = the first three organic results with the excerpt Google showed, copied exactly, for the phrases featured in the report. Replaces the paid results provider, which listed different sites for the same phrases.",
+  "site_strength_moz_11_25_2026": {"zavient.com": {"da": 8, "linking_sites": 193}, "zarlent.com": {"da": 1, "linking_sites": 0}, "iternal.ai": {"da": 41, "linking_sites": 3256}, "truefoundry.com": {"da": 32, "linking_sites": 3815}},
+  "phrases": {
+    "golden dataset llm": {"ads": 0, "d": ["langfuse.com","innodata.com","medium.com","decagon.ai","deepeval.com","qaskills.sh","confident-ai.com","reddit.com","barkingiguana.com"]},
+    "llm eval datasets": {"ads": 4, "d": ["github.com","huggingface.co","mlflow.org","arxiv.org","reddit.com","evidentlyai.com","promptfoo.dev","deepeval.com","docs.datarobot.com"]},
+    "how to create evals for ai agents": {"ads": 4, "d": ["anthropic.com","reddit.com","langchain.com","cameronrwolfe.substack.com","huggingface.co","producttalk.org","aws.amazon.com","mindstudio.ai"]},
+    "how to create evals": {"ads": 2, "d": ["producttalk.org","eugeneyan.com","anthropic.com","langchain.com","vitals.tidyverse.org","medium.com","lennysnewsletter.com","braintrust.dev"],
+      "top": [
+        {"site": "Product Talk", "title": "AI Evals: A Hands-On Guide for Product Teams", "url": "https://www.producttalk.org/ai-evals/", "x": "To create a dataset eval, you simply define a set of inputs that you expect to represent what you might see in production and you define the ..."},
+        {"site": "eugeneyan.com", "title": "Product Evals in Three Simple Steps", "url": "https://eugeneyan.com/writing/product-evals/", "x": "There are three basic steps: (i) labeling a small dataset, (ii) aligning our LLM evaluators, and (iii) running the experiment + evaluation harness with each ..."},
+        {"site": "Anthropic", "title": "Demystifying evals for AI agents", "url": "https://www.anthropic.com/research/demystifying-evals-for-ai-agents", "x": "One strategy to build research agent evals is to combine grader types. Groundedness checks verify that claims are supported by retrieved sources ..."}]},
+    "how to build evals": {"ads": 2, "d": ["huggingface.co","langchain.com","anthropic.com","lennysnewsletter.com","vitals.tidyverse.org","producttalk.org","medium.com","developers.openai.com"]},
+    "llm test cases": {"ads": 4, "d": ["confident-ai.com","skphd.medium.com","langfuse.com","braintrust.dev","patronus.ai","deepeval.com","arxiv.org","iese.fraunhofer.de","reddit.com"]},
+    "llm benchmark": {"ads": 0, "d": ["artificialanalysis.ai","benchlm.ai","livebench.ai","wolfram.com","decagon.ai","onyx.app","llm.aidatatools.com","evidentlyai.com","reddit.com"],
+      "top": [
+        {"site": "Artificial Analysis", "title": "LLM Leaderboard - Comparison of AI models from OpenAI, ...", "url": "https://artificialanalysis.ai/leaderboards/models", "x": "Comparison and ranking the performance of over 250 AI models (LLMs) across key metrics including intelligence, price, performance and speed"},
+        {"site": "BenchLM", "title": "BenchLM: LLM Leaderboard & AI Model Benchmarks", "url": "https://benchlm.ai/", "x": "The BenchLM LLM leaderboard 2026 ranks 216+ models and tracks 1036+ large language models side by side across 837 benchmarks"},
+        {"site": "LiveBench", "title": "LiveBench 2.0 - A challenging, contamination-free long ...", "url": "https://livebench.ai/", "x": "A challenging, contamination-free long-horizon AI benchmark. We give models real work (decks, research reports, bug fixes, apps that run for hours) and ..."}]},
+    "llm benchmarks": {"ads": 0, "d": ["artificialanalysis.ai","benchlm.ai","livebench.ai","splunk.com","ibm.com","codecademy.com","onyx.app","cameronrwolfe.substack.com","github.com"]},
+    "llm as a judge": {"ads": 2, "d": ["en.wikipedia.org","evidentlyai.com","langfuse.com","arxiv.org","confident-ai.com","huggingface.co","llm-as-a-judge.github.io","mlflow.org"]},
+    "ai model comparison": {"ads": 0, "d": ["artificialanalysis.ai","benchlm.ai","docs.github.com","openrouter.ai","reddit.com","livebench.ai","opencode.ai","aiagentstore.ai","arena.ai"]},
+    "llm evaluation": {"ads": 4, "d": ["ibm.com","azure.microsoft.com","superannotate.com","databricks.com","developer.nvidia.com","magazine.sebastianraschka.com","evidentlyai.com","mlflow.org"],
+      "top": [
+        {"site": "IBM", "title": "LLM evaluation: Why testing AI models matters", "url": "https://www.ibm.com/think/insights/llm-evaluation", "x": "LLM evaluation is the process of assessing the performance of large language models by using tasks, data and metrics to gauge their effectiveness."},
+        {"site": "Microsoft Azure", "title": "What Is LLM Evaluation?", "url": "https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-llm-evaluation", "x": "Large language model evaluation checks model outputs against specific criteria to maintain correctness, relevance, coherence, and safety."},
+        {"site": "SuperAnnotate", "title": "LLM Evaluation: Frameworks, Metrics, and Best Practices", "url": "https://www.superannotate.com/blog/llm-evaluation-guide", "x": "LLM evaluation is the process of testing and measuring how well large language models perform in real-world situations."}]},
+    "llm comparison": {"ads": 0, "d": ["artificialanalysis.ai","benchlm.ai","livebench.ai","whatllm.org","llm-stats.com","aipedagogy.org","magazine.sebastianraschka.com","huggingface.co","llmmodels.org"]},
+    "open weight models": {"ads": 0, "d": ["hai.stanford.edu","en.wikipedia.org","gumloop.com","opensource.org","reddit.com","github.com"],
+      "top": [
+        {"site": "Stanford HAI", "title": "What is an Open-Weight Model? - Stanford HAI", "url": "https://hai.stanford.edu/ai-definitions/what-is-an-open-weight-model", "x": "An Open-Weight Model is an AI model whose core components are publicly released, allowing anyone to download it. This lets users run the model on their own ..."},
+        {"site": "Wikipedia", "title": "Open weights", "url": "https://en.wikipedia.org/wiki/Open_weights", "x": "Open weights are the publicly released learned parameters of a trained artificial intelligence model, principally its weights and biases."},
+        {"site": "Gumloop", "title": "7 best open weight AI models I've tested in 2026", "url": "https://www.gumloop.com/blog/open-weight-ai-models", "x": "7 best open weight AI models in 2026 · 1. GLM-5.2 · 2. DeepSeek V4 Pro · 3. Kimi K2.7 Code · 4. Qwen3.5 397B ..."}]},
+    "open source llm": {"ads": 0, "d": ["baseten.co","ibm.com","huggingface.co","github.com","instaclustr.com","reddit.com","lmstudio.ai","mastra.ai","fireworks.ai"]},
+    "self host llm": {"ads": 0, "d": ["reddit.com","towardsdatascience.com","onyx.app","premai.io","vercel.com","exoscale.com","qovery.com","github.com"],
+      "top": [
+        {"site": "Reddit · r/selfhosted", "title": "Self-hosting LLMs seems pointless—what am I missing?", "url": "https://www.reddit.com/r/selfhosted/comments/1ih4iee/selfhosting_llms_seems_pointlesswhat_am_i_missing/", "x": "Don’t get me wrong—I absolutely love self-hosting. If something can be self-hosted and makes sense, I’ll run it on my home server without hesitation. ..."},
+        {"site": "Towards Data Science", "title": "Self-Hosting Your First LLM", "url": "https://towardsdatascience.com/self-hosting-your-first-llm/", "x": "The good news is that self-hosting an LLM is no longer a research project or a massive ML infrastructure effort. With the right model, the right ..."},
+        {"site": "Onyx AI", "title": "Best Self-Hosted LLM Leaderboard 2026", "url": "https://onyx.app/self-hosted-llm-leaderboard", "x": "Onyx is the open-source AI platform that lets you self-host any of these LLMs and connect them to your team's docs, apps, and people."}]},
+    "private llm": {"ads": 0, "d": ["privatellm.app","apps.apple.com","privatellm.com","pureai.com","reddit.com","thehackettgroup.com","privatellm.app"],
+      "top": [
+        {"site": "Private LLM", "title": "Private LLM - Local & Private AI for iPhone, iPad & Mac", "url": "https://privatellm.app/en", "x": "Private LLM runs entirely on your iPhone, iPad, or Mac. Your conversations never leave the device, and no internet is required after the first model ..."},
+        {"site": "Apple", "title": "Private LLM - Local AI Chat - App Store - Apple", "url": "https://apps.apple.com/us/app/private-llm-local-ai-chat/id6448106860", "x": "Private LLM, the premier AI assistant designed with your privacy in mind. Available for a one-time purchase, it offers a range of AI capabilities without ..."},
+        {"site": "privatellm.com", "title": "PrivateLLM — Your Private AI Workspace", "url": "https://privatellm.com/", "x": "Your AI. Your Data. Your Control. Upload documents, build private knowledge bases, and chat with AI that never stores or trains on your data."}]},
+    "on premise llm": {"ads": 3, "d": ["medium.com","reddit.com","iternal.ai","truefoundry.com","nhimg.org","blog.radeuslabs.com","go.ai","getmaxim.ai"],
+      "top": [
+        {"site": "Medium · Avinash Chander", "title": "What Is On-Prem LLM Deployment? A Full Guide", "url": "https://medium.com/@avinash_61951/what-is-on-prem-llm-deployment-a-full-guide-36793bb95436", "x": "The hosting and operation of AI models within your company's own servers or private data centers is known as on-premises LLM deployment."},
+        {"site": "Reddit · r/LocalLLM", "title": "What should I study to introduce on-premise LLMs in my ...", "url": "https://www.reddit.com/r/LocalLLM/comments/1od39ri/what_should_i_study_to_introduce_onpremise_llms/", "x": "Hello all, I'm a Network Engineer with a bit of a background in software development, and recently I've been highly interested in Large Language Models. ..."},
+        {"site": "Iternal AI", "title": "On-Prem LLM Deployment (2026): GPU Sizing, vLLM & Air ...", "url": "https://iternal.ai/how-to-deploy-llm-on-premise", "x": "Deploying an LLM on-premise means running the model weights, serving engine, and API entirely on hardware you own, inside your own network boundary."}]},
+    "openai api alternatives": {"ads": 6, "d": ["getmaxim.ai","reddit.com","novita.ai","yottalabs.ai","geodd.io","youtube.com","nordicapis.com"],
+      "top": [
+        {"site": "Bifrost by Maxim AI", "title": "13 Best OpenAI API Alternatives", "url": "", "x": "This guide compares 13 of them, including Anthropic, Google Gemini, Groq, and Amazon Bedrock, on SDK compatibility, pricing model, rate limits, ..."},
+        {"site": "Reddit · r/MachineLearning", "title": "[D] Is there currently anything comparable to the OpenAI API?", "url": "", "x": "I am a designer and a small frontend developer. The OpenAI API makes it extremely easy for me to build AI functionality into apps, although I only have ..."},
+        {"site": "Novita AI", "title": "OpenAI API alternatives", "url": "", "x": "Compare 3 OpenAI API alternatives—Claude, Kimi and DeepSeek—on token costs, AA benchmark results and Chat Completions migration ..."}]}
+  }
+}

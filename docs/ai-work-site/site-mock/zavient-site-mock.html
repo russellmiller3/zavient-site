@@ -1,0 +1,2018 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zavient AI-work site: data flow and sample pages</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<script>
+(function(){try{var q=/[?&]theme=(light|dark)/.exec(location.search);var s=q?q[1]:localStorage.getItem('df-theme');if(s==='light'||s==='dark')document.documentElement.setAttribute('data-df-theme',s);}catch(e){}})();
+</script>
+<style>
+*{box-sizing:border-box}
+:root{--pg-wash:linear-gradient(135deg,#dbe7f8 0%,#eaf0f8 42%,#ddf0f1 100%);--pg-bg:#edf2f8;--pg-ink:#121726;--pg-ink2:#545d72;--pg-dot:rgba(18,24,48,.085);--pg-glow1:rgba(37,99,235,.17);--pg-glow2:rgba(20,184,166,.14);--pg-line:rgba(18,24,48,.12);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-df-theme="light"]){--pg-wash:none;--pg-bg:#0a0f1a;--pg-ink:#e9ebf3;--pg-ink2:#9ca3b8;--pg-dot:rgba(255,255,255,.065);--pg-glow1:rgba(37,99,235,.24);--pg-glow2:rgba(20,184,166,.10);--pg-line:rgba(255,255,255,.16);color-scheme:dark}}
+:root[data-df-theme="dark"]{--pg-wash:none;--pg-bg:#0a0f1a;--pg-ink:#e9ebf3;--pg-ink2:#9ca3b8;--pg-dot:rgba(255,255,255,.065);--pg-glow1:rgba(37,99,235,.24);--pg-glow2:rgba(20,184,166,.10);--pg-line:rgba(255,255,255,.16);color-scheme:dark}
+body{margin:0;min-height:100vh;color:var(--pg-ink);font-family:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5;
+  background-color:var(--pg-bg);
+  background-image:radial-gradient(70% 45% at 50% -8%,var(--pg-glow1),transparent 70%),radial-gradient(45% 35% at 95% 30%,var(--pg-glow2),transparent 70%),radial-gradient(var(--pg-dot) 1px,transparent 1.4px),var(--pg-wash);
+  background-size:100% 100%,100% 100%,24px 24px,100% 100%;background-repeat:no-repeat,no-repeat,repeat,no-repeat;background-attachment:fixed,fixed,fixed,fixed}
+main{max-width:1720px;margin:0 auto;padding:28px clamp(16px,3vw,48px) 56px}
+.pg-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.pg-kicker{display:flex;align-items:center;gap:12px;margin:0;font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pg-ink2)}
+.pg-kicker::before{content:"";width:34px;height:1.5px;background:currentColor}
+h1{font-family:"Inter",ui-sans-serif,system-ui,sans-serif;font-weight:650;font-size:clamp(2rem,4.2vw,3rem);line-height:1.08;letter-spacing:-.03em;margin:14px 0 0}
+.lede{color:var(--pg-ink2);max-width:680px;margin:12px 0 28px;font-size:1.08rem}
+.pg-mode{white-space:nowrap;flex:none;font:inherit;font-size:.9rem;display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;cursor:pointer;color:var(--pg-ink);
+  background:color-mix(in srgb,var(--pg-bg) 60%,transparent);border:1px solid var(--pg-line);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.pg-mode svg{width:16px;height:16px}
+.pg-btns{display:flex;gap:8px}
+/* Save a copy sits beside Mark up in the same warm family: caramel, not the yellow of Mark up and never red */
+.pg-sendnotes{background:#F4DDB8!important;border-color:#C8945A!important;color:#6B4214!important;font-weight:600}
+.pg-sendnotes:hover{background:#EDCF9E!important}
+.pg-sendnotes[hidden]{display:none!important}
+.df-scroll{position:relative}
+/* mark up: a clear layer over each tab; marks are drawn on the page itself */
+main,.pg-panel,.pg-head{position:relative}
+/* the page buttons sit above the drawing layer, so they still work while marking */
+.pg-top{position:relative;z-index:30;pointer-events:none}
+.pg-top button{pointer-events:auto}
+/* while marking, a click never selects text; only a note being typed does */
+body.mk-on main{-webkit-user-select:none;user-select:none}
+body.mk-on .mk-note{-webkit-user-select:text;user-select:text}
+.mk-layer{position:absolute;inset:0;z-index:20;pointer-events:none}
+body.mk-on .mk-layer{pointer-events:auto;cursor:crosshair}
+.mk-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.mk-svg *{pointer-events:none}
+body.mk-on .mk-svg [data-i]{pointer-events:visiblePainted;cursor:move}
+body.mk-on .mk-svg rect[data-i]{pointer-events:all}
+/* arrows stand out: highlighter yellow-green for notes, blue for Move, each on a dark edge */
+.mk-note-edge{stroke:#365314;stroke-width:9;stroke-linecap:round}
+.mk-note-line{stroke:#CCF526;stroke-width:5;stroke-linecap:round}
+.mk-note-dot{fill:#CCF526;stroke:#365314;stroke-width:2.5}
+.mk-ah{fill:#CCF526;stroke:#365314;stroke-width:1.4}
+.mk-move{fill:rgba(37,99,235,.06);stroke:#2563EB;stroke-width:3;stroke-dasharray:8 5}
+.mk-move-edge{stroke:#172554;stroke-width:9;stroke-linecap:round}
+.mk-move-line{stroke:#3B82F6;stroke-width:5;stroke-linecap:round}
+.mk-mh{fill:#3B82F6;stroke:#172554;stroke-width:1.4}
+.mk-move-t{fill:#1D4ED8;font:700 14px "Inter",ui-sans-serif,system-ui,sans-serif;paint-order:stroke;stroke:#fff;stroke-width:4px}
+.mk-del{fill:rgba(225,29,72,.08);stroke:#E11D48;stroke-width:3}
+.mk-del-x{stroke:#E11D48;stroke-width:3;stroke-linecap:round}
+.mk-del-t{fill:#BE123C;font:700 14px "Inter",ui-sans-serif,system-ui,sans-serif;paint-order:stroke;stroke:#fff;stroke-width:4px}
+.mk-move.mk-sel,.mk-del.mk-sel{stroke-width:5;filter:drop-shadow(0 0 4px rgba(0,0,0,.25))}
+.mk-handle{fill:#fff;stroke:#365314;stroke-width:3;cursor:grab!important}
+.mk-handle-move{stroke:#2563EB}
+.mk-x{position:absolute;width:22px;height:22px;border-radius:50%;border:0;background:#4A3510;color:#F8E3A3;font:700 15px/22px "Inter",ui-sans-serif,system-ui,sans-serif;text-align:center;padding:0;cursor:pointer;pointer-events:auto;box-shadow:0 1px 4px rgba(0,0,0,.3);z-index:2}
+.mk-x:hover{background:#BE123C;color:#fff}
+.mk-note{position:absolute;min-width:140px;max-width:280px;padding:7px 10px;background:#FDF6A3;border:1px solid #C9B847;border-radius:4px;color:#4A2E14;font:500 15px/1.4 "Inter",ui-sans-serif,system-ui,sans-serif;box-shadow:0 3px 10px rgba(0,0,0,.18);white-space:pre-wrap;outline:none;pointer-events:none}
+body.mk-on .mk-note{pointer-events:auto}
+body.mk-on .mk-note{cursor:move}
+.mk-note:focus{cursor:text;box-shadow:0 0 0 3px rgba(107,68,35,.25),0 3px 10px rgba(0,0,0,.18)}
+.mk-note.mk-sel{border-color:#6B4423}
+.mk-note:empty::before{content:"Type a note";color:#9CA3AF}
+/* marking up: a soft butter-yellow strip across the top; the page moves down so the strip covers nothing */
+.mk-bar{position:fixed;top:0;left:0;right:0;z-index:1000;display:none;flex-wrap:wrap;justify-content:space-between;gap:8px 12px;align-items:center;background:#F8E3A3;color:#4A3510;padding:8px 16px;border-bottom:1px solid #D9B556;box-shadow:0 2px 10px rgba(74,53,16,.14);font-family:"Inter",ui-sans-serif,system-ui,sans-serif}
+body.mk-on .mk-bar{display:flex}
+.mk-bar button{font:inherit;display:inline-flex;align-items:center;gap:6px;cursor:pointer;transition:background .12s,color .12s,transform .08s}
+.mk-bar svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+/* the marks: 3 separate raised buttons, each in its mark's own colour; the chosen one fills with that colour */
+.mk-tools{display:flex;gap:8px}
+.mk-tool{font-size:.95rem;font-weight:650;padding:7px 14px;border-radius:8px;border:2px solid var(--mkc);background:#fff;color:var(--mkc);box-shadow:0 2px 0 color-mix(in srgb,var(--mkc) 45%,#000),0 3px 8px rgba(0,0,0,.12)}
+.mk-tool:hover{background:color-mix(in srgb,var(--mkc) 12%,#fff)}
+.mk-tool[aria-pressed="true"]{background:var(--mkc);color:#fff;box-shadow:0 1px 0 color-mix(in srgb,var(--mkc) 45%,#000);transform:translateY(1px)}
+.mk-sure{background:#E11D48!important;color:#fff!important}
+body.mk-fading .mk-layer{opacity:0;transition:opacity .35s}
+.mk-t-note{--mkc:#8A5A2B}
+.mk-t-move{--mkc:#2563EB}
+.mk-t-del{--mkc:#E11D48}
+/* the page actions: quieter, apart on the right; only Done is filled */
+.mk-utils{display:flex;gap:4px;align-items:center}
+.mk-util{font-size:.875rem;font-weight:600;color:#4A3510;background:transparent;border:0;border-radius:6px;padding:6px 9px}
+.mk-util:hover{background:rgba(255,255,255,.6)}
+.mk-done{font-size:.875rem;font-weight:700;background:#4A3510;color:#fff;border:0;border-radius:7px;padding:7px 14px;margin-left:4px}
+.mk-hint{flex:1;text-align:center;min-width:180px;font-size:.875rem;color:#6B4E16;padding:3px 8px;border-radius:4px;transition:background .3s}
+.mk-hint.mk-flash{background:#fff;font-weight:700}
+/* Mark up stands out a little when off (pale yellow), and matches the strip when on */
+.pg-markup{background:#FFF7DC!important;border-color:#E6CB78!important;color:#5B4513!important}
+.pg-markup[aria-pressed="true"]{background:#F8E3A3!important;color:#4A3510!important;border-color:#D9B556!important}
+/* every button visibly presses in when clicked */
+button{transition:transform .08s,filter .08s}
+button:active{transform:translateY(1px) scale(.97);filter:brightness(.9)}
+@media print{body{background:#fff!important;min-height:0}main{padding:0;max-width:none}.pg-top{display:none}h1{font-size:18pt;margin:0}.lede{font-size:10pt;margin:4px 0 8px}.mk-bar,.mk-layer{display:none!important}}
+.pg-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 22px}
+.pg-tab{font:inherit;font-size:.95rem;padding:8px 14px;border-radius:999px;cursor:pointer;color:var(--pg-ink);background:color-mix(in srgb,var(--pg-ink) 9%,var(--pg-bg));border:1px solid color-mix(in srgb,var(--pg-ink) 28%,transparent);box-shadow:0 1px 0 color-mix(in srgb,var(--pg-ink) 12%,transparent);transition:border-color .2s}
+.pg-tab:hover,.pg-tab:focus-visible{background-image:linear-gradient(115deg,#c9d3db,#a9bccb,#9fc2bd,#dde3e7,#b4c0cc,#c9d3db);background-size:300% 100%;color:#1f2430;border-color:color-mix(in srgb,var(--pg-ink) 45%,transparent);animation:pg-opal 8s linear infinite}
+@keyframes pg-opal{to{background-position:300% 0}}
+@media (prefers-reduced-motion:reduce){.pg-tab:hover,.pg-tab:focus-visible{animation:none}}
+.pg-tab[aria-pressed="true"]{background:var(--pg-ink);color:var(--pg-bg);border-color:var(--pg-ink);animation:none}
+.pg-off{position:absolute;left:-20000px;top:0;width:calc(100vw - 96px);max-width:1624px;visibility:hidden}
+.pg-panel-lede{color:var(--pg-ink2);margin:0 0 16px;max-width:760px}
+.pg-print-title{display:none}
+@media print{.pg-tabs,main>h1,main>.lede,.pg-head{display:none}.pg-off{position:static;visibility:visible;width:auto;max-width:none}.pg-panel{break-after:page}.pg-panel:last-of-type{break-after:auto}.pg-panel.pg-wide{page:df-wide}.pg-panel.pg-tall{page:df-tall}.pg-page{zoom:var(--pg-print-zoom,1)}.pg-print-title{display:block;font-size:16pt;font-weight:650;margin:0 0 2px}.pg-print-title span{display:block;font-size:9pt;font-weight:500;color:var(--pg-ink2)}.pg-panel-lede{font-size:9.5pt;margin:0 0 6px;max-width:none}}
+</style>
+</head>
+<body>
+<main>
+<header class="pg-head"><div class="pg-top"><p class="pg-kicker">Interactive data flow</p>
+<div class="pg-btns"><button type="button" class="pg-mode pg-markup" aria-pressed="false" title="Draw arrows, circles, boxes and notes on this page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg><span>Mark up</span></button><button type="button" class="pg-mode pg-sendnotes" hidden title="Save this page as a file with your marks inside, to email back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg><span>Save a copy with my notes</span></button><button type="button" class="pg-mode pg-print" title="One page per diagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg><span>Print</span></button><button type="button" class="pg-mode pg-theme" aria-label="Switch light or dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v2"/><path d="M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715"/><path d="M16 12a4 4 0 0 0-4-4"/><path d="m19 5-1.256 1.256"/><path d="M20 12h2"/></svg><span>Light / dark</span></button></div></div>
+<h1>Zavient AI-work site: data flow and sample pages</h1>
+<p class="lede">Tab 1 shows how data becomes pages and pages become leads. Tabs 2 to 6 are sample pages; every one ends with the custom-benchmark and consulting offer.</p></header>
+<nav class="pg-tabs" aria-label="Diagrams"><button type="button" class="pg-tab" data-tab="1" aria-pressed="true">How the Zavient AI-work site turns data into leads</button><button type="button" class="pg-tab" data-tab="2" aria-pressed="false">2 · Home page</button><button type="button" class="pg-tab" data-tab="3" aria-pressed="false">3 · Job × industry page</button><button type="button" class="pg-tab" data-tab="4" aria-pressed="false">4 · Industry page</button><button type="button" class="pg-tab" data-tab="5" aria-pressed="false">5 · Model page</button><button type="button" class="pg-tab" data-tab="6" aria-pressed="false">6 · News page</button></nav>
+<section class="pg-panel pg-wide" data-panel="1" aria-label="How the Zavient AI-work site turns data into leads"><h2 class="pg-print-title"><span>Zavient AI-work site: data flow and sample pages</span>How the Zavient AI-work site turns data into leads</h2><p class="pg-panel-lede">Where the data comes from, how it becomes pages, and how a visitor becomes a lead. Press Play, or step through it.</p><style>
+.df{--df-ink:#14233A;--df-ink2:#51627A;--df-line:#C9D4E2;--df-card:#fff;--df-head:#F3F6FA;color:var(--df-ink)}
+.df-grid{display:grid;grid-template-columns:minmax(0,var(--df-w,2.1fr)) minmax(320px,440px);justify-content:start;gap:28px;align-items:start}
+.df-grid>div:first-child{position:sticky;top:20px}
+.df-grid>div{min-width:0}
+.df-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px}
+@media (max-width:560px){.df-svg{min-width:500px}}
+.df-svg{width:100%;height:auto;display:block;background:var(--df-card);border:1px solid var(--df-line);border-radius:4px}
+.df-svg text{font-family:inherit;fill:var(--df-ink)}
+.df-node{cursor:pointer;transition:opacity .15s}
+.df-node rect{fill:var(--t);stroke:var(--c);stroke-width:1.5}
+.df-node .df-ico{fill:none;stroke:var(--c);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.df-node .df-t{font-size:16.5px;font-weight:600}
+.df-node .df-t3{font-size:15.5px;font-weight:600}
+.df-node .df-s{font-size:14px;fill:var(--df-ink2)}
+.df-node .df-s3{font-size:13.5px;fill:var(--df-ink2)}
+.df-node.on rect{stroke-width:3}
+.df-node.dim{opacity:.38}
+.df-node:focus{outline:none}
+.df-node:focus-visible rect,.df-node.picked rect{stroke:var(--df-ink);stroke-width:2.5}
+.df-edge{fill:none;stroke:#B4C0D0;stroke-width:2}
+.df-edge.on{stroke-width:3.5}
+.df-edge.fwd,.df-edge.rev{stroke-dasharray:7 5;animation:df-march .7s linear infinite}
+.df-edge.rev{animation-direction:reverse}
+@keyframes df-march{to{stroke-dashoffset:-12}}
+@media (prefers-reduced-motion:reduce){.df-edge.fwd,.df-edge.rev{animation:none;stroke-dasharray:none}}
+.df-packet{pointer-events:none}
+.df-dot{pointer-events:none;filter:drop-shadow(0 0 6px currentColor)}
+.df-dot rect{fill:#fff;stroke-width:2}
+.df-packet rect{fill:#fff;stroke-width:1.6}
+.df-packet text{font-size:14px;font-weight:600;fill:var(--df-ink)}
+.df .df-packet text.df-badge-t{font-size:13px;font-weight:700;fill:#fff}
+.df-pico{fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.df-carry{display:inline-flex;align-items:center;gap:6px;margin:8px 0 0;font-size:.95rem;font-weight:600;border:1.5px solid var(--df-line);border-radius:3px;padding:3px 8px;background:#fff}
+.df-carry[hidden]{display:none}
+.df-carry svg{width:17px;height:17px;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.df-zone{fill:none;stroke:#8A99AD;stroke-dasharray:5 4}
+.df-zone-l{font-size:13.5px;fill:var(--df-ink2);letter-spacing:.05em}
+.df-k-person{--c:#1D4ED8;--t:#EEF3FF}
+.df-k-mail{--c:#B45309;--t:#FFF4DE}
+.df-k-program{--c:#334155;--t:#EEF2F6}
+.df-k-ai{--c:#7C3AED;--t:#F3ECFF}
+.df-k-store{--c:#15803D;--t:#E8F6EC}
+.df-k-files{--c:#0F766E;--t:#E3F5F2}
+.df-k-outside{--c:#BE123C;--t:#FDEBEF}
+.df-k-web{--c:#0E7490;--t:#E4F4F9}
+.df-k-output{--c:#4338CA;--t:#ECEEFF}
+.df-k-time{--c:#A16207;--t:#FBF3D5}
+.df-info{margin-top:10px;font-size:.95rem;color:var(--df-ink2);border-top:1px dashed var(--df-line);padding-top:10px}
+.df-info b{color:var(--df-ink)}
+.df-info[hidden]{display:none}
+.df-source{margin:10px 0 0;font-size:.85rem;color:var(--df-ink2)}
+.df-source span{font-weight:700}
+.df-keyfold{margin-top:12px;border-top:1px dashed var(--df-line);padding-top:10px}
+.df-keyfold summary{cursor:pointer;font-size:.95rem;color:var(--df-ink2);list-style:none;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid var(--df-line);border-radius:999px;background:var(--df-card)}
+.df-keyfold summary::-webkit-details-marker{display:none}
+.df-keyfold summary::before{content:'+';font-weight:700}
+.df-keyfold[open] summary::before{content:'−'}
+.df-hint{margin:10px 0 0;font-size:.95rem;color:var(--df-ink2)}
+.df-stepfold{margin-top:14px}
+.df-stepfold summary{cursor:pointer;font-size:.95rem;color:var(--df-ink2);list-style:none;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid var(--df-line);border-radius:999px;background:var(--df-card)}
+.df-stepfold summary::-webkit-details-marker{display:none}
+.df-stepfold summary::before{content:'+';font-weight:700}
+.df-stepfold[open] summary::before{content:'−'}
+/* the tag on the drawing already says what moves, so the step card does not repeat it */
+.df-cap .df-carry{display:none!important}
+/* the everything list: one line per send */
+.df .df-all-row{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;padding:6px 10px}
+.df .df-all-who{font-size:.95rem}
+.df .df-all-what{display:contents}
+.df .df-all-step{margin-left:auto}
+.df-allview .df-stepfold{display:none}
+/* progress dots: done, now, still to come */
+.df-dots{display:inline-flex;gap:5px;align-items:center;margin-right:4px}
+.df-dots i{width:8px;height:8px;border-radius:50%;background:var(--df-line);display:block}
+.df-dots i.done{background:color-mix(in srgb,var(--df-ink2) 55%,transparent)}
+.df-dots i.now{width:22px;border-radius:4px;background:var(--a,var(--df-ink))}
+/* the step list: finished steps get a tick and fade, steps to come stay plain */
+.df-steps button.done{opacity:.55}
+.df-steps button.done .df-num{font-size:0}
+.df-steps button.done .df-num::before{content:'✓';font-size:.95rem}
+.df-legend{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;align-items:center}
+.df-credit{margin:56px 0 0;text-align:right;font-size:.85rem;color:var(--df-ink2)}
+.df-allview :is(.df-cap,.df-nav,.df-item,.df-steps,.df-only-steps){display:none}
+.df:not(.df-allview) .df-only-all{display:none}
+.df-key .df-ln{width:34px;height:10px}
+.df-ln path{fill:none;stroke-width:3;stroke-linecap:round}
+.df-ln-now{stroke:#3B82F6;stroke-dasharray:7 5}
+.df-ln-past{stroke:#3B82F6;opacity:.4}
+.df-ln-all{stroke:#3B82F6}
+.df-ln-idle{stroke:#8A99AD;stroke-width:2}
+.df-ln .df-ln-out{fill:rgba(190,18,60,.12);stroke:rgba(190,18,60,.55);stroke-width:1.2}
+.df-outzone{fill:rgba(190,18,60,.06);stroke:rgba(190,18,60,.45);stroke-width:1.2}
+.df .df-svg text.df-outzone-l{paint-order:stroke;font-size:14px;font-weight:600;letter-spacing:.1em;fill:#E0607E}
+.df .df-svg text.df-out-l{font-size:13px;font-weight:700;letter-spacing:.01em;fill:#E0607E}
+/* a send picked in the everything view: the rest steps back */
+.df-pick .df-edge.on:not(.df-hot),.df-pick .df-packet:not(.df-hot){opacity:.14}
+.df-pick .df-node:not(.df-hot){opacity:.35}
+.df-pick .df-edge.df-hot{stroke-width:5}
+.df-all-row[aria-pressed="true"]{border-color:var(--a);box-shadow:inset 3px 0 0 var(--a),0 0 0 3px color-mix(in srgb,var(--a) 22%,transparent)}
+.df-all-row:hover{border-color:color-mix(in srgb,var(--a) 60%,var(--df-line))}
+.df-all-list{display:grid;gap:6px}
+.df-all-row{display:grid;gap:3px;padding:7px 10px;cursor:pointer;border:1px solid var(--df-line);border-left:3px solid var(--a);border-radius:8px;background:var(--df-card)}
+.df-all-who{font-weight:600;font-size:1rem}
+.df-all-who span{color:var(--df-ink2);font-weight:500;padding:0 6px}
+.df-all-what{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.95rem}
+.df-all-chip{display:inline-flex;align-items:center;gap:6px;padding:3px 9px;border-radius:6px;border:1.5px solid var(--a);font-weight:600}
+.df-all-chip svg{width:15px;height:15px;fill:none;stroke:var(--a);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.df-all-step{color:var(--df-ink2);font-size:.85rem}
+.df-credit a{color:var(--df-ink2);text-decoration:none;border-bottom:1px solid var(--df-line)}
+.df-credit a:hover{color:var(--df-ink);border-bottom-color:var(--df-ink)}
+.df-legend small{font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--df-ink2);margin-right:2px}
+.df-key{display:inline-flex;align-items:center;gap:6px;font-size:.88rem;border:1px solid var(--df-line);border-radius:3px;padding:3px 8px 3px 6px;background:var(--df-card);color:var(--df-ink)}
+.df-key svg{width:16px;height:16px;flex:none}
+.df-key.act{border-color:transparent;color:#fff}
+.df-seg{display:flex;flex-wrap:wrap;border:1px solid var(--df-line);border-radius:3px;overflow:hidden;background:var(--df-card);width:max-content;max-width:100%;margin-bottom:12px}
+.df-seg button{font:inherit;font-size:.95rem;border:0;border-right:1px solid var(--df-line);background:transparent;padding:8px 12px;cursor:pointer;color:var(--df-ink)}
+.df-seg button:last-child{border-right:0}
+.df-scen{display:flex;flex-wrap:wrap;align-items:flex-end;gap:2px 18px;margin:0 0 14px;border-bottom:1px solid var(--df-line)}
+.df-scen-l{width:100%;font-size:.8125rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--df-ink2)}
+.df-scen button{font:inherit;font-size:1rem;background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-1px;padding:6px 0 7px;cursor:pointer;color:var(--df-ink2)}
+.df-scen button:hover{color:var(--df-ink)}
+.df-scen button[aria-pressed="true"]{color:var(--df-ink);font-weight:650;border-bottom-color:var(--df-ink)}
+.df-viewrow{display:flex;align-items:center;gap:10px;margin-top:10px}
+.df-viewrow-l{font-size:.95rem;color:var(--df-ink2)}
+.df-viewrow .df-seg{margin:0}
+.df-viewrow .df-seg button{font-size:.875rem;padding:5px 10px}
+.df-seg button[aria-pressed="true"]{background:var(--df-ink);color:#fff}
+.df-cap{background:var(--df-card);border:1px solid var(--df-line);border-left:5px solid var(--df-ink);border-radius:4px;padding:12px 14px;min-height:112px}
+.df-caphead{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.df-count{color:var(--df-ink2);font-size:.85rem;text-transform:uppercase;letter-spacing:.05em}
+.df-act{display:inline-flex;align-items:center;gap:5px;color:#fff;font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:3px;padding:3px 8px 3px 6px}
+.df-act svg{width:15px;height:15px}
+.df-text{margin:6px 0 0;font-size:1.05rem}
+.df-nav{display:grid;grid-template-columns:auto auto auto 1fr;gap:8px;margin:0 0 12px}
+.df-nav button{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px;font-weight:600;white-space:nowrap}
+@media (max-width:480px){.df-nav{grid-template-columns:1fr 1fr}}
+.df-nav button svg{width:17px;height:17px;flex:none;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.df-nav button:disabled{opacity:.35}
+.df-motion{margin-top:14px;display:inline-flex;align-items:center;gap:10px;font:inherit;font-size:.95rem;color:var(--df-ink2);background:none;border:0;padding:4px 0;cursor:pointer}
+.df-motion b{color:var(--df-ink)}
+.df-switch{width:36px;height:20px;border-radius:999px;background:var(--df-line);position:relative;flex:none;transition:background .15s}
+.df-switch::after{content:'';position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.3);transition:left .15s}
+.df-motion[aria-checked="true"] .df-switch{background:var(--df-ink)}
+.df-motion[aria-checked="true"] .df-switch::after{left:18px}
+.df-motion[hidden]{display:none}
+.df-nav button{font:inherit;font-size:.95rem;border:1px solid var(--df-line);background:var(--df-card);border-radius:3px;padding:7px 11px;cursor:pointer;color:var(--df-ink)}
+.df-nav button:disabled{opacity:.4;cursor:default}
+.df-nav .df-next{background:var(--df-ink);border-color:var(--df-ink);color:#fff}
+.df-play{display:inline-flex;align-items:center;gap:6px}
+.df-play svg{width:16px;height:16px}
+.df-time{display:inline-flex;align-items:center;gap:5px;color:var(--df-ink2);font-size:.85rem}
+.df-time[hidden]{display:none}
+.df-time svg{width:15px;height:15px}
+.df-leaves,.df-ifnot{display:flex;align-items:flex-start;gap:7px;margin:8px 0 0;font-size:.95rem;border-radius:3px;padding:6px 9px}
+.df-leaves[hidden],.df-ifnot[hidden]{display:none}
+.df-leaves{background:#FDECEC;color:#9B1C1C;font-weight:600}
+.df-ifnot{background:#FFF6E0;color:#7A4B00}
+.df-leaves svg,.df-ifnot svg{width:17px;height:17px;flex:none;margin-top:2px}
+.df-item{margin-top:14px}
+.df-item-h{font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--df-ink2);margin:0 0 6px;font-weight:600}
+.df-item-card{background:var(--df-card);border:1px solid var(--df-line);border-top:4px solid var(--df-line);border-radius:4px;font-size:.95rem}
+.df-item-card.empty{padding:12px 14px;color:var(--df-ink2)}
+.df-item-title{display:flex;align-items:center;gap:8px;padding:10px 14px;font-weight:600;border-bottom:1px solid var(--df-line);background:var(--df-head)}
+.df-item-title svg{width:18px;height:18px;flex:none}
+.df-item-fields{display:grid;grid-template-columns:minmax(80px,auto) minmax(0,1fr);gap:4px 14px;padding:10px 14px;margin:0}
+.df-item-fields dt{color:var(--df-ink2);font-size:.88rem}
+.df-item-fields dd{margin:0;overflow-wrap:anywhere}
+.df-item-body{margin:0;padding:10px 14px;white-space:pre-wrap;overflow-wrap:anywhere;font-family:inherit;border-top:1px solid var(--df-line)}
+.df-item-fields + .df-item-body{border-top:1px dashed var(--df-line)}
+.df-item-title + .df-item-body{border-top:0}
+.df-edge.trail{stroke-width:2.6;opacity:.4}
+.df-node.seen{opacity:.72}
+.df-steps{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:3px}
+.df-steps button{font:inherit;font-size:.95rem;text-align:left;width:100%;border:1px solid transparent;background:transparent;border-radius:3px;padding:5px 8px;cursor:pointer;color:var(--df-ink2);display:grid;grid-template-columns:26px 18px minmax(0,1fr);gap:8px;align-items:start}
+.df-steps button[aria-current="step"]{background:var(--df-head);border-color:var(--df-line);color:var(--df-ink);font-weight:600}
+.df-chip{width:26px;height:26px;border-radius:3px;display:grid;place-items:center;color:#fff}
+.df-chip svg{width:15px;height:15px}
+.df-num{color:var(--df-ink2);font-variant-numeric:tabular-nums}
+@media (max-width:860px){.df-grid{grid-template-columns:minmax(0,1fr)}.df-grid>div:first-child{position:static}.df-svg{max-height:none}}
+
+/* ---- look: soft gradients, see-through panels, faint texture; light and dark ---- */
+.df{
+  --df-ink:#121726;--df-ink2:#4b5468;--df-line:rgba(18,24,48,.15);--df-head:rgba(18,24,48,.045);
+  --df-card:rgba(255,255,255,.93);--df-solid:#ffffff;--df-node:#ffffff;--df-edge:rgba(18,24,48,.26);
+  --df-glow:0 1px 0 rgba(255,255,255,1) inset,0 1px 3px rgba(18,24,48,.08),0 24px 50px -24px rgba(40,48,110,.42);
+  --df-leaves-bg:#fdecee;--df-leaves-ink:#9f1239;--df-ifnot-bg:#fff6e0;--df-ifnot-ink:#7a4b00;
+  --df-dots:rgba(18,24,48,.07);--df-node-tint:13%;--df-node-on:20%;
+  --df-node-shadow:drop-shadow(0 1px 1px rgba(18,24,48,.06)) drop-shadow(0 8px 14px color-mix(in srgb,var(--c) 16%,transparent));
+  font-family:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+.df [class^="df-k-"],.df [class*=" df-k-"]{--cs:var(--c)}
+@media (prefers-color-scheme:dark){html:not([data-df-theme="light"]) .df{
+  --df-ink:#e9ebf3;--df-ink2:#9ca3b8;--df-line:rgba(255,255,255,.09);--df-head:rgba(255,255,255,.045);
+  --df-card:rgba(23,25,41,.58);--df-solid:#161828;--df-node:#14162a;--df-edge:rgba(255,255,255,.18);
+  --df-glow:0 1px 0 rgba(255,255,255,.06) inset,0 24px 60px -30px rgba(0,0,0,.75);
+  --df-leaves-bg:rgba(239,68,68,.13);--df-leaves-ink:#fca5a5;--df-ifnot-bg:rgba(245,158,11,.12);--df-ifnot-ink:#fcd34d;
+  --df-dots:rgba(255,255,255,.035);--df-node-tint:10%;--df-node-on:18%;--df-node-shadow:none;
+}
+html:not([data-df-theme="light"]) .df [class^="df-k-"],html:not([data-df-theme="light"]) .df [class*=" df-k-"]{--cs:color-mix(in srgb,var(--c) 58%,white)}}
+html[data-df-theme="dark"] .df{
+  --df-ink:#e9ebf3;--df-ink2:#9ca3b8;--df-line:rgba(255,255,255,.09);--df-head:rgba(255,255,255,.045);
+  --df-card:rgba(23,25,41,.58);--df-solid:#161828;--df-node:#14162a;--df-edge:rgba(255,255,255,.18);
+  --df-glow:0 1px 0 rgba(255,255,255,.06) inset,0 24px 60px -30px rgba(0,0,0,.75);
+  --df-leaves-bg:rgba(239,68,68,.13);--df-leaves-ink:#fca5a5;--df-ifnot-bg:rgba(245,158,11,.12);--df-ifnot-ink:#fcd34d;
+  --df-dots:rgba(255,255,255,.035);--df-node-tint:10%;--df-node-on:18%;--df-node-shadow:none;
+}
+html[data-df-theme="dark"] .df [class^="df-k-"],html[data-df-theme="dark"] .df [class*=" df-k-"]{--cs:color-mix(in srgb,var(--c) 58%,white)}
+.df :is(.df-svg,.df-cap,.df-item-card,.df-seg,.df-key,.df-nav button){
+  background:var(--df-card);-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);
+  border-color:var(--df-line);box-shadow:var(--df-glow)}
+.df .df-svg{border-radius:10px;background:radial-gradient(var(--df-dots) 1px,transparent 1.4px) 0 0/18px 18px,linear-gradient(180deg,color-mix(in srgb,var(--df-solid) 18%,transparent),transparent 40%),var(--df-card)}
+.df :is(.df-cap,.df-item-card){border-radius:10px}
+.df :is(.df-seg,.df-key,.df-nav button,.df-carry){border-radius:8px}
+.df .df-node rect{fill:color-mix(in srgb,var(--c) var(--df-node-tint),var(--df-node));stroke:var(--cs);filter:var(--df-node-shadow)}
+.df .df-node .df-ico{stroke:var(--cs)}
+.df .df-node.on rect{fill:color-mix(in srgb,var(--c) var(--df-node-on),var(--df-node));filter:drop-shadow(0 6px 14px color-mix(in srgb,var(--c) 35%,transparent))}
+.df .df-edge{stroke:var(--df-edge)}
+.df .df-zone{stroke:var(--df-ink2);opacity:.55}
+.df .df-packet rect,.df .df-dot rect{fill:var(--df-solid)}
+/* an icon's own rectangles are outlines: the box and tag fills must not cover the icon's lines (mail, table-2) */
+.df .df-node .df-ico rect,.df .df-node.on .df-ico rect,.df .df-packet .df-pico rect{fill:none!important;filter:none!important;stroke:inherit!important;stroke-width:inherit!important}
+.df .df-carry{background:var(--df-solid)}
+.df .df-key svg{color:var(--cs,currentColor)}
+.df .df-key.act{box-shadow:none;border-color:transparent}
+.df .df-leaves{background:var(--df-leaves-bg);color:var(--df-leaves-ink)}
+.df .df-ifnot{background:var(--df-ifnot-bg);color:var(--df-ifnot-ink)}
+.df .df-seg button[aria-pressed="true"],.df .df-nav .df-next{background:var(--df-ink);color:var(--df-solid);border-color:var(--df-ink)}
+.df .df-steps button[aria-current="step"]{background:var(--df-card);border-color:var(--df-line);box-shadow:var(--df-glow)}
+.df{--a-ink-mix:black;--a-ink-amt:22%}
+@media (prefers-color-scheme:dark){html:not([data-df-theme="light"]) .df{--a-ink-mix:white;--a-ink-amt:45%}}
+html[data-df-theme="dark"] .df{--a-ink-mix:white;--a-ink-amt:45%}
+.df :is(.df-act,.df-chip,.df-key.act){background:color-mix(in srgb,var(--a) 14%,transparent)!important;color:color-mix(in srgb,var(--a),var(--a-ink-mix) var(--a-ink-amt))!important;border:1px solid color-mix(in srgb,var(--a) 30%,transparent)!important;box-shadow:none}
+.df .df-chip{border-radius:7px}
+.df .df-act{border-radius:999px;padding:2px 9px 2px 7px}
+.df .df-cap{border:1.5px solid color-mix(in srgb,var(--a) 62%,var(--df-line));background:linear-gradient(180deg,color-mix(in srgb,var(--a) 13%,transparent),color-mix(in srgb,var(--a) 4%,transparent)),var(--df-card);box-shadow:inset 4px 0 0 var(--a),0 0 0 4px color-mix(in srgb,var(--a) 10%,transparent),0 14px 36px -18px color-mix(in srgb,var(--a) 75%,transparent)}
+.df .df-cap .df-text{font-size:1.2rem;font-weight:600;line-height:1.35}
+.df .df-cap.df-pulse{animation:df-cap-pulse .7s ease-out}
+@keyframes df-cap-pulse{0%{box-shadow:inset 4px 0 0 var(--a),0 0 0 0 color-mix(in srgb,var(--a) 55%,transparent),0 14px 36px -18px color-mix(in srgb,var(--a) 75%,transparent)}100%{box-shadow:inset 4px 0 0 var(--a),0 0 0 4px color-mix(in srgb,var(--a) 10%,transparent),0 14px 36px -18px color-mix(in srgb,var(--a) 75%,transparent)}}
+@media (prefers-reduced-motion:reduce){.df .df-cap.df-pulse{animation:none}}
+.df .df-steps button[aria-current="step"]{border-color:color-mix(in srgb,var(--a) 55%,var(--df-line));background:linear-gradient(90deg,color-mix(in srgb,var(--a) 14%,transparent),transparent 70%),var(--df-card);box-shadow:inset 3px 0 0 var(--a)}
+.df .df-item-card{border-top:1px solid var(--df-line);box-shadow:inset 0 2px 0 color-mix(in srgb,var(--a) 70%,transparent),var(--df-glow)}
+.df .df-item-h,.df .df-legend small,.df .df-count{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,monospace;letter-spacing:.08em}
+
+.df-printsteps,.df-printcredit{display:none}
+@page df-wide{size:landscape;margin:10mm}
+@page df-tall{size:portrait;margin:10mm}
+@media print{
+.df,.df *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.df .df-grid{display:block}
+.df .df-grid>div:first-child{position:static}
+.df .df-grid>div:nth-child(2),.df .df-keyfold,.df .df-info{display:none!important}
+.df .df-scroll{overflow:visible}
+.df .df-svg{width:100%;height:var(--df-print-h);border:0;min-width:0}
+.df.df-wide .df-printsteps{columns:3}
+.df .df-printsteps{display:block;columns:2;column-gap:22px;font-size:8.5pt;line-height:1.3;margin-top:8px}
+.df .df-printsteps>div{break-inside:avoid}
+.df .df-printsteps h4{margin:0 0 2px;font-size:9pt}
+.df .df-printsteps ol{margin:0 0 6px;padding-left:18px}.df-printsteps ol.df-lettered{list-style:none;padding-left:0}
+.df .df-source{font-size:8pt;margin-top:6px}
+.df-credit{display:none}
+.df .df-printcredit{display:block;margin:4px 0 0;text-align:right;font-size:7pt;color:var(--df-ink2)}
+main:has(> .df.df-wide){page:df-wide}
+main:has(> .df.df-tall){page:df-tall}
+}
+</style>
+<div class="df df-wide" id="d1" style="--df-print-h:3.65in">
+  <div class="df-grid" style="--df-w:1315.6px">
+    <div>
+      <div class="df-scroll"><svg class="df-svg" viewBox="0 0 1012 704" role="img" aria-label="How the Zavient AI-work site turns data into leads">
+        <defs><marker id="d1-m-read" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="context-stroke"/></marker><marker id="d1-m-send" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="context-stroke"/></marker><marker id="d1-m-save" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="context-stroke"/></marker><marker id="d1-m-write" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="context-stroke"/></marker><marker id="d1-m-search" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="context-stroke"/></marker><marker id="d1-m-reply" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="context-stroke"/></marker><marker id="d1-m-check" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="context-stroke"/></marker></defs>
+        
+        <rect class="df-outzone" x="17" y="587" width="978" height="100" rx="8"/>
+        <g class="df-edges"><path class="df-edge" data-edge="e0" d="M187.8 110 L187.8 130.7 Q187.8 136.7 193.8 136.7 L222.5 136.7 Q228.5 136.7 228.5 142.7 L228.5 214"/><path class="df-edge" data-edge="e1" d="M269.2 110 L269.2 156 Q269.2 162 275.2 162 L736.8 162 Q742.8 162 742.8 168 L742.8 214"/><path class="df-edge" data-edge="e2" d="M783.5 110 L783.5 181.3 Q783.5 187.3 789.5 187.3 L818.2 187.3 Q824.2 187.3 824.2 193.3 L824.2 214"/><path class="df-edge" data-edge="e3" d="M350.5 257 L661.5 257" data-tag="506,192"/><path class="df-edge" data-edge="e4" d="M228.5 300 L228.5 404"/><path class="df-edge" data-edge="e5" d="M783.5 300 L783.5 404"/><path class="df-edge" data-edge="e6" d="M350.5 447 L661.5 447" data-tag="506,382"/><path class="df-edge" data-edge="e7" d="M167.5 490 L167.5 507.5 Q167.5 513.5 161.5 513.5 L134 513.5 Q128 513.5 128 519.5 L128 594"/><path class="df-edge" data-edge="e8" d="M289.5 490 L289.5 526.5 Q289.5 532.5 295.5 532.5 L878 532.5 Q884 532.5 884 538.5 L884 594"/><path class="df-edge" data-edge="e9" d="M783.5 490 L783.5 545.5 Q783.5 551.5 777.5 551.5 L546.7 551.5 Q540.7 551.5 540.7 557.5 L540.7 594"/><path class="df-edge" data-edge="e10" d="M228.5 490 L228.5 564.5 Q228.5 570.5 234.5 570.5 L465.3 570.5 Q471.3 570.5 471.3 576.5 L471.3 594"/></g>
+        <g class="df-node df-k-person" style="--c:#1D4ED8;--t:#EEF3FF" data-node="buyer" tabindex="0" role="button" aria-label="Company buyer"><rect x="106.5" y="24" width="244" height="86" rx="4"/><g class="df-ico" transform="translate(217.5 34) scale(.9167)"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></g><text class="df-t" x="228.5" y="77" text-anchor="middle">Company buyer</text><text class="df-s" x="228.5" y="96" text-anchor="middle">e.g. a claims VP at an insurer</text></g><g class="df-node df-k-person" style="--c:#B45309;--t:#FFF4DE" data-node="russell" tabindex="0" role="button" aria-label="Russell"><rect x="661.5" y="24" width="244" height="86" rx="4"/><g class="df-ico" transform="translate(772.5 34) scale(.9167)"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></g><text class="df-t" x="783.5" y="77" text-anchor="middle">Russell</text><text class="df-s" x="783.5" y="96" text-anchor="middle">Zavient consulting</text></g><g class="df-node df-k-program" style="--c:#334155;--t:#EEF2F6" data-node="site" tabindex="0" role="button" aria-label="zavient.com pages"><rect x="106.5" y="214" width="244" height="86" rx="4"/><g class="df-ico" transform="translate(217.5 224) scale(.9167)"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></g><text class="df-t" x="228.5" y="267" text-anchor="middle">zavient.com pages</text><text class="df-s" x="228.5" y="286" text-anchor="middle">AI jobs, industries, models</text></g><g class="df-node df-k-output" style="--c:#4338CA;--t:#ECEEFF" data-node="offer" tabindex="0" role="button" aria-label="Benchmark offer"><rect x="661.5" y="214" width="244" height="86" rx="4"/><g class="df-ico" transform="translate(772.5 224) scale(.9167)"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></g><text class="df-t" x="783.5" y="267" text-anchor="middle">Benchmark offer</text><text class="df-s" x="783.5" y="286" text-anchor="middle">custom benchmark + consulting</text></g><g class="df-node df-k-store" style="--c:#15803D;--t:#E8F6EC" data-node="db" tabindex="0" role="button" aria-label="AI-work database"><rect x="106.5" y="404" width="244" height="86" rx="4"/><g class="df-ico" transform="translate(217.5 414) scale(.9167)"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></g><text class="df-t" x="228.5" y="457" text-anchor="middle">AI-work database</text><text class="df-s" x="228.5" y="476" text-anchor="middle">jobs x industries x models</text></g><g class="df-node df-k-program" style="--c:#7C3AED;--t:#F3ECFF" data-node="runner" tabindex="0" role="button" aria-label="Benchmark runner"><rect x="661.5" y="404" width="244" height="86" rx="4"/><g class="df-ico" transform="translate(772.5 414) scale(.9167)"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></g><text class="df-t" x="783.5" y="457" text-anchor="middle">Benchmark runner</text><text class="df-s" x="783.5" y="476" text-anchor="middle">our own tests, via Runner</text></g><g class="df-node df-k-web" style="--c:#0E7490;--t:#E4F4F9" data-node="public" tabindex="0" role="button" aria-label="Public benchmarks"><rect x="24" y="594" width="208" height="86" rx="4"/><g class="df-ico" transform="translate(117 604) scale(.9167)"><path d="M12 5v16"/><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/></g><text class="df-t3" x="128" y="647" text-anchor="middle">Public benchmarks</text><text class="df-out-l" x="30" y="611">OUTSIDE</text><text class="df-s3" x="128" y="666" text-anchor="middle">LegalBench, tau-bench, ...</text></g><g class="df-node df-k-web" style="--c:#1D4ED8;--t:#EEF3FF" data-node="openrouter" tabindex="0" role="button" aria-label="OpenRouter"><rect x="402" y="594" width="208" height="86" rx="4"/><g class="df-ico" transform="translate(495 604) scale(.9167)"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></g><text class="df-t3" x="506" y="647" text-anchor="middle">OpenRouter</text><text class="df-out-l" x="408" y="611">OUTSIDE</text><text class="df-s3" x="506" y="666" text-anchor="middle">600+ models, prices, runs</text></g><g class="df-node df-k-web" style="--c:#B45309;--t:#FFF4DE" data-node="news" tabindex="0" role="button" aria-label="News feeds"><rect x="780" y="594" width="208" height="86" rx="4"/><g class="df-ico" transform="translate(873 604) scale(.9167)"><path d="M15 18h-5"/><path d="M18 14h-8"/><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2"/><rect width="8" height="4" x="10" y="6" rx="1"/></g><text class="df-t3" x="884" y="647" text-anchor="middle">News feeds</text><text class="df-out-l" x="786" y="611">OUTSIDE</text><text class="df-s3" x="884" y="666" text-anchor="middle">new models, AI rollouts</text></g>
+        <g class="df-packets"></g>
+      </svg></div>
+      <p class="df-info" aria-live="polite" hidden></p>
+      <div class="df-printsteps"><div><h4>A · Fill the database</h4><ol class="df-lettered"><li><b>A1</b> Pull public scores and map each to a job.</li><li><b>A2</b> Pull every model with its price and hosts.</li><li><b>A3</b> Catch news: a new model or a company AI rollout.</li><li><b>A4</b> Run our own benchmark: 30 finance questions to 20 models.</li><li><b>A5</b> Save scores: right answers and cost per correct answer.</li><li><b>A6</b> Build the pages from the database.</li></ol></div><div><h4>B · A visitor becomes a lead</h4><ol class="df-lettered"><li><b>B1</b> A buyer searches Google for 'insurance underwriting ai' and lands on our page.</li><li><b>B2</b> The page shows best models for the job, cost per task, tools and our benchmark.</li><li><b>B3</b> The buyer fills in the offer form at the end of the page.</li><li><b>B4</b> The lead lands with Russell, with what the buyer read.</li><li><b>B5</b> Paid benchmark: the buyer's sample documents go to the runner.</li><li><b>B6</b> The runner tests 20 models on the buyer's documents.</li><li><b>B7</b> The report shows which model wins and what it costs.</li></ol></div><div><h4>C · A practitioner adds a report</h4><ol class="df-lettered"><li><b>C1</b> A practitioner reports what worked for them.</li><li><b>C2</b> Check it, then add it to the job's page as a practitioner report.</li></ol></div></div>
+      <p class="df-source"><span>Source:</span> Proposed design, 25 Nov 2026, from the site plan in reports/AI model comparison site plan.md. Sources named are real; sample items are invented and labelled.</p>
+      <p class="df-printcredit">Made with Dataflowgram by Russell Miller · russellmiller.io · Free for personal use · Companies: rmiller@zavient.com</p>
+      <details class="df-keyfold"><summary>Key: what the colours, icons and lines mean</summary>
+      <p class="df-hint">Tap any box to see what it is.</p>
+      <div class="df-legend"><small>Parts</small><span class="df-key df-kind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>A person</span></span><span class="df-key df-kind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v2"/><path d="M12 2v2"/><path d="M17 20v2"/><path d="M17 2v2"/><path d="M2 12h2"/><path d="M2 17h2"/><path d="M2 7h2"/><path d="M20 12h2"/><path d="M20 17h2"/><path d="M20 7h2"/><path d="M7 20v2"/><path d="M7 2v2"/><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg><span>Our program</span></span><span class="df-key df-kind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg><span>What a person receives</span></span><span class="df-key df-kind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18"/><path d="M9 3v18"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg><span>Stored rows</span></span><span class="df-key df-kind"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg><span>The public web</span></span></div>
+      <div class="df-legend"><small>Steps</small><span class="df-key act" style="--a:#0E7490"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v16"/><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/></svg>Read</span><span class="df-key act" style="--a:#2563EB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>Send</span><span class="df-key act" style="--a:#0F766E"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/><path d="M7 3v4a1 1 0 0 0 1 1h7"/></svg>Save</span><span class="df-key act" style="--a:#15803D"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 21h8"/><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/></svg>Write</span><span class="df-key act" style="--a:#0369A1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>Search</span><span class="df-key act" style="--a:#C2410C"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 18v-2a4 4 0 0 0-4-4H4"/><path d="m9 17-5-5 5-5"/></svg>Reply</span><span class="df-key act" style="--a:#475569"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>Check</span></div>
+      <div class="df-legend df-linekey"><small>Lines</small><span class="df-key df-only-steps"><svg viewBox="0 0 34 10" class="df-ln"><path d="M1 5H33" class="df-ln-all"/></svg>Bold: data goes along this line in this step</span><span class="df-key df-only-steps"><svg viewBox="0 0 34 10" class="df-ln"><path d="M1 5H33" class="df-ln-past"/></svg>Faint: used in an earlier step</span><span class="df-key df-only-all"><svg viewBox="0 0 34 10" class="df-ln"><path d="M1 5H33" class="df-ln-all"/></svg>Coloured: carries data, in the sender's colour</span><span class="df-key"><svg viewBox="0 0 34 10" class="df-ln"><path d="M1 5H33" class="df-ln-idle"/></svg>Grey: joined, no data in this view</span><span class="df-key"><svg viewBox="0 0 34 14" class="df-ln"><rect x="1" y="1" width="32" height="12" rx="3" class="df-ln-out"/></svg>Red: outside your system; data sent there leaves you</span></div>
+      </details>
+    </div>
+    <div>
+      <div class="df-scen" role="group" aria-label="Walkthrough"><span class="df-scen-l">Walkthrough</span><button type="button" data-s="fill" aria-pressed="true">A · Fill the database</button><button type="button" data-s="lead" aria-pressed="false">B · A visitor becomes a lead</button><button type="button" data-s="ugc" aria-pressed="false">C · A practitioner adds a report</button></div>
+      <div class="df-nav"><button type="button" class="df-restart" title="Back to step 1 (Home key)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg><span>Start over</span></button><button type="button" class="df-back" title="Previous step (left arrow key)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg><span>Back</span></button><button type="button" class="df-play" aria-pressed="false" title="Run the steps by themselves"></button><button type="button" class="df-next" title="Next step (right arrow key)"><span>Next step</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></div>
+      <div class="df-cap" aria-live="polite"><div class="df-caphead"><span class="df-count"></span><span class="df-dots" aria-hidden="true"></span><span class="df-act"></span><span class="df-time" hidden></span></div><p class="df-text"></p><p class="df-carry" hidden></p><p class="df-leaves" hidden></p><p class="df-ifnot" hidden></p></div>
+      <section class="df-item" aria-live="polite"><h4 class="df-item-h">What moves in this step</h4><div class="df-item-card"></div></section>
+      <details class="df-stepfold"><summary class="df-stepfold-s">All steps</summary><ol class="df-steps"></ol></details>
+      <button type="button" class="df-motion" role="switch" aria-checked="false" title="Make the tags travel along their lines"><span class="df-switch" aria-hidden="true"></span><span>Moving tags: <b class="df-motion-state">off</b></span></button>
+      <div class="df-viewrow"><span class="df-viewrow-l">View</span><div class="df-seg df-view" role="group" aria-label="View"><button type="button" data-view="steps" aria-pressed="true">Step by step</button><button type="button" data-view="all" aria-pressed="false">Everything at once</button></div></div>
+      <section class="df-all" hidden><h4 class="df-item-h">Everything sent, line by line</h4><div class="df-all-list"></div></section>
+    </div>
+  </div>
+  <p class="df-credit">Made with <a href="https://github.com/russellmiller3/dataflowgram" target="_blank" rel="noopener">Dataflowgram</a> by <a href="https://russellmiller.io" target="_blank" rel="noopener">Russell Miller</a> · <a href="https://russellmiller.io" target="_blank" rel="noopener">russellmiller.io</a> · <a href="https://www.linkedin.com/in/russellmiller" target="_blank" rel="noopener">LinkedIn</a> · Free for personal use · Companies: <a href="mailto:rmiller@zavient.com?subject=Dataflowgram%20licence">rmiller@zavient.com</a></p>
+</div>
+<script>
+(function(){
+// The part of a data-flow diagram that runs in the reader's browser.
+// The builder copies this file into each page it makes. The tests import it directly.
+
+// What the diagram shows at one step. No page needed: this is plain data in, plain data out.
+function stepView(data, scenarioId, index) {
+  const scn = data.scenarios.find((s) => s.id === scenarioId);
+  if (!scn) throw new Error('unknown scenario: ' + scenarioId);
+  const i = Math.max(0, Math.min(index, scn.steps.length - 1));
+  const st = scn.steps[i];
+  const edges = {};
+  st.edges.forEach((pair) => { edges[pair[0]] = pair[1]; });
+  // the trail: lines and parts used by earlier steps, each line in the colour of its latest action
+  const trail = {};
+  const trailFocus = {}; // edge id -> the focus part of the latest earlier step that used it
+  const seen = [];
+  scn.steps.slice(0, i).forEach((prev) => {
+    prev.edges.forEach((pair) => { if (!(pair[0] in edges)) { trail[pair[0]] = prev.action; trailFocus[pair[0]] = prev.focus; } });
+    prev.nodes.forEach((n) => { if (st.nodes.indexOf(n) < 0 && seen.indexOf(n) < 0) seen.push(n); });
+  });
+  return {
+    scenario: scn.id,
+    index: i,
+    count: scn.steps.length,
+    action: st.action,
+    text: st.text,
+    edges, // edge id -> 'f' (along the line), 'b' (against it) or 'x' (both ways)
+    nodes: st.nodes.slice(),
+    focus: st.focus, // the part that sends the data: its colour is the step's colour
+    trailFocus,
+    trail, // edge id -> the action of the latest earlier step that used it
+    seen, // parts used by earlier steps and not by this one
+    carry: st.carry || null, // what travels on the line: { label, icon }
+    item: st.item || null, // a sample of the real item: { title, icon, fields, body }
+    leaves: (st.leaves || []).slice(), // parts outside the owner's system that receive data
+    time: st.time || '',
+    ifNot: st.ifNot || '',
+    first: i === 0,
+    last: i === scn.steps.length - 1,
+  };
+}
+
+// The first sentence of a step, for the step list.
+function shortText(text) {
+  const m = /^(.*?[.?!])(\s|$)/.exec(text);
+  return (m ? m[1] : text).replace(/\.$/, '');
+}
+
+// How visible a travelling tag is at time t (0 to 1) in its loop. A one-way tag fades in as it
+// leaves and fades out as it arrives, so it never jumps back to the start. A tag that goes there
+// and back, or one that does not move, stays fully visible.
+function tagOpacity(t, dir, stationary) {
+  if (stationary || dir === 'x') return 1;
+  const EDGE = 0.18;
+  return Math.max(0, Math.min(1, t / EDGE, (1 - t) / EDGE));
+}
+
+// Everything a scenario sends, grouped by line: for the view that shows all of it at once, with no movement.
+// Each line lists its sends in step order; the same thing sent the same way twice is listed once, with both steps.
+function overview(data, scenarioId) {
+  const scn = data.scenarios.find((s) => s.id === scenarioId);
+  if (!scn) throw new Error('unknown scenario: ' + scenarioId);
+  const wires = [];
+  const byEdge = {};
+  scn.steps.forEach((st, k) => {
+    (st.flows || []).forEach((f) => {
+      let wire = byEdge[f.edge];
+      if (!wire) { wire = byEdge[f.edge] = { edge: f.edge, sends: [] }; wires.push(wire); }
+      const label = st.carry ? st.carry.label : '';
+      const key = f.from + '>' + f.to + '|' + f.dir + '|' + label;
+      let send = wire.sends.find((s) => s.key === key);
+      if (!send) {
+        send = { key, from: f.from, to: f.to, dir: f.dir, label, icon: st.carry ? st.carry.icon : '', text: st.text, steps: [] };
+        wire.sends.push(send);
+      }
+      send.steps.push(k + 1);
+    });
+  });
+  return wires;
+}
+
+// A line that carries data both ways is drawn as separate lanes, one per direction, so the reader sees
+// which way each thing goes. Returns the lanes for one line: its direction ('f' along the line, 'b'
+// against it, 'x' both ways in one step), its sends, and its distance from the middle of the line.
+// Whether the picture moves. Movement is off unless the reader switches it on, and it stays off for a
+// reader whose computer asks for reduced motion. (18 November 2026: "the animation is distracting to my
+// ADHD brain. Make that optional, and by default just have the label there with clear arrows.")
+function moves(readerSwitchedOn, computerAsksForLess) {
+  return !!readerSwitchedOn && !computerAsksForLess;
+}
+
+// The words on a still tag, with an arrow that points the way the data goes on the page.
+// dir is 'f' (along the line), 'b' (against it) or 'x' (both ways); dx and dy run from the line's start to its end.
+function arrowLabel(label, dir, dx, dy) {
+  const flat = Math.abs(dx) > Math.abs(dy);
+  if (dir === 'x') return label + (flat ? ' \u2194' : ' \u2195');
+  const sign = (flat ? dx : dy) * (dir === 'b' ? -1 : 1);
+  if (flat) return sign >= 0 ? label + ' \u2192' : '\u2190 ' + label;
+  return label + (sign >= 0 ? ' \u2193' : ' \u2191');
+}
+
+// The name a reader uses for a step. With 2 or more processes in one diagram, each process gets a letter in the
+// order they are listed: A1, A2 ... then B1, B2. With 1 process the steps stay 1, 2, 3.
+function stepName(scenarios, id, n) {
+  if (!Array.isArray(scenarios) || scenarios.length < 2) return String(n);
+  const k = scenarios.findIndex((s) => s && s.id === id);
+  return (k >= 0 ? String.fromCharCode(65 + k) : '') + n;
+}
+
+// The words on a tag's number badge: the step, or the steps, that send this item.
+function stepBadge(steps, name = String) {
+  const list = (steps || []).filter((n) => Number.isFinite(n)).map((n) => name(n));
+  if (list.length === 0) return '';
+  if (list.length <= 2) return list.join(', ');
+  return list.slice(0, 2).join(', ') + ' +' + (list.length - 2);
+}
+
+function lanesOf(sends) {
+  const dirs = ['f', 'x', 'b'].filter((d) => sends.some((s) => s.dir === d));
+  const GAP = 34;
+  return dirs.map((d, k) => ({ dir: d, sends: sends.filter((s) => s.dir === d), offset: (k - (dirs.length - 1) / 2) * GAP }));
+}
+
+// Picks a place for a still tag so that it covers no tag placed before it. 'spots' are the candidate
+// centres in order of preference; 'placed' holds the boxes already taken. Returns the first free spot,
+// or the first spot when none is free.
+function freeSpot(spots, width, height, placed) {
+  const PAD = 4;
+  const hits = (s) => placed.some((b) => Math.abs(s.x - b.x) < (width + b.w) / 2 + PAD && Math.abs(s.y - b.y) < (height + b.h) / 2 + PAD);
+  const pick = spots.find((s) => !hits(s)) || spots[0];
+  placed.push({ x: pick.x, y: pick.y, w: width, h: height });
+  return pick;
+}
+
+// Where the travelling dot sits on its line, 0 (start) to 1 (end), at time t (0 to 1).
+// Forward lines run start to end, reply lines end to start, two-way lines go out and come back.
+function dotPosition(t, dir) {
+  if (dir === 'b') return 1 - t;
+  if (dir === 'x') return t < 0.5 ? t * 2 : 2 - t * 2;
+  return t;
+}
+
+// The dot fades in at the start of each trip and out at the end, so it never pops.
+// A tag exists to show data moving, so it rides its line. It stands still beside the line only
+// when the line is far shorter than the tag (3 boxes in one row with a long tag).
+function tagRides(lineLength, tagWidth) {
+  return lineLength >= tagWidth * 0.6;
+}
+
+// The width of a tag, from its words, when the page cannot measure the text.
+function tagWidth(label) {
+  return label.length * 7.7 + 34;
+}
+
+function dotOpacity(t, dir) {
+  if (dir === 'x') return 1;
+  const EDGE = 0.15;
+  return Math.max(0, Math.min(1, t / EDGE, (1 - t) / EDGE));
+}
+
+// Reads a link to one step: "#<diagram id>=<scenario id>.<step number>".
+function readLink(hash, prefix, data) {
+  const m = new RegExp('[#&]' + prefix + '=([a-z][a-z0-9-]*)\\.(\\d+)').exec(hash || '');
+  if (!m) return null;
+  const scn = data.scenarios.find((s) => s.id === m[1]);
+  if (!scn) return null;
+  return { scenario: scn.id, index: Math.max(0, Math.min(Number(m[2]) - 1, scn.steps.length - 1)) };
+}
+
+// Wires one diagram on the page. root is the element the builder wrote.
+function mount(root, data, prefix) {
+  const q = (s) => root.querySelector(s);
+  const qa = (s) => [].slice.call(root.querySelectorAll(s));
+  let cur = data.scenarios[0].id;
+  let i = 0;
+  const link = readLink(window.location.hash, prefix, data);
+  if (link) { cur = link.scenario; i = link.index; }
+  const list = q('.df-steps');
+  const back = q('.df-back');
+  const restart = q('.df-restart');
+  const next = q('.df-next');
+  const play = q('.df-play');
+  const info = q('.df-info');
+  const card = q('.df-item-card');
+  const edgeLayer = q('.df-edges');
+  const packetLayer = q('.df-packets');
+  const svg = q('.df-svg');
+  const NS = 'http://www.w3.org/2000/svg';
+  const asksForLess = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  let motionOn = false; // the reader's choice; kept for the next visit where the browser allows it
+  try { motionOn = window.localStorage.getItem('df-motion') === 'on'; } catch (e) { motionOn = false; }
+  const quiet = () => !moves(motionOn, asksForLess);
+  let packets = [];
+  let timer = null;
+
+  // A tag that rides along a line: an icon and a few words, in the step's colour.
+  function makePacket(path, dir, carry, color, badge) {
+    // badge: the step number(s) this item moves in, drawn as a filled pill at the tag's left end
+    const g = document.createElementNS(NS, 'g');
+    g.setAttribute('class', 'df-packet');
+    const rect = document.createElementNS(NS, 'rect');
+    rect.setAttribute('rx', '3');
+    rect.setAttribute('height', '26');
+    rect.setAttribute('y', '-13');
+    rect.style.stroke = color;
+    const icon = document.createElementNS(NS, 'g');
+    icon.setAttribute('class', 'df-pico');
+    icon.innerHTML = carry.icon;
+    icon.style.stroke = color;
+    const text = document.createElementNS(NS, 'text');
+    text.setAttribute('y', '4.4');
+    text.textContent = carry.label;
+    g.appendChild(rect);
+    let pill = null;
+    let pillText = null;
+    if (badge) {
+      pill = document.createElementNS(NS, 'rect');
+      pill.setAttribute('class', 'df-badge');
+      pill.setAttribute('rx', '9');
+      pill.setAttribute('height', '18');
+      pill.setAttribute('y', '-9');
+      pill.style.fill = color;
+      pillText = document.createElementNS(NS, 'text');
+      pillText.setAttribute('class', 'df-badge-t');
+      pillText.setAttribute('y', '4.6');
+      pillText.setAttribute('text-anchor', 'middle');
+      pillText.textContent = badge;
+      g.appendChild(pill);
+      g.appendChild(pillText);
+    }
+    g.appendChild(icon);
+    g.appendChild(text);
+    packetLayer.appendChild(g);
+    let tw = 0;
+    try { tw = text.getComputedTextLength(); } catch (e) { tw = 0; }
+    let bw = 0;
+    if (badge) {
+      try { bw = pillText.getComputedTextLength(); } catch (e) { bw = 0; }
+      bw = Math.max(18, (bw || badge.length * 7.4) + 10);
+    }
+    const lead = badge ? bw + 6 : 0; // room the badge takes at the left
+    const w = (tw ? tw + 34 : tagWidth(carry.label)) + lead; // the panel is hidden, so measure by count
+    rect.setAttribute('x', String(-w / 2));
+    rect.setAttribute('width', String(w));
+    if (badge) {
+      pill.setAttribute('x', String(-w / 2 + 4));
+      pill.setAttribute('width', String(bw));
+      pillText.setAttribute('x', String(-w / 2 + 4 + bw / 2));
+    }
+    icon.setAttribute('transform', 'translate(' + (-w / 2 + 7 + lead) + ' -7) scale(.5833)');
+    text.setAttribute('x', String(-w / 2 + 26 + lead));
+    const tag = path.getAttribute('data-tag');
+    const len0 = path.getTotalLength();
+    // The tag rides its line. Only when the line is far shorter than the tag does it sit beside the line instead.
+    const fixed = tag && !tagRides(len0, w) ? tag.split(',').map(Number) : null;
+    return { g, path, dir, w, len: path.getTotalLength(), fixed };
+  }
+
+  function place(pk, t) {
+    let f = t;
+    if (pk.dir === 'b') f = 1 - t;
+    if (pk.dir === 'x') f = t < 0.5 ? t * 2 : 2 - t * 2;
+    if (quiet()) f = 0.5;
+    const pt = pk.fixed ? { x: pk.fixed[0], y: pk.fixed[1] } : pk.path.getPointAtLength(pk.len * (0.12 + 0.76 * f));
+    const vb = svg.viewBox.baseVal;
+    const x = Math.max(pk.w / 2 + 2, Math.min(vb.width - pk.w / 2 - 2, pt.x));
+    pk.g.setAttribute('transform', 'translate(' + x.toFixed(1) + ' ' + pt.y.toFixed(1) + ')');
+    pk.g.style.opacity = String(tagOpacity(t, pk.dir, !!pk.fixed || quiet()));
+  }
+
+  // A glowing dot that travels the whole lit line, so the direction of travel is plain even on a short line.
+  let dots = [];
+  function makeDot(path, dir, color, carry) {
+    // The thing that travels: the item's own icon in a small chip, so the reader sees the data
+    // itself go from one box to the next. A step with no item shows a plain dot.
+    const g = document.createElementNS(NS, 'g');
+    g.setAttribute('class', 'df-dot');
+    g.style.color = color;
+    if (carry) {
+      const r = document.createElementNS(NS, 'rect');
+      r.setAttribute('x', '-15'); r.setAttribute('y', '-15');
+      r.setAttribute('width', '30'); r.setAttribute('height', '30'); r.setAttribute('rx', '8');
+      r.style.stroke = color;
+      const icon = document.createElementNS(NS, 'g');
+      icon.setAttribute('class', 'df-pico');
+      icon.setAttribute('transform', 'translate(-9 -9) scale(.75)');
+      icon.innerHTML = carry.icon;
+      icon.style.stroke = color;
+      g.appendChild(r);
+      g.appendChild(icon);
+    } else {
+      const c = document.createElementNS(NS, 'circle');
+      c.setAttribute('r', '6');
+      c.style.fill = color;
+      g.appendChild(c);
+    }
+    packetLayer.appendChild(g);
+    return { g, path, dir, len: path.getTotalLength() };
+  }
+  function placeDot(d, t) {
+    const pt = d.path.getPointAtLength(d.len * dotPosition(t, d.dir));
+    d.g.setAttribute('transform', 'translate(' + pt.x.toFixed(1) + ' ' + pt.y.toFixed(1) + ')');
+    d.g.style.opacity = quiet() ? '0' : String(dotOpacity(t, d.dir));
+  }
+
+  function tick(now) {
+    const t = (now % 2200) / 2200;
+    packets.forEach((pk) => place(pk, t));
+    const td = (now % 1800) / 1800;
+    dots.forEach((d) => placeDot(d, td));
+    window.requestAnimationFrame(tick);
+  }
+
+  function el(tag, cls, text) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined) e.textContent = text;
+    return e;
+  }
+
+  // The side panel: a sample of the real item that moves in this step.
+  function showItem(v, color) {
+    card.innerHTML = '';
+    card.style.setProperty('--a', v.item ? color : 'transparent');
+    card.classList.toggle('empty', !v.item);
+    if (!v.item) {
+      card.textContent = v.carry ? v.carry.label : 'No item moves in this step.';
+      return;
+    }
+    const head = el('div', 'df-item-title');
+    const ico = document.createElementNS(NS, 'svg');
+    ico.setAttribute('viewBox', '0 0 24 24');
+    ico.setAttribute('fill', 'none');
+    ico.setAttribute('stroke-width', '2');
+    ico.setAttribute('stroke-linecap', 'round');
+    ico.setAttribute('stroke-linejoin', 'round');
+    ico.setAttribute('aria-hidden', 'true');
+    ico.style.stroke = color;
+    ico.innerHTML = v.item.icon;
+    head.appendChild(ico);
+    head.appendChild(el('span', '', v.item.title));
+    card.appendChild(head);
+    if (v.item.fields.length) {
+      const dl = el('dl', 'df-item-fields');
+      v.item.fields.forEach((pair) => {
+        dl.appendChild(el('dt', '', pair[0]));
+        dl.appendChild(el('dd', '', pair[1]));
+      });
+      card.appendChild(dl);
+    }
+    if (v.item.body) card.appendChild(el('pre', 'df-item-body', v.item.body));
+  }
+
+  function setNote(sel, show, icon, text) {
+    const p = q(sel);
+    p.hidden = !show;
+    if (!show) return;
+    p.innerHTML = icon + '<span></span>';
+    p.lastChild.textContent = text;
+  }
+
+  let view = 'steps'; // 'steps' (one step at a time, moving) or 'all' (everything at once, still)
+  const allBox = q('.df-all');
+  const allList = q('.df-all-list');
+  function toneOfNode(id, fallback) {
+    const g = id ? q('[data-node="' + id + '"]') : null;
+    const c = g ? window.getComputedStyle(g).getPropertyValue('--cs').trim() : '';
+    return c || fallback;
+  }
+
+  // The whole scenario at once: every used line lit, every thing it carries named on it, nothing moving.
+  function drawAll() {
+    const wires = overview(data, cur);
+    const anyAction = Object.keys(data.actions)[0];
+    const marker = 'url(#' + prefix + '-m-' + anyAction + ')';
+    packetLayer.innerHTML = '';
+    packets = [];
+    dots = [];
+    allList.innerHTML = '';
+    root.classList.remove('df-pick');
+    qa('.df-hot').forEach((h) => h.classList.remove('df-hot'));
+    qa('.df-lane').forEach((l) => l.remove());
+    qa('.df-edge').forEach((p) => {
+      p.classList.remove('on', 'fwd', 'rev', 'trail');
+      p.style.stroke = '';
+      p.style.visibility = '';
+      p.removeAttribute('marker-end');
+      p.removeAttribute('marker-start');
+    });
+    const used = {};
+    const placedTags = [];
+    // the boxes are taken too: a still tag must not cover a box's words
+    qa('.df-node').forEach((g) => {
+      const r = g.querySelector('rect');
+      if (!r) return;
+      const w = Number(r.getAttribute('width'));
+      const h = Number(r.getAttribute('height'));
+      placedTags.push({ x: Number(r.getAttribute('x')) + w / 2, y: Number(r.getAttribute('y')) + h / 2, w, h: h - 8 });
+    });
+    const vb = svg.viewBox.baseVal;
+    const rows = []; // the "Everything at once" list, filled below and then put in step order
+    wires.forEach((wire) => {
+      const p = q('[data-edge="' + wire.edge + '"]');
+      const len = p.getTotalLength();
+      const start = p.getPointAtLength(0);
+      const end = p.getPointAtLength(len);
+      const flat = Math.abs(end.x - start.x) > Math.abs(end.y - start.y); // a line between 2 boxes in one row
+      const lanes = lanesOf(wire.sends);
+      if (lanes.length > 1) p.style.visibility = 'hidden'; // its lanes are drawn in its place
+      lanes.forEach((lane) => {
+        const ox = flat ? 0 : lane.offset;
+        const oy = flat ? lane.offset : 0;
+        let line = p;
+        if (lanes.length > 1) {
+          line = p.cloneNode(false);
+          line.removeAttribute('data-edge');
+          line.removeAttribute('data-tag');
+          line.setAttribute('class', 'df-edge df-lane');
+          line.style.visibility = '';
+          line.setAttribute('transform', 'translate(' + ox + ' ' + oy + ')');
+        }
+        line.classList.add('on');
+        line.style.stroke = toneOfNode(lane.sends[0].from, '');
+        if (lane.dir !== 'b') line.setAttribute('marker-end', marker);
+        if (lane.dir !== 'f') line.setAttribute('marker-start', marker);
+        edgeLayer.appendChild(line);
+        lane.sends.forEach((s) => { s.line = line; });
+        const named = lane.sends.filter((s) => s.label);
+        named.forEach((s, j) => {
+          // the tag itself says which way it goes, because a wide tag can cover its line's arrowhead
+          const pk = makePacket(p, 'f', { label: arrowLabel(s.label, lane.dir, end.x - start.x, end.y - start.y), icon: s.icon }, toneOfNode(s.from, ''), stepBadge(s.steps, (n) => stepName(data.scenarios, cur, n)));
+          // candidate places: on its own lane first, then a little off it
+          const spots = [];
+          const stack = (j - (named.length - 1) / 2) * 30; // tags that share a lane start stacked around its middle
+          const along = flat ? [stack, 0, -15, 15, -30, 30] : [stack, 0, -15, 15, -30, 30, -45, 45];
+          along.forEach((d) => {
+            [0.5, 0.4, 0.6, 0.3, 0.7, 0.2, 0.8].forEach((f) => {
+              const pt = p.getPointAtLength(len * f);
+              // on an upright line the tag sits beside its lane, on the outer side, so 2 lanes never share words
+              const side = !flat && lanes.length > 1 && lane.offset !== 0 ? Math.sign(lane.offset) * (pk.w / 2 - 12) : 0;
+              const x = pt.x + ox + side;
+              spots.push({ x: Math.max(pk.w / 2 + 2, Math.min(vb.width - pk.w / 2 - 2, x)), y: pt.y + oy + d });
+            });
+          });
+          // last resort on a crowded upright line: slide the tag sideways, outward first, until it is clear
+          if (!flat) {
+            const out = Math.sign(lane.offset) || 1;
+            const mid = p.getPointAtLength(len * 0.5);
+            [stack, 0, -15, 15].forEach((d) => {
+              [30, 60, 90, 120, 160, 200, -30, -60, -90, -120, -160, -200].forEach((dx) => {
+                const x = mid.x + ox + out * dx;
+                spots.push({ x: Math.max(pk.w / 2 + 2, Math.min(vb.width - pk.w / 2 - 2, x)), y: mid.y + oy + d });
+              });
+            });
+          }
+          const at = freeSpot(spots, pk.w, 26, placedTags);
+          pk.g.setAttribute('transform', 'translate(' + at.x.toFixed(1) + ' ' + at.y.toFixed(1) + ')');
+          pk.g.style.opacity = '1';
+          s.tag = pk.g;
+        });
+      });
+      wire.sends.forEach((s) => {
+        used[s.from] = true;
+        used[s.to] = true;
+        const row = el('div', 'df-all-row');
+        row.setAttribute('role', 'button');
+        row.setAttribute('tabindex', '0');
+        row.setAttribute('aria-pressed', 'false');
+        const pick = () => {
+          const was = row.getAttribute('aria-pressed') === 'true';
+          qa('.df-hot').forEach((h) => h.classList.remove('df-hot'));
+          qa('.df-all-row').forEach((r) => r.setAttribute('aria-pressed', 'false'));
+          root.classList.toggle('df-pick', !was);
+          if (was) return; // a second press on the same row shows everything again
+          row.setAttribute('aria-pressed', 'true');
+          if (s.line) s.line.classList.add('df-hot');
+          if (s.tag) s.tag.classList.add('df-hot');
+          [s.from, s.to].forEach((id) => { const g = q('[data-node="' + id + '"]'); if (g) g.classList.add('df-hot'); });
+        };
+        row.addEventListener('click', pick);
+        row.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } });
+        row.style.setProperty('--a', toneOfNode(s.from, 'currentColor'));
+        const who = el('div', 'df-all-who');
+        who.appendChild(document.createTextNode(data.nodes[s.from].label));
+        who.appendChild(el('span', '', s.dir === 'x' ? '\u2194' : '\u2192'));
+        who.appendChild(document.createTextNode(data.nodes[s.to].label));
+        const what = el('div', 'df-all-what');
+        if (s.label) {
+          const chip = el('span', 'df-all-chip');
+          chip.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"></svg><span></span>';
+          chip.firstChild.innerHTML = s.icon;
+          chip.lastChild.textContent = s.label;
+          what.appendChild(chip);
+        } else {
+          what.appendChild(el('span', '', shortText(s.text)));
+        }
+        what.appendChild(el('span', 'df-all-step', (s.steps.length > 1 ? 'steps ' : 'step ') + s.steps.map((n) => stepName(data.scenarios, cur, n)).join(', ')));
+        row.appendChild(who);
+        row.appendChild(what);
+        rows.push({ row, first: Math.min(...s.steps) });
+      });
+    });
+    // 19 November 2026, owner: "steps should always be in order". Rows were grouped by line, so a reply on the
+    // same line as step 1 sat second with "step 8". Now every row sits in the order of its first step.
+    rows.sort((a, b) => a.first - b.first).forEach((r) => allList.appendChild(r.row));
+    qa('.df-node').forEach((g) => {
+      const on = !!used[g.getAttribute('data-node')];
+      g.classList.toggle('on', false);
+      g.classList.toggle('seen', false);
+      g.classList.toggle('dim', !on);
+    });
+  }
+
+  function setView(name) {
+    view = name === 'all' ? 'all' : 'steps';
+    if (view === 'all') stop();
+    root.classList.toggle('df-allview', view === 'all');
+    allBox.hidden = view !== 'all';
+    qa('.df-view button').forEach((b) => b.setAttribute('aria-pressed', b.getAttribute('data-view') === view ? 'true' : 'false'));
+    draw();
+  }
+
+  function draw() {
+    if (view === 'all') { drawAll(); return; }
+    const v = stepView(data, cur, i);
+    i = v.index; // a press past the last step stays on the last step
+    const act = data.actions[v.action];
+    // One colour per step: the colour of the part that sends the data. The line, the dot,
+    // the tag, the step card and the list row all take it, so the eye links them at once.
+    const toneOf = (id) => {
+      const g = id ? q('[data-node="' + id + '"]') : null;
+      const c = g ? window.getComputedStyle(g).getPropertyValue('--cs').trim() : '';
+      return c || act.color;
+    };
+    const tone = toneOf(v.focus);
+    packetLayer.innerHTML = '';
+    packets = [];
+    dots = [];
+    root.classList.remove('df-pick');
+    qa('.df-hot').forEach((h) => h.classList.remove('df-hot'));
+    qa('.df-lane').forEach((l) => l.remove());
+    qa('.df-edge').forEach((p) => {
+      p.classList.remove('on', 'fwd', 'rev', 'trail');
+      p.style.stroke = '';
+      p.style.visibility = '';
+      p.removeAttribute('marker-end');
+      p.removeAttribute('marker-start');
+    });
+    Object.keys(v.trail).forEach((id) => {
+      const p = q('[data-edge="' + id + '"]');
+      p.classList.add('trail');
+      p.style.stroke = toneOf(v.trailFocus[id]);
+    });
+    Object.keys(v.edges).forEach((id) => {
+      const p = q('[data-edge="' + id + '"]');
+      const dir = v.edges[id];
+      const marker = 'url(#' + prefix + '-m-' + v.action + ')';
+      p.classList.add('on');
+      p.style.stroke = tone;
+      if (dir !== 'b') p.setAttribute('marker-end', marker);
+      if (dir !== 'f') p.setAttribute('marker-start', marker);
+      if (!quiet() && dir === 'f') p.classList.add('fwd');
+      if (!quiet() && dir === 'b') p.classList.add('rev');
+      edgeLayer.appendChild(p); // the moving line is drawn above the idle lines
+      if (v.carry) {
+        // with movement off, the tag stands on its line and carries an arrow for the direction
+        let carry = v.carry;
+        if (quiet()) {
+          const a = p.getPointAtLength(0);
+          const b = p.getPointAtLength(p.getTotalLength());
+          carry = { label: arrowLabel(v.carry.label, dir, b.x - a.x, b.y - a.y), icon: v.carry.icon };
+        }
+        packets.push(makePacket(p, dir, carry, tone, String(v.index + 1)));
+      }
+      const riding = v.carry && !packets[packets.length - 1].fixed; // a tag that travels the line already shows the movement
+      if (!riding) dots.push(makeDot(p, dir, tone, null));
+    });
+    packets.forEach((pk) => place(pk, 0.5));
+    dots.forEach((d) => placeDot(d, 0.5));
+    qa('.df-node').forEach((g) => {
+      const id = g.getAttribute('data-node');
+      const on = v.nodes.indexOf(id) >= 0;
+      const seen = v.seen.indexOf(id) >= 0;
+      g.classList.toggle('on', on);
+      g.classList.toggle('seen', !on && seen);
+      g.classList.toggle('dim', !on && !seen);
+    });
+    q('.df-count').textContent = 'Step ' + stepName(data.scenarios, cur, v.index + 1) + ' of ' + v.count;
+    const dotsBox = q('.df-dots');
+    if (dotsBox) {
+      dotsBox.innerHTML = '';
+      for (let k = 0; k < v.count; k++) {
+        const d = document.createElement('i');
+        if (k < v.index) d.className = 'done';
+        if (k === v.index) d.className = 'now';
+        dotsBox.appendChild(d);
+      }
+    }
+    const badge = q('.df-act');
+    badge.innerHTML = act.icon + '<span></span>';
+    badge.lastChild.textContent = act.label;
+    badge.style.setProperty('--a', act.color);
+    setNote('.df-time', !!v.time, data.ui.clock, v.time);
+    const capBox = q('.df-cap');
+    capBox.style.setProperty('--a', tone);
+    capBox.classList.remove('df-pulse');
+    void capBox.offsetWidth; // restart the pulse so each step change draws the eye
+    if (!quiet()) capBox.classList.add('df-pulse');
+    const chip = q('.df-carry');
+    if (v.carry) {
+      chip.hidden = false;
+      chip.style.borderColor = tone;
+      chip.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"></svg><span></span>';
+      chip.firstChild.innerHTML = v.carry.icon;
+      chip.firstChild.style.stroke = tone;
+      chip.lastChild.textContent = 'Carries: ' + v.carry.label;
+    } else {
+      chip.hidden = true;
+    }
+    setNote('.df-leaves', v.leaves.length > 0, data.ui.out, 'Leaves your system: sent to ' + v.leaves.join(' and ') + '.');
+    setNote('.df-ifnot', !!v.ifNot, data.ui.branch, 'If not: ' + v.ifNot);
+    q('.df-text').textContent = v.text;
+    showItem(v, tone);
+    back.disabled = v.first;
+    if (restart) restart.disabled = v.first;
+    next.disabled = v.last;
+    qa('.df-steps button').forEach((b, k) => {
+      if (k === v.index) { b.setAttribute('aria-current', 'step'); b.style.setProperty('--a', tone); }
+      else b.removeAttribute('aria-current');
+      b.classList.toggle('done', k < v.index);
+    });
+    root.setAttribute('data-scenario', v.scenario);
+    root.setAttribute('data-step', String(v.index + 1));
+    root.setAttribute('data-action', v.action);
+    if (timer && v.last) stop();
+  }
+
+  function setPlayLabel(on) {
+    play.innerHTML = (on ? data.ui.pause : data.ui.play) + '<span></span>';
+    play.lastChild.textContent = on ? 'Pause' : 'Play';
+    play.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+  function stop() {
+    if (timer) window.clearInterval(timer);
+    timer = null;
+    setPlayLabel(false);
+  }
+  function start() {
+    const scn = data.scenarios.find((s) => s.id === cur);
+    if (i >= scn.steps.length - 1) i = 0; // at the end, Play starts again from step 1
+    draw();
+    setPlayLabel(true);
+    timer = window.setInterval(() => { i += 1; draw(); }, 2600);
+  }
+
+  function build() {
+    list.innerHTML = '';
+    const scn = data.scenarios.find((s) => s.id === cur);
+    const foldLabel = q('.df-stepfold-s');
+    if (foldLabel) foldLabel.textContent = 'All ' + scn.steps.length + ' steps';
+    scn.steps.forEach((st, k) => {
+      const act = data.actions[st.action];
+      const li = document.createElement('li');
+      const b = document.createElement('button');
+      const chip = document.createElement('span');
+      const num = document.createElement('span');
+      const txt = document.createElement('span');
+      chip.className = 'df-chip';
+      chip.style.setProperty('--a', act.color);
+      chip.innerHTML = act.icon;
+      chip.setAttribute('title', act.label);
+      num.className = 'df-num';
+      num.textContent = stepName(data.scenarios, cur, k + 1);
+      txt.textContent = shortText(st.text);
+      b.type = 'button';
+      b.appendChild(chip);
+      b.appendChild(num);
+      b.appendChild(txt);
+      b.addEventListener('click', () => { stop(); i = k; draw(); });
+      li.appendChild(b);
+      list.appendChild(li);
+    });
+  }
+
+  qa('.df-scen button').forEach((b) => {
+    b.setAttribute('aria-pressed', b.getAttribute('data-s') === cur ? 'true' : 'false');
+    b.addEventListener('click', () => {
+      stop();
+      cur = b.getAttribute('data-s');
+      i = 0;
+      qa('.df-scen button').forEach((o) => o.setAttribute('aria-pressed', o === b ? 'true' : 'false'));
+      build();
+      draw();
+    });
+  });
+  qa('.df-view button').forEach((b) => b.addEventListener('click', () => setView(b.getAttribute('data-view'))));
+  const motionBtn = q('.df-motion');
+  const showMotion = () => {
+    motionBtn.setAttribute('aria-checked', motionOn ? 'true' : 'false');
+    const state = motionBtn.querySelector('.df-motion-state');
+    if (state) state.textContent = motionOn ? 'on' : 'off';
+    motionBtn.hidden = asksForLess; // nothing to switch when the computer asks for no movement
+  };
+  motionBtn.addEventListener('click', () => {
+    motionOn = !motionOn;
+    try { window.localStorage.setItem('df-motion', motionOn ? 'on' : 'off'); } catch (e) { /* the choice lasts for this visit only */ }
+    showMotion();
+    draw();
+  });
+  showMotion();
+  if (new RegExp('[#&]' + prefix + '=all\\b').test(window.location.hash || '')) setView('all');
+  back.addEventListener('click', () => { stop(); if (i > 0) { i -= 1; draw(); } });
+  if (restart) restart.addEventListener('click', () => { stop(); i = 0; draw(); });
+  next.addEventListener('click', () => { stop(); i += 1; draw(); });
+  play.addEventListener('click', () => { if (timer) stop(); else start(); });
+  root.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') { stop(); i += 1; draw(); }
+    if (e.key === 'ArrowLeft' && i > 0) { stop(); i -= 1; draw(); }
+    if (e.key === 'Home') { stop(); i = 0; draw(); }
+  });
+  qa('.df-node').forEach((g) => {
+    function pick() {
+      const n = data.nodes[g.getAttribute('data-node')];
+      info.hidden = false;
+      info.innerHTML = '';
+      const b = document.createElement('b');
+      b.textContent = n.label + '. ';
+      info.appendChild(b);
+      info.appendChild(document.createTextNode(n.info || 'No note for this part.'));
+      qa('.df-node').forEach((o) => o.classList.toggle('picked', o === g));
+    }
+    g.addEventListener('click', pick);
+    g.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); }
+    });
+  });
+  setPlayLabel(false);
+  // On paper, show everything at once: every line lit and named. The reader's view comes back after printing.
+  let viewBeforePrint = null;
+  window.addEventListener('beforeprint', () => { viewBeforePrint = view; setView('all'); });
+  window.addEventListener('afterprint', () => { if (viewBeforePrint) setView(viewBeforePrint); viewBeforePrint = null; });
+  build();
+  draw();
+  window.requestAnimationFrame(tick);
+  if (window.MutationObserver) new MutationObserver(() => draw()).observe(document.documentElement, { attributes: true, attributeFilter: ['data-df-theme'] });
+}
+
+mount(document.getElementById("d1"), {"nodes":{"buyer":{"label":"Company buyer","info":"Someone at a company deciding how to use AI for one job. Finds us from Google or an AI answer."},"russell":{"label":"Russell","info":"Gets every lead with the context: company, job, industry, what they read."},"site":{"label":"zavient.com pages","info":"About 2,500 pages: 20 AI jobs, 14 industries, about 20 job-by-industry pairs, model and comparison pages. Every page carries the offer."},"offer":{"label":"Benchmark offer","info":"The form on every page: benchmark AI models on your own documents, then build what wins."},"db":{"label":"AI-work database","info":"One data file. Each job has its best models, scores with sources, cost per task, tools and open data sets."},"runner":{"label":"Benchmark runner","info":"Runs a question set across 20 models, grades against a hand-checked answer key, records cost per correct answer."},"public":{"label":"Public benchmarks","info":"Published scores, each mapped to the job it measures. Cited, never copied where the license forbids."},"openrouter":{"label":"OpenRouter","info":"Public model list and prices, and the paid API we run benchmarks through."},"news":{"label":"News feeds","info":"New model releases and company AI rollouts. Each becomes its own page within a day, reusing the Zarlent new-deal page engine."}},"actions":{"read":{"label":"Read","color":"#0E7490","icon":"\u003csvg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003cpath d=\"M12 5v16\"/>\u003cpath d=\"M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z\"/>\u003c/svg>"},"send":{"label":"Send","color":"#2563EB","icon":"\u003csvg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003cpath d=\"M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z\"/>\u003cpath d=\"m21.854 2.147-10.94 10.939\"/>\u003c/svg>"},"save":{"label":"Save","color":"#0F766E","icon":"\u003csvg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003cpath d=\"M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z\"/>\u003cpath d=\"M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7\"/>\u003cpath d=\"M7 3v4a1 1 0 0 0 1 1h7\"/>\u003c/svg>"},"write":{"label":"Write","color":"#15803D","icon":"\u003csvg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003cpath d=\"M13 21h8\"/>\u003cpath d=\"M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z\"/>\u003c/svg>"},"search":{"label":"Search","color":"#0369A1","icon":"\u003csvg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003cpath d=\"m21 21-4.34-4.34\"/>\u003ccircle cx=\"11\" cy=\"11\" r=\"8\"/>\u003c/svg>"},"reply":{"label":"Reply","color":"#C2410C","icon":"\u003csvg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003cpath d=\"M20 18v-2a4 4 0 0 0-4-4H4\"/>\u003cpath d=\"m9 17-5-5 5-5\"/>\u003c/svg>"},"check":{"label":"Check","color":"#475569","icon":"\u003csvg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003cpath d=\"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z\"/>\u003cpath d=\"m9 12 2 2 4-4\"/>\u003c/svg>"}},"scenarios":[{"id":"fill","label":"Fill the database","steps":[{"action":"read","text":"Pull public scores and map each to a job. LegalBench feeds contract review; tau-bench feeds customer-service agents.","edges":[["e7","b"]],"flows":[{"edge":"e7","from":"public","to":"db","dir":"b"}],"nodes":["public","db"],"focus":"public","carry":{"label":"LegalBench scores ↑","icon":"\u003cpath d=\"M12 5v16\"/>\u003cpath d=\"M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z\"/>"},"leaves":[],"item":{"title":"Public score (sample)","icon":"\u003cpath d=\"M12 5v16\"/>\u003cpath d=\"M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z\"/>","fields":[["Benchmark","LegalBench"],["Job","contract review"],["Model","Model A"],["Score","81% (sample)"],["Source","cited link"]],"body":""},"time":"weekly","ifNot":""},{"action":"read","text":"Pull every model with its price and hosts.","edges":[["e10","b"]],"flows":[{"edge":"e10","from":"openrouter","to":"db","dir":"b"}],"nodes":["openrouter","db"],"focus":"openrouter","carry":{"label":"600+ models + prices ↑","icon":"\u003cpath d=\"M3 5h.01\"/>\u003cpath d=\"M3 12h.01\"/>\u003cpath d=\"M3 19h.01\"/>\u003cpath d=\"M8 5h13\"/>\u003cpath d=\"M8 12h13\"/>\u003cpath d=\"M8 19h13\"/>"},"leaves":[],"item":{"title":"Model row (sample)","icon":"\u003cpath d=\"M3 5h.01\"/>\u003cpath d=\"M3 12h.01\"/>\u003cpath d=\"M3 19h.01\"/>\u003cpath d=\"M8 5h13\"/>\u003cpath d=\"M8 12h13\"/>\u003cpath d=\"M8 19h13\"/>","fields":[["Model","Model A"],["Price in","$0.40 / million tokens"],["Price out","$1.60 / million tokens"],["Hosts","5"]],"body":""},"time":"daily","ifNot":""},{"action":"read","text":"Catch news: a new model or a company AI rollout.","edges":[["e8","b"]],"flows":[{"edge":"e8","from":"news","to":"db","dir":"b"}],"nodes":["news","db"],"focus":"news","carry":{"label":"New model released ↑","icon":"\u003cpath d=\"M15 18h-5\"/>\u003cpath d=\"M18 14h-8\"/>\u003cpath d=\"M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2\"/>\u003crect width=\"8\" height=\"4\" x=\"10\" y=\"6\" rx=\"1\"/>"},"leaves":[],"item":{"title":"News item (sample)","icon":"\u003cpath d=\"M15 18h-5\"/>\u003cpath d=\"M18 14h-8\"/>\u003cpath d=\"M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2\"/>\u003crect width=\"8\" height=\"4\" x=\"10\" y=\"6\" rx=\"1\"/>","fields":[["What","Model B released"],["Date","25 Nov 2026"],["Page","/models/model-b/ in 24 hours"]],"body":""},"time":"hourly","ifNot":""},{"action":"send","text":"Run our own benchmark: 30 finance questions to 20 models.","edges":[["e9","x"]],"flows":[{"edge":"e9","from":"runner","to":"openrouter","dir":"x"}],"nodes":["runner","openrouter"],"focus":"runner","carry":{"label":"30 questions → 20 AIs","icon":"\u003cpath d=\"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z\"/>\u003cpath d=\"M9 9.5a3 2.5 0 016 0c0 2-2 2-3 3.5\"/>\u003cpath d=\"M12 17h.01\"/>"},"leaves":["OpenRouter"],"item":{"title":"One question (sample)","icon":"\u003cpath d=\"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z\"/>\u003cpath d=\"M9 9.5a3 2.5 0 016 0c0 2-2 2-3 3.5\"/>\u003cpath d=\"M12 17h.01\"/>","fields":[["Question","Fund net return, Q3?"],["Answer key","8.2%, page 4"],["Model A","8.2%, 1 cent"],["Model B","7.9%, 5 cents"]],"body":""},"time":"about 1 hour","ifNot":""},{"action":"save","text":"Save scores: right answers and cost per correct answer.","edges":[["e6","b"]],"flows":[{"edge":"e6","from":"runner","to":"db","dir":"b"}],"nodes":["runner","db"],"focus":"runner","carry":{"label":"20 scores ↓","icon":"\u003cpath d=\"M20 6 9 17l-5-5\"/>"},"leaves":[],"item":{"title":"Score row (sample)","icon":"\u003cpath d=\"M20 6 9 17l-5-5\"/>","fields":[["Job","finance documents"],["Model A","27 of 30, $0.30"],["Model B","22 of 30, $1.50"],["Label","Zavient tested"]],"body":""},"time":"","ifNot":""},{"action":"write","text":"Build the pages from the database.","edges":[["e4","b"]],"flows":[{"edge":"e4","from":"db","to":"site","dir":"b"}],"nodes":["db","site"],"focus":"db","carry":{"label":"AI underwriting page ↑","icon":"\u003crect width=\"7\" height=\"9\" x=\"3\" y=\"3\" rx=\"1\"/>\u003crect width=\"7\" height=\"5\" x=\"14\" y=\"3\" rx=\"1\"/>\u003crect width=\"7\" height=\"9\" x=\"14\" y=\"12\" rx=\"1\"/>\u003crect width=\"7\" height=\"5\" x=\"3\" y=\"16\" rx=\"1\"/>"},"leaves":[],"item":null,"time":"minutes","ifNot":""}]},{"id":"lead","label":"A visitor becomes a lead","steps":[{"action":"search","text":"A buyer searches Google for 'insurance underwriting ai' and lands on our page.","edges":[["e0","f"]],"flows":[{"edge":"e0","from":"buyer","to":"site","dir":"f"}],"nodes":["buyer","site"],"focus":"buyer","carry":{"label":"underwriting ai ↓","icon":"\u003cpath d=\"m21 21-4.34-4.34\"/>\u003ccircle cx=\"11\" cy=\"11\" r=\"8\"/>"},"leaves":[],"item":null,"time":"","ifNot":""},{"action":"reply","text":"The page shows best models for the job, cost per task, tools and our benchmark.","edges":[["e0","b"]],"flows":[{"edge":"e0","from":"site","to":"buyer","dir":"b"}],"nodes":["site","buyer"],"focus":"site","carry":{"label":"Best models + costs ↑","icon":"\u003crect width=\"7\" height=\"9\" x=\"3\" y=\"3\" rx=\"1\"/>\u003crect width=\"7\" height=\"5\" x=\"14\" y=\"3\" rx=\"1\"/>\u003crect width=\"7\" height=\"9\" x=\"14\" y=\"12\" rx=\"1\"/>\u003crect width=\"7\" height=\"5\" x=\"3\" y=\"16\" rx=\"1\"/>"},"leaves":[],"item":null,"time":"","ifNot":""},{"action":"send","text":"The buyer fills in the offer form at the end of the page.","edges":[["e1","f"]],"flows":[{"edge":"e1","from":"buyer","to":"offer","dir":"f"}],"nodes":["buyer","offer"],"focus":"buyer","carry":{"label":"Request: benchmark ↓","icon":"\u003crect width=\"8\" height=\"4\" x=\"8\" y=\"2\" rx=\"1\" ry=\"1\"/>\u003cpath d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\"/>"},"leaves":[],"item":{"title":"Form (sample)","icon":"\u003crect width=\"8\" height=\"4\" x=\"8\" y=\"2\" rx=\"1\" ry=\"1\"/>\u003cpath d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\"/>","fields":[["Company","Mid-size insurer"],["Job","claims underwriting"],["Documents","about 5,000 claim files"],["Timing","this quarter"]],"body":""},"time":"","ifNot":""},{"action":"send","text":"The lead lands with Russell, with what the buyer read.","edges":[["e2","b"]],"flows":[{"edge":"e2","from":"offer","to":"russell","dir":"b"}],"nodes":["offer","russell"],"focus":"offer","carry":{"label":"Lead: insurer ↑","icon":"\u003cpath d=\"m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7\"/>\u003crect x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\"/>"},"leaves":[],"item":null,"time":"instant","ifNot":""},{"action":"send","text":"Paid benchmark: the buyer's sample documents go to the runner.","edges":[["e5","f"]],"flows":[{"edge":"e5","from":"offer","to":"runner","dir":"f"}],"nodes":["offer","runner"],"focus":"offer","carry":{"label":"50 claim files ↓","icon":"\u003cpath d=\"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z\"/>\u003cpath d=\"M14 2v5a1 1 0 0 0 1 1h5\"/>\u003cpath d=\"M10 9H8\"/>\u003cpath d=\"M16 13H8\"/>\u003cpath d=\"M16 17H8\"/>"},"leaves":[],"item":null,"time":"1 to 2 weeks","ifNot":""},{"action":"send","text":"The runner tests 20 models on the buyer's documents.","edges":[["e9","x"]],"flows":[{"edge":"e9","from":"runner","to":"openrouter","dir":"x"}],"nodes":["runner","openrouter"],"focus":"runner","carry":{"label":"50 files → 20 AIs","icon":"\u003cpath d=\"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z\"/>\u003cpath d=\"M9 9.5a3 2.5 0 016 0c0 2-2 2-3 3.5\"/>\u003cpath d=\"M12 17h.01\"/>"},"leaves":["OpenRouter"],"item":null,"time":"","ifNot":"Sensitive files run on a private host instead of OpenRouter."},{"action":"reply","text":"The report shows which model wins and what it costs. Next sale: build it.","edges":[["e5","b"]],"flows":[{"edge":"e5","from":"runner","to":"offer","dir":"b"}],"nodes":["runner","offer"],"focus":"runner","carry":{"label":"Benchmark report ↑","icon":"\u003cpath d=\"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z\"/>\u003cpath d=\"M14 2v5a1 1 0 0 0 1 1h5\"/>\u003cpath d=\"m9 15 2 2 4-4\"/>"},"leaves":[],"item":null,"time":"","ifNot":""}]},{"id":"ugc","label":"A practitioner adds a report","steps":[{"action":"send","text":"A practitioner reports what worked for them.","edges":[["e0","f"]],"flows":[{"edge":"e0","from":"buyer","to":"site","dir":"f"}],"nodes":["buyer","site"],"focus":"buyer","carry":{"label":"My result: model A ↓","icon":"\u003cpath d=\"M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719\"/>"},"leaves":[],"item":{"title":"Practitioner report (sample)","icon":"\u003cpath d=\"M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719\"/>","fields":[["Job","invoice reading"],["Industry","logistics"],["Model","Model A"],["Worked?","yes, 96% fields right"],["Cost","about 2 cents a page"]],"body":""},"time":"","ifNot":""},{"action":"check","text":"Check it, then add it to the job's page as a practitioner report.","edges":[["e4","f"]],"flows":[{"edge":"e4","from":"site","to":"db","dir":"f"}],"nodes":["site","db"],"focus":"site","carry":{"label":"1 checked report ↓","icon":"\u003cpath d=\"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z\"/>\u003cpath d=\"m9 12 2 2 4-4\"/>"},"leaves":[],"item":null,"time":"","ifNot":"Reports without a job, model and result are not published."}]}],"ui":{"play":"\u003csvg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003cpath d=\"M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z\"/>\u003c/svg>","pause":"\u003csvg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003crect x=\"14\" y=\"3\" width=\"5\" height=\"18\" rx=\"1\"/>\u003crect x=\"5\" y=\"3\" width=\"5\" height=\"18\" rx=\"1\"/>\u003c/svg>","clock":"\u003csvg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003ccircle cx=\"12\" cy=\"12\" r=\"10\"/>\u003cpath d=\"M12 6v6l4 2\"/>\u003c/svg>","branch":"\u003csvg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003cpath d=\"M15 6a9 9 0 0 0-9 9V3\"/>\u003ccircle cx=\"18\" cy=\"6\" r=\"3\"/>\u003ccircle cx=\"6\" cy=\"18\" r=\"3\"/>\u003c/svg>","out":"\u003csvg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003cpath d=\"M15 3h6v6\"/>\u003cpath d=\"M10 14 21 3\"/>\u003cpath d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/>\u003c/svg>"}}, "d1");
+})();
+</script>
+</section>
+<section class="pg-panel pg-wide pg-off" data-panel="2" aria-label="2 · Home page"><h2 class="pg-print-title"><span>Zavient AI-work site: data flow and sample pages</span>2 · Home page</h2><p class="pg-panel-lede">Sample page. Items marked sample are invented.</p><div class="pg-page"><style>
+.zm{--tb:#0A9A96;--tb-fill:#0ABAB5;--sky:#2C7FA8;--sky-fill:#87CEEB;font-family:Georgia,'Times New Roman',serif;color:var(--pg-ink);max-width:880px;margin:0 auto;font-size:16px;line-height:1.5}
+.zm .bar{display:flex;align-items:center;gap:10px;border:1px solid var(--pg-line);border-bottom:none;padding:8px 12px;font-family:Helvetica,Arial,sans-serif;font-size:13px;color:var(--pg-ink2);border-radius:4px 4px 0 0}
+.zm .bar .url{flex:1;border:1px solid var(--pg-line);border-radius:3px;padding:3px 10px}
+.zm .page{border:1px solid var(--pg-line);border-radius:0 0 4px 4px;padding:22px 26px 26px}
+.zm .nav{display:flex;flex-wrap:wrap;gap:18px;font-family:Helvetica,Arial,sans-serif;font-size:14px;border-bottom:1px solid var(--pg-line);padding-bottom:12px;margin-bottom:18px}
+.zm .nav b{color:var(--tb);font-size:17px;margin-right:auto}
+.zm .nav span{color:var(--pg-ink2)}
+.zm h1,.zm h2,.zm h3{font-family:Helvetica,Arial,sans-serif;color:var(--tb);line-height:1.2;margin:0 0 8px}
+.zm h1{font-size:28px}.zm h2{font-size:20px;margin-top:22px}.zm h3{font-size:16px;color:var(--pg-ink)}
+.zm .crumb{font-family:Helvetica,Arial,sans-serif;font-size:13px;color:var(--pg-ink2);margin-bottom:6px}
+.zm .lede{font-size:17px;color:var(--pg-ink);margin:0 0 14px}
+.zm table{border-collapse:collapse;width:100%;font-size:14.5px;margin:8px 0 4px}
+.zm th,.zm td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--pg-line);vertical-align:top}
+.zm th{font-family:Helvetica,Arial,sans-serif;font-size:13px;color:var(--pg-ink2);font-weight:600}
+.zm .note{font-size:13px;color:var(--pg-ink2);font-style:italic;margin:4px 0 10px}
+.zm .sample{display:inline-block;font-family:Helvetica,Arial,sans-serif;font-size:13px;color:var(--sky);border:1px solid var(--sky);border-radius:3px;padding:1px 6px;margin-left:6px;vertical-align:middle}
+.zm .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:10px 0}
+.zm .cell{border:1px solid var(--pg-line);border-radius:4px;padding:10px 12px;font-size:14.5px}
+.zm .cell b{font-family:Helvetica,Arial,sans-serif;color:var(--pg-ink);display:block;margin-bottom:3px}
+.zm .cta{border:2px solid var(--tb-fill);border-radius:4px;padding:16px 18px;margin-top:24px}
+.zm .cta h3{color:var(--tb);font-size:18px}
+.zm .cta .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:8px}
+.zm .cta .opt{font-size:14.5px}
+.zm .cta .opt b{font-family:Helvetica,Arial,sans-serif;display:block}
+.zm .btn{display:inline-block;margin-top:10px;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:600;color:#fff;background:var(--tb);border-radius:3px;padding:8px 14px}
+.zm ul{margin:6px 0 6px 20px;padding:0}.zm li{margin:3px 0}
+.zm .src{font-size:13px;color:var(--pg-ink2);margin-top:14px;border-top:1px solid var(--pg-line);padding-top:8px}
+@media (max-width:600px){.zm .page{padding:16px}.zm h1{font-size:23px}}
+</style>
+<div class="zm">
+<div class="bar"><span>●●●</span><span class="url">zavient.com</span></div>
+<div class="page">
+<div class="nav"><b>Zavient</b><span>AI jobs</span><span>Industries</span><span>Models</span><span>Benchmarks</span><span>News</span><span>Work with us</span></div>
+<h1>Which AI does this job best, and what does it cost?</h1>
+<p class="lede">Rankings for 20 kinds of AI work across 14 industries, built from public benchmarks and our own tests on real documents. Pick the job; see the best models, cost per task, tools and data.</p>
+<h2>Start with the job</h2>
+<div class="grid">
+  <div class="cell"><b>Reading documents</b>Invoices, claims, forms, fund reports</div>
+  <div class="cell"><b>Contract review</b>Clauses, risks, obligations</div>
+  <div class="cell"><b>Underwriting and risk scoring</b>Lenders and insurers</div>
+  <div class="cell"><b>Search over company documents</b>Answers from your own files</div>
+  <div class="cell"><b>Customer-service agents</b>Chat, phone, email</div>
+  <div class="cell"><b>Predictive maintenance</b>Machines, fleets, plants</div>
+</div>
+<p class="note">+ 14 more jobs · or start with your industry: insurance, legal, healthcare, lending, manufacturing, logistics…</p>
+<h2>New this week</h2>
+<table>
+<tr><th>Date</th><th>What changed</th><th>Jobs it affects</th></tr>
+<tr><td>25 Nov</td><td>Model B released; first scores in<span class="sample">sample</span></td><td>reading documents, contract review</td></tr>
+<tr><td>24 Nov</td><td>Our finance-document benchmark: 20 models on 30 questions<span class="sample">sample</span></td><td>reading documents, underwriting</td></tr>
+<tr><td>22 Nov</td><td>A regional insurer moved claims intake to AI<span class="sample">sample</span></td><td>reading documents × insurance</td></tr>
+</table>
+<div class="cta">
+  <h3>Get the right AI for this job, tested on your own documents</h3>
+  <div class="two">
+    <div class="opt"><b>Custom benchmark</b>We run 20 AI models on 50 of your own documents. You see which one gets it right and what each costs. 1 to 2 weeks. From $3,500<span class="sample">sample price</span></div>
+    <div class="opt"><b>Build it and keep it right</b>Then we build the winner into your workflow and re-check it as new models come out. Priced per project.</div>
+  </div>
+  <span class="btn">Talk to Russell →</span>
+</div>
+
+<p class="src">Sample page. Layout and wording proposed; items marked "sample" are invented.</p>
+</div></div>
+</div></section>
+<section class="pg-panel pg-wide pg-off" data-panel="3" aria-label="3 · Job × industry page"><h2 class="pg-print-title"><span>Zavient AI-work site: data flow and sample pages</span>3 · Job × industry page</h2><p class="pg-panel-lede">Sample page. Items marked sample are invented.</p><div class="pg-page"><style>
+.zm{--tb:#0A9A96;--tb-fill:#0ABAB5;--sky:#2C7FA8;--sky-fill:#87CEEB;font-family:Georgia,'Times New Roman',serif;color:var(--pg-ink);max-width:880px;margin:0 auto;font-size:16px;line-height:1.5}
+.zm .bar{display:flex;align-items:center;gap:10px;border:1px solid var(--pg-line);border-bottom:none;padding:8px 12px;font-family:Helvetica,Arial,sans-serif;font-size:13px;color:var(--pg-ink2);border-radius:4px 4px 0 0}
+.zm .bar .url{flex:1;border:1px solid var(--pg-line);border-radius:3px;padding:3px 10px}
+.zm .page{border:1px solid var(--pg-line);border-radius:0 0 4px 4px;padding:22px 26px 26px}
+.zm .nav{display:flex;flex-wrap:wrap;gap:18px;font-family:Helvetica,Arial,sans-serif;font-size:14px;border-bottom:1px solid var(--pg-line);padding-bottom:12px;margin-bottom:18px}
+.zm .nav b{color:var(--tb);font-size:17px;margin-right:auto}
+.zm .nav span{color:var(--pg-ink2)}
+.zm h1,.zm h2,.zm h3{font-family:Helvetica,Arial,sans-serif;color:var(--tb);line-height:1.2;margin:0 0 8px}
+.zm h1{font-size:28px}.zm h2{font-size:20px;margin-top:22px}.zm h3{font-size:16px;color:var(--pg-ink)}
+.zm .crumb{font-family:Helvetica,Arial,sans-serif;font-size:13px;color:var(--pg-ink2);margin-bottom:6px}
+.zm .lede{font-size:17px;color:var(--pg-ink);margin:0 0 14px}
+.zm table{border-collapse:collapse;width:100%;font-size:14.5px;margin:8px 0 4px}
+.zm th,.zm td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--pg-line);vertical-align:top}
+.zm th{font-family:Helvetica,Arial,sans-serif;font-size:13px;color:var(--pg-ink2);font-weight:600}
+.zm .note{font-size:13px;color:var(--pg-ink2);font-style:italic;margin:4px 0 10px}
+.zm .sample{display:inline-block;font-family:Helvetica,Arial,sans-serif;font-size:13px;color:var(--sky);border:1px solid var(--sky);border-radius:3px;padding:1px 6px;margin-left:6px;vertical-align:middle}
+.zm .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:10px 0}
+.zm .cell{border:1px solid var(--pg-line);border-radius:4px;padding:10px 12px;font-size:14.5px}
+.zm .cell b{font-family:Helvetica,Arial,sans-serif;color:var(--pg-ink);display:block;margin-bottom:3px}
+.zm .cta{border:2px solid var(--tb-fill);border-radius:4px;padding:16px 18px;margin-top:24px}
+.zm .cta h3{color:var(--tb);font-size:18px}
+.zm .cta .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:8px}
+.zm .cta .opt{font-size:14.5px}
+.zm .cta .opt b{font-family:Helvetica,Arial,sans-serif;display:block}
+.zm .btn{display:inline-block;margin-top:10px;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:600;color:#fff;background:var(--tb);border-radius:3px;padding:8px 14px}
+.zm ul{margin:6px 0 6px 20px;padding:0}.zm li{margin:3px 0}
+.zm .src{font-size:13px;color:var(--pg-ink2);margin-top:14px;border-top:1px solid var(--pg-line);padding-top:8px}
+@media (max-width:600px){.zm .page{padding:16px}.zm h1{font-size:23px}}
+</style>
+<div class="zm">
+<div class="bar"><span>●●●</span><span class="url">zavient.com/ai-work/underwriting/insurance/</span></div>
+<div class="page">
+<div class="nav"><b>Zavient</b><span>AI jobs</span><span>Industries</span><span>Models</span><span>Benchmarks</span><span>News</span><span>Work with us</span></div>
+<div class="crumb">AI jobs › Underwriting and risk scoring › Insurance</div>
+<h1>AI underwriting for insurers</h1>
+<p class="lede">AI reads the application, loss runs and inspection reports, pulls the facts an underwriter needs, and flags the risks. The underwriter still decides.</p>
+<h2>What it looks like</h2>
+<table>
+<tr><th>Goes in</th><th>Comes out</th></tr>
+<tr><td>Commercial property application, 3 years of loss runs, an inspection PDF</td><td>Building age, construction, 4 prior claims totalling $212,000, sprinkler status, 2 flagged risks with page cites<span class="sample">sample</span></td></tr>
+</table>
+<h2>Best AI models for this job</h2>
+<table>
+<tr><th>Model</th><th>Facts right</th><th>Cost per file</th><th>Score from</th></tr>
+<tr><td>Model A</td><td>27 of 30</td><td>$0.02</td><td>Zavient tested<span class="sample">sample</span></td></tr>
+<tr><td>Model C</td><td>26 of 30</td><td>$0.11</td><td>Zavient tested<span class="sample">sample</span></td></tr>
+<tr><td>Model B</td><td>81% on a related public benchmark</td><td>$0.06</td><td>public benchmark, cited<span class="sample">sample</span></td></tr>
+</table>
+<p class="note">"Zavient tested" scores come from our own question sets with hand-checked answers. Public scores are cited to their source.</p>
+<h2>Tools that do it</h2>
+<ul><li>Underwriting workbench software, named and compared, not ranked by who pays<span class="sample">sample</span></li><li>Build your own: a document reader + a rules check + an underwriter review screen</li></ul>
+<h2>Build or buy</h2>
+<table>
+<tr><th></th><th>Buy software</th><th>Build on a model</th></tr>
+<tr><td>Time to start</td><td>weeks</td><td>1 to 3 months</td></tr>
+<tr><td>Fits your rules</td><td>partly</td><td>fully</td></tr>
+<tr><td>Typical cost</td><td>per seat or per file</td><td>project + cents per file</td></tr>
+</table>
+<h2>From practitioners</h2>
+<p>"Model A got the loss-run totals right on 48 of 50 files; it missed handwritten notes." — Underwriting manager, mid-size carrier<span class="sample">sample</span></p>
+<h2>Open data and benchmarks</h2>
+<ul><li>Public benchmarks for reading financial and insurance documents, each with its license<span class="sample">sample</span></li></ul>
+<div class="cta">
+  <h3>Get the right AI for this job, tested on your own documents</h3>
+  <div class="two">
+    <div class="opt"><b>Custom benchmark</b>We run 20 AI models on 50 of your own documents. You see which one gets it right and what each costs. 1 to 2 weeks. From $3,500<span class="sample">sample price</span></div>
+    <div class="opt"><b>Build it and keep it right</b>Then we build the winner into your workflow and re-check it as new models come out. Priced per project.</div>
+  </div>
+  <span class="btn">Talk to Russell →</span>
+</div>
+
+<p class="src">Sample page. Related: AI underwriting for lenders · Reading documents for insurers · AI in insurance.</p>
+</div></div>
+</div></section>
+<section class="pg-panel pg-wide pg-off" data-panel="4" aria-label="4 · Industry page"><h2 class="pg-print-title"><span>Zavient AI-work site: data flow and sample pages</span>4 · Industry page</h2><p class="pg-panel-lede">Sample page. Items marked sample are invented.</p><div class="pg-page"><style>
+.zm{--tb:#0A9A96;--tb-fill:#0ABAB5;--sky:#2C7FA8;--sky-fill:#87CEEB;font-family:Georgia,'Times New Roman',serif;color:var(--pg-ink);max-width:880px;margin:0 auto;font-size:16px;line-height:1.5}
+.zm .bar{display:flex;align-items:center;gap:10px;border:1px solid var(--pg-line);border-bottom:none;padding:8px 12px;font-family:Helvetica,Arial,sans-serif;font-size:13px;color:var(--pg-ink2);border-radius:4px 4px 0 0}
+.zm .bar .url{flex:1;border:1px solid var(--pg-line);border-radius:3px;padding:3px 10px}
+.zm .page{border:1px solid var(--pg-line);border-radius:0 0 4px 4px;padding:22px 26px 26px}
+.zm .nav{display:flex;flex-wrap:wrap;gap:18px;font-family:Helvetica,Arial,sans-serif;font-size:14px;border-bottom:1px solid var(--pg-line);padding-bottom:12px;margin-bottom:18px}
+.zm .nav b{color:var(--tb);font-size:17px;margin-right:auto}
+.zm .nav span{color:var(--pg-ink2)}
+.zm h1,.zm h2,.zm h3{font-family:Helvetica,Arial,sans-serif;color:var(--tb);line-height:1.2;margin:0 0 8px}
+.zm h1{font-size:28px}.zm h2{font-size:20px;margin-top:22px}.zm h3{font-size:16px;color:var(--pg-ink)}
+.zm .crumb{font-family:Helvetica,Arial,sans-serif;font-size:13px;color:var(--pg-ink2);margin-bottom:6px}
+.zm .lede{font-size:17px;color:var(--pg-ink);margin:0 0 14px}
+.zm table{border-collapse:collapse;width:100%;font-size:14.5px;margin:8px 0 4px}
+.zm th,.zm td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--pg-line);vertical-align:top}
+.zm th{font-family:Helvetica,Arial,sans-serif;font-size:13px;color:var(--pg-ink2);font-weight:600}
+.zm .note{font-size:13px;color:var(--pg-ink2);font-style:italic;margin:4px 0 10px}
+.zm .sample{display:inline-block;font-family:Helvetica,Arial,sans-serif;font-size:13px;color:var(--sky);border:1px solid var(--sky);border-radius:3px;padding:1px 6px;margin-left:6px;vertical-align:middle}
+.zm .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:10px 0}
+.zm .cell{border:1px solid var(--pg-line);border-radius:4px;padding:10px 12px;font-size:14.5px}
+.zm .cell b{font-family:Helvetica,Arial,sans-serif;color:var(--pg-ink);display:block;margin-bottom:3px}
+.zm .cta{border:2px solid var(--tb-fill);border-radius:4px;padding:16px 18px;margin-top:24px}
+.zm .cta h3{color:var(--tb);font-size:18px}
+.zm .cta .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:8px}
+.zm .cta .opt{font-size:14.5px}
+.zm .cta .opt b{font-family:Helvetica,Arial,sans-serif;display:block}
+.zm .btn{display:inline-block;margin-top:10px;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:600;color:#fff;background:var(--tb);border-radius:3px;padding:8px 14px}
+.zm ul{margin:6px 0 6px 20px;padding:0}.zm li{margin:3px 0}
+.zm .src{font-size:13px;color:var(--pg-ink2);margin-top:14px;border-top:1px solid var(--pg-line);padding-top:8px}
+@media (max-width:600px){.zm .page{padding:16px}.zm h1{font-size:23px}}
+</style>
+<div class="zm">
+<div class="bar"><span>●●●</span><span class="url">zavient.com/industries/insurance/</span></div>
+<div class="page">
+<div class="nav"><b>Zavient</b><span>AI jobs</span><span>Industries</span><span>Models</span><span>Benchmarks</span><span>News</span><span>Work with us</span></div>
+<div class="crumb">Industries › Insurance</div>
+<h1>AI in insurance: the jobs worth doing</h1>
+<p class="lede">The AI work insurers buy, ranked by how much value it returns, with the best models and tools for each.</p>
+<h2>AI jobs in insurance</h2>
+<table>
+<tr><th>Job</th><th>What AI does</th><th>Best model now</th></tr>
+<tr><td>Underwriting</td><td>Reads applications and loss runs, flags risks</td><td>Model A<span class="sample">sample</span></td></tr>
+<tr><td>Claims intake</td><td>Reads claim forms and photos, routes the claim</td><td>Model C<span class="sample">sample</span></td></tr>
+<tr><td>Fraud detection</td><td>Scores each claim for signs of fraud</td><td>custom model<span class="sample">sample</span></td></tr>
+<tr><td>Agent and customer service</td><td>Answers policy questions by chat or phone</td><td>Model B<span class="sample">sample</span></td></tr>
+<tr><td>Subrogation</td><td>Finds claims where someone else should pay</td><td>Model A<span class="sample">sample</span></td></tr>
+</table>
+<h2>What insurers have done</h2>
+<ul><li>A regional insurer moved claims intake to AI; time to first contact fell<span class="sample">sample</span></li><li>An MGA scores every submission before an underwriter sees it<span class="sample">sample</span></li></ul>
+<h2>Best AI consulting firms for insurance</h2>
+<p class="note">A short list per industry, with what each firm does best. Zavient appears on it; no firm pays to be listed.</p>
+<div class="cta">
+  <h3>Get the right AI for this job, tested on your own documents</h3>
+  <div class="two">
+    <div class="opt"><b>Custom benchmark</b>We run 20 AI models on 50 of your own documents. You see which one gets it right and what each costs. 1 to 2 weeks. From $3,500<span class="sample">sample price</span></div>
+    <div class="opt"><b>Build it and keep it right</b>Then we build the winner into your workflow and re-check it as new models come out. Priced per project.</div>
+  </div>
+  <span class="btn">Talk to Russell →</span>
+</div>
+
+<p class="src">Sample page. Also see: AI in banking and lending · AI in legal · AI in healthcare.</p>
+</div></div>
+</div></section>
+<section class="pg-panel pg-wide pg-off" data-panel="5" aria-label="5 · Model page"><h2 class="pg-print-title"><span>Zavient AI-work site: data flow and sample pages</span>5 · Model page</h2><p class="pg-panel-lede">Sample page. Items marked sample are invented.</p><div class="pg-page"><style>
+.zm{--tb:#0A9A96;--tb-fill:#0ABAB5;--sky:#2C7FA8;--sky-fill:#87CEEB;font-family:Georgia,'Times New Roman',serif;color:var(--pg-ink);max-width:880px;margin:0 auto;font-size:16px;line-height:1.5}
+.zm .bar{display:flex;align-items:center;gap:10px;border:1px solid var(--pg-line);border-bottom:none;padding:8px 12px;font-family:Helvetica,Arial,sans-serif;font-size:13px;color:var(--pg-ink2);border-radius:4px 4px 0 0}
+.zm .bar .url{flex:1;border:1px solid var(--pg-line);border-radius:3px;padding:3px 10px}
+.zm .page{border:1px solid var(--pg-line);border-radius:0 0 4px 4px;padding:22px 26px 26px}
+.zm .nav{display:flex;flex-wrap:wrap;gap:18px;font-family:Helvetica,Arial,sans-serif;font-size:14px;border-bottom:1px solid var(--pg-line);padding-bottom:12px;margin-bottom:18px}
+.zm .nav b{color:var(--tb);font-size:17px;margin-right:auto}
+.zm .nav span{color:var(--pg-ink2)}
+.zm h1,.zm h2,.zm h3{font-family:Helvetica,Arial,sans-serif;color:var(--tb);line-height:1.2;margin:0 0 8px}
+.zm h1{font-size:28px}.zm h2{font-size:20px;margin-top:22px}.zm h3{font-size:16px;color:var(--pg-ink)}
+.zm .crumb{font-family:Helvetica,Arial,sans-serif;font-size:13px;color:var(--pg-ink2);margin-bottom:6px}
+.zm .lede{font-size:17px;color:var(--pg-ink);margin:0 0 14px}
+.zm table{border-collapse:collapse;width:100%;font-size:14.5px;margin:8px 0 4px}
+.zm th,.zm td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--pg-line);vertical-align:top}
+.zm th{font-family:Helvetica,Arial,sans-serif;font-size:13px;color:var(--pg-ink2);font-weight:600}
+.zm .note{font-size:13px;color:var(--pg-ink2);font-style:italic;margin:4px 0 10px}
+.zm .sample{display:inline-block;font-family:Helvetica,Arial,sans-serif;font-size:13px;color:var(--sky);border:1px solid var(--sky);border-radius:3px;padding:1px 6px;margin-left:6px;vertical-align:middle}
+.zm .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:10px 0}
+.zm .cell{border:1px solid var(--pg-line);border-radius:4px;padding:10px 12px;font-size:14.5px}
+.zm .cell b{font-family:Helvetica,Arial,sans-serif;color:var(--pg-ink);display:block;margin-bottom:3px}
+.zm .cta{border:2px solid var(--tb-fill);border-radius:4px;padding:16px 18px;margin-top:24px}
+.zm .cta h3{color:var(--tb);font-size:18px}
+.zm .cta .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:8px}
+.zm .cta .opt{font-size:14.5px}
+.zm .cta .opt b{font-family:Helvetica,Arial,sans-serif;display:block}
+.zm .btn{display:inline-block;margin-top:10px;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:600;color:#fff;background:var(--tb);border-radius:3px;padding:8px 14px}
+.zm ul{margin:6px 0 6px 20px;padding:0}.zm li{margin:3px 0}
+.zm .src{font-size:13px;color:var(--pg-ink2);margin-top:14px;border-top:1px solid var(--pg-line);padding-top:8px}
+@media (max-width:600px){.zm .page{padding:16px}.zm h1{font-size:23px}}
+</style>
+<div class="zm">
+<div class="bar"><span>●●●</span><span class="url">zavient.com/models/glm-5-3-flash/</span></div>
+<div class="page">
+<div class="nav"><b>Zavient</b><span>AI jobs</span><span>Industries</span><span>Models</span><span>Benchmarks</span><span>News</span><span>Work with us</span></div>
+<div class="crumb">Models › GLM-5.3-Flash</div>
+<h1>GLM-5.3-Flash: what it's good at</h1>
+<p class="lede">A low-cost model that beat far pricier ones on real coding work in our own benchmark.</p>
+<h2>Scores by job</h2>
+<table>
+<tr><th>Job</th><th>Result</th><th>Cost</th><th>Score from</th></tr>
+<tr><td>Fixing code (hard bug)</td><td>passed</td><td>$0.0021, 22 seconds</td><td>Zavient tested, Oct 2026</td></tr>
+<tr><td>Advising on a stuck project</td><td>9 of 10</td><td>$0.0021</td><td>Zavient tested, Oct 2026 (Claude Opus 5.5 scored 8 at $0.1456)</td></tr>
+<tr><td>Reading documents</td><td>not yet tested</td><td>—</td><td>finance benchmark due<span class="sample">sample</span></td></tr>
+<tr><td>Contract review</td><td>public score</td><td>—</td><td>cited public benchmark<span class="sample">sample</span></td></tr>
+</table>
+<h2>Price and hosts</h2>
+<p>Price per million words in and out, and every company that hosts it, updated daily from public lists.<span class="sample">sample</span></p>
+<h2>Compare</h2>
+<p>GLM-5.3-Flash vs Claude Opus 5.5 · vs Claude Sonnet 5.5 · vs GPT-6.1 Sol<span class="sample">sample links</span></p>
+<div class="cta">
+  <h3>Get the right AI for this job, tested on your own documents</h3>
+  <div class="two">
+    <div class="opt"><b>Custom benchmark</b>We run 20 AI models on 50 of your own documents. You see which one gets it right and what each costs. 1 to 2 weeks. From $3,500<span class="sample">sample price</span></div>
+    <div class="opt"><b>Build it and keep it right</b>Then we build the winner into your workflow and re-check it as new models come out. Priced per project.</div>
+  </div>
+  <span class="btn">Talk to Russell →</span>
+</div>
+
+<p class="src">The two coding rows are real: Zavient coding benchmark, 26 models, 4 tasks on private code, $2.04 total, October 2026. All other rows are samples.</p>
+</div></div>
+</div></section>
+<section class="pg-panel pg-wide pg-off" data-panel="6" aria-label="6 · News page"><h2 class="pg-print-title"><span>Zavient AI-work site: data flow and sample pages</span>6 · News page</h2><p class="pg-panel-lede">Sample page. Items marked sample are invented.</p><div class="pg-page"><style>
+.zm{--tb:#0A9A96;--tb-fill:#0ABAB5;--sky:#2C7FA8;--sky-fill:#87CEEB;font-family:Georgia,'Times New Roman',serif;color:var(--pg-ink);max-width:880px;margin:0 auto;font-size:16px;line-height:1.5}
+.zm .bar{display:flex;align-items:center;gap:10px;border:1px solid var(--pg-line);border-bottom:none;padding:8px 12px;font-family:Helvetica,Arial,sans-serif;font-size:13px;color:var(--pg-ink2);border-radius:4px 4px 0 0}
+.zm .bar .url{flex:1;border:1px solid var(--pg-line);border-radius:3px;padding:3px 10px}
+.zm .page{border:1px solid var(--pg-line);border-radius:0 0 4px 4px;padding:22px 26px 26px}
+.zm .nav{display:flex;flex-wrap:wrap;gap:18px;font-family:Helvetica,Arial,sans-serif;font-size:14px;border-bottom:1px solid var(--pg-line);padding-bottom:12px;margin-bottom:18px}
+.zm .nav b{color:var(--tb);font-size:17px;margin-right:auto}
+.zm .nav span{color:var(--pg-ink2)}
+.zm h1,.zm h2,.zm h3{font-family:Helvetica,Arial,sans-serif;color:var(--tb);line-height:1.2;margin:0 0 8px}
+.zm h1{font-size:28px}.zm h2{font-size:20px;margin-top:22px}.zm h3{font-size:16px;color:var(--pg-ink)}
+.zm .crumb{font-family:Helvetica,Arial,sans-serif;font-size:13px;color:var(--pg-ink2);margin-bottom:6px}
+.zm .lede{font-size:17px;color:var(--pg-ink);margin:0 0 14px}
+.zm table{border-collapse:collapse;width:100%;font-size:14.5px;margin:8px 0 4px}
+.zm th,.zm td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--pg-line);vertical-align:top}
+.zm th{font-family:Helvetica,Arial,sans-serif;font-size:13px;color:var(--pg-ink2);font-weight:600}
+.zm .note{font-size:13px;color:var(--pg-ink2);font-style:italic;margin:4px 0 10px}
+.zm .sample{display:inline-block;font-family:Helvetica,Arial,sans-serif;font-size:13px;color:var(--sky);border:1px solid var(--sky);border-radius:3px;padding:1px 6px;margin-left:6px;vertical-align:middle}
+.zm .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:10px 0}
+.zm .cell{border:1px solid var(--pg-line);border-radius:4px;padding:10px 12px;font-size:14.5px}
+.zm .cell b{font-family:Helvetica,Arial,sans-serif;color:var(--pg-ink);display:block;margin-bottom:3px}
+.zm .cta{border:2px solid var(--tb-fill);border-radius:4px;padding:16px 18px;margin-top:24px}
+.zm .cta h3{color:var(--tb);font-size:18px}
+.zm .cta .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:8px}
+.zm .cta .opt{font-size:14.5px}
+.zm .cta .opt b{font-family:Helvetica,Arial,sans-serif;display:block}
+.zm .btn{display:inline-block;margin-top:10px;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:600;color:#fff;background:var(--tb);border-radius:3px;padding:8px 14px}
+.zm ul{margin:6px 0 6px 20px;padding:0}.zm li{margin:3px 0}
+.zm .src{font-size:13px;color:var(--pg-ink2);margin-top:14px;border-top:1px solid var(--pg-line);padding-top:8px}
+@media (max-width:600px){.zm .page{padding:16px}.zm h1{font-size:23px}}
+</style>
+<div class="zm">
+<div class="bar"><span>●●●</span><span class="url">zavient.com/news/model-b-released/</span></div>
+<div class="page">
+<div class="nav"><b>Zavient</b><span>AI jobs</span><span>Industries</span><span>Models</span><span>Benchmarks</span><span>News</span><span>Work with us</span></div>
+<div class="crumb">News › 25 Nov 2026<span class="sample">sample</span></div>
+<h1>Model B is out. Which jobs should switch to it?</h1>
+<p class="lede">Built automatically within a day of release: its price, public scores mapped to jobs, and our first quick benchmark.</p>
+<h2>Where it changes the ranking</h2>
+<table>
+<tr><th>Job</th><th>Before</th><th>Now</th></tr>
+<tr><td>Reading documents</td><td>Model A best</td><td>Model B ties at half the price<span class="sample">sample</span></td></tr>
+<tr><td>Contract review</td><td>Model C best</td><td>no change<span class="sample">sample</span></td></tr>
+<tr><td>Customer-service agents</td><td>Model A best</td><td>not yet tested</td></tr>
+</table>
+<h2>Who should care</h2>
+<ul><li>Insurers and lenders reading documents at volume: up to 50% lower cost per file<span class="sample">sample</span></li></ul>
+<div class="cta">
+  <h3>Get the right AI for this job, tested on your own documents</h3>
+  <div class="two">
+    <div class="opt"><b>Custom benchmark</b>We run 20 AI models on 50 of your own documents. You see which one gets it right and what each costs. 1 to 2 weeks. From $3,500<span class="sample">sample price</span></div>
+    <div class="opt"><b>Build it and keep it right</b>Then we build the winner into your workflow and re-check it as new models come out. Priced per project.</div>
+  </div>
+  <span class="btn">Talk to Russell →</span>
+</div>
+
+<p class="src">Sample page. Each new model and each company AI rollout gets a page like this, linked to its jobs and industries.</p>
+</div></div>
+</div></section>
+</main>
+<script>
+(function(){var b=document.querySelector('.pg-theme');if(!b)return;b.addEventListener('click',function(){
+var r=document.documentElement;var cur=r.getAttribute('data-df-theme')||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+var next=cur==='dark'?'light':'dark';r.setAttribute('data-df-theme',next);try{localStorage.setItem('df-theme',next);}catch(e){}});})();
+(function(){var p=document.querySelector('.pg-print');if(p)p.addEventListener('click',function(){window.print();});
+var r=document.documentElement,was=null;
+window.addEventListener('beforeprint',function(){was=r.getAttribute('data-df-theme');r.setAttribute('data-df-theme','light');});
+window.addEventListener('afterprint',function(){if(was)r.setAttribute('data-df-theme',was);else r.removeAttribute('data-df-theme');});})();
+(function(){var bs=document.querySelectorAll(".pg-tab");function show(n){bs.forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-tab")===String(n)?"true":"false");});document.querySelectorAll(".pg-panel").forEach(function(p){p.classList.toggle("pg-off",p.getAttribute("data-panel")!==String(n));});try{history.replaceState(null,"","#tab="+n);}catch(e){}}bs.forEach(function(b){b.addEventListener("click",function(){show(b.getAttribute("data-tab"));});});var m=/[#&]tab=(\d+)/.exec(location.hash||"");if(m&&document.querySelector("[data-panel=\""+m[1]+"\"]"))show(m[1]);})();
+</script>
+<script type="application/json" id="df-marks">{}</script>
+<script>
+// Lets a reader mark up the page itself with 3 marks that say what they want: a Note (a question, with an optional
+// arrow to the thing it asks about), Move this (a box around a thing, with an arrow to where it should go) and
+// Delete this (a box with an X over the thing). "Save a copy with my notes" downloads the page with the marks inside.
+// No outside library: marks sit in a clear layer over each tab, stored as fractions of that tab's size.
+(function () {
+  var holder = document.getElementById('df-marks');
+  // each saved copy carries its own name, so a copy someone sends back never shows this browser's marks for the original
+  var copyId = '';
+  try { copyId = (JSON.parse(holder ? holder.textContent : '{}') || {}).copy || ''; } catch (e) { copyId = ''; }
+  var KEY = 'df-marks:' + document.title + (copyId ? ':' + copyId : '');
+  var NS = 'http://www.w3.org/2000/svg';
+  var TOOLS = [['note', 'Note'], ['move', 'Move this'], ['del', 'Delete this']];
+  var HINTS = {
+    note: 'Now click the thing, then type. Drag the note away for an arrow.',
+    move: 'Now box the thing, then click where it goes.',
+    del: 'Now box the thing to delete.',
+  };
+
+  function load() {
+    var d = {};
+    try { d = JSON.parse(holder ? holder.textContent : '{}') || {}; } catch (e) { d = {}; }
+    try {
+      var here = JSON.parse(window.localStorage.getItem(KEY) || 'null');
+      if (here && Array.isArray(here.items)) d.items = here.items;
+    } catch (e) { /* storage blocked: the marks in the file still show */ }
+    if (!Array.isArray(d.items)) d.items = [];
+    // a note left empty when the page closed is dropped, not shown as a blank box
+    d.items = d.items.filter(function (it) { return it && (it.type !== 'note' || String(it.text || '').trim()); });
+    d.v = 3;
+    return d;
+  }
+  var data = load();
+  var undoStack = [];
+  var tool = 'note';
+  var on = false;
+  var sel = -1;
+  var aiming = -1; // a Move mark waiting for the click that says where to
+  var pendingFocus = null;
+
+  function save() {
+    if (holder) holder.textContent = JSON.stringify(data);
+    try { window.localStorage.setItem(KEY, JSON.stringify({ items: data.items })); } catch (e) { /* the file copy still carries them */ }
+    refreshButtons();
+  }
+  function remember() { undoStack.push(JSON.stringify(data.items)); if (undoStack.length > 100) undoStack.shift(); }
+  function drop(i) { data.items.splice(i, 1); sel = -1; aiming = -1; }
+  // A note is done when the reader moves on: an empty note goes away.
+  // Returns the place of a note that went away, or -1.
+  function finish(i) {
+    var it = data.items[i];
+    if (!it || it.type !== 'note') return -1;
+    if (!String(it.text || '').trim()) { data.items.splice(i, 1); return i; }
+    tagDiagram(it);
+    return -1;
+  }
+  // Select mark i (or none: -1), finishing the note selected before. Returns i, moved down if an earlier mark went away.
+  function select(i) {
+    if (sel >= 0 && sel !== i) {
+      var gone = finish(sel);
+      if (gone >= 0 && i > gone) i -= 1;
+      if (gone >= 0 && aiming > gone) aiming -= 1;
+    }
+    sel = i;
+    return i;
+  }
+
+  // Each tab is one anchor, and the title with its intro is one more; a page with no tabs uses the whole page.
+  function anchors() {
+    var p = document.querySelectorAll('.pg-panel');
+    var head = document.querySelector('.pg-head');
+    return p.length ? (head ? [head] : []).concat(Array.prototype.slice.call(p)) : [document.querySelector('main')];
+  }
+  function idOf(a) { return a.classList.contains('pg-panel') ? 'p' + a.getAttribute('data-panel') : a.classList.contains('pg-head') ? 'head' : 'main'; }
+  function anchorById(id) { return anchors().filter(function (a) { return idOf(a) === id; })[0]; }
+  function size(a) { return { w: a.offsetWidth || 1, h: a.offsetHeight || 1 }; }
+
+  function layerOf(a) {
+    var l = a.querySelector(':scope > .mk-layer');
+    if (l) return l;
+    l = document.createElement('div');
+    l.className = 'mk-layer';
+    var id = idOf(a);
+    l.innerHTML = '<svg class="mk-svg" xmlns="' + NS + '"><defs>' +
+      '<marker id="mk-ah-' + id + '" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="mk-ah"/></marker>' +
+      '<marker id="mk-mh-' + id + '" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="mk-mh"/></marker>' +
+      '</defs><g class="mk-g"></g></svg>';
+    a.appendChild(l);
+    l.addEventListener('pointerdown', down);
+    // the browser moves the keyboard to the page when the click ends; hand it back to the new note
+    l.addEventListener('click', function () { if (pendingFocus) { pendingFocus.focus(); pendingFocus = null; } });
+    return l;
+  }
+
+  function svgEl(name, attrs, cls) {
+    var el = document.createElementNS(NS, name);
+    Object.keys(attrs).forEach(function (k) { el.setAttribute(k, attrs[k]); });
+    if (cls) el.setAttribute('class', cls);
+    return el;
+  }
+  // where a line from the middle of a box towards a point leaves the box
+  function edge(r, tx, ty) {
+    var cx = r.x + r.w / 2, cy = r.y + r.h / 2, dx = tx - cx, dy = ty - cy;
+    if (!dx && !dy) return [cx, cy];
+    var s = Math.min(dx ? (r.w / 2) / Math.abs(dx) : Infinity, dy ? (r.h / 2) / Math.abs(dy) : Infinity);
+    return [cx + dx * s, cy + dy * s];
+  }
+  function inside(r, x, y) { return x >= r.x && x <= r.x + r.w && y >= r.y && y <= r.y + r.h; }
+
+  // Draw every mark in pixels for the tab's current size, so arrowheads never stretch.
+  function render() {
+    anchors().forEach(function (a) {
+      var l = layerOf(a);
+      var g = l.querySelector('.mk-g');
+      var s = size(a);
+      var id = idOf(a);
+      var X = function (f) { return f * s.w; };
+      var Y = function (f) { return f * s.h; };
+      g.innerHTML = '';
+      // nothing reacts to a note leaving the page, so removing the one being typed in cannot start a second redraw
+      l.querySelectorAll('.mk-note, .mk-x').forEach(function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
+      // the selected mark carries a small x in its top right corner that removes it
+      var cross = function (i, cx, cy) {
+        if (!on || i !== sel || aiming === i) return;
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'mk-x';
+        b.title = 'Remove this mark (Delete key)';
+        b.setAttribute('aria-label', 'Remove this mark');
+        b.dataset.x = i;
+        b.textContent = '×';
+        b.style.left = (cx - 11) + 'px';
+        b.style.top = (cy - 11) + 'px';
+        l.appendChild(b);
+      };
+      data.items.forEach(function (it, i) {
+        if (it.anchor !== id) return;
+        var mine = i === sel ? ' mk-sel' : '';
+        if (it.type === 'note') {
+          var n = document.createElement('div');
+          n.className = 'mk-note' + mine;
+          n.style.left = X(it.x1) + 'px';
+          n.style.top = Y(it.y1) + 'px';
+          n.textContent = it.text || '';
+          n.contentEditable = on ? 'true' : 'false';
+          n.dataset.i = i;
+          n.addEventListener('input', function () { it.text = n.textContent; save(); });
+          l.appendChild(n);
+          if (it.tip) {
+            // a dot marks the spot the note is about; once the note is dragged away, an arrow runs back to the dot
+            var r = { x: n.offsetLeft, y: n.offsetTop, w: n.offsetWidth, h: n.offsetHeight };
+            var tx = X(it.tip[0]), ty = Y(it.tip[1]);
+            if (!inside(r, tx, ty)) {
+              var e = edge(r, tx, ty);
+              if (Math.hypot(e[0] - tx, e[1] - ty) > 28) {
+                g.appendChild(svgEl('line', { x1: e[0], y1: e[1], x2: tx, y2: ty, 'data-i': i }, 'mk-note-edge'));
+                g.appendChild(svgEl('line', { x1: e[0], y1: e[1], x2: tx, y2: ty, 'marker-end': 'url(#mk-ah-' + id + ')', 'data-i': i }, 'mk-note-line'));
+              } else g.appendChild(svgEl('circle', { cx: tx, cy: ty, r: 4.5, 'data-i': i }, 'mk-note-dot'));
+            }
+            if (on && i === sel) g.appendChild(svgEl('circle', { cx: tx, cy: ty, r: 7, 'data-i': i, 'data-h': 'tip' }, 'mk-handle'));
+          }
+          cross(i, n.offsetLeft + n.offsetWidth, n.offsetTop);
+          return;
+        }
+        var x = Math.min(X(it.x1), X(it.x2)), y = Math.min(Y(it.y1), Y(it.y2));
+        var w = Math.abs(X(it.x2) - X(it.x1)), h = Math.abs(Y(it.y2) - Y(it.y1));
+        if (it.type === 'del') {
+          g.appendChild(svgEl('rect', { x: x, y: y, width: w, height: h, rx: 4, 'data-i': i }, 'mk-del' + mine));
+          g.appendChild(svgEl('path', { d: 'M' + x + ' ' + y + 'L' + (x + w) + ' ' + (y + h) + 'M' + (x + w) + ' ' + y + 'L' + x + ' ' + (y + h), 'data-i': i }, 'mk-del-x'));
+          var t = svgEl('text', { x: x + 4, y: y - 6, 'data-i': i }, 'mk-del-t');
+          t.textContent = 'Delete';
+          g.appendChild(t);
+        } else if (it.type === 'move') {
+          g.appendChild(svgEl('rect', { x: x, y: y, width: w, height: h, rx: 6, 'data-i': i }, 'mk-move' + mine));
+          if (it.to) {
+            var mx = X(it.to[0]), my = Y(it.to[1]);
+            var from = edge({ x: x, y: y, w: w, h: h }, mx, my);
+            if (!inside({ x: x, y: y, w: w, h: h }, mx, my)) {
+              g.appendChild(svgEl('line', { x1: from[0], y1: from[1], x2: mx, y2: my, 'data-i': i }, 'mk-move-edge'));
+              g.appendChild(svgEl('line', { x1: from[0], y1: from[1], x2: mx, y2: my, 'marker-end': 'url(#mk-mh-' + id + ')', 'data-i': i }, 'mk-move-line'));
+            }
+            var mt = svgEl('text', { x: mx + 8, y: my + 5, 'data-i': i }, 'mk-move-t');
+            mt.textContent = 'Move here';
+            g.appendChild(mt);
+            if (on && i === sel && aiming !== i) g.appendChild(svgEl('circle', { cx: mx, cy: my, r: 7, 'data-i': i, 'data-h': 'to' }, 'mk-handle mk-handle-move'));
+          }
+        }
+        cross(i, x + w, y);
+      });
+    });
+  }
+
+  // Where a mark sits on a diagram, in the drawing's own units, so the notes command can name the box under it.
+  function tagDiagram(it) {
+    var a = anchorById(it.anchor);
+    if (!a) return;
+    var r = a.getBoundingClientRect();
+    var s = size(a);
+    var key = function (fx, fy) {
+      var cx = r.left + fx * s.w, cy = r.top + fy * s.h;
+      var svgs = a.querySelectorAll('.df-svg');
+      for (var k = 0; k < svgs.length; k += 1) {
+        var b = svgs[k].getBoundingClientRect();
+        if (cx >= b.left && cx <= b.right && cy >= b.top && cy <= b.bottom && svgs[k].getScreenCTM()) {
+          var p = new DOMPoint(cx, cy).matrixTransform(svgs[k].getScreenCTM().inverse());
+          var block = svgs[k].closest('.df');
+          return { on: block ? block.id : '', pt: [Math.round(p.x), Math.round(p.y)] };
+        }
+      }
+      return null;
+    };
+    // the shortest piece of page under a point, skipping the marks themselves: the words a reader pointed at
+    var words = function (fx, fy) {
+      var list = document.elementsFromPoint(r.left + fx * s.w, r.top + fy * s.h);
+      for (var k = 0; k < list.length; k += 1) {
+        if (list[k].closest('.mk-layer, .mk-bar')) continue;
+        var t = String((list[k].closest('button') || list[k]).textContent || '').replace(/\s+/g, ' ').trim();
+        if (t && t.length <= 90) return t;
+      }
+      return '';
+    };
+    var at = null, from = null;
+    if (it.type === 'note') at = it.tip ? key(it.tip[0], it.tip[1]) : key(it.x1, it.y1);
+    else if (it.type === 'move') { from = key((it.x1 + it.x2) / 2, (it.y1 + it.y2) / 2); if (it.to) at = key(it.to[0], it.to[1]); }
+    else at = key((it.x1 + it.x2) / 2, (it.y1 + it.y2) / 2);
+    delete it.on; delete it.at; delete it.from; delete it.target;
+    if (!at) {
+      var p = it.type === 'note' ? (it.tip || [it.x1, it.y1]) : it.type === 'move' && it.to ? it.to : [(it.x1 + it.x2) / 2, (it.y1 + it.y2) / 2];
+      var w = words(p[0], p[1]);
+      if (w) it.target = w;
+    }
+    if (from) { it.on = from.on; it.from = from.pt; }
+    if (at) { it.on = it.on || at.on; it.at = at.pt; }
+  }
+
+  var drag = null;
+  // a point as fractions of its tab; a mark may reach past its own tab, onto the tab bar or the title, but not off the page
+  function frac(a, e) {
+    var r = a.getBoundingClientRect();
+    var s = size(a);
+    var page = (document.querySelector('main') || document.body).getBoundingClientRect();
+    var cx = Math.max(page.left, Math.min(page.right, e.clientX));
+    var cy = Math.max(page.top, Math.min(page.bottom, e.clientY));
+    return [(cx - r.left) / s.w, (cy - r.top) / s.h];
+  }
+  function far(a, p, q) { var s = size(a); return Math.abs(p[0] - q[0]) * s.w > 6 || Math.abs(p[1] - q[1]) * s.h > 6; }
+
+  function down(e) {
+    if (!on || e.button !== 0) return;
+    var a = e.currentTarget.parentNode;
+    var layer = e.currentTarget;
+    var p = frac(a, e);
+    // the click that says where a Move mark should go
+    if (aiming >= 0 && data.items[aiming]) {
+      data.items[aiming].to = p;
+      tagDiagram(data.items[aiming]);
+      aiming = -1;
+      save(); render();
+      e.preventDefault();
+      return;
+    }
+    var xb = e.target.closest('.mk-x');
+    if (xb) { remember(); drop(Number(xb.dataset.x)); save(); render(); e.preventDefault(); return; }
+    var hit = e.target.closest('[data-i]');
+    if (hit) {
+      var i = Number(hit.getAttribute('data-i'));
+      var handle = hit.getAttribute('data-h');
+      // a press inside the note being typed: a short click moves the text cursor, a drag moves the note
+      if (data.items[i].type === 'note' && !handle && document.activeElement === hit) {
+        drag = { a: a, layer: layer, mode: 'shift', soft: true, start: p, orig: JSON.parse(JSON.stringify(data.items[i])), moved: false };
+        return;
+      }
+      remember();
+      i = select(i);
+      if (i < 0) { render(); return; }
+      drag = { a: a, mode: handle ? 'handle' : 'shift', handle: handle, start: p, orig: JSON.parse(JSON.stringify(data.items[i])), moved: false };
+      layer.setPointerCapture(e.pointerId);
+      e.preventDefault();
+      render();
+      return;
+    }
+    // a click on empty space while a note is open finishes that note; it does not start another
+    if (tool === 'note' && data.items[sel] && data.items[sel].type === 'note') {
+      if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+      select(-1); save(); render();
+      e.preventDefault();
+      return;
+    }
+    remember();
+    select(-1);
+    var it = { anchor: idOf(a), type: tool, x1: p[0], y1: p[1], x2: p[0], y2: p[1] };
+    if (tool === 'note') { it.text = ''; it.tip = null; }
+    data.items.push(it);
+    sel = data.items.length - 1;
+    drag = { a: a, mode: 'draw', start: p, moved: false };
+    layer.setPointerCapture(e.pointerId);
+    e.preventDefault();
+    render();
+  }
+  function move(e) {
+    var it;
+    if (aiming >= 0 && !drag) {
+      it = data.items[aiming];
+      var a0 = it && anchorById(it.anchor);
+      if (a0) { it.to = frac(a0, e); render(); }
+      return;
+    }
+    if (!drag) return;
+    var p = frac(drag.a, e);
+    it = data.items[sel];
+    if (!it) return;
+    if (drag.soft && !drag.moved) {
+      if (!far(drag.a, p, drag.start)) return; // still a click: leave the typing alone
+      remember();
+      var s0 = window.getSelection();
+      if (s0) s0.removeAllRanges();
+      try { drag.layer.setPointerCapture(e.pointerId); } catch (err) { /* the move still follows the pointer */ }
+    }
+    if (far(drag.a, p, drag.start)) drag.moved = true;
+    if (drag.mode === 'draw') {
+      if (it.type === 'note') {
+        // dragging out from the thing: the arrow points back at where the press began
+        if (drag.moved) { it.tip = drag.start; it.x1 = p[0]; it.y1 = p[1]; }
+      } else { it.x2 = p[0]; it.y2 = p[1]; }
+    } else if (drag.mode === 'handle') {
+      it[drag.handle] = p;
+    } else {
+      var dx = p[0] - drag.start[0], dy = p[1] - drag.start[1], o = drag.orig;
+      it.x1 = o.x1 + dx; it.y1 = o.y1 + dy;
+      if (it.type !== 'note') { it.x2 = o.x2 + dx; it.y2 = o.y2 + dy; }
+      if (it.type === 'move' && o.to) it.to = [o.to[0] + dx, o.to[1] + dy];
+      // a note moves on its own; its arrow keeps pointing at the same thing
+    }
+    render();
+  }
+  function up() {
+    if (!drag) return;
+    var it = data.items[sel];
+    var d = drag;
+    drag = null;
+    if (d.soft && !d.moved) return; // a click inside the note being typed: the cursor moved, nothing else
+    if (!it) { render(); return; }
+    if (d.mode === 'draw') {
+      if (it.type === 'note') {
+        if (!d.moved) {
+          // a click on the thing: the dot sits on the spot clicked, and the note opens just beside it, ready to type
+          var sz = size(d.a);
+          it.tip = [it.x1, it.y1];
+          it.x1 = Math.min(1, it.x1 + 14 / sz.w);
+          it.y1 = Math.min(1, it.y1 + 10 / sz.h);
+        }
+        tagDiagram(it); save(); render();
+        typeInto(d.a, sel);
+        return;
+      }
+      if (!d.moved) { drop(sel); undoStack.pop(); render(); return; } // a click with no drag makes no box
+      if (it.type === 'move') { aiming = sel; it.to = [it.x2, it.y2]; }
+    } else if (!d.moved) undoStack.pop();
+    tagDiagram(it);
+    save(); render();
+    // a note clicked, moved or re-aimed is ready for typing again
+    if (it.type === 'note') typeInto(d.a, sel);
+  }
+  // Put the keyboard in note i, after the redraw has made its box, with the cursor at the end of the text.
+  function typeInto(a, i) {
+    var n = a.querySelector('.mk-note[data-i="' + i + '"]');
+    if (!n) return;
+    pendingFocus = n;
+    var go = function () {
+      if (!n.isConnected) return;
+      n.focus();
+      var r = document.createRange();
+      r.selectNodeContents(n);
+      r.collapse(false);
+      var s = window.getSelection();
+      s.removeAllRanges();
+      s.addRange(r);
+    };
+    go();
+    setTimeout(go, 0);
+  }
+  document.addEventListener('pointermove', move);
+  document.addEventListener('pointerup', up);
+
+  // The bar of tools shown while marking up.
+  var bar = document.createElement('div');
+  bar.className = 'mk-bar';
+  bar.setAttribute('role', 'toolbar');
+  bar.setAttribute('aria-label', 'Mark up tools');
+  // the 3 marks are a palette of tools, each with its own icon and colour; the page actions sit apart, quieter
+  var ICON = {
+    note: '<path d="M16 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8Z"/><path d="M15 3v4a2 2 0 0 0 2 2h4"/>',
+    move: '<path d="M12 2v20"/><path d="m15 19-3 3-3-3"/><path d="m19 9 3 3-3 3"/><path d="M2 12h20"/><path d="m5 9-3 3 3 3"/><path d="m9 5 3-3 3 3"/>',
+    del: '<rect width="18" height="18" x="3" y="3" rx="2"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/>',
+    undo: '<path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/>',
+    clear: '<path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>',
+    done: '<path d="M20 6 9 17l-5-5"/>',
+  };
+  var ico = function (k) { return '<svg viewBox="0 0 24 24" aria-hidden="true">' + ICON[k] + '</svg>'; };
+  bar.innerHTML = '<div class="mk-tools" role="group" aria-label="Marks">' +
+    TOOLS.map(function (k) { return '<button type="button" data-tool="' + k[0] + '" class="mk-tool mk-t-' + k[0] + '">' + ico(k[0]) + '<span>' + k[1] + '</span></button>'; }).join('') +
+    '</div><span class="mk-hint"></span><div class="mk-utils">' +
+    '<button type="button" data-act="undo" class="mk-util">' + ico('undo') + '<span>Undo</span></button>' +
+    '<button type="button" data-act="clear" class="mk-util">' + ico('clear') + '<span>Clear all</span></button>' +
+    '<button type="button" data-act="done" class="mk-done">' + ico('done') + '<span>Done</span></button></div>';
+  document.body.appendChild(bar);
+  function setTool(t) {
+    tool = t;
+    aiming = -1;
+    if (sel >= 0) { select(-1); save(); render(); }
+    bar.querySelectorAll('[data-tool]').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.tool === t ? 'true' : 'false'); });
+    // the instruction flashes each time a tool is picked, so a click on the tool already in use still shows a response
+    var hint = bar.querySelector('.mk-hint');
+    hint.textContent = HINTS[t];
+    hint.classList.remove('mk-flash');
+    void hint.offsetWidth;
+    hint.classList.add('mk-flash');
+    clearTimeout(setTool.timer);
+    setTool.timer = setTimeout(function () { hint.classList.remove('mk-flash'); }, 1200);
+    document.body.setAttribute('data-mk-tool', t);
+  }
+  bar.addEventListener('click', function (e) {
+    var b = e.target.closest('button');
+    if (!b) return;
+    if (b.dataset.tool) { setTool(b.dataset.tool); return; }
+    var act = b.dataset.act;
+    if (act === 'undo' && undoStack.length) { data.items = JSON.parse(undoStack.pop()); sel = -1; aiming = -1; save(); render(); }
+    else if (act === 'clear' && data.items.length) {
+      // first click asks "Sure?" on the button itself; a second click within 3 seconds fades every mark away.
+      // Undo brings them all back.
+      var label = b.querySelector('span');
+      if (!b.classList.contains('mk-sure')) {
+        b.classList.add('mk-sure');
+        label.textContent = 'Sure?';
+        clearTimeout(b.timer);
+        b.timer = setTimeout(function () { b.classList.remove('mk-sure'); label.textContent = 'Clear all'; }, 3000);
+        return;
+      }
+      clearTimeout(b.timer);
+      b.classList.remove('mk-sure');
+      label.textContent = 'Clear all';
+      document.body.classList.add('mk-fading');
+      setTimeout(function () {
+        remember(); data.items = []; sel = -1; aiming = -1; save(); render();
+        document.body.classList.remove('mk-fading');
+      }, 350);
+    }
+    else if (act === 'done') setOn(false);
+  });
+  function setOn(v) {
+    on = v;
+    select(-1);
+    aiming = -1;
+    document.body.classList.toggle('mk-on', on);
+    makeRoom();
+    save();
+    render();
+  }
+  document.addEventListener('keydown', function (e) {
+    if (!on) return;
+    var typing = document.activeElement && document.activeElement.classList.contains('mk-note');
+    if (e.key === 'Escape') {
+      if (typing) document.activeElement.blur();
+      else if (aiming >= 0) { aiming = -1; render(); }
+      else setOn(false);
+    } else if ((e.key === 'Delete' || e.key === 'Backspace') && !typing && data.items[sel]) { remember(); drop(sel); save(); render(); e.preventDefault(); }
+  });
+
+  // "Save a copy with my notes": this same page as a file, with the marks written inside it.
+  function saveCopy() {
+    var doc = document.documentElement.cloneNode(true);
+    ['.df-packets', '.df-steps', '.df-all-list', '.df-dots', '.df-item-card'].forEach(function (q) {
+      doc.querySelectorAll(q).forEach(function (el) { el.innerHTML = ''; });
+    });
+    doc.querySelectorAll('.mk-layer, .mk-bar').forEach(function (el) { el.remove(); });
+    var body = doc.querySelector('body');
+    if (body) { body.classList.remove('mk-on'); body.removeAttribute('data-mk-tool'); }
+    var h = doc.querySelector('#df-marks');
+    var copy = JSON.parse(JSON.stringify(data));
+    copy.copy = Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+    if (h) h.textContent = JSON.stringify(copy);
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob(['<!doctype html>\n' + doc.outerHTML], { type: 'text/html' }));
+    a.download = (document.title || 'diagram') + ' - with notes.html';
+    document.body.appendChild(a); a.click(); a.remove();
+  }
+
+  function refreshButtons() {
+    var n = data.items.length;
+    document.querySelectorAll('.pg-markup').forEach(function (b) {
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      b.querySelector('span').textContent = on ? 'Marking up' : (n ? 'Mark up (' + n + ')' : 'Mark up');
+    });
+    document.querySelectorAll('.pg-sendnotes').forEach(function (b) { b.hidden = n === 0; });
+  }
+
+  document.querySelectorAll('.pg-markup').forEach(function (b) { b.addEventListener('click', function () { setOn(!on); }); });
+  document.querySelectorAll('.pg-sendnotes').forEach(function (b) { b.addEventListener('click', saveCopy); });
+  // a tab change or a new window size moves things: draw again
+  // the page moves down by the strip's real height (one row on a wide window, two on a narrow one), so it covers nothing
+  function makeRoom() { document.body.style.paddingTop = on ? bar.offsetHeight + 'px' : ''; }
+  window.addEventListener('resize', function () { makeRoom(); render(); });
+  document.addEventListener('click', function (e) { if (e.target.closest('.pg-tab, .df-view button, .df-scen button')) setTimeout(render, 0); });
+  setTool('note');
+  render();
+  refreshButtons();
+})();
+</script>
+</body>
+</html>

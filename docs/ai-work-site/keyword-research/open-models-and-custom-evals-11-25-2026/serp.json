@@ -1,0 +1,1505 @@
+{
+ "golden dataset llm": {
+  "theme": "build_own_benchmark",
+  "results": [
+   {
+    "pos": 1,
+    "domain": "langfuse.com",
+    "site": "Langfuse",
+    "kind": "Company and product sites",
+    "title": "Golden dataset evaluation: build and maintain LLM test sets",
+    "snippet": "A golden dataset is the fixed set of test cases you run your LLM application against before every meaningful change.",
+    "url": "https://langfuse.com/resources/engineering/golden-dataset-evaluation"
+   },
+   {
+    "pos": 2,
+    "domain": "innodata.com",
+    "site": "Innodata",
+    "kind": "Company and product sites",
+    "title": "What are Golden Datasets? LLM & AI Evaluation Guide",
+    "snippet": "In the context of large language models (LLMs), a golden dataset is a curated collection of high-quality data, often question-answer pairs, that ...",
+    "url": "https://innodata.com/what-are-golden-datasets-in-ai/"
+   },
+   {
+    "pos": 3,
+    "domain": "medium.com",
+    "site": "Medium \u00b7 fedemoreno613",
+    "kind": "Blogs and media",
+    "title": "Golden Datasets: The Foundation of Reliable AI Evaluation",
+    "snippet": "Golden Dataset is your external benchmark \u2014 used to evaluate whether the system is performing correctly. It's about measuring what you get back.",
+    "url": "https://medium.com/@federicomoreno613/golden-datasets-the-foundation-of-reliable-ai-evaluation-486ce97ce89d"
+   },
+   {
+    "pos": 4,
+    "domain": "decagon.ai",
+    "site": "decagon.ai",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 5,
+    "domain": "deepeval.com",
+    "site": "DeepEval",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 6,
+    "domain": "qaskills.sh",
+    "site": "QASkills.sh",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 7,
+    "domain": "confident-ai.com",
+    "site": "Confident AI",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 8,
+    "domain": "reddit.com",
+    "site": "Reddit \u00b7 r/Rag",
+    "kind": "Forums and Q&A",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 9,
+    "domain": "ultralytics.com",
+    "site": "Ultralytics",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   }
+  ],
+  "features": [],
+  "ai_cites": [],
+  "ads": 0,
+  "source": "Google page, read in Chrome 25 Nov 2026"
+ },
+ "llm eval datasets": {
+  "theme": "build_own_benchmark",
+  "results": [
+   {
+    "pos": 1,
+    "domain": "github.com",
+    "site": "GitHub",
+    "kind": "Code and model hubs",
+    "title": "leobeeson/llm_benchmarks: A collection of benchmarks",
+    "snippet": "A collection of benchmarks and datasets for evaluating LLM. Measures general knowledge across 57 different subjects, ranging from STEM to social scien",
+    "url": "https://github.com/leobeeson/llm_benchmarks"
+   },
+   {
+    "pos": 2,
+    "domain": "huggingface.co",
+    "site": "Hugging Face",
+    "kind": "Code and model hubs",
+    "title": "LLM evaluation datasets - a clefourrier Collection",
+    "snippet": "We're on a journey to advance and democratize artificial intelligence through open source and open science.",
+    "url": "https://huggingface.co/collections/clefourrier/llm-evaluation-datasets"
+   },
+   {
+    "pos": 3,
+    "domain": "mlflow.org",
+    "site": "MLflow",
+    "kind": "Company and product sites",
+    "title": "Building Agent & LLM Evaluation Datasets",
+    "snippet": "Create labeled and unlabeled evaluation datasets to systematically test and improve your agent and LLM applications with MLflow.",
+    "url": "https://mlflow.org/docs/latest/genai/datasets/"
+   },
+   {
+    "pos": 4,
+    "domain": "arxiv.org",
+    "site": "arXiv",
+    "kind": "Research and docs",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 5,
+    "domain": "reddit.com",
+    "site": "Reddit \u00b7 r/Rag",
+    "kind": "Forums and Q&A",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 6,
+    "domain": "evidentlyai.com",
+    "site": "Evidently AI",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 7,
+    "domain": "promptfoo.dev",
+    "site": "Promptfoo",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 8,
+    "domain": "deepeval.com",
+    "site": "DeepEval",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 9,
+    "domain": "docs.datarobot.com",
+    "site": "DataRobot docs",
+    "kind": "Research and docs",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   }
+  ],
+  "features": [],
+  "ai_cites": [],
+  "ads": 4,
+  "source": "Google page, read in Chrome 25 Nov 2026"
+ },
+ "how to create evals for ai agents": {
+  "theme": "build_own_benchmark",
+  "results": [
+   {
+    "pos": 1,
+    "domain": "anthropic.com",
+    "site": "Anthropic",
+    "kind": "Big tech and cloud",
+    "title": "Demystifying evals for AI agents",
+    "snippet": "One strategy to build research agent evals is to combine grader types. Groundedness checks verify that claims are supported by retrieved sources ...",
+    "url": "https://www.anthropic.com/research/demystifying-evals-for-ai-agents"
+   },
+   {
+    "pos": 2,
+    "domain": "reddit.com",
+    "site": "Reddit \u00b7 r/AI_Agents",
+    "kind": "Forums and Q&A",
+    "title": "How to write evals for your agents? Make your agent teach",
+    "snippet": "There was a post a few days back asking about what you should actually test when writing evals. I ended up writing a long walkthrough for writing agen",
+    "url": "https://www.reddit.com/r/AI_Agents/comments/1wdox9j/how_to_write_evals_for_your_agents_make_your/"
+   },
+   {
+    "pos": 3,
+    "domain": "langchain.com",
+    "site": "LangChain",
+    "kind": "Company and product sites",
+    "title": "How we build evals for Deep Agents",
+    "snippet": "Build targeted evals for Deep Agents that measure real behaviors. Discover data curation, metrics, and testing strategies to improve agent accuracy.",
+    "url": "https://www.langchain.com/blog/how-we-build-evals-for-deep-agents"
+   },
+   {
+    "pos": 4,
+    "domain": "cameronrwolfe.substack.com",
+    "site": "Substack \u00b7 Deep (Learning) Focus",
+    "kind": "Blogs and media",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 5,
+    "domain": "huggingface.co",
+    "site": "Hugging Face",
+    "kind": "Code and model hubs",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 6,
+    "domain": "producttalk.org",
+    "site": "Product Talk",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 7,
+    "domain": "aws.amazon.com",
+    "site": "Amazon Web Services (AWS)",
+    "kind": "Big tech and cloud",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 8,
+    "domain": "mindstudio.ai",
+    "site": "MindStudio",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   }
+  ],
+  "features": [],
+  "ai_cites": [],
+  "ads": 4,
+  "source": "Google page, read in Chrome 25 Nov 2026"
+ },
+ "how to create evals": {
+  "theme": "build_own_benchmark",
+  "results": [
+   {
+    "pos": 1,
+    "domain": "producttalk.org",
+    "site": "Product Talk",
+    "kind": "Company and product sites",
+    "title": "AI Evals: A Hands-On Guide for Product Teams",
+    "snippet": "To create a dataset eval, you simply define a set of inputs that you expect to represent what you might see in production and you define the ...",
+    "url": "https://www.producttalk.org/ai-evals/"
+   },
+   {
+    "pos": 2,
+    "domain": "eugeneyan.com",
+    "site": "eugeneyan.com",
+    "kind": "Company and product sites",
+    "title": "Product Evals in Three Simple Steps",
+    "snippet": "There are three basic steps: (i) labeling a small dataset, (ii) aligning our LLM evaluators, and (iii) running the experiment + evaluation harness wit",
+    "url": "https://eugeneyan.com/writing/product-evals/"
+   },
+   {
+    "pos": 3,
+    "domain": "anthropic.com",
+    "site": "Anthropic",
+    "kind": "Big tech and cloud",
+    "title": "Demystifying evals for AI agents",
+    "snippet": "One strategy to build research agent evals is to combine grader types. Groundedness checks verify that claims are supported by retrieved sources ...",
+    "url": "https://www.anthropic.com/research/demystifying-evals-for-ai-agents"
+   },
+   {
+    "pos": 4,
+    "domain": "langchain.com",
+    "site": "LangChain",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 5,
+    "domain": "vitals.tidyverse.org",
+    "site": "vitals package",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 6,
+    "domain": "medium.com",
+    "site": "Medium \u00b7 Stephan Beyer",
+    "kind": "Blogs and media",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 7,
+    "domain": "lennysnewsletter.com",
+    "site": "Lenny's Newsletter",
+    "kind": "Blogs and media",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 8,
+    "domain": "braintrust.dev",
+    "site": "braintrust.dev",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   }
+  ],
+  "features": [],
+  "ai_cites": [],
+  "ads": 4,
+  "source": "Google page, read in Chrome 25 Nov 2026"
+ },
+ "how to build evals": {
+  "theme": "build_own_benchmark",
+  "results": [
+   {
+    "pos": 1,
+    "domain": "huggingface.co",
+    "site": "Hugging Face",
+    "kind": "Code and model hubs",
+    "title": "How to build and maintain an agentic evaluation",
+    "snippet": "Building an eval: what to reuse, adapt, and validate. We work through eight steps: define the claim, find a task, run it unchanged, adapt",
+    "url": "https://huggingface.co/blog/agentic-evals"
+   },
+   {
+    "pos": 2,
+    "domain": "langchain.com",
+    "site": "LangChain",
+    "kind": "Company and product sites",
+    "title": "How we build evals for Deep Agents",
+    "snippet": "Decide which behaviors we want our agent to follow. Then research and curate targeted evals that measure those behaviors in a verifiable way.",
+    "url": "https://www.langchain.com/blog/how-we-build-evals-for-deep-agents"
+   },
+   {
+    "pos": 3,
+    "domain": "anthropic.com",
+    "site": "Anthropic",
+    "kind": "Big tech and cloud",
+    "title": "Demystifying evals for AI agents",
+    "snippet": "Step 0. Start early \u00b7 Step 1. Start with what you already test manually \u00b7 Step 2: Write unambiguous tasks with reference solutions \u00b7 Step 3: Build ...",
+    "url": "https://www.anthropic.com/research/demystifying-evals-for-ai-agents"
+   },
+   {
+    "pos": 4,
+    "domain": "lennysnewsletter.com",
+    "site": "Lenny's Newsletter",
+    "kind": "Blogs and media",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 5,
+    "domain": "vitals.tidyverse.org",
+    "site": "vitals package",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 6,
+    "domain": "producttalk.org",
+    "site": "Product Talk",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 7,
+    "domain": "medium.com",
+    "site": "Medium \u00b7 Aravind Bharathy",
+    "kind": "Blogs and media",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 8,
+    "domain": "developers.openai.com",
+    "site": "OpenAI Developers",
+    "kind": "Big tech and cloud",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   }
+  ],
+  "features": [],
+  "ai_cites": [],
+  "ads": 4,
+  "source": "Google page, read in Chrome 25 Nov 2026"
+ },
+ "llm test cases": {
+  "theme": "build_own_benchmark",
+  "results": [
+   {
+    "pos": 1,
+    "domain": "confident-ai.com",
+    "site": "Confident AI",
+    "kind": "Company and product sites",
+    "title": "LLM Testing in 2026: Top Methods and Strategies",
+    "snippet": "A test requires a test criteria, constructing test cases, and applying LLM evaluation metrics to assess whether your test has passed or not. If ...",
+    "url": "https://www.confident-ai.com/blog/llm-testing-in-2024-top-methods-and-strategies"
+   },
+   {
+    "pos": 2,
+    "domain": "skphd.medium.com",
+    "site": "Medium \u00b7 Sanjay Kumar PhD",
+    "kind": "Blogs and media",
+    "title": "LLM Testing: Methods, Strategies, and Best Practices",
+    "snippet": "LLM Testing is the process of evaluating model outputs against defined criteria such as accuracy, coherence, fairness, safety, and efficiency",
+    "url": "https://skphd.medium.com/llm-testing-methods-strategies-and-best-practices-df01794f2b1d"
+   },
+   {
+    "pos": 3,
+    "domain": "langfuse.com",
+    "site": "Langfuse",
+    "kind": "Company and product sites",
+    "title": "LLM Testing: Automated Tests for LLM Apps",
+    "snippet": "Learn how to test LLM applications with automated evaluation, datasets, and experiment runners. A practical guide to LLM testing strategies.",
+    "url": "https://langfuse.com/blog/2025-10-21-testing-llm-applications"
+   },
+   {
+    "pos": 4,
+    "domain": "braintrust.dev",
+    "site": "braintrust.dev",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 5,
+    "domain": "patronus.ai",
+    "site": "Patronus AI",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 6,
+    "domain": "deepeval.com",
+    "site": "DeepEval",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 7,
+    "domain": "arxiv.org",
+    "site": "arXiv",
+    "kind": "Research and docs",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 8,
+    "domain": "iese.fraunhofer.de",
+    "site": "Fraunhofer IESE Kaiserslautern",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 9,
+    "domain": "reddit.com",
+    "site": "Reddit \u00b7 r/programming",
+    "kind": "Forums and Q&A",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   }
+  ],
+  "features": [],
+  "ai_cites": [],
+  "ads": 4,
+  "source": "Google page, read in Chrome 25 Nov 2026"
+ },
+ "llm benchmark": {
+  "theme": "benchmark_own_data",
+  "results": [
+   {
+    "pos": 1,
+    "domain": "artificialanalysis.ai",
+    "site": "Artificial Analysis",
+    "kind": "Company and product sites",
+    "title": "LLM Leaderboard - Comparison of AI models from OpenAI,",
+    "snippet": "Comparison and ranking the performance of over 250 AI models (LLMs) across key metrics including intelligence, price, performance and speed",
+    "url": "https://artificialanalysis.ai/leaderboards/models"
+   },
+   {
+    "pos": 2,
+    "domain": "benchlm.ai",
+    "site": "BenchLM",
+    "kind": "Company and product sites",
+    "title": "BenchLM: LLM Leaderboard & AI Model Benchmarks \u2014 Nov",
+    "snippet": "The BenchLM LLM leaderboard 2026 ranks 216+ models and tracks 1036+ large language models side by side across 837 benchmarks",
+    "url": "https://benchlm.ai/"
+   },
+   {
+    "pos": 3,
+    "domain": "livebench.ai",
+    "site": "LiveBench",
+    "kind": "Company and product sites",
+    "title": "LiveBench 2.0 - A challenging, contamination-free long",
+    "snippet": "A challenging, contamination-free long-horizon AI benchmark. We give models real work (decks, research reports, bug fixes, apps that run for hours) an",
+    "url": "https://livebench.ai/"
+   },
+   {
+    "pos": 4,
+    "domain": "wolfram.com",
+    "site": "wolfram.com",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 5,
+    "domain": "decagon.ai",
+    "site": "decagon.ai",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 6,
+    "domain": "onyx.app",
+    "site": "Onyx AI",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 7,
+    "domain": "llm.aidatatools.com",
+    "site": "Benchmark Local LLM Performance",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 8,
+    "domain": "confident-ai.com",
+    "site": "Confident AI",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 9,
+    "domain": "reddit.com",
+    "site": "Reddit \u00b7 r/singularity",
+    "kind": "Forums and Q&A",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   }
+  ],
+  "features": [],
+  "ai_cites": [],
+  "ads": 0,
+  "source": "Google page, read in Chrome 25 Nov 2026"
+ },
+ "llm benchmarks": {
+  "theme": "benchmark_own_data",
+  "results": [
+   {
+    "pos": 1,
+    "domain": "artificialanalysis.ai",
+    "site": "Artificial Analysis",
+    "kind": "Company and product sites",
+    "title": "LLM Leaderboard - Comparison of AI models from OpenAI,",
+    "snippet": "Comparison and ranking the performance of over 250 AI models (LLMs) across key metrics including intelligence, price, performance and speed",
+    "url": "https://artificialanalysis.ai/leaderboards/models"
+   },
+   {
+    "pos": 2,
+    "domain": "benchlm.ai",
+    "site": "BenchLM",
+    "kind": "Company and product sites",
+    "title": "BenchLM: LLM Leaderboard & AI Model Benchmarks \u2014 Nov",
+    "snippet": "Compare 1036 AI models across 837 benchmarks, with 216 ranked scores, source evidence, API pricing, context windows, runtime, and head-to-head pages.",
+    "url": "https://benchlm.ai/"
+   },
+   {
+    "pos": 3,
+    "domain": "livebench.ai",
+    "site": "LiveBench",
+    "kind": "Company and product sites",
+    "title": "LiveBench 2.0 - A challenging, contamination-free long",
+    "snippet": "A challenging, contamination-free long-horizon AI benchmark. We give models real work (decks, research reports, bug fixes, apps that run for hours) an",
+    "url": "https://livebench.ai/"
+   },
+   {
+    "pos": 4,
+    "domain": "splunk.com",
+    "site": "Splunk",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 5,
+    "domain": "ibm.com",
+    "site": "IBM",
+    "kind": "Big tech and cloud",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 6,
+    "domain": "codecademy.com",
+    "site": "Codecademy",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 7,
+    "domain": "onyx.app",
+    "site": "Onyx AI",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 8,
+    "domain": "cameronrwolfe.substack.com",
+    "site": "Substack \u00b7 Deep (Learning) Focus",
+    "kind": "Blogs and media",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 9,
+    "domain": "github.com",
+    "site": "GitHub",
+    "kind": "Code and model hubs",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   }
+  ],
+  "features": [],
+  "ai_cites": [],
+  "ads": 0,
+  "source": "Google page, read in Chrome 25 Nov 2026"
+ },
+ "llm as a judge": {
+  "theme": "benchmark_own_data",
+  "results": [
+   {
+    "pos": 1,
+    "domain": "en.wikipedia.org",
+    "site": "Wikipedia",
+    "kind": "Blogs and media",
+    "title": "LLM-as-a-Judge",
+    "snippet": "In LLM-as-a-judge, a large language model acts as an evaluator: it receives an evaluation prompt specifying the target text, the criteria, and the req",
+    "url": "https://en.wikipedia.org/wiki/LLM-as-a-Judge"
+   },
+   {
+    "pos": 2,
+    "domain": "evidentlyai.com",
+    "site": "Evidently AI",
+    "kind": "Company and product sites",
+    "title": "LLM-as-a-judge: a complete guide to using LLMs for",
+    "snippet": "LLM-as-a-judge is a common technique to evaluate LLM-powered products. it's a practical alternative to costly human evaluation when assessing open-end",
+    "url": "https://www.evidentlyai.com/llm-guide/llm-as-a-judge"
+   },
+   {
+    "pos": 3,
+    "domain": "langfuse.com",
+    "site": "Langfuse",
+    "kind": "Company and product sites",
+    "title": "LLM-as-a-Judge",
+    "snippet": "LLM-as-a-Judge is an evaluation methodology where a large language model (the \"judge\") assesses the quality of outputs from another LLM application.",
+    "url": "https://langfuse.com/docs/evaluation/evaluation-methods/llm-as-a-judge"
+   },
+   {
+    "pos": 4,
+    "domain": "arxiv.org",
+    "site": "arXiv",
+    "kind": "Research and docs",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 5,
+    "domain": "confident-ai.com",
+    "site": "Confident AI",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 6,
+    "domain": "huggingface.co",
+    "site": "Hugging Face",
+    "kind": "Code and model hubs",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 7,
+    "domain": "llm-as-a-judge.github.io",
+    "site": "GitHub",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 8,
+    "domain": "mlflow.org",
+    "site": "MLflow",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   }
+  ],
+  "features": [],
+  "ai_cites": [],
+  "ads": 3,
+  "source": "Google page, read in Chrome 25 Nov 2026"
+ },
+ "ai model comparison": {
+  "theme": "benchmark_own_data",
+  "results": [
+   {
+    "pos": 1,
+    "domain": "artificialanalysis.ai",
+    "site": "Artificial Analysis",
+    "kind": "Company and product sites",
+    "title": "Comparison of Models: Intelligence, Performance & Price",
+    "snippet": "Comparison and analysis of AI models across key performance metrics including quality, price, time per task, latency, context window & others.",
+    "url": "https://artificialanalysis.ai/models"
+   },
+   {
+    "pos": 2,
+    "domain": "benchlm.ai",
+    "site": "BenchLM",
+    "kind": "Company and product sites",
+    "title": "Compare AI Models Side-by-Side (Live Benchmarks)",
+    "snippet": "Pick any two of 1036 AI models and compare them across 837 live benchmarks \u2014 scores, pricing, speed and context, updated with every release.",
+    "url": "https://benchlm.ai/compare"
+   },
+   {
+    "pos": 3,
+    "domain": "livebench.ai",
+    "site": "LiveBench",
+    "kind": "Company and product sites",
+    "title": "LiveBench 2.0 - A challenging, contamination-free long",
+    "snippet": "A challenging, contamination-free long-horizon AI benchmark. We give models real work (decks, research reports, bug fixes, apps that run for hours) an",
+    "url": "https://livebench.ai/"
+   },
+   {
+    "pos": 4,
+    "domain": "openrouter.ai",
+    "site": "OpenRouter",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 5,
+    "domain": "reddit.com",
+    "site": "Reddit \u00b7 r/artificial",
+    "kind": "Forums and Q&A",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 6,
+    "domain": "docs.github.com",
+    "site": "GitHub Docs",
+    "kind": "Code and model hubs",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 7,
+    "domain": "opencode.ai",
+    "site": "OpenCode",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 8,
+    "domain": "aiagentstore.ai",
+    "site": "AI Agent Store",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 9,
+    "domain": "arena.ai",
+    "site": "Arena AI",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   }
+  ],
+  "features": [],
+  "ai_cites": [],
+  "ads": 0,
+  "source": "Google page, read in Chrome 25 Nov 2026"
+ },
+ "llm evaluation": {
+  "theme": "benchmark_own_data",
+  "results": [
+   {
+    "pos": 1,
+    "domain": "ibm.com",
+    "site": "IBM",
+    "kind": "Big tech and cloud",
+    "title": "LLM evaluation: Why testing AI models matters",
+    "snippet": "LLM evaluation is the process of assessing the performance of large language models by using tasks, data and metrics to gauge their effectiveness.",
+    "url": "https://www.ibm.com/think/insights/llm-evaluation"
+   },
+   {
+    "pos": 2,
+    "domain": "azure.microsoft.com",
+    "site": "Microsoft Azure",
+    "kind": "Big tech and cloud",
+    "title": "What Is LLM Evaluation?",
+    "snippet": "Large language model evaluation checks model outputs against specific criteria to maintain correctness, relevance, coherence, and safety.",
+    "url": "https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-llm-evaluation"
+   },
+   {
+    "pos": 3,
+    "domain": "superannotate.com",
+    "site": "SuperAnnotate",
+    "kind": "Company and product sites",
+    "title": "LLM Evaluation: Frameworks, Metrics, and Best Practices",
+    "snippet": "LLM evaluation is the process of testing and measuring how well large language models perform in real-world situations.",
+    "url": "https://www.superannotate.com/blog/llm-evaluation-guide"
+   },
+   {
+    "pos": 4,
+    "domain": "databricks.com",
+    "site": "Databricks",
+    "kind": "Big tech and cloud",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 5,
+    "domain": "developer.nvidia.com",
+    "site": "NVIDIA Developer",
+    "kind": "Research and docs",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 6,
+    "domain": "magazine.sebastianraschka.com",
+    "site": "Ahead of AI",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 7,
+    "domain": "evidentlyai.com",
+    "site": "Evidently AI",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 8,
+    "domain": "mlflow.org",
+    "site": "MLflow",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   }
+  ],
+  "features": [],
+  "ai_cites": [],
+  "ads": 4,
+  "source": "Google page, read in Chrome 25 Nov 2026"
+ },
+ "llm comparison": {
+  "theme": "benchmark_own_data",
+  "results": [
+   {
+    "pos": 1,
+    "domain": "artificialanalysis.ai",
+    "site": "Artificial Analysis",
+    "kind": "Company and product sites",
+    "title": "LLM Leaderboard - Comparison of AI models from OpenAI,",
+    "snippet": "Comparison and ranking the performance of over 250 AI models (LLMs) across key metrics including intelligence, price, performance and speed",
+    "url": "https://artificialanalysis.ai/leaderboards/models"
+   },
+   {
+    "pos": 2,
+    "domain": "benchlm.ai",
+    "site": "BenchLM",
+    "kind": "Company and product sites",
+    "title": "BenchLM: LLM Leaderboard & AI Model Benchmarks \u2014 Nov",
+    "snippet": "Compare 1036 AI models across 837 benchmarks, with 216 ranked scores, source evidence, API pricing, context windows, runtime, and head-to-head pages.",
+    "url": "https://benchlm.ai/"
+   },
+   {
+    "pos": 3,
+    "domain": "livebench.ai",
+    "site": "LiveBench",
+    "kind": "Company and product sites",
+    "title": "LiveBench 2.0 - A challenging, contamination-free long",
+    "snippet": "A challenging, contamination-free long-horizon AI benchmark. We give models real work (decks, research reports, bug fixes, apps that run for hours) an",
+    "url": "https://livebench.ai/"
+   },
+   {
+    "pos": 4,
+    "domain": "whatllm.org",
+    "site": "WhatLLM",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 5,
+    "domain": "llm-stats.com",
+    "site": "LLM Stats",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 6,
+    "domain": "aipedagogy.org",
+    "site": "AI Pedagogy Project",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 7,
+    "domain": "magazine.sebastianraschka.com",
+    "site": "Ahead of AI",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 8,
+    "domain": "huggingface.co",
+    "site": "Hugging Face",
+    "kind": "Code and model hubs",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 9,
+    "domain": "llmmodels.org",
+    "site": "All Large Language Models Directory",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   }
+  ],
+  "features": [],
+  "ai_cites": [],
+  "ads": 0,
+  "source": "Google page, read in Chrome 25 Nov 2026"
+ },
+ "open weight models": {
+  "theme": "switch_to_open_models",
+  "results": [
+   {
+    "pos": 1,
+    "domain": "hai.stanford.edu",
+    "site": "Stanford HAI",
+    "kind": "Research and docs",
+    "title": "What is an Open-Weight Model? - Stanford HAI",
+    "snippet": "An Open-Weight Model is an AI model whose core components are publicly released, allowing anyone to download it. This lets users run the model on thei",
+    "url": "https://hai.stanford.edu/ai-definitions/what-is-an-open-weight-model"
+   },
+   {
+    "pos": 2,
+    "domain": "en.wikipedia.org",
+    "site": "Wikipedia",
+    "kind": "Blogs and media",
+    "title": "Open weights",
+    "snippet": "Open weights are the publicly released learned parameters of a trained artificial intelligence model, principally its weights and biases.",
+    "url": "https://en.wikipedia.org/wiki/Open_weights"
+   },
+   {
+    "pos": 3,
+    "domain": "gumloop.com",
+    "site": "Gumloop",
+    "kind": "Company and product sites",
+    "title": "7 best open weight AI models I've tested in 2026",
+    "snippet": "7 best open weight AI models in 2026 \u00b7 1. GLM-5.2 \u00b7 2. DeepSeek V4 Pro \u00b7 3. Kimi K2.7 Code \u00b7 4. Qwen3.5 397B \u00b7 5. DeepSeek V4 Flash \u00b7 6. MiniMax ...",
+    "url": "https://www.gumloop.com/blog/open-weight-ai-models"
+   },
+   {
+    "pos": 4,
+    "domain": "opensource.org",
+    "site": "Open Source Initiative",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 5,
+    "domain": "reddit.com",
+    "site": "Reddit \u00b7 r/OpenAI",
+    "kind": "Forums and Q&A",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 6,
+    "domain": "github.com",
+    "site": "GitHub",
+    "kind": "Code and model hubs",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 7,
+    "domain": "fastino.ai",
+    "site": "Fastino Labs",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   }
+  ],
+  "features": [],
+  "ai_cites": [],
+  "ads": 0,
+  "source": "Google page, read in Chrome 25 Nov 2026"
+ },
+ "open source llm": {
+  "theme": "switch_to_open_models",
+  "results": [
+   {
+    "pos": 1,
+    "domain": "baseten.co",
+    "site": "Baseten",
+    "kind": "Company and product sites",
+    "title": "The best open-source large language models (LLMs)",
+    "snippet": "We compare 9 top open-source LLMs in production. Find the best model for agentic coding, long-context reasoning, cost, and speed.",
+    "url": "https://www.baseten.co/blog/the-best-open-source-large-language-models-llms/"
+   },
+   {
+    "pos": 2,
+    "domain": "ibm.com",
+    "site": "IBM",
+    "kind": "Big tech and cloud",
+    "title": "What are Open Source Large Language Models?",
+    "snippet": "Open source LLM models allow you to create an app with language generation abilities, such as writing emails, blog posts or creative stories. An LLM l",
+    "url": "https://www.ibm.com/think/topics/open-source-llms"
+   },
+   {
+    "pos": 3,
+    "domain": "huggingface.co",
+    "site": "Hugging Face",
+    "kind": "Code and model hubs",
+    "title": "a Hugging Face Space by open-llm-leaderboard",
+    "snippet": "This app lets you explore an interactive leaderboard of open\u2011source large language models and see how they perform on a range of tests such as IFEval,",
+    "url": "https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard"
+   },
+   {
+    "pos": 4,
+    "domain": "github.com",
+    "site": "GitHub",
+    "kind": "Code and model hubs",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 5,
+    "domain": "instaclustr.com",
+    "site": "Instaclustr",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 6,
+    "domain": "reddit.com",
+    "site": "Reddit \u00b7 r/LocalLLaMA",
+    "kind": "Forums and Q&A",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 7,
+    "domain": "lmstudio.ai",
+    "site": "LM Studio",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 8,
+    "domain": "mastra.ai",
+    "site": "Mastra",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 9,
+    "domain": "fireworks.ai",
+    "site": "Fireworks AI",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   }
+  ],
+  "features": [],
+  "ai_cites": [],
+  "ads": 1,
+  "source": "Google page, read in Chrome 25 Nov 2026"
+ },
+ "self host llm": {
+  "theme": "switch_to_open_models",
+  "results": [
+   {
+    "pos": 1,
+    "domain": "reddit.com",
+    "site": "Reddit \u00b7 r/selfhosted",
+    "kind": "Forums and Q&A",
+    "title": "Self-hosting LLMs seems pointless\u2014what am I missing?",
+    "snippet": "Don\u2019t get me wrong\u2014I absolutely love self-hosting. If something can be self-hosted and makes sense, I\u2019ll run it on my home server without hesitation. ",
+    "url": "https://www.reddit.com/r/selfhosted/comments/1ih4iee/selfhosting_llms_seems_pointlesswhat_am_i_missing/"
+   },
+   {
+    "pos": 2,
+    "domain": "towardsdatascience.com",
+    "site": "Towards Data Science",
+    "kind": "Blogs and media",
+    "title": "Self-Hosting Your First LLM",
+    "snippet": "The good news is that self-hosting an LLM is no longer a research project or a massive ML infrastructure effort. With the right model, the right ...",
+    "url": "https://towardsdatascience.com/self-hosting-your-first-llm/"
+   },
+   {
+    "pos": 3,
+    "domain": "onyx.app",
+    "site": "Onyx AI",
+    "kind": "Company and product sites",
+    "title": "Best Self-Hosted LLM Leaderboard 2026",
+    "snippet": "Onyx is the open-source AI platform that lets you self-host any of these LLMs and connect them to your team's docs, apps, and people.",
+    "url": "https://onyx.app/self-hosted-llm-leaderboard"
+   },
+   {
+    "pos": 4,
+    "domain": "premai.io",
+    "site": "Prem AI",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 5,
+    "domain": "vercel.com",
+    "site": "Vercel",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 6,
+    "domain": "exoscale.com",
+    "site": "Exoscale",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 7,
+    "domain": "qovery.com",
+    "site": "Qovery",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 8,
+    "domain": "github.com",
+    "site": "GitHub",
+    "kind": "Code and model hubs",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   }
+  ],
+  "features": [],
+  "ai_cites": [],
+  "ads": 0,
+  "source": "Google page, read in Chrome 25 Nov 2026"
+ },
+ "private llm": {
+  "theme": "switch_to_open_models",
+  "results": [
+   {
+    "pos": 1,
+    "domain": "privatellm.app",
+    "site": "Private LLM",
+    "kind": "Company and product sites",
+    "title": "Private LLM - Local & Private AI for iPhone, iPad & Mac",
+    "snippet": "Private LLM runs entirely on your iPhone, iPad, or Mac. Your conversations never leave the device, and no internet is required after the first model .",
+    "url": "https://privatellm.app/en"
+   },
+   {
+    "pos": 2,
+    "domain": "apps.apple.com",
+    "site": "Apple",
+    "kind": "Big tech and cloud",
+    "title": "Private LLM - Local AI Chat - App Store - Apple",
+    "snippet": "Private LLM, the premier AI assistant designed with your privacy in mind. Available for a one-time purchase, it offers a range of AI capabilities with",
+    "url": "https://apps.apple.com/us/app/private-llm-local-ai-chat/id6448106860"
+   },
+   {
+    "pos": 3,
+    "domain": "privatellm.com",
+    "site": "privatellm.com",
+    "kind": "Company and product sites",
+    "title": "PrivateLLM \u2014 Your Private AI Workspace",
+    "snippet": "Your AI. Your Data. Your Control. Upload documents, build private knowledge bases, and chat with AI that never stores or trains on your data.",
+    "url": "https://privatellm.com/"
+   },
+   {
+    "pos": 4,
+    "domain": "pureai.com",
+    "site": "Pure AI",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 5,
+    "domain": "reddit.com",
+    "site": "Reddit \u00b7 r/developersIndia",
+    "kind": "Forums and Q&A",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 6,
+    "domain": "thehackettgroup.com",
+    "site": "The Hackett Group",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 7,
+    "domain": "privatellm.app",
+    "site": "Private LLM",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   }
+  ],
+  "features": [],
+  "ai_cites": [],
+  "ads": 0,
+  "source": "Google page, read in Chrome 25 Nov 2026"
+ },
+ "on premise llm": {
+  "theme": "switch_to_open_models",
+  "results": [
+   {
+    "pos": 1,
+    "domain": "medium.com",
+    "site": "Medium \u00b7 Avinash Chander",
+    "kind": "Blogs and media",
+    "title": "What Is On-Prem LLM Deployment? A Full Guide",
+    "snippet": "The hosting and operation of AI models within your company's own servers or private data centers is known as on-premises LLM deployment.",
+    "url": "https://medium.com/@avinash_61951/what-is-on-prem-llm-deployment-a-full-guide-36793bb95436"
+   },
+   {
+    "pos": 2,
+    "domain": "reddit.com",
+    "site": "Reddit \u00b7 r/LocalLLM",
+    "kind": "Forums and Q&A",
+    "title": "What should I study to introduce on-premise LLMs in my",
+    "snippet": "Hello all, I'm a Network Engineer with a bit of a background in software development, and recently I've been highly interested in Large Language Model",
+    "url": "https://www.reddit.com/r/LocalLLM/comments/1od39ri/what_should_i_study_to_introduce_onpremise_llms/"
+   },
+   {
+    "pos": 3,
+    "domain": "iternal.ai",
+    "site": "Iternal AI",
+    "kind": "Company and product sites",
+    "title": "On-Prem LLM Deployment (2026): GPU Sizing, vLLM & Air",
+    "snippet": "Deploying an LLM on-premise means running the model weights, serving engine, and API entirely on hardware you own, inside your own network boundary.",
+    "url": "https://iternal.ai/how-to-deploy-llm-on-premise"
+   },
+   {
+    "pos": 4,
+    "domain": "truefoundry.com",
+    "site": "TrueFoundry",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 5,
+    "domain": "nhimg.org",
+    "site": "Non-Human Identity Management Group",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 6,
+    "domain": "blog.radeuslabs.com",
+    "site": "Radeus Labs",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 7,
+    "domain": "go.ai",
+    "site": "go.ai",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 8,
+    "domain": "getmaxim.ai",
+    "site": "Bifrost by Maxim AI",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   }
+  ],
+  "features": [],
+  "ai_cites": [],
+  "ads": 2,
+  "source": "Google page, read in Chrome 25 Nov 2026"
+ },
+ "openai api alternatives": {
+  "theme": "switch_to_open_models",
+  "results": [
+   {
+    "pos": 1,
+    "domain": "getmaxim.ai",
+    "site": "Bifrost by Maxim AI",
+    "kind": "Company and product sites",
+    "title": "13 Best OpenAI API Alternatives",
+    "snippet": "This guide compares 13 of them, including Anthropic, Google Gemini, Groq, and Amazon Bedrock, on SDK compatibility, pricing model, rate limits, ...",
+    "url": "https://www.getmaxim.ai/articles/13-best-openai-api-alternatives/"
+   },
+   {
+    "pos": 2,
+    "domain": "reddit.com",
+    "site": "Reddit \u00b7 r/MachineLearning",
+    "kind": "Forums and Q&A",
+    "title": "[D] Is there currently anything comparable to the OpenAI API?",
+    "snippet": "I am a designer and a small frontend developer. The OpenAI API makes it extremely easy for me to build AI functionality into apps, although I only hav",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/12arwkf/d_is_there_currently_anything_comparable_to_the/"
+   },
+   {
+    "pos": 3,
+    "domain": "novita.ai",
+    "site": "Novita AI",
+    "kind": "Company and product sites",
+    "title": "OpenAI API alternatives",
+    "snippet": "Compare 3 OpenAI API alternatives\u2014Claude, Kimi and DeepSeek\u2014on token costs, AA benchmark results and Chat Completions migration ...",
+    "url": "https://novita.ai/compare/openai-api-alternatives"
+   },
+   {
+    "pos": 4,
+    "domain": "yottalabs.ai",
+    "site": "Yotta Labs",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 5,
+    "domain": "geodd.io",
+    "site": "geodd.io",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 6,
+    "domain": "youtube.com",
+    "site": "YouTube \u00b7 Built This Week",
+    "kind": "Video",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   },
+   {
+    "pos": 7,
+    "domain": "nordicapis.com",
+    "site": "Nordic APIs",
+    "kind": "Company and product sites",
+    "title": "",
+    "snippet": "",
+    "url": ""
+   }
+  ],
+  "features": [],
+  "ai_cites": [],
+  "ads": 6,
+  "source": "Google page, read in Chrome 25 Nov 2026"
+ }
+}

@@ -1,0 +1,44 @@
+{
+  "title": "Route optimization software: plan better delivery routes",
+  "description": "Route optimization software plans the stops and order for each vehicle. Learn how it works, how to test it on your own routes, and when to buy or build.",
+  "job": "Decide which vehicle visits which stops, and in what order, so deliveries finish on time with fewer miles.",
+  "industry": "logistics",
+  "summary": "Route optimization software takes a list of stops and a list of vehicles. It then picks the order of stops for each vehicle. You give it limits, such as delivery time windows, how much each truck can carry, and driver shift length. It searches for a plan that meets the limits with the least driving. This is a math problem, not a language-model problem. Good tools use proven optimization methods, so the plan is checkable and repeatable.",
+  "example": {
+    "input": "Eighty stops for tomorrow, six vans that each hold 40 packages, a 9 a.m. to 5 p.m. shift, and customer time windows such as 'between 1 and 3 p.m.'.",
+    "output": "One ordered stop list per van, with an estimated arrival time at each stop. The plan shows total miles and any stop that cannot be reached inside its time window."
+  },
+  "howToTest": [
+    "Take three past days of real stops. Ask the software to plan them. Compare its total miles and hours to what your drivers actually drove.",
+    "Check every limit by hand on a few routes: time windows, van capacity and shift length. A plan that breaks a limit is not a plan.",
+    "Ask a driver to look at five routes. Drivers know about low bridges, hard turns and loading docks that the map data does not show.",
+    "Change one input, such as adding a rush stop, and replan. The plan should change in sensible ways and not reshuffle everything."
+  ],
+  "buyVsBuild": {
+    "buy": "Buy if you want maps, live traffic, driver apps and customer notices in one product. Most fleets are better served by this. Ask for a trial on your own stop lists.",
+    "build": "Build if your rules are unusual and you have a developer. Google's OR-Tools is free, open-source software for vehicle routing. You still need to supply map distances, driver screens and a way to handle last-minute changes."
+  },
+  "watchOuts": [
+    "The plan is only as good as the travel times it uses. Straight-line distances give plans that drivers cannot follow.",
+    "Real days change. Late orders, traffic and absent drivers mean you need a way to replan during the day.",
+    "A plan that saves miles but ignores driver habits or customer preferences may be ignored on the road.",
+    "Compare the tool to your best dispatcher, not to a random plan. A skilled dispatcher is a strong baseline."
+  ],
+  "resources": [
+    {
+      "name": "Google OR-Tools",
+      "url": "https://developers.google.com/optimization",
+      "what": "Free, open-source optimization software from Google. Its page says it is tuned for problems such as vehicle routing, and it works from C++, Python, C# and Java."
+    }
+  ],
+  "sources": [
+    {
+      "name": "Google OR-Tools home page",
+      "url": "https://developers.google.com/optimization",
+      "what": "Describes OR-Tools as open-source software for combinatorial optimization, covering vehicle routing, flows, integer and linear programming and constraint programming."
+    }
+  ],
+  "related": ["predictive-maintenance", "ai-consulting-companies"],
+  "keyword": { "phrase": "route optimization software", "searches": 720, "cpc": 98.26, "difficulty": 23 },
+  "updated": "2026-11-25"
+}

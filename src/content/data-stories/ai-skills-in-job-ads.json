@@ -1,0 +1,38 @@
+{
+ "title": "One in eleven US AI job ads now asks for MCP",
+ "description": "The tools US employers ask for in AI job ads: PyTorch leads, MCP is in 1 in 11 ads, and prompt engineering is a skill, never a job title.",
+ "dek": "MCP, the standard way AI agents connect to software, appears in 193 of 2,046 recent US AI job ads. Prompt engineering appears in 258, but never as a job title.",
+ "findings": [
+  "PyTorch, the most used framework for building models, is the most requested tool, in 427 ads.",
+  "MCP (Model Context Protocol) lets an AI agent use other software. It appears in 193 ads from 159 employers, about 1 in 11 ads.",
+  "Prompt engineering is asked for in 258 ads, but none of the 2,046 ads is titled prompt engineer. It became a skill, not a job.",
+  "Among data platforms, Databricks (200 ads) leads Snowflake (132). Among cloud AI services, Azure OpenAI (113) leads AWS Bedrock (88) and Google Vertex AI (82)."
+ ],
+ "chart": {
+  "title": "US AI job ads naming each tool or skill",
+  "subtitle": "Ads posted between 21 and 25 Nov 2026; 2,046 ads after reposts removed",
+  "unit": "count",
+  "bars": [
+   {"label": "PyTorch", "value": 427, "note": "297 employers"},
+   {"label": "LangChain / LangGraph", "value": 262, "note": "210 employers"},
+   {"label": "Prompt engineering", "value": 258, "note": "203 employers"},
+   {"label": "Databricks", "value": 200, "note": "167 employers"},
+   {"label": "MCP", "value": 193, "note": "159 employers"},
+   {"label": "Snowflake", "value": 132, "note": "122 employers"},
+   {"label": "Azure OpenAI / AI Foundry", "value": 113, "note": "94 employers"},
+   {"label": "AWS Bedrock", "value": 88, "note": "78 employers"},
+   {"label": "Hugging Face", "value": 86, "note": "61 employers"},
+   {"label": "Google Vertex AI", "value": 82, "note": "66 employers"}
+  ]
+ },
+ "method": [
+  "I pulled the 3,000 newest US job ads with AI or machine-learning job titles posted between 21 and 25 Nov 2026, from the jobspipe job index, and removed reposts, leaving 2,046.",
+  "A tool counts when the ad's description names it as a whole word or phrase.",
+  "'MCP' as in 'Microsoft Certified Professional' is excluded; a hand check found about 1 in 12 raw matches meant that.",
+  "No job title in the sample contains 'prompt engineer'."
+ ],
+ "sources": [
+  {"name": "Model Context Protocol", "url": "https://modelcontextprotocol.io", "what": "The open standard that lets AI applications connect to tools and data."}
+ ],
+ "updated": "2026-11-25"
+}

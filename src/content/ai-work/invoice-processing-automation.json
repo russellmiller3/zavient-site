@@ -1,0 +1,33 @@
+{
+ "title": "Invoice processing automation: what it does and how to test it",
+ "description": "How software reads supplier invoices and feeds accounts payable, which public datasets measure it, and how to test it on your own invoices.",
+ "job": "accounts payable and invoice processing",
+ "industry": "finance teams",
+ "summary": "Invoice processing automation reads each supplier invoice, pulls out the vendor, date, line items and total, and sends the result to your accounting system. A person only reviews the invoices the software is unsure about.",
+ "example": {"input": "A scanned supplier invoice with 12 line items, a purchase order number and a tax line.", "output": "Vendor name, invoice number, due date, each line item and the total, matched to the purchase order, with any mismatch flagged for a person."},
+ "howToTest": [
+  "Collect 100 past invoices from your real suppliers, including bad scans and unusual layouts, and write down the correct fields by hand.",
+  "Run each tool on the same 100 invoices and count the fields it got exactly right, field by field.",
+  "Count the invoices it sent through with a wrong total or wrong vendor. These errors cost the most.",
+  "Check that low-confidence invoices go to a person instead of straight to payment.",
+  "Compare the cost and time per invoice, including the time your staff spend fixing errors."
+ ],
+ "buyVsBuild": {"buy": "Buy when your invoices come from many suppliers in many layouts and you want it working this quarter.", "build": "Build when you receive very high volumes of a few fixed layouts, or when you need tight control over where the documents go."},
+ "watchOuts": [
+  "A tool that is right on clean sample invoices can still fail on your worst scans. Test on your own mess.",
+  "Public benchmarks such as receipts datasets are not invoices, so their scores do not predict your results.",
+  "Keep a human approval step before money moves, at least for large or new-vendor invoices.",
+  "Keep the original invoice file. The IRS says records that support a deduction must be kept until the period of limitations for that return runs out."
+ ],
+ "resources": [
+  {"name": "CORD: Consolidated Receipt Dataset", "url": "https://github.com/clovaai/cord", "what": "A public dataset of Indonesian receipt images with labels, used to test systems that read documents. It is receipts, not invoices."},
+  {"name": "Key information extraction survey (ACM Computing Surveys)", "url": "https://dl.acm.org/doi/10.1145/3749369", "what": "A 2025 literature review of deep learning methods that pull key fields from business documents."}
+ ],
+ "sources": [
+  {"name": "IRS: How long should I keep records?", "url": "https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records", "what": "States that records supporting income, deductions or credits must be kept until the period of limitations for the return runs out."},
+  {"name": "Key information extraction survey (ACM Computing Surveys)", "url": "https://dl.acm.org/doi/10.1145/3749369", "what": "Describes extracting key information from business documents as a large share of business workloads and a target for automation."}
+ ],
+ "related": ["ai-document-processing", "account-reconciliation-automation", "ai-contract-review"],
+ "keyword": {"phrase": "accounts payable automation", "searches": 1600, "cpc": 310.1, "difficulty": 28},
+ "updated": "2026-11-25"
+}

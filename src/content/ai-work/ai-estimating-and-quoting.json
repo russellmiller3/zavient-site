@@ -1,0 +1,33 @@
+{
+ "title": "AI construction estimating: what it does and how to test it",
+ "description": "How AI reads plans and builds a cost estimate, the standard accuracy ranges for each estimate stage, and how to test it against jobs you already priced.",
+ "job": "cost estimating and quoting",
+ "industry": "construction and industrial",
+ "summary": "AI estimating tools read drawings and specifications, count quantities and apply your costs to draft a price. A good estimator still reviews it. Speed matters most when you bid many jobs and win only a few.",
+ "example": {"input": "A set of floor plans and specifications for a small office renovation, plus your current labor and material prices.", "output": "A draft estimate with quantities by trade, the unit prices used, a total, and a list of items the tool could not read from the drawings."},
+ "howToTest": [
+  "Choose 10 finished jobs where you know the final cost, and hide the final cost from the tool.",
+  "Run each job's drawings through the tool and compare its total with what the job actually cost.",
+  "Compare the tool's quantities line by line with your estimator's takeoff. Wrong quantities are the usual root of wrong totals.",
+  "Note which items it missed entirely, such as scope buried in the specifications.",
+  "Time the work: hours for the tool plus review versus hours for your estimator from scratch."
+ ],
+ "buyVsBuild": {"buy": "Buy when your jobs are common building types and you want faster takeoffs from standard drawings.", "build": "Build when you price special products or processes from your own history and want a model tuned to your own past jobs."},
+ "watchOuts": [
+  "Accuracy depends on how complete the design is. An ASTM-based table used by Alberta Infrastructure gives a typical range of minus 30% to plus 50% for the earliest stage and minus 3% to plus 10% for the most complete stage. AI does not remove that gap.",
+  "Your own price data is the main input. Old or wrong unit costs give wrong totals.",
+  "Never let a draft estimate go out as a bid without an estimator's review.",
+  "Note your assumptions and exclusions in writing on every estimate."
+ ],
+ "resources": [
+  {"name": "Alberta Infrastructure: Classes of Construction Cost Estimates", "url": "https://www.alberta.ca/system/files/infra-tr-dt-series-19-estimates.pdf", "what": "Explains the five estimate classes and their typical accuracy ranges, based on ASTM E2516."},
+  {"name": "GAO Cost Estimating and Assessment Guide", "url": "https://www.gao.gov/products/gao-20-195g", "what": "A federal guide to the steps behind a reliable cost estimate, including risk analysis and updating with actual costs."}
+ ],
+ "sources": [
+  {"name": "Alberta Infrastructure: Classes of Construction Cost Estimates", "url": "https://www.alberta.ca/system/files/infra-tr-dt-series-19-estimates.pdf", "what": "Gives accuracy ranges by class, for example Class 5 at minus 20% to minus 30% low and plus 30% to plus 50% high, and says accuracy improves as the project definition improves."},
+  {"name": "GAO-20-195G Cost Estimating and Assessment Guide", "url": "https://www.gao.gov/products/gao-20-195g", "what": "Lists the steps of a cost estimate, including data collection, estimating methods, sensitivity and risk analysis, and updating estimates with actual costs."}
+ ],
+ "related": ["ai-document-processing", "ai-contract-review", "route-optimization"],
+ "keyword": {"phrase": "ai construction estimating", "searches": 480, "cpc": 35.85, "difficulty": 16},
+ "updated": "2026-11-25"
+}

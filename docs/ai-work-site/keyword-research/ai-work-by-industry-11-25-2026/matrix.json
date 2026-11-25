@@ -1,0 +1,50 @@
+{
+  "csvs": [
+    "/Users/russellmiller/Desktop/Personal/Consulting/research/keywords/ai-work-by-industry-11-25-2026/keywords.csv",
+    "/Users/russellmiller/Desktop/Personal/Consulting/research/keywords/ai-work-types-11-25-2026/keywords.csv"
+  ],
+  "rows": {
+    "fraud and anomaly detection": "fraud|anomal|transaction monitoring|money laundering|\\baml\\b|\\bkyc\\b",
+    "risk scoring and underwriting": "underwrit|credit (risk|scor)|risk (scor|model|assess)|scoring model|valuation model|\\bavm\\b|property valuation|actuar|home (value|price) (estimat|predict)",
+    "predictive maintenance": "predictive maintenance|condition monitoring|asset (performance|health)|failure prediction",
+    "forecasting": "forecast|predictive analytic|demand plan|time series",
+    "computer vision and inspection": "computer vision|visual inspection|object detection|video analytic|image recognition|defect|machine vision|quality inspection|radiolog|imaging",
+    "speech, transcription and scribes": "speech|transcri|scribe|call (analys|analytic|recording|summar)|conversation intelligence|dictation",
+    "document and contract review": "contract|e-?discovery|due diligence|compliance",
+    "document reading and extraction": "document|\\bocr\\b|extract|\\bidp\\b|data entry|invoice|accounts payable|payable|medical coding|claims processing|form processing|prior auth",
+    "knowledge search and research": "\\brag\\b|retrieval|knowledge (base|management)|enterprise search|legal research|investment research|private gpt|search",
+    "recommendations and personalization": "recommend|personaliz|next best",
+    "pricing optimization": "pric|revenue management|yield management",
+    "lead scoring, churn and targeting": "lead (scor|gen)|churn|propensity|lifetime value|\\bclv\\b|\\bltv\\b|marketing mix|attribution|prospect|deal sourc",
+    "scheduling, routing and optimization": "optimi[sz]|schedul|route|routing|operations research|inventory|planning",
+    "customer-facing chatbots and voice agents": "chat ?bots?|conversational|receptionist|call cent|contact cent|voice (agent|ai|assistant)|phone answering|answering service|help ?desk|customer (service|support|experience|care)|\\bsdr\\b",
+    "AI agents (general)": "\\bagents?\\b|assistant|agentic",
+    "content and report generation": "generat|proposal|\\brfp\\b|report writ|content|copywrit|product description",
+    "drug and science discovery": "drug discovery|molecul|protein|clinical trial|life science",
+    "custom model building": "fine.?tun|custom (ai|llm|model|gpt|machine learning)|train (a |an |your own |custom )?(ai|llm|model)|model development|mlops|machine learning model",
+    "process automation": "automat|\\brpa\\b|workflow|bookkeep|onboard|processing|data entry",
+    "hiring AI help (consulting, agencies)": "consult|agency|agencies|development (company|companies|services|firm)|implement|strateg|\\bhire\\b|readiness|chief ai officer|services|solutions"
+  },
+  "row_default": "general AI adoption",
+  "cols": {
+    "private equity and investing": "private equity|venture|due diligence|deal sourc|investment|investing|portfolio|hedge fund|m&a|merger|acquisition|trading|asset management|wealth",
+    "insurance": "insur|claim|actuar|subrogation|reinsur",
+    "banking and lending": "bank|credit|loan|lend|underwrit|mortgage|\\baml\\b|money laundering|\\bkyc\\b|fintech|payment|collection",
+    "healthcare": "health|medical|clinic|patient|hospital|radiolog|scribe|prior auth|revenue cycle|\\behr\\b|nurs|doctor|physician|dental|dentist",
+    "pharma and life sciences": "drug|pharma|clinical trial|life science|biotech|pharmacovigil|molecul|protein",
+    "real estate": "real estate|property|realtor|housing|valuation model|\\bavm\\b|rental|tenant|landlord|home (value|price)",
+    "retail and ecommerce": "retail|e-?commerce|shopify|store|merchandis|consumer goods|\\bcpg\\b|product recommend|product description",
+    "manufacturing": "manufactur|maintenance|quality inspection|defect|factory|industrial|production|machine shop|\\bcnc\\b|\\boee\\b",
+    "logistics and supply chain": "supply chain|logistic|freight|route|warehouse|procure|shipping|trucking|fleet|transport",
+    "legal": "legal|\\blaw\\b|law firm|lawyer|attorney|e-?discovery|litigation|paralegal",
+    "accounting and finance teams": "account|bookkeep|invoice|payable|receivable|\\bcfo|fp&a|audit|\\btax\\b|expense|month.?end",
+    "energy and utilities": "energy|utilit|\\bgrid\\b|\\boil\\b|\\bgas\\b|solar|wind|electric|load forecast",
+    "construction and agriculture": "construct|contractor|agricult|\\bfarm|\\bcrop|agtech",
+    "small business": "small business|smb"
+  },
+  "col_default": "any industry",
+  "exclude": [
+    "vet claims|propensity (meaning|score)|best ai invest|investing (app|platform)|ai stock|ai trading bot|robo|\\bfree\\b|\\bonline\\b|what is|what are|meaning|definition|\\byolo\\b|personal use|how to calculate|^pricing software$|examples?$|\\bvs\\b|reddit|github|python|tutorial|pdf$|\\bppt\\b|paper|research paper|course|book|\\bjobs?\\b",
+    "chatgpt|gemini|copilot|claude|openai|salesforce|hubspot|zendesk|uipath|automation anywhere|\\baws\\b|azure|google cloud|\\bibm\\b|zillow|redfin"
+  ]
+}

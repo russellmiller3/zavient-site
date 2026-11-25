@@ -1,0 +1,32 @@
+{
+ "title": "AI voice agents: what they do and how to test one before launch",
+ "description": "How AI voice agents answer and place phone calls, the consent rules that apply, and how to test one on real call recordings before customers hear it.",
+ "job": "answering and placing phone calls",
+ "summary": "An AI voice agent talks with callers on the phone. It turns speech into text, decides what to say, and speaks the answer back. Businesses use it to answer calls, book appointments and make routine outbound calls.",
+ "example": {"input": "A caller says: I need to move my Thursday appointment to next week, and I can only do mornings.", "output": "The agent finds open morning slots next week, offers two, books the one the caller picks, and reads the new time back to confirm."},
+ "howToTest": [
+  "Collect 50 real call recordings, including noisy lines, strong accents and callers who change their mind midway.",
+  "Have the agent handle each scenario by phone and record every call.",
+  "Count calls where it finished the job correctly, calls it handed to a person, and calls where it said something wrong.",
+  "Check that a caller can reach a human at any time, and that the agent says it is an AI.",
+  "Time the pauses between a caller finishing and the agent answering. Long pauses make callers hang up."
+ ],
+ "buyVsBuild": {"buy": "Buy when you need to answer common calls soon and your calendar or order system has standard connections.", "build": "Build when you need custom call flows or want to control the speech recognition, for example by running a free model such as Whisper yourself."},
+ "watchOuts": [
+  "Outbound calls need consent. The FCC ruled in February 2024 that the TCPA's limits on artificial voices cover AI-generated human voices, so those calls require prior express consent.",
+  "Telemarketing calls fall under the FTC's Telemarketing Sales Rule as well.",
+  "Speech recognition makes more errors on names, addresses and numbers. Make the agent read them back.",
+  "Never let the agent promise a refund, price or medical answer you have not approved in writing."
+ ],
+ "resources": [
+  {"name": "OpenAI Whisper", "url": "https://github.com/openai/whisper", "what": "A free, MIT-licensed speech recognition model that handles many languages. Used as the listening part of a voice agent."},
+  {"name": "eCFR: 16 CFR Part 310, Telemarketing Sales Rule", "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-310", "what": "The federal rule that governs telemarketing calls."}
+ ],
+ "sources": [
+  {"name": "FCC: TCPA applies to AI technologies that generate human voices", "url": "https://www.fcc.gov/document/fcc-confirms-tcpa-applies-ai-technologies-generate-human-voices", "what": "Declaratory ruling FCC-24-17, issued February 8, 2024: calls using AI-generated human voices require prior express consent."},
+  {"name": "OpenAI Whisper", "url": "https://github.com/openai/whisper", "what": "Describes Whisper as a general-purpose speech recognition model that does multilingual speech recognition, speech translation and language identification, under the MIT license."}
+ ],
+ "related": ["ai-sales-development-rep", "ai-customer-service", "ai-medical-scribe"],
+ "keyword": {"phrase": "ai voice agent", "searches": 40500, "cpc": 51.13, "difficulty": 41},
+ "updated": "2026-11-25"
+}

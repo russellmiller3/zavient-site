@@ -1,0 +1,45 @@
+{
+  "title": "AI agents for business: what they do and how to test one",
+  "description": "An AI agent is software that takes steps on its own, such as looking up an order or issuing a refund. Learn what to check before you give one real work.",
+  "job": "Hand a routine task, such as answering a customer about an order, to software that can look things up and take action.",
+  "industry": "any industry",
+  "summary": "An AI agent is a program built on a language model that does more than answer questions. It can call your other software, such as an order system, to look up facts or make changes. It follows rules you write down, like a refund policy. It talks with a customer or an employee until the task is done. Because it can act, a mistake costs more than a wrong answer in a chat window. So you test it on real tasks, many times, before it goes live.",
+  "example": {
+    "input": "A customer writes: 'My order arrived damaged. I want a refund.' The agent can read the order system and issue refunds under $50. The policy says photos are required first.",
+    "output": "The agent asks for a photo, looks up the order, confirms the item is eligible, issues a $32 refund, and replies to the customer with the refund date. If the order were over $50, it would pass the case to a person."
+  },
+  "howToTest": [
+    "Write 30 to 50 real tasks from your past tickets, each with the correct outcome. Include hard ones: angry customers, missing details, and requests that break policy.",
+    "Run each task several times. Agents can succeed once and fail the next time on the same task. Count how often the same task succeeds every time.",
+    "Check what the agent did, not only what it said. Look at the final state of your order system. Did the refund go to the right order for the right amount?",
+    "Try to break the rules on purpose. Ask for a refund the policy does not allow. A good agent says no and hands the case to a person.",
+    "Start with a person approving each action. Remove approvals one task type at a time, as results stay good."
+  ],
+  "buyVsBuild": {
+    "buy": "Buy if your task is common, such as customer support, and your software has a standard connection. A vendor handles hosting, updates and safety checks. Ask to run your own test tasks before you sign.",
+    "build": "Build if the task is specific to your business and you have developers. Expect the work to be in the connections to your systems, the written rules and the test set. Writing the first version is the small part."
+  },
+  "watchOuts": [
+    "An agent that works once may fail on the next try with the same task. Test each task more than once.",
+    "Give the agent the least access it needs. An agent that can refund can also refund wrongly.",
+    "Keep a log of every action. When something goes wrong, you need to see each step.",
+    "Know when a person must step in, such as large amounts, legal matters or upset customers, and build that handoff first."
+  ],
+  "resources": [
+    {
+      "name": "tau-bench on GitHub",
+      "url": "https://github.com/sierra-research/tau-bench",
+      "what": "An open-source test that simulates conversations between a user and an AI agent that has company tools and a written policy. Its page notes that its airline and retail tasks are outdated and points to a newer version, tau3-bench."
+    }
+  ],
+  "sources": [
+    {
+      "name": "tau-bench README on GitHub",
+      "url": "https://github.com/sierra-research/tau-bench",
+      "what": "Describes a benchmark of dynamic conversations between a simulated user and a language agent given domain-specific tools and policy guidelines. It reports results for repeated runs of the same tasks (Pass^1 through Pass^4)."
+    }
+  ],
+  "related": ["ai-consulting-companies", "predictive-maintenance"],
+  "keyword": { "phrase": "ai agents for business", "searches": 3600, "cpc": 44.89, "difficulty": 21 },
+  "updated": "2026-11-25"
+}

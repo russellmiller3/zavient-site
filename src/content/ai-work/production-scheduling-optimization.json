@@ -1,0 +1,33 @@
+{
+ "title": "Production scheduling software: how it works and how to test it",
+ "description": "How scheduling software orders jobs across machines, the free open-source tools that solve it, and how to test a schedule against your real plant.",
+ "job": "production scheduling",
+ "industry": "manufacturing",
+ "summary": "Production scheduling software decides which job runs on which machine and when, so all jobs finish as early as possible. It works within rules such as job steps that must happen in order and one job at a time per machine.",
+ "example": {"input": "Three jobs, three machines, a list of steps per job with the machine and time each step needs.", "output": "A start and end time for every step, with the total time to finish all jobs, and a flag for the machine that limits the plant."},
+ "howToTest": [
+  "Pick one past week of real orders, with the machines, step times and due dates you actually had.",
+  "Write down what your planner scheduled and how the week really went, including late orders.",
+  "Give the software the same week and compare total finish time and late orders against your real result.",
+  "Add a surprise, such as a machine going down for half a day, and check how fast it produces a new usable schedule.",
+  "Ask your planner to read the schedule. If they cannot follow it, the shop floor will not either."
+ ],
+ "buyVsBuild": {"buy": "Buy when your plant fits common patterns and you need a scheduler that talks to your orders and machines.", "build": "Build when your rules are unusual, for example special setups or cleaning between products, using a free solver as the core."},
+ "watchOuts": [
+  "A schedule is only as good as its inputs. Wrong step times or stale inventory data give a wrong schedule.",
+  "Real plants have rules the textbook problem leaves out, such as operator shifts and changeover time. List them before you test.",
+  "Minimizing total time may not be your goal. You may care more about on-time orders or fewer changeovers.",
+  "Plans need to be re-run often. Test how quickly it re-plans after a change."
+ ],
+ "resources": [
+  {"name": "Google OR-Tools: The Job Shop Problem", "url": "https://developers.google.com/optimization/scheduling/job_shop", "what": "A worked example of modeling and solving a job shop schedule with a constraint solver."},
+  {"name": "Job-shop scheduling (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Job-shop_scheduling", "what": "An overview of the problem, its variants and the standard benchmark instances."}
+ ],
+ "sources": [
+  {"name": "Google OR-Tools: The Job Shop Problem", "url": "https://developers.google.com/optimization/scheduling/job_shop", "what": "Defines the job shop problem: tasks in a job run in order, a machine does one task at a time, and the goal is the shortest total schedule."},
+  {"name": "Job-shop scheduling (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Job-shop_scheduling", "what": "Defines job-shop scheduling and the makespan, and names Taillard as the source of the best-known benchmark instances."}
+ ],
+ "related": ["predictive-maintenance", "route-optimization"],
+ "keyword": {"phrase": "production scheduling software", "searches": 1110, "cpc": 109.87, "difficulty": null},
+ "updated": "2026-11-25"
+}

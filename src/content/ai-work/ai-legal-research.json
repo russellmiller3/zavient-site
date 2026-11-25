@@ -1,0 +1,31 @@
+{
+ "title": "AI legal research: how reliable is it and how to test it",
+ "description": "How AI legal research tools find cases and answer legal questions, what Stanford researchers found about errors, and how to check a tool before relying on it.",
+ "job": "legal research",
+ "industry": "legal",
+ "summary": "AI legal research tools answer legal questions in plain language and point to cases and statutes. They save time on first-pass research, but they can state the law wrongly or cite a source that does not support the claim.",
+ "example": {"input": "Does a non-compete agreement signed in Texas hold up when the employee moves to California?", "output": "A short answer with the cases and statutes relied on, each with a link, and a note on where the law is unsettled."},
+ "howToTest": [
+  "Write 30 questions your lawyers already answered, including some with a false premise built into the question.",
+  "Run each question and have a lawyer check every cited case: does it exist, and does it say what the tool claims?",
+  "Count two kinds of errors separately: a wrong statement of law, and a correct statement that cites a source that does not support it.",
+  "Include questions about recent changes in the law and about a specific state, where tools tend to be weaker.",
+  "Record how often it says it does not know, which is the right answer to some questions."
+ ],
+ "buyVsBuild": {"buy": "Buy a legal research product built on a real case database. It has the sources and the citations to check.", "build": "Build only when you have a private body of documents, such as your own past memos, and an engineer to maintain it."},
+ "watchOuts": [
+  "Stanford researchers tested two leading legal research tools in 2024 and found incorrect information more than 17% of the time for Lexis+ AI and Ask Practical Law AI, and more than 34% for Westlaw AI-Assisted Research.",
+  "In the same work, earlier tests of general-purpose chatbots found hallucination rates between 58% and 82% on legal queries.",
+  "A New York lawyer faced sanctions for citing cases a chatbot invented. A lawyer must check every citation.",
+  "Those results are from 2024 tests. Tools change, so test the current version yourself."
+ ],
+ "resources": [
+  {"name": "Stanford HAI: AI on Trial, Legal Models Hallucinate", "url": "https://hai.stanford.edu/news/ai-trial-legal-models-hallucinate-1-out-6-or-more-benchmarking-queries", "what": "A summary of Stanford RegLab and HAI research that tested legal AI research tools on over 200 open-ended legal queries."}
+ ],
+ "sources": [
+  {"name": "Stanford HAI: AI on Trial (May 23, 2024)", "url": "https://hai.stanford.edu/news/ai-trial-legal-models-hallucinate-1-out-6-or-more-benchmarking-queries", "what": "Reports that tested legal research tools produced incorrect information in more than 17% to more than 34% of queries, and describes wrong answers and misgrounded citations as two types of hallucination."}
+ ],
+ "related": ["ai-contract-review", "ai-document-processing", "rag-chatbot"],
+ "keyword": {"phrase": "ai legal research", "searches": 590, "cpc": 55.17, "difficulty": 29},
+ "updated": "2026-11-25"
+}

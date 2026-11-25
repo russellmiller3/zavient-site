@@ -1,0 +1,28 @@
+{
+ "title": "RAG chatbots: answers from your company's own documents",
+ "description": "How a RAG chatbot answers questions from your own documents, how to test that its answers are right and sourced, and buy versus build.",
+ "job": "search over company documents",
+ "summary": "A RAG chatbot (retrieval-augmented generation) first finds the relevant passages in your own documents, then writes an answer from them with references. It is only as good as what it finds and whether it sticks to it.",
+ "example": {"input": "An employee asks: what is our refund policy for annual contracts cancelled after 60 days?", "output": "The answer in two sentences, quoting the policy section and linking to the source document."},
+ "howToTest": [
+  "Write 50 real questions with the correct answer and the document it comes from.",
+  "Score each answer for correctness and for citing the right source.",
+  "Include questions the documents cannot answer: a good system says it does not know.",
+  "Re-test after documents change, since stale answers are a common failure."
+ ],
+ "buyVsBuild": {"buy": "Buy when your documents live in common tools and you need search across them quickly.", "build": "Build when answers must follow your rules, cite exact sources and run inside your own systems."},
+ "watchOuts": [
+  "Confident answers not supported by any document.",
+  "Answers built from outdated versions of a policy.",
+  "Access control: the chatbot must not reveal documents a user cannot open."
+ ],
+ "resources": [
+  {"name": "Vectara hallucination leaderboard", "url": "https://github.com/vectara/hallucination-leaderboard", "what": "Measures how often AI models add facts not in the source when summarizing."}
+ ],
+ "sources": [
+  {"name": "a16z, enterprise CIO survey (2025)", "url": "https://a16z.com/ai-enterprise-2025/", "what": "Enterprises test models on their own internal benchmarks."}
+ ],
+ "related": ["ai-document-processing", "ai-agents-for-business", "ai-contract-review"],
+ "keyword": {"phrase": "rag chatbot", "searches": 3600, "cpc": 29.68, "difficulty": 3},
+ "updated": "2026-11-25"
+}

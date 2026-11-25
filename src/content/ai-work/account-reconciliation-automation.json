@@ -1,0 +1,31 @@
+{
+ "title": "Account reconciliation software: what it does and how to test it",
+ "description": "How software matches your books to bank and other records, what it can and cannot settle on its own, and how to test it on your own accounts.",
+ "job": "account reconciliation",
+ "industry": "finance teams",
+ "summary": "Account reconciliation compares your accounting records with the bank's records and explains every difference. Software does the matching, including one payment that covers many invoices, and leaves a short list for a person to research.",
+ "example": {"input": "A month of bank transactions and your ledger entries for the same account.", "output": "Matched pairs, a short list of unmatched items with likely reasons, and suggested entries for bank fees and interest."},
+ "howToTest": [
+  "Take one closed month that your team already reconciled by hand and keep the final signed result.",
+  "Load the same raw bank data and ledger into the software and let it run.",
+  "Compare its matches with your signed result. Count wrong matches separately from missed matches.",
+  "Check that every item it could not match shows a clear reason a person can act on.",
+  "Repeat on a messy month with many split or combined payments."
+ ],
+ "buyVsBuild": {"buy": "Buy when you reconcile many accounts monthly and your accounting system or an add-on already imports bank data.", "build": "Build only when your matching rules are unusual, such as many-to-many matches across your own internal systems."},
+ "watchOuts": [
+  "A wrong automatic match hides a problem. Reconciliation exists to find errors and fraud, so review the matches too.",
+  "After any system update, check again that the matching still works as expected.",
+  "Automation does not replace the policy: who reconciles, how often, and who reviews the result.",
+  "Separate duties. The person who records transactions should not be the only person who reconciles them."
+ ],
+ "resources": [
+  {"name": "Washington State Auditor: Best Practices for Bank Reconciliations", "url": "https://sao.wa.gov/sites/default/files/2026-03/2026%20Best%20Practices%20for%20Bank%20Reconciliations.pdf", "what": "A government guide to reconciliation policy, frequency, automation and fraud controls such as Positive Pay."}
+ ],
+ "sources": [
+  {"name": "Washington State Auditor: Best Practices for Bank Reconciliations (March 2026)", "url": "https://sao.wa.gov/sites/default/files/2026-03/2026%20Best%20Practices%20for%20Bank%20Reconciliations.pdf", "what": "Says reconciliation can identify fraud, flag bank errors and highlight your own mistakes, and says some systems can automatically reconcile most or all items, including one-to-many matches, if you periodically verify they work."}
+ ],
+ "related": ["invoice-processing-automation", "ai-document-processing"],
+ "keyword": {"phrase": "account reconciliation software", "searches": 760, "cpc": 192.82, "difficulty": null},
+ "updated": "2026-11-25"
+}

@@ -1,0 +1,70 @@
+{
+  "title": "How the Zavient AI-work site turns data into leads",
+  "intro": "Where the data comes from, how it becomes pages, and how a visitor becomes a lead. Press Play, or step through it.",
+  "source": "Proposed design, 25 Nov 2026, from the site plan in reports/AI model comparison site plan.md. Sources named are real; sample items are invented and labelled.",
+  "rows": [
+    ["buyer", "russell"],
+    ["site", "offer"],
+    ["db", "runner"],
+    ["public", "openrouter", "news"]
+  ],
+  "parts": {
+    "buyer": {"label": "Company buyer", "sub": "e.g. a claims VP at an insurer", "kind": "person", "icon": "user", "info": "Someone at a company deciding how to use AI for one job. Finds us from Google or an AI answer."},
+    "russell": {"label": "Russell", "sub": "Zavient consulting", "kind": "person", "icon": "briefcase", "info": "Gets every lead with the context: company, job, industry, what they read."},
+    "site": {"label": "zavient.com pages", "sub": "AI jobs, industries, models", "kind": "program", "icon": "globe", "info": "About 2,500 pages: 20 AI jobs, 14 industries, about 20 job-by-industry pairs, model and comparison pages. Every page carries the offer."},
+    "offer": {"label": "Benchmark offer", "sub": "custom benchmark + consulting", "kind": "output", "icon": "clipboard-check", "info": "The form on every page: benchmark AI models on your own documents, then build what wins."},
+    "db": {"label": "AI-work database", "sub": "jobs x industries x models", "kind": "store", "icon": "database", "info": "One data file. Each job has its best models, scores with sources, cost per task, tools and open data sets."},
+    "runner": {"label": "Benchmark runner", "sub": "our own tests, via Runner", "kind": "program", "icon": "gauge", "info": "Runs a question set across 20 models, grades against a hand-checked answer key, records cost per correct answer."},
+    "public": {"label": "Public benchmarks", "sub": "LegalBench, tau-bench, ...", "kind": "web", "icon": "book-open", "info": "Published scores, each mapped to the job it measures. Cited, never copied where the license forbids."},
+    "openrouter": {"label": "OpenRouter", "sub": "600+ models, prices, runs", "kind": "web", "icon": "server", "info": "Public model list and prices, and the paid API we run benchmarks through."},
+    "news": {"label": "News feeds", "sub": "new models, AI rollouts", "kind": "web", "icon": "newspaper", "info": "New model releases and company AI rollouts. Each becomes its own page within a day, reusing the Zarlent new-deal page engine."}
+  },
+  "lines": [
+    ["buyer", "site"],
+    ["buyer", "offer"],
+    ["russell", "offer"],
+    ["site", "offer"],
+    ["site", "db"],
+    ["offer", "runner"],
+    ["db", "runner"],
+    ["db", "public"],
+    ["db", "news"],
+    ["runner", "openrouter"],
+    ["db", "openrouter"]
+  ],
+  "scenarios": [
+    {
+      "id": "fill",
+      "label": "Fill the database",
+      "steps": [
+        {"action": "read", "text": "Pull public scores and map each to a job. LegalBench feeds contract review; tau-bench feeds customer-service agents.", "flow": "public>db", "carry": {"icon": "book-open", "label": "LegalBench scores ↑"}, "item": {"title": "Public score (sample)", "fields": [["Benchmark", "LegalBench"], ["Job", "contract review"], ["Model", "Model A"], ["Score", "81% (sample)"], ["Source", "cited link"]]}, "time": "weekly"},
+        {"action": "read", "text": "Pull every model with its price and hosts.", "flow": "openrouter>db", "carry": {"icon": "list", "label": "600+ models + prices ↑"}, "item": {"title": "Model row (sample)", "fields": [["Model", "Model A"], ["Price in", "$0.40 / million tokens"], ["Price out", "$1.60 / million tokens"], ["Hosts", "5"]]}, "time": "daily"},
+        {"action": "read", "text": "Catch news: a new model or a company AI rollout.", "flow": "news>db", "carry": {"icon": "newspaper", "label": "New model released ↑"}, "item": {"title": "News item (sample)", "fields": [["What", "Model B released"], ["Date", "25 Nov 2026"], ["Page", "/models/model-b/ in 24 hours"]]}, "time": "hourly"},
+        {"action": "send", "text": "Run our own benchmark: 30 finance questions to 20 models.", "flow": "runner<>openrouter", "carry": {"icon": "file-question-mark", "label": "30 questions → 20 AIs"}, "item": {"title": "One question (sample)", "fields": [["Question", "Fund net return, Q3?"], ["Answer key", "8.2%, page 4"], ["Model A", "8.2%, 1 cent"], ["Model B", "7.9%, 5 cents"]]}, "time": "about 1 hour"},
+        {"action": "save", "text": "Save scores: right answers and cost per correct answer.", "flow": "runner>db", "carry": {"icon": "check", "label": "20 scores ↓"}, "item": {"title": "Score row (sample)", "fields": [["Job", "finance documents"], ["Model A", "27 of 30, $0.30"], ["Model B", "22 of 30, $1.50"], ["Label", "Zavient tested"]]}},
+        {"action": "write", "text": "Build the pages from the database.", "flow": "db>site", "carry": {"icon": "layout-dashboard", "label": "AI underwriting page ↑"}, "time": "minutes"}
+      ]
+    },
+    {
+      "id": "lead",
+      "label": "A visitor becomes a lead",
+      "steps": [
+        {"action": "search", "text": "A buyer searches Google for 'insurance underwriting ai' and lands on our page.", "flow": "buyer>site", "carry": {"icon": "search", "label": "underwriting ai ↓"}},
+        {"action": "reply", "text": "The page shows best models for the job, cost per task, tools and our benchmark.", "flow": "site>buyer", "carry": {"icon": "layout-dashboard", "label": "Best models + costs ↑"}},
+        {"action": "send", "text": "The buyer fills in the offer form at the end of the page.", "flow": "buyer>offer", "carry": {"icon": "clipboard", "label": "Request: benchmark ↓"}, "item": {"title": "Form (sample)", "fields": [["Company", "Mid-size insurer"], ["Job", "claims underwriting"], ["Documents", "about 5,000 claim files"], ["Timing", "this quarter"]]}},
+        {"action": "send", "text": "The lead lands with Russell, with what the buyer read.", "flow": "offer>russell", "carry": {"icon": "mail", "label": "Lead: insurer ↑"}, "time": "instant"},
+        {"action": "send", "text": "Paid benchmark: the buyer's sample documents go to the runner.", "flow": "offer>runner", "carry": {"icon": "file-text", "label": "50 claim files ↓"}, "time": "1 to 2 weeks"},
+        {"action": "send", "text": "The runner tests 20 models on the buyer's documents.", "flow": "runner<>openrouter", "carry": {"icon": "file-question-mark", "label": "50 files → 20 AIs"}, "ifNot": "Sensitive files run on a private host instead of OpenRouter."},
+        {"action": "reply", "text": "The report shows which model wins and what it costs. Next sale: build it.", "flow": "runner>offer", "carry": {"icon": "file-check", "label": "Benchmark report ↑"}}
+      ]
+    },
+    {
+      "id": "ugc",
+      "label": "A practitioner adds a report",
+      "steps": [
+        {"action": "send", "text": "A practitioner reports what worked for them.", "flow": "buyer>site", "carry": {"icon": "message-circle", "label": "My result: model A ↓"}, "item": {"title": "Practitioner report (sample)", "fields": [["Job", "invoice reading"], ["Industry", "logistics"], ["Model", "Model A"], ["Worked?", "yes, 96% fields right"], ["Cost", "about 2 cents a page"]]}},
+        {"action": "check", "text": "Check it, then add it to the job's page as a practitioner report.", "flow": "site>db", "carry": {"icon": "shield-check", "label": "1 checked report ↓"}, "ifNot": "Reports without a job, model and result are not published."}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+ "title": "AI medical scribe: what it does and how to test one safely",
+ "description": "How an AI medical scribe turns a doctor visit into a chart note, what a published health-system study found, and how to test one with privacy rules in mind.",
+ "job": "clinical note writing",
+ "industry": "healthcare",
+ "summary": "An AI medical scribe listens to a patient visit, with consent, and drafts the clinical note. The clinician reads, fixes and signs it. The goal is less time typing notes, especially after hours.",
+ "example": {"input": "A recorded 15-minute visit about knee pain, including the exam and the plan to order an X-ray.", "output": "A draft note with the history, exam findings, assessment and plan sections filled in, for the clinician to edit and sign."},
+ "howToTest": [
+  "Run a pilot with a small group of clinicians who volunteer, and track the same measures for a similar group without the tool.",
+  "Measure time in notes per visit, after-hours charting time, and the share of notes closed the same day, before and after.",
+  "Have a second clinician compare 30 drafts to the recording and count missing facts and invented facts.",
+  "Ask patients if they were told about the recording and whether they agreed.",
+  "Check where the audio and text are stored, who can see them and how long they are kept."
+ ],
+ "buyVsBuild": {"buy": "Buy in almost every case. Privacy contracts, chart system connections and clinical safety checks are heavy work.", "build": "Build only if you are a large health system with a research team and a need the products do not meet."},
+ "watchOuts": [
+  "A vendor that handles patient information for you is usually a HIPAA business associate. HHS says you need a written business associate agreement before sharing that information.",
+  "The clinician stays responsible for the note. A draft with an invented finding is a patient safety problem.",
+  "Published results come from specific sites and willing clinicians. Yours may differ.",
+  "Obtain patient consent to record in line with your state's rules, which this page does not cover."
+ ],
+ "resources": [
+  {"name": "HHS: Business Associates", "url": "https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/business-associates/index.html", "what": "HHS guidance on who counts as a business associate and why a written agreement is needed."},
+  {"name": "HHS: The HIPAA Privacy Rule", "url": "https://www.hhs.gov/hipaa/for-professionals/privacy/index.html", "what": "The national standards that protect medical records and other personal health information."}
+ ],
+ "sources": [
+  {"name": "JAMA Network Open: Clinician Experiences With Ambient Scribe Technology (Feb 2025)", "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2830383", "what": "A study of 46 clinicians in which mean time in notes per appointment fell from 10.3 to 8.2 minutes after ambient scribing, a 15.2% change."},
+  {"name": "HHS: Business Associates", "url": "https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/business-associates/index.html", "what": "Explains that a covered entity may share protected health information with a business associate only with satisfactory assurances in a written agreement."}
+ ],
+ "related": ["ai-voice-agents", "ai-document-processing", "rag-chatbot"],
+ "keyword": {"phrase": "ai medical scribe", "searches": 3600, "cpc": 26.98, "difficulty": 35},
+ "updated": "2026-11-25"
+}

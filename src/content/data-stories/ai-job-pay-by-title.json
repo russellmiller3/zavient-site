@@ -1,0 +1,37 @@
+{
+ "title": "What AI jobs pay in the US, by job title",
+ "description": "Median posted pay for US AI jobs by title, from 1,038 job ads that state pay: heads of AI at $220K, data scientists at $130K.",
+ "dek": "Among recent US AI job ads that state pay, heads of AI post the highest median minimum, at $220,600. Data scientists post the lowest, at $130,000.",
+ "findings": [
+  "Research and leadership roles pay most: head or director of AI at a median $220,600, AI research scientist at $196,965, applied scientist at $184,500.",
+  "Machine learning engineers post a median $170,600, ahead of forward deployed engineers ($161,359) and AI engineers ($155,300).",
+  "Data scientists post the lowest median, $130,000, about $40,000 below machine learning engineers.",
+  "These are the minimums of posted pay ranges, so actual offers often run higher."
+ ],
+ "chart": {
+  "title": "Median posted minimum pay, US AI job ads",
+  "subtitle": "Ads posted between 21 and 25 Nov 2026 that state yearly pay; number of ads in each row's note",
+  "unit": "usd",
+  "bars": [
+   {"label": "Head or director of AI", "value": 220600, "note": "28 ads"},
+   {"label": "AI research scientist", "value": 196965, "note": "36 ads"},
+   {"label": "Applied scientist", "value": 184500, "note": "18 ads"},
+   {"label": "Machine learning engineer", "value": 170600, "note": "195 ads"},
+   {"label": "AI architect or consultant", "value": 166400, "note": "34 ads"},
+   {"label": "AI product manager", "value": 165000, "note": "19 ads"},
+   {"label": "Forward deployed engineer", "value": 161359, "note": "174 ads"},
+   {"label": "AI engineer", "value": 155300, "note": "247 ads"},
+   {"label": "Data scientist", "value": 130000, "note": "287 ads"}
+  ]
+ },
+ "method": [
+  "From 2,046 recent US AI job ads (reposts removed), I kept the 1,038 that state a yearly minimum between $40,000 and $2 million.",
+  "The figure is the median of each ad's posted minimum, the bottom of the stated range.",
+  "Groups with fewer than 30 ads (head of AI, applied scientist, AI product manager) are less certain; their ad counts are shown.",
+  "Pay is as posted; some states require pay ranges in ads, so ads from those states are over-represented."
+ ],
+ "sources": [
+  {"name": "JobsPipe job index", "url": "https://jobspipe.dev/", "what": "The job ads, with posted pay, employer, title and description, pulled through the treg data service."}
+ ],
+ "updated": "2026-11-25"
+}

@@ -1,0 +1,660 @@
+{
+ "plan": "open-models-and-custom-evals",
+ "geo": {
+  "country": "us",
+  "language": "en"
+ },
+ "phrases_found": 374,
+ "phrases_kept": 334,
+ "phrases_dropped_off_topic": 40,
+ "spend_usd": 0,
+ "calls": 0,
+ "themes": {
+  "build_own_benchmark": {
+   "phrases": 30,
+   "with_volume": 8,
+   "total_monthly_volume": 80,
+   "volume_by_facet": {
+    "(none)": 50,
+    "how_to": 30
+   },
+   "top": [
+    {
+     "keyword": "golden dataset llm",
+     "volume": 10,
+     "cpc": null,
+     "difficulty": null,
+     "yoy_pct": 0,
+     "facets": ""
+    },
+    {
+     "keyword": "llm eval datasets",
+     "volume": 10,
+     "cpc": null,
+     "difficulty": null,
+     "yoy_pct": null,
+     "facets": ""
+    },
+    {
+     "keyword": "how to create evals for ai agents",
+     "volume": 10,
+     "cpc": 39.07,
+     "difficulty": null,
+     "yoy_pct": null,
+     "facets": "how_to"
+    },
+    {
+     "keyword": "how to create evals",
+     "volume": 10,
+     "cpc": 28.03,
+     "difficulty": null,
+     "yoy_pct": null,
+     "facets": "how_to"
+    },
+    {
+     "keyword": "how to build evals",
+     "volume": 10,
+     "cpc": 16.56,
+     "difficulty": null,
+     "yoy_pct": null,
+     "facets": "how_to"
+    },
+    {
+     "keyword": "llm test cases",
+     "volume": 10,
+     "cpc": null,
+     "difficulty": null,
+     "yoy_pct": -100,
+     "facets": ""
+    },
+    {
+     "keyword": "rag evaluation dataset",
+     "volume": 10,
+     "cpc": null,
+     "difficulty": 9,
+     "yoy_pct": 0,
+     "facets": ""
+    },
+    {
+     "keyword": "rag evaluation datasets",
+     "volume": 10,
+     "cpc": null,
+     "difficulty": 9,
+     "yoy_pct": null,
+     "facets": ""
+    },
+    {
+     "keyword": "how to create llm benchmark",
+     "volume": 0,
+     "cpc": null,
+     "difficulty": null,
+     "yoy_pct": null,
+     "facets": "how_to"
+    },
+    {
+     "keyword": "create llm benchmark",
+     "volume": 0,
+     "cpc": null,
+     "difficulty": null,
+     "yoy_pct": null,
+     "facets": ""
+    },
+    {
+     "keyword": "custom llm benchmark",
+     "volume": 0,
+     "cpc": null,
+     "difficulty": null,
+     "yoy_pct": null,
+     "facets": ""
+    },
+    {
+     "keyword": "create evaluation dataset",
+     "volume": 0,
+     "cpc": null,
+     "difficulty": null,
+     "yoy_pct": null,
+     "facets": ""
+    },
+    {
+     "keyword": "create evaluation dataset snowflake",
+     "volume": 0,
+     "cpc": null,
+     "difficulty": null,
+     "yoy_pct": null,
+     "facets": ""
+    },
+    {
+     "keyword": "build evaluation dataset",
+     "volume": 0,
+     "cpc": null,
+     "difficulty": null,
+     "yoy_pct": null,
+     "facets": ""
+    },
+    {
+     "keyword": "golden dataset llm evaluation",
+     "volume": 0,
+     "cpc": null,
+     "difficulty": null,
+     "yoy_pct": null,
+     "facets": ""
+    },
+    {
+     "keyword": "llm evaluation dataset generation",
+     "volume": 0,
+     "cpc": null,
+     "difficulty": null,
+     "yoy_pct": null,
+     "facets": ""
+    },
+    {
+     "keyword": "llm evaluation golden dataset",
+     "volume": 0,
+     "cpc": null,
+     "difficulty": null,
+     "yoy_pct": null,
+     "facets": ""
+    },
+    {
+     "keyword": "llm eval dataset",
+     "volume": 0,
+     "cpc": null,
+     "difficulty": null,
+     "yoy_pct": null,
+     "facets": ""
+    },
+    {
+     "keyword": "how to create evals for skills",
+     "volume": 0,
+     "cpc": null,
+     "difficulty": null,
+     "yoy_pct": null,
+     "facets": "how_to"
+    },
+    {
+     "keyword": "how to create evals for agents",
+     "volume": 0,
+     "cpc": null,
+     "difficulty": null,
+     "yoy_pct": null,
+     "facets": "how_to"
+    },
+    {
+     "keyword": "how to build evals for ai agents",
+     "volume": 0,
+     "cpc": null,
+     "difficulty": null,
+     "yoy_pct": null,
+     "facets": "how_to"
+    },
+    {
+     "keyword": "how to create llm evals",
+     "volume": 0,
+     "cpc": null,
+     "difficulty": null,
+     "yoy_pct": null,
+     "facets": "how_to"
+    },
+    {
+     "keyword": "how to create ai evals",
+     "volume": 0,
+     "cpc": null,
+     "difficulty": null,
+     "yoy_pct": null,
+     "facets": "how_to"
+    },
+    {
+     "keyword": "custom evals",
+     "volume": 0,
+     "cpc": null,
+     "difficulty": null,
+     "yoy_pct": null,
+     "facets": ""
+    },
+    {
+     "keyword": "evalscope custom dataset",
+     "volume": 0,
+     "cpc": null,
+     "difficulty": null,
+     "yoy_pct": null,
+     "facets": ""
+    }
+   ]
+  },
+  "benchmark_own_data": {
+   "phrases": 181,
+   "with_volume": 153,
+   "total_monthly_volume": 34540,
+   "volume_by_facet": {
+    "(none)": 15430,
+    "unclear": 11770,
+    "comparison": 5940,
+    "best_ranking": 1870,
+    "tools": 1110,
+    "question": 570,
+    "academic": 260,
+    "how_to": 180,
+    "cost": 30
+   },
+   "top": [
+    {
+     "keyword": "ai benchmark",
+     "volume": 9900,
+     "cpc": 6.6,
+     "difficulty": 65,
+     "yoy_pct": 403,
+     "facets": "unclear"
+    },
+    {
+     "keyword": "llm benchmark",
+     "volume": 5400,
+     "cpc": 9.78,
+     "difficulty": 43,
+     "yoy_pct": 179,
+     "facets": ""
+    },
+    {
+     "keyword": "llm benchmarks",
+     "volume": 5400,
+     "cpc": 9.78,
+     "difficulty": 43,
+     "yoy_pct": null,
+     "facets": ""
+    },
+    {
+     "keyword": "llm as a judge",
+     "volume": 2400,
+     "cpc": 10.28,
+     "difficulty": 40,
+     "yoy_pct": 0,
+     "facets": ""
+    },
+    {
+     "keyword": "ai model comparison",
+     "volume": 1600,
+     "cpc": 5.47,
+     "difficulty": 24,
+     "yoy_pct": 307,
+     "facets": "comparison"
+    },
+    {
+     "keyword": "deepseek vs chatgpt",
+     "volume": 1600,
+     "cpc": 1.77,
+     "difficulty": 10,
+     "yoy_pct": -47,
+     "facets": "comparison;unclear"
+    },
+    {
+     "keyword": "llm evaluation",
+     "volume": 1000,
+     "cpc": 19.93,
+     "difficulty": 26,
+     "yoy_pct": 30,
+     "facets": ""
+    },
+    {
+     "keyword": "llm comparison",
+     "volume": 590,
+     "cpc": 6.19,
+     "difficulty": 50,
+     "yoy_pct": 0,
+     "facets": "comparison"
+    },
+    {
+     "keyword": "llm benchmark leaderboard",
+     "volume": 590,
+     "cpc": 7.95,
+     "difficulty": 63,
+     "yoy_pct": null,
+     "facets": "best_ranking"
+    },
+    {
+     "keyword": "llm evaluation framework",
+     "volume": 390,
+     "cpc": 21.59,
+     "difficulty": 17,
+     "yoy_pct": 23,
+     "facets": "tools"
+    },
+    {
+     "keyword": "qwen vs claude",
+     "volume": 390,
+     "cpc": 12.26,
+     "difficulty": 0,
+     "yoy_pct": 929,
+     "facets": "comparison"
+    },
+    {
+     "keyword": "ai model comparison chart",
+     "volume": 320,
+     "cpc": 6.94,
+     "difficulty": 30,
+     "yoy_pct": 129,
+     "facets": "comparison"
+    },
+    {
+     "keyword": "open source llm leaderboard",
+     "volume": 320,
+     "cpc": 8.08,
+     "difficulty": 30,
+     "yoy_pct": -34,
+     "facets": "best_ranking"
+    },
+    {
+     "keyword": "llm evaluation metrics",
+     "volume": 260,
+     "cpc": 12.66,
+     "difficulty": 18,
+     "yoy_pct": -35,
+     "facets": ""
+    },
+    {
+     "keyword": "which llm is best for coding",
+     "volume": 210,
+     "cpc": 11.25,
+     "difficulty": 7,
+     "yoy_pct": -47,
+     "facets": "best_ranking;question"
+    },
+    {
+     "keyword": "rag evaluation",
+     "volume": 170,
+     "cpc": 15.96,
+     "difficulty": 25,
+     "yoy_pct": 24,
+     "facets": ""
+    },
+    {
+     "keyword": "compare ai models side by side",
+     "volume": 170,
+     "cpc": 7.12,
+     "difficulty": 7,
+     "yoy_pct": 191,
+     "facets": "comparison"
+    },
+    {
+     "keyword": "open weight models vs open source",
+     "volume": 170,
+     "cpc": 6.18,
+     "difficulty": 29,
+     "yoy_pct": null,
+     "facets": "comparison"
+    },
+    {
+     "keyword": "llm evaluation tool",
+     "volume": 110,
+     "cpc": 23.72,
+     "difficulty": 20,
+     "yoy_pct": -21,
+     "facets": "tools"
+    },
+    {
+     "keyword": "llm evaluation tools",
+     "volume": 110,
+     "cpc": 23.72,
+     "difficulty": 20,
+     "yoy_pct": -21,
+     "facets": "tools"
+    },
+    {
+     "keyword": "which llm is best for writing",
+     "volume": 110,
+     "cpc": 22.52,
+     "difficulty": 0,
+     "yoy_pct": 57,
+     "facets": "best_ranking;question"
+    },
+    {
+     "keyword": "rag evaluation metrics",
+     "volume": 110,
+     "cpc": 18.15,
+     "difficulty": 21,
+     "yoy_pct": 0,
+     "facets": ""
+    },
+    {
+     "keyword": "llm-as a judge paper",
+     "volume": 110,
+     "cpc": null,
+     "difficulty": 26,
+     "yoy_pct": -81,
+     "facets": "academic"
+    },
+    {
+     "keyword": "llm as a judge paper",
+     "volume": 110,
+     "cpc": null,
+     "difficulty": 49,
+     "yoy_pct": null,
+     "facets": "academic"
+    },
+    {
+     "keyword": "llm evaluation harness",
+     "volume": 90,
+     "cpc": 19.63,
+     "difficulty": 0,
+     "yoy_pct": null,
+     "facets": ""
+    }
+   ]
+  },
+  "switch_to_open_models": {
+   "phrases": 123,
+   "with_volume": 86,
+   "total_monthly_volume": 201070,
+   "volume_by_facet": {
+    "brand_tool": 173190,
+    "(none)": 15700,
+    "business": 6910,
+    "comparison": 2740,
+    "best_ranking": 2550,
+    "question": 0,
+    "cost": 0
+   },
+   "top": [
+    {
+     "keyword": "ollama",
+     "volume": 165000,
+     "cpc": 7.02,
+     "difficulty": 48,
+     "yoy_pct": 49,
+     "facets": "brand_tool"
+    },
+    {
+     "keyword": "llama ai",
+     "volume": 8100,
+     "cpc": 7.95,
+     "difficulty": 40,
+     "yoy_pct": 49,
+     "facets": "brand_tool"
+    },
+    {
+     "keyword": "open weight models",
+     "volume": 5400,
+     "cpc": 6.81,
+     "difficulty": 20,
+     "yoy_pct": 3671,
+     "facets": ""
+    },
+    {
+     "keyword": "open source llm",
+     "volume": 3600,
+     "cpc": 10.42,
+     "difficulty": 33,
+     "yoy_pct": 26,
+     "facets": ""
+    },
+    {
+     "keyword": "self host llm",
+     "volume": 3600,
+     "cpc": 6.85,
+     "difficulty": 2,
+     "yoy_pct": 233,
+     "facets": ""
+    },
+    {
+     "keyword": "private llm",
+     "volume": 3600,
+     "cpc": 8.01,
+     "difficulty": 17,
+     "yoy_pct": 116,
+     "facets": "business"
+    },
+    {
+     "keyword": "on premise llm",
+     "volume": 2900,
+     "cpc": 7.77,
+     "difficulty": 1,
+     "yoy_pct": 2011,
+     "facets": "business"
+    },
+    {
+     "keyword": "openai api alternatives",
+     "volume": 2400,
+     "cpc": 27.12,
+     "difficulty": 0,
+     "yoy_pct": null,
+     "facets": "comparison"
+    },
+    {
+     "keyword": "best open source llm",
+     "volume": 1600,
+     "cpc": 6.53,
+     "difficulty": 34,
+     "yoy_pct": 85,
+     "facets": "best_ranking"
+    },
+    {
+     "keyword": "open source llms",
+     "volume": 1000,
+     "cpc": 8.21,
+     "difficulty": 35,
+     "yoy_pct": null,
+     "facets": ""
+    },
+    {
+     "keyword": "open source llm models",
+     "volume": 720,
+     "cpc": 6.5,
+     "difficulty": 36,
+     "yoy_pct": null,
+     "facets": ""
+    },
+    {
+     "keyword": "fine-tune llm",
+     "volume": 590,
+     "cpc": 8.49,
+     "difficulty": 35,
+     "yoy_pct": -76,
+     "facets": ""
+    },
+    {
+     "keyword": "best open source llm for coding",
+     "volume": 480,
+     "cpc": 7.64,
+     "difficulty": 19,
+     "yoy_pct": 181,
+     "facets": "best_ranking"
+    },
+    {
+     "keyword": "openai alternatives",
+     "volume": 110,
+     "cpc": 6.68,
+     "difficulty": 0,
+     "yoy_pct": -21,
+     "facets": "comparison"
+    },
+    {
+     "keyword": "open weight models meaning",
+     "volume": 110,
+     "cpc": 2.02,
+     "difficulty": null,
+     "yoy_pct": null,
+     "facets": ""
+    },
+    {
+     "keyword": "open ai alternative",
+     "volume": 90,
+     "cpc": 4.22,
+     "difficulty": 15,
+     "yoy_pct": null,
+     "facets": "comparison"
+    },
+    {
+     "keyword": "llama gpt",
+     "volume": 90,
+     "cpc": 0.02,
+     "difficulty": 57,
+     "yoy_pct": -71,
+     "facets": "brand_tool"
+    },
+    {
+     "keyword": "open source llm models list",
+     "volume": 70,
+     "cpc": 5.9,
+     "difficulty": 38,
+     "yoy_pct": 25,
+     "facets": ""
+    },
+    {
+     "keyword": "open-source llm models to run locally",
+     "volume": 70,
+     "cpc": 6.67,
+     "difficulty": 37,
+     "yoy_pct": 950,
+     "facets": ""
+    },
+    {
+     "keyword": "open source llm models to run locally",
+     "volume": 70,
+     "cpc": 6.67,
+     "difficulty": 37,
+     "yoy_pct": null,
+     "facets": ""
+    },
+    {
+     "keyword": "open source llm ranking",
+     "volume": 70,
+     "cpc": 4.38,
+     "difficulty": 61,
+     "yoy_pct": null,
+     "facets": "best_ranking"
+    },
+    {
+     "keyword": "private llm app",
+     "volume": 70,
+     "cpc": 5.5,
+     "difficulty": 10,
+     "yoy_pct": null,
+     "facets": "business"
+    },
+    {
+     "keyword": "best open source llm to run locally",
+     "volume": 70,
+     "cpc": 14.08,
+     "difficulty": 23,
+     "yoy_pct": 267,
+     "facets": "best_ranking"
+    },
+    {
+     "keyword": "best open source llm model",
+     "volume": 70,
+     "cpc": 6.54,
+     "difficulty": 28,
+     "yoy_pct": null,
+     "facets": "best_ranking"
+    },
+    {
+     "keyword": "open source llm for coding",
+     "volume": 50,
+     "cpc": 5.42,
+     "difficulty": 20,
+     "yoy_pct": null,
+     "facets": ""
+    }
+   ]
+  }
+ },
+ "spend_usd_all_runs": 0.7922
+}

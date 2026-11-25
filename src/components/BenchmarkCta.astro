@@ -1,0 +1,12 @@
+---
+// api-docs-read: static offer block — no external API/protocol surface, only mailto.
+// The offer every AI-work page ends with: a custom benchmark on the reader's own documents, then the build.
+const { job = 'this job' } = Astro.props;
+---
+<section class="article-cta" data-cta="benchmark">
+  <div class="wrap">
+    <h2>Find out which AI does {job} best on your own documents</h2>
+    <p>Send 20 to 50 real examples of the work. I test the leading AI models on them against answers your team has checked, and show which model gets it right and what each costs per document. Then, if you want, we build the winner into your workflow and keep it right as new models come out.</p>
+    <p><a class="btn" href="/benchmark-your-documents.html">See how a custom benchmark works &rarr;</a></p>
+  </div>
+</section>

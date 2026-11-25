@@ -1,0 +1,32 @@
+{
+ "title": "AI SDR: what an AI sales rep does and how to test one",
+ "description": "What an AI sales development rep does, the email rules it must follow, and how to run a small, fair test before you give it your list.",
+ "job": "sales prospecting and outreach",
+ "summary": "An AI sales development rep (SDR) finds prospects, writes outreach emails, sends them and handles first replies. It does the early, repetitive part of sales so your people talk only to interested buyers.",
+ "example": {"input": "A list of 200 target companies and a two-line description of who you sell to.", "output": "A named contact at each company, a short personal email for each, and a sorted list of replies marked interested, not now, or unsubscribe."},
+ "howToTest": [
+  "Pick 100 prospects from your list. Split them in two groups of 50 that look alike.",
+  "Have the AI contact one group and your best human rep contact the other, with the same offer and the same dates.",
+  "Count positive replies and meetings booked, and count complaints, bounces and unsubscribes.",
+  "Read every email it sent. Check that facts about each company are true.",
+  "Compare cost per meeting for both groups, including the time you spent supervising the AI."
+ ],
+ "buyVsBuild": {"buy": "Buy when you want to test outbound sales quickly and your list is in a common data tool.", "build": "Build when your sales process is specific, you need strict control of what is said, or you already have clean data to feed it."},
+ "watchOuts": [
+  "Cold email is regulated. The CAN-SPAM law bans misleading header information and deceptive subject lines, and covers how recipients can opt out.",
+  "AI-generated voice calls are covered too. The FCC ruled in 2024 that the TCPA rules on artificial voices include AI-generated human voices, so those calls need prior consent.",
+  "A made-up fact about a prospect damages your name. Check the emails.",
+  "Sending too much too fast can harm your email domain's reputation, so start small."
+ ],
+ "resources": [
+  {"name": "15 U.S.C. 7704 (CAN-SPAM Act)", "url": "https://www.law.cornell.edu/uscode/text/15/7704", "what": "The law's text on false headers, deceptive subject lines and opt-out options for commercial email."},
+  {"name": "eCFR: 16 CFR Part 316, CAN-SPAM Rule", "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-316", "what": "The Federal Trade Commission's rule that carries out the CAN-SPAM Act."}
+ ],
+ "sources": [
+  {"name": "15 U.S.C. 7704", "url": "https://www.law.cornell.edu/uscode/text/15/7704", "what": "Makes it unlawful to send commercial email with materially false or misleading header information, and sets rules for deceptive subject headings."},
+  {"name": "FCC: TCPA applies to AI technologies that generate human voices", "url": "https://www.fcc.gov/document/fcc-confirms-tcpa-applies-ai-technologies-generate-human-voices", "what": "A February 2024 ruling that calls using AI-generated human voices require the prior express consent of the person called."}
+ ],
+ "related": ["ai-voice-agents", "ai-customer-service", "marketing-mix-modeling"],
+ "keyword": {"phrase": "ai sdr", "searches": 1600, "cpc": 92.75, "difficulty": 33},
+ "updated": "2026-11-25"
+}
