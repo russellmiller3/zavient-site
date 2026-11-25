@@ -1,7 +1,7 @@
 # Zavient site — technical truth
 
 The agent's reference for zavient.com: what the site is for, where the work stands, how it is built, what
-breaks, and what to do next. The master plan (strategy, numbers, page lists) is `docs/ai-work-site/plan.md`.
+breaks, and what to do next. The master plan (strategy, numbers, page lists) is `docs/zavient-ai-site-master-plan.md`.
 Last reconciled 25 Nov 2026, on branch `feature/ai-work-pages`.
 
 <!-- truth:generated:toc START -->
@@ -79,7 +79,7 @@ Last reconciled 25 Nov 2026, on branch `feature/ai-work-pages`.
 
 ```
 1 Research: rivals, buyers, demand, job ads ........ done
-2 Plan and decisions (docs/ai-work-site/plan.md) .... done
+2 Plan and decisions (master plan) ................ done
 3 Engine + first 20 pages + 5 data stories ......... done
 4 Publish to zavient.com ............................ done (25 Nov 2026)
 5 Hand-check agent pages; submit sitemap ............ <- YOU ARE HERE
@@ -240,7 +240,7 @@ A monthly job-ad snapshot costs about $6 to $12; Indeed's trend data is free.
 
 | Fact | Owner |
 |---|---|
-| Strategy, page lists, revenue lines, data map | `docs/ai-work-site/plan.md` (master plan) |
+| Strategy, page lists, revenue lines, data map | `docs/zavient-ai-site-master-plan.md` (master plan) |
 | Rival sites, buyers, user complaints, data sources | `docs/ai-work-site/research-notes/` |
 | Search demand by phrase | `docs/ai-work-site/keyword-research/` |
 | Job-ad counts and pay (one snapshot) | `docs/ai-work-site/job-data/stories.json` |
@@ -297,6 +297,10 @@ Read straight from git, so this can never become someone's recollection.
 
 | date | what shipped |
 |---|---|
+| 2026-11-25 | Master plan: save the site architecture shown to Russell on 25 Nov |
+| 2026-11-25 | Hide the 20 AI-work pages from Google; fix sitemap addresses |
+| 2026-11-25 | README: change-log entry for the menu-link fix |
+| 2026-11-25 | Fix menu links that 404 on Vercel; add a test that every internal link names a real file |
 | 2026-11-25 | Add AI-work pages, job-ad data stories with trends, and the site's planning record |
 | 2026-11-22 | Add data evaluation section to the home page |
 | 2026-08-08 | Fix internal linking: homepage to articles, and articles to each other |
@@ -313,7 +317,6 @@ Read straight from git, so this can never become someone's recollection.
 | 2026-05-09 | Launch revenue model homepage |
 | 2026-03-24 | Remove open-ended retainers bullet from What I Don't Do |
 | 2026-03-24 | Reframe landing page: Sprint as flagship, new CTA, advisory reframe |
-| 2026-03-17 | start |
 <!-- truth:generated:recent-work END -->
 
 ## Maintaining this guide

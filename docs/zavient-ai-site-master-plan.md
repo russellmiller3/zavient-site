@@ -172,7 +172,7 @@ Difficulty is DataForSEO's 0-to-100 estimate. I have not yet read Google's real 
 - **Traffic you can get (US Google, measured 25 Nov 2026):** 2,710 phrases with 1,535,860 searches a month, all categories above included. At AWR's July 2026 US desktop click rates (20.0% at #1, 3.9% at #3), that's about 29,000 visits a month in year 1 (easy phrases at #3), 60,000 at #3 everywhere and 307,000 at #1 everywhere. Duplicates, app names, look-alike software names and "what is" questions are removed.
 - **What top-paying AI job ads show (1,000 US ads, 281 employers, posted 19 to 25 Nov 2026):** the highest pay is at AI labs (Anthropic and OpenAI, up to $500,000 minimum), Netflix, Roblox and Capital One. The most common work, counted by employers to stop repeated templates inflating it: AI agents (157 employers), forecasting and experimentation (139), evaluation and benchmarks (114), search and RAG (113), recommendations (101), AI governance (88), AI safety (79), post-training (75). Industry-specific jobs such as seismic interpretation or lease abstraction almost never appear. Operating companies buy that work rather than hire for it, which is the consulting opening. EY (167 ads) and Deloitte (83) post a quarter of the ads, so the big firms are staffing up to sell AI work.
 - Job-ad counts matched single words rather than whole phrases, so they serve only as a rough tie-breaker.
-- Files: the ranked lists of work types and software, and the traffic script, are in `research/keywords/ai-work-taxonomy-11-25-2026/`.
+- Files: the ranked lists of work types and software, and the traffic script, are in `ai-work-site/keyword-research/ai-work-taxonomy-11-25-2026/`.
 
 ## Data map: what we combine (25 Nov 2026)
 
@@ -181,7 +181,7 @@ Difficulty is DataForSEO's 0-to-100 estimate. I have not yet read Google's real 
 | Models | OpenRouter model list and usage; Epoch AI (CC BY 4.0); price history from tokencanopy and modelpricewatch (MIT); uptime from openrouter-uptime (MIT) and llmstatus.io; Vectara hallucination leaderboard (Apache); LiveBench, SWE-bench-Live, tau-bench | open, with credit |
 | Link only | Vals AI, BenchLM (non-commercial license), Artificial Analysis (contract needed) | never copy |
 | Demand and buyers | Google search data via DataForSEO (cents); job ads via jobspipe (about $3 per 1,000, with the provider's ESCO skill and technology tags); Indeed Hiring Lab AI Tracker (AI share of job ads, 2019 on, CC BY 4.0); SEC filings; news; government contracts; Ramp AI Index | bought or public |
-| Job-ad trends | monthly snapshot of 3,000 ads, counted by `job-data/mentions.py` into `mentions/windows.json`; what already exists and why we built only this: `research-notes/extraction-tools-sweep.md` | ours |
+| Job-ad trends | monthly snapshot of 3,000 ads, counted by `ai-work-site/job-data/mentions.py` into `ai-work-site/job-data/mentions/windows.json`; what already exists and why we built only this: `ai-work-site/research-notes/extraction-tools-sweep.md` | ours |
 | Practitioners | Reddit, Hacker News, GitHub, Hugging Face | quote briefly |
 | Ours alone | our benchmarks by job, practitioner reports on the site, Zarlent's deal database | the edge |
 
