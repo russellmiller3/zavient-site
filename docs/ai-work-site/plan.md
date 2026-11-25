@@ -19,7 +19,7 @@
 
 **Why:** Model scores are a crowded fight. Arena has raised about $450M, and Artificial Analysis has run over 1 trillion test tokens. Nobody ranks models by job and industry. That is also how buyers search: "ai document processing", "ai contract review", "ai underwriting".
 
-**Where we are:** 20 AI-work pages and 5 data stories are built on branch `feature/ai-work-pages`, not yet live. One is a trend: the share of US job ads that mention AI, 2019 to October 2026 (Indeed data). A monthly store now tracks which AI models, software and skills job ads name. Zavient gets 0 Google visits, and its site strength is 8 out of 100. The rivals score 37 to 86.
+**Where we are:** 20 AI-work pages and 5 data stories went live on zavient.com on 25 Nov 2026. One is a trend: the share of US job ads that mention AI, 2019 to October 2026 (Indeed data). A monthly store now tracks which AI models, software and skills job ads name. Zavient gets 0 Google visits, and its site strength is 8 out of 100. The rivals score 37 to 86.
 
 **Cost:** I estimate under $1,000 to launch and about $100 a month after that, all in model calls for benchmarks. The keyword research cost $3.70.
 

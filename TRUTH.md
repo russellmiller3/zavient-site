@@ -52,10 +52,10 @@ Last reconciled 25 Nov 2026, on branch `feature/ai-work-pages`.
 
 ## Where we are
 
-- **Live site (`master`):** home page, AI offer page, 10 Insights articles. Hosted on Vercel from `master`.
-- **Branch `feature/ai-work-pages` (not live):** 20 AI-work pages, 5 data stories with embeddable SVG charts
-  and CSVs (4 bar charts, 1 trend line), hubs at /ai-work and /data, menu links, a second sitemap, a link
-  checker, 3 site tests and 4 tests of the mention counter. All pass (25 Nov 2026).
+- **Live on zavient.com since 25 Nov 2026 (Vercel, from `master`):** home page, AI offer page, 10 Insights
+  articles, 20 AI-work pages, 5 data stories with embeddable SVG charts and CSVs (4 bar charts, 1 trend line),
+  hubs at /ai-work.html and /data.html, menu links, a second sitemap. All 56 built files answered 200 live.
+  Checks: 4 site tests, 4 mention-counter tests, a source-link checker. All pass.
 - **Trend story:** the share of US job postings that mention AI, monthly from January 2019 to October 2026,
   from Indeed Hiring Lab's free data (CC BY 4.0): 2.74% in January 2025, 7.60% in October 2026.
   Evidence: `docs/ai-work-site/job-data/indeed/monthly.json`.
@@ -68,17 +68,17 @@ Last reconciled 25 Nov 2026, on branch `feature/ai-work-pages`.
   `docs/ai-work-site/job-data/stories.json`.
 - **Demand measured:** 2,710 search phrases, 1,535,860 US Google searches a month; about 29,000 visits a
   month estimated for year 1. Evidence: `docs/ai-work-site/keyword-research/ai-work-taxonomy-11-25-2026/`.
-- **Not done:** the 15 agent-written pages are link-checked but not checked sentence by sentence; no page is
-  live; no own benchmark has been run yet.
+- **Not done:** the 15 agent-written pages are live and link-checked but not checked sentence by sentence;
+  the sitemap is not yet submitted to Google or Bing; no own benchmark has been run yet.
 
 ## The ladder
 
 ```
 1 Research: rivals, buyers, demand, job ads ........ done
 2 Plan and decisions (docs/ai-work-site/plan.md) .... done
-3 Engine + first 20 pages + 5 data stories (branch) . done
-4 Russell reviews; hand-check agent pages ........... <- YOU ARE HERE
-5 Merge to master (publish); submit sitemap ......... not started
+3 Engine + first 20 pages + 5 data stories ......... done
+4 Publish to zavient.com ............................ done (25 Nov 2026)
+5 Hand-check agent pages; submit sitemap ............ <- YOU ARE HERE
 6 Monthly job-ad snapshot -> real trend charts ...... store built, 1 of 2 snapshots
 7 First own benchmark (finance documents) ........... not started
 8 Scale pages: 165 work types, 87 software, ~150 AI software products
@@ -91,9 +91,8 @@ Ordered by what blocks what: checking before publishing, publishing before trend
 1. **Hand-check the 15 agent pages.** For each file in `src/content/ai-work/` written by agents (all except
    ai-consulting-services, ai-underwriting, ai-document-processing, ai-contract-review, rag-chatbot), open each
    source and confirm every sentence that states a fact. Done means: each claim matches its source or is cut.
-2. **Show Russell the branch** (`npm run build`, serve `dist/`), then merge to `master` only on his yes.
-   Before pushing, decide where `docs/` belongs: the GitHub repo is public, so pushing publishes the plan.
-   Done means: pages live and `sitemap-ai.xml` submitted in Google Search Console and Bing.
+2. **Submit `https://zavient.com/sitemap-ai.xml`** in Google Search Console and Bing Webmaster Tools (needs
+   Russell's sign-in). Done means: both consoles list the sitemap as read, with 25 pages found.
 3. **Top up treg** (balance $5.05; a snapshot costs about $6 to $12), then each month run
    `python3 fetch_sample.py ~/Desktop/Personal/Consulting/research/job-pulls/<date>` and
    `python3 mentions.py --add <date> <that folder>` in `docs/ai-work-site/job-data/`. Needs Russell's yes
@@ -140,14 +139,16 @@ every page -> src/components/BenchmarkCta.astro -> /benchmark-your-documents.htm
 | `src/components/BenchmarkCta.astro` | the offer block on every new page |
 | `src/pages/benchmark-your-documents.astro` | the offer page |
 | `src/pages/sitemap-ai.xml.js` | sitemap of AI-work pages and data stories |
-| `tests/site.test.mjs` | the 3 site tests |
+| `tests/site.test.mjs` | the 4 site tests |
 | `scripts/check-links.mjs` | opens every cited source link |
 | `public/index.html` | the home page (hand-written HTML, not Astro) |
 
 ## How results are judged
 
-- `npm test` builds the site and runs 3 tests: offer block and a source link on every AI-work page; every
-  data story's SVG and CSV match its JSON; the schema refuses a story with no sources (checked on a throwaway
+- `npm test` builds the site and runs 4 tests: offer block and a source link on every AI-work page; every
+  data story's SVG and CSV match its JSON; every internal link on every page names a real file (Vercel
+  serves only exact file paths, so /data is a 404 and /data.html works; this test failed on 3 menu links
+  before the fix); the schema refuses a story with no sources (checked on a throwaway
   copy). Proven 25 Nov 2026: renaming the offer block's marker made tests 1 and 2 fail; restoring it passed.
 - Tests run through Runner (Russell's rule). From `~/Desktop/code/runner`:
   `node ~/.claude/scripts/quiet-py.mjs -m runner.bounded_shell test --app-root ~/Desktop/code/zavient-site-live --app-entrypoint src/lib/lineChart.js -- npm test`
@@ -193,8 +194,9 @@ every page -> src/components/BenchmarkCta.astro -> /benchmark-your-documents.htm
 - The 15 agent-written pages are not hand-checked (Do this next, item 1).
 - The four job-ad stories are 5-day snapshots, not trends, until a second monthly pull exists. Only the
   Indeed story is a trend.
-- `/ai-work` and `/data` hubs build as `ai-work.html` and `data.html`; Vercel serves them at the clean path,
-  a plain file server does not.
+- Links without `.html` (`/insights`, `/ai-work`, `/data`) return 404 on zavient.com: Vercel serves only the
+  exact file. Every link must name the file (`/data.html`); test 3 enforces it. Fixed 25 Nov 2026 (the
+  Insights menu link had been broken on the live site before this work).
 
 ## Infrastructure traps
 
@@ -269,7 +271,7 @@ Untracked and ignored-only files are excluded. Missing measurements are unknown;
 
 | part | what it is | built on | language | tracked files | code lines | unmeasured files | last change |
 |---|---|---|---|---|---|---|---|
-| `docs/` |  |  | unknown | 99 | unknown | 99 | 2026-11-25 |
+| `docs/` |  |  | unknown | 100 | unknown | 100 | 2026-11-25 |
 | `public/` |  |  | unknown | 12 | unknown | 12 | 2026-11-25 |
 | `scripts/` |  |  | unknown | 1 | unknown | 1 | 2026-11-25 |
 | `src/` |  |  | unknown | 52 | unknown | 52 | 2026-11-25 |
@@ -280,12 +282,7 @@ Untracked and ignored-only files are excluded. Missing measurements are unknown;
 ## What is in flight
 
 <!-- truth:generated:branches START -->
-Work parked outside `master`. A branch far behind is a decision waiting,
-not a branch: rebase and land it, or archive and delete it.
-
-| branch | last commit | ahead | behind | subject |
-|---|---|---|---|---|
-| `feature/ai-work-pages` | 2026-11-25 | 4 | 0 | Docs: TRUTH.md and the master plan, plus research, keyword data, job-data scripts and mockups |
+**Nothing in flight.** Only `master`, no linked worktrees - every branch landed and deleted.
 <!-- truth:generated:branches END -->
 
 ## Recent work
@@ -296,10 +293,7 @@ Read straight from git, so this can never become someone's recollection.
 
 | date | what shipped |
 |---|---|
-| 2026-11-25 | Docs: TRUTH.md and the master plan, plus research, keyword data, job-data scripts and mockups |
-| 2026-11-25 | Add TOOLS.md index of the site's scripts |
-| 2026-11-25 | README: how the AI-work and data-story sections are built and checked |
-| 2026-11-25 | Add AI-work pages, job-ad data stories with embeddable charts, and tests |
+| 2026-11-25 | Add AI-work pages, job-ad data stories with trends, and the site's planning record |
 | 2026-11-22 | Add data evaluation section to the home page |
 | 2026-08-08 | Fix internal linking: homepage to articles, and articles to each other |
 | 2026-08-08 | Surface the method note across Insights |
