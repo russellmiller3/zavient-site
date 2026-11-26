@@ -42,7 +42,9 @@ const h = headingFor(d, id);
 {id === 'spokes' && spokes.length > 0 && (<>
   <h2 id="where-ai-pays">{h}</h2>
   <div class="hub-grid">
-    {spokes.map((s) => <a class="hub-card" href={s.url || href(s.slug)}><span class="hub-tag">Guide</span><h3>{s.title}</h3><p><Fn s={s.why} /></p></a>)}
+    {/* A div, not an <a>: the blurb holds footnote links, and a link inside a link breaks the card apart (26 Nov 2026).
+        The title link stretches over the whole card, so the card still clicks through. */}
+    {spokes.map((s) => <div class="hub-card stretch"><span class="hub-tag">Guide</span><h3><a class="card-link" href={s.url || href(s.slug)}>{s.title}</a></h3><p><Fn s={s.why} /></p></div>)}
   </div>
 </>)}
 {id === 'ranked' && d.ranked.length > 0 && (<>

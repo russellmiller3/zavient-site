@@ -121,7 +121,8 @@ const proofAfter = tpl ? (['tool', 'own-data'].find((id) => order.includes(id) &
       const mark = () => {
         if (Date.now() < hold) return;
         let i = -1;
-        heads.forEach((h, k) => { if (h.getBoundingClientRect().top <= 140) i = k; });
+        const line = Math.max(140, innerHeight / 3); // a section counts once its heading reaches the top third of the screen
+        heads.forEach((h, k) => { if (h.getBoundingClientRect().top <= line) i = k; });
         if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) i = heads.length - 1;
         show(i);
       };

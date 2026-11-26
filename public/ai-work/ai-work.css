@@ -46,7 +46,7 @@ nav:not(.on-page) {
 .nav-links { display: flex; gap: 24px; align-items: center; }
 .nav-links a { font-family: var(--mono); font-size: 14px; color: var(--muted); text-decoration: none; }
 .nav-links a:hover { color: var(--blue); }
-.nav-links a.nav-cta { background: var(--blue); color: #fff; padding: 8px 14px; border-radius: 2px; }
+.nav-links a.nav-cta { background: var(--blue); color: #fff; padding: 8px 14px; border-radius: 2px; font-family: var(--sans); font-weight: 600; font-size: 15px; }
 .nav-links a.nav-cta:hover { background: var(--blue-dark); color: #fff; }
 
 /* Layout */
@@ -175,6 +175,12 @@ nav:not(.on-page) {
 .hub-tag { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; }
 .hub-card h3 { font-family: var(--sans); font-weight: 700; font-size: 20px; line-height: 1.25; margin: 0 0 8px; }
 .hub-card p { font-size: 17px; color: var(--ink-soft); margin: 0; }
+/* Cards whose blurb has footnotes: the title link covers the card; footnote links sit above it */
+.hub-card.stretch { position: relative; }
+.hub-card .card-link { color: inherit; text-decoration: none; }
+.hub-card .card-link::after { content: ''; position: absolute; inset: 0; }
+.hub-card.stretch sup.fn { position: relative; z-index: 1; }
+.hub-card.stretch:focus-within { border-color: var(--blue); }
 
 /* Footnote markers */
 sup.fn { font-size: 0.62em; line-height: 0; margin-left: 1px; font-family: var(--mono); }
@@ -222,7 +228,14 @@ footer a:hover { color: var(--blue); }
   .wrap { padding: 0 18px; }
   nav:not(.on-page) { padding: 12px 18px; }
   .nav-links { gap: 14px; }
-  .nav-links a:not(.nav-cta) { display: none; }
+  /* Phones (26 Nov 2026): every link stays visible on a second row, logo and button on the first.
+     Few links, so no hamburger: hidden menus get used far less (NN/g). */
+  nav:not(.on-page) { flex-wrap: wrap; row-gap: 8px; }
+  .article-body h2 { scroll-margin-top: 112px; } /* the two-row header is taller */
+  nav:not(.on-page) .nav-links { display: contents; }
+  nav:not(.on-page) .nav-links a.nav-cta { order: 1; margin-left: auto; }
+  nav:not(.on-page)::after { content: ''; order: 2; flex-basis: 100%; height: 0; }
+  nav:not(.on-page) .nav-links a:not(.nav-cta) { order: 3; margin-right: 18px; font-size: 13px; }
   .article-hero { padding: 40px 0 32px; }
   .on-page ol { columns: 1; }
   .hub-grid { grid-template-columns: 1fr; }

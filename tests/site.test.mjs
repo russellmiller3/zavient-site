@@ -246,3 +246,16 @@ test('every long page has the sticky contents with a jump link to each section',
   // A <nav> would pick up the site header's sticky styles (nav:not(.on-page)).
   assert.ok(!/<nav class="sticky-toc/.test(readFileSync(join(root, 'src/components/AiWorkPage.astro'), 'utf8')));
 });
+
+test('no built page puts a link inside a link (browsers split such cards apart)', () => {
+  const pages = [];
+  const walk = (d) => { for (const f of readdirSync(d)) { const p = join(d, f); if (statSync(p).isDirectory()) walk(p); else if (p.endsWith('.html')) pages.push(p); } };
+  walk(dist);
+  for (const page of pages) {
+    let depth = 0;
+    for (const [, close] of readFileSync(page, 'utf8').matchAll(/<(\/?)a[\s>]/g)) {
+      depth += close ? -1 : 1;
+      assert.ok(depth <= 1, `${page.replace(dist, '')} has a link inside a link`);
+    }
+  }
+});
