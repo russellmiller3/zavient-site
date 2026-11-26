@@ -1,5 +1,5 @@
 // Cloudflare hosting (moved from Vercel, 26 Nov 2026). Workers Builds runs `npm run build`, then
-// `npx wrangler deploy` on master and `npx wrangler versions upload` on other branches (preview URLs).
+// `npx wrangler deploy` on master and `npx wrangler preview` on other branches (a Preview URL per branch).
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "zavient-site",
@@ -15,5 +15,7 @@
     "not_found_handling": "none",
     // Only the home page needs the script (to serve index.html for "/").
     "run_worker_first": ["/"]
-  }
+  },
+  // Branch previews (`npx wrangler preview`) need this block; empty means previews use the settings above.
+  "previews": {}
 }

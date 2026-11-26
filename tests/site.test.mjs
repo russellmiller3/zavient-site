@@ -218,6 +218,7 @@ test('Cloudflare config keeps .html addresses, serves the home page and carries 
   assert.equal(cfg.assets.directory, './dist');
   assert.equal(cfg.assets.html_handling, 'none', 'any other mode redirects /about.html to /about');
   assert.deepEqual(cfg.assets.run_worker_first, ['/']);
+  assert.ok(cfg.previews && typeof cfg.previews === 'object', 'branch previews need a previews block');
   const { default: worker } = await import('../worker/index.js');
   const seen = [];
   const env = { ASSETS: { fetch: async (r) => { seen.push(new URL(r.url ?? r).pathname); return new Response('ok'); } } };
