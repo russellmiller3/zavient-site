@@ -398,3 +398,6 @@ sup.fn a { padding: 10px 3px; margin: -10px -1px; } /* bigger hit area, same lin
   .bar-value { font-family: var(--sans); font-size: 15px; font-weight: 700; white-space: nowrap; }
   .bar-note { font-weight: 400; color: var(--ink-soft); }
 }
+
+/* "For:" line on hub cards: who the guide is for, set apart from the blurb and pinned to the card's foot. */
+.hub-card p.hub-for { margin-top: auto; padding-top: 12px; font-family: var(--sans); font-size: 15px; font-weight: 600; color: var(--ink); }
