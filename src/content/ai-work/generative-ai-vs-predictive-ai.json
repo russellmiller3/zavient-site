@@ -1,0 +1,753 @@
+{
+ "title": "Generative AI vs predictive AI: which does your workflow need?",
+ "description": "Which of your workflows need predictive AI, generative AI, both or neither: study results, dated prices, current rules and who signs off.",
+ "type": "compare",
+ "templateVersion": 1,
+ "topic": "Generative AI vs predictive AI",
+ "job": "deciding which kind of AI fits a workflow",
+ "industry": "any industry",
+ "index": false,
+ "verdict": [
+  "Use predictive AI if the job is a number from your own records, such as demand, cash or default risk[^1][^2].",
+  "Use generative AI if the job is reading or writing: drafts, summaries, fields pulled from documents. A person checks it[^1][^3].",
+  "Use both if the facts sit in documents but the decision is a score: generative extracts, predictive scores[^4][^5].",
+  "Use neither if a spreadsheet forecast or a written rule already works. Make any AI beat it first[^6][^7].",
+  "Either way, people decide: lenders must give specific denial reasons, and chatbots state wrong answers with confidence[^8][^9]."
+ ],
+ "onPage": [
+  {
+   "to": "table-2",
+   "text": "What the head-to-head studies found"
+  },
+  {
+   "to": "recipes",
+   "text": "Three builds: a scorecard, a forecast, a document check"
+  },
+  {
+   "to": "human-role",
+   "text": "Who decides, who checks and who signs off"
+  },
+  {
+   "to": "own-data",
+   "text": "Ten common workflows, mapped to the AI each needs"
+  },
+  {
+   "to": "what-goes-wrong",
+   "text": "Mistakes teams make when choosing, and the fix for each"
+  },
+  {
+   "to": "faq",
+   "text": "Straight answers to the questions buyers ask"
+  }
+ ],
+ "headings": {},
+ "summary": "Predictive AI learns from your past records to put a number on something, such as demand or default risk[^10][^11]. Generative AI writes new content from a prompt, so it drafts, summarises and pulls facts from documents[^9][^1]. The output decides it: a tested number, or words a person checks[^1][^12].",
+ "tables": [
+  {
+   "title": "How do predictive and generative AI differ in practice?",
+   "intro": "Generative AI here means large language models (LLMs), the engines behind ChatGPT and similar chatbots[^9]. SR 26-2 is the bank regulators' model risk guidance; it replaced SR 11-7 on 17 Apr 2026[^13][^14][^15]. Reg B is the US rule on credit decisions and the reasons for each denial[^8].",
+   "headers": [
+    "Question",
+    "Predictive AI",
+    "Generative AI"
+   ],
+   "rows": [
+    {
+     "name": "What goes in",
+     "cells": [
+      "Rows and columns from your own records: past sales, loan files, payment history[^10][^12]",
+      "A prompt plus text, documents or images. The model was trained beforehand on huge public data[^9][^11]"
+     ]
+    },
+    {
+     "name": "What comes out",
+     "cells": [
+      "A number, score or probability: a forecast, a default risk, a fraud flag[^10][^11]",
+      "New content: a draft, a summary, an answer or fields pulled from a document[^9][^16]"
+     ]
+    },
+    {
+     "name": "Data you supply",
+     "cells": [
+      "Your own labelled history, often a few GB or less (AWS's description)[^17][^11]",
+      "A few examples and your documents at run time. The model itself was trained on terabytes (AWS's description)[^17]"
+     ]
+    },
+    {
+     "name": "How you test it",
+     "cells": [
+      "Hide past months or loans the model never saw, then compare its predictions with what happened[^13][^18]",
+      "Check outputs against a verified answer key: field accuracy for extraction, error rate on a question set[^3][^19]"
+     ]
+    },
+    {
+     "name": "Typical jobs",
+     "cells": [
+      "Demand and cash forecasts, credit scores, churn risk, fraud flags[^1][^11][^20]",
+      "Drafting, summarising, questions about documents, data extraction, chat[^1][^16]"
+     ]
+    },
+    {
+     "name": "How you pay",
+     "cells": [
+      "Build once, then score cheaply. No-code tools bill by use, such as $1.90 per session-hour on SageMaker Canvas, read 26 Nov 2026[^21]",
+      "Per token, every time it runs: about $2 in and $10 out per million tokens on mid-tier models[^22][^23]. Third-party tracker prices, read 26 Nov 2026"
+     ]
+    },
+    {
+     "name": "Can it explain itself?",
+     "cells": [
+      "Simple and additive models give exact reasons for each decision[^24][^25]",
+      "Usually not: IBM says most generative models lack explainability (IBM's view)[^11]. Confident wrong answers are a named risk[^9]"
+     ]
+    },
+    {
+     "name": "How it fails",
+     "cells": [
+      "Drift: accuracy decays as the world moves away from the training data[^10][^26]",
+      "Confabulation: fluent, confident and wrong[^9][^27][^19]"
+     ]
+    },
+    {
+     "name": "US rules that apply",
+     "cells": [
+      "Reg B reasons for credit denials[^8]. SR 26-2 for bank models; the NAIC bulletin for insurers[^13][^10]",
+      "Reg B still applies to any credit decision[^8]. SR 26-2 leaves generative AI out of scope, and you still own what your chatbot says[^13][^28]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "What happened when the two went head to head?",
+   "intro": "Published studies, with sample sizes; XGBoost and LightGBM are common boosted-tree models. AUC scores how well a model ranks risk, from 0.5 (a coin flip) to 1 (perfect)[^29][^2]. On numbers from records, trained models won; on documents, LLMs did the reading[^30][^4][^3].",
+   "headers": [
+    "Study",
+    "Sample",
+    "Result"
+   ],
+   "rows": [
+    {
+     "name": "Ferro Pérez et al. 2026, cooperative lending, Colombia (university paper)",
+     "url": "https://repository.udemedellin.edu.co/server/api/core/bitstreams/4150e64a-d3f5-4649-acd8-611298fa98f5/content",
+     "cells": [
+      "12,861 loans, 17.3% default rate[^2]",
+      "Tuned ML scored AUC about 0.96; gpt-4o-mini 0.67-0.74[^2]. Trained models overtook the LLM after about 40-80 labelled loans[^2]"
+     ]
+    },
+    {
+     "name": "Huertas (Amazon), FedCSIS 2024",
+     "url": "https://arxiv.org/abs/2411.04324",
+     "cells": [
+      "4 public datasets, incl. FICO home-equity loans[^29]",
+      "FICO AUC: GPT-4 0.68, XGBoost 0.72, plain logistic regression 0.72[^29]. The LLM won only with 8 or fewer examples[^29]"
+     ]
+    },
+    {
+     "name": "Drinkall et al., FinNLP 2025",
+     "url": "https://aclanthology.org/2025.finnlp-1.11.pdf",
+     "cells": [
+      "Corporate credit ratings[^4]",
+      "XGBoost on the numbers: 52.8% accuracy; GPT-4o: 31.4%[^4]. XGBoost on the numbers plus GPT-4o reading the text: 69.9%[^4]"
+     ]
+    },
+    {
+     "name": "Grinsztajn et al., NeurIPS 2022",
+     "url": "https://arxiv.org/abs/2207.08815",
+     "cells": [
+      "45 tabular datasets[^30]",
+      "Tree-based models stayed state of the art on medium-sized data, about 10,000 rows[^30]"
+     ]
+    },
+    {
+     "name": "M5 forecasting competition, IJF 2022",
+     "url": "https://doi.org/10.1016/j.ijforecast.2021.11.013",
+     "cells": [
+      "42,840 Walmart sales series[^18]",
+      "Winner beat the best statistical benchmark by 22.4%; the boosted-tree method LightGBM dominated[^18]"
+     ]
+    },
+    {
+     "name": "Tan et al., NeurIPS 2024",
+     "url": "https://arxiv.org/abs/2406.16964",
+     "cells": [
+      "3 LLM forecasting methods, 13 datasets[^31]",
+      "Removing the LLM did not hurt accuracy and often helped, at far less compute[^31]"
+     ]
+    },
+    {
+     "name": "Ansari et al., Chronos (Amazon), TMLR 2024",
+     "url": "https://cdn.amazon.science/1c/b5/1ec660274e52ac843a988c6065dc/chronos-learning-the-language-of-time-series.pdf",
+     "cells": [
+      "42 datasets[^32]",
+      "A purpose-built pretrained forecasting model did well with no training on the data. It is a forecasting tool, not a chatbot[^32]"
+     ]
+    },
+    {
+     "name": "Berghaus et al. (Fraunhofer), 2025",
+     "url": "https://arxiv.org/abs/2509.04469",
+     "cells": [
+      "8 LLMs, 3 invoice and receipt datasets[^3]",
+      "Best field accuracy: 96.5% clean invoices, 92.7% scanned invoices, 87.5% receipts[^3]. Bank-number fields were weakest[^3]"
+     ]
+    },
+    {
+     "name": "Magesh et al. (Stanford), JELS 2025",
+     "url": "https://dho.stanford.edu/wp-content/uploads/Legal_RAG_Hallucinations.pdf",
+     "cells": [
+      "202 legal research questions[^19]",
+      "Purpose-built legal AI tools gave false answers 17-33% of the time; GPT-4 43%[^19]"
+     ]
+    }
+   ],
+   "note": "Newer tabular foundation models such as TabPFN now rival boosted trees in a third-party benchmark[^33]. The line is blurring, but a chatbot prompt is still not a forecasting model[^31][^32]."
+  },
+  {
+   "title": "What do the tools cost?",
+   "intro": "Prices as published, read 26 Nov 2026[^21][^34][^35]. LLM prices come from third-party trackers, not the vendors' own pages, so check them before you budget[^22][^23].",
+   "headers": [
+    "Tool",
+    "Kind",
+    "Price",
+    "Worth knowing"
+   ],
+   "rows": [
+    {
+     "name": "Excel Forecast Sheet (Microsoft)",
+     "url": "https://support.microsoft.com/en-us/office/create-a-forecast-in-excel-for-windows-22c500da-6da7-45e5-bfdc-60a7062329fd",
+     "cells": [
+      "Statistical forecast (exponential smoothing)[^34]",
+      "Included in desktop Excel, Microsoft 365 or 2016 and later[^34]",
+      "Shows a 95% band and error stats. Not in Excel for the web[^6][^34]"
+     ]
+    },
+    {
+     "name": "Prophet (Meta)",
+     "url": "https://github.com/facebook/prophet",
+     "cells": [
+      "Open-source forecasting[^35]",
+      "Free, MIT licence[^35]",
+      "In maintenance mode since version 1.4.0: bug fixes only[^35]"
+     ]
+    },
+    {
+     "name": "InterpretML explainable boosting (Microsoft Research)",
+     "url": "https://github.com/interpretml/interpret",
+     "cells": [
+      "Open-source explainable predictive model[^36]",
+      "Free, open source[^36]",
+      "Matched XGBoost on one benchmark, 0.928 vs 0.927 AUC (the project's own claim)[^36][^24]"
+     ]
+    },
+    {
+     "name": "Amazon SageMaker Canvas",
+     "url": "https://aws.amazon.com/sagemaker/ai/canvas/pricing",
+     "cells": [
+      "No-code predictive models[^21]",
+      "$1.90 per session-hour; 160 free hours a month for 2 months[^21]",
+      "From AWS's own pricing page[^21]"
+     ]
+    },
+    {
+     "name": "Mid-tier LLM API (OpenAI, Anthropic)",
+     "cells": [
+      "Generative[^22][^23]",
+      "About $2 per million input tokens and $10 per million output[^22][^23]",
+      "Third-party tracker prices. OpenAI batch jobs cost 50% less[^22]"
+     ]
+    },
+    {
+     "name": "Small LLM API (OpenAI, Anthropic)",
+     "cells": [
+      "Generative[^22][^23]",
+      "About $0.10 in and $0.50 out per million tokens[^22][^23]",
+      "Third-party tracker prices only[^22][^23]"
+     ]
+    }
+   ]
+  }
+ ],
+ "recipes": [
+  {
+   "name": "1. Lending or underwriting team: a credit scorecard (predictive)",
+   "when": "A lender or insurer with 2+ years of decided files and known outcomes. Past about 40-80 labelled loans, trained models beat an LLM on this job[^2][^29].",
+   "flow": [
+    "Head of credit: define the outcome, such as 90+ days past due within 24 months[^25]",
+    "Credit analyst: pull past applications and outcomes, and set aside the newest 20-30% untouched[^13]",
+    "Credit analyst: fit a logistic regression and an explainable boosted model, then compare them on the set-aside loans[^29][^24]",
+    "Independent reviewer: challenge the inputs, the logic and the result on the set-aside loans[^13]",
+    "Credit officer: run it in shadow on one loan product, beside today's decisions, before it decides anything",
+    "Underwriter: decide every decline and borderline case, and give the top reasons the model used[^8]",
+    "Model owner: check accuracy monthly and re-fit when the applicant mix shifts[^10][^26]"
+   ],
+   "cost": "Open-source tools are free[^36]; no-code SageMaker Canvas is $1.90 per session-hour after a free tier, read 26 Nov 2026[^21]. Twenty build hours past the free tier is $38 (our arithmetic)."
+  },
+  {
+   "name": "2. FP&A or planning team: a demand or cash forecast (predictive first)",
+   "when": "A finance or planning team with 2-3 years of weekly or monthly history in a spreadsheet. Predictive methods make the number; generative AI only drafts the commentary[^1][^18].",
+   "flow": [
+    "FP&A analyst: build an Excel Forecast Sheet, which shows a 95% band and error stats[^6]",
+    "FP&A analyst: hide the last 6-12 months, forecast them, and record the error as the bar to beat[^18][^7]",
+    "FP&A analyst: if many items or drivers matter, test a boosted-tree model and keep it only if it beats the bar[^18]",
+    "FP&A lead: own the number and log every manual override",
+    "Generative AI: draft the variance commentary from the approved numbers[^1]",
+    "FP&A analyst: check every figure in the draft before it goes out[^9]"
+   ],
+   "cost": "Excel's forecast tools come with desktop Microsoft 365[^34]. Commentary for 20 reports a month is about $0.40 at third-party tracker prices read 26 Nov 2026 (our arithmetic)[^22][^23]."
+  },
+  {
+   "name": "3. Document-heavy team: generative reads, predictive scores (both)",
+   "when": "Small-business lending, commercial insurance or payables teams whose facts sit in bank statements, invoices or applications. In one study, a boosted model plus LLM-read text lifted credit-rating accuracy from 52.8% to 69.9%[^4][^5].",
+   "flow": [
+    "Ops lead: list the 10-15 fields the decision needs",
+    "Generative AI: pull those fields from each document[^3]",
+    "Ops reviewer: check amounts, bank numbers and low-confidence fields, where models err most[^3]",
+    "Predictive model: score the case from the checked fields plus history[^4][^5]",
+    "Underwriter: decide, and sign off the reasons[^8]"
+   ],
+   "cost": "Extraction for 1,000 documents a month is about $11 on a mid-tier model, or $0.55 on a small one (our arithmetic)[^22][^23]. Prices are third-party, read 26 Nov 2026; your reviewers' time is the bigger cost."
+  }
+ ],
+ "humanRole": [
+  "Underwriter or credit officer: makes every decline call and signs its reasons; the model only ranks. Reg B reasons must be specific and match the factors actually scored[^8].",
+  "Independent reviewer, not the builder: challenges each model's inputs, logic and results on held-back cases before use. SR 26-2 keeps this 'effective challenge' for bank models, vendor models included[^13][^14].",
+  "Model owner: watches accuracy and calls the re-fit. The NAIC bulletin asks insurers to assess drift, and FICO scores lost predictive power from 2003 to 2006[^10][^26].",
+  "A named person approves any generated text before a customer sees it. A tribunal held Air Canada liable for its chatbot's wrong fare advice[^28][^9]."
+ ],
+ "ownData": {
+  "title": "Which kind of AI does each common workflow need?",
+  "intro": "Zavient desk mapping, 26 Nov 2026: ten workflows a 40-500 person lender, insurer or finance team commonly owns. We placed each against Gartner's use-case families, then checked it against the studies above[^1][^30][^18]. Six are prediction jobs, three are reading or writing jobs, and one needs both.",
+  "headers": [
+   "Workflow",
+   "Main fit",
+   "Data it needs",
+   "Test before you trust it"
+  ],
+  "rows": [
+   [
+    "Credit scoring for loan applicants",
+    "Predictive[^8][^29][^2]",
+    "2+ years of decided applications with repayment outcomes",
+    "AUC on loans it never saw; predicted default rates match actual ones"
+   ],
+   [
+    "Demand forecast (stock, staffing)",
+    "Predictive, or a spreadsheet forecast[^1][^18][^31][^6]",
+    "2-3 years of weekly or monthly history, plus promotions and price",
+    "Forecast hidden past months; beat the error of an Excel forecast"
+   ],
+   [
+    "13-week cash forecast",
+    "Predictive, or a spreadsheet forecast[^1][^7][^6]",
+    "Receipts and payments history, receivables and payables ageing",
+    "Forecast hidden past weeks; track the error weekly against actuals"
+   ],
+   [
+    "Collections prioritisation",
+    "Predictive[^10][^30][^20]",
+    "Payment history and contact outcomes per account",
+    "On held-back months, do top-ranked accounts pay, or fall further behind, more often?"
+   ],
+   [
+    "Fraud or anomaly flags",
+    "Predictive; Gartner rates generative only 'somewhat useful'[^1][^36]",
+    "Labelled past fraud and normal transactions",
+    "Share of flags that were real, and share of fraud caught, on a held-back month"
+   ],
+   [
+    "Churn or lapse risk",
+    "Predictive[^10][^36]",
+    "Tenure, usage, service and billing history",
+    "Does the retention team keep more customers with the list than without?"
+   ],
+   [
+    "Invoice and statement field extraction",
+    "Generative[^3]",
+    "Sample documents and an answer key of correct fields",
+    "Field accuracy on 100+ checked documents; extra checks on bank numbers and totals"
+   ],
+   [
+    "Claims or application triage from notes",
+    "Both: generative reads, predictive scores[^4][^5][^10]",
+    "Free-text notes plus outcomes for past cases",
+    "Field accuracy on a checked sample, then a score check on held-back past cases"
+   ],
+   [
+    "Customer email and letter drafting",
+    "Generative; a person approves[^9][^28][^1]",
+    "Approved templates, policy text, tone examples",
+    "Reviewer error rate on sample drafts; no wrong policy statements"
+   ],
+   [
+    "Contract or policy questions",
+    "Generative, answering from your own documents; a person verifies[^27][^19][^1]",
+    "The contracts and policies themselves",
+    "An answer key of 50+ questions; count wrong or unsupported answers"
+   ]
+  ],
+  "note": "Method: desk mapping, not a benchmark we ran, so sample sizes are the cited studies', not ours. All sources read 26 Nov 2026; your own data can change a placement. Re-check by 26 May 2027."
+ },
+ "example": {
+  "input": "A 120-person small-business lender. An analyst reads three months of bank statements per application and keys 12 fields into a spreadsheet. Someone suggests asking a chatbot whether to approve, though on 12,861 real loans a chatbot model ranked risk far worse than trained ML[^2].",
+  "output": "Generative AI pulls the 12 fields, and an ops reviewer checks amounts and account numbers[^3]. A boosted model trained on 4,000 past loans gives a default probability, tested on 1,000 more held back[^2][^18]. The underwriter decides and sends the top reasons the model actually used[^8]."
+ },
+ "watchOuts": [
+  "Asking a chatbot for the forecast number: Gartner rates generative AI 'hardly useful' for forecasting[^1][^37]. Use a forecasting method and test it on hidden past months; removing the LLM from LLM forecasters often improved accuracy[^31].",
+  "Testing once, or never: score every model on months or loans it never saw before go-live, as the M5 and M4 contests did[^18][^7]. Then re-check monthly, because models decay as data shifts[^13][^26].",
+  "Treating a chatbot's odds as a risk number: in one lending study it predicted 28-38% default against an actual 17%[^2]. For anything that sets price, limit or reserve, use a predictive model whose predicted rates match real ones[^2][^24].",
+  "A black box where reasons are required: Reg B still demands specific reasons tied to the factors actually scored[^8]. The CFPB withdrew its two AI-related adverse-action circulars in May 2025, but the rule itself stands[^38][^39].",
+  "Publishing generated answers unchecked: Air Canada was held liable for its chatbot's advice[^28]. Even purpose-built legal AI tools gave false answers 17-33% of the time, so a named person approves outbound text[^19].",
+  "Citing SR 11-7 as current: SR 26-2 replaced it on 17 Apr 2026 and leaves generative AI out of scope[^13][^14][^15]. It targets banks over $30B in assets, but it is the clearest public guide to good model practice for any lender[^13][^15]."
+ ],
+ "faq": [
+  {
+   "q": "Is ChatGPT generative AI or predictive AI?",
+   "a": "Generative. It predicts the next word inside, but what it gives you is new content, not a tested forecast or score[^9][^11]."
+  },
+  {
+   "q": "Can generative AI do forecasting or predictive analytics?",
+   "a": "Not well as a chatbot. Gartner rates it 'hardly useful' for forecasting, and removing the LLM from three forecasting methods did not hurt accuracy[^1][^31]. Purpose-built time-series models are a different tool, and some do well[^32]."
+  },
+  {
+   "q": "Is a linear regression AI?",
+   "a": "For the rules, yes. The NAIC bulletin counts it as a predictive model, and SR 26-2 counts any method that produces quantitative estimates as a model[^10][^13]. On FICO credit data, a plain logistic regression matched a boosted-tree model (XGBoost) at 0.72 AUC[^29]."
+  },
+  {
+   "q": "Is generative AI replacing predictive AI?",
+   "a": "No. Gartner says nongenerative machine learning is superior for prediction, and that focusing only on generative AI is 'a guarantee to fail'[^1]. The best credit-rating result in one study combined both[^4]."
+  },
+  {
+   "q": "Which type of AI is better for business?",
+   "a": "Neither wins everywhere; the output decides. Numbers from your own records point to predictive AI, and words and documents point to generative AI[^1][^12]. In one FP&A forum thread, many said they use no AI, because reports must be right 'to the penny'[^40]."
+  },
+  {
+   "q": "What is the difference between agentic, generative and predictive AI?",
+   "a": "Predictive scores, generative writes, and agentic plans and acts with tools. One agent flow can call a predictive score and a generative model, per IBM's and SAP's explainers[^41][^20]. Our agentic AI vs generative AI comparison covers the third kind."
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Buy when the job is standard, such as document extraction, drafting or a forecast inside your planning tool, and you have no data team[^42]. Menlo Ventures found 76% of enterprise AI use cases were bought in 2025, up from 53% in 2024[^42]. MIT NANDA found bought tools succeeded about twice as often as internal builds, though both studies cover generative AI only[^43][^44].",
+  "build": "Build, or set up a no-code tool on your own data, when your history is the edge, such as a credit or claims score[^17][^21]. No-code options start at $1.90 per session-hour, read 26 Nov 2026[^21]. Either way, validate a vendor's model as you would your own[^13]."
+ },
+ "pickElse": [
+  "A spreadsheet forecast already works: Excel's Forecast Sheet gives a forecast, a 95% band and error stats[^34][^6]. In the M4 contest, simple statistical combinations ranked among the most accurate methods[^7].",
+  "The decision is a fixed policy, such as declining above a set debt-to-income ratio: write the rule into your loan system. SR 26-2 doesn't count deterministic rules as models[^13].",
+  "A plain scorecard is enough: logistic regression matched a boosted-tree model on FICO credit data, and its reasons are easy to explain[^29][^25].",
+  "Too little history: below about 40-80 decided loans, trained models had too little to learn from in one lending study[^2]. Keep deciding by policy and log clean outcomes until you have enough[^29]."
+ ],
+ "resources": [
+  {
+   "name": "NIST AI 600-1, Generative AI Profile",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+   "what": "Free list of generative AI risks and the controls for each."
+  },
+  {
+   "name": "Gartner, When Not to Use Generative AI",
+   "url": "https://www.gartner.com/en/articles/when-not-to-use-generative-ai",
+   "what": "Free one-page map of the jobs where generative AI fits and where it doesn't."
+  },
+  {
+   "name": "Microsoft, Create a forecast in Excel for Windows",
+   "url": "https://support.microsoft.com/en-us/office/create-a-forecast-in-excel-for-windows-22c500da-6da7-45e5-bfdc-60a7062329fd",
+   "what": "Build the baseline forecast any AI tool must beat, in minutes."
+  },
+  {
+   "name": "InterpretML (open source)",
+   "url": "https://github.com/interpretml/interpret",
+   "what": "Explainable predictive models that show the exact reasons behind each score."
+  },
+  {
+   "name": "M5 competition results paper",
+   "url": "https://doi.org/10.1016/j.ijforecast.2021.11.013",
+   "what": "Shows how a fair forecasting test is run on periods the model never saw."
+  }
+ ],
+ "stats": [
+  {
+   "num": "0.96 vs 0.67-0.74",
+   "label": "Risk-ranking accuracy (AUC) of tuned ML vs an LLM on 12,861 cooperative loans in Colombia[^2].",
+   "source": "Ferro Pérez et al., 2026"
+  },
+  {
+   "num": "22.4%",
+   "label": "How much the M5 contest winner beat the best statistical benchmark on 42,840 sales series[^18].",
+   "source": "M5 competition, IJF 2022"
+  },
+  {
+   "num": "52.8% to 69.9%",
+   "label": "Credit-rating accuracy of a boosted model alone, then with LLM-read text added[^4].",
+   "source": "Drinkall et al., FinNLP 2025"
+  },
+  {
+   "num": "17-33%",
+   "label": "Share of false answers from purpose-built legal AI tools on 202 test questions[^19].",
+   "source": "Magesh et al., JELS 2025"
+  },
+  {
+   "num": "76%",
+   "label": "Share of enterprise AI use cases bought rather than built in 2025, up from 53%[^42].",
+   "source": "Menlo Ventures, 495 US decision-makers"
+  }
+ ],
+ "sources": [
+  {
+   "name": "Gartner, When Not to Use Generative AI (28 Jan 2026, updated 30 Apr 2026)",
+   "url": "https://www.gartner.com/en/articles/when-not-to-use-generative-ai",
+   "what": "Rates generative AI 'hardly useful' for prediction and forecasting and 'highly useful' for content and conversation; nongenerative ML is superior for prediction; focusing only on GenAI is 'a guarantee to fail'."
+  },
+  {
+   "name": "Ferro Pérez et al., LLMs vs machine learning for credit risk in cooperative lending (Universidad de Medellín, 2026)",
+   "url": "https://repository.udemedellin.edu.co/server/api/core/bitstreams/4150e64a-d3f5-4649-acd8-611298fa98f5/content",
+   "what": "University paper, one market (Colombia), 12,861 loans: tuned ML AUC about 0.96 vs 0.67-0.74 for gpt-4o-mini; ML overtakes the LLM at about 40-80 labelled loans; the LLM over-predicts default (0.28-0.38 vs 0.17 actual)."
+  },
+  {
+   "name": "Berghaus et al. (Fraunhofer IAIS), Benchmarking LLM Strategies for Invoice Processing (Aug 2025)",
+   "url": "https://arxiv.org/abs/2509.04469",
+   "what": "8 multimodal LLMs, 3 open datasets: best field accuracy 96.5% clean invoices, 92.7% scanned invoices, 87.5% scanned receipts; bank-number fields weakest."
+  },
+  {
+   "name": "Drinkall et al., Forecasting Credit Ratings: A Case Study where Traditional Methods Outperform Generative LLMs (FinNLP 2025)",
+   "url": "https://aclanthology.org/2025.finnlp-1.11.pdf",
+   "what": "XGBoost on financial numbers 52.8% accuracy; GPT-4o 31.4%; XGBoost numbers plus GPT-4o text features 69.9%."
+  },
+  {
+   "name": "Xia et al., International Journal of Forecasting (2025)",
+   "url": "https://www.sciencedirect.com/science/article/pii/S0169207024000724",
+   "what": "21,555 fintech loans: a language model turns loan narratives into features; a gradient-boosted model (CatBoost) does the scoring."
+  },
+  {
+   "name": "Microsoft Support, Create a forecast in Excel for Windows (5 May 2026)",
+   "url": "https://support.microsoft.com/en-us/office/create-a-forecast-in-excel-for-windows-22c500da-6da7-45e5-bfdc-60a7062329fd",
+   "what": "Forecast Sheet shows a 95% confidence interval and error statistics (MASE, SMAPE, MAE, RMSE)."
+  },
+  {
+   "name": "Makridakis et al., The M4 Competition (IJF)",
+   "url": "https://www.sciencedirect.com/science/article/pii/S0169207018300785",
+   "what": "100,000 series, 61 methods: 12 of the 17 most accurate were combinations of mostly statistical methods."
+  },
+  {
+   "name": "CFPB, Regulation B 12 CFR 1002.9 and official interpretation",
+   "url": "https://www.consumerfinance.gov/rules-policy/regulations/1002/9",
+   "what": "Adverse-action reasons 'must be specific' and must accurately describe the factors actually considered or scored."
+  },
+  {
+   "name": "NIST AI 600-1, Generative AI Profile (Jul 2024)",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+   "what": "US standards body: defines generative AI as models that generate derived synthetic content; names confabulation, 'confidently stated but erroneous or false content', as a key risk."
+  },
+  {
+   "name": "NAIC Model Bulletin: Use of Artificial Intelligence Systems by Insurers (Dec 2023)",
+   "url": "https://content.naic.org/sites/default/files/cmte-h-big-data-artificial-intelligence-wg-ai-model-bulletin.pdf.pdf",
+   "what": "US insurance regulators' bulletin: defines a predictive model as mining historic data to predict outcomes; asks insurers to assess model drift."
+  },
+  {
+   "name": "IBM, Generative AI vs. predictive AI: What's the difference? (9 Aug 2024)",
+   "url": "https://www.ibm.com/think/topics/generative-ai-vs-predictive-ai-whats-the-difference",
+   "what": "Vendor explainer: generative AI creates content, predictive AI forecasts; predictive uses smaller, targeted data and is more explainable (IBM's view)."
+  },
+  {
+   "name": "Ramakrishnan, When to Use GenAI Versus Predictive AI (MIT Sloan Management Review, 24 Mar 2025)",
+   "url": "https://sloanreview.mit.edu/article/when-to-use-genai-versus-predictive-ai",
+   "what": "Decide first whether it is a generation or a prediction problem; tabular prediction goes to regression or gradient boosting."
+  },
+  {
+   "name": "Federal Reserve, SR 26-2: Revised Guidance on Model Risk Management (17 Apr 2026)",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+   "what": "Supersedes SR 11-7. A model produces quantitative estimates; spreadsheets and deterministic rules are excluded; generative and agentic AI are 'not within the scope'. Keeps effective challenge, outcomes analysis and vendor-model validation."
+  },
+  {
+   "name": "OCC Bulletin 2026-13 (17 Apr 2026)",
+   "url": "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-13.html",
+   "what": "The OCC's version of the revised model risk guidance, issued the same day."
+  },
+  {
+   "name": "FDIC FIL-15-2026: Agencies revise interagency model risk management guidance (17 Apr 2026)",
+   "url": "https://www.fdic.gov/news/financial-institution-letters/2026/agencies-revise-interagency-model-risk-management-guidance",
+   "what": "FDIC adoption of the revised guidance; most relevant to banks over $30B in assets, and non-compliance is not a basis for supervisory criticism."
+  },
+  {
+   "name": "Microsoft, Generative AI vs. other types of AI",
+   "url": "https://www.microsoft.com/en-us/ai/ai-101/generative-ai-vs-other-types-of-ai",
+   "what": "Vendor explainer: generative AI creates content such as marketing campaigns; predictive AI forecasts their success."
+  },
+  {
+   "name": "AWS, What's the difference between generative AI and predictive AI? (updated 18 Nov 2026)",
+   "url": "https://aws.amazon.com/what-is/difference-between-generative-ai-and-predictive-ai",
+   "what": "Vendor explainer: generative models train on terabytes; predictive models need far less data and can be run by organisations of all sizes (AWS's view)."
+  },
+  {
+   "name": "Makridakis, Spiliotis, Assimakopoulos, M5 accuracy competition: Results, findings, and conclusions (IJF 2022)",
+   "url": "https://doi.org/10.1016/j.ijforecast.2021.11.013",
+   "what": "42,840 Walmart series: the winner beat the best statistical benchmark by 22.4%; LightGBM, a boosted-tree method, dominated. Methods judged on unseen periods."
+  },
+  {
+   "name": "Magesh et al., Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools (JELS, 2025)",
+   "url": "https://dho.stanford.edu/wp-content/uploads/Legal_RAG_Hallucinations.pdf",
+   "what": "202 pre-registered queries: purpose-built legal AI tools hallucinated 17% to 33% of the time; GPT-4 43%."
+  },
+  {
+   "name": "SAP Learning, Differentiating Predictive, Generative, and Agentic AI",
+   "url": "https://learning.sap.com/courses/exploring-sap-cloud-erp/differentiating-predictive-generative-and-agentic-ai_e0b8c491-2ad0-42b2-a448-62a33196ad89",
+   "what": "Vendor course: predictive AI for late-paid invoices, maintenance and fraud; generative and agentic AI compared."
+  },
+  {
+   "name": "AWS, Amazon SageMaker Canvas pricing (read 26 Nov 2026)",
+   "url": "https://aws.amazon.com/sagemaker/ai/canvas/pricing",
+   "what": "$1.90 per session-hour; 160 free session-hours a month for the first 2 months."
+  },
+  {
+   "name": "AI Stack Wise, LLM API pricing (third-party tracker, checked 18 Nov 2026; read 26 Nov 2026)",
+   "url": "https://aistackwise.com/llm-api-pricing",
+   "what": "Third-party list of OpenAI per-million-token prices: mid-tier about $2 in / $10 out, small about $0.10 / $0.50; batch jobs 50% off. Not the vendor's page."
+  },
+  {
+   "name": "AgentPing, Claude API pricing (third-party tracker, verified 19 Nov 2026; read 26 Nov 2026)",
+   "url": "https://agentping.io/llm-api-pricing/claude",
+   "what": "Third-party list of Anthropic per-million-token prices at similar tiers. Not the vendor's page."
+  },
+  {
+   "name": "Nori, Caruana et al., Accuracy, Interpretability, and Differential Privacy via Explainable Boosting (ICML 2021)",
+   "url": "https://proceedings.mlr.press/v139/nori21a/nori21a.pdf",
+   "what": "Explainable boosting machines often match the accuracy of XGBoost and random forests, with exact explanations."
+  },
+  {
+   "name": "Chen, Rudin et al., A Holistic Approach to Interpretability in Financial Lending (FICO Explainable ML Challenge)",
+   "url": "https://arxiv.org/html/2106.02605v1",
+   "what": "FICO HELOC data, target 90+ days past due within 24 months: an interpretable model was as accurate as black boxes."
+  },
+  {
+   "name": "Credit-scoring drift study, Operations Research Forum (Springer, 2022)",
+   "url": "https://link.springer.com/article/10.1007/s43069-022-00177-1",
+   "what": "FICO scores became worse predictors of default from 2003 to 2006; bureaus monitor and recalibrate continuously."
+  },
+  {
+   "name": "Dahl, Magesh, Suzgun, Ho, Large Legal Fictions (Journal of Legal Analysis, 2024)",
+   "url": "https://academic.oup.com/jla/article/16/1/64/7699227",
+   "what": "General chatbots hallucinated 58% (GPT-4) to 88% (Llama 2) of the time on verifiable legal questions."
+  },
+  {
+   "name": "Moffatt v. Air Canada, 2024 BCCRT 149 (14 Feb 2024), CanLII",
+   "url": "https://www.canlii.org/en/bc/bccrt/doc/2024/2024bccrt149/2024bccrt149.html",
+   "what": "Tribunal holds Air Canada liable for its chatbot's wrong bereavement-fare advice and rejects the claim that the chatbot is a separate legal entity."
+  },
+  {
+   "name": "Huertas (Amazon), LLMs vs gradient-boosted trees on tabular classification (FedCSIS 2024)",
+   "url": "https://arxiv.org/abs/2411.04324",
+   "what": "FICO home-equity data AUC: GPT-4 0.68, XGBoost 0.72, logistic regression 0.72. The LLM wins only with 8 or fewer examples."
+  },
+  {
+   "name": "Grinsztajn, Oyallon, Varoquaux, Why do tree-based models still outperform deep learning on tabular data? (NeurIPS 2022)",
+   "url": "https://arxiv.org/abs/2207.08815",
+   "what": "45 tabular datasets: tree-based models remain state of the art on medium-sized data (about 10,000 rows)."
+  },
+  {
+   "name": "Tan et al., Are Language Models Actually Useful for Time Series Forecasting? (NeurIPS 2024)",
+   "url": "https://arxiv.org/abs/2406.16964",
+   "what": "Across 3 LLM forecasting methods and 13 datasets, removing the LLM did not hurt accuracy and often improved it, at far lower compute."
+  },
+  {
+   "name": "Ansari et al., Chronos: Learning the Language of Time Series (TMLR 2024, Amazon)",
+   "url": "https://cdn.amazon.science/1c/b5/1ec660274e52ac843a988c6065dc/chronos-learning-the-language-of-time-series.pdf",
+   "what": "42 datasets: a purpose-built pretrained forecasting model gives comparable, sometimes better, zero-shot accuracy."
+  },
+  {
+   "name": "AIMultiple, Tabular models benchmark (Oct 2026)",
+   "url": "https://aimultiple.com/tabular-models",
+   "what": "Third-party benchmark on 19 datasets: tabular foundation models such as TabPFN now rival boosted trees; trees keep fast training and no-GPU scoring."
+  },
+  {
+   "name": "Microsoft Support, FORECAST.ETS function (4 Feb 2026)",
+   "url": "https://support.microsoft.com/en-us/excel/functions/forecast-ets-function",
+   "what": "Excel forecasts with AAA exponential smoothing; not available in Excel for the web."
+  },
+  {
+   "name": "Prophet (Meta), GitHub (read 26 Nov 2026)",
+   "url": "https://github.com/facebook/prophet",
+   "what": "Open-source forecasting library, MIT licence; in maintenance mode since v1.4.0."
+  },
+  {
+   "name": "InterpretML (Microsoft Research), GitHub",
+   "url": "https://github.com/interpretml/interpret",
+   "what": "Open-source explainable boosting machine; project benchmark: Adult Income AUROC 0.928 vs XGBoost 0.927 (project's own claim)."
+  },
+  {
+   "name": "Gartner, Generative AI topic page (Sep 2025)",
+   "url": "https://www.gartner.com/en/topics/generative-ai",
+   "what": "'GenAI models are not well-suited for tasks that require numerical predictive modeling.'"
+  },
+  {
+   "name": "Federal Register, Interpretive Rules, Policy Statements, and Advisory Opinions; Withdrawal (12 May 2025)",
+   "url": "https://www.federalregister.gov/documents/2025/05/12/2025-08286/interpretive-rules-policy-statements-and-advisory-opinions-withdrawal",
+   "what": "CFPB withdraws guidance documents, including Circulars 2022-03 and 2023-03 on adverse-action notices and complex algorithms."
+  },
+  {
+   "name": "CFPB, Withdrawn guidance",
+   "url": "https://www.consumerfinance.gov/compliance/guidance/withdrawn-guidance",
+   "what": "Lists Circulars 2022-03 and 2023-03 as withdrawn."
+  },
+  {
+   "name": "r/FPandA, What LLMs or AI tools are you actually using in FP&A? (Jan 2026)",
+   "url": "https://www.reddit.com/r/FPandA/comments/1q2iblv/what_llms_or_ai_tools_are_you_actually_using_in/",
+   "what": "Practitioner thread: many FP&A staff say they use none; reports must be right 'to the penny'."
+  },
+  {
+   "name": "IBM, Agentic AI vs. generative AI (11 Feb 2025)",
+   "url": "https://www.ibm.com/think/topics/agentic-ai-vs-generative-ai",
+   "what": "Vendor explainer: generative AI creates content; agentic AI acts toward goals using tools."
+  },
+  {
+   "name": "Menlo Ventures, 2025: The State of Generative AI in the Enterprise (9 Dec 2025)",
+   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+   "what": "Survey of 495 US decision-makers: 76% of AI use cases bought rather than built in 2025, up from 53% in 2024. Generative AI only."
+  },
+  {
+   "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025)",
+   "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+   "what": "52 interviews and 153 survey responses: bought or partnered generative AI tools reached deployment about twice as often as internal builds. Authors flag sample limits."
+  },
+  {
+   "name": "Fortune, MIT report: 95% of generative AI pilots at companies are failing (18 Aug 2025)",
+   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
+   "what": "Reports the MIT NANDA finding that bought tools succeed about 67% of the time, against about a third for internal builds."
+  }
+ ],
+ "related": [
+  "agentic-ai-vs-generative-ai",
+  "ai-credit-scoring",
+  "ai-underwriting",
+  "ai-document-processing",
+  "chatgpt-plus-vs-business-vs-enterprise"
+ ],
+ "offer": {
+  "heading": "Not sure your forecast or scorecard needs generative AI?",
+  "body": "Bring one workflow you own: a forecast, a score or a document check. In 30 minutes we tell you whether it needs predictive AI, generative AI, both or neither. You leave with the test to run before you spend."
+ },
+ "keyword": {
+  "phrase": "generative ai vs predictive ai",
+  "searches": 720,
+  "cpc": 72.01,
+  "difficulty": 0
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Wants to know which workflow goes to which kind of AI and how to prove it works before go-live. The workflow map answers both: a main fit and a test for each of ten jobs. The 'On this page' list follows page order. Recipe 2's name ran long on a phone; shortened to 'FP&A or planning team: a demand or cash forecast (predictive first)'. No sourced time-to-deploy figure exists in the research, so none is given."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Reads on a phone between meetings. Jargon cut: 'backtest', 'holdout', 'roll' and 'calibrated' became plain descriptions (forecast hidden past months, set-aside loans, fall further behind, predicted rates match real ones). Map cells shortened so the 4-column table fits a phone. XGBoost and LightGBM are now explained once as boosted-tree models; the FAQ and pick-neither lines say 'boosted-tree model'."
+  },
+  {
+   "reader": "GM",
+   "notes": "Asks whether one unit can try it first and what it really costs. Added a step to the scorecard build: run it in shadow on one loan product beside today's decisions before it decides anything. The document recipe's token cost (about $11 a month) looked too cheap to trust; it now says reviewers' time is the bigger cost. Token prices stay labelled third-party with the date read."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Head of lending or underwriting asks what the examiner will ask. The SR 11-7 watch-out now says SR 26-2 targets banks over $30B but is the clearest public guide for any lender, so a smaller lender doesn't over-read it. CFPB circulars are shown as withdrawn in May 2025, with Reg B's specific-reasons duty still in force. The Colombian lending study is labelled a university paper on one market, in the table and the key numbers."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Steve gets the answer in 10 seconds: the title is his question and the bottom line is five 'use X if' bullets. Every tool shows a dated price or says it is a third-party price. His return worry is answered by testing before spending: each mapped workflow names the test to pass, and 'use neither' sets a spreadsheet as the bar. A survey stat on AI profit impact was tried and cut, because it isn't used elsewhere on the page. The research has no source on data security for this choice and no case from a firm his size, so neither is claimed; the example is marked illustrative."
+  }
+ ],
+ "updated": "2026-11-26"
+}
