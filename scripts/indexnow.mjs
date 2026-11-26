@@ -1,7 +1,7 @@
 // Tells IndexNow (Bing, Yandex, Seznam, Naver and others) which pages are new or changed after a deploy.
 // Run by .github/workflows/indexnow.yml on every push to master; can also be run by hand.
 //   node scripts/indexnow.mjs --new dist [--old dist-old] [--all] [--dry] [--wait]
-// --old: the previous build. A URL is sent when it is new, or its built HTML changed. Without --old, or with --all,
+// --old: the previous build. A URL is sent when it is new, its built HTML changed, or it was removed. Without --old, or with --all,
 //        every URL in the new sitemap is sent.
 // --wait: first poll the live sitemap until it matches the new build, so engines never fetch the old page.
 // The key is public by design: IndexNow checks it by fetching https://zavient.com/<key>.txt.
@@ -28,6 +28,9 @@ const newMap = readFileSync(join(newDir, 'sitemap.xml'), 'utf8');
 let urls = locs(newMap);
 if (oldDir && !flag('--all') && existsSync(oldDir)) {
   urls = urls.filter((u) => hash(fileFor(oldDir, u)) !== hash(fileFor(newDir, u)));
+  // A page cut from the site is sent too, so engines recrawl it, find the 404 and drop it (26 Nov 2026).
+  const oldMap = join(oldDir, 'sitemap.xml');
+  if (existsSync(oldMap)) urls.push(...locs(readFileSync(oldMap, 'utf8')).filter((u) => !newMap.includes(`<loc>${u}</loc>`)));
 }
 console.log(`${urls.length} URL(s) to submit`);
 urls.forEach((u) => console.log(`  ${u}`));
