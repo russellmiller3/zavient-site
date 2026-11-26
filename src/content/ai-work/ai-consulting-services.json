@@ -2,14 +2,14 @@
  "title": "AI consulting for finance: is it worth it, and what does it cost?",
  "description": "What AI consulting should deliver, what it costs against hiring a team or buying software, and the finance work where AI pays first. With our own data.",
  "job": "AI consulting",
- "summary": "AI consulting should take one costly job off your team, such as invoice exceptions, which hit about 1 invoice in 5[^34]. Most generative AI never shows up in profit[^1][^16]. Winners benchmark on their own files[^5] and budget for after launch, where most of the cost sits[^3][^12].",
+ "summary": "AI consulting should take one costly job off your team, such as invoice exceptions, which hit about 1 invoice in 5[^31]. Most generative AI never shows up in profit[^1][^13]. Winners benchmark on their own files[^5] and budget for after launch, where most of the cost sits[^3][^9].",
  "index": true,
  "verdict": [
-  "Hire AI help for one problem with a number attached, not a strategy deck[^1].",
-  "Bought or partnered AI projects succeed about 67% of the time, about three times internal builds[^1].",
-  "Benchmark the options on your own files before anyone builds[^5][^23].",
-  "Our AI Sprint: $10,000, 30 days, fixed scope, ending in specs for 2 or 3 AI bets[^21].",
-  "Re-check the choice each year: the same AI work keeps getting much cheaper[^22]."
+  "Hire AI help for one problem with a number attached, not a strategy deck[^1][^12].",
+  "Buy or partner before you build: bought projects succeed about 3 times as often[^1], and most are now bought[^2].",
+  "Benchmark the options on your own files before anyone builds[^5][^20].",
+  "Our AI Sprint costs $10,000 for 30 days, about a month of one data scientist's median pay[^18][^4].",
+  "Re-check the model each year: AI keeps getting cheaper[^19], and running it is most of the cost[^3]."
  ],
  "onPage": [
   {
@@ -18,7 +18,7 @@
   },
   {
    "to": "own-data",
-   "text": "What it costs to hire an AI team yourself, from US job ads"
+   "text": "What it costs to hire an AI team yourself, from US government pay data"
   },
   {
    "to": "recipes",
@@ -40,33 +40,33 @@
  "stats": [
   {
    "num": "76%",
-   "label": "of US organizations faced attempted or actual payments fraud in 2025[^35]",
-   "source": "AFP 2026 Payments Fraud and Control Survey[^35]"
+   "label": "of US organizations faced attempted or actual payments fraud in 2025[^32]",
+   "source": "AFP 2026 Payments Fraud and Control Survey[^32]"
   },
   {
    "num": "19.9%",
-   "label": "average share of invoices that hit an exception, a mismatch a person must sort out[^34]",
-   "source": "Ardent Partners, State of ePayables[^34]; average cost $9.90 per invoice[^34]"
+   "label": "average share of invoices that hit an exception, a mismatch a person must sort out[^31]",
+   "source": "Ardent Partners, State of ePayables[^31]; average cost $9.90 per invoice[^31]"
   },
   {
-   "num": "$155,300",
-   "label": "median posted minimum pay for a US AI engineer, before benefits[^8]",
-   "source": "Zavient sample of 2,046 US AI job ads, 21 to 25 Nov 2026[^8]; BLS medians, May 2025: software developers $135,980, research scientists $140,300[^17][^18]"
+   "num": "~$630,000",
+   "label": "rough yearly cost of a lean in-house AI team of three, with benefits[^4][^16]",
+   "source": "BLS median pay, May 2025: tech manager $175,140, software developer $135,980, data scientist $120,230[^34][^14][^4]; benefits added from BLS pay cost data[^16]"
   },
   {
    "num": "~95%",
-   "label": "of organizations in MIT NANDA's 2025 study got little or no measurable P&L return from generative AI[^1][^16]",
-   "source": "MIT NANDA 2025, via Fortune and The Register[^1][^16]"
+   "label": "of organizations in MIT NANDA's 2025 study got little or no measurable P&L return from generative AI[^1][^13]",
+   "source": "MIT NANDA 2025, via Fortune and The Register[^1][^13]"
   }
  ],
  "pickElse": [
-  "AI is your product and you will run many systems: hire in-house. Technical roles take a median 75 days to fill[^20], so budget for that and the salaries in the table above[^8].",
+  "AI is your product and you will run many systems: hire in-house. Technical roles take a median 75 days to fill[^17], so budget for that and the pay in the table above[^4][^14].",
   "A standard job that software already does, such as accounts payable: buy the product and benchmark it on your own files. 76% of enterprise AI use cases are now bought[^2], and bought projects succeed about 3 times as often as internal builds[^1]."
  ],
  "spokes": [
   {
    "slug": "ai-invoice-processing",
-   "why": "Accounts payable: reading invoices is the easy part, but about 1 in 5 (19.9%) hit an exception, a mismatch someone must fix[^34]. The money is in those exceptions and in payments fraud, which 76% of US firms faced in 2025[^35]."
+   "why": "Accounts payable: reading invoices is the easy part, but about 1 in 5 (19.9%) hit an exception, a mismatch someone must fix[^31]. The money is in those exceptions and in payments fraud, which 76% of US firms faced in 2025[^32]."
   },
   {
    "slug": "ai-document-processing",
@@ -74,47 +74,44 @@
   },
   {
    "slug": "ai-underwriting",
-   "why": "If you lend or insure: AI does the reading so underwriters spend their time on the decision, which must stay explainable[^24][^29]."
+   "why": "If you lend or insure: AI does the reading so underwriters spend their time on the decision, which must stay explainable[^21][^26]."
   },
   {
    "slug": "ai-credit-scoring",
-   "why": "If you lend: score loans with a model you can explain, and add a stronger, harder-to-explain one only if your benchmark shows lift[^36]. Stronger models usually score higher, but the gap narrows on small data[^36], and every decline needs specific reasons[^24][^25]."
+   "why": "If you lend: score loans with a model you can explain, and add a stronger, harder-to-explain one only if your benchmark shows lift[^33]. Stronger models usually score higher, but the gap narrows on small data[^33], and every decline needs specific reasons[^21][^22]."
   }
  ],
  "ownData": {
   "title": "What does it cost to hire an AI team yourself?",
-  "intro": "These are posted minimum salaries from our sample of US AI job ads, the floor for building an AI team in-house[^8]. Benefits are 30% of US private employers' total pay costs[^19]. Technical roles take a median 75 days to fill[^20].",
+  "intro": "These are US median pay figures from the Bureau of Labor Statistics for May 2025[^4][^14]. AI job titles have no BLS group of their own, so each row uses the nearest one. A lean team of one manager, one data scientist and one developer costs about $630,000 a year with benefits[^16].",
   "headers": [
-   "Role",
-   "Median posted minimum pay"
+   "Role (nearest BLS group)",
+   "Median pay, May 2025",
+   "Rough cost with benefits"
   ],
   "rows": [
    [
-    "Head or director of AI",
-    "$220,600"
+    "Computer and information systems manager, nearest to a head of AI",
+    "$175,140[^34]",
+    "About $256,000[^16]"
    ],
    [
-    "Machine learning engineer",
-    "$170,600"
+    "Computer and information research scientist, nearest to a machine learning engineer",
+    "$140,300[^15]",
+    "About $205,000[^16]"
    ],
    [
-    "AI architect or consultant",
-    "$166,400"
-   ],
-   [
-    "Forward deployed engineer",
-    "$161,359"
-   ],
-   [
-    "AI engineer",
-    "$155,300"
+    "Software developer, nearest to an AI engineer",
+    "$135,980[^14]",
+    "About $199,000[^16]"
    ],
    [
     "Data scientist",
-    "$130,000"
+    "$120,230[^4]",
+    "About $176,000[^16]"
    ]
   ],
-  "note": "Source: Zavient sample of 2,046 US AI job ads at 1,172 employers, posted 21 to 25 November 2026, reposts removed[^8][^9][^37]. Pay is the posted minimum of the range, where an ad gives one."
+  "note": "Source: BLS Occupational Outlook Handbook, May 2025 median pay, checked 26 November 2026[^4][^14][^15][^34]. Cost with benefits divides median pay by 68.5%, the wage share of pay costs for full-time private workers in June 2026[^16]. Medians cover all employers and experience levels, not one specific hire."
  },
  "example": {
   "input": "A mid-sized lender wants AI to read small-business loan files so underwriters stop spreading bank statements and tax returns by hand. Spreading means retyping their numbers into the lender's standard analysis sheet.",
@@ -124,7 +121,7 @@
  "recipes": [
   {
    "name": "1. Benchmark first",
-   "when": "Before anyone builds, to settle which approach wins on your files and what it costs; public leaderboards are only a first filter[^5]. Pick a high-volume, repetitive job with a known cost of errors, and price it today: an invoice costs $9.90 on average to process[^34].",
+   "when": "Before anyone builds, to settle which approach wins on your files and what it costs; public leaderboards are only a first filter[^5]. Pick a high-volume, repetitive job with a known cost of errors, and price it today: an invoice costs $9.90 on average to process[^31].",
    "flow": [
     "Process lead: measure today's time and error rate per file",
     "Process lead: pick 50 real files",
@@ -145,24 +142,24 @@
     "Process lead: go live at one site or team first",
     "Process lead: move to full volume"
    ],
-   "cost": "Depends on the systems it touches. Gartner warns that a production system can cost many times the pilot[^3][^12], so scope it from the benchmark, not the demo."
+   "cost": "Depends on the systems it touches. Gartner warns that a production system can cost many times the pilot[^3][^9], so scope it from the benchmark, not the demo."
   },
   {
    "name": "3. Keep it right",
-   "when": "Always, because models, prices and your documents change. The same AI performance gets 9 to 900 times cheaper each year[^22].",
+   "when": "Always, because models, prices and your documents change. The same AI performance gets 9 to 900 times cheaper each year[^19].",
    "flow": [
     "Consultant: flag a new model or price change",
     "Consultant: re-run the benchmark",
     "Process lead: check if it's cheaper or better",
     "You: decide to switch, or keep"
    ],
-   "cost": "Small, because the benchmark already exists. Running the model is at least 70% of its lifetime cost[^3][^12], so a cheaper model that passes the benchmark saves on every file."
+   "cost": "Small, because the benchmark already exists. Running the model is at least 70% of its lifetime cost[^3][^9], so a cheaper model that passes the benchmark saves on every file."
   }
  ],
  "tables": [
   {
    "title": "How much does an AI consultant cost?",
-   "intro": "Public prices for each way to get the work done, checked 26 November 2026. Zavient's own prices are listed for comparison[^21].",
+   "intro": "Public prices for each way to get the work done, checked 26 November 2026. Zavient's own prices are listed for comparison[^18].",
    "headers": [
     "Option",
     "Typical price",
@@ -174,36 +171,36 @@
      "name": "In-house data scientist (BLS)",
      "url": "https://www.bls.gov/ooh/math/data-scientists.htm",
      "cells": [
-      "BLS median pay: $120,230 a year, May 2025[^4]. Job ads post a median minimum of $130,000[^8].",
+      "BLS median pay: $120,230 a year, May 2025[^4]. About $176,000 with benefits[^16].",
       "Many systems over years",
-      "Salary only; technical roles take a median 75 days to fill[^20]"
+      "Salary only; technical roles take a median 75 days to fill[^17]"
      ]
     },
     {
      "name": "Generative AI project on an API (Gartner, 2024)",
      "url": "https://www.techrepublic.com/article/30-generative-ai-projects-fail-amid-high-costs-and-risks/",
      "cells": [
-      "Up to $200,000 upfront plus $550 per user a year[^14]",
+      "Up to $200,000 upfront plus $550 per user a year[^11]",
       "Apps built on a vendor's model",
-      "Gartner's estimate, reported by TechRepublic[^14]"
+      "Gartner's estimate, reported by TechRepublic[^11]"
      ]
     },
     {
      "name": "Zavient 30-day AI Sprint",
      "url": "https://zavient.com/about.html#engagements",
      "cells": [
-      "$10,000 for 30 days[^21]",
+      "$10,000 for 30 days[^18]",
       "Finding and specifying the 2 or 3 bets that pay",
-      "Fixed scope; you leave with a plan and specs[^21]"
+      "Fixed scope; you leave with a plan and specs[^18]"
      ]
     },
     {
      "name": "Zavient ongoing advisory",
      "url": "https://zavient.com/about.html#engagements",
      "cells": [
-      "$5,000 to $10,000 a month[^21]",
+      "$5,000 to $10,000 a month[^18]",
       "Guiding a build through to launch",
-      "Quarterly commitment[^21]"
+      "Quarterly commitment[^18]"
      ]
     }
    ]
@@ -215,7 +212,7 @@
   "Ask for a benchmark on 20 to 50 of your own files before you sign for a full build.",
   "Agree the right answers with your own team first, and lock them, so the result is graded against your standard.",
   "Ask for cost per correct answer, not price per token. In our benchmark the cheapest tool made 16 wrong answers; the two best made none[^7].",
-  "Ask why they picked their model. In our benchmark, two tools found nearly the same facts at prices 48 times apart[^7]; Claude's own list prices span about 40 times[^11].",
+  "Ask why they picked their model. In our benchmark, two tools found nearly the same facts at prices 48 times apart[^7]; Claude's own list prices span about 40 times[^8].",
   "Ask what happens when a better model ships next month. If the answer is a new project, the system will go stale.",
   "Ask for a client where the system has run in production for at least six months.",
   "Ask where your files are stored, who can see them, and whether anyone trains AI models on them.",
@@ -224,13 +221,13 @@
  ],
  "buyVsBuild": {
   "buy": "Hire a consultant when you need one system working this quarter, have no AI engineers, and want someone accountable for the result. Pay for a fixed scope with a benchmark you can check. Bought or partnered projects succeed about 3 times as often as internal builds[^1].",
-  "build": "Hire in-house when AI is core to what you sell and you will run many systems. Expect about two and a half months to fill each technical role[^20] and the salaries above[^8]."
+  "build": "Hire in-house when AI is core to what you sell and you will run many systems. Expect about two and a half months to fill each technical role[^17] and the pay in the table above[^4][^14]."
  },
  "watchOuts": [
   "Firms that resell one software vendor's product and call it a recommendation. 37% of enterprise CIOs surveyed by a16z run five or more models, picked by use case[^5].",
-  "Demos on clean sample data that never meet your real files. Gartner lists poor data quality among the main reasons generative AI projects are dropped after the proof of concept[^13].",
-  "No answer key: without agreed right answers, nobody can show the system works. Anthropic's own guide says to set measurable success criteria and benchmark on cases that mirror the real task[^23].",
-  "Budgets that stop at the pilot. Gartner expects at least half of generative AI projects to overrun through 2028, and running the model is most of the lifetime cost[^3][^12]."
+  "Demos on clean sample data that never meet your real files. Gartner lists poor data quality among the main reasons generative AI projects are dropped after the proof of concept[^10].",
+  "No answer key: without agreed right answers, nobody can show the system works. Anthropic's own guide says to set measurable success criteria and benchmark on cases that mirror the real task[^20].",
+  "Budgets that stop at the pilot. Gartner expects at least half of generative AI projects to overrun through 2028, and running the model is most of the lifetime cost[^3][^9]."
  ],
  "resources": [
   {
@@ -281,21 +278,6 @@
    "what": "Hard round: GPT-6 Luna and Claude Opus 5.5 each proved 21 of 22 long-report facts, at $0.0063 and $0.3032 per report (48 times apart); the cheapest tool made 16 wrong answers."
   },
   {
-   "name": "Zavient, AI job pay by title",
-   "url": "https://zavient.com/data/ai-job-pay-by-title.html",
-   "what": "Median posted minimum pay in 2,046 US AI job ads, 21 to 25 Nov 2026: AI engineer $155,300, data scientist $130,000, head of AI $220,600."
-  },
-  {
-   "name": "Zavient, forward deployed engineer rise",
-   "url": "https://zavient.com/data/forward-deployed-engineer-rise.html",
-   "what": "Ads and employers by job title in 2,046 US AI job ads: 304 forward deployed engineer ads from 213 employers, 306 machine learning engineer ads."
-  },
-  {
-   "name": "Fortune, forward deployed engineers, 3 Sep 2026",
-   "url": "https://www.fortune.com/2026/09/03/forward-deployed-engineers-fast-growing-six-figure-silicon-valley-job-integrate-ai-with-customers-tech-careers-palantir/",
-   "what": "Lightcast data: forward deployed engineer postings rose more than 1,000% in Jan to Aug 2026 against a year earlier; the role connects AI to a customer's own data."
-  },
-  {
    "name": "Anthropic, Claude API pricing",
    "url": "https://platform.claude.com/docs/en/about-claude/pricing",
    "what": "List prices per million tokens: Claude Opus 5.5 $4 in, $20 out; Claude Haiku 5.5 $0.10 in, $0.50 out for prompts up to 100,000 tokens."
@@ -338,7 +320,7 @@
   {
    "name": "BLS, employer costs for employee compensation, Jun 2026",
    "url": "https://www.bls.gov/opub/ted/2026/compensation-costs-for-private-industry-workers-averaged-46-89-per-hour-worked-in-june-2026.htm",
-   "what": "In private industry, wages are 70.0% of total compensation costs and benefits 30.0%."
+   "what": "In private industry, wages are 70.0% of total compensation costs and benefits 30.0%; for full-time workers, wages are 68.5% and benefits 31.5%."
   },
   {
    "name": "Ashby, recruiting benchmarks 2026",
@@ -426,9 +408,9 @@
    "what": "Gradient boosting leads on accuracy; logistic regression stays competitive on small data and wins where auditability binds."
   },
   {
-   "name": "Zavient, Claude vs ChatGPT in AI job ads",
-   "url": "https://zavient.com/data/claude-vs-chatgpt-in-ai-job-ads.html",
-   "what": "The sample: 2,046 US AI job ads from 1,172 employers, 21 to 25 Nov 2026, reposts removed."
+   "name": "BLS, computer and information systems managers",
+   "url": "https://www.bls.gov/ooh/management/computer-and-information-systems-managers.htm",
+   "what": "Median pay $175,140 a year in May 2025; they plan, coordinate and direct an organization's computer-related work."
   }
  ],
  "related": [],
@@ -448,13 +430,13 @@
    "name": "AI credit scoring: the lending rules",
    "url": "https://zavient.com/ai-work/ai-credit-scoring.html",
    "status": "US in force; EU from 2 Dec 2027",
-   "what": "If you lend, US rules require a decline notice within 30 days, giving the specific reasons or how to ask for them[^24]. Those reasons must be the factors the model actually scored[^25]. In the EU, credit scoring of people becomes a high-risk AI use from 2 December 2027[^26][^27][^28]."
+   "what": "If you lend, US rules require a decline notice within 30 days, giving the specific reasons or how to ask for them[^21]. Those reasons must be the factors the model actually scored[^22]. In the EU, credit scoring of people becomes a high-risk AI use from 2 December 2027[^23][^24][^25]."
   },
   {
    "name": "AI underwriting: the insurance rules",
    "url": "https://zavient.com/ai-work/ai-underwriting.html",
    "status": "US in force; EU from 2 Dec 2027",
-   "what": "If you insure, New York expects and Colorado requires testing AI and outside data for unfair discrimination[^29][^32]. 30 jurisdictions expect a written AI program with vendor oversight[^30][^31]. In the EU, life and health insurance pricing becomes a high-risk AI use from 2 December 2027[^26][^27][^28]."
+   "what": "If you insure, New York expects and Colorado requires testing AI and outside data for unfair discrimination[^26][^29][^30]. 30 jurisdictions expect a written AI program with vendor oversight[^27][^28]. In the EU, life and health insurance pricing becomes a high-risk AI use from 2 December 2027[^23][^24][^25]."
   }
  ],
  "headings": {
