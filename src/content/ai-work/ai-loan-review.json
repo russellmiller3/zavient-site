@@ -1,0 +1,821 @@
+{
+ "title": "Can AI widen loan review coverage without losing independence?",
+ "description": "AI loan review and credit risk monitoring for community banks and credit unions: what it flags, who signs, current exam guidance and failed-bank lessons.",
+ "type": "usecase",
+ "templateVersion": 1,
+ "topic": "AI loan review and credit risk monitoring",
+ "job": "loan review",
+ "industry": "community banks and credit unions",
+ "index": true,
+ "verdict": [
+  "Loan review independently checks loan grades. Vendors say AI can read every file between reviews and flag the gaps[^1][^48].",
+  "No rule sets a minimum share for your own loan review. Even FDIC examiners use no fixed ratio[^1][^4].",
+  "In our read of nine failed-bank reviews, five showed loan-book problems; insiders altered records in two[^29][^34].",
+  "Reviewers keep the grade and the sign-off. AI drafts with page citations, and a person validates each line[^16][^17].",
+  "Test on last year's downgrades first: language models still miss numbers on multi-document financial work[^24][^26]."
+ ],
+ "onPage": [
+  {
+   "to": "human-role",
+   "text": "What reviewers, the chief credit officer and the board keep"
+  },
+  {
+   "to": "table-1",
+   "text": "Loan review tools with AI, and the one published price"
+  },
+  {
+   "to": "own-data",
+   "text": "Our read of nine failed-bank reviews since July 2023"
+  },
+  {
+   "to": "recipes",
+   "text": "Three ways to start, sized to your bank"
+  },
+  {
+   "to": "benchmark",
+   "text": "How to test AI on last year's closed reviews"
+  },
+  {
+   "to": "what-goes-wrong",
+   "text": "Where AI loan review breaks, from failed-bank cases"
+  }
+ ],
+ "headings": {
+  "what-it-is": "What is loan review, and what does AI change in it?",
+  "human-role": "Where does your loan review team stay in charge?",
+  "team-after": "What do reviewers do once AI takes the first pass?",
+  "example": "What does AI-assisted loan review look like in practice?",
+  "recipes": "Which way to add AI to loan review fits your bank?",
+  "rules": "Which rules shape AI loan review?",
+  "benchmark": "How do you test AI loan review before you trust it?",
+  "what-goes-wrong": "Where does AI loan review go wrong?",
+  "faq": "Questions credit officers ask about AI loan review",
+  "buy-or-build": "Should you buy AI loan review or build it?"
+ },
+ "summary": "Loan review is the independent check that loans are graded right and problems surface early[^1][^2]. Vendors report AI that reads every commercial file between reviews, drafts the reviewer's write-up with page citations and flags grade gaps[^17][^46][^48]. Clean core data and reviewers independent of lending make or break it[^2][^4].",
+ "humanRole": [
+  "Loan reviewer: checks every AI flag and draft against the cited pages before it enters the official file[^17]. At Old National, AI output is not examiner-visible, and reviewers validate it (Abrigo case, vendor-reported, 2026)[^16].",
+  "Loan review stays independent of lending: reviewers don't originate the loans and aren't paid on the ratings[^1]. Keep the AI's prompts, thresholds and flag list with loan review, not lenders, to protect that independence[^1].",
+  "Chief credit officer: settles lender-versus-reviewer grade disputes through an appeal process, which the Office of the Comptroller of the Currency (OCC) expects[^2].",
+  "Board: approves the loan review policy each year and receives the findings, typically every quarter[^1][^2]."
+ ],
+ "teamAfter": [
+  "Reviewers move from reading every page to checking flagged and larger credits. Teams on automated software report 4.6 files per reviewer a week, against 3.6 manual (Abrigo survey, vendor)[^18].",
+  "Watch-list loans get borrower calls and site visits, since soft information is where AI helps least[^21][^28].",
+  "Reviewers spend more time on trends for the board and the allowance for credit losses (ACL)[^1]. Seacoast aims to automate every nonjudgmental part of credit risk review by 2028 (Abrigo case, vendor-reported)[^17].",
+  "Headcount isn't the goal: of firms using AI, 66% only use it to help staff, and only 2% of firms report AI-related job losses[^20]."
+ ],
+ "example": {
+  "input": "Illustrative: a $900M community bank with two loan reviewers and an outsourced annual review that samples the largest loans and a slice of the rest[^1]. Each month the AI gets the commercial trial balance with grades, core payment history, extension and overdraft reports, statements and covenant certificates[^1].",
+  "output": "A ranked flag list with page citations: loan 4471, graded pass, shows debt service coverage down from 1.35x to 0.98x against a 1.20x covenant[^17]. The reviewer opens the cited pages, agrees or rejects, and records why[^16]. Grade changes go to the chief credit officer and the lender appeal step[^2]."
+ },
+ "tables": [
+  {
+   "title": "Which loan review tools use AI today?",
+   "intro": "Claims are each vendor's own, read on 26 Nov 2026[^19][^45]. We list software only, not review services.",
+   "headers": [
+    "Product",
+    "What it does",
+    "Price",
+    "Worth knowing"
+   ],
+   "rows": [
+    {
+     "name": "Abrigo Loan Review Assistant",
+     "url": "https://www.abrigo.com/ai-hub/products/loan-review-assistant",
+     "cells": [
+      "Drafts line sheets and summaries with citations (vendor)[^17][^19]",
+      "Not published[^19]",
+      "Vendor claim: speeds loan reviews up to 30%[^19]"
+     ]
+    },
+    {
+     "name": "nCino Continuous Credit Monitoring",
+     "url": "https://www.ncino.com/continuous-credit-monitoring",
+     "cells": [
+      "Early warning indicators flag deteriorating credit, with automated risk insights (vendor)[^46]",
+      "Not published[^46]",
+      "Runs inside the nCino platform[^46]"
+     ]
+    },
+    {
+     "name": "Moody's Lending Suite, loan monitoring",
+     "url": "https://www.moodys.com/web/en/us/solutions/lending/loan-monitoring.html",
+     "cells": [
+      "Automated covenant tracking and AI early warning signals (vendor)[^47]",
+      "Not published[^47]",
+      "Covenants and early warning in one suite[^47]"
+     ]
+    },
+    {
+     "name": "Botminds Credit Risk Review",
+     "url": "https://www.botminds.ai/solutions/credit-risk-review",
+     "cells": [
+      "Suggests a grade for each loan; the reviewer sets the grade (vendor)[^48]",
+      "Not published[^48]",
+      "Vendor claim: re-grades every commercial loan, every quarter[^48]"
+     ]
+    },
+    {
+     "name": "LenderAnalyzer",
+     "url": "https://lenderanalyzer.com/loan-review-software",
+     "cells": [
+      "Re-spreads borrower financials so reviewers can re-test grades (vendor)[^45]",
+      "From $99 a month[^45]",
+      "The only published price we found[^45]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "How far along are lenders with AI in loan review?",
+   "intro": "Surveys from a state supervisors' body, a Federal Reserve bank and two vendors, plus two vendor case studies[^22][^21]. Vendor figures are labelled.",
+   "headers": [
+    "Source",
+    "Finding"
+   ],
+   "rows": [
+    {
+     "name": "Abrigo Loan Review Benchmark, 2026 (vendor survey, n=124)",
+     "cells": [
+      "74.4% of loan review respondents use, explore or plan AI. Only 23.1% of loan review respondents already use it[^18]."
+     ]
+    },
+    {
+     "name": "Abrigo Loan Review Benchmark, 2026 (vendor survey)",
+     "cells": [
+      "4.6 files per reviewer a week with automated software, against 3.6 manual[^18]."
+     ]
+    },
+    {
+     "name": "Conference of State Bank Supervisors (CSBS) survey, 2026 (n=330)",
+     "cells": [
+      "53% of community banks are piloting or in limited AI use. 9% have deployed it across functions[^22]."
+     ]
+    },
+    {
+     "name": "MeridianLink AI Priorities, 2026 (vendor survey, n=257)",
+     "cells": [
+      "21% of lending professionals at community banks and credit unions say AI is used in underwriting or risk review[^23]."
+     ]
+    },
+    {
+     "name": "San Francisco Fed Economic Letter, 2026",
+     "cells": [
+      "84% of small banks have never posted an AI job[^21]."
+     ]
+    },
+    {
+     "name": "Old National Bank (Abrigo case, vendor-reported, 2026)",
+     "cells": [
+      "About 31% average reviewer efficiency gain, 15-40% by review type, reported by reviewers[^15]."
+     ]
+    },
+    {
+     "name": "Seacoast Bank (Abrigo case, vendor-reported, 2026)",
+     "cells": [
+      "Documentation time for complex loan reviews cut nearly in half[^17]."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "How accurate is AI on financial documents?",
+   "intro": "Published benchmarks and one bank study. Your files differ, which is why you test on your own reviews.",
+   "headers": [
+    "Study",
+    "Finding"
+   ],
+   "rows": [
+    {
+     "name": "FinSheet-Bench, 2026",
+     "url": "https://arxiv.org/html/2603.07316",
+     "cells": [
+      "Best model 82.4% accurate on financial spreadsheet questions, about one error in six[^24]."
+     ]
+    },
+    {
+     "name": "FinDoc-RAG, 2025",
+     "url": "https://aclanthology.org/2025.finnlp-2.9.pdf",
+     "cells": [
+      "0.84 accuracy on basic extraction, but 0.31 on average for complex synthesis[^25]."
+     ]
+    },
+    {
+     "name": "Fin-RATE, 2026",
+     "url": "https://arxiv.org/html/2602.07294",
+     "cells": [
+      "Accuracy falls 18.60% from single-document to multi-period analysis[^26]."
+     ]
+    },
+    {
+     "name": "Machado, Chen and Osterrieder, 2025",
+     "url": "https://www.sciencedirect.com/science/article/pii/S277266222500061X",
+     "cells": [
+      "Machine-learning early warning at a large Dutch bank predicted 12.7% of negative rating migrations. It helped prevent 67.6% of loss cases[^27]."
+     ]
+    }
+   ]
+  }
+ ],
+ "recipes": [
+  {
+   "name": "1. Small team already on loan review software",
+   "when": "One to three reviewers, often at a $250M to $1B bank, already on a loan review platform with an AI module. Abrigo reports Old National and Seacoast use one with human validation (vendor-reported, 2026)[^15][^17].",
+   "flow": [
+    "Loan review officer: switch on the AI module and choose what it drafts",
+    "Credit admin: load the trial balance, statements and covenant certificates",
+    "AI: draft each line sheet, the reviewer's write-up of one loan, with page citations",
+    "Reviewer: check each line against the cited pages, then accept or reject",
+    "Chief credit officer: sign grade changes after the lender appeal step",
+    "Loan review officer: report findings to the board each quarter"
+   ],
+   "cost": "Most AI modules carry no published price, so expect a vendor quote[^19][^46]. The lowest published loan review software price is LenderAnalyzer's, from $99 a month, read 26 Nov 2026[^45]."
+  },
+  {
+   "name": "2. Mid-size bank with a covenant-heavy commercial book",
+   "when": "A $1B to $5B bank, heavy in commercial real estate (CRE), whose loan platform already tracks covenants and statement dates. Interagency guidance lets key risk indicators set how often and how deeply you review[^1].",
+   "flow": [
+    "Credit admin: map covenants and statement due dates in the platform",
+    "AI: test covenants and flag deteriorating credits every month",
+    "Loan review: review flagged loans first, then the usual scope list",
+    "Lender: answer each flag in writing",
+    "Chief credit officer: approve or reject grade changes",
+    "Loan review officer: log every rating change, a risk indicator OCC examiners track"
+   ],
+   "cost": "Monitoring modules from nCino and Moody's publish no price, so cost comes from a quote[^46][^47]. As a floor, published loan review software starts from $99 a month, read 26 Nov 2026[^45]."
+  },
+  {
+   "name": "3. Your own rules on core data, with an analyst",
+   "when": "A bank or credit union with a data analyst and core extracts, often next to an outsourced annual review. Fixed rules fall outside SR 26-2's definition of a model[^49].",
+   "flow": [
+    "Data analyst: pull payments, extensions, overdrafts, maturity changes and statement dates from the core",
+    "Rules: flag stale financials, repeated extensions, overdrafts and maturity changes with no renewal memo",
+    "Reviewer: triage the list and pull the files",
+    "Internal audit: reconcile a sample of core fields to loan documents",
+    "Risk management: document the rules and the test results"
+   ],
+   "cost": "We found no public cost figure for an in-house build, so price it as analyst time on tools you own. For scale, published loan review software starts from $99 a month, read 26 Nov 2026[^45]."
+  }
+ ],
+ "ownData": {
+  "title": "What did failed-bank reviews find in the loan book?",
+  "intro": "We read every published inspector general review of US bank failures from July 2023 to November 2026[^29]. The window starts after the 2023 failures of Silicon Valley, Signature and First Republic, which were not community banks. Yes means the review names a loan-book problem a file or core-data check could flag.",
+  "headers": [
+   "Bank and failure",
+   "What the review found",
+   "Could a file check flag it?"
+  ],
+  "rows": [
+   [
+    "Heartland Tri-State Bank, Kansas, Jul 2023",
+    "The CEO wired about $47.1M of bank funds in a cryptocurrency scam[^30].",
+    "No"
+   ],
+   [
+    "Citizens Bank, Sac City, Iowa, Nov 2023",
+    "Trucking loans were 43% of loans. Overdrafts went to problem borrowers without current financials[^31].",
+    "Yes: concentration, stale financials, overdrafts"
+   ],
+   [
+    "Republic First Bank, Pennsylvania, Apr 2024",
+    "Securities losses and too little liquidity[^32].",
+    "No"
+   ],
+   [
+    "First National Bank of Lindsay, Oklahoma, Oct 2024",
+    "The OCC found the CEO changed maturity dates, due dates and past-due status in the core system to hide bad loans[^33][^34].",
+    "Yes, but an insider altered the records"
+   ],
+   [
+    "Pulaski Savings Bank, Chicago, Jan 2025",
+    "$20.7M of deposits kept off the core system, plus key-person risk[^35].",
+    "No"
+   ],
+   [
+    "Santa Anna National Bank, Texas, Jun 2025",
+    "Fraud affecting the loan book masked its weaknesses[^36].",
+    "Yes, but insiders masked the records"
+   ],
+   [
+    "Metropolitan Capital Bank & Trust, Chicago, Jan 2026",
+    "Management routinely applied unreasonable risk scores. Examiners graded sampled loans lower from 2018 to 2025[^37].",
+    "Yes: grades drifted from the numbers"
+   ],
+   [
+    "Community Bank & Trust, West Georgia, May 2026",
+    "Inadequate loan review and grading, and liberal payment deferrals and extensions[^38].",
+    "Yes: grading, deferrals, extensions"
+   ],
+   [
+    "Tioga-Franklin Savings Bank, Pennsylvania, Aug 2026",
+    "Unprofitable after a mortgage-banking expansion[^39].",
+    "No"
+   ]
+  ],
+  "note": "Pulled 26 Nov 2026: nine reviews only, three newer failures have none yet, and two in-depth reviews are still open[^29][^40]. The Yes or No tag is our reading, not the inspectors', and could flag never means would have saved the bank. At Lindsay and Santa Anna insiders altered records, which file checks alone may not catch[^34][^36]."
+ },
+ "rules": [
+  {
+   "name": "Interagency Guidance on Credit Risk Review Systems (2020)",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2013a1.pdf",
+   "status": "In force at the Federal Reserve, Federal Deposit Insurance Corporation (FDIC), OCC and National Credit Union Administration (NCUA)",
+   "what": "Loan review must be independent of lending, follow a board-approved policy and report to the board[^1]. Key risk indicators may set how often and how deeply loans are reviewed[^1]. Credit risk review is not internal audit[^1]."
+  },
+  {
+   "name": "OCC booklet, Lending and Loan Portfolio Risk Management (June 2026)",
+   "url": "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-29.html",
+   "status": "In force; it rescinded the 1998 Loan Portfolio Management booklet",
+   "what": "Examiners check review frequency, scope, delayed reviews, board reports and the rating appeal process[^2][^3]. Lending models belong under model risk management[^2]."
+  },
+  {
+   "name": "OCC booklet, Rating Credit Risk (2001)",
+   "url": "https://www.occ.gov/publications-and-resources/publications/comptrollers-handbook/files/rating-credit-risk/pub-ch-rating-credit-risk.pdf",
+   "status": "Still listed by the OCC",
+   "what": "Every credit is formally reviewed at least once a year, and rating systems are back-tested[^13]. Some large banks use credit models to confirm and supplement judgmentally assigned ratings[^13]."
+  },
+  {
+   "name": "FDIC Risk Management Manual, Section 3.2 Loans",
+   "url": "https://www.fdic.gov/resources/supervision-and-examinations/examination-policies-manual/section3-2.pdf",
+   "status": "In force, 11-2026 edition",
+   "what": "Lists what a loan review policy should cover[^4]. FDIC examiners use no minimum or maximum loan penetration ratio when they sample loans[^4]."
+  },
+  {
+   "name": "NCUA rule, 12 CFR 723.4",
+   "url": "https://www.ecfr.gov/current/title-12/section-723.4",
+   "status": "In force",
+   "what": "Credit unions with commercial loans need periodic loan review, a risk rating system and an exceptions process[^6]."
+  },
+  {
+   "name": "SR 26-2, model risk management (17 Apr 2026)",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+   "status": "In force; it replaced SR 11-7 and SR 21-8",
+   "what": "SR 26-2 replaced SR 11-7 and SR 21-8, and is most relevant to banks over $30B[^7]. The guidance leaves generative and agentic AI out of scope and excludes fixed rules[^49]. Banks stay responsible for models they buy from vendors[^49]."
+  },
+  {
+   "name": "OCC Bulletin 2026-54, Super Intelligence (AI) supervisory framework",
+   "url": "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-54.html",
+   "status": "Issued 4 Nov 2026, an examiner framework",
+   "what": "The OCC now uses the term super intelligence (SI) for AI, treats it as no separate risk category and adds no new expectations[^8]. Controls scale with consequences and the degree of human oversight[^8]."
+  },
+  {
+   "name": "Interagency third-party guidance, FDIC FIL-29-2023",
+   "url": "https://www.fdic.gov/news/financial-institution-letters/2023/fil23029.html",
+   "status": "In force; a September 2026 proposal would replace it, comments due 16 Dec 2026",
+   "what": "An AI vendor or outsourced reviewer is a third party, and the bank stays responsible for the work[^10][^11]. Proposed guidance (FIL-58-2026) would replace it once final[^11][^12]."
+  },
+  {
+   "name": "NCUA AI resources",
+   "url": "https://ncua.gov/regulation-supervision/regulatory-compliance-resources/artificial-intelligence-ai",
+   "status": "Current",
+   "what": "The NCUA supervises AI like any other new technology, focusing on risk management, not the tool[^9]."
+  }
+ ],
+ "howToTest": [
+  "Record today's numbers: files per reviewer a week, commercial dollars covered, grade changes per review and exam findings. Surveyed teams average 3.6 files a week manual, 4.6 automated (vendor survey)[^18].",
+  "Build a test set from last year's closed reviews, with every downgrade and every loan examiners graded lower. Examiner-versus-management gaps were the warning sign at Metropolitan Capital[^37].",
+  "Run the AI blind on that set and compare its flags with the final grades. Count missed downgrades first, then false flags.",
+  "Check every number it quotes against the source page. The best model scored 82.4% on financial spreadsheets, and complex synthesis averaged 0.31[^24][^25].",
+  "Check the grades it suggests against how those loans actually performed, as the OCC expects of any rating system[^13].",
+  "Run one review cycle in parallel: reviewers do their normal sample while AI reads every loan. Keep AI output out of the official file until a reviewer validates it[^16][^17].",
+  "Pilot one segment first, such as commercial real estate, and widen to the whole book only after a clean parallel cycle.",
+  "Test the data feed, not just the model: reconcile maturity dates and past-due status to loan documents. The OCC found Lindsay's CEO altered exactly those core fields[^34].",
+  "Price the lift: reviewer hours freed times loaded cost, plus commercial dollars newly reviewed. Old National's 15-40% gain by review type is a vendor-reported reference only[^15].",
+  "Document it for examiners: list the tool with your lending models and third parties, plus the validation results[^2]."
+ ],
+ "watchOuts": [
+  "Optimistic grades go unchallenged: Metropolitan Capital's management routinely applied unreasonable risk scores[^37]. Compare each grade to its numbers and send gaps to loan review, not the lender.",
+  "Extensions and deferrals hide trouble: examiners cited liberal deferrals and extensions, and weak loan review, at Community Bank & Trust[^38]. Flag repeated extensions as a trigger.",
+  "The records themselves can be wrong: the OCC found Lindsay's CEO changed maturity dates and past-due status in the core[^34][^33]. Reconcile core fields to signed loan documents.",
+  "Independence leaks if lenders tune the tool[^1][^4]. Loan review should own the prompts, thresholds and flag list.",
+  "Confident wrong numbers: accuracy falls 18.60% on multi-period work[^26]. Require page citations and recompute ratios with fixed formulas.",
+  "Capacity mistaken for quality: more files per reviewer is not a better catch rate, as Abrigo's own survey warns[^18]. Measure the catch rate on downgrades, and treat vendor speed claims as claims[^18]."
+ ],
+ "faq": [
+  {
+   "q": "How much of the loan portfolio should loan review cover?",
+   "a": "No regulator sets a fixed minimum share for your own review, though Fed examiners sample at least 10% at $10B to $100B state member banks[^1][^14]. The FDIC tells its examiners the right loans in the sample matter more than the percentage[^4]. The Fed expects internal review to cover substantially more than the examiners' sample[^14]."
+  },
+  {
+   "q": "How often should loans be reviewed?",
+   "a": "Significant loans are typically reviewed once a year, at renewal, or more often when risk rises[^1][^5]. Key risk indicators can raise or lower that frequency[^1]."
+  },
+  {
+   "q": "Can a small bank or credit union do loan review in-house?",
+   "a": "Yes, if reviewers are independent of origination and not paid on the ratings, or you use a qualified third party[^1]. Credit unions generally use third-party reviewers[^42]."
+  },
+  {
+   "q": "Will examiners accept AI-assisted loan review?",
+   "a": "Yes, if reviewers stay in charge: the OCC's November 2026 framework sets no new expectations, and the NCUA treats AI like any other technology[^8][^9]. Keep reviewer sign-off and validation records[^16]."
+  },
+  {
+   "q": "Is AI loan review a model under model risk management?",
+   "a": "Only partly, because SR 26-2, which replaced SR 11-7, leaves generative AI out of scope and excludes fixed rules[^7][^49]. The OCC still expects lending models under model risk management[^2]."
+  },
+  {
+   "q": "What's the difference between loan review and internal audit?",
+   "a": "Loan review grades credit risk, while internal audit tests whether controls work, loan review included[^1]. The guidance keeps the two functions separate[^1]."
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Buy the file reading and line-sheet drafting: 76% of enterprise AI solutions were bought in 2025, up from 53%[^43]. Bought or partnered pilots reached deployment about twice as often as internal builds[^44]. Loan review platforms already ship document AI[^17][^19].",
+  "build": "Build the flags that run on your own core data, where the rules are yours and easy to explain[^49]. Fixed rules sit outside SR 26-2's model definition, and 84% of small banks have never posted an AI job, so keep the build simple[^49][^21]."
+ },
+ "pickElse": [
+  "Mostly consumer or small, similar loans: track delinquency by loan type and by the year loans were made, in your core or allowance software. One Community Development Financial Institutions (CDFI) Fund memo suggests 10-15% sampling for similar products[^41].",
+  "A few hundred commercial loans and one reviewer: a covenant reminder report and a stale-financials report may be enough. Low-cost loan review software starts from $99 a month (vendor price, read 26 Nov 2026)[^45].",
+  "Core data you can't trust: fix the data first, with a reconciliation project that internal audit tests. Altered core fields hid Lindsay's bad loans[^34].",
+  "You need an independent annual opinion for the board or examiners: keep an independent reviewer, in-house or outsourced, and let AI support them[^1]."
+ ],
+ "resources": [
+  {
+   "name": "Interagency Guidance on Credit Risk Review Systems",
+   "url": "https://www.federalreserve.gov/frrs/guidance/interagency-guidance-on-credit-risk-review-systems.htm",
+   "what": "The base standard for loan review scope, frequency and independence."
+  },
+  {
+   "name": "OCC, Lending and Loan Portfolio Risk Management booklet",
+   "url": "https://www.occ.gov/publications-and-resources/publications/comptrollers-handbook/files/lending-loan-portfolio-risk-management/pub-ch-lending-loan-portfolio.pdf",
+   "what": "Examiner procedures and the request list your exam team will use."
+  },
+  {
+   "name": "FDIC Risk Management Manual, Section 3.2 Loans",
+   "url": "https://www.fdic.gov/resources/supervision-and-examinations/examination-policies-manual/section3-2.pdf",
+   "what": "Loan review policy elements, and the FDIC's no-minimum stance on examiner loan sampling."
+  },
+  {
+   "name": "NCUA Examiner's Guide, Credit Risk Rating Systems",
+   "url": "https://publishedguides.ncua.gov/examiner/Content/ExaminersGuide/Commercial&MBL/CreditRiskRatingSystems.htm",
+   "what": "What NCUA examiners expect of a credit union's risk ratings and loan review."
+  },
+  {
+   "name": "FDIC inspector general, bank failure reviews",
+   "url": "https://www.fdicoig.gov/reports-publications/bank-failures",
+   "what": "Read what went wrong at peers, failure by failure."
+  }
+ ],
+ "stats": [
+  {
+   "num": "5 of 9",
+   "label": "failed-bank reviews we read named loan-book problems a file check could flag[^29]",
+   "source": "Zavient read of inspector general reviews, 26 Nov 2026"
+  },
+  {
+   "num": "74.4%",
+   "label": "of loan review teams use, explore or plan AI[^18]",
+   "source": "Abrigo survey (vendor), 2026"
+  },
+  {
+   "num": "4.6 vs 3.6",
+   "label": "files per reviewer a week, automated software against manual[^18]",
+   "source": "Abrigo survey (vendor), 2026"
+  },
+  {
+   "num": "82.4%",
+   "label": "best model accuracy on financial spreadsheet questions[^24]",
+   "source": "FinSheet-Bench, 2026"
+  },
+  {
+   "num": "20.35%",
+   "label": "12-month default rate at Community Bank & Trust, against 3.55% at peers[^38]",
+   "source": "FDIC inspector general, 2026"
+  },
+  {
+   "num": "66%",
+   "label": "of firms using AI only use it to help staff[^20]",
+   "source": "US Census Bureau, 2026"
+  }
+ ],
+ "sources": [
+  {
+   "name": "Interagency Guidance on Credit Risk Review Systems, Fed SR 20-13 attachment (May 2020)",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2013a1.pdf",
+   "what": "Credit risk review (loan review) is independent of lending, has seven objectives, a board-approved policy and a scope list; key risk indicators may set frequency and scope; small institutions may use independent staff, directors or a qualified third party; it is not internal audit. Read 26 Nov 2026."
+  },
+  {
+   "name": "OCC Comptroller's Handbook, Lending and Loan Portfolio Risk Management, v1.0 (June 2026)",
+   "url": "https://www.occ.gov/publications-and-resources/publications/comptrollers-handbook/files/lending-loan-portfolio-risk-management/pub-ch-lending-loan-portfolio.pdf",
+   "what": "Loan review and credit risk review are the same process; expects an appeal process for rating disputes, board reports typically quarterly, lending models under model risk management, and lists rating changes made by credit risk review as a risk indicator. Read 26 Nov 2026."
+  },
+  {
+   "name": "OCC Bulletin 2026-29 (25 Jun 2026)",
+   "url": "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-29.html",
+   "what": "Issues the Lending and Loan Portfolio Risk Management booklet and rescinds the 1998 Loan Portfolio Management booklet. Read 26 Nov 2026."
+  },
+  {
+   "name": "FDIC Risk Management Manual, Section 3.2 Loans (11-2026 edition)",
+   "url": "https://www.fdic.gov/resources/supervision-and-examinations/examination-policies-manual/section3-2.pdf",
+   "what": "Loan review policy elements; for examiner loan sampling, no minimum or maximum penetration ratio, and the right types of loans matter more than how much; avoid over-reliance on loan officers' own grades. Read 26 Nov 2026."
+  },
+  {
+   "name": "NCUA Examiner's Guide, Credit Risk Rating Systems",
+   "url": "https://publishedguides.ncua.gov/examiner/Content/ExaminersGuide/Commercial&MBL/CreditRiskRatingSystems.htm",
+   "what": "The in-depth assessment of risk should be performed by the independent loan review; review frequency rises with risk. Read 26 Nov 2026."
+  },
+  {
+   "name": "eCFR, 12 CFR 723.4 (NCUA commercial lending)",
+   "url": "https://www.ecfr.gov/current/title-12/section-723.4",
+   "what": "Requires periodic loan review, a risk rating system and an exceptions process for credit unions with commercial lending. Current to 17 Nov 2026. Read 26 Nov 2026."
+  },
+  {
+   "name": "Federal Reserve SR 26-2, model risk management guidance (17 Apr 2026)",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+   "what": "Supersedes SR 11-7 and SR 21-8; most relevant to banks above $30B in assets. Read 26 Nov 2026."
+  },
+  {
+   "name": "OCC Bulletin 2026-54, Super Intelligence (AI) supervisory framework for examiners (4 Nov 2026)",
+   "url": "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-54.html",
+   "what": "Uses super intelligence (SI) for what was called AI; not a separate risk category, no new expectations; controls scale with consequences, transfer of agency and human oversight. Read 26 Nov 2026."
+  },
+  {
+   "name": "NCUA, Artificial Intelligence resources page",
+   "url": "https://ncua.gov/regulation-supervision/regulatory-compliance-resources/artificial-intelligence-ai",
+   "what": "AI is not treated differently from any other innovative technology; supervisory focus is on risk management, not the tool. Read 26 Nov 2026."
+  },
+  {
+   "name": "FDIC FIL-29-2023, Interagency Guidance on Third-Party Relationships: Risk Management (6 Jun 2023)",
+   "url": "https://www.fdic.gov/news/financial-institution-letters/2023/fil23029.html",
+   "what": "In force: principles for managing risk across the life of every third-party relationship. A replacement was proposed on 11 Sep 2026 (FDIC FIL-58-2026); comments are due 16 Dec 2026. Read 26 Nov 2026."
+  },
+  {
+   "name": "FDIC FIL-58-2026, proposed interagency third-party risk management guidance (11 Sep 2026)",
+   "url": "https://www.fdic.gov/news/financial-institution-letters/2026/proposed-interagency-third-party-risk-management-guidance",
+   "what": "Proposal that, once final, would replace the 2023 guidance; using a third party does not reduce the bank's responsibility. Read 26 Nov 2026."
+  },
+  {
+   "name": "FDIC FIL-68-2026, comment period extended (13 Nov 2026)",
+   "url": "https://www.fdic.gov/news/financial-institution-letters/2026/extension-comment-period-proposed-third-party-risk",
+   "what": "Comments on the proposed third-party guidance now due 16 Dec 2026. Read 26 Nov 2026."
+  },
+  {
+   "name": "OCC Comptroller's Handbook, Rating Credit Risk (April 2001)",
+   "url": "https://www.occ.gov/publications-and-resources/publications/comptrollers-handbook/files/rating-credit-risk/pub-ch-rating-credit-risk.pdf",
+   "what": "All credits formally reviewed at least annually; back-test rating systems; some large banks use credit models to confirm and supplement judgmental ratings. Read 26 Nov 2026."
+  },
+  {
+   "name": "Federal Reserve SR 14-4, examiner loan sampling (revised 6 Dec 2021)",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/sr1404.htm",
+   "what": "For banks of $10B to $100B: examiner samples cover at least 10% of committed commercial dollars per segment; internal loan review should achieve substantial coverage beyond the examiners' sample. Read 26 Nov 2026."
+  },
+  {
+   "name": "Abrigo case study, Old National Bank (vendor, Jul 2026)",
+   "url": "https://www.abrigo.com/success-stories/how-old-national-bank-increased-loan-review-efficiency-and-capacity-with-ai-powered-workflow-intelligence",
+   "what": "Vendor-reported: about 31% average reviewer efficiency gain, 15-40% by review type, reported by reviewers. Read 26 Nov 2026."
+  },
+  {
+   "name": "Abrigo, Old National Loan Review Assistant case PDF (vendor, Jul 2026)",
+   "url": "https://www.abrigo.com/wp-content/uploads/2026/07/Old-National-Loan-Review-Assistant-1.pdf",
+   "what": "Vendor-reported controls: AI outputs are not examiner-visible, reviewers validate them, analysts own the conclusions. Read 26 Nov 2026."
+  },
+  {
+   "name": "Abrigo case study, Seacoast Bank (vendor, 8 Oct 2026)",
+   "url": "https://www.abrigo.com/success-stories/seacoast-bank-cuts-complex-loan-review-documentation-time-nearly-in-half-with-abrigo-loan-review-assistant",
+   "what": "Vendor-reported: complex loan review documentation time cut nearly in half; every result human-reviewed with citations to source documents; aims to automate nonjudgmental review work by 2028. Read 26 Nov 2026."
+  },
+  {
+   "name": "Abrigo 2026 Loan Review Benchmark Report (vendor survey, 15 Sep 2026)",
+   "url": "https://www.abrigo.com/resources/2026-loan-review-benchmark-report",
+   "what": "Vendor survey of 124 loan review respondents at institutions of about $500M to $100B+: 74.4% of loan review teams use, explore or plan AI, 23.1% already use it; 4.6 files per reviewer per week with automated software vs 3.6 manual; capacity is not quality. Read 26 Nov 2026."
+  },
+  {
+   "name": "Abrigo Loan Review Assistant product page (vendor)",
+   "url": "https://www.abrigo.com/ai-hub/products/loan-review-assistant",
+   "what": "Vendor: AI assistant for loan reviews; claims to speed loan reviews up to 30%; no published price. Read 26 Nov 2026."
+  },
+  {
+   "name": "US Census Bureau, CES-WP-26-25R (Oct 2026)",
+   "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
+   "what": "66% of AI-using firms only use it to augment tasks; AI-related employment decreases occur in only 2% of firms. Read 26 Nov 2026."
+  },
+  {
+   "name": "Federal Reserve Bank of San Francisco, Economic Letter, How AI Adoption Might Affect Bank Lending (Sep 2026)",
+   "url": "https://www.frbsf.org/research-and-insights/publications/economic-letter/2026/09/how-ai-adoption-might-affect-bank-lending/",
+   "what": "84% of small banks never posted an AI job; AI helps most with hard data, less with soft information; high-AI banks show slightly more problem loans (correlation only). Read 26 Nov 2026."
+  },
+  {
+   "name": "CSBS 2026 Annual Survey of Community Banks",
+   "url": "https://www.csbs.org/2026-csbs-annual-survey",
+   "what": "n=330: 53% of community banks piloting or in limited AI use; 9% deployed across functions. Read 26 Nov 2026."
+  },
+  {
+   "name": "MeridianLink 2026 AI Priorities Benchmark Survey (vendor, 8 Oct 2026)",
+   "url": "https://www.meridianlink.com/press-release/2026-ai-priorities-benchmark-survey",
+   "what": "Vendor survey of 257 lending professionals at community banks and credit unions (April 2026): 21% say AI is used in underwriting or risk review. Read 26 Nov 2026."
+  },
+  {
+   "name": "FinSheet-Bench, arXiv 2603.07316 (2026)",
+   "url": "https://arxiv.org/html/2603.07316",
+   "what": "Best language model 82.4% accurate on financial spreadsheet questions (about 1 error in 6); no standalone model is accurate enough for unsupervised use. Read 26 Nov 2026."
+  },
+  {
+   "name": "FinDoc-RAG, FinNLP workshop at EMNLP 2025",
+   "url": "https://aclanthology.org/2025.finnlp-2.9.pdf",
+   "what": "Retrieval systems on financial documents: 0.84 accuracy on basic extraction, 0.31 average on complex synthesis. Read 26 Nov 2026."
+  },
+  {
+   "name": "Fin-RATE, arXiv 2602.07294 (2026)",
+   "url": "https://arxiv.org/html/2602.07294",
+   "what": "Language model accuracy drops 18.60% from single-document to multi-period analysis. Read 26 Nov 2026."
+  },
+  {
+   "name": "Machado, Chen and Osterrieder, Decision Analytics Journal (Sep 2025)",
+   "url": "https://www.sciencedirect.com/science/article/pii/S277266222500061X",
+   "what": "Machine-learning early warning on a large Dutch bank's own data predicted 12.7% of negative client migrations and helped prevent 67.6% of loss cases. Read 26 Nov 2026."
+  },
+  {
+   "name": "Stevenson, Mues and Bravo, European Journal of Operational Research (2021)",
+   "url": "https://www.sciencedirect.com/science/article/abs/pii/S0377221721001983",
+   "what": "Loan officers' text notes predict default but add less once structured data is present. Read 26 Nov 2026."
+  },
+  {
+   "name": "FDIC Office of Inspector General, bank failure reviews (index)",
+   "url": "https://www.fdicoig.gov/reports-publications/bank-failures",
+   "what": "Index of failed-bank and material loss reviews; Zavient read every published review for July 2023 to November 2026 failures on 26 Nov 2026."
+  },
+  {
+   "name": "Federal Reserve OIG, material loss review, Heartland Tri-State Bank (Feb 2024)",
+   "url": "https://oig.federalreserve.gov/reports/board-material-loss-review-heartland-tri-state-bank-feb2024.pdf",
+   "what": "Failed 28 Jul 2023 after the CEO wired about $47.1M of bank funds in a cryptocurrency scam. Read 26 Nov 2026."
+  },
+  {
+   "name": "FDIC OIG, failed bank review, Citizens Bank, Sac City, Iowa (Mar 2024)",
+   "url": "https://fdicoig.gov/sites/default/files/reports/2024-03/Citizens%20Bank%20Failed%20Bank%20Review%20Memorandum_0.pdf",
+   "what": "Trucking loans were 43% of loans; overdrafts extended to problem borrowers without current financial information. Read 26 Nov 2026."
+  },
+  {
+   "name": "FDIC OIG, material loss review summary, Republic First Bank",
+   "url": "http://www.fdicoig.gov/news/summary-announcements/material-loss-review-republic-first-bank",
+   "what": "Failed 26 Apr 2024 on securities losses and insufficient liquidity. Read 26 Nov 2026."
+  },
+  {
+   "name": "Treasury OIG-25-024, failed bank review, First National Bank of Lindsay (Mar 2025)",
+   "url": "https://oig.treasury.gov/system/files/2025-03/Failed-Bank-Limited-Review-Memorandum---First-National-Bank-of-Lindsay-508-Locked.pdf",
+   "what": "Failed 18 Oct 2024; loss $42.3M; one or more bank employees altered loan records to hide problem loans. Read 26 Nov 2026."
+  },
+  {
+   "name": "OCC consent order AA-ENF-2026-27, Lindsay former CEO (11 May 2026)",
+   "url": "https://www.occ.gov/static/enforcement-actions/eaAA-ENF-2026-27.pdf",
+   "what": "OCC findings, neither admitted nor denied: the CEO manipulated the core system to change loans' maturity dates, payment due dates and past-due status. Read 26 Nov 2026."
+  },
+  {
+   "name": "FDIC OIG REV-25-02, failed bank review, Pulaski Savings Bank (Jun 2025)",
+   "url": "https://www.fdicoig.gov/sites/default/files/reports/2025-06/Failed%20Bank%20Review%20-%20Pulaski%20Savings%20Bank%20REV-25-02.pdf",
+   "what": "Failed 17 Jan 2025; $20.7M of deposits kept off the core system; key-person risk. Read 26 Nov 2026."
+  },
+  {
+   "name": "Treasury OIG-26-023, failed bank review, Santa Anna National Bank (Mar 2026)",
+   "url": "https://oig.treasury.gov/system/files/2026-03/Failed-Bank-Limited-Review-Memo---Santa-Anna-National-Bank-TX-508-%28locked%29.pdf",
+   "what": "Failed 27 Jun 2025; fraud affecting the credit portfolio masked weaknesses. Read 26 Nov 2026."
+  },
+  {
+   "name": "FDIC OIG REV-26-01, failed bank review, Metropolitan Capital Bank & Trust (Jun 2026)",
+   "url": "https://www.fdicoig.gov/sites/default/files/reports/2026-06/Failed%20Bank%20Review%20Metropolitan%20Capital%20BT%20-%20Final%20Memorandum_0.pdf",
+   "what": "Failed 30 Jan 2026; management routinely applied unreasonable risk scoring practices; examiners rated sampled assets lower than management from 2018 to 2025. Read 26 Nov 2026."
+  },
+  {
+   "name": "FDIC OIG EVAL-27-01, material loss review, Community Bank & Trust - West Georgia (2 Nov 2026)",
+   "url": "https://www.fdicoig.gov/sites/default/files/reports/2026-11/4.%20Material%20Loss%20Review%20of%20Community%20Bank%20%20Trust%20-%20EVAL-27-01%20-%20Redacted.pdf",
+   "what": "Failed 1 May 2026; loss $97.3M; causes include inadequate loan review and grading and liberal payment deferrals and extensions; 12-month default rate 20.35% vs 3.55% at peers. Read 26 Nov 2026."
+  },
+  {
+   "name": "FDIC OIG REV-27-01, failed bank review, Tioga-Franklin Savings Bank (Oct 2026)",
+   "url": "https://fdicoig.gov/sites/default/files/reports/2026-10/REV-27-01.pdf",
+   "what": "Failed 21 Aug 2026; structurally unprofitable after a mortgage-banking expansion. Read 26 Nov 2026."
+  },
+  {
+   "name": "Council of Inspectors General on Financial Oversight, 2026 Annual Report",
+   "url": "http://fdicoig.gov/sites/default/files/reports/2026-07/CIGFO%202026%20Annual%20Report_508%20Compliant.pdf",
+   "what": "In-depth reviews of the Lindsay and Santa Anna failures are still in progress. Read 26 Nov 2026."
+  },
+  {
+   "name": "CDFI Fund and Opportunity Finance Network, loan review technical assistance memo (2010)",
+   "url": "https://www.cdfifund.gov/system/files/documents/ofn-loan-review-ta-memo.pdf",
+   "what": "Suggests at least 25% of dollars reviewed for portfolios over $30M, and 10-15% for homogeneous products. Read 26 Nov 2026."
+  },
+  {
+   "name": "NCUA Examiner's Guide, Commercial Loan Administration",
+   "url": "https://publishedguides.ncua.gov/examiner/Content/ExaminersGuide/Commercial%26MBL/CommLoanAdmin/Administration.htm",
+   "what": "Loan review uses a representational sample; credit unions generally use third-party providers. Read 26 Nov 2026."
+  },
+  {
+   "name": "Menlo Ventures, 2025: The State of Generative AI in the Enterprise (9 Dec 2025)",
+   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise",
+   "what": "76% of enterprise AI solutions were purchased in 2025, up from 53% in 2024. Read 26 Nov 2026."
+  },
+  {
+   "name": "MIT NANDA, The GenAI Divide (Jul 2025)",
+   "url": "https://cdn.prod.website-files.com/65485a9d76d8f3c0c7041ff7/68c24ad1aae82e13946aa39b_MIT_ai_report_2025.pdf",
+   "what": "Partnered and bought pilots reached deployment about twice as often as internal builds. Read 26 Nov 2026."
+  },
+  {
+   "name": "LenderAnalyzer, loan review software page (vendor)",
+   "url": "https://lenderanalyzer.com/loan-review-software",
+   "what": "Vendor: re-spreads borrower financials for loan review; plans from $99 to $3,990 a month; the only published loan review software price found. Read 26 Nov 2026."
+  },
+  {
+   "name": "nCino, Continuous Credit Monitoring (vendor)",
+   "url": "https://www.ncino.com/continuous-credit-monitoring",
+   "what": "Vendor: early warning indicators identify deteriorating credit, with automated risk insights, embedded in the nCino platform; no published price. Read 26 Nov 2026."
+  },
+  {
+   "name": "Moody's Lending Suite, loan monitoring (vendor)",
+   "url": "https://www.moodys.com/web/en/us/solutions/lending/loan-monitoring.html",
+   "what": "Vendor: automated covenant tracking and AI early warning signals; no published price. Read 26 Nov 2026."
+  },
+  {
+   "name": "Botminds, Credit Risk Review (vendor)",
+   "url": "https://www.botminds.ai/solutions/credit-risk-review",
+   "what": "Vendor claims it re-grades every commercial loan every quarter, with the reviewer setting the grade; no published price. Read 26 Nov 2026."
+  },
+  {
+   "name": "Federal Reserve SR 26-2 attachment, Supervisory Guidance on Model Risk Management (17 Apr 2026)",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602a1.pdf",
+   "what": "Generative and agentic AI out of scope; simple spreadsheets and deterministic rules are not models; banks stay responsible for vendor models. Read 26 Nov 2026."
+  }
+ ],
+ "related": [
+  "ai-credit-scoring",
+  "ai-underwriting",
+  "community-banks-credit-unions",
+  "private-credit-portfolio-monitoring",
+  "ai-credit-memo-spreading"
+ ],
+ "answers": {
+  "human-role": "Your reviewers stay in charge: AI drafts and flags, reviewers validate each line, the chief credit officer settles grade disputes and the board approves policy[^1][^2][^16].",
+  "team-after": "Reviewers move from reading every page to checking flagged and larger credits, visiting watch-list borrowers and reporting trends to the board[^18][^21][^1].",
+  "example": "Core data and loan files go in, and a ranked flag list with page citations comes out for a reviewer to accept or reject[^17][^1].",
+  "table-1": "Several loan review and monitoring tools now draft line sheets, test covenants and suggest grades, vendors say, and only one publishes a price, from $99 a month[^17][^47][^48][^45].",
+  "table-2": "Most loan review teams are exploring AI, but under a quarter use it: 74.4% use, explore or plan it, and 23.1% already do[^18][^22].",
+  "table-3": "AI is accurate enough to draft and flag, not to grade alone: the best model scored 82.4% on financial spreadsheets, about one error in six[^24][^25].",
+  "recipes": "Start with an add-on if you run loan review software, platform monitoring if it holds your covenants, or your own rules if you have core data and an analyst[^15][^47][^49].",
+  "own-data": "Five of the nine failed-bank reviews we read found loan-book problems a file or core-data check could flag, and in two of those, insiders altered records[^29][^34].",
+  "rules": "The 2020 interagency credit risk review guidance sets the base, with the OCC's June 2026 booklet, FDIC and NCUA manuals, and SR 26-2 for models[^1][^2][^7].",
+  "benchmark": "Run the AI blind on last year's closed reviews, count missed downgrades, check its numbers against source pages, then run one cycle in parallel[^18][^37][^16].",
+  "what-goes-wrong": "AI loan review goes wrong when optimistic grades go unchallenged, extensions hide trouble, core records are altered, lenders tune the tool, or numbers come out confidently wrong[^37][^38][^34].",
+  "buy-or-build": "Buy the file reading and line-sheet drafting, and build the core-data flags that loan review owns[^43][^49].",
+  "something-else": "Pick something else when your book is mostly consumer loans, you have one reviewer, your core data is unreliable, or you need an independent annual opinion[^41][^45][^34]."
+ },
+ "offer": {
+  "heading": "Which loans would your review flag this month? Get a free diagnostic",
+  "body": "Bring a recent trial balance and your loan review policy. In 30 minutes we map, on your own book, where AI can widen coverage and where your reviewers stay in charge. You leave with the first step and a before-and-after measure, in writing, with no sales pitch."
+ },
+ "keyword": {
+  "phrase": "loan review",
+  "searches": 260,
+  "cpc": 18.33,
+  "difficulty": 0
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Could tell in seconds what the page answers. The example had no 'before', so the input now says the annual review samples the largest loans and a slice of the rest. On this page had no route to the build options; added a link to the three recipes."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Tripped on 'line sheet', 'hold-out set', 'back-test', 'covenant tickler', 'vintages' and bare OCC, FDIC, NCUA and CSBS. Line sheet is now 'the reviewer's write-up of one loan'; the test steps say 'test set' and 'check suggested grades against how loans performed'; pick-else lines use plain words; each regulator and CSBS is spelled out on first use."
+  },
+  {
+   "reader": "GM",
+   "notes": "Wanted to know whether one part of the book can pilot first. Added a test step: pilot one segment, such as commercial real estate, and widen only after a clean parallel cycle. The price-the-lift step already counts reviewer hours freed and dollars newly reviewed."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Chief credit officer checked the rules. Every model-risk mention names SR 26-2 as the replacement for SR 11-7 and FIL-27-2021; the 1998 OCC booklet appears only as rescinded; FIL-29-2023 shows the Sep 2026 replacement proposal (comments due 16 Dec 2026, checked on fdic.gov). SR 14-4's examiner sample now reads $10B to $100B, per the revised Fed letter. Added that banks stay responsible for vendor models, and footnoted 'credit risk review is not internal audit'. Independence of loan review from lending is explicit in human role and watch-outs."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Liked the plain cost line: vendors publish no price, with one labelled $99-a-month floor, and no consulting fees anywhere. The vendor bank results are labelled as vendor-reported with the year. No sourced pilot timeline exists, so none is promised. The offer now says the diagnostic maps his own book, with a first step and a before-and-after measure in writing."
+  }
+ ],
+ "updated": "2026-11-26",
+ "sourceCheck": {
+  "date": "2026-11-26",
+  "by": "source-check agent (separate from writer)",
+  "checked": 49,
+  "fixed": [
+   "SR 26-2 row: replaced only SR 11-7 and SR 21-8, cut OCC 2011-12, FIL-22-2017, FIL-27-2021",
+   "Added SR 26-2 attachment as source 49 for generative AI, fixed-rule and vendor-model claims",
+   "FDIC no-minimum ratio relabelled as examiner sampling, not the bank's own review (verdict, rule, FAQ, resource); FAQ now answers no-minimum first",
+   "Independence-ownership line re-cited to interagency guidance",
+   "Rating Credit Risk: replaced unbacked automated-scoring line with what the booklet says",
+   "OCC 2026-54 renamed to its Super Intelligence title",
+   "NCUA AI line reworded to the page's own words",
+   "FIL-58-2026 'tailor' claim cut to 'would replace it once final'",
+   "nCino row and citations cut to what its page shows (no covenants or drafting)",
+   "LenderAnalyzer row: re-spreading tool, not full loan review",
+   "Abrigo citations and line sheets re-cited to Seacoast case",
+   "Old National examiner-visibility wording matched to source",
+   "Census 2% is of all firms",
+   "MeridianLink 21% scoped to lending professionals at community banks and credit unions",
+   "FinDoc-RAG 0.31 is complex synthesis average",
+   "Recipe 3 cost footnote cut (source did not back it)",
+   "Watch-out vendor-claims line re-cited to Abrigo survey",
+   "Republic First: insufficient liquidity, not a run",
+   "Lindsay attributed to OCC findings",
+   "Own-data intro: big 2023 failures predate window",
+   "Recipe 1 no longer implies Old National and Seacoast are small banks",
+   "FDIC manual edition date set to 11-2026",
+   "Abrigo benchmark note names its 124 respondents"
+  ]
+ }
+}

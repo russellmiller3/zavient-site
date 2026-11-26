@@ -1,0 +1,840 @@
+{
+ "title": "Can AI speed up due diligence on add-on acquisitions?",
+ "description": "AI in mergers and acquisitions (M&A) diligence: what AI reads first and what your team decides. Plus tool prices and our count of merger agreements naming AI.",
+ "type": "usecase",
+ "templateVersion": 1,
+ "topic": "AI due diligence for acquisitions",
+ "job": "acquisition due diligence",
+ "industry": "Acquisitive companies, platforms and holding companies",
+ "index": true,
+ "verdict": [
+  "AI reads the seller's data room first and flags issues; your deal team, lawyers and accountants still judge[^15][^5].",
+  "Most surveyed large acquirers and private equity firms already use AI in diligence, mainly on legal agreements[^2][^45].",
+  "Expect errors: legal research AI hallucinated 17% to 33% of the time in testing, so check every flag[^6][^11].",
+  "Check the target's own AI too: 37.9% of the 2026 public merger agreements we counted mention \"artificial intelligence\"[^1][^19].",
+  "Keep the seller's files inside the data room, or in an AI tool your counsel has cleared[^15][^5]."
+ ],
+ "onPage": [
+  {
+   "to": "human-role",
+   "text": "Who decides the deal, checks the numbers and signs legal findings"
+  },
+  {
+   "to": "table-1",
+   "text": "Data-room and AI tools, with prices read on 26 Nov 2026"
+  },
+  {
+   "to": "table-2",
+   "text": "Where AI beat lawyers in a blind test, and where it lost"
+  },
+  {
+   "to": "recipes",
+   "text": "Three setups, sized to how many add-ons you buy a year"
+  },
+  {
+   "to": "own-data",
+   "text": "Our count of public merger agreements that mention AI, 2019 to 2026"
+  },
+  {
+   "to": "benchmark",
+   "text": "How to test AI on a deal you already closed"
+  },
+  {
+   "to": "what-goes-wrong",
+   "text": "Where AI diligence goes wrong, and the fix for each"
+  }
+ ],
+ "headings": {
+  "human-role": "Where do your deal team and counsel stay in charge?",
+  "team-after": "What does your deal team do once AI takes the first pass?",
+  "example": "What does AI due diligence look like on an add-on deal?",
+  "recipes": "Which setup fits how many add-ons you buy?",
+  "rules": "Which rules shape AI-assisted due diligence?",
+  "benchmark": "How do you test AI on a closed deal before you trust it?",
+  "what-goes-wrong": "Where does AI-assisted due diligence go wrong?",
+  "faq": "Questions buyers ask about AI in M&A due diligence",
+  "buy-or-build": "Should you buy diligence tools or build your own setup?"
+ },
+ "summary": "AI due diligence uses AI to read a target's data room first, pulling contract terms, numbers and gaps with page cites[^15][^16]. It changes speed and coverage, so your team checks more and asks the seller better questions[^2][^30]. Human checking of every flag makes or breaks it[^6].",
+ "humanRole": [
+  "Head of corporate development: owns the scope, the request list and the go/no-go call. Surveyed acquirers rank doing more diligence in the time available as AI's top goal[^2].",
+  "Controller: ties every number AI pulls to the target's trial balance and working-capital schedule. Post-closing price adjustments are nearly universal in private-target deals, and working capital is the most common measure[^17][^39].",
+  "Outside counsel: checks AI output for accuracy, then signs legal findings and the disclosure schedule. Under American Bar Association (ABA) Opinion 512, lawyers using AI keep their duties of competence and confidentiality[^5].",
+  "Compliance lead: decides whether to disclose misconduct found at the target. The Department of Justice (DOJ) safe harbor needs disclosure within six months of closing[^9][^10]."
+ ],
+ "teamAfter": [
+  "Deal leads move from first reads to follow-up questions for the seller and management interviews. Surveyed acquirers rank doing more diligence in the time first, and headcount reduction last[^2].",
+  "Counsel can cover more contracts, because AI fills the contract grid first and links each answer to its source[^23][^30].",
+  "Corporate development starts the integration plan earlier: acquirers now use AI to size a target's cost base from public sources before bidding[^4].",
+  "Headcount isn't the goal: only 2% of AI-using firms report AI-related employment decreases, and about 96% see no change in employment[^12][^13]."
+ ],
+ "example": {
+  "input": "Illustrative, not a client result: a 150-person heating and cooling services platform is buying a smaller add-on. The seller's data room holds customer contracts, leases, 36 months of trial balances, payroll and insurance policies. The buyer has a standard request list.",
+  "output": "A contract grid with term, auto-renewal, consent needed on a change of owner, and price increase clauses, each with a page cite[^15][^23]. A check of 36 months of working capital and a gap list against the request list[^17][^16]. The controller, counsel and corporate development check each flag, then send the seller questions."
+ },
+ "tables": [
+  {
+   "title": "Which AI tools read a data room, and what do they cost?",
+   "intro": "Every claim in the table is the vendor's own, read on its own page on 26 Nov 2026[^20][^21].",
+   "headers": [
+    "Tool",
+    "What it does",
+    "Price (read 26 Nov 2026)",
+    "Worth knowing"
+   ],
+   "rows": [
+    {
+     "name": "Datasite Diligence with Blueflame",
+     "url": "https://www.datasite.com/en/products/diligence",
+     "cells": [
+      "Data room with AI search, drafted answers to buyer questions, summaries and redaction[^20]",
+      "Custom per deal[^20]",
+      "Approved outside assistants can work inside authorized rooms (vendor)[^20][^15]"
+     ]
+    },
+    {
+     "name": "SS&C Intralinks DealCentre AI",
+     "url": "https://www.intralinks.com/guides/dealcentre-ai-pricing-guide",
+     "cells": [
+      "Data room with Link, the vendor's own AI assistant (vendor)[^21]",
+      "Quote by data volume, users, project length and features[^21]",
+      "Quote or live demo on request[^21]"
+     ]
+    },
+    {
+     "name": "DealRoom",
+     "url": "https://dealroom.net/products/pricing",
+     "cells": [
+      "Buyer-led deal management, with an AI diligence add-on[^22]",
+      "By deal volume, annual commitment; no number published[^22]",
+      "Unlimited users (vendor)[^22]"
+     ]
+    },
+    {
+     "name": "Litera Kira",
+     "url": "https://www.litera.com/products/kira",
+     "cells": [
+      "Contract extraction with 1,400+ pre-built fields[^23]",
+      "Not published[^23]",
+      "Litera claims 95%+ precision on target clauses (vendor)[^23]"
+     ]
+    },
+    {
+     "name": "Hebbia Matrix",
+     "url": "https://www.hebbia.com/matrix",
+     "cells": [
+      "Grids over many documents[^24]",
+      "Not published[^24]",
+      "Grids show a source-documents column (vendor)[^24]"
+     ]
+    },
+    {
+     "name": "ChatGPT Business",
+     "url": "https://chatgpt.com/business/",
+     "cells": [
+      "General AI assistant for the deal team[^25]",
+      "No price on its business page; contact sales[^25]",
+      "OpenAI says business data is never used for training (vendor)[^25]"
+     ]
+    },
+    {
+     "name": "Claude Team",
+     "url": "https://support.anthropic.com/en/articles/9266767-what-is-the-claude-team-plan",
+     "cells": [
+      "General AI assistant for the deal team[^26]",
+      "$20 per member a month yearly, $25 monthly[^26]",
+      "Plans run from 2 to 150 seats[^26]"
+     ]
+    },
+    {
+     "name": "Microsoft 365 Copilot Business",
+     "url": "https://www.microsoft.com/en-us/copilot/pricing/business",
+     "cells": [
+      "AI assistant inside Word, Excel and Outlook[^27]",
+      "$21 per user a month, paid yearly[^27]",
+      "First-year promotion at $18 to 31 Dec 2026, for existing customers[^27]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Which diligence tasks do AI tools do better than lawyers?",
+   "intro": "Vals AI ran a blind test in February 2025, scoring tools against lawyers out of 100 on the same tasks[^7]. Vendors chose to take part, and one withdrew before publication[^46].",
+   "headers": [
+    "Task",
+    "AI tool scores",
+    "Lawyer baseline"
+   ],
+   "rows": [
+    {
+     "name": "Answering questions about documents",
+     "cells": [
+      "Harvey 94.8, CoCounsel 89.6[^7]",
+      "70.1[^7]"
+     ]
+    },
+    {
+     "name": "Summarizing documents",
+     "cells": [
+      "Up to 77.2[^7]",
+      "50.3[^7]"
+     ]
+    },
+    {
+     "name": "Redlining (marking up a contract)",
+     "cells": [
+      "53.6 to 65.0[^7]",
+      "79.7[^7]"
+     ]
+    },
+    {
+     "name": "Research in Securities and Exchange Commission (SEC) filings",
+     "cells": [
+      "55.2[^7]",
+      "70.1[^7]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "How many acquirers use AI in diligence today?",
+   "intro": "Each survey asked a different group, mostly larger firms[^2][^45]. Read the rates as a ceiling for a 40-500 person buyer.",
+   "headers": [
+    "Survey",
+    "Finding",
+    "Who was asked"
+   ],
+   "rows": [
+    {
+     "name": "SS&C Intralinks and Transaction Advisors Institute, 2026",
+     "cells": [
+      "93% use or pilot AI in diligence, up from 37% in 2024[^2]",
+      "Mostly serial acquirers above $5B revenue (vendor-associated)[^2]"
+     ]
+    },
+    {
+     "name": "Deloitte M&A Generative AI Study, 2025",
+     "cells": [
+      "86% of US corporate and private equity leaders have built generative AI into M&A work[^3]",
+      "1,000 US corporate and private equity leaders[^3]"
+     ]
+    },
+    {
+     "name": "Bain M&A Report, 2026",
+     "cells": [
+      "45% rely on AI tools, more than double the year before[^4]",
+      "300+ M&A executives[^4]"
+     ]
+    },
+    {
+     "name": "Bain M&A Report, 2025",
+     "cells": [
+      "21% used generative AI for M&A, up from 16% in 2023[^44]",
+      "307 M&A practitioners[^44]"
+     ]
+    },
+    {
+     "name": "UK Private Capital Pulse survey, Sept 2026",
+     "cells": [
+      "92% of private equity and venture capital firms use AI for due diligence and document review[^45]",
+      "76 private equity and venture capital decision makers[^45]"
+     ]
+    }
+   ]
+  }
+ ],
+ "recipes": [
+  {
+   "name": "1. A few add-ons a year, a small deal team",
+   "when": "A few deals a year, a deal team of a few people, and sellers whose data rooms already have AI built in[^20][^21].",
+   "flow": [
+    "Counsel: clear the non-disclosure agreement (NDA) and the AI tool's retention terms before any file goes in",
+    "Corporate development lead: load the request list and the data-room index",
+    "AI: compare the room with the request list and draft a gap list with page cites",
+    "Controller: tie every number AI pulls to the target's trial balance",
+    "Counsel: read every change-of-control and assignment hit",
+    "Corporate development lead: turn gaps into seller questions and the go/no-go memo"
+   ],
+   "cost": "Claude Team lists at $20 to $25 per member a month, read 26 Nov 2026[^26]. By our math, five seats cost $1,200 to $1,500 a year, plus the seller's room AI[^20]."
+  },
+  {
+   "name": "2. Several add-ons a year on one playbook",
+   "when": "Several deals a year run on the same checklist, where your past issue lists are the edge[^20].",
+   "flow": [
+    "Corporate development lead: write the standard request list, prompts and issue-list format once",
+    "Counsel: approve which AI assistant may connect to data rooms",
+    "AI: work inside each room through the vendor's connector, under the room's permissions",
+    "Controller: run the same working-capital check on every deal",
+    "Counsel: sign legal findings and the disclosure-schedule questions",
+    "COO: carry flagged issues into the integration plan"
+   ],
+   "cost": "Data rooms price per deal or by data volume and users[^20][^21]. Claude Team seats list at $20 a member a month billed yearly, read 26 Nov 2026[^26]."
+  },
+  {
+   "name": "3. Hundreds of similar contracts in one room",
+   "when": "Customer, supplier or lease contracts number in the hundreds, and change-of-control consents decide the deal[^23].",
+   "flow": [
+    "Counsel: pick the clause fields to extract",
+    "AI: fill a contract grid with each answer linked to its source page",
+    "Counsel: check every hit and a sample of blanks",
+    "Controller: tie contract values to revenue by customer",
+    "Corporate development lead: price the consents needed before closing"
+   ],
+   "cost": "Kira and Hebbia publish no price, so expect a demo and a quote[^23][^24]. The review usually runs through counsel's own bill."
+  }
+ ],
+ "ownData": {
+  "title": "How often do public merger agreements mention AI?",
+  "intro": "We searched SEC EDGAR full text on 26 Nov 2026, one calendar year at a time, in 8-K current reports[^1]. We counted documents with the phrase \"Company Disclosure Letter\", a marker of public-target merger agreements[^1]. Then we counted those that also say \"artificial intelligence\", and 110 of 2026's 111 hits are the merger agreement itself[^1].",
+  "headers": [
+   "Year",
+   "Merger agreements found",
+   "Say \"artificial intelligence\"",
+   "Share"
+  ],
+  "rows": [
+   [
+    "2019",
+    "194[^1]",
+    "1[^1]",
+    "0.5%"
+   ],
+   [
+    "2020",
+    "216[^1]",
+    "0[^1]",
+    "0%"
+   ],
+   [
+    "2021",
+    "390[^1]",
+    "9[^1]",
+    "2.3%"
+   ],
+   [
+    "2022",
+    "260[^1]",
+    "8[^1]",
+    "3.1%"
+   ],
+   [
+    "2023",
+    "248[^1]",
+    "8[^1]",
+    "3.2%"
+   ],
+   [
+    "2024",
+    "234[^1]",
+    "15[^1]",
+    "6.4%"
+   ],
+   [
+    "2025",
+    "280[^1]",
+    "61[^1]",
+    "21.8%"
+   ],
+   [
+    "2026, to 25 Nov",
+    "293[^1]",
+    "111[^1]",
+    "37.9%"
+   ]
+  ],
+  "note": "Counts documents, not deals, so amendments can double count, and private add-on agreements are rarely filed[^1]. A mention is not always a full AI clause: we read only two by hand[^18][^19]. Other wordings, such as \"Disclosure Schedule\", are missed."
+ },
+ "rules": [
+  {
+   "name": "Hart-Scott-Rodino (HSR) thresholds for 2026",
+   "url": "https://www.ftc.gov/enforcement/competition-matters/2026/01/new-hsr-thresholds-filing-fees-2026",
+   "status": "In force from 17 Feb 2026",
+   "what": "A deal must be worth at least $133.9M before a premerger filing is needed[^31]. Filing fees run from $35,000 to $2,460,000[^31]. Most add-ons bought by a 40-500 person company fall below the threshold."
+  },
+  {
+   "name": "Expanded HSR filing form",
+   "url": "https://www.ftc.gov/enforcement/premerger-notification-program/hsr-notification-forms-instructions-guidance",
+   "status": "Vacated 12 Feb 2026",
+   "what": "A federal court vacated the 2025 form, and the Federal Trade Commission (FTC) accepts the older form again[^32]. Check the current form before you file."
+  },
+  {
+   "name": "2023 Merger Guidelines",
+   "url": "https://www.ftc.gov/news-events/news/press-releases/2025/02/ftc-chairman-andrew-n-ferguson-announces-ftc-dojs-joint-2023-merger-guidelines-are-effect",
+   "status": "In force",
+   "what": "The FTC and DOJ confirmed in Feb 2025 that the 2023 guidelines frame merger review[^33]."
+  },
+  {
+   "name": "DOJ M&A Safe Harbor Policy",
+   "url": "https://www.justice.gov/archives/opa/speech/deputy-attorney-general-lisa-o-monaco-announces-new-safe-harbor-policy-voluntary-self",
+   "status": "In force, kept in the March 2026 policy",
+   "what": "Disclose misconduct found at the target within six months of closing, and fix it within a year, for a presumption the DOJ won't prosecute[^9][^10]. Faster diligence leaves more of that clock for the legal call."
+  },
+  {
+   "name": "DOJ Evaluation of Corporate Compliance Programs",
+   "url": "https://www.justice.gov/criminal/criminal-fraud/page/file/937501/dl",
+   "status": "Updated Sept 2024",
+   "what": "Prosecutors expect thorough diligence on acquisition targets[^8]. They also ask whether a company manages risks from AI[^47]."
+  },
+  {
+   "name": "ABA Formal Opinion 512",
+   "url": "https://www.americanbar.org/content/dam/aba/administrative/professional_responsibility/ethics-opinions/aba-formal-opinion-512.pdf",
+   "status": "Issued 29 Jul 2024",
+   "what": "Lawyers using generative AI keep their duties of competence and confidentiality, including knowing the tool's risks[^5]. Ask counsel how their tools treat seller data."
+  },
+  {
+   "name": "FTC orders to delete algorithms",
+   "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/2024.03.21-PrivacyandDataSecurityUpdate-508.pdf",
+   "status": "Precedent from 2021 to 2023 orders",
+   "what": "The FTC has ordered companies to delete models built from unlawfully obtained data[^34][^43]. A buyer takes on that risk with the target's models."
+  },
+  {
+   "name": "SEC actions on AI-washing",
+   "url": "https://www.sec.gov/news/press-release/2024-36",
+   "status": "Enforced since Mar 2024",
+   "what": "The SEC penalized two advisers $400,000 in total for claiming AI they did not use[^35]. Presto Automation was charged over how it described its voice AI[^36]."
+  },
+  {
+   "name": "EU AI Act, as amended by the Digital Omnibus",
+   "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+   "status": "High-risk duties start 2 Dec 2027",
+   "what": "Matters if the target sells or uses AI in the European Union[^37]. Hiring, credit and education uses face high-risk duties from 2 Dec 2027[^37]."
+  }
+ ],
+ "howToTest": [
+  "Record today's numbers on your last closed deal: deal-team hours, days to the issue list, and issues found after signing.",
+  "Rerun that closed deal's data room through the tool, since you already know the answers.",
+  "Score each finding as found, missed or false, with the page it cites. Vals scored tools against a lawyer baseline on the same tasks[^7].",
+  "Count hallucinations, not just hits: the Stanford-led study scored answers correct, incomplete or hallucinated[^6].",
+  "Check every hit against its cited page, as NIST's generative AI profile suggests for sources and citations[^11].",
+  "Run a sample of the free CUAD and MAUD test sets for a public baseline[^28][^29].",
+  "Price the lift: hours saved, plus each issue found before signing, valued at the price cut or claim it would have cost. Nearly three in ten private deals see an indemnity claim, and median escrow is 10% of deal value[^38][^39].",
+  "Decide with counsel and the controller to keep, change or stop."
+ ],
+ "watchOuts": [
+  "Confident wrong answers: commercial legal research tools hallucinated 17% to 33% of the time in a preregistered test[^6]. Require a page cite for every finding, and have a person check each one[^11].",
+  "Strong at answering questions, weak at markup: lawyers beat every tool at redlining, 79.7 to at most 65.0, in the Vals benchmark[^7]. Keep contract markup with counsel.",
+  "Leaking the seller's data: exporting data-room files to an outside AI tool creates uncontrolled copies (Datasite's view, vendor)[^15]. Check the NDA and the tool's retention terms first[^5].",
+  "Buying overstated AI: Presto did not tell investors that its voice AI ran on a third party's technology[^36]. Ask the target for usage logs, vendor contracts and human-help rates.",
+  "Buying a model you must delete: FTC orders made Everalbum and Rite Aid delete algorithms[^43][^48]. Ask how each model's training data was collected and what consent covers it.",
+  "Cutting diligence because AI is fast: acquirers that did less diligence saw weaker post-deal results and more goodwill write-downs[^14]. Spend the saved time on deeper checks."
+ ],
+ "faq": [
+  {
+   "q": "Can AI do due diligence?",
+   "a": "Only as a first pass, because AI reads and flags while people check and decide[^30][^5]. Legal research AI tools hallucinated 17% to 33% of the time in a preregistered test[^6]."
+  },
+  {
+   "q": "How is AI used in M&A due diligence?",
+   "a": "Large acquirers use AI most often to review legal agreements, manage workstreams and review financial statements[^2]. In one 2026 survey of large serial acquirers, 79% used it on legal agreements[^2]."
+  },
+  {
+   "q": "Will AI replace due diligence jobs?",
+   "a": "No, the evidence points to help rather than job loss: only 2% of AI-using US firms report AI-related employment decreases[^12]. About 96% of AI-using firms report no change in employment[^13]. In M&A, surveyed acquirers rank headcount reduction last among AI goals[^2]."
+  },
+  {
+   "q": "Is it safe to put data-room files into ChatGPT?",
+   "a": "Only after counsel checks the NDA and the tool's retention terms, because lawyers must keep client information confidential[^5]. OpenAI says ChatGPT Business data is never used for training (vendor)[^25]. Datasite warns that exporting files creates uncontrolled copies (vendor)[^15]."
+  },
+  {
+   "q": "How much does AI due diligence software cost?",
+   "a": "General AI seats list at $20 to $25 per member a month for Claude Team and $21 for the Copilot add-on, read 26 Nov 2026[^26][^27]. Data-room AI is quoted per deal, and contract-review tools such as Kira publish no price[^20][^21][^23]."
+  },
+  {
+   "q": "What does due diligence on a target's own AI check?",
+   "a": "Diligence on a target's AI checks how it uses AI, who owns AI-made work, and whether its AI policies hold up[^19][^18]. Our count found 111 public merger-agreement documents mentioning \"artificial intelligence\" from 1 Jan to 25 Nov 2026[^1]."
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Buy the tools: 76% of enterprise AI use cases are now bought rather than built, up from 53% in 2024[^40]. For a few deals a year, the seller's room AI plus business AI seats is enough[^20][^26].",
+  "build": "Build the playbook, not the software: your request list, prompts and issue-list format, run the same way every deal[^20]. Data rooms now let your approved assistant work inside the room (Datasite, vendor)[^15]."
+ },
+ "pickElse": [
+  "You need earnings checked, not files read: get a quality-of-earnings (QoE) report, which vets normalized earnings and working capital[^41]. AI can prepare the data for it.",
+  "To shift the risk: representations and warranties insurance (RWI) was referenced in 63% of private-target deals in the ABA's 2025 study, up from 55%[^42].",
+  "One deal in a seller's room: use the room's own AI, such as Datasite Blueflame or the Intralinks assistant, before building anything[^16][^21].",
+  "Hundreds of similar contracts: a contract-review tool such as Litera Kira, with 1,400+ pre-built fields (vendor), run through counsel[^23]."
+ ],
+ "resources": [
+  {
+   "name": "CUAD contract dataset (The Atticus Project)",
+   "url": "https://www.atticusprojectai.org/cuad",
+   "what": "Free contracts labelled under lawyer supervision, to test clause finding before you use your own files."
+  },
+  {
+   "name": "MAUD merger agreement dataset (The Atticus Project)",
+   "url": "https://www.atticusprojectai.org/maud",
+   "what": "Free, labelled merger agreements to test how well a tool reads deal terms."
+  },
+  {
+   "name": "SEC EDGAR full-text search",
+   "url": "https://www.sec.gov/edgar/search/",
+   "what": "Read comparable public merger agreements and their AI clauses for free."
+  },
+  {
+   "name": "NIST AI 600-1, Generative AI Profile",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+   "what": "A free checklist for testing and governing generative AI output."
+  },
+  {
+   "name": "DOJ Evaluation of Corporate Compliance Programs",
+   "url": "https://www.justice.gov/criminal/criminal-fraud/page/file/937501/dl",
+   "what": "What prosecutors expect from pre- and post-deal diligence."
+  }
+ ],
+ "stats": [
+  {
+   "num": "37.9%",
+   "label": "of 2026 public merger agreements we counted mention \"artificial intelligence\", up from 0.5% in 2019[^1]",
+   "source": "Zavient count of SEC EDGAR, 26 Nov 2026"
+  },
+  {
+   "num": "17-33%",
+   "label": "hallucination rate of commercial legal AI research tools in a preregistered test[^6]",
+   "source": "Magesh et al., 2025"
+  },
+  {
+   "num": "93%",
+   "label": "of surveyed serial acquirers use or pilot AI in diligence, up from 37% in 2024[^2]",
+   "source": "SS&C Intralinks and Transaction Advisors Institute (vendor-associated), 2026"
+  },
+  {
+   "num": "2%",
+   "label": "of AI-using US firms report AI-related employment decreases[^12]",
+   "source": "U.S. Census Bureau working paper, 2026"
+  },
+  {
+   "num": "$133.9M",
+   "label": "minimum 2026 deal size for an HSR premerger filing[^31]",
+   "source": "FTC, 2026"
+  },
+  {
+   "num": "3 in 10",
+   "label": "private deals see an indemnification claim[^38]",
+   "source": "SRS Acquiom, 2026"
+  }
+ ],
+ "related": [
+  "holding-companies-roll-ups",
+  "private-equity",
+  "ai-post-merger-integration",
+  "multi-entity-close",
+  "ai-value-creation-plan"
+ ],
+ "answers": {
+  "human-role": "Your team keeps every judgment: corporate development owns the deal call, the controller checks the numbers, and counsel signs legal findings[^2][^5].",
+  "team-after": "Your deal team moves from first reads to seller questions, full contract review and earlier integration planning[^2][^4].",
+  "example": "The seller's data room goes in, and a cited contract grid, a working-capital check and a gap list come out for your team to check[^15][^16].",
+  "table-1": "General AI seats cost $20 to $25 per user a month, while data-room and contract-review tools quote per deal or publish no price[^26][^27][^20]. Prices come from each vendor's own page.",
+  "table-2": "AI tools beat lawyers at answering document questions and at summaries, while lawyers beat every tool at redlining and filing research[^7].",
+  "table-3": "Between 21% and 93% of surveyed acquirers use AI in M&A work, depending on who was asked and when[^44][^2].",
+  "recipes": "Start with AI seats and the seller's room AI if you buy a few add-ons a year, a shared playbook for several, or a contract-review tool for hundreds of contracts[^26][^20][^23].",
+  "own-data": "More often each year: 37.9% of the 2026 public merger agreements we counted mention \"artificial intelligence\", up from 0.5% in 2019[^1]. Check the target's own AI as part of diligence[^18].",
+  "rules": "Antitrust filing rules, the DOJ safe harbor, lawyers' ethics rules on AI, and federal and EU rules on a target's own AI all apply[^31][^9][^5][^34]. None of this is legal advice.",
+  "benchmark": "Rerun your last closed deal's data room through the tool, score every finding as found, missed or false, then price the time and issues it saved[^7][^6].",
+  "what-goes-wrong": "AI-assisted diligence goes wrong through confident wrong answers, leaked seller files, overstated AI at the target, and diligence cut short because AI was fast[^6][^15][^36][^14].",
+  "buy-or-build": "Buy the tools and build the playbook: your request list, prompts and issue-list format, run the same way on every deal[^40][^20].",
+  "something-else": "Pick something else when you need earnings checked, want to insure the risk, have one deal in a seller's room, or face hundreds of similar contracts[^41][^42]."
+ },
+ "offer": {
+  "heading": "Is your deal team still reading every data-room file by hand? Get a free diagnostic",
+  "body": "Walk us through your request list and your last add-on's data room. In 30 minutes you leave with the first step for your next deal, a before-and-after measure and what counsel should clear first. You get it in writing, with no sales pitch."
+ },
+ "keyword": {
+  "phrase": "ai in m&a",
+  "searches": 170,
+  "cpc": 40.98,
+  "difficulty": 11
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Dana (COO): clear on who does what and how to measure before and after on a closed deal. Tripped on 'hallucinated' in the bottom line; now 'gave wrong answers'. Recipe 2 gives the COO the hand-off of flagged issues into the integration plan, which links to the post-merger integration guide in related pages."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Ops head: jargon in the example and rules ('tie-out', 'price escalators', 'change-of-control consent', 'presumption of declination'). Now a working-capital check, price increase clauses, consent needed on a change of owner, and a presumption the DOJ won't prosecute. Every recipe step names a role."
+  },
+  {
+   "reader": "GM",
+   "notes": "GM: wanted the payoff in money, not just hours. The test step now values each issue found before signing at the price cut or claim it would have cost, next to the indemnity-claim and escrow figures. Pilot path is clear: rerun one closed deal first."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Head of corporate development: roles match how a deal runs (corp dev owns the call, controller the numbers, counsel the legal sign-off, compliance the 180-day clock). Cut invented deal-count thresholds from recipes 1 and 2 ('two or three', 'four or more'); now 'a few' and 'several'. Source checker: confirm the Vals lawyer baselines (70.1 for both document Q&A and EDGAR research)."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Steve: wanted a plain dollar figure for a small team; recipe 1 now says five users cost $1,200 to $1,500 a year at list. Security worry answered in the bottom line and FAQ 4. No Zavient price, per site rules; the offer promises the first step and a before-and-after measure in writing, with no sales pitch."
+  }
+ ],
+ "updated": "2026-11-26",
+ "sources": [
+  {
+   "name": "SEC EDGAR full-text search (Zavient count)",
+   "url": "https://www.sec.gov/edgar/search/",
+   "what": "Our count, pulled 26 Nov 2026: 8-K documents with \"Company Disclosure Letter\", and those also saying \"artificial intelligence\", one calendar year at a time, 2019 to 25 Nov 2026."
+  },
+  {
+   "name": "SS&C Intralinks and Transaction Advisors Institute, AI in M&A Due Diligence and Integration Planning Report (2026)",
+   "url": "https://www3.intralinks.com/rs/414-BKN-706/images/SS%26C-Intralinks-AI-in-M%26A-Due-Diligence-and-Integration-Planning-Report.pdf",
+   "what": "Vendor-associated study fielded Mar-Apr 2026 among senior corporate development staff at serial acquirers, mostly above $5B revenue (sample size not published): 93% use or pilot AI in diligence (37% in 2024); 79% use it on legal agreements; headcount reduction is the lowest priority."
+  },
+  {
+   "name": "Deloitte, 2025 M&A Generative AI Study (press release, 9 Oct 2025)",
+   "url": "https://www.deloitte.com/us/en/about/press-room/deloitte-survey-genai-in-mna.html",
+   "what": "Survey of 1,000 US corporate and private equity leaders: 86% have integrated generative AI into M&A work; 35% of adopters use it in due diligence; data security (67%) and data quality (65%) are top barriers."
+  },
+  {
+   "name": "Bain & Company, M&A Capability for a New Era (2026 M&A Report)",
+   "url": "https://www.bain.com/insights/capability-for-a-new-era-m-and-a-report-2026",
+   "what": "Study: AI tool adoption more than doubled in 2025, with 45% of 300+ M&A executives relying on it; acquirers use AI for outside-in diligence on a target's costs."
+  },
+  {
+   "name": "American Bar Association, ABA issues first ethics guidance on a lawyer's use of AI tools (news release on Formal Opinion 512, 29 Jul 2024)",
+   "url": "https://www.americanbar.org/news/abanews/aba-news-archives/2024/07/aba-issues-first-ethics-guidance-ai-tools/",
+   "what": "Lawyers using generative AI keep the duty of competence, including understanding its benefits and risks, and must keep client information confidential; time to review AI drafts for accuracy and completeness may be billed."
+  },
+  {
+   "name": "Magesh et al., Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools, Journal of Empirical Legal Studies (2025)",
+   "url": "https://onlinelibrary.wiley.com/doi/full/10.1111/jels.12413",
+   "what": "Preregistered test of 200+ legal queries: Lexis+ AI and Thomson Reuters tools hallucinated 17% to 33% of the time; GPT-4 43%. Answers scored accurate, incomplete or hallucinated. Content checked on the authors' arXiv version (2405.20362), journal details on Crossref."
+  },
+  {
+   "name": "Vals AI, Vals Legal AI Report (Feb 2025)",
+   "url": "https://www.vals.ai/industry-reports/vlair-2-27-25",
+   "what": "Blind benchmark against a lawyer baseline: tools led at document Q&A and summaries; lawyers led at redlining and EDGAR research. Vendors opted in."
+  },
+  {
+   "name": "U.S. Department of Justice, Evaluation of Corporate Compliance Programs (updated Sept 2024)",
+   "url": "https://www.justice.gov/criminal/criminal-fraud/page/file/937501/dl",
+   "what": "A well-designed compliance program includes comprehensive due diligence of acquisition targets; flawed diligence can let misconduct continue."
+  },
+  {
+   "name": "U.S. Department of Justice, Deputy Attorney General remarks announcing the M&A Safe Harbor Policy (4 Oct 2023)",
+   "url": "https://www.justice.gov/archives/opa/speech/deputy-attorney-general-lisa-o-monaco-announces-new-safe-harbor-policy-voluntary-self",
+   "what": "Disclose target misconduct within six months of closing and remediate within one year for a presumption of declination."
+  },
+  {
+   "name": "U.S. Department of Justice, Corporate Enforcement and Voluntary Self-Disclosure Policy (10 Mar 2026)",
+   "url": "https://www.justice.gov/dag/media/1430731/dl?inline",
+   "what": "Department-wide policy that keeps the M&A policy for misconduct found in pre- or post-acquisition diligence (footnote 7)."
+  },
+  {
+   "name": "NIST AI 600-1, AI Risk Management Framework: Generative AI Profile (Jul 2024)",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+   "what": "Names confabulation as a core generative AI risk and suggests verifying sources and citations in outputs."
+  },
+  {
+   "name": "Bonney et al., CES-WP-26-25R, U.S. Census Bureau Center for Economic Studies (2026)",
+   "url": "https://www2.census.gov/library/working-papers/2026/adrm/ces/CES-WP-26-25R.pdf",
+   "what": "Among firms reporting AI-driven task effects, 66% only augment tasks; AI-related employment decreases occur in only 2% of AI-using firms."
+  },
+  {
+   "name": "Federal Reserve Bank of Minneapolis, AI adoption in business grows steadily but unevenly (2026)",
+   "url": "https://www.minneapolisfed.org/article/2026/ai-adoption-in-business-grows-steadily-but-unevenly",
+   "what": "About 96% of AI-using firms report no change in employment from AI."
+  },
+  {
+   "name": "Wangerin, M&A Due Diligence, Post-Acquisition Performance, and Financial Reporting for Business Combinations, Contemporary Accounting Research 36(4) (2019)",
+   "url": "https://onlinelibrary.wiley.com/doi/10.1111/1911-3846.12520",
+   "what": "Acquirers that do less transactional due diligence show lower post-acquisition performance and more goodwill impairments."
+  },
+  {
+   "name": "Datasite, press release on its MCP server (28 Apr 2026)",
+   "url": "https://www.datasite.com/en/company/news/datasite-becomes-the-first-vdr-provider-to-connect-ai-assistants-directly-to-live-deal-content-with-mcp-server-launch",
+   "what": "Vendor claim: approved AI assistants work on live data-room content under room permissions, summarizing change-of-control and termination terms with citations; exporting documents creates uncontrolled copies."
+  },
+  {
+   "name": "Datasite, Power your Datasite diligence documents with Blueflame AI (Jan 2026)",
+   "url": "https://www.datasite.com/en/resources/insights/power-your-datasite-diligence-documents-with-blueflame-ai",
+   "what": "Vendor claim: compares a buyer's standard request list against the room to surface missing items, and flags contradictions, gaps or anomalies."
+  },
+  {
+   "name": "SRS Acquiom, 2026 M&A Deal Terms Study",
+   "url": "https://learn.srsacquiom.com/rs/664-KLJ-520/images/SRSAcquiom-2026-Deal-Terms-Study.pdf",
+   "what": "Study of 2,300+ private-target deals, 2020-2025: post-closing purchase price adjustments appear in over 90% of deals, and working capital is the most common adjustment metric."
+  },
+  {
+   "name": "SEC EDGAR, CBIZ 8-K exhibit 2.1 (filed 29 Jul 2026)",
+   "url": "https://www.sec.gov/Archives/edgar/data/944148/000119312526322225/d174772dex21.htm",
+   "what": "Merger agreement with section 4.17 titled \"Data Privacy; Artificial Intelligence\", covering AI Requirements and AI Activities."
+  },
+  {
+   "name": "SEC EDGAR, Penske Automotive 8-K exhibit 2.1 (filed 15 Oct 2026)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1019849/000114036126039664/ef20083688_ex2-1.htm",
+   "what": "Target represents lawful AI use, no material owned IP created with AI, and commercially reasonable AI-use policies."
+  },
+  {
+   "name": "Datasite, Diligence product page and FAQ",
+   "url": "https://www.datasite.com/en/products/diligence",
+   "what": "Read 26 Nov 2026: \"pricing is customized for every transaction\"; Blueflame AI search, Q&A drafting and redaction; Datasite Connect lets approved assistants work across authorized rooms."
+  },
+  {
+   "name": "SS&C Intralinks, DealCentre AI pricing guide",
+   "url": "https://www.intralinks.com/guides/dealcentre-ai-pricing-guide",
+   "what": "Read 26 Nov 2026: price set by data volume, users, project duration and features, quoted on request; calls \"Link\" its proprietary AI assistant; no number shown."
+  },
+  {
+   "name": "DealRoom, pricing page",
+   "url": "https://dealroom.net/products/pricing",
+   "what": "Read 26 Nov 2026: priced by deal volume with unlimited users and an annual commitment; AI for diligence is an add-on; no number shown."
+  },
+  {
+   "name": "Litera, Kira product page",
+   "url": "https://www.litera.com/products/kira",
+   "what": "Read 26 Nov 2026: 1,400+ pre-built fields, answers linked to the source contract; Litera claims 95%+ precision; demo request, no price shown."
+  },
+  {
+   "name": "Hebbia, Matrix page",
+   "url": "https://www.hebbia.com/matrix",
+   "what": "Read 26 Nov 2026: document grids with source-documents and basis columns; demo request, no price shown."
+  },
+  {
+   "name": "OpenAI, ChatGPT Business page",
+   "url": "https://chatgpt.com/business/",
+   "what": "Read 26 Nov 2026: no price shown, contact sales; \"Your data is never used for training our models.\""
+  },
+  {
+   "name": "Claude Help Center, What is the Team plan",
+   "url": "https://support.anthropic.com/en/articles/9266767-what-is-the-claude-team-plan",
+   "what": "Read 26 Nov 2026: $20 per member a month billed annually, $25 monthly; 2 to 150 seats."
+  },
+  {
+   "name": "Microsoft, Copilot business pricing",
+   "url": "https://www.microsoft.com/en-us/copilot/pricing/business",
+   "what": "Read 26 Nov 2026: Microsoft 365 Copilot Business add-on $21 per user a month paid yearly; $18 first-year promotion to 31 Dec 2026 for existing eligible customers."
+  },
+  {
+   "name": "The Atticus Project, CUAD (Contract Understanding Atticus Dataset)",
+   "url": "https://www.atticusprojectai.org/cuad",
+   "what": "Free dataset: 510 commercial contracts with 41 clause types, labelled under the supervision of experienced lawyers."
+  },
+  {
+   "name": "The Atticus Project, MAUD (Merger Agreement Understanding Dataset)",
+   "url": "https://www.atticusprojectai.org/maud",
+   "what": "Free dataset: 152 public merger agreements, 47,000+ labels answering 92 deal-point questions."
+  },
+  {
+   "name": "NAACL 2024 Industry Track, paper 14",
+   "url": "https://aclanthology.org/2024.naacl-industry.14.pdf",
+   "what": "Long legal documents challenge large language models; they help most as assistants to lawyers doing due diligence."
+  },
+  {
+   "name": "Federal Trade Commission, New HSR thresholds and filing fees for 2026",
+   "url": "https://www.ftc.gov/enforcement/competition-matters/2026/01/new-hsr-thresholds-filing-fees-2026",
+   "what": "Read 26 Nov 2026: effective 17 Feb 2026, minimum size of transaction $133.9M; filing fees $35,000 to $2,460,000."
+  },
+  {
+   "name": "Federal Trade Commission, HSR Notification Forms, Instructions and Guidance (updated 23 Mar 2026)",
+   "url": "https://www.ftc.gov/enforcement/premerger-notification-program/hsr-notification-forms-instructions-guidance",
+   "what": "The expanded 2025 form was vacated on 12 Feb 2026; the FTC accepts the pre-2025 form."
+  },
+  {
+   "name": "Federal Trade Commission, press release on the 2023 Merger Guidelines (18 Feb 2025)",
+   "url": "https://www.ftc.gov/news-events/news/press-releases/2025/02/ftc-chairman-andrew-n-ferguson-announces-ftc-dojs-joint-2023-merger-guidelines-are-effect",
+   "what": "The 2023 Merger Guidelines remain the framework for FTC and DOJ merger review."
+  },
+  {
+   "name": "Federal Trade Commission, 2023 Privacy and Data Security Update (Mar 2024)",
+   "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/2024.03.21-PrivacyandDataSecurityUpdate-508.pdf",
+   "what": "FTC orders required deletion of models, algorithms or work product built from unlawfully obtained data: Everalbum, WW International/Kurbo."
+  },
+  {
+   "name": "U.S. Securities and Exchange Commission, press release 2024-36",
+   "url": "https://www.sec.gov/news/press-release/2024-36",
+   "what": "Delphia and Global Predictions paid $400,000 in total penalties for claiming AI use they did not have."
+  },
+  {
+   "name": "U.S. Securities and Exchange Commission, Presto Automation order (Release 33-11352, Jan 2025)",
+   "url": "https://www.sec.gov/files/litigation/admin/2025/33-11352.pdf",
+   "what": "Presto did not disclose that its voice AI ran on a third party's technology, and overstated how few orders needed human help."
+  },
+  {
+   "name": "EUR-Lex, Regulation (EU) 2026/1744 (Digital Omnibus amending the AI Act)",
+   "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+   "what": "High-risk duties for Annex III uses (hiring, credit, education) apply from 2 Dec 2027."
+  },
+  {
+   "name": "SRS Acquiom, 2026 M&A Earnouts & Claims Study",
+   "url": "https://www.srsacquiom.com/our-insights/ma-earnouts-claims-study",
+   "what": "Nearly three in ten private deals see an indemnification claim."
+  },
+  {
+   "name": "SRS Acquiom, Six Key Findings from the 2026 M&A Deal Terms Study",
+   "url": "https://learn.srsacquiom.com/rs/664-KLJ-520/images/six-key-findings-from-the-2026-ma-deal-terms-study.pdf",
+   "what": "2025 median general indemnification escrow: 10.0% of deal value, 2.8% with representations and warranties insurance; post-closing price adjustments are \"nearly ubiquitous\"."
+  },
+  {
+   "name": "Menlo Ventures, 2025: The State of Generative AI in the Enterprise",
+   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise",
+   "what": "Survey of 495 US enterprise AI decision-makers: 76% of AI use cases were purchased, up from 53% in 2024."
+  },
+  {
+   "name": "CBV Institute, Best practices for Quality of Earnings reports (sponsored research paper)",
+   "url": "https://cbvinstitute.com/wp-content/uploads/2026/09/Sponsored-Research-Paper_Quality-of-Earnings-Best-Practices_Final.pdf",
+   "what": "A quality-of-earnings report checks normalized earnings and working capital; research participants favour a narrow scope centred on vetting the financial statements."
+  },
+  {
+   "name": "American Bar Association, Business Law Today: 2025 Private Target M&A Deal Points Study (Dec 2025)",
+   "url": "https://www.americanbar.org/groups/business_law/resources/business-law-today/2025-december/aba-2025-private-target-mergers-acquisitions-deal-points-study",
+   "what": "63% of deals in the 2025 study (deals from 2024 and Q1 2025) referenced representations and warranties insurance, up from 55% in the 2023 study."
+  },
+  {
+   "name": "Federal Trade Commission, Everalbum settlement press release (Jan 2021)",
+   "url": "https://www.ftc.gov/news-events/news/press-releases/2021/01/california-company-settles-ftc-allegations-it-deceived-consumers-about-use-facial-recognition-photo",
+   "what": "Everalbum had to delete face recognition models built from users' photos without consent."
+  },
+  {
+   "name": "Bain & Company, Generative AI in M&A: You're Not Behind, Yet (Feb 2025)",
+   "url": "https://www.bain.com/insights/generative-ai-m-and-a-report-2025",
+   "what": "Study: 21% of 307 M&A practitioners used generative AI for M&A (16% in 2023)."
+  },
+  {
+   "name": "UK Private Capital, Pulse survey press release (17 Sep 2026)",
+   "url": "https://www.ukprivatecapital.co.uk/resource/private-capital-firms-drive-widespread-adoption-of-ai-in-portfolio-companies.html",
+   "what": "Survey of 76 private equity and venture capital decision makers: 92% use AI for due diligence and document review."
+  },
+  {
+   "name": "Legal IT Insider, report on the Vals legal AI benchmark (Feb 2025)",
+   "url": "https://legaltechnology.com/harvey-and-cocounsel-receive-top-scores-in-first-major-industry-genai-benchmarking-study",
+   "what": "Harvey and CoCounsel scored highest; Lexis+ AI withdrew from the study before publication."
+  },
+  {
+   "name": "U.S. Department of Justice, Promoting Corporate Criminal Accountability 2021-2025",
+   "url": "https://www.justice.gov/archives/media/1385316/dl?inline",
+   "what": "Summarizes the Sept 2024 compliance-program revisions: prosecutors ask whether companies manage risks from AI and emerging technology."
+  },
+  {
+   "name": "Federal Trade Commission, Rite Aid facial recognition press release (19 Dec 2023)",
+   "url": "https://www.ftc.gov/news-events/news/press-releases/2023/12/rite-aid-banned-using-ai-facial-recognition-after-ftc-says-retailer-deployed-technology-without",
+   "what": "Proposed order: Rite Aid must delete images and any algorithms developed from them, and is banned from facial recognition for surveillance for five years."
+  }
+ ],
+ "sourceCheck": {
+  "date": "2026-11-26",
+  "by": "source-check agent (separate from writer)",
+  "checked": 50,
+  "fixed": [
+   "Own data: verdict, on-page link and FAQ now say agreements that mention \"artificial intelligence\", not AI clauses; note says only two read by hand; EDGAR counts for 2019, 2025, 2026 re-pulled and match",
+   "Verdict 2: Deloitte shows only 35% of adopters use AI in diligence, so 'most' now rests on SS&C Intralinks (93%) and UK Private Capital (92%)",
+   "Census 66% applies only to firms with AI task effects; replaced with the 2% employment-decrease figure (team after, FAQ, stat)",
+   "DOJ safe harbor: 180 days corrected to six months, per the 2023 announcement",
+   "SRS Acquiom: 'working-capital adjustments in over 90% of deals' not stated; now 'price adjustments nearly universal, working capital the most common measure', added six-key-findings cite",
+   "ChatGPT Business help article unreadable and no price on OpenAI's live business or pricing pages: price removed, source swapped to chatgpt.com/business; seat costs now cite Claude Team and Copilot",
+   "Intralinks: summaries with source references and bulk redaction not on the vendor page; row now says Link assistant, quote or demo",
+   "Hebbia: 'each answer traced to its source sentence' not on page; now source-documents column",
+   "Copilot: added promo end date 31 Dec 2026 and existing-customer condition",
+   "Legal AI hallucination: wording now 'legal research AI'; Wiley blocks fetch, figures checked on authors' arXiv version and Crossref (JELS 2025)",
+   "ABA Opinion 512 PDF unreachable (ABA site maintenance): source swapped to ABA's own news release; dropped 'supervision' and 'must check output' claims it does not state",
+   "Wangerin (Wiley blocks fetch): abstract confirmed via Crossref metadata",
+   "Cut MIT NANDA 'twice as often' claim: publisher PDF gone, only third-party mirrors; source dropped",
+   "Cut Gartner 40% agentic-cancellation claim: press release unreadable; source dropped",
+   "Vals: 'scored the same way' reworded to 'against a lawyer baseline'",
+   "RWI 63% relabelled as the ABA 2025 study (2024-Q1 2025 deals); cut unsourced underwriter claim",
+   "CUAD: 'lawyer-labelled' changed to 'labelled under lawyer supervision'",
+   "Source notes corrected: CBIZ AI terms, FTC deletion orders (Rite Aid not in the 2023 update), Datasite Blueflame, SRS escrow, Census, CBV date",
+   "Renumbered footnotes after dropping 2 sources",
+   "Claim check pass: five-seat cost marked 'by our math'; survey groups named in table rows; HSR source dated Read 26 Nov 2026; SS&C note names who answered (no sample size published)"
+  ]
+ }
+}

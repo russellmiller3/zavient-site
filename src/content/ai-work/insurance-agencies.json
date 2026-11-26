@@ -1,0 +1,800 @@
+{
+ "title": "AI for insurance agencies: what are they actually using it for?",
+ "description": "AI for insurance agencies of 40-500 staff: where it pays first and who signs off. Plus the rules and our count of AI in nine brokers' 10-Ks.",
+ "type": "industry",
+ "templateVersion": 1,
+ "topic": "AI for insurance agencies",
+ "job": "AI for insurance agencies",
+ "industry": "independent insurance agencies and regional brokers",
+ "index": true,
+ "verdict": [
+  "Staff use runs ahead of agency rollout: 46% of agencies use AI, but only 21% have a written AI policy.[^1][^2]",
+  "Start with direct bill reconciliation and policy checking, where agencies already report days and hours saved.[^3][^4]",
+  "Re-keying is agents' top workflow pain, so fix carrier data feeds and submission intake before chatbots.[^5][^2]",
+  "AI drafts and flags, while a licensed producer signs off on coverage advice and binding.[^6][^7]",
+  "All nine public brokers we checked name AI risks in annual reports: wrong outputs, data leaks and liability claims.[^8][^9]"
+ ],
+ "onPage": [
+  {
+   "to": "human-role",
+   "text": "Who signs off: producers, account managers and the principal"
+  },
+  {
+   "to": "ranked",
+   "text": "Seven agency jobs ranked by payoff, from reconciliation to post-deal clean-up"
+  },
+  {
+   "to": "own-data",
+   "text": "Our count of AI wording in nine public brokers' annual reports"
+  },
+  {
+   "to": "table-1",
+   "text": "Agency AI tools and the prices they publish"
+  },
+  {
+   "to": "table-3",
+   "text": "How AI investment rises with agency revenue"
+  },
+  {
+   "to": "rules",
+   "text": "Licensing, data security, New York and AI-voice call rules"
+  },
+  {
+   "to": "what-goes-wrong",
+   "text": "Where agency AI goes wrong, and the fix for each"
+  },
+  {
+   "to": "faq",
+   "text": "Straight answers on ChatGPT, chatbots and errors and omissions cover"
+  }
+ ],
+ "headings": {
+  "ranked": "Where does AI pay first at an independent agency?",
+  "what-goes-wrong": "Where does AI go wrong at an agency?",
+  "faq": "Questions agency leaders ask about AI",
+  "buy-or-build": "Should you buy AI from your agency software vendor or build it?"
+ },
+ "summary": "AI for insurance agencies reads carrier documents, checks policies and matches commission statements, so account managers and producers key less.[^2][^10] Per the Big \"I\" 2026 study release, 46% of agencies use AI.[^1] Clean data in the agency management system (AMS) and a person checking client-facing output make or break it.[^5][^7]",
+ "humanRole": [
+  "Licensed producer: signs off on any coverage advice, proposal or bind request. Under the National Association of Insurance Commissioners (NAIC) licensing model, advising on coverage terms needs a license.[^6][^22]",
+  "Account manager: approves each policy-check flag and endorsement (policy change) before it reaches the client or carrier. Law-firm guidance treats every AI output as a draft for review.[^7][^23]",
+  "Accounting lead: clears every direct bill line the AI can't match, and posts the result. One agency cut this reconciliation from two days to five minutes.[^3][^10]",
+  "Principal or COO: owns the written AI policy, vendor contracts and the security program. Only 21% of agencies have a written AI policy.[^2][^16]"
+ ],
+ "ranked": [
+  {
+   "name": "Direct bill and commission reconciliation (accounting team)",
+   "slug": "account-reconciliation-automation",
+   "why": "Direct bill means carriers bill clients and send you commission statements to match.[^3] One agency cut that reconciliation from two full days to five minutes, and another matched about 80% of statements automatically in month one.[^3][^4]",
+   "payoff": "Days to close the month, and the share of statement lines matched without a touch."
+  },
+  {
+   "name": "Policy checking (account managers and service staff)",
+   "slug": "ai-document-processing",
+   "why": "Failure to procure, not getting the coverage the client asked for, causes about 30% of agency errors and omissions (E&O) claims.[^24][^25] In the 2025 Best Practices Study, an AI policy-checking pilot saved each support staffer 30 minutes a day.[^4]",
+   "payoff": "Policies checked per account manager each week, and errors caught before the policy reaches the client."
+  },
+  {
+   "name": "Commercial submission intake and prefill (account managers, producers)",
+   "slug": "ai-underwriting",
+   "why": "In Ivans' 2026 survey of 702 agents, 74% named re-keying their top workflow pain.[^5] Asked for one AI feature, 51% of agents chose prefill: carrier forms filled from data you already hold.[^5]",
+   "payoff": "Minutes per new commercial submission, and markets approached per account."
+  },
+  {
+   "name": "Loss runs, quote comparison and proposals (producers)",
+   "slug": "sales-analytics",
+   "why": "In the 2025 Best Practices Study, one agency's AI for loss runs (claims histories) and coverage analysis saved staff 7.5 hours a week.[^4] Among agency staff saving the most time in Liberty Mutual's study, 34% use AI to compare policy details.[^27]",
+   "payoff": "Proposals sent per producer each month, and the share of quotes that win."
+  },
+  {
+   "name": "Service email triage and endorsements (account managers, service staff)",
+   "why": "Vertafore says its email agent saves 80% of handling time at 98% accuracy (vendor claim).[^10] Change requests also teach new account managers the business, so keep a review step.[^28]",
+   "payoff": "First-response time, and endorsements done per person per day without rework."
+  },
+  {
+   "name": "Meeting notes and client recaps (producers, account managers)",
+   "why": "AI users in Liberty Mutual's 2026 carrier study save about 4 hours a week.[^27][^29] Among agency staff saving the most time, meeting notes was the top use, at 44%.[^27]",
+   "payoff": "Hours a week returned per producer, and follow-ups sent within 24 hours."
+  },
+  {
+   "name": "Clean-up of client data after an acquisition (operations)",
+   "slug": "ai-post-merger-integration",
+   "why": "In the 2025 Best Practices Study, AI-assisted data clean-up cut one agency's integration from 180 days to 45.[^4] About one agency in eight (13%) did a merger or acquisition in the past two years.[^30]",
+   "payoff": "Days to convert an acquired book, and duplicate client records left."
+  }
+ ],
+ "ownData": {
+  "title": "What do public brokers tell investors about AI?",
+  "intro": "On 26 Nov 2026 we searched the Securities and Exchange Commission (SEC) EDGAR database for six AI phrases in nine brokers' annual reports.[^8] Generative AI appears in 6 of 9 filings made in 2026, up from 4 of 9 in 2025.[^8] We then read each 2026 filing's AI passages.[^8]",
+  "headers": [
+   "Broker (10-K filed)",
+   "AI phrases found",
+   "What the filing says"
+  ],
+  "rows": [
+   [
+    "Marsh McLennan (9 Feb 2026)",
+    "artificial intelligence, generative AI",
+    "Runs an in-house generative AI tool, LenAI, and an AI Academy for staff. Names biased or wrong outputs as a risk.[^31]"
+   ],
+   [
+    "Aon (13 Feb 2026)",
+    "artificial intelligence, agentic",
+    "Names incorrect outputs, bias, weak human oversight and possible E&O claims. Says agentic AI could undercut its own investments.[^9]"
+   ],
+   [
+    "WTW (25 Feb 2026)",
+    "artificial intelligence, generative AI, agentic",
+    "Says generative and agentic AI may let clients do the work in-house. Warns staff prompts could leak confidential data.[^32]"
+   ],
+   [
+    "Arthur J. Gallagher (17 Feb 2026)",
+    "artificial intelligence, generative AI, machine learning",
+    "Has a stand-alone AI risk factor and AI principles to guard against E&O liability. Names confidential information put into AI tools against its policies.[^33]"
+   ],
+   [
+    "Brown & Brown (12 Feb 2026)",
+    "artificial intelligence, generative AI",
+    "Uses enterprise-managed AI tools and robotic process automation (RPA), and is exploring more uses. Names staff leaking data into outside AI.[^11]"
+   ],
+   [
+    "Ryan Specialty (13 Feb 2026)",
+    "artificial intelligence, generative AI",
+    "Names a specific live use: generative AI automates parts of submission intake and analysis for its underwriters.[^34]"
+   ],
+   [
+    "The Baldwin Group (26 Feb 2026)",
+    "artificial intelligence, machine learning",
+    "Uses AI and machine learning, with AI coaching in staff training. Warns AI can produce \"hallucinatory\" outputs.[^35]"
+   ],
+   [
+    "Goosehead Insurance (19 Feb 2026)",
+    "artificial intelligence, machine learning",
+    "Uses AI and machine learning. Names \"hallucinatory\" outputs and confidential-data leaks as risks.[^36]"
+   ],
+   [
+    "TWFG (10 Mar 2026)",
+    "artificial intelligence, generative AI, machine learning",
+    "Says it is in the early stages of integrating AI tools. Lists possible job displacement among its disclosed AI risks.[^37]"
+   ]
+  ],
+  "note": "Zavient count of SEC EDGAR full-text search, pulled 26 Nov 2026, exact phrases only: artificial intelligence, generative AI, agentic, machine learning, hallucinations, large language model.[^8] A mention shows disclosure, not use, spend or quality, and we counted filings with a hit, not hits per filing. These are nine large public brokers, not 40-500 staff agencies, and the main 10-K document only, not exhibits."
+ },
+ "tables": [
+  {
+   "title": "Which AI tools do agencies buy, and what do they cost?",
+   "intro": "Speed and accuracy figures are each vendor's own claims, read on 26 Nov 2026.[^10][^14]",
+   "headers": [
+    "Product",
+    "What it does",
+    "Price",
+    "Worth knowing"
+   ],
+   "rows": [
+    {
+     "name": "Vertafore AI agents",
+     "url": "https://www.vertafore.com/ai-vertafore/agentic-agency",
+     "cells": [
+      "Agents for reconciliation, email, policy intake and policy checks, for AMS360 users[^10]",
+      "Not published[^10]",
+      "Vendor claim: the reconciliation agent saves 90% of time at 94% accuracy across 200+ carriers[^10]"
+     ]
+    },
+    {
+     "name": "Applied Epic (Epic Conductor)",
+     "url": "https://www1.appliedsystems.com/en-us/platform/applied-epic/artificial-intelligence",
+     "cells": [
+      "Carrier connections, policy checking, endorsements and financial automation inside Applied Epic[^12]",
+      "Not published[^12]",
+      "Ivans, the agency-carrier connection network, is one of Applied Systems' brands[^26][^5]"
+     ]
+    },
+    {
+     "name": "Patra Policy Checking AI and Quote Compare AI",
+     "url": "https://www.patracorp.com/insights/blogs/ai-subscription-pricing-for-agencies",
+     "cells": [
+      "900+ point policy checks across 12 commercial lines, and side-by-side comparison of up to 3 quotes[^14]",
+      "Monthly subscription with a 14-day trial, price not shown[^14]",
+      "Vendor claim: 87% less processing time and 99.5% accuracy with human checks[^14]"
+     ]
+    },
+    {
+     "name": "Canopy Connect",
+     "url": "https://www.usecanopy.com/pricing",
+     "cells": [
+      "Pulls a client's current policies with their permission and reads declarations pages for intake[^13]",
+      "$100, $250 or $500 a month billed yearly, or $120, $300 or $600 monthly[^13]",
+      "Commercial lines and AMS links start on the $250 plan[^13]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "What do the agency AI studies actually say?",
+   "intro": "Who ran each study matters: Liberty Mutual is a carrier, and Ivans belongs to Applied Systems, an agency software vendor.[^27][^26]",
+   "headers": [
+    "Study, year",
+    "Who was asked",
+    "Key finding"
+   ],
+   "rows": [
+    {
+     "name": "Big \"I\" and Future One, Agency Universe Study, 2026",
+     "url": "https://www.independentagent.com/news/big-i-and-future-one-release-2026-agency-universe-study",
+     "cells": [
+      "1,376 agency responses, Mar-May 2026[^1][^2]",
+      "46% use AI, up from 15% in 2024, per the 23 Sep 2026 release[^1][^38]"
+     ]
+    },
+    {
+     "name": "Big \"I\" ACT, Agency Universe partner report, 2026",
+     "url": "https://www.independentagent.com/wp-content/uploads/2026/10/AUS-ACT-Partner-Insight-Report-Agent-Tech-Marketing-Signals.pdf",
+     "cells": [
+      "The same agencies, by AI use[^2]",
+      "Top uses: marketing content 49%, coverage form analysis 43%, contract reviews 35%. Only 21% have a written AI policy[^2]"
+     ]
+    },
+    {
+     "name": "Big \"I\" ACT Tech Trends, 2026",
+     "url": "https://www.independentagent.com/news/two-thirds-of-independent-agents-plan-to-increase-ai-use-this-year",
+     "cells": [
+      "Big \"I\" member agencies, results released 19 Feb 2026[^15]",
+      "8% of agents say AI is embedded in daily work[^15]. 45% use ChatGPT or other public chat tools[^15]"
+     ]
+    },
+    {
+     "name": "Liberty Mutual Independent Agency Growth Study, 2026 (carrier study)",
+     "url": "https://www.agentforthefuture.com/topics/all-reports/2026-independent-agency-growth-study/",
+     "cells": [
+      "1,149 agency principals and staff, Dec 2025[^27]",
+      "AI users save 4 hours a week on average[^27][^29]. Only 14% of agency staff say their agency has implemented an AI tool[^27][^29]"
+     ]
+    },
+    {
+     "name": "Ivans Agency-Carrier Connectivity Trends, 2026 (Applied Systems-owned)",
+     "url": "https://www.ivans.com/globalassets/all-documents/resources/reports/2026-agency-carrier-connectivity-trends.pdf",
+     "cells": [
+      "702 agents, Apr-May 2026[^5]",
+      "74% of agents name re-keying their top pain[^5][^26]. Most re-key submission data already in their AMS[^5]"
+     ]
+    },
+    {
+     "name": "Reagan Consulting and Big \"I\" Best Practices Study, 2025",
+     "url": "https://static1.squarespace.com/static/6542fedc4bc2cd7d5761c002/t/6aa8199bb939540496e36b63/1789401499681/2025+BPS+Study+-+FINAL+%2811.6.25%29.pdf",
+     "cells": [
+      "Agencies nominated as best-practice performers, by revenue band[^4][^39]",
+      "Share investing in AI rises from 11.5% under $1.25M revenue to 84.2% over $100M[^4]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Which agencies your size are investing in AI?",
+   "intro": "The 2025 Best Practices Study covers agencies nominated as high performers, not the average agency.[^4]",
+   "headers": [
+    "Revenue band",
+    "Invested in AI",
+    "Average staff and revenue per employee"
+   ],
+   "rows": [
+    {
+     "name": "Under $1.25M",
+     "cells": [
+      "11.5%[^4]",
+      "Not reported"
+     ]
+    },
+    {
+     "name": "$5M to $10M",
+     "cells": [
+      "23.3%[^4]",
+      "32 staff, $236,444 per employee[^4]"
+     ]
+    },
+    {
+     "name": "$10M to $25M",
+     "cells": [
+      "25.0%[^4]",
+      "67 staff, $248,526 per employee[^4]"
+     ]
+    },
+    {
+     "name": "$25M to $100M",
+     "cells": [
+      "60.0%[^4]",
+      "188 staff, $251,322 per employee[^4]"
+     ]
+    },
+    {
+     "name": "Over $100M",
+     "cells": [
+      "84.2%[^4]",
+      "Not reported"
+     ]
+    }
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "name": "NAIC Producer Licensing Model Act (#218), as adopted by states",
+   "url": "https://content.naic.org/sites/default/files/model-law-218.pdf",
+   "status": "In force through state licensing laws",
+   "what": "Only licensed people may sell, solicit or negotiate insurance, and negotiating includes advising on coverage terms.[^6] Unlicensed staff are exempt only for clerical work paid no commission.[^6][^22] A chatbot that advises on coverage or binds needs a licensed person behind it.[^6][^7]"
+  },
+  {
+   "name": "NAIC Insurance Data Security Model Law (#668)",
+   "url": "https://content.naic.org/sites/default/files/government-affairs-brief-data-security-model-law.pdf",
+   "status": "Adopted in 28 jurisdictions (NAIC map, 3 Nov 2026)",
+   "what": "It applies to licensees, agencies included, and requires a risk-based security program that oversees outside vendors.[^16][^40] Only licensees with fewer than 10 employees are exempt from the program, so put your AI vendors in yours.[^16] Notify the commissioner of certain cybersecurity events.[^16]"
+  },
+  {
+   "name": "New York Department of Financial Services (DFS) cybersecurity rule, 23 NYCRR Part 500",
+   "url": "https://www.dfs.ny.gov/cybersecurity/exemptions",
+   "status": "In force; final phase took effect 1 Nov 2025",
+   "what": "It covers DFS-licensed businesses, insurance agents and brokers included, and the final phase requires multi-factor authentication for every user.[^42][^41] The limited exemption needs under 20 staff and contractors, under $7.5M revenue, or under $15M assets.[^42] An agency of 40 or more fails the headcount test, so check the other two.[^42]"
+  },
+  {
+   "name": "New York DFS industry letter on AI cybersecurity risks",
+   "url": "https://www.dfs.ny.gov/industry-guidance/industry-letters/il20241016-cyber-risks-ai-and-strategies-combat-related-risks",
+   "status": "Guidance issued 16 Oct 2024; adds no new requirements",
+   "what": "It tells covered firms to address AI in risk assessments and vendor due diligence.[^43] It also asks for deepfake-resistant multi-factor authentication and keeping less client data.[^43]"
+  },
+  {
+   "name": "Federal Communications Commission (FCC) Declaratory Ruling 24-17, Telephone Consumer Protection Act (TCPA)",
+   "url": "https://docs.fcc.gov/public/attachments/FCC-24-17A1.pdf",
+   "status": "In force; adopted 2 Feb 2024",
+   "what": "AI-generated voices count as artificial or prerecorded voices.[^17] Calls need prior express consent, and telemarketing calls need prior express written consent.[^17][^44] Have consent records before an AI voice agent calls about renewals or cross-selling.[^44]"
+  },
+  {
+   "name": "NAIC Model Bulletin on the Use of AI Systems by Insurers",
+   "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
+   "status": "Adopted in 30 jurisdictions (NAIC map, 13 Nov 2026)",
+   "what": "The bulletin binds insurers, not agencies.[^18] The carriers you place business with may still ask how your agency uses AI with their customers. Our insurance page covers the bulletin in depth."
+  }
+ ],
+ "watchOuts": [
+  "Made-up facts in submissions: an E&O underwriter reports a broker presented an AI-invented nil claims history though the attached claims run showed losses.[^19] Placement and clerical errors already drive E&O claims, so check every material field against the source documents.[^45]",
+  "Authority creep: staff come to trust AI that is usually right, and review fades until it disappears.[^20] Write down what AI may do alone, and keep advice, limit changes and binding with a licensed producer.[^7][^6]",
+  "Client data in public chat tools: 45% of agents use ChatGPT or other public tools.[^15] Gallagher and WTW name staff data leaks into outside AI as a risk, so approve tools and block client data in public ones.[^33][^32]",
+  "AI voice calls without consent records: the FCC treats AI voices as artificial voices under the TCPA.[^17] Check prior express consent, written for telemarketing, before any AI outbound call.[^44]",
+  "Assuming your E&O policy covers AI mistakes: most agent and broker policies still respond, but insurers elsewhere in professional liability have begun proposing AI exclusions.[^45][^46] Read your renewal wording for AI exclusions or sublimits.[^46]",
+  "Cutting the work juniors learn on: change requests and data entry teach new account managers the business.[^28] Move juniors to reviewing AI drafts and client work, and keep a teaching loop.[^28]"
+ ],
+ "faq": [
+  {
+   "q": "Will AI replace account managers and service staff?",
+   "a": "No, the evidence points to AI taking keying and checking work while people keep advice and sign-off.[^47][^7] The 2025 Best Practices Study says AI should augment, not replace, human expertise.[^4]"
+  },
+  {
+   "q": "Is it safe to put client data into ChatGPT?",
+   "a": "Not in an unapproved public tool, so use only the tools your written AI policy approves.[^7][^43] Add each AI vendor to the vendor oversight in your security program.[^16]"
+  },
+  {
+   "q": "Can a chatbot quote or bind coverage?",
+   "a": "Only with a licensed producer behind it, because advising on coverage terms counts as negotiating under producer licensing law.[^6][^7] Unlicensed staff are exempt only for administrative or clerical work paid no commission, and Big \"I\" advises asking your state insurance department when unsure.[^6][^22][^20]"
+  },
+  {
+   "q": "How much time does AI save an agency?",
+   "a": "About 4 hours a week per AI user, in Liberty Mutual's 2026 carrier survey of agency principals and staff.[^27][^29] In the 2025 Best Practices Study, one agency's policy-checking pilot saved each support staffer 30 minutes a day.[^4]"
+  },
+  {
+   "q": "Where should a mid-size agency start with AI?",
+   "a": "Start with direct bill reconciliation and policy checking, where agencies report days and hours saved.[^3][^4] Policy checking also guards against failure to procure, the top cause of agency E&O claims.[^24]"
+  },
+  {
+   "q": "Does our E&O policy cover mistakes made with AI?",
+   "a": "Yes, usually, unless the policy carries a specific AI exclusion.[^46][^45] Some professional liability insurers have begun proposing AI exclusions, so read your renewal wording.[^45]"
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Buy when the work runs inside your agency management system and a vendor module reads your data in place, as with reconciliation and policy checks.[^10][^12] Most enterprise AI is now bought: 76% of use cases, up from 53% in 2024.[^21] MIT found outside partnerships reached deployment about twice as often as internal builds.[^48][^49]",
+  "build": "Build or configure when your own process is the edge, such as commercial submissions across niche carriers or data clean-up after acquisitions.[^5][^4] Build also when you need firm control over what a tool may say to clients.[^6] A Big \"I\" AI Labs deck warns that the vendor's contract leaves your agency responsible for what a tool may legally do.[^20]"
+ },
+ "pickElse": [
+  "Your pain is carrier connectivity, not reading documents: use carrier download and the insurance data standards from ACORD, the standards body, before AI.[^50][^5] With 74% of agents re-keying data as standard practice, the feed comes first.[^5]",
+  "The screens and steps never change: use robotic process automation or your agency system's own workflow rules. Only 6% of agencies use RPA today.[^2]",
+  "You need the work off your desks, not just done faster: an outsourced policy-checking service, such as Patra's full-service model, moves the volume.[^14]",
+  "Your agency software already ships the feature: turn on Vertafore's agents or Applied Epic's AI before any custom project.[^10][^12]"
+ ],
+ "resources": [
+  {
+   "name": "NAIC Model #668 adoption map",
+   "url": "https://content.naic.org/sites/default/files/legal-adoption-map-668-idsm.pdf",
+   "what": "Check whether your states require a written security program."
+  },
+  {
+   "name": "New York DFS Part 500 exemptions",
+   "url": "https://www.dfs.ny.gov/cybersecurity/exemptions",
+   "what": "Check whether your agency qualifies for the limited exemption."
+  },
+  {
+   "name": "IA Magazine, 5 ways to reduce AI-driven E&O exposures",
+   "url": "https://www.iamagazine.com/2026/09/09/5-ways-insurance-agencies-can-reduce-ai-driven-eo-exposures",
+   "what": "A checklist to build your written AI policy from."
+  },
+  {
+   "name": "NAIC AI Model Bulletin adoption map",
+   "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
+   "what": "See which of your carriers' states have adopted the bulletin."
+  },
+  {
+   "name": "ACORD data standards",
+   "url": "https://www.acord.org/standards-architecture/acord-data-standards",
+   "what": "The carrier data formats behind download and real-time connections."
+  }
+ ],
+ "stats": [
+  {
+   "num": "46%",
+   "label": "of independent agencies use AI, up from 15% in 2024, per the study's 23 Sep 2026 release.[^1][^51]",
+   "source": "Big \"I\" and Future One, Agency Universe Study, 2026"
+  },
+  {
+   "num": "21%",
+   "label": "of agencies have a written AI policy.[^2]",
+   "source": "Big \"I\" ACT partner report, 2026"
+  },
+  {
+   "num": "74%",
+   "label": "of agents name re-keying as their top workflow pain.[^5]",
+   "source": "Ivans (Applied Systems), 702 agents, 2026"
+  },
+  {
+   "num": "About 30%",
+   "label": "of agency E&O claims come from failure to procure, the top cause.[^24]",
+   "source": "IA Magazine, Swiss Re data, 2021"
+  },
+  {
+   "num": "4 hours",
+   "label": "a week saved on average per agency AI user.[^27]",
+   "source": "Liberty Mutual carrier study, 2026"
+  },
+  {
+   "num": "2 of 9",
+   "label": "public brokers used \"agentic\" in 10-Ks filed in 2026, up from 0 of 9 in 2025.[^8]",
+   "source": "Zavient count of SEC EDGAR, 26 Nov 2026"
+  }
+ ],
+ "sources": [
+  {
+   "name": "Big \"I\" and Future One, 2026 Agency Universe Study news release (23 Sep 2026)",
+   "url": "https://www.independentagent.com/news/big-i-and-future-one-release-2026-agency-universe-study",
+   "what": "Trade body release (23 Sep 2026). Survey of 1,376 agencies (respondents): 46% of agencies use AI, up from 15% in 2024; top uses marketing content 49%, coverage form analysis 43%, contract reviews 35%; about 37,000 agencies; average staff 9.9. The figure this page uses. Read 26 Nov 2026."
+  },
+  {
+   "name": "Big \"I\" Agents Council for Technology (ACT), Agency Universe Study partner insight report (Oct 2026)",
+   "url": "https://www.independentagent.com/wp-content/uploads/2026/10/AUS-ACT-Partner-Insight-Report-Agent-Tech-Marketing-Signals.pdf",
+   "what": "Partner report on the 2026 Agency Universe Study, 1,376 agency responses, fieldwork Mar-May 2026: 46% use AI; top uses marketing content 49%, coverage form analysis 43%, contract reviews 35%; 21% have a written AI policy; multi-carrier connectivity is the top tech challenge (43%); 6% use RPA. Read 26 Nov 2026."
+  },
+  {
+   "name": "Big \"I\" ACT and Ivans, 2025 roundtable report",
+   "url": "https://www.independentagent.com/wp-content/uploads/2025/12/IvansReport_25.pdf",
+   "what": "An agency went from two full days on direct bill reconciliation to five minutes with AI. Read 26 Nov 2026."
+  },
+  {
+   "name": "Reagan Consulting and Big \"I\", 2025 Best Practices Study (study PDF)",
+   "url": "https://static1.squarespace.com/static/6542fedc4bc2cd7d5761c002/t/6aa8199bb939540496e36b63/1789401499681/2025+BPS+Study+-+FINAL+%2811.6.25%29.pdf",
+   "what": "Study of 349 Best Practices agencies chosen from 1,100+ nominated. Share that invested in AI: 11.5% under $1.25M revenue, 22.0% at $1.25M-$2.5M and $2.5M-$5M, 23.3% at $5M-$10M, 25.0% at $10M-$25M, 60.0% at $25M-$100M, 84.2% over $100M. Average staff and revenue per employee: 32.0 and $236,444 at $5M-$10M; 67.2 and $248,526 at $10M-$25M; 188.3 and $251,322 at $25M-$100M. Examples: one firm auto-reconciled about 80% of direct bill statements in its first month; a top-100 agency's policy-checking pilot saved 30 minutes a day per support staff member; one agency's platform for loss runs and coverage analysis saved staff an average of 7.5 hours a week; AI data clean-up cut post-close integration from 180 to 45 days. Says AI should augment, not replace, human expertise. Read 26 Nov 2026."
+  },
+  {
+   "name": "Ivans (Applied Systems), 2026 Agency-Carrier Connectivity Trends report",
+   "url": "https://www.ivans.com/globalassets/all-documents/resources/reports/2026-agency-carrier-connectivity-trends.pdf",
+   "what": "Survey of 702 independent agents, Apr-May 2026: 74% name re-keying their top workflow pain; 74% re-key data as standard practice; most re-key submission data already in their AMS; 51% name automated data prefill their top AI request; 49% of commercial lines-heavy agencies collect submissions by email; Ivans connects 38,000+ agencies with 700+ carriers and MGAs. Read 26 Nov 2026."
+  },
+  {
+   "name": "NAIC, Producer Licensing Model Act (#218)",
+   "url": "https://content.naic.org/sites/default/files/model-law-218.pdf",
+   "what": "A person must be licensed to sell, solicit or negotiate insurance; \"negotiate\" includes advising on substantive benefits, terms or conditions; unlicensed clerical staff are exempt only with no commission. Read 26 Nov 2026."
+  },
+  {
+   "name": "IA Magazine, 5 ways insurance agencies can reduce AI-driven E&O exposures (9 Sep 2026)",
+   "url": "https://www.iamagazine.com/2026/09/09/5-ways-insurance-agencies-can-reduce-ai-driven-eo-exposures",
+   "what": "Law-firm authors: treat AI output as a draft; a qualified person reviews quotes, proposals and comparisons; AI must not bind, change limits or advise on coverage without human review. Read 26 Nov 2026."
+  },
+  {
+   "name": "SEC EDGAR full-text search (Zavient count)",
+   "url": "https://www.sec.gov/edgar/search/",
+   "what": "Our count, run 26 Nov 2026 and re-run by the source check, of six exact AI phrases in the main 10-K documents of nine US-listed brokers filed in 2026 and 2025: generative AI in 6 of 9 (2026) and 4 of 9 (2025); agentic in 2 of 9 (Aon, WTW) and 0 of 9. Exhibits excluded."
+  },
+  {
+   "name": "Aon, Form 10-K for fiscal 2025 (filed 13 Feb 2026)",
+   "url": "https://www.sec.gov/Archives/edgar/data/315293/000162828026008116/",
+   "what": "Risks of incorrect outputs, bias, inadequate human oversight and potential E&O claims; generative and agentic AI could undercut its investments. Read 26 Nov 2026."
+  },
+  {
+   "name": "Vertafore, Agentic Agency (vendor claims)",
+   "url": "https://www.vertafore.com/ai-vertafore/agentic-agency",
+   "what": "Vendor: AI agents for AMS360 users: reconciliation (90% time saved, 94% accuracy, 200+ carriers), email (80% time saved, 98% accuracy), policy intake (86% time saved), policy check (90% time saved), which recommends corrections for review; human-in-the-loop controls. No price shown. Read 26 Nov 2026."
+  },
+  {
+   "name": "Brown & Brown, Form 10-K for fiscal 2025 (filed 12 Feb 2026)",
+   "url": "https://www.sec.gov/Archives/edgar/data/79282/000119312526046984/",
+   "what": "Uses enterprise-managed AI tools and robotic process automation; exploring use cases; staff using third-party AI may leak data. Read 26 Nov 2026."
+  },
+  {
+   "name": "Applied Systems, Applied Epic artificial intelligence (Epic Conductor)",
+   "url": "https://www1.appliedsystems.com/en-us/platform/applied-epic/artificial-intelligence",
+   "what": "Vendor: AI for connected carrier trading, operational automation such as policy checking and endorsements, and financial automation. No price shown. Read 26 Nov 2026."
+  },
+  {
+   "name": "Canopy Connect, pricing page",
+   "url": "https://www.usecanopy.com/pricing",
+   "what": "Scratch, Elevate and Peak plans: $100, $250 and $500 a month billed annually, or $120, $300 and $600 monthly; commercial lines and AMS integrations from the $250 plan. Read 26 Nov 2026."
+  },
+  {
+   "name": "Patra, AI subscription pricing for insurance agencies (4 Mar 2026, vendor claims)",
+   "url": "https://www.patracorp.com/insights/blogs/ai-subscription-pricing-for-agencies",
+   "what": "Vendor: Policy Checking AI with 900+ point checklists across 12 commercial lines; Quote Compare AI for up to 3 quotes; claims 87% less processing time and 99.5% accuracy with human verification; monthly subscription, price not shown, 14-day trial; also a full-service model. Read 26 Nov 2026."
+  },
+  {
+   "name": "Big \"I\" ACT, Tech Trends release: Two-thirds of independent agents plan to increase AI use (19 Feb 2026)",
+   "url": "https://www.independentagent.com/news/two-thirds-of-independent-agents-plan-to-increase-ai-use-this-year",
+   "what": "Release (19 Feb 2026) on Big \"I\" ACT Tech Trends findings from independent agents: 8% say AI is embedded in daily workflows; 33% just experimenting; 45% use ChatGPT or other public LLMs; 55% have no written AI use policy. Sample size not stated. Read 26 Nov 2026."
+  },
+  {
+   "name": "NAIC, Insurance Data Security Model Law (#668) brief",
+   "url": "https://content.naic.org/sites/default/files/government-affairs-brief-data-security-model-law.pdf",
+   "what": "Applies to insurers and other entities licensed by a state insurance department (licensees): a risk-based information security program, oversight of third-party service providers, and notice to the commissioner of certain cybersecurity events; licensees with fewer than 10 employees are exempt from the program requirements. Read 26 Nov 2026."
+  },
+  {
+   "name": "FCC, Declaratory Ruling FCC 24-17 (adopted 2 Feb 2024)",
+   "url": "https://docs.fcc.gov/public/attachments/FCC-24-17A1.pdf",
+   "what": "AI-generated voices are \"artificial or prerecorded voice\" under the TCPA, so the consent rules apply. Read 26 Nov 2026."
+  },
+  {
+   "name": "NAIC, AI Model Bulletin adoption map (13 Nov 2026)",
+   "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
+   "what": "Status as of 13 Nov 2026: 30 jurisdictions listed as adopting the model bulletin on the use of AI systems by insurers. Read 26 Nov 2026."
+  },
+  {
+   "name": "Euclid, Mind the Gap: the AI risk for brokers (Jul 2026)",
+   "url": "https://euclidfp.com/wp-content/uploads/2026/07/Mind-the-Gap-the-AI-Risk-for-Brokers-4.pdf",
+   "what": "E&O underwriter Euclid Financial & Professional Risks: a broker presented a nil claims experience, hallucinated by AI, although the proposal form attached a detailed claims run. Read 26 Nov 2026."
+  },
+  {
+   "name": "Big \"I\" Agency AI Labs, AI, E&O and commercial client risk slides (Oct 2026)",
+   "url": "https://www.independentagent.com/wp-content/uploads/2026/10/SLIDES-P3S4-AI-EO-and-Commercial-Client-Risk.pdf",
+   "what": "Session deck: \"authority creep\", where staff come to trust AI outputs and review fades until it disappears; the vendor's contract leaves the agency responsible for what a tool may legally do; when in doubt, ask the state insurance department whether AI can do the task. Read 26 Nov 2026."
+  },
+  {
+   "name": "Menlo Ventures, 2025: The State of Generative AI in the Enterprise",
+   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+   "what": "76% of enterprise AI use cases are bought, up from 53% in 2024 (n=495). Read 26 Nov 2026."
+  },
+  {
+   "name": "NAIC, State Licensing Handbook",
+   "url": "https://content.naic.org/sites/default/files/inline-files/State%20Licensing%20Handbook%20-%20Complete%20and%20Final.pdf",
+   "what": "How states apply producer licensing: employees of producers are exempt only if they receive no commission on policies written or sold; licensable sales activity is set apart from administrative or clerical acts. Read 26 Nov 2026."
+  },
+  {
+   "name": "Marshall Dennehey, Insurance broker best practices to reduce AI-related E&O risk (25 Aug 2026)",
+   "url": "https://www.marshalldennehey.com/thought-leadership/insurance-broker-best-practices-to-reduce-ai-related-eo-risk",
+   "what": "Law firm: the same human-review practices for AI output at brokers. Read 26 Nov 2026."
+  },
+  {
+   "name": "IA Magazine, The top 5 causes of agency E&O claims in 2020 (Mar 2021)",
+   "url": "https://www.iamagazine.com/2021/03/01/the-top-5-causes-of-agency-eo-claims-in-2020",
+   "what": "Swiss Re data: failure to procure is the top cause of agency E&O claims, about 30%; 60% of claims are commercial. Read 26 Nov 2026."
+  },
+  {
+   "name": "IA Magazine, What's driving the rise in E&O claims (1 May 2025)",
+   "url": "https://www.iamagazine.com/2025/05/01/whats-driving-the-rise-in-eo-claims-and-what-can-your-agency-do-to-prevent-one",
+   "what": "Failure to procure is still the top cause; Big \"I\" Professional Liability saw rising claim frequency and severity. Read 26 Nov 2026."
+  },
+  {
+   "name": "Applied Systems press release on the 2026 Ivans connectivity survey",
+   "url": "https://www1.appliedsystems.com/en-us/news/press-releases/2026/agents-are-choosing-carriers-that-automate-submissions-say-findings-in-2026-insurance-agency-carrier-connectivity-trends-survey-report",
+   "what": "Applied Systems release (26 Aug 2026) on its survey of 702 independent agents, Apr-May 2026: 74% cite re-keying as the top pain; 90% reduced business with a carrier over friction; commercial lines-heavy agencies rely on email (49%). Ivans is listed in Applied's family of brands. Read 26 Nov 2026."
+  },
+  {
+   "name": "Liberty Mutual, 2026 Independent Agency Growth Study (carrier study)",
+   "url": "https://www.agentforthefuture.com/topics/all-reports/2026-independent-agency-growth-study/",
+   "what": "Survey of 1,149 agency principals and staff, Dec 2025, by Liberty Mutual's research team: AI users save 4 hours a week on average; 14% of agents say their agency has implemented an AI tool; among staff saving 2+ hours a week, 44% use AI to summarize meeting notes and 34% to compare policy details. Read 26 Nov 2026."
+  },
+  {
+   "name": "Big \"I\" ACT and Applied Net, 2026 Ecosystem Exchange report (17 Nov 2026)",
+   "url": "https://www.independentagent.com/wp-content/uploads/2026/11/AppliedNet_26.pdf",
+   "what": "Entry-level data entry and change requests are how new account managers learn the business; liability still lands on the agent. Read 26 Nov 2026."
+  },
+  {
+   "name": "IA Magazine, Agents using AI save 4 hours a week, says Liberty Mutual study",
+   "url": "https://www.iamagazine.com/news/agents-using-ai-save-4-hours-a-week-says-liberty-mutual-study/",
+   "what": "Reports the Liberty Mutual study of nearly 1,200 agency principals and staff: AI users save about 4 hours a week; 14% of agents say their agency has implemented an AI tool. Read 26 Nov 2026."
+  },
+  {
+   "name": "Trusted Choice / Big \"I\", 2026 Agency Universe Study management summary",
+   "url": "https://trustedchoice.independentagent.com/resources/2026-agency-universe-study-management-summary/",
+   "what": "Management summary: more than 1 in 10 agencies (13%) were involved in a merger or acquisition in the past two years; finding and screening job candidates is the top challenge (45%). Read 26 Nov 2026."
+  },
+  {
+   "name": "Marsh McLennan, Form 10-K for fiscal 2025 (filed 9 Feb 2026)",
+   "url": "https://www.sec.gov/Archives/edgar/data/62709/000006270926000022/",
+   "what": "In-house generative AI tool LenAI; AI Academy since Aug 2024; risks of biased or wrong outputs and overstating AI capability. Read 26 Nov 2026."
+  },
+  {
+   "name": "WTW, Form 10-K for fiscal 2025 (filed 25 Feb 2026)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1140536/000119312526069307/",
+   "what": "Generative and agentic AI may let clients do work in-house; AI may need enhanced human oversight; staff prompts could leak confidential data. Read 26 Nov 2026."
+  },
+  {
+   "name": "Arthur J. Gallagher, Form 10-K for fiscal 2025 (filed 17 Feb 2026)",
+   "url": "https://www.sec.gov/Archives/edgar/data/354190/000162828026008662/",
+   "what": "Stand-alone AI risk factor; internal AI policies aligned with globally recognized AI principles to guard against E&O liability; confidential information put into AI against its policies could reach other third-party AI users. Read 26 Nov 2026."
+  },
+  {
+   "name": "Ryan Specialty, Form 10-K for fiscal 2025 (filed 13 Feb 2026)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1849253/000184925326000006/",
+   "what": "Initiated generative AI to automate parts of submission intake and analysis for its underwriters; liability if output is deficient. Read 26 Nov 2026."
+  },
+  {
+   "name": "The Baldwin Group, Form 10-K for fiscal 2025 (filed 26 Feb 2026)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1781755/000178175526000018/",
+   "what": "Uses AI and machine learning; AI can produce \"hallucinatory\" outputs; LinkedIn Learning with AI coaching for staff. Read 26 Nov 2026."
+  },
+  {
+   "name": "Goosehead Insurance, Form 10-K for fiscal 2025 (filed 19 Feb 2026)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1726978/000172697826000010/",
+   "what": "Uses AI and machine learning; names \"hallucinatory\" outputs and confidential-data leaks as risks. Read 26 Nov 2026."
+  },
+  {
+   "name": "TWFG, Form 10-K for fiscal 2025 (filed 10 Mar 2026)",
+   "url": "https://www.sec.gov/Archives/edgar/data/2007596/000162828026016162/",
+   "what": "In the early stages of integrating AI tools; discloses that AI could displace certain jobs. Read 26 Nov 2026."
+  },
+  {
+   "name": "Insurance Journal, coverage of the 2026 Agency Universe Study (24 Sep 2026)",
+   "url": "https://www.insurancejournal.com/news/national/2026/09/24/886639.htm",
+   "what": "Reports the release figure: 46% of agencies use AI, up from 15%. Read 26 Nov 2026."
+  },
+  {
+   "name": "Big \"I\", release of the 2025 Best Practices Study with Reagan Consulting",
+   "url": "https://www.independentagent.com/news/big-i-and-reagan-consulting-release-2025-best-practices-study",
+   "what": "Trade body release (12 Aug 2025) on the study of nominated Best Practices firms. Read 26 Nov 2026."
+  },
+  {
+   "name": "NAIC, Model #668 adoption map (3 Nov 2026)",
+   "url": "https://content.naic.org/sites/default/files/legal-adoption-map-668-idsm.pdf",
+   "what": "Status as of 3 Nov 2026: adopted in 28 jurisdictions, pending in 1. Read 26 Nov 2026."
+  },
+  {
+   "name": "New York DFS, multi-factor authentication guidance",
+   "url": "https://www.dfs.ny.gov/industry-guidance/cybersecurity/multifactor-authentication",
+   "what": "Final phase of Part 500 from 1 Nov 2025: covered entities must use MFA for any individual accessing their information systems. Read 26 Nov 2026."
+  },
+  {
+   "name": "New York DFS, Cybersecurity regulation (23 NYCRR Part 500) exemptions",
+   "url": "https://www.dfs.ny.gov/cybersecurity/exemptions",
+   "what": "Limited exemption under 500.19(a): fewer than 20 employees and independent contractors, under $7.5M gross annual revenue in each of the last 3 fiscal years, or under $15M year-end total assets. Full exemptions name individual insurance brokers and inactive insurance agents, who are covered entities. Read 26 Nov 2026."
+  },
+  {
+   "name": "New York DFS, industry letter on cyber risks from AI (16 Oct 2024)",
+   "url": "https://www.dfs.ny.gov/industry-guidance/industry-letters/il20241016-cyber-risks-ai-and-strategies-combat-related-risks",
+   "what": "Guidance, no new requirements: address AI in risk assessments and vendor due diligence, use deepfake-resistant authentication, minimize data. Read 26 Nov 2026."
+  },
+  {
+   "name": "FCC, consumer guide to robocall rules",
+   "url": "https://www.fcc.gov/consumers/guides/robocalls-rules-callers",
+   "what": "Prior written consent for artificial or prerecorded voice telemarketing calls to home lines; consent for informational prerecorded calls to wireless numbers; AI-generated voice calls need consumer consent unless exempt. Read 26 Nov 2026."
+  },
+  {
+   "name": "Amwins, Softer pricing, sharper risk: the agents and brokers E&O market (Apr 2026)",
+   "url": "https://www.amwins.com/resources-and-insights/market-insights/article/softer-pricing--sharper-risk-shape-insurance-agents-and-brokers-e-o-market",
+   "what": "Wholesaler (27 Apr 2026): placement errors, clerical mistakes and failure to recommend coverage drive E&O frequency; most agent and broker E&O policies still respond to negligence claims involving AI; insurers elsewhere in professional and management liability have begun proposing broad AI exclusions. Read 26 Nov 2026."
+  },
+  {
+   "name": "Business Insurance, AI use amplifies professional liability risks (26 Jun 2026)",
+   "url": "https://www.businessinsurance.com/ai-use-amplifies-professional-liability-risks/",
+   "what": "Markel's E&O lead: standard E&O policies generally cover AI-related negligence, and affirmative AI cover comes subject to a sublimit; Zurich's lead: policies cover errors broadly unless they include a specific AI exclusion. Read 26 Nov 2026."
+  },
+  {
+   "name": "Insurance Journal, How AI is changing the roles of account managers and CSRs (13 Jul 2026)",
+   "url": "https://www.insurancejournal.com/magazines/mag-features/2026/07/13/877091.htm",
+   "what": "The client-advisor part of account manager and service roles stays; AI takes routine processing. Read 26 Nov 2026."
+  },
+  {
+   "name": "MIT NANDA, The GenAI Divide (Jul 2025, hosted PDF)",
+   "url": "https://www.ictworks.org/wp-content/uploads/2025/09/AI_Business_2025.pdf",
+   "what": "52 interviews, 153 surveys, 300 public initiatives: external partnerships reached deployment about 67% of the time, internal builds about 33%. Read 26 Nov 2026."
+  },
+  {
+   "name": "Fortune on MIT NANDA's GenAI Divide report (18 Aug 2025)",
+   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
+   "what": "Reports that bought or partnered AI tools succeed about twice as often as internal builds. Read 26 Nov 2026."
+  },
+  {
+   "name": "ACORD, Data Standards (P&C XML and AL3)",
+   "url": "https://www.acord.org/standards-architecture/acord-data-standards",
+   "what": "Insurance standards body: XML and AL3 data standards for property and casualty, set through an open member process. Read 26 Nov 2026."
+  },
+  {
+   "name": "IA Magazine, Key findings from the 2026 Agency Universe Study (1 Oct 2026)",
+   "url": "https://www.iamagazine.com/2026/10/01/evolving-channel-key-findings-from-the-2026-agency-universe-study",
+   "what": "Big \"I\" magazine; repeats the study's headline figures, including 46% AI use. Read 26 Nov 2026."
+  }
+ ],
+ "related": [
+  "insurance",
+  "ai-claims-processing",
+  "ai-underwriting",
+  "ai-document-processing",
+  "account-reconciliation-automation",
+  "ai-post-merger-integration",
+  "holding-companies-roll-ups",
+  "ai-governance-consulting",
+  "sales-analytics",
+  "rpa-vs-agentic-automation"
+ ],
+ "answers": {
+  "human-role": "Your people keep every client-facing call: producers own coverage advice and binding, account managers approve policy checks, and the principal owns the AI policy.[^6][^7][^2]",
+  "ranked": "AI pays first in direct bill reconciliation and policy checking, then commercial submission intake, because each saves measured time or guards against errors and omissions (E&O) claims.[^3][^4][^5]",
+  "own-data": "All nine US-listed brokers we checked name AI in their latest annual reports (10-Ks), and two now say \"agentic\", up from none.[^8][^9][^11]",
+  "table-1": "Agencies buy AI built into Vertafore and Applied Epic, plus add-ons such as Patra and Canopy Connect, which lists $100 to $500 a month.[^10][^12][^13] Vertafore, Applied and Patra show no price on the pages we read.[^10][^12][^14]",
+  "table-2": "Most agencies are early: 46% use AI per the Big \"I\" 2026 release, but only 8% of agents say AI is embedded in daily work.[^1][^15]",
+  "table-3": "Larger best-practice agencies invest far more: 25% at $10M to $25M revenue, against 60% at $25M to $100M, in the 2025 Best Practices Study.[^4]",
+  "rules": "Producer licensing, data security and robocall rules bind agencies directly, while the NAIC AI bulletin binds the insurers you place business with.[^6][^16][^17][^18] None of this is legal advice.",
+  "what-goes-wrong": "AI goes wrong at agencies when it invents facts in submissions, loses its human check, leaks client data or calls clients without consent records.[^19][^20][^15][^17]",
+  "buy-or-build": "Buy for standard work inside your agency management system, and build only where your own process or carrier mix is the edge.[^21][^10]",
+  "something-else": "Pick something else when carrier feeds are the pain, steps never change, you need volume moved out, or your agency software already ships it.[^5][^2][^14][^10]"
+ },
+ "offer": {
+  "heading": "Which agency workflow should AI take first?",
+  "body": "Usually direct bill reconciliation or policy checking, then commercial submission intake. In a free 30-minute call we map that workflow for one team or office. You get it in writing, with no sales pitch: who signs off, one before-and-after measure and the AI policy points to set."
+ },
+ "keyword": {
+  "phrase": "ai for insurance agencies",
+  "searches": 170,
+  "cpc": 57.1,
+  "difficulty": 7
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Read as the COO of a 150-person agency. The last bottom-line bullet only said brokers mention AI, with no so-what; it now names the risks the filings share with any agency: wrong outputs, data leaks and E&O claims. Ranked jobs already name the team doing the work and one measure each, so they forward cleanly."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Tripped on 'direct bill', 'failure to procure', 'prefill' and 'ACORD'. Each is now defined where it first appears: direct bill as carrier commission statements to match, failure to procure as not getting the coverage asked for, prefill as carrier forms filled from data you hold, ACORD as the standards body."
+  },
+  {
+   "reader": "GM",
+   "notes": "Wanted to know whether one office can try it before the whole agency. The offer now maps the first workflow for one team or office. Revenue per employee by band is in the revenue table, which gives the margin context a GM looks for."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Read as head of commercial lines account management. Roles check out: producers keep advice and binding, account managers approve policy checks and endorsements. The 'nil claims history' case is now labelled as an E&O insurer's report, and the chatbot FAQ adds Big \"I\" advice to ask the state insurance department when unsure."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Found dated software prices from Canopy Connect, 'not published' labels for the rest, no consulting fees and time saved per person. The offer now says the result comes in writing with no sales pitch, which answers the slides-not-software worry."
+  }
+ ],
+ "updated": "2026-11-26",
+ "sourceCheck": {
+  "date": "2026-11-26",
+  "by": "source-check agent (separate from writer)",
+  "checked": 51,
+  "fixed": [
+   "Own data: Brown & Brown's 'agentic' hit is in exhibit 21, not the main 10-K; agentic count 3 of 9 -> 2 of 9 (stat, answer, row)",
+   "Own data: Ryan Specialty row no longer claims it is the only filing stating a live use (Marsh names LenAI)",
+   "Own data: Gallagher row says confidential information, not client data",
+   "Ivans: 98% re-key figure not in the report; replaced with 74% re-key as standard practice and 'most re-key AMS data'",
+   "Ivans prefill 51%: dropped Applied release as cite (no prefill figure there)",
+   "Agency Universe: fieldwork Mar-May is in the partner report, not the release; cell now cites both and says 1,376 responses",
+   "Liberty Mutual 14% is agents saying their agency implemented an AI tool, not agency-wide rollout; Safeco dropped from name",
+   "Reagan 7.5 hours: one agency's platform, staff saving; 'best-practice agencies treat AI' replaced by study's 'augment, not replace'",
+   "Big I AI Labs deck: 'authority creep' is fading review, not bots drifting into advice; it does not say review contracts before building; licensing claims recited to NAIC #218 and IA Magazine",
+   "Euclid is an E&O underwriter, not insurer; wording aligned",
+   "Amwins: AI exclusions proposed elsewhere in professional liability, not in agent E&O forms; FAQ and watch-out reworded",
+   "NAIC #668 brief: no 72-hour deadline or 'written' wording; rule text and note corrected; map says adopted, not in force",
+   "NAIC AI bulletin map dated 13 Nov 2026, not 14 Nov; 30 adopted",
+   "NY DFS: agents and brokers as covered entities now cited to the exemptions page, not the MFA page",
+   "Vertafore: page names AMS360 only (not Sagitta or QQCatalyst for these agents); no 'users approve each correction'",
+   "ChatGPT FAQ: source bans unapproved public tools; 'approved business version' removed",
+   "Tech Trends: survey dates not stated; cell says released 19 Feb 2026",
+   "ACORD note limited to what the page says",
+   "Source notes rewritten with each source's own figures and survey groups (flagged-figure check: 0 flagged)",
+   "Shortened one sentence over 25 words"
+  ]
+ }
+}
