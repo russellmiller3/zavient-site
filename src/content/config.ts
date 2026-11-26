@@ -86,33 +86,4 @@ const aiwork = defineCollection({
   }),
 });
 
-// One data story = one JSON file in src/content/data-stories: a finding, one chart, the method and the sources.
-// Each story also ships its chart as an embeddable SVG and its numbers as CSV, so other sites can cite and link it.
-const datastory = defineCollection({
-  loader: glob({ pattern: '**/*.json', base: './src/content/data-stories' }),
-  schema: z.object({
-    title: z.string().min(20).max(90),
-    description: z.string().min(50).max(160),
-    dek: z.string().min(40),
-    findings: z.array(z.string()).min(2),
-    chart: z.object({
-      title: z.string(), subtitle: z.string().default(''), unit: z.enum(['count', 'usd', 'percent']),
-      // 'bar' compares categories; 'line' shows one series over time (labels are YYYY-MM).
-      kind: z.enum(['bar', 'line']).default('bar'),
-      // Named first in the chart's credit line when the numbers come from someone else's data (CC BY needs it).
-      creditSource: z.string().optional(),
-      // true prints each bar's note (e.g. "28 ads") after its value on the chart itself, not only on hover.
-      showNotes: z.boolean().default(false),
-      // Header for the value column in the page's table view, e.g. "Employers" (mobile/ADHD audit, 26 Nov 2026).
-      valueLabel: z.string().default('Value'),
-      bars: z.array(z.object({ label: z.string(), value: z.number(), note: z.string().optional() })).min(3),
-    }),
-    // One line on what the finding means for a buyer, with a link to the guide that helps them act on it.
-    soWhat: z.object({ text: z.string().min(20), link: z.string().min(5), href: z.string().startsWith('/') }).optional(),
-    method: z.array(z.string()).min(2),
-    sources: z.array(link).min(1),
-    updated: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
-  }),
-});
-
-export const collections = { aiwork, datastory };
+export const collections = { aiwork };

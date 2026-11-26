@@ -5,7 +5,7 @@ import { join } from 'node:path';
 
 const root = new URL('..', import.meta.url).pathname;
 const links = [];
-for (const dir of ['ai-work', 'data-stories']) {
+for (const dir of ['ai-work']) {
   for (const f of readdirSync(join(root, 'src/content', dir)).filter((x) => x.endsWith('.json'))) {
     const d = JSON.parse(readFileSync(join(root, 'src/content', dir, f), 'utf8'));
     for (const l of [...(d.resources || []), ...(d.sources || [])]) links.push({ page: `${dir}/${f}`, url: l.url });

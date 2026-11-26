@@ -18,15 +18,9 @@ const guideOrder = {
   'ai-credit-scoring': { for: 'Head of lending, credit risk', blurb: 'Fair, explainable credit models and the rules that apply.' },
   'ai-underwriting': { for: 'Head of underwriting, lenders and insurers', blurb: 'AI does the reading; the underwriter keeps the call.' },
 };
-const storyBlurb = {
-  'claude-vs-chatgpt-in-ai-job-ads': 'Claude and OpenAI tie in 2,046 US AI job ads; more employers name Claude.',
-  'forward-deployed-engineer-rise': 'Engineers who build on site with the customer are as common as ML engineers.',
-  'ai-job-pay-by-title': 'Median posted pay for 9 AI job titles, from 1,038 ads.',
-};
 const all = await getCollection('aiwork');
 const keys = Object.keys(guideOrder);
 const pages = [...all.filter((p) => keys.includes(p.id)).sort((a, b) => keys.indexOf(a.id) - keys.indexOf(b.id)), ...all.filter((p) => !keys.includes(p.id))];
-const stories = (await getCollection('datastory')).sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 <Base title="AI at work, job by job | Zavient" description="Where AI helps your team, how to benchmark it before you buy, and when to buy or build. One page per job." noindex>
   <header class="article-hero"><div class="wrap">
@@ -49,9 +43,6 @@ const stories = (await getCollection('datastory')).sort((a, b) => a.data.title.l
       const g = guideOrder[p.id];
       return <a class="hub-card" href={urlFor(p.data, p.id)}><span class="hub-tag">Guide</span><h3>{p.data.title}</h3><p>{g ? g.blurb : p.data.description}</p>{g && <p class="hub-for">For: {g.for}</p>}</a>;
     })}</div>
-    <h2>Data stories</h2>
-    <p>What AI talent costs, and which tools employers ask for, from 2,046 US job ads. Free to republish with a link back.</p>
-    <div class="hub-grid">{stories.map((s) => <a class="hub-card" href={`/data/${s.id}.html`}><span class="hub-tag">Data</span><h3>{s.data.title}</h3><p>{storyBlurb[s.id] || s.data.description}</p></a>)}</div>
   </div></article>
   <ConsultingCta job="AI in your work" />
 </Base>

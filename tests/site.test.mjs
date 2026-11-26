@@ -43,24 +43,6 @@ test('every AI-work page is built with the offer and at least one source link', 
   }
 });
 
-test('every data story has its chart, embed code, CSV and SVG, and they match the data', () => {
-  for (const s of slugs('data-stories')) {
-    const data = JSON.parse(readFileSync(join(root, 'src/content/data-stories', `${s}.json`), 'utf8'));
-    const html = readFileSync(join(dist, 'data', `${s}.html`), 'utf8');
-    assert.match(html, /<svg[^>]*role="img"/, `${s}: chart missing`);
-    assert.ok(html.includes(`https://zavient.com/data/${s}.svg`), `${s}: embed code missing`);
-    assert.match(html, /data-cta="consulting"/, `${s}: offer block missing`);
-    const svg = readFileSync(join(dist, 'data', `${s}.svg`), 'utf8');
-    assert.ok(svg.includes(`zavient.com/data/${s}.html`), `${s}: SVG credit link missing`);
-    // Borrowed data (Indeed's is CC BY 4.0) must be credited on the chart itself, which travels without the page.
-    if (data.chart.creditSource) assert.ok(svg.includes(data.chart.creditSource.replace(/&/g, '&amp;')), `${s}: SVG lacks credit to ${data.chart.creditSource}`);
-    for (const b of data.chart.bars) assert.ok(svg.includes(b.label.replace(/&/g, '&amp;')), `${s}: SVG missing bar ${b.label}`);
-    const csv = readFileSync(join(dist, 'data', `${s}.csv`), 'utf8').trim().split('\n');
-    assert.equal(csv.length - 1, data.chart.bars.length, `${s}: CSV row count differs from chart`);
-    data.chart.bars.forEach((b, i) => assert.ok(csv[i + 1].includes(`"${b.value}"`), `${s}: CSV value differs for ${b.label}`));
-  }
-});
-
 test('every internal link on every built page points to a file that exists', () => {
   // Protects: menu and page links work on Vercel, which serves a page only at its exact file path (/data.html,
   // never /data). Fails if a link drops its .html or names a page that was never built (25 Nov 2026: the menu's
@@ -77,21 +59,6 @@ test('every internal link on every built page points to a file that exists', () 
     }
   }
   assert.deepEqual([...new Set(broken)], [], 'internal links to missing files');
-});
-
-test('the schema refuses a data story with no sources', () => {
-  const tmp = mkdtempSync(join(tmpdir(), 'zavient-schema-'));
-  try {
-    for (const p of ['src', 'public', 'astro.config.mjs', 'package.json']) cpSync(join(root, p), join(tmp, p), { recursive: true });
-    symlinkSync(join(root, 'node_modules'), join(tmp, 'node_modules'));
-    const good = JSON.parse(readFileSync(join(root, 'src/content/data-stories', `${slugs('data-stories')[0]}.json`), 'utf8'));
-    writeFileSync(join(tmp, 'src/content/data-stories/zz-bad.json'), JSON.stringify({ ...good, sources: [] }));
-    const r = spawnSync('npx', ['astro', 'sync'], { cwd: tmp, encoding: 'utf8' });
-    assert.notEqual(r.status, 0, 'astro sync accepted a story with no sources');
-    assert.match(r.stdout + r.stderr, /sources/i);
-  } finally {
-    rmSync(tmp, { recursive: true, force: true });
-  }
 });
 
 test('the schema refuses an indexed AI-work page with no verdict', () => {
@@ -163,28 +130,14 @@ test('every indexed AI-work page passes the ADHD-friendly readability check', as
   }
 });
 
-test('the home, About, hub, data story and readiness pages pass the same readability check', async () => {
+test('the home, About, hub and readiness pages pass the same readability check', async () => {
   // Mobile/ADHD audit (26 Nov 2026): the hand-built pages were never checked. Sentences of 25 words or fewer and
   // 3 sentences or fewer per paragraph or list item, read from the built HTML.
   const { checkHtml, HTML_PAGES } = await import('../scripts/check-readability.mjs');
-  const pages = [...HTML_PAGES, ...slugs('data-stories').map((s) => `data/${s}.html`)];
+  const pages = [...HTML_PAGES];
   for (const page of pages) {
     const problems = checkHtml(readFileSync(join(dist, page), 'utf8'));
     assert.equal(problems.length, 0, `${page}: hard to scan:\n  ${problems.join('\n  ')}`);
-  }
-});
-
-test('every data story footnotes its findings and says what they mean for the reader', () => {
-  // Rule: every market number footnoted. "[^n]" in a finding links to source n.
-  for (const s of slugs('data-stories')) {
-    const data = JSON.parse(readFileSync(join(root, 'src/content/data-stories', `${s}.json`), 'utf8'));
-    const marks = [...JSON.stringify(data).matchAll(/\[\^(\d+)\]/g)].map((m) => Number(m[1]));
-    for (const m of marks) assert.ok(m >= 1 && m <= data.sources.length, `${s}: footnote [^${m}] has no source`);
-    for (const f of data.findings) if (/\d/.test(f)) assert.match(f, /\[\^\d+\]/, `${s}: finding with a number has no footnote: "${f.slice(0, 60)}"`);
-    assert.ok(data.soWhat, `${s}: no "What this means for you" line`);
-    const html = readFileSync(join(dist, 'data', `${s}.html`), 'utf8');
-    assert.match(html, /id="fn-1"/, `${s}: numbered sources missing`);
-    assert.ok(html.indexOf('How we counted') < html.indexOf('Use this chart'), `${s}: embed code sits above the method`);
   }
 });
 
