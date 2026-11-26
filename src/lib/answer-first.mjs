@@ -65,7 +65,8 @@ export function pageQuestions(d) {
     if (q) out.push({ where: id, q, a: A[id] || OPENS_WITH_PARAGRAPH[id]?.(d) || '' });
     if (id === 'faq') (d.faq || []).forEach((x, i) => out.push({ where: `faq ${i + 1}`, q: x.q, a: x.a }));
   }
-  if (d.offer?.heading) out.push({ where: 'offer', q: d.offer.heading, a: A.offer || d.offer.body || '' });
+  // The offer box renders offer.body as plain text and ignores answers.offer, so only offer.body counts here.
+  if (d.offer?.heading) out.push({ where: 'offer', q: d.offer.heading, a: d.offer.body || '' });
   return out.filter((x) => String(x.q).trim().endsWith('?'));
 }
 export function pageAnswerProblems(d) {

@@ -5,7 +5,7 @@
  "templateVersion": 1,
  "topic": "AI document processing",
  "job": "document processing",
- "summary": "Document AI reads a PDF or scan and returns named fields, like the total and the due date, while OCR (text recognition) returns only raw text[^3][^4][^2]. Document AI knows which number is which[^2][^3]. Start with the document your team re-keys most: reading costs cents, and staff time is the real cost[^5][^1].",
+ "summary": "Document AI reads a PDF or scan and returns named fields, like the total and due date[^3][^4]. OCR (text recognition) returns only raw text[^2][^3]. Start with the document your team re-keys most: reading costs cents, and staff time is the real cost[^5][^1].",
  "humanRole": [
   "Reviewer, someone who knows the documents: settles every fact the two models disagree on.[^5] The reviewer can override any AI value.[^17][^23]",
   "Team lead: sets the error rate the team will accept and signs off before go-live. NIST says people, not the tool, should set those limits.[^23]",
@@ -88,7 +88,7 @@
  ],
  "ownData": {
   "title": "Which AI made the fewest mistakes on 30 fund reports?",
-  "intro": "GPT-6.2 Sol (OpenAI) and Gemini 4 Hydrogen (Google) made the fewest mistakes, zero each, on FinExtractBench, our own test of 30 public private-fund reports, 781 pages in all[^5]. We wrote every right answer by hand and locked it before any tool ran[^5]. Each tool read each raw PDF once; a mistake is a wrong value or a value the report never states.",
+  "intro": "GPT-6.2 Sol (OpenAI) and Gemini 4 Hydrogen (Google) made zero mistakes each on FinExtractBench, our own test of 30 public private-fund reports[^5]. The reports run 781 pages, and we wrote and locked every right answer by hand before any tool ran[^5]. Each tool read each raw PDF once; a mistake is a wrong value or a value the report never states.",
   "headers": [
    "Tool",
    "Mistakes",
@@ -307,11 +307,11 @@
  "faq": [
   {
    "q": "What is the difference between OCR and AI document processing?",
-   "a": "OCR turns a page into raw text.[^2][^3] Document AI also knows which number is which, like the total or the due date.[^3][^4] Use OCR alone when you only need searchable text.[^2]"
+   "a": "OCR turns a page into raw text, while document AI also knows which number is which, like the total or the due date.[^2][^3][^4] Use OCR alone when you only need searchable text.[^2]"
   },
   {
    "q": "How accurate is AI document processing?",
-   "a": "It depends on your documents, so test on your own.[^23][^14] On our 30 fund reports, the two best models made no mistakes.[^5] Zero in 30 still allows a true rate of up to about 1 in 10.[^13]"
+   "a": "AI document processing is very accurate on clean files: on our 30 fund reports, the two best models made no mistakes.[^5] Accuracy still depends on your documents, so test on your own.[^23][^14] Zero in 30 still allows a true rate of up to about 1 in 10.[^13]"
   },
   {
    "q": "Can AI read scanned documents?",
@@ -319,11 +319,11 @@
   },
   {
    "q": "Is it safe to send company documents to an AI model?",
-   "a": "Read the vendor's business terms first. OpenAI and Anthropic say they do not train on business or API data by default.[^30][^31] OpenAI may keep API data up to 30 days to spot abuse, unless you qualify for zero retention.[^30]"
+   "a": "Only under business or API terms you have read: OpenAI and Anthropic say they do not train on that data by default.[^30][^31] OpenAI may keep API data up to 30 days to spot abuse, unless you qualify for zero retention.[^30]"
   },
   {
    "q": "Will AI document processing replace data entry staff?",
-   "a": "It changes the job more than it removes it. Among US firms using AI, 66% use it only to help staff, and AI-related employment fell in 2%.[^25] BLS still projects data entry keyer jobs to fall 25.5% by 2035.[^32]"
+   "a": "Not entirely: AI changes the job from typing to checking, though fewer keying jobs are projected.[^26][^32] Among US firms using AI, 66% use it only to help staff, and AI-related employment fell in 2%.[^25] BLS still projects data entry keyer jobs to fall 25.5% by 2035.[^32]"
   }
  ],
  "resources": [
@@ -573,6 +573,8 @@
   "benchmark": "Lock the right answers for 50 of your own files first, run each tool on them, make every answer quote its page, and count wrong values apart from blanks[^14][^11].",
   "what-goes-wrong": "Not on their own: most vendor accuracy numbers come from the vendor's own benchmark runs, so test on your own files[^14]. Public answer keys have errors too[^12].",
   "buy-or-build": "Buy a prebuilt parser for standard invoices, receipts or IDs, and build on frontier models when your files are unique and a wrong number is expensive[^2][^4][^5].",
-  "something-else": "Pick something other than a frontier model when you read thousands of standard invoices a day, when files cannot leave your network, or when searchable text is enough[^2][^4][^5][^3]. Use a prebuilt cloud parser, a local open-source model or plain OCR, respectively[^2][^5][^3]."
+  "something-else": "Pick something other than a frontier model when you read thousands of standard invoices a day, when files cannot leave your network, or when searchable text is enough[^2][^4][^5][^3]. Use a prebuilt cloud parser, a local open-source model or plain OCR, respectively[^2][^5][^3].",
+  "human-role": "Your team keeps three calls: a reviewer settles facts the models disagree on, a team lead sets the acceptable error rate, and a separate approver releases the facts[^5][^23][^24]. Any reviewer can override any AI value[^17][^23].",
+  "team-after": "After AI reads the documents, your team checks instead of typing and settles the facts the two models disagree on, about 1 in 4 in our test[^26][^5]. Staff also get time back for harder cases, about 2.2 hours a week for generative AI users[^28]."
  }
 }

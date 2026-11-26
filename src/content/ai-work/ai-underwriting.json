@@ -360,27 +360,27 @@
  "faq": [
   {
    "q": "What is AI underwriting?",
-   "a": "AI reads the file and pulls out each fact with its page and quote.[^12][^21] It can draft a risk score with its reasons for the underwriter to review.[^34] The underwriter still decides.[^34][^2]"
+   "a": "AI underwriting is software that reads the file and pulls out each fact with its page and quote.[^12][^21] It can draft a risk score with its reasons for the underwriter to review.[^34] The underwriter still decides.[^34][^2]"
   },
   {
    "q": "Can AI approve or decline an application on its own?",
-   "a": "For simple consumer loans, underwriting may be fully automated, BLS says.[^35] Either way, the lender still owes specific reasons for a decline.[^4] Insurers must hold vendor AI to the legal standards they meet themselves.[^38]"
+   "a": "Only for simple consumer loans, where BLS says underwriting may be fully automated.[^35] Either way, the lender still owes specific reasons for a decline.[^4] Insurers must hold vendor AI to the legal standards they meet themselves.[^38]"
   },
   {
    "q": "Will AI take underwriters' jobs?",
-   "a": "BLS projects insurance underwriter jobs to fall 4% from 2025 to 2035, citing automated underwriting software.[^34] It still expects about 6,800 openings a year.[^34] Among US firms using AI, 66% use it only to help staff; 2% saw AI-related employment fall.[^36]"
+   "a": "Not most of them: BLS projects insurance underwriter jobs to fall 4% from 2025 to 2035, citing automated underwriting software.[^34] It still expects about 6,800 openings a year.[^34] Among US firms using AI, 66% use it only to help staff; 2% saw AI-related employment fall.[^36]"
   },
   {
    "q": "Do you have to explain a loan decline made with AI?",
-   "a": "Yes. Reg B requires specific reasons, and for a scoring model they must be the factors it scored.[^4][^16] The CFPB withdrew its 2022 circular on AI declines in May 2025, but the rule itself still applies.[^41][^4]"
+   "a": "Yes: Reg B requires specific reasons, and for a scoring model they must be the factors it scored.[^4][^16] The CFPB withdrew its 2022 circular on AI declines in May 2025, but the rule itself still applies.[^41][^4]"
   },
   {
    "q": "How accurate is AI at reading underwriting files?",
-   "a": "On clean documents, very: the best model in a Fraunhofer study got 96.5% of invoice fields right.[^42] Scans are harder: 87.5% on scanned receipts.[^42] In our own test, two models made zero mistakes on 30 long fund reports.[^12]"
+   "a": "AI is very accurate at reading clean documents: the best model in a Fraunhofer study got 96.5% of invoice fields right.[^42] Scans are harder: 87.5% on scanned receipts.[^42] In our own test, two models made zero mistakes on 30 long fund reports.[^12]"
   },
   {
    "q": "What does AI underwriting software cost?",
-   "a": "None of the 19 products we checked publishes a price.[^23][^29] Reading a long report cost under 1 cent to about 30 cents in our test.[^12] Budget from a quote scoped to one line, after a test on 50 of your files.[^20]"
+   "a": "No list price: none of the 19 products we checked publishes one.[^23][^29] Reading a long report cost under 1 cent to about 30 cents in our test.[^12] Budget from a quote scoped to one line, after a test on 50 of your files.[^20]"
   }
  ],
  "resources": [
@@ -664,6 +664,9 @@
   "rules": "Examiners and regulators will ask for specific decline reasons that match the factors scored, tests for unfair discrimination, vendor oversight and a written AI program with governance[^4][^16][^2][^3][^31]. In the EU, they will also ask for logs and human oversight from 2 Dec 2027[^32][^33][^10].",
   "benchmark": "Lock an underwriter-written answer key on 50 past files, run each tool on the same files, and count wrong facts, cost and time per file[^12]. Time the same files done by hand first, so you have a before number.",
   "what-goes-wrong": "AI underwriting goes wrong when models carry past bias, report high confidence on wrong answers, take the wrong look-alike table, or arrive with vendor speed claims you never tested[^2][^15][^12][^23]. You also stay responsible for any vendor's model[^2][^31].",
-  "something-else": "Start somewhere else for consumer lending where the score is the product, life and health underwriting, or pricing questions[^29][^17][^24]. Those point to the AI credit scoring guide, a rules engine such as Swiss Re MagnumXP, or a pricing platform such as Akur8[^29][^17][^24]."
+  "something-else": "Start somewhere else for consumer lending where the score is the product, life and health underwriting, or pricing questions[^29][^17][^24]. Those point to the AI credit scoring guide, a rules engine such as Swiss Re MagnumXP, or a pricing platform such as Akur8[^29][^17][^24].",
+  "human-role": "Your team keeps every underwriting decision: the underwriter offers, declines or prices, the credit officer owns each decline's reasons, and an independent reviewer challenges the model first[^34][^4][^40]. The head of underwriting sits on the AI committee[^38].",
+  "team-after": "After AI does the reading, your team works the referred and complex files, chases what the file lacks, and tests for unfair outcomes on a schedule[^18][^34][^2][^15]. Underwriters also get back admin time, now 39% to 43% of their week[^1][^7].",
+  "buy-or-build": "Buy when your line is standard and the vendor already reads your submission formats[^22]; build when your own loss history is your edge, because the reading layer is swappable[^12]."
  }
 }

@@ -21,7 +21,7 @@
   "rules": "What will your auditor expect?",
   "buy-or-build": "Should you buy a close platform or use what you have?"
  },
- "summary": "In a reconciliation, AI suggests matches between your ledger and records such as a bank statement, with a confidence level, and leaves the unsure ones for a person[^3][^4]. Reconciliation itself compares two sets of records and explains each difference[^1]; AI can also suggest a reason for each exception[^6]. Controls make or break it: late reconciliation review already shows up in material weakness reports[^8].",
+ "summary": "In a reconciliation, AI matches your ledger against records like a bank statement, scores each match, and leaves unsure ones for a person[^3][^4]. Each difference must be explained[^1], and AI can suggest a reason[^6]. Controls make or break it: late reconciliation review already shows up in material weakness reports[^8].",
  "humanRole": [
   "A staff accountant prepares each reconciliation and a different person reviews it, and both sign every month[^2][^1]. The reviewer checks the support behind it, not just the final balance[^2][^1].",
   "The controller approves reconciliations on time. The SEC has cited late review as a control deficiency, and public companies report it as a material weakness, a serious control gap[^7][^8].",
@@ -196,7 +196,7 @@
  "tables": [
   {
    "title": "What do close studies say about automating reconciliations?",
-   "intro": "Close studies link automated reconciliations to a faster close, 57% closing within six business days against 27% without, but most teams see only modest AI impact at first[^17][^19]. The median firm takes 6 days to produce monthly statements[^16]. The sponsored study is marked, so read it as directional.",
+   "intro": "Close studies link automated reconciliations to a faster close: 57% close within six business days, against 27% without[^17][^19]. Most teams see only modest AI impact at first[^17][^19], and the median firm takes 6 days to produce monthly statements[^16]. The sponsored study is marked, so read it as directional.",
    "headers": [
     "Study",
     "Who was asked",
