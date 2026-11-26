@@ -69,6 +69,18 @@ const h = headingFor(d, id);
 {id === 'tool' && d.tool && (<>
   <h2 id="tool">{h}</h2>
   <div class="tool-frame"><iframe src={d.tool.embed} title={d.title} loading="lazy"></iframe></div>
+  <script is:inline>
+    // Grow each same-origin tool frame to its content, so the tool never scrolls inside a fixed box on a phone.
+    document.querySelectorAll('.tool-frame iframe').forEach(function (f) {
+      function fit() {
+        try { var d = f.contentDocument; if (d && d.body) f.style.height = Math.max(480, d.documentElement.scrollHeight) + 'px'; } catch (e) {}
+      }
+      f.addEventListener('load', function () {
+        fit();
+        try { new ResizeObserver(fit).observe(f.contentDocument.body); } catch (e) { setInterval(fit, 1000); }
+      });
+    });
+  </script>
   <p class="table-note"><a href={d.tool.embed}>Open the tool full screen</a></p>
   <ol>{d.tool.steps.map((s) => <li><Fn s={s} /></li>)}</ol>
   <h3>How it works</h3>
