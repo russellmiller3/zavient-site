@@ -81,6 +81,8 @@ p { max-width: 66ch; }
 .field { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; font-size: 17px; color: var(--ink-soft); }
 .field input { min-height: 44px; font: 500 16px var(--mono); padding: 8px 10px; border-radius: 2px; border: 1.5px solid var(--line-strong); background: var(--paper); color: var(--ink); }
 .field input[type=number] { width: 110px; }
+.field .iu { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
+.nw { white-space: nowrap; }
 .field input[type=text] { width: min(100%, 320px); font-family: var(--sans); font-weight: 600; }
 
 /* Result */
@@ -145,6 +147,7 @@ details.card[open] > summary h3::after { content: " \2212"; }
 sup.fn { font-size: 0.62em; line-height: 0; margin-left: 1px; font-family: var(--mono); }
 sup.fn a { color: var(--blue); text-decoration: none; font-weight: 600; }
 sup.fn + sup.fn { margin-left: 3px; }
+sup.fn .fn-sep { font-family: var(--sans); color: var(--muted); margin: 0 2px 0 0; }
 .srcs ol { margin-left: 24px; display: flex; flex-direction: column; gap: 6px; font-size: 16px; line-height: 1.45; color: var(--ink-soft); }
 .srcs li { overflow-wrap: anywhere; scroll-margin-top: 16px; }
 .srcs li:target { background: var(--blue-wash); }
@@ -434,7 +437,7 @@ const RM = (() => {
     if (P1) {
       ph2.push({ t: `Train the ${P1.teamShort} pilot group (about ${S.pilotN} people, or the whole team if smaller) for at least 5 hours on their own work`, who: "Champions", when: `Days ${31 + o}-${35 + o}`, day: 35 + o, link: "training", src: ["bcgwork"] });
       ph2.push({ t: `Go live with ${P(P1)} for the pilot group`, who: P1.owner, when: `About day ${P1.startDay}`, day: P1.startDay, zm: "A pilot of 10 to 15 people or one team" });
-      ph2.push({ t: "Check the share of the group using it, minutes per task, and errors caught in review", who: P1.owner, when: "Every week", day: 60 + o, src: ["mck25"] });
+      ph2.push({ t: "Check the share of the group using it, minutes per task, and errors caught in review", who: P1.owner, when: "Every week", every: true, day: P1.startDay + 7, src: ["mck25"] });
       if (two && P2) ph2.push({ t: `Start the ${P(P2)} pilot, after its group's training`, who: P2.owner, when: `About day ${P2.startDay}`, day: P2.startDay, link: "training" });
     }
     const ph3 = [];
@@ -455,6 +458,7 @@ const RM = (() => {
     if (P3) ph5.push({ t: `Gate on ${P(P3)}: scale, fix or stop`, who: `Sponsor and ${P3.owner}`, when: P3.gate, day: P3.gateDay, gate: true });
     if (projects.some((x) => x.review.tier === "medium")) ph5.push({ t: `Cut checking to a ${S.sample}% sample only where review errors stayed under ${S.errTh}% for ${S.errWeeks} weeks in a row`, who: "Each project owner", when: "From month 7", day: 200, zm: "Error threshold" });
     ph5.push({ t: `Year review: measures against baseline, where saved hours went, budget against plan, and the year-two list${onDeck ? `, starting with ${onDeck.sn}` : ""}`, who: "Sponsor and project owners", when: "Month 12", day: 365, src: ["mck25"] });
+    for (const ph of [ph1, ph2, ph3, ph4, ph5]) ph.sort((x, y) => x.day - y.day);
     const phases = [
       { label: `${L[0]}: Set the ground`, tasks: ph1, check: `Day ${30 + o}: owner named${needPolicy ? ", policy signed" : ""}${needTool ? ", tool approved" : ""}, baselines in hand.` },
       { label: `${L[1]}: Pilot Project 1`, tasks: ph2, check: `Day ${60 + o}: pilot readout against the baseline.` },
@@ -505,7 +509,7 @@ const RM = (() => {
 
   // Plain-text plan for "Copy plan".
   function text(plan, dateOf) {
-    const d = (n) => dateOf ? ` (${dateOf(n)})` : "";
+    const d = (t) => dateOf ? ` (${t.every ? "from " : ""}${dateOf(t.day)})` : "";
     const L = [];
     L.push("COMPANY AI PLAN (built with the Zavient AI roadmap builder)");
     L.push(plan.header);
@@ -522,7 +526,7 @@ const RM = (() => {
     if (plan.onDeck) L.push(`On deck for year two: ${plan.onDeck.u.n}.`);
     plan.phases.forEach((p) => {
       L.push(""); L.push(p.label.toUpperCase());
-      p.tasks.forEach((t) => L.push(`- ${t.when}${d(t.day)}: ${t.t}. Owner: ${t.who}.`));
+      p.tasks.forEach((t) => L.push(`- ${t.when}${d(t)}: ${t.t}. Owner: ${t.who}.`));
       L.push(`Checkpoint: ${p.check}`);
     });
     L.push(""); L.push("Gate rule:"); L.push(`- ${plan.gates.scale}`); L.push(`- ${plan.gates.fix}`); L.push(`- ${plan.gates.stop}`);
@@ -551,16 +555,34 @@ const LINK = {
 const app = document.getElementById("app");
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-const fns = (keys) => { const links = (keys || []).map((k) => { const i = RM.SRC_ORDER.indexOf(k) + 1; return i ? `<a href="#fn-${i}" data-fn="${i}" aria-label="Source ${i}">${i}</a>` : ""; }).filter(Boolean); return links.length ? `<sup class="fn">${links.join(",")}</sup>` : ""; };
+const fns = (keys) => { const links = (keys || []).map((k) => { const i = RM.SRC_ORDER.indexOf(k) + 1; return i ? `<a href="#fn-${i}" data-fn="${i}" aria-label="Source ${i}">${i}</a>` : ""; }).filter(Boolean); return links.length ? `<sup class="fn">${links.join("<span class=\"fn-sep\">,</span>")}</sup>` : ""; };
 const ZM = (why) => ` <span class="tag" title="${esc(why || "Zavient judgment built on the cited sources")}">Zavient method</span>`;
 
 function nextMonday() { const d = new Date(); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() + ((8 - d.getDay()) % 7 || 7)); return d; }
 const iso = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+function dayDate(n) {
+  const p = (st.S.start || "").split("-").map(Number); if (p.length !== 3 || p.some(isNaN)) return null;
+  return new Date(p[0], p[1] - 1, p[2] + n - 1);
+}
 function dateOf(n) {
-  const p = (st.S.start || "").split("-").map(Number); if (p.length !== 3 || p.some(isNaN)) return "";
-  const d = new Date(p[0], p[1] - 1, p[2] + n - 1);
+  const d = dayDate(n); if (!d) return "";
   return d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
 }
+// Deadlines fall on business days: a task due on a Saturday or Sunday moves to the next Monday. A label that no
+// longer matches its date says "about"; a range keeps its exact end day.
+function onBusinessDay(t) {
+  const d = dayDate(t.day); if (!d) return t;
+  const shift = d.getDay() === 6 ? 2 : d.getDay() === 0 ? 1 : 0; if (!shift) return t;
+  const day = t.day + shift; let when = t.when, m;
+  if ((m = when.match(/^Days (\d+)-\d+$/))) when = `Days ${m[1]}-${day}`;
+  else if ((m = when.match(/^(By )?[Dd]ay (\d+)$/))) when = `${m[1] ? "By about" : "About"} day ${m[2]}`;
+  else if (when === "Week 1") when = `By about day ${t.day}`;
+  return { ...t, day, when };
+}
+const datedTasks = (tasks) => tasks.map(onBusinessDay).map((t, i) => [t, i]).sort((x, y) => x[0].day - y[0].day || x[1] - y[1]).map((x) => x[0]);
+const datedPlan = (P) => ({ ...P, phases: P.phases.map((ph) => ({ ...ph, tasks: datedTasks(ph.tasks) })) });
+// Keep hyphenated phrases ("follow-up", "4-6") whole in the headline.
+const noBreak = (s) => esc(s).replace(/\S+-\S+/g, (w) => `<span class="nw">${w}</span>`);
 
 const blankA = () => ({ industry: null, size: null, headcount: null, teams: [], current: null, policy: null, data: null, risk: null, budget: null, owner: null, stage: null });
 let st = { step: "intro", i: 0, a: blankA(), S: { start: iso(nextMonday()), useTh: 60, errTh: 2, pilotN: 12, names: {} } };
@@ -680,7 +702,7 @@ function renderResult() {
   app.innerHTML = `
   <section class="card bluf" id="result-top" tabindex="-1">
     <div class="eyebrow">Your plan</div>
-    <p class="lead">${esc(P.header)}</p>
+    <p class="lead">${noBreak(P.header)}</p>
     ${a.owner === "no" ? `<p><strong>First: name one executive owner this week.</strong></p>` : ""}
     <div class="facts">
       <div class="fact"><div class="k">Sponsor</div><div class="v">${esc(P.sponsor)}</div></div>
@@ -712,8 +734,8 @@ function renderResult() {
   <section class="card">
     <h2>Your dated plan</h2>
     <label class="field no-print">Start date <input type="date" id="start" value="${esc(st.S.start)}"></label>
-    ${P.phases.map((ph) => `<div class="phase"><h3>${esc(ph.label)}</h3>
-      <ul class="tasks">${ph.tasks.map((t) => `<li><span class="when">${esc(t.when)}<span>${esc(dateOf(t.day))}</span></span>
+    ${datedPlan(P).phases.map((ph) => `<div class="phase"><h3>${esc(ph.label)}</h3>
+      <ul class="tasks">${ph.tasks.map((t) => `<li><span class="when">${esc(t.when)}<span>${t.every ? "from " : ""}${esc(dateOf(t.day))}</span></span>
         <span><span class="${t.gate ? "gate" : ""}">${esc(t.t)}.</span>${t.src ? fns(t.src) : ""}${t.zm ? ZM(t.zm) : ""} <span class="who">Owner: ${esc(t.who)}</span>${taskLink(t)}</span></li>`).join("")}</ul>
       <p class="check">Checkpoint: ${esc(ph.check)}</p></div>`).join("")}
     <p class="muted">A typical AI use case pays back over 2 to 4 years, in a survey of firms in Europe and the Middle East.${fns(["deloitte"])} Productivity often dips before it rises.${fns(["censusj", "aea"])} So judge year one on use, time per task, errors and cycle time.</p>
@@ -739,11 +761,11 @@ function renderResult() {
   <section class="card settings no-print">
     <h2>Adjust the plan to your firm</h2>
     <p class="muted">These are Zavient method defaults. Change any of them and the plan updates.</p>
-    <label class="field">Pilot group size <input type="number" id="s-pilot" min="3" max="60" value="${st.S.pilotN}"> people</label>
+    <label class="field">Pilot group size <span class="iu"><input type="number" id="s-pilot" min="3" max="60" value="${st.S.pilotN}"> people</span></label>
     <p class="why">Default 12: one team, or 10 to 15 people, big enough to see a pattern in 4 weeks.</p>
-    <label class="field">Weekly use needed to scale <input type="number" id="s-use" min="10" max="100" value="${st.S.useTh}"> %</label>
+    <label class="field">Weekly use needed to scale <span class="iu"><input type="number" id="s-use" min="10" max="100" value="${st.S.useTh}"> %</span></label>
     <p class="why">Default 60%: above the 51% of frontline staff who use gen AI regularly today.${fns(["bcgwork"])}</p>
-    <label class="field">Review error rate before you sample <input type="number" id="s-err" min="0" max="20" step="0.5" value="${st.S.errTh}"> %</label>
+    <label class="field">Review error rate before you sample <span class="iu"><input type="number" id="s-err" min="0" max="20" step="0.5" value="${st.S.errTh}"> %</span></label>
     <p class="why">Default 2% for 4 weeks in a row before checking drops to a 20% sample. Work that decides on people is always checked.${fns(["mck25n", "dellacqua"])}</p>
   </section>
 
@@ -764,7 +786,7 @@ function renderResult() {
   </div>`;
 
   const fresh = () => RM.build(st.a, st.S);
-  $("copy").onclick = () => copyText(RM.text(fresh(), dateOf), "Plan copied. Paste it into an email or doc for your team.");
+  $("copy").onclick = () => copyText(RM.text(datedPlan(fresh()), dateOf), "Plan copied. Paste it into an email or doc for your team.");
   $("print").onclick = () => window.print();
   const link = location.href.split("#")[0] + toHash();
   try { history.replaceState(null, "", toHash()); } catch (e) {}

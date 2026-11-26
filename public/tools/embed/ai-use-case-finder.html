@@ -123,7 +123,7 @@ summary { cursor: pointer; min-height: 44px; display: flex; align-items: center;
 .method li { margin: 0 0 8px 18px; }
 sup.fn { font-family: var(--mono); font-size: 11px; line-height: 0; margin-left: 1px; }
 sup.fn a { text-decoration: none; padding: 0 1px; }
-sup.fn .fn-sep { color: var(--muted); margin-right: 1px; }
+sup.fn .fn-sep { font-family: var(--sans); color: var(--muted); margin: 0 1px 0 -1px; }
 #fn-list { font-size: 15px; line-height: 1.45; color: var(--ink-soft); margin-left: 22px; }
 #fn-list li { margin-bottom: 6px; overflow-wrap: anywhere; }
 #fn-list li:target { background: var(--mid-wash); }
@@ -264,7 +264,7 @@ function regLine(x) {
   const u = x.u;
   const named = u.rsrc.some((s) => REG.includes(s));
   if (u.risk === "high") return `<p class="note bad"><b>${named ? "High risk: regulators have named this use." : "High risk: wrong output can harm people or bring regulator findings."}</b> ${esc(u.rwhy)}${fn(u.rsrc)}${x.held ? " Not ranked first because the risk is high." : ""}</p>`;
-  if (named) return `<p class="note warn"><b>Regulator guidance applies.</b> ${esc(u.rwhy)}${fn(u.rsrc)}</p>`;
+  if (named) return `<p class="note warn"><b>Regulators have issued guidance on this use.</b> ${esc(u.rwhy)}${fn(u.rsrc)}</p>`;
   return "";
 }
 function card(x, k, top) {

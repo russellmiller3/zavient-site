@@ -124,6 +124,7 @@ p { max-width: 68ch; }
 .policy .branch { border-left: 3px solid var(--blue); padding-left: 10px; }
 .policy mark.ph { background: #FFF4C2; color: var(--ink); padding: 0 2px; }
 .policy sup { font-family: var(--mono); font-size: 12px; color: var(--blue); }
+.policy sup .fn-sep { font-family: var(--sans); }
 .policy table { border-collapse: collapse; width: 100%; margin: 6px 0 12px; font-size: 16px; }
 .policy th, .policy td { border: 1px solid var(--line-strong); padding: 6px 8px; text-align: left; vertical-align: top; overflow-wrap: normal; word-break: normal; hyphens: manual; }
 .policy th { background: var(--paper-alt); font-family: var(--sans); font-size: 15px; }
@@ -175,7 +176,7 @@ details > summary { cursor: pointer; min-height: 44px; display: flex; align-item
 .method li::before { content: ''; position: absolute; left: 4px; top: 12px; width: 7px; height: 7px; background: var(--blue); }
 sup.fn { font-size: 0.62em; line-height: 0; margin-left: 1px; font-family: var(--mono); }
 sup.fn a { color: var(--blue); text-decoration: none; font-weight: 600; }
-sup.fn .fn-sep { color: var(--muted); margin-right: 2px; }
+sup.fn .fn-sep { font-family: var(--sans); color: var(--muted); margin: 0 2px 0 0; }
 .sources ol { margin: 8px 0 0 26px; display: flex; flex-direction: column; gap: 8px; font-size: 16px; line-height: 1.5; color: var(--ink-soft); }
 .sources li { overflow-wrap: anywhere; scroll-margin-top: 20px; }
 .sources li:target { background: var(--blue-wash); }
@@ -725,7 +726,7 @@ document.addEventListener("keydown", (e) => {
 const fmt = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\[\[(.+?)\]\]/g, '<mark class="ph">[$1]</mark>');
 function policyHTML(p) {
   const order = noteOrder(p);
-  const sup = (b) => b.fn && b.fn.length ? `<sup>[${b.fn.map((id) => order.indexOf(id) + 1).join(", ")}]</sup>` : "";
+  const sup = (b) => b.fn && b.fn.length ? `<sup>[${b.fn.map((id) => order.indexOf(id) + 1).join('<span class="fn-sep">,</span> ')}]</sup>` : "";
   const disc = `This is a starting draft, not legal advice. Laws on AI change often and differ by state, country and industry. Have your legal or compliance adviser review it before you adopt it. Generated ${esc(p.today)}; law checked as of ${LAW_DATE}.`;
   let h = `<h1>${fmt(p.company)} AI use policy</h1><p class="meta">Version 1 · Owner: ${fmt(p.flags.group ? "AI working group" : (ROLE[state.a.approver] || ROLE.undecided).replace(/^the /, ""))} · Approved: <mark class="ph">[date]</mark> · Next review: <mark class="ph">[date]</mark></p><p class="disclaimer">${disc}</p>`;
   p.sections.forEach((s, i) => {
