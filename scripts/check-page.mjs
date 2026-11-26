@@ -10,6 +10,7 @@ import { fileURLToPath } from 'node:url';
 import { TYPES, COMMON_REQUIRED, REVIEWERS, MIN, BANNED, BLOCKS, DEMAND } from '../src/lib/page-types.mjs';
 import { checkPage as readability } from './check-readability.mjs';
 import { pageAnswerProblems } from '../src/lib/answer-first.mjs';
+import { ownPriceProblems, strings } from '../src/lib/no-own-price.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const contentDir = join(root, 'src/content/ai-work');
@@ -86,6 +87,9 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
 
   // Answer-first rule (Russell, 26 Nov 2026): every question heading answered in the first sentence under it
   for (const p of pageAnswerProblems(d)) fail.push(`answer first: ${p}`);
+
+  // No Zavient price or range anywhere (Russell, 26 Nov 2026); market prices with a source stay
+  for (const str of strings(d)) for (const p of ownPriceProblems(str)) fail.push(p);
 
   // Readability (ADHD rule)
   for (const p of readability({ ...d, verdict: v })) fail.push(`readability: ${p}`);
