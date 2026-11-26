@@ -5,7 +5,7 @@
 // `updated` (YYYY-MM-DD) becomes article:modified_time, which the self-updating sitemap reads as lastmod.
 const { title, description, noindex = false, theme = 'blue', canonical = '', updated = '' } = Astro.props;
 const fonts = theme === 'blue'
-  ? 'https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap'
+  ? 'https://fonts.googleapis.com/css2?family=Figtree:wght@600;700;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap'
   : 'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=IBM+Plex+Mono:wght@400;500;600&display=swap';
 const css = theme === 'blue' ? '/ai-work/ai-work.css' : '/insights/article.css';
 ---
@@ -43,5 +43,32 @@ const css = theme === 'blue' ? '/ai-work/ai-work.css' : '/insights/article.css';
     <span>&copy; 2026 Zavient LLC &middot; AI that helps your team do more</span>
     <span><a href="/about.html">About</a> &middot; <a href="mailto:rmiller@zavient.com">Email us</a></span>
   </footer>
+  <script is:inline>
+    // Mobile reading helpers (26 Nov 2026), on every page:
+    // 1. Wide tables: keyboard-scrollable, with a "scroll for more" cue only while there is more to see (NN/g mobile tables).
+    // 2. Footnotes: a source marker opens the collapsed source list before jumping to the source.
+    (() => {
+      document.querySelectorAll('.table-scroll').forEach((box) => {
+        const t = box.querySelector('table');
+        box.setAttribute('tabindex', '0'); box.setAttribute('role', 'region');
+        box.setAttribute('aria-label', (t && t.querySelector('th') ? t.querySelector('th').textContent + ' table' : 'Table') + ', scrolls sideways');
+        const cue = document.createElement('p'); cue.className = 'scroll-cue'; cue.setAttribute('aria-hidden', 'true'); cue.textContent = 'Swipe the table sideways for more \u2192';
+        box.before(cue);
+        const check = () => {
+          const more = box.scrollWidth - box.clientWidth > 4;
+          box.classList.toggle('can-scroll', more);
+          box.classList.toggle('at-end', box.scrollLeft + box.clientWidth >= box.scrollWidth - 4);
+          cue.hidden = !more;
+        };
+        box.addEventListener('scroll', check, { passive: true }); addEventListener('resize', check); check();
+      });
+      const openFor = (hash) => {
+        const el = hash && hash.length > 1 && document.getElementById(decodeURIComponent(hash.slice(1)));
+        const d = el && el.closest('details'); if (d && !d.open) d.open = true;
+      };
+      document.addEventListener('click', (e) => { const a = e.target.closest('a[href^="#"]'); if (a) openFor(a.getAttribute('href')); });
+      openFor(location.hash);
+    })();
+  </script>
 </body>
 </html>

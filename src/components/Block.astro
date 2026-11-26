@@ -144,7 +144,7 @@ const h = headingFor(d, id);
 </>)}
 {id === 'faq' && d.faq.length > 0 && (<>
   <h2 id="faq">{h}</h2>
-  <div class="faq">{d.faq.map((x) => <div class="faq-item"><h3>{x.q}</h3><p><Fn s={x.a} /></p></div>)}</div>
+  <div class="faq">{d.faq.map((x) => <details class="faq-item"><summary><h3>{x.q}</h3></summary><p><Fn s={x.a} /></p></details>)}</div>
 </>)}
 {id === 'buy-or-build' && d.buyVsBuild && (<>
   <h2 id="buy-or-build">{h}</h2>
@@ -169,10 +169,12 @@ const h = headingFor(d, id);
 {id === 'sources' && (
   <div class="sources">
     <h2 id="sources">{h}</h2>
+    <details class="sources-list"><summary>Show all {d.sources.length} sources</summary>
     <div class="table-scroll"><table class="sources-table">
       <thead><tr><th>#</th><th>Source</th><th>What it says</th></tr></thead>
       <tbody>{d.sources.map((s, i) => <tr id={`fn-${i + 1}`}><td>{i + 1}</td><td><a href={s.url}>{s.name}</a></td><td>{s.what}</td></tr>)}</tbody>
     </table></div>
+    </details>
   </div>
 )}
 {id === 'related' && related.length > 0 && (<p>Related: {related.map((r, i) => <>{i > 0 && ' · '}<a href={r.url || href(r.id)}>{r.title}</a></>)}</p>)}

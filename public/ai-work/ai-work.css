@@ -81,7 +81,7 @@ nav:not(.on-page) {
 
 /* BLUF: bottom line, then what the page covers */
 .bluf-label {
-  display: block; font-family: var(--mono); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase;
+  display: block; font-family: var(--mono); font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase;
   color: var(--blue); margin-bottom: 8px;
 }
 .bluf { background: var(--paper); border: 1px solid var(--line); border-left: 3px solid var(--blue); padding: 20px 24px; }
@@ -93,11 +93,11 @@ nav:not(.on-page) {
 .on-page { margin-top: 22px; padding: 4px 0 0; }
 .on-page ol { list-style: none; counter-reset: op; columns: 2; column-gap: 28px; }
 .on-page li { counter-increment: op; break-inside: avoid; position: relative; padding: 7px 0 7px 34px; border-top: 1px solid var(--line); font-size: 18px; line-height: 1.35; }
-.on-page li::before { content: counter(op, decimal-leading-zero); position: absolute; left: 0; top: 9px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
+.on-page li::before { content: counter(op, decimal-leading-zero); position: absolute; left: 0; top: 9px; font-family: var(--mono); font-size: 14px; color: var(--muted); }
 .on-page li a { color: var(--ink); text-decoration: none; }
 .on-page li a:hover { color: var(--blue); text-decoration: underline; }
 .on-page-cta { margin-top: 12px; font-size: 18px; color: var(--ink-soft); }
-.byline { font-family: var(--mono); font-size: 13px; color: var(--muted); margin-top: 22px; }
+.byline { font-family: var(--mono); font-size: 14px; color: var(--muted); margin-top: 22px; }
 .byline a { color: inherit; }
 
 /* Article body */
@@ -110,7 +110,7 @@ nav:not(.on-page) {
 }
 .article-body h2::before {
   content: counter(sec, decimal-leading-zero); display: block; margin-bottom: 6px;
-  font-family: var(--mono); font-size: 13px; font-weight: 400; letter-spacing: 0.06em; color: var(--muted);
+  font-family: var(--mono); font-size: 14px; font-weight: 400; letter-spacing: 0.06em; color: var(--muted);
 }
 .article-body h3 { font-family: var(--sans); font-weight: 700; font-size: 20px; color: var(--ink); margin: 28px 0 10px; }
 .article-body p { margin-bottom: 18px; }
@@ -127,7 +127,7 @@ nav:not(.on-page) {
 .sources-table { width: 100%; border-collapse: collapse; font-size: 17px; line-height: 1.45; }
 .table-scroll .sources-table { min-width: 560px; }
 .sources-table th {
-  font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--muted); text-align: left;
+  font-family: var(--mono); font-size: 14px; font-weight: 500; color: var(--muted); text-align: left;
   padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line-strong); white-space: nowrap;
 }
 .sources-table td { padding: 11px 12px 11px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
@@ -135,8 +135,8 @@ nav:not(.on-page) {
 .sources-table tr:target { background: var(--blue-wash); }
 .table-scroll .sources-table th:first-child, .table-scroll .sources-table td:first-child { position: sticky; left: 0; background: var(--paper); z-index: 1; }
 .table-scroll .sources-table tr:target td:first-child { background: var(--blue-wash); }
-.table-note { font-family: var(--mono); font-size: 13px; color: var(--muted); margin-top: 6px; }
-.stat-src { display: block; margin-top: 4px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
+.table-note { font-family: var(--mono); font-size: 14px; color: var(--muted); margin-top: 6px; }
+.stat-src { display: block; margin-top: 4px; font-family: var(--mono); font-size: 14px; color: var(--muted); }
 .status { font-family: var(--mono); font-size: 14px; color: var(--blue-dark); white-space: nowrap; }
 .sources { margin-top: 0; }
 
@@ -172,7 +172,7 @@ nav:not(.on-page) {
 .hub-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 14px 0 8px; }
 .hub-card { display: flex; flex-direction: column; border: 1px solid var(--line); padding: 20px 22px; color: var(--ink); text-decoration: none; transition: border-color 0.15s, background 0.15s; }
 .hub-card:hover { border-color: var(--blue); background: var(--blue-wash); color: var(--ink); }
-.hub-tag { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; }
+.hub-tag { font-family: var(--mono); font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; }
 .hub-card h3 { font-family: var(--sans); font-weight: 700; font-size: 20px; line-height: 1.25; margin: 0 0 8px; }
 .hub-card p { font-size: 17px; color: var(--ink-soft); margin: 0; }
 /* Cards whose blurb has footnotes: the title link covers the card; footnote links sit above it */
@@ -218,7 +218,7 @@ sup.fn .fn-sep { color: var(--muted); margin-right: 1px; }
 footer {
   display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
   padding: 24px 32px; border-top: 1px solid var(--line); background: var(--paper-alt);
-  font-family: var(--mono); font-size: 13px; color: var(--muted);
+  font-family: var(--mono); font-size: 14px; color: var(--muted);
 }
 footer a { color: var(--muted); text-decoration: none; }
 footer a:hover { color: var(--blue); }
@@ -235,7 +235,7 @@ footer a:hover { color: var(--blue); }
   nav:not(.on-page) .nav-links { display: contents; }
   nav:not(.on-page) .nav-links a.nav-cta { order: 1; margin-left: auto; }
   nav:not(.on-page)::after { content: ''; order: 2; flex-basis: 100%; height: 0; }
-  nav:not(.on-page) .nav-links a:not(.nav-cta) { order: 3; margin-right: 18px; font-size: 13px; }
+  nav:not(.on-page) .nav-links a:not(.nav-cta) { order: 3; margin-right: 18px; font-size: 14px; }
   .article-hero { padding: 40px 0 32px; }
   .on-page ol { columns: 1; }
   .hub-grid { grid-template-columns: 1fr; }
@@ -276,7 +276,7 @@ footer a:hover { color: var(--blue); }
 .sticky-toc[hidden] { display: none; }
 .sticky-toc.is-hidden { opacity: 0; pointer-events: none; }
 .sticky-toc .toc-toggle { font: inherit; background: none; border: 0; padding: 0; color: var(--ink); text-align: left; cursor: pointer; display: flex; align-items: center; gap: 8px; min-width: 0; min-height: 44px; }
-.sticky-toc .toc-label { font-family: var(--sans); font-weight: 700; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.sticky-toc .toc-label { font-family: var(--sans); font-weight: 700; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
 .sticky-toc .toc-count { font-weight: 600; letter-spacing: 0; text-transform: none; margin-left: 4px; }
 .sticky-toc .toc-now { font-family: var(--sans); font-weight: 600; font-size: 15px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 .sticky-toc .toc-list { list-style: none; margin: 0; padding: 0; overflow-y: auto; overscroll-behavior: contain; }
@@ -324,3 +324,47 @@ footer a:hover { color: var(--blue); }
   .sticky-toc .btn-gold .short { display: inline; }
 }
 
+
+/* Mobile-first, ADHD-friendly reading (26 Nov 2026). Sources: NN/g long-form formatting, layer-cake scanning,
+   hamburger menus and mobile tables; GOV.UK type scale; British Dyslexia Association style guide; W3C WCAG 2.2
+   (2.5.8 target size, 1.4.12 text spacing) and COGA; Apple HIG and Android 48dp touch targets; web.dev fonts.
+   Notes: Drive handoff folder, "11 Mobile and ADHD-friendly reading". */
+
+/* Line length: 50-75 characters reads best (Baymard). Prose keeps to about 68 characters; tables and boxes use the full column. */
+.article-body > p, .article-body > ul > li, .article-body > ol > li, .faq-item p, .bluf li { max-width: 68ch; }
+.article-body p, .article-body li { text-wrap: pretty; }
+
+/* Tap targets: 44px or more for anything you tap on a phone (Apple 44pt, Android 48dp, WCAG 2.5.5) */
+.nav-links a { display: inline-flex; align-items: center; min-height: 44px; }
+.nav-links a.nav-cta { min-height: 40px; }
+sup.fn a { padding: 10px 3px; margin: -10px -1px; } /* bigger hit area, same line height */
+.on-page a, .hub-card .card-link { display: inline-block; padding: 6px 0; }
+
+/* FAQ as accordions: scan the questions, open the one you need */
+.faq-item summary { list-style: none; cursor: pointer; display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; min-height: 48px; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: '+'; content: '+' / ''; margin-left: auto; font-family: var(--sans); font-weight: 700; font-size: 24px; line-height: 1.1; color: var(--blue); }
+.faq-item[open] summary::after { content: '\2212'; content: '\2212' / ''; }
+.faq-item summary h3 { margin: 0; }
+.faq-item p { padding-bottom: 14px; }
+.faq-item summary:hover h3 { color: var(--blue); }
+
+/* Sources: closed by default so the page ends on the offer, not 40 rows of links */
+.sources-list > summary { cursor: pointer; display: inline-flex; align-items: center; min-height: 48px; font-family: var(--sans); font-weight: 600; font-size: 17px; color: var(--blue); }
+.sources-list[open] > summary { margin-bottom: 6px; }
+
+/* Wide tables: a cue while there is more to the right, and a soft edge shadow (no background-attachment: it fails in iOS Safari) */
+.scroll-cue { font-family: var(--sans); font-size: 14px; color: var(--muted); margin: 10px 0 -4px; }
+.table-scroll { position: relative; }
+.table-scroll:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.table-scroll.can-scroll:not(.at-end) { mask-image: linear-gradient(to right, #000 calc(100% - 36px), transparent); -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 36px), transparent); }
+
+@media (max-width: 720px) {
+  /* GOV.UK keeps 19px body on phones; BDA asks for 16-19px with 1.5 spacing */
+  .article-body { line-height: 1.55; }
+  .article-body h2 { font-size: 25px; margin-top: 44px; }
+  .sources-table { font-size: 16px; }
+  .table-scroll .sources-table { min-width: 520px; }
+  .sticky-toc .toc-list a { padding-top: 12px; padding-bottom: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
