@@ -1,5 +1,5 @@
 {
- "title": "AI document processing: which AI reads files with fewest wrong numbers",
+ "title": "AI document processing: how accurate is it on financial documents?",
  "description": "We benchmarked AI tools on 30 fund reports, with answers locked in advance. Which ones made no mistakes, what each costs per page, and three ways to build it.",
  "job": "document processing",
  "summary": "Start with the document your team re-keys most, where a wrong number costs money; AI can read it into fields your systems use. Reading itself costs cents; the staff time around it is the real cost[^7][^1]. AI does the reading part, but wrong fields on your own files are the risk, so we built a benchmark that measures them[^20][^7].",
@@ -69,7 +69,7 @@
   "You only need searchable text, not fields: basic OCR is about $1.50 per 1,000 pages at all three big clouds[^2][^3][^4]."
  ],
  "ownData": {
-  "title": "Our benchmark: 30 fund reports, keys sealed before any AI read them",
+  "title": "Which AI made the fewest mistakes on 30 fund reports?",
   "intro": "FinExtractBench is our own benchmark of 30 public private-fund reports, 781 pages in all[^7]. We wrote every correct answer by hand and sealed it, meaning locked, before any tool ran[^7]. Each tool read each raw PDF once; a mistake is a wrong value or a value the report never states.",
   "headers": [
    "Tool",
@@ -149,7 +149,7 @@
  ],
  "tables": [
   {
-   "title": "What reading 1,000 pages costs",
+   "title": "What does AI document reading cost per 1,000 pages?",
    "intro": "List prices on each vendor's own pricing page or price feed, checked 26 November 2026. For comparison, the median total cost to process one supplier invoice is $6.00 (APQC)[^1].",
    "headers": [
     "Tool",
@@ -543,5 +543,15 @@
    "status": "In force since Jul 2024",
    "what": "New York insurers that use AI in underwriting and pricing stay responsible for vendor tools[^28]. Where available, their vendor contracts should give them audit rights[^28]."
   }
- ]
+ ],
+ "headings": {
+  "what-it-is": "How does AI document processing work, and how is it different from OCR?",
+  "example": "What does AI pull out of a fund report?",
+  "rules": "Which rules apply when AI reads financial documents?",
+  "what-goes-wrong": "Can you trust a vendor's accuracy numbers?",
+  "buy-or-build": "Should you buy a document parser or build your own?",
+  "something-else": "When should you pick something else?"
+ },
+ "recipesTitle": "Should a person check every AI-read field, or only the exceptions?",
+ "testTitle": "How do you benchmark AI document tools on your own files?"
 }

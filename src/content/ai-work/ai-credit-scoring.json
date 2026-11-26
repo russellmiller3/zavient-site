@@ -1,5 +1,5 @@
 {
- "title": "AI credit scoring: the tools, the rules and what to build first",
+ "title": "AI credit scoring: how do lenders keep it fair and explainable?",
  "description": "Approve more good loans with an AI credit model you can explain: the tools, US and EU rules, three builds and our pick.",
  "job": "credit scoring",
  "industry": "lending",
@@ -66,7 +66,7 @@
   "Most of the work is reading documents: spend on extraction first (recipe 3 below). In our own benchmark, AI read each long report for under $0.30[^42]."
  ],
  "ownData": {
-  "title": "Free software your modeler will use",
+  "title": "Which open-source tools can build an AI credit model?",
   "intro": "For your modeler: release date, licence and monthly downloads for each free library the recipes below use[^46][^59]. Three older scorecard and bias libraries are flagged too, because they went quiet[^54][^55][^57]. Downloads show what teams actually run; release dates show what is still maintained.",
   "headers": [
    "Library",
@@ -870,5 +870,15 @@
   "heading": "Not sure how to bring AI into credit decisions? Get a free diagnostic",
   "body": "Tell me your loan products and how you score today. In 30 minutes you get my read on what to change first, and what your examiner will ask."
  },
- "updated": "2026-11-26"
+ "updated": "2026-11-26",
+ "headings": {
+  "what-it-is": "What is AI credit scoring, and what data does it use?",
+  "example": "How do lenders use AI to approve loans?",
+  "rules": "Which rules apply to AI credit decisions?",
+  "what-goes-wrong": "Where does AI credit scoring go wrong?",
+  "buy-or-build": "Should you buy an AI credit platform or build your own model?",
+  "something-else": "When should a lender pick something else?"
+ },
+ "recipesTitle": "Which way to build an AI credit model fits your lender?",
+ "testTitle": "How do you benchmark an AI credit model before you trust it?"
 }
