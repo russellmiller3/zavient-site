@@ -41,7 +41,7 @@ const good = () => ({
   teamAfter: ['The preparer works the exceptions the software leaves [^4].'],
   keyword: { phrase: 'account reconciliation software', searches: 590, cpc: 212, difficulty: 21 },
   updated: '2026-11-26',
-  ownData: { title: 'What we checked?', intro: 'We checked pricing pages [^5].', headers: ['Tool'], rows: [['A [^5]']], note: 'Pulled 26 Nov 2026.' },
+  ownData: { title: 'What does tool A cost?', intro: 'Tool A costs $20 a seat a month [^5].', headers: ['Tool'], rows: [['A [^5]']], note: 'Pulled 26 Nov 2026.' },
   example: { input: 'A month of bank lines.', output: 'Matched lines and a short exceptions list.' },
   recipes: [{ name: 'Small team', when: 'Few accounts [^6].', flow: ['Staff accountant: export', 'Controller: approve'], cost: 'Included in many ERPs [^6].' }],
   tables: [{ title: 'Tools', intro: 'Vendors [^7].', headers: ['Name', 'Price'], rows: [{ name: 'X', cells: ['Not published [^7]'] }] }],
