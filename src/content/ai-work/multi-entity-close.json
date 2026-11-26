@@ -1,0 +1,700 @@
+{
+ "title": "Can AI speed up consolidated financial reporting across add-ons?",
+ "description": "Close several add-ons' books into one report on the lender's clock. AI mapping and matching, controller sign-off, and our count of 599 lender deadlines.",
+ "type": "usecase",
+ "templateVersion": 1,
+ "topic": "AI for multi-entity close and consolidation",
+ "job": "multi-entity close",
+ "industry": "PE platforms and holding companies",
+ "index": true,
+ "verdict": [
+  "Lenders mostly want consolidated monthly statements within 30 days; consolidating alone takes a median 6 days[^2][^1].",
+  "Map each add-on's chart of accounts to one group chart; you don't need one ERP first[^16][^14].",
+  "Let AI suggest account mappings and intercompany matches; the controller approves each one before it posts[^6][^5].",
+  "Never post AI mappings unreviewed: accuracy drops on a newly bought company and on large charts[^12][^13].",
+  "Close and reporting problems appear in 84% of material weaknesses; missed eliminations have forced restatements[^11][^24]."
+ ],
+ "onPage": [
+  {
+   "to": "human-role",
+   "text": "What the controller approves, and what AI only suggests"
+  },
+  {
+   "to": "table-1",
+   "text": "Each close step, what AI does today and who signs"
+  },
+  {
+   "to": "table-3",
+   "text": "How accurate AI account mapping is in published studies"
+  },
+  {
+   "to": "recipes",
+   "text": "Three ways to consolidate, sized to your platform"
+  },
+  {
+   "to": "own-data",
+   "text": "Our count of monthly deadlines in 599 lender agreements"
+  },
+  {
+   "to": "benchmark",
+   "text": "How to test AI on one closed month before you trust it"
+  },
+  {
+   "to": "what-goes-wrong",
+   "text": "Where a multi-entity close breaks, from SEC enforcement cases"
+  }
+ ],
+ "headings": {
+  "what-it-is": "What is consolidated financial reporting, and what can AI change?",
+  "human-role": "Where does your controller stay in charge?",
+  "team-after": "What does your finance team do once AI takes the first pass?",
+  "example": "What does an AI-assisted multi-entity close look like?",
+  "recipes": "Which way to consolidate fits your platform?",
+  "rules": "Which rules shape a consolidated close?",
+  "benchmark": "How do you test AI on your close before you trust it?",
+  "what-goes-wrong": "Where does a multi-entity close go wrong?",
+  "faq": "Questions buyers ask about consolidated financial reporting",
+  "buy-or-build": "Should you buy consolidation software or build the work around it?"
+ },
+ "summary": "After several add-ons, the hard part sits upstream: different ledgers, different charts of accounts and intercompany that won't tie[^34]. Most lender agreements we counted want monthly statements in 30 days[^2]. The approved mapping table and the review steps make or break it[^16][^8].",
+ "humanRole": [
+  "Controller: approves the mapping from each add-on's accounts to the group chart, then every new account[^12][^13]. AI only suggests; nothing posts without that approval.",
+  "Controller: approves each intercompany match the AI suggests, and every low-confidence or unmatched pair[^6][^5]. Breaks go back to the add-on's bookkeeper with context[^5].",
+  "Controller plus a second reviewer: sign off eliminations and every top-level adjustment[^18][^26]. Auditors evaluate journal entries and adjustments in the period-end process[^20].",
+  "Head of finance ops: signs off the consolidated and consolidating statements and owns the lender package[^3][^4]. Auditors will ask how each AI output was reviewed[^8]."
+ ],
+ "teamAfter": [
+  "The controller moves from keying mappings to reviewing suggestions and exceptions. Surveyed CFOs already spend 26% of the week checking AI output (Datarails, vendor)[^7].",
+  "Add-on bookkeepers keep their own ledgers and fix the breaks routed back to them[^5].",
+  "The close owner runs a workday checklist with named owners, built back from the lender's deadline[^16][^2].",
+  "Headcount isn't the goal: of firms using AI, 66% only use it to help staff[^9]. Thin teams are the bigger risk; Cambrex's finance team was too thinly staffed to reconcile intercompany[^23]."
+ ],
+ "example": {
+  "input": "Trial balances from four add-ons bought over 18 months: QuickBooks Online, Xero, an old QuickBooks Desktop file and NetSuite at the platform. Intercompany items: shared services, a management fee and inventory moved between two add-ons. The lender wants consolidated and consolidating statements, plus a compliance certificate, within 30 days[^3].",
+  "output": "A map of each local account to the group chart, with a confidence score, approved and locked by the controller. Suggested intercompany matches and drafted eliminations, with breaks routed to each add-on. A consolidating workbook with one column per company, and the lender package[^19]."
+ },
+ "tables": [
+  {
+   "title": "Which close steps can AI take on today?",
+   "intro": "Close and consolidation software now ships AI features, which Gartner tracks as their own category[^35]. Claims below are each vendor's own unless marked.",
+   "headers": [
+    "Close step",
+    "What AI does today",
+    "What your team does"
+   ],
+   "rows": [
+    {
+     "name": "Account mapping",
+     "cells": [
+      "Suggests a group account for each local account, with a score[^14][^15]",
+      "Controller approves the table once, then each new account[^12]"
+     ]
+    },
+    {
+     "name": "Intercompany matching",
+     "cells": [
+      "Suggests matches with confidence scores and reasoning (BlackLine, vendor)[^6]",
+      "Controller approves each match before it posts[^6]"
+     ]
+    },
+    {
+     "name": "Intercompany breaks",
+     "cells": [
+      "Routes unmatched items with context (Oracle, vendor)[^5]",
+      "Add-on bookkeeper fixes; controller approves[^5]"
+     ]
+    },
+    {
+     "name": "Anomaly flags",
+     "cells": [
+      "Flags unusual entries; 34% of finance teams using AI use it this way[^17]",
+      "Controller investigates each flag"
+     ]
+    },
+    {
+     "name": "Eliminations",
+     "cells": [
+      "Drafts the entries",
+      "Controller signs off; eliminated in full under ASC 810[^18]"
+     ]
+    },
+    {
+     "name": "Lender package",
+     "cells": [
+      "Assembles consolidating columns",
+      "Head of finance ops signs and sends it[^3][^4]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "How long does a consolidated close take?",
+   "intro": "Benchmarks from APQC, an independent benchmarking body, plus two surveys. None is specific to PE-backed companies.",
+   "headers": [
+    "Benchmark",
+    "Figure",
+    "Who measured it"
+   ],
+   "rows": [
+    {
+     "name": "Days to monthly consolidated statements, from first trial balance",
+     "cells": [
+      "Top performers 5, median 6, bottom 10[^1]",
+      "APQC, n=10,201[^1]"
+     ]
+    },
+    {
+     "name": "Intercompany transactions processed fully automated",
+     "cells": [
+      "Median 41.0%[^10]",
+      "APQC, 2026[^10]"
+     ]
+    },
+    {
+     "name": "Accounting staff time on consolidations and eliminations",
+     "cells": [
+      "5.8%[^10]",
+      "APQC, 2026[^10]"
+     ]
+    },
+    {
+     "name": "Close within 6 days",
+     "cells": [
+      "69% of firms that automate reconciliations, against 53% that don't[^33]",
+      "Ventana Research, 2019[^33]"
+     ]
+    },
+    {
+     "name": "Top intercompany challenge",
+     "cells": [
+      "Disparate systems, 21.4%[^34]",
+      "Deloitte poll, 3,800+ people[^34]"
+     ]
+    },
+    {
+     "name": "Biggest intercompany challenges",
+     "cells": [
+      "Nearly 60% name data quality, reconciliation and transfer-pricing records[^36]",
+      "Deloitte poll, 4,114 people[^36]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "How accurate is AI at mapping accounts?",
+   "intro": "Published studies on machine account mapping. Your charts can differ, which is why you test on your own month.",
+   "headers": [
+    "Study",
+    "Finding"
+   ],
+   "rows": [
+    {
+     "name": "Jorgensen et al., 2021",
+     "url": "https://onlinelibrary.wiley.com/doi/10.1002/isaf.1500",
+     "cells": [
+      "About 80.5% top-1 accuracy within known companies; 64.6% on a company the model never saw[^12]."
+     ]
+    },
+    {
+     "name": "FinTagging, 2025",
+     "url": "https://arxiv.org/html/2505.20650",
+     "cells": [
+      "Off-the-shelf models picking from the full US-GAAP taxonomy scored about 17% at best[^13]."
+     ]
+    },
+    {
+     "name": "TopoLedgerBERT, 2024",
+     "url": "https://aclanthology.org/2024.finnlp-2.6.pdf",
+     "cells": [
+      "Using the chart's hierarchy beat baselines and handled accounts unseen in training[^14]."
+     ]
+    },
+    {
+     "name": "Soft Computing, 2026",
+     "url": "https://link.springer.com/article/10.1007/s00500-025-10983-4",
+     "cells": [
+      "A fine-tuned GPT-3 model mapped 945 charts of accounts to a standard EU layout[^15]."
+     ]
+    },
+    {
+     "name": "Suffolk University, 2025",
+     "url": "https://www.xbrl.org/news/with-ai-structured-data-wins-the-day",
+     "cells": [
+      "Scaling errors topped 8% from text, against 0.11% from structured data[^27]."
+     ]
+    }
+   ]
+  }
+ ],
+ "recipes": [
+  {
+   "name": "1. Few add-ons on QuickBooks Online or Xero, little intercompany",
+   "when": "Two to a few dozen companies on the same ledger family, with few sales between them. A reporting tool can pull and add up the books[^30].",
+   "flow": [
+    "Controller: set one group chart of accounts",
+    "Add-on bookkeeper: close local books by workday 3 (the third business day after month end)",
+    "Controller: approve the suggested mapping in the tool",
+    "Finance ops lead: pull trial balances and run the consolidation",
+    "Controller: review and sign the consolidated statements",
+    "Head of finance ops: send the lender package"
+   ],
+   "cost": "Fathom lists $450 a month for 25 companies, plus $17 per extra, read 26 Nov 2026[^30]. Add the controller's setup time for the group chart."
+  },
+  {
+   "name": "2. Platform on mixed ledgers with real intercompany",
+   "when": "Three or more add-ons on different ledgers, with shared services, management fees or stock moving between them. The lender wants consolidating statements within 30 days[^3][^2].",
+   "flow": [
+    "Finance ops lead: pull trial balances from each ledger",
+    "Controller: key the mapping on entity plus local account",
+    "AI: suggest a group account for each local account, with a score",
+    "Controller: approve the mapping table, then lock and version it",
+    "Controller: give every company one counterparty code, the tag used on sales between group companies",
+    "AI: suggest intercompany matches on amount, date window, reference and currency",
+    "Controller: approve every match; route breaks to the add-on bookkeeper",
+    "Controller: review the drafted eliminations, with a second reviewer for top-level (topside) entries",
+    "Head of finance ops: sign the consolidating workbook and lender package"
+   ],
+   "cost": "Software runs from Fathom's $450 a month[^30] to Oracle's EPM suite at $250 per named user a month, 10-user minimum[^31]. The mapping and intercompany setup is scoped per platform in the diagnostic."
+  },
+  {
+   "name": "3. Larger group moving to an EPM suite",
+   "when": "Many entities, several currencies and an audit or sale on the horizon. Suites such as Oracle's ship their own intercompany agent (vendor)[^5].",
+   "flow": [
+    "Controller: clean and approve the mapping before migration",
+    "IT: load approved mappings and history into the suite",
+    "AI: suggest matches and route disputes within policy",
+    "Controller: approve matches and review the audit trail",
+    "Head of finance ops: sign the statements and lender package"
+   ],
+   "cost": "Oracle's EPM suite lists $250 per named user a month, 10-user minimum, read 26 Nov 2026[^31]. Other suites quote per contract."
+  }
+ ],
+ "ownData": {
+  "title": "How fast do lenders want monthly statements?",
+  "intro": "We searched SEC EDGAR full text on 26 Nov 2026 for filings dated 1 Jan 2024 onward[^2]. We counted documents with a monthly deadline phrase, such as \"within 30 days after the end of each month\", plus \"compliance certificate\"[^2]. Numeric and spelled-out forms were added together.",
+  "headers": [
+   "Monthly deadline",
+   "Documents",
+   "Share of 599"
+  ],
+  "rows": [
+   [
+    "15 days",
+    "39[^2]",
+    "6.5%"
+   ],
+   [
+    "20 days",
+    "41[^2]",
+    "6.8%"
+   ],
+   [
+    "25 days",
+    "0[^2]",
+    "0%"
+   ],
+   [
+    "30 days",
+    "479[^2]",
+    "80.0%"
+   ],
+   [
+    "45 days",
+    "40[^2]",
+    "6.7%"
+   ],
+   [
+    "60 days",
+    "0[^2]",
+    "0%"
+   ],
+   [
+    "30 days, and the document says \"consolidating\"",
+    "313 of 474 checked[^2][^3]",
+    "66% of those"
+   ]
+  ],
+  "note": "Counts documents, not loans: amendments double count, and many are venture-debt borrowers, since private PE credit agreements aren't filed[^2]. A phrase can sit anywhere, so some deadlines may cover borrowing-base reports; we hand-checked 2 documents[^3][^4]. Other wordings, such as \"thirty days following\", are missed."
+ },
+ "rules": [
+  {
+   "name": "ASC 810, Consolidation",
+   "url": "https://dart.deloitte.com/USDART/home/codification/broad-transactions/asc810-10/roadmap-noncontrolling-interests/chapter-4-intercompany-matters-with-noncontrolling/4-3-transactions-between-parent-subsidiary",
+   "status": "In force",
+   "what": "Present the group as one economic entity, mainly for owners and creditors[^19]. Balances and transactions between group companies are eliminated in full, even with a minority owner[^18]. Your mapping and intercompany rules exist to make that true every month."
+  },
+  {
+   "name": "PCAOB AS 2201, paragraph .26",
+   "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2201",
+   "status": "In force (public company audits)",
+   "what": "The auditor evaluates the period-end process: journal entries, adjustments and how statements are prepared[^20]. Keep a log showing who approved each AI-suggested entry."
+  },
+  {
+   "name": "PCAOB AS 2, Appendix D, Scenario A",
+   "url": "https://www.sec.gov/files/rules/pcaob/34-49544-appendixd.pdf",
+   "status": "Superseded standard; example still useful",
+   "what": "A written policy to reconcile intercompany monthly, with no process to make sure it happened, was a significant deficiency[^21]. A workday checklist with named owners closes that gap[^16]."
+  },
+  {
+   "name": "AICPA practice aid on AI in financial reporting",
+   "url": "https://www.aicpa-cima.com/news/article/aicpa-releases-guidance-to-help-auditors-address-the-use-of-ai-in-financial-reporting-and-auditing",
+   "status": "Issued 13 Oct 2026",
+   "what": "Auditors will ask how AI outputs used in your statements were reviewed[^8]. The controller's approvals are that evidence."
+  },
+  {
+   "name": "COSO guidance on robotic process automation",
+   "url": "https://www.coso.org/_files/ugd/719ba0_8b22177f8521488687a838c680c54f59.pdf",
+   "status": "Published Dec 2024",
+   "what": "Automation needs the same control design as work done by people[^22]. Give each AI step an owner, a review and a record."
+  }
+ ],
+ "howToTest": [
+  "Record today's numbers on the last closed month: workdays from first trial balance to consolidated statements, hours spent and late adjustments. APQC's median is 6 days[^1].",
+  "Pick two add-ons on different ledgers, at least one with intercompany activity.",
+  "Run AI mapping on both. Measure the share of accounts suggested above your confidence threshold, and the share the controller changed[^12].",
+  "Run intercompany matching on the same month. Count the match rate, false matches caught in review and unmatched items by age.",
+  "Compare with the manual close you already signed: same balances, same eliminations, fewer workdays? The target for false matches posted is zero.",
+  "Run a control check: can an auditor trace each elimination to a source and an approver[^20][^8]?",
+  "Price the lift: workdays freed inside the lender's 30-day clock[^2], controller hours moved to review, and how much sooner each add-on's margins reach you.",
+  "Decide with the controller to keep, change or stop."
+ ],
+ "watchOuts": [
+  "Off-the-shelf models pick badly from thousands of accounts: about 17% right on the full US-GAAP taxonomy[^13]. Limit choices to your group chart and show the top candidates for approval[^14].",
+  "A newly bought company maps worse: about 65% right, against 80% within known companies[^12]. Review every mapping for each new add-on.",
+  "Messy inputs raise AI errors: over 8% scaling errors from text, against 0.11% from structured data[^27]. Feed trial balances as data, not PDFs.",
+  "Missed eliminations overstate the group: INTL FCStone overstated sales by $1.3B and $2.6B in two years[^24]. Eliminate every month, not at year end.",
+  "Breaks pile up without hands: Cambrex logged intercompany imbalances, but its finance team was too thinly staffed to reconcile them[^23]. Give every break an owner and an age.",
+  "Top-level entries can skip review: split duties failed at CIRCOR, allowing $11M+ in unsupported entries[^26]. Have a second person approve each one."
+ ],
+ "faq": [
+  {
+   "q": "What are consolidated financial statements?",
+   "a": "Consolidated statements show a parent and the companies it controls as one economic entity, mainly for owners and creditors[^19]. Balances and sales between those companies are eliminated in full[^18]."
+  },
+  {
+   "q": "What's the difference between combined and consolidated financial statements?",
+   "a": "Consolidated statements roll subsidiaries into a parent that controls them, while combined statements join sister companies under common control with no parent between them[^19]. The preparation steps are the same[^19]."
+  },
+  {
+   "q": "Do we need to move every add-on to one ERP first?",
+   "a": "No, map each add-on's accounts to one group chart now and decide later, company by company, whether to migrate[^16][^14]."
+  },
+  {
+   "q": "Can AI match intercompany transactions on its own?",
+   "a": "No, tools only suggest matches with confidence scores, and a person approves them[^6][^5]. Only 4% of CFOs in one vendor survey trust AI with the month-end close[^7]."
+  },
+  {
+   "q": "How long should a multi-entity close take?",
+   "a": "Six calendar days is the median from first trial balance to monthly consolidated statements[^1]. Most lender agreements we counted want statements within 30 days[^2]."
+  },
+  {
+   "q": "What happens if intercompany doesn't eliminate?",
+   "a": "Sales and costs are overstated, and restatements can follow[^24]. INTL FCStone overstated sales by $2.6B in one year[^24]. EIDP misclassified intercompany loan cash flows and reported a material weakness[^25]."
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Buy the consolidation software: most firms buy their AI tools, and bought tools succeed more often[^28][^29]. Pick by entity count and ledger mix, from Fathom to an EPM suite[^30][^31].",
+  "build": "Build the work no tool ships: the group chart, the mapping table, counterparty codes and the review log. Auditors will ask how each AI suggestion was reviewed[^8]."
+ },
+ "pickElse": [
+  "A few add-ons, all on QuickBooks Online or Xero, with little intercompany: a reporting tool such as Fathom may be enough. It lists $450 a month for 25 companies[^30].",
+  "One ERP already holds every entity: use its own multi-entity features, such as Sage Intacct or NetSuite OneWorld, before adding a layer. Most AI uses are bought, not built[^28].",
+  "A large group with many currencies and an EPM budget: Oracle's EPM suite lists $250 per named user a month, 10-user minimum[^31]. It ships its own intercompany agent (vendor)[^5].",
+  "Only reconciliations hurt, not consolidation: start with account reconciliation automation instead. Firms that automate reconciliations close faster[^33]."
+ ],
+ "resources": [
+  {
+   "name": "APQC, days to complete monthly consolidated statements",
+   "url": "https://www.apqc.org/what-we-do/benchmarking/open-standards-benchmarking/measures/cycle-time-days-complete-monthly",
+   "what": "The benchmark to compare your own close against."
+  },
+  {
+   "name": "KPMG, Handbook: Consolidation",
+   "url": "https://kpmg.com/kpmg-us/content/dam/kpmg/frv/pdf/2026/handbook-consolidation.pdf",
+   "what": "Free reference on when to consolidate, combine or show consolidating columns."
+  },
+  {
+   "name": "AICPA guidance on AI in financial reporting",
+   "url": "https://www.aicpa-cima.com/news/article/aicpa-releases-guidance-to-help-auditors-address-the-use-of-ai-in-financial-reporting-and-auditing",
+   "what": "What your auditor will ask about AI-assisted entries."
+  },
+  {
+   "name": "COSO guidance on automation controls",
+   "url": "https://www.coso.org/_files/ugd/719ba0_8b22177f8521488687a838c680c54f59.pdf",
+   "what": "How to design controls around automated close steps."
+  }
+ ],
+ "stats": [
+  {
+   "num": "6 days",
+   "label": "median to complete monthly consolidated statements, counted from the first trial balance[^1]",
+   "source": "APQC, n=10,201"
+  },
+  {
+   "num": "80%",
+   "label": "of 599 SEC-filed credit documents we counted set a 30-day monthly statement deadline[^2]",
+   "source": "Zavient count of SEC EDGAR, 26 Nov 2026"
+  },
+  {
+   "num": "84%",
+   "label": "of FY2025 material weaknesses involve financial close and reporting, up from 71%[^11]",
+   "source": "KPMG, 2026"
+  },
+  {
+   "num": "41%",
+   "label": "median share of intercompany transactions processed fully automated[^10]",
+   "source": "APQC, 2026"
+  },
+  {
+   "num": "4%",
+   "label": "of surveyed CFOs trust AI with the month-end close[^7]",
+   "source": "Datarails survey (vendor), 2026"
+  },
+  {
+   "num": "99%",
+   "label": "of surveyed finance staff report intercompany accounting challenges[^32]",
+   "source": "BlackLine and Dimensional Research (vendor), 2023"
+  }
+ ],
+ "sources": [
+  {
+   "name": "APQC Open Standards Benchmarking, measure 100162",
+   "url": "https://www.apqc.org/what-we-do/benchmarking/open-standards-benchmarking/measures/cycle-time-days-complete-monthly",
+   "what": "Cycle time in calendar days to complete monthly consolidated financial statements, from the first trial balance: top performers 5, median 6, bottom 10 (n=10,201). Read 26 Nov 2026."
+  },
+  {
+   "name": "SEC EDGAR full-text search (Zavient count)",
+   "url": "https://www.sec.gov/edgar/search/",
+   "what": "Our count, run 26 Nov 2026, of filings dated 1 Jan 2024 to 26 Nov 2026 that pair a monthly statement deadline with a compliance certificate: 599 documents."
+  },
+  {
+   "name": "Nerdy Inc and Hercules, loan and security agreement (8-K exhibit, 6 Nov 2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1819404/000181940425000075/loanandsecurityagreement.htm",
+   "what": "Monthly statements on a consolidated and consolidating basis within 30 days, plus a monthly compliance certificate."
+  },
+  {
+   "name": "Benson Hill and FNBO, credit agreement (8-K exhibit, 9 May 2024)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1830210/000162828024021949/ex101ddb-fnboexecutedfirst.htm",
+   "what": "Monthly statements, a borrowing base report and a compliance certificate, each within 30 days."
+  },
+  {
+   "name": "Oracle, Financial Consolidation and Close datasheet (vendor, 12 Jun 2026)",
+   "url": "https://www.oracle.com/a/ocom/docs/applications/epm/oracle-financial-consolidation-and-close-ds.pdf",
+   "what": "Vendor: its Intercompany Agent resolves routine disputes within policy, routes unmatched items with context, keeps an audit trail; controllers review and approve."
+  },
+  {
+   "name": "BlackLine, transaction matching and Verity Match (vendor)",
+   "url": "https://www.blackline.com/products/financial-close/transaction-matching",
+   "what": "Vendor: AI match suggestions come with confidence scores and reasoning inside a review-and-confirm workflow."
+  },
+  {
+   "name": "Datarails, 2026 CFO Sentiments survey (vendor, Jul 2026)",
+   "url": "https://www.datarails.com/research/2026-cfo-sentiments",
+   "what": "Vendor survey of 270 US companies over $100M revenue: 26% of the working week goes to checking AI output; 4% trust AI with month-end close."
+  },
+  {
+   "name": "AICPA, guidance on AI in financial reporting and auditing (13 Oct 2026)",
+   "url": "https://www.aicpa-cima.com/news/article/aicpa-releases-guidance-to-help-auditors-address-the-use-of-ai-in-financial-reporting-and-auditing",
+   "what": "Practice aid: auditors will ask how a company's AI outputs used in financial reporting were reviewed."
+  },
+  {
+   "name": "US Census Bureau, CES-WP-26-25 (Apr 2026)",
+   "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
+   "what": "Of firms using AI, 66% use it only to augment staff work; 2% reported AI-related job cuts."
+  },
+  {
+   "name": "APQC, What benchmarks matter for record-to-report performance (9 Nov 2026)",
+   "url": "https://www.apqc.org/What-Benchmarks-Matter-for-Record-to-Report-Performance",
+   "what": "5.8% of general accounting staff time goes to consolidations and eliminations; median 41.0% of intercompany transactions processed fully automated."
+  },
+  {
+   "name": "KPMG, Trends in material weaknesses, FY2025 (May 2026)",
+   "url": "https://kpmg.com/kpmg-us/content/dam/kpmg/pdf/2026/trends-material-weaknesses.pdf",
+   "what": "238 of 3,307 companies (7%) reported material weaknesses; financial close and reporting appears in 84% of them, up from 71%."
+  },
+  {
+   "name": "Jorgensen et al., Intelligent Systems in Accounting, Finance and Management (2021)",
+   "url": "https://onlinelibrary.wiley.com/doi/10.1002/isaf.1500",
+   "what": "Classifying transactions to accounts: about 80.5% top-1 accuracy within each of 473 companies; 64.6% on a company the model never saw."
+  },
+  {
+   "name": "FinTagging benchmark, arXiv 2505.20650 (2025)",
+   "url": "https://arxiv.org/html/2505.20650",
+   "what": "Zero-shot language models linking financial facts to the full US-GAAP taxonomy scored about 17% at best (DeepSeek-V3 and GPT-4o, 0.17)."
+  },
+  {
+   "name": "TopoLedgerBERT, FinNLP 2024 (Silverfin and Ghent University)",
+   "url": "https://aclanthology.org/2024.finnlp-2.6.pdf",
+   "what": "Maps company-specific ledger accounts to a standard chart with hierarchy-aware embeddings; beats baselines and handles accounts unseen in training."
+  },
+  {
+   "name": "Soft Computing, GPT trial-balance mapping study (21 Jan 2026)",
+   "url": "https://link.springer.com/article/10.1007/s00500-025-10983-4",
+   "what": "A fine-tuned GPT-3 model mapped 945 charts of accounts to the EU Accounting Directive layout."
+  },
+  {
+   "name": "APQC, How can you improve the month-end closing process? (13 Oct 2026)",
+   "url": "https://www.apqc.org/how-can-you-improve-the-month-end-closing-process",
+   "what": "Centralize the chart of accounts, since units adding accounts slows reporting; run the close on a workday checklist with named owners."
+  },
+  {
+   "name": "Gartner press release, finance AI adoption (18 Nov 2025)",
+   "url": "https://www.gartner.com/en/newsroom/press-releases/2025-11-18-gartner-survey-shows-finance-ai-adoption-remains-steady-in-2025",
+   "what": "34% of finance functions using AI use it for error and anomaly detection (n=183)."
+  },
+  {
+   "name": "Deloitte DART, ASC 810 roadmap 4.3",
+   "url": "https://dart.deloitte.com/USDART/home/codification/broad-transactions/asc810-10/roadmap-noncontrolling-interests/chapter-4-intercompany-matters-with-noncontrolling/4-3-transactions-between-parent-subsidiary",
+   "what": "Intra-entity balances and transactions are eliminated in full (ASC 810-10-45-1); a noncontrolling interest does not change the amount eliminated."
+  },
+  {
+   "name": "KPMG, Handbook: Consolidation (25 Feb 2026)",
+   "url": "https://kpmg.com/kpmg-us/content/dam/kpmg/frv/pdf/2026/handbook-consolidation.pdf",
+   "what": "Consolidated statements present a parent and subsidiaries as one economic entity for owners and creditors; combined statements cover commonly controlled entities with no controlling interest between them, prepared the same way; consolidating statements show one column per subsidiary."
+  },
+  {
+   "name": "PCAOB, AS 2201 paragraph .26",
+   "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2201",
+   "what": "The auditor evaluates the period-end financial reporting process, including journal entries, adjustments and statement preparation."
+  },
+  {
+   "name": "PCAOB Auditing Standard No. 2, Appendix D (2004)",
+   "url": "https://www.sec.gov/files/rules/pcaob/34-49544-appendixd.pdf",
+   "what": "Scenario A: a policy requires monthly intercompany reconciliation but no process makes sure it happens; a significant deficiency."
+  },
+  {
+   "name": "COSO, guidance on robotic process automation (Dec 2024)",
+   "url": "https://www.coso.org/_files/ugd/719ba0_8b22177f8521488687a838c680c54f59.pdf",
+   "what": "Bots and automation need the same control design as work done by people."
+  },
+  {
+   "name": "SEC order, Cambrex, 34-55933 (20 Jun 2007)",
+   "url": "https://www.sec.gov/files/litigation/admin/2007/34-55933.pdf",
+   "what": "Intercompany imbalances were logged but not resolved; the finance department was inadequately staffed to reconcile intercompany accounts."
+  },
+  {
+   "name": "SEC order, INTL FCStone, 34-77596 (12 Apr 2016)",
+   "url": "https://www.sec.gov/files/litigation/admin/2016/34-77596.pdf",
+   "what": "Intercompany physical sales were not eliminated, overstating sales and cost of sales by $1.3B in FY2011 and $2.6B in FY2012."
+  },
+  {
+   "name": "EIDP (Corteva subsidiary), Form 8-K (6 Feb 2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/30554/000119312525021314/d926878d8k.htm",
+   "what": "Intercompany loan cash flows were misclassified; the company concluded it had a material weakness, with no controls over their cash flow classification."
+  },
+  {
+   "name": "SEC order, CIRCOR, 34-100934 (5 Sep 2024)",
+   "url": "https://www.sec.gov/files/litigation/admin/2024/34-100934.pdf",
+   "what": "Segregation-of-duties failures in business unit reconciliations allowed more than $11M in unsupported top-level entries."
+  },
+  {
+   "name": "XBRL International, With AI, structured data wins the day (13 Jul 2025)",
+   "url": "https://www.xbrl.org/news/with-ai-structured-data-wins-the-day",
+   "what": "Reports a Suffolk University study of an LLM pulling 26 metrics from 5,000 10-Ks: scaling errors over 8% from text against 0.11% from XBRL."
+  },
+  {
+   "name": "Menlo Ventures, 2025 State of Generative AI in the Enterprise",
+   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+   "what": "76% of enterprise AI use cases are bought rather than built (n=495)."
+  },
+  {
+   "name": "Fortune on MIT NANDA's GenAI Divide report (18 Aug 2025)",
+   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
+   "what": "Bought AI tools succeed about 67% of the time; internal builds about a third as often."
+  },
+  {
+   "name": "Fathom, pricing page",
+   "url": "https://www.fathomhq.com/pricing",
+   "what": "Pro Gold $450 a month for 25 companies, plus $17 per extra company; Enterprise quoted. Read 26 Nov 2026."
+  },
+  {
+   "name": "Oracle Fusion Cloud Service Global Price List (5 Nov 2026)",
+   "url": "https://www.oracle.com/a/ocom/docs/corporate/pricing/oracle-fusion-cloud-global-price-list.pdf",
+   "what": "EPM Standard $250 per hosted named user a month, 10-user minimum. Read 26 Nov 2026."
+  },
+  {
+   "name": "BlackLine and Dimensional Research survey (vendor, Mar 2023)",
+   "url": "https://www.blackline.com/about/press-releases/2023/99-of-stakeholders-surveyed-by-blackline-report-challenges-with-intercompany-accounting-processes/",
+   "what": "Vendor survey, n=263: 99% report intercompany accounting challenges; 97% have had to resolve multi-million-dollar variances."
+  },
+  {
+   "name": "Ventana Research, Finally, a faster close (7 Oct 2019)",
+   "url": "https://research.isg-one.com/analyst-perspectives/finally-a-faster-close",
+   "what": "69% of companies that automate reconciliations close within 6 days, against 53% of those that don't."
+  },
+  {
+   "name": "Deloitte Dbriefs poll via IAS Plus (26 May 2016)",
+   "url": "https://iasplus.com/content/c4815ce5-5420-4573-8c2e-684ea8888425",
+   "what": "3,800+ participants: disparate systems is the top intercompany challenge (21.4%); only 9.2% have a leading intercompany framework."
+  },
+  {
+   "name": "Gartner, Innovation Insight: AI in Financial Close and Consolidation Solutions (2 Jun 2026)",
+   "url": "https://www.gartner.com/en/documents/7944773",
+   "what": "Research note on AI features inside close and consolidation software; abstract only, report paywalled."
+  },
+  {
+   "name": "Deloitte Center for Controllership, Managing intercompany accounting challenges",
+   "url": "https://www.deloitte.com/us/en/programs/center-for-controllership/blogs/managing-intercompany-accounting-challenges-and-tax-complexities.html",
+   "what": "Nearly 60% of 4,114 polled cite data quality, reconciliation and transfer-pricing documentation as the biggest intercompany challenges."
+  }
+ ],
+ "related": [
+  "holding-companies-roll-ups",
+  "ai-post-merger-integration",
+  "private-equity",
+  "ai-value-creation-plan",
+  "account-reconciliation-automation",
+  "private-credit-portfolio-monitoring",
+  "ai-integration-services",
+  "sales-analytics"
+ ],
+ "answers": {
+  "what-it-is": "Consolidated financial reporting turns each company's books into one set of statements for the group, with sales and balances between them eliminated[^19][^18]. AI can suggest account mappings and intercompany matches, while the controller approves each one[^6][^12].",
+  "human-role": "The controller stays in charge: AI suggests account mappings and intercompany matches, and the controller approves each one and signs off eliminations and statements[^6][^5][^8].",
+  "team-after": "Your finance team moves from keying mappings and chasing matches to reviewing AI suggestions, fixing routed breaks and running the close checklist[^7][^5][^16].",
+  "example": "Trial balances from each add-on go in. Approved mappings, suggested intercompany matches, reviewed eliminations and a lender-ready consolidating workbook come out[^3][^19].",
+  "table-1": "AI can suggest account mappings and intercompany matches, flag anomalies and draft eliminations, while your controller approves each one and signs the statements[^6][^5][^17].",
+  "table-2": "Six calendar days is the median from first trial balance to monthly consolidated statements. Top performers take 5 and bottom performers 10[^1].",
+  "table-3": "AI mapping is accurate enough to suggest, not to post: about 80% right within known companies, 65% on a new one, and 17% unaided on the full US-GAAP taxonomy[^12][^13].",
+  "recipes": "Few add-ons on QuickBooks or Xero fit a reporting tool. Mixed ledgers need a mapping layer with reviewed AI matching; a large group fits an EPM suite[^30][^31][^5].",
+  "own-data": "Most want them within 30 days of month end: 479 of 599 SEC-filed credit documents we counted, about 80%, set that deadline[^2][^3].",
+  "rules": "ASC 810 sets what a consolidation must show, while auditing standards and AICPA and COSO guidance set how auditors judge the close, AI steps included[^19][^20][^8][^22].",
+  "benchmark": "Run one closed month through AI mapping and matching on two add-ons, compare it with the signed manual close, and trace every elimination to an approver[^1][^20].",
+  "what-goes-wrong": "A multi-entity close goes wrong when AI mappings post unreviewed, intercompany breaks age without owners, eliminations get missed, or top-level entries skip a second approver[^12][^23][^24][^26].",
+  "buy-or-build": "Buy the consolidation software, and build the mapping, intercompany rules and review steps around it[^28].",
+  "something-else": "Pick something else when your add-ons share one simple ledger, one ERP already holds every entity, a large group needs an EPM suite, or only reconciliations hurt[^30][^31]."
+ },
+ "offer": {
+  "heading": "Is your consolidated close racing the lender's deadline? Get a free diagnostic",
+  "body": "Walk us through your add-ons, their ledgers and your lender's reporting deadline. In 30 minutes you leave with the first step for your next close, a before-and-after measure and what your auditor will ask. You get it in writing, with no sales pitch."
+ },
+ "keyword": {
+  "phrase": "consolidated financial reporting",
+  "searches": 1000,
+  "cpc": 72.93,
+  "difficulty": 11
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Bottom line led with the lender's 30-day clock but said 'a median of 6' with no unit; now '6 days'. On this page had no route to the failure cases; added a link to where a multi-entity close breaks."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Tripped on 'workday 3', 'counterparty code' and 'top-level adjustment'. Recipe steps now explain workday 3, say what a counterparty code tags, and name topside entries."
+  },
+  {
+   "reader": "GM",
+   "notes": "Wanted the payoff beyond the lender. The test step that prices the lift now counts how much sooner each add-on's margins reach you, next to workdays freed and controller hours moved. Sales analytics is linked in related pages."
+  },
+  {
+   "reader": "Division head",
+   "notes": "The controller checked roles and accounting. Eliminations and topside entries keep a second reviewer; FAQ answers on combined vs consolidated match KPMG's handbook. The 26% checking-time figure is now labelled as a vendor survey, and the team-after bullet cites Cambrex for thin staffing instead of an unsourced claim."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Found software prices with dates, no consulting fees, and the jobs answer. The offer now promises the first step for the next close and a before-and-after measure in writing, with no sales pitch."
+  }
+ ],
+ "updated": "2026-11-26"
+}
