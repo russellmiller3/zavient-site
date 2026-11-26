@@ -38,7 +38,7 @@ export const PUBLISHERS = [
   [/^NAIC\b/, ['naic.org']], [/^AICPA\b/, ['aicpa-cima.com', 'aicpa.org']],
 ];
 // A name that says the copy is someone else's is fine only when the note says why the publisher's own copy isn't used.
-const OWN_COPY_GONE = /\b(?:commissioned by|publisher (?:no longer|does not|doesn't) (?:host|publish)|no publisher copy|only copy online|as reported by|reported by|via\b)/i;
+const OWN_COPY_GONE = /\b(?:commissioned by|(?:publisher|[A-Z][\w&.-]*) (?:no longer|does not|doesn't) (?:hosts?|publish(?:es)?)|no publisher copy|only copy online|as reported by|reported by|via\b)/i;
 export function mirrorProblems(sources = []) {
   const out = [];
   sources.forEach((s, i) => {

@@ -11,5 +11,10 @@ export function indexed(page, pages) {
   if (!d.index) return false;
   if (!d.templateVersion) return true;
   const siblings = pages.map((p) => ({ ...p.data, _slug: p.id }));
-  return gate(d, { slug: page.id, siblings }).fail.length === 0;
+  // Round 6 (26 Nov 2026): a page marked index that fails the gate here used to render noindex in silence, and once
+  // passed scripts/check-page.mjs while failing here (ai-procurement). Now the build stops and names the reasons, so
+  // the page check and the build can never disagree without a red build.
+  const { fail } = gate(d, { slug: page.id, siblings });
+  if (fail.length) throw new Error(`${page.id} is marked index but fails the publish gate in the build:\n  - ${fail.join('\n  - ')}\nRun node scripts/check-page.mjs ${page.id} --indexed; if it passes there, the two disagree: fix the check so they match.`);
+  return true;
 }

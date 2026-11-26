@@ -62,6 +62,11 @@ export const CONTRAST = /\b(while|but|whereas|unlike|than|instead)\b/i;
 export const COST_FIGURE_Q = /^(how much\b.*\bcosts?\b|what (does|do)\b.*\bcosts?\b)/i;
 // A figure: a $ sign, or any digit left once dates and years are taken out.
 export const hasFigure = (s) => /[$€£]|\d/.test(String(s).replace(DATES, ''));
+// Round 6 (26 Nov 2026), the sanctioned answer when a vendor publishes no price (ChatGPT Enterprise): the first sentence
+// says so in plain words ("OpenAI publishes no Enterprise price and quotes each deal"), and the next sentence gives the
+// nearest public figure (a seat minimum, a reseller listing), each with its source, or says no public figure exists. Russell: "MAKE SURE TO ANSWER THE
+// FUCKINF QUARIONS". "Contact sales" alone is not an answer.
+export const NO_PRICE = /\b(?:no (?:public |list |published )?(?:[A-Z][\w-]* )?price|publishes no\b[^.]*\bprice|not published|quote only|quotes? each (?:deal|customer|firm)|free)\b/i;
 
 // Problems with one question heading and the paragraph text straight under it ('' when no paragraph follows).
 export function answerProblems(heading, text) {
@@ -74,7 +79,7 @@ export function answerProblems(heading, text) {
   if (words < MIN_WORDS) out.push(`first sentence is a bare ${words}-word answer (min ${MIN_WORDS}): give the reason in the same sentence ("No, because ..."): "${s}"`);
   if (words > MAX_WORDS) out.push(`first sentence is ${words} words (max ${MAX_WORDS}): "${s.slice(0, 80)}..."`);
   if (YES_NO.test(q) && !/\bor\b/i.test(q) && !/^(yes|no|not|only)\b/i.test(s)) out.push(`yes/no question, but the answer doesn't start with Yes or No: "${s.slice(0, 80)}"`);
-  if (COST.test(q) && !/[\d$€£]|\b(no (public |list )?price|not published|quote only|free)\b/i.test(s.replace(DATES, ''))) out.push(`cost question, but the first sentence has no number: "${s.slice(0, 80)}"`);
+  if (COST.test(q) && !/[\d$€£]/.test(s.replace(DATES, '')) && !NO_PRICE.test(s)) out.push(`cost question, but the first sentence has no number: "${s.slice(0, 80)}"`);
   if (/^(it|this|that|they|these|those)\b/i.test(s)) out.push(`the first sentence leans on the heading (starts "${s.split(' ')[0]}"); name the subject so it stands alone`);
   if (/^(great question|in this (section|guide|page)|there are (many|several|a few)|when it comes to|before we|let's|let us)\b/i.test(s)) out.push(`filler opening instead of the answer: "${s.slice(0, 80)}"`);
   if (SOURCE_NOTE.test(s)) out.push(`the first sentence is a source or method note, not the answer; answer first, then say where the numbers came from: "${s.slice(0, 80)}"`);
@@ -83,7 +88,7 @@ export function answerProblems(heading, text) {
   const all = sentencesOf(text);
   if (TWO_PART.test(q) && all.length < 2) out.push(`two-part question, but the answer is ${all.length} sentence; answer each part (at least 2 sentences): "${s.slice(0, 80)}"`);
   if (DIFFERENCE.test(q) && !CONTRAST.test(s)) out.push(`difference question, but the first sentence states no contrast (while, but, whereas, unlike, than, instead): "${s.slice(0, 80)}"`);
-  if (COST_FIGURE_Q.test(q) && !all.slice(0, 2).some(hasFigure)) out.push(`cost question, but the first two sentences give no figure ($ or a number that is not a date): "${s.slice(0, 80)}"`);
+  if (COST_FIGURE_Q.test(q) && !all.slice(0, 2).some(hasFigure) && !(NO_PRICE.test(s) && /\bno (?:other )?(?:public|published) (?:figure|number|price)s?\b/i.test(all[1] || ''))) out.push(NO_PRICE.test(s) ? `cost question with no public price, but the first two sentences give no figure: make the second sentence the nearest public figure (a seat minimum, a listing) with its source: "${s.slice(0, 80)}"` : `cost question, but the first two sentences give no figure ($ or a number that is not a date); if the vendor publishes none, say so first ("<Vendor> publishes no price and quotes each deal"): "${s.slice(0, 80)}"`);
   return out;
 }
 

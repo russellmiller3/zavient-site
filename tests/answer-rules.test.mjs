@@ -36,3 +36,11 @@ test('rule 10: a cost heading needs a figure in the first two sentences, and dat
   // Other cost-shaped headings keep only the older first-sentence check.
   assert.ok(!has('Which platform is cheapest?', 'Make is cheapest at volume.', 'first two sentences'));
 });
+
+test('round 6: the sanctioned answer when a vendor publishes no price', () => {
+  const q = 'How much does ChatGPT Enterprise cost?';
+  assert.ok(!has(q, 'OpenAI publishes no Enterprise price and quotes each deal[^2]. A reseller listing gives a 150-seat minimum[^22].', 'cost question'));
+  assert.ok(!has(q, 'Acme publishes no price and quotes each deal for each firm. No other public figure exists, from resellers or reports.', 'cost question'));
+  assert.ok(has(q, 'OpenAI publishes no Enterprise price and quotes each deal. Talk to sales for the details.', 'nearest public figure'));
+  assert.ok(has(q, 'Pricing varies by deal size and seat count for each firm. Talk to sales.', 'publishes no price and quotes each deal'));
+});

@@ -260,18 +260,10 @@ test('a research finding may carry its URL and read date on the lines under it',
   assert.ok(researchProblems('## Slot\n- KPMG: 51%\n  URL: https://kpmg.com/x\n- next\n  Read: 2026-11-26\n').length === 2);
 });
 
-test('the claim baseline only shrinks: never above a page\'s current count, and only real pages', async () => {
-  const { default: baseline } = await import('../src/lib/claim-baseline.mjs');
-  const bad = [];
-  for (const [slug, n] of Object.entries(baseline)) {
-    const page = pages.find(([s]) => s === slug);
-    if (!page) { bad.push(`${slug}: no such page; run node scripts/claim-baseline.mjs --write`); continue; }
-    const now = claimProblems(page[1]).length;
-    if (now < n) bad.push(`${slug}: ${now} claims now, baseline ${n}; lower it with node scripts/claim-baseline.mjs --write`);
-    if (now > n) bad.push(`${slug}: ${now} claims, more than its baseline of ${n}: fix the new ones`);
-  }
-  for (const [s, d] of pages) if (!(s in baseline) && claimProblems(d).length) bad.push(`${s}: ${claimProblems(d).length} claims and no baseline: new pages start clean`);
+test('every page is clean: no claim problems, and no baseline to hide one (round 6)', () => {
+  const bad = pages.filter(([, d]) => claimProblems(d).length).map(([s, d]) => `${s}: ${claimProblems(d).join(' | ')}`);
   assert.deepEqual(bad, []);
+  assert.ok(!existsSync(join(root, 'src/lib/claim-baseline.mjs')), 'the claim baseline was removed in round 6; fix the page instead');
 });
 
 test('the brief sends research to the fetch tool where the proxy blocks curl, and runs the live figure check', () => {

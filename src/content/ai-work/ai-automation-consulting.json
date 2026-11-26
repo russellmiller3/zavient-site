@@ -8,7 +8,7 @@
  "industry": "any industry",
  "index": true,
  "verdict": [
-  "Pay for a redesigned workflow, not a tool. Firms that rebuilt the work beat AI goals about twice as often.[^1][^2]",
+  "Pay for a redesigned workflow, not a tool. By our math, rebuilt workflows beat AI goals about twice as often.[^1][^2]",
   "Get a working pilot and a before-and-after number, not slides. Most custom AI pilots never reach daily use.[^3][^4]",
   "Tools cost $9 to $129 a month per workflow, by our math.[^5][^25] The real work is mapping steps and exceptions.",
   "Keep a named person on anything moving money or reaching customers.[^8] Your firm stays liable for what its AI says.[^7]",
@@ -25,7 +25,7 @@
   "Everything you paid for, handed over: logins, workflow exports, documents and test cases. Your team should be able to run it without the advisor."
  ],
  "humanRole": [
-  "The ops lead owns the workflow and its number, and decides which outputs a person checks.[^10] In McKinsey's survey, 27% of respondents say staff review every generative AI output, and a similar share say 20% or less gets checked.[^2]",
+  "The ops lead owns the workflow and its number, and decides which outputs a person checks.[^10] In McKinsey's survey, 27% of respondents say their organizations' staff review every generative AI output, and a similar share say 20% or less gets checked.[^2]",
   "A named reviewer approves anything that moves money or reaches customers, such as refunds, payments or cancellations, until the system earns trust.[^8][^9]",
   "People can override or stop the system, and every override is logged. NIST (the US standards agency) asks for documented oversight; EU rules require a stop button for high-risk AI.[^9][^10][^17]",
   "Your firm stays liable for what its AI tells customers. A Canadian tribunal held Air Canada to its chatbot's wrong refund advice.[^7][^18]"
@@ -134,7 +134,7 @@
  "faq": [
   {
    "q": "Is AI automation consulting worth it for a mid-sized firm?",
-   "a": "Yes, if you bring one workflow with a number attached. In an RSM survey, 70% of mid-market firms said they need outside help to get the most from AI.[^14] In MIT's sample, partnered projects reached daily use about twice as often as internal builds.[^3]"
+   "a": "Yes, if you bring one workflow with a number attached. In an RSM survey, 70% of middle-market executives said they need outside help to get the most from AI.[^14] In MIT's sample, partnered projects reached daily use about twice as often as internal builds.[^3]"
   },
   {
    "q": "What does an AI automation consultant actually do?",
@@ -159,7 +159,7 @@
  ],
  "pickElse": [
   "A simple job in standard apps, like a web form feeding your customer database: build it on Zapier's free plan or self-hosted n8n.[^5][^6]",
-  "Drafting and summarising for individuals: buy Microsoft 365 Copilot or ChatGPT Business seats and train people.[^21][^32] Writing and marketing are the most common small-firm AI uses (83%).[^13]",
+  "Drafting and summarising for individuals: buy Microsoft 365 Copilot or ChatGPT Business seats and train people.[^21][^32] Among small firms that use AI, 83% use it for writing or marketing, the most common use.[^13]",
   "A standard back-office job a product already does, like payables or reconciliation: buy the product and benchmark it on your own files.[^3]",
   "A process nobody has written down: map and fix it first, since redesigning the work drives the gain.[^1]"
  ],
@@ -188,7 +188,7 @@
  "stats": [
   {
    "num": "48% vs 23%",
-   "label": "Firms that rebuilt workflows against firms that only added tools, beating their AI goals.[^1]",
+   "label": "Companies that rebuilt workflows against companies that made smaller changes, beating their AI goals.[^1]",
    "source": "Bain survey, Nov 2026"
   },
   {
@@ -198,7 +198,7 @@
   },
   {
    "num": "70%",
-   "label": "Mid-market firms that say they need outside help to get the most from AI.[^14]",
+   "label": "Middle-market executives who say they need outside help to get the most from AI.[^14]",
    "source": "RSM survey of 966 executives, 2025"
   },
   {
@@ -221,17 +221,17 @@
   {
    "name": "Bain, Survey: workflow redesign is key to AI success, Nov 2026",
    "url": "http://www.bain.com/insights/survey-workflow-redesign-is-key-to-ai-success",
-   "what": "200 firms per wave. 48% of firms that rebuilt workflows beat AI goals, against about 23% that only added tools; 33% report measurable results from at least one use case."
+   "what": "Survey of 200 companies per wave (Bain AI readiness surveys; Q3 2026 wave n=200, fielded Aug 2026). 48% of companies that redesigned or rebuilt workflows exceeded or far exceeded their AI goals, against about 23% of companies that only added tools, reassigned tasks or redesigned steps; 33% of companies report measurable results from AI in at least one use case. Read 26 Nov 2026."
   },
   {
    "name": "McKinsey, The state of AI, Mar 2025",
    "url": "https://www.mckinsey.com/~/media/mckinsey/business%20functions/quantumblack/our%20insights/the%20state%20of%20ai/2025/the-state-of-ai-how-organizations-are-rewiring-to-capture-value_final.pdf",
-   "what": "Survey of 1,491 respondents in 101 nations, Jul 2024. Of 25 attributes tested, redesigning workflows has the biggest effect on profit impact from generative AI. 27% of respondents whose organizations use generative AI say employees review all its content before use, and a similar share say 20% or less is checked."
+   "what": "Survey of 1,491 participants from organizations in 101 nations, at all levels of the organization (555 C-level executives, 371 senior managers, 264 midlevel managers), fielded 16 to 31 Jul 2024. Of 25 attributes tested, redesigning workflows has the biggest effect on EBIT impact from generative AI. 27% of respondents whose organizations use generative AI say employees review all its content before use, and a similar share say 20% or less is checked. Read 26 Nov 2026."
   },
   {
-   "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025, Jul 2025",
-   "url": "https://21464181.fs1.hubspotusercontent-na1.net/hubfs/21464181/v0.1_State_of_AI_in_Business_2025_Report.pdf",
-   "what": "Survey of 153 senior leaders, plus interviews with 52 organizations and a review of over 300 public AI initiatives, Jan to Jun 2025 (preliminary, self-reported). Only 5% of custom enterprise AI tools reach production. External partnerships reached deployment about 67% of the time, internal builds about 33%."
+   "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025)",
+   "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+   "what": "MIT no longer hosts the report (its link now opens the NANDA project page, checked 26 Nov 2026); copy hosted by MLQ.ai. Sample: 52 organizations interviewed, survey of 153 leaders, and 300+ public AI initiatives reviewed. $30-40 billion of enterprise GenAI investment; 95% of organizations are getting zero return; just 5% of integrated AI pilots extract millions in value. Task-specific tools: 60% of organizations evaluated them, 20% piloted, 5% reached production. Over 80% of organizations explored or piloted ChatGPT or Copilot, and nearly 40% report deployment. External partnerships with customized tools reached deployment about 67% of the time vs about 33% for internal builds: 2x as likely, twice the success rate. Only 40% of companies purchased an official LLM subscription; workers at over 90% of companies surveyed use personal AI tools for work. For mission-critical work, 90% of users prefer humans. Enterprises, defined as firms with over $100 million in annual revenue, lead in pilot count but report the lowest pilot-to-scale conversion. Read 26 Nov 2026."
   },
   {
    "name": "Gartner press release, 29 Jul 2024",

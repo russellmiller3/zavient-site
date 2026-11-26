@@ -20,7 +20,6 @@ import { rivalProblems } from '../src/lib/rival-firms.mjs';
 import { acronymProblems } from '../src/lib/acronyms.mjs';
 import { structureProblems } from '../src/lib/structure-rules.mjs';
 import { claimProblems } from '../src/lib/source-numbers.mjs';
-import CLAIM_BASELINE from '../src/lib/claim-baseline.mjs';
 import { figureCheckProblems } from '../src/lib/figure-check.mjs';
 import { edgarProblems } from '../src/lib/edgar-hits.mjs';
 
@@ -145,13 +144,9 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
   // A warning, not a fail, until the pages built before the rule have a log.
   if (!d.sourceCheck) warn.push('no source-claim check logged: open each cited source, confirm it states the claim it backs, and log sourceCheck {date, by, checked, fixed}');
   // Every footnoted figure in its source's note, survey figures with their group, one figure per claim, dated prices
-  // (src/lib/source-numbers.mjs, 26 Nov 2026). A new page must be clean; a page built before the rule may not get worse
-  // than its count in the baseline, which only goes down. The 5 PE pages logged a source check just before the rule
-  // landed, so they are in the baseline too, to be fixed and lowered by the build thread.
-  const claims = claimProblems(d);
-  const allowed = CLAIM_BASELINE[slug] ?? 0;
-  if (claims.length > allowed) for (const p of claims) fail.push(`claim: ${p}`);
-  else if (claims.length) warn.push(`${claims.length} claims not yet matched to their source notes (the most this page may have is ${allowed}; see src/lib/claim-baseline.mjs), e.g. ${claims[0]}`);
+  // (src/lib/source-numbers.mjs, 26 Nov 2026). Round 6 (26 Nov 2026): every page was fixed to zero, so the baseline
+  // that let older pages keep their count is gone. Any claim problem fails, on every page.
+  for (const p of claimProblems(d)) fail.push(`claim: ${p}`);
   // Round 5 (26 Nov 2026): the live figure check's record (src/lib/figure-check.mjs) and EDGAR hit lists
   // (src/lib/edgar-hits.mjs). Pages built before each rule are listed there, and those lists only shrink.
   for (const p of figureCheckProblems(d, slug)) fail.push(`figure check: ${p}`);

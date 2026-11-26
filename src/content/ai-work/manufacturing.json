@@ -326,7 +326,7 @@
   }
  ],
  "watchOuts": [
-  "Pilot purgatory: 77% of AI vision systems in a 50-study review never left prototype or pilot.[^7][^36] Cost the problem first, in downtime hours or escapes, and start on one line.[^14][^37]",
+  "Pilot purgatory: 77% of AI vision systems in a 50-study review never left prototype or pilot, and a second review puts it at 83%.[^7][^36] Cost the problem first, in downtime hours or escapes, and start on one line.[^14][^37]",
   "Productivity dips before it rises, worst in older plants.[^8][^9] Budget a ramp period and keep your standard work, since dropping it explains about a third of the losses.[^8]",
   "Alert fatigue: NIST MEP warns that even a 2% false-alarm rate can mean dozens of false alarms a day, until staff ignore alarms entirely.[^13] Fix basic preventive maintenance first, then set alert limits with the technicians who act on them.",
   "Vision models drift when lighting, material or product changes, and lab accuracy overstates the line.[^36][^7] Trial on your own parts, keep every labelled image and budget for upkeep, since plant AI is never a one-time fix.[^13]",
@@ -360,7 +360,7 @@
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy when the process is standard, such as maintenance software, condition monitoring or one camera station, and you have no data team. Most firms now buy: 76% of enterprise AI use cases are purchased.[^44] Bought or partnered tools succeed about 67% of the time, three times the rate of internal builds (self-reported).[^45]",
+  "buy": "Buy when the process is standard, such as maintenance software, condition monitoring or one camera station, and you have no data team. Most firms now buy: 76% of enterprise AI use cases are purchased.[^44] Among organizations MIT studied, partnered or bought tools reached deployment about 67% of the time, twice as often as internal builds.[^45]",
   "build": "Build, or configure, when your edge is your own data: an assistant over your manuals and repair history, or scheduling on your routings.[^4][^18] Custom industrial AI may need data scientists on staff or a specialist.[^13] Check claims hard: Gartner expects over 40% of agentic AI projects to be canceled by 2027.[^46]"
  },
  "pickElse": [
@@ -471,7 +471,7 @@
   {
    "name": "NIST AMS 100-34, Thomas and Weiss, Economics of Manufacturing Machinery Maintenance (2020)",
    "url": "https://nvlpubs.nist.gov/nistpubs/ams/NIST.AMS.100-34.pdf",
-   "what": "Top 25% of plants by reliance on reactive maintenance vs the bottom 25%: 3.3x the downtime (3.28 times, 13.0% vs 4.0%) and 16x the defects (16.00 times, 3.3% vs 0.2% defect rate); 45.7% of maintenance is reactive on average."
+   "what": "Survey of 85 manufacturing establishments (NIST Machinery Maintenance Survey sent to managers of machinery maintenance; 85 responses returned, some dropped as incomplete or out of scope). Top 25% of plants by reliance on reactive maintenance vs the bottom 25%: 3.3x the downtime (3.28 times, 13.0% vs 4.0%) and 16x the defects (16.00 times, 3.3% vs 0.2% defect rate); 45.7% of maintenance is reactive on average. Read 26 Nov 2026."
   },
   {
    "name": "NIST news, Research Suggests Significant Benefits to Investing in Advanced Machinery Maintenance (June 2020)",
@@ -491,7 +491,7 @@
   {
    "name": "Rockwell Automation, 10th State of Smart Manufacturing (June 2025; 1,560 respondents)",
    "url": "https://www.rockwellautomation.com/en-us/company/news/press-releases/Ninety-Five-Percent-of-Manufacturers-Are-Investing-in-AI-to-Navigate-Uncertainty-and-Accelerate-Smart-Manufacturing.html",
-   "what": "50% planned AI for product quality in 2025, the top use case; 48% plan to repurpose or hire more workers."
+   "what": "Survey of more than 1,500 manufacturers in 17 countries (1,560 respondents from management up to the C-suite, run with Sapio Research): 50% planned to apply AI/ML to product quality in 2025, the top AI use case for the second year; 48% plan to repurpose or hire more workers. Read 26 Nov 2026."
   },
   {
    "name": "See, Visual Inspection Reliability for Precision Manufactured Parts, Human Factors 57(8), Sandia (2015)",
@@ -644,9 +644,9 @@
    "what": "The US reference for securing OT; a Rev. 4 draft is open for comment to 30 Nov 2026."
   },
   {
-   "name": "A critical survey of machine learning-powered vision inspection in semiconductors manufacturing, ScienceDirect (July 2026)",
+   "name": "Akele and Gurau, review article on machine learning vision inspection in semiconductor manufacturing, Array (Elsevier), July 2026",
    "url": "https://www.sciencedirect.com/science/article/pii/S2590005626002110",
-   "what": "Only 17% of systems deployed in high-volume production; high false positives and drift across production batches."
+   "what": "Literature review of published ML vision inspection work: only 17% of reviewed publications report full-scale high-volume deployed systems, the other 83% are prototype or pilot scale; reported problems include high false positives and performance drift across production batches. Read 26 Nov 2026."
   },
   {
    "name": "Gartner press release, 30% of generative AI projects abandoned after proof of concept by end of 2025 (29 July 2024)",
@@ -689,9 +689,9 @@
    "what": "76% of enterprise AI use cases are now bought rather than built, up from 53%."
   },
   {
-   "name": "Fortune on MIT NANDA, The GenAI Divide (Aug 2025)",
-   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
-   "what": "Self-reported: buying or partnering succeeds about 67% of the time; internal builds succeed a third as often."
+   "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025)",
+   "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+   "what": "MIT no longer hosts the report (its link now opens the NANDA project page, checked 26 Nov 2026); copy hosted by MLQ.ai. Sample: 52 organizations interviewed, survey of 153 leaders, and 300+ public AI initiatives reviewed. $30-40 billion of enterprise GenAI investment; 95% of organizations are getting zero return; just 5% of integrated AI pilots extract millions in value. Task-specific tools: 60% of organizations evaluated them, 20% piloted, 5% reached production. Over 80% of organizations explored or piloted ChatGPT or Copilot, and nearly 40% report deployment. External partnerships with customized tools reached deployment about 67% of the time vs about 33% for internal builds: 2x as likely, twice the success rate. Only 40% of companies purchased an official LLM subscription; workers at over 90% of companies surveyed use personal AI tools for work. For mission-critical work, 90% of users prefer humans. Enterprises, defined as firms with over $100 million in annual revenue, lead in pilot count but report the lowest pilot-to-scale conversion. Read 26 Nov 2026."
   },
   {
    "name": "Gartner press release, over 40% of agentic AI projects canceled by end of 2027 (25 June 2025)",

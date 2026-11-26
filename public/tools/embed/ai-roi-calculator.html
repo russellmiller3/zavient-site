@@ -541,9 +541,10 @@ function roiLever(p) {
     $('rFacts').innerHTML = facts.map((x) => `<li>${x}</li>`).join('');
 
     const pct = Math.round(r.implied * 100);
-    // Research brief: show the reality check only when implied time saved is above 40% (the top of measured results).
+    // Research brief: show the reality check only when implied time saved is above 40% (the top of measured results: Noy and Zhang, Science 2023).
+    // Round 6: every figure in this sentence is linked to its study (the tool-claim check fails an unsourced figure).
     $('rReality').innerHTML = !r.addsWork && pct > 40
-      ? `<p class="note warn"><strong>Reality check:</strong> your inputs imply ${pct}% of the team's time on this work saved. That is above most measured results, which run from about 2% to 40%. Check your AI share and review minutes.</p>`
+      ? `<p class="note warn"><strong>Reality check:</strong> your inputs imply ${pct}% of the team's time on this work saved. That is above measured results. Across whole jobs, users report saving 2.8% of work hours in Denmark (<a href="https://www.nber.org/papers/w33777" target="_blank" rel="noopener">NBER, 2025</a>) and 5.4% in the US (<a href="https://www.stlouisfed.org/on-the-economy/2025/feb/impact-generative-ai-work-productivity" target="_blank" rel="noopener">St. Louis Fed, 2025</a>). The biggest controlled result, on one writing task, was 40% (<a href="https://doi.org/10.1126/science.adh2586" target="_blank" rel="noopener">Science, 2023</a>). Check your AI share and review minutes.</p>`
       : '';
 
     let no = '';

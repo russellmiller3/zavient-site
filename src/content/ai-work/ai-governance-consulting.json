@@ -11,7 +11,7 @@
   "Staff already use AI at work, but only about a third of firms have a formal, written AI policy.[^3][^5]",
   "Governance speeds AI up: UK mid-size firms approving tools in days report better returns than those taking months.[^6][^7]",
   "Rules now reach mid-size firms. Colorado's rewrite has no size exemption, though a court order pauses enforcement during a lawsuit.[^13][^15]",
-  "Ask for evidence, not just a policy: most firms doubt they'd pass an AI governance audit within 90 days.[^8][^9]",
+  "Ask for evidence, not a policy: 78% of business leaders lack strong confidence they'd pass an audit in 90 days.[^8][^9]",
   "Keep a person on decisions about customers and staff, someone who understands the output and can change it.[^25][^12]"
  ],
  "onPage": [],
@@ -179,11 +179,11 @@
   "A policy so strict people ignore it. Of firms with an AI policy, 54% of HR leaders call it too restrictive; give low-risk uses a fast approval.[^38][^6]",
   "Shadow AI (tools used without approval) leaks data: one in five breached firms in IBM's study had such a breach. Heavy shadow AI added $670,000 per breach, so give staff an approved tool.[^4]",
   "Vendor AI nobody checked. The FTC banned Rite Aid from facial recognition for five years after undocumented vendor checks, so write down every vendor review.[^39]",
-  "AI agents acting with no sign-off. In one survey, 47% skipped governance for urgent agent rollouts; require a named approver before any agent acts alone.[^40][^41]"
+  "AI agents acting with no sign-off: 47% of senior AI executives in an EY survey said urgent deployments skipped governance.[^40][^41] Require a named approver before any agent acts alone.[^41]"
  ],
  "howToTest": [
   "Judge them on what they leave you, not the policy they write: a register, an evidence file, named owners and a fast approval route.[^8][^2]",
-  "Ask for a register and an evidence file, not just a policy. Evidence is what most firms lack.[^8][^9]",
+  "Ask for a register and an evidence file, not just a policy. Evidence is the gap: most business leaders lack strong confidence they'd pass an audit.[^8][^9]",
   "Ask which rules apply to you, by state and regulator, as of this month. Compare the answer with our table above.[^16][^15]",
   "Ask how fast staff can get a new tool approved under their design. Days beat months on returns.[^6]",
   "Ask who owns each control after the advisor leaves. NIST asks for named roles and executive responsibility.[^2]",
@@ -196,7 +196,7 @@
  "faq": [
   {
    "q": "Does a firm our size need an AI governance framework?",
-   "a": "Yes, if staff use AI, and in most firms they already do.[^3] Colorado's rewrite dropped its under-50-staff exemption, and insurer and credit union regulators expect oversight at any size.[^13][^17][^21]"
+   "a": "Yes, if staff use AI, and 6 in 10 small and mid-market business owners say their staff already do.[^3] Colorado's rewrite dropped its under-50-staff exemption, and insurer and credit union regulators expect oversight at any size.[^13][^17][^21]"
   },
   {
    "q": "Who usually owns AI governance in a company?",
@@ -204,7 +204,7 @@
   },
   {
    "q": "Should we block AI tools or approve some?",
-   "a": "Approve some, because misuse was twice as common where AI was banned as with no policy at all.[^10] Approve a few safe tools and set clear data rules.[^3]"
+   "a": "Approve some, because employees reported risky AI use far more where AI was banned (67%) than where there was no policy (33%).[^10] Approve a few safe tools and set clear data rules.[^3]"
   },
   {
    "q": "Does following NIST or ISO 42001 make us compliant?",
@@ -275,7 +275,7 @@
   },
   {
    "num": "62% vs 38%",
-   "label": "Firms reporting AI returns when tools are approved in days, against months.[^6]",
+   "label": "Mid-market leaders reporting AI returns when tools are approved in days, against months.[^6]",
    "source": "aibl survey of 755 UK mid-market leaders, 2026"
   },
   {
@@ -353,7 +353,7 @@
   {
    "name": "aibl, State of UK AI Adoption 2026",
    "url": "https://aiblmedia.com/about/state-of-uk-ai-adoption-2026-findings/",
-   "what": "UK sample: 755 mid-market leaders (GBP 50m to 500m revenue), Jan to Mar 2026. 63-point ROI gap between no governance and mature governance; tool approval in days 62% report ROI vs 38% in months; C-suite ownership 62% vs 18% with no single owner."
+   "what": "Survey of 755 UK mid-market leaders (senior leaders at organisations with GBP 50m to 500m revenue), Jan to Mar 2026; figures are shares of leaders. 63-point ROI gap between no governance (22.2%) and mature governance (85.3%); companies that approve tools in days report 62% measurable ROI vs 38% for those taking months; C-suite ownership 62% vs 18% with no single owner. Read 26 Nov 2026."
   },
   {
    "name": "BCG, Balance AI innovation and governance, Oct 2026",
@@ -368,12 +368,12 @@
   {
    "name": "Grant Thornton, Insurance insights: 2026 AI Impact Survey",
    "url": "https://www.grantthornton.com/insights/survey-reports/insurance/2026/insurance-insights-2026-ai-impact-survey-report.html",
-   "what": "Insurance subgroup: 68% say AI controls exist but the evidence is fragmented."
+   "what": "Survey of 950 business leaders, 23 Feb to 18 Mar 2026, with an insurance subgroup of 100 insurance leaders (directional): 68% say AI controls exist but the evidence is fragmented across teams and tools; 24% are very confident they could pass an independent AI governance review within 90 days. Read 26 Nov 2026."
   },
   {
    "name": "KPMG and University of Melbourne, Trust, attitudes and use of AI, 2025 (report)",
    "url": "https://assets.kpmg.com/content/dam/kpmgsites/kw/pdf/insights/2025/05/Trust-in-AI_Final_Report.pdf.coredownload.inline.pdf",
-   "what": "Survey of 32,352 employees, part of 48,340 people in 47 countries. 48% of employees uploaded company information to public AI; misuse 67% where AI was banned vs 33% with no policy; 57% hide their AI use."
+   "what": "Survey of 32,352 employees, part of 48,340 people in 47 countries. 48% of employees uploaded sensitive company information to public AI tools; such policy-contravening use was reported by 67% of employees whose organization banned generative AI vs 33% where there was no policy; 57% hide their AI use. Read 26 Nov 2026."
   },
   {
    "name": "KPMG press release, Trust of AI remains a critical challenge, Apr 2025",
@@ -523,12 +523,12 @@
   {
    "name": "EY, Autonomous AI implementation outpaces oversight, Sep 2026",
    "url": "https://www.ey.com/en_us/newsroom/2026/09/ey-survey-finds-that-autonomous-ai-implementation-outpaces-oversight-yielding-an-ai-governance-gap",
-   "what": "47% skipped governance for urgent AI agent deployments; 26% cannot detect unauthorised agents."
+   "what": "Survey of 202 US senior AI executives (board members, C-suite, VP+) at public companies with at least $1 billion revenue, 28 May to 15 Jun 2026: 47% say their organization has not applied its AI governance process for urgent deployments; 26% of those using agentic AI cannot detect unauthorized AI agents. Read 26 Nov 2026."
   },
   {
    "name": "Deloitte, Enterprise AI enters an ROI reckoning, Oct 2026",
    "url": "https://www.deloitte.com/us/en/about/press-room/enterprise-ai-enters-an-roi-reckoning.html",
-   "what": "40% let AI act without human approval at least moderately; 23% say accountability for AI is unclear."
+   "what": "Survey of 3,500 director to C-suite leaders across 25 countries and six industries, May to Jun 2026: 40% let AI execute decisions or take actions without human approval at least to a moderate degree; 23% say accountability is unclear when AI produces a negative outcome. Read 26 Nov 2026."
   },
   {
    "name": "U.S. Census Bureau, CES-WP-26-25, 2026",

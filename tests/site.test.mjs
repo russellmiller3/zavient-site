@@ -237,3 +237,15 @@ test('no built page puts a link inside a link (browsers split such cards apart)'
     }
   }
 });
+
+// Round 6 (26 Nov 2026): "gaps[^1][^48]." rendered "gaps 1,48 ." on 29 pages. src/components/Fn.astro moves the
+// full stop in front of the marker; this fails any built page where punctuation still follows a footnote.
+test('no built page puts punctuation after a footnote marker', () => {
+  const bad = [];
+  for (const s of slugs('ai-work')) {
+    const html = readFileSync(aiWorkFile(s), 'utf8');
+    const m = html.match(/<\/sup>\s*[.,;:!?](?![\w\d])/);
+    if (m) bad.push(`${s}: ...${html.slice(Math.max(0, m.index - 60), m.index + 10).replace(/<[^>]+>/g, '')}`);
+  }
+  assert.deepEqual(bad, []);
+});

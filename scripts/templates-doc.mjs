@@ -4,6 +4,7 @@ import { writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { TYPES, BLOCKS, COMMON_REQUIRED, REVIEWERS, MIN, DEMAND, ONE_OFFS } from '../src/lib/page-types.mjs';
+import { LIMITS } from './check-readability.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const out = process.argv[2] || join(root, 'docs/golden-templates.md');
@@ -28,6 +29,11 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: \
 
 ## Rules every template enforces
 - Bottom line first: ${MIN.verdict[0]}-${MIN.verdict[1]} bullets, each with ${MIN.verdictFootnotes}+ sources. No number leading the title or a bullet.
+- A bottom-line bullet carries at most ${LIMITS.verdictFootnotes} footnotes: a figure built from several inputs says "by our math", cites its two main inputs, and footnotes the rest where the sum is shown.
+- A survey's size from a companion page: "Survey of 951 contractors (N from <page>)", with that page among the sources.
+- A cost question with no published price: "<Vendor> publishes no price and quotes each deal", then the nearest public figure with its source.
+- One canonical URL and note for a report many pages cite (src/lib/canonical-sources.mjs); a vendor price taken off its page goes in src/lib/stale-prices.mjs.
+- Every figure inside a tool (public/tools/embed) carries a link, footnote or Zavient-judgment marker (src/lib/tool-claims.mjs).
 - Title and headings are the buyer's question; the title ends in "?".
 - Every claim footnoted; ${MIN.sources}+ sources from ${MIN.domains}+ sites (tool pages ${MIN.toolSources}).
 - Measured demand: ${DEMAND.searches}+ US searches a month, or ${DEMAND.nicheSearches}+ at $${DEMAND.nicheCpc}+ a click (role pages skip it: they are navigation).
@@ -39,7 +45,7 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: \
 - Every fix is structural: it goes into the template or a failing page check, so it can't come back on any page.
 - Every lead text says the thing: no meta pointers, no restated heading, no semicolon joining two answers (src/lib/lead-rules.mjs).
 - Superseded rules (SR 11-7, FIL-27-2021, withdrawn CFPB circulars, the OCC's 1998 Loan Portfolio Management booklet) always name their replacement or say withdrawn; the 2023 third-party guidance says a replacement (FIL-58-2026) is proposed (src/lib/stale-rules.mjs).
-- Every footnoted %, multiple and price appears in its source's note; survey figures name their group; one figure per claim per study; price sources carry a read date within 120 days of the update. Both ends of a range and word figures ("twice as") are checked; a bare figure is the source's rounded, and "about", "more than", "nearly" set the tolerance; "most" never sits on a share under 50%; a survey note says "Survey of N group" or "Survey, sample size not published"; a table column headed "our math" is ours. Sources are the publisher's own copy, listed once, with the document's own date. EDGAR own data keeps a hit list (data/own-data/<slug>.csv) and says whether exhibits count (src/lib/edgar-hits.mjs). New pages must be clean; older pages may not get worse than src/lib/claim-baseline.mjs, and \`node scripts/claim-baseline.mjs --write\` lowers it as they're fixed (src/lib/source-numbers.mjs).
+- Every footnoted %, multiple and price appears in its source's note; survey figures name their group; one figure per claim per study; price sources carry a read date within 120 days of the update. Both ends of a range and word figures ("twice as") are checked; a bare figure is the source's rounded, and "about", "more than", "nearly" set the tolerance; "most" never sits on a share under 50%; a survey note says "Survey of N group" or "Survey, sample size not published"; a table column headed "our math" is ours. Sources are the publisher's own copy, listed once, with the document's own date. EDGAR own data keeps a hit list (data/own-data/<slug>.csv) and says whether exhibits count (src/lib/edgar-hits.mjs). Every page must be clean: any claim problem fails the build (src/lib/source-numbers.mjs; the older-page baseline was removed in round 6, once every page was fixed).
 - No cached or archived copies and no stat aggregators as sources (src/lib/source-rules.mjs).
 - No rival consulting firm offered or priced, and no consultant fee ranges (src/lib/rival-firms.mjs).
 - Own-site links are root-relative; page JSON keeps its own indent and ends in a newline.

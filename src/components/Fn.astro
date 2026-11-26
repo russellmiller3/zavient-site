@@ -7,7 +7,10 @@
 // Rule (26 Nov 2026): every claim is sourced, with several sources where possible. tests/site.test.mjs
 // checks that every marker points at a real source.
 const { s = '' } = Astro.props;
-const parts = String(s).split(/((?:\[\^\d+\])+)/g).filter((p) => p !== '');
+// Round 6 (26 Nov 2026): "gaps[^1][^48]." rendered "gaps 1,48 ." with a stray space on 29 pages, while others wrote
+// "gaps.[^1]". Punctuation after a marker group moves in front of it, so every page renders "gaps.1,48".
+const text = String(s).replace(/((?:\[\^\d+\])+)([.,;:!?])/g, '$2$1');
+const parts = text.split(/((?:\[\^\d+\])+)/g).filter((p) => p !== '');
 ---
 {parts.map((p) => {
   const ns = /^(?:\[\^\d+\])+$/.test(p) ? [...p.matchAll(/\[\^(\d+)\]/g)].map((m) => m[1]) : null;

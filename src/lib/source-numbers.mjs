@@ -8,6 +8,8 @@
 // fails one source backing two different figures for the same claim on one page.
 import { splitSentences } from './sentences.mjs';
 import { mirrorProblems } from './source-rules.mjs';
+import { canonicalProblems } from './canonical-sources.mjs';
+import { stalePriceProblems } from './stale-prices.mjs';
 
 // 56%, 56 percent, 3x, 3-fold, $1.2M, $205,000, €15,000, £40k, $1.5 billion
 const NUM = /(?:[$€£]\s?\d[\d,]*(?:\.\d+)?(?:\s?(?:[kKmMbB]n?|million|billion|thousand|trillion)\b)?|\b\d[\d,]*(?:\.\d+)?\s?(?:%|x\b|-fold\b|-times\b|\s?per ?cent\b|\s?percent\b))/g;
@@ -22,7 +24,10 @@ const MULT = { k: 1e3, thousand: 1e3, m: 1e6, million: 1e6, b: 1e9, bn: 1e9, bil
 const UNIT = '(%|\\s?percent\\b|\\s?per ?cent\\b|x\\b|-fold\\b|\\s?times\\b)';
 const RANGE = new RegExp(`\\b(\\d[\\d,]*(?:\\.\\d+)?)\\s?(?:-|–|—|to)\\s?(\\d[\\d,]*(?:\\.\\d+)?)${UNIT}`, 'gi');
 const BETWEEN = new RegExp(`\\bbetween (\\d[\\d,]*(?:\\.\\d+)?) and (\\d[\\d,]*(?:\\.\\d+)?)${UNIT}`, 'gi');
-const MONEY_RANGE = /([$€£])\s?(\d[\d,]*(?:\.\d+)?)\s?(?:-|–|—|to)\s?(?:[$€£]\s?)?(\d[\d,]*(?:\.\d+)?)\s?([kKmMbB]n?\b|million\b|billion\b|thousand\b|trillion\b)?/g;
+// A money range: each end keeps its own unit ("$750K-1M", "$750,000-$1 million"); the high end's unit carries to the
+// low end only when the low end is a bare small number ("$10-50k"). "$18 to 31 Dec" is a price and a date, not a range.
+const MU = '(?:\\s?(?:[kKmMbB]n?\\b|million\\b|billion\\b|thousand\\b|trillion\\b))';
+const MONEY_RANGE = new RegExp(`([$€£])\\s?(\\d[\\d,]*(?:\\.\\d+)?)(${MU})?\\s?(?:-|–|—|to)\\s?(?:[$€£]\\s?)?(\\d[\\d,]*(?:\\.\\d+)?)(?![\\d,.]?\\d)(${MU})?(?!\\s?(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\\b|\\s?[/,-]?\\s?(?:19|20)\\d\\d\\b)`, 'g');
 const WORDNUM = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, twice: 2, double: 2, doubled: 2, triple: 3, tripled: 3, quadruple: 4, quadrupled: 4 };
 const WORD_X = /\b(?:(twice|double|triple|quadruple)\s+(?=as\b|the\b|that\b|what\b)|(doubled|tripled|quadrupled)\b|(one|two|three|four|five|six|seven|eight|nine|ten|\d+(?:\.\d+)?)\s+times\s+(?=as\b|more\b|less\b|fewer\b|faster\b|slower\b|higher\b|lower\b|greater\b|larger\b|bigger\b|the\b|over\b|what\b|that\b))|\b(\d+(?:\.\d+)?|one|two|three|four|five|six|seven|eight|nine|ten)\s?(?:to|:)\s?1\b(?!\s?(?:%|million|billion|thousand)|[.,]\d|\d)/gi;
 const HEDGE = /(about|around|roughly|approximately|approx\.?|~|some|nearly|almost|close to|just under|just over|over|more than|at least|above|upwards of|under|less than|below|fewer than|up to)\s*$/i;
@@ -33,7 +38,10 @@ const HEDGES = { about: 'approx', around: 'approx', roughly: 'approx', approxima
 const expand = (text) => String(text).replace(/\[\^\d+\]/g, '')
   .replace(BETWEEN, (_, a, b, u) => `${a}${u} and ${b}${u}`)
   .replace(RANGE, (m, a, b, u) => (/^(?:19|20)\d\d$/.test(a) && /^(?:19|20)?\d\d$/.test(b) ? m : `${a}${u} to ${b}${u}`))
-  .replace(MONEY_RANGE, (m, c, a, b, u) => `${c}${a}${u ? ` ${u}` : ''} to ${c}${b}${u ? ` ${u}` : ''}`);
+  .replace(MONEY_RANGE, (m, c, a, ua, b, ub) => {
+    const u2 = (ub || '').trim(); const u1 = (ua || '').trim() || (!/,/.test(a) && Number(a) < 1000 ? u2 : '');
+    return `${c}${a}${u1 ? ` ${u1}` : ''} to ${c}${b}${u2 ? ` ${u2}` : ''}`;
+  });
 
 // One figure as a comparable key: "pct:56", "x:3", "$:205000". Currency signs count as one kind, so a source in
 // dollars backs the same figure written in dollars only; a converted figure belongs in the note too.
@@ -87,7 +95,7 @@ export function backs(p, q) {
 }
 
 // Zavient's own math, said so in the sentence: the inputs still need their sources, the result does not.
-export const OWN_MATH = /\b(?:our|we|zavient(?:'s)?)\b[^.;]{0,50}?\b(?:math|maths|arithmetic|calculat\w*|estimat\w*|divid\w*|multipl\w*|count\w*|tall\w*|check\w*|benchmark\w*|test\w*|analys\w*|review\w*|model\w*)\b|^illustrative\b/i;
+export const OWN_MATH = /\b(?:our|we) (?:ran (?:a |the )?)?backtest\w*\b|\bby our (?:math|count|check|estimate)\b|\b(?:our|we|zavient(?:'s)?)\b[^.;]{0,50}?\b(?:math|maths|arithmetic|calculat\w*|estimat\w*|divid\w*|multipl\w*|count\w*|tall\w*|check\w*|benchmark\w*|test\w*|analys\w*|review\w*|model\w*)\b|^illustrative\b/i;
 const SKIP = new Set(['url', 'sources', 'reviews', 'keyword', 'sourceCheck', 'figureCheck', 'example', 'related', 'spokes', 'headings']);
 function* strings(x, path = '') {
   if (typeof x === 'string') yield [path, x];
@@ -154,7 +162,10 @@ const words = (s) => new Set((s.toLowerCase().replace(/\[\^\d+\]/g, '').match(/[
 export function twoFigureProblems(d) {
   const out = [];
   const byCite = new Map();
+  // Round 6: our own math is not the source's figure, and table cells are parallel facts (one row per group or
+  // occupation), so neither is paired.
   for (const c of citedSentences(d)) {
+    if (c.own || /\.rows\[\d+\]/.test(c.where)) continue;
     const pcts = figures(c.sentence).filter((f) => f.key.startsWith('pct:'));
     if (pcts.length !== 1) continue;
     for (const n of c.cites) { if (!byCite.has(n)) byCite.set(n, []); byCite.get(n).push({ ...c, pct: pcts[0], w: words(c.sentence) }); }
@@ -183,7 +194,9 @@ export const SURVEY = /\b(?:survey(?:ed)?|poll(?:ed)?|respondents?|questionnaire
 export const NO_SAMPLE = /\bsample size not (?:published|given|disclosed|stated)\b/i;
 // A note that reads like a survey answer ("62% of CFOs say") but never says survey (agents dropped the word to dodge
 // the group check, which is gaming it).
-const SURVEY_LIKE = /\b\d+(?:\.\d+)?\s?(?:%|percent)\s+of\s+(?:[A-Za-z&-]+\s){0,3}?[A-Za-z&-]+\s+(?:say|said|believe[ds]?|agree[ds]?|told)\b/i;
+// Round 6: the Atlanta Fed note ("Senior executives at US firms, asked in March 2026, reported...") is a survey that
+// never says survey, so "asked in/about/whether" and "responded" read as survey answers too.
+const SURVEY_LIKE = /\b\d+(?:\.\d+)?\s?(?:%|percent)\s+of\s+(?:[A-Za-z&-]+\s){0,3}?[A-Za-z&-]+\s+(?:say|said|believe[ds]?|agree[ds]?|told)\b|\b(?:were |when |, )?asked (?:in (?:early |late |mid-)?(?:(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*|q[1-4]|\d{4})|about|whether|if|how)\b|\brespond(?:ed|ents?)\b/i;
 const GROUP_STOP = new Set('the and of at in with from who for across their its our than more over under about some all each per firm firms nearly almost around roughly approximately least close to upwards'.split(' '));
 const NOT_GROUP = new Set(['AI', 'ML', 'GENAI']);
 // A source's whole note: its name ("..., survey of 150 operating partners") and its "what" ("951 contractors in 49 states: ...").
@@ -199,9 +212,13 @@ export function stemWord(w) {
   for (const suf of ['ies', 'ings', 'ing', 'ory', 'ors', 'ers', 'ed', 'es', 'or', 'er', 'y', 'e', 's']) if (x.endsWith(suf) && x.length - suf.length >= 4) return x.slice(0, -suf.length);
   return x;
 }
-const GROUP = /\b(?:of|n\s?=|among|polled|surveyed)\s?(?:(?:more than|over|nearly|almost|about|around|roughly|some|approximately|at least|close to|upwards of)\s)?(\d[\d,]*(?:\.\d+)?)\s?\+?\s?(?:million|thousand|k)?\s+((?:(?:[A-Z]\.){2,}\s?|[A-Za-z][\w&'’-]*\s?){1,6})/i;
-const LEAD = /(?:^|[|(,;:])\s*(?!(?:19|20)\d\d\b)(\d[\d,]*(?:\.\d+)?)\s?\+?\s?(?:million|thousand|k)?\s+((?:(?:[A-Z]\.){2,}\s?|[A-Za-z][\w&'’-]*\s?){1,6})/;
-export function surveyGroup(note) {
+const GROUP = /\b(?:of|n\s?=|among|polled|surveyed)\s?(?:(?:more than|over|nearly|almost|about|around|roughly|some|approximately|at least|close to|upwards of)\s)?(\d[\d,]*(?:\.\d+)?)\s?\+?\s?(?:million|thousand|k)?(?:\s(?:or more|plus))?\s+((?:(?:[A-Z]\.){2,}\s?|[A-Za-z][\w&'’-]*\s?){1,6})/i;
+const LEAD = /(?:^|[|(,;:])\s*(?!(?:19|20)\d\d\b)(\d[\d,]*(?:\.\d+)?)\s?\+?\s?(?:million|thousand|k)?(?:\s(?:or more|plus))?\s+((?:(?:[A-Z]\.){2,}\s?|[A-Za-z][\w&'’-]*\s?){1,6})/;
+export function surveyGroup(note) { return surveyGroups(note)[0] || null; }
+// Every group a note names: a study that mixes methods ("52 organizations interviewed, survey of 153 leaders")
+// names more than one, and a figure may come from any of them.
+export function surveyGroups(note) {
+  const found = [];
   const NOT_A_GROUP = /^(?:jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\b|^(?:waves?|days?|weeks?|months?|years?|hours?|minutes?|countries|states|markets|industries|sectors|percent|per|to|and|or)\b/i;
   const all = [...String(note).matchAll(new RegExp(GROUP.source, 'gi')), ...String(note).matchAll(new RegExp(LEAD.source, 'g'))];
   for (const m of all) {
@@ -210,22 +227,31 @@ export function surveyGroup(note) {
     const all = m[2].split(/[,;:)(|]/)[0].trim().split(/\s+/).filter((x) => x && !NOT_GROUP.has(stemWord(x).toUpperCase()) && (x.length >= 3 || /^[A-Z]{2,}$|^(?:[A-Z]\.){2,}$/.test(x)));
     const w = all.filter((x) => !GROUP_STOP.has(x.toLowerCase())).slice(0, 4);
     // "1,719 respondents" doesn't say who answered: the note must name the group.
-    if (w.length && w.every((x) => /^(?:respondents?|participants?|people|persons?|individuals?|distinct)$/i.test(x))) return null;
-    if (w.length) return w;
-    if (all.some((x) => /^firms?$/i.test(x))) return ['firms']; // "1,073 firms": firms is the group
+    if (w.length && w.every((x) => /^(?:respondents?|participants?|people|persons?|individuals?|distinct)$/i.test(x))) { if (!found.length) return []; continue; }
+    const g = w.length ? w : all.some((x) => /^firms?$/i.test(x)) ? ['firms'] : null; // "1,073 firms": firms is the group
+    if (g && !found.some((f) => f.join(' ') === g.join(' '))) found.push(g);
   }
-  return null;
+  return found;
 }
+// Words for the same population: a survey of 500 companies backs "firms", "businesses" and "organizations".
+export const QUANTITY = /(?<!\bthe\s|\bat\s)\b(?:most|the majority of|majority of|nearly all|almost all|more than half of|fewer than half of|a minority of|few)\b(?=\s+(?:[a-z-]+\s+){0,3}?(?:firms?|compan|organi|business|leaders?|executives?|respondents?|teams?|banks?|insurers?|contractors?|accountants?|workers?|employees?|staff|people|users?|CFOs?|CEOs?|managers?|professionals?|lawyers?|agencies|agents?|owners?|buyers?|lenders?|acquirers?|funds?|sponsors?|partners?|manufacturers?|retailers?|carriers?|credit unions?|hospitals?|plants?|shops?|practices?))/i;
+const POPULATION = /^(?:firm|compan|company|organi[sz]ation|organi[sz]at|busines|enterpris|employ|institution)/i;
 export function surveyScopeProblems(d) {
   const out = [];
   const src = d.sources || [];
   src.forEach((s, i) => {
     const note = noteOf(s);
-    if (SURVEY.test(note) && !surveyGroup(note) && !NO_SAMPLE.test(note)) out.push(`source ${i + 1} is a survey but its note doesn't say who answered: write "Survey of N <group>" (for example "Survey of 200 PE leaders"), or "Survey, sample size not published"`);
+    if (SURVEY.test(note) && !surveyGroups(note).length && !NO_SAMPLE.test(note)) out.push(`source ${i + 1} is a survey but its note doesn't say who answered: write "Survey of N <group>" (for example "Survey of 200 PE leaders"), or "Survey, sample size not published"`);
     if (!SURVEY.test(note) && SURVEY_LIKE.test(note)) out.push(`source ${i + 1}'s note reads like a survey answer ("${note.match(SURVEY_LIKE)[0]}") but doesn't say survey: write "Survey of N <group>", or "Survey, sample size not published"`);
   });
   for (const { where, sentence, cites, own } of citedSentences(d)) {
-    if (!figures(sentence).some((f) => f.kind === 'pct') || own) continue;
+    const pctFig = figures(sentence).some((f) => f.kind === 'pct');
+    const qty = !figures(sentence).length && sentence.replace(/\[\^\d+\]/g, '').match(QUANTITY);
+    // Advice ("most ops teams should buy first") is not a survey answer.
+    if (qty && /^\S+\s+(?:\S+\s+){0,3}?(?:should|can|could|need|must|will)\b/i.test(sentence.replace(/\[\^\d+\]/g, '').slice(qty.index))) continue;
+    if ((!pctFig && !qty) || own) continue;
+    // Round 6: a quantity word over a survey ("most firms", "few contractors") is a survey figure in words, so the
+    // sentence names the survey's group like any figure (Grant Thornton asked business leaders, not firms).
     const cited = cites.map((c) => src[c - 1]).filter(Boolean);
     const surveys = cited.filter((s) => SURVEY.test(noteOf(s)));
     const plain = sentence.replace(/\[\^\d+\]/g, '');
@@ -235,11 +261,13 @@ export function surveyScopeProblems(d) {
       if (!SURVEY.test(plain)) out.push(`${where}: a survey figure with no sample size: say it was a survey ("in a survey of ...", "respondents"): "${plain.slice(0, 80)}"`);
       continue;
     }
-    const groups = surveys.map((s) => surveyGroup(noteOf(s))).filter(Boolean);
+    const groups = surveys.flatMap((s) => surveyGroups(noteOf(s)));
     if (!groups.length) continue;
     const sw = new Set((plain.match(/(?:[A-Z]\.){2,}|[A-Za-z][\w&'’-]*/g) || []).map(stemWord));
     const hit = (w) => { const k = stemWord(w); return sw.has(k) || (SPELLED[k] && SPELLED[k].test(plain)) || k.length >= 3 && [...sw].some((x) => x.length >= 3 && (x.startsWith(k) || k.startsWith(x)) && x.toLowerCase() === x === (k.toLowerCase() === k)); };
-    if (!groups.some((g) => g.some(hit))) out.push(`${where}: a survey figure without its group: say whose answer it is, in the note's words (${groups.map((g) => g.join(' ')).join(' / ')}): "${plain.slice(0, 80)}"`);
+    const pop = [...sw].some((x) => POPULATION.test(x));
+    // The population leniency reads the group's head noun: "business leaders" are leaders, not businesses.
+    if (!groups.some((g) => g.some((w) => hit(w)) || (pop && POPULATION.test(stemWord(g.filter((w) => !/ed$/i.test(w)).pop() || '')))))  out.push(`${where}: a survey figure without its group: say whose answer it is, in the note's words (${groups.map((g) => g.join(' ')).join(' / ')}): "${plain.slice(0, 80)}"`);
   }
   return out;
 }
@@ -250,15 +278,15 @@ export function surveyScopeProblems(d) {
 // check (scripts/check-prices.mjs) opens each such source and looks for the figure on the vendor's page today.
 // Round 5: "up from $X", "from about $350B" and bare "from $X" are not prices; nor are fines, salaries, savings or
 // market sizes quoted "a year".
-export const PRICE = /[$€£]\s?\d[^.;]{0,40}?\b(?:per|a|an|\/)\s?(?:seat|user|month|mo|year|yr|licen[cs]e|plan|member|agent|page|document|invoice|credit|call|minute|hour)\b|\b(?:billed|plans?(?: start| from)?|pricing(?: starts?| from)?|subscription|list price|starts? at|starting at|prices? (?:start|from))\b[^.;]{0,30}?[$€£]\s?\d/i;
-const NOT_PRICE = /\b(?:fines?|fined|penalt\w*|statutory|violations?|damages|settle\w*|salar\w*|wages?|earn\w*|pay(?:s|ing)? (?:a |an |their )?(?:staff|employees?|analysts?|engineers?)|compensation|savings?|saves?|saved|market|industry|revenue|budget\w*|spend\w*|losses|lose|lost|up from|grew|rose|fell|reached|total(?:l?ed)?)\b|[$€£]\s?\d[\d,.]*\s?(?:bn?|billion|trillion)\b/i;
+export const PRICE = /[$€£]\s?\d[^.;]{0,40}?\b(?:per|a|an|\/)\s?(?:seat|user|month|mo|year|yr|licen[cs]e|plan|member|agent|page|document|invoice|credit|call|minute|hour)\b|\b(?:billed|plans? (?:start|from|cost|run)|pricing(?: starts?| from)?|subscription|list price|starts? at|starting at|prices? (?:start|from))\b[^.;]{0,30}?[$€£]\s?\d/i;
+const NOT_PRICE = /\bfrom scratch\b|\bto (?:build|develop|train)\b|\b(?:fines?|fined|penalt\w*|statutory|violations?|damages|settle\w*|salar\w*|wages?|earn\w*|pay(?:s|ing)? (?:a |an |their )?(?:staff|employees?|analysts?|engineers?)|compensation|savings?|saves?|saved|market|industry|revenue|budget\w*|spend\w*|losses|lose|lost|up from|grew|rose|fell|reached|total(?:l?ed)?)\b|[$€£]\s?\d[\d,.]*\s?(?:bn?|billion|trillion)\b/i;
 export const isPrice = (sentence) => { const t = String(sentence).replace(/\[\^\d+\]/g, ''); return PRICE.test(t) && !NOT_PRICE.test(t); };
 const MONTHS = { jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5, jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11 };
 export function readDate(note) {
   const s = String(note);
-  let m = s.match(/\bRead:?\s*(\d{4})-(\d{2})-(\d{2})\b/i);
+  let m = s.match(/\bRead(?: live)?:?\s*(?:on\s)?(\d{4})-(\d{2})-(\d{2})\b/i);
   if (m) return Date.UTC(+m[1], +m[2] - 1, +m[3]);
-  m = s.match(/\bRead:?\s*(?:on\s)?(\d{1,2})\s([A-Za-z]{3})[a-z]*\.?\s(\d{4})\b/i);
+  m = s.match(/\bRead(?: live)?:?\s*(?:on\s)?(\d{1,2})\s([A-Za-z]{3})[a-z]*\.?,?\s(\d{4})\b/i);
   if (m && MONTHS[m[2].toLowerCase()] !== undefined) return Date.UTC(+m[3], MONTHS[m[2].toLowerCase()], +m[1]);
   return null;
 }
@@ -270,10 +298,14 @@ export function priceProblems(d) {
   const flagged = new Set();
   for (const { where, sentence, cites, own } of citedSentences(d)) {
     if (!isPrice(sentence) || own) continue;
-    for (const c of cites) {
+    // Round 6: only the sources whose note holds the price figure back the price; a sentence's other footnotes
+    // (a survey, a case study) need no read date. With no note holding it, every cited source is held to it.
+    const money = figures(sentence).filter((f) => /^[$€£]$/.test(f.kind));
+    const holders = cites.filter((c) => src[c - 1] && figures(noteOf(src[c - 1])).some((q) => money.some((f) => backs(f, q))));
+    for (const c of holders.length ? holders : cites) {
       const s = src[c - 1];
       if (!s || flagged.has(c)) continue;
-      const r = readDate(s.what);
+      const r = readDate(`${s.name || ''} ${s.what || ''}`);
       if (r === null) { flagged.add(c); out.push(`source ${c} backs a price (${where}) but its note has no read date: open the vendor's page, confirm the price, and add "Read D Mon YYYY"`); }
       else if (page && (page - r) / 864e5 > PRICE_MAX_AGE_DAYS) { flagged.add(c); out.push(`source ${c} backs a price (${where}) but was read over ${PRICE_MAX_AGE_DAYS} days before the page's update: check the vendor's page again`); }
     }
@@ -281,5 +313,5 @@ export function priceProblems(d) {
   return out;
 }
 
-// Everything this file checks, one count per page, for the page check's ratchet (src/lib/claim-baseline.json).
-export const claimProblems = (d) => [...numberProblems(d), ...twoFigureProblems(d), ...surveyScopeProblems(d), ...priceProblems(d), ...mostProblems(d), ...mirrorProblems(d.sources)];
+// Everything this file checks, one count per page, for the page check (any problem fails).
+export const claimProblems = (d) => [...numberProblems(d), ...twoFigureProblems(d), ...surveyScopeProblems(d), ...priceProblems(d), ...mostProblems(d), ...mirrorProblems(d.sources), ...canonicalProblems(d.sources), ...stalePriceProblems(d, { citedSentences, figures, isPrice })];
