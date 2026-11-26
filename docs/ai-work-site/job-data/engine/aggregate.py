@@ -13,7 +13,7 @@ def load(run):
     for f in glob.glob(str(pathlib.Path(run) / "results-*.jsonl")):
         for l in open(f):
             x = json.loads(l)
-            if x.get("error") is None and x.get("rows") is not None:
+            if x.get("error") is None and x.get("rows") is not None and not x.get("capped_window") and not x.get("capped"):
                 r[x["id"]] = x
     return r
 
@@ -50,9 +50,26 @@ def main(run, db, out):
         by_fn.append(row)
     by_fn.sort(key=lambda x: -(x["uses_ai_w0"] or 0))
 
+    # 1b. Overall ICP share = sum of AI ads / sum of all ads, over functions counted in every window (so the mix is the same)
+    full = [f for f in fns if all(g(f"icp|fn_ai:{f}|{w}") and g(f"icp|fn_total:{f}|{w}") for w in WIN)]
+    icp_share = {w: round(100 * sum(g(f"icp|fn_ai:{f}|{w}") for f in full) / sum(g(f"icp|fn_total:{f}|{w}") for f in full), 1) for w in WIN}
+    icp_share["functions_used"] = len(full)
+    # 1c. Same by industry
+    inds = sorted({i.split("|")[1].split(":", 1)[1] for i in r if i.startswith("icp|ind_total:")})
+    by_ind = []
+    for ind in inds:
+        row = {"industry": ind}
+        for w in WIN:
+            a, t = g(f"icp|ind_ai:{ind}|{w}"), g(f"icp|ind_total:{ind}|{w}")
+            row[w] = round(100 * a / t, 1) if a and t else None
+        row["ads_w0"] = g(f"icp|ind_total:{ind}|w0")
+        by_ind.append(row)
+    by_ind.sort(key=lambda x: -(x["w0"] or 0))
+
     # 2. Models: share of voice among model mentions in builder jobs (engineering, data, IT, science), each window.
     #    Builder jobs only, because short names collide elsewhere (PHI in health ads, CrowdStrike Falcon in security ads).
-    models = [l for l, o in q.items() if o["group"] == "model" and not o["source"].startswith("keyword")]
+    # Phi and Falcon are left out: their short names match PHI (health data) and CrowdStrike Falcon far more often than the models
+    models = [l for l, o in q.items() if o["group"] == "model" and not o["source"].startswith("keyword") and l not in {"Microsoft Phi", "Falcon"}]
     pre = "builder" if any(i.startswith("builder|model:") for i in r) else "us"
     sov = []
     for w in WIN:
@@ -92,13 +109,14 @@ def main(run, db, out):
                      f"WHERE salary_posted=1 AND employer_type='employer' AND ai_label='duty'")
 
     doc = {"built": "2026-11-26", "windows": WIN, "source": "JobsPipe job-ad counts and full ads, via treg; US; ICP band = 40 to 500 staff",
-           "icp_all_ai_share": {w: round(100 * (g(f"icp|all_ai|{w}") or 0) / max(1, sum(g(f"icp|fn_total:{f}|{w}") or 0 for f in fns)), 1) for w in WIN},
+           "icp_all_ai_share": icp_share, "by_industry": by_ind,
            "duty_share_all": round(duty_all, 2), "by_function": by_fn, "model_share": sov, "open_weight_rank_w0": open_rank,
            "rising_work": rising, "median_growth": med, "pay_by_industry": pay_ind, "pay_by_function": pay_fn, "pay_by_work_type": pay_wt,
            "coverage": {"count_jobs_done": len(r)}}
     pathlib.Path(out).write_text(json.dumps(doc, indent=1))
     print(json.dumps({k: doc[k] for k in ["icp_all_ai_share", "duty_share_all", "coverage"]}))
     for x in by_fn: print(x)
+    for x in by_ind: print(x)
     print("open", [(s["model"], s["ads"], s["share"]) for s in open_rank])
     print("rising", [(x["term"], x["relative_growth"], x["ads_w0"]) for x in rising[:15]])
     print("pay ind", pay_ind[:12]); print("pay fn", pay_fn); print("pay wt", pay_wt)

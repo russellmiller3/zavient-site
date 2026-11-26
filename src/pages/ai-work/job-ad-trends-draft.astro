@@ -1,0 +1,107 @@
+---
+// DRAFT (26 Nov 2026), noindex and out of the nav and sitemap: first trend charts from the job-ad engine
+// (docs/ai-work-site/job-data/engine). Data: src/data/job-ad-trends.json, built by engine/site_data.py from aggregate.py.
+// Aggregates only; raw ads live in the private data repo. Charts are plain HTML bars so they reflow on phones.
+import Base from '../../layouts/Base.astro';
+import Fn from '../../components/Fn.astro';
+import d from '../../data/job-ad-trends.json';
+
+const pct = (v) => `${v.toFixed(1)}%`;
+const fnMax = Math.max(...d.by_function.map((x) => x.uses_ai));
+const indMax = Math.max(...d.by_industry.map((x) => x.mentions[2]));
+const openMax = Math.max(...d.models.open.map((x) => x.ads));
+const delta = (m) => { const v = m[2] - m[0]; return `${v >= 0 ? '+' : ''}${v.toFixed(1)} pts`; };
+const top = d.by_function[0];
+const ops = d.by_function.find((x) => x.name === 'Operations');
+const sources = [
+  ['JobsPipe job-ad search, US ads, counts by job function, industry and company size, 28 Aug to 25 Nov 2026 (queried through Treg, 25 to 26 Nov 2026).', ''],
+  ['Zavient hand-labelled sample of 922 full US job ads (JobsPipe, Nov 2026): each AI sentence labelled as a duty for the hire, the employer screening applicants with AI, or the employer describing itself. 37 of 40 spot-checked labels were right.', ''],
+  ['Indeed Hiring Lab, AI Tracker: daily share of US postings that mention AI; 7.8% on 31 Oct 2026. CC BY 4.0.', 'https://github.com/hiring-lab/ai-tracker'],
+  ['Post Labor Economics, "AI in job ads: what the count measures" (13 Nov 2026): Ontario\'s AI-screening disclosure rule took its AI-mention share from 9% to 28%.', 'https://postlaboreconomics.com/posts/ai-in-job-ads-what-the-count-measures'],
+];
+---
+<Base title="AI in job ads at 40 to 500 staff firms (draft)" description="Draft trend charts from Zavient's job-ad engine." noindex={true}>
+<style>
+  .chart { margin: 28px 0 36px; }
+  .chart h3 { font-family: var(--sans); font-size: 21px; line-height: 1.3; margin-bottom: 4px; }
+  .chart .sub { font-family: var(--mono); font-size: 13px; color: var(--muted); margin-bottom: 16px; line-height: 1.5; }
+  .bar-row { display: grid; grid-template-columns: minmax(120px, 210px) 1fr 64px; gap: 10px; align-items: center; padding: 5px 0; }
+  .bar-row .name { font-family: var(--sans); font-size: 15px; line-height: 1.25; color: var(--ink); }
+  .bar-row .track { height: 14px; background: var(--paper-alt); border-radius: 0 4px 4px 0; }
+  .bar-row .fill { height: 14px; background: var(--blue); border-radius: 0 4px 4px 0; min-width: 2px; }
+  .bar-row.hl .fill { background: var(--blue-dark); }
+  .bar-row.muted .fill { background: #8FB0E0; }
+  .bar-row .val { font-family: var(--mono); font-size: 14px; font-weight: 500; text-align: right; color: var(--ink); }
+  .bar-row:hover .track { outline: 1px solid var(--line-strong); }
+  .note { font-family: var(--mono); font-size: 13px; color: var(--muted); margin-top: 10px; line-height: 1.5; }
+  .draft-flag { font-family: var(--mono); font-size: 13px; background: #FFF4D6; border: 1px solid #E8D28A; padding: 8px 12px; margin: 18px 0; }
+  .lead { font-size: 22px; }
+  details.chart-table summary { font-family: var(--mono); font-size: 13px; color: var(--blue); cursor: pointer; margin-top: 8px; }
+  .chart-table table { width: 100%; border-collapse: collapse; font-size: 15px; margin-top: 8px; }
+  .chart-table td, .chart-table th { padding: 6px 8px 6px 0; border-bottom: 1px solid var(--line); text-align: left; font-family: var(--sans); }
+  .chart-table td.n { font-family: var(--mono); text-align: right; }
+  ol.srcs { font-size: 16px; line-height: 1.5; padding-left: 22px; }
+  ol.srcs li { margin-bottom: 8px; }
+  @media (max-width: 560px) {
+    .bar-row { grid-template-columns: 1fr 58px; gap: 4px 8px; }
+    .bar-row .name { grid-column: 1 / -1; }
+    .bar-row .track { grid-column: 1; }
+  }
+</style>
+<main class="wrap" style="padding-top:40px;padding-bottom:64px;">
+  <p class="label">Job-ad trends · draft</p>
+  <h1 style="font-family:var(--sans);font-size:36px;line-height:1.15;margin-bottom:14px;">Which teams are being asked to work with AI</h1>
+  <p class="draft-flag">Draft for review. Not linked, not indexed. Numbers from 28 Aug to 25 Nov 2026.</p>
+  <p class="lead"><Fn s={`About 1 in 10 job ads at US firms with 40 to 500 staff mentions AI, and that share held steady from August to November (${d.icp_share.w2}% to ${d.icp_share.w0}%).[^1][^3]`} /></p>
+  <p><Fn s={`The useful number is narrower: how many ads ask the person in the job to use AI. About ${Math.round(d.duty_share * 100)}% of AI mentions do. The rest are the employer saying it screens applicants with AI, or describing its own product.[^2][^4] ${top.name} leads at ${pct(top.uses_ai)}. Operations sits at ${pct(ops.uses_ai)}, which is where most of the untapped help is.`} /></p>
+
+  <section class="chart" aria-labelledby="c1">
+    <h3 id="c1">Share of job ads that ask the hire to use AI, by team</h3>
+    <p class="sub">US firms with 40 to 500 staff · {d.windows.w0} · hover a bar for the trend</p>
+    {d.by_function.map((x, i) => (
+      <div class={`bar-row${i === 0 ? ' hl' : ''}`} title={`${x.name}: ${pct(x.uses_ai)} ask the hire to use AI. Ads mentioning AI at all: ${x.mentions.map(pct).join(' → ')} (Aug → Nov). ${x.ads.toLocaleString('en-US')} ads.`}>
+        <span class="name">{x.name}{x.estimated && '*'}</span>
+        <span class="track"><span class="fill" style={`display:block;width:${(100 * x.uses_ai / fnMax).toFixed(1)}%`}></span></span>
+        <span class="val">{pct(x.uses_ai)}</span>
+      </div>
+    ))}
+    <p class="note"><Fn s={`Share of ads mentioning AI × the share of those mentions that are duties for the hire, from the hand-labelled sample.[^1][^2] * fewer than 20 labelled ads for this team, so the all-team rate (${Math.round(d.duty_share * 100)}%) is used.`} /></p>
+    <details class="chart-table"><summary>Show as a table</summary>
+      <table><thead><tr><th>Team</th><th>Asks hire to use AI</th><th>Mentions AI, Aug</th><th>Mentions AI, Nov</th></tr></thead><tbody>
+      {d.by_function.map((x) => <tr><td>{x.name}</td><td class="n">{pct(x.uses_ai)}</td><td class="n">{pct(x.mentions[0])}</td><td class="n">{pct(x.mentions[2])}</td></tr>)}
+      </tbody></table>
+    </details>
+  </section>
+
+  <section class="chart" aria-labelledby="c2">
+    <h3 id="c2">Share of job ads that mention AI, by industry</h3>
+    <p class="sub">US firms with 40 to 500 staff · {d.windows.w0} · change since late Aug</p>
+    {d.by_industry.map((x, i) => (
+      <div class={`bar-row${i === 0 ? ' hl' : ''}`} title={`${x.name}: ${x.mentions.map(pct).join(' → ')} (Aug → Nov). ${x.ads.toLocaleString('en-US')} ads.`}>
+        <span class="name">{x.name}</span>
+        <span class="track"><span class="fill" style={`display:block;width:${(100 * x.mentions[2] / indMax).toFixed(1)}%`}></span></span>
+        <span class="val">{pct(x.mentions[2])}</span>
+      </div>
+    ))}
+    <p class="note"><Fn s={`Insurance moved most: ${delta(d.by_industry[0].mentions)} since late August.[^1] Industries with fewer than 500 ads in the window are left out.`} /></p>
+  </section>
+
+  <section class="chart" aria-labelledby="c3">
+    <h3 id="c3">Open models named in job ads for builders</h3>
+    <p class="sub">US engineering, data, IT and research ads · {d.windows.w0} · number of ads</p>
+    {d.models.open.slice(0, 8).map((x, i) => (
+      <div class={`bar-row${i === 0 ? ' hl' : ''}`} title={`${x.name}: ${x.ads} ads, ${x.share}% of all model mentions`}>
+        <span class="name">{x.name}</span>
+        <span class="track"><span class="fill" style={`display:block;width:${(100 * x.ads / openMax).toFixed(1)}%`}></span></span>
+        <span class="val">{x.ads.toLocaleString('en-US')}</span>
+      </div>
+    ))}
+    <p class="note"><Fn s={`Open models are ${d.models.open_share}% of model mentions. ${d.models.closed_top.slice(0, 3).map((c) => `${c.name} ${c.share.toFixed(0)}%`).join(', ')}.[^1] Counts include the model makers' own ads. Microsoft Phi and Falcon are left out: their names match "PHI" health data and CrowdStrike Falcon.`} /></p>
+  </section>
+
+  <h2 style="font-family:var(--sans);font-size:24px;margin:36px 0 12px;">Sources</h2>
+  <ol class="srcs">
+    {sources.map(([t, u], i) => <li id={`fn-${i + 1}`}>{t}{u && <> <a href={u}>{u.replace(/^https:\/\//, '')}</a></>}</li>)}
+  </ol>
+</main>
+</Base>

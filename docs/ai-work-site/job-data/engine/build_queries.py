@@ -29,7 +29,7 @@ MODELS = [  # (label, query words, open_weight)
     ("Qwen", ["qwen"], True),
     ("DeepSeek", ["deepseek"], True),
     ("Google Gemma", ["gemma llm", "gemma model"], True),
-    ("Microsoft Phi", ["phi3", "phi4", "microsoft phi"], True),   # "phi-3" splits to phi + 3 and matches PHI (health data): 2,315 healthcare ads
+    ("Microsoft Phi", ["phi3", "phi4"], True),   # "phi-3" and "microsoft phi" match PHI (health data): 2,315 healthcare ads, 660 builder ads; real use is about 4 ads
     ("OpenAI gpt-oss", ["gpt-oss"], True),
     ("Falcon", ["falcon 180b", "falcon 40b", "tii falcon"], True),   # "falcon llm" matched CrowdStrike Falcon: 99 of 116 in IT security
     ("Moonshot Kimi", ["kimi k2", "kimi llm"], True),
