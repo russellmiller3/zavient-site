@@ -385,7 +385,7 @@ sup.fn a { padding: 10px 3px; margin: -10px -1px; } /* bigger hit area, same lin
    HTML (label above each bar, 15px+ text). Only one of the two is ever displayed, so screen readers get one. */
 .bar-list { display: none; }
 @media (max-width: 599.98px) {
-  .data-chart.has-bar-list > div { display: none; }
+  .data-chart.has-bar-list > div:not(.bar-list) { display: none; }
   .bar-list { display: block; }
   .bar-list-title { font-family: var(--sans); font-weight: 700; font-size: 18px; color: var(--blue-ink, #133F87); margin: 0 0 4px; }
   .bar-list-sub { font-size: 15px; color: var(--ink-soft); margin: 0 0 12px; }
