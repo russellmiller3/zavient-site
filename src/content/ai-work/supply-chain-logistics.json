@@ -48,10 +48,10 @@
     "faq": "Questions supply chain leaders ask about AI",
     "buy-or-build": "Should you buy supply chain AI or build it?"
   },
-  "summary": "AI in supply chain and logistics drafts routine work: forecasts, order entry, check calls, freight-bill matching and route plans.[^32][^33] McKinsey reports distributors cutting inventory 20-30% and logistics costs 5-20%: consultancy ranges, not promises.[^33] Success hinges on clean master data (core product and supplier records) and a named owner per decision.[^31][^30]",
+  "summary": "AI in supply chain and logistics drafts routine work: forecasts, order entry, check calls, freight-bill matching and route plans.[^6][^31] McKinsey reports distributors cutting inventory 20-30% and logistics costs 5-20%: consultancy ranges, not promises.[^31] Success hinges on clean master data (core product and supplier records) and a named owner per decision.[^4][^30]",
   "humanRole": [
     "Demand planners sign off the plan. AI drafts the baseline; planners flag promotions, new customers and lost accounts, where people add the most.[^12][^14]",
-    "Buyers award the business and negotiate. AI can draft purchase orders and spend reports, but it should never create vendors or change bank details.[^45][^34]",
+    "Buyers award the business, and trade body ASCM keeps sourcing under human oversight while AI drafts orders and spend reports.[^11] A person verifies any change to a supplier's bank details by calling a number on file, as the FBI advises.[^44]",
     "Dispatchers and carrier reps keep final routes, carrier vetting and rate calls. Fake-carrier pickups are about a quarter of cargo thefts, so a person verifies every carrier.[^26][^25]",
     "Warehouse managers set quotas and own safety. Several states treat an algorithm-set pick rate as a quota that must be disclosed in writing.[^15][^16]"
   ],
@@ -59,7 +59,7 @@
     {
       "name": "Keying emailed and PDF orders into your ERP (enterprise resource planning system)",
       "slug": "ai-document-processing",
-      "why": "Benchmarking body APQC puts the median cost to process one purchase order at $55, across 4,620 firms.[^5] Order-entry vendors Esker and Conexiom say a manual order takes 11-12 minutes to key (their claim).[^41]",
+      "why": "Benchmarking body APQC puts the median cost to process one purchase order at $55, across 4,620 firms.[^5] APQC also finds ordering is the costliest procurement process and takes the most staff time.[^45]",
       "payoff": "Minutes per order, keying errors and orders handled per rep."
     },
     {
@@ -80,17 +80,17 @@
     },
     {
       "name": "Procurement: spend analysis, contract review, supplier screening",
-      "why": "Hackett finds 43% of procurement teams pursuing AI but only 12% at scale, in a mostly large-firm sample.[^34] Most (69%) use AI already built into their procurement software.[^34]",
+      "why": "Hackett finds 43% of procurement teams pursuing AI but only 12% at scale, in a mostly large-firm sample.[^32] Most (69%) use AI already built into their procurement software.[^32]",
       "payoff": "Spend under contract, days per sourcing event and contract review hours."
     },
     {
       "name": "Route and load planning (if you run your own fleet)",
-      "why": "UPS's ORION routing saves about 100 million miles a year, but it's a custom build at UPS scale.[^46] Every route must fit federal hours-of-service limits.[^20]",
+      "why": "UPS's ORION routing saves about 100 million miles a year, but it's a custom build at UPS scale.[^41] Every route must fit federal hours-of-service limits.[^20]",
       "payoff": "Miles per stop, on-time delivery and driver hours used."
     },
     {
       "name": "Warehouse slotting and labor planning",
-      "why": "APQC finds 40% of firms have no plan for AI in warehouse automation.[^36] It needs a WMS (warehouse management system) and clean data first, and quota laws apply.[^31][^15]",
+      "why": "APQC finds 40% of firms have no plan for AI in warehouse automation.[^34] It needs a WMS (warehouse management system) and clean data first, and quota laws apply.[^4][^15]",
       "payoff": "Travel per pick, picks per labor hour and injury rate."
     }
   ],
@@ -159,7 +159,7 @@
   "tables": [
     {
       "title": "What do forecasting and freight AI tools cost?",
-      "intro": "Prices from vendor pages or, where marked, third-party reports, read 26 November 2026.[^38][^40] Freight agents publish no price.[^42][^43][^44]",
+      "intro": "Prices from each vendor's own page, read 26 November 2026.[^36][^37] Freight agents publish no price.[^38][^39][^40]",
       "headers": [
         "Tool",
         "Job",
@@ -171,7 +171,7 @@
           "url": "https://www.netstock.com/packages",
           "cells": [
             "Demand planning and reorders for mid-size firms",
-            "From $900/mo; $1,500 and $2,000 tiers; annual terms[^38]"
+            "From $900/mo; $1,500 and $2,000 tiers; annual terms[^36]"
           ]
         },
         {
@@ -179,36 +179,38 @@
           "url": "https://www.inventory-planner.com/pricing",
           "cells": [
             "Forecasts and reorders for wholesale and ecommerce",
-            "Quote only; priced by inventory volume[^39]"
+            "Quote only; priced by inventory volume[^37]"
           ]
         },
         {
           "name": "Lokad",
+          "url": "https://www.lokad.com/contractual-agreement/",
           "cells": [
             "Probabilistic forecasting and inventory optimization",
-            "Third-party report: low thousands a month, about 6 months to onboard[^40]"
+            "From the low thousands a month per decision type; onboarding usually billed as 6 months[^46]"
           ]
         },
         {
           "name": "StockIQ",
+          "url": "https://stockiqtech.com/pricing/",
           "cells": [
             "Supply chain planning",
-            "About $750/mo (third-party report)[^40]"
+            "Quote only; priced by ERP, SKU count and locations[^47]"
           ]
         },
         {
           "name": "C.H. Robinson, project44, Parade",
           "cells": [
             "Quote, visibility and carrier-sales agents",
-            "Not published[^42][^43][^44]"
+            "Not published[^38][^39][^40]"
           ]
         }
       ],
-      "note": "A third-party guide puts Netstock's setup at 6-10 weeks.[^40] Freight vendors' speed claims are their own: C.H. Robinson says quotes in 32 seconds, Parade says 4x rep bandwidth.[^42][^44]"
+      "note": "Netstock puts its own setup at 6-10 weeks.[^36] Freight vendors' speed claims are their own: C.H. Robinson says quotes in 32 seconds, Parade says 4x rep bandwidth.[^38][^40]"
     },
     {
       "title": "What do the studies and surveys say?",
-      "intro": "Sample sizes shown so you can weigh each one. Most samples skew to large firms.[^34][^4]",
+      "intro": "Sample sizes shown so you can weigh each one. Most samples skew to large firms.[^32][^4]",
       "headers": [
         "Study",
         "Sample",
@@ -312,7 +314,7 @@
   ],
   "watchOuts": [
     "Lab wins can fail on the floor. Starbucks dropped an AI shelf-counting tool after about nine months when reflections doubled milk counts; pilot on one real site first.[^28]",
-    "Bad master data sinks the forecast. Nike's 2000-01 planning rollout overbought about $90M of product, so clean your SKU data and launch in phases.[^29][^31]",
+    "Bad master data sinks the forecast. Nike's 2000-01 planning rollout overbought about $90M of product, so clean your SKU data and launch in phases.[^29][^4]",
     "Some 'AI agents' aren't. Gartner expects over 40% of agentic AI projects to be canceled by 2027; ask vendors to prove claims, which the FTC also polices.[^27][^24]",
     "Email-reading agents are a fraud target. Cyber-enabled cargo theft cost about $725M in 2025, so any agent that books carriers or changes payment details needs a person's check.[^25][^26]",
     "Planner corrections can hurt as well as help. Small, upward tweaks make forecasts worse, so track whether each touch improved accuracy.[^12][^13]",
@@ -325,7 +327,7 @@
     },
     {
       "q": "Are AI purchase order recommendations useful yet for a midsize distributor?",
-      "a": "Often, but benchmark them against a plain reorder point first. Mid-size planning tools start around $900 a month.[^38] Most procurement teams use AI already built into their software.[^34]"
+      "a": "Often, but benchmark them against a plain reorder point first. Mid-size planning tools start around $900 a month.[^36] Most procurement teams use AI already built into their software.[^32]"
     },
     {
       "q": "What exactly has AI improved for 3PL providers?",
@@ -337,7 +339,7 @@
     },
     {
       "q": "How is AI changing logistics and supply chain jobs?",
-      "a": "It adds skills to jobs more than it removes them. About half of logistics providers expect reskilling, and logistician jobs are projected to grow 18% by 2035.[^1][^37] In our job-ad count above, demand planner ads mention AI most often."
+      "a": "It adds skills to jobs more than it removes them. About half of logistics providers expect reskilling, and logistician jobs are projected to grow 18% by 2035.[^1][^35] In our job-ad count above, demand planner ads mention AI most often."
     },
     {
       "q": "Management wants AI in our operations. Where do we start?",
@@ -345,23 +347,23 @@
     }
   ],
   "buyVsBuild": {
-    "buy": "Buy for forecasting, routing, visibility and freight audit, where tools are mature. About 76% of AI uses are now bought, up from 53% in 2024.[^35] Bought or partnered tools succeed about twice as often as internal builds.[^7]",
-    "build": "Build only the glue: email-to-ERP order intake, data clean-up and approval steps. Hackett's leaders first check where AI pays, then pick built-in features, AI-native tools or custom builds.[^34] Turn on what your ERP or WMS already has before you buy more."
+    "buy": "Buy for forecasting, routing, visibility and freight audit, where tools are mature. About 76% of AI uses are now bought, up from 53% in 2024.[^33] Bought or partnered tools succeed about twice as often as internal builds.[^7]",
+    "build": "Build only the glue: email-to-ERP order intake, data clean-up and approval steps. Hackett's leaders first check where AI pays, then pick built-in features, AI-native tools or custom builds.[^32] Turn on what your ERP or WMS already has before you buy more."
   },
   "pickElse": [
     "Lumpy, slow-moving demand such as spare parts: try a simple method like Croston's first. Croston-type methods beat a seasonal baseline on low-volume items in M5.[^8]",
-    "One depot or a regional fleet: buy off-the-shelf routing software. A custom optimizer like UPS's ORION pays only at UPS scale.[^46]"
+    "One depot or a regional fleet: buy off-the-shelf routing software. A custom optimizer like UPS's ORION pays only at UPS scale.[^41]"
   ],
   "resources": [
     {
       "name": "US Census Bureau, Monthly Wholesale Trade",
       "url": "https://www.census.gov/wholesale/current/index.html",
-      "what": "Benchmark your inventory-to-sales ratio against wholesalers nationally (1.21 in Sept 2026).[^47]"
+      "what": "Benchmark your inventory-to-sales ratio against wholesalers nationally (1.21 in Sept 2026).[^42]"
     },
     {
       "name": "BTS Supply Chain and Freight Indicators",
       "url": "https://www.bts.gov/freight-indicators",
-      "what": "Free monthly freight, port and trucking signals to sense-check a forecast.[^48]"
+      "what": "Free monthly freight, port and trucking signals to sense-check a forecast.[^43]"
     },
     {
       "name": "APQC Open Standards Benchmarking",
@@ -576,16 +578,6 @@
       "what": "Oct 2026: predictive AI pilots stall on data and decision ownership."
     },
     {
-      "name": "Miebach, AI in warehouse operations whitepaper",
-      "url": "https://www.miebach.com/ca/en/news-and-resources/whitepaper/2026/ai-in-warehouse-operations",
-      "what": "2 Nov 2026: AI's value depends on accurate master data, dependable processes and clear accountability for decisions."
-    },
-    {
-      "name": "IBM Think, What is AI in supply chain?",
-      "url": "https://www.ibm.com/think/topics/ai-supply-chain",
-      "what": "Explainer, updated 1 Apr 2026: use cases across forecasting, logistics and procurement; implementation requires thoughtful preparation."
-    },
-    {
       "name": "McKinsey Distribution Blog, AI in distribution operations",
       "url": "https://www.mckinsey.com/industries/industrials/our-insights/distribution-blog/harnessing-the-power-of-ai-in-distribution-operations",
       "what": "15 Nov 2024: reductions of 20-30% in inventory, 5-20% in logistics costs and 5-15% in procurement spend; a building products distributor raised fill rates 5-8%."
@@ -613,22 +605,12 @@
     {
       "name": "Netstock, packages and pricing",
       "url": "https://www.netstock.com/packages",
-      "what": "Vendor price page, read 26 Nov 2026: Essentials from $900/mo, Advanced $1,500/mo, Commercial $2,000/mo, annual terms; 60+ ERP integrations."
+      "what": "Vendor price page, read 26 Nov 2026: Essentials from $900/mo, Advanced $1,500/mo, Commercial $2,000/mo, annual terms; 60+ ERP integrations; implementation typically 6-10 weeks."
     },
     {
       "name": "Inventory Planner by Sage, pricing",
       "url": "https://www.inventory-planner.com/pricing",
       "what": "Vendor price page, read 26 Nov 2026: priced by inventory volume, quote only, unlimited users."
-    },
-    {
-      "name": "Morsa.ai, inventory planning software pricing guide",
-      "url": "https://morsa.ai/guides/inventory-planning-software-pricing",
-      "what": "Third-party guide, read 26 Nov 2026: Lokad 'low-digit thousands' a month with about 6 months of onboarding; StockIQ about $750/mo; Netstock implementation 6-10 weeks."
-    },
-    {
-      "name": "Ordana blog, purchase order processing (citing Esker and Conexiom)",
-      "url": "https://ordana.ai/blog/purchase-orders-process",
-      "what": "Vendor claims: a manual order takes 11-12 minutes to key (Esker, Conexiom)."
     },
     {
       "name": "C.H. Robinson, how it ensures ROI from agentic AI",
@@ -646,11 +628,6 @@
       "what": "Vendor claim: 4x the bandwidth for carrier sales reps. No price published."
     },
     {
-      "name": "SlipperDigital, AI in supply chain readiness guide",
-      "url": "https://hub.slipperdigital.com/articles/supply-chain-logistics-procurement/ai-in-supply-chain-practical-readiness-guide",
-      "what": "AI must not approve awards, create vendors or change bank details; the category owner signs the award."
-    },
-    {
       "name": "INFORMS, UPS ORION wins the 2016 Franz Edelman Award",
       "url": "https://pubsonline.informs.org/do/10.1287/orms.2016.03.10/full",
       "what": "ORION saves about 100M miles and 10M gallons of fuel a year, worth $300-400M; middle managers resisted more than drivers."
@@ -664,6 +641,26 @@
       "name": "Bureau of Transportation Statistics, Supply Chain and Freight Indicators",
       "url": "https://www.bts.gov/freight-indicators",
       "what": "Free monthly freight, port and trucking indicators."
+    },
+    {
+      "name": "FBI, Business Email Compromise",
+      "url": "https://www.fbi.gov/how-we-can-help-you/scams-and-safety/common-frauds-and-scams/business-email-compromise",
+      "what": "Verify any change in account number or payment procedures with the person making the request, by calling a number you look up yourself."
+    },
+    {
+      "name": "APQC, How Do You Benchmark Procurement? (13 Nov 2026)",
+      "url": "https://www.apqc.org/blog/how-do-you-benchmark-procurement",
+      "what": "Ordering materials and services is the costliest procurement process and takes the largest share of procurement staff time."
+    },
+    {
+      "name": "Lokad, FAQ: Contractual Agreement (vendor page, read 26 Nov 2026)",
+      "url": "https://www.lokad.com/contractual-agreement/",
+      "what": "Flat monthly fee per type of supply chain decision, starting in the low-digit thousands of EUR or USD; implementation typically equals six months of fees, billed monthly; monthly commitment."
+    },
+    {
+      "name": "StockIQ Technologies, pricing (vendor page, read 26 Nov 2026)",
+      "url": "https://stockiqtech.com/pricing/",
+      "what": "Quote only; priced by ERP integration, SKU and location scale and capabilities; unlimited users."
     }
   ],
   "reviews": [
@@ -673,7 +670,7 @@
     },
     {
       "reader": "Head of operations",
-      "notes": "Who checks AI output is named: planners, buyers, dispatchers, carrier reps, warehouse managers. Vendor numbers (Esker, Conexiom, C.H. Robinson, Parade) are labelled as the vendor's, and third-party prices are marked. Would distrust the job-ad count without its weak spots. Fixed: the note now says matching is on ad text, so employer boilerplate can inflate counts. Tables are 3 short columns, readable at 390px."
+      "notes": "Who checks AI output is named: planners, buyers, dispatchers, carrier reps, warehouse managers. Vendor numbers (C.H. Robinson, Parade) are labelled as the vendor's, and third-party prices are marked. Would distrust the job-ad count without its weak spots. Fixed: the note now says matching is on ad text, so employer boilerplate can inflate counts. Tables are 3 short columns, readable at 390px."
     },
     {
       "reader": "GM",
