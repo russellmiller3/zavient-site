@@ -1,0 +1,482 @@
+{
+  "title": "Machine learning consulting: what should you get, and will it work?",
+  "description": "What a good predictive model build should leave you with. How to test it on your own data, and what it costs to keep accurate.",
+  "type": "consulting",
+  "templateVersion": 1,
+  "topic": "Machine learning consulting",
+  "job": "building predictive models on a firm's own data",
+  "industry": "any industry",
+  "index": false,
+  "verdict": [
+    "Insist on a model your team uses weekly, not a demo. Half or more of models never reach use.[^1][^2]",
+    "Test models against today's rule on held-back data. Our benchmark's models caught 76 churners per 100 flagged; the rule, 44.[^3][^4]",
+    "Explainable models often match black-box accuracy on business data, so your team sees why each score.[^5][^6]",
+    "Budget for upkeep, not just the build. Most models lose accuracy over time and need monitoring and retraining.[^7][^8]",
+    "People keep the call: managers can adjust each score, and logged adjustments often improve results.[^9][^10]"
+  ],
+  "onPage": [
+    {
+      "to": "walk-away",
+      "text": "The five things a good model build leaves you holding"
+    },
+    {
+      "to": "recipes",
+      "text": "Three shapes of model work, sized to your firm, with vendor cost ranges"
+    },
+    {
+      "to": "own-data",
+      "text": "Our churn benchmark: does an explainable model cost accuracy?"
+    },
+    {
+      "to": "what-goes-wrong",
+      "text": "Six ways model projects stall, and the fix for each"
+    },
+    {
+      "to": "benchmark",
+      "text": "Ten checks to judge any advisor on your own data"
+    },
+    {
+      "to": "something-else",
+      "text": "When a rule, your CRM or a free tool beats hiring help"
+    }
+  ],
+  "headings": {},
+  "summary": "Machine learning consulting builds a model that scores each new customer, loan or order from your own history.[^3][^5] Your team works the highest scores first, and a named person decides. The code is the small part; the decision, the test and the upkeep make or break it.[^8][^3]",
+  "walkAway": [
+    "One named decision and the money number it moves, agreed before any build. Google's rules for machine learning say to design the metric first.[^3]",
+    "Today's rule, scored, and a held-back test set that you keep. A simple first model sets the baseline; leaked test data makes weak models look strong.[^3][^11]",
+    "A model in your team's weekly routine, not a file on a laptop. Only 32% of data scientists say their models usually get used.[^1][^2]",
+    "The reasons behind each score, as charts your managers can read and correct. Glass-box models (ones whose logic you can read) are often as accurate as black boxes.[^12][^13]",
+    "A handover: code, data feed, monitoring and a retrain rule, with a named owner. Google's ML Test Score lists 28 checks to score it against.[^14][^8]"
+  ],
+  "humanRole": [
+    "The person who acts on the score, such as an account manager or demand planner, makes the call and can override it. Log overrides to see whether they help.[^9][^10]",
+    "The domain lead, such as the head of underwriting or customer success, reviews what the model learned before launch.[^15][^13] One hospital model learned asthma lowers pneumonia risk, only because those patients got intensive care first.[^15]",
+    "Someone who didn't build the model checks it: internal audit, a risk owner or an outside reviewer. Bank and insurance guidance calls this independent, effective challenge.[^16][^17]",
+    "In credit, the credit officer or underwriter owns every decline and its stated reasons. Reg B, the federal fair-lending rule, says 'failed our score' is not a reason.[^18]"
+  ],
+  "recipes": [
+    {
+      "name": "1. One yes-or-no decision, data in your CRM (about 40 to 150 staff)",
+      "when": "Pick this for churn or lead priority: one yes-or-no outcome, a few thousand past cases and a team that acts weekly.[^19] Check your CRM's (customer database's) built-in score first.[^20][^21]",
+      "flow": [
+        "GM: name the decision and the money number it moves",
+        "Ops lead: write down today's rule and how often it is right",
+        "IT lead: export two to three years of history",
+        "Builder: hold back the latest 3 to 6 months, unseen in training, then test the rule against two or three models",
+        "Account managers in one team or region: work the top 10% list weekly and log what they did",
+        "Ops lead: compare saved revenue with a held-back control group after 60 to 90 days"
+      ],
+      "cost": "Vendor guides put a trial build at about €5,000 to €15,000 (a European vendor) or $15,000 to $80,000.[^22][^23] Zavient's fixed-scope 30-day Sprint is $10,000 for ranked bets, specs and a plan, so not like for like.[^24]"
+    },
+    {
+      "name": "2. A model that drafts a weekly plan (about 100 to 500 staff)",
+      "when": "Pick this for demand, scrap or staffing, when a planner already builds the number by hand. The model gives a first draft, and the planner adjusts it.[^10][^19]",
+      "flow": [
+        "Division head: pick the plan and what an error costs",
+        "Demand planner: record today's forecast error for 8 to 12 weeks",
+        "Builder: replay past weeks, testing only on weeks the model never saw",
+        "Demand planner: adjust the draft and log every override",
+        "Controller: check the inventory or labor cost effect monthly",
+        "IT lead: set up monitoring and a retrain trigger (an accuracy drop that starts a refresh)"
+      ],
+      "cost": "Vendor guides put a live model at €15,000 to €45,000 up to $80,000 to $350,000; forecasting at €50,000 to €150,000.[^22][^25][^19] They budget 15% to 30% of the build each year for upkeep.[^22][^25]"
+    },
+    {
+      "name": "3. A regulated decision: credit, underwriting or insurance pricing",
+      "when": "Pick this when a regulator, examiner or customer can ask why. Thirty US jurisdictions have adopted the NAIC bulletin, which asks insurers for validation and drift checks.[^17][^26]",
+      "flow": [
+        "Head of lending or underwriting: set the policy and the reasons you must give",
+        "Builder: fit a glass-box model and document its data and limits",
+        "Independent validator: check the logic, test it on past outcomes and set a monitoring plan",
+        "Compliance lead: map model reasons to the reasons on decline letters",
+        "Underwriter: decide edge cases and sign every decline",
+        "Risk owner: review drift (accuracy slipping as data changes) each quarter"
+      ],
+      "cost": "We found no published price for regulated builds. Expect the ranges above, plus time for the validation and documentation that model risk guidance describes.[^16][^27]"
+    }
+  ],
+  "ownData": {
+    "title": "Does an explainable churn model cost you accuracy?",
+    "intro": "We ran four approaches on IBM's public telecom churn file: 7,032 customers, scored 15 times on customers each model never saw.[^4][^6] Among the 100 riskiest of every 1,000 customers, each model found about 76 who really left. The one-line contract rule found about 44.",
+    "headers": [
+      "Approach",
+      "Real churners among the 100 riskiest",
+      "Ranking score (AUC: 0.5 is a coin flip, 1.0 is perfect)",
+      "Can a manager see why?"
+    ],
+    "rows": [
+      [
+        "Contract-type rule: each contract type's past churn rate",
+        "About 44",
+        "0.739",
+        "Yes, one line"
+      ],
+      [
+        "Logistic regression, a classic statistical model",
+        "About 76",
+        "0.845",
+        "Mostly, from its weights"
+      ],
+      [
+        "Glass-box model (Explainable Boosting Machine)",
+        "About 76",
+        "0.849",
+        "Yes: one chart per field, reasons per customer"
+      ],
+      [
+        "Black-box model (LightGBM), untuned",
+        "About 76",
+        "0.837",
+        "Only with add-on explainer tools"
+      ]
+    ],
+    "note": "Method: Zavient run on 26 Nov 2026; each model trained on 80% of customers and scored on the other 20%, 15 times, on default settings. Limits: one telecom dataset, no tuning, and random rather than time-based splits, since the file has no dates. The glass box and logistic regression differ by less than the run-to-run spread, so call it a tie."
+  },
+  "watchOuts": [
+    "Test scores that look too good. Leakage, where the model glimpses the answers, hit 294 studies in 17 fields; lock a recent holdout yourself before work starts.[^11][^28]",
+    "The model never reaches the people who would use it. Studies of Microsoft teams and of 18 ML engineers find deployment and upkeep are the hard part; name the user and screen first.[^29][^30]",
+    "Accuracy decays after launch. One study found decay in 91% of 128 model and dataset pairs; check live accuracy monthly and set a retrain trigger.[^7][^31]",
+    "The model learns the wrong lesson and nobody sees it. Start glass-box and have the domain lead review every chart; Google's rules say readable models are easier to debug.[^15][^3]",
+    "Scores used outside the range they were built for. Zillow wrote down $304 million of homes after its price forecasts missed; cap where scores apply and keep sign-off on big calls.[^32]",
+    "A churn score is not a save plan. Hold back a small random control group, so you measure customers saved, not just predictions made.[^33]"
+  ],
+  "howToTest": [
+    "Name one decision and the money number it moves, before any data work.[^3]",
+    "Write down today's rule and score it. Any model must beat it; our contract rule caught 44 churners per 100 flagged.[^3][^4]",
+    "Count past outcomes, such as customers who left, not rows. Needed size depends on the number of outcomes and fields, not one rule of thumb.[^34]",
+    "Lock a holdout, past cases the model never trains on, before the advisor sees any results. Use your most recent months if you can.[^11][^34]",
+    "Compare four approaches on that holdout: your rule, logistic regression, a glass-box model and a black box.[^5][^3]",
+    "Score what your decision needs: real cases caught in the list you will work, and results by region or product. One Google system gained 1% overall while one country fell 50%.[^14]",
+    "Ask to see why for one real customer. In our benchmark, one customer's top reasons were one month of tenure, a month-to-month contract and fibre internet.[^12][^4]",
+    "Price the lift: extra real cases in your list x the share you save x margin, minus the cost of acting, building and upkeep. Our 32 extra churners per 1,000 paid about $28,600 a year: revenue reached, not saved.[^4]",
+    "Run it live in one team against a small random control group for 60 to 90 days before you scale.[^33]",
+    "Check the handover against the ML Test Score's monitoring checks: code, data feed, monitoring, retrain rule and who holds the logins.[^14][^35]"
+  ],
+  "faq": [
+    {
+      "q": "How much does machine learning consulting cost?",
+      "a": "Vendor guides publish about $40,000 to $400,000 for a custom model, with a typical range of $55,000 to $250,000.[^23] Trial builds cost less, and vendors budget 15% to 30% of the build a year for upkeep.[^22][^25]"
+    },
+    {
+      "q": "How long does a machine learning project take?",
+      "a": "One vendor guide says 2 to 6 weeks to check the data and 1 to 3 months for a trial build.[^36] A first live model takes 4 to 6 months.[^36] Gartner's survey average was 8 months from prototype to production.[^2]"
+    },
+    {
+      "q": "Do we have enough data?",
+      "a": "Count outcomes, not rows: how many customers left, loans went bad or orders slipped.[^34] Practitioners test it with a learning curve: fit on half the data, then all; if scores still climb, more data helps.[^37] With a few dozen cases, use a rule instead.[^38]"
+    },
+    {
+      "q": "Does predictive modelling actually work, or is it hype?",
+      "a": "It works when it beats your current rule on data it never saw.[^3] On our churn benchmark, models caught about 76 churners per 100 flagged, against 44 for a contract-type rule.[^4]"
+    },
+    {
+      "q": "Will we lose accuracy if the model has to be explainable?",
+      "a": "Often not, on business data.[^5] InterpretML's own table puts its glass-box model at 0.852 on telecom churn, against 0.828 for a popular black box.[^6] Ours scored 0.849 against 0.837 for an untuned black box.[^4]"
+    },
+    {
+      "q": "Can our team keep the model running after the consultant leaves?",
+      "a": "Only if the handover includes the data feed, monitoring, a retrain rule and a named owner.[^14][^8] Practitioners warn that small-firm models often go unmaintained once the consultant moves on.[^35]"
+    }
+  ],
+  "pickElse": [
+    "Your CRM already scores leads: turn on its scoring and test it on your holdout first.[^20][^21] Salesforce's tool wants 1,000 leads in 200 days, with 120 converted.[^20]",
+    "Too few cases, or one obvious driver: use a rule or a spreadsheet score. Google's rules say a simple rule can get you about half the gain.[^3][^38]",
+    "You have an analyst and one clean table: try free InterpretML or Google's AutoML first.[^6][^39] Google lists AutoML training on tables at $21.252 per hour of computing.[^39]"
+  ],
+  "resources": [
+    {
+      "name": "InterpretML",
+      "url": "https://github.com/interpretml/interpret",
+      "what": "Free, open-source glass-box models with charts your team can read."
+    },
+    {
+      "name": "Google, Rules of Machine Learning",
+      "url": "https://developers.google.com/machine-learning/guides/rules-of-ml",
+      "what": "Plain rules: try a simple rule first, set the metric first, start with a simple model."
+    },
+    {
+      "name": "The ML Test Score",
+      "url": "https://research.google.com/pubs/archive/aad9f93b86b7addfea4c419b9100c6cdd26cacea.pdf",
+      "what": "28 checks to score any model handover, including monitoring and rollback."
+    },
+    {
+      "name": "Riley et al., BMJ 2020",
+      "url": "https://www.bmj.com/content/368/bmj.m441",
+      "what": "How many past cases a model needs, and why there is no single rule."
+    },
+    {
+      "name": "Federal Reserve SR 26-2",
+      "url": "https://www.federalreserve.gov/supervisionreg/srletters/sr2602.htm",
+      "what": "Current bank model-risk guidance; a sound validation checklist even outside banking."
+    }
+  ],
+  "stats": [
+    {
+      "num": "76 vs 44",
+      "label": "Real churners among the 100 riskiest of 1,000 customers: models against a contract-type rule.[^4]",
+      "source": "Zavient churn benchmark, 26 Nov 2026"
+    },
+    {
+      "num": "32%",
+      "label": "Data scientists who say their models usually get used.[^1]",
+      "source": "Rexer Analytics survey via KDnuggets, 2024"
+    },
+    {
+      "num": "48%",
+      "label": "AI projects that reach production, after about 8 months on average.[^2]",
+      "source": "Gartner survey of 644, May 2024"
+    },
+    {
+      "num": "91%",
+      "label": "Model and dataset pairs that lost accuracy over time, of 128 tested.[^7]",
+      "source": "Vela et al., Scientific Reports, 2022"
+    },
+    {
+      "num": "294",
+      "label": "Published studies in 17 fields hit by data leakage.[^11]",
+      "source": "Kapoor and Narayanan, Patterns, 2023"
+    },
+    {
+      "num": "30",
+      "label": "US jurisdictions that have adopted the NAIC AI bulletin for insurers.[^26]",
+      "source": "NAIC adoption map, 13 Nov 2026"
+    }
+  ],
+  "sources": [
+    {
+      "name": "Eric Siegel, KDnuggets, Survey: machine learning projects still routinely fail to deploy, Jan 2024 (Rexer Analytics 2023 survey)",
+      "url": "https://www.kdnuggets.com/survey-machine-learning-projects-still-routinely-fail-to-deploy",
+      "what": "Only 32% of data scientists say their models usually deploy; 22% for new, ambitious projects."
+    },
+    {
+      "name": "Gartner press release, 7 May 2024",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2024-05-07-gartner-survey-finds-generative-ai-is-now-the-most-frequently-deployed-ai-solution-in-organizations",
+      "what": "Survey of 644 respondents: 48% of AI projects reach production, taking about 8 months from prototype on average."
+    },
+    {
+      "name": "Google, Rules of Machine Learning (Zinkevich)",
+      "url": "https://developers.google.com/machine-learning/guides/rules-of-ml",
+      "what": "Rule 1: a simple rule gets you about half the gain of ML; Rule 2: design metrics first; Rule 4: a simple first model sets the baseline; Rule 14: interpretable models are easier to debug."
+    },
+    {
+      "name": "IBM, Telco Customer Churn dataset (GitHub), used for the Zavient churn benchmark, 26 Nov 2026",
+      "url": "https://github.com/IBM/telco-customer-churn-on-icp4d",
+      "what": "Public sample of 7,043 telecom customers with 19 fields and a churn flag; Zavient used 7,032 after dropping 11 with blank charges."
+    },
+    {
+      "name": "Rudin, Stop explaining black box machine learning models for high stakes decisions, Nature Machine Intelligence, 2019",
+      "url": "https://arxiv.org/abs/1811.10154",
+      "what": "On structured data with meaningful fields there is often no real accuracy gap between complex models and simpler, interpretable ones; the trade-off is a myth."
+    },
+    {
+      "name": "InterpretML on GitHub (Microsoft; benchmark table is the authors' own)",
+      "url": "https://github.com/interpretml/interpret",
+      "what": "Free, open-source glass-box models. Authors' table, telecom churn AUC: Explainable Boosting Machine 0.852, logistic regression 0.849, XGBoost 0.828, random forest 0.824."
+    },
+    {
+      "name": "Vela et al., Temporal quality degradation in AI models, Scientific Reports, Jul 2022",
+      "url": "https://www.nature.com/articles/s41598-022-15245-z",
+      "what": "Accuracy fell over time in 91% of 128 model and dataset pairs, across 32 datasets in four industries; sometimes suddenly after a stable period."
+    },
+    {
+      "name": "Sculley et al., Hidden Technical Debt in Machine Learning Systems, NeurIPS 2015",
+      "url": "https://proceedings.neurips.cc/paper/2015/file/86df7dcfd896fcaf2674f757a2463eba-Paper.pdf",
+      "what": "Google engineers: building ML systems is relatively fast and cheap, but keeping them working over time is difficult and expensive; the model code is a small fraction of the system."
+    },
+    {
+      "name": "Dietvorst, Simmons and Massey, Overcoming Algorithm Aversion, Management Science, 2018",
+      "url": "https://pubsonline.informs.org/doi/10.1287/mnsc.2016.2643",
+      "what": "People were considerably more likely to use an imperfect algorithm when they could adjust it, even slightly, and performed better as a result."
+    },
+    {
+      "name": "Fildes, Goodwin, Lawrence and Nikolopoulos, Effective forecasting and judgmental adjustments, International Journal of Forecasting, 2009",
+      "url": "https://doi.org/10.1016/j.ijforecast.2008.11.010",
+      "what": "60,000+ forecasts at four supply-chain firms: planners adjusted up to 80% of them, and adjustments improved accuracy on average at three of four firms."
+    },
+    {
+      "name": "Kapoor and Narayanan, Leakage and the reproducibility crisis in machine-learning-based science, Patterns, 2023",
+      "url": "https://www.cell.com/patterns/fulltext/S2666-3899(23)00159-9",
+      "what": "Data leakage affected 294 papers across 17 fields; once fixed in one case, complex models did no better than logistic regression."
+    },
+    {
+      "name": "InterpretML documentation, Explainable Boosting Machine",
+      "url": "https://interpret.ml/docs/ebm.html",
+      "what": "EBMs are often as accurate as state-of-the-art black-box models while staying fully interpretable; each field's effect shows as a chart."
+    },
+    {
+      "name": "Nori et al., InterpretML: A Unified Framework for Machine Learning Interpretability, 2019",
+      "url": "https://arxiv.org/abs/1909.09223",
+      "what": "Microsoft researchers: glass-box models such as EBMs can be read and edited by domain experts."
+    },
+    {
+      "name": "Breck et al., The ML Test Score, IEEE Big Data 2017",
+      "url": "https://research.google.com/pubs/archive/aad9f93b86b7addfea4c419b9100c6cdd26cacea.pdf",
+      "what": "28 tests across data, model, infrastructure and monitoring, from maintainers of 36 production systems; warns overall accuracy can rise 1% while one country drops 50%."
+    },
+    {
+      "name": "Caruana et al., Intelligible Models for HealthCare, KDD 2015",
+      "url": "https://people.dbmi.columbia.edu/noemie/papers/15kdd.pdf",
+      "what": "A pneumonia model learned that asthma lowers risk, because asthma patients went straight to intensive care; the glass-box model let doctors see and remove it, at AUC 0.857 vs 0.846 for a random forest."
+    },
+    {
+      "name": "Federal Reserve, SR 26-2, revised model risk management guidance, 17 Apr 2026",
+      "url": "https://www.federalreserve.gov/supervisionreg/srletters/sr2602.htm",
+      "what": "Replaces SR 11-7. Effective challenge stays central; validation covers soundness, outcomes back-testing and ongoing monitoring. Aimed mainly at banks over $30 billion; not binding on smaller firms."
+    },
+    {
+      "name": "NAIC Model Bulletin: Use of Artificial Intelligence Systems by Insurers, Dec 2023",
+      "url": "https://content.naic.org/sites/default/files/cmte-h-big-data-artificial-intelligence-wg-ai-model-bulletin.pdf.pdf",
+      "what": "Asks insurers for independent decision-makers across the AI life cycle, validation, drift checks and audit rights over vendors."
+    },
+    {
+      "name": "Regulation B, 12 CFR 1002.9(b)(2), eCFR, read 26 Nov 2026",
+      "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1002/section-1002.9",
+      "what": "Reasons for a credit denial must be specific and give the principal reasons; saying the applicant failed the creditor's scoring system is insufficient."
+    },
+    {
+      "name": "Digital Colliers, Machine Learning Consulting: When and What to Expect, 30 May 2026 (vendor guide)",
+      "url": "https://www.digitalcolliers.com/blog/machine-learning-consulting",
+      "what": "Vendor's figures: churn or lead-scoring models 8 to 14 weeks, EUR 30,000 to 80,000, 3 to 6 months of history; forecasting 12 to 20 weeks, EUR 50,000 to 150,000."
+    },
+    {
+      "name": "Salesforce, Set Up Sales Cloud Einstein implementation guide, Jul 2026",
+      "url": "https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/sales_einstein_implementation_guide.pdf",
+      "what": "Einstein Lead Scoring wants at least 1,000 leads in 200 days with 120 converted; falls back to a global model when data is thin."
+    },
+    {
+      "name": "HubSpot Knowledge Base, Overview of the lead scoring tool, updated 16 Nov 2026",
+      "url": "https://knowledge.hubspot.com/scoring/understand-the-lead-scoring-tool",
+      "what": "AI-built contact scores need Marketing Hub Enterprise; rule-based fit and engagement scores come on Professional and Enterprise."
+    },
+    {
+      "name": "Tensoria, Custom AI model cost, 12 Jun 2026 (vendor guide)",
+      "url": "https://tensoria.fr/en/blog/custom-ai-model-cost",
+      "what": "Vendor's figures: production model on tables EUR 15,000 to 45,000; audit plus trial build EUR 5,000 to 15,000; upkeep 15% to 25% of build a year."
+    },
+    {
+      "name": "Unlocking Tech, AI development cost, 14 Oct 2026 (vendor guide)",
+      "url": "https://www.unlockingtech.com/blog-posts/ai-development-cost",
+      "what": "Vendor's comparison of 7 vendor cost guides: custom ML model about $40,000 to $400,000, median range about $55,000 to $250,000; proof of concept $15,000 to $80,000."
+    },
+    {
+      "name": "Zavient, About: how we work and what it costs, read 26 Nov 2026",
+      "url": "https://zavient.com/about.html",
+      "what": "Free 30-minute diagnostic; 30-day AI Sprint $10,000 fixed scope, delivering ranked AI bets, specs, a written case and a 90-day plan; advisory after."
+    },
+    {
+      "name": "GMWARE, Machine learning consulting services, 15 Jan 2026 (vendor guide)",
+      "url": "https://gmware.com/blog/machine-learning-consulting-services",
+      "what": "Vendor's figures: proof of concept $5,000 to $25,000; custom model $80,000 to $350,000; upkeep 20% to 30% a year."
+    },
+    {
+      "name": "NAIC, AI model bulletin adoption map, dated 13 Nov 2026",
+      "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
+      "what": "30 US jurisdictions have adopted the bulletin: 28 states, DC and Puerto Rico."
+    },
+    {
+      "name": "OCC Bulletin 2026-13, Model risk management, Apr 2026",
+      "url": "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-13.html",
+      "what": "The OCC adopts the revised interagency model risk guidance issued with the Fed and FDIC."
+    },
+    {
+      "name": "Reddit r/datascience, How's your experience with consulting companies?, Aug 2023 (practitioner opinion)",
+      "url": "https://www.reddit.com/r/datascience/comments/15k2pxz/hows_your_experience_with_consulting_companies",
+      "what": "Practitioner complaint that some outside vendors tune models on the test set, then claim the model will hold up."
+    },
+    {
+      "name": "Amershi et al., Software Engineering for Machine Learning: A Case Study, ICSE 2019 (Microsoft)",
+      "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2019/03/amershi-icse-2019_Software_Engineering_for_Machine_Learning.pdf",
+      "what": "Study of Microsoft teams (551 survey responses): data, deployment and operations, not modelling alone, are where ML work gets hard."
+    },
+    {
+      "name": "Shankar et al., Operationalizing Machine Learning: An Interview Study, 2022",
+      "url": "https://arxiv.org/abs/2209.09125",
+      "what": "Interviews with 18 ML engineers: keeping models working in production, through monitoring and retraining, is where effort goes."
+    },
+    {
+      "name": "Comet, 2023 State of MLOps, survey of 500 US ML practitioners (vendor survey)",
+      "url": "https://go.comet.ml/rs/912-JJP-445/images/Comet_State_of_MLOPs_Report-2023_ML_Practitioner_Survey.pdf",
+      "what": "Vendor survey: 15% of models failed after launch; deployment took 7 months on average."
+    },
+    {
+      "name": "Zillow Group, Q3 2021 shareholder letter (SEC filing), 2 Nov 2021",
+      "url": "https://www.sec.gov/Archives/edgar/data/1617640/000161764021000085/exhibit993.htm",
+      "what": "$304.4 million inventory write-down in Zillow Offers; the CEO said home-price forecasting proved far less predictable than expected."
+    },
+    {
+      "name": "Reddit r/datascience, Question about how to use churn prediction (practitioner opinion)",
+      "url": "https://www.reddit.com/r/datascience/comments/1k80mxy/question_about_how_to_use_churn_prediction",
+      "what": "Practitioners note a risk score alone doesn't show an offer works, and advise small randomised tests with a control group."
+    },
+    {
+      "name": "Riley et al., Calculating the sample size required for developing a clinical prediction model, BMJ, 2020",
+      "url": "https://www.bmj.com/content/368/bmj.m441",
+      "what": "Needed data depends on the number of outcomes, the number of fields, the outcome share and expected performance; the 10-events-per-field rule is only a rule of thumb."
+    },
+    {
+      "name": "Reddit r/datascience, Services a sole data scientist consultant can offer small businesses, Jul 2021 (practitioner opinion)",
+      "url": "https://www.reddit.com/r/datascience/comments/ofqq2e/what_services_could_you_provide_to_small",
+      "what": "Practitioner warning: small-business models often go unmaintained once the consultant moves on."
+    },
+    {
+      "name": "Logix Built, Machine Learning Consultant: Services, Costs and How to Choose, 19 Nov 2026 (vendor guide)",
+      "url": "https://logixbuilt.com/blogs/machine-learning-consultant",
+      "what": "Vendor's timeline: data assessment 2 to 6 weeks; proof of concept 1 to 3 months; first production model 4 to 6 months."
+    },
+    {
+      "name": "Reddit r/MachineLearning, How much data is enough data?, Oct 2013 (practitioner opinion)",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1pdaxo/how_much_data_is_enough_data",
+      "what": "Practitioners suggest a learning curve: fit on part of the data, then all of it; if scores still climb, more data helps."
+    },
+    {
+      "name": "Reddit r/datascience, Working with extremely limited data, Feb 2023 (practitioner opinion)",
+      "url": "https://www.reddit.com/r/datascience/comments/10u61v7/working_with_extremely_limited_data/",
+      "what": "Practitioner view: a problem that can be solved with 25 samples can be solved without machine learning."
+    },
+    {
+      "name": "Google Cloud, Vertex AI pricing, read 26 Nov 2026",
+      "url": "https://cloud.google.com/vertex-ai/pricing",
+      "what": "AutoML on tabular data: training $21.252 per node hour for classification or regression, on Google's own pricing page."
+    }
+  ],
+  "related": [
+    "ai-consulting-services",
+    "ai-strategy-consulting",
+    "hire-ai-engineer",
+    "ai-credit-scoring"
+  ],
+  "offer": {
+    "heading": "Not sure your data can support a model?",
+    "body": "Free, before any paid work, and no sales pitch: 30 minutes on your first workflow. Bring the decision and a rough count of past cases. You leave knowing whether a rule, your CRM's score or a custom model fits, and what to test first."
+  },
+  "keyword": {
+    "phrase": "machine learning consulting",
+    "searches": 390,
+    "cpc": 30.25,
+    "difficulty": 0
+  },
+  "reviews": [
+    {
+      "reader": "COO",
+      "notes": "Title, bottom line and timeline answer what I'd ask: what we get, how we know it works, how long. Two terms stalled me: 'holdout' in the recipe flow and 'cross-validation' in the benchmark note. The recipe step and test step now say 'past cases the model never trains on', and the note says trained on 80%, scored on 20%, 15 times. The 76-vs-44 line is what I'd forward to the CEO."
+    },
+    {
+      "reader": "Head of operations",
+      "notes": "Every flow step names a role, so I can hand each recipe out. Jargon in the flows: 'retrain trigger', 'back-test' and 'drift'. Each is now explained in place (an accuracy drop that starts a refresh; test on past outcomes; accuracy slipping as data changes). AUC is explained in the table header; the table stays four short columns."
+    },
+    {
+      "reader": "GM",
+      "notes": "Asked whether one team can pilot first and what it does to margin. Recipe 1 now runs in one team or region, and the live test step does too. The price-the-lift step and the $28,600 worked example give me the margin view, clearly marked revenue reached, not saved."
+    },
+    {
+      "reader": "Division head",
+      "notes": "Read as head of customer success, who owns the churn list (cross-read as head of lending for recipe 3). My team keeps the call and can override, and I review the model's charts before launch: right. Worry: a control group means not calling some at-risk customers. Watch-out 6 and the live test now say a small control group. Reg B and the NAIC bulletin are stated as current rules; the withdrawn CFPB circulars are not cited."
+    },
+    {
+      "reader": "Owner-CEO",
+      "notes": "Steve gets a price: vendor ranges labelled as vendors', and Zavient's $10,000 Sprint marked not like for like. Mixed euro and dollar ranges read oddly; euros now use the euro sign and name the European vendor. His data worry is answered in the FAQ, return in the dollar step, skills in the handover bullet. Security and privacy is not covered: the research has no source on it, so nothing was added. Offer says no sales pitch."
+    }
+  ],
+  "updated": "2026-11-26"
+}
