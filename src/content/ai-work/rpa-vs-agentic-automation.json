@@ -654,7 +654,7 @@
  ],
  "offer": {
   "heading": "Not sure which workflows need a bot, an agent or neither?",
-  "body": "Bring your list of manual workflows. In 30 minutes we sort them into bot, agent, both or neither. You leave with the first one to pilot."
+  "body": "In 30 minutes we sort your manual workflows into bot, agent, both or neither. Bring your list. You leave with the first one to pilot."
  },
  "keyword": {
   "phrase": "rpa vs agentic ai",
@@ -684,5 +684,16 @@
    "notes": "Steve decides in 10 seconds: the title is his question and the bottom line gives four picks plus a fifth line saying people keep payments and exceptions. He distrusts hype; the Gartner cancellation figure is labelled a forecast and agent washing is a watch-out. US prices are dated; where only UK public-sector list prices exist, the page says so. The offer says what he leaves with: workflows sorted and the first one to pilot. No case from a firm his size exists in the research, so the example is marked illustrative."
   }
  ],
- "updated": "2026-11-26"
+ "updated": "2026-11-26",
+ "answers": {
+  "recipes": "Invoice keying into an old system fits both, messy document intake fits an agent that reads and a bot that writes, and stable reconciliation fits a bot or API[^10][^6][^46].",
+  "human-role": "Your people keep control: the controller approves every payment an agent drafts, the ops lead owns exceptions, builder and approver stay separate, and each automation has one named owner[^38][^7][^40][^27].",
+  "example": "On 300 invoices a week, a bot keys matched invoices into an old finance system, an agent suggests coding when there's no PO, and the controller approves exceptions[^13][^10][^8].",
+  "what-goes-wrong": "Teams go wrong by buying rebranded bots as agents, trusting one good demo, putting bots on unstable screens, giving agents ungated write access, and ignoring metered costs[^26][^30][^29][^37][^2].",
+  "something-else": "Pick neither when the app has an API, the process keeps changing, volume is too low to pay back, or one person just needs a lookup or summary[^46][^26][^40].",
+  "table-1": "An RPA bot follows a fixed script on an app's screen, while an AI agent reads the input and picks its next step, so its path can differ[^46][^43][^16].",
+  "table-2": "Bots mostly cost a flat fee, such as Microsoft's $150 a month, while agents are metered per model call, credit or run[^10][^2][^13][^22].",
+  "table-3": "Bots break when screens change, and agents still vary between runs, finishing complex screen workflows only 9-19% of the time in one vendor-authored test[^29][^42][^30][^9].",
+  "own-data": "One Microsoft bot is $150 a month, one unattended run is $3.00, and one agent action is about $0.04-$0.05 in Copilot Studio credits[^10][^11][^13][^14]."
+ }
 }

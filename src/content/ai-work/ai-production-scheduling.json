@@ -219,7 +219,7 @@
     },
     {
       "title": "Can a chatbot build your schedule on its own?",
-      "intro": "Research benchmarks from 2026. Language models do best writing and explaining a schedule, with a solver checking that it can run.[^6][^39]",
+      "intro": "No, not on its own: in 2026 research benchmarks, language models alone broke scheduling rules or failed to beat simple dispatching rules.[^5][^40] Language models do best writing and explaining a schedule, with a solver checking that it can run.[^6][^39]",
       "headers": [
         "Study",
         "What it tested",
@@ -412,7 +412,7 @@
     },
     {
       "q": "How is an APS different from ERP scheduling?",
-      "a": "The ERP plans what to make and when material arrives.[^56] An APS (advanced planning and scheduling tool) sequences every operation within real machine hours and re-plans after disruptions.[^11][^12]"
+      "a": "An ERP plans what to make and when material arrives, while an APS (advanced planning and scheduling tool) sequences every operation within real machine hours.[^56][^11] An APS also re-plans after disruptions.[^12]"
     },
     {
       "q": "Can it build a schedule straight from my ERP?",
@@ -420,7 +420,7 @@
     },
     {
       "q": "How long does setup take?",
-      "a": "Data clean-up comes first.[^3] PlanetTogether says many integrations take about 4-8 weeks (vendor claim), and research calls these projects complex and risky.[^31][^2]"
+      "a": "Data clean-up comes first, then about 4-8 weeks for many integrations, by PlanetTogether's own claim.[^3][^31] Research calls these projects complex and risky.[^2]"
     },
     {
       "q": "What data does scheduling software need?",
@@ -831,5 +831,18 @@
       "notes": "Steve wanted to know where his data would live and what the 30 minutes buys. The tools table now says EDGEBIC runs on your own PCs, not in the cloud. The offer now promises the first step, a before-and-after measure and the data to fix first, with no sales pitch."
     }
   ],
-  "updated": "2026-11-26"
+  "updated": "2026-11-26",
+  "answers": {
+    "human-role": "Your planner approves every schedule before release and can override any move, with the reason logged.[^4][^2] Supervisors confirm what the floor can run, and the operations manager sets the rules the software follows.[^9][^15]",
+    "team-after": "Planners stop building the schedule by hand and work exceptions instead: late orders, material gaps, what-ifs and what to tell customers.[^9][^19]",
+    "example": "The software proposes a new sequence, moves the down machine's jobs to other machines, and costs the fixes; the planner picks one and releases it.[^16][^22][^4]",
+    "table-1": "Small shops fit ERP schedulers such as Business Central, Odoo or MRPeasy; plants with many changeovers fit stand-alone schedulers such as SkyPlanner, EDGEBIC or PlanetTogether.[^26][^7][^25][^30][^8][^31] Plants with unusual rules can build on frePPLe or a free solver.[^33][^45]",
+    "table-2": "The one independent case, from NIST MEP, cut lead time from 12-14 weeks to 5 after fixing routings first; vendor cases claim gains such as 25% fewer changeovers.[^3][^37]",
+    "recipes": "Small shops fit their ERP's own scheduler, plants with many changeovers fit a stand-alone scheduler, and data-rich plants with unusual rules can build on a free solver.[^41][^45]",
+    "own-data": "Year-one list licenses for a 100-person shop ran from about $1,494 (Odoo Standard) to a $25,000 one-time license (EDGEBIC), and five of 12 tools publish no usable price.[^7][^8]",
+    "rules": "The EU AI Act makes AI that assigns tasks to workers high-risk from 2 Dec 2027, and Chicago's Fair Workweek Ordinance requires 14 days' shift notice.[^51][^53] Neither covers sequencing machines alone.",
+    "benchmark": "Freeze the data from 4-6 past weeks with real disruptions, replay them in the tool, and compare against what happened and a simple earliest-due-date rule.[^40] Count every capacity or calendar violation, then run 4 weeks in shadow with the planner approving.[^5][^4]",
+    "what-goes-wrong": "Production scheduling software goes wrong through bad master data, shadow spreadsheets, planners losing their say, schedule churn, wrong shift calendars and untested vendor claims.[^4][^55][^1][^22][^13][^23]",
+    "something-else": "Pick something else when one bottleneck drives everything, demand is steady and repeats, material drives lead times, or your routings and run times are wrong.[^58][^59][^60][^61] Drum-Buffer-Rope, kanban, DDMRP or a NIST MEP center may fit better."
+  }
 }

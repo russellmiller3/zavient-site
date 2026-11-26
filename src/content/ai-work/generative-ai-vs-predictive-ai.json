@@ -409,7 +409,7 @@
   },
   {
    "q": "Is a linear regression AI?",
-   "a": "For the rules, yes. The NAIC bulletin counts it as a predictive model, and SR 26-2 counts any method that produces quantitative estimates as a model[^10][^13]. On FICO credit data, a plain logistic regression matched a boosted-tree model (XGBoost) at 0.72 AUC[^29]."
+   "a": "Yes, for the rules. The NAIC bulletin counts it as a predictive model, and SR 26-2 counts any method that produces quantitative estimates as a model[^10][^13]. On FICO credit data, a plain logistic regression matched a boosted-tree model (XGBoost) at 0.72 AUC[^29]."
   },
   {
    "q": "Is generative AI replacing predictive AI?",
@@ -717,7 +717,7 @@
  ],
  "offer": {
   "heading": "Not sure your forecast or scorecard needs generative AI?",
-  "body": "Bring one workflow you own: a forecast, a score or a document check. In 30 minutes we tell you whether it needs predictive AI, generative AI, both or neither. You leave with the test to run before you spend."
+  "body": "In 30 minutes we tell you whether one workflow you own needs predictive AI, generative AI, both or neither. Bring a forecast, a score or a document check. You leave with the test to run before you spend."
  },
  "keyword": {
   "phrase": "generative ai vs predictive ai",
@@ -747,5 +747,16 @@
    "notes": "Steve gets the answer in 10 seconds: the title is his question and the bottom line is five 'use X if' bullets. Every tool shows a dated price or says it is a third-party price. His return worry is answered by testing before spending: each mapped workflow names the test to pass, and 'use neither' sets a spreadsheet as the bar. A survey stat on AI profit impact was tried and cut, because it isn't used elsewhere on the page. The research has no source on data security for this choice and no case from a firm his size, so neither is claimed; the example is marked illustrative."
   }
  ],
- "updated": "2026-11-26"
+ "updated": "2026-11-26",
+ "answers": {
+  "recipes": "A lending team scoring loans fits predictive AI, a planning team forecasting cash fits predictive first, and a document-heavy team fits both: generative reads, predictive scores[^1][^4].",
+  "human-role": "Your team keeps every decision: an underwriter signs each decline, an independent reviewer challenges each model, a model owner watches accuracy, and a named person approves generated text[^8][^13].",
+  "example": "At a 120-person small-business lender, generative AI pulls 12 fields from bank statements, a predictive model scores default risk, and the underwriter decides[^3][^2][^8].",
+  "what-goes-wrong": "Teams go wrong by asking a chatbot for a number a tested model should make, skipping tests on unseen data, and publishing generated text unchecked[^1][^18][^28].",
+  "something-else": "Pick neither when a spreadsheet forecast already works, the decision is a fixed policy rule, a plain scorecard is enough, or you have too little history[^6][^13][^29][^2].",
+  "table-1": "Predictive AI turns your own records into a tested number, while generative AI turns a prompt and documents into new text that a person checks[^10][^9].",
+  "table-2": "On numbers from records, trained predictive models beat the chatbots, while on documents the LLMs did the reading well[^30][^4][^3].",
+  "table-3": "The predictive tools are free or bundled, except SageMaker Canvas at $1.90 a session-hour, while mid-tier LLM APIs cost about $2 in and $10 out per million tokens[^34][^35][^21][^22].",
+  "own-data": "Of ten common workflows, six need predictive AI, three need generative AI, and one, claims or application triage, needs both[^1][^4]."
+ }
 }

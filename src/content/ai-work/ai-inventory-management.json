@@ -368,7 +368,7 @@
  "faq": [
   {
    "q": "Is AI inventory management just reorder points with a new name?",
-   "a": "Sometimes. Ask whether safety stock recalculates per item from demand and lead-time swings, and how often[^25][^24]. A fixed days-of-cover default is not that[^24]."
+   "a": "Not always: real AI planning recalculates safety stock per item from demand and lead-time swings, while some tools keep a fixed default[^25][^24]. Ask how often it recalculates. A fixed days-of-cover default is not that[^24]."
   },
   {
    "q": "Do we need new AI inventory management software, or does our ERP do this?",
@@ -380,7 +380,7 @@
   },
   {
    "q": "What carrying cost rate should we use?",
-   "a": "Work out your own, item by item if you can[^6]. APQC's median across 6,468 organizations is 10%, while textbooks say 20-50%[^5][^4]. One case firm used 19% but measured 37.8%[^7]."
+   "a": "Start from 10% to 30% a year, but work out your own rate, item by item if you can[^5][^4][^6]. APQC's median across 6,468 organizations is 10%, while textbooks say 20-50%[^5][^4]. One case firm used 19% but measured 37.8%[^7]."
   },
   {
    "q": "Can we write off the dead stock the AI flags?",
@@ -705,5 +705,18 @@
    "notes": "Passes the 10-second test: the title is his question and the bottom line leads with cash. Return is answered in dollars per $10M of sales; skills by a first step that needs an analyst, not a data scientist; data by the recount-first step. The offer now promises his ratio against his sector, a concrete thing to walk away with. Gaps he'd notice: no security or data-sharing guidance for add-ons and no case from a firm his size, because the research has neither; no Zavient fee is shown, per site rules. Lead's decision after review: carrying cost widened to 10-30% (APQC median to textbook range), own-data columns recomputed at both ends, and the MIT NANDA figure labelled as read from a published copy."
   }
  ],
- "updated": "2026-11-26"
+ "updated": "2026-11-26",
+ "answers": {
+  "human-role": "Your buyers keep the order decision: they approve every suggested purchase order and transfer before it goes out[^11][^8]. Planners own the inputs, branch managers the transfers, and the controller any write-down[^25][^21][^35].",
+  "team-after": "Buyers work a ranked list of exceptions instead of scanning every item, and spend more time chasing late suppliers[^11][^14]. Planners review the override log each month against results[^10].",
+  "example": "At a $40M, three-branch parts distributor, AI sets safety stock from measured supplier lead times, flags dead stock and suggests branch transfers that managers approve[^1]. A 10% stock cut there would free about $880k[^1].",
+  "table-1": "AI sets safety stock and reorder points per item from demand and supplier lead-time swings, segments items by value and demand, and flags slow stock and branch transfers[^25][^13][^23].",
+  "table-2": "Your ERP may already set reorder points: NetSuite calculates them and sets safety stock by segment, while Business Central and Acumatica take safety stock typed in by hand[^24][^25][^27][^31]. Add-ons such as Smart IP&O plan from the odds of each demand level[^32].",
+  "recipes": "Start with lead-time and dead-stock checks on your own ERP history, then add a planning add-on only for several branches, lumpy parts or many suppliers[^3][^33]. A single warehouse on NetSuite or Business Central can tune the features it already pays for[^25][^28].",
+  "own-data": "Machinery distributors hold about $2.21M of stock per $10M of yearly sales, against $1.01M across all wholesalers and $608k for grocery distributors[^1]. A 10% cut frees a tenth of that[^1].",
+  "rules": "Treasury Regulation 1.471-2(c) and the Thor Power Tool ruling let you write dead stock down for tax only once you scrap it or offer it at a lower price[^35][^37]. For your books, FASB ASC 330 carries inventory at the lower of cost and net realizable value[^38].",
+  "benchmark": "Recount a sample of stock records, then replay the last 12 months with today's settings and with the tool's, before an 8-12 week live trial on one branch[^17][^13][^8]. Price the result in cash, fill rate and buyer hours[^1].",
+  "what-goes-wrong": "AI inventory management goes wrong when stock records are wrong, demand is lumpy, lead times are guessed, or buyers override outputs without logging why[^17][^26][^15][^8].",
+  "something-else": "Pick something else when ERP reorder rules will do, when the demand forecast is the real problem, or when you can't trust your stock counts[^28][^26][^17]."
+ }
 }

@@ -47,6 +47,15 @@
     "buy-or-build": "Should you buy demand forecasting software or build your own?"
   },
   "summary": "AI demand forecasting predicts sales by item and week from your history and drivers like price and season.[^2][^11] Your planner reviews it before it sets the monthly plan and how much buffer stock you carry.[^12][^13] Clean history, and overrides made only with real news, make or break it.[^14][^6]",
+  "answers": {
+    "human-role": "Your demand planner owns the final number and every override, with a written reason for each, and the supply planner picks the service level.[^15][^7][^13]",
+    "team-after": "Planners stop building numbers and start reviewing exceptions, spending their time on the few big calls like a promotion, a new customer or a lost account.[^7][^16]",
+    "example": "At an illustrative 120-person distributor with 6,000 items, the AI sorts items by demand pattern and forecasts 13 weeks ahead, and the planner reviews its flags.[^3][^2]",
+    "recipes": "Size decides it: Excel teams trial a low-cost tool, mid-size ERP firms switch on a forecasting module, and firms with an analyst and customer data build their own.[^38][^29][^40]",
+    "benchmark": "Hold back your latest 13 to 26 weeks of sales, have each tool forecast them, and score it against last year plus growth using WAPE and bias.[^39][^44]",
+    "what-goes-wrong": "AI demand forecasting goes wrong when stockouts hide real demand, small upward overrides add error, or a forecast that runs low hides behind a good error score.[^14][^6][^1]",
+    "something-else": "Pick something else when items are mostly new or have under two years of history, demand is slow and lumpy, or orders come from contracts.[^23][^4][^40]"
+  },
   "humanRole": [
     "Demand planner: owns the final number and every override, with a written reason for each. Forecasting texts say to adjust sparingly and document why.[^15][^7]",
     "Sales and marketing: flag promotions, new accounts and lost customers. In one study, the best setup had people flag events and the model size them.[^16]",
@@ -406,7 +415,7 @@
     },
     {
       "q": "How much sales history do we need?",
-      "a": "Two years minimum to learn seasons, and three is better.[^23][^43] New items need forecasts borrowed from similar items, or judgment.[^23]"
+      "a": "You need at least 2 years of weekly sales to learn seasons, and 3 is better.[^23][^43] New items need forecasts borrowed from similar items, or judgment.[^23]"
     },
     {
       "q": "Can we run S&OP in Excel?",
@@ -759,7 +768,7 @@
   ],
   "offer": {
     "heading": "Is your forecast beating last year plus growth?",
-    "body": "Bring your forecasting process and two years of weekly sales. In 30 minutes you leave with a plan to test models on your own history before you buy, and a before-and-after measure. No sales pitch."
+    "body": "Not likely: in our test, AI cut forecast error about 40% against last year plus growth, and simple statistics got most of that gain. Bring your forecasting process and two years of weekly sales. In 30 minutes, with no sales pitch, you leave with a plan to test models on your history before you buy, plus a before-and-after measure."
   },
   "keyword": {
     "phrase": "demand forecasting software",

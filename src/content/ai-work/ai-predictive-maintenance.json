@@ -757,5 +757,18 @@
       "notes": "Steve could see the question, the hardware price and the first step (clean the work orders) in 10 seconds, and liked that a free start with no sensors comes first. He wanted the next step to say what it is and how long: the offer heading now names the free 30-minute diagnostic. He'd distrust vendor ROI claims, so the Augury 310% stays labelled as vendor-commissioned, and the published-results table says plainly that none comes from a firm his size."
     }
   ],
-  "updated": "2026-11-26"
+  "updated": "2026-11-26",
+  "answers": {
+    "human-role": "A technician confirms each alert on the machine, the planner decides when the repair happens, and the maintenance manager signs off run-or-stop calls.[^9][^10][^13]",
+    "team-after": "Your team moves from firefighting to planned work: alerts give lead time, so the planner books repairs before breakdowns, and technicians write fuller work orders.[^16][^17]",
+    "example": "An AI maintenance alert names the machine and the fault trend, matches it to past work orders, and suggests a next step a technician must confirm first.[^10] Each alert also carries a confidence level.[^4]",
+    "table-1": "Use calendar PM for parts that wear out with use, condition checks for parts that fail at random with warning, and run-to-failure for cheap, redundant parts.[^23][^3] Trial AI prediction on critical machines with known failure modes.[^12]",
+    "table-2": "Published results show predictive saving 8-12% over preventive, and 20-80% less downtime in large-firm cases, but none comes from a 40-500 person plant.[^3][^19][^29]",
+    "own-data": "Self-run sensors for 10 machines list at about $4,200 to $5,550 in hardware before installation, and most managed services publish no price.[^7][^8][^38]",
+    "recipes": "Start from work orders if PM is shaky; add open sensors to 5-10 critical machines if someone likes data, or use a managed service if nobody reads vibration data.[^29][^12][^35]",
+    "rules": "NFPA 70B covers electrical maintenance where adopted, OSHA lockout covers every repair, ISO 17359 guides the monitoring program, and CISA and NIST cover plant-network security.[^14][^15][^9][^51][^52]",
+    "benchmark": "Pick 5-10 critical machines, record a 12-month baseline, fix the alarm rule before day one, log every alert as caught or false, then decide per machine at day 90.[^17][^9][^4][^12]",
+    "what-goes-wrong": "Predictive maintenance goes wrong through false alarms, dirty work orders, alerts nobody acts on, sensors without context, vendor exits and over-maintaining.[^4][^5][^35][^32][^42][^1]",
+    "something-else": "Pick something else when parts wear on a known life, one failure mode needs only a threshold alarm, your CMMS is barely used, or the gear is electrical distribution.[^1][^12][^17][^14]"
+  }
 }

@@ -381,7 +381,7 @@
   },
   {
    "q": "Is Copilot safer than Claude for a company rollout?",
-   "a": "Neither trains on business data by default, so the gap is records[^7][^32]. Copilot logs every interaction to Purview Audit; Claude and ChatGPT audit logs need their enterprise tiers[^34][^5][^23]."
+   "a": "No, not on training: neither trains on business data by default, so the gap is records[^7][^32]. Copilot logs every interaction to Purview Audit; Claude and ChatGPT audit logs need their enterprise tiers[^34][^5][^23]."
   }
  ],
  "buyVsBuild": {
@@ -798,5 +798,12 @@
    "notes": "Steve, 60-150 staff, decides in 10 seconds: the title and bottom line answer by stack. He worried 'Run two' meant paying twice; the bullet now says Copilot Chat costs nothing extra and only heavy users get a second paid seat. The ChatGPT Enterprise floor is labelled as a third-party report so he doesn't think he's being upsold. Offer says what he leaves with: a pick, a year-one cost and a pilot plan."
   }
  ],
- "updated": "2026-11-26"
+ "updated": "2026-11-26",
+ "answers": {
+  "recipes": "Copilot fits a Microsoft 365 firm, ChatGPT or Claude a Google or mixed stack, and a regulated firm or one past 150 seats weighs enterprise tiers.[^29][^17][^3][^5]",
+  "human-role": "The COO owns the rollout, IT decides what the assistant can read, and a person checks the output and presses send.[^12][^13][^51]",
+  "example": "In an illustrative case, a 120-person Microsoft 365 distributor gives everyone Copilot Chat at no extra cost, 15 leads Copilot Business, and two analysts Claude or ChatGPT seats.[^31][^29][^16]",
+  "what-goes-wrong": "Teams most often leave staff on personal accounts, switch on Copilot before fixing file permissions, and buy seats nobody uses.[^52][^31][^53]",
+  "something-else": "Pick neither when light needs fit Gemini in Workspace or Copilot Chat, one process needs a purpose-built tool, or staff won't use it yet.[^40][^31][^55][^47] Copilot Chat comes at no extra cost on Microsoft 365.[^31]"
+ }
 }

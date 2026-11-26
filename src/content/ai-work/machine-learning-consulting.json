@@ -98,7 +98,7 @@
   ],
   "ownData": {
     "title": "Does an explainable churn model cost you accuracy?",
-    "intro": "We ran four approaches on IBM's public telecom churn file: 7,032 customers, scored 15 times on customers each model never saw.[^4][^6] Among the 100 riskiest of every 1,000 customers, each model found about 76 who really left. The one-line contract rule found about 44.",
+    "intro": "No: we ran four approaches on IBM's public churn file of 7,032 customers, and the glass-box model matched the black box on unseen customers.[^4][^6] Among the 100 riskiest of every 1,000 customers, each model found about 76 who really left. The one-line contract rule found about 44.",
     "headers": [
       "Approach",
       "Real churners among the 100 riskiest",
@@ -164,15 +164,15 @@
     },
     {
       "q": "Do we have enough data?",
-      "a": "Count outcomes, not rows: how many customers left, loans went bad or orders slipped.[^34] Practitioners test it with a learning curve: fit on half the data, then all; if scores still climb, more data helps.[^37] With a few dozen cases, use a rule instead.[^38]"
+      "a": "Only if you have enough outcomes, not rows: count how many customers left, loans went bad or orders slipped.[^34] Practitioners test it with a learning curve: fit on half the data, then all; if scores still climb, more data helps.[^37] With a few dozen cases, use a rule instead.[^38]"
     },
     {
       "q": "Does predictive modelling actually work, or is it hype?",
-      "a": "It works when it beats your current rule on data it never saw.[^3] On our churn benchmark, models caught about 76 churners per 100 flagged, against 44 for a contract-type rule.[^4]"
+      "a": "Predictive modelling works when it beats your current rule on data it never saw.[^3] On our churn benchmark, models caught about 76 churners per 100 flagged, against 44 for a contract-type rule.[^4]"
     },
     {
       "q": "Will we lose accuracy if the model has to be explainable?",
-      "a": "Often not, on business data.[^5] InterpretML's own table puts its glass-box model at 0.852 on telecom churn, against 0.828 for a popular black box.[^6] Ours scored 0.849 against 0.837 for an untuned black box.[^4]"
+      "a": "No: on business data, explainable models often match black-box accuracy.[^5] InterpretML's own table puts its glass-box model at 0.852 on telecom churn, against 0.828 for a popular black box.[^6] Ours scored 0.849 against 0.837 for an untuned black box.[^4]"
     },
     {
       "q": "Can our team keep the model running after the consultant leaves?",
@@ -478,5 +478,13 @@
       "notes": "Steve gets a price: vendor ranges labelled as vendors', and Zavient's $10,000 Sprint marked not like for like. Mixed euro and dollar ranges read oddly; euros now use the euro sign and name the European vendor. His data worry is answered in the FAQ, return in the dollar step, skills in the handover bullet. Security and privacy is not covered: the research has no source on it, so nothing was added. Offer says no sales pitch."
     }
   ],
-  "updated": "2026-11-26"
+  "updated": "2026-11-26",
+  "answers": {
+    "walk-away": "You should hold one named decision with its money number, a scored baseline and held-back test set, a model in weekly use, readable reasons per score, and a handover[^3][^1][^14].",
+    "human-role": "People keep the calls: the person acting on the score can override it, the domain lead reviews the model, an independent checker tests it, and credit officers own declines[^9][^15][^16][^18].",
+    "recipes": "The work takes one of three shapes: a yes-or-no score from your CRM data, a model that drafts a weekly plan, or a glass-box model for a regulated decision[^19][^10][^17].",
+    "what-goes-wrong": "Most pilots stall because the model never reaches the people who would use it, its accuracy decays without upkeep, or its test scores were too good to be true[^29][^7][^11].",
+    "benchmark": "Judge an advisor by whether their model beats your current rule on a holdout you locked, with reasons you can read and a handover your team can run[^3][^11][^14].",
+    "something-else": "Skip a consultant when your CRM already scores leads, when a rule or spreadsheet will do, or when an analyst can try InterpretML or Google's AutoML first[^20][^3][^6][^39]."
+  }
 }

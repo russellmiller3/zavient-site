@@ -390,7 +390,7 @@
   },
   {
    "q": "Will examiners criticize us for using AI?",
-   "a": "The OCC says its AI framework sets no new expectations and can be tailored to community banks.[^12][^49] The FDIC says not following its model guidance does not, by itself, bring criticism.[^7]"
+   "a": "No, not for using AI by itself: the OCC says its AI framework sets no new expectations and can be tailored to community banks.[^12][^49] The FDIC says not following its model guidance does not, by itself, bring criticism.[^7]"
   }
  ],
  "buyVsBuild": {
@@ -828,5 +828,12 @@
    "notes": "Steve: title and five bottom-line bullets answer the question in 10 seconds; the charter table tells him which examiner guidance is his. Worries covered: data (core gate), security (staff pasting member data), rules, cost. Gap he will notice: no case from an institution his size, because the vendor case pages lacked citable URLs; none is claimed. Offer now says the 30-minute call is free."
   }
  ],
- "updated": "2026-11-26"
+ "updated": "2026-11-26",
+ "answers": {
+  "human-role": "People keep every decision: credit officers sign each memo, your BSA officer decides what gets filed, and staff keep the member conversation.[^10][^14][^3] Management still owns vendor oversight.[^11][^17]",
+  "ranked": "Fraud and anti-money-laundering alert triage pays first, then commercial credit memo drafts and staff knowledge search.[^2][^15][^10][^3]",
+  "rules": "Fair lending law and vendor oversight duties apply to every charter; the April 2026 model risk guidance mostly targets banks over $30B.[^8][^11][^30][^6] OCC-supervised banks also face the OCC's AI framework.[^12]",
+  "what-goes-wrong": "AI goes wrong when staff paste member data into personal accounts, chatbots give wrong answers, or a vendor's credit model can't give the specific reasons a denial needs.[^39][^24][^8]",
+  "something-else": "Pick something else when your core already sells the job, staff only need drafting, a bank under $1B needs a CECL estimate, or credit decisions need a specialist vendor.[^14][^60][^27][^65]"
+ }
 }

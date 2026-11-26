@@ -31,7 +31,7 @@
       "Defaults we chose ourselves are marked Zavient estimate: a 5-day answer on tool requests and 24-hour incident reports.[^7]"
     ]
   },
-  "summary": "An AI use policy tells staff which AI tools they can use, what information may go in, and who checks the output.[^6][^7] This generator builds yours from 10 questions, adding clauses for your industry, data and locations. It's a starting draft for your adviser, not legal advice.",
+  "summary": "The AI policy generator turns 10 answers into a draft policy: which AI tools staff may use, what data goes in, who checks output.[^6][^7] It adds clauses for your industry, data and locations. It's a starting draft for your adviser, not legal advice.",
   "humanRole": [
     "Your COO or head of operations owns the policy and names who approves new AI tools.[^7][^19]",
     "A qualified person reviews AI output before it reaches customers, regulators or the public.[^6][^1]",
@@ -45,7 +45,7 @@
     },
     {
       "q": "Should we ban ChatGPT at work?",
-      "a": "Usually not. In one global study, policy-breaking AI use was most common where AI was banned, so approved tools plus clear rules work better.[^4][^5]"
+      "a": "No, usually not. In one global study, policy-breaking AI use was most common where AI was banned, so approved tools plus clear rules work better.[^4][^5]"
     },
     {
       "q": "What should an AI acceptable use policy include?",
@@ -57,11 +57,11 @@
     },
     {
       "q": "Do we need an AI policy if we have EU staff or customers?",
-      "a": "The EU AI Act asks deployers to take steps to build staff AI literacy, supervised nationally from 2 August 2026. A written policy with a training record helps show you did.[^8][^9]"
+      "a": "Not by name, but the EU AI Act asks deployers to take steps to build staff AI literacy, supervised nationally from 2 August 2026. A written policy with a training record helps show you did.[^8][^9]"
     },
     {
       "q": "Do we need separate rules for AI in hiring?",
-      "a": "Hiring AI carries extra duties. New York City requires a bias audit within a year of use, and federal anti-discrimination law still applies to AI-assisted decisions.[^11][^14]"
+      "a": "Yes, because hiring AI carries extra duties. New York City requires a bias audit within a year of use, and federal anti-discrimination law still applies to AI-assisted decisions.[^11][^14]"
     },
     {
       "q": "How often should we update our AI policy?",
@@ -125,5 +125,9 @@
     { "reader": "Division head", "notes": "Asked whether their team's AI use needs sign-off. Added the risk summary from the answers, with the control for each high-risk use, plus the per-use check." },
     { "reader": "Owner-CEO", "notes": "Asked what legal exposure is left. Fix-next lists legal items first; the disclaimer and law date sit at the top and in the policy footer." }
   ],
-  "updated": "2026-11-26"
+  "updated": "2026-11-26",
+  "answers": {
+    "human-role": "Your COO owns the policy, a qualified person reviews AI output before it goes out, and people make every decision about someone's job, credit or care.[^7][^6][^14] Your legal adviser reviews the draft before you adopt it.[^10]",
+    "something-else": "Pick something else, or add to this policy, if you are a broker-dealer or insurer, use AI in clinical decisions, or want a certified ISO 42001 system.[^20][^21][^22][^19]"
+  }
 }

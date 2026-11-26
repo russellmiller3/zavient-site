@@ -167,7 +167,7 @@
   },
   {
    "q": "Does the AI vendor train on our data, and who owns the output?",
-   "a": "Anthropic's and OpenAI's business terms say you own outputs and they don't train on your content.[^31][^32][^33] Google's paid Gemini tier isn't used for training, but its free tier may be, so keep confidential files off it.[^35][^34]"
+   "a": "No, not on paid business plans: Anthropic and OpenAI don't train on your content, and their terms say you own the outputs.[^31][^32][^33] Google's paid Gemini tier isn't used for training, but its free tier may be, so keep confidential files off it.[^35][^34]"
   },
   {
    "q": "Should we build, buy or assemble AI solutions for our business?",
@@ -479,5 +479,13 @@
    "notes": "Steve's worries: data, security, skills, return, consultant fees. Data has its own watch-out; security is the vendor-training FAQ and the IT access step; return is the dollar formula. Cut 'thin layer' and 'document index' from the bottom line as jargon. No Zavient fee shown, since prices are not set; offer says no sales pitch."
   }
  ],
- "updated": "2026-11-26"
+ "updated": "2026-11-26",
+ "answers": {
+  "walk-away": "Walk away with a build-or-buy call per use, a 3-year cost sheet, a test set of real cases, a contract saying you own the work, and a named owner.[^3][^9][^23][^13][^10]",
+  "human-role": "The COO or process owner makes the go or no-go call, a domain reviewer spot-checks output, and a named person approves customer-facing answers.[^10][^12][^14]",
+  "recipes": "Custom AI work takes three common shapes: answers from your own documents, pulling fields from documents into your system, or tuning a model for format or sorting.[^5][^15][^6]",
+  "what-goes-wrong": "Pilots stall when firms build what they could buy, start with messy documents, or stop testing as models change and quality slips.[^1][^8][^25][^28]",
+  "benchmark": "Judge an advisor by whether they set a pass mark before any demo, test on 20 to 50 of your own cases, and compare against off-the-shelf tools.[^38][^23][^10]",
+  "something-else": "Don't hire help when a rule or no-code tool does the job, bought seats cover drafting and search, or your ERP or CRM already has AI built in.[^7][^3][^4]"
+ }
 }

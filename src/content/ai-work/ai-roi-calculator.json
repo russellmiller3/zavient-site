@@ -74,7 +74,7 @@
     },
     {
       "q": "How accurate is an AI ROI estimate?",
-      "a": "It is a planning estimate, so the tool shows low, expected and high cases. Self-reported savings run high: developers who felt 20% faster were 19% slower when measured[^14]. Time 20 real items before you decide[^12]."
+      "a": "Only roughly: an AI ROI estimate is for planning, so the tool shows low, expected and high cases. Self-reported savings run high: developers who felt 20% faster were 19% slower when measured[^14]. Time 20 real items before you decide[^12]."
     },
     {
       "q": "What costs should I include?",
@@ -82,7 +82,7 @@
     },
     {
       "q": "What if it says the workflow doesn't pay back?",
-      "a": "That is a useful answer, and the result names the most likely lever: a cheaper set-up path, more volume, or less review time[^17]. In MIT's study, bought tools succeeded about 67% of the time and internal builds one-third as often[^18]. Bring the numbers to the free 30-minute diagnostic and we will find which lever fits."
+      "a": "A no-payback result is still useful: the tool names the most likely lever, such as a cheaper set-up path, more volume, or less review time[^17]. In MIT's study, bought tools succeeded about 67% of the time and internal builds one-third as often[^18]. Bring the numbers to the free 30-minute diagnostic and we will find which lever fits."
     },
     {
       "q": "Why are IT tickets, reconciliations and document intake not in the list?",
@@ -165,5 +165,10 @@
     { "reader": "Division head", "notes": "Controller and head of support wanted their reviewers named. Human-role bullets and preset notes now say who keeps the call. Fixed: reconciliation priced at accountant cost, with the clerk rate noted." },
     { "reader": "Owner-CEO", "notes": "Checked it is not a sales funnel: no email gate, sources on every default, and an honest 'does not pay back' state with cheaper options. Fixed: meeting preset AI share cut to 70% so its default stays inside the measured 2-40% band. Fixed (26 Nov): a no-payback or AI-adds-work result now names the likely lever and links to the free diagnostic." }
   ],
-  "updated": "2026-11-26"
+  "updated": "2026-11-26",
+  "answers": {
+    "human-role": "Your team stays in charge of reviewing each AI draft, handling exceptions, deciding where freed hours go, and the go or no-go call on spend[^12][^17][^23].",
+    "own-data": "On the default path, workflows need 110 to 2,200 items a month to pay back in a year, from 110 meetings to 2,200 support tickets. A custom build at $80k needs far more, from 830 meetings to 9,700 invoices a month.",
+    "something-else": "Pick something else when you run software delivery, draft at low volume, have few IT tickets or reconciliations, face thin-data judgment calls, or haven't priced the build yet[^25][^12][^34][^4][^20]."
+  }
 }

@@ -261,7 +261,7 @@
  "faq": [
   {
    "q": "Is Make cheaper than Zapier?",
-   "a": "Usually, per unit: Make's help example is $9 for 10,000 credits, against $129 for 10,000 Zapier tasks billed yearly[^18][^1]. But the units differ, and Make charges for every trigger check[^13]. Price your real flow, as our table does[^52]."
+   "a": "Yes, usually, per unit: Make's help example is $9 for 10,000 credits, against $129 for 10,000 Zapier tasks billed yearly[^18][^1]. But the units differ, and Make charges for every trigger check[^13]. Price your real flow, as our table does[^52]."
   },
   {
    "q": "Does Make charge for trigger checks that find nothing?",
@@ -273,7 +273,7 @@
   },
   {
    "q": "Can a person approve a step before the workflow continues?",
-   "a": "On Zapier and Workato, yes; on Make, only in an Enterprise closed beta[^4][^35][^21]. Make users report a two-scenario workaround meanwhile[^23]."
+   "a": "Yes, on Zapier and Workato; on Make, only in an Enterprise closed beta[^4][^35][^21]. Make users report a two-scenario workaround meanwhile[^23]."
   },
   {
    "q": "Who owns the workflow when it breaks?",
@@ -632,7 +632,7 @@
  ],
  "offer": {
   "heading": "Not sure which automation platform your ops team should run?",
-  "body": "Bring one workflow you want automated. In 30 minutes we price it on each platform and name who approves what. You leave with a pick and a rollout plan."
+  "body": "In 30 minutes we price one of your workflows on each platform and name who approves what. Bring one workflow you want automated. You leave with a pick and a rollout plan."
  },
  "keyword": {
   "phrase": "make vs zapier",
@@ -662,5 +662,15 @@
    "notes": "Steve, 60-150 staff, decides from the title and bottom line. He worries Workato is an upsell; the Workato bullet now carries Vendr's reported $64,544 yearly median, labelled as Vendr's, so he sees the size of that decision against Zapier at $129 a month. The breach watch-out names Zapier's 2025 incident but frames the fix for any platform, since no Make or Workato incident data was found. Offer says what he leaves with: a pick and a rollout plan."
   }
  ],
- "updated": "2026-11-26"
+ "updated": "2026-11-26",
+ "answers": {
+  "recipes": "A 50-person team with no IT fits Zapier, a 150-person team running cross-team handoffs fits Zapier or Make, and a 400-person firm with an ERP fits Workato[^4][^20][^29].",
+  "human-role": "People keep control: the controller approves payments above a set amount, a named ops lead owns each workflow, and agents stop to ask a person at set points[^4][^34][^51][^3].",
+  "example": "On Zapier, an AI step reads each of an illustrative distributor's 2,000 monthly invoices, and the controller approves each one, at about five tasks per invoice[^4][^1][^2].",
+  "what-goes-wrong": "Teams go wrong by missing overage and empty-trigger costs, editing live flows with no test stage, and assuming every platform has an approval step[^1][^13][^29][^21].",
+  "something-else": "Pick neither when you need self-hosting (n8n), a full integration platform for a large ERP estate, or Power Automate because your firm lives in Microsoft 365[^49][^39].",
+  "table-1": "Zapier Pro starts at $19.99 a month billed yearly and bills per task, Make's help example is $9 for 10,000 credits, and Workato is quote-only, billed in credits[^1][^18][^24][^26].",
+  "table-2": "Workato gives the most: approvals, dev-test-live stages and a one-year audit log; Zapier adds approvals from Pro, and Make keeps approvals, audit log and SSO on Enterprise[^35][^29][^32][^4][^19][^21].",
+  "own-data": "At 2,000 invoices a month, Make costs about $12.38 and Zapier $129 to $193.50; Workato's cost is unclear, since it publishes no credit-to-task rate[^18][^1][^25]."
+ }
 }

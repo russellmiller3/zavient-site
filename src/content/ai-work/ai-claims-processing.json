@@ -53,6 +53,16 @@
     "something-else": "When should a claims team pick something else?"
   },
   "summary": "Insurance claims automation, or AI claims processing, gives software the first pass on a claim: reading the report, documents and photos, then flagging it.[^11][^12] Adjusters still decide coverage, reserves and payment.[^1] It works only if the file shows who decided what, inside each state's deadlines.[^4][^13]",
+  "answers": {
+    "human-role": "The adjuster keeps the decision on coverage, the reserve, any denial and the customer, and supervisors approve payments within their authority.[^1][^3]",
+    "team-after": "Adjusters spend the freed time on investigation, coverage analysis and customers, while intake reps confirm AI-filled fields instead of keying them.[^17][^18]",
+    "example": "On one water-damage claim, AI fills the fields, quotes the policy clauses and drafts the acknowledgment letter, and the adjuster decides coverage, reserve and payment.[^4]",
+    "recipes": "Small teams start with AI at intake and documents, multi-client TPAs add triage and deadline tracking, and document-heavy lines use summaries with citations.[^8][^11][^34]",
+    "rules": "The NAIC AI bulletin, each state's unfair-claims law and deadlines, and state guidance such as Texas Bulletin B-0003-26 apply to AI claims decisions.[^11][^3][^4] Health claims follow separate rules.[^10]",
+    "benchmark": "Run the tool in shadow mode on 200 to 500 of your closed claims, then compare its fields, flags and reserves with what your adjusters recorded.[^54]",
+    "what-goes-wrong": "AI claims processing goes wrong through biased fraud scores, one bad rule repeated on every claim, missed state deadlines, and adjusters stuck fixing its mistakes.[^15][^3][^54][^21]",
+    "something-else": "Pick something else when your claims are mostly simple auto damage, your real problem is talking to claimants, or your core claims system is the bottleneck.[^7][^24]"
+  },
   "humanRole": [
     "Adjuster: decides coverage, sets the reserve, signs any denial and talks to the customer.[^1][^3] Texas expects a person to review and agree with any consequential AI decision before action.[^4]",
     "Claims supervisor or examiner: approves payments within their authority and spot-checks AI-filled files.[^1] The insurer answers for every AI-supported decision, vendor tools included.[^11][^14]",
@@ -852,7 +862,7 @@
   ],
   "offer": {
     "heading": "Which part of your claims process should AI take first?",
-    "body": "Bring us your claims intake and your list of states. In 30 minutes we map first report to decision against each state's deadline. You leave with the first step, a closed-file test and a before-and-after measure, with no sales pitch."
+    "body": "Intake on one line usually comes first, tested on your own closed claims. Bring us your claims intake and your list of states, and in 30 minutes we map first report to decision against each state's deadline. You leave with the first step, a closed-file test and a before-and-after measure, with no sales pitch."
   },
   "keyword": {
     "phrase": "insurance claims automation",

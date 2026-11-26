@@ -17,6 +17,14 @@
  "onPage": [],
  "headings": {},
  "summary": "AI agent development services build software in which an AI model picks its own next step and uses your systems to finish a task.[^1][^30] Typical jobs: order entry, supplier emails and ticket triage.[^38][^41] It works when a named person approves risky actions and tests use your real cases.[^2][^32]",
+ "answers": {
+  "walk-away": "You should leave with a working agent on one workflow, a test set with an agreed pass score, and a named approver for every risky step.[^32][^4]",
+  "human-role": "Your people approve every quote, order, payment or customer email, and a named person can pause or switch off the agent.[^2][^5]",
+  "recipes": "The work takes three common shapes: order entry from customer email, supplier emails and purchase order changes, and ticket triage in risk tiers.[^38][^41][^3]",
+  "what-goes-wrong": "Agent pilots stall when cost and value are never pinned down, when the agent gets too much access, or when it passes the demo but fails on repeats.[^20][^28][^9]",
+  "benchmark": "Judge any AI advisor by whether they test the agent on 20 to 50 of your own past cases, each run several times, before go-live.[^32][^35]",
+  "something-else": "Skip outside help when your software already ships a built-in agent, when the steps never change, or when your data is not yet reachable.[^40][^29][^23]"
+ },
  "walkAway": [
   "A working agent on one workflow, plus a test set of 20 to 50 real past cases with a pass score agreed before the build.[^32][^33]",
   "A written autonomy level for every action: draft only, ask first, or act alone. Gartner expects 40% of enterprises to pull back agents over governance gaps by 2027.[^22][^2]",
@@ -153,7 +161,7 @@
   },
   {
    "q": "What does an agent cost to run each month?",
-   "a": "Often tens of dollars for one workflow. Our arithmetic: a 10-step task reading 30,000 tokens (chunks of text) and writing 3,000 costs about $0.09 at $2 and $10 per million.[^48][^49] So 1,000 tasks a month is about $90, before caching discounts."
+   "a": "One workflow often costs tens of dollars a month to run, about $90 for 1,000 tasks. Our arithmetic: a 10-step task reading 30,000 tokens (chunks of text) and writing 3,000 costs about $0.09 at $2 and $10 per million.[^48][^49] That is before caching discounts."
   },
   {
    "q": "When does a custom agent make sense versus tools we already have?",
@@ -165,7 +173,7 @@
   },
   {
    "q": "Will an AI agent take jobs from our team?",
-   "a": "That is not the design: the agent drafts and checks, and your people approve and handle exceptions.[^2][^4] Firms using agents mostly report productivity gains (66%) and faster decisions (55%), per PwC.[^25]"
+   "a": "No, the agent is built to draft and check, while your people approve and handle exceptions.[^2][^4] Firms using agents mostly report productivity gains (66%) and faster decisions (55%), per PwC.[^25]"
   },
   {
    "q": "How long does a first agent take to build?",
