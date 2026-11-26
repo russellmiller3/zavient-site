@@ -272,7 +272,7 @@
    "when": "A lender or insurer with 2+ years of decided files and known outcomes. Past about 40-80 labelled loans, trained models beat an LLM on this job[^2][^29].",
    "flow": [
     "Head of credit: define the outcome, such as 90+ days past due within 24 months[^25]",
-    "Credit analyst: pull past applications and outcomes, and set aside the newest 20-30% untouched[^13]",
+    "Credit analyst: pull past applications and outcomes, and set aside the newest ones untouched[^13]",
     "Credit analyst: fit a logistic regression and an explainable boosted model, then compare them on the set-aside loans[^29][^24]",
     "Independent reviewer: challenge the inputs, the logic and the result on the set-aside loans[^13]",
     "Credit officer: run it in shadow on one loan product, beside today's decisions, before it decides anything",
@@ -425,7 +425,7 @@
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy when the job is standard, such as document extraction, drafting or a forecast inside your planning tool, and you have no data team[^41]. Menlo Ventures found 76% of enterprise AI use cases were bought in 2025, up from 53% in 2024[^41]. MIT NANDA found bought tools succeeded about twice as often as internal builds, though both studies cover generative AI only[^42][^43].",
+  "buy": "Buy when the job is standard, such as document extraction, drafting or a forecast inside your planning tool, and you have no data team[^41]. In a Menlo Ventures survey of US enterprise decision-makers, 76% of AI use cases were bought in 2025, up from 53% in 2024[^41]. MIT NANDA found bought tools succeeded about twice as often as internal builds, though both studies cover generative AI only[^42][^43].",
   "build": "Build, or set up a no-code tool on your own data, when your history is the edge, such as a credit or claims score[^17][^21]. No-code options start at $1.90 per session-hour, read 26 Nov 2026[^21]. Either way, validate a vendor's model as you would your own[^13]."
  },
  "pickElse": [
@@ -484,7 +484,7 @@
   },
   {
    "num": "76%",
-   "label": "Share of enterprise AI use cases bought rather than built in 2025, up from 53%[^41].",
+   "label": "Share of AI use cases US enterprise decision-makers bought rather than built in 2025, up from 53%[^41].",
    "source": "Menlo Ventures, 495 US decision-makers"
   }
  ],
@@ -497,7 +497,7 @@
   {
    "name": "Ferro Pérez et al., LLMs vs machine learning for credit risk in cooperative lending (Universidad de Medellín, 2026)",
    "url": "https://repository.udemedellin.edu.co/server/api/core/bitstreams/4150e64a-d3f5-4649-acd8-611298fa98f5/content",
-   "what": "University paper, one market (Colombia), 12,861 loans: tuned ML AUC about 0.96 vs 0.67-0.74 for gpt-4o-mini; ML overtakes the LLM at about 40-80 labelled loans; the LLM over-predicts default (0.28-0.38 vs 0.17 actual)."
+   "what": "University paper, one market (Colombia), 12,861 loans with a 17.3% default rate: tuned ML AUC about 0.96 vs 0.67-0.74 for gpt-4o-mini; ML overtakes the LLM at about 40-80 labelled loans; the LLM over-predicts default, with mean predicted probability 0.28-0.38 (28-38%) against an observed base rate of 0.17 (17%)."
   },
   {
    "name": "Berghaus et al. (Fraunhofer IAIS), Benchmarking LLM Strategies for Invoice Processing (Aug 2025)",
@@ -592,7 +592,7 @@
   {
    "name": "AWS, Amazon SageMaker Canvas pricing (read 26 Nov 2026)",
    "url": "https://aws.amazon.com/sagemaker/ai/canvas/pricing",
-   "what": "$1.90 per session-hour; 160 free session-hours a month for the first 2 months."
+   "what": "Read 26 Nov 2026. $1.90 per session-hour; 160 free session-hours a month for the first 2 months."
   },
   {
    "name": "AI Stack Wise, LLM API pricing (third-party tracker, checked 18 Nov 2026; read 26 Nov 2026)",
@@ -692,12 +692,12 @@
   {
    "name": "Menlo Ventures, 2025: The State of Generative AI in the Enterprise (9 Dec 2025)",
    "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
-   "what": "Survey of 495 US decision-makers: 76% of AI use cases bought rather than built in 2025, up from 53% in 2024. Generative AI only."
+   "what": "Survey of 495 US enterprise AI decision-makers: 76% of AI use cases purchased rather than built in 2025; in 2024, 53% of AI solutions were purchased. Generative AI only."
   },
   {
    "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025)",
    "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
-   "what": "52 interviews and 153 survey responses: bought or partnered generative AI tools reached deployment about twice as often as internal builds. Authors flag sample limits."
+   "what": "Survey of 153 senior leaders at industry conferences, plus interviews with 52 organizations: external partnerships reached deployment about 67% of the time, against about 33% for internal builds. Authors flag self-reported data and sample limits."
   },
   {
    "name": "Fortune, MIT report: 95% of generative AI pilots at companies are failing (18 Aug 2025)",

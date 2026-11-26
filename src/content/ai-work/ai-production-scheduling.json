@@ -11,7 +11,7 @@
     "Software proposes the schedule; your planner approves it. Fights over planner control are a key reason scheduling software fails.[^1][^2]",
     "Fix routings and run times first. One NIST-backed shop did, and lead time fell from 12-14 weeks to five.[^3][^4]",
     "Chatbots alone can't build a schedule you can run. Benchmarks show language models break capacity rules without a solver checking.[^5][^6]",
-    "Only seven of 12 tools we checked publish a price. For a 100-person shop, year one ran $1,500 to $25,000.[^7][^8]",
+    "Only seven of 12 tools publish a price. By our math, a 100-person shop's year one ran $2,940 to $25,000.[^24][^8]",
     "Planners shift to exceptions and what-ifs. Where AI changed tasks, two in three firms used it only to help staff.[^9][^10]"
   ],
   "onPage": [
@@ -110,7 +110,7 @@
         },
         {
           "name": "Autodesk Fusion Operations",
-          "url": "https://www.autodesk.com/products/fusion-operations/buy",
+          "url": "https://www.autodesk.com/products/fusion-operations/overview",
           "cells": [
             "Cloud production management for the shop floor[^28]",
             "14-day free trial[^28]"
@@ -271,7 +271,7 @@
         "Planner: run the finite schedule weekly, freeze the near term (say, 2 days), and re-run only on real events[^16][^21]",
         "Operations manager: review on-time delivery and changeover hours each week[^40]"
       ],
-      "cost": "For 5 office users, year-one list licenses run about $1,494 (Odoo Standard) to $6,600 (Business Central Premium).[^7][^25] MRPeasy Starter comes to $2,940.[^24]"
+      "cost": "By our math, year-one list licenses for 5 office users run about $2,940 (MRPeasy Starter) to $6,600 (Business Central Premium).[^24][^25] Odoo lists per-user prices too, but we couldn't open its live page to confirm them.[^7]"
     },
     {
       "name": "2. Mid-size plant with many changeovers and disruptions (about 100-500 staff)",
@@ -282,7 +282,7 @@
         "Planner: run it daily, and approve or override each proposal with a reason[^17][^4]",
         "Supervisor: work from the dispatch list and report actual times back"
       ],
-      "cost": "SkyPlanner for 15 work centers lists about €4,788 a year; EDGEBIC is a $25,000 one-time license.[^29][^8] PlanetTogether quotes about 4-8 weeks to integrate but shows no price.[^30]"
+      "cost": "By our math, SkyPlanner for 15 work centers comes to about €4,788 a year, and EDGEBIC is a $25,000 one-time license.[^29][^8] PlanetTogether quotes about 4-8 weeks to integrate but shows no price.[^30]"
     },
     {
       "name": "3. Data-rich plant with unusual rules: build on a free solver",
@@ -309,37 +309,37 @@
       [
         "Odoo Standard / Custom",
         "Yes, per user",
-        "$1,494 Standard ($1,866 from year 2); $2,940 Custom[^7]",
+        "Published per user, but we couldn't open the live page to confirm it[^7]",
         "\"Agentic AI\" on Custom only[^7]"
       ],
       [
         "MRPeasy",
         "Yes, per user",
-        "$2,940 Starter to $5,940 Enterprise, billed monthly[^24]",
+        "$2,940 Starter to $5,940 Enterprise, billed monthly, by our math[^24]",
         "Support assistant only[^24]"
       ],
       [
         "Cetec ERP",
         "Yes, per user plus support",
-        "$3,000 self-supported; $10,800 with Standard support[^27]",
+        "$3,000 self-supported, $10,800 with Standard support, by our math[^27]",
         "None seen"
       ],
       [
         "SkyPlanner APS",
         "Yes, per workstation",
-        "€4,788 for 15 workstations[^29]",
+        "€4,788 for 15 workstations, by our math[^29]",
         "\"AI-assisted schedule optimization\"[^29]"
       ],
       [
         "Business Central Premium",
         "Yes, per user",
-        "$6,600[^25]",
+        "$6,600 by our math[^25]",
         "Copilot agents; credits extra[^25]"
       ],
       [
         "Autodesk Fusion Operations",
-        "Yes, per user",
-        "About $10,325[^28]",
+        "Yes, starting price",
+        "From $173 a month; a 5-user total isn't shown[^28]",
         "None seen"
       ],
       [
@@ -367,7 +367,7 @@
         "PlanetTogether: machine-learning \"Copilot\"[^23]"
       ]
     ],
-    "note": "List prices on one date: discounts, shop-floor seats, setup, integration and tax are left out, and SkyPlanner bills in euros. Odoo's year-one price is a discount, and ERP schedulers do less than stand-alone ones. A separate third-party list covers 39 vendors and says only 13 or 14 publish a price.[^46]"
+    "note": "Year-one totals are our math from list prices on one date, leaving out discounts, shop-floor seats, setup, integration and tax. SkyPlanner bills in euros, and ERP schedulers do less than stand-alone ones. A separate third-party list covers 39 vendors and says only 13 or 14 publish a price.[^46]"
   },
   "rules": [
     {
@@ -408,7 +408,7 @@
     },
     {
       "q": "How much does production scheduling software cost?",
-      "a": "For a 100-person shop, year-one list licenses ran from about $1,500 to a $25,000 one-time license in our check.[^7][^8] Seven of the 12 tools we read publish a price; the rest quote.[^30][^31]"
+      "a": "For a 100-person shop, year-one list licenses ran from about $2,940 to a $25,000 one-time license, by our math.[^24][^8] Seven of the 12 tools we read publish a price, and the rest quote.[^30][^31]"
     },
     {
       "q": "How is an APS different from ERP scheduling?",
@@ -520,7 +520,7 @@
     {
       "name": "Odoo pricing, US list",
       "url": "https://www.odoo.com/pricing?country=US&lang=en_US",
-      "what": "Read 26 Nov 2026 via a search-tool copy, cross-checked with third-party pages: Standard $24.90 per user a month in year one billed yearly, then $31.10; Custom $49 then $61, lists Agentic AI."
+      "what": "Live page could not be opened on 26 Nov 2026, so we quote no Odoo price. A search-tool copy shows Standard and Custom per-user plans, with Agentic AI on Custom."
     },
     {
       "name": "User Solutions, EDGEBIC pricing",
@@ -605,7 +605,7 @@
     {
       "name": "MRPeasy pricing",
       "url": "https://www.mrpeasy.com/pricing/",
-      "what": "Read 26 Nov 2026: $49, $69, $99, $149 per user a month; lists operations scheduling (MRP II, finite capacity); support AI assistant only."
+      "what": "Read 26 Nov 2026: Starter $49, Professional $69, Enterprise $99, Unlimited $149 per user a month; lists operations scheduling (MRP II, finite capacity); support AI assistant only."
     },
     {
       "name": "Microsoft Dynamics 365 Business Central pricing",
@@ -623,14 +623,14 @@
       "what": "Read 26 Nov 2026: $50 per user a month, 5-user minimum; support per company per month: Lite $0, Standard $650, Enterprise $3,200."
     },
     {
-      "name": "Autodesk Fusion Operations, buy page",
-      "url": "https://www.autodesk.com/products/fusion-operations/buy",
-      "what": "Read 26 Nov 2026: $173 a month paid annually, $2,065 a year for one user; 14-day free trial."
+      "name": "Autodesk Fusion Operations, overview page",
+      "url": "https://www.autodesk.com/products/fusion-operations/overview",
+      "what": "Read 26 Nov 2026: \"Starting at $173 / month\", not stated per user; annual terms cost about a third less than monthly; 14-day free trial."
     },
     {
       "name": "SkyPlanner APS pricing",
       "url": "https://skyplanner.ai/pricing",
-      "what": "Read 26 Nov 2026: 199 euros a month including 5 workstations, plus 20 euros per extra workstation; no per-user fee; lists AI-assisted schedule optimization (vendor claim)."
+      "what": "Read 26 Nov 2026: €199 a month including 5 workstations, plus €20 a month per extra workstation; no per-user fee; lists AI-assisted schedule optimization (vendor claim)."
     },
     {
       "name": "PlanetTogether, APS integrations and pricing page",
@@ -650,7 +650,7 @@
     {
       "name": "frePPLe pricing",
       "url": "https://frepple.com/pricing/",
-      "what": "Read 26 Nov 2026: subscription price not shown; proof of concept 2,000-5,000 euros; implementation 5,000-25,000 euros."
+      "what": "Read 26 Nov 2026: subscription price not shown; proof of concept €2,000 to €5,000; implementation €5,000 to €25,000."
     },
     {
       "name": "Katana pricing",
@@ -819,7 +819,7 @@
     "table-1": "Small shops fit ERP schedulers such as Business Central, Odoo or MRPeasy. Plants with many changeovers fit stand-alone schedulers such as SkyPlanner, EDGEBIC or PlanetTogether.[^25][^7][^24][^29][^8][^30] Plants with unusual rules can build on frePPLe or a free solver.[^32][^41]",
     "table-2": "The one independent case, from NIST MEP, cut lead time from 12-14 weeks to 5 after fixing routings first. Vendor cases claim gains such as 25% fewer changeovers.[^3][^36]",
     "recipes": "Small shops fit their ERP's own scheduler, plants with many changeovers fit a stand-alone scheduler, and data-rich plants with unusual rules can build on a free solver.[^41]",
-    "own-data": "Year-one list licenses for a 100-person shop ran from about $1,494 (Odoo Standard) to a $25,000 one-time license (EDGEBIC), and five of 12 tools publish no usable price.[^7][^8]",
+    "own-data": "By our math, year-one list licenses for a 100-person shop ran from about $2,940 (MRPeasy Starter) to a $25,000 one-time license (EDGEBIC).[^24][^8] Five of 12 tools publish no usable price.[^30][^31][^45][^34][^33]",
     "rules": "The EU AI Act makes AI that assigns tasks to workers high-risk from 2 Dec 2027, and Chicago's Fair Workweek Ordinance requires 14 days' shift notice.[^47][^49] Neither covers sequencing machines alone.",
     "benchmark": "Freeze the data from 4-6 past weeks with real disruptions, replay them in the tool, and compare against what happened and a simple earliest-due-date rule.[^39] Count every capacity or calendar violation, then run 4 weeks in shadow with the planner approving.[^5][^4]",
     "what-goes-wrong": "Production scheduling software goes wrong through bad master data, shadow spreadsheets, planners losing their say, schedule churn, wrong shift calendars and untested vendor claims.[^4][^51][^1][^21][^13][^22]",

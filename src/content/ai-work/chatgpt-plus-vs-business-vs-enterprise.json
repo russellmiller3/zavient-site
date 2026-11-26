@@ -45,7 +45,7 @@
  "tables": [
   {
    "title": "What does each ChatGPT plan cost, and who controls it?",
-   "intro": "US list prices before tax, as OpenAI publishes them, read 26 Nov 2026[^1][^2]. Enterprise has no public price, so we show third-party reports and label them[^23].",
+   "intro": "US list prices before tax, as OpenAI publishes them, read 26 Nov 2026[^1][^2]. Enterprise has no public price, so its row shows none[^2].",
    "headers": [
     "Plan",
     "Price",
@@ -57,7 +57,7 @@
      "name": "Free",
      "url": "https://chatgpt.com/pricing",
      "cells": [
-      "$0[^1]",
+      "$0[^21]",
       "One person[^1]",
       "OpenAI may train on chats unless the user opts out. Personal account, no admin[^12]."
      ]
@@ -102,7 +102,7 @@
      "name": "Enterprise",
      "url": "https://openai.com/business/pricing",
      "cells": [
-      "Not published: 'custom pricing'. Third parties report about $60 a seat a month[^2][^23].",
+      "Not published: 'custom pricing', quoted per deal[^2].",
       "Firms at scale, or with contract and compliance needs[^2]",
       "Adds automatic offboarding (SCIM), role-based access, audit-log feeds and data residency[^2][^10]."
      ]
@@ -204,7 +204,7 @@
     "Ops lead: read weekly use in the admin analytics dashboard",
     "Ops lead and finance: at day 60-90, move to yearly billing or stop"
    ],
-   "cost": "10 seats × $25 × 3 months = $750; 12 seats = $900, at list prices read 26 Nov 2026[^2][^5]. OpenAI's pages differ on the minimum seat count, so check at checkout[^5][^8]."
+   "cost": "By our math, 10 seats × $25 × 3 months = $750, and 12 seats = $900, at list prices read 26 Nov 2026[^2][^5]. OpenAI's pages differ on the minimum seat count, so check at checkout[^5][^8]."
   },
   {
    "name": "2. Whole-firm rollout, 40-200 staff",
@@ -218,7 +218,7 @@
     "Finance: set credit usage alerts if you buy extra credits",
     "Ops lead: review seats each quarter and reassign idle ones"
    ],
-   "cost": "Worked example, 120 staff billed yearly: 108 Standard and 12 Premium seats come to $40,320 a year[^2][^5]. All Standard, the same 120 seats cost $28,800 a year[^2]."
+   "cost": "Worked example by our math, 120 staff billed yearly: 108 Standard and 12 Premium seats come to $40,320 a year[^2][^5]. All on Standard, the same 120 seats cost $28,800 a year by our math[^2]."
   },
   {
    "name": "3. Regulated firm, or more than 200 staff",
@@ -231,7 +231,7 @@
     "IT: plan the personal-account move; on Enterprise, staff get 7 days to choose",
     "Department heads: keep sign-off rules for each role"
    ],
-   "cost": "OpenAI publishes no Enterprise price[^2]. Third parties report about $60 a seat a month with a 150-seat minimum, about $108,000 a year at the floor[^23][^22]."
+   "cost": "OpenAI publishes no Enterprise price and quotes each deal[^2]. A reseller listing and third-party reports give a 150-seat minimum[^22][^23]."
   }
  ],
  "humanRole": [
@@ -242,7 +242,7 @@
  ],
  "ownData": {
   "title": "What does a year of ChatGPT cost at 50 and 200 seats?",
-  "intro": "On 26 Nov 2026 we read OpenAI's pricing and help pages, then multiplied each monthly list price by 12 and by 50 or 200 seats[^1][^2][^3][^5]. OpenAI publishes no Enterprise price, so that row uses third-party reports[^23][^22]. At 50 staff, that reported floor costs about nine times Business Standard[^23][^2].",
+  "intro": "On 26 Nov 2026 we read OpenAI's pricing and help pages, then multiplied each monthly list price by 12 and by 50 or 200 seats[^1][^2][^3][^5]. OpenAI publishes no Enterprise price, so Enterprise has no row here[^2].",
   "headers": [
    "Option",
    "Per seat a year",
@@ -270,7 +270,7 @@
     "$300",
     "$15,000",
     "$60,000",
-    "25% more for the right to stop any month[^2]"
+    "By our math, 25% more for the right to stop any month[^2]"
    ],
    [
     "Business Premium, yearly",
@@ -285,13 +285,6 @@
     "$16,800",
     "$67,200",
     "45 + 5 seats at 50; 180 + 20 at 200[^2]"
-   ],
-   [
-    "Enterprise at a reported $60 a seat",
-    "$720",
-    "$108,000 (150-seat floor)",
-    "$144,000",
-    "Reported, not an OpenAI price. Range $45-75 a seat a month[^23][^22]."
    ]
   ],
   "note": "Zavient price check, read 26 Nov 2026: US list prices before tax, which can vary by country[^5]. It leaves out extra usage credits, promotions and API spend[^17][^2]. Plus is shown for cost only, and 200 seats is the Business cap for new workspaces[^6]."
@@ -331,7 +324,7 @@
   },
   {
    "q": "How much does ChatGPT Enterprise cost?",
-   "a": "About $60 a seat a month with a 150-seat minimum, by third-party reports; OpenAI publishes no price and quotes each deal[^23][^22][^2]. Treat that as a planning number and get a written quote."
+   "a": "OpenAI publishes no ChatGPT Enterprise price and quotes each deal, and a reseller lists a 150-seat minimum[^2][^22][^23]. Get a written quote, and set it against Business Standard at $20 a seat billed yearly[^2]."
   }
  ],
  "buyVsBuild": {
@@ -340,7 +333,7 @@
  },
  "pickElse": [
   "You already pay for Microsoft 365: Copilot Chat comes at no extra cost on eligible plans[^36]. Microsoft 365 Copilot Business adds answers drawn from your email and files for $21 a user a month on top, billed yearly[^36].",
-  "You run Google Workspace: Business Standard, at $14 a user a month billed yearly, includes Gemini in Gmail, Docs and Meet[^37][^38]. Google says it doesn't train models on your company data[^37].",
+  "You run Google Workspace: Business Standard costs $14 a user a month on a one-year commitment, with Gemini included[^37]. Google says Gemini covers Gmail, Docs and Meet and doesn't train models on your company data[^38][^37].",
   "You need one narrow workflow, not a chat tool for everyone: a purpose-built tool or a small API build fits better[^29]. MIT found generic chat tools stall in critical workflows that need memory and customisation[^29].",
   "Staff won't use it yet: fix the task list and training first[^35]. In one UK government pilot of 1,000 Copilot licences, only 30% used it daily[^34][^35]."
  ],
@@ -384,7 +377,7 @@
   },
   {
    "num": "$12,000 vs $48,000",
-   "label": "a year for Business Standard at 50 vs 200 seats, billed yearly[^2].",
+   "label": "a year for Business Standard at 50 vs 200 seats, billed yearly, by our math[^2].",
    "source": "Zavient price check, 26 Nov 2026"
   },
   {
@@ -412,7 +405,7 @@
   {
    "name": "OpenAI, Business Pricing",
    "url": "https://openai.com/business/pricing",
-   "what": "Business Standard $20 a seat a month yearly or $25 monthly; Premium $100 or $125; 'teams of 2-200'; Enterprise 'custom pricing'; full Business vs Enterprise table; read 26 Nov 2026."
+   "what": "Business Standard $20 a seat a month yearly or $25 monthly; Premium $100 or $125; 'teams of 2-200'; up to $500 a month in API credits for the workspace; Enterprise 'custom pricing'; full Business vs Enterprise table; read 26 Nov 2026."
   },
   {
    "name": "OpenAI Help, What is ChatGPT Plus?",
@@ -507,17 +500,17 @@
   {
    "name": "ChatGPT Learn, Pricing",
    "url": "https://learn.chatgpt.com/docs/pricing",
-   "what": "Plus $20 a month; ChatGPT Work and Codex share pricing, credits and usage limits; read 26 Nov 2026."
+   "what": "Free $0 a month, Plus $20 a month; ChatGPT Work and Codex share pricing, credits and usage limits; read 26 Nov 2026."
   },
   {
    "name": "CDW, ChatGPT Enterprise Standard License 1Y Subscription",
    "url": "https://www.cdw.com/product/chatgpt-enterprise-standard-license-1y-subscription-500-credits-seat-month/9097307",
-   "what": "Reseller listing: '1-year ChatGPT Enterprise subscription (150-seat minimum)'; listing captured Aug 2026, read 26 Nov 2026."
+   "what": "Reseller listing: '1-year ChatGPT Enterprise subscription (150-seat minimum)'; price on request; listing captured Aug 2026."
   },
   {
    "name": "CloudZero, ChatGPT Enterprise pricing in 2026 (20 Oct 2026)",
    "url": "https://www.cloudzero.com/blog/chatgpt-enterprise-pricing",
-   "what": "Reported, not confirmed by OpenAI: about $60 a seat a month, range $45-75, 150-seat minimum, about $108,000 a year at the floor; read 26 Nov 2026."
+   "what": "Reported, not confirmed by OpenAI: ChatGPT Enterprise has no public list price; a 150-seat minimum is consistently reported; read 26 Nov 2026."
   },
   {
    "name": "NIST, AI 600-1 Generative AI Profile (Jul 2024)",
@@ -587,7 +580,7 @@
   {
    "name": "Google, Google Workspace pricing",
    "url": "https://workspace.google.com/pricing",
-   "what": "Business Standard $14 a user a month, billed yearly, with Gemini included; company data not used to train models; read 26 Nov 2026."
+   "what": "Business Standard $14 a user a month on the Annual plan (1-year commitment), with Gemini included; company data not used to train models; read 26 Nov 2026."
   },
   {
    "name": "Google, Google Workspace with Gemini (help)",
@@ -648,7 +641,7 @@
   "example": "ChatGPT itself works almost the same on all three plans. What changes is who controls the account, the data and the audit trail.[^1][^2]",
   "what-goes-wrong": "Teams most often leave staff on personal accounts, pay for seats nobody uses, and keep risky workspace defaults on.[^27][^32][^8]",
   "something-else": "Pick neither if your Microsoft 365 or Google Workspace plan already includes AI chat, or you need one narrow workflow rather than chat for everyone.[^36][^37][^29]",
-  "table-1": "Plus is $20 a month on a personal account. Business Standard is $20-25 a seat with company admin; Enterprise has no public price and adds audit-log feeds.[^3][^12][^2][^5][^10] Business Premium seats cost $100-125 a month, and third parties report Enterprise at about $60 a seat.[^2][^5][^23]",
-  "own-data": "Business Standard billed yearly costs $12,000 a year at 50 seats and $48,000 at 200, the same cash as Plus.[^2][^3] Enterprise at a reported $60 a seat runs $108,000 at its 150-seat floor and $144,000 at 200.[^23][^22]"
+  "table-1": "Plus is $20 a month on a personal account. Business Standard is $20-25 a seat with company admin; Enterprise has no public price and adds audit-log feeds.[^3][^12][^2][^5][^10] Business Premium seats cost $100-125 a month.[^2][^5]",
+  "own-data": "Business Standard billed yearly costs $12,000 a year at 50 seats and $48,000 at 200 by our math, the same cash as Plus.[^2][^3] OpenAI publishes no Enterprise price, so it has no row.[^2]"
  }
 }

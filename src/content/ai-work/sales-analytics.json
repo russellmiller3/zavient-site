@@ -89,7 +89,7 @@
           "name": "Share of wallet",
           "cells": [
             "Of all the money a customer keeps or borrows everywhere, the share you hold[^20][^21].",
-            "In one study, a top credit union held 38.8% of its members' auto loans; a top bank held 5.6%[^22].",
+            "In one survey of US adults, a top credit union held 38.8% of its members' auto loans, and a top bank held 5.6%[^22].",
             "Asks about outside accounts in conversation. Treats one customer's estimate as a lead, not a fact[^23]."
           ]
         },
@@ -97,7 +97,7 @@
           "name": "White space analysis",
           "cells": [
             "A grid of customers by products. Each empty cell is a product they could hold but don't[^24][^25].",
-            "An insurance agency ranks clients with missing coverages, called account rounding[^26][^2].",
+            "An insurance agency lists the coverages each client lacks, with a reason for each opening[^2].",
             "Checks the gap is real before offering. An empty cell is a question, not proof of demand[^27]."
           ]
         },
@@ -137,7 +137,7 @@
     },
     {
       "title": "What do sales analytics tools cost?",
-      "intro": "CRM seats run $65 to $700 a user a month, with AI scoring from about $90, and Alkami's bank module starts at $23,000 a year[^29][^37][^38][^39]. List prices read on 26 Nov 2026; vendor claims are marked as the vendor's. Seat prices leave out setup and data work.",
+      "intro": "CRM seats run $65 to $700 a user a month, with AI scoring from about $90, while Alkami's bank module shows no price[^29][^37][^38][^39]. List prices read on 26 Nov 2026; vendor claims are marked as the vendor's. Seat prices leave out setup and data work.",
       "headers": [
         "Name",
         "What it does",
@@ -177,24 +177,15 @@
           "url": "https://www.alkami.com/data-marketing-solutions?m-search",
           "cells": [
             "Data and campaigns for banks and credit unions",
-            "From $23,000, $47,000 or $77,000 a year, by tier (vendor page)[^39]",
-            "Predictive AI starts at the $47,000 tier[^39]"
-          ]
-        },
-        {
-          "name": "AgencyKPI",
-          "url": "https://growth.agencykpi.com/",
-          "cells": [
-            "Account rounding for insurance agencies",
-            "$250 a month, or $166.67 a month billed yearly[^26]",
-            "Vendor says it hands each lead to a producer in one click[^26]"
+            "Not published on its page[^39]",
+            "Sold in three tiers: Data Insights, Predictive AI and Full Funnel Marketing[^39]"
           ]
         },
         {
           "name": "Gong, Clari",
           "cells": [
             "Revenue intelligence: calls and pipeline forecasts",
-            "Not published[^40]. Third-party medians: about $55,000 and $76,000 a year[^41]",
+            "Not published[^40]. Third-party medians: $55,333 and $76,000 a year[^41]",
             "Gong prices per user plus a platform fee[^40]"
           ]
         }
@@ -278,11 +269,11 @@
         "Marketing lead and reps: run campaigns and calls from the list, keeping a holdout",
         "Analyst: each quarter, check the lift and whether the scores still hold up"
       ],
-      "cost": "Alkami lists $23,000, $47,000 or $77,000 a year by tier, read 26 Nov 2026[^39]. Data connection work is extra."
+      "cost": "Alkami shows no price on its page, so ask for an all-in year-one quote[^39]. Data connection work is extra."
     },
     {
       "name": "3. Insurance agency: account rounding",
-      "when": "An agency that wants each client's missing coverages ranked for producers[^26][^2]. Check your state's AI bulletin first[^45].",
+      "when": "An agency that wants each client's missing coverages ranked for producers[^2]. Check your state's AI bulletin first[^45].",
       "flow": [
         "Agency operations: connect the agency management system to a rounding tool",
         "Producer: work the ranked list of missing coverages",
@@ -290,12 +281,12 @@
         "Agency principal: check state AI bulletin duties, such as Colorado's",
         "Agency operations: track the rounding rate against an uncalled holdout"
       ],
-      "cost": "AgencyKPI lists $250 a month, or $166.67 a month billed yearly, read 26 Nov 2026[^26]. OpSpring prices by credits and publishes no amounts[^2]."
+      "cost": "OpSpring publishes no price on its page[^2]. AgencyKPI, a rounding tool that did list one, has shut down[^26]."
     }
   ],
   "ownData": {
     "title": "What do sales analytics vendors show on their own pages?",
-    "intro": "Most show little you need to check: 2 of 9 publish a price, 1 names fair lending and 4 show a reason for each pick[^39][^28][^13]. We read the product or pricing pages of 9 sales analytics vendors on 26 Nov 2026[^46][^47][^48][^2][^26][^49]. Eight sell to banks, credit unions or insurance agencies; one sells to distributors.",
+    "intro": "Most show little you need to check: none of 9 shows a price, 1 names fair lending and 4 show a reason for each pick[^39][^26][^28][^13]. We read the product or pricing pages of 9 sales analytics vendors on 26 Nov 2026[^46][^47][^48][^2][^26][^49]. Eight sell to banks, credit unions or insurance agencies; one sells to distributors.",
     "headers": [
       "What the page shows",
       "Vendors",
@@ -304,7 +295,7 @@
     "rows": [
       [
         "A published price",
-        "2 of 9[^39][^26]",
+        "0 of 9: Alkami's page shows none, and AgencyKPI has shut down[^39][^26]",
         "What does year one cost, all in?"
       ],
       [
@@ -424,7 +415,7 @@
     },
     {
       "q": "What does sales analytics software cost?",
-      "a": "CRM seats with AI scoring list at $90 to $150 a user a month[^38][^29]. Alkami's bank marketing module starts at $23,000 a year[^39]. Revenue intelligence tools such as Gong don't publish prices[^40][^41]."
+      "a": "CRM seats with AI scoring list at $90 to $150 a user a month[^38][^29]. Bank marketing modules such as Alkami's show no price on their pages[^39]. Revenue intelligence tools such as Gong don't publish prices[^40][^41]."
     },
     {
       "q": "Does sales analytics take over from our reps?",
@@ -438,7 +429,7 @@
   "pickElse": [
     "When you have few products or a small customer base: a spreadsheet white-space grid is enough to start[^24][^25].",
     "Already on Salesforce Financial Services Cloud, Dynamics 365 Sales Premium or HubSpot Sales Hub Pro: turn on the built-in scoring first[^29][^38].",
-    "Insurance agency: try a rounding tool such as AgencyKPI before a custom model[^26].",
+    "Insurance agency: try a tool that lists each client's missing coverages before a custom model[^2].",
     "Need to forecast the pipeline, not pick accounts: revenue intelligence tools such as Gong or Clari fit better[^40][^41]."
   ],
   "resources": [
@@ -504,7 +495,7 @@
     {
       "name": "OpSpring ProducerHQ cross-sell (vendor)",
       "url": "https://opspring.ai/products/producer-hq/cross-sell",
-      "what": "Shows the reason for each opening; openings are suggestions for a licensed agent to judge."
+      "what": "Prioritizes the coverage openings in one client's file, with the reason for each; openings are suggestions for a licensed agent to judge; no price on the page (read 26 Nov 2026)."
     },
     {
       "name": "Knott, Hayes and Neslin, Journal of Interactive Marketing (2002)",
@@ -604,7 +595,7 @@
     {
       "name": "Gutenberg et al., Journal of Applied Finance and Banking (2014)",
       "url": "http://www.scienpress.com/Upload/JAFB/Vol%204_4_4.pdf",
-      "what": "1,699 respondents: members of the top credit union kept 49.8% of checking balances and 38.8% of auto loans there; at the top bank, 45.6% and 5.6%."
+      "what": "Survey of 1,699 adults in a mid-sized US city (online panel): members of the most popular credit union kept 49.8% of checking balances and 38.8% of auto loans there; at the most popular bank, 45.6% and 5.6%."
     },
     {
       "name": "Garland, Journal of Financial Services Marketing (2004)",
@@ -622,9 +613,9 @@
       "what": "Whitespace analysis as a grid of customers by products, used to rank growth gaps."
     },
     {
-      "name": "AgencyKPI growth page (vendor; price read 26 Nov 2026)",
-      "url": "https://growth.agencykpi.com/",
-      "what": "Ranked list of agency clients with missing coverages and top carriers; one-click producer handoff; $250 a month, or $166.67 a month billed annually."
+      "name": "AgencyKPI, service notice",
+      "url": "https://www.agencykpi.com/",
+      "what": "AgencyKPI has ceased operations and its platform services are discontinued (read 26 Nov 2026)."
     },
     {
       "name": "EntityReach, White space analysis in enterprise sales (vendor)",
@@ -639,7 +630,7 @@
     {
       "name": "Microsoft Dynamics 365 Sales pricing (price read 26 Nov 2026)",
       "url": "https://www.microsoft.com/en-us/dynamics-365/products/sales/pricing",
-      "what": "Professional $65, Enterprise $105, Premium $150 per user a month, billed annually; Premium includes AI recommended actions."
+      "what": "Professional $65, Enterprise $105, Premium $150 per user a month, billed annually; Premium includes AI recommended actions. Read 26 Nov 2026."
     },
     {
       "name": "Neural Computing and Applications, bank churn (2022)",
@@ -679,27 +670,27 @@
     {
       "name": "Salesforce Financial Services Cloud pricing (price read 26 Nov 2026)",
       "url": "https://www.salesforce.com/financial-services/pricing",
-      "what": "$325, $500 or $700 per user a month billed annually; Digital Origination $175,000 per org a year."
+      "what": "$325, $500 or $700 per user a month billed annually; Digital Origination $175,000 per org a year. Read 26 Nov 2026."
     },
     {
       "name": "HubSpot Sales Hub pricing (price read 26 Nov 2026)",
       "url": "https://www.hubspot.com/pricing/sales",
-      "what": "Pro $90 a seat a month billed annually or $100 monthly; Enterprise $150; lead scoring from Pro."
+      "what": "Pro $90 a seat a month billed annually or $100 monthly; Enterprise $150; lead scoring from Pro. Read 26 Nov 2026."
     },
     {
-      "name": "Alkami Data and Marketing solutions (vendor; prices read 26 Nov 2026)",
+      "name": "Alkami Data and Marketing solutions (vendor)",
       "url": "https://www.alkami.com/data-marketing-solutions?m-search",
-      "what": "From $23K (Data Insights), $47K (Predictive AI) or $77K (Full Funnel) a year."
+      "what": "Three tiers: Data Insights, Predictive AI and Full Funnel Marketing; no price shown on the page (read 26 Nov 2026)."
     },
     {
-      "name": "Gong pricing page (read 26 Nov 2026)",
+      "name": "Gong pricing page",
       "url": "https://www.gong.io/pricing",
-      "what": "No price shown; priced per user plus a platform fee."
+      "what": "No price shown; licenses priced per user plus a platform fee based on users supported. Read 26 Nov 2026."
     },
     {
-      "name": "Market Intelligence Tools, revenue intelligence pricing (third party; read 26 Nov 2026)",
+      "name": "Market Intelligence Tools, revenue intelligence pricing (third party, 1 Oct 2026)",
       "url": "https://marketintelligencetools.com/reports/revenue-intelligence-pricing/",
-      "what": "Median contract about $55,333 a year for Gong and $76,000 for Clari, from Vendr data."
+      "what": "Vendr median contract $55,333 a year for Gong (1,157 purchases) and $76,000 for Clari (291 purchases). Read 26 Nov 2026."
     },
     {
       "name": "Harland Clarke, cross-sell case study (vendor)",
@@ -873,16 +864,16 @@
   "updated": "2026-11-26",
   "answers": {
     "table-1": "The six are share of wallet, white space analysis, propensity models, next best action, churn prediction and lookalike models, each answering one question about a customer[^11][^1].",
-    "table-2": "CRM seats list at $65 to $700 a user a month, Alkami's bank data module at $23,000 to $77,000 a year, and an agency rounding tool at $250 a month[^29][^37][^39][^26].",
+    "table-2": "CRM seats list at $65 to $700 a user a month, while bank modules such as Alkami's and revenue tools such as Gong show no price[^29][^37][^39][^40].",
     "table-3": "Studies found analytics helps: relationship managers with an analytics workbench grew portfolios 9% against 5% for a control group, and a next-product model beat a rule of thumb[^1][^3].",
-    "own-data": "Of the 9 vendor pages we read, only 2 publish a price, 1 names fair lending, and 4 show a reason for each pick[^39][^26][^28][^13].",
+    "own-data": "Of the 9 vendor pages we read, none shows a price, 1 names fair lending, and 4 show a reason for each pick[^39][^26][^28][^13].",
     "human-role": "The rep or licensed agent keeps the decision and can skip anyone, while compliance signs off targeting and the sales head sets goals on conversations and fit[^2][^8][^14].",
     "team-after": "Reps still pick who to call and what to offer, but spend less time on account planning and get more cross-sell ideas to bring to each conversation[^2][^1].",
     "example": "At an illustrative $400 million credit union, the model ranks 200 members for auto refinance with a reason for each, and reps choose who to call[^6].",
-    "recipes": "Community banks and credit unions start with a call list on their own CRM, digital banking platform users buy a module, and insurance agencies use a rounding tool[^4][^39][^26].",
+    "recipes": "Community banks and credit unions start with a call list on their own CRM, digital banking platform users buy a module, and insurance agencies list each client's missing coverages[^4][^39][^2].",
     "rules": "Regulation B's fair-lending rules apply, along with CFPB exam procedures, privacy and affiliate-marketing rules (Regulations P and V), model-risk guidance, and the NAIC AI bulletin for insurers[^7][^8][^55][^54][^44][^57].",
-    "benchmark": "Pilot one product in one branch, back-test the scores on last quarter, keep a random 10% uncalled to measure lift, and price the gain over 90 days[^6].",
+    "benchmark": "Pilot one product in one branch, back-test the scores on last quarter, keep a random group uncalled to measure lift, and price the gain over 90 days[^6].",
     "what-goes-wrong": "Sales analytics fails when quotas on model lists invite abuse, targeting fields stand in for protected traits, household data is messy, or lists chase people who'd buy anyway[^9][^7][^12][^5].",
-    "something-else": "Pick something else when a spreadsheet grid is enough, your CRM already has built-in scoring, an agency can start with a rounding tool, or you need pipeline forecasting instead[^24][^29][^26][^40]."
+    "something-else": "Pick something else when a spreadsheet grid is enough, your CRM already has built-in scoring, an agency can start with a missing-coverage list, or you need pipeline forecasting instead[^24][^29][^2][^40]."
   }
 }
