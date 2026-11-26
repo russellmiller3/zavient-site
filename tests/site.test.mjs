@@ -28,7 +28,7 @@ test('every AI-work page is built with the offer and at least one source link', 
     if (data.templateVersion) assert.match(html, /data-cta="consulting"/, `${s}: free diagnostic missing on a template page`);
     if (indexed({ id: s, data }, all)) {
       assert.match(html, /data-cta="consulting"/, `${s}: consulting offer missing`);
-      assert.match(html, /href="mailto:rmiller@zavient\.com"/, `${s}: offer email missing`);
+      assert.match(html, /href="mailto:hello@zavient\.com"/, `${s}: offer email missing`);
       assert.doesNotMatch(html, /name="robots" content="noindex/, `${s}: indexed page is marked noindex`);
       assert.ok(sitemap.includes(urlFor(data, s)), `${s}: indexed page missing from sitemap`);
     } else {
