@@ -128,7 +128,8 @@ test('every indexed AI-work page footnotes its claims, and every footnote points
     for (const st of data.stats) assert.ok(marks(st.label + st.source).length > 0, `${s}: stat ${st.num} has no footnote`);
     for (const w of [...data.watchOuts, ...data.pickElse]) assert.ok(marks(w).length > 0, `${s}: no footnote on "${w.slice(0, 60)}"`);
     const html = readFileSync(aiWorkFile(s), 'utf8');
-    assert.match(html, /<sup class="fn"><a href="#fn-1"/, `${s}: footnotes not rendered`);
+    // Back-to-back markers share one superscript ("8, 1"), so source 1 may not be first inside it.
+    assert.match(html, /<sup class="fn">(?:(?!<\/sup>).)*?<a href="#fn-1"/, `${s}: footnotes not rendered`);
     assert.match(html, /id="fn-1"/, `${s}: numbered sources missing`);
   }
 });
@@ -188,4 +189,24 @@ test('sitemap lists every indexable page and no noindex page', () => {
     else assert.match(map, new RegExp(`<loc>${url.replace(/[.?]/g, '\\$&')}</loc><lastmod>\\d{4}-\\d{2}-\\d{2}</lastmod>`), `${rel}: missing from sitemap or no lastmod`);
   }
   assert.match(readFileSync(join(dist, 'robots.txt'), 'utf8'), /^Sitemap: https:\/\/zavient\.com\/sitemap\.xml$/m);
+});
+
+test('footnote commas only sit between back-to-back markers', () => {
+  // Bug seen 26 Nov 2026: a CSS "sup + sup" comma also hit single markers with words between them ("run ,31").
+  assert.ok(!/sup\.fn\s*\+\s*sup\.fn/.test(readFileSync(join(root, 'public/ai-work/ai-work.css'), 'utf8')), 'CSS adds footnote commas');
+  for (const s of slugs('ai-work')) {
+    const html = readFileSync(aiWorkFile(s), 'utf8');
+    for (const m of html.matchAll(/<sup class="fn">((?:(?!<\/sup>).)*)<\/sup>/g)) {
+      assert.match(m[1], /^<a [^>]+>\d+<\/a>(?:, <a [^>]+>\d+<\/a>)*$/, `${s}: odd footnote marker ${m[1].slice(0, 80)}`);
+    }
+  }
+});
+
+test('who-does-what flows are numbered lists, not rows of arrows', () => {
+  // Russell, 26 Nov 2026: the arrow diagram "looks crap ... hard to follow".
+  for (const s of slugs('ai-work')) {
+    const html = readFileSync(aiWorkFile(s), 'utf8');
+    assert.ok(!/class="arr"/.test(html), `${s}: arrow flow still rendered`);
+    for (const m of html.matchAll(/<ol class="flow"[^>]*>((?:(?!<\/ol>).)*)<\/ol>/g)) assert.ok((m[1].match(/<li>/g) || []).length >= 2, `${s}: flow with under 2 steps`);
+  }
 });

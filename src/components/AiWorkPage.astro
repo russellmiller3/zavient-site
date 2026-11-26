@@ -71,5 +71,27 @@ const proofAfter = tpl ? (['tool', 'own-data'].find((id) => order.includes(id) &
       <a class="btn-gold" href="#diagnostic">Free 30-minute diagnostic</a>
     </div>
   )}
+  {tpl && (
+    <script is:inline>
+      // Sticky box: hidden while the top of the page or the end offer is on screen, so the offer never shows
+      // twice at once; contents list kept open where it sits in the side rail (1300px and wider).
+      (() => {
+        const box = document.querySelector('.sticky-toc');
+        if (!box) return;
+        const det = box.querySelector('details');
+        const wide = matchMedia('(min-width: 1300px)');
+        const sync = () => { if (det && wide.matches) det.open = true; };
+        sync(); wide.addEventListener('change', sync);
+        const seen = new Set();
+        const watch = [document.querySelector('.article-hero'), document.querySelector('#diagnostic')].filter(Boolean);
+        if (!('IntersectionObserver' in window) || !watch.length) return;
+        const io = new IntersectionObserver((es) => {
+          es.forEach((e) => (e.isIntersecting ? seen.add(e.target) : seen.delete(e.target)));
+          box.classList.toggle('is-hidden', seen.size > 0);
+        });
+        watch.forEach((el) => io.observe(el));
+      })();
+    </script>
+  )}
   <ConsultingCta job={d.job} heading={d.offer?.heading} ask={d.offer?.body} spot={tpl ? 'end' : ''} />
 </Base>

@@ -1,12 +1,17 @@
 ---
 // api-docs-read: static text renderer — no external API surface.
 // Renders page text with footnote markers. "[^3]" in a JSON string becomes a superscript link to source 3
-// in the page's numbered Sources list (#fn-3). Rule (26 Nov 2026): every claim is sourced, with several
-// sources where possible. tests/site.test.mjs checks that every marker points at a real source.
+// in the page's numbered Sources list (#fn-3). Back-to-back markers ("[^3][^7]") share one superscript,
+// written "3, 7". The comma is real text, not CSS: a CSS "sup + sup" rule also matches markers that have
+// words between them, which put stray commas in front of single markers (26 Nov 2026).
+// Rule (26 Nov 2026): every claim is sourced, with several sources where possible. tests/site.test.mjs
+// checks that every marker points at a real source.
 const { s = '' } = Astro.props;
-const parts = String(s).split(/(\[\^\d+\])/g).filter((p) => p !== '');
+const parts = String(s).split(/((?:\[\^\d+\])+)/g).filter((p) => p !== '');
 ---
 {parts.map((p) => {
-  const m = p.match(/^\[\^(\d+)\]$/);
-  return m ? <sup class="fn"><a href={`#fn-${m[1]}`} aria-label={`Source ${m[1]}`}>{m[1]}</a></sup> : p;
+  const ns = /^(?:\[\^\d+\])+$/.test(p) ? [...p.matchAll(/\[\^(\d+)\]/g)].map((m) => m[1]) : null;
+  return ns
+    ? <sup class="fn">{ns.map((n, i) => <>{i > 0 && ', '}<a href={`#fn-${n}`} aria-label={`Source ${n}`}>{n}</a></>)}</sup>
+    : p;
 })}

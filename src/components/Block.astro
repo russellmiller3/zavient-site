@@ -102,9 +102,15 @@ const h = headingFor(d, id);
     <div class="recipe">
       <h3>{r.name}</h3>
       <p class="when"><Fn s={r.when} /></p>
-      <div class="flow" role="img" aria-label={r.flow.join(', then ')}>
-        {r.flow.map((f, i) => <>{i > 0 && <span class="arr" aria-hidden="true">&rarr;</span>}<span class="step">{f}</span></>)}
-      </div>
+      <ol class="flow" aria-label={`${r.name}: who does what, in order`}>
+        {r.flow.map((f) => {
+          // "Role: action" shows the role in bold; a step with no role is shown as plain text.
+          const at = f.indexOf(': ');
+          return at > 0 && at < 40
+            ? <li><span class="who">{f.slice(0, at)}</span><span class="what"><Fn s={f.charAt(at + 2).toUpperCase() + f.slice(at + 3)} /></span></li>
+            : <li><span class="what"><Fn s={f} /></span></li>;
+        })}
+      </ol>
       <p class="cost"><strong>Cost:</strong>{' '}<Fn s={r.cost} /></p>
     </div>
   ))}

@@ -144,9 +144,16 @@ nav:not(.on-page) {
 .recipe { border: 1px solid var(--line); background: var(--paper); padding: 20px 22px; margin: 18px 0; }
 .recipe h3 { margin-top: 0; }
 .recipe .when { color: var(--ink-soft); margin-bottom: 14px; }
-.flow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 14px; }
-.flow .step { font-family: var(--mono); font-size: 13px; line-height: 1.4; background: var(--blue-wash); border: 1px solid #C9D9F0; padding: 7px 11px; }
-.flow .arr { color: var(--blue); }
+/* Who-does-what flow: a numbered vertical list. Circles joined by one thin line; role in bold, action in body text.
+   Vertical reads more easily than a wrapping row (Carbon progress indicator; Material 1 vertical stepper). */
+.flow { list-style: none; margin: 4px 0 18px; padding: 0; counter-reset: step; }
+.flow li { position: relative; counter-increment: step; padding: 0 0 18px 46px; min-height: 30px; }
+.flow li:last-child { padding-bottom: 2px; }
+.flow li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--blue); color: #fff; font-family: var(--sans); font-weight: 700; font-size: 15px; line-height: 30px; text-align: center; }
+.flow li:not(:last-child)::after { content: ''; position: absolute; left: 14.5px; top: 34px; bottom: 4px; width: 1px; background: #B8CCE8; }
+.flow .who { display: block; font-family: var(--sans); font-weight: 700; font-size: 16px; line-height: 1.3; color: var(--ink); padding-top: 4px; }
+.flow .what { display: block; font-size: 18px; line-height: 1.45; color: var(--ink-soft); margin-top: 2px; }
+.flow li > .what:only-child { padding-top: 3px; color: var(--ink); }
 .recipe .cost { font-size: 18px; margin: 0; }
 
 /* Hub cards */
@@ -160,7 +167,7 @@ nav:not(.on-page) {
 /* Footnote markers */
 sup.fn { font-size: 0.62em; line-height: 0; margin-left: 1px; font-family: var(--mono); }
 sup.fn a { color: var(--blue); text-decoration: none; font-weight: 600; }
-sup.fn + sup.fn::before { content: ','; color: var(--muted); }
+
 
 /* Free diagnostic offer */
 .article-cta {
@@ -230,15 +237,37 @@ footer a:hover { color: var(--blue); }
 .diag-box { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; border: 1px solid var(--line); border-left: 3px solid var(--blue); background: var(--blue-wash); padding: 14px 20px; margin: 4px 0 26px; }
 .diag-box p { margin: 0; font-size: 18px; flex: 1 1 280px; }
 .diag-box .btn-gold { white-space: nowrap; }
-.sticky-toc { position: fixed; right: 18px; bottom: 18px; z-index: 90; max-width: 320px; background: var(--paper); border: 1px solid var(--line-strong); box-shadow: 0 6px 24px rgba(21, 32, 46, 0.14); padding: 10px 12px; display: flex; flex-direction: column; gap: 8px; }
-.sticky-toc summary { cursor: pointer; font-family: var(--mono); font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
-.sticky-toc ol { margin: 8px 0 0; padding-left: 18px; max-height: 40vh; overflow-y: auto; }
-.sticky-toc li { font-size: 15px; line-height: 1.35; padding: 3px 0; }
+/* Sticky contents + free diagnostic. It must never sit on top of the text.
+   - 1300px and wider: a rail in the empty margin right of the 780px column (NN/g: sticky TOC in a side rail).
+   - Narrower: a slim bar along the bottom; the page gets matching bottom padding so nothing ends up hidden
+     under it (WCAG 2.2 technique C43, scroll-padding).
+   - Short screens (under 520px tall): not fixed at all (GOV.UK sticky-elements testing).
+   - Hidden once the end offer is on screen, so the offer never shows twice (script in AiWorkPage.astro). */
+.sticky-toc { position: fixed; z-index: 90; background: var(--paper); border: 1px solid var(--line-strong); display: flex; gap: 10px; transition: opacity .2s; }
+.sticky-toc.is-hidden { opacity: 0; pointer-events: none; }
+.sticky-toc summary { cursor: pointer; font-family: var(--sans); font-weight: 600; font-size: 15px; color: var(--ink); list-style: none; white-space: nowrap; }
+.sticky-toc summary::-webkit-details-marker { display: none; }
+.sticky-toc summary::after { content: ' \25BE'; color: var(--muted); }
+.sticky-toc details[open] summary::after { content: ' \25B4'; }
+.sticky-toc ol { margin: 8px 0 0; padding-left: 20px; max-height: 50vh; overflow-y: auto; }
+.sticky-toc li { font-size: 15px; line-height: 1.35; padding: 4px 0; }
 .sticky-toc li a { color: var(--ink); text-decoration: none; }
-.sticky-toc .btn-gold { text-align: center; font-size: 15px; padding: 9px 14px; }
-@media (max-width: 720px) {
-  .sticky-toc { left: 12px; right: 12px; bottom: 12px; max-width: none; flex-direction: row; align-items: center; justify-content: space-between; }
-  .sticky-toc details[open] { flex-basis: 100%; }
+.sticky-toc li a:hover { color: var(--blue); }
+.sticky-toc .btn-gold { text-align: center; font-size: 15px; padding: 9px 14px; white-space: nowrap; }
+@media (min-width: 1300px) {
+  .sticky-toc { top: 110px; left: calc(50% + 390px + 28px); width: 230px; flex-direction: column; padding: 14px; box-shadow: none; }
+  .sticky-toc details { order: 2; }
+  .sticky-toc details > summary { pointer-events: none; }
+  .sticky-toc details > summary::after { content: ''; }
+}
+@media (max-width: 1299.98px) {
+  .sticky-toc { left: 0; right: 0; bottom: 0; flex-direction: row; align-items: center; justify-content: space-between; padding: 8px max(16px, calc(50% - 390px)); border-width: 1px 0 0; box-shadow: 0 -4px 16px rgba(21, 32, 46, 0.08); }
   .sticky-toc:has(details[open]) { flex-direction: column; align-items: stretch; }
-  .article-cta { padding-bottom: 96px; }
+  html { scroll-padding-bottom: 72px; }
+  body { padding-bottom: 64px; }
+}
+@media (max-height: 519.98px) {
+  .sticky-toc { position: static; box-shadow: none; border-width: 1px 0; margin: 0; }
+  html { scroll-padding-bottom: 0; }
+  body { padding-bottom: 0; }
 }
