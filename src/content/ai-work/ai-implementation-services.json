@@ -1,0 +1,408 @@
+{
+  "title": "AI implementation services: what should you walk away with?",
+  "description": "How to get one chosen AI use case live in your own systems, with your team. What you should own at the end, and what most offers leave out.",
+  "type": "consulting",
+  "templateVersion": 1,
+  "topic": "AI implementation services",
+  "job": "getting one chosen AI use case live in existing systems",
+  "industry": "any industry",
+  "index": false,
+  "verdict": [
+    "Implementation gets one use case you already chose working in your own systems, not a new plan.[^2][^3]",
+    "Most AI pilots stall before daily use, usually at hooking into existing systems and at security review.[^5][^7]",
+    "Staff use AI far more when it fits their existing tools and their manager backs it.[^8][^9]",
+    "Ask who owns it after handover. Only 1 of 16 offer pages we checked names an owner on your side.[^2][^26]",
+    "People keep the calls: the AI drafts and flags, and a named person on your team signs off.[^11][^20]"
+  ],
+  "onPage": [],
+  "headings": {},
+  "summary": "AI implementation services get one AI use case you already chose working in your own systems, used by your own team.[^1][^2] The AI drafts, sorts or flags; people keep the decisions.[^11][^3] What makes or breaks it is the hookup to real systems, and whether staff actually use it.[^5][^3]",
+  "walkAway": [
+    "A named owner on your side, with a monthly review of errors, overrides and use. A good handover names the team receiving the system and its support duties.[^2][^11]",
+    "A starting number for the task, measured before the build, and the number it should move. Microsoft's testing guide says to set a baseline before any go or no-go call.[^15][^7]",
+    "The logins, code, prompts, test results and a runbook (the how-to for running it), all in your accounts. Practitioners flag any vendor who can't say who owns the prompts and data at the end.[^23][^3]",
+    "A written line between what the AI may do on its own and what waits for a person. NIST, the US standards agency, asks firms to define and document human oversight.[^11][^2]",
+    "A team trained to work the new way, not just a working system. Regular AI use is sharply higher after five or more hours of training.[^9][^10]"
+  ],
+  "humanRole": [
+    "The process owner, such as the ops lead, controller or claims lead, owns the workflow and its number. They decide which outputs a person checks.[^11][^2]",
+    "The AI drafts, sorts or flags; a named reviewer approves anything that reaches customers or moves money. Those review points are written down before launch.[^11][^3]",
+    "Someone other than the builder checks the test results. People can override the system or roll it back to the old process.[^11][^12]",
+    "An executive signs off on the risk, and the vendor never owns the decision. Two in three AI-using firms use it only to help staff with tasks.[^11][^20]"
+  ],
+  "recipes": [
+    {
+      "name": "1. Small team, about 40 to 120 staff: one task in tools you already pay for",
+      "when": "Pick this for one repeat task, like drafting customer replies or summarizing intake forms, in Microsoft 365. Microsoft's free Success Kit has scenario guides and an adoption checklist.[^19]",
+      "flow": [
+        "Ops lead: pick one weekly task and record today's time and error rate",
+        "Process owner: write what the AI may draft and what a person must check",
+        "IT lead: turn on Copilot for a pilot group and check who can see which files",
+        "Named reviewer: check every output while the old way still runs alongside",
+        "Ops lead: compare with the starting number, decide go, fix or stop, then widen one team at a time"
+      ],
+      "cost": "Microsoft 365 Copilot Business is $21 per user a month, paid yearly, or $18 in a first-year offer ending 31 Dec 2026.[^18] License the pilot group first, and buy any outside help at a fixed price and scope."
+    },
+    {
+      "name": "2. Mid-size firm on Microsoft 365 with 150 or more licences: free guided rollout plus your own review",
+      "when": "Pick this if you hold 150 or more eligible Microsoft 365 licences and at least one Copilot licence.[^16] Microsoft's FastTrack team then guides the rollout at no extra cost.[^17]",
+      "flow": [
+        "IT lead: sign up for FastTrack and fix files shared too widely in SharePoint first",
+        "Ops lead: pick 2 or 3 roles and record their starting numbers",
+        "Managers: name a reviewer for each team and coach use every week",
+        "Team leads: give each person at least five hours of training built around their own tasks",
+        "Ops lead: track use and results monthly in Copilot Analytics",
+        "COO: widen to the next team only if the numbers moved"
+      ],
+      "cost": "FastTrack guidance is free; licences are the main cost, from $21 per user a month, or $32 bundled with Business Premium.[^17][^18] Microsoft's Business plans cover up to 300 users.[^18]"
+    },
+    {
+      "name": "3. Document-heavy work: AI wired into your ERP or CRM",
+      "when": "Pick this when invoices, orders, claims or contracts move between systems. Integration sets the timeline: Deloitte found three-month estimates can stretch to 18 months.[^5]",
+      "flow": [
+        "Controller or process owner: list what data actually exists, before anyone scopes the build",
+        "Builder: connect to a test copy of the ERP (finance system) or CRM (customer database)",
+        "Process owner: lock a set of real past cases, messy ones included",
+        "Builder: run the AI in shadow mode, where it works alongside people but decides nothing",
+        "Named reviewer: compare its output with the team's own decisions",
+        "Ops lead: go live with one team, keeping a way back to the old process",
+        "Process owner: sign off, then review errors and overrides every month"
+      ],
+      "cost": "Quoted per job, because the price depends on the systems it touches.[^25] Run a short data audit first; practitioners say skipping it is why these budgets blow up.[^22]"
+    }
+  ],
+  "ownData": {
+    "title": "What do AI implementation offers promise, and what do they leave out?",
+    "intro": "We read every page selling AI implementation on Google's first page for two searches, on 26 Nov 2026.[^26] Most promise training and support; few publish a price, measure a starting number or name an owner on your side.[^26] Ask for the missing ones in writing before you sign.",
+    "headers": [
+      "What the offer page says",
+      "Pages, of 16"
+    ],
+    "rows": [
+      [
+        "Offers staff training or adoption help",
+        "11[^26]"
+      ],
+      [
+        "Offers monitoring or support after launch",
+        "8[^26]"
+      ],
+      [
+        "Says where people keep the decision or check AI output",
+        "6[^26]"
+      ],
+      [
+        "Lists what you keep at the end",
+        "4[^26]"
+      ],
+      [
+        "Measures a starting number before the build",
+        "3[^26]"
+      ],
+      [
+        "Plans a handover to your team",
+        "3[^26]"
+      ],
+      [
+        "Publishes its own price",
+        "2[^26]"
+      ],
+      [
+        "States its own timeline",
+        "1[^26]"
+      ],
+      [
+        "Names an owner on your side",
+        "1[^26]"
+      ],
+      [
+        "Zavient, for contrast",
+        "Publishes a $10,000 fixed-price sprint. \"You own the specs, the code and the results.\"[^25]"
+      ]
+    ],
+    "note": "Method: 18 offer pages on US Google page one for two implementation searches, 26 Nov 2026; 2 were dead, so 16 were coded. All 16 were re-read in full that day, 3 from cached copies dated 27 Sep to 25 Nov 2026. A feature counts only where stated outright; small sample, one day, US only."
+  },
+  "watchOuts": [
+    "Integration stretches the timeline: Deloitte found three-month estimates can stretch to 18 months.[^5] Fix: map every system and login the AI touches before you sign.[^2]",
+    "Ideas die at IT and security review: in a study Adobe paid for, only about 15 of 100 reached production.[^7] Fix: bring IT and security in during week one, not at go-live.",
+    "Staff drift back to the old tools after the first error.[^21] Fix: pick work that fits their tools and get managers to back it; frequent use is 88% versus 55% when AI fits.[^8]",
+    "The pilot ran on hand-picked clean data.[^22] Fix: test on real past cases, messy ones included; OpenAI warns against test sets unlike real traffic.[^14]",
+    "Nobody owns it after the vendor leaves, the fear of one ops lead who dreaded an agent \"nobody uses after 2 months\".[^27] Fix: name the owner before the build starts.[^2]",
+    "No starting number, so no proof it worked. Fix: measure today's time and errors before any build, then make a go or no-go call.[^15][^7]"
+  ],
+  "howToTest": [
+    "Write down today's number for the one task: time per case, error rate and cost per case.[^15]",
+    "Pull a set of real past cases, messy ones included, and lock them away before the vendor sees results.[^14][^22]",
+    "Have someone other than the builder score the results against your team's own decisions.[^11][^14]",
+    "Run it in shadow mode first: the AI works alongside your team, but people decide and nothing it outputs is used.[^12]",
+    "Give the shadow run a fixed end date. Amazon's shadow tests run 7 days by default, and 30 at most.[^13]",
+    "Score against people's judgement, not gut feel. OpenAI lists \"it seems like it's working\" as a mistake to avoid.[^14]",
+    "Compare with the starting number and make a written go, fix or stop call.[^15]",
+    "Go live with one team first, and keep a way back to the old process.[^12]",
+    "Price the lift in dollars: hours saved times loaded cost per hour (pay plus benefits), plus errors avoided times cost per error. Then subtract licences, upkeep and reviewer time.",
+    "Name the owner and set a monthly review of errors, overrides and use.[^11]"
+  ],
+  "faq": [
+    {
+      "q": "What does an AI implementation consultant actually do?",
+      "a": "They take a use case you've already picked and make it work in your real systems, with your data, people and controls.[^3][^2] That covers integration, testing, rollout, training and handover. Deciding what to do first is strategy work, a different purchase.[^2]"
+    },
+    {
+      "q": "How much does AI implementation cost?",
+      "a": "For a small rollout in Microsoft 365, licences start at $21 per user a month, and guided setup is free at 150 or more licences.[^18][^17] Custom work into an ERP or CRM is quoted per job. Our own 30-day sprint is a published $10,000, fixed scope.[^25]"
+    },
+    {
+      "q": "What do AI implementation vendors promise, and what actually happens?",
+      "a": "Most promise training and support; few publish a price, measure a starting number or name an owner on your side.[^26] The gap shows after launch, when staff drift back to old tools at the first error.[^21]"
+    },
+    {
+      "q": "How do you get the holdouts on your team to use it?",
+      "a": "Separate people who can't yet from people who won't; each needs different help.[^24] Frequent use runs 88% where AI fits existing systems, against 55% where it doesn't; manager support shows a similar gap.[^8] Train people on their own tasks; use is sharply higher after five hours or more.[^9][^10]"
+    },
+    {
+      "q": "How can we avoid being scammed on AI implementation?",
+      "a": "Ask for a price, the working system you'll get, and who owns the prompts and data at the end.[^23] Ask how hard cases will be tested and who runs the system after handover.[^3]"
+    }
+  ],
+  "pickElse": [
+    "You haven't picked the use case yet: get strategy help first. Implementation assumes the decision is already made.[^2]",
+    "You hold 150 or more eligible Microsoft 365 licences and one Copilot licence: start with Microsoft's free FastTrack guidance.[^16][^17]",
+    "You have someone in-house to run it: use Microsoft's free Copilot Success Kit, with its scenario library and adoption checklist.[^19]",
+    "Staff only need help writing and summarizing: buy AI seats and train people, with no implementation project.[^18][^9]"
+  ],
+  "resources": [
+    {
+      "name": "NIST AI Risk Management Framework, Core",
+      "url": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF/Core_And_Profiles/5-sec-core",
+      "what": "Free US government checklist for owners, human oversight, monitoring and override."
+    },
+    {
+      "name": "AWS Prescriptive Guidance, deployment strategies",
+      "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/ml-operations-planning/deployment.html",
+      "what": "Plain explainer of shadow, step-by-step and rollback launches."
+    },
+    {
+      "name": "OpenAI, Evaluation best practices",
+      "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+      "what": "How to test AI output on real cases, and the shortcuts to avoid."
+    },
+    {
+      "name": "Microsoft FastTrack for Copilot",
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/fasttrack/microsoft-365-copilot",
+      "what": "What Microsoft's free guided rollout covers, from readiness to measuring impact."
+    },
+    {
+      "name": "Microsoft Copilot Success Kit",
+      "url": "https://adoption.microsoft.com/en-us/copilot/success-kit/",
+      "what": "Free rollout guides, scenario library and adoption checklist for running it in-house."
+    }
+  ],
+  "stats": [
+    {
+      "num": "25%",
+      "label": "of firms have moved 40% or more of their AI pilots into production.[^4]",
+      "source": "Deloitte, State of AI in the Enterprise 2026[^4]"
+    },
+    {
+      "num": "31%",
+      "label": "of prioritized AI use cases reached full production in 2025, double the 2024 share.[^6]",
+      "source": "ISG, State of Enterprise AI Adoption 2025[^6]"
+    },
+    {
+      "num": "About 15 in 100",
+      "label": "AI ideas that reach production, with the steepest drop at IT review.[^7]",
+      "source": "Adobe State of AI Readiness 2026, a study Adobe paid for[^7]"
+    },
+    {
+      "num": "88% vs 55%",
+      "label": "frequent AI use where AI fits existing systems and processes, against where it doesn't.[^8]",
+      "source": "Gallup, 23,717 US employees, Feb 2026[^8]"
+    },
+    {
+      "num": "1 of 16",
+      "label": "AI implementation offer pages that name an owner on your side.[^26]",
+      "source": "Zavient check of page-one offers, 26 Nov 2026[^26]"
+    },
+    {
+      "num": "66%",
+      "label": "of AI-using firms use it only to help with tasks.[^20]",
+      "source": "US Census Bureau working paper CES-WP-26-25, 2026[^20]"
+    }
+  ],
+  "sources": [
+    {
+      "name": "IDC, What are AI services?, 10 Nov 2026",
+      "url": "http://www.idc.com/resource-center/definitions/what-are-ai-services",
+      "what": "Analyst definition: business, IT and engineering services to assess, plan, design, build, implement, integrate, operate, support and optimize AI systems."
+    },
+    {
+      "name": "Open for AI, AI consulting vs AI implementation, 23 Oct 2026",
+      "url": "https://openforai.com/insights/ai-consulting-vs-ai-implementation",
+      "what": "Practitioner guide from a firm that sells both: consulting asks what to do; implementation asks whether the agreed change works in place. A handover names a receiving owner and an authority boundary."
+    },
+    {
+      "name": "Losung Consult, What are AI implementation services?",
+      "url": "https://losungconsult.com/guides/what-are-ai-implementation-services",
+      "what": "Practitioner guide from a firm that sells this work: implementation turns an approved use case into a production system; a correct system staff avoid is not implemented; ask who owns it after handover."
+    },
+    {
+      "name": "Deloitte, State of AI in the Enterprise 2026, press release, 21 Jan 2026",
+      "url": "https://www.deloitte.com/us/en/about/press-room/state-of-ai-report-2026.html",
+      "what": "Only 25% of respondents have moved 40% or more of their AI pilots into production."
+    },
+    {
+      "name": "Deloitte, State of AI in the Enterprise 2026, full report",
+      "url": "http://view.deloitte.nl/rs/502-WIB-308/images/deloitte-state-of-ai-2026.pdf",
+      "what": "Use cases estimated to take three months can stretch to 18 months when integration complexities emerge."
+    },
+    {
+      "name": "ISG, State of Enterprise AI Adoption 2025",
+      "url": "https://isg-one.com/state-of-enterprise-ai-adoption-report-2025",
+      "what": "31% of prioritized use cases reached full production in 2025, double the 2024 study."
+    },
+    {
+      "name": "Adobe, State of AI Readiness 2026, 16 Oct 2026 (Adobe-commissioned)",
+      "url": "https://business.adobe.com/resources/sdk/state-of-ai-readiness.html",
+      "what": "A study Adobe paid for: of every 100 AI ideas, about 15 reach production; the steepest drop is at IT evaluation, then security review. Leaders set a baseline before go-live."
+    },
+    {
+      "name": "Gallup, AI in the workplace: what separates adopters and holdouts, 12 Apr 2026",
+      "url": "https://www.gallup.com/workplace/704252/workplace-separates-adopters-and-holdouts.aspx",
+      "what": "23,717 US employees, Feb 2026: 88% use AI frequently when it fits their systems and processes, against 55%; 78% against 44% with strong manager support."
+    },
+    {
+      "name": "BCG, AI at Work 2025: Momentum builds, but gaps remain, Jun 2025",
+      "url": "https://www.bcg.com/publications/2025/ai-at-work-momentum-builds-but-gaps-remain",
+      "what": "Regular use is sharply higher with at least five hours of training; only a third feel properly trained; leadership support lifts positive feeling about AI from 15% to 55%."
+    },
+    {
+      "name": "Gallup, Manager support drives employee AI adoption, Nov 2025",
+      "url": "https://www.gallup.com/workplace/694682/manager-support-drives-employee-ai-adoption.aspx",
+      "what": "Recommends role-specific training built on employees' actual tasks; lack of training is a top barrier to use."
+    },
+    {
+      "name": "NIST AI Risk Management Framework, Core",
+      "url": "https://airc.nist.gov/AI_RMF_Knowledge_Base/AI_RMF/Core_And_Profiles/5-sec-core",
+      "what": "GOVERN 2.1 and 3.2: roles for human-AI oversight documented; GOVERN 2.3: executives take responsibility for AI risk; MAP 3.5: human oversight defined; MANAGE 4.1: monitoring, override and change management after launch."
+    },
+    {
+      "name": "AWS Prescriptive Guidance, Deployment",
+      "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/ml-operations-planning/deployment.html",
+      "what": "In shadow mode the new model works alongside the old process and performs inferences without influencing any decisions; canary launches roll out step by step and can be rolled back."
+    },
+    {
+      "name": "Amazon SageMaker, Create a shadow test",
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests-create.html",
+      "what": "Shadow tests run for a set period: 7 days by default, 30 days at most."
+    },
+    {
+      "name": "OpenAI, Evaluation best practices",
+      "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+      "what": "Anti-patterns include test sets that don't reproduce production traffic and vibe-based evals (\"it seems like it's working\")."
+    },
+    {
+      "name": "Microsoft Azure Well-Architected, Test and evaluate AI workloads",
+      "url": "https://learn.microsoft.com/en-us/azure/well-architected/ai/test",
+      "what": "Establish a baseline with metrics tied to business goals, and make a go or no-go decision on the test results."
+    },
+    {
+      "name": "Microsoft FastTrack, Eligibility",
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/fasttrack/eligibility",
+      "what": "FastTrack needs 150 or more eligible licences per tenant, plus at least one Copilot licence for Copilot help."
+    },
+    {
+      "name": "Microsoft FastTrack, Microsoft Copilot, updated 24 Nov 2026",
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/fasttrack/microsoft-365-copilot",
+      "what": "Guided help with readiness, oversharing in SharePoint, adoption and measuring impact in Copilot Analytics; FastTrack is included at no extra cost."
+    },
+    {
+      "name": "Microsoft Copilot business pricing, read 26 Nov 2026",
+      "url": "https://www.microsoft.com/en-us/copilot/pricing/business",
+      "what": "Copilot Business add-on $21 per user a month paid yearly, $18 first-year offer from 1 Jul to 31 Dec 2026; Business Standard with Copilot $23.50; Business Premium with Copilot $32; Business plans up to 300 users."
+    },
+    {
+      "name": "Microsoft, Copilot Success Kit",
+      "url": "https://adoption.microsoft.com/en-us/copilot/success-kit/",
+      "what": "Free implementation framework: scenario library, technical readiness guide, user enablement guide and adoption planning checklist."
+    },
+    {
+      "name": "US Census Bureau, The Microstructure of AI Diffusion, CES-WP-26-25, Apr 2026",
+      "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
+      "what": "66% of AI-using firms rely on AI solely to augment tasks; AI-related employment decreases occurred at 2% of firms."
+    },
+    {
+      "name": "Reddit r/smallbusiness, Anyone here who paid for an AI implementation consulting service?, 2026",
+      "url": "https://www.reddit.com/r/smallbusiness/comments/1qzg3wc/anyone_here_who_paid_for_an_ai_implementation/",
+      "what": "Buyer forum question: what did the vendor promise vs what happened; the poster says workers go back to their old tools as soon as they find an error."
+    },
+    {
+      "name": "Reddit r/consulting, Has anyone here seen an AI engagement come in under budget?, 2026",
+      "url": "https://www.reddit.com/r/consulting/comments/1tdttfc/",
+      "what": "Practitioner opinion: pilots work on hand-picked clean rows; overruns follow scoping before anyone inventories the data; run a short data audit first."
+    },
+    {
+      "name": "Reddit r/AiAutomations, AI implementation process: how can we avoid being scammed?, 2026",
+      "url": "https://www.reddit.com/r/AiAutomations/comments/1sl4tyg/",
+      "what": "Buyer question from a small family shop; a commenter's red flags: no price, a strategy document instead of a working integration, and no answer on who owns the prompts and data at the end."
+    },
+    {
+      "name": "Reddit r/AI_Agents, What do you do when the tool works and the person doesn't want it?, Nov 2026",
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1xpq738/what_do_you_do_when_the_tool_works_and_the_person/",
+      "what": "Practitioner asks how others handled team members who held out against an AI tool that works."
+    },
+    {
+      "name": "Zavient, how we work and what it costs",
+      "url": "https://zavient.com/about.html#engagements",
+      "what": "30-day AI Sprint $10,000, fixed scope; building is quoted per job, or done by your team or a vendor from our specs; you own the specs, the code and the results."
+    },
+    {
+      "name": "Zavient, check of AI implementation offer pages, 26 Nov 2026",
+      "url": "https://zavient.com/ai-consulting/ai-implementation-services.html#own-data",
+      "what": "16 page-one offer pages for two US searches, each re-read in full and coded for price, timeline, starting number, what you keep, owner, handover, human review, support and training."
+    },
+    {
+      "name": "Reddit r/AI_Agents, What should a small business expect from AI consultants?, May 2026",
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1th55du/",
+      "what": "A non-tech business asks what a realistic AI implementation process looks like; biggest fear is an agent nobody uses after 2 months."
+    }
+  ],
+  "related": [
+    "ai-strategy-consulting",
+    "ai-automation-consulting",
+    "ai-consulting-services",
+    "ai-document-processing"
+  ],
+  "offer": {
+    "heading": "Have a use case picked, but not live yet?",
+    "body": "Free, before any paid work, and no sales pitch: 30 minutes on your first workflow. Bring the use case and the systems it touches. You leave with the first step, the starting number to record and who should own it."
+  },
+  "keyword": {
+    "phrase": "ai implementation services",
+    "searches": 390,
+    "cpc": 34.65,
+    "difficulty": 11
+  },
+  "reviews": [
+    {
+      "reader": "COO",
+      "notes": "Wanted the first task, a before-and-after measure and who does what: all present, with a role on every step. The own-data table had no next step, so its intro now says to ask for the missing items in writing before signing. Asked how long it takes; the only sourced timing is Deloitte's three-to-18-month warning and Amazon's 7-day shadow default, so no small-firm duration is given rather than inventing one."
+    },
+    {
+      "reader": "Head of operations",
+      "notes": "Tripped on 'runbook', 'loaded cost', 'anti-pattern' and 'canary'. Runbook and loaded cost are now glossed, anti-pattern is now 'a mistake to avoid', and canary is now 'step-by-step'. ERP and CRM are glossed on first use in recipe 3; shadow mode is explained wherever it appears."
+    },
+    {
+      "reader": "GM",
+      "notes": "Asked whether one team can go first and what it costs the unit. Recipe 1 now widens one team at a time, recipes 2 and 3 already gate on one team, and the dollar formula now subtracts reviewer time, not just licences and upkeep."
+    },
+    {
+      "reader": "Division head",
+      "notes": "Read as the ops lead who would own the system after handover. Wanted to know what lands on their desk: the owner bullet now includes a monthly review of errors, overrides and use, and the override and rollback bullet stays in 'Where does your team stay in charge?'. The 1-of-16 owner count is the line they would forward."
+    },
+    {
+      "reader": "Owner-CEO",
+      "notes": "Steve's worries are data, security, skills, return and paying for slides. All five are covered: data audit and messy test cases, IT and security in week one, training, the dollar formula, and 'not a new plan' in the bottom line. Price sits in the cost FAQ and the own-data contrast row, not the bottom line, which can't open with a number. Added 'no sales pitch' to the diagnostic offer."
+    }
+  ],
+  "updated": "2026-11-26"
+}
