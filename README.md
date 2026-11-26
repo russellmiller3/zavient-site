@@ -1,6 +1,6 @@
 # Zavient site (zavient.com)
 
-The public site for Zavient LLC. Pushing to `master` on GitHub publishes it through Vercel.
+The public site for Zavient LLC. Pushing to `master` on GitHub publishes it through Cloudflare (Workers Builds); other branches get a preview URL. Vercel stays connected only as the rollback until zavient.com's DNS points at Cloudflare.
 
 - The home page is one file: `public/index.html`, styled by `public/styles.css`.
 - Articles live in `src/content/insights/` and are built by Astro.
@@ -16,7 +16,22 @@ The public site for Zavient LLC. Pushing to `master` on GitHub publishes it thro
   `updated` date (pass `updated="YYYY-MM-DD"` to `Base.astro`). Never hand-edit a sitemap. A new page is listed as
   soon as it builds, and `npm test` fails if any indexable page is missing.
 - On every push to `master`, `.github/workflows/indexnow.yml` sends IndexNow (Bing and others) the URLs that are new
-  or changed, after Vercel serves the new sitemap. Google reads the sitemap from `robots.txt` and Search Console.
+  or changed, after the live site serves the new sitemap. Google reads the sitemap from `robots.txt` and Search Console.
+
+## Hosting (Cloudflare)
+
+- `wrangler.jsonc` serves `dist/` as Workers static assets. `html_handling` is `none`, so `/about.html` stays the address (every other mode redirects it to `/about`).
+- `worker/index.js` runs only for `/` and serves `index.html` there.
+- `public/_redirects` holds the old-page redirects. It mirrors `vercel.json`, and a test keeps the two lists equal.
+- Cloudflare setup (dashboard, once):
+  - Workers & Pages, then Create, then Import a repository, then pick `zavient-site`.
+  - Build command: `npm run build`.
+  - Deploy command: `npx wrangler deploy`.
+  - Production branch: `master`.
+  - Turn on builds for non-production branches, with the command `npx wrangler versions upload`.
+- Rollback:
+  - Roll back to the previous deployment in the Worker's Deployments tab.
+  - Or reset `master` to the `archive-site-2026-11-26` tag.
 
 ## Change log
 

@@ -210,3 +210,22 @@ test('who-does-what flows are numbered lists, not rows of arrows', () => {
     for (const m of html.matchAll(/<ol class="flow"[^>]*>((?:(?!<\/ol>).)*)<\/ol>/g)) assert.ok((m[1].match(/<li>/g) || []).length >= 2, `${s}: flow with under 2 steps`);
   }
 });
+
+// Hosting on Cloudflare (26 Nov 2026): addresses keep .html, "/" serves the home page, and the old-page redirects
+// match the Vercel list (kept while Vercel is the rollback).
+test('Cloudflare config keeps .html addresses, serves the home page and carries every redirect', async () => {
+  const cfg = JSON.parse(readFileSync(join(root, 'wrangler.jsonc'), 'utf8').replace(/^\s*\/\/.*$/gm, ''));
+  assert.equal(cfg.assets.directory, './dist');
+  assert.equal(cfg.assets.html_handling, 'none', 'any other mode redirects /about.html to /about');
+  assert.deepEqual(cfg.assets.run_worker_first, ['/']);
+  const { default: worker } = await import('../worker/index.js');
+  const seen = [];
+  const env = { ASSETS: { fetch: async (r) => { seen.push(new URL(r.url ?? r).pathname); return new Response('ok'); } } };
+  await worker.fetch(new Request('https://zavient.com/'), env);
+  await worker.fetch(new Request('https://zavient.com/about.html'), env);
+  assert.deepEqual(seen, ['/index.html', '/about.html']);
+  const cf = readFileSync(join(root, 'dist/_redirects'), 'utf8').split('\n').filter((l) => l && !l.startsWith('#')).map((l) => l.split(/\s+/));
+  const vercel = JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8')).redirects;
+  assert.deepEqual(cf, vercel.map((r) => [r.source.replace('/:path*', '/*'), r.destination, r.permanent ? '301' : '302']));
+  for (const [, to] of cf) assert.ok(to === '/' || existsSync(join(root, 'dist', to.split('#')[0])), `redirect target missing: ${to}`);
+});

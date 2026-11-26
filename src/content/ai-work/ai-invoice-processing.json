@@ -172,7 +172,7 @@
    "flow": [
     "Suppliers email invoices to the AP inbox",
     "Suite reads and codes them; AP clerk checks the flagged ones",
-    "Suite matches each invoice to the PO and the receipt Receiving logged",
+    "Suite matches each invoice to the PO and the receipt that Receiving logged",
     "Budget owner approves; Controller approves over limit",
     "AP manager or treasury releases payment; the approver can't release it",
     "Suite syncs to your accounting system (ERP)"
@@ -185,7 +185,7 @@
    "flow": [
     "New invoice lands in the AP inbox",
     "AI reads it and shows where on the page each value came from",
-    "AI compares it with the PO, the receipt Receiving logged and the supplier record",
+    "AI compares it with the PO, the receipt that Receiving logged and the supplier record",
     "AI flags any bank-detail change and holds the payment",
     "The person who owns the supplier list, not the paying clerk, calls the supplier on a number you look up yourself[^12]",
     "AP clerk releases it to approval; Controller approves over limit"

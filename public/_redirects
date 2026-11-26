@@ -1,0 +1,37 @@
+# Redirects for Cloudflare (Workers static assets). Mirrors the redirects in vercel.json.
+# Format: source destination status. A test checks the two lists match.
+/sitemap-ai.xml /sitemap.xml 301
+/ai-offer.html /about.html#engagements 301
+/ai-offer /about.html#engagements 301
+/benchmark-your-documents.html /ai-work/ai-document-processing.html 301
+/benchmark-your-documents /ai-work/ai-document-processing.html 301
+/insights/insurance-financial-services.html /ai-work/ai-underwriting.html 301
+/insights.html / 301
+/insights / 301
+/insights/* / 301
+/data.html / 301
+/data / 301
+/data/ai-in-us-job-postings.html / 301
+/data/ai-in-us-job-postings.csv / 301
+/data/ai-in-us-job-postings.svg / 301
+/data/ai-skills-in-job-ads.html / 301
+/data/ai-skills-in-job-ads.csv / 301
+/data/ai-skills-in-job-ads.svg / 301
+/ai-work/invoice-processing-automation.html /ai-work/ai-invoice-processing.html 301
+/ai-work/ai-consulting-companies.html /ai-work/ai-consulting-services.html 301
+/ai-work/ai-agents-for-business.html /ai-work.html 301
+/ai-work/ai-contract-review.html /ai-work.html 301
+/ai-work/ai-customer-service.html /ai-work.html 301
+/ai-work/ai-estimating-and-quoting.html /ai-work.html 301
+/ai-work/ai-legal-research.html /ai-work.html 301
+/ai-work/ai-medical-scribe.html /ai-work.html 301
+/ai-work/ai-sales-development-rep.html /ai-work.html 301
+/ai-work/ai-voice-agents.html /ai-work.html 301
+/ai-work/marketing-attribution-modeling.html /ai-work.html 301
+/ai-work/marketing-mix-modeling.html /ai-work.html 301
+/ai-work/predictive-maintenance.html /ai-work.html 301
+/ai-work/production-scheduling-optimization.html /ai-work.html 301
+/ai-work/rag-chatbot.html /ai-work.html 301
+/ai-work/route-optimization.html /ai-work.html 301
+/admin / 301
+/admin/* / 301
