@@ -61,7 +61,7 @@ const css = theme === 'blue' ? '/ai-work/ai-work.css' : '/insights/article.css';
       document.querySelectorAll('.table-scroll').forEach((box) => {
         const t = box.querySelector('table');
         box.setAttribute('tabindex', '0'); box.setAttribute('role', 'region');
-        box.setAttribute('aria-label', (t && t.querySelector('th') ? t.querySelector('th').textContent + ' table' : 'Table') + ', scrolls sideways');
+        const name = t && t.querySelector('th') ? t.querySelector('th').textContent + ' table' : 'Table';
         const cue = document.createElement('p'); cue.className = 'scroll-cue'; cue.setAttribute('aria-hidden', 'true'); cue.textContent = 'Swipe the table sideways for more \u2192';
         box.before(cue);
         const check = () => {
@@ -69,6 +69,7 @@ const css = theme === 'blue' ? '/ai-work/ai-work.css' : '/insights/article.css';
           box.classList.toggle('can-scroll', more);
           box.classList.toggle('at-end', box.scrollLeft + box.clientWidth >= box.scrollWidth - 4);
           cue.hidden = !more;
+          box.setAttribute('aria-label', more ? name + ', scrolls sideways' : name);
         };
         box.addEventListener('scroll', check, { passive: true }); addEventListener('resize', check); check();
       });

@@ -18,6 +18,7 @@ const { story, others } = Astro.props;
 const d = story.data;
 const svg = storySvg(story.id, d.chart);
 const f = fmt(d.chart.unit);
+const max = Math.max(...d.chart.bars.map((b) => b.value));
 const embed = `<a href="https://zavient.com/data/${story.id}.html"><img src="https://zavient.com/data/${story.id}.svg" alt="${d.chart.title}" width="760"></a>`;
 ---
 <Base title={`${d.title} | Zavient`} description={d.description} updated={d.updated}>
@@ -33,7 +34,12 @@ const embed = `<a href="https://zavient.com/data/${story.id}.html"><img src="htt
         <p><strong>What this means for you:</strong> <Fn s={d.soWhat.text} /> <a href={d.soWhat.href}>{d.soWhat.link}&nbsp;&rarr;</a></p>
       </div>
     )}
-    <figure class="data-chart" style="margin:0 0 8px;max-width:100%;overflow:hidden"><div style="max-width:100%" set:html={svg.replace('width="760"', 'width="100%"').replace(/height="\d+"/, '')} /></figure>
+        <figure class={`data-chart${d.chart.kind === 'line' ? '' : ' has-bar-list'}`} style="margin:0 0 8px;max-width:100%;overflow:hidden"><div style="max-width:100%" set:html={svg.replace('width="760"', 'width="100%"').replace(/height="\d+"/, '')} />
+      {d.chart.kind !== 'line' && (<div class="bar-list">
+        <p class="bar-list-title">{d.chart.title}</p>
+        {d.chart.subtitle && <p class="bar-list-sub">{d.chart.subtitle}</p>}
+        <ol>{d.chart.bars.map((b) => <li><span class="bar-label">{b.label}</span><span class="bar-row"><span class="bar" style={`width:${Math.max(3, Math.round((b.value / max) * 70))}%`}></span><span class="bar-value">{f(b.value)}{b.note ? <span class="bar-note"> · {b.note}</span> : ''}</span></span></li>)}</ol>
+      </div>)}</figure>
     <details><summary>See the numbers as a table</summary>
       <table class="sources-table"><thead><tr><th>{d.chart.title}</th><th>{d.chart.valueLabel}</th></tr></thead>
         <tbody>{d.chart.bars.map((b) => <tr><td>{b.label}{b.note ? ` (${b.note})` : ''}</td><td>{f(b.value)}</td></tr>)}</tbody></table>

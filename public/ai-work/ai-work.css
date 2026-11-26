@@ -380,3 +380,21 @@ sup.fn a { padding: 10px 3px; margin: -10px -1px; } /* bigger hit area, same lin
   .sources-table.stack-2 td:first-child { font-weight: 600; }
   .sources-table.stack-2 td.num { font-size: 18px; }
 }
+
+/* Data-story bar charts: below 600px the SVG's labels shrink under 10px, so phones get the same bars as
+   HTML (label above each bar, 15px+ text). Only one of the two is ever displayed, so screen readers get one. */
+.bar-list { display: none; }
+@media (max-width: 599.98px) {
+  .data-chart.has-bar-list > div { display: none; }
+  .bar-list { display: block; }
+  .bar-list-title { font-family: var(--sans); font-weight: 700; font-size: 18px; color: var(--blue-ink, #133F87); margin: 0 0 4px; }
+  .bar-list-sub { font-size: 15px; color: var(--ink-soft); margin: 0 0 12px; }
+  .bar-list ol { list-style: none; margin: 0; padding: 0; }
+  .bar-list li { margin: 0 0 12px; padding: 0; }
+  .bar-list li::before { content: none; }
+  .bar-label { display: block; font-family: var(--sans); font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .bar-row { display: flex; align-items: center; gap: 8px; }
+  .bar { display: block; height: 14px; background: var(--blue); border-radius: 2px; flex: 0 0 auto; }
+  .bar-value { font-family: var(--sans); font-size: 15px; font-weight: 700; white-space: nowrap; }
+  .bar-note { font-weight: 400; color: var(--ink-soft); }
+}
