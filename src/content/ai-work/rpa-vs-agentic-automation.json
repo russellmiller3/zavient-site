@@ -1,0 +1,688 @@
+{
+ "title": "RPA vs agentic automation: which does your ops workflow need?",
+ "description": "Which ops workflows need RPA bots, AI agents, both or neither: dated prices, reliability studies, who approves exceptions.",
+ "type": "compare",
+ "templateVersion": 1,
+ "topic": "RPA vs agentic automation for operations",
+ "job": "decide whether a workflow needs RPA bots, AI agents, or both",
+ "industry": "any industry",
+ "index": false,
+ "verdict": [
+  "Use RPA if the steps are fixed, high-volume and run on stable screens, especially old apps with no API[^46][^26].",
+  "Use an agent if the work means reading messy documents or making judgment calls, and a person checks the result[^27][^17].",
+  "Use both if documents feed a system: the agent reads and decides, the bot executes, people approve exceptions[^17][^6].",
+  "Use neither if the app has an API, the process keeps changing, or volume is too low to pay back[^46][^42].",
+  "Either way, people approve payments and exceptions; an agent can't be held responsible for a mistake[^38][^27]."
+ ],
+ "onPage": [
+  {
+   "to": "tables",
+   "text": "Bots and agents side by side, with dated prices"
+  },
+  {
+   "to": "recipes",
+   "text": "Three builds: invoice entry, document intake, reconciliation"
+  },
+  {
+   "to": "human-role",
+   "text": "Who approves, who owns exceptions and who signs off"
+  },
+  {
+   "to": "own-data",
+   "text": "What one bot, one run and one agent step cost"
+  },
+  {
+   "to": "what-goes-wrong",
+   "text": "Mistakes teams make when choosing, and the fix for each"
+  },
+  {
+   "to": "faq",
+   "text": "Straight answers to the questions buyers ask"
+  }
+ ],
+ "headings": {},
+ "summary": "An RPA bot copies a person's clicks along a fixed script, so the same input gives the same output[^16][^46]. An AI agent chooses its next step from the input, so it handles messy work but can vary between runs[^43][^30]. Stable screens make bots work; checked outputs make agents work[^42][^27].",
+ "tables": [
+  {
+   "title": "How do RPA bots and AI agents differ in practice?",
+   "intro": "RPA means robotic process automation: software robots that work an app's screen the way a person does[^46]. An API is a direct data link between systems, with no screen involved[^46]. Gartner's one-line split: agents where decisions are needed, automation for routine workflows[^26].",
+   "headers": [
+    "Question",
+    "RPA bot",
+    "AI agent"
+   ],
+   "rows": [
+    {
+     "name": "How it works",
+     "cells": [
+      "Follows a fixed script of clicks and keystrokes, through any app's screen[^46][^43]",
+      "Reads the input, then picks its next step from its instructions, tools and context[^43][^16]"
+     ]
+    },
+    {
+     "name": "Same input twice",
+     "cells": [
+      "Same output every time. Microsoft's words for its fixed flows[^16]",
+      "The path can differ. In 2024 tests, agents finished the same retail task in all 8 tries under 25% of the time[^30]"
+     ]
+    },
+    {
+     "name": "Best at",
+     "cells": [
+      "Stable, high-volume rule steps, including old apps with no API (Zapier's view)[^46][^26]",
+      "Messy documents and judgment calls where several answers are acceptable and errors get caught[^27][^17]"
+     ]
+    },
+    {
+     "name": "How it breaks",
+     "cells": [
+      "A changed screen or field stops it. UiPath itself names changing interfaces as the challenge[^5][^42]",
+      "Invents values for fields that should stay empty and loses track in long tasks[^9]"
+     ]
+    },
+    {
+     "name": "How you pay",
+     "cells": [
+      "Mostly a flat fee per bot, such as $150 a month, read 26 Nov 2026[^10]",
+      "Metered per model call, credit or run, so volume sets the bill[^2][^13][^22]"
+     ]
+    },
+    {
+     "name": "Main control",
+     "cells": [
+      "The person who builds a bot doesn't move it to production. Keep a log for each unattended bot[^40][^41]",
+      "Access to only what the task needs, and a person approves high-impact actions such as payments[^37][^38]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "What do the main platforms charge for bots and agents?",
+   "intro": "All three sell bots and agents on one platform[^6][^17][^25]. Prices are the vendors' own, read 26 Nov 2026. Where only UK public-sector list prices exist, in pounds from the vendor's own filing, the table says so[^4][^21].",
+   "headers": [
+    "Platform",
+    "Bots (RPA)",
+    "Agents",
+    "Worth knowing"
+   ],
+   "rows": [
+    {
+     "name": "UiPath",
+     "url": "https://www.uipath.com/pricing",
+     "cells": [
+      "Free Community plan; Basic from $25 a month with 2 robots. Standard and Enterprise are quote-only[^1]",
+      "Billed per model call: 0.2 Platform Units on a standard model, 0.4 on premium[^2][^3]",
+      "Agents can't run in production on Basic[^2]. No US robot price; UK public-sector list is £9,000 a year[^4][^1]"
+     ]
+    },
+    {
+     "name": "Microsoft Power Automate and Copilot Studio",
+     "url": "https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing",
+     "cells": [
+      "$150 a bot a month, paid yearly, or $3.00 per unattended run pay-as-you-go[^10][^11]",
+      "$200 a month for 25,000 credits, or $0.01 a credit. Reading one page costs 8 credits[^12][^14][^13]",
+      "One bot runs one unattended flow at a time[^10]. Microsoft calls the prices 'for marketing purposes only'[^10]"
+     ]
+    },
+    {
+     "name": "Automation Anywhere",
+     "url": "https://www.automationanywhere.com/products/enterprise/community-edition",
+     "cells": [
+      "Free Community Edition, capped at 5 machines for small firms[^19]. UK public-sector list: £8,000 a year per bot runner package[^21]",
+      "20 AI Credits per agent run, on a separately bought Enterprise Platform add-on[^22][^24]",
+      "No price on its own site; AWS lists $126,000 a year 'for reference only'[^19][^20]. Failed runs aren't charged[^23]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "What do published studies say about reliability?",
+   "intro": "Bot figures come from vendor-paid surveys from 2019 and 2020. No neutral, recent survey of bot breakage turned up, so treat them as dated[^28][^29]. Agent scores rose fast, but consistency on repeat runs is the thing to test[^30][^31].",
+   "headers": [
+    "Study",
+    "Sample",
+    "Result"
+   ],
+   "rows": [
+    {
+     "name": "Survey paid for by Pega, an RPA vendor, 2019",
+     "url": "https://www.pega.com/about/news/press-releases/survey-most-businesses-find-rpa-effective-hard-deploy-and-maintain",
+     "cells": [
+      "509 firms using RPA[^28]",
+      "87% had bot failures; 41% said managing bots took more time than expected[^28]. Vendor-paid and dated"
+     ]
+    },
+    {
+     "name": "Survey paid for by Tricentis, a testing vendor, 2020",
+     "url": "https://www.businesswire.com/news/home/20200212005226/en/RPA-Reality-Check-New-Forrester-Research-Identifies-Barriers-to-RPA-Scalability",
+     "cells": [
+      "Firms using RPA[^29]",
+      "45% fixed bot breakage weekly or more often[^29]. Vendor-paid and dated"
+     ]
+    },
+    {
+     "name": "Welsh Government automation discovery report",
+     "url": "https://digitalpublicservices.gov.wales/automation-and-artificial-intelligence-discovery-report/findings",
+     "cells": [
+      "Public-sector teams[^42]",
+      "Bots broke when screens changed; frequent fixes can wipe out the return on unstable processes[^42]"
+     ]
+    },
+    {
+     "name": "τ-bench, ICLR 2025 (academic)",
+     "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/1b126cc38b8638e07bef37e7b2bb72bf-Paper-Conference.pdf",
+     "cells": [
+      "Simulated retail and airline service tasks[^30]",
+      "GPT-4o agents solved under 50%; under 25% succeeded on all 8 repeat tries in retail[^30]"
+     ]
+    },
+    {
+     "name": "Princeton HAL reliability dashboard, 2026",
+     "url": "https://hal.cs.princeton.edu/reliability/benchmark/taubench_airline/",
+     "cells": [
+      "Cleaned τ-bench airline tasks[^31]",
+      "Top models now score 79.5-84.6%; smaller ones 20-30%[^31]. A do-nothing agent passes 38%, so scores can flatter[^32]"
+     ]
+    },
+    {
+     "name": "UI-CUBE, written by UiPath researchers, 2025",
+     "url": "https://arxiv.org/abs/2511.17131",
+     "cells": [
+      "Simple and complex enterprise screen tasks[^9]",
+      "Agents 67-85% on simple tasks vs 97.9% for people; 9-19% on complex workflows vs 61.2%[^9]. Vendor-authored"
+     ]
+    },
+    {
+     "name": "TheAgentCompany, NeurIPS 2025 (academic)",
+     "url": "https://proceedings.neurips.cc//paper_files/paper/2025/hash/0d744742f6fac4d1134c019b7cef3c8a-Abstract-Datasets_and_Benchmarks_Track.html",
+     "cells": [
+      "Simulated office tasks in a mock company[^33]",
+      "The best agent finished 30% of tasks on its own[^33]"
+     ]
+    }
+   ]
+  }
+ ],
+ "recipes": [
+  {
+   "name": "1. Small AP or ops team on Microsoft 365: invoices into an old system (both)",
+   "when": "A team keying PDF invoices into a finance system (ERP) with no API. From 1 Nov 2026, new Microsoft licences carry no seeded AI Builder credits, so page reading draws Copilot Credits[^15][^13].",
+   "flow": [
+    "Ops lead: time today's keying and count errors for two weeks, as the baseline to beat",
+    "AP clerk: save incoming invoices to one shared folder",
+    "AI document step: pull vendor, PO number and amounts from each page[^13]",
+    "Unattended desktop bot: key matched invoices into the finance system[^10]",
+    "Controller: approve every mismatch in a built-in approval step before it posts[^16][^38]",
+    "Ops lead: check the run log and the mismatch rate each week[^40]",
+    "Ops lead: run it on one team's invoices for a month before adding others"
+   ],
+   "cost": "A bot is $150 a month paid yearly, or $3.00 per unattended run, read 26 Nov 2026[^10][^11]. Reading a page costs 8 credits, about $0.08, so 1,300 pages a month is about $104 (our arithmetic)[^13][^14]."
+  },
+  {
+   "name": "2. Mid-size, document-heavy intake: claims, orders or onboarding (agent reads, bot writes)",
+   "when": "Mixed documents arrive in many formats and someone has to judge what each one is. All three platforms document this agent-plus-robot pattern[^6][^17][^25].",
+   "flow": [
+    "Agent: sort each document and pull the fields the case needs[^6][^25]",
+    "Bot: write the checked fields into your main system, such as the claims, order or HR system[^6]",
+    "Intake or claims lead: approve every case above a set amount, as a fixed human step[^8]",
+    "Named reviewer: clear the agent's unclear cases from an escalation queue[^7]",
+    "Ops lead: review error and escalation rates monthly, and whether each step still pays[^40]"
+   ],
+   "cost": "UiPath bills 0.2 Platform Units per standard model call; its only public unit price is £900 per 1,000, UK public-sector list[^2][^4]. Automation Anywhere charges 20 AI Credits per agent run, read 26 Nov 2026[^22]."
+  },
+  {
+   "name": "3. Stable, high-volume reconciliation or data moves (bot or API only)",
+   "when": "The task has one right answer and the screens rarely change. Gartner says agents are far less suited where only one correct answer exists[^27][^16].",
+   "flow": [
+    "Controller: write the matching rules and the tolerance for each account",
+    "Analyst: build an API flow where one exists, or an unattended bot where it doesn't[^46][^10]",
+    "Bot: match items and send breaks to an exceptions queue",
+    "Accountant: clear every break and note the reason",
+    "Controller: sign off the reconciliation; a second person moves bot changes to production[^40]"
+   ],
+   "cost": "A Power Automate bot is $150 a month, paid yearly, read 26 Nov 2026[^10]. Each bot runs one flow at a time, so parallel runs need more bots[^10]."
+  }
+ ],
+ "humanRole": [
+  "Controller or AP lead: approves every payment an agent drafts. Microsoft's own guidance has AI draft the payment and a manager approve it[^38][^37].",
+  "Ops lead: owns the exception queue. Unclear cases go to a named person or group, never to whoever is free by default[^7][^8].",
+  "Bot builder and approver are different people: one builds or changes a bot, another moves it to production[^40][^41]. Keep a bot inventory; Microsoft's audit log records flow changes, not each run[^18].",
+  "One named owner per automation: agents can't be held responsible, and a tribunal held Air Canada liable for its chatbot's answer[^27][^35]."
+ ],
+ "ownData": {
+  "title": "What does one bot, one run and one agent step cost?",
+  "intro": "On 26 Nov 2026 we read each vendor's own pricing pages, docs and UK public-sector filings[^1][^10][^12][^4][^21]. We turned each price into the cost of one bot, one run or one agent step. Bots cost a flat fee; agents cost per step, so volume sets the bill[^10][^2].",
+  "headers": [
+   "Unit of work",
+   "Vendor figure, read 26 Nov 2026",
+   "What it works out to (our arithmetic)"
+  ],
+  "rows": [
+   [
+    "One unattended Microsoft bot",
+    "$150 a month, paid yearly[^10]",
+    "$1,800 a year, running one flow at a time[^10]"
+   ],
+   [
+    "Microsoft unattended run, pay-as-you-go",
+    "$3.00 per run[^11]",
+    "Past 50 runs a month, the flat $150 bot costs less[^10][^11]"
+   ],
+   [
+    "Copilot Studio reading one invoice page",
+    "8 credits at $0.01 each, or $200 per 25,000[^13][^14][^12]",
+    "$0.064-$0.08 a page[^13][^14]"
+   ],
+   [
+    "Copilot Studio agent action",
+    "5 credits[^13]",
+    "$0.04-$0.05 an action[^14][^12]"
+   ],
+   [
+    "UiPath agent, one standard model call",
+    "0.2 Platform Units; £900 per 1,000, UK public-sector list[^2][^4]",
+    "About £0.18 a call, so an 8-call run is about £1.44. No US price published[^1]"
+   ],
+   [
+    "UiPath unattended robot",
+    "£9,000 a year, UK public-sector list[^4]",
+    "No US price; Standard tier is quote-only[^1]"
+   ],
+   [
+    "Automation Anywhere agent run",
+    "20 AI Credits[^22]",
+    "The £99,500 UK-list Enterprise Platform includes 50,000 credits: about 2,500 agent runs a year[^21]"
+   ],
+   [
+    "Automation Anywhere bot runner package",
+    "£8,000 a year, UK public-sector list[^21]",
+    "Its own site lists no price[^19]"
+   ]
+  ],
+  "note": "Zavient price check of 12 vendor pages and filings, read 26 Nov 2026. UK figures are pounds, ex VAT, public-sector list prices, and may differ from US quotes; Microsoft calls its prices 'for marketing purposes only'. Arithmetic assumes full use of packs and leaves out third-party model fees[^23]."
+ },
+ "example": {
+  "input": "Illustrative: an AP clerk keys 300 vendor invoices a week from PDFs into an in-house finance system (ERP) with no API. Each one means reading vendor, PO and amounts, then typing them in[^13][^10].",
+  "output": "A document step pulls the fields and a bot keys matched invoices into the system[^13][^10]. An agent suggests coding for invoices with no PO. The controller approves anything unmatched or over a set amount before it posts[^8][^38]."
+ },
+ "watchOuts": [
+  "Buying rebranded bots as agents: Gartner calls this agent washing and counts about 130 real agentic vendors among thousands[^26]. Ask for a demo where different inputs take different paths.",
+  "Trusting one good demo: agents vary from run to run, and complex screen workflows scored 9-19% in a UiPath researchers' test[^30][^9]. Run 20-50 of your real cases several times and measure consistency.",
+  "Putting a bot on an unstable screen: 45% of firms fixed broken bots weekly or more, in a vendor-paid 2020 survey[^29]. Use an API where one exists, and budget for upkeep[^42][^40].",
+  "Giving an agent write access with no gate: one agent reportedly deleted a production database during a code freeze[^36][^34]. Give agents accounts that reach only what the task needs and human approval before money moves or records change[^37][^38].",
+  "Not counting metered costs: agents bill per call, credit or run, and Gartner names rising costs as a top reason projects get cancelled[^2][^13][^26]. Log calls per run in the trial and set spend alerts.",
+  "Assuming the vendor owns the mistake: a tribunal held Air Canada liable for its chatbot's wrong answer[^35]. Name one human owner for each automation before go-live[^27][^39]."
+ ],
+ "faq": [
+  {
+   "q": "Is RPA dead?",
+   "a": "No. Gartner still says to use automation for routine workflows and agents where decisions are needed[^26]. UiPath, Microsoft and Automation Anywhere all still sell robots, now next to agents[^1][^10][^21]."
+  },
+  {
+   "q": "Does agentic AI replace RPA?",
+   "a": "Not for stable, rule-based steps. Gartner says agents are far less suited where only one correct answer exists[^27]. Vendors now run bots and agents together in one flow[^6][^17]."
+  },
+  {
+   "q": "Can RPA bots and AI agents work together?",
+   "a": "Yes, and it's the pattern all three big vendors document. Microsoft describes workflows that call agents and agents that use workflows as tools[^17][^6][^25]."
+  },
+  {
+   "q": "What is the difference between an AI agent and an RPA bot?",
+   "a": "A bot follows a fixed script, so the same input gives the same output[^16]. An agent chooses its next step from the input, so its path can vary[^43]."
+  },
+  {
+   "q": "Where does an agent earn its keep over plain RPA?",
+   "a": "On messy inputs and judgment steps, with a narrow list of allowed actions[^17][^27]. One practitioner on Reddit warns that a bot fails loudly, but an agent can fail quietly[^47]."
+  },
+  {
+   "q": "How much does an AI agent cost to run compared with a bot?",
+   "a": "Bots are mostly flat: $150 a bot a month on Power Automate, read 26 Nov 2026[^10]. Agents are metered per model call, credit or run, so cost grows with volume[^2][^13][^22]."
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Buy a platform when the process is standard and you have no automation team[^44][^45]. Menlo Ventures found 76% of enterprise AI use cases were bought in 2025, up from 53% in 2024[^44]. MIT NANDA found bought tools reached deployment about twice as often, from 52 interviews, correlation only[^45].",
+  "build": "Build your own flows on a platform when your rules and data are the edge and you need control of each step[^16][^3]. All three let you bring your own model, which moves token costs to your model provider[^2][^23]. For old systems, Gartner says redesigning the workflow often beats bolting on agents[^26]."
+ },
+ "pickElse": [
+  "The app has an API or a built-in connector: use a cloud flow, not a screen bot[^46][^11]. Zapier says RPA mostly remains for old systems without APIs (a vendor's view)[^46].",
+  "The process is broken or keeps changing: fix it first. Gartner advises rethinking the workflow, and unstable processes eat bot returns in upkeep[^26][^42].",
+  "Volume is too low to pay back: keep it manual and review it yearly. COSO says to check regularly whether a bot adds measurable value[^40][^42].",
+  "One person needs a lookup or a summary: use an AI assistant, not an agent or a bot. Gartner reserves assistants for simple retrieval[^26]."
+ ],
+ "resources": [
+  {
+   "name": "UiPath Community plan (free)",
+   "url": "https://www.uipath.com/pricing",
+   "what": "Try bots and agent design before you talk to sales."
+  },
+  {
+   "name": "Automation Anywhere Community Edition (free)",
+   "url": "https://www.automationanywhere.com/products/enterprise/community-edition",
+   "what": "Free tier for small firms, capped at 5 machines."
+  },
+  {
+   "name": "COSO, Robotic Process Automation (Dec 2024)",
+   "url": "https://www.coso.org/_files/ugd/719ba0_8b22177f8521488687a838c680c54f59.pdf",
+   "what": "Control checklist for bots your auditor will recognise."
+  },
+  {
+   "name": "OWASP, Excessive Agency (LLM06:2025)",
+   "url": "https://genai.owasp.org/llmrisk/llm062025-excessive-agency",
+   "what": "How to limit what an agent can touch, and when a person must approve."
+  },
+  {
+   "name": "Princeton HAL reliability dashboard",
+   "url": "https://hal.cs.princeton.edu/reliability/benchmark/taubench_airline/",
+   "what": "Current agent scores on repeatable service tasks, updated as models change."
+  }
+ ],
+ "stats": [
+  {
+   "num": "45%",
+   "label": "Firms fixing bot breakage weekly or more, in a vendor-paid 2020 survey[^29].",
+   "source": "Tricentis-paid survey, 2020"
+  },
+  {
+   "num": "87%",
+   "label": "Firms using RPA that had bot failures, in a vendor-paid 2019 survey of 509[^28].",
+   "source": "Pega-paid survey, 2019"
+  },
+  {
+   "num": "9-19%",
+   "label": "Agent success on complex enterprise screen workflows, against 61.2% for people[^9].",
+   "source": "UI-CUBE, UiPath researchers, 2025"
+  },
+  {
+   "num": "Over 40%",
+   "label": "Agentic AI projects Gartner forecasts will be cancelled by the end of 2027[^26].",
+   "source": "Gartner forecast, June 2025"
+  },
+  {
+   "num": "$150",
+   "label": "Monthly price of one unattended Power Automate bot, paid yearly, read 26 Nov 2026[^10].",
+   "source": "Microsoft pricing page"
+  },
+  {
+   "num": "50 runs",
+   "label": "Monthly unattended runs past which a flat bot beats $3.00 pay-as-you-go (our arithmetic)[^10][^11].",
+   "source": "Zavient price check, 26 Nov 2026"
+  }
+ ],
+ "sources": [
+  {
+   "name": "UiPath, Plans and Pricing",
+   "url": "https://www.uipath.com/pricing",
+   "what": "Community free; Basic from $25 a month with 2 robots; Standard and Enterprise quote-only (read 26 Nov 2026)."
+  },
+  {
+   "name": "UiPath docs, Agents licensing",
+   "url": "https://docs.uipath.com/agents/automation-cloud/latest/user-guide/licensing",
+   "what": "Agent runs billed per model call: 0.2 Platform Units standard, 0.4 premium; Basic can't run agents in production (read 26 Nov 2026)."
+  },
+  {
+   "name": "UiPath Licensing, license definitions",
+   "url": "https://licensing.uipath.com/",
+   "what": "Agent calls charged in 64k-token increments; bring-your-own-model billed per run (read 26 Nov 2026)."
+  },
+  {
+   "name": "UiPath pricing document, UK G-Cloud 15 (filed by UiPath UK)",
+   "url": "https://assets.applytosupply.digitalmarketplace.service.gov.uk/g-cloud-15/documents/706505/751119680364473-pricing-document-2026-01-15-1316.pdf",
+   "what": "UK public-sector list prices in GBP a year: unattended robot £9,000; 1,000 Platform Units £900 (read 26 Nov 2026)."
+  },
+  {
+   "name": "UiPath docs, What is Healing Agent?",
+   "url": "https://docs.uipath.com/agents/automation-cloud/latest/user-guide-ha/what-is-healing-agent",
+   "what": "UiPath says UI automation is challenged by constantly changing interfaces."
+  },
+  {
+   "name": "UiPath, Business Orchestration (Maestro)",
+   "url": "https://www.uipath.com/platform/agentic-automation/business-orchestration",
+   "what": "Vendor claim: coordinates agents, robots and people; exceptions go to humans; audit trail."
+  },
+  {
+   "name": "UiPath docs, Agent escalations",
+   "url": "https://docs.uipath.com/agents/automation-cloud/latest/user-guide/agent-escalations",
+   "what": "Escalations go to a named user or group; with no valid recipient the task stays unassigned."
+  },
+  {
+   "name": "UiPath docs, Human in the loop: escalation or human step",
+   "url": "https://docs.uipath.com/maestro-automate/automation-cloud/latest/user-guide/escalation-or-human-node",
+   "what": "Fixed human step for every refund before it's paid; escalation only for unclear cases."
+  },
+  {
+   "name": "Cristescu et al., UI-CUBE (arXiv 2511.17131), UiPath researchers",
+   "url": "https://arxiv.org/abs/2511.17131",
+   "what": "Vendor-authored: agents 67-85% on simple UI tasks vs 97.9% human; 9-19% on complex workflows vs 61.2%."
+  },
+  {
+   "name": "Microsoft, Power Automate pricing",
+   "url": "https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing",
+   "what": "Process $150 a bot a month paid yearly; one unattended flow at a time per bot; 'for marketing purposes only' (read 26 Nov 2026)."
+  },
+  {
+   "name": "Microsoft Learn, Power Platform pay-as-you-go meters",
+   "url": "https://learn.microsoft.com/en-us/power-platform/admin/pay-as-you-go-meters",
+   "what": "$0.60 per premium cloud run; $3.00 per unattended desktop run (read 26 Nov 2026)."
+  },
+  {
+   "name": "Microsoft, Copilot Studio plans and pricing",
+   "url": "https://www.microsoft.com/en-us/copilot/pricing/copilot-studio",
+   "what": "$200 a month per 25,000 Copilot Credits, or pay-as-you-go (read 26 Nov 2026)."
+  },
+  {
+   "name": "Microsoft Learn, Copilot Studio billing rates",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management",
+   "what": "Agent action 5 credits; content processing 8 credits a page (read 26 Nov 2026)."
+  },
+  {
+   "name": "Microsoft, Copilot Credits Guide, November 2026 (PDF)",
+   "url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/bade/documents/products-and-services/en-us/ai/CopilotCreditsGuide.pdf",
+   "what": "Pay-as-you-go $0.01 per Copilot Credit (read 26 Nov 2026)."
+  },
+  {
+   "name": "Microsoft Learn, AI Builder licensing overview",
+   "url": "https://learn.microsoft.com/en-us/ai-builder/administer-licensing",
+   "what": "From 1 Nov 2026, new or renewed licences get no seeded AI Builder credits."
+  },
+  {
+   "name": "Microsoft Learn, Agent flows overview",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/flows-overview",
+   "what": "Fixed flows: same input always gives the same output; human approval steps built in."
+  },
+  {
+   "name": "Microsoft Copilot Blog, agents plus workflows",
+   "url": "https://www.microsoft.com/en-us/copilot/blog/copilot-studio/automate-business-processes-with-agents-plus-workflows-in-microsoft-copilot-studio",
+   "what": "Vendor pattern: the workflow gives structure and audit trail; the agent handles judgment steps."
+  },
+  {
+   "name": "Microsoft Learn, Power Automate activity logs in Purview",
+   "url": "https://learn.microsoft.com/en-us/power-platform/admin/activity-logging-auditing/activity-logs-power-automate",
+   "what": "Audit logs capture flow creation, edits and permission changes, not individual runs."
+  },
+  {
+   "name": "Automation Anywhere, Community Edition",
+   "url": "https://www.automationanywhere.com/products/enterprise/community-edition",
+   "what": "Free; small firms capped at 5 machines and 100 document pages a month; no price list on the site (read 26 Nov 2026)."
+  },
+  {
+   "name": "AWS Marketplace, Automation Anywhere Agentic Process Automation Platform",
+   "url": "https://aws.amazon.com/marketplace/pp/prodview-3y62cx6ntph32",
+   "what": "$126,000 per 12-month contract, 'for reference only' (read 26 Nov 2026)."
+  },
+  {
+   "name": "Automation Anywhere pricing document, UK G-Cloud 15",
+   "url": "https://assets.applytosupply.digitalmarketplace.service.gov.uk/g-cloud-15/documents/92299/835559348726219-pricing-document-2026-01-29-1523.pdf",
+   "what": "UK public-sector list, GBP ex VAT a year: bot runner package £8,000; Enterprise Platform with 50,000 AI Credits £99,500 (read 26 Nov 2026)."
+  },
+  {
+   "name": "Automation Anywhere docs, Using Automation credits",
+   "url": "https://docs.automationanywhere.com/r/en-us/automation-360/using-automation-credits",
+   "what": "Goal-oriented AI Agent: 20 AI Credits per run (read 26 Nov 2026)."
+  },
+  {
+   "name": "Automation Anywhere docs, Licensing model for AI Agents",
+   "url": "https://docs.automationanywhere.com/r/automation-360/license-ai-agents",
+   "what": "Only successful runs charged; third-party model costs on top."
+  },
+  {
+   "name": "Automation Anywhere docs, Enterprise Platform",
+   "url": "https://docs.automationanywhere.com/r/automation-360/enterprise-plus-licenses",
+   "what": "AI Agents need the separately bought Enterprise Platform add-on."
+  },
+  {
+   "name": "Automation Anywhere, AI Agent Studio",
+   "url": "https://www.automationanywhere.com/products/ai-agent-studio",
+   "what": "Vendor claim: agents reason and hand off to people, working across bots, APIs and documents."
+  },
+  {
+   "name": "Gartner press release, 25 Jun 2025",
+   "url": "https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027",
+   "what": "Forecast: over 40% of agentic AI projects cancelled by end of 2027; agent washing; agents for decisions, automation for routine work."
+  },
+  {
+   "name": "Gartner, AI Agent Success Hinges on Reliability, Not Autonomy (2 Oct 2026)",
+   "url": "https://www.gartner.com/en/articles/ai-agent-reality-check",
+   "what": "Agents fit where several outcomes are acceptable, not where only one answer is correct; accountability stays human."
+  },
+  {
+   "name": "Pega survey press release (10 Sep 2019)",
+   "url": "https://www.pega.com/about/news/press-releases/survey-most-businesses-find-rpa-effective-hard-deploy-and-maintain",
+   "what": "Vendor-paid, 509 RPA users: 87% had bot failures; 41% found bot management took longer than expected."
+  },
+  {
+   "name": "Tricentis-paid RPA survey, Business Wire (12 Feb 2020)",
+   "url": "https://www.businesswire.com/news/home/20200212005226/en/RPA-Reality-Check-New-Forrester-Research-Identifies-Barriers-to-RPA-Scalability",
+   "what": "Vendor-paid: 45% of firms deal with bot breakage weekly or more."
+  },
+  {
+   "name": "Yao et al., τ-bench (ICLR 2025)",
+   "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/1b126cc38b8638e07bef37e7b2bb72bf-Paper-Conference.pdf",
+   "what": "GPT-4o agents solved under 50% of tasks; under 25% succeeded on all 8 repeat runs in retail."
+  },
+  {
+   "name": "Princeton HAL Reliability Dashboard, τ-bench airline",
+   "url": "https://hal.cs.princeton.edu/reliability/benchmark/taubench_airline/",
+   "what": "Top scores 84.6% and 79.5%; smaller models 20-30% (read 26 Nov 2026)."
+  },
+  {
+   "name": "Zhu et al., Best Practices for Rigorous Agentic Benchmarks (arXiv 2507.02825)",
+   "url": "https://arxiv.org/html/2507.02825v5",
+   "what": "A do-nothing agent passes 38% of τ-bench airline tasks."
+  },
+  {
+   "name": "Xu et al., TheAgentCompany (NeurIPS 2025)",
+   "url": "https://proceedings.neurips.cc//paper_files/paper/2025/hash/0d744742f6fac4d1134c019b7cef3c8a-Abstract-Datasets_and_Benchmarks_Track.html",
+   "what": "Best agent finished 30% of simulated office tasks on its own."
+  },
+  {
+   "name": "Anthropic, Project Vend (27 Jun 2025)",
+   "url": "https://www.anthropic.com/news/project-vend-1",
+   "what": "An agent running a small shop invented a payment account and ignored profitable offers."
+  },
+  {
+   "name": "ABA Business Law Today, Moffatt v. Air Canada (29 Feb 2024)",
+   "url": "https://www.americanbar.org/groups/business_law/resources/business-law-today/2024-february/bc-tribunal-confirms-companies-remain-liable-information-provided-ai-chatbot",
+   "what": "Tribunal held the airline liable for its chatbot's wrong answer."
+  },
+  {
+   "name": "PCMag, Replit agent deletes database (22 Jul 2025)",
+   "url": "https://www.pcmag.com/news/vibe-coding-fiasco-replite-ai-agent-goes-rogue-deletes-company-database",
+   "what": "Reported: an agent ignored a code freeze and deleted a production database."
+  },
+  {
+   "name": "OWASP GenAI, LLM06:2025 Excessive Agency",
+   "url": "https://genai.owasp.org/llmrisk/llm062025-excessive-agency",
+   "what": "Least privilege, human approval for high-impact actions, authorisation in downstream systems."
+  },
+  {
+   "name": "Microsoft Learn, Excessive Agency (Zero Trust AI catalog)",
+   "url": "https://learn.microsoft.com/en-us/security/zero-trust/catalog-ai-attack-techniques/excessive-agency",
+   "what": "Have AI draft the payment, then require a human manager's approval."
+  },
+  {
+   "name": "NIST AI RMF Playbook, Govern",
+   "url": "https://airc.nist.gov/airmf-resources/playbook/govern/",
+   "what": "Define human roles and responsibilities for overseeing deployed AI."
+  },
+  {
+   "name": "COSO, Robotic Process Automation (Dec 2024)",
+   "url": "https://www.coso.org/_files/ugd/719ba0_8b22177f8521488687a838c680c54f59.pdf",
+   "what": "Split bot building from promotion to production; bot inventory and logs; review whether bots add value."
+  },
+  {
+   "name": "ISACA Journal 2020 Vol 6, RPA for Internal Audit",
+   "url": "https://www.isaca.org/resources/isaca-journal/issues/2020/volume-6/robotic-process-automation-for-internal-audit",
+   "what": "Bot accounts, segregation of duties, access reviews."
+  },
+  {
+   "name": "Welsh Government, Automation and AI discovery report",
+   "url": "https://digitalpublicservices.gov.wales/automation-and-artificial-intelligence-discovery-report/findings",
+   "what": "Bots break when screens change; upkeep and low volume can wipe out the return."
+  },
+  {
+   "name": "Anthropic, Building effective agents (19 Dec 2024)",
+   "url": "https://www.anthropic.com/engineering/building-effective-agents",
+   "what": "Workflows give predictability for well-defined tasks; agents trade cost and speed for flexibility."
+  },
+  {
+   "name": "Menlo Ventures, 2025 State of Generative AI in the Enterprise",
+   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+   "what": "76% of enterprise AI use cases bought in 2025, up from 53% (n=495)."
+  },
+  {
+   "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (PDF)",
+   "url": "https://21464181.fs1.hubspotusercontent-na1.net/hubfs/21464181/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+   "what": "Bought tools about 66% successful vs about 33% for internal builds; 52 interviews, correlation only."
+  },
+  {
+   "name": "Zapier blog, Agentic AI vs RPA",
+   "url": "https://zapier.com/blog/agentic-ai-vs-rpa",
+   "what": "Vendor view: RPA copies clicks and still fits old systems with no API."
+  },
+  {
+   "name": "Reddit r/automation, agentic workflow automation vs plain RPA",
+   "url": "https://www.reddit.com/r/automation/comments/1wn7275/agentic_workflow_automation_vs_plain_rpa_where",
+   "what": "Practitioner opinion: a bot fails loudly, an agent can fail quietly."
+  }
+ ],
+ "related": [
+  "ai-invoice-processing",
+  "ai-document-processing",
+  "account-reconciliation-automation",
+  "generative-ai-vs-predictive-ai",
+  "ai-consulting-services"
+ ],
+ "offer": {
+  "heading": "Not sure which workflows need a bot, an agent or neither?",
+  "body": "Bring your list of manual workflows. In 30 minutes we sort them into bot, agent, both or neither. You leave with the first one to pilot."
+ },
+ "keyword": {
+  "phrase": "rpa vs agentic ai",
+  "searches": 90,
+  "cpc": 30,
+  "difficulty": 0
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Wants to know which workflow gets a bot, an agent or neither, and how to prove it worked. The bottom line answers in four 'use X if' lines; the three builds name who does each step. No before-and-after measure was in the invoice build, so added 'time today's keying and count errors for two weeks' as the first step. FAQ questions were seen on r/rpa (Sep 2025), r/automation, r/AI_Agents (Feb 2025) and Zapier's own FAQ on this topic."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Reads on a phone. Cut jargon a non-IT reader would stall on: 'least-privilege' became 'access to only what the task needs', 'system of record' became 'your main system', ERP is spelled out as the finance system, and RPA and API are defined in the first table. Every cell is two sentences or fewer."
+  },
+  {
+   "reader": "GM",
+   "notes": "Asks whether one unit can pilot first and what it costs that unit. Added a one-team, one-month pilot step to the invoice build, and a monthly cost for 1,300 pages (about $104, our arithmetic, labelled). The own-data table shows the break-even between pay-per-run and a flat bot (50 runs a month). No sourced time-saved figure exists, so none is claimed."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Read as the controller or head of AP whose team would run the invoice bot. Wants to know who approves and what the auditor sees. Every build ends in a named sign-off. Added that Microsoft's audit log records flow changes, not each run, so the controller knows run evidence lives elsewhere. Bot surveys are labelled vendor-paid and dated; UI-CUBE is labelled as written by UiPath researchers."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Steve decides in 10 seconds: the title is his question and the bottom line gives four picks plus a fifth line saying people keep payments and exceptions. He distrusts hype; the Gartner cancellation figure is labelled a forecast and agent washing is a watch-out. US prices are dated; where only UK public-sector list prices exist, the page says so. The offer says what he leaves with: workflows sorted and the first one to pilot. No case from a firm his size exists in the research, so the example is marked illustrative."
+  }
+ ],
+ "updated": "2026-11-26"
+}

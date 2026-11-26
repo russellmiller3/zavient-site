@@ -1,0 +1,679 @@
+{
+  "title": "AI agent or AI assistant: which does your team need?",
+  "description": "Which workflows need an AI agent, which need an assistant, who approves each step, how agents are priced, and our check of nine agent products.",
+  "type": "compare",
+  "templateVersion": 1,
+  "topic": "AI agents vs AI assistants",
+  "job": "deciding whether a workflow needs an AI agent, an AI assistant or neither",
+  "industry": "any industry",
+  "index": false,
+  "verdict": [
+    "Pick an AI assistant (generative AI) if the work is drafting, summarizing or answering, and a person acts on it[^2][^6].",
+    "Pick an AI agent if the work crosses several systems, needs judgment calls, and a named person approves risky steps[^6][^10].",
+    "Pick neither if the steps never change; plain rules automation is cheaper and more predictable[^8][^5].",
+    "Pick short, supervised agent tasks over long unattended ones; the best agent finished under a third of test office tasks[^14][^7].",
+    "Ask every vendor who approves and what it bills; only four of nine we checked gate risky steps by default[^33][^6]."
+  ],
+  "onPage": [
+    {
+      "to": "table-1",
+      "text": "Which workflows suit an assistant, an agent or neither"
+    },
+    {
+      "to": "recipes",
+      "text": "Three ways to start, with what each costs"
+    },
+    {
+      "to": "human-role",
+      "text": "Who approves what"
+    },
+    {
+      "to": "own-data",
+      "text": "What nine agent products ask you first, and how they charge"
+    },
+    {
+      "to": "what-goes-wrong",
+      "text": "How to spot agent washing, and other buying mistakes"
+    },
+    {
+      "to": "something-else",
+      "text": "When to pick neither"
+    }
+  ],
+  "headings": {
+    "what-goes-wrong": "How do you spot agent washing and other mistakes?"
+  },
+  "summary": "An AI assistant is generative AI: it drafts, summarizes or answers, and a person acts on it[^2][^3]. An AI agent is agentic AI: given a goal, it plans steps and acts in your systems[^1][^5]. What makes or breaks an agent is what it may touch and who approves risky steps[^10][^11].",
+  "tables": [
+    {
+      "title": "Which of your workflows suit an assistant, an agent or neither?",
+      "intro": "Gartner's split: agents when decisions are needed, automation for routine workflows, assistants for simple retrieval[^6]. Rows are illustrative pairings for a 40-500 person firm; each fit and gate is sourced[^8][^17].",
+      "headers": [
+        "Workflow (owner)",
+        "Best fit",
+        "Approval gate to set",
+        "How it's priced"
+      ],
+      "rows": [
+        {
+          "name": "Weekly ops report, meeting notes, procedure lookups (ops lead)",
+          "cells": [
+            "Assistant: a person reads and sends the result[^6]",
+            "The person reading it",
+            "Per seat a month[^21][^26]"
+          ]
+        },
+        {
+          "name": "Vendor or customer email drafts (payables, service)",
+          "cells": [
+            "Assistant: content only, and the person sends[^2][^6]",
+            "Sender reviews before sending",
+            "Per seat a month[^21][^26]"
+          ]
+        },
+        {
+          "name": "Order status, password resets, simple returns (head of service)",
+          "cells": [
+            "Narrow agent: high volume, clear rules, low cost of error[^8][^23]",
+            "Confirmation on cancels, refunds and resets[^24]. A teammate approves refunds and closures[^30].",
+            "Per action, conversation or resolution[^23][^29][^30]"
+          ]
+        },
+        {
+          "name": "Invoice exceptions, purchase order (PO) mismatches (controller)",
+          "cells": [
+            "Agent with a role-owned gate: many steps and a judgment call[^6][^17]",
+            "Payables (AP) specialist approves each proposal; controller above a set threshold[^10][^31]",
+            "Per credit or consumption unit[^21][^31]"
+          ]
+        },
+        {
+          "name": "IT or HR service tickets (IT or HR lead)",
+          "cells": [
+            "Narrow agent: repeatable triage across systems[^28]",
+            "A person reviews the agent's plan before it runs[^28]",
+            "Per action; quote only[^28]"
+          ]
+        },
+        {
+          "name": "Payments, bank-detail changes, account deletes (controller)",
+          "cells": [
+            "Person decides; an agent may only prepare the step[^25][^26]",
+            "A person does the step[^10]",
+            "Not applicable"
+          ]
+        },
+        {
+          "name": "Same steps every time, no judgment (ops lead)",
+          "cells": [
+            "Neither: rules automation[^6][^8]",
+            "Normal change control",
+            "Per robot or platform units[^31]"
+          ]
+        },
+        {
+          "name": "Cross-company negotiation, cost trade-offs (leadership)",
+          "cells": [
+            "Neither for now: Gartner calls these poor agent candidates before 2027[^8]",
+            "A person decides",
+            "Not applicable"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "How does an assistant differ from an agent and from rules automation?",
+      "intro": "The same questions asked of each option, from standards bodies, analysts and practitioner guides[^1][^2][^6].",
+      "headers": [
+        "Question",
+        "AI assistant (generative AI)",
+        "AI agent (agentic AI)",
+        "Rules automation"
+      ],
+      "rows": [
+        {
+          "name": "What starts it",
+          "cells": [
+            "A person's prompt[^2][^3]",
+            "A goal, a schedule or an event[^1][^22]",
+            "A fixed trigger and script[^6]"
+          ]
+        },
+        {
+          "name": "What it produces",
+          "cells": [
+            "A draft, summary or answer[^2]",
+            "Actions in other systems, plus content[^1][^4]",
+            "The same actions every time[^8]"
+          ]
+        },
+        {
+          "name": "Who acts on the output",
+          "cells": [
+            "The person[^3]",
+            "The agent; a person approves high-impact steps[^10][^11]",
+            "The script[^8]"
+          ]
+        },
+        {
+          "name": "Handles new situations",
+          "cells": [
+            "Yes, within one reply[^2]",
+            "Yes, it re-plans across steps[^4][^5]",
+            "No; built for repetitive, low-complexity tasks[^8]"
+          ]
+        },
+        {
+          "name": "Main risk",
+          "cells": [
+            "Wrong or made-up content[^2]",
+            "Too much access or autonomy; hijacking by hidden instructions[^10][^13]",
+            "Poor fit for judgment calls[^6][^8]"
+          ]
+        },
+        {
+          "name": "How it's priced",
+          "cells": [
+            "Per seat a month[^21][^26]",
+            "Per action, credit, conversation or outcome; some per seat[^33]",
+            "Per robot or platform units[^31]"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "What do published studies say about agents at work?",
+      "intro": "Results from analysts, government and university labs[^7][^18][^14]. The CRMArena-Pro study is Salesforce's own research, so read it as a vendor claim[^15].",
+      "headers": [
+        "Study",
+        "Sample or method",
+        "Finding"
+      ],
+      "rows": [
+        {
+          "name": "Gartner 2026 CIO survey (Apr 2026)",
+          "cells": [
+            "CIO survey; sample size not public[^7]",
+            "17% have deployed AI agents; 42% expect to within 12 months[^7]"
+          ]
+        },
+        {
+          "name": "Gartner prediction (Jun 2025)",
+          "cells": [
+            "Poll of 3,412 webinar attendees[^6]",
+            "Over 40% of agentic AI projects will be canceled by end of 2027[^6]"
+          ]
+        },
+        {
+          "name": "Carnegie Mellon, TheAgentCompany (2025)",
+          "cells": [
+            "175 simulated office tasks[^14]",
+            "Best agent fully finished 30.3%, taking about 27 steps and over $4 a task[^14]"
+          ]
+        },
+        {
+          "name": "Salesforce CRMArena-Pro (vendor research)",
+          "cells": [
+            "Tasks in a customer database (CRM)[^15]",
+            "About 58% success on one-turn tasks; about 35% over several turns[^15]"
+          ]
+        },
+        {
+          "name": "NIST agent hijacking test (Jan 2025)",
+          "cells": [
+            "Red-team attacks on test agents[^13]",
+            "Attack success rose from 11% to 81% with new attacks[^13]"
+          ]
+        },
+        {
+          "name": "MIT NANDA, The GenAI Divide (Jul 2025)",
+          "cells": [
+            "300+ initiatives, 52 interviews, 153 surveys[^17]",
+            "95% of organizations report no measurable profit-and-loss return[^17]"
+          ]
+        },
+        {
+          "name": "US Census Bureau (2026)",
+          "cells": [
+            "Business survey, Nov 2025 to Jan 2026[^18]",
+            "Where AI changed tasks, 66% of firms only used it to help workers; 5% substituted[^18]"
+          ]
+        }
+      ]
+    }
+  ],
+  "recipes": [
+    {
+      "name": "1. Start with an assistant (most teams, first 90 days)",
+      "when": "An ops team of 10 to 30 whose work is drafting, summarizing and answering policy questions, with no system changes[^6][^17].",
+      "flow": [
+        "Ops lead: picks three repeat tasks, such as the weekly report, vendor emails and procedure lookups",
+        "Staff member: asks the assistant for a draft",
+        "Staff member: checks and edits it, then sends or files it",
+        "Ops lead: once a month, compares time per task against the starting baseline"
+      ],
+      "cost": "Per seat: Microsoft 365 Copilot Business is $21 a user a month, so 15 people cost about $315[^21]. Claude Team Standard read $25 monthly or $20 annual in our 22-26 Nov check; we didn't capture ChatGPT Business's figure[^26][^25]."
+    },
+    {
+      "name": "2. One narrow agent with an approval step (service team)",
+      "when": "High-volume, repeatable requests with clear rules, such as order status, password resets and simple returns[^8][^23].",
+      "flow": [
+        "Head of service: writes the rules and lists the actions the agent may take",
+        "Admin: grants read access plus only those actions, and turns on confirmation for refunds, cancels and account changes[^24][^30]",
+        "Agent: answers the customer and runs the allowed lookups",
+        "Service rep: approves any refund or account closure the agent proposes[^30]",
+        "Head of service: reviews a sample of resolved conversations each week, and tracks resolution time against the starting baseline"
+      ],
+      "cost": "Vendor list prices, read 26 Nov 2026: Agentforce is $0.10 an action, about $120 a month in Salesforce's own order-status example[^23]. Intercom Fin is $0.99 per resolved outcome plus seats from $29; Zendesk charges $1.50 to $2.00 per automated resolution[^30][^29]."
+    },
+    {
+      "name": "3. A back-office agent with a role-owned gate (AP exceptions)",
+      "when": "A finance or ops team with many exceptions a month across email, the ERP (finance system) and documents, each needing a judgment call[^6][^17].",
+      "flow": [
+        "Controller: records today's exception count and handling time as the baseline",
+        "Controller: sets the decision rules and the approval threshold, such as any payment change or credit over a set amount",
+        "IT or admin: connects the agent to the inbox and ERP with the narrowest rights, and no payment release[^10][^11]",
+        "Agent: reads the invoice, matches the PO, finds the gap, drafts the vendor email and proposes a fix",
+        "AP specialist: approves, edits or rejects each proposal in an approval queue[^22][^31]",
+        "Controller: signs off anything over the threshold and reviews the log of agent actions monthly[^12]"
+      ],
+      "cost": "Microsoft Copilot Studio is $200 per 25,000 credits a month, or pay as you go; credits used per action vary[^21]. UiPath and ServiceNow price agents by consumption units or per action, with no dollar price published[^31][^28]."
+    }
+  ],
+  "humanRole": [
+    "Ops lead or system owner decides what the agent may touch. Give it the fewest functions, permissions and autonomy the task needs[^10][^11].",
+    "The role owner, such as the AP specialist, controller or service rep, approves high-impact or hard-to-reverse actions before they run[^10][^11]. ChatGPT Work and Claude in Chrome build this check in[^25][^26].",
+    "A team lead reviews a sample of agent work on a schedule. NIST's risk framework asks that human oversight be defined, assessed and documented[^12].",
+    "Leadership decides which decisions agents never make, and matches controls to each agent's level of autonomy[^9][^7]. Most real deployments today run under significant human oversight[^3]."
+  ],
+  "ownData": {
+    "title": "What do nine 'agent' products do on their own, and what do they ask you first?",
+    "intro": "From 22 to 26 Nov 2026 we read the public product, pricing and help pages of nine software products sold as AI agents[^33]. All nine can act without a person each time, and all nine have a way to stop and ask[^33]. Only four switch that check on out of the box, and only five publish a dollar price on their own page[^33].",
+    "headers": [
+      "Product",
+      "Stops for a person on (vendor docs)",
+      "On by default?",
+      "How it charges",
+      "Published price"
+    ],
+    "rows": [
+      [
+        "Copilot Studio (Microsoft)",
+        "Approval and information requests pause agent flows[^22]",
+        "No; your builder sets it",
+        "Per credit",
+        "$200 per 25,000 credits a month, or pay as you go[^21]"
+      ],
+      [
+        "Agentforce (Salesforce)",
+        "Per-action user confirmation, such as cancel order or reset password[^24]",
+        "For standard actions since Sep 2025; builder sets custom ones[^24]",
+        "Per action, conversation or user add-on",
+        "$0.10 an action; $2 a conversation; add-ons $150 to $175 a user a month[^23]"
+      ],
+      [
+        "ChatGPT Work (OpenAI)",
+        "Hard-to-reverse steps, or financial, legal or account commitments[^25]",
+        "Yes",
+        "Per seat plus usage credits",
+        "In paid plans; Business seat price not captured[^25]"
+      ],
+      [
+        "Claude in Chrome and Cowork",
+        "Downloads, sensitive info and authorizations; won't do purchases or permanent deletes[^26]",
+        "Yes; protected actions always ask",
+        "Per seat; Enterprise adds usage",
+        "Team $25 a month or $20 annual (our read); Enterprise $20 a seat plus usage[^26]"
+      ],
+      [
+        "Gemini Enterprise (Google)",
+        "Business edition pauses any action involving other people[^27]",
+        "Yes (Business edition)",
+        "Per seat",
+        "Not published now; last listed from $21 (Business) and $30 (Standard)[^27]"
+      ],
+      [
+        "ServiceNow AI Agents",
+        "A person can review the plan and approve before it runs[^28]",
+        "No; an admin sets it",
+        "Per action (\"assists\")",
+        "Not published; custom quote[^28]"
+      ],
+      [
+        "Zendesk AI agents",
+        "Hands off to a person; no per-action approval in pages read[^29]",
+        "Not documented",
+        "Per automated resolution",
+        "$1.50 committed or $2.00 pay as you go; handoffs free; moving to allowances[^29]"
+      ],
+      [
+        "Intercom Fin",
+        "A Loop in teammate step pauses for approval, such as refunds and account closures[^30]",
+        "No; your builder adds the step",
+        "Per outcome",
+        "$0.99 an outcome ($1.99 voice), plus seats from $29[^30]"
+      ],
+      [
+        "UiPath Agents",
+        "Escalations route decisions to a person, and the agent waits[^31]",
+        "No; your builder sets it",
+        "Consumption units",
+        "Not published[^31]"
+      ]
+    ],
+    "note": "Zavient check of vendor docs, 22-26 Nov 2026, US list prices; we did not run the products[^33]. We read \"on by default\" from the docs, and nine products is a sample, not the market. Pages change often: ChatGPT agent became ChatGPT Work, Zendesk is changing its model and Google removed its price cards."
+  },
+  "example": {
+    "input": "Illustrative, not a client case: a vendor emails an invoice that is $480 over its purchase order. With an assistant, the AP specialist pastes both in and gets the gap and a polite email draft[^2]. The specialist then checks the ERP, sends the email and logs the case.",
+    "output": "With an agent, it reads the inbox, pulls the PO from the ERP, finds the $480 gap, drafts the email and proposes a hold[^1][^4]. The AP specialist approves or edits one card; the controller signs off holds over the firm's threshold[^10]. If every mismatch gets the same treatment, a rules workflow does it cheaper[^6][^8]."
+  },
+  "watchOuts": [
+    "Buying a relabeled chatbot: Gartner calls this agent washing and counts only about 130 real agentic vendors[^6][^8]. Ask for a demo where it chooses its own steps on a case it hasn't seen.",
+    "Giving the agent more access than the task needs: coding agents at Replit and PocketOS deleted production databases[^19][^20]. Grant the narrowest permissions, and no delete or payment rights without a person[^10].",
+    "Treating an instruction as a control: Replit's code freeze was only an instruction, and NIST saw hijack success reach 81%[^19][^13]. Enforce limits in permissions and approval steps, not in the prompt[^11].",
+    "Expecting long tasks to finish unattended: the best agent fully finished 30.3% of simulated office tasks[^14][^16]. Keep each task short and add checkpoints where a person looks.",
+    "No baseline, then a surprise bill: Gartner expects over 40% of agentic projects canceled by 2027 over cost, unclear value or weak controls[^6]. Measure time and error rate first, and model per-action costs from our check[^33].",
+    "The wrong person confirms: Agentforce's confirmation asks the user in the conversation, who may be your customer[^24]. Route refunds and payment changes to a named role in an approval queue[^30][^31][^22]."
+  ],
+  "faq": [
+    {
+      "q": "Which workflow should we give an agent first?",
+      "a": "A high-volume, well-defined one with clear rules and a low cost of error, such as order status[^8][^23]. Keep money and account changes with a person[^10][^25]. Pilot it on one team, with one owner and one measured number."
+    },
+    {
+      "q": "Is \"AI agent\" just rebadged chatbot marketing?",
+      "a": "Sometimes. Gartner calls it agent washing and estimates only about 130 real agentic vendors among thousands[^6]. Ask the vendor to show the agent choosing its own steps on a new case[^8]."
+    },
+    {
+      "q": "Is agentic AI safe to use in a business?",
+      "a": "With limits. Give it the narrowest access and require a person to approve high-impact actions[^10][^11]. Gartner says fully autonomous agents are not ready for most enterprise uses[^7]."
+    },
+    {
+      "q": "What's the difference between RPA and agentic AI?",
+      "a": "RPA (robotic process automation) follows fixed rules; an agent decides its own steps[^5]. Gartner's advice: automation for routine workflows, agents when decisions are needed[^6][^8]."
+    },
+    {
+      "q": "Is ChatGPT generative AI or agentic AI?",
+      "a": "Both, depending on the feature. Chat is generative AI; ChatGPT Work runs tasks in a cloud browser and asks before hard-to-reverse steps[^2][^25]."
+    },
+    {
+      "q": "Is agentic AI the same as AI agents?",
+      "a": "Close. An AI agent is one system doing a task; agentic AI often means several agents working toward one goal[^3][^32]. Both usually run on a generative model that plans and calls tools[^4][^5]."
+    }
+  ],
+  "buyVsBuild": {
+    "buy": "Buy when the process is standard, such as service desk, order status or IT tickets, and you have no AI engineers[^17]. MIT found bought tools and partnerships reached deployment about 67% of the time, against about 33% for internal builds (self-reported)[^17]. Many agents now ship inside software you already pay for[^21][^23].",
+    "build": "Build or configure when your own data and rules are the edge, and you need control of the approval gate and the activity log[^12][^10]. Start with a fixed workflow and add agent steps only where needed[^5]. Platforms such as Copilot Studio, Agentforce and UiPath are a middle path: you configure, they host[^21][^23][^31]."
+  },
+  "pickElse": [
+    "The steps never change: use rules automation, such as Power Automate or UiPath robots[^6][^8]. Agents trade cost and speed for flexibility you won't need[^5].",
+    "You need one smart step inside a fixed process: use a workflow with a single AI step to classify, extract or draft[^5]. That runs on a predefined path, not an agent's own plan[^5].",
+    "The process itself is broken: fix the form, the handoff or the data first[^8]. Gartner warns that agents bolted onto old processes cap the return[^8].",
+    "You need a score or forecast, not content or actions: that is predictive AI. See our generative AI vs predictive AI comparison."
+  ],
+  "resources": [
+    {
+      "name": "OWASP Top 10 for Agentic Applications 2026",
+      "url": "https://genai.owasp.org/top-10-for-agentic-applications-2026",
+      "what": "The ten agent risks and their fixes, free to read."
+    },
+    {
+      "name": "NIST AI Risk Management Framework Core",
+      "url": "https://airc.nist.gov/airmf-resources/airmf/5-sec-core",
+      "what": "How to define and document who oversees an AI system (MAP 3.5)."
+    },
+    {
+      "name": "Anthropic, Building effective agents",
+      "url": "https://www.anthropic.com/research/building-effective-agents",
+      "what": "A vendor's guide to when a fixed workflow beats an agent."
+    },
+    {
+      "name": "Gartner on governance by autonomy level (May 2026)",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2026-05-26-gartner-says-applying-uniform-governance-across-ai-agents-will-lead-to-enterprise-ai-agent-failure",
+      "what": "Why controls should match how much an agent can do on its own."
+    },
+    {
+      "name": "US Census Bureau, AI use by businesses (May 2026)",
+      "url": "https://www.census.gov/library/stories/2026/05/ai-use-businesses.html",
+      "what": "How many US firms use AI, including by firm size."
+    }
+  ],
+  "stats": [
+    {
+      "num": "17%",
+      "label": "of organizations have deployed AI agents, per Gartner's 2026 CIO survey[^7].",
+      "source": "Gartner, Apr 2026"
+    },
+    {
+      "num": "Over 40%",
+      "label": "of agentic AI projects Gartner expects to be canceled by the end of 2027[^6].",
+      "source": "Gartner, Jun 2025"
+    },
+    {
+      "num": "30.3%",
+      "label": "of simulated office tasks the best agent finished end to end[^14].",
+      "source": "Carnegie Mellon, TheAgentCompany, 2025"
+    },
+    {
+      "num": "66%",
+      "label": "of firms where AI changed tasks only used it to help workers; 5% substituted[^18].",
+      "source": "US Census Bureau, 2026"
+    },
+    {
+      "num": "81%",
+      "label": "agent hijack success with new attacks in NIST tests, up from 11% at baseline[^13].",
+      "source": "NIST CAISI, Jan 2025"
+    },
+    {
+      "num": "4 of 9",
+      "label": "agent products in our check ask a person before risky actions by default[^33].",
+      "source": "Zavient check, 22-26 Nov 2026"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NIST, Agentic AI topic page (28 Jul 2026)",
+      "url": "https://www.nist.gov/agentic-ai",
+      "what": "Defines agentic AI as systems that act as autonomous agents, make decisions and pursue goals."
+    },
+    {
+      "name": "NIST AI 600-1, Generative AI Profile (Jul 2024)",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+      "what": "Defines generative AI as models that generate derived synthetic content; lists risks including confabulation (made-up content)."
+    },
+    {
+      "name": "EDPS TechSonar, Agentic AI (23 Nov 2026)",
+      "url": "https://www.edps.europa.eu/data-protection/technology-monitoring/techsonar/agentic-ai_en",
+      "what": "EU data protection supervisor: generative AI produces content; agentic AI pursues goals with limited human interaction; most deployments are single agents under significant human oversight."
+    },
+    {
+      "name": "Stanford HAI, AI Index Report 2025, chapter 3.10",
+      "url": "https://hai.stanford.edu/assets/files/hai_ai_index_report_2025.pdf",
+      "what": "AI agents plan and execute sequences of actions on behalf of a user, across one or more domains."
+    },
+    {
+      "name": "Anthropic, Building effective agents (19 Dec 2024)",
+      "url": "https://www.anthropic.com/research/building-effective-agents",
+      "what": "Vendor guide: workflows follow predefined code paths, agents direct their own steps and tools; start with the simplest solution."
+    },
+    {
+      "name": "Gartner press release (25 Jun 2025)",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027",
+      "what": "Poll of 3,412 webinar attendees: over 40% of agentic AI projects will be canceled by end of 2027; agent washing; about 130 real agentic vendors; agents when decisions are needed, automation for routine workflows, assistants for simple retrieval."
+    },
+    {
+      "name": "Gartner, What the 2026 Hype Cycle for Agentic AI Reveals (15 Apr 2026)",
+      "url": "https://www.gartner.com/en/articles/hype-cycle-for-agentic-ai",
+      "what": "2026 CIO survey: 17% have deployed AI agents, 42% expect to within 12 months; fully autonomous agents are not ready for most enterprise uses; legacy automation rebranded as agent platforms."
+    },
+    {
+      "name": "Gartner press release on agent washing in supply chain planning (20 May 2026)",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2026-05-20-gartner-warns-of-agent-washing-risks-in-supply-chain-planning-technology-market",
+      "what": "Best agent candidates are well defined, high volume, measurable and low cost of error; traditional automation suits repetitive, low-complexity tasks; negotiation and trade-offs are poor candidates before 2027."
+    },
+    {
+      "name": "Gartner press release on AI agent governance (26 May 2026)",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2026-05-26-gartner-says-applying-uniform-governance-across-ai-agents-will-lead-to-enterprise-ai-agent-failure",
+      "what": "40% of enterprises will demote or decommission autonomous agents by 2027 after incidents; match controls to autonomy levels."
+    },
+    {
+      "name": "OWASP, LLM06:2025 Excessive Agency",
+      "url": "https://genai.owasp.org/llmrisk/llm06:2025-excessive-agency/",
+      "what": "Minimize an agent's functions, permissions and autonomy; require a human to approve high-impact actions before they are taken."
+    },
+    {
+      "name": "OWASP, Top 10 for Agentic Applications 2026 (9 Dec 2025)",
+      "url": "https://genai.owasp.org/top-10-for-agentic-applications-2026",
+      "what": "Agent risks such as goal hijack, tool misuse and privilege abuse; agents cannot reliably tell instructions from content; human approval for high-impact or goal-changing actions."
+    },
+    {
+      "name": "NIST AI Risk Management Framework, Core (MAP 3.5)",
+      "url": "https://airc.nist.gov/airmf-resources/airmf/5-sec-core",
+      "what": "Processes for human oversight are defined, assessed and documented."
+    },
+    {
+      "name": "NIST CAISI, Strengthening AI Agent Hijacking Evaluations (17 Jan 2025)",
+      "url": "https://www.nist.gov/news-events/news/2025/01/technical-blog-strengthening-ai-agent-hijacking-evaluations",
+      "what": "Agent hijack attack success rose from 11% at baseline to 81% with new attacks."
+    },
+    {
+      "name": "Carnegie Mellon, TheAgentCompany (NeurIPS 2025)",
+      "url": "https://www.cs.cmu.edu/news/2025/agent-company",
+      "what": "175 simulated office tasks: best agent fully completed 30.3% (39.3% partial credit), about 27 steps and over $4 a task."
+    },
+    {
+      "name": "Salesforce AI Research, CRMArena-Pro (vendor research)",
+      "url": "https://arxiv.org/abs/2505.18878",
+      "what": "Vendor's own research: agents reach about 58% success on single-turn CRM tasks and about 35% on multi-turn tasks."
+    },
+    {
+      "name": "METR, Measuring AI ability to complete long tasks (2025)",
+      "url": "https://arxiv.org/abs/2503.14499",
+      "what": "Tasks agents finish with 80% reliability are about five times shorter than tasks they finish half the time."
+    },
+    {
+      "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025)",
+      "url": "https://www.artificialintelligence-news.com/wp-content/uploads/2025/08/ai_report_2025.pdf",
+      "what": "300+ initiatives, 52 interviews, 153 surveys: 95% report no measurable P&L return; bought tools and partnerships deployed about 67% of the time vs about 33% for internal builds (self-reported); biggest returns in back office."
+    },
+    {
+      "name": "US Census Bureau, CES-WP-26-25R (Apr 2026, rev. Oct 2026)",
+      "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
+      "what": "Business survey, Nov 2025-Jan 2026: 18% of firms use AI; of firms where AI changed tasks, 66% only augment workers and 5% substitute."
+    },
+    {
+      "name": "The Register, Replit agent deletes a production database (21 Jul 2025)",
+      "url": "https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident/",
+      "what": "A coding agent deleted a production database during a code freeze that was only an instruction."
+    },
+    {
+      "name": "The Register, coding agent deletes a startup's production database (27 Apr 2026)",
+      "url": "https://www.theregister.com/software/2026/04/27/cursor-opus-agent-snuffs-out-startups-production-database/5224442",
+      "what": "A coding agent with an over-scoped token deleted a production database and its backups in seconds."
+    },
+    {
+      "name": "Microsoft, Copilot Studio pricing (read 26 Nov 2026)",
+      "url": "https://www.microsoft.com/en-us/microsoft-365-copilot/pricing/copilot-studio",
+      "what": "$200 per pack of 25,000 Copilot Credits a month, or pay as you go; Microsoft 365 Copilot Business $21 a user a month."
+    },
+    {
+      "name": "Microsoft Learn, Copilot Studio docs: event triggers and requests for information (6 Nov 2026)",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/",
+      "what": "Event triggers let agents act on their own; approval and information requests pause agent flows for a person."
+    },
+    {
+      "name": "Salesforce, Agentforce pricing (read 26 Nov 2026)",
+      "url": "https://www.salesforce.com/agentforce/pricing/",
+      "what": "$0.10 an action (Flex Credits), $2 a conversation, per-user add-ons $150-$175 a month; order-status example about $120 a month."
+    },
+    {
+      "name": "Salesforce Help, article 005133036 (27 Sep 2025)",
+      "url": "https://help.salesforce.com/s/articleView?id=005133036&language=en_US&type=1",
+      "what": "Require user confirmation per action; on by default for standard actions such as cancel order and reset password."
+    },
+    {
+      "name": "OpenAI Help, Using cloud browser in ChatGPT (read 26 Nov 2026)",
+      "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+      "what": "ChatGPT Work runs tasks in a cloud browser on paid plans (not Free or Go) and asks in chat before steps that are hard to reverse or create a financial, legal or account commitment."
+    },
+    {
+      "name": "Anthropic, Claude in Chrome permissions (support article 12902446) and pricing (read 22-26 Nov 2026)",
+      "url": "https://support.claude.com/en/articles/12902446",
+      "what": "Downloads, sensitive info and authorizations always ask; purchases, account creation and permanent deletes not done. Team Standard $25 a month or $20 annual in our read; Enterprise $20 a seat plus usage."
+    },
+    {
+      "name": "Google Cloud, Gemini Enterprise editions (read 26 Nov 2026)",
+      "url": "https://docs.cloud.google.com/gemini/enterprise/docs/editions",
+      "what": "Business edition: any action involving other people pauses for review; price cards removed around Oct 2026, last listed from $21 (Business) and $30 (Standard)."
+    },
+    {
+      "name": "ServiceNow support, AI Agents FAQ, KBB0010929 (26 Aug 2026)",
+      "url": "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KBB0010929",
+      "what": "Priced per action in assists; a person can review the agent's plan and approve before execution; no public price."
+    },
+    {
+      "name": "Zendesk pricing (read 26 Nov 2026)",
+      "url": "https://www.zendesk.com/pricing",
+      "what": "AI agents: $1.50 committed or $2.00 pay as you go per automated resolution; handoffs not charged; moving to an allowance model."
+    },
+    {
+      "name": "Intercom pricing and Help article 14468561 (read 26 Nov 2026)",
+      "url": "https://www.intercom.com/help/en/articles/14468561",
+      "what": "Fin: $0.99 per outcome ($1.99 voice) plus seats from $29; a Loop in teammate step pauses for approval on refunds and account closures."
+    },
+    {
+      "name": "UiPath Agents licensing and escalations docs (read 26 Nov 2026)",
+      "url": "https://docs.uipath.com/agents/automation-cloud/latest/user-guide/licensing",
+      "what": "Consumption in Platform or Agent Units, no dollar price published; Action Center escalations pause the agent for a person's approval."
+    },
+    {
+      "name": "Sapkota, Roumeliotis and Karkee, AI agents vs. agentic AI: a conceptual taxonomy (2025)",
+      "url": "https://arxiv.org/abs/2505.10468",
+      "what": "An AI agent is a single system for a task; agentic AI coordinates several agents toward a goal."
+    },
+    {
+      "name": "Zavient check of nine AI agent products, 22-26 Nov 2026",
+      "url": "https://zavient.com/compare/agentic-ai-vs-generative-ai.html#own-data",
+      "what": "Our read of nine vendors' product, pricing and help pages: what acts on its own, what needs approval, the default, and pricing. Method and limits in the table note."
+    }
+  ],
+  "related": [
+    "generative-ai-vs-predictive-ai",
+    "chatgpt-plus-vs-business-vs-enterprise",
+    "copilot-vs-microsoft-365-copilot",
+    "ai-invoice-processing"
+  ],
+  "offer": {
+    "heading": "Not sure if a workflow needs an agent?",
+    "body": "In 30 minutes we map one of your workflows step by step. We mark which steps suit an assistant, an agent or plain automation, and who approves each. You leave with a short plan and the questions to ask vendors."
+  },
+  "keyword": {
+    "phrase": "agentic ai vs generative ai",
+    "searches": 5400,
+    "cpc": 9.28,
+    "difficulty": 24
+  },
+  "reviews": [
+    {
+      "reader": "COO",
+      "notes": "Gets the operator's question from the title and a three-way answer (assistant, agent, neither) in the bottom line. The workflow table names an owner per row, which is what she'd forward. Recipes 2 and 3 had no before-and-after measure; added a baseline step to each (resolution time; exception count and handling time). The research has no sourced time-to-deploy figure, so none is given."
+    },
+    {
+      "reader": "Head of operations",
+      "notes": "Reads on a phone. Acronyms SOP, PO, ERP, AP, RPA, CRM and P&L appeared bare; spelled out or swapped for plain words at first use. Own-data table is five columns, so product names were shortened (vendor in brackets) and the charging cells trimmed to fit 390px. Zendesk cell said 'human agent', confusing next to AI agents; now 'a person'."
+    },
+    {
+      "reader": "GM",
+      "notes": "Wants to know if one team can pilot first and what it costs per unit. Added 'Pilot it on one team, with one owner and one measured number' to the first-workflow FAQ. Per-seat vs per-action pricing sits side by side in the workflow table and the own-data check, with a 15-person seat example ($315 a month) in recipe 1. No sourced margin figure exists for a firm this size, so none is claimed."
+    },
+    {
+      "reader": "Division head",
+      "notes": "Read as controller and head of service. Controller needs payments kept with a person and a log to audit: payments row says a person does the step, recipe 3 bars payment release and the controller now reviews 'the log of agent actions' (was 'activity log'). Head of service needs billing rules: added 'handoffs free' to the Zendesk price. The wrong-person-confirms watch-out covers customer-side confirmation."
+    },
+    {
+      "reader": "Owner-CEO",
+      "notes": "Steve gets the answer in 10 seconds: question title and five short bullets. Cost is answered with dated list prices or 'not published'; security in the safe-to-use FAQ and the access watch-outs; skills in buy-or-build. 'Consequential actions' in the key numbers read as jargon; now 'risky actions'. Bottom-line claim that rules automation is cheaper now cites the practitioner cost note. No case from a firm his size and no Zavient price for the next step exist in the research, so neither is claimed."
+    }
+  ],
+  "updated": "2026-11-26"
+}

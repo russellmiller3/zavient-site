@@ -218,6 +218,30 @@ export const TYPES = {
     division: 'the person most likely to run the tool',
     offer: 'Want the detailed plan behind your result? Book the free 30-minute diagnostic.',
   },
+  compare: {
+    label: 'Comparison',
+    path: 'compare/{slug}',
+    titleShape: '{A} vs {B}: which fits {a team like yours}?',
+    example: 'ChatGPT Plus vs Business vs Enterprise: which plan fits a 40-500 person firm?',
+    // X vs Y strategy (Drive, "X vs Y comparison strategy", 26 Nov 2026). Software, plan, model and concept pairs only:
+    // never rival or partner consulting firms. Bottom line is "Pick A if... Pick B if...". The table is the extractable
+    // core; own data is a dated price-and-terms check of each vendor's own pages. Teach the difference, show who each
+    // fits by team size and work type, then where people stay in charge, then buy-or-build and pick-neither.
+    order: ['what-it-is', 'tables', 'recipes', 'human-role', 'own-data', 'example', 'what-goes-wrong', 'faq', 'buy-or-build', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
+    required: ['tables', 'recipes', 'ownData', 'watchOuts', 'buyVsBuild', 'pickElse'],
+    division: 'the head of the team that would use the tool most (ops lead, controller, head of service)',
+    headings: {
+      'what-it-is': 'What is the real difference?',
+      tables: 'How do they compare, side by side?',
+      recipes: 'Which one fits your team?',
+      'what-goes-wrong': 'What do teams get wrong when they choose?',
+      'something-else': 'When should you pick neither?',
+      example: 'What does each look like in practice?',
+      'buy-or-build': 'Should you buy a tool or build your own?',
+      faq: 'Questions buyers ask before they choose',
+    },
+    offer: 'Not sure which fits your team? Bring us your top workflow. Leave with a pick and a first step.',
+  },
   guide: {
     label: 'Guide',
     path: 'guides/{slug}',
