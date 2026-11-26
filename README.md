@@ -23,12 +23,13 @@ The public site for Zavient LLC. Pushing to `master` on GitHub publishes it thro
 - `wrangler.jsonc` serves `dist/` as Workers static assets. `html_handling` is `none`, so `/about.html` stays the address (every other mode redirects it to `/about`).
 - `worker/index.js` runs only for `/` and serves `index.html` there.
 - `public/_redirects` holds the old-page redirects. It mirrors `vercel.json`, and a test keeps the two lists equal.
-- Cloudflare setup (dashboard, once):
-  - Workers & Pages, then Create, then Import a repository, then pick `zavient-site`.
+- Cloudflare setup (connected 26 Nov 2026, Worker `zavient-site`):
+  - Workers & Pages, then Create, then Continue with GitHub, then `zavient-site`. The GitHub app sees this repo only.
   - Build command: `npm run build`.
   - Deploy command: `npx wrangler deploy`.
-  - Production branch: `master`.
-  - Turn on builds for non-production branches, with the command `npx wrangler versions upload`.
+  - Production branch: `master` (the repo default).
+  - Preview builds on, preview command `npx wrangler preview`: every other branch gets its own preview address.
+  - zavient.com is not on Cloudflare yet; until its DNS moves, Vercel still serves the live site.
 - Rollback:
   - Roll back to the previous deployment in the Worker's Deployments tab.
   - Or reset `master` to the `archive-site-2026-11-26` tag.
