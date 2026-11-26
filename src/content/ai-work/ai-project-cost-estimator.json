@@ -1,0 +1,310 @@
+{
+  "title": "AI agent cost estimator: what will an AI agent cost to run?",
+  "description": "Price one AI agent for one workflow: set-up, monthly fees, your team's review time and a first-year total, low to high, every default sourced.",
+  "type": "tool",
+  "templateVersion": 1,
+  "topic": "AI agent cost estimator",
+  "job": "AI project cost estimator",
+  "industry": "any industry",
+  "index": false,
+  "verdict": [
+    "Most of the cost is people's time: set-up, training and checking the AI's work, not the model[^15][^17].",
+    "Ready-made support agents charge about $1 to $2 for each conversation they handle[^8][^10].",
+    "Turning on AI in software you already pay for costs $20 to $30 a person a month[^6][^5].",
+    "Model fees are rarely the biggest line: about $690 a month for 10,000 documents on a mid-tier model[^1][^3].",
+    "Messy data breaks budgets: Gartner expects firms to abandon 60% of AI projects without AI-ready data[^22][^21]."
+  ],
+  "onPage": [],
+  "headings": {
+    "what-it-is": "What does an AI agent cost, and what drives it?",
+    "faq": "What do buyers ask about AI agent costs?"
+  },
+  "tool": {
+    "embed": "/tools/embed/ai-project-cost-estimator.html",
+    "steps": [
+      "Pick the one workflow you want an agent for, such as invoice entry, claims intake or customer emails.",
+      "Answer seven plain questions: volume, people, minutes per item, systems, data, risk and how you'd get it.",
+      "Read your first-year total first. Then check the line items, the two answers that widen the range and what you can skip.",
+      "Copy the link to share the estimate with whoever owns the budget."
+    ],
+    "method": [
+      "Model fees = items × tokens per item × list price per million tokens × 1.15 for retries[^3][^1][^2]. Low, expected and high use small, mid and top-tier models.",
+      "Review time = items × share checked × minutes per check × $46.89 an hour, US pay plus benefits[^13][^16]. The share checked follows how bad a mistake is, a Zavient estimate.",
+      "Set-up uses published effort bands: 200 to 1,400 build hours and 3 to 5 days per connected system[^12][^11]. Outside work is priced at federal (GSA) schedule rates for AI work[^28].",
+      "Seat and per-conversation fees are list prices checked 26 Nov 2026 that still apply after 31 Dec 2026[^4][^5][^8][^10]. Promotions are left out.",
+      "Training is 10 hours per person, and upkeep on a custom build is 15% to 25% of the build a year[^14][^18][^19]. Lines marked Zavient estimate are our judgment around a published anchor."
+    ]
+  },
+  "summary": "What does an AI agent cost? Running one costs cents to about $2 an item, or $20 to $30 a person a month in seats[^1][^8][^5]. Set-up, connecting systems and your team's time checking its work usually cost more[^11][^17].",
+  "humanRole": [
+    "The ops lead who owns the workflow decides which items the agent may finish alone and which a person checks[^16].",
+    "The people who do the work today check the agent's output and handle the exceptions. Budget that time as its own line[^17].",
+    "The budget owner sets a monthly cap on usage fees, because they grow with volume and can sit on top of seat fees[^21][^27]."
+  ],
+  "faq": [
+    {
+      "q": "How much does an AI agent cost?",
+      "a": "Usage runs $0.99 to $2 per conversation on ready-made support agents, or $20 to $30 a person a month for AI seats[^8][^10][^9][^5]. Set-up and people's time add more. Our worked example of 1,000 invoices a month comes to about $53,000 to $65,000 in year one on a ready-made path, a Zavient estimate[^14][^11]."
+    },
+    {
+      "q": "How much does it cost to build an AI agent?",
+      "a": "Published estimates put a custom agent at 200 to 1,400 hours of build work, plus 3 to 5 days per system it connects to[^12][^11]. Upkeep then runs 15% to 25% of the build each year[^18][^19]. Our worked example came to about $164,000 in year one, a Zavient estimate."
+    },
+    {
+      "q": "Is the AI model the biggest cost?",
+      "a": "Rarely. 10,000 documents a month cost about $35 on a small model, $690 on a mid model and $2,760 on a top model[^1][^3]. Training and checking the AI's work usually cost more[^15][^17]."
+    },
+    {
+      "q": "How much of the AI's work should people check?",
+      "a": "It depends on how bad a mistake is. 27% of firms review all gen-AI output, and a similar share check 20% or less[^16]. Nearly 40% of AI time savings go to rework, so budget the checking[^17]."
+    },
+    {
+      "q": "Should we buy a tool, turn on AI we already pay for, or build?",
+      "a": "Most firms buy: 76% of AI use cases are bought, not built[^24]. Bought or partner-built tools succeed about 67% of the time, internal builds about a third as often[^25]. Build only when the work is core and no tool fits."
+    },
+    {
+      "q": "How long does it take to get an AI agent working?",
+      "a": "Pilots on ready-made tools take 4 to 8 weeks[^20]. Half of firms take 3 to 6 months from idea to production, and Gartner's average is about 29 weeks[^20]."
+    },
+    {
+      "q": "Why do AI cost estimates go so wrong?",
+      "a": "Gartner warns that leaders who don't know how AI costs scale can be off by 500% to 1,000%[^21]. Usage grows with volume, and on some plans every token is billed on top of the seat fee[^27]."
+    }
+  ],
+  "pickElse": [
+    "Fewer than 10 people do this work: turn on AI seats you already pay for first[^5][^6][^7]. Microsoft 365 Copilot, ChatGPT Business and Claude Team all qualify.",
+    "Your data is scattered or unknown: fix the data first. Gartner expects firms to abandon 60% of AI projects without AI-ready data[^22].",
+    "The agent would run a long chain of steps across systems: start with one step. Gartner expects over 40% of agentic AI projects to be canceled by 2027[^23].",
+    "Someone proposes training your own model: that costs $5 million to $20 million up front. Off-the-shelf models with your documents cover most first projects[^26]."
+  ],
+  "resources": [
+    {
+      "name": "Anthropic, models and API prices",
+      "url": "https://platform.claude.com/docs/en/models/overview",
+      "what": "Current per-token prices for small, mid and top-tier Claude models."
+    },
+    {
+      "name": "OpenAI, API pricing",
+      "url": "https://developers.openai.com/api/docs/pricing",
+      "what": "Current per-token prices for OpenAI models, including batch discounts."
+    },
+    {
+      "name": "Ailoitte, AI cost calculator",
+      "url": "https://www.ailoitte.com/ai-cost-calculator/",
+      "what": "Tokens per task by use case, to check the model-fee line against your own prompts."
+    },
+    {
+      "name": "BLS, Employer Costs for Employee Compensation",
+      "url": "https://www.bls.gov/news.release/archives/ecec_09092026.htm",
+      "what": "Pay plus benefits per hour by industry, to price your own team's time."
+    }
+  ],
+  "stats": [
+    {
+      "num": "$0.99",
+      "label": "Fin's list price for each conversation its AI agent resolves[^8].",
+      "source": "Fin pricing, checked 26 Nov 2026"
+    },
+    {
+      "num": "$21",
+      "label": "a user a month for Microsoft Copilot Business paid yearly, once the promotion ends[^4].",
+      "source": "Microsoft Copilot for business pricing, checked 26 Nov 2026"
+    },
+    {
+      "num": "$46.89",
+      "label": "an hour: average US private-industry pay plus benefits, used to price your team's time[^13].",
+      "source": "BLS Employer Costs for Employee Compensation, June 2026"
+    },
+    {
+      "num": "Nearly 40%",
+      "label": "of AI time savings lost to fixing low-quality output[^17].",
+      "source": "Workday research, Jan 2026"
+    },
+    {
+      "num": "76%",
+      "label": "of AI use cases bought rather than built[^24].",
+      "source": "Menlo Ventures, 2025"
+    }
+  ],
+  "sources": [
+    {
+      "name": "Anthropic, Models overview",
+      "url": "https://platform.claude.com/docs/en/models/overview",
+      "what": "API prices per million tokens: Haiku 5.5 $0.10/$0.50, Sonnet 5.5 $2/$10, Fable 5.2 $8/$40. Read 26 Nov 2026."
+    },
+    {
+      "name": "OpenAI, API pricing",
+      "url": "https://developers.openai.com/api/docs/pricing",
+      "what": "gpt-6-luna $0.10/$0.50, gpt-6.2-sol $2/$10, gpt-6.2-astra $8/$40 per million tokens. Read 26 Nov 2026."
+    },
+    {
+      "name": "Ailoitte, AI cost calculator",
+      "url": "https://www.ailoitte.com/ai-cost-calculator/",
+      "what": "Tokens per task by use case (documents 20K in, 2K out; support 12K, 1.5K) and a 15% overhead."
+    },
+    {
+      "name": "Microsoft, Copilot for business pricing",
+      "url": "https://www.microsoft.com/en-us/copilot/pricing/business",
+      "what": "Copilot Business $21 a user a month paid yearly; $18 promotion ends 31 Dec 2026. Read 26 Nov 2026."
+    },
+    {
+      "name": "Microsoft, Copilot enterprise pricing",
+      "url": "https://www.microsoft.com/en-us/copilot/pricing/enterprise",
+      "what": "Microsoft 365 Copilot $30 a user a month paid yearly. Read 26 Nov 2026."
+    },
+    {
+      "name": "OpenAI Help Center, ChatGPT Business FAQ",
+      "url": "https://help.openai.com/en/articles/8542115-chatgpt-business-general-faq",
+      "what": "ChatGPT Business $20 a user a month paid yearly, $25 monthly. Read 26 Nov 2026."
+    },
+    {
+      "name": "Anthropic Help Center, Claude Team plan",
+      "url": "https://support.anthropic.com/en/articles/9266767-what-is-the-claude-team-plan",
+      "what": "Team plan $20 a member a month paid yearly, $25 monthly. Read 26 Nov 2026."
+    },
+    {
+      "name": "Fin (Intercom), pricing",
+      "url": "https://fin.ai/pricing",
+      "what": "Vendor list price: $0.99 per resolved outcome; Copilot add-on $29 a teammate a month. Read 26 Nov 2026."
+    },
+    {
+      "name": "Salesforce, Agentforce pricing",
+      "url": "https://www.salesforce.com/agentforce/pricing",
+      "what": "Vendor list price: $2 per conversation; add-ons $125 a user a month. Read 26 Nov 2026."
+    },
+    {
+      "name": "kapa.ai, How AI support agents are priced",
+      "url": "https://kapa.ai/library/how-ai-support-agents-are-priced-2026",
+      "what": "Zendesk AI agents $1.50 per resolution committed, $2.00 pay as you go; Zendesk Copilot $50 an agent a month (Nov 2026)."
+    },
+    {
+      "name": "Elements Agents, AI project cost calculator",
+      "url": "https://www.elementsagents.com/tools/ai-project-cost-calculator",
+      "what": "Effort bands: simple 10-20 days, moderate 25-50, complex 60-110; each integration adds 3-5 days."
+    },
+    {
+      "name": "Cleveroad, AI cost estimation",
+      "url": "https://www.cleveroad.com/blog/artificial-intelligence-cost-estimation",
+      "what": "Chatbots and assistants take 200-800 hours to build; NLP systems 500-1,400 hours."
+    },
+    {
+      "name": "US Bureau of Labor Statistics, Employer Costs for Employee Compensation, June 2026",
+      "url": "https://www.bls.gov/news.release/archives/ecec_09092026.htm",
+      "what": "Private industry averages $46.89 an hour in pay plus benefits; wages are 70% of it."
+    },
+    {
+      "name": "Forrester, TEI of Microsoft 365 Copilot for SMB (commissioned by Microsoft)",
+      "url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/TEI-of-Microsoft-365-Copilot-for-SMB-Oct-2024.pdf",
+      "what": "Vendor-sponsored study: 10 hours of training per new user; initial implementation $14,040 risk-adjusted."
+    },
+    {
+      "name": "Forrester, TEI of Microsoft 365 Copilot (commissioned by Microsoft)",
+      "url": "https://tei.forrester.com/go/microsoft/M365Copilot/docs/TheTEIOfMicrosoft365Copilot.pdf",
+      "what": "Vendor-sponsored study: training cost $6.9M, more than licences at $5.7M, in present value."
+    },
+    {
+      "name": "McKinsey, The state of AI (March 2025)",
+      "url": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-state-of-ai-how-organizations-are-rewiring-to-capture-value",
+      "what": "27% of firms using gen AI review all output before use; a similar share check 20% or less."
+    },
+    {
+      "name": "Workday, press release (14 Jan 2026)",
+      "url": "https://investor.workday.com/news-and-events/press-releases/news-details/2026/New-Workday-Research-Companies-Are-Leaving-AI-Gains-on-the-Table/default.aspx",
+      "what": "Nearly 40% of AI time savings are lost to rework; 77% of daily users review AI work as carefully as human work, or more."
+    },
+    {
+      "name": "EltexSoft, Software maintenance cost",
+      "url": "https://eltexsoft.com/blog/software-maintenance-cost",
+      "what": "15% to 20% of the build a year is a rule of thumb; measured cases run 6% to 40%."
+    },
+    {
+      "name": "Team 400, AI maintenance costs after go-live (Apr 2026)",
+      "url": "https://team400.ai/blog/2026-04-05-ai-maintenance-costs-after-go-live",
+      "what": "15% to 25% of the initial build a year for mid-market AI systems."
+    },
+    {
+      "name": "AI Services Companies, AI implementation timeline statistics 2026",
+      "url": "https://aiservicescompanies.com/research/ai-implementation-timeline-statistics-2026",
+      "what": "Pilots take 4-8 weeks; 51% reach production in 3-6 months (Google Cloud); Gartner average 29.3 weeks from idea to production."
+    },
+    {
+      "name": "Gartner, press release (21 Oct 2024)",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2024-10-21-gartner-identifies-four-emerging-challenges-to-delivering-value-from-ai-safely-and-at-scale",
+      "what": "Leaders who don't understand how AI costs scale could be off by 500% to 1,000% in their cost estimates."
+    },
+    {
+      "name": "Gartner, Lack of AI-ready data puts AI projects at risk (26 Feb 2025)",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2025-02-26-lack-of-ai-ready-data-puts-ai-projects-at-risk",
+      "what": "63% of firms lack AI-ready data practices; through 2026, 60% of AI projects without AI-ready data will be abandoned."
+    },
+    {
+      "name": "Gartner, press release (25 Jun 2025)",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027",
+      "what": "Over 40% of agentic AI projects will be canceled by the end of 2027."
+    },
+    {
+      "name": "Menlo Ventures, The state of generative AI in the enterprise (2025)",
+      "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise",
+      "what": "76% of AI use cases are purchased rather than built internally."
+    },
+    {
+      "name": "Fortune on MIT NANDA (Aug 2025)",
+      "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
+      "what": "Tools bought from specialist vendors or partners succeed about 67% of the time; internal builds a third as often."
+    },
+    {
+      "name": "ZDNet on Gartner (2024)",
+      "url": "https://www.zdnet.com/article/a-third-of-all-gen-ai-projects-will-be-abandoned-says-gartner",
+      "what": "Fine-tuning or building custom models costs $5 million to $20 million up front."
+    },
+    {
+      "name": "Anthropic Help Center, Enterprise plan billing",
+      "url": "https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan",
+      "what": "Every token used is billed at standard API rates on top of the seat fee. Read 26 Nov 2026."
+    },
+    {
+      "name": "AI Services Companies, AI consulting hourly rates 2026",
+      "url": "https://aiservicescompanies.com/research/ai-consulting-hourly-rates-2026",
+      "what": "GSA CALC+ federal schedule ceiling rates for AI and machine learning labour categories: median $183.05 an hour."
+    }
+  ],
+  "related": [
+    "ai-roi-calculator",
+    "ai-document-processing",
+    "ai-invoice-processing",
+    "ai-consulting-services"
+  ],
+  "offer": {
+    "heading": "Budgeting one AI agent? Check the number with us",
+    "body": "Want the detailed plan behind your result? Book the free 30-minute diagnostic."
+  },
+  "keyword": {
+    "phrase": "ai agent cost",
+    "searches": 110,
+    "cpc": 21.09,
+    "difficulty": 9
+  },
+  "reviews": [
+    {
+      "reader": "COO",
+      "notes": "Wants one all-in number first. The result opens with the expected first-year total, then set-up, monthly fees and review hours, then the range. Fix: the total now states it includes your team's checking time, so it is not mistaken for the vendor bill alone."
+    },
+    {
+      "reader": "Head of operations",
+      "notes": "Asked whether review time is new spend. It is time your current team already has, moved from doing the work to checking it. Fix: the review card now says so, and the hours today vs hours checking sit side by side."
+    },
+    {
+      "reader": "GM",
+      "notes": "Wanted to compare buy, turn on and build without rerunning. The three paths show side by side with set-up, monthly cost and time to first value; the cheapest is marked. Fix: added a Lowest cost label on that card."
+    },
+    {
+      "reader": "Division head",
+      "notes": "Runs the tool. Items a month was unclear for document work; the help line now gives examples (emails, documents, tickets), and an exact number box sits under the ranges. Not sure answers stay allowed and widen the range instead of blocking."
+    },
+    {
+      "reader": "Owner-CEO",
+      "notes": "Wanted to know if it pays back and what to skip. The result links to the AI ROI calculator and lists what can wait, such as a custom build under 10 people or training your own model. The range is wide on purpose; the two answers that widen it most are named."
+    }
+  ],
+  "updated": "2026-11-26"
+}
