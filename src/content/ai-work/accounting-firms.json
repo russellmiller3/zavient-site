@@ -1,0 +1,814 @@
+{
+  "title": "AI for accounting firms: what are CPA firms actually using it for?",
+  "description": "AI for accounting firms with 40-500 staff: where it pays first, what tools cost, the Section 7216 rules, and who signs off.",
+  "type": "industry",
+  "templateVersion": 1,
+  "topic": "AI for accounting and CPA firms",
+  "job": "AI for accounting and CPA firms",
+  "industry": "accounting and CPA firms",
+  "index": true,
+  "verdict": [
+    "Most firms now use AI for tax research, document intake or audit review, but few have a written AI policy.[^11][^12]",
+    "Accountants keep the signature: tax and audit rule-makers say people must check every AI fact, citation and calculation.[^1][^3]",
+    "Client data needs a vendor contract or client consent first; tax code Section 7216 penalties cover return information.[^5][^21]",
+    "AI moves staff time from data entry to client work, and demand for accountants is still projected to grow.[^10][^20]",
+    "Buy the AI inside your tax and audit software first; build only where your own process is the edge.[^46][^43]"
+  ],
+  "onPage": [
+    {
+      "to": "human-role",
+      "text": "Who signs the opinion, the return and the client-consent call"
+    },
+    {
+      "to": "ranked",
+      "text": "Seven AI jobs at a CPA firm, ranked by payoff then effort"
+    },
+    {
+      "to": "own-data",
+      "text": "Our count of what the largest US CPA firms are hiring for"
+    },
+    {
+      "to": "table-1",
+      "text": "AI tools CPA firms use, with prices read 26 Nov 2026"
+    },
+    {
+      "to": "table-2",
+      "text": "What published studies and surveys found, with who was asked"
+    },
+    {
+      "to": "table-3",
+      "text": "How a client's tax documents move to a reviewed return"
+    },
+    {
+      "to": "rules",
+      "text": "Section 7216, Circular 230, the AICPA code and quality standards"
+    },
+    {
+      "to": "what-goes-wrong",
+      "text": "Where it goes wrong, and the fix for each"
+    }
+  ],
+  "headings": {
+    "ranked": "Where does AI pay first at a CPA firm?",
+    "rules": "Which rules apply to AI at a CPA firm?",
+    "what-goes-wrong": "Where does AI go wrong at CPA firms?",
+    "faq": "Questions CPA firm leaders ask about AI",
+    "buy-or-build": "Should a CPA firm buy AI or build its own?",
+    "something-else": "When should a CPA firm pick something else?"
+  },
+  "answers": {
+    "human-role": "People keep every judgment that carries a signature: the audit opinion, the return, the advice and the decision to share client data.[^1][^3]",
+    "ranked": "AI pays first in client document intake and tax research, then in audit first-pass review and month-end close for client accounting work.[^11][^9][^10] The intake and research time savings are vendor claims, so measure your own.[^18]",
+    "rules": "No law bans AI in a CPA firm, but tax privacy law, Circular 230, the AICPA code and quality standards all govern how you use it.[^1][^5] None of this is legal advice.",
+    "what-goes-wrong": "AI goes wrong at CPA firms when nobody reads its output closely: fake citations, client data in consumer tools and unchecked client reports are the documented failures.[^39][^1]",
+    "buy-or-build": "Buy first: the AI inside your tax, audit and practice software covers most work, and you build only where your own process is the edge.[^46][^43]",
+    "something-else": "Pick something else when your software already has the feature, the step never changes, or the volume is too low to repay the review.[^19][^53]"
+  },
+  "summary": "AI in a certified public accountant (CPA) firm reads client documents, drafts research and workpapers, and flags exceptions; accountants review and sign.[^1][^9] In a 2026 field study, accountants using more AI served more clients and closed books faster.[^10] Review discipline and client-data handling make or break it.[^1][^21]",
+  "humanRole": [
+    "The engagement partner signs the audit opinion and must understand and approve any AI tool used.[^3][^4] The American Institute of CPAs (AICPA) says the auditor stays responsible for the audit and the opinion.[^3]",
+    "Preparers and reviewers check every AI-filled field and citation before a return or memo goes out, under Circular 230 due diligence.[^2][^1] The Internal Revenue Service (IRS) warns that blind reliance on AI output may be unreasonable.[^1]",
+    "The managing partner owns the firm's AI procedures and tool approvals, under Circular 230 section 10.36 and the quality standard SQMS 1.[^1][^32] The IRS Office of Professional Responsibility (OPR) lists training, secure data handling and vendor contracts.[^1]",
+    "A tax partner decides client notice and consent before client data reaches an AI vendor.[^5][^23] The AICPA says AI should support, not supplant, professional judgment.[^7]"
+  ],
+  "ranked": [
+    {
+      "name": "Client document intake and chasing",
+      "slug": "ai-document-processing",
+      "why": "In a 2024 survey reported by a vendor, 49% of 240 professionals said gathering documents takes 1-2 days per engagement.[^17] SurePrep's own study claims 1.59 fewer hours per return (vendor claim).[^18]",
+      "payoff": "Measure your own: days from first upload to ready-for-prep, and preparer hours per return."
+    },
+    {
+      "name": "Tax research and memo drafting",
+      "why": "Firms using AI tax research rose to 60% from 33% in a year, and 84% say it saves time (vendor survey).[^11] Fake citations are the risk; the IRS says to check citations and read the cases.[^1][^39]",
+      "payoff": "Research hours per question and the share of citations that pass a read-through, not the vendor's time claim."
+    },
+    {
+      "name": "Audit first-pass review: extraction, vouching and tie-out",
+      "why": "One 11-person firm cut first-pass document review from about a week to 2-3 hours with a closed AI system, by its own account.[^9] The AICPA's October 2026 practice aid covers AI in the audit and its risks.[^3]",
+      "payoff": "Fieldwork hours per engagement and review notes per file."
+    },
+    {
+      "name": "Client accounting services: bank feeds, reconciliation and close",
+      "slug": "account-reconciliation-automation",
+      "why": "A 2026 field study of 79 small-business clients tied heavier AI use to about 19% more clients a week and a close 7.5 days faster.[^10] Accountants stepped in when the AI's confidence was low, and time moved to client communication and quality checks.[^10]",
+      "payoff": "Days to close per client, clients per accountant and low-confidence items per month."
+    },
+    {
+      "name": "Workpaper review assist, with AI as the first reviewer",
+      "why": "At one firm in a Journal of Accountancy report, AI is the mandatory first reviewer before partner review.[^9] Effort is higher: it needs a firm-approved tool, and Public Company Accounting Oversight Board (PCAOB) staff offer no safe harbor for AI.[^37]",
+      "payoff": "Review notes per engagement and partner review hours."
+    },
+    {
+      "name": "Client emails, engagement letters and practice admin",
+      "why": "Karbon survey users report saving 60 minutes a day each (self-reported vendor survey, 593 respondents).[^12] Karbon and TaxDome already build AI into practice management (vendor pages).[^50][^51]",
+      "payoff": "Response time to client emails and admin hours per week."
+    },
+    {
+      "name": "Advisory and planning drafts",
+      "why": "Advisory is the top AI tax research use, at 44%, and 69% expect value-based, hybrid or fixed fees (vendor survey).[^11] The partner's judgment carries the advice, so the payoff is harder to measure.[^7]",
+      "payoff": "Advisory hours sold per partner and turnaround on planning memos."
+    }
+  ],
+  "ownData": {
+    "title": "What are the largest US CPA firms hiring for?",
+    "intro": "The largest US CPA firms still hire mostly tax and audit staff; only about 1 in 80 job posts has AI in the title.[^54] We counted US posts from the last 60 days at 35 large CPA firms, pulled 26 Nov 2026; 24 had posts listed.[^54] Read it as a signal of where the work is heading, not a picture of firms with 40 to 500 staff.",
+    "headers": [
+      "Role type or skill",
+      "Posts",
+      "Share"
+    ],
+    "rows": [
+      [
+        "All US posts at the 24 firms with posts listed",
+        "2,072[^54]",
+        "100%"
+      ],
+      [
+        "\"Tax\" in the job title",
+        "703",
+        "33.9% of all posts"
+      ],
+      [
+        "\"Audit\" or \"assurance\" in the job title",
+        "392",
+        "18.9% of all posts"
+      ],
+      [
+        "AI, generative AI or machine learning in the job title",
+        "25 rows; 18 distinct roles at 8 firms",
+        "1.2% of all posts"
+      ],
+      [
+        "Automation, tax technology, innovation or process improvement in the title",
+        "15",
+        "0.7% of all posts"
+      ],
+      [
+        "Post mentions \"AI\" anywhere",
+        "152",
+        "7.3% of all posts"
+      ],
+      [
+        "Audit or assurance posts that mention AI",
+        "20 of 392",
+        "5.1% of audit posts"
+      ],
+      [
+        "Tax posts that mention AI",
+        "6 of 703",
+        "0.9% of tax posts"
+      ],
+      [
+        "Post mentions Power BI",
+        "62",
+        "3.0% of all posts"
+      ],
+      [
+        "Post mentions Python",
+        "41",
+        "2.0% of all posts"
+      ]
+    ],
+    "note": "Zavient count from one job-post index, US posts in the 60 days to 26 Nov 2026; 11 of the 35 firms had no posts listed.[^54] A post listed in several cities counts once per city, so shares are of rows, and keyword matching is rough. October and November fall before busy season, when tax hiring may rise."
+  },
+  "tables": [
+    {
+      "title": "Which AI tools do CPA firms use, and what do they cost?",
+      "intro": "AI tax research seats list at $1,300 to $1,498 per user a year, and most audit AI tools publish no price.[^49][^48] We read each vendor's own pricing page on 26 Nov 2026; time savings shown are the vendor's claims.[^19]",
+      "headers": [
+        "Tool",
+        "What it does",
+        "Price (read 26 Nov 2026)",
+        "Worth knowing"
+      ],
+      "rows": [
+        {
+          "name": "Blue J",
+          "url": "https://www.bluej.com/pricing",
+          "cells": [
+            "AI tax research",
+            "$1,498 per user a year (Individual); Team on request[^48]",
+            "Co-ran the 2026 adoption survey with CPA.com[^11]"
+          ]
+        },
+        {
+          "name": "CoCounsel Tax (Thomson Reuters)",
+          "url": "https://tax.thomsonreuters.com/en-us/products/cocounsel-tax/plans-pricing",
+          "cells": [
+            "AI tax research and drafting",
+            "Essentials $1,300 per user a year[^49]",
+            "Sold online to firms of up to 10 users; Essentials gives 20 Checkpoint-backed answers a week[^49]"
+          ]
+        },
+        {
+          "name": "SurePrep 1040SCAN (Thomson Reuters)",
+          "cells": [
+            "Scans client source documents and fills 1040 returns",
+            "Not published",
+            "Auto-verifies up to 65% of standard documents (vendor claim)[^19]"
+          ]
+        },
+        {
+          "name": "Karbon",
+          "url": "https://karbonhq.com/pricing",
+          "cells": [
+            "Practice management with AI",
+            "Team $59, Business $89 per user a month, billed annually[^50]",
+            "Publishes the 2026 State of AI in Accounting survey[^12]"
+          ]
+        },
+        {
+          "name": "TaxDome",
+          "url": "https://taxdome.com/pricing",
+          "cells": [
+            "Practice management and client portal",
+            "From $1,500 a year for 150 active clients and 20 team members; AI add-on $200 a month per firm[^51]",
+            "Moved to pricing by active clients on 2 Nov 2026[^51]"
+          ]
+        },
+        {
+          "name": "AuditFile",
+          "url": "https://auditfile.com/pricing",
+          "cells": [
+            "Cloud audit software",
+            "Professional $179 per user a month on annual terms; Pro Plus with AI audit agents $249[^52]",
+            "One of the few audit tools we found with a public price"
+          ]
+        },
+        {
+          "name": "Caseware",
+          "url": "https://www.caseware.com/platform/ai",
+          "cells": [
+            "Audit and financial statement software with AI agents",
+            "Not published",
+            "Sells a Disclosure Checklist Agent (vendor page)[^53]"
+          ]
+        }
+      ],
+      "note": "List prices only; discounts, firm-size tiers and add-ons differ. We could not confirm a CCH AnswerConnect price on the vendor's own page, so it is left out."
+    },
+    {
+      "title": "What have studies found about AI in accounting firms?",
+      "intro": "Studies find wide AI use but thin policy: 60% of firms use AI tax research, yet only 21% have an AI policy or strategy.[^11][^12] The one peer-reviewed field study found more clients served and faster closes.[^10]",
+      "headers": [
+        "Study",
+        "Who answered",
+        "What it found"
+      ],
+      "rows": [
+        {
+          "name": "Journal of Accounting Research field study, 2026",
+          "url": "https://onlinelibrary.wiley.com/doi/full/10.1111/1475-679X.70052",
+          "cells": [
+            "79 small and mid-size business clients, 200,000+ transactions[^10]",
+            "About 19% more clients a week per standard-deviation rise in AI use; close 7.5 days faster[^10]"
+          ]
+        },
+        {
+          "name": "CPA.com and Blue J, Mar 2026 (vendor survey)",
+          "cells": [
+            "1,000 US accountants, 12-23 Mar 2026[^11]",
+            "60% of firms use AI tax research, up from 33%; 84% say it saves time[^11]"
+          ]
+        },
+        {
+          "name": "Karbon, 2026 (vendor survey)",
+          "cells": [
+            "593 respondents on six continents[^12]",
+            "98% use AI; only 21% have an AI policy or strategy[^12]"
+          ]
+        },
+        {
+          "name": "Thomson Reuters Institute, 2026 (vendor survey)",
+          "cells": [
+            "1,514 professionals in 27 countries, Oct-Nov 2025[^13]",
+            "40% of organizations use generative AI, up from 22%; only 18% track AI returns[^13]"
+          ]
+        },
+        {
+          "name": "AICPA PCPS Top Issues Survey, 2026",
+          "url": "https://www.aicpa-cima.com/news/article/aicpa-survey-cites-change-management-for-technology-and-ai-as-top-long-term-issue-facing-accounting-firms",
+          "cells": [
+            "629 firms, Apr-May 2026[^15]",
+            "Change management for technology and AI is the top five-year issue for every firm size[^14]"
+          ]
+        },
+        {
+          "name": "AICPA and CPA.com 2025 National MAP Survey",
+          "cells": [
+            "1,073 firms[^16]",
+            "88% feel confident about adapting to AI; most lack formal programs[^16]"
+          ]
+        }
+      ],
+      "note": "Three of the six are vendor-run surveys of people who chose to answer. Read their numbers as direction, not precision."
+    },
+    {
+      "title": "How does AI move a client's tax documents into a reviewed return?",
+      "intro": "AI reads and sorts the client's uploads, fills return fields and flags gaps; a preparer and a reviewer then check each flag and sign.[^18][^1] The example below is illustrative, built from vendor descriptions and the IRS review duty.[^19]",
+      "headers": [
+        "Goes in",
+        "Comes out"
+      ],
+      "rows": [
+        {
+          "name": "A W-2, a brokerage 1099 and a K-1, uploaded late through the client portal",
+          "cells": [
+            "Documents sorted and named, and return fields filled from each form (vendor-described scan-and-fill)[^18][^19]"
+          ]
+        },
+        {
+          "name": "Last year's return",
+          "cells": [
+            "A list of documents filed last year but missing now, with a chase email drafted for a person to send"
+          ]
+        },
+        {
+          "name": "The firm's review checklist",
+          "cells": [
+            "Low-confidence fields flagged for the preparer, with the source page shown[^10]"
+          ]
+        },
+        {
+          "name": "The preparer's checked return",
+          "cells": [
+            "Review notes for the reviewer; nothing is filed until the reviewer signs[^1]"
+          ]
+        }
+      ],
+      "note": "Illustrative, not a client case. Our invoice guide shows the same pattern for client bills."
+    }
+  ],
+  "rules": [
+    {
+      "name": "Circular 230 (31 CFR Part 10) and OPR's AI guidelines",
+      "url": "https://www.ecfr.gov/current/title-31/section-10.22",
+      "status": "In force; OPR guidelines dated 24 Jun 2026",
+      "what": "Due diligence, competence and firm-procedure duties apply to AI-assisted work.[^2][^1] OPR's 2026 guidelines say to verify facts, citations and calculations, and to use only enterprise-approved AI.[^1] Billing for time not actually spent may breach section 10.27.[^1]"
+    },
+    {
+      "name": "Tax code Sections 7216 and 6713",
+      "url": "https://uscode.house.gov/us/usc/t26/s7216",
+      "status": "In force",
+      "what": "Knowing or reckless disclosure of return information is a misdemeanor; the civil penalty is $250 a disclosure, up to $10,000 a year.[^21][^22] Whether a general AI vendor needs taxpayer consent is unsettled, and the IRS has not said.[^23][^26] Check with your own tax counsel.[^28]"
+    },
+    {
+      "name": "Treasury Reg. 301.7216-2 and Rev. Proc. 2013-14 (consent)",
+      "url": "https://www.ecfr.gov/current/title-26/section-301.7216-2",
+      "status": "In force",
+      "what": "Disclosures inside the firm in the US need no consent, but sending return data offshore does.[^23][^25] Consent for 1040 returns must name the recipient, the purpose and the information.[^24] For business returns, consent can sit in the engagement letter.[^25]"
+    },
+    {
+      "name": "Federal Trade Commission (FTC) Safeguards Rule (16 CFR Part 314) and your WISP",
+      "url": "https://www.ftc.gov/legal-library/browse/rules/safeguards-rule",
+      "status": "In force",
+      "what": "Tax and accounting firms count as financial institutions under this rule, whatever their size.[^29][^31] You need a written information security plan (WISP), multi-factor authentication and service-provider oversight.[^29] List each AI vendor in the plan as a service provider.[^30]"
+    },
+    {
+      "name": "AICPA Code of Professional Conduct, ET 1.150.040 and 1.700.040",
+      "url": "https://pub.aicpa.org/codeofconduct/ethicsresources/et-cod.pdf",
+      "status": "In force for members; updated through Sep 2026",
+      "what": "Inform clients, preferably in writing, before sharing confidential data with a third-party provider.[^5] Before disclosing, sign a confidentiality contract with the provider or get the client's specific consent.[^5] Whether an AI tool counts as exempt software hosting is unsettled, so notice plus a contract is the safe course.[^5][^6]"
+    },
+    {
+      "name": "AICPA quality management standard, SQMS 1",
+      "url": "https://assets.ctfassets.net/rb9cdnjh59cm/6r2lyevVCQws0ij7ChdAFq/3a96e430f189b08abf4218ffbd3e7e16/sqms1.pdf",
+      "status": "In force; systems in place by 15 Dec 2025",
+      "what": "Software, AI included, counts as a technological resource the firm must govern.[^32] Peer review now looks at quality management.[^33]"
+    },
+    {
+      "name": "PCAOB QC 1000 and the technology-assisted analysis amendments",
+      "url": "https://pcaobus.org/oversight/standards/qc-standards/details/qc-1000--a-firms-system-of-quality-control",
+      "status": "QC 1000 effective 15 Dec 2026; amendments for fiscal years from 15 Dec 2025",
+      "what": "These apply only to firms registered with the PCAOB that audit public companies.[^34][^35] If you audit only private companies, SQMS 1 applies instead.[^32] The amendments cover analysis of electronic data, and PCAOB staff say there is no safe harbor for AI.[^36][^37]"
+    },
+    {
+      "name": "AICPA practice aid, AI Considerations for Financial Statement Auditors",
+      "url": "https://www.aicpa-cima.com/news/article/aicpa-releases-guidance-to-help-auditors-address-the-use-of-ai-in-financial-reporting-and-auditing",
+      "status": "Nonauthoritative guidance, 13 Oct 2026",
+      "what": "The practice aid covers AI use in financial statement audits.[^3][^4] The engagement partner should understand the tools and confirm they are firm-approved.[^3]"
+    },
+    {
+      "name": "State AI laws and state boards of accountancy",
+      "url": "https://www.aicpa-cima.com/advocacy/article/ai-policy-after-the-elections-the-landscape-heading-into-2027",
+      "status": "Varies by state",
+      "what": "No comprehensive federal AI law exists, and most state AI laws target AI developers, not CPA firms.[^38] OPR names California, Colorado, Illinois and Utah as states with AI governance laws.[^1] We found no AI rule from a state board of accountancy, so check with yours."
+    }
+  ],
+  "watchOuts": [
+    "Fake citations reach filings: a 2026 Tax Court filing cited three AI-invented cases, and a Minnesota court referred a county's fake citations for discipline.[^39][^40] Read every cited case before anything is filed, as the IRS directs.[^1]",
+    "Client data pasted into a consumer AI tool risks unauthorized disclosure under Sections 7216 and 6713.[^1][^21] Use an enterprise tool under contract with no training on your data, and list it in your WISP.[^29][^5]",
+    "Vendors are asking firms to sell data for AI training, and redaction does not make client information nonconfidential.[^6] Get specific written client consent and run a separate Section 7216 check.[^6][^23]",
+    "A Big Four member firm refunded part of an A$440,000 Australian government report with AI errors, and was later barred over another.[^41][^42] Have a named reviewer read every AI-drafted deliverable before it goes out.[^1]",
+    "Few firms write it down: only 21% have an AI policy or strategy, and 18% track AI returns (vendor surveys).[^12][^13] Write a one-page policy, train staff, and record two measures for a month before any pilot starts.[^1]",
+    "Billing for time AI saved may breach Circular 230 section 10.27, though an IRS advisory council asked OPR to revise that guidance.[^1][^26] Move AI-heavy work to fixed or value fees, as 69% of surveyed accountants expect.[^11]"
+  ],
+  "faq": [
+    {
+      "q": "Will AI replace CPAs?",
+      "a": "No sign of it yet: the Bureau of Labor Statistics projects 5% job growth for accountants and auditors from 2025 to 2035.[^20] About 115,300 openings are expected each year, and a 2026 field study found AI moved time from data entry to client work.[^20][^10] The largest firms we checked still post mostly tax and audit roles.[^54]"
+    },
+    {
+      "q": "Can I put client tax data into ChatGPT?",
+      "a": "Not into a consumer tool: the IRS says to use only secure, enterprise-approved AI, and Section 7216 penalties apply to unauthorized disclosure.[^1][^21] The AICPA code also requires a vendor confidentiality contract or the client's specific consent.[^5]"
+    },
+    {
+      "q": "Do I need taxpayer consent before return data goes to an AI vendor?",
+      "a": "Not settled: the IRS has not said whether a general AI vendor is an auxiliary service provider that needs no consent.[^23][^26] An IRS advisory council asked for guidance on Section 7216 in November 2026.[^27][^28] Check with your own tax counsel before return data reaches the vendor."
+    },
+    {
+      "q": "Do I have to tell clients I use AI?",
+      "a": "Yes, usually, if the tool receives confidential client information: the AICPA code says to inform clients first, preferably in writing.[^5] Pure software hosting is exempt and whether AI counts is unsettled, so the AICPA-sponsored insurer suggests disclosing anyway.[^5][^8]"
+    },
+    {
+      "q": "Which AI tools do accounting firms actually use?",
+      "a": "Mostly AI tax research, document scan-and-fill, audit extraction tools and AI built into practice management software.[^11][^9][^12] The tools table above lists prices read on 26 Nov 2026."
+    },
+    {
+      "q": "Can we bill clients for the time AI saved?",
+      "a": "No, not as if staff did the work by hand: OPR says billing for time not spent may violate Circular 230 section 10.27.[^1] Most surveyed accountants expect value-based, hybrid or fixed fees instead (vendor survey).[^11]"
+    }
+  ],
+  "buyVsBuild": {
+    "buy": "Buy for general ledger, practice management and tax prep, and switch on the AI already inside those tools.[^46][^47] Most enterprises now buy: 76% of AI use cases in 2025, up from 53%.[^43] Bought tools reached deployment about twice as often as internal builds in an MIT study.[^44][^45]",
+    "build": "Build only a thin layer that reflects how your firm works, such as your review checklist or research memo template.[^47] CPA.com warns that builds bring shadow IT, cross-client data leakage and key-person risk.[^47]"
+  },
+  "pickElse": [
+    "Your tax or audit software already has it: turn on the AI in SurePrep, Caseware or your practice management tool first.[^19][^53]",
+    "The step never changes: use rules-based automation in Karbon or TaxDome, or a data tool such as Alteryx or Power BI.[^50][^51] Power BI appeared in 62 of the large-firm posts we counted.[^54]",
+    "Seasonal volume is the problem: outsourcing can fit, but offshore work needs Section 7216 consent and an AICPA client notice.[^23][^24][^5]",
+    "The task takes an hour a month: skip AI for now, because policy, training and review would cost more than it saves.[^1][^12]"
+  ],
+  "resources": [
+    {
+      "name": "IRS Publication 5708, Creating a Written Information Security Plan",
+      "url": "https://www.irs.gov/pub/irs-pdf/p5708.pdf",
+      "what": "Free WISP template for tax professionals; add your AI vendors to it."
+    },
+    {
+      "name": "IRS OPR Issue 2026-19, guidelines for responsible AI use in tax practice",
+      "url": "https://www.irs.gov/pub/opr-taxpros/issue-number-2026-19-introductory-guidelines-for-responsible-ai-use-in-federal-tax-practice.pdf",
+      "what": "The IRS's own checklist for reviewing AI output and handling client data."
+    },
+    {
+      "name": "CPA.com, Build vs. Buy decision framework for AI in accounting firms",
+      "url": "https://www.cpa.com/town-hall/resources/26-06-08/Build-vs-Buy-The-decision-framework-for-AI-in-accounting-firms.pdf",
+      "what": "A profession-built framework for deciding what to buy and what to build."
+    },
+    {
+      "name": "AICPA practice aid on quality management",
+      "url": "https://www.aicpa-cima.com/resources/download/practice-aid-quality-management",
+      "what": "Helps fit AI tools into your SQMS 1 system."
+    },
+    {
+      "name": "AICPA sample client disclosure language for outsourcing",
+      "url": "https://www.aicpa-cima.com/resources/download/sample-client-disclosure-language-for-outsourcing-rules",
+      "what": "A starting point for telling clients about AI vendors."
+    }
+  ],
+  "stats": [
+    {
+      "num": "60%",
+      "label": "of firms surveyed use AI tax research, up from 33% a year earlier.[^11]",
+      "source": "CPA.com and Blue J, Mar 2026, 1,000 US accountants (vendor survey)"
+    },
+    {
+      "num": "21%",
+      "label": "of firms surveyed have an AI policy or strategy.[^12]",
+      "source": "Karbon, State of AI in Accounting 2026, 593 respondents (vendor survey)"
+    },
+    {
+      "num": "40%",
+      "label": "of professional services organizations surveyed use generative AI, up from 22%.[^13]",
+      "source": "Thomson Reuters Institute 2026, 1,514 professionals (vendor survey)"
+    },
+    {
+      "num": "7.5 days",
+      "label": "faster monthly close with heavier AI use, in a field study of 79 clients.[^10]",
+      "source": "Journal of Accounting Research, 2026"
+    },
+    {
+      "num": "5%",
+      "label": "projected job growth for accountants and auditors, 2025 to 2035.[^20]",
+      "source": "BLS Occupational Outlook Handbook"
+    },
+    {
+      "num": "1.2%",
+      "label": "of 2,072 job posts at the largest US CPA firms had AI in the title.[^54]",
+      "source": "Zavient count, 60 days to 26 Nov 2026"
+    }
+  ],
+  "related": [
+    "professional-services",
+    "ai-adoption-change-management",
+    "ai-for-operations-leaders",
+    "fractional-chief-ai-officer",
+    "ai-invoice-processing"
+  ],
+  "offer": {
+    "heading": "Which job should your firm hand to AI first?",
+    "body": "The first job is usually high-volume and easy to check, such as document intake, tax research or month-end close for client accounting work. In a free 30-minute call we map that job, who reviews the output and what to measure. You leave with the client-consent and WISP checks to run before any pilot."
+  },
+  "keyword": {
+    "phrase": "ai for accounting firms",
+    "searches": 140,
+    "cpc": 63.0,
+    "difficulty": 28
+  },
+  "reviews": [
+    {
+      "reader": "COO",
+      "notes": "COO: the bottom line answers what firms use AI for, and the human-role block names who signs (engagement partner, preparer, reviewer, managing partner, tax partner). Every ranked job ends in a number to measure. Problem: IRS and AICPA appeared in the bottom line before being spelled out, and FTC never was. Fixed: bottom line 2 now says 'tax and audit rule-makers'; IRS is spelled out in the human-role block (AICPA, OPR and PCAOB already were) and FTC in the rules table. All 18 question headings open with a direct answer; FAQ questions come from the keyword pull (will cpa be replaced by ai, 260 a month), r/taxpros and r/Accounting threads, a CPA insurer FAQ and the IRS guidance."
+    },
+    {
+      "reader": "Head of operations",
+      "notes": "Head of operations: wants to know what changes in the workflow and where people step in. The document-to-return table shows each hand-off and that nothing is filed until the reviewer signs. Problem: the client accounting item said what improved but not when an accountant steps in, and the policy watch-out gave no baseline step. Fixed: the item now says accountants take the low-confidence items, with low-confidence items per month added to its measures; the watch-out now says to record two measures for a month before a pilot starts."
+    },
+    {
+      "reader": "GM",
+      "notes": "GM: wants cost and effort before saying yes to a pilot. The tools table gives list prices read 26 Nov 2026 from each vendor's own page, and says 'Not published' where SurePrep and Caseware show none; no Zavient price, per site rules. Buy-or-build says switch on what you already pay for first. Problem: the ranking says payoff then effort, but no item said which one costs more effort. Fixed: the workpaper review item now says its effort is higher and why (a firm-approved tool, no safe harbor)."
+    },
+    {
+      "reader": "Division head",
+      "notes": "Tax and audit practice leads: check the rules are stated exactly. Section 7216 consent for a general AI vendor is called unsettled, with the regulation, the IRS Advisory Council request and 'check with your own tax counsel'; the $250 and $10,000 Section 6713 figures were confirmed on the statute text. PCAOB QC 1000 is limited to registered firms, with SQMS 1 named for private-company audits. Problem: FAQ 2 implied Section 7216 penalties attach to any AI use. Fixed: it now says they apply to unauthorized disclosure. Also tightened the Blue J cell, which named CPA.com twice."
+    },
+    {
+      "reader": "Owner-CEO",
+      "notes": "Steve: the title is his question and the five bottom-line bullets answer it in about ten seconds, with the signature, client-data and buy-first points up front. The hiring table is clearly labelled as the largest firms, not firms his size, so he is not misled. No Zavient price, per Russell's 26 Nov decision; not flagged. Problem: the summary said 'firms using more AI', but the field study measured accountants. Fixed: it now says accountants using more AI served more clients and closed books faster."
+    }
+  ],
+  "sources": [
+    {
+      "name": "IRS Office of Professional Responsibility, Issue 2026-19, Introductory Guidelines for Responsible AI Use in Federal Tax Practice (24 Jun 2026)",
+      "url": "https://www.irs.gov/pub/opr-taxpros/issue-number-2026-19-introductory-guidelines-for-responsible-ai-use-in-federal-tax-practice.pdf",
+      "what": "Practitioners must review all AI-created documents and verify facts, citations and calculations; use only secure, enterprise-approved AI; blind reliance may be unreasonable; billing for time not spent may violate section 10.27."
+    },
+    {
+      "name": "31 CFR 10.22, Diligence as to accuracy (eCFR)",
+      "url": "https://www.ecfr.gov/current/title-31/section-10.22",
+      "what": "Circular 230 due diligence duty; reliance on others' work is presumed diligent only with reasonable care in supervising it."
+    },
+    {
+      "name": "AICPA, new practice aid AI Considerations for Financial Statement Auditors (13 Oct 2026)",
+      "url": "https://www.aicpa-cima.com/news/article/aicpa-releases-guidance-to-help-auditors-address-the-use-of-ai-in-financial-reporting-and-auditing",
+      "what": "The auditor remains responsible for the audit and the audit opinion; engagement partners should understand AI tools and make sure they are firm-approved."
+    },
+    {
+      "name": "AICPA, Explore new AICPA guidance on AI and the financial statement audit",
+      "url": "https://www.aicpa-cima.com/resources/article/explore-new-aicpa-guidance-on-artificial-intelligence-ai-and-the-financial-statement-audit",
+      "what": "Resource page for the October 2026 practice aid and a SOC 1 and SOC 2 Q&A (TQA 9561)."
+    },
+    {
+      "name": "AICPA Code of Professional Conduct, updated through Sep 2026",
+      "url": "https://pub.aicpa.org/codeofconduct/ethicsresources/et-cod.pdf",
+      "what": "ET 1.150.040: inform clients before using a third-party service provider; ET 1.700.040: confidentiality contract or specific client consent before disclosure; administrative support such as software hosting is exempt from notice."
+    },
+    {
+      "name": "Journal of Accountancy, Asked to sell firm data for AI training? Be very cautious (2 Nov 2026)",
+      "url": "https://www.journalofaccountancy.com/issues/2026/nov/asked-to-sell-firm-data-for-ai-training-be-very-cautious/",
+      "what": "Sharing firm data for AI training needs specific client consent, preferably written; redaction does not make information nonconfidential; tax return information needs a separate Section 7216 analysis."
+    },
+    {
+      "name": "AICPA and CIMA, Ethics, accountancy, and AI-powered tools (30 Apr 2026)",
+      "url": "https://www.aicpa-cima.com/membership/article/ethics-accountancy-and-ai-powered-tools",
+      "what": "AI should support, not supplant, professional judgment."
+    },
+    {
+      "name": "CPA insurance program (AICPA-sponsored), Should I disclose my use of gen AI to clients? (2024)",
+      "url": "https://www.cpai.com/Education-Resources/My-Firm/Data-Security-Risk-Management/Should-I-disclose-my-use-of-gen-AI-to-clients",
+      "what": "Insurer guidance suggesting firms disclose generative AI use to clients."
+    },
+    {
+      "name": "Journal of Accountancy, How CPAs are putting AI to work in audits (1 Nov 2026)",
+      "url": "https://www.journalofaccountancy.com/issues/2026/nov/how-cpas-are-putting-ai-to-work-in-audits",
+      "what": "Four firms of 11 to 1,800+ staff; an 11-person firm runs first-pass review in 2-3 hours against about a week, by its own account; AI is a mandatory first reviewer at one firm."
+    },
+    {
+      "name": "Journal of Accounting Research, Human + AI in Accounting: Early Evidence from the Field (2026)",
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1111/1475-679X.70052",
+      "what": "79 small and mid-size clients, 200,000+ transactions: one standard deviation more AI use goes with about 19% more clients per week and a close 7.5 days faster; time moves from data entry to client work."
+    },
+    {
+      "name": "CPA.com and Blue J, 2026 AI Tax Research Solution Outlook Report (vendor survey, 12-23 Mar 2026)",
+      "url": "https://www.cpa.com/news/blue-j-and-cpacom-survey-finds-ai-adoption-among-tax-firms-has-nearly-doubled-one-year",
+      "what": "1,000 US accountants: 60% of firms use AI tax research, up from 33%; 84% say it saves time; advisory 44% top use; 69% expect value-based, hybrid or fixed fees."
+    },
+    {
+      "name": "Karbon, State of AI in Accounting 2026 (vendor survey)",
+      "url": "https://karbonhq.com/resources/state-of-ai-accounting-2026",
+      "what": "593 respondents on six continents: 98% use AI; 21% have an AI policy or strategy; users report 60 minutes a day saved (self-reported)."
+    },
+    {
+      "name": "Thomson Reuters Institute, 2026 AI in Professional Services Report (vendor survey, fieldwork Oct-Nov 2025)",
+      "url": "https://www.thomsonreuters.com/en/reports/2026-ai-in-professional-services-report",
+      "what": "1,514 professionals in 27 countries: 40% of organizations use generative AI, up from 22%; 18% track AI return on investment."
+    },
+    {
+      "name": "AICPA, PCPS CPA Firm Top Issues Survey 2026 (23 Jun 2026)",
+      "url": "https://www.aicpa-cima.com/news/article/aicpa-survey-cites-change-management-for-technology-and-ai-as-top-long-term-issue-facing-accounting-firms",
+      "what": "Change management for technology and AI is the top five-year issue for firms of every size."
+    },
+    {
+      "name": "Journal of Accountancy, coverage of the 2026 Top Issues survey (Jun 2026)",
+      "url": "https://www.journalofaccountancy.com/news/2026/jun/aicpa-top-issues-survey-firms-focus-on-technology-rises",
+      "what": "629 firms answered in Apr-May 2026; technology focus rises."
+    },
+    {
+      "name": "AICPA and CPA.com, 2025 National MAP Survey executive summary (hosted by TXCPA)",
+      "url": "https://www.tx.cpa/docs/default-source/about-tscpa-documents/2025-national-map-survey-executive-summary.pdf",
+      "what": "1,073 firms: 88% confident about adapting to AI; most lack formal programs."
+    },
+    {
+      "name": "Canopy and CPA Practice Advisor survey (Jun 2024, 240 professionals), as reported by a vendor blog",
+      "url": "https://doxalio.com/blog/cost-of-chasing-client-documents-accounting-firms",
+      "what": "Reported: 49% spend 1-2 days per engagement gathering documents; 16% two weeks or more; 9.3 hours a week on client communication."
+    },
+    {
+      "name": "SurePrep, Is tax technology worth the investment? (internal study, 2021; vendor claim)",
+      "url": "https://corp.sureprep.com/wp-content/uploads/Is-tax-tachnology-worth-the-investment-.pdf",
+      "what": "Vendor claim: 1.59 fewer hours per return; preparer time down 32%, reviewer time down 29%."
+    },
+    {
+      "name": "Thomson Reuters tax blog, tax prep automation (vendor claim)",
+      "url": "https://tax.thomsonreuters.com/blog/4-tax-prep-automation-software-hacks-that-actually-save-time",
+      "what": "Vendor claim: 1040SCAN auto-verifies up to 65% of standard documents."
+    },
+    {
+      "name": "US Bureau of Labor Statistics, Occupational Outlook Handbook: Accountants and Auditors",
+      "url": "https://www.bls.gov/ooh/business-and-financial/accountants-and-auditors.htm",
+      "what": "5% projected job growth 2025-35, about 115,300 openings a year."
+    },
+    {
+      "name": "26 USC 7216, Disclosure or use of information by preparers of returns",
+      "url": "https://uscode.house.gov/us/usc/t26/s7216",
+      "what": "Knowing or reckless disclosure of return information is a misdemeanor: fine up to $1,000, or $100,000 in certain identity-theft cases, and up to one year."
+    },
+    {
+      "name": "26 USC 6713, civil penalty for disclosure by preparers (Cornell LII)",
+      "url": "https://www.law.cornell.edu/uscode/text/26/6713",
+      "what": "$250 per disclosure or use, capped at $10,000 a calendar year; higher in identity-theft cases."
+    },
+    {
+      "name": "26 CFR 301.7216-2, Permissible disclosures or uses without consent (eCFR)",
+      "url": "https://www.ecfr.gov/current/title-26/section-301.7216-2",
+      "what": "Disclosures within the firm in the US need no consent; some auxiliary service providers may not need consent; offshore disclosure needs consent."
+    },
+    {
+      "name": "IRS Rev. Proc. 2013-14, consent format",
+      "url": "https://www.irs.gov/pub/irs-drop/rp-13-14.pdf",
+      "what": "Consent for 1040-series returns must name the recipient, purpose and information."
+    },
+    {
+      "name": "The CPA Journal, Considerations for tax return preparers outsourcing overseas (26 Aug 2025)",
+      "url": "https://www.cpajournal.com/2025/08/26/considerations-for-tax-return-preparers-outsourcing-overseas",
+      "what": "Offshore disclosure needs consent; for non-1040 taxpayers consent can sit in the engagement letter."
+    },
+    {
+      "name": "IRS Advisory Council Public Report, Publication 5316 (Nov 2026)",
+      "url": "https://www.irs.gov/pub/irs-pdf/p5316.pdf",
+      "what": "Asks for guidance on AI under sections 6694, 6713, 7216 and 7525, and for OPR to reissue its AI guidance after comments."
+    },
+    {
+      "name": "IRS news release IR-2026-142 (18 Nov 2026)",
+      "url": "https://www.irs.gov/newsroom/irs-advisory-council-issues-annual-public-report",
+      "what": "IRS Advisory Council issues its annual public report."
+    },
+    {
+      "name": "Journal of Accountancy, Tax practitioners need updated AI guidance, council tells IRS (19 Nov 2026)",
+      "url": "https://www.journalofaccountancy.com/news/2026/nov/tax-practitioners-need-updated-ai-guidance-council-tells-irs",
+      "what": "Coverage of the council's request for updated AI guidance."
+    },
+    {
+      "name": "IRS Publication 5708, Creating a Written Information Security Plan (Rev. 8-2024)",
+      "url": "https://www.irs.gov/pub/irs-pdf/p5708.pdf",
+      "what": "Tax and accounting professionals are financial institutions under GLBA regardless of size; WISP, qualified individual, multi-factor authentication, service-provider oversight; report events affecting 500+ people to the FTC within 30 days."
+    },
+    {
+      "name": "IRS OPR Issue 2026-22, How to be a careful WISPer (22 Jul 2026)",
+      "url": "https://www.irs.gov/pub/opr-taxpros/issue-number-2026-22-how-to-be-a-careful-wisper.pdf",
+      "what": "Ties the WISP to Circular 230 section 10.36 firm procedures and vendor oversight."
+    },
+    {
+      "name": "FTC Safeguards Rule, 16 CFR Part 314",
+      "url": "https://www.ftc.gov/legal-library/browse/rules/safeguards-rule",
+      "what": "Information security program rules for financial institutions, including service-provider oversight."
+    },
+    {
+      "name": "AICPA, SQMS No. 1 standard text",
+      "url": "https://assets.ctfassets.net/rb9cdnjh59cm/6r2lyevVCQws0ij7ChdAFq/3a96e430f189b08abf4218ffbd3e7e16/sqms1.pdf",
+      "what": "Quality management systems designed and in place by 15 Dec 2025; IT applications are technological resources the firm governs."
+    },
+    {
+      "name": "Illinois CPA Society, Peer Review Alliance booklet 2026-27",
+      "url": "https://www.icpas.org/docs/default-source/advocacy-docs/peer-review-docs/booklet-2026-2027.pdf",
+      "what": "Peer review now looks at quality management."
+    },
+    {
+      "name": "PCAOB, QC 1000, A Firm's System of Quality Control",
+      "url": "https://pcaobus.org/oversight/standards/qc-standards/details/qc-1000--a-firms-system-of-quality-control",
+      "what": "Quality control standard for PCAOB-registered firms; effective 15 Dec 2026."
+    },
+    {
+      "name": "SEC order approving PCAOB amendments, Release 34-106791 (Nov 2026)",
+      "url": "https://www.sec.gov/files/rules/pcaob/2026/34-106791.pdf",
+      "what": "Approves the amendments adopted 9 Sep 2026, including the QC 1000 effective date."
+    },
+    {
+      "name": "PCAOB, amendments on technology-assisted analysis (AS 1105, AS 2301)",
+      "url": "https://pcaobus.org/oversight/standards/implementation-resources-PCAOB-standards-rules/amendments-related-to-aspects-of-designing-and-performing-audit-procedures-that-involve-technology-assisted-analysis-of-information-in-electronic-form",
+      "what": "Effective for audits of fiscal years beginning on or after 15 Dec 2025."
+    },
+    {
+      "name": "PCAOB, Staff Spotlight on generative AI (Jul 2024)",
+      "url": "https://pcaobus.org/documents/generative-ai-spotlight.pdf",
+      "what": "Firms mostly use generative AI for admin and research; no safe harbor for AI use."
+    },
+    {
+      "name": "AICPA advocacy, AI Policy After the Elections: The Landscape Heading into 2027",
+      "url": "https://www.aicpa-cima.com/advocacy/article/ai-policy-after-the-elections-the-landscape-heading-into-2027",
+      "what": "No comprehensive federal AI law; state laws mostly aim at AI developers."
+    },
+    {
+      "name": "Journal of Accountancy, A recipe for sanctions: AI-hallucinated citations in tax (1 Sep 2026)",
+      "url": "https://www.journalofaccountancy.com/issues/2026/sep/a-recipe-for-sanctions-ai-hallucinated-citations-in-tax/",
+      "what": "A 2026 US Tax Court filing cited three AI-invented cases; the court warned but did not sanction."
+    },
+    {
+      "name": "Minnesota Tax Court, order on sanctions (29 May 2025)",
+      "url": "https://mn.gov/tax-court-stat/published%20orders/2025/Delano%20v.%20Wright%20County%2005-29-25%20Order%20on%20Sanctions.pdf",
+      "what": "Five fake citations in a county's brief; Rule 11 violation; referral to the professional responsibility board."
+    },
+    {
+      "name": "Associated Press, Australian government report partly refunded over AI errors (7 Oct 2025)",
+      "url": "https://apnews.com/article/australia-ai-errors-deloitte-ab54858680ffc4ae6555b31c8fb987f3",
+      "what": "A Big Four member firm partly refunded an A$440,000 government report with AI errors. Incident only."
+    },
+    {
+      "name": "Sydney Morning Herald, Western Australia three-month ban over AI-flawed report (25 Nov 2026)",
+      "url": "https://www.smh.com.au/politics/western-australia/wa-government-bans-deloitte-for-three-months-over-ai-uni-report-20261125-p61hbp.html",
+      "what": "The same firm barred from Western Australian government work for three months over another AI-flawed report. Incident only."
+    },
+    {
+      "name": "Menlo Ventures, 2025: The State of Generative AI in the Enterprise",
+      "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+      "what": "76% of AI use cases bought in 2025, up from 53% in 2024."
+    },
+    {
+      "name": "MIT NANDA, The GenAI Divide (Jul 2025)",
+      "url": "https://www.artificialintelligence-news.com/wp-content/uploads/2025/08/ai_report_2025.pdf",
+      "what": "Bought or partnered tools reached deployment about 67% of the time, internal builds about 33%; 52 interviews."
+    },
+    {
+      "name": "Fortune, coverage of the MIT report (18 Aug 2025)",
+      "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
+      "what": "Reports the buy-versus-build deployment gap from the MIT study."
+    },
+    {
+      "name": "CPA.com, AI build vs. buy decision framework (9 Jun 2026)",
+      "url": "https://www.cpa.com/news/cpacom-publishes-ai-build-vs-buy-decision-framework-accounting-firms",
+      "what": "Buy commodity systems such as general ledger, practice management and tax prep; build around configurable platforms."
+    },
+    {
+      "name": "CPA.com, Build vs. Buy: The decision framework for AI in accounting firms (PDF)",
+      "url": "https://www.cpa.com/town-hall/resources/26-06-08/Build-vs-Buy-The-decision-framework-for-AI-in-accounting-firms.pdf",
+      "what": "Build a one-off utility or a core-competency layer; builds risk shadow IT, cross-client data leakage, pricing whiplash and key-person dependence."
+    },
+    {
+      "name": "Blue J pricing (read 26 Nov 2026)",
+      "url": "https://www.bluej.com/pricing",
+      "what": "Individual $1,498 per user per year; Team on request."
+    },
+    {
+      "name": "Thomson Reuters, CoCounsel Tax plans and pricing (read 26 Nov 2026)",
+      "url": "https://tax.thomsonreuters.com/en-us/products/cocounsel-tax/plans-pricing",
+      "what": "Essentials $1,300 per user per year; online purchase up to 10 users; 20 Checkpoint-backed answers a week."
+    },
+    {
+      "name": "Karbon pricing (read 26 Nov 2026)",
+      "url": "https://karbonhq.com/pricing",
+      "what": "Team $59 and Business $89 per user a month, billed annually; Enterprise custom."
+    },
+    {
+      "name": "TaxDome pricing (read 26 Nov 2026)",
+      "url": "https://taxdome.com/pricing",
+      "what": "From $1,500 a year for 150 active clients with 20 team members; client-based pricing from 2 Nov 2026; AI add-on $200 a month per firm."
+    },
+    {
+      "name": "AuditFile pricing (read 26 Nov 2026)",
+      "url": "https://auditfile.com/pricing",
+      "what": "Professional $179 per user a month on annual terms, $199 monthly; Pro Plus with AI audit agents $249 annual, $299 monthly."
+    },
+    {
+      "name": "Caseware, AI platform",
+      "url": "https://www.caseware.com/platform/ai",
+      "what": "Vendor page for AI agents, including a Disclosure Checklist Agent; no price published."
+    },
+    {
+      "name": "Zavient count of job posts at 35 large US CPA firms, 60 days to 26 Nov 2026",
+      "url": "https://zavient.com/industries/accounting-firms.html#own-data",
+      "what": "Our count from one job-post index: 2,072 US posts at the 24 firms with posts listed; 1.2% had AI in the title; method and limits in the table note."
+    }
+  ],
+  "updated": "2026-11-26"
+}

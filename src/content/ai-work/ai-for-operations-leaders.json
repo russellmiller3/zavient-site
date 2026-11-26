@@ -1,0 +1,640 @@
+{
+  "title": "Where should a COO start with AI?",
+  "description": "Where AI helps operations first, who keeps the calls, what to measure, and a one-page brief for your CEO. Built on Census, BLS and field studies.",
+  "type": "role",
+  "templateVersion": 1,
+  "topic": "AI for operations leaders",
+  "job": "AI for operations leaders",
+  "industry": "any industry",
+  "index": true,
+  "verdict": [
+    "AI helps most with answering, drafting and compiling around operations, not with directing it.[^10][^1]",
+    "Gains come from redesigning one workflow, not from buying seats.[^16][^17]",
+    "People keep the calls, and the firm owns what its AI tells customers.[^29][^23]",
+    "Expect a few percent of hours saved at first, so measure against a baseline.[^8][^9]",
+    "Larger firms use AI more: about a third of firms with 100 to 249 staff did by May 2026.[^2][^1]"
+  ],
+  "onPage": [
+    {
+      "to": "human-role",
+      "text": "Which calls your planners, controller and service leads keep"
+    },
+    {
+      "to": "ranked",
+      "text": "Six ops jobs where AI pays first, with the number to measure"
+    },
+    {
+      "to": "faq",
+      "text": "Straight answers to what your CEO or board will ask"
+    },
+    {
+      "to": "forward",
+      "text": "A one-page brief you can forward to your CEO"
+    },
+    {
+      "to": "recipes",
+      "text": "Three 90-day starts, sized to your firm"
+    },
+    {
+      "to": "own-data",
+      "text": "Our analysis of which ops jobs AI helps, and with which part"
+    }
+  ],
+  "headings": {
+    "what-it-is": "What is AI for operations, and what does it change?",
+    "decisions": "Which AI decisions does a COO own?",
+    "ranked": "Where does AI pay first in operations?",
+    "faq": "What will your CEO or board ask?",
+    "what-goes-wrong": "Where does AI in operations go wrong?",
+    "buy-or-build": "Should you buy AI for operations or build it?"
+  },
+  "answers": {
+    "human-role": "Your people keep every call that directs, schedules or commits the firm; AI drafts, answers and flags work for them to check.[^10][^29]",
+    "decisions": "A COO owns six AI calls: what to fix first, who checks output, redesign or bolt-on, saved time, buy or build, and which tools staff may use.[^15][^29]",
+    "ranked": "AI pays first on customer and order questions, then order paperwork and status writing, where field studies show the biggest gains.[^3][^4]",
+    "faq": "Your CEO or board will ask about jobs, payback, ownership, tools already bought, peers and data safety; short answers follow.[^13][^15]",
+    "recipes": "A 90-day start is one workflow, four weeks of baseline, six weeks of pilot against a hold-out group, then a keep, change or stop call.[^3][^6]",
+    "benchmark": "Show it worked by comparing a pilot group with a hold-out group against four weeks of baseline, then pricing the gain in dollars.[^3][^6]",
+    "what-goes-wrong": "AI in operations goes wrong when pilots lack an owner, agents are oversold, customers get wrong answers or nobody checks the output.[^20][^22]",
+    "something-else": "Pick something else when the process is broken, the rules are fixed, the problem is a forecast, or physical work dominates.[^16][^10]"
+  },
+  "summary": "AI for operations means tools that read, write, answer and sort the paperwork around your operation, while your people keep the calls.[^1][^10] AI speeds up answering, drafting and checking, not who decides.[^3] Whether it pays depends on redesigning the workflow, not on buying seats.[^16][^17]",
+  "humanRole": [
+    "COO: owns the risk call and the list of AI outputs that need a human check.[^29][^30] High performers set rules for when people must validate AI output.[^15]",
+    "Customer service lead: approves every answer pattern before AI uses it with customers, and owns the route to a person. A tribunal held Air Canada liable for its chatbot's wrong advice.[^23]",
+    "Planner or scheduler: keeps the schedule and work assignments, while AI drafts and flags. In our analysis, scheduling and assigning work show no measurable AI use.[^10][^11]",
+    "Controller: signs off any AI-matched or AI-coded number before it posts.[^30] On a task outside AI's range, AI users were 19 points less likely to be right.[^5]"
+  ],
+  "decisions": [
+    {
+      "decision": "What to fix first",
+      "know": "Which roles spend most time answering, drafting and compiling, and today's cost per unit.[^10][^32] Most AI-using firms start in three or fewer of 15 functions.[^1]"
+    },
+    {
+      "decision": "Who owns each workflow, and who checks output",
+      "know": "Senior leaders at AI high performers are three times as likely to show ownership.[^15] NIST, the US standards agency, asks for defined human oversight roles.[^29][^30]"
+    },
+    {
+      "decision": "Redesign the workflow, or bolt on a tool",
+      "know": "Of 25 traits tested in one large survey, redesign had the biggest effect on earnings before interest and taxes (EBIT); only 21% had done it.[^16] Another found redesign made measurable gains 24 points more likely.[^17]"
+    },
+    {
+      "decision": "What staff do with time saved",
+      "know": "Two in three frontline users get limited or no guidance on using saved time.[^17] Gains were 10% to 40% larger where employers encouraged use.[^7]"
+    },
+    {
+      "decision": "Buy or build",
+      "know": "Firms now buy 76% of their AI solutions, up from 53%, says Menlo Ventures, an AI investor.[^31] Bought or partnered tools reached deployment about twice as often as internal builds.[^20]"
+    },
+    {
+      "decision": "Which tools staff may use",
+      "know": "Over half of workers, 54%, would use AI tools even if not authorized.[^18] In 6.8% of firms, staff use AI though the firm has not adopted it.[^1]"
+    }
+  ],
+  "ranked": [
+    {
+      "name": "Customer and order questions",
+      "why": "Customer service reps rank 7th of 785 jobs for AI help in our analysis.[^10] Support agents with an AI assistant resolved 14% more issues an hour, and novices about 34% more.[^3]",
+      "payoff": "Resolutions per hour, escalations and new-hire ramp time."
+    },
+    {
+      "name": "Order entry and order-to-cash paperwork",
+      "slug": "ai-document-processing",
+      "why": "Median order-to-cash takes 38 days and costs $2.32 per $1,000 of revenue, per APQC, a benchmarking body.[^34][^35] A vendor-sponsored 2017 survey found automated order entry cut cycle time 46%.[^36]",
+      "payoff": "Order entry hours, error rate and days to invoice."
+    },
+    {
+      "name": "Status updates, reports and email",
+      "why": "Professionals using ChatGPT finished writing tasks 40% faster at 18% higher quality.[^4] Copilot users spent about 2 fewer hours a week on email.[^6]",
+      "payoff": "Hours a week on email and reports, and report turnaround."
+    },
+    {
+      "name": "Purchase orders and supplier questions",
+      "slug": "ai-procurement",
+      "why": "APQC's median cost to process a purchase order is $55, and issuing one takes 2.0 days.[^32][^33] AI helps buyers gather product facts, but negotiating shows no AI use.[^10]",
+      "payoff": "Cost per purchase order and days to issue one."
+    },
+    {
+      "name": "Records, reconciliations and data checks",
+      "slug": "account-reconciliation-automation",
+      "why": "Compiling records scores high for AI help, but reconciling financial data shows no use in our analysis.[^10] So AI prepares and flags, and people keep the matching rules and sign-off.[^30]",
+      "payoff": "Exceptions per close and days to close."
+    },
+    {
+      "name": "Planning and forecasting",
+      "why": "A 2026 operations survey finds planning and sourcing lead AI use.[^19] Chat tools show no use for analyzing data to improve operations, so this pays through a forecasting model.[^10]",
+      "payoff": "Forecast error against last year's method."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Will AI replace our operations managers?",
+      "a": "No: the Bureau of Labor Statistics (BLS) projects operations manager jobs to grow 5.0% from 2025 to 2035, above 3.5% for all jobs.[^13] BLS rates the role high for AI exposure, but says exposure does not imply job loss.[^14] In our analysis, 69% of the role's work shows no AI use.[^10]"
+    },
+    {
+      "q": "What's the return on AI, and when will we see it?",
+      "a": "Expect returns per workflow first, not company-wide: only 39% of firms report any EBIT impact from AI.[^15] Users save about 5.4% of their hours, or 2.2% of all work hours.[^8][^9] So set a baseline and judge each workflow at day 90."
+    },
+    {
+      "q": "Who owns AI here, the COO or IT?",
+      "a": "The workflow owner owns the result, and IT owns access and security.[^30] NIST puts AI risk decisions with executive leadership.[^29] Senior leaders at AI high performers show ownership three times as often.[^15]"
+    },
+    {
+      "q": "Why did the AI tools we bought change nothing?",
+      "a": "Seats without a redesigned workflow rarely move the numbers.[^16][^17] Only 21% of firms had redesigned any workflow, the step with the biggest earnings effect.[^16] In a Copilot field study, email time fell but the mix of tasks did not change.[^6]"
+    },
+    {
+      "q": "Are firms our size using AI yet?",
+      "a": "Yes: 32% of firms with 100 to 249 staff and 37% with 250 or more used AI, in Census data to 3 May 2026.[^2] The national rate was 19.8%, and use rose among firms with 20 or more staff.[^2][^1]"
+    },
+    {
+      "q": "Is our data safe in these tools?",
+      "a": "Only on business plans with admin controls, plus a written list of allowed tools.[^39][^18] Google says Workspace data isn't used to train its models; that is the vendor's claim.[^39] A 2025 survey found 54% of workers would use unapproved tools anyway.[^18]"
+    }
+  ],
+  "forward": [
+    "Top workflow: customer and order questions. Support agents with AI resolved 14% more issues an hour.[^3][^10]",
+    "What it saves: writing and email time first, about 40% on writing tasks.[^4][^6] Expect a few percent of total hours, not a step change.[^8][^9]",
+    "Risk and who checks: the firm owns what its AI tells customers.[^23] The ops lead approves answer patterns, and the controller signs off numbers.",
+    "First step: one workflow, four weeks of baseline, then a pilot against a hold-out group.[^3][^6]",
+    "Cost: AI seats list at $14 to $21 a user a month (26 Nov 2026), so 15 users for 90 days is under $1,000.[^39][^37] Connecting AI to your order or ticket system costs extra.",
+    "How we'll know: resolutions per hour, order cycle time and cost per purchase order, against APQC medians of 38 days and $55.[^34][^32]"
+  ],
+  "recipes": [
+    {
+      "name": "1. Small ops team, about 40 to 100 staff: seat tools plus one workflow",
+      "when": "No IT team, and Microsoft 365 or Google Workspace already in place. Most firms start AI in three or fewer functions.[^1]",
+      "flow": [
+        "COO: pick one workflow, such as order status emails or the weekly ops report, and name an owner (days 1 to 10)",
+        "Ops lead: record four weeks of baseline: volume, hours, error rate and turnaround",
+        "Office manager or IT admin: turn on business-plan seats for 10 to 15 users and post the allowed-tools list",
+        "Ops lead: write answer templates and a check-before-send rule, then train users",
+        "Ops lead: run six weeks with a hold-out group and compare",
+        "COO: keep, change or stop at day 90"
+      ],
+      "cost": "Copilot Business lists at $21 a user a month, annual; ChatGPT Business at $20; Google Business Standard at $14 (read 26 Nov 2026).[^37][^38][^39] Fifteen users for three months at $21 is $945 in seats."
+    },
+    {
+      "name": "2. Mid-size firm, 100 to 500 staff: service desk assist",
+      "when": "A service or inside-sales team of 10 or more answering repeat questions. Novice agents gained most in the field study.[^3]",
+      "flow": [
+        "COO: sponsor the pilot and set the measures: resolutions per hour and escalations",
+        "Customer service lead: build an approved answer library from past tickets",
+        "IT: connect the AI assistant to the ticketing system and knowledge base",
+        "Agents: AI suggests replies, and agents edit and send; no auto-send in the first 90 days",
+        "Quality lead: check 5% to 10% of AI-assisted replies each week for accuracy",
+        "COO: compare gains for new and experienced agents at day 90"
+      ],
+      "cost": "Seat prices as in recipe 1.[^37][^38] We did not check helpdesk AI add-on prices, so ask your helpdesk vendor for its list price."
+    },
+    {
+      "name": "3. Document-heavy operation: orders or invoices arrive as PDFs",
+      "when": "Orders or invoices arrive by email and get retyped into your ERP (enterprise resource planning system). APQC's median purchase order costs $55 to process.[^32]",
+      "flow": [
+        "COO: pick the document flow with the highest volume",
+        "Order desk or accounts payable lead: count documents, minutes each and error rate for four weeks",
+        "IT or integrator: set up extraction into the ERP with a review queue",
+        "Order desk lead: approve every low-confidence field and track the exception rate",
+        "Controller: sign off the posting rules",
+        "COO: compare cost per order with the baseline and APQC's median"
+      ],
+      "cost": "We give no list price here; our document processing and invoice processing guides carry their own price checks. Measure against your baseline and APQC's medians.[^32][^35]"
+    }
+  ],
+  "ownData": {
+    "title": "Which jobs in your operation does AI help most, and with which part?",
+    "intro": "AI helps customer service reps and order clerks most, with answering and explaining; directing, scheduling, assigning and negotiating show no AI use.[^10][^11] We calculated these shares on 26 Nov 2026 from Microsoft Research's public Working with AI data, licensed CC BY 4.0.[^10][^11] Jobs and pay come from BLS, May 2025.[^12]",
+    "headers": [
+      "Ops role",
+      "AI help score (rank of 785 jobs)",
+      "Work AI helps a lot",
+      "Work with no AI use seen",
+      "AI helps most with",
+      "No AI use seen in",
+      "US jobs; mean pay"
+    ],
+    "rows": [
+      [
+        "Customer service reps",
+        "0.408 (7th)",
+        "61%",
+        "20%",
+        "Answering and informing customers",
+        "Keeping sales records",
+        "2,595,750; $46,590"
+      ],
+      [
+        "Order clerks",
+        "0.321 (66th)",
+        "45%",
+        "33%",
+        "Answering customers, explaining products",
+        "Collecting customer-needs data",
+        "75,200; $48,220"
+      ],
+      [
+        "Production, planning and expediting clerks",
+        "0.258 (139th)",
+        "48%",
+        "42%",
+        "Sharing ops plans, compiling records",
+        "Directing operations, scheduling",
+        "390,160; $62,150"
+      ],
+      [
+        "Production supervisors",
+        "0.250 (157th)",
+        "32%",
+        "32%",
+        "Planning work, reading documents",
+        "Keeping ops records, inspecting equipment",
+        "673,430; $76,600"
+      ],
+      [
+        "Office and admin supervisors",
+        "0.245 (168th)",
+        "35%",
+        "46%",
+        "Explaining policies",
+        "Supervising staff, assigning work",
+        "1,436,680; $73,490"
+      ],
+      [
+        "Bookkeeping and accounting clerks",
+        "0.244 (170th)",
+        "27%",
+        "29%",
+        "Compiling records, calculating",
+        "Reconciling financial data",
+        "1,373,680; $53,560"
+      ],
+      [
+        "Dispatchers",
+        "0.232 (191st)",
+        "38%",
+        "50%",
+        "Answering customers, sharing plans",
+        "Scheduling, assigning work, monitoring",
+        "202,810; $54,740"
+      ],
+      [
+        "Buyers and purchasing agents",
+        "0.203 (240th)",
+        "23%",
+        "38%",
+        "Getting information on goods",
+        "Negotiating contracts",
+        "491,430; $83,770"
+      ],
+      [
+        "Shipping, receiving and inventory clerks",
+        "0.184 (275th)",
+        "17%",
+        "53%",
+        "Answering customers",
+        "Analyzing data to improve ops",
+        "816,870; $46,810"
+      ],
+      [
+        "General and operations managers",
+        "0.110 (500th)",
+        "14%",
+        "69%",
+        "Putting procedures in place",
+        "Directing operations, setting policy",
+        "3,503,020; $134,940"
+      ]
+    ],
+    "note": "Method: we weight each job's activities by importance; help is completion times scope in about 200,000 US Bing Copilot chats from 2024. A lot means a help score of 0.40 or more; no use seen means too few chats to measure, not that AI can't help. Limits: consumer chats, not your firm's tools; scores show current use, not job loss, for the US with no firm-size cut."
+  },
+  "howToTest": [
+    "Pick one workflow and one unit: a ticket, order, purchase order or report. Record four weeks of volume, minutes per unit, errors and cycle time.",
+    "Compare your baseline with outside medians: APQC's 38-day order-to-cash, $55 per purchase order and 2.0 days to issue one.[^34][^32][^33]",
+    "Split users into a pilot group with AI and a hold-out group without, on similar work. Both big field studies measured AI users against non-users.[^3][^6]",
+    "Measure quality as well as speed. Consultants using AI were faster and better inside AI's range, but 19 points less accurate outside it.[^5]",
+    "Check self-reported time savings against system data. In an early-2025 trial, developers were 19% slower with AI while believing they were 20% faster.[^26]",
+    "Count rework that lands on others. In a survey with BetterUp, a coaching vendor, 40% of desk workers had received AI work needing fixes in the past month.[^24][^25]",
+    "Track where saved time goes. Danish workers moved 80% of saved time to other tasks.[^7]",
+    "Price the lift: share of a role's year saved times annual pay, plus errors avoided, minus seats and setup. Example: 5% of a service rep's year at the BLS mean of $46,590 is about $2,330.[^12]",
+    "Decide at day 90: keep, change or stop."
+  ],
+  "watchOuts": [
+    "Pilots that never ship: an MIT study found 95% of firms saw no measurable profit impact from generative AI.[^20][^21] Fix: one workflow, one owner, a baseline and a day-90 decision.",
+    "Agent hype: Gartner expects over 40% of agentic AI projects to be canceled by end of 2027, and warns of agent washing.[^22] Fix: demand a demo on your own documents, and start with assist, not autonomy.",
+    "Wrong answers to customers: Air Canada was held liable for its chatbot, and Klarna said a cost focus cut quality.[^23][^27][^28] Fix: a person approves answer patterns, with an easy route to staff.",
+    "Using AI outside what it does well: on such a task, consultants with AI were 19 points less likely to be right.[^5] Fix: test your own hard cases before rollout.",
+    "Workslop: 40% of desk workers got AI work needing fixes last month, about 2 hours each, in a BetterUp vendor survey.[^24][^25] Fix: the sender checks AI output before passing it on.",
+    "Shadow AI: 54% of workers would use AI tools even if not authorized.[^18] Fix: an allowed-tools list plus business plans with admin controls.[^39]"
+  ],
+  "buyVsBuild": {
+    "buy": "Most ops teams should buy first, for standard work such as email, meeting notes, helpdesk replies and document capture.[^31][^20] Firms now buy 76% of AI solutions, says Menlo Ventures, an AI investor.[^31] Bought or partnered tools reached deployment about twice as often as internal builds.[^20]",
+    "build": "Build when your own data or process is the edge, such as a pricing rule, a scheduling limit or a quoting method. Gartner warns many agent products are relabeled tools, so a build on a proven model can beat a weak product.[^22] Middle path: buy the seats, then build the connection to your systems."
+  },
+  "pickElse": [
+    "The process is broken or undocumented: map and fix it first with standard process improvement, such as lean methods and written procedures. Redesign is what pays.[^16]",
+    "The work is rules-based and stable: plain workflow automation or your ERP's built-in rules may be cheaper and more predictable.[^40]",
+    "The problem is a forecast or schedule with years of history: a statistical forecasting or planning tool beats a chat assistant.[^19]",
+    "Physical work dominates: hand material movers rank 678th of 785, with 88% of the job showing no AI use.[^10] Equipment, layout or a warehouse system matter more."
+  ],
+  "resources": [
+    {
+      "name": "NIST AI Risk Management Framework and Playbook",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf",
+      "what": "Free US framework for AI roles, risks and human checks."
+    },
+    {
+      "name": "Census Business Trends and Outlook Survey data",
+      "url": "https://www.census.gov/hfp/btos/data",
+      "what": "AI use by firm size, sector and state, updated every two weeks."
+    },
+    {
+      "name": "APQC Open Standards Benchmarking",
+      "url": "https://www.apqc.org/what-we-do/benchmarking/open-standards-benchmarking",
+      "what": "Free medians for order-to-cash, procurement and more (free login)."
+    },
+    {
+      "name": "Microsoft Working with AI data (CC BY 4.0)",
+      "url": "https://github.com/microsoft/working-with-ai",
+      "what": "Look up any job's AI applicability score and its activities."
+    },
+    {
+      "name": "BLS AI exposure categories",
+      "url": "https://www.bls.gov/emp/publications/ai-exposure-categories.htm",
+      "what": "How exposed each job is to AI, next to 2025-35 job projections."
+    }
+  ],
+  "stats": [
+    {
+      "num": "32%",
+      "label": "of US firms with 100 to 249 staff used AI, in Census data to 3 May 2026.[^2]",
+      "source": "US Census Bureau, Business Trends and Outlook Survey, May 2026"
+    },
+    {
+      "num": "+14%",
+      "label": "issues resolved per hour by support agents with an AI assistant.[^3]",
+      "source": "National Bureau of Economic Research (NBER) w31161, 5,179 agents"
+    },
+    {
+      "num": "2.2%",
+      "label": "of all US work hours saved by generative AI.[^9]",
+      "source": "St. Louis Fed, FRED Blog, Aug 2026"
+    },
+    {
+      "num": "39%",
+      "label": "of firms report any EBIT impact from AI.[^15]",
+      "source": "State of AI 2025 survey, n=1,993"
+    },
+    {
+      "num": "0.408 vs 0.110",
+      "label": "AI applicability: customer service reps against general and operations managers.[^10][^11]",
+      "source": "Zavient analysis of Microsoft Research data, 26 Nov 2026"
+    },
+    {
+      "num": "+5.0%",
+      "label": "projected growth in general and operations manager jobs, 2025 to 2035.[^13]",
+      "source": "BLS Employment Projections, Aug 2026"
+    }
+  ],
+  "sources": [
+    {
+      "name": "US Census Bureau, The Microstructure of AI Diffusion, working paper CES-WP-26-25R (Oct 2026)",
+      "url": "https://www2.census.gov/ces/wp/2026/CES-WP-26-25R.pdf",
+      "what": "About 117,000 BTOS responses, Nov 2025 to Jan 2026: 57% of AI users use it in three or fewer of 15 functions; writing and editing lead worker tasks. 6.8% of firms are worker-only users."
+    },
+    {
+      "name": "US Census Bureau, America Counts: Large Firms With at Least 20 Employees Biggest AI Users (May 2026)",
+      "url": "https://www.census.gov/library/stories/2026/05/ai-use-businesses.html",
+      "what": "Business Trends and Outlook Survey (BTOS): 37% of firms with 250+ staff and 32% with 100 to 249 used AI; national rate 19.8% (period ending 3 May 2026)."
+    },
+    {
+      "name": "NBER working paper w31161, Generative AI at Work (Brynjolfsson, Li, Raymond)",
+      "url": "https://www.nber.org/papers/w31161",
+      "what": "5,179 support agents: an AI assistant raised issues resolved per hour by 14%, and by about 34% for novices, with fewer escalations."
+    },
+    {
+      "name": "Science 381, Experimental evidence on the productivity effects of generative AI (Noy, Zhang, 2023)",
+      "url": "https://www.science.org/doi/10.1126/science.adh2586",
+      "what": "453 professionals: ChatGPT cut time on writing tasks by 40% and raised quality by 18%."
+    },
+    {
+      "name": "Organization Science (2026), Navigating the jagged technological frontier (Dell'Acqua et al.)",
+      "url": "https://pubsonline.informs.org/doi/10.1287/orsc.2025.21838",
+      "what": "Consultant field experiment: AI users did better inside AI's range, but were 19 points less likely to be right on a task outside it."
+    },
+    {
+      "name": "NBER working paper w33795, Shifting Work Patterns with Generative AI (Dillon, Jaffe, Immorlica, Stanton)",
+      "url": "https://www.nber.org/papers/w33795",
+      "what": "66 firms, 7,137 workers: Copilot users spent about 2 fewer hours a week on email; the mix of tasks did not change."
+    },
+    {
+      "name": "Becker Friedman Institute WP 2025-56, Large Language Models, Small Labor Market Effects (Humlum, Vestergaard)",
+      "url": "https://bfi.uchicago.edu/wp-content/uploads/2025/04/BFI_WP_2025-56-1.pdf",
+      "what": "25,000 Danish workers: 80% moved saved time to other tasks; benefits were 10% to 40% larger where employers encouraged use."
+    },
+    {
+      "name": "Federal Reserve Bank of St. Louis, The Impact of Generative AI on Work Productivity (Feb 2025)",
+      "url": "https://www.stlouisfed.org/on-the-economy/2025/feb/impact-generative-ai-work-productivity",
+      "what": "Generative AI users saved about 5.4% of their work hours."
+    },
+    {
+      "name": "FRED Blog, Does generative AI save time at work? (Aug 2026)",
+      "url": "https://fred.stlouisfed.org/blog/2026/08/does-generative-ai-save-time-at-work",
+      "what": "Hours saved by generative AI equal about 2.2% of all work hours; work use at 39.2% in Q2 2026."
+    },
+    {
+      "name": "Microsoft Research, Working with AI: Measuring the Occupational Implications of Generative AI (arXiv 2507.07935)",
+      "url": "https://arxiv.org/abs/2507.07935",
+      "what": "AI applicability scores for 785 occupations from about 200,000 anonymized US Bing Copilot conversations (2024), mapped to O*NET work activities."
+    },
+    {
+      "name": "Microsoft working-with-ai data repository, v1.1 (CC BY 4.0)",
+      "url": "https://github.com/microsoft/working-with-ai",
+      "what": "Score, activity and weight files used for Zavient's role analysis. Licence CC BY 4.0. Downloaded 26 Nov 2026."
+    },
+    {
+      "name": "US Bureau of Labor Statistics, Occupational Employment and Wages, May 2025, Table 1",
+      "url": "https://www.bls.gov/news.release/ocwage.t01.htm",
+      "what": "Employment and annual mean wage by occupation, released 15 May 2026."
+    },
+    {
+      "name": "US Bureau of Labor Statistics, Employment Projections 2025-35, occupational table",
+      "url": "https://www.bls.gov/emp/tables/occupational-projections-and-characteristics.htm",
+      "what": "General and operations managers: 3,599,000 to 3,780,300 jobs (+5.0%) against 3.5% for all jobs; 285,000 openings a year."
+    },
+    {
+      "name": "US Bureau of Labor Statistics, AI exposure categories",
+      "url": "https://www.bls.gov/emp/publications/ai-exposure-categories.htm",
+      "what": "Rates general and operations managers high in relative AI exposure; exposure does not imply job loss."
+    },
+    {
+      "name": "McKinsey, The state of AI in 2025 (Nov 2025; n=1,993)",
+      "url": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-state-of-ai-2025",
+      "what": "88% use AI in at least one function; 39% report any EBIT impact; high performers define when outputs need human validation and show senior ownership three times as often."
+    },
+    {
+      "name": "McKinsey, The state of AI: How organizations are rewiring to capture value (Mar 2025)",
+      "url": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-state-of-ai-how-organizations-are-rewiring-to-capture-value",
+      "what": "Of 25 attributes tested, workflow redesign had the biggest effect on EBIT; only 21% had redesigned any workflows."
+    },
+    {
+      "name": "BCG, AI at Work 2026 (n=11,749)",
+      "url": "https://www.bcg.com/publications/2026/ai-at-work-why-strategy-matters-more-than-tools",
+      "what": "Redesign makes measurable improvement 24 points more likely; 66% of frontline users get limited or no guidance on using saved time."
+    },
+    {
+      "name": "BCG press release, AI at Work 2025 (26 Jun 2025)",
+      "url": "https://www.bcg.com/press/26june2025-beyond-ai-adoption-full-potential",
+      "what": "54% of workers would use AI tools even if not authorized."
+    },
+    {
+      "name": "PwC, 2026 Digital Trends in Operations",
+      "url": "https://www.pwc.com/us/en/services/consulting/supply-chain-operations/library/ai-execution-gap-operations.html",
+      "what": "89% say tech investments fell short; 27% have AI fully embedded; planning and sourcing lead AI use in operations."
+    },
+    {
+      "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025)",
+      "url": "https://www.ictworks.org/wp-content/uploads/2025/09/AI_Business_2025.pdf",
+      "what": "95% saw no measurable P&L impact; bought or partnered tools reached deployment about 67% of the time against about 33% for internal builds. The authors call figures directional."
+    },
+    {
+      "name": "Fortune, MIT report: 95% of generative AI pilots at companies are failing (18 Aug 2025)",
+      "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
+      "what": "News coverage of the MIT NANDA findings."
+    },
+    {
+      "name": "Gartner press release, agentic AI cancellations (25 Jun 2025)",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027",
+      "what": "Over 40% of agentic AI projects will be canceled by end of 2027; warns of 'agent washing' by vendors."
+    },
+    {
+      "name": "Moffatt v. Air Canada, 2024 BCCRT 149",
+      "url": "https://www.canlii.org/en/bc/bccrt/doc/2024/2024bccrt149/2024bccrt149.html",
+      "what": "Tribunal held the airline liable for wrong advice its website chatbot gave a customer."
+    },
+    {
+      "name": "Harvard Business Review, AI-Generated Workslop Is Destroying Productivity (Sep 2025)",
+      "url": "https://hbr.org/2025/09/ai-generated-workslop-is-destroying-productivity",
+      "what": "Survey of 1,150 US desk workers with BetterUp: 40% received AI work needing fixes in the past month, about 2 hours each."
+    },
+    {
+      "name": "BetterUp, the hidden costs of workslop (vendor)",
+      "url": "https://www.betterup.com/blog/hidden-costs-workslop",
+      "what": "Vendor's own write-up of its workslop survey; not peer reviewed."
+    },
+    {
+      "name": "METR, early-2025 AI developer randomized trial (10 Jul 2025)",
+      "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study",
+      "what": "Experienced developers were 19% slower with AI while believing they were 20% faster. METR now calls the results dated."
+    },
+    {
+      "name": "CX Dive, Klarna reinvests in human talent (9 May 2025)",
+      "url": "https://www.customerexperiencedive.com/news/klarna-reinvests-human-talent-customer-service-AI-chatbot/747586",
+      "what": "Klarna's CEO said a cost focus lowered service quality; the firm is hiring people again."
+    },
+    {
+      "name": "Reuters, Klarna shifts AI focus (10 Sep 2025)",
+      "url": "https://www.reuters.com/business/swedens-klarna-shifts-ai-focus-cost-cuts-growth-2025-09-10",
+      "what": "Klarna moves its AI focus from cost cuts to growth; its bot still handles about two-thirds of chats."
+    },
+    {
+      "name": "NIST, AI Risk Management Framework 1.0 (NIST AI 100-1), Jan 2023",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf",
+      "what": "GOVERN 2.3: executive leadership takes responsibility for AI risk decisions. Human roles in human-AI teaming must be clearly defined."
+    },
+    {
+      "name": "NIST AI RMF Playbook, Govern",
+      "url": "https://airc.nist.gov/airmf-resources/playbook/govern",
+      "what": "GOVERN 3.2: policies that define and separate human roles for oversight of AI."
+    },
+    {
+      "name": "Menlo Ventures, 2025: The State of Generative AI in the Enterprise (n=495; AI investor)",
+      "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+      "what": "Investor survey: 76% of AI solutions now bought, up from 53% in 2024."
+    },
+    {
+      "name": "APQC, total cost to process purchase orders",
+      "url": "https://www.apqc.org/resources/benchmarking/open-standards-benchmarking/measures/total-cost-perform-process-order-1",
+      "what": "Median cost per purchase order $55 (n=4,620)."
+    },
+    {
+      "name": "APQC, average days to issue a purchase order",
+      "url": "https://www.apqc.org/resources/benchmarking/open-standards-benchmarking/measures/average-days-issue-purchase-order",
+      "what": "Median 2.0 days from requisition to purchase order (n=1,250)."
+    },
+    {
+      "name": "APQC, cycle time to perform order-to-cash",
+      "url": "https://www.apqc.org/what-we-do/benchmarking/open-standards-benchmarking/measures/cycle-time-days-perform-order-cash-o2c",
+      "what": "Median order-to-cash cycle 38 days (n=574)."
+    },
+    {
+      "name": "APQC, total cost to perform order-to-cash",
+      "url": "https://www.apqc.org/what-we-do/benchmarking/open-standards-benchmarking/measures/total-cost-perform-order-cash",
+      "what": "Median $2.32 per $1,000 of revenue (n=994)."
+    },
+    {
+      "name": "APQC and Esker, Automating the Sales Order Entry Process (2017; vendor-sponsored)",
+      "url": "https://cloud.esker.com/fm/others/APQC-Survey-Automating-the-Sales-Order-Entry-Process-2017.pdf",
+      "what": "167 respondents: automated order entry cut cost $5 to $15 per order and cycle time 46%. Vendor-sponsored and dated."
+    },
+    {
+      "name": "Microsoft 365 Copilot Business pricing",
+      "url": "https://www.microsoft.com/en-us/copilot/pricing/business",
+      "what": "Copilot Business add-on $21 a user a month, annual ($18 promotion to 31 Dec 2026). List price, read 26 Nov 2026."
+    },
+    {
+      "name": "OpenAI, ChatGPT Business general FAQ",
+      "url": "https://help.openai.com/en/articles/8542115-chatgpt-business-general-faq",
+      "what": "ChatGPT Business $20 a user a month annual, $25 monthly. List price, read 26 Nov 2026."
+    },
+    {
+      "name": "Google Workspace pricing",
+      "url": "https://workspace.google.com/pricing",
+      "what": "Business Standard with Gemini $14 a user a month, annual, up to 300 users; Google says company data is not used to train its models (vendor's claim). Read 26 Nov 2026."
+    },
+    {
+      "name": "Anthropic, Building effective agents, Dec 2024",
+      "url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "what": "Model maker's guide: find the simplest solution and add complexity only when needed; fixed workflows suit well-defined tasks."
+    }
+  ],
+  "related": [
+    "ai-strategy-consulting",
+    "ai-automation-consulting",
+    "ai-document-processing",
+    "ai-invoice-processing",
+    "ai-governance-consulting"
+  ],
+  "offer": {
+    "heading": "Find the one ops workflow where AI pays first",
+    "body": "Your top 2 workflows ranked, and a one-page plan you can hand your CEO. Bring one workflow your team, site or unit runs every week. We'll show where AI helps, who checks its output and what to measure in the first 90 days."
+  },
+  "keyword": {
+    "phrase": "ai for business operations",
+    "searches": 260,
+    "cpc": 31.41,
+    "difficulty": 7
+  },
+  "reviews": [
+    {
+      "reader": "COO",
+      "notes": "Would forward the one-page brief as is. Stopped at the own-data table: a bare 0.408 meant nothing, so the column now reads 'AI help score (rank of 785 jobs)' and the note defines 'a lot' as 0.40 or more. Liked that the scheduling, assigning and directing rows show no AI use; it matches how the team actually runs."
+    },
+    {
+      "reader": "Head of operations",
+      "notes": "Step flows name a role on every line and fit a phone. Tripped on 'QA lead' and 'AP lead'; now 'Quality lead' and 'accounts payable lead'. Stats sources spelled out (NBER, Census survey name). Wanted the 90-day timing visible; the recipes answer line now gives four weeks of baseline and six of pilot."
+    },
+    {
+      "reader": "GM",
+      "notes": "Runs one site, so wanted to know the offer works for a unit, not the whole firm; the offer body now says team, site or unit. The price-the-lift step ties gains to annual pay from BLS, which is the P&L language a GM reports in. No other changes."
+    },
+    {
+      "reader": "Division head",
+      "notes": "Read as a customer service lead and a controller. Both sign-off bullets match how they would run it, and the no-auto-send rule for 90 days is right. Asked that the workslop figure carry its vendor label in the watch-outs too, as it does in the test steps; fixed."
+    },
+    {
+      "reader": "Owner-CEO",
+      "notes": "Bottom line is five short bullets he can read in a minute. Wanted a total, not just a per-seat price, in the brief; the cost line now says 15 users for 90 days is under $1,000 at list price, with connection work extra. No Zavient price requested or added, per Russell's 26 Nov rule."
+    }
+  ],
+  "updated": "2026-11-26"
+}
