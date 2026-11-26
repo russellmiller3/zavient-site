@@ -249,9 +249,9 @@ footer a:hover { color: var(--blue); }
 
 /* Golden-template blocks (26 Nov 2026): where people stay in charge, ranked jobs, FAQ, tool frame */
 .callout { border: 1px solid var(--line); border-left: 3px solid var(--blue); background: var(--blue-wash); padding: 16px 22px 4px; margin: 6px 0 22px; }
-.ranked { list-style: none; counter-reset: rk; margin: 8px 0 22px; padding: 0; }
-.ranked > li { counter-increment: rk; position: relative; padding: 14px 0 6px 46px; border-top: 1px solid var(--line); }
-.ranked > li::before { content: counter(rk, decimal-leading-zero); position: absolute; left: 0; top: 18px; font-family: var(--mono); font-size: 15px; color: var(--blue); }
+.article-body ol.ranked, .ranked { list-style: none; counter-reset: rk; margin: 8px 0 22px; padding: 0; }
+.article-body ol.ranked > li, .ranked > li { counter-increment: rk; position: relative; padding: 14px 0 6px 46px; border-top: 1px solid var(--line); }
+.article-body ol.ranked > li::before, .ranked > li::before { content: counter(rk, decimal-leading-zero); position: absolute; left: 0; top: 18px; font-family: var(--mono); font-size: 15px; color: var(--blue); }
 .ranked h3 { margin: 0 0 6px; }
 .ranked .payoff { font-size: 18px; color: var(--ink-soft); }
 .faq-item { border-top: 1px solid var(--line); padding-top: 4px; }
