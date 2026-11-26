@@ -45,12 +45,12 @@
   "buy-or-build": "Should you buy AI tools or build your own?",
   "faq": "Questions plant leaders ask about AI"
  },
- "summary": "AI in manufacturing reads data your plant already makes: machine signals, camera images, work orders and prints.[^13][^14] It flags failing machines, catches defects and answers technicians' questions; people decide what to fix, ship or scrap.[^14][^10] Success needs consistent data and one problem with a dollar cost, like downtime or scrap.[^15][^16][^8]",
+ "summary": "AI in manufacturing reads data your plant already makes: machine signals, camera images, manuals and work orders.[^13][^4] It flags failing machines, catches defects and answers technicians' questions; people decide what to fix, ship or scrap.[^13][^10] Success needs consistent data and one problem with a dollar cost, like downtime or scrap.[^14][^15][^8]",
  "humanRole": [
   "Operators and the maintenance lead keep control of the machines. Federal and allied guidance urges caution with AI that acts on machine control, and wants human checkpoints.[^10][^12]",
   "The maintenance planner owns the work order; AI only raises the flag. A trained person still locks out the machine's power under OSHA rules before any AI-suggested repair.[^11][^10]",
-  "The quality manager decides what ships, reworks or gets scrapped; the camera only sorts and flags. Medical-device makers must also show that this software works, under FDA rules.[^17][^18]",
-  "Technicians still do the fix, and AI answers their questions faster. In one McKinsey case, technicians gained 40% more capacity because they rarely had to answer simple questions.[^4][^19]"
+  "The quality manager decides what ships, reworks or gets scrapped; the camera only sorts and flags. Medical-device makers must also show that this software works, under FDA rules.[^16][^17]",
+  "Technicians still do the fix, and AI answers their questions faster. In one McKinsey case, technicians gained 40% more capacity because they rarely had to answer simple questions.[^4][^18]"
  ],
  "ranked": [
   {
@@ -60,7 +60,7 @@
   },
   {
    "name": "Predictive maintenance on the few machines that stop the line",
-   "why": "The average US plant still does 45.7% of its maintenance after something breaks.[^1][^2] Plants leaning on planned and predictive work had 52.7% less unplanned downtime.[^20]",
+   "why": "The average US plant still does 45.7% of its maintenance after something breaks.[^1][^2] Plants leaning on planned and predictive work had 52.7% less unplanned downtime.[^19]",
    "payoff": "Unplanned downtime hours on the covered machines, and your share of reactive maintenance hours."
   },
   {
@@ -71,23 +71,23 @@
   {
    "name": "Reading quotes, orders and certificates",
    "slug": "ai-document-processing",
-   "why": "Language models fit the reading-and-writing side of the plant: requests for quote, purchase orders, prints and certs.[^21][^22] GE Appliances says a supplier-email agent helped cut backorders 25% (Google's claim).[^23]",
+   "why": "Language models fit the paperwork around the plant, like requests for quote and supplier contracts.[^52][^53] GE Appliances says a supplier-email agent helped cut backorders 25% (Google's claim).[^21]",
    "payoff": "Hours from request for quote to quote sent, and keying errors per 100 documents."
   },
   {
    "name": "Production scheduling and process optimization",
-   "why": "This is where employers hire: we counted 2,535 US ads for process optimization and 1,607 for scheduling optimization in one week.[^24][^25] It needs clean routings and data from your ERP (business system), and 54% of surveyed manufacturers are unsure theirs is ready.[^26]",
+   "why": "This is where employers hire: we counted 2,535 US ads for process optimization and 1,607 for scheduling optimization in one week.[^22][^23] It needs clean routings plus production and supply data from your ERP (business system).[^13]",
    "payoff": "On-time delivery, schedule changes per week, and scrap or yield percentage."
   },
   {
    "name": "Energy use and digital twins",
-   "why": "Save these for later: they need the most data plumbing. Energy AI drew almost no US searches in our pull, though 290 job ads mentioned it in a week.[^27][^24]",
+   "why": "Save these for later: they need the most data plumbing. Energy AI drew almost no US searches in our pull, though 290 job ads mentioned it in a week.[^24][^22]",
    "payoff": "Energy cost per unit made."
   }
  ],
  "ownData": {
   "title": "What do plants search for, and what do employers hire for?",
-  "intro": "We set US Google searches for each kind of manufacturing AI work against US job ads that mention it.[^27][^24] Buyers search most for predictive maintenance, while the job ads we counted name process optimization and scheduling most.[^27][^24] The Federal Reserve sees the same pull: about 11% of manufacturing job postings asked for AI skills in 2026, against about 8% overall.[^25]",
+  "intro": "We set US Google searches for each kind of manufacturing AI work against US job ads that mention it.[^24][^22] Buyers search most for predictive maintenance, while the job ads we counted name process optimization and scheduling most.[^24][^22] The Federal Reserve sees the same pull: about 11% of manufacturing job postings asked for AI skills in 2026, against about 8% overall.[^23]",
   "headers": [
    "Kind of AI work",
    "US searches a month",
@@ -96,41 +96,41 @@
   "rows": [
    [
     "Predictive maintenance",
-    "2,590[^27]",
+    "2,590[^24]",
     "Not counted yet"
    ],
    [
     "Production scheduling",
-    "1,110[^27]",
-    "1,607[^24]"
+    "1,110[^24]",
+    "1,607[^22]"
    ],
    [
     "Process and yield optimization",
-    "100[^27]",
-    "2,535[^24]"
+    "100[^24]",
+    "2,535[^22]"
    ],
    [
     "Visual quality inspection",
-    "100[^27]",
-    "213[^24]"
+    "100[^24]",
+    "213[^22]"
    ],
    [
     "Digital twin",
-    "15,420, mostly the general term[^27]",
-    "474[^24]"
+    "15,420, mostly the general term[^24]",
+    "474[^22]"
    ],
    [
     "Energy use",
-    "None measured[^27]",
-    "290[^24]"
+    "None measured[^24]",
+    "290[^22]"
    ]
   ],
-  "note": "Searches are US Google monthly averages for three phrases per row, from our keyword pull of 25 Nov 2026.[^27] Job ads are US ads posted in the 7 days to 25 Nov 2026 that mention the row's phrase.[^24] Counts are rough: ads aren't limited to manufacturers, and one ad can match several rows."
+  "note": "Searches are US Google monthly averages for three phrases per row, from our keyword pull of 25 Nov 2026.[^24] Job ads are US ads posted in the 7 days to 25 Nov 2026 that mention the row's phrase.[^22] Counts are rough: ads aren't limited to manufacturers, and one ad can match several rows."
  },
  "tables": [
   {
    "title": "What do maintenance and inspection tools cost?",
-   "intro": "Prices from each vendor's own page, checked 26 Nov 2026, unless the cell names another source.[^28][^29] Sensor-based systems rarely publish a price.[^30]",
+   "intro": "Prices from each vendor's own page, checked 26 Nov 2026.[^25][^26] Sensor-based systems rarely publish a price.[^50][^49]",
    "headers": [
     "Tool",
     "What it does",
@@ -143,8 +143,8 @@
      "url": "https://www.getmaintainx.com/pricing",
      "cells": [
       "Work orders (CMMS) plus AI add-ons",
-      "Free tier; $20 to $65 per user a month, billed yearly[^28]",
-      "Its machine-data AI add-on is priced by sales[^28]"
+      "Free tier; $20 to $65 per user a month, billed yearly[^25]",
+      "Its machine-data AI add-on is priced by sales[^25]"
      ]
     },
     {
@@ -152,44 +152,44 @@
      "url": "https://fiixsoftware.com/cmms/pricing/",
      "cells": [
       "CMMS with AI insights",
-      "Free tier; $45 to $75 per user a month[^29]",
-      "Foresight is on Professional and up only[^29]"
+      "Free tier; $45 to $75 per user a month[^26]",
+      "Foresight is on Professional and up only[^26]"
      ]
     },
     {
      "name": "Limble",
-     "url": "https://limble.com/learn/cost",
+     "url": "https://limble.com/pricing",
      "cells": [
       "CMMS with an AI plan builder",
-      "$28 to $69 per user a month, per Limble's cost guide[^31]",
-      "Its pricing page now uses a calculator[^31]"
+      "$28 to $69 per user a month[^27]",
+      "Enterprise plan is quoted[^27]"
      ]
     },
     {
      "name": "Siemens Senseye",
-     "url": "https://tractian.com/en/blog/siemens-senseye-vs-augury",
+     "url": "https://www.siemens.com/global/en/products/services/digital-enterprise-services/analytics-artificial-intelligence-services/predictive-services/senseye-predictive-maintenance/how-it-works.html",
      "cells": [
-      "Predicts failures from your sensor data",
-      "Not published[^30]",
-      "Needs machines that already have sensors, per Tractian, a competitor[^30]"
+      "Predicts failures from your machine data",
+      "Not published; ask sales[^48]",
+      "Uses data you already collect; new sensors optional[^48]"
      ]
     },
     {
      "name": "Augury",
-     "url": "https://tractian.com/en/blog/siemens-senseye-vs-augury",
+     "url": "https://www.augury.com/machine-health/",
      "cells": [
       "Sensors, AI and analysts in one plan",
-      "Not published[^30]",
-      "Sold as one subscription, per Tractian[^30]"
+      "Not published[^49]",
+      "Sensors come with every subscription[^49]"
      ]
     },
     {
      "name": "Tractian",
-     "url": "https://www.softwr.com/compare/maintainx-vs-tractian",
+     "url": "https://tractian.com/en/pricing",
      "cells": [
-      "CMMS plus vibration sensors",
-      "From $60 per user a month, 5-user minimum, per Softwr[^32]",
-      "Sensors are priced separately[^32]"
+      "Condition sensors plus maintenance software",
+      "Custom quote, priced by asset[^50]",
+      "Scoped on site to your critical machines[^50]"
      ]
     },
     {
@@ -197,15 +197,15 @@
      "url": "https://landinglens.docs.landing.ai/plans",
      "cells": [
       "No-code visual inspection models",
-      "Free tier: 1,000 credits a month, 3 users[^33]",
-      "Free-plan model download is non-commercial only[^34]"
+      "Free tier: 1,000 credits a month, 3 users[^28]",
+      "Free-plan model download is non-commercial only[^28]"
      ]
     }
    ]
   },
   {
    "title": "What do the studies say?",
-   "intro": "The primary studies behind the main numbers on this page.[^1][^6][^16]",
+   "intro": "The primary studies behind the main numbers on this page.[^1][^6][^15]",
    "headers": [
     "Study",
     "Sample",
@@ -225,7 +225,7 @@
      "url": "https://www.nist.gov/publications/maintenance-costs-and-advanced-maintenance-techniques-manufacturing-machinery-survey",
      "cells": [
       "Same survey",
-      "Less reactive half: 52.7% less unplanned downtime, 78.5% fewer defects[^20]"
+      "Less reactive half: 52.7% less unplanned downtime, 78.5% fewer defects[^19]"
      ]
     },
     {
@@ -241,7 +241,7 @@
      "url": "https://www.aeaweb.org/articles?id=10.1257/pandp.20261033",
      "cells": [
       "About 28,500 plants",
-      "22.8% used AI by 2021; cost and no clear use case were top barriers[^16]"
+      "22.8% used AI by 2021; cost and no clear use case were top barriers[^15]"
      ]
     },
     {
@@ -268,43 +268,43 @@
    "name": "OSHA lockout/tagout, 29 CFR 1910.147",
    "url": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.147",
    "status": "In force",
-   "what": "Covers servicing any machine that could start up unexpectedly and hurt someone.[^11] An AI maintenance alert doesn't change who locks out the power. It was OSHA's 4th most-cited standard in FY2025, with 2,177 violations.[^35][^36]"
+   "what": "Covers servicing any machine that could start up unexpectedly and hurt someone.[^11] An AI maintenance alert doesn't change who locks out the power. It was OSHA's 4th most-cited standard in FY2025, with 2,177 violations.[^29][^30]"
   },
   {
    "name": "OSHA machine guarding, 29 CFR 1910.212",
    "url": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.212",
    "status": "In force",
-   "what": "Keep guards in place when you add cameras or robots for AI inspection. It was OSHA's 10th most-cited standard in FY2025, with 1,239 violations.[^35]"
+   "what": "Keep guards in place when you add cameras or robots for AI inspection. It was OSHA's 10th most-cited standard in FY2025, with 1,239 violations.[^29]"
   },
   {
    "name": "ISO 10218-1 and 10218-2:2025, robot safety",
    "url": "https://www.iso.org/standard/73933.html",
    "status": "Published Feb 2025",
-   "what": "The baseline for any AI-guided robot or cobot cell. It replaces the 2011 edition and is a paid standard.[^37]"
+   "what": "The baseline for any AI-guided robot or cobot cell. It replaces the 2011 edition and is a paid standard.[^31]"
   },
   {
    "name": "FDA QMSR, 21 CFR 820 (medical devices)",
    "url": "https://www.fda.gov/medical-devices/postmarket-requirements-devices/quality-management-system-regulation-qmsr",
    "status": "In force since 2 Feb 2026",
-   "what": "It folds in ISO 13485:2016 and now specifically requires risk management.[^17] AI used in production or quality falls inside your quality system.[^18]"
+   "what": "It folds in ISO 13485:2016 and now specifically requires risk management.[^16] AI used in production or quality falls inside your quality system.[^17]"
   },
   {
    "name": "FDA Computer Software Assurance guidance",
    "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/computer-software-assurance-production-and-quality-management-system-software",
    "status": "Final, Feb 2026",
-   "what": "A risk-based way to show that software used in production or quality does its job.[^18] Treat AI tools in those steps the same way."
+   "what": "A risk-based way to show that software used in production or quality does its job.[^17] Treat AI tools in those steps the same way."
   },
   {
    "name": "CMMC, DFARS rule (defense suppliers)",
    "url": "https://www.federalregister.gov/documents/2025/09/10/2025-17359/defense-federal-acquisition-regulation-supplement-assessing-contractor-implementation-of",
    "status": "In force; Phase 2 from 10 Nov 2026",
-   "what": "If you handle controlled unclassified information (CUI), any cloud AI tool that touches it must sit inside your assessed environment.[^38] Full rollout comes on 10 Nov 2028.[^39]"
+   "what": "If you handle controlled unclassified information (CUI), any cloud AI tool that touches it must sit inside your assessed environment.[^32] Full rollout comes on 10 Nov 2028.[^33]"
   },
   {
    "name": "EU Machinery Regulation 2023/1230",
    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML?uri=CELEX%3A02023R1230-20260727",
    "status": "Applies from 20 Jan 2027",
-   "what": "Only if you sell machines into the EU. It replaces the Machinery Directive and was amended in 2026 by Regulation (EU) 2026/1744.[^40]"
+   "what": "Only if you sell machines into the EU. It replaces the Machinery Directive and was amended in 2026 by Regulation (EU) 2026/1744.[^34]"
   },
   {
    "name": "NIST AI Risk Management Framework 1.0",
@@ -322,52 +322,52 @@
    "name": "NIST SP 800-82 Rev. 3, OT security",
    "url": "https://csrc.nist.gov/pubs/sp/800/82/r3/final",
    "status": "Final; Rev. 4 in draft",
-   "what": "The US reference for securing the systems that run your machines (OT) before you connect AI to them.[^41]"
+   "what": "The US reference for securing the systems that run your machines (OT) before you connect AI to them.[^35]"
   }
  ],
  "watchOuts": [
-  "Pilot purgatory: 77% of AI vision systems in a 50-study review never left prototype or pilot.[^7][^42] Cost the problem first, in downtime hours or escapes, and start on one line.[^15][^43]",
+  "Pilot purgatory: 77% of AI vision systems in a 50-study review never left prototype or pilot.[^7][^36] Cost the problem first, in downtime hours or escapes, and start on one line.[^14][^37]",
   "Productivity dips before it rises, worst in older plants.[^8][^9] Budget a ramp period and keep your standard work, since dropping it explains about a third of the losses.[^8]",
-  "Alert fatigue: practitioners report half of alerts ignored after six months, and six-figure tools left unused.[^44][^45] Fix basic preventive maintenance first, then set alert limits with the technicians who act on them.",
-  "Vision models drift when lighting, material or product changes, and lab accuracy overstates the line.[^42][^7] Trial on your own parts, keep every labelled image and budget retraining for each product change.[^34]",
-  "Connecting machines opens a cyber door: manufacturing was the most-attacked industry for the fifth year running, per IBM.[^46][^47] Follow NIST SP 800-82 and the CISA AI-in-OT principles before you connect.[^41][^10]",
-  "Lock-in: proprietary sensors can be written off if you later switch analytics vendors.[^32][^15] Prefer open data standards such as MTConnect, and make sure you can export your own data.[^48]"
+  "Alert fatigue: NIST MEP warns that even a 2% false-alarm rate can mean dozens of false alarms a day, until staff ignore alarms entirely.[^13] Fix basic preventive maintenance first, then set alert limits with the technicians who act on them.",
+  "Vision models drift when lighting, material or product changes, and lab accuracy overstates the line.[^36][^7] Trial on your own parts, keep every labelled image and budget for upkeep, since plant AI is never a one-time fix.[^13]",
+  "Connecting machines opens a cyber door: manufacturing was the most-attacked industry for the fifth year running, per IBM.[^38][^39] Follow NIST SP 800-82 and the CISA AI-in-OT principles before you connect.[^35][^10]",
+  "Lock-in: NIST MEP warns that big tech is easy to get into and hard to get out of.[^14] Get data-use terms in writing and prefer open standards such as MTConnect, so you can export your own data.[^10][^40]"
  ],
  "faq": [
   {
    "q": "Is predictive maintenance worth it, or mostly a sales pitch?",
-   "a": "Often worth it, but only after the basics. NIST found the less reactive half of plants had 52.7% less unplanned downtime.[^20] Practitioners say most costly failures are missed routine work, not hidden faults.[^44]"
+   "a": "Often worth it, but only after the basics. NIST found the less reactive half of plants had 52.7% less unplanned downtime.[^19] The Department of Energy puts predictive savings at 8% to 12% over preventive work, but it needs diagnostic gear and training.[^47]"
   },
   {
    "q": "What is the difference between predictive and preventive maintenance?",
-   "a": "Preventive maintenance runs on a calendar or cycle count. Predictive maintenance is triggered by measured condition, such as vibration or temperature.[^1][^2] NIST found predictive-heavy plants had 18.5% less unplanned downtime than preventive-heavy ones.[^20]"
+   "a": "Preventive maintenance runs on a calendar or cycle count. Predictive maintenance is triggered by measured condition, such as vibration or temperature.[^1][^2] NIST found predictive-heavy plants had 18.5% less unplanned downtime than preventive-heavy ones.[^19]"
   },
   {
    "q": "Does predictive maintenance only work for big companies?",
-   "a": "No, but start with the few machines that stop the line.[^49] Maintenance software publishes prices from $20 to $75 per user a month.[^28][^29] Sensor systems are quoted per machine; one forum user put hookup at $5,000 to $10,000 each.[^30][^50]"
+   "a": "No, but start small. The Department of Energy says to fix one troubled system first and leave cheap, unimportant equipment to reactive repair.[^47] Maintenance software runs $20 to $75 per user a month, while sensor systems are quoted per site.[^25][^26][^50][^49]"
   },
   {
    "q": "How much does AI visual inspection cost?",
-   "a": "Few suppliers publish prices; most quote per station.[^34] LandingLens has a free tier for trials, but its free model download is for non-commercial use.[^33][^34]"
+   "a": "NIST MEP puts industrial AI tools at a few thousand dollars for simple setups and hundreds of thousands for custom ones.[^13] LandingLens has a free tier for trials, but its free model download is for non-commercial use.[^28]"
   },
   {
    "q": "How many manufacturers actually use AI?",
-   "a": "Fewer than the hype suggests: about 12% of manufacturing businesses reported using AI in the Census survey of April 2026.[^51] Hiring runs ahead, with about 11% of manufacturing job postings asking for AI skills.[^25]"
+   "a": "Fewer than the hype suggests: about 12% of manufacturing businesses reported using AI in the Census survey of April 2026.[^41] Hiring runs ahead, with about 11% of manufacturing job postings asking for AI skills.[^23]"
   },
   {
    "q": "Will AI take jobs on the plant floor?",
-   "a": "The data points to help, not cuts. Among US firms using AI, 95.7% reported no AI-driven change in headcount.[^22] Manufacturers also face up to 1.9 million unfilled jobs by 2033.[^52][^53]"
+   "a": "The data points to help, not cuts. Among US firms using AI, 95.7% reported no AI-driven change in headcount.[^20] Manufacturers also face up to 1.9 million unfilled jobs by 2033.[^42][^43]"
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy when the process is standard, such as maintenance software, condition monitoring or one camera station, and you have no data team. Most firms now buy: 76% of enterprise AI use cases are purchased.[^54] Bought or partnered tools succeed about 67% of the time, three times the rate of internal builds (self-reported).[^55]",
-  "build": "Build, or configure, when your edge is your own data: an assistant over your manuals and repair history, or scheduling on your routings.[^4][^19] Custom industrial AI may need data scientists on staff or a specialist.[^14] Check claims hard: Gartner expects over 40% of agentic AI projects to be canceled by 2027.[^56]"
+  "buy": "Buy when the process is standard, such as maintenance software, condition monitoring or one camera station, and you have no data team. Most firms now buy: 76% of enterprise AI use cases are purchased.[^44] Bought or partnered tools succeed about 67% of the time, three times the rate of internal builds (self-reported).[^45]",
+  "build": "Build, or configure, when your edge is your own data: an assistant over your manuals and repair history, or scheduling on your routings.[^4][^18] Custom industrial AI may need data scientists on staff or a specialist.[^13] Check claims hard: Gartner expects over 40% of agentic AI projects to be canceled by 2027.[^46]"
  },
  "pickElse": [
-  "Preventive work keeps slipping: fix the basics with maintenance software (a CMMS) and a schedule before predictive AI. NIST's big gap is reactive versus planned work, and MaintainX and Fiix have free tiers.[^1][^28][^29]",
-  "The check is simple and stable, like presence, a size or a code read: use rule-based machine vision, not deep learning. It is cheaper for stable checks.[^57]",
-  "Escapes are rare and cheap: skip the camera. One cost guide's example: if one $200 defect a year reaches a customer, a $10,000 station never pays back.[^34]",
-  "The process is stable and the problem is variation: use statistical process control (SPC) or lean before machine learning. One plant analyst calls anomaly detection SPC on steroids.[^45][^16]"
+  "Preventive work keeps slipping: fix the basics with maintenance software (a CMMS) and a schedule before predictive AI. NIST's big gap is reactive versus planned work, and MaintainX and Fiix have free tiers.[^1][^25][^26]",
+  "The check is simple and stable, like presence, a size or a color: use rule-based machine vision, not deep learning. NIST MEP says rule-based tools are simpler, stable and suit parts with defined criteria.[^13]",
+  "Escapes are rare and cheap: skip the camera. NIST MEP says to cost the problem first and weigh a simple fix against AI.[^14][^13]",
+  "The process is stable and the problem is variation: use statistical process control (SPC) or lean before machine learning. SPC flags output that falls outside limits set from your own past data.[^51][^13]"
  ],
  "resources": [
   {
@@ -404,7 +404,7 @@
   },
   {
    "num": "52.7%",
-   "label": "less unplanned downtime at the less reactive half of plants[^20]",
+   "label": "less unplanned downtime at the less reactive half of plants[^19]",
    "source": "NIST, 2021"
   },
   {
@@ -414,17 +414,17 @@
   },
   {
    "num": "About 12%",
-   "label": "of manufacturing businesses used AI in the Census survey of April 2026[^51]",
+   "label": "of manufacturing businesses used AI in the Census survey of April 2026[^41]",
    "source": "Federal Reserve Bank of Minneapolis, May 2026"
   },
   {
    "num": "About 11%",
-   "label": "of manufacturing job postings asked for AI skills in 2026, against about 8% of all postings[^25]",
+   "label": "of manufacturing job postings asked for AI skills in 2026, against about 8% of all postings[^23]",
    "source": "Federal Reserve Board, FEDS Notes, Sept 2026"
   },
   {
    "num": "2,535",
-   "label": "US job ads in one week mentioning process optimization with machine learning[^24]",
+   "label": "US job ads in one week mentioning process optimization with machine learning[^22]",
    "source": "Zavient job-ad count, 25 Nov 2026"
   }
  ],
@@ -459,7 +459,7 @@
   },
   {
    "reader": "Division head",
-   "notes": "Read as a VP of operations or plant manager. Would close the tab on predictive maintenance without a sensor cost. Fixed: the big-company FAQ now gives software prices per user and a labelled forum figure for sensor hookup per machine. Checked the rules list names who each rule applies to (medical devices, defense suppliers, EU sellers)."
+   "notes": "Read as a VP of operations or plant manager. Would close the tab on predictive maintenance without a sensor cost. Fixed: the big-company FAQ now gives software prices per user and says sensor systems are quoted per site, citing the vendors' own pages. Checked the rules list names who each rule applies to (medical devices, defense suppliers, EU sellers)."
   },
   {
    "reader": "Owner-CEO",
@@ -529,11 +529,6 @@
    "what": "Human roles in overseeing AI must be clearly defined; risks of serious injury or death get the most urgent priority. Voluntary; under revision."
   },
   {
-   "name": "FlowFuse, AI in Manufacturing: Use Cases, Software, and Implementation (Sept 2026; vendor)",
-   "url": "https://flowfuse.com/blog/2026/09/ai-in-manufacturing",
-   "what": "Vendor explainer: AI reads machine, sensor, camera and MES data to predict failures, detect defects and support production decisions."
-  },
-  {
    "name": "NIST MEP, Artificial Intelligence: Key Considerations and Effective Implementation Strategies (July 2025)",
    "url": "https://www.nist.gov/system/files/documents/2025/07/11/Artificial%20Intelligence-%20Key%20Consideration%20and%20Effective%20Implementation%20Strategies%20508%20Compliant.pdf",
    "what": "Industrial AI is \"a smart assistant for your factory, but it must have human support to work\"; written for small and mid-size manufacturers."
@@ -569,11 +564,6 @@
    "what": "Less reactive plants: 52.7% less unplanned downtime, 78.5% fewer defects; predictive-heavy vs preventive-heavy: 18.5% less downtime."
   },
   {
-   "name": "Structify, AI in manufacturing: use cases, generative AI, where to start (Nov 2026; vendor)",
-   "url": "https://www.structify.ai/ai-in-manufacturing",
-   "what": "Vendor explainer: language models fit reading-and-writing work (RFQs, POs, prints, certs), not work that must be exact every time."
-  },
-  {
    "name": "US Census Bureau, CES-WP-26-25, The Microstructure of AI Diffusion (Apr 2026)",
    "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
    "what": "Among AI-using firms: sales and marketing (52%) is the top function; 95.7% report no AI-driven employment change."
@@ -594,11 +584,6 @@
    "what": "About 11% of manufacturing postings required AI skills by 2026, up from about 2% in 2011, vs about 8% of all postings."
   },
   {
-   "name": "Rootstock Software, State of AI in Manufacturing 2024-2025 (vendor-commissioned; 369 firms with 100+ staff)",
-   "url": "https://clouderp.rootstock.com/hubfs/RTS240013_AI%20in%20Manufacturing%20Survey_021222.pdf",
-   "what": "53% prefer AI copilots vs 22% fully autonomous agents; 54% unsure whether their ERP is ready for AI."
-  },
-  {
    "name": "Zavient, keyword pull by kind of AI work, US Google (25 Nov 2026)",
    "url": "https://zavient.com/industries/manufacturing.html#own-data",
    "what": "Monthly US searches and cost per click for three phrases per kind of manufacturing AI work; main phrase \"ai in manufacturing\" 2,900 a month."
@@ -614,29 +599,14 @@
    "what": "Free tier; Basic $45 and Professional $75 per user a month; Fiix Foresight AI on Professional and up."
   },
   {
-   "name": "Tractian, Siemens Senseye vs Augury (competitor vendor content)",
-   "url": "https://tractian.com/en/blog/siemens-senseye-vs-augury",
-   "what": "A competitor's comparison: neither publishes prices; Senseye needs existing sensors or historian data; Augury bundles sensors and analysts."
-  },
-  {
-   "name": "Limble, CMMS Software Cost guide (Mar 2026)",
+   "name": "Limble, CMMS Software Cost guide (Limble's own page, read 26 Nov 2026)",
    "url": "https://limble.com/learn/cost",
-   "what": "Standard $28 and Premium+ $69 per user a month; the pricing page now uses a calculator."
-  },
-  {
-   "name": "Softwr, MaintainX vs Tractian (checked 20 Nov 2026 by the site)",
-   "url": "https://www.softwr.com/compare/maintainx-vs-tractian",
-   "what": "Tractian CMMS from $60 per user a month, 5-user minimum; sensors priced separately; proprietary sensors can be written off if you switch."
+   "what": "Limble's own plans: Standard $28 and Premium+ $69 per user a month; Enterprise by custom quote."
   },
   {
    "name": "LandingAI, LandingLens plans",
    "url": "https://landinglens.docs.landing.ai/plans",
    "what": "Free plan: $0, 1,000 credits a month, 3 users; Enterprise through sales."
-  },
-  {
-   "name": "Bhattacharya, How Much Does AI Visual Inspection Cost a Small Manufacturer? (Sept 2026)",
-   "url": "https://sagnikbhattacharya.com/blog/ai-visual-inspection-cost",
-   "what": "Cost guide: free-plan model download is non-commercial; budget retraining per product change; rare, cheap escapes don't justify a station."
   },
   {
    "name": "Safety+Health (National Safety Council), The most frequently cited OSHA standards in FY 2025 (Nov 2025)",
@@ -684,16 +654,6 @@
    "what": "Causes: poor data quality, weak risk controls, rising costs or unclear business value."
   },
   {
-   "name": "Reddit r/IndustrialMaintenance, Is predictive maintenance actually worth it, or is it mostly a sales pitch? (Aug 2026)",
-   "url": "https://www.reddit.com/r/IndustrialMaintenance/comments/1w36qxg/is_predictive_maintenance_actually_worth_it_or_is",
-   "what": "Practitioners: about 80% of costly failures are \"dumb, basic stuff\"; \"half the alerts get ignored after six months\"."
-  },
-  {
-   "name": "Reddit r/manufacturing, Anyone actually using ML/AI for production data analysis? (Dec 2025)",
-   "url": "https://www.reddit.com/r/manufacturing/comments/1py48hl/anyone_actually_using_mlai_for_production_data",
-   "what": "Plant analyst: six-figure tools \"collect dust\" when data isn't clean or operators don't trust them; anomaly detection is \"statistical process control on steroids\"."
-  },
-  {
    "name": "IBM, 2026 X-Force Threat Intelligence Index (Feb 2026; vendor)",
    "url": "https://newsroom.ibm.com/2026-02-25-ibm-2026-x-force-threat-index-ai-driven-attacks-are-escalating-as-basic-security-gaps-leave-enterprises-exposed",
    "what": "Manufacturing was the most-attacked industry for the fifth year, with 27.7% of incidents."
@@ -707,16 +667,6 @@
    "name": "MTConnect (Association for Manufacturing Technology)",
    "url": "https://www.mtconnect.org/",
    "what": "Royalty-free open standard for reading machine data, supported by major machine-tool makers."
-  },
-  {
-   "name": "Reddit r/IndustrialMaintenance, Does Predictive Maintenance Only Work If You're a Big Company? (Dec 2025)",
-   "url": "https://www.reddit.com/r/IndustrialMaintenance/comments/1pkan2d/does_predictive_maintenance_only_work_if_youre_a",
-   "what": "Where the question was asked: maintenance staff at smaller plants weighing predictive maintenance."
-  },
-  {
-   "name": "Reddit r/manufacturing, Pains of Predictive Maintenance (Dec 2024)",
-   "url": "https://www.reddit.com/r/manufacturing/comments/1hc9o2d/pains_of_predictive_maintenance/",
-   "what": "Forum claim: sensor hookup ran $5,000 to $10,000 per machine."
   },
   {
    "name": "Federal Reserve Bank of Minneapolis, AI adoption in business grows steadily but unevenly (May 2026)",
@@ -749,9 +699,39 @@
    "what": "Over 40% of agentic AI projects will be canceled by end of 2027; many vendors are \"agent washing\"."
   },
   {
-   "name": "Opsio, Vision Inspection System Cost in 2026",
-   "url": "https://opsiocloud.com/knowledge-base/how-much-does-a-vision-inspection-system-cost",
-   "what": "Rule-based machine vision is cheaper for stable checks such as measuring a hole, reading a code or checking presence."
+   "name": "US Department of Energy, FEMP, Operations and Maintenance Best Practices Guide, Release 3.0",
+   "url": "https://www.energy.gov/sites/prod/files/2020/04/f74/omguide_complete_w-eo-disclaimer.pdf",
+   "what": "Predictive maintenance: estimated 8% to 12% savings over preventive, but needs investment in diagnostic equipment and staff training. Start with one troubled system; cheap, unimportant equipment may be best left to reactive repair."
+  },
+  {
+   "name": "Siemens, Senseye Cloud Application (vendor page, read 26 Nov 2026)",
+   "url": "https://www.siemens.com/global/en/products/services/digital-enterprise-services/analytics-artificial-intelligence-services/predictive-services/senseye-predictive-maintenance/how-it-works.html",
+   "what": "Works with existing data from historians, IoT platforms or new sensors; contact sales for pricing."
+  },
+  {
+   "name": "Augury, Machine Health (vendor page, read 26 Nov 2026)",
+   "url": "https://www.augury.com/machine-health/",
+   "what": "Industrial IoT sensors included in every subscription; AI diagnosis plus expert vibration analysts; no price published."
+  },
+  {
+   "name": "Tractian, pricing page (read 26 Nov 2026)",
+   "url": "https://tractian.com/en/pricing",
+   "what": "Custom quote; pricing scoped to your assets and their criticality, confirmed on site."
+  },
+  {
+   "name": "NIST/SEMATECH e-Handbook of Statistical Methods, 6.1.2 What are process control techniques?",
+   "url": "https://www.itl.nist.gov/div898/handbook/pmc/section1/pmc12.htm",
+   "what": "Statistical process control compares current output with control limits computed from past data and investigates points outside them."
+  },
+  {
+   "name": "Edwards, Bauer, Jacquillat, Hart and Ahmed, Agentic AI in Engineering and Manufacturing, MIT (Mar 2026)",
+   "url": "https://decode.mit.edu/assets/papers/2026_Edwards_Agentic_AI_in_Engineering_and_Manufacturing.pdf",
+   "what": "Interview study (30+ interviews): multi-step request-for-quote workflows between suppliers and OEMs are a highly beneficial area for AI automation; early AI augments work rather than replacing it."
+  },
+  {
+   "name": "McKinsey, Making the leap with generative AI in procurement (Mar 2024)",
+   "url": "https://www.mckinsey.com/capabilities/operations/our-insights/operations-blog/making-the-leap-with-generative-ai-in-procurement",
+   "what": "Language models draft requests for proposal and contracts; one RFP engine drew on 10,000+ past RFPs and bids."
   }
  ]
 }
