@@ -8,11 +8,11 @@
  "industry": "manufacturing",
  "index": false,
  "verdict": [
-  "Fix basic maintenance first. NIST found the most reactive quarter of plants had 3.3 times the downtime and 16 times the defects of the least reactive[^1][^2].",
-  "Start with a troubleshooting assistant that reads your manuals and repair history. It needs no new sensors, and one plant cut repair time 40%[^3][^4].",
-  "Camera inspection is the most-planned AI use, and trained inspectors miss about 15% of defects. Most published AI inspection systems stall at pilot, so trial on your own parts[^5][^6][^7].",
-  "Expect a dip before the gain. Census research found productivity falls first after AI adoption, and plants that drop structured management lose more[^8][^9].",
-  "People keep the switch. Federal guidance on AI in plant control systems keeps a human in the loop, and OSHA lockout rules still govern every repair[^10][^11][^12]."
+  "Fix basic maintenance first. NIST found the most reactive quarter of plants had 3.3 times the downtime and 16 times the defects of the least reactive.[^1][^2]",
+  "Start with a troubleshooting assistant that reads your manuals and repair history. It needs no new sensors, and one plant cut repair time 40%.[^3][^4]",
+  "Camera inspection is the most-planned AI use, and trained inspectors miss about 15% of defects. Most published AI inspection systems stall at pilot, so trial on your own parts.[^5][^6][^7]",
+  "Expect a dip before the gain. Census research found productivity falls first after AI adoption, and plants that drop structured management lose more.[^8][^9]",
+  "People keep the switch. Federal guidance on AI in plant control systems keeps a human in the loop, and OSHA lockout rules still govern every repair.[^10][^11][^12]"
  ],
  "onPage": [
   {
@@ -45,49 +45,49 @@
   "buy-or-build": "Should you buy AI tools or build your own?",
   "faq": "Questions plant leaders ask about AI"
  },
- "summary": "AI in manufacturing reads the data your plant already makes: machine signals, camera images, work orders and prints[^13][^14]. It flags a failing machine, catches a defect or answers a technician's question, while people decide what to fix, ship or scrap[^14][^10]. What makes or breaks it is boring: consistent data and one problem with a dollar cost, such as downtime or scrap[^15][^16][^8].",
+ "summary": "AI in manufacturing reads the data your plant already makes: machine signals, camera images, work orders and prints.[^13][^14] It flags a failing machine, catches a defect or answers a technician's question, while people decide what to fix, ship or scrap.[^14][^10] What makes or breaks it is boring: consistent data and one problem with a dollar cost, such as downtime or scrap.[^15][^16][^8]",
  "humanRole": [
-  "Operators and the maintenance lead keep control of the machines. Federal and allied guidance urges caution with AI that acts on machine control, and wants human checkpoints[^10][^12].",
-  "The maintenance planner owns the work order; AI only raises the flag. A trained person still locks out the machine's power under OSHA rules before any AI-suggested repair[^11][^10].",
-  "The quality manager decides what ships, reworks or gets scrapped; the camera only sorts and flags. Medical-device makers must also show that this software works, under FDA rules[^17][^18].",
-  "Technicians still do the fix, and AI answers their questions faster. In one McKinsey case, technicians gained 40% more capacity because they rarely had to answer simple questions[^4][^19]."
+  "Operators and the maintenance lead keep control of the machines. Federal and allied guidance urges caution with AI that acts on machine control, and wants human checkpoints.[^10][^12]",
+  "The maintenance planner owns the work order; AI only raises the flag. A trained person still locks out the machine's power under OSHA rules before any AI-suggested repair.[^11][^10]",
+  "The quality manager decides what ships, reworks or gets scrapped; the camera only sorts and flags. Medical-device makers must also show that this software works, under FDA rules.[^17][^18]",
+  "Technicians still do the fix, and AI answers their questions faster. In one McKinsey case, technicians gained 40% more capacity because they rarely had to answer simple questions.[^4][^19]"
  ],
  "ranked": [
   {
    "name": "A troubleshooting assistant for maintenance",
-   "why": "Lowest effort: it reads the manuals and repair notes you already have, with no new sensors[^4]. One plant built its assistant in two weeks and cut repair time 40%[^3].",
+   "why": "Lowest effort: it reads the manuals and repair notes you already have, with no new sensors.[^4] One plant built its assistant in two weeks and cut repair time 40%.[^3]",
    "payoff": "Mean time to repair, and the share of calls operators solve without a technician."
   },
   {
    "name": "Predictive maintenance on the few machines that stop the line",
-   "why": "The average US plant still does 45.7% of its maintenance after something breaks[^1][^2]. Plants leaning on planned and predictive work had 52.7% less unplanned downtime[^20].",
+   "why": "The average US plant still does 45.7% of its maintenance after something breaks.[^1][^2] Plants leaning on planned and predictive work had 52.7% less unplanned downtime.[^20]",
    "payoff": "Unplanned downtime hours on the covered machines, and your share of reactive maintenance hours."
   },
   {
    "name": "AI camera inspection on one defect that reaches customers",
-   "why": "Half of 1,560 manufacturers planned AI for quality in 2025, the top use case[^5]. Trained inspectors caught 85% of bad parts and wrongly rejected 35% of good ones[^6].",
+   "why": "Half of 1,560 manufacturers planned AI for quality in 2025, the top use case.[^5] Trained inspectors caught 85% of bad parts and wrongly rejected 35% of good ones.[^6]",
    "payoff": "Escapes to customers per quarter, false rejects, and inspection minutes per part."
   },
   {
    "name": "Reading quotes, orders and certificates",
    "slug": "ai-document-processing",
-   "why": "Language models fit the reading-and-writing side of the plant: requests for quote, purchase orders, prints and certs[^21][^22]. GE Appliances says a supplier-email agent helped cut backorders 25% (Google's claim)[^23].",
+   "why": "Language models fit the reading-and-writing side of the plant: requests for quote, purchase orders, prints and certs.[^21][^22] GE Appliances says a supplier-email agent helped cut backorders 25% (Google's claim).[^23]",
    "payoff": "Hours from request for quote to quote sent, and keying errors per 100 documents."
   },
   {
    "name": "Production scheduling and process optimization",
-   "why": "This is where employers hire: we counted 2,535 US ads for process optimization and 1,607 for scheduling optimization in one week[^24][^25]. It needs clean routings and data from your ERP (business system), and 54% of surveyed manufacturers are unsure theirs is ready[^26].",
+   "why": "This is where employers hire: we counted 2,535 US ads for process optimization and 1,607 for scheduling optimization in one week.[^24][^25] It needs clean routings and data from your ERP (business system), and 54% of surveyed manufacturers are unsure theirs is ready.[^26]",
    "payoff": "On-time delivery, schedule changes per week, and scrap or yield percentage."
   },
   {
    "name": "Energy use and digital twins",
-   "why": "Save these for later: they need the most data plumbing. Energy AI drew almost no US searches in our pull, though 290 job ads mentioned it in a week[^27][^24].",
+   "why": "Save these for later: they need the most data plumbing. Energy AI drew almost no US searches in our pull, though 290 job ads mentioned it in a week.[^27][^24]",
    "payoff": "Energy cost per unit made."
   }
  ],
  "ownData": {
   "title": "What do plants search for, and what do employers hire for?",
-  "intro": "We set US Google searches for each kind of manufacturing AI work against US job ads that mention it[^27][^24]. Buyers search most for predictive maintenance, while the job ads we counted name process optimization and scheduling most[^27][^24]. The Federal Reserve sees the same pull: about 11% of manufacturing job postings asked for AI skills in 2026, against about 8% overall[^25].",
+  "intro": "We set US Google searches for each kind of manufacturing AI work against US job ads that mention it.[^27][^24] Buyers search most for predictive maintenance, while the job ads we counted name process optimization and scheduling most.[^27][^24] The Federal Reserve sees the same pull: about 11% of manufacturing job postings asked for AI skills in 2026, against about 8% overall.[^25]",
   "headers": [
    "Kind of AI work",
    "US searches a month",
@@ -125,12 +125,12 @@
     "290[^24]"
    ]
   ],
-  "note": "Searches are US Google monthly averages for three phrases per row, from our keyword pull of 25 Nov 2026[^27]. Job ads are US ads posted in the 7 days to 25 Nov 2026 that mention the row's phrase[^24]. Counts are rough: ads aren't limited to manufacturers, and one ad can match several rows."
+  "note": "Searches are US Google monthly averages for three phrases per row, from our keyword pull of 25 Nov 2026.[^27] Job ads are US ads posted in the 7 days to 25 Nov 2026 that mention the row's phrase.[^24] Counts are rough: ads aren't limited to manufacturers, and one ad can match several rows."
  },
  "tables": [
   {
    "title": "What do maintenance and inspection tools cost?",
-   "intro": "Prices from each vendor's own page, checked 26 Nov 2026, unless the cell names another source[^28][^29]. Sensor-based systems rarely publish a price[^30].",
+   "intro": "Prices from each vendor's own page, checked 26 Nov 2026, unless the cell names another source.[^28][^29] Sensor-based systems rarely publish a price.[^30]",
    "headers": [
     "Tool",
     "What it does",
@@ -205,7 +205,7 @@
   },
   {
    "title": "What do the studies say?",
-   "intro": "The primary studies behind the main numbers on this page[^1][^6][^16].",
+   "intro": "The primary studies behind the main numbers on this page.[^1][^6][^16]",
    "headers": [
     "Study",
     "Sample",
@@ -268,106 +268,106 @@
    "name": "OSHA lockout/tagout, 29 CFR 1910.147",
    "url": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.147",
    "status": "In force",
-   "what": "Covers servicing any machine that could start up unexpectedly and hurt someone[^11]. An AI maintenance alert doesn't change who locks out the power. It was OSHA's 4th most-cited standard in FY2025, with 2,177 violations[^35][^36]."
+   "what": "Covers servicing any machine that could start up unexpectedly and hurt someone.[^11] An AI maintenance alert doesn't change who locks out the power. It was OSHA's 4th most-cited standard in FY2025, with 2,177 violations.[^35][^36]"
   },
   {
    "name": "OSHA machine guarding, 29 CFR 1910.212",
    "url": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.212",
    "status": "In force",
-   "what": "Keep guards in place when you add cameras or robots for AI inspection. It was OSHA's 10th most-cited standard in FY2025, with 1,239 violations[^35]."
+   "what": "Keep guards in place when you add cameras or robots for AI inspection. It was OSHA's 10th most-cited standard in FY2025, with 1,239 violations.[^35]"
   },
   {
    "name": "ISO 10218-1 and 10218-2:2025, robot safety",
    "url": "https://www.iso.org/standard/73933.html",
    "status": "Published Feb 2025",
-   "what": "The baseline for any AI-guided robot or cobot cell. It replaces the 2011 edition and is a paid standard[^37]."
+   "what": "The baseline for any AI-guided robot or cobot cell. It replaces the 2011 edition and is a paid standard.[^37]"
   },
   {
    "name": "FDA QMSR, 21 CFR 820 (medical devices)",
    "url": "https://www.fda.gov/medical-devices/postmarket-requirements-devices/quality-management-system-regulation-qmsr",
    "status": "In force since 2 Feb 2026",
-   "what": "It folds in ISO 13485:2016 and now specifically requires risk management[^17]. AI used in production or quality falls inside your quality system[^18]."
+   "what": "It folds in ISO 13485:2016 and now specifically requires risk management.[^17] AI used in production or quality falls inside your quality system.[^18]"
   },
   {
    "name": "FDA Computer Software Assurance guidance",
    "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/computer-software-assurance-production-and-quality-management-system-software",
    "status": "Final, Feb 2026",
-   "what": "A risk-based way to show that software used in production or quality does its job[^18]. Treat AI tools in those steps the same way."
+   "what": "A risk-based way to show that software used in production or quality does its job.[^18] Treat AI tools in those steps the same way."
   },
   {
    "name": "CMMC, DFARS rule (defense suppliers)",
    "url": "https://www.federalregister.gov/documents/2025/09/10/2025-17359/defense-federal-acquisition-regulation-supplement-assessing-contractor-implementation-of",
    "status": "In force; Phase 2 from 10 Nov 2026",
-   "what": "If you handle controlled unclassified information (CUI), any cloud AI tool that touches it must sit inside your assessed environment[^38]. Full rollout comes on 10 Nov 2028[^39]."
+   "what": "If you handle controlled unclassified information (CUI), any cloud AI tool that touches it must sit inside your assessed environment.[^38] Full rollout comes on 10 Nov 2028.[^39]"
   },
   {
    "name": "EU Machinery Regulation 2023/1230",
    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML?uri=CELEX%3A02023R1230-20260727",
    "status": "Applies from 20 Jan 2027",
-   "what": "Only if you sell machines into the EU. It replaces the Machinery Directive and was amended in 2026 by Regulation (EU) 2026/1744[^40]."
+   "what": "Only if you sell machines into the EU. It replaces the Machinery Directive and was amended in 2026 by Regulation (EU) 2026/1744.[^40]"
   },
   {
    "name": "NIST AI Risk Management Framework 1.0",
    "url": "https://www.nist.gov/itl/ai-risk-management-framework",
    "status": "Voluntary; under revision",
-   "what": "A free framework for naming who oversees AI and how you check it. It puts risks of serious injury or death first[^12]."
+   "what": "A free framework for naming who oversees AI and how you check it. It puts risks of serious injury or death first.[^12]"
   },
   {
    "name": "CISA and allies, AI in operational technology",
    "url": "https://www.cisa.gov/news-events/news/new-joint-guide-advances-secure-integration-artificial-intelligence-operational-technology",
    "status": "Guidance, 3 Dec 2025",
-   "what": "Ask vendors for a software bill of materials (SBOM) that covers embedded AI. Get data-use terms so the vendor may not train on your plant data[^10]."
+   "what": "Ask vendors for a software bill of materials (SBOM) that covers embedded AI. Get data-use terms so the vendor may not train on your plant data.[^10]"
   },
   {
    "name": "NIST SP 800-82 Rev. 3, OT security",
    "url": "https://csrc.nist.gov/pubs/sp/800/82/r3/final",
    "status": "Final; Rev. 4 in draft",
-   "what": "The US reference for securing the systems that run your machines (OT) before you connect AI to them[^41]."
+   "what": "The US reference for securing the systems that run your machines (OT) before you connect AI to them.[^41]"
   }
  ],
  "watchOuts": [
-  "Pilot purgatory: 77% of AI vision systems in a 50-study review never left prototype or pilot[^7][^42]. Cost the problem first, in downtime hours or escapes, and start on one line[^15][^43].",
-  "Productivity dips before it rises, worst in older plants[^8][^9]. Budget a ramp period and keep your standard work, since dropping it explains about a third of the losses[^8].",
-  "Alert fatigue: practitioners report half of alerts ignored after six months, and six-figure tools left unused[^44][^45]. Fix basic preventive maintenance first, then set alert limits with the technicians who act on them.",
-  "Vision models drift when lighting, material or product changes, and lab accuracy overstates the line[^42][^7]. Trial on your own parts, keep every labelled image and budget retraining for each product change[^34].",
-  "Connecting machines opens a cyber door: manufacturing was the most-attacked industry for the fifth year running, per IBM[^46][^47]. Follow NIST SP 800-82 and the CISA AI-in-OT principles before you connect[^41][^10].",
-  "Lock-in: proprietary sensors can be written off if you later switch analytics vendors[^32][^15]. Prefer open data standards such as MTConnect, and make sure you can export your own data[^48]."
+  "Pilot purgatory: 77% of AI vision systems in a 50-study review never left prototype or pilot.[^7][^42] Cost the problem first, in downtime hours or escapes, and start on one line.[^15][^43]",
+  "Productivity dips before it rises, worst in older plants.[^8][^9] Budget a ramp period and keep your standard work, since dropping it explains about a third of the losses.[^8]",
+  "Alert fatigue: practitioners report half of alerts ignored after six months, and six-figure tools left unused.[^44][^45] Fix basic preventive maintenance first, then set alert limits with the technicians who act on them.",
+  "Vision models drift when lighting, material or product changes, and lab accuracy overstates the line.[^42][^7] Trial on your own parts, keep every labelled image and budget retraining for each product change.[^34]",
+  "Connecting machines opens a cyber door: manufacturing was the most-attacked industry for the fifth year running, per IBM.[^46][^47] Follow NIST SP 800-82 and the CISA AI-in-OT principles before you connect.[^41][^10]",
+  "Lock-in: proprietary sensors can be written off if you later switch analytics vendors.[^32][^15] Prefer open data standards such as MTConnect, and make sure you can export your own data.[^48]"
  ],
  "faq": [
   {
    "q": "Is predictive maintenance worth it, or mostly a sales pitch?",
-   "a": "Often worth it, but only after the basics. NIST found the less reactive half of plants had 52.7% less unplanned downtime[^20]. Practitioners say most costly failures are missed routine work, not hidden faults[^44]."
+   "a": "Often worth it, but only after the basics. NIST found the less reactive half of plants had 52.7% less unplanned downtime.[^20] Practitioners say most costly failures are missed routine work, not hidden faults.[^44]"
   },
   {
    "q": "What is the difference between predictive and preventive maintenance?",
-   "a": "Preventive maintenance runs on a calendar or cycle count. Predictive maintenance is triggered by measured condition, such as vibration or temperature[^1][^2]. NIST found predictive-heavy plants had 18.5% less unplanned downtime than preventive-heavy ones[^20]."
+   "a": "Preventive maintenance runs on a calendar or cycle count. Predictive maintenance is triggered by measured condition, such as vibration or temperature.[^1][^2] NIST found predictive-heavy plants had 18.5% less unplanned downtime than preventive-heavy ones.[^20]"
   },
   {
    "q": "Does predictive maintenance only work for big companies?",
-   "a": "No, but start with the few machines that stop the line[^49]. Maintenance software publishes prices from $20 to $75 per user a month[^28][^29]. Sensor systems are quoted per machine; one forum user put hookup at $5,000 to $10,000 each[^30][^50]."
+   "a": "No, but start with the few machines that stop the line.[^49] Maintenance software publishes prices from $20 to $75 per user a month.[^28][^29] Sensor systems are quoted per machine; one forum user put hookup at $5,000 to $10,000 each.[^30][^50]"
   },
   {
    "q": "How much does AI visual inspection cost?",
-   "a": "Few suppliers publish prices; most quote per station[^34]. LandingLens has a free tier for trials, but its free model download is for non-commercial use[^33][^34]."
+   "a": "Few suppliers publish prices; most quote per station.[^34] LandingLens has a free tier for trials, but its free model download is for non-commercial use.[^33][^34]"
   },
   {
    "q": "How many manufacturers actually use AI?",
-   "a": "Fewer than the hype suggests: about 12% of manufacturing businesses reported using AI in the Census survey of April 2026[^51]. Hiring runs ahead, with about 11% of manufacturing job postings asking for AI skills[^25]."
+   "a": "Fewer than the hype suggests: about 12% of manufacturing businesses reported using AI in the Census survey of April 2026.[^51] Hiring runs ahead, with about 11% of manufacturing job postings asking for AI skills.[^25]"
   },
   {
    "q": "Will AI take jobs on the plant floor?",
-   "a": "The data points to help, not cuts. Among US firms using AI, 95.7% reported no AI-driven change in headcount[^22]. Manufacturers also face up to 1.9 million unfilled jobs by 2033[^52][^53]."
+   "a": "The data points to help, not cuts. Among US firms using AI, 95.7% reported no AI-driven change in headcount.[^22] Manufacturers also face up to 1.9 million unfilled jobs by 2033.[^52][^53]"
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy when the process is standard, such as maintenance software, condition monitoring or one camera station, and you have no data team. Most firms now buy: 76% of enterprise AI use cases are purchased[^54]. Bought or partnered tools succeed about 67% of the time, three times the rate of internal builds (self-reported)[^55].",
-  "build": "Build, or configure, when your edge is your own data: an assistant over your manuals and repair history, or scheduling on your routings[^4][^19]. Custom industrial AI may need data scientists on staff or a specialist[^14]. Check claims hard: Gartner expects over 40% of agentic AI projects to be canceled by 2027[^56]."
+  "buy": "Buy when the process is standard, such as maintenance software, condition monitoring or one camera station, and you have no data team. Most firms now buy: 76% of enterprise AI use cases are purchased.[^54] Bought or partnered tools succeed about 67% of the time, three times the rate of internal builds (self-reported).[^55]",
+  "build": "Build, or configure, when your edge is your own data: an assistant over your manuals and repair history, or scheduling on your routings.[^4][^19] Custom industrial AI may need data scientists on staff or a specialist.[^14] Check claims hard: Gartner expects over 40% of agentic AI projects to be canceled by 2027.[^56]"
  },
  "pickElse": [
-  "Preventive work keeps slipping: fix the basics with maintenance software (a CMMS) and a schedule before predictive AI. NIST's big gap is reactive versus planned work, and MaintainX and Fiix have free tiers[^1][^28][^29].",
-  "The check is simple and stable, like presence, a size or a code read: use rule-based machine vision, not deep learning. It is cheaper for stable checks[^57].",
-  "Escapes are rare and cheap: skip the camera. One cost guide's example: if one $200 defect a year reaches a customer, a $10,000 station never pays back[^34].",
-  "The process is stable and the problem is variation: use statistical process control (SPC) or lean before machine learning. One plant analyst calls anomaly detection SPC on steroids[^45][^16]."
+  "Preventive work keeps slipping: fix the basics with maintenance software (a CMMS) and a schedule before predictive AI. NIST's big gap is reactive versus planned work, and MaintainX and Fiix have free tiers.[^1][^28][^29]",
+  "The check is simple and stable, like presence, a size or a code read: use rule-based machine vision, not deep learning. It is cheaper for stable checks.[^57]",
+  "Escapes are rare and cheap: skip the camera. One cost guide's example: if one $200 defect a year reaches a customer, a $10,000 station never pays back.[^34]",
+  "The process is stable and the problem is variation: use statistical process control (SPC) or lean before machine learning. One plant analyst calls anomaly detection SPC on steroids.[^45][^16]"
  ],
  "resources": [
   {
