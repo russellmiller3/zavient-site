@@ -1,28 +1,46 @@
 {
  "title": "AI document processing: how accurate is it on financial documents?",
  "description": "We benchmarked AI tools on 30 fund reports, with answers locked in advance. Which ones made no mistakes, what each costs per report, and how to set it up.",
+ "type": "usecase",
+ "templateVersion": 1,
+ "topic": "AI document processing",
  "job": "document processing",
- "summary": "Document AI reads a PDF or scan and returns the fields your systems use, like totals and dates[^3][^4]. OCR returns raw text only; document AI knows which number is which[^2][^3]. Start with the document your team re-keys most: reading costs cents, and staff time is the real cost[^5][^1].",
+ "summary": "Document AI reads a PDF or scan and returns the fields your systems use, like totals and dates[^3][^4]. OCR (text recognition) returns raw text only; document AI knows which number is which[^2][^3]. Start with the document your team re-keys most: reading costs cents, and staff time is the real cost[^5][^1].",
+ "humanRole": [
+  "Reviewer, someone who knows the documents: settles every fact the two models disagree on.[^5] The reviewer can override any AI value.[^17][^23]",
+  "Team lead: sets the error rate the team will accept and signs off before go-live. NIST says people, not the tool, should set those limits.[^23]",
+  "Approver, not the person who fixed the value: releases facts that feed money or reports into the system others rely on.[^24] Small teams that can't split duties can use other checks.[^24]",
+  "Every reviewer checks the quoted page, not just the number.[^31] The EU AI Act names the risk of leaning on AI output: automation bias.[^17]"
+ ],
+ "teamAfter": [
+  "Checking replaces typing. Checking was already part of the job: O*NET lists comparing data with source documents as a core data-entry task.[^26]",
+  "Disagreements become the main work: in our test, about 1 fact in 4 went to a person.[^5]",
+  "New staff get up to speed faster. In a study of 5,172 support agents, those two months in with AI help matched agents six months in without it.[^27]",
+  "Time back for harder cases: workers who use generative AI report saving 5.4% of their hours, about 2.2 hours a week.[^28] Among US firms using AI, 66% use it only to help staff.[^25]"
+ ],
  "index": true,
  "verdict": [
   "Have two models from different vendors read each file; a person settles their disagreements[^9][^10].",
   "AI reading costs cents per report; staff time and errors are the real cost[^5][^1].",
-  "The two best models made zero mistakes on our 30 fund reports[^5].",
-  "Thirty clean reports still allow a true error rate of up to about 1 in 10[^13].",
-  "First step: benchmark two models on 50 files from one team's queue[^14]."
+  "Best two models: zero mistakes on our 30 fund reports; the true rate may still be 1 report in 10[^5][^13].",
+  "First step: benchmark two models on 50 files from one team's queue[^14][^23]."
  ],
  "onPage": [
   {
-   "to": "own-data",
-   "text": "Our benchmark: which AI tools read 30 fund reports without a wrong number"
+   "to": "human-role",
+   "text": "Who on your team checks, overrides and signs off"
+  },
+  {
+   "to": "table-1",
+   "text": "What reading one document costs, next to staff time"
   },
   {
    "to": "recipes",
    "text": "Three ways to set it up"
   },
   {
-   "to": "table-1",
-   "text": "What reading one document costs, next to staff time"
+   "to": "own-data",
+   "text": "Our benchmark: which AI tools read 30 fund reports without a wrong number"
   },
   {
    "to": "rules",
@@ -37,8 +55,8 @@
    "text": "Where document AI goes wrong, and how to catch it"
   },
   {
-   "to": "buy-or-build",
-   "text": "Buy or build"
+   "to": "faq",
+   "text": "Accuracy, scans, data privacy and jobs: the questions buyers ask"
   }
  ],
  "stats": [
@@ -128,9 +146,9 @@
     "Model A and Model B read it",
     "Code compares fact by fact",
     "Agree: accept",
-    "Disagree: your finance or ops checker decides (maker-checker: a second person approves)",
+    "Disagree: your reviewer decides, and a second person approves (maker-checker)",
     "System logs each decision and who made it",
-    "Approved facts load to your accounting or investor-reporting system"
+    "Approved facts load to your accounting, CRM or reporting system"
    ],
    "cost": "About $0.27 per report for two top models in our locked-answer round[^5]. The two models disagreed on 66 of 270 facts across all 30 reports, about 1 in 4, and a person settled each[^5]."
   },
@@ -268,11 +286,11 @@
  ],
  "howToTest": [
   "Record today's baseline first: staff minutes per file, and errors that reach the systems and reports downstream.",
-  "Pick 50 real files, including your worst scans and longest reports, plus facts some files never state, to catch invented answers. Even vendors advise benchmarking on your own documents[^14].",
+  "Pick 50 real files from one team's queue, including your worst scans and longest reports, plus facts some files never state, to catch invented answers. Even vendors advise benchmarking on your own documents[^14].",
   "Write the right answer for every fact before any AI reads the files, and lock it, so the AI's output cannot sway it.",
   "Require each answer to name its page and quote the exact words, and have code check that the quote is there.",
   "Count wrong answers apart from blanks. A blank goes to a person; a wrong number can slip through.",
-  "Report minutes per file, wrong fields reaching downstream systems and cost per file, before and after. Run the winner again on new files before you go live."
+  "Report minutes, wrong fields and cost per file, before and after; multiply the change by monthly volume to price it in dollars. Run the winner again on new files before you go live."
  ],
  "buyVsBuild": {
   "buy": "Buy a prebuilt parser or an accounts payable tool when your files are standard invoices, receipts or IDs. The big clouds' prebuilt models already cover those[^2][^4]. Buying fits best when you mainly need volume and an audit trail.",
@@ -285,6 +303,28 @@
   "Prices and model versions change: Mistral's newer OCR model costs twice its older one[^6]. Re-run your benchmark when either changes, and keep the files and answers so the re-run is cheap.",
   "Read the vendor's data terms. Datalab's rate card shows prices with a 25% discount that assumes you let it train on your data[^7].",
   "Plan reviewer time: in our benchmark, about 1 fact in 4 (66 of 270) went to a person[^5]. Multiply by the facts you pull each month to size the workload."
+ ],
+ "faq": [
+  {
+   "q": "What is the difference between OCR and AI document processing?",
+   "a": "OCR turns a page into raw text.[^2][^3] Document AI also knows which number is which, like the total or the due date.[^3][^4] Use OCR alone when you only need searchable text.[^2]"
+  },
+  {
+   "q": "How accurate is AI document processing?",
+   "a": "It depends on your documents, so test on your own.[^23][^14] On our 30 fund reports, the two best models made no mistakes.[^5] Zero in 30 still allows a true rate of up to about 1 in 10.[^13]"
+  },
+  {
+   "q": "Can AI read scanned documents?",
+   "a": "Yes, but accuracy drops on scans. In a 2025 study, the best model got 96.5% of invoice fields right on clean files and 92.7% on scanned ones.[^29] Re-run on 10 of our reports as scanned images, both top tools still made no mistakes.[^5]"
+  },
+  {
+   "q": "Is it safe to send company documents to an AI model?",
+   "a": "Read the vendor's business terms first. OpenAI and Anthropic say they do not train on business or API data by default.[^30][^31] OpenAI may keep API data up to 30 days to spot abuse, unless you qualify for zero retention.[^30]"
+  },
+  {
+   "q": "Will AI document processing replace data entry staff?",
+   "a": "It changes the job more than it removes it. Among US firms using AI, 66% use it only to help staff, and AI-related employment fell in 2%.[^25] BLS still projects data entry keyer jobs to fall 25.5% by 2035.[^32]"
+  }
  ],
  "resources": [
   {
@@ -377,7 +417,7 @@
   {
    "name": "EU AI Act, Article 14",
    "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-14",
-   "what": "High-risk AI systems must be designed so that people can oversee them effectively."
+   "what": "High-risk AI systems must let people oversee them, stay aware of over-relying on output (automation bias), and disregard, override or reverse it."
   },
   {
    "name": "Council of the EU, AI omnibus final approval (30 Jun 2026)",
@@ -403,6 +443,56 @@
    "name": "NYDFS Circular Letter No. 7 (2024)",
    "url": "https://www.dfs.ny.gov/industry-guidance/circular-letters/cl2024-07",
    "what": "Insurers stay responsible for vendor AI tools in underwriting and pricing and should seek audit rights in vendor contracts."
+  },
+  {
+   "name": "NIST, AI Risk Management Framework 1.0 (NIST AI 100-1, Jan 2023)",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf",
+   "what": "\"Accuracy measurements should always be paired with clearly defined and realistic test sets... representative of conditions of expected use.\" Human judgment should set metric thresholds; monitoring plans should include appeal and override."
+  },
+  {
+   "name": "US GAO, Green Book (2025), Principle 10",
+   "url": "https://guides.gaoinnovations.gov/greenbook/2025/principle-10-design-control-activities",
+   "what": "Segregation of duties separates authorizing, processing and recording, and reviewing \"so that no one individual controls all key aspects of a transaction.\" Where staff are too few, design alternative controls."
+  },
+  {
+   "name": "US Census Bureau, CES-WP-26-25, The Microstructure of AI Diffusion (Apr 2026)",
+   "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
+   "what": "\"Most users (66%) rely on AI solely to augment tasks, while AI-related employment decreases are rare, occurring in only 2% of firms.\" Document analysis is a leading task use."
+  },
+  {
+   "name": "O*NET OnLine, Data Entry Keyers (43-9021.00)",
+   "url": "https://www.onetonline.org/link/summary/43-9021.00",
+   "what": "US Department of Labor task list: locate and correct data entry errors; verify accuracy before entry; compare data with source documents to detect errors."
+  },
+  {
+   "name": "Brynjolfsson, Li and Raymond, Generative AI at Work (Quarterly Journal of Economics, 2025)",
+   "url": "https://academic.oup.com/qje/article/140/2/889/7990658",
+   "what": "Study of 5,172 support agents: AI help raised issues resolved per hour by 15%. Agents two months in with AI performed like agents over six months in without it."
+  },
+  {
+   "name": "Federal Reserve Bank of St. Louis, The Impact of Generative AI on Work Productivity (Feb 2025)",
+   "url": "https://www.stlouisfed.org/on-the-economy/2025/feb/impact-generative-ai-work-productivity",
+   "what": "Nationally representative survey: generative AI users saved 5.4% of work hours on average, about 2.2 hours in a 40-hour week."
+  },
+  {
+   "name": "Berghaus et al., Benchmarking LLM strategies for invoice processing (arXiv 2509.04469, Aug 2025)",
+   "url": "https://arxiv.org/abs/2509.04469",
+   "what": "Eight models on three public datasets. Best model: 96.50% of fields right on clean invoices, 92.71% on scanned invoices, 87.46% on scanned receipts."
+  },
+  {
+   "name": "OpenAI, Enterprise privacy (updated Jan 2026)",
+   "url": "https://openai.com/enterprise-privacy/",
+   "what": "No training on business or API data by default. API inputs and outputs may be kept up to 30 days to provide the service and spot abuse; zero data retention for qualifying uses."
+  },
+  {
+   "name": "Anthropic, Commercial Terms of Service",
+   "url": "https://www.anthropic.com/legal/commercial-terms",
+   "what": "\"Anthropic may not train models on Customer Content.\" Customers must tell users that factual claims in outputs should not be relied on without independently checking them."
+  },
+  {
+   "name": "US Bureau of Labor Statistics, Occupational projections 2025-35 (Aug 2026)",
+   "url": "https://www.bls.gov/emp/tables/occupational-projections-and-characteristics.htm",
+   "what": "Data entry keyers: 131,800 jobs in 2025, projected 98,200 in 2035, a 25.5% decline, with about 7,700 openings a year."
   }
  ],
  "related": [
@@ -419,8 +509,30 @@
  },
  "offer": {
   "heading": "Not sure which AI to trust with your documents? Get a free diagnostic",
-  "body": "Tell us what you read today and what a wrong number costs you. In 30 minutes you get our read on how to automate it."
+  "body": "Bring us one document type, your monthly volume and what a wrong number costs you. In 30 minutes you leave with the first step and a before-and-after measure, in writing."
  },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Wanted to see who does what before the benchmark. On this page now leads with who checks, overrides and signs off, and follows the page order. The bottom line said the true rate may be \"1 in 10\" without saying of what; it now says 1 report in 10."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Tripped on OCR and \"system of record\". OCR is now defined as text recognition where it first appears, and the approver bullet and recipe 2 now name the system in plain words (accounting, CRM or reporting). Frontier models, NAV and maker-checker were already defined."
+  },
+  {
+   "reader": "GM",
+   "notes": "Asked whether one unit can pilot first and what it is worth. The test now pulls its 50 files from one team's queue, and the last step turns the change per file into dollars a month. The first bottom-line step already said one team's queue."
+  },
+  {
+   "reader": "Division head",
+   "notes": "The head of document operations checked the control blocks. Recipe 2 said \"your finance or ops checker\"; it now says your reviewer decides and a second person approves, so it reads for any document team. The approver step applies only where facts feed money or reports, to keep review time sane."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Looked for what it costs, whether the files are safe and what happens to staff. The FAQ now answers data privacy from the vendors' own terms and jobs from Census and BLS. The offer now asks for one document type and monthly volume and promises the first step and a before-and-after measure in writing."
+  }
+ ],
  "updated": "2026-11-26",
  "rules": [
   {
@@ -448,7 +560,9 @@
   "rules": "Which rules apply when AI reads financial documents?",
   "what-goes-wrong": "Can you trust a vendor's accuracy numbers?",
   "buy-or-build": "Should you buy a document parser or build your own?",
-  "something-else": "When should you pick something else?"
+  "something-else": "When should you pick something else?",
+  "recipes": "Should a person check every AI-read field, or only the exceptions?",
+  "benchmark": "How do you benchmark AI document tools on your own files?"
  },
  "recipesTitle": "Should a person check every AI-read field, or only the exceptions?",
  "testTitle": "How do you benchmark AI document tools on your own files?"
