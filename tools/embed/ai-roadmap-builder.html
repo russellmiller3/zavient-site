@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta name="robots" content="noindex">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI roadmap builder: what should our company do with AI, and in what order?</title>
 <meta name="description" content="A dated company AI plan for a 40 to 500 person firm: 30 days of groundwork, up to 3 projects in year one with owners, review steps and pass/fail checkpoints.">
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="https://zavient.com/tools/ai-roadmap-builder.html">
-<link rel="icon" href="https://raw.githack.com/russellmiller3/zavient-site/preview-batch1-dist/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@600;700;800&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -856,7 +856,7 @@ function renderSources() {
     return `<li id="fn-${k + 1}">${esc(t)} <a href="${esc(u)}" target="_blank" rel="noopener">${esc(host)}</a></li>`;
   }).join("");
   const items = [
-    `Projects come from the <a href="https://raw.githack.com/russellmiller3/zavient-site/preview-batch1-dist/tools/ai-use-case-finder.html" target="_top">AI use case finder</a>: every use it lists for your industry and teams, with its score. Roadmap score = finder score × data fit × budget fit.${ZM()}`,
+    `Projects come from the <a href="/tools/ai-use-case-finder.html" target="_top">AI use case finder</a>: every use it lists for your industry and teams, with its score. Roadmap score = finder score × data fit × budget fit.${ZM()}`,
     `Data fit: messy data counts set-up tools 0.85 and builds 0.5; data in email, paper and spreadsheets counts set-up tools 0.6 and leaves builds out. Most AI projects without AI-ready data are expected to be dropped.${fns(["gdata", "rsm"])}${ZM()}`,
     `Budget fit: under $25K, set-up tools count 0.8 and builds are left out. Builds only enter at $100K or more, from month 4.${ZM()}`,
     `Project 1 is a bought or set-up tool with low or medium risk. Within 5 points, lower risk wins. Bought or partner-built tools reached daily use about twice as often as internal builds (a small, self-reported sample).${fns(["mit", "fortune"])}`,
