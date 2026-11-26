@@ -8,10 +8,10 @@ import ConsultingCta from '../components/ConsultingCta.astro';
 
 const BOOK = 'https://calendly.com/zavient/call';
 
-// Every kind of work. Only work with real guides links to a guide; the rest link to the free diagnostic, which
+// Every kind of work. Work with a guide links to it; the rest link to the free diagnostic until its guide ships, which
 // covers any workflow. No stub pages and no "coming soon" (research-home-allwork.md, 26 Nov 2026).
 const kinds = [
-  { href: '#finance', tag: 'Guides', title: 'Finance and accounting', text: 'Invoices, month-end close, reconciliations and financial documents.' },
+  { href: '#guides', tag: 'Guides', title: 'Finance and accounting', text: 'Invoices, month-end close, reconciliations and financial documents.' },
   { href: '/ai-work/ai-underwriting.html', tag: 'Guides', title: 'Lending and underwriting', text: 'Credit decisions and loan or policy files, with the underwriter keeping the call.' },
   { href: BOOK, tag: 'Free diagnostic', title: 'Operations and supply chain', text: 'Orders, scheduling, forecasting and the paperwork between them.' },
   { href: BOOK, tag: 'Free diagnostic', title: 'Customer service', text: 'AI finds the answer and drafts the reply. Your team checks it and sends it.' },
@@ -26,7 +26,7 @@ const kinds = [
 const industries = [
   { href: '/ai-work/ai-credit-scoring.html', tag: 'Guides', title: 'Banking and lending', text: 'Credit scoring you can explain to an examiner, and loan file review.' },
   { href: '/ai-work/ai-underwriting.html', tag: 'Guides', title: 'Insurance', text: 'Underwriting and the reading around every file.' },
-  { href: '#finance', tag: 'Guides', title: 'Any company with a finance team', text: 'Invoices, close and reconciliations work the same across industries.' },
+  { href: '#guides', tag: 'Guides', title: 'Any company with a finance team', text: 'Invoices, close and reconciliations work the same across industries.' },
   { href: BOOK, tag: 'Free diagnostic', title: 'Manufacturing', text: 'Quality records, supplier paperwork and planning.' },
   { href: BOOK, tag: 'Free diagnostic', title: 'Distribution and logistics', text: 'Orders, shipping documents and demand planning.' },
   { href: BOOK, tag: 'Free diagnostic', title: 'Property management', text: 'Leases, tenant requests and maintenance work orders.' },
@@ -53,7 +53,7 @@ const sources = [
 const fn = (n) => `#fn-${n}`;
 const updated = '26 November 2026';
 ---
-<Base title="AI for every kind of work: where should your company start? | Zavient" description="Zavient helps companies of 40 to 500 people put AI to work in any function and any industry. Pick your kind of work, read our finance guides, or book a free 30-minute diagnostic." canonical="https://zavient.com/" updated="2026-11-26">
+<Base title="AI for every kind of work: where should your company start? | Zavient" description="Zavient helps companies of 40 to 500 people put AI to work in any function and any industry. Pick your kind of work or industry, read a guide, or book a free 30-minute diagnostic." canonical="https://zavient.com/" updated="2026-11-26">
   <header class="article-hero"><div class="wrap">
     <div class="label">Zavient &middot; AI that helps your team do more</div>
     <h1>AI for every kind of work: where should your company <span class="hl">start?</span></h1>
@@ -62,16 +62,15 @@ const updated = '26 November 2026';
       <ul>
         <li>We help companies of 40 to 500 people put AI to work in any function and any industry.</li>
         <li>AI does the reading, matching and first draft. Your people keep the decision.</li>
-        <li>Our guides start with finance, where we test tools on real documents. We add a new area only when we have real research behind it.</li>
         <li>The free 30-minute diagnostic covers any kind of work, whether or not we have a guide for it yet.</li>
       </ul>
     </div>
     <p style="margin-top:22px;"><a class="btn-gold" href={BOOK}>Book a free 30-minute diagnostic &rarr;</a></p>
-    <p class="diag-nudge">Not ready to talk? <a href="#finance">Read the finance guides</a>, or <a href="/ai-readiness-assessment.html">take the AI readiness check</a>. It takes about 3 minutes, and your answers stay in your browser.</p>
+    <p class="diag-nudge">Not ready to talk? <a href="#guides">Read a guide</a>, or <a href="/ai-readiness-assessment.html">take the AI readiness check</a>. It takes about 3 minutes, and your answers stay in your browser.</p>
     <nav class="on-page" aria-label="On this page"><div class="label" style="margin-top:18px;">On this page</div><ol>
       <li><a href="#work">Find your kind of work</a></li>
       <li><a href="#industry">Or find your industry</a></li>
-      <li><a href="#finance">Finance guides, live now</a></li>
+      <li><a href="#guides">Guides you can read today</a></li>
       <li><a href="#role">Start with your role</a></li>
       <li><a href="#how">How we work with you</a></li>
       <li><a href="#people">Your team stays in charge</a></li>
@@ -82,7 +81,7 @@ const updated = '26 November 2026';
 
   <article class="article-body"><div class="wrap">
     <h2 id="work">Find your kind of work</h2>
-    <p>Pick the work you want AI to help with. Areas marked "Guides" have full pages today. For every other area, the free diagnostic maps your workflow with you, one to one.</p>
+    <p>Pick the work you want AI to help with. Areas marked "Guides" have full pages you can read now. For any area, the free diagnostic maps your workflow with you, one to one.</p>
     <div class="hub-grid">
       {kinds.map((k) => (
         <a class="hub-card" href={k.href}>
@@ -105,8 +104,8 @@ const updated = '26 November 2026';
       ))}
     </div>
 
-    <h2 id="finance">Finance guides, live now</h2>
-    <p>We started with finance because it runs on documents, and documents are where we can test AI tools ourselves. These 6 guides each answer one question. Each covers where people stay in the loop, what it costs, the rules that apply, and whether to buy or build.</p>
+    <h2 id="guides">Guides you can read today</h2>
+    <p>Each guide answers one question about one kind of work. Each covers where people stay in the loop, what it costs, the rules that apply, and whether to buy or build.</p>
     <div class="hub-grid">
       {finance.map((w) => (
         <a class="hub-card" href={w.href}>
