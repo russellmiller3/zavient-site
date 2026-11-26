@@ -4,7 +4,7 @@
 // with AI, which leads to an AI consulting engagement. data-cta="consulting" is what tests/site.test.mjs looks for.
 const { job = 'this work', heading = '', ask = '' } = Astro.props;
 ---
-<section class="article-cta" data-cta="consulting">
+<section class="article-cta" id="diagnostic" data-cta="consulting">
   <div class="wrap">
     <div class="label">Free diagnostic</div>
     <h2>{heading || `Not sure how to approach ${job}? Get a free diagnostic`}</h2>

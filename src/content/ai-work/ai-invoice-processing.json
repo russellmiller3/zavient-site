@@ -1,11 +1,11 @@
 {
- "title": "AI invoice processing: buy an AP tool, then fix what it misses",
+ "title": "AI invoice processing: where AP tools stop and the money leaks",
  "description": "15 AP and invoice-capture tools checked, with prices where they exist. Why reading invoices is solved and exceptions and fraud are not.",
  "job": "invoice processing",
  "industry": "finance and accounts payable",
  "summary": "AI invoice processing reads a supplier invoice, codes it, matches it to the purchase order and gets it approved and paid. Reading the invoice now costs cents. The money is in the 18% of invoices that hit an exception, and in the fake ones that ask you to pay a new bank account.",
  "index": true,
- "verdict": "Buy an accounts payable tool before you build anything: BILL, Ramp and Tipalti publish prices and already read invoices well. Then spend your effort where the suites fall short: the exceptions that stall approval, a check on any change to a supplier's bank details, and invoices from suppliers in countries that now require e-invoices. Build a custom AI step only for those gaps, and benchmark it on 50 of your own invoices first.",
+ "verdict": "Reading invoices is solved; the money leaks in the exceptions and the fraud. About 18% of invoices hit an exception, and fake requests to change a supplier's bank account arrive as invoices. Let an accounts payable tool such as BILL, Ramp or Tipalti run the inbox, approvals and payments. Put your effort, and any custom AI, into what the suites miss: exception triage, a hold on any change to bank details, and the e-invoices Germany and France now require. Benchmark any custom step on 50 of your own invoices first.",
  "stats": [
   {
    "num": "3 of 9",

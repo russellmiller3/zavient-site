@@ -22,6 +22,8 @@
 - **The offer:** every indexed page ends with a free 30-minute diagnostic that leads into consulting. Benchmarks stay on the page as proof, not as the ask.
 - **No pages for other consulting firms.** Ranking or listing rival or partner firms sends searchers to them.
 - **First cluster:** the 10 pages below did not hang together, so the first batch is 5 finance pages: the ai consulting services hub plus ai credit scoring, ai underwriting, ai document processing and ai invoice processing.
+- **The rule for every page, in your words:** "Optimize for education, trust and getting me leads." Teach first, prove it with our own data, and end on the free diagnostic. Nothing that sends readers elsewhere goes near the top.
+- **Never on the site:** low-end freelance marketplace rates such as Upwork.
 - **Every page covers four things:** how to do the work, the tools, the models and the regulations.
 - **Publish gate:** a page is indexed only with a verdict, 3 or more Zavient numbers and 3 or more sources. The site build refuses an indexed page without them. Everything else stays noindexed.
 

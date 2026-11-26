@@ -40,7 +40,7 @@ const d = page.data;
   <article class="article-body">
     <div class="wrap">
       {d.verdict && (
-        <div class="verdict"><span class="ask-label">The verdict</span><p>{d.verdict}</p></div>
+        <div class="verdict"><span class="ask-label">The verdict</span><p>{d.verdict}</p>{d.index && <p class="verdict-cta">Want my read on your version of this? <a href="#diagnostic">Get a free 30-minute diagnostic &rarr;</a></p>}</div>
       )}
       {spokes.length > 0 && (<>
         <h2>Where AI pays first in finance work</h2>
