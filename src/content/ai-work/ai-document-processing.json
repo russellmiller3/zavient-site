@@ -1,15 +1,15 @@
 {
  "title": "AI document processing: how accurate is it on financial documents?",
- "description": "We benchmarked AI tools on 30 fund reports, with answers locked in advance. Which ones made no mistakes, what each costs per page, and three ways to build it.",
+ "description": "We benchmarked AI tools on 30 fund reports, with answers locked in advance. Which ones made no mistakes, what each costs per report, and how to set it up.",
  "job": "document processing",
- "summary": "Document AI reads a PDF or scan and returns the fields your systems use, like totals and dates[^3][^4]. OCR returns raw text only; document AI knows which number is which[^2][^3]. Start with the document your team re-keys most: reading costs cents, and staff time is the real cost[^7][^1].",
+ "summary": "Document AI reads a PDF or scan and returns the fields your systems use, like totals and dates[^3][^4]. OCR returns raw text only; document AI knows which number is which[^2][^3]. Start with the document your team re-keys most: reading costs cents, and staff time is the real cost[^5][^1].",
  "index": true,
  "verdict": [
-  "Have two models from different vendors read each file; a person settles their disagreements[^15][^16].",
-  "AI reading costs cents per report; staff time and errors are the real cost[^7][^1].",
-  "The two best models made zero mistakes on our 30 fund reports[^7].",
-  "Thirty clean reports still allow a true error rate of up to about 1 in 10[^19].",
-  "First step: benchmark two models on 50 files from one team's queue[^20]."
+  "Have two models from different vendors read each file; a person settles their disagreements[^9][^10].",
+  "AI reading costs cents per report; staff time and errors are the real cost[^5][^1].",
+  "The two best models made zero mistakes on our 30 fund reports[^5].",
+  "Thirty clean reports still allow a true error rate of up to about 1 in 10[^13].",
+  "First step: benchmark two models on 50 files from one team's queue[^14]."
  ],
  "onPage": [
   {
@@ -18,11 +18,11 @@
   },
   {
    "to": "recipes",
-   "text": "Three ways to build it"
+   "text": "Three ways to set it up"
   },
   {
    "to": "table-1",
-   "text": "What reading 1,000 pages costs, tool by tool"
+   "text": "What reading one document costs, next to staff time"
   },
   {
    "to": "rules",
@@ -44,33 +44,33 @@
  "stats": [
   {
    "num": "0",
-   "label": "mistakes by the two best models on 30 fund reports (781 pages), answers locked in advance[^7]",
+   "label": "mistakes by the two best models on 30 fund reports (781 pages), answers locked in advance[^5]",
    "source": "FinExtractBench, Zavient, Nov 2026"
   },
   {
    "num": "$0.12",
-   "label": "per report for Google's Gemini 4 Hydrogen; OpenAI's GPT-6.2 Sol was $0.15 and 3 times faster[^7]",
+   "label": "per report for Google's Gemini 4 Hydrogen; OpenAI's GPT-6.2 Sol was $0.15 and 3 times faster[^5]",
    "source": "FinExtractBench, Zavient, Nov 2026"
   },
   {
    "num": "7 of 10",
-   "label": "tools took the wrong table for paid-in capital on a 57-page report[^7]",
+   "label": "tools took the wrong table for paid-in capital on a 57-page report[^5]",
    "source": "FinExtractBench, Zavient, Nov 2026"
   },
   {
    "num": "70–100",
-   "label": "confidence the chat models gave their own wrong answers[^7]",
-   "source": "FinExtractBench, Zavient, Nov 2026; Xiong et al., 2023[^14]"
+   "label": "confidence the chat models gave their own wrong answers[^5]",
+   "source": "FinExtractBench, Zavient, Nov 2026; Xiong et al., 2023[^8]"
   }
  ],
  "pickElse": [
-  "Thousands of standard invoices a day? A prebuilt cloud parser, a ready-made reader for standard forms, costs about $10 per 1,000 pages[^2][^4].",
-  "Your files cannot leave your network: run open-source Docling (free for business use)[^6] or a local model. Expect more wrong values: in our first round the two local models made 8 each, where Anthropic's Claude Haiku 5.5 made none[^7].",
-  "You only need searchable text, not fields: basic OCR is about $1.50 per 1,000 pages at all three big clouds[^2][^3][^4]."
+  "Thousands of standard invoices a day? A prebuilt cloud parser, a ready-made reader for standard forms, costs about a penny a page[^2][^4].",
+  "Your files cannot leave your network: run an open-source model on your own servers. Expect more wrong values: in our first round the two local models made 8 each, where Anthropic's Claude Haiku 5.5 made none[^5].",
+  "You only need searchable text, not fields: basic text recognition (OCR) costs well under a penny a page at all three big clouds[^2][^3][^4]."
  ],
  "ownData": {
   "title": "Which AI made the fewest mistakes on 30 fund reports?",
-  "intro": "FinExtractBench is our own benchmark of 30 public private-fund reports, 781 pages in all[^7]. We wrote every right answer by hand and locked it before any tool ran[^7]. Each tool read each raw PDF once; a mistake is a wrong value or a value the report never states.",
+  "intro": "FinExtractBench is our own benchmark of 30 public private-fund reports, 781 pages in all[^5]. We wrote every right answer by hand and locked it before any tool ran[^5]. Each tool read each raw PDF once; a mistake is a wrong value or a value the report never states.",
   "headers": [
    "Tool",
    "Mistakes",
@@ -101,7 +101,7 @@
     "$0.14, 91 seconds"
    ]
   ],
-  "note": "Limits: one person wrote the answers, and the reports are digital, in English and 56 pages at most[^7]. Zero mistakes in 30 reports still allows a true rate of up to about 1 report in 10[^19]. Re-run on 10 reports as scanned page images, both tools still made 0 mistakes[^7]."
+  "note": "Limits: one person wrote the answers, and the reports are digital, in English and 56 pages at most[^5]. Zero mistakes in 30 reports still allows a true rate of up to about 1 report in 10[^13]. Re-run on 10 reports as scanned page images, both tools still made 0 mistakes[^5]."
  },
  "example": {
   "input": "A 57-page quarterly report from a private equity fund, as a PDF.",
@@ -118,7 +118,7 @@
     "Code checks the quote is on that page",
     "Your reviewer fixes failures and logs each fix"
    ],
-   "cost": "Under 2 cents per 57-page report with OpenAI's GPT-6 Luna, Anthropic's Claude Haiku 5.5 or DeepSeek V4.1 Flash in our hard round[^7]. Add review time."
+   "cost": "Under 2 cents per 57-page report with OpenAI's GPT-6 Luna, Anthropic's Claude Haiku 5.5 or DeepSeek V4.1 Flash in our hard round[^5]. Add review time."
   },
   {
    "name": "Fewest wrong numbers: two models, a person on disagreements",
@@ -132,7 +132,7 @@
     "System logs each decision and who made it",
     "Approved facts load to your accounting or investor-reporting system"
    ],
-   "cost": "About $0.27 per report for two top models in our locked-answer round[^7]. The two models disagreed on 66 of 270 facts across all 30 reports, about 1 in 4, and a person settled each[^7]."
+   "cost": "About $0.27 per report for two top models in our locked-answer round[^5]. The two models disagreed on 66 of 270 facts across all 30 reports, about 1 in 4, and a person settled each[^5]."
   },
   {
    "name": "High volume, standard forms: cloud parser first, model for the hard cases",
@@ -144,115 +144,53 @@
     "Model re-reads it",
     "Person on what is still unsure"
    ],
-   "cost": "About $10 per 1,000 pages for prebuilt parsers at AWS and Azure[^2][^4], plus model cost on the share that fails."
+   "cost": "About a penny a page for prebuilt parsers at AWS and Azure[^2][^4], plus model cost on the share they cannot read."
   }
  ],
  "tables": [
   {
-   "title": "What does AI document reading cost per 1,000 pages?",
-   "intro": "List prices on each vendor's own pricing page or price feed, checked 26 November 2026. For comparison, the median total cost to process one supplier invoice is $6.00 (APQC)[^1].",
+   "title": "What does reading one document cost, next to staff time?",
+   "intro": "Staff time is the big cost: the median total cost to process one supplier invoice is $6.00, across 4,821 companies[^1]. AI reading costs cents per document. Prices are list prices, checked 26 November 2026.",
    "headers": [
-    "Tool",
-    "Type",
-    "Price per 1,000 pages",
-    "Catch"
+    "Approach",
+    "Cost per document",
+    "Fits"
    ],
    "rows": [
     {
-     "name": "AWS Textract",
+     "name": "Today: people key and check each invoice",
+     "cells": [
+      "$6.00 median per invoice, all costs in[^1]",
+      "The baseline to beat"
+     ]
+    },
+    {
+     "name": "Prebuilt cloud parser (AWS or Azure)",
      "url": "https://aws.amazon.com/textract/pricing/",
      "cells": [
-      "Cloud API",
-      "$1.50 text; $10 invoices and receipts; $50 forms[^2]",
-      "Text price drops to $0.60 at high volume[^2]"
+      "About 1 cent a page for invoices and receipts[^2][^4]",
+      "Standard invoices, receipts and IDs at volume"
      ]
     },
     {
-     "name": "Google Document AI",
-     "url": "https://cloud.google.com/document-ai/pricing",
+     "name": "One top model reads each report",
      "cells": [
-      "Cloud API",
-      "$1.50 OCR; $30 form parser; invoice parser $0.10 per 10 pages[^3]",
-      "Invoice parser bills per 10 pages[^3]"
+      "12 to 15 cents per fund report[^5]",
+      "Layouts unique to your business, with a person reviewing"
      ]
     },
     {
-     "name": "Azure Document Intelligence",
-     "url": "https://azure.microsoft.com/en-us/pricing/details/ai-document-intelligence/",
+     "name": "Two top models, a person settles disagreements",
      "cells": [
-      "Cloud API",
-      "$1.50 read; $10 prebuilt; $30 custom[^4]",
-      "Custom models need your labelled samples"
-     ]
-    },
-    {
-     "name": "Mistral OCR 4.1",
-     "url": "https://docs.mistral.ai/models/ocr-4-1",
-     "cells": [
-      "Model API",
-      "$4[^8]",
-      "Returns text and page layout; pulling out set fields is a separate feature[^29]"
-     ]
-    },
-    {
-     "name": "Reducto",
-     "url": "https://reducto.ai/pricing",
-     "cells": [
-      "Parsing service",
-      "$10 parse; $20 extract[^5]",
-      "A lighter parse mode costs $1[^5]"
-     ]
-    },
-    {
-     "name": "Unstructured",
-     "url": "https://unstructured.io/pricing",
-     "cells": [
-      "Parsing service",
-      "$10 to $15 on its platform, by mode[^9]",
-      "The library is also free and open source[^10]"
-     ]
-    },
-    {
-     "name": "LlamaParse",
-     "url": "https://developers.llamaindex.ai/llamaparse/general/pricing/",
-     "cells": [
-      "Parsing service",
-      "$1.50 to $37.50 by mode[^11]",
-      "Price depends on the mode you pick[^11]"
-     ]
-    },
-    {
-     "name": "Datalab",
-     "url": "https://www.datalab.to/pricing",
-     "cells": [
-      "Parsing service",
-      "$0.375 to $7.50 to convert; $4.50 to $15 to extract, plus fees[^12]",
-      "Prices shown assume a 25% discount for letting it train on your data[^12]"
-     ]
-    },
-    {
-     "name": "Docling",
-     "url": "https://pypi.org/project/docling/",
-     "cells": [
-      "Open source",
-      "Free for business use[^6]",
-      "You run and maintain it"
-     ]
-    },
-    {
-     "name": "Marker",
-     "url": "https://pypi.org/project/marker-pdf/",
-     "cells": [
-      "Open source",
-      "Free code (Apache)[^13]",
-      "Its trained model files (weights) are restricted for firms above $5M in funding or revenue[^13]"
+      "About 27 cents per fund report, plus review of about 1 fact in 4[^5]",
+      "Numbers that feed money decisions or investor reports"
      ]
     }
    ]
   },
   {
    "title": "Hard round: every answer had to quote its page",
-   "intro": "Eight public fund reports, two of them 47 and 57 pages long, one run each on cleaned text[^7]. A fact counts only if it is right and its quote is on the cited page. The top tools were within 2 facts of each other, so pick on wrong answers, cost and speed[^7].",
+   "intro": "Eight public fund reports, two of them 47 and 57 pages long, one run each on cleaned text[^5]. A fact counts only if it is right and its quote is on the cited page. The top tools were within 2 facts of each other, so pick on wrong answers, cost and speed[^5].",
    "headers": [
     "Tool",
     "Facts right, with page proof (of 118)",
@@ -325,12 +263,12 @@
      ]
     }
    ],
-   "note": "Source: FinExtractBench, Zavient, 21 Nov 2026[^7]. All 8 reports have since been read while fixing the answers, so they are no longer unseen[^7]."
+   "note": "Source: FinExtractBench, Zavient, 21 Nov 2026[^5]. All 8 reports have since been read while fixing the answers, so they are no longer unseen[^5]."
   }
  ],
  "howToTest": [
   "Record today's baseline first: staff minutes per file, and errors that reach the systems and reports downstream.",
-  "Pick 50 real files, including your worst scans and longest reports, plus facts some files never state, to catch invented answers. Even vendors advise benchmarking on your own documents[^20].",
+  "Pick 50 real files, including your worst scans and longest reports, plus facts some files never state, to catch invented answers. Even vendors advise benchmarking on your own documents[^14].",
   "Write the right answer for every fact before any AI reads the files, and lock it, so the AI's output cannot sway it.",
   "Require each answer to name its page and quote the exact words, and have code check that the quote is there.",
   "Count wrong answers apart from blanks. A blank goes to a person; a wrong number can slip through.",
@@ -338,26 +276,21 @@
  ],
  "buyVsBuild": {
   "buy": "Buy a prebuilt parser or an accounts payable tool when your files are standard invoices, receipts or IDs. The big clouds' prebuilt models already cover those[^2][^4]. Buying fits best when you mainly need volume and an audit trail.",
-  "build": "Build on frontier models (the newest, most capable ones) when your files are unique to your business and a wrong number is expensive. The build is a prompt, a fact list, a checker and a review queue where your team settles about 2 facts per report[^7]. If files must stay in-house, run open-source Docling[^6] or a local model; in our benchmark, local models made more wrong values[^7]."
+  "build": "Build on frontier models (the newest, most capable ones) when your files are unique to your business and a wrong number is expensive. The build is a prompt, a fact list, a checker and a review queue where your team settles about 2 facts per report[^5]. If files must stay in-house, run an open-source model on your own servers; in our benchmark, local models made more wrong values[^5]."
  },
  "watchOuts": [
-  "Vendor accuracy numbers mostly come from the vendor's own benchmark runs[^20], and public answer keys have errors too[^18]. Even on our locked-answer set, when the AI and our key differed, the AI was right in 22 of 57 cases, so check your key[^7].",
-  "A model that writes a plausible wrong number is worse than one that leaves the field blank[^17]. Score them separately.",
-  "Two tables on one page with similar labels fooled 7 of 10 tools in our hard round[^7]. Check the facts that sit near look-alikes.",
-  "Prices and model versions change: Mistral lists OCR 3 at $2 and OCR 4.1 at $4 per 1,000 pages[^8]. Re-run your benchmark when either changes, and keep the files and answers so the re-run is cheap.",
-  "Read the vendor's data terms. Datalab's rate card shows prices with a 25% discount that assumes you let it train on your data[^12].",
-  "Plan reviewer time: in our benchmark, about 1 fact in 4 (66 of 270) went to a person[^7]. Multiply by the facts you pull each month to size the workload."
+  "Vendor accuracy numbers mostly come from the vendor's own benchmark runs[^14], and public answer keys have errors too[^12]. Even on our locked-answer set, when the AI and our key differed, the AI was right in 22 of 57 cases, so check your key[^5].",
+  "A model that writes a plausible wrong number is worse than one that leaves the field blank[^11]. Score them separately.",
+  "Two tables on one page with similar labels fooled 7 of 10 tools in our hard round[^5]. Check the facts that sit near look-alikes.",
+  "Prices and model versions change: Mistral's newer OCR model costs twice its older one[^6]. Re-run your benchmark when either changes, and keep the files and answers so the re-run is cheap.",
+  "Read the vendor's data terms. Datalab's rate card shows prices with a 25% discount that assumes you let it train on your data[^7].",
+  "Plan reviewer time: in our benchmark, about 1 fact in 4 (66 of 270) went to a person[^5]. Multiply by the facts you pull each month to size the workload."
  ],
  "resources": [
   {
-   "name": "DocVQA",
-   "url": "https://www.docvqa.org",
-   "what": "A public benchmark for answering questions about document images."
-  },
-  {
-   "name": "OmniDocBench",
-   "url": "https://github.com/opendatalab/OmniDocBench",
-   "what": "A public benchmark of document parsing quality across layouts. Research use only, and it has no invoices."
+   "name": "APQC Open Standards Benchmarking, accounts payable",
+   "url": "https://www.apqc.org/what-we-do/benchmarking/open-standards-benchmarking/measures/total-cost-perform-process-process",
+   "what": "Free benchmark of what processing an invoice costs across thousands of companies. Compare your own cost per document before and after AI."
   }
  ],
  "sources": [
@@ -382,16 +315,6 @@
    "what": "Microsoft's own price feed: Read $1.50 per 1,000 pages, prebuilt models $10, custom extraction $30. The public pricing page showed no figures when checked."
   },
   {
-   "name": "Reducto pricing",
-   "url": "https://reducto.ai/pricing",
-   "what": "r-1 Parse $10 per 1,000 pages, r-1 mini Parse $1, Extract $20 with parsing included."
-  },
-  {
-   "name": "Docling on PyPI",
-   "url": "https://pypi.org/project/docling/",
-   "what": "Open-source document converter under the MIT licence."
-  },
-  {
    "name": "Zavient FinExtractBench (Nov 2026)",
    "url": "https://zavient.com/ai-work/ai-document-processing.html#own-data",
    "what": "Zavient's own benchmark: 30 private fund reports with an answer key checked by hand, run in a sealed round and a hard round."
@@ -402,29 +325,9 @@
    "what": "OCR 4.1 costs $4 per 1,000 pages; the older OCR 3 costs $2."
   },
   {
-   "name": "Unstructured pricing",
-   "url": "https://unstructured.io/pricing",
-   "what": "Platform pricing of $0.010 per page in Balanced mode and $0.015 in Best mode."
-  },
-  {
-   "name": "Unstructured on PyPI",
-   "url": "https://pypi.org/project/unstructured/",
-   "what": "The unstructured library is Apache-2.0 open source and says it will stay free."
-  },
-  {
-   "name": "LlamaParse pricing",
-   "url": "https://developers.llamaindex.ai/llamaparse/general/pricing/",
-   "what": "$1.50 per 1,000 credits pay as you go; parse tiers cost 1 to 25 credits per page."
-  },
-  {
    "name": "Datalab pricing",
    "url": "https://www.datalab.to/pricing",
    "what": "Rate card prices include a 25% discount for sharing data for model training: convert $0.375 to $7.50, extract $4.50 to $15 plus fees, per 1,000 pages."
-  },
-  {
-   "name": "Marker on PyPI",
-   "url": "https://pypi.org/project/marker-pdf/",
-   "what": "Code is Apache 2.0; model weights are free only for research, personal use and startups under $5M funding or revenue."
   },
   {
    "name": "Xiong et al., Can LLMs Express Their Uncertainty? (2023)",
@@ -500,11 +403,6 @@
    "name": "NYDFS Circular Letter No. 7 (2024)",
    "url": "https://www.dfs.ny.gov/industry-guidance/circular-letters/cl2024-07",
    "what": "Insurers stay responsible for vendor AI tools in underwriting and pricing and should seek audit rights in vendor contracts."
-  },
-  {
-   "name": "Mistral OCR 4.1 docs",
-   "url": "https://docs.mistral.ai/models/ocr-4-1",
-   "what": "OCR 4.1 returns paragraph bounding boxes, block labels and block confidence scores, with structured annotations as a feature."
   }
  ],
  "related": [
@@ -529,19 +427,19 @@
    "name": "EU AI Act, Annex III",
    "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3",
    "status": "Starts 2 Dec 2027",
-   "what": "Reading documents is not a high-risk use on its own. It becomes part of one when the facts feed credit scoring of people or life and health insurance pricing[^21]. Then logging and human oversight apply[^22][^23], from 2 December 2027[^24][^25]."
+   "what": "Reading documents is not a high-risk use on its own. It becomes part of one when the facts feed credit scoring of people or life and health insurance pricing[^15]. Then logging and human oversight apply[^16][^17], from 2 December 2027[^18][^19]."
   },
   {
    "name": "Regulation B, 12 CFR 1002.9",
    "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1002/subpart-A/section-1002.9",
    "status": "In force",
-   "what": "If extracted facts feed a US credit decision, a decline still needs specific reasons[^26], even when an algorithm made it[^27]. A wrongly read fact becomes a wrong reason, so keep the page and quote behind every fact."
+   "what": "If extracted facts feed a US credit decision, a decline still needs specific reasons[^20], even when an algorithm made it[^21]. A wrongly read fact becomes a wrong reason, so keep the page and quote behind every fact."
   },
   {
    "name": "NYDFS Circular Letter No. 7",
    "url": "https://www.dfs.ny.gov/industry-guidance/circular-letters/cl2024-07",
    "status": "In force since Jul 2024",
-   "what": "New York insurers that use AI in underwriting and pricing stay responsible for vendor tools[^28]. Where available, their vendor contracts should give them audit rights[^28]."
+   "what": "New York insurers that use AI in underwriting and pricing stay responsible for vendor tools[^22]. Where available, their vendor contracts should give them audit rights[^22]."
   }
  ],
  "headings": {

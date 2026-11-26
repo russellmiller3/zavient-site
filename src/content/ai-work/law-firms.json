@@ -90,7 +90,7 @@
  ],
  "ownData": {
   "title": "What does an AI seat cost, in billable hours?",
-  "intro": "Zavient checked the pricing pages of 18 AI tools law firms use, on 26 Nov 2026. We divided each published seat price by Clio's average lawyer rate of $362 an hour.[^13] The result is how much billable time a lawyer must free up each month to cover the seat.",
+  "intro": "Zavient checked the pricing pages of 18 AI tools law firms use, on 26 Nov 2026. We divided each seat price by $362 an hour, the average lawyer rate in billing data from Clio, a practice-management software vendor.[^13] The result is how much billable time a lawyer must free up each month to cover the seat.",
   "headers": [
    "Tool",
    "Price per user a month",
@@ -148,7 +148,7 @@
     "Can't compute"
    ]
   ],
-  "note": "List prices exclude tax, discounts and setup; some pages were cached copies from 14 to 26 Nov 2026. Three of the 18 are left out: two pages were stale and one returned an error. Your own hourly rate will differ from Clio's average.[^13]"
+  "note": "List prices exclude tax, discounts and setup; some pages were cached copies from 14 to 26 Nov 2026. Three of the 18 are left out: two pages were stale and one returned an error. Two state bar surveys back the $362 figure, with 2025 medians of $368 in Texas and $350 in Michigan.[^44][^61]"
  },
  "tables": [
   {
@@ -267,7 +267,7 @@
      ]
     },
     {
-     "name": "Clio benchmarks, 2025",
+     "name": "Clio benchmarks, 2025 (vendor data)",
      "url": "https://www.clio.com/resources/legal-trends/benchmarks",
      "cells": [
       "Billable time per lawyer day[^27]",
@@ -278,7 +278,7 @@
   },
   {
    "title": "How many firms use AI?",
-   "intro": "Each survey asks a different question, so don't read them as one trend line.[^44]",
+   "intro": "Each survey below asks a different question of a different group. Read them side by side, not as one trend line.",
    "headers": [
     "Survey",
     "Who answered",
@@ -489,8 +489,8 @@
   },
   {
    "num": "$362",
-   "label": "is the average US lawyer hourly rate, data through Sep 2026.[^13]",
-   "source": "Clio, 2026"
+   "label": "is the average US lawyer hourly rate in Clio's billing data, updated Oct 2026.[^13]",
+   "source": "Clio, a practice-management software vendor, 2026"
   }
  ],
  "sources": [
@@ -557,7 +557,7 @@
   {
    "name": "Clio, Average Lawyer Hourly Rate by State (2026 data)",
    "url": "https://www.clio.com/resources/legal-trends/compare-lawyer-rates",
-   "what": "Average US lawyer hourly rate of $362, data through 30 Sep 2026 (read 26 Nov 2026)."
+   "what": "Clio's billing data from tens of thousands of legal professionals, published with its Legal Trends Report: average US lawyer hourly rate of $362, updated Oct 2026. Clio sells practice-management software (read 26 Nov 2026)."
   },
   {
    "name": "Claude pricing (Anthropic)",
@@ -710,9 +710,9 @@
    "what": "Lawyer baseline 71% accurate; AI products about 80%, including ChatGPT."
   },
   {
-   "name": "Beyond the Bar, How many lawyers use AI?, 2 Nov 2026",
-   "url": "https://readbeyondthebar.com/guides/legal-ai-adoption-statistics",
-   "what": "Compares the legal AI surveys and warns that each asks a different question, so they are not one trend line."
+   "name": "State Bar of Texas, 2025 Income and Hourly Rate Report, Aug 2026",
+   "url": "https://www.texasbar.com/AM/Template.cfm?Section=Demographic_and_Economic_Trends&Template=/CM/ContentDisplay.cfm&ContentID=72113",
+   "what": "Survey of 6,363 Texas attorneys, May to June 2026, margin of error 1.2 points: median hourly rate for full-time private practitioners was $368 in 2025."
   },
   {
    "name": "ABA 2024 AI TechReport, 25 Apr 2025",
@@ -793,6 +793,11 @@
    "name": "MIT NANDA, The GenAI Divide, Jul 2025",
    "url": "https://asociace.ai/wp-content/uploads/2025/08/ai_report_2025.pdf",
    "what": "Bought tools and partnerships succeed about twice as often as internal builds; the gap may reflect organizational capability."
+  },
+  {
+   "name": "State Bar of Michigan, Economics of Law 2026 Survey Results",
+   "url": "https://www.michbar.org/file/pmrc/pdfs/EOL_SurveyResults26.pdf",
+   "what": "Survey of Michigan attorneys on 2025 rates: median hourly billing rate $350 across 2,102 attorneys reporting a rate."
   }
  ],
  "related": [
