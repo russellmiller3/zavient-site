@@ -1,0 +1,644 @@
+{
+ "title": "Roll-up strategy: what do holdcos actually use AI for after close?",
+ "description": "What holdcos, roll-ups and independent sponsors use AI for after close, ranked by payoff. Plus the roll-up evidence, the rules and where AI roll-ups stand.",
+ "type": "industry",
+ "templateVersion": 1,
+ "topic": "AI for holding companies and roll-ups",
+ "job": "running a group of acquired companies",
+ "industry": "any industry",
+ "index": true,
+ "verdict": [
+  "Roll-ups win on operations: growth and margin, not resale multiples, drive returns for buy-and-build deals and serial acquirers.[^1][^2]",
+  "Acquired companies usually start near zero: 43% of private equity (PE) portfolio companies use no AI at all.[^3][^4]",
+  "Start with shared finance and clean data, then pricing and cross-sell; front-line automation comes last.[^5][^4]",
+  "Keep acquired owners and staff: roll-ups did better when founders stayed, and acquired workers leave fast.[^6][^7]",
+  "AI roll-ups have raised billions, but their results are still unproven and mostly self-reported.[^8][^9]"
+ ],
+ "onPage": [
+  {
+   "to": "human-role",
+   "text": "Who signs off at the holdco and at each company"
+  },
+  {
+   "to": "ranked",
+   "text": "Eight jobs, ranked from shared finance to front-line work"
+  },
+  {
+   "to": "own-data",
+   "text": "Who reports the results AI roll-ups claim"
+  },
+  {
+   "to": "table-1",
+   "text": "What the research says about roll-ups and serial acquirers"
+  },
+  {
+   "to": "rules",
+   "text": "Merger, privacy and hiring rules that touch a holdco"
+  },
+  {
+   "to": "what-goes-wrong",
+   "text": "Where it goes wrong, and the fix for each"
+  }
+ ],
+ "headings": {
+  "what-it-is": "What is a roll-up strategy, and what does AI change in it?",
+  "ranked": "Where does AI pay first in a holdco or roll-up?",
+  "rules": "Which rules apply when a holdco adds AI?",
+  "what-goes-wrong": "Where does AI go wrong in a holdco or roll-up?",
+  "faq": "Questions holdco operators and sponsors ask",
+  "buy-or-build": "Should a holdco buy AI tools or build its own?"
+ },
+ "summary": "A roll-up strategy buys several small firms in one fragmented industry and runs them as one larger business.[^1][^6] AI changes the operating work across those firms: shared finance, clean data, pricing and cross-sell.[^5][^3] Done with the acquired teams, it drives the growth that separates winning roll-ups.[^1][^6]",
+ "humanRole": [
+  "The holdco CEO owns the AI plan and its budget. In a Latin American (LATAM) survey of 10 operators, CEO-led AI work was judged worth it 4 times in 5, against 1 in 5 otherwise.[^4]",
+  "Each company's controller signs off its close and every intercompany entry, while AI drafts matches and flags differences. The National Institute of Standards and Technology (NIST) AI framework asks firms to name who oversees each AI system.[^10]",
+  "Each company's general manager (GM) owns pricing and customer changes, and acquired founders sit on the rollout group. Roll-ups did better when acquired owners stayed on as directors and shareholders.[^6][^11]",
+  "People make hiring, pay and discipline calls, with a documented review. From 1 Jan 2027, Colorado gives a right to human review of adverse automated decisions, including in employment.[^12]"
+ ],
+ "ranked": [
+  {
+   "name": "Shared finance: the group close, consolidation and intercompany entries",
+   "slug": "multi-entity-close",
+   "why": "Close to half of add-ons are a platform's fourth deal or later, so each month-end spans more ledgers.[^1] Most operating partners' AI work is still back-office automation.[^5]",
+   "payoff": "Days to close the group books, and intercompany differences cleared before month-end."
+  },
+  {
+   "name": "Data standards: one chart of accounts, customer list and customer relationship management (CRM) system",
+   "slug": "ai-integration-services",
+   "why": "Operating partners rank data infrastructure as the top barrier to AI.[^5] In a LATAM survey of 10 operators, 7 in 10 acquired companies had no CRM.[^4]",
+   "payoff": "Share of companies reporting on the same chart of accounts and customer fields."
+  },
+  {
+   "name": "Pricing, cross-sell and the sales pipeline across companies",
+   "slug": "sales-analytics",
+   "why": "Buy-and-build deals that also grew returned 2.2x, against 1.4x from reselling at a higher multiple alone.[^1] In PE portfolios, 41% of AI projects aim at revenue and 24% at cost alone.[^3]",
+   "payoff": "Revenue from customers sold a second company's service, and win rate on quotes."
+  },
+  {
+   "name": "Integrating each new add-on",
+   "slug": "ai-post-merger-integration",
+   "why": "Integrating AI into the next acquired business is not much easier than into the last one.[^13] AI roll-up investors name integration and change management as the top risk, at 79%.[^14]",
+   "payoff": "Days from close until the add-on reports in the group's format."
+  },
+  {
+   "name": "Value creation plan and board reporting",
+   "slug": "ai-value-creation-plan",
+   "why": "In a 2026 survey of 187 independent sponsors, 48% use AI in value creation plans.[^15] Even more, 60%, use it for investor decks.[^15]",
+   "payoff": "Hours to produce the monthly board pack, and plan items with a named owner and measure."
+  },
+  {
+   "name": "Deal sourcing and diligence",
+   "why": "Independent sponsors already use AI in deal work: 62% in due diligence.[^15] In 161 buy-and-build buyouts, good add-on sourcing explained most of the outperformance.[^16]",
+   "payoff": "Targets screened per month, and days from first look to letter of intent."
+  },
+  {
+   "name": "Training and onboarding across companies",
+   "why": "In the LATAM survey of 10 operators, 7 had no AI training program.[^4] Half named onboarding and marketing as a bottleneck.[^4]",
+   "payoff": "Share of staff at each company using the shared tools every week."
+  },
+  {
+   "name": "Front-line service work: tickets, tax returns, scheduling",
+   "why": "Ranked last because the evidence is company-reported: Current says its tools save 31% of time across 7,000 returns.[^17] Sloppy AI output can eat the gains in services work.[^18]",
+   "payoff": "Time per ticket or return, with a reviewer checking a weekly sample."
+  }
+ ],
+ "ownData": {
+  "title": "What do AI roll-ups prove in public about their results?",
+  "intro": "On 26 Nov 2026 we read the public pages of four AI roll-ups and logged each outcome claim, such as time saved or accuracy.[^19][^17][^21][^18] For each claim we noted who reported it and whether anyone outside checked it. We name no winner: the point is the source type, not the company.",
+  "headers": [
+   "Who reports the claim",
+   "Claims found",
+   "Example claim"
+  ],
+  "rows": [
+   [
+    "The company itself",
+    "3",
+    "Current says its tools save 31% of preparer time on average, across 7,000 tax returns.[^17]"
+   ],
+   [
+    "An investor in the company",
+    "3",
+    "General Catalyst says Long Lake's homeowners' association managers each reclaim 65+ hours a month.[^19]"
+   ],
+   [
+    "A shareholder's case study",
+    "2",
+    "OpenAI, a shareholder in Current, reports about a third of time saved and up to 97% accuracy.[^20]"
+   ],
+   [
+    "Press quoting the company",
+    "1",
+    "Titan told TechCrunch that 38% of managed IT service tasks were automatable in its pilots.[^18]"
+   ],
+   [
+    "Independent audit or outside check",
+    "0",
+    "None found. Mimetic also reports no audited before-and-after margins from any AI roll-up.[^8]"
+   ]
+  ],
+  "note": "Zavient check of public company, investor and press pages, read 26 Nov 2026. Four platforms that publish outcome figures, so not a random sample, and claims change often. It logs who reports each claim and judges no company."
+ },
+ "tables": [
+  {
+   "title": "Do roll-ups and serial acquirers create value?",
+   "intro": "Results come from public-market studies and private equity deal data.[^23][^1] Samples and periods differ, so read each row on its own terms.",
+   "headers": [
+    "Study",
+    "Sample",
+    "What it found"
+   ],
+   "rows": [
+    {
+     "name": "Roll-up IPOs, US",
+     "url": "https://academic.oup.com/rfs/article-abstract/18/1/241/1592270",
+     "cells": [
+      "47 roll-up IPOs, 1994-1998[^6]",
+      "Negative long-run returns, about -2.01% a month below benchmark.[^22] Better when acquired owners stayed.[^6]"
+     ]
+    },
+    {
+     "name": "Roll-up vs build-up IPOs, US",
+     "url": "https://docs.lib.purdue.edu/dissertations/AAI3105033",
+     "cells": [
+      "58 roll-ups, 55 build-ups[^24]",
+      "Roll-ups underperformed; build-ups matched the market.[^24]"
+     ]
+    },
+    {
+     "name": "Serial acquirers, US",
+     "url": "https://cfr.ivo-welch.org/papers/karolyi2025serial.pdf",
+     "cells": [
+      "49,239 deals, 2000-2018[^23]",
+      "Serial acquirers did 68% of public-company deals and over 70% of $15T in value.[^23]"
+     ]
+    },
+    {
+     "name": "Later deals by serial acquirers, US",
+     "url": "https://www.aeaweb.org/conference/2016/retrieve.php?pdfid=20336&tk=BNRfy9na",
+     "cells": [
+      "18,359 serial deals[^25]",
+      "Announcement returns fall in later deals, mostly from the fifth deal on.[^25]"
+     ]
+    },
+    {
+     "name": "Serial acquirers, Australia",
+     "url": "https://www.sciencedirect.com/science/article/abs/pii/S1057521921001617",
+     "cells": [
+      "2,696 deals[^26]",
+      "Serial acquirers underperformed single acquirers.[^26]"
+     ]
+    },
+    {
+     "name": "Programmatic acquirers, global",
+     "url": "https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-seven-habits-of-programmatic-acquirers",
+     "cells": [
+      "Global 2,000 companies[^2]",
+      "Earned 3.9% excess shareholder return over a decade.[^2]"
+     ]
+    },
+    {
+     "name": "Buy-and-build buyouts",
+     "url": "https://www.bain.com/insights/building-a-stronger-buy-and-build-global-private-equity-report-2024",
+     "cells": [
+      "44 deals, 2010-2019[^1]",
+      "Reselling at a higher multiple alone returned 1.4x; deals that also grew or lifted margins returned 2.2x.[^1]"
+     ]
+    },
+    {
+     "name": "Buy-and-build buyouts, sourcing",
+     "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6100327",
+     "cells": [
+      "161 buyouts[^16]",
+      "Without good add-on sourcing, worth about 8% a year of equity growth, the outperformance largely disappears.[^16]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "How far along is AI in acquired companies?",
+   "intro": "Surveys of PE firms, independent sponsors and searchers, 2026.[^3][^15] Each asked different people, so compare with care.",
+   "headers": [
+    "Survey",
+    "Sample",
+    "What it found"
+   ],
+   "rows": [
+    {
+     "name": "FTI Consulting, PE AI Radar",
+     "url": "https://www.fticonsulting.com/insights/reports/2026-private-equity-ai-radar",
+     "cells": [
+      "200 respondents[^3]",
+      "36% of portfolio companies use AI in production, 7% at enterprise scale, 43% not at all.[^3] 95% of live projects met or beat their business case.[^3]"
+     ]
+    },
+    {
+     "name": "Accordion and Wakefield, PE AI benchmark",
+     "url": "https://www.accordion.com/the-pe-ai-adoption-benchmark/",
+     "cells": [
+      "150 operating partners[^5]",
+      "Only 14% have moved beyond back-office automation.[^5] 41% roll AI out across companies with no playbook.[^5]"
+     ]
+    },
+    {
+     "name": "Citrin Cooperman, Independent Sponsor Report",
+     "url": "https://www.citrincooperman.com/Focused-Programs/Independent-Sponsor-Report",
+     "cells": [
+      "187 independent sponsors[^15]",
+      "62% use AI in due diligence and 48% in value creation plans.[^15] The top barrier is in-house expertise, at 59%.[^15]"
+     ]
+    },
+    {
+     "name": "Spectra, LATAM searchers and operators",
+     "url": "https://spectrainvest.com/wp-content/uploads/2026/06/AI-Playbook-for-Searchers-and-Operators-in-LATAM.pdf",
+     "cells": [
+      "10 operators, mostly Brazil[^4]",
+      "9 of 10 had no AI at closing; 6 in 10 had no AI budget.[^4] Average AI maturity rose from 1.2 to 2.4 of 5 after purchase.[^4]"
+     ]
+    },
+    {
+     "name": "Mimetic, AI roll-up tracker",
+     "url": "https://trymimetic.com/research/ai-rollups-2026",
+     "cells": [
+      "81 AI roll-up platforms[^8]",
+      "About $9.0B in disclosed funding, 85% of it in three platforms, by Mimetic's count.[^8]"
+     ]
+    }
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "name": "2023 Merger Guidelines, Guideline 8: a series of acquisitions",
+   "url": "https://www.justice.gov/atr/merger-guidelines/applying-merger-guidelines/guideline-8",
+   "status": "In force; the Federal Trade Commission (FTC) and Department of Justice (DOJ) kept them in Feb 2025",
+   "what": "The agencies may examine a series of small acquisitions as a whole, not one deal at a time.[^27][^29] Track your share of each local market as you add companies."
+  },
+  {
+   "name": "FTC final order: Welsh Carson and U.S. Anesthesia Partners",
+   "url": "https://www.ftc.gov/news-events/news/press-releases/2025/05/ftc-approves-final-order-welsh-carson",
+   "status": "Final order approved 20 May 2025",
+   "what": "The FTC finalised its order against a private equity firm over its anesthesia roll-up.[^30] Treat it as a sign that repeated deals in one local market draw scrutiny."
+  },
+  {
+   "name": "Hart-Scott-Rodino (HSR) premerger notification form",
+   "url": "https://www.ftc.gov/enforcement/premerger-notification-program/hsr-notification-forms-instructions-guidance",
+   "status": "Prior form in use; the new form was vacated 12 Feb 2026",
+   "what": "The expanded premerger form was vacated, a stay was denied in Mar 2026, and the FTC accepts the prior form.[^31] Check the FTC page before each filing."
+  },
+  {
+   "name": "FTC: privacy promises survive an acquisition",
+   "url": "https://www.ftc.gov/news-events/news/press-releases/2014/04/ftc-notifies-facebook-whatsapp-privacy-obligations-light-proposed-acquisition",
+   "status": "FTC position since Apr 2014",
+   "what": "Privacy promises a company made to its customers still apply after you buy it.[^28] Check each company's privacy notice before you pool customer data or train AI on it."
+  },
+  {
+   "name": "Colorado SB26-189, automated decisions",
+   "url": "https://leg.colorado.gov/bills/sb26-189",
+   "status": "Signed May 2026; effective 1 Jan 2027",
+   "what": "People get a right to human review after an adverse automated decision, including in employment.[^12] Keep a person on hiring, pay and discipline at any Colorado company you own."
+  },
+  {
+   "name": "New York City Local Law 144, automated hiring tools",
+   "url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page",
+   "status": "In force in New York City",
+   "what": "Automated hiring tools used for New York City jobs need a bias audit.[^32] Check this before you roll one screening tool out across every company."
+  }
+ ],
+ "watchOuts": [
+  "Losing key people: 33% of acquired tech workers left in year one, against 12% of comparable hires.[^7] Losses run highest in executive, technical and sales roles, so give those people the new tools first.[^33]",
+  "Treating each add-on as easy: announcement returns fall from the fifth deal on, and AI gets little easier per company.[^25][^13] Give every integration its own owner and checklist.",
+  "Rolling out with no playbook: 41% of operating partners deploy AI across companies without one.[^5] Prove one playbook at one company, then copy it.",
+  "Paying software prices for services firms: AI-run services firms trade at about 5-23 times operating profit (EBITDA), against 22-92 times for software.[^34] Price deals on today's cash flow, not promised AI margins.[^9]",
+  "Accepting sloppy output: low-quality AI work can wipe out the time saved in services.[^18] Sample output weekly at each company, with a named person signing off.",
+  "Pooling customer data carelessly: privacy promises travel with each acquired company.[^28] Map each company's notice before you merge customer lists or train AI on them."
+ ],
+ "faq": [
+  {
+   "q": "What is a roll-up strategy?",
+   "a": "A roll-up strategy buys several small companies in one fragmented industry and runs them as one larger business.[^1] It pays when the combined business grows or runs better, not only when it resells at a higher multiple.[^1][^6]"
+  },
+  {
+   "q": "Do roll-ups work?",
+   "a": "Only some do: 1990s roll-up IPOs lost money on average, while disciplined programmatic acquirers beat peers over a decade.[^22][^2] The gap is operations, and keeping acquired owners involved.[^6][^1]"
+  },
+  {
+   "q": "What is an AI roll-up?",
+   "a": "An AI roll-up is a roll-up, usually venture-funded, that buys services firms and runs them on its own AI software.[^8][^34] Targets include accounting, IT support and property management firms.[^17][^21][^19]"
+  },
+  {
+   "q": "Do AI roll-ups work?",
+   "a": "Not proven yet: published results come from the companies or their backers, and none had published audited before-and-after margins by Nov 2026.[^8][^9] Our own check of nine public claims found none checked by an outsider.[^19][^17]"
+  },
+  {
+   "q": "What is the difference between a serial acquirer and a roll-up?",
+   "a": "A serial acquirer buys again and again, often keeping companies separate, while a roll-up usually merges them into one platform in one industry.[^23][^1] Serial acquirers did 68% of US public-company deals from 2000 to 2018.[^23]"
+  },
+  {
+   "q": "What is an independent sponsor?",
+   "a": "An independent sponsor buys companies one deal at a time, raising equity for each deal instead of from a committed fund.[^15] Most now use AI in deal work: 62% in due diligence, in a 2026 survey of 187.[^15]"
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Buy tools for the jobs every company shares, such as the close, CRM and ticketing.[^35] Most enterprise AI is now bought: 76% of use cases in 2025, up from 53%.[^35] Vendor-led projects reached deployment about twice as often as internal builds in MIT's study.[^36]",
+  "build": "Build only the thin shared layer, such as one data model and group reporting, once several companies use it.[^13] AI roll-ups build whole platforms because the platform is their bet, funded by investors like General Catalyst and Thrive Holdings.[^19][^21] A 40-500 person holdco rarely needs that."
+ },
+ "pickElse": [
+  "You own one PE-backed company, not a group: the cross-company jobs here don't apply yet. Start with that company's first AI job; 43% of portfolio companies have none.[^3]",
+  "An enterprise resource planning (ERP) move is coming at your companies anyway: finish it first, since data infrastructure is the top barrier to AI.[^5] Use the AI features in the new system before adding tools.",
+  "Your teams only need to write and summarise faster: an enterprise plan of ChatGPT, Claude or Microsoft 365 Copilot will do.[^35]",
+  "You are still buying your first company: AI for screening and diligence matters more now; 62% of independent sponsors already use it there.[^15]"
+ ],
+ "resources": [
+  {
+   "name": "Stanford GSB 2026 Search Fund Study",
+   "url": "https://www.gsb.stanford.edu/faculty-research/case-studies/2026-search-fund-study-selected-observations",
+   "what": "Free benchmark of search-fund deals: prices, multiples and company size."
+  },
+  {
+   "name": "NIST AI Risk Management Framework 1.0",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf",
+   "what": "Free framework for naming who oversees each AI system at each company."
+  },
+  {
+   "name": "DOJ and FTC Merger Guidelines, Guideline 8",
+   "url": "https://www.justice.gov/atr/merger-guidelines/applying-merger-guidelines/guideline-8",
+   "what": "The agencies' own text on reviewing a series of acquisitions."
+  },
+  {
+   "name": "FTC HSR forms and guidance",
+   "url": "https://www.ftc.gov/enforcement/premerger-notification-program/hsr-notification-forms-instructions-guidance",
+   "what": "The current premerger filing form and instructions."
+  },
+  {
+   "name": "Spectra AI Playbook for Searchers and Operators",
+   "url": "https://spectrainvest.com/wp-content/uploads/2026/06/AI-Playbook-for-Searchers-and-Operators-in-LATAM.pdf",
+   "what": "Free playbook from a LATAM survey of searchers and operators after close."
+  }
+ ],
+ "stats": [
+  {
+   "num": "2.2x",
+   "label": "returned by buy-and-build deals that also grew or lifted margins, against 1.4x from resale multiples alone.[^1]",
+   "source": "Bain, 44 deals, 2024"
+  },
+  {
+   "num": "68%",
+   "label": "of US public-company deals from 2000 to 2018 were made by serial acquirers.[^23]",
+   "source": "Serial acquirer working paper, 2025"
+  },
+  {
+   "num": "43%",
+   "label": "of PE portfolio companies use no AI at all; 7% run it at enterprise scale.[^3]",
+   "source": "FTI Consulting PE AI Radar, 200 respondents, 2026"
+  },
+  {
+   "num": "9 of 10",
+   "label": "acquired companies had no AI at closing, in a LATAM survey of 10 operators.[^4]",
+   "source": "Spectra AI Playbook, Jun 2026"
+  },
+  {
+   "num": "33% vs 12%",
+   "label": "of acquired tech workers left in year one, against comparable hires.[^7]",
+   "source": "US Census Bureau working paper, 2018"
+  },
+  {
+   "num": "$9.0B",
+   "label": "in disclosed funding for AI roll-ups, 85% of it in three platforms, by Mimetic's count.[^8]",
+   "source": "Mimetic, Nov 2026"
+  }
+ ],
+ "sources": [
+  {
+   "name": "Bain & Company, Building a stronger buy-and-build, Global Private Equity Report (Mar 2024)",
+   "url": "https://www.bain.com/insights/building-a-stronger-buy-and-build-global-private-equity-report-2024",
+   "what": "Consultancy research, 44 buy-and-build deals 2010-2019: multiple arbitrage alone returned 1.4x; deals that also grew or lifted margins returned 2.2x. Close to half of add-ons are a platform's fourth deal or later."
+  },
+  {
+   "name": "McKinsey, The seven habits of programmatic acquirers (Aug 2023)",
+   "url": "https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-seven-habits-of-programmatic-acquirers",
+   "what": "Consultancy research on the Global 2,000: programmatic acquirers earned 3.9% excess total shareholder return over a decade."
+  },
+  {
+   "name": "FTI Consulting, 2026 Private Equity AI Radar (May 2026)",
+   "url": "https://www.fticonsulting.com/insights/reports/2026-private-equity-ai-radar",
+   "what": "Consultancy survey, 200 respondents: 36% of portfolio companies use AI in production, 7% at enterprise scale, 43% none; 95% of live initiatives met or beat their business case; 41% of initiatives target revenue, 24% cost only."
+  },
+  {
+   "name": "Spectra, AI Playbook for Searchers and Operators in LATAM (Jun 2026)",
+   "url": "https://spectrainvest.com/wp-content/uploads/2026/06/AI-Playbook-for-Searchers-and-Operators-in-LATAM.pdf",
+   "what": "Investor survey of 35 (25 searchers, 10 operators), mostly Brazil: 9 of 10 operators had no AI at closing; maturity 1.2 to 2.4 of 5; 7 in 10 no CRM; 6 in 10 no AI budget; CEO-led AI work judged worth it 4 times in 5."
+  },
+  {
+   "name": "Accordion and Wakefield Research, PE AI adoption benchmark (Jun 2026)",
+   "url": "https://www.accordion.com/the-pe-ai-adoption-benchmark/",
+   "what": "Consultancy survey of 150 operating partners: only 14% have moved beyond back-office automation; data infrastructure is the top barrier; 41% deploy AI across companies without a playbook."
+  },
+  {
+   "name": "Review of Financial Studies, Corporate governance, incentives and industry consolidations (2005)",
+   "url": "https://academic.oup.com/rfs/article-abstract/18/1/241/1592270",
+   "what": "Academic study of 47 roll-up IPOs, 1994-1998: roll-ups did better when acquired-company owners stayed as shareholders and directors, and worse with higher sponsor ownership."
+  },
+  {
+   "name": "US Census Bureau, Center for Economic Studies working paper CES-WP-18-41 (2018)",
+   "url": "https://www2.census.gov/ces/wp/2018/CES-WP-18-41.pdf",
+   "what": "Tech-sector data: 33% of acquired workers left in year one, against 12% of comparable hires."
+  },
+  {
+   "name": "Mimetic, AI rollups in 2026 (Nov 2026)",
+   "url": "https://trymimetic.com/research/ai-rollups-2026",
+   "what": "Mimetic's own research: 81 AI roll-up platforms tracked, about $9.0B disclosed, 85% of it in three platforms; no audited before-and-after margins published."
+  },
+  {
+   "name": "PitchBook, 'The math doesn't make sense': AI roll-up hype tests the limits of VC economics (Aug 2025)",
+   "url": "https://pitchbook.com/news/articles/the-math-doesnt-make-sense-ai-rollup-hype-tests-the-limits-of-vc-economics",
+   "what": "Press: investors question whether AI roll-up economics work."
+  },
+  {
+   "name": "NIST, AI Risk Management Framework 1.0 (Jan 2023)",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf",
+   "what": "GOVERN 3.2 and MAP 3.5: define roles for human oversight of AI systems."
+  },
+  {
+   "name": "University of Michigan news release on the roll-up study (Sep 2004)",
+   "url": "https://news.umich.edu/consolidating-companies-do-better-if-founders-stay-involved/",
+   "what": "Consolidating companies did better when founders stayed involved: about +2.8 points of long-run return per point of founder directors."
+  },
+  {
+   "name": "Colorado General Assembly, SB26-189",
+   "url": "https://leg.colorado.gov/bills/sb26-189",
+   "what": "Signed 14 May 2026, effective 1 Jan 2027: right to human review after an adverse automated consequential decision, including employment."
+  },
+  {
+   "name": "Tower Research, The AI services opportunity starts at zero (Nov 2025)",
+   "url": "https://tower-research.com/the-ai-services-opportunity-starts-at-zero",
+   "what": "Investor analysis: integrating AI into acquired business N+1 is not much easier than into business N."
+  },
+  {
+   "name": "AI Roll-up Nexus, Investor Survey Report (Mar 2026)",
+   "url": "https://www.ai-rollup.fyi/investor-survey-report-2026.pdf",
+   "what": "Investor survey (sample size not shown): integration and change management is the top risk (79%); overhyped AI value second (68%)."
+  },
+  {
+   "name": "Citrin Cooperman, 2026 Independent Sponsor Report (Mar 2026)",
+   "url": "https://www.citrincooperman.com/Focused-Programs/Independent-Sponsor-Report",
+   "what": "Survey of 187 independent sponsors: AI used in due diligence 62%, investor decks 60%, value creation plans 48%; top barrier internal expertise 59%."
+  },
+  {
+   "name": "SSRN working paper on buy-and-build buyouts (Jan 2026)",
+   "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6100327",
+   "what": "161 buy-and-build buyouts: without the add-on sourcing effect, about 8% a year of equity value growth, the outperformance largely disappears."
+  },
+  {
+   "name": "Current, Crete Professionals Alliance rebrands as Current (Jun 2026)",
+   "url": "https://www.current.co/news/crete-professionals-alliance-rebrands-as-current",
+   "what": "Company claim for its accounting and tax firms: 31% average time saved across 7,000 returns; up to 98% accuracy."
+  },
+  {
+   "name": "TechCrunch, The AI services transformation may be harder than VCs think (Sep 2025)",
+   "url": "https://techcrunch.com/2025/09/28/the-ai-services-transformation-may-be-harder-than-vcs-think",
+   "what": "Press: low-quality AI output ('workslop') threatens AI-services economics; Titan reports 38% of managed IT service tasks automatable in pilots (company figure)."
+  },
+  {
+   "name": "General Catalyst, Manufacturing outliers: Long Lake",
+   "url": "https://www.generalcatalyst.com/stories/manufacturing-outliers-long-lake",
+   "what": "Investor's own account of Long Lake, a homeowners' association management roll-up: managers reclaim 65+ hours a month, pipeline up 10x, 30%+ payroll capacity."
+  },
+  {
+   "name": "OpenAI, Building self-improving tax agents with Codex (May 2026)",
+   "url": "https://openai.com/index/building-self-improving-tax-agents-with-codex",
+   "what": "Case study by a shareholder in Current: about a third of time saved, up to 97% accuracy."
+  },
+  {
+   "name": "Shield Technology Partners, Shield raises $100 million from Thrive Holdings (Feb 2026)",
+   "url": "https://shieldtp.com/company-news/shield-raises-100-million-from-thrive-holdings-to-accelerate-the-growth-of-its-it-services-platform",
+   "what": "Company release: IT services platform backed by Thrive Holdings; says median time to resolution fell by more than half on some ticket types."
+  },
+  {
+   "name": "NBER Summer Institute draft of the roll-up IPO study (2000)",
+   "url": "https://users.nber.org/~confer/2000/si2000/brown.pdf",
+   "what": "Working-paper version: roll-up IPOs had negative long-run returns, about -2.01% a month abnormal."
+  },
+  {
+   "name": "Why are serial acquirers different in the US? Working paper (Sep 2025)",
+   "url": "https://cfr.ivo-welch.org/papers/karolyi2025serial.pdf",
+   "what": "19,243 US acquirers, 49,239 deals, 2000-2018: serial acquirers did 68% of public-company deals and over 70% of $15T in value."
+  },
+  {
+   "name": "Purdue University dissertation, industry-consolidating IPOs",
+   "url": "https://docs.lib.purdue.edu/dissertations/AAI3105033",
+   "what": "58 roll-up and 55 build-up IPOs: roll-ups underperformed; build-up IPOs matched the market."
+  },
+  {
+   "name": "American Economic Association 2016 conference paper on serial acquirers",
+   "url": "https://www.aeaweb.org/conference/2016/retrieve.php?pdfid=20336&tk=BNRfy9na",
+   "what": "18,359 serial deals: announcement returns fall in later deals, mostly from the fifth deal on."
+  },
+  {
+   "name": "International Review of Financial Analysis, serial acquirers in Australia (2021)",
+   "url": "https://www.sciencedirect.com/science/article/abs/pii/S1057521921001617",
+   "what": "2,696 Australian deals: serial acquirers underperform single acquirers."
+  },
+  {
+   "name": "US Department of Justice, Merger Guidelines, Guideline 8",
+   "url": "https://www.justice.gov/atr/merger-guidelines/applying-merger-guidelines/guideline-8",
+   "what": "When a merger is part of a series of multiple acquisitions, the agencies may examine the whole series."
+  },
+  {
+   "name": "FTC letter on privacy obligations in a proposed acquisition (Apr 2014)",
+   "url": "https://www.ftc.gov/news-events/news/press-releases/2014/04/ftc-notifies-facebook-whatsapp-privacy-obligations-light-proposed-acquisition",
+   "what": "Privacy promises a company made to its users still apply after it is acquired."
+  },
+  {
+   "name": "FTC press release: 2023 Merger Guidelines remain in effect (Feb 2025)",
+   "url": "https://www.ftc.gov/news-events/news/press-releases/2025/02/ftc-chairman-andrew-n-ferguson-announces-ftc-dojs-joint-2023-merger-guidelines-are-effect",
+   "what": "FTC and DOJ joint 2023 Merger Guidelines stay in effect."
+  },
+  {
+   "name": "FTC, final order against Welsh Carson (May 2025)",
+   "url": "https://www.ftc.gov/news-events/news/press-releases/2025/05/ftc-approves-final-order-welsh-carson",
+   "what": "Final order in the U.S. Anesthesia Partners roll-up case, approved 20 May 2025."
+  },
+  {
+   "name": "FTC, HSR notification forms, instructions and guidance",
+   "url": "https://www.ftc.gov/enforcement/premerger-notification-program/hsr-notification-forms-instructions-guidance",
+   "what": "New HSR form vacated 12 Feb 2026, stay denied 19 Mar 2026; the FTC accepts the prior form."
+  },
+  {
+   "name": "NYC Department of Consumer and Worker Protection, Automated employment decision tools",
+   "url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page",
+   "what": "Local Law 144: automated hiring tools used for NYC jobs need a bias audit."
+  },
+  {
+   "name": "Strategic Management Journal, acquired-employee turnover study (2022)",
+   "url": "https://sms.onlinelibrary.wiley.com/doi/10.1002/smj.3361",
+   "what": "Turnover after acquisitions is highest in executive, technical, business development and sales roles."
+  },
+  {
+   "name": "Fortune, AI roll-up investment strategy (Jun 2025)",
+   "url": "https://fortune.com/2025/06/27/ai-rollup-investment-strategy/",
+   "what": "Press: AI-transformed services businesses trade at about 5-23x EV/EBITDA, against 22-92x for software."
+  },
+  {
+   "name": "Menlo Ventures, 2025 State of Generative AI in the Enterprise (Dec 2025)",
+   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise",
+   "what": "AI investor survey of 495: 76% of AI use cases bought rather than built in 2025, up from 53% in 2024."
+  },
+  {
+   "name": "Fortune on the MIT NANDA GenAI Divide report (Aug 2025)",
+   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
+   "what": "Vendor or partner-led AI projects reached deployment about 67% of the time, against about 33% for internal builds; the authors call the figures directional."
+  }
+ ],
+ "related": [
+  "private-equity",
+  "ai-post-merger-integration",
+  "multi-entity-close",
+  "ai-value-creation-plan",
+  "ai-integration-services"
+ ],
+ "answers": {
+  "human-role": "Your people keep every decision: the holdco CEO owns the AI plan, controllers sign off each close, general managers own pricing, and people decide hiring and pay.[^4][^10][^12]",
+  "ranked": "AI pays first in shared finance and clean data across companies, then in pricing and cross-sell, then in integrating each new add-on.[^5][^4][^1]",
+  "own-data": "Little so far: all nine outcome claims we found from four AI roll-ups came from the company or its backers, none independently checked.[^19][^17][^20][^18]",
+  "table-1": "Only when they run the companies better: buy-and-builds that relied on resale multiples returned 1.4x, against 2.2x for deals that also grew or lifted margins.[^1] Roll-up initial public offerings (IPOs) of the 1990s lost money on average.[^22][^6]",
+  "table-2": "Early: 43% of PE portfolio companies use no AI, and only 7% run it at enterprise scale.[^3] In a LATAM survey of 10 operators, 9 had none at closing.[^4]",
+  "rules": "Merger rules can treat a string of small deals as one, and privacy and hiring rules govern the AI you add.[^27][^28][^12]",
+  "what-goes-wrong": "AI goes wrong in a holdco when key people leave, integrations pile up, results are taken on trust, or customer data is pooled carelessly.[^7][^13][^8][^28]",
+  "buy-or-build": "Buy standard tools for the close, CRM and ticketing, and build only the thin shared layer, such as one data model and group reporting.[^35][^36]",
+  "something-else": "Pick something else when you own one company rather than a group, an ERP move is coming anyway, or staff only need faster writing.[^3][^5][^35]"
+ },
+ "offer": {
+  "heading": "Which shared job should your holdco hand to AI first?",
+  "body": "Start with a job every company shares: the monthly close, data standards or pricing. In 30 minutes we map that job across your companies, with your finance lead and a GM. You leave knowing who signs off at each company and the measure to track."
+ },
+ "keyword": {
+  "phrase": "roll up strategy",
+  "searches": 260,
+  "cpc": 37.43,
+  "difficulty": 5
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Each ranked job now carries one measure the COO can report on (days to close, shared fields, cross-sold revenue, days to report after close). Rewrote two pick-something-else lines that pointed nowhere: the single-company case now says 43% of portfolio companies have no AI yet, and the pre-close case points to screening and diligence."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Spelled out every acronym on first use: PE, LATAM, NIST, CRM, ERP, HSR, FTC, DOJ, IPO, EBITDA, GM. Replaced 'multiple arbitrage' with plain 'reselling at a higher multiple' in the ranked list, table and key numbers. Training row now says onboarding and marketing, matching the survey."
+  },
+  {
+   "reader": "GM",
+   "notes": "A GM of one acquired company needs to see what stays theirs: pricing and customer changes, and a seat for acquired founders on the rollout group, backed by the roll-up IPO study. The offer now brings a GM into the 30-minute session alongside the finance lead."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Read as the head of finance or controller who runs the group close. Shared finance stays first, links to the multi-entity close guide, and measures days to close and intercompany differences cleared. The controller bullet now says AI drafts matches and flags differences while the controller decides and signs off."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Title is the owner's own question after close, with the main phrase 'roll-up strategy' up front. Bottom line answers in five lines: operations win, companies start near zero, finance and data first, keep acquired people, AI roll-up results are unproven. Description now names independent sponsors, a reader the page serves. Named AI roll-ups appear only as their own cited claims, never ranked."
+  }
+ ],
+ "updated": "2026-11-26"
+}

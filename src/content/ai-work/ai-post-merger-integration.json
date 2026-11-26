@@ -1,0 +1,828 @@
+{
+ "title": "Can AI speed post-merger integration and find the cross-sell?",
+ "description": "How AI matches customers, products and accounts across add-ons, finds cross-sell and tracks synergies, while your integration team keeps every call.",
+ "type": "usecase",
+ "templateVersion": 1,
+ "topic": "AI for post-merger integration",
+ "job": "post-merger integration",
+ "industry": "any industry",
+ "index": true,
+ "verdict": [
+  "Revenue synergies are the ones deals miss: fewer than 20% hit cross-sell goals, in consulting surveys[^22][^20].",
+  "AI's best job here is matching customers, products and vendors across both systems, then flagging overlap and cross-sell[^34][^33].",
+  "Even vendor cases send 10% to 25% of matches to a person, so your team keeps every merge decision[^41][^43].",
+  "Don't pull a target's customer file before close without counsel and a clean team; one gun-jumping fine hit $5.6M[^2][^1].",
+  "Test matching on your own lists first: published AI accuracy runs from poor to near-perfect[^13][^17]."
+ ],
+ "onPage": [
+  {
+   "to": "human-role",
+   "text": "Who on the integration team owns merges, prices, customer messages and people"
+  },
+  {
+   "to": "table-1",
+   "text": "How often deals hit cost and revenue synergy targets, by survey"
+  },
+  {
+   "to": "table-2",
+   "text": "What AI did in published integration cases, labelled by who says so"
+  },
+  {
+   "to": "own-data",
+   "text": "Our compilation of published AI matching accuracy on public test sets"
+  },
+  {
+   "to": "rules",
+   "text": "Gun-jumping, HSR thresholds, roll-up review and privacy promises, in plain words"
+  },
+  {
+   "to": "benchmark",
+   "text": "How to test AI matching on 200 pairs from your own lists"
+  },
+  {
+   "to": "faq",
+   "text": "Timelines, 100-day plans, pre-close data, consent and synergy tracking"
+  }
+ ],
+ "headings": {
+  "human-role": "Where does your integration team stay in charge?",
+  "team-after": "What does your integration team do after?",
+  "example": "What does AI-assisted integration of one add-on look like?",
+  "recipes": "Which way to build AI for post-merger integration fits your platform?",
+  "rules": "Which rules limit AI in post-merger integration?",
+  "faq": "Questions buyers ask about AI for post-merger integration"
+ },
+ "summary": "AI for post-merger integration matches customers, products, vendors and accounts across the platform and each add-on, then flags overlap, cross-sell and price gaps[^34][^33]. It changes where the team's hours go: less data mapping, more customer and pricing work[^26][^36]. Agreed definitions, and a person checking unsure matches, make or break it[^43][^41].",
+ "humanRole": [
+  "Controller and sales operations lead: approve every customer and product merge below the confidence cut, the score under which a person checks the match. Vendor cases still send 10% to 25% of matches to a person[^41][^42][^43].",
+  "Head of sales and the COO: decide every price change for acquired customers. In one consultancy case, price harmonisation was held to just 6 SKUs (stock-keeping units)[^33].",
+  "Account owners: write and send what acquired customers hear. A 2009 study found switching intent two to three times higher after mergers; in banking, one integration designed around customers lost none[^38][^28].",
+  "COO: owns people decisions and picks the integration lead. Leaders with experience in the target's industry capture more synergies, and culture is a top reason deals fail[^12][^27]."
+ ],
+ "teamAfter": [
+  "Integration lead: edits an AI-drafted 100-day plan instead of writing it from scratch. In a bank case a consulting firm published, drafting tools cut integration prep time by 25%[^26].",
+  "Controller: checks the unsure matches and the money totals, instead of mapping accounts by hand. One technology leader says AI does about 80% of their data mapping; a vendor reports 5 days cut to 3 hours[^36][^42].",
+  "Sales lead: calls acquired customers about the cross-sell list. Revenue synergies take about five years against two for cost, so this work outlasts day 100[^21][^24].",
+  "COO: runs the next add-on on the same playbook, since close to half of add-ons are a platform's fourth deal or later[^25]. Among US firms where AI changed tasks, 66% used it only to help staff[^11]."
+ ],
+ "example": {
+  "input": "Illustrative, based on a published consultancy case: a $316M distributor buys a $68M competitor[^33]. The inputs are both firms' customer lists, product lists with SKUs, vendor lists and invoice history.",
+  "output": "Here AI returns three scored lists: shared customers, customers buying few product lines, and the same SKU at different prices. In the published case, the team chose 5 SKUs to cross-sell and 6 for price harmonisation, worth $12M in net revenue and $5.6M in margin[^33]. People approved every merge and every price change."
+ },
+ "tables": [
+  {
+   "title": "How often do deals hit their synergy targets?",
+   "intro": "Consulting surveys and one academic study, each labelled by type. None covers lower-middle-market add-ons alone, so treat them as direction, not a forecast for your deal.",
+   "headers": [
+    "Source",
+    "Finding",
+    "Type"
+   ],
+   "rows": [
+    {
+     "name": "McKinsey, 2004",
+     "url": "https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/where-mergers-go-wrong",
+     "cells": [
+      "Almost 70% missed expected revenue synergies; about 60% delivered cost synergies[^20]",
+      "Consulting view"
+     ]
+    },
+    {
+     "name": "McKinsey, 2018",
+     "url": "https://www.mckinsey.com/~/media/McKinsey/Business%20Functions/Marketing%20and%20Sales/Our%20Insights/Seven%20rules%20to%20crack%20the%20code%20on%20revenue%20synergies%20in%20MA/Seven-rules-to-crack-the-code-on-revenue-synergies-in-M-and-A.pdf",
+     "cells": [
+      "Deals reached 77% of revenue-synergy targets on average; revenue took about 5 years, cost about 2[^21]",
+      "Consulting survey of 200 executives"
+     ]
+    },
+    {
+     "name": "McKinsey, 2020",
+     "url": "https://www.mckinsey.com/capabilities/m-and-a/our-insights/capturing-cross-selling-synergies-in-ma",
+     "cells": [
+      "Fewer than 20% hit their cross-sell goals[^22]",
+      "Consulting view"
+     ]
+    },
+    {
+     "name": "Bain, 2022",
+     "url": "https://www.bain.com/insights/revenue-synergies-m-and-a-report-2022",
+     "cells": [
+      "Overestimated revenue synergies are the most-cited reason deals failed; only about half of buyers model them[^24]",
+      "Consulting survey of 281"
+     ]
+    },
+    {
+     "name": "PwC 2019, cited by TriVista",
+     "url": "https://trivista.com/wp-content/uploads/2025/12/Post-Merger-Integration-Mid-Market-Survey.pdf",
+     "cells": [
+      "Value realised against plan: 70% for cost, 53% for working capital, 45% for revenue[^31]",
+      "Consulting survey of 100 PE executives"
+     ]
+    },
+    {
+     "name": "AlixPartners, 2018",
+     "url": "https://www.alixpartners.com/media/14490/ap_growth_orientated_mergers_jul_2018.pdf",
+     "cells": [
+      "Up to 66% of deals fail to deliver value despite hitting about 80% of cost targets[^32]",
+      "Consulting view"
+     ]
+    },
+    {
+     "name": "Academic working paper, Dec 2025",
+     "url": "https://www.bayes.citystgeorges.ac.uk/__data/assets/pdf_file/0018/1003923/11.-Gokkaya-_Stulz_Business-Unit-Leaders_MAs.pdf",
+     "cells": [
+      "Missing projected synergies is the most common cause of integration failure[^12]",
+      "Academic"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "What has AI done in published integration cases?",
+   "intro": "Each row is labelled by who makes the claim: a consulting firm, trade press or the vendor itself. None has an independent audit.",
+   "headers": [
+    "Case",
+    "What AI did",
+    "Result",
+    "Who says so"
+   ],
+   "rows": [
+    {
+     "name": "European bank",
+     "url": "https://www.bain.com/insights/capability-for-a-new-era-m-and-a-report-2026",
+     "cells": [
+      "Drafted the deal thesis, decisions, 13 team charters and work plans",
+      "Prep time down 25%; 240 hours saved across four tasks[^26]",
+      "Consulting firm's case"
+     ]
+    },
+    {
+     "name": "Media acquirer",
+     "url": "https://www.bain.com/insights/capability-for-a-new-era-m-and-a-report-2026",
+     "cells": [
+      "Forecast the target's costs from outside data",
+      "Within 90% of actuals[^26]",
+      "Consulting firm's case"
+     ]
+    },
+    {
+     "name": "Chemicals merger",
+     "url": "https://www.coro.io/moneymap-case-study-chemco",
+     "cells": [
+      "A clean team, a walled-off group, used AI-assisted matching to merge two customer lists before close",
+      "About $2B of cross-sell opportunity and $20M+ of pricing uplift identified[^34]",
+      "Consultancy case study"
+     ]
+    },
+    {
+     "name": "Nash Squared",
+     "url": "https://www.cio.com/article/4139885/how-cios-can-use-ai-to-overcome-ma-integration-headaches.html",
+     "cells": [
+      "Mapped data between the two firms' systems",
+      "Completes about 80% of the data mapping, a user says[^36]",
+      "Trade press"
+     ]
+    },
+    {
+     "name": "Quinnox client",
+     "url": "https://www.quinnox.com/case-study/data-integration-transformation",
+     "cells": [
+      "Mapped one database layout to another",
+      "80-85% automated; experts reviewed 10-15%; migration cut from 2 months to 3 weeks[^41]",
+      "Vendor claim"
+     ]
+    },
+    {
+     "name": "Turing client",
+     "url": "https://www.turing.com/case-study/automating-mmr-models",
+     "cells": [
+      "Mapped trial balances to a chart of accounts",
+      "5 days down to 3 hours; about 20% still reviewed by hand[^42]",
+      "Vendor claim"
+     ]
+    },
+    {
+     "name": "PavingX",
+     "url": "https://www.sphereinc.com/case-studies/pavingx-unify-case-study",
+     "cells": [
+      "Merged duplicate records into single clean ones (golden records)",
+      "612 records became 187 at 94% average confidence; 46 went to manual review[^43]",
+      "Vendor claim"
+     ]
+    },
+    {
+     "name": "HP",
+     "url": "https://kpmg.com/us/en/how-we-work/client-stories/hp-transforms-complex.html",
+     "cells": [
+      "50+ automations, with synergy tracking fed from enterprise resource planning (ERP) and customer relationship management (CRM) data",
+      "Program-level; no single figure published[^35]",
+      "Consulting firm's case"
+     ]
+    },
+    {
+     "name": "Quisitive client",
+     "url": "https://quisitive.com/using-ai-contract-analysis-to-untangle-years-of-acquisitions",
+     "cells": [
+      "Read acquired customer contracts into structured fields with a confidence score",
+      "No figure published[^44]",
+      "Vendor claim"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "What do integration and synergy-tracking tools cost?",
+   "intro": "Prices from each vendor's own pricing page, read 26 Nov 2026. Both run checklists and trackers; neither is a matching engine for your records.",
+   "headers": [
+    "Tool",
+    "What it covers",
+    "Published price",
+    "Worth knowing"
+   ],
+   "rows": [
+    {
+     "name": "DealRoom",
+     "url": "https://dealroom.net/products/pricing",
+     "cells": [
+      "Integration worklists and a synergy tracker[^45]",
+      "$12,000 a year[^45]",
+      "Billed annually at $1,000 a month[^45]"
+     ]
+    },
+    {
+     "name": "Midaxo",
+     "url": "https://midaxo.com/pricing",
+     "cells": [
+      "Value and synergy-tracking dashboards[^46]",
+      "From $25,000 a year[^46]",
+      "A starting price; read 26 Nov 2026[^46]"
+     ]
+    }
+   ]
+  }
+ ],
+ "recipes": [
+  {
+   "name": "1. First add-on: spreadsheet plus an AI check on unsure matches",
+   "when": "Your first or second add-on, with a few thousand customers. A working paper used AI only on unsure pairs and still scored about 96 out of 100[^17].",
+   "flow": [
+    "IT lead: export both customer and product lists to spreadsheets",
+    "Analyst: match exact keys first, such as tax ID, email domain and model number",
+    "Analyst: run fuzzy name matching, which scores near-identical spellings, on the rest",
+    "Analyst: send only the unsure middle band to an AI model for a yes or no with a reason",
+    "Controller: review every match below the confidence cut",
+    "Sales lead: turn the result into overlap, cross-sell and price-gap lists"
+   ],
+   "cost": "The AI step cost $1.30 to $3.95 per 1,000 pairs in one working paper[^17]. Most of the cost is your controller's review time."
+  },
+  {
+   "name": "2. Platform doing three or more add-ons a year: a standing mapping layer",
+   "when": "Integration is a repeat job: close to half of add-ons are a platform's fourth deal or later[^25]. Build the map once and fold each add-on into it.",
+   "flow": [
+    "Controller: keep one platform chart of accounts, product list and customer ID scheme",
+    "Analyst: map each new add-on into it with an AI-assisted mapper",
+    "Controller: sign off the chart-of-accounts map before master data (customer, product and vendor records) moves, then transactions",
+    "Controller: approve the low-confidence rows, with extra care on the master-data map in days 45 to 70",
+    "Finance lead: feed the synergy tracker from ERP and CRM data each month",
+    "Integration lead: have AI redraft the 100-day checklist from the deal's facts, then mark each item keep, edit or drop"
+   ],
+   "cost": "Mostly controller review time: vendors report 10% to 20% of rows still checked by hand[^41][^42]. Practitioners say the master-data map is where consolidations fail, so budget time there[^47]."
+  },
+  {
+   "name": "3. Bought tracker plus your own matching",
+   "when": "You want checklists, owners and a synergy tracker now, plus revenue analysis on your own data[^45][^46].",
+   "flow": [
+    "Integration lead: run the plan and owners in a tool such as DealRoom or Midaxo",
+    "Analyst: run the matching from build 1 or 2 on your own records",
+    "Sales lead: load the cross-sell and price-gap lists into the tracker as revenue lines",
+    "COO: review the tracker each month against the deal model"
+   ],
+   "cost": "DealRoom's integration plan is $12,000 a year and Midaxo starts at $25,000 a year, both read 26 Nov 2026[^45][^46]. Matching costs the same as build 1[^17]."
+  }
+ ],
+ "ownData": {
+  "title": "How accurate is AI at matching records across two lists in published tests?",
+  "intro": "We compiled the published results below from the papers themselves, read on 26 Nov 2026; we did not rerun them[^13][^15][^17]. The score is F1, out of 100: it drops when a model misses true matches or makes false ones. Fine-tuned means trained on labelled example pairs; zero-shot means no task training.",
+  "headers": [
+   "Method",
+   "Test set",
+   "Published score (F1, of 100)",
+   "Source",
+   "What to watch"
+  ],
+  "rows": [
+   [
+    "Matching model, zero-shot",
+    "Abt-Buy: two electronics stores' product listings",
+    "28.8[^13]",
+    "LinkTransformer, ACL 2024",
+    "Too weak to trust without training or review"
+   ],
+   [
+    "Same model, fine-tuned",
+    "Abt-Buy",
+    "84[^13]",
+    "LinkTransformer, ACL 2024",
+    "Needs labelled pairs from your own data"
+   ],
+   [
+    "Matching model, zero-shot",
+    "Amazon-Google product listings",
+    "47.1[^13]",
+    "LinkTransformer, ACL 2024",
+    "Harder set; zero-shot misses more"
+   ],
+   [
+    "Same model, fine-tuned",
+    "Amazon-Google product listings",
+    "74[^13]",
+    "LinkTransformer, ACL 2024",
+    "Training helps, but a gap to perfect remains"
+   ],
+   [
+    "Large model (GPT-4o), fine-tuned",
+    "WDC Products, a hard set of web product offers",
+    "87.07[^15]",
+    "arXiv 2409.08185",
+    "Even a strong model falls short of perfect"
+   ],
+   [
+    "Fuzzy matching, with a large model only on unsure pairs",
+    "The paper's own test pairs",
+    "95.8 to 96.1[^17]",
+    "Working paper on Zenodo, 8 May 2026",
+    "Not peer reviewed; AI cost $1.30 to $3.95 per 1,000 pairs"
+   ],
+   [
+    "Best large models, few or no examples",
+    "Several public benchmarks",
+    "About level with fine-tuned models[^14]",
+    "EDBT 2025",
+    "Depends on which model you use"
+   ],
+   [
+    "Small fine-tuned models",
+    "Public benchmarks",
+    "Comparable to large models[^16]",
+    "EDBT 2025",
+    "Far cheaper to run, per the paper"
+   ]
+  ],
+  "note": "Limits: these are public product lists in English, not your ERP or customer master[^18]. Abt-Buy holds 1,081 and 1,092 listings with 1,097 true matches[^18]. Each paper used its own setup and model versions change, so test on your own lists with the steps below."
+ },
+ "rules": [
+  {
+   "name": "Sherman Act and FTC pre-merger guidance",
+   "url": "https://www.ftc.gov/enforcement/competition-matters/2018/03/avoiding-antitrust-pitfalls-during-pre-merger-negotiations-due-diligence",
+   "status": "In force; FTC guidance of 20 Mar 2018",
+   "what": "Until closing, buyer and target must act as separate firms, even when no filing is needed[^1]. Share the least information needed, and keep customer pricing inside a clean team[^1]. A buyer that took control early paid a record $5.6M[^2][^3]."
+  },
+  {
+   "name": "Hart-Scott-Rodino (HSR) thresholds, 2026",
+   "url": "https://www.ftc.gov/enforcement/premerger-notification-program/current-thresholds",
+   "status": "In force from 17 Feb 2026",
+   "what": "Deals above $133.9M generally need an HSR filing and a waiting period, subject to size-of-person tests[^4][^5]. The lowest filing fee is $35,000, for deals below $189.6M[^5]. Civil penalties for HSR violations reach $53,088 a day[^6]."
+  },
+  {
+   "name": "2023 Merger Guidelines, Guideline 8, and the Welsh Carson order",
+   "url": "https://www.justice.gov/atr/merger-guidelines/applying-merger-guidelines/guideline-8",
+   "status": "Agency guidance (2023); Welsh Carson order final 20 May 2025",
+   "what": "Regulators may review a series of small acquisitions together, which is how roll-ups get examined[^7]. The FTC's Welsh Carson order came out of an anesthesia roll-up[^8]. Small add-ons in one local market can draw review even below HSR thresholds[^7]."
+  },
+  {
+   "name": "California Consumer Privacy Act (CCPA), merger provisions",
+   "url": "https://cppa.ca.gov/pdf/20260101_ccpa_statute.pdf",
+   "status": "In force; statute text of 1 Jan 2026",
+   "what": "Customer data that moves in a merger is not a sale under the CCPA[^10]. A later use materially inconsistent with what customers were told needs prior notice, and existing opt-outs must be honoured[^10]."
+  },
+  {
+   "name": "FTC position on privacy promises in acquisitions",
+   "url": "https://www.ftc.gov/news-events/news/press-releases/2014/04/ftc-notifies-facebook-whatsapp-privacy-obligations-light-proposed-acquisition",
+   "status": "FTC position since 10 Apr 2014",
+   "what": "Privacy promises made to the target's customers survive the acquisition[^9]. Using data already collected in a materially different way needs customers' affirmative consent[^9]."
+  }
+ ],
+ "howToTest": [
+  "Record today's baseline on your latest add-on: team hours spent mapping, days to a first cross-sell list, and errors found later.",
+  "Hand-label 200 pairs from your own customer or product lists: 100 likely matches and 100 near-misses. That is your gold set.",
+  "Run the matcher on the gold set and count false merges and missed matches. False merges cost more, so weigh them harder.",
+  "Set the confidence cut so false merges stay under your bar, say 2 in 100. Everything below the cut goes to a person; record that share.",
+  "Check the money: revenue of matched customers must reconcile to both source ledgers, to the dollar.",
+  "Have sales reps spot-check 20 cross-sell suggestions before any outreach.",
+  "Have the integration lead mark each item in the AI-drafted 100-day plan keep, edit or drop. Track that edit rate across add-ons.",
+  "Log every merge with who approved it, so any merge can be reversed.",
+  "Price the lift in dollars: cross-sell revenue won from the list, plus team hours saved against your baseline. Pilot on one add-on before using the playbook on the next."
+ ],
+ "watchOuts": [
+  "Gun-jumping means acting as one company before the deal closes; XCL Resources paid a record $5.6M for it[^2][^3]. Run any pre-close cross-sell model only through a clean team, a walled-off group, with counsel[^1].",
+  "Marketing to acquired customers on new terms can break the target's privacy promises[^9][^10]. Honour its opt-outs, and upload customer files only to AI tools under a data agreement; data security is deal teams' top AI worry[^30].",
+  "Two customers merged into one misstate revenue, credit limits and commissions. Set the cut for few false merges and log each approval, because even strong models fall short of perfect[^15][^13].",
+  "Matched data can mislead until definitions line up: in one vendor case, a 3.5-point margin gap was just two costing methods[^43]. Agree definitions with the controller before comparing numbers.",
+  "The average merger loses 2% to 5% of combined customers; in banking, acquired-bank customers leave at 8% against 5% industry-wide[^20][^37]. Call key accounts before any price letter goes out[^28][^38].",
+  "Competitors poach staff and accounts during integration, and target-company staff turnover rose from 19.7% to 28.6% after deals in one study[^40][^23][^39]. Keeping people is a leadership job, not an AI one."
+ ],
+ "faq": [
+  {
+   "q": "How long does post-merger integration take?",
+   "a": "Plan on 18 months to three years for synergies, with the add-on's current state mapped by day 30 and process decisions made by day 90[^49][^50]. Revenue synergies take longest, about five years in one consulting survey[^21]."
+  },
+  {
+   "q": "What goes in a 100-day integration plan?",
+   "a": "A 100-day plan sets what must happen by when: map the add-on's current state by day 30 and make process decisions by day 90[^50]. Decide the ERP question within the first 100 days, then replace systems on a plan[^48]."
+  },
+  {
+   "q": "How can AI be used in mergers and acquisitions?",
+   "a": "AI drafts integration plans, maps data between systems, matches records and reads contracts, with people checking the output[^26][^36][^44]. In a consulting firm's survey, 45% of M&A executives used AI in 2025, more than double the year before[^26]."
+  },
+  {
+   "q": "Can we look at the target's customer list before closing?",
+   "a": "Only with safeguards: share the least information needed and keep sensitive data, such as customer pricing, inside a clean team[^1]. Buyers that took control early have paid record fines[^2]. Ask antitrust counsel first; this is not legal advice."
+  },
+  {
+   "q": "Do we need customer consent to market to acquired customers?",
+   "a": "Not always, but you must keep the target's privacy promises[^9]. Using collected data in a materially different way needs affirmative consent, and the CCPA requires notice and honouring opt-outs[^9][^10]. This is not legal advice."
+  },
+  {
+   "q": "How do we track synergies after close?",
+   "a": "Give each synergy an owner, a target and a monthly actual pulled from ERP and CRM data, run by the integration management office (IMO)[^35][^46]. Tools such as DealRoom and Midaxo include synergy trackers[^45][^46]."
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Buy a post-merger integration tool when the need is checklists, owners and a synergy tracker. DealRoom's integration plan is $12,000 a year and Midaxo starts at $25,000 a year[^45][^46].",
+  "build": "Build the matching and the revenue analysis, because they run on your own ERP and CRM fields. Small fine-tuned models match about as well as large ones at far lower cost[^16][^14]. Using AI only on unsure pairs kept costs to $1.30 to $3.95 per 1,000 pairs[^17]."
+ },
+ "pickElse": [
+  "The add-on is folded in and the pain is the month-end close: start with the chart of accounts[^47] and see the multi-entity close guide.",
+  "AI should help every company you own, not one deal: close to half of add-ons are a platform's fourth or later[^25]. See the AI value creation plan.",
+  "You want cross-sell with no deal in play: fewer than 20% of deals hit cross-sell goals[^22], so start with the sales analytics guide.",
+  "You only need a checklist and a tracker: a bought tool such as DealRoom or Midaxo is enough[^45][^46]."
+ ],
+ "resources": [
+  {
+   "name": "FTC, Avoiding antitrust pitfalls during pre-merger negotiations",
+   "url": "https://www.ftc.gov/enforcement/competition-matters/2018/03/avoiding-antitrust-pitfalls-during-pre-merger-negotiations-due-diligence",
+   "what": "The FTC's own plain guide to what you can share before close, including clean teams."
+  },
+  {
+   "name": "FTC, Current HSR thresholds",
+   "url": "https://www.ftc.gov/enforcement/premerger-notification-program/current-thresholds",
+   "what": "Check whether an add-on needs a filing, and what the fee is."
+  },
+  {
+   "name": "DOJ and FTC, Merger Guidelines, Guideline 8",
+   "url": "https://www.justice.gov/atr/merger-guidelines/applying-merger-guidelines/guideline-8",
+   "what": "How regulators look at a series of acquisitions, which is what a roll-up is."
+  },
+  {
+   "name": "CCPA statute text, January 2026",
+   "url": "https://cppa.ca.gov/pdf/20260101_ccpa_statute.pdf",
+   "what": "The California rules on customer data in a merger, including notice and opt-outs."
+  },
+  {
+   "name": "Leipzig benchmark datasets for entity resolution",
+   "url": "https://dbs.uni-leipzig.de/research/projects/benchmark-datasets-for-entity-resolution",
+   "what": "Free public matching test sets, including Abt-Buy, to try a matcher before your own data."
+  }
+ ],
+ "stats": [
+  {
+   "num": "72.9%",
+   "label": "of US private equity buyouts in 2025 were add-ons, 5,351 deals[^19]",
+   "source": "PitchBook, Jan 2026"
+  },
+  {
+   "num": "Under 20%",
+   "label": "of deals hit their cross-sell goals[^22]",
+   "source": "McKinsey, 2020 (consulting view)"
+  },
+  {
+   "num": "2% to 5%",
+   "label": "of combined customers lost in the average merger[^20]",
+   "source": "McKinsey, 2004 (consulting view)"
+  },
+  {
+   "num": "45%",
+   "label": "of M&A executives used AI in 2025, more than double the year before[^26]",
+   "source": "Bain M&A Report 2026 (consulting survey)"
+  },
+  {
+   "num": "$5.6M",
+   "label": "record gun-jumping penalty, for 94 days of early control[^2]",
+   "source": "FTC, Jan 2025"
+  },
+  {
+   "num": "66%",
+   "label": "of US firms where AI changed tasks used it only to help staff[^11]",
+   "source": "US Census Bureau, CES-WP-26-25"
+  }
+ ],
+ "sources": [
+  {
+   "name": "FTC, Avoiding antitrust pitfalls during pre-merger negotiations and due diligence (20 Mar 2018)",
+   "url": "https://www.ftc.gov/enforcement/competition-matters/2018/03/avoiding-antitrust-pitfalls-during-pre-merger-negotiations-due-diligence",
+   "what": "Buyer and target must stay independent until closing; share the least information needed and use clean teams for competitively sensitive data such as customer pricing."
+  },
+  {
+   "name": "FTC, Oil companies pay record gun-jumping fine (Jan 2025)",
+   "url": "https://www.ftc.gov/news-events/news/press-releases/2025/01/oil-companies-pay-record-ftc-gun-jumping-fine-antitrust-law-violation",
+   "what": "XCL Resources, Verdun and EP Energy agree to a record $5.6M ($5,684,377) penalty for 94 days of gun-jumping, including control of contracts and pricing and receipt of customer pricing data."
+  },
+  {
+   "name": "FTC, US v. XCL Resources Holdings case page",
+   "url": "https://www.ftc.gov/legal-library/browse/cases-proceedings/xcl-resources-holdings-llc-et-al-usa-v",
+   "what": "Case record for the XCL gun-jumping matter; final judgment entered 4 Feb 2026."
+  },
+  {
+   "name": "FTC, 2026 update of HSR jurisdictional and fee thresholds (Jan 2026)",
+   "url": "https://www.ftc.gov/news-events/news/press-releases/2026/01/ftc-announces-2026-update-jurisdictional-fee-thresholds-premerger-notification-filings",
+   "what": "From 17 Feb 2026 the HSR size-of-transaction threshold is $133.9M; size-of-person tests are $267.8M and $26.8M, with none above $535.5M."
+  },
+  {
+   "name": "FTC, Current HSR thresholds",
+   "url": "https://www.ftc.gov/enforcement/premerger-notification-program/current-thresholds",
+   "what": "Current HSR thresholds and filing fees; the lowest fee, $35,000, applies to deals below $189.6M."
+  },
+  {
+   "name": "FTC and DOJ, HSR annual report, fiscal year 2025",
+   "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/fy_2025_hsr_annual_report_for_transmittal_to_congress.pdf",
+   "what": "Maximum civil penalty for HSR violations is $53,088 per day."
+  },
+  {
+   "name": "DOJ and FTC, 2023 Merger Guidelines, Guideline 8",
+   "url": "https://www.justice.gov/atr/merger-guidelines/applying-merger-guidelines/guideline-8",
+   "what": "When a merger is part of a series of acquisitions, the agencies may examine the whole series."
+  },
+  {
+   "name": "FTC, Welsh Carson final order (20 May 2025)",
+   "url": "https://www.ftc.gov/news-events/news/press-releases/2025/05/ftc-approves-final-order-welsh-carson",
+   "what": "FTC approves the final consent order with private equity firm Welsh Carson over its anesthesia roll-up, US Anesthesia Partners."
+  },
+  {
+   "name": "FTC, letter on Facebook and WhatsApp privacy obligations (10 Apr 2014)",
+   "url": "https://www.ftc.gov/news-events/news/press-releases/2014/04/ftc-notifies-facebook-whatsapp-privacy-obligations-light-proposed-acquisition",
+   "what": "Privacy promises made to customers survive an acquisition; using already-collected data in a materially different way needs affirmative consent."
+  },
+  {
+   "name": "California Privacy Protection Agency, CCPA statute text (1 Jan 2026)",
+   "url": "https://cppa.ca.gov/pdf/20260101_ccpa_statute.pdf",
+   "what": "A transfer of personal information in a merger is not a sale; a later material change inconsistent with the promises at collection needs prior notice, and opt-outs must be honoured (1798.140(ad)(2)(C), 1798.120)."
+  },
+  {
+   "name": "US Census Bureau, working paper CES-WP-26-25 (Apr 2026, revised Oct 2026)",
+   "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
+   "what": "Of firms where AI changed tasks, 66% used it only to augment tasks; 2% reported AI-related employment decreases."
+  },
+  {
+   "name": "Do Business Unit Leaders Matter for M&A? (working paper, Dec 2025)",
+   "url": "https://www.bayes.citystgeorges.ac.uk/__data/assets/pdf_file/0018/1003923/11.-Gokkaya-_Stulz_Business-Unit-Leaders_MAs.pdf",
+   "what": "Failure to achieve projected synergies is the most common cause of integration failure; integration leaders with target-industry experience capture more revenue and cost synergies."
+  },
+  {
+   "name": "LinkTransformer, ACL 2024 system demonstrations",
+   "url": "https://aclanthology.org/2024.acl-demos.21.pdf",
+   "what": "Product matching F1: Abt-Buy 28.8 zero-shot and 84 fine-tuned; Amazon-Google 47.1 zero-shot and 74 fine-tuned."
+  },
+  {
+   "name": "Entity Matching using Large Language Models (EDBT 2025)",
+   "url": "https://arxiv.org/abs/2310.11244",
+   "what": "The best large language models need few or no training examples to match the accuracy of fine-tuned matching models."
+  },
+  {
+   "name": "Fine-tuning large language models for entity matching (arXiv 2409.08185)",
+   "url": "https://arxiv.org/html/2409.08185v2",
+   "what": "Fine-tuned GPT-4o reaches F1 87.07 on the hard WDC Products benchmark."
+  },
+  {
+   "name": "Small fine-tuned models for entity matching (EDBT 2025)",
+   "url": "https://openproceedings.org/2025/conf/edbt/paper-224.pdf",
+   "what": "Small fine-tuned models match about as well as large ones on entity matching, at far lower cost."
+  },
+  {
+   "name": "LLM escalation for fuzzy matching (working paper on Zenodo, 8 May 2026)",
+   "url": "https://zenodo.org/records/20089436",
+   "what": "Using a large language model only as an escalation layer for unsure pairs, reports F1 of 0.958 to 0.961 at $1.30 to $3.95 per 1,000 pairs at the top end."
+  },
+  {
+   "name": "Leipzig University, benchmark datasets for entity resolution",
+   "url": "https://dbs.uni-leipzig.de/research/projects/benchmark-datasets-for-entity-resolution",
+   "what": "Abt-Buy: 1,081 and 1,092 product listings with 1,097 true matches; Amazon-GoogleProducts: 1,363 and 3,226 with 1,300 matches; CC BY 4.0."
+  },
+  {
+   "name": "PitchBook, 2025 Annual US PE Breakdown (Jan 2026; copy hosted by Wall Street Prep)",
+   "url": "https://media.wallstreetprep.com/uploads/2026/01/05163008/Pitchbook-US-Annual-PE-Breakdown-2025.pdf",
+   "what": "Add-ons were 72.9% of US buyouts in 2025: 5,351 deals worth $350.7B."
+  },
+  {
+   "name": "McKinsey, Where mergers go wrong (2004), consulting view",
+   "url": "https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/where-mergers-go-wrong",
+   "what": "Almost 70% of mergers missed expected revenue synergies; about 60% delivered cost synergies; the average merger loses 2% to 5% of combined customers, some 30% or more."
+  },
+  {
+   "name": "McKinsey, Seven rules to crack the code on revenue synergies in M&A (Oct 2018), consulting survey of 200 executives",
+   "url": "https://www.mckinsey.com/~/media/McKinsey/Business%20Functions/Marketing%20and%20Sales/Our%20Insights/Seven%20rules%20to%20crack%20the%20code%20on%20revenue%20synergies%20in%20MA/Seven-rules-to-crack-the-code-on-revenue-synergies-in-M-and-A.pdf",
+   "what": "Deals achieved 77% of revenue-synergy targets on average; revenue synergies take about five years, cost synergies about two."
+  },
+  {
+   "name": "McKinsey, Capturing cross-selling synergies in M&A (11 Feb 2020), consulting view",
+   "url": "https://www.mckinsey.com/capabilities/m-and-a/our-insights/capturing-cross-selling-synergies-in-ma",
+   "what": "Fewer than 20% of deals hit their cross-selling goals."
+  },
+  {
+   "name": "McKinsey, Mastering sales force integration in a merger (2009), consulting view",
+   "url": "https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/mastering-sales-force-integration-in-a-merger",
+   "what": "Competitors target customers and sales staff while a merger integrates."
+  },
+  {
+   "name": "Bain, Revenue synergies M&A report (8 Feb 2022), consulting survey of 281",
+   "url": "https://www.bain.com/insights/revenue-synergies-m-and-a-report-2022",
+   "what": "Overestimating revenue synergies is the most-cited reason deals failed; only about half model them; full results take three to five years."
+  },
+  {
+   "name": "Bain, Global Private Equity Report 2024: Building a Stronger Buy-and-Build (11 Mar 2024), consulting view",
+   "url": "https://www.bain.com/insights/building-a-stronger-buy-and-build-global-private-equity-report-2024",
+   "what": "Close to 50% of add-ons are at least a platform's fourth acquisition."
+  },
+  {
+   "name": "Bain, M&A Report 2026 (27 Jan 2026), consulting survey and cases",
+   "url": "https://www.bain.com/insights/capability-for-a-new-era-m-and-a-report-2026",
+   "what": "45% of M&A executives used AI in 2025, more than double the year before; a bank cut integration prep time 25% with GPTs; a media acquirer forecast costs within 90% of actuals."
+  },
+  {
+   "name": "Bain, Cultural integration, M&A Report 2023, consulting survey",
+   "url": "https://www.bain.com/insights/cultural-integration-m-and-a-report-2023",
+   "what": "Nearly half of practitioners name culture or management-team integration as a reason past deals failed."
+  },
+  {
+   "name": "Bain, Keeping customers first in merger integration (2011), consulting view",
+   "url": "https://www.bain.com/insights/keeping-customers-first-in-merger-integration",
+   "what": "In banking, First Union lost 20% of customers in year one; Westpac and St.George designed their integration to lose none."
+  },
+  {
+   "name": "Deloitte, 2026 GenAI in M&A Pulse, consulting survey (sample size not shown)",
+   "url": "https://www.deloitte.com/us/en/what-we-do/capabilities/mergers-acquisitions-restructuring/articles/m-and-a-generative-ai-study.html",
+   "what": "Human review is the top requirement for high-stakes GenAI use in deals; 52% use GenAI in post-close integration."
+  },
+  {
+   "name": "Deloitte, GenAI in M&A survey press release (9 Oct 2025), consulting survey of 1,000",
+   "url": "https://www.deloitte.com/us/en/about/press-room/deloitte-survey-genai-in-mna.html",
+   "what": "Data security was the top GenAI concern in deals at 67%, data quality second at 65%."
+  },
+  {
+   "name": "TriVista, Post-Merger Integration Mid-Market Survey (2021), citing PwC 2019",
+   "url": "https://trivista.com/wp-content/uploads/2025/12/Post-Merger-Integration-Mid-Market-Survey.pdf",
+   "what": "Cites PwC 2019 survey of 100 PE executives: realised value against plan was 70% for cost, 53% for working capital and 45% for revenue."
+  },
+  {
+   "name": "AlixPartners, growth-oriented mergers (Jul 2018), consulting view",
+   "url": "https://www.alixpartners.com/media/14490/ap_growth_orientated_mergers_jul_2018.pdf",
+   "what": "Up to 66% of deals fail to deliver value despite hitting about 80% of cost targets."
+  },
+  {
+   "name": "FTI Consulting, HVAC acquisition synergies case study (9 Sep 2026), consultancy case study",
+   "url": "https://www.fticonsulting.com/insights/case-studies/capturing-12-million-net-revenue-hvac-acquisition-synergies",
+   "what": "A $316M distributor buying a $68M competitor found $12M net revenue uplift: $10M from cross-selling 5 SKUs and $2M from price harmonisation on 6 SKUs; $5.6M margin impact."
+  },
+  {
+   "name": "Coro by Bain, MoneyMap chemicals case study, consultancy case study",
+   "url": "https://www.coro.io/moneymap-case-study-chemco",
+   "what": "A clean team used AI-enabled matching to merge two customer datasets before close, finding about $2B of cross-sell opportunity and $20M+ of pricing uplift."
+  },
+  {
+   "name": "KPMG, HP integration client story (27 Jan 2025), consultancy case",
+   "url": "https://kpmg.com/us/en/how-we-work/client-stories/hp-transforms-complex.html",
+   "what": "Integration management office with 50+ automations and synergy tracking from ERP and CRM data; no single result figure."
+  },
+  {
+   "name": "CIO.com, How CIOs can use AI to overcome M&A integration headaches (3 Mar 2026)",
+   "url": "https://www.cio.com/article/4139885/how-cios-can-use-ai-to-overcome-ma-integration-headaches.html",
+   "what": "A Nash Squared leader says an AI data-mapping tool completes about 80% of their data mapping."
+  },
+  {
+   "name": "Gallup, Bank mergers may chase away customers (2 Jun 2015)",
+   "url": "https://news.gallup.com/businessjournal/183443/bank-mergers-may-chase-away-customers.aspx",
+   "what": "Customers of acquired banks leave at 8%, against a 5% industry average."
+  },
+  {
+   "name": "J.D. Power, US mergers and acquisitions study (2009)",
+   "url": "http://images.dealer.com/jdpa/pdf/09-US-MergersAcquisitions-SR.pdf",
+   "what": "Customer switching intent ran two to three times higher after mergers; communication separated good outcomes from bad."
+  },
+  {
+   "name": "ECGI blog, Race, gender and employee turnover: evidence from M&A (11 Aug 2025)",
+   "url": "https://www.ecgi.global/publications/blog/race-gender-and-employee-turnover-evidence-from-mergers-and-acquisitions",
+   "what": "Target-company employee turnover rises from 19.7% to 28.6% after mergers, in a study of LinkedIn profiles."
+  },
+  {
+   "name": "WTW, 2024 M&A Retention Study (n=159)",
+   "url": "https://www.wtwco.com/en-us/insights/2024/03/2024-m-and-a-retention-study",
+   "what": "Competitors try to poach staff during deals; retention is a core integration risk."
+  },
+  {
+   "name": "Quinnox, data integration case study (28 Feb 2026), vendor claim",
+   "url": "https://www.quinnox.com/case-study/data-integration-transformation",
+   "what": "Vendor says 80-85% of schema mapping automated, subject experts reviewed the 10-15% low-confidence rows, and migration fell from 2 months to 3 weeks."
+  },
+  {
+   "name": "Turing, trial-balance mapping case study (9 Jan 2026), vendor claim",
+   "url": "https://www.turing.com/case-study/automating-mmr-models",
+   "what": "Vendor says mapping fell from 5 days to 3 hours, with about 20% of accounts still reviewed by hand."
+  },
+  {
+   "name": "Sphere, PavingX Unify case study (9 Jul 2026), vendor claim",
+   "url": "https://www.sphereinc.com/case-studies/pavingx-unify-case-study",
+   "what": "Vendor says 612 duplicate records became 187 golden records at 94% average confidence, 46 went to manual review, and a 3.5-point margin gap was a costing-method artifact."
+  },
+  {
+   "name": "Quisitive, AI contract analysis across acquisitions (21 Jul 2026), vendor claim",
+   "url": "https://quisitive.com/using-ai-contract-analysis-to-untangle-years-of-acquisitions",
+   "what": "Vendor describes an AI model reading acquired customer contracts into structured fields with a confidence score."
+  },
+  {
+   "name": "DealRoom, pricing page",
+   "url": "https://dealroom.net/products/pricing",
+   "what": "Read 26 Nov 2026: Diligence and Integration plan at $1,000 a month billed annually ($12,000 a year), with integration worklists and a synergy tracker."
+  },
+  {
+   "name": "Midaxo, pricing page",
+   "url": "https://midaxo.com/pricing",
+   "what": "Read 26 Nov 2026: plans from $25,000 a year, with value and synergy-tracking dashboards."
+  },
+  {
+   "name": "Bramvia, Two ERP systems after an acquisition (12 Sep 2026)",
+   "url": "https://bramvia.net/blog/two-erp-systems-after-acquisition-consolidation",
+   "what": "Practitioner sequence: chart of accounts first, then master data, then transactions; the master-data map in days 45 to 70 is where consolidations fail."
+  },
+  {
+   "name": "ERPGo-live, ERP in the first 100 days after an acquisition (25 Sep 2026)",
+   "url": "https://www.erpgo-live.com/post/erp-first-100-days-after-an-acquisition",
+   "what": "Decide the ERP question within the first 100 days, then replace on a plan rather than in a rush."
+  },
+  {
+   "name": "DealDen, post-merger integration (10 Nov 2026)",
+   "url": "https://dealden.ai/terms/post-merger-integration",
+   "what": "Buyers set synergy deadlines of 18 months to three years."
+  },
+  {
+   "name": "ClearWork, buy-and-build integration playbook (12 Nov 2026)",
+   "url": "https://www.clearwork.io/blog-posts/buy-and-build-integration-playbook",
+   "what": "For each add-on, map current state by day 30 and make process decisions by day 90."
+  }
+ ],
+ "related": [
+  "sales-analytics",
+  "multi-entity-close",
+  "ai-value-creation-plan",
+  "private-equity",
+  "holding-companies-roll-ups",
+  "ai-integration-services",
+  "account-reconciliation-automation"
+ ],
+ "answers": {
+  "human-role": "People keep every decision that touches money or trust: which records merge, which prices change, what customers hear and who leads[^29][^33][^38].",
+  "team-after": "The same small team covers more add-ons: AI drafts maps and plans, and people spend the time on customer calls, pricing and keeping staff[^26][^11].",
+  "example": "In an illustrative case, a distributor matches its customer and product lists against an add-on's, and the team picks a short list of cross-sell and price moves[^33][^34].",
+  "table-1": "Cost synergies usually land and revenue synergies often don't: about 60% of deals delivered cost synergies, but almost 70% missed revenue ones[^20][^22].",
+  "table-2": "AI has drafted plans, mapped data and matched records in published cases, yet vendor cases still send 10% to 25% of items to a person[^26][^41][^43].",
+  "table-3": "Published prices start at $12,000 a year for DealRoom's integration plan and $25,000 a year for Midaxo[^45][^46].",
+  "recipes": "A first add-on fits a spreadsheet plus an AI pass, a platform doing three or more deals a year fits a standing mapping layer, and a bought tracker fits either[^17][^25][^45].",
+  "own-data": "Accuracy varies widely: untrained AI scored as low as 29 out of 100 on a public product test, while trained or escalation setups reached 84 to 96[^13][^17].",
+  "rules": "Four sets of rules apply: antitrust limits on sharing before close, Hart-Scott-Rodino (HSR) filing thresholds, roll-up review, and privacy promises to the target's customers[^1][^4][^7][^10]. Not legal advice.",
+  "benchmark": "Test on 200 hand-labelled pairs from your own lists, set a confidence cut, reconcile the money and have sales reps check the cross-sell list before anyone acts.",
+  "what-goes-wrong": "AI-assisted integration goes wrong through gun-jumping, broken privacy promises, false merges, mismatched definitions, customer churn and lost staff[^2][^9][^43][^20].",
+  "buy-or-build": "Buy the workflow and synergy tracker, and build the matching layer that finds overlap, cross-sell and price gaps in your own data[^45][^16].",
+  "something-else": "Pick something else when the pain is month-end close, a portfolio-wide plan, cross-sell without a deal, or only a checklist."
+ },
+ "offer": {
+  "heading": "Folding in an add-on? Start with a free diagnostic",
+  "body": "Bring us your post-merger integration process for your latest add-on. In 30 minutes you leave with the first step and a before-and-after measure, in writing. Your team keeps every merge, price and customer decision."
+ },
+ "keyword": {
+  "phrase": "post merger integration",
+  "searches": 1300,
+  "cpc": 29.14,
+  "difficulty": 19
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Read as Dana, COO of a PE-backed platform. Wanted hours saved, not just percentages: team-after now gives the vendor's 5 days to 3 hours next to the 80% data-mapping quote, each labelled. Revenue lead is clear in the bottom line, summary and example (now with the $5.6M margin figure). No neutral source gives a build time, so none is stated."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Tripped on clean team, HSR, fuzzy matching and master data. Clean team is now defined at its first body use (table 2), HSR is spelled out in the rules answer, fuzzy matching and master data are defined in builds 1 and 2. SKU, ERP, CRM, F1, zero-shot, fine-tuned, golden record and confidence cut were already defined on first use."
+  },
+  {
+   "reader": "GM",
+   "notes": "Asked for the margin effect and whether one add-on can pilot first. The example now shows margin as well as revenue, and the last test step says to pilot on one add-on before reusing the playbook. Team time is covered by the review-share figures in builds 1 and 2."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Read as the controller who owns the integration mapping. The sequence was right but ownership was blurred: build 2 now has the controller signing off the chart-of-accounts map before master data moves, then transactions. Money reconciliation to both ledgers and a reversible merge log are in the test steps. Consolidation and intercompany are routed to the multi-entity close guide."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Read as Steve. His worries are covered: data security (privacy watch-out cites the 67% concern), cost (dated tool prices and per-pair AI cost), return (price-the-lift step), legal risk (plain-words gun-jumping and privacy, not legal advice). Offer now promises the result in writing. No Zavient price shown, as decided; consulting figures are labelled as surveys or cases."
+  }
+ ],
+ "updated": "2026-11-26"
+}
