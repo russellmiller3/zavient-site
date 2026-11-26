@@ -5,7 +5,7 @@
 // AI-work hub, data stories and readiness check; run after `npm run build`). Exits 1 on any problem.
 // Mobile/ADHD audit (26 Nov 2026): bottom-line bullets of 20 words or fewer with at most 2 footnotes, opening
 // paragraph of 50 words or fewer, and the same sentence and paragraph limits on the hand-built pages.
-import { readFileSync, readdirSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -96,7 +96,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   }
   if (!process.argv.slice(2).length) {
     const dist = join(here, '..', 'dist');
-    const pages = [...HTML_PAGES, ...readdirSync(join(dist, 'data')).filter((f) => f.endsWith('.html')).map((f) => `data/${f}`)];
+    const pages = [...HTML_PAGES, ...(existsSync(join(dist, 'data')) ? readdirSync(join(dist, 'data')) : []).filter((f) => f.endsWith('.html')).map((f) => `data/${f}`)];
     for (const page of pages) {
       const p = checkHtml(readFileSync(join(dist, page), 'utf8'));
       bad += p.length;
