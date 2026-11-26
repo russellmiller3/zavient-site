@@ -23,12 +23,15 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: `
 - "Where does your team stay in charge?" on every page. No headcount-cut wording.
 - No Upwork, freelancer marketplaces, hourly rates or rival consulting firms.
 - Teach, then trust, then the lead: alternatives sit after "Buy or build", just above the free diagnostic.
+- The free diagnostic shows in four spots, worded for the page type: under the bottom line, beside the tool or own data, in a sticky contents box, and at the end.
+- One folder per page type; pages built before the templates stay at `/ai-work/<slug>.html`.
 - A fact only Zavient has on every page except tools (the tool is the fact).
 - ADHD-friendly: 25-word sentences, 2-sentence bullets, 3-sentence paragraphs.
 - Zarlent look in blue (`public/ai-work/ai-work.css`).
 - Required on every page: verdict, summary, humanRole, faq, stats, sources, offer.
 
 ## Work playbook (`usecase`)
+- Address: `/ai-work/{slug}.html`.
 - Title shape: "Can AI {do the work} {the way the buyer needs it}?". Example: "Can AI score loans fairly and explainably?".
 - Division-head reviewer: the head of the team that does this work (e.g. head of lending, chief underwriter, controller).
 - Free diagnostic offer: "Bring us your {job} process. Leave with the first step and a before-and-after measure."
@@ -55,6 +58,7 @@ Block order:
 18. Free diagnostic
 
 ## Work for one industry (`crossing`)
+- Address: `/ai-work/{parent}/{industrySlug}.html`.
 - Title shape: "Can AI {do the work} for {industry} {the way they need it}?". Example: "Can AI underwrite for insurers without tripping the NAIC bulletin?".
 - Division-head reviewer: the head of that work in that industry.
 - Free diagnostic offer: "Bring us your {job} process. Leave with the first step, a before-and-after measure and the questions your examiner will ask."
@@ -82,6 +86,7 @@ Block order:
 18. Free diagnostic
 
 ## Industry hub (`industry`)
+- Address: `/industries/{slug}.html`.
 - Title shape: "What are {industry} actually using AI for?". Example: "What are community banks actually using AI for?".
 - Division-head reviewer: the division heads of that industry (e.g. head of lending, chief underwriter).
 - Free diagnostic offer: "Which of these workflows pays back first at your firm?"
@@ -105,6 +110,7 @@ Block order:
 15. Free diagnostic
 
 ## Role page (`role`)
+- Address: `/for/{slug}.html`.
 - Title shape: "Where should a {role} start with AI?". Example: "Where should a head of lending start with AI?".
 - Division-head reviewer: the role itself is the main reader; the division-head review checks it from a peer function.
 - Free diagnostic offer: "Your top 2 workflows ranked, and a one-page plan you can hand your CEO."
@@ -131,6 +137,7 @@ Block order:
 17. Free diagnostic
 
 ## Consulting (`consulting`)
+- Address: `/ai-consulting/{slug}.html` (the hub, slug `ai-consulting`, is `/ai-consulting.html`).
 - Title shape: "{The kind of help}: what should you walk away with?". Example: "AI automation consulting: what should you walk away with?".
 - Division-head reviewer: the operator who would hire the help (COO or head of operations).
 - Free diagnostic offer: "Free, before any paid work: 30 minutes on your first workflow."
@@ -153,6 +160,7 @@ Block order:
 14. Free diagnostic
 
 ## Rules page (`regulation`)
+- Address: `/ai-rules/{slug}.html`.
 - Title shape: "Does {rule} apply to {a firm like yours}?". Example: "Does the Colorado AI Act apply to a 200-person lender?".
 - Division-head reviewer: the compliance or risk owner for that work.
 - Free diagnostic offer: "Does this rule touch the AI you use? We'll check in 30 minutes."
@@ -177,6 +185,7 @@ Block order:
 16. Free diagnostic
 
 ## Free tool (`tool`)
+- Address: `/tools/{slug}.html`.
 - Title shape: "{Tool name}: {question it answers}?". Example: "AI ROI calculator: will this workflow pay back this year?".
 - Division-head reviewer: the person most likely to run the tool.
 - Free diagnostic offer: "Want the detailed plan behind your result? Book the free 30-minute diagnostic."
@@ -196,6 +205,7 @@ Block order:
 11. Free diagnostic
 
 ## Guide (`guide`)
+- Address: `/guides/{slug}.html`.
 - Title shape: "How do I {do the thing}?". Example: "How do I pick our first AI project?".
 - Division-head reviewer: the person who would do the steps.
 - Free diagnostic offer: "Want a second pair of eyes on your answer? Book the free 30-minute diagnostic."
@@ -226,7 +236,7 @@ Block order:
 - **walk-away** (`walkAway`): 3-5 bullets: what a buyer should hold at the end of good help (a ranked workflow list, a before-and-after measure, a working pilot, a plan their team can run). Source to buyer surveys where possible.
 - **forward** (`forward`): 4-6 short lines a reader can print or forward to the owner-CEO: the top workflow, what it saves, the risk and who checks it, the first step, the cost range. Every number footnoted. This is the role page's forward to Steve.
 - **applies** (`applies`): 3-6 if/then lines a reader can answer yes or no to (size, state, what the AI decides, who is affected), each from the rule's own text. Primary sources only. Not legal advice.
-- **tool** (`tool`): The tool itself (an HTML file in public/tools/), 3-5 steps to use it, and 3-6 method lines: every default and formula with its source. No made-up defaults.
+- **tool** (`tool`): The tool itself (an HTML file in public/tools/embed/), 3-5 steps to use it, and 3-6 method lines: every default and formula with its source. No made-up defaults.
 - **timeline** (`timeline`): Dated milestones (in force, proposed, withdrawn, start dates), each from the official text or the regulator page. Primary sources only.
 - **own-data** (`ownData`): The number only Zavient has: a benchmark we ran, a price check of N vendor pages on a date, a count from public registries or package stats. Table of 4-10 rows with method, date pulled and a note on limits. This is the publish gate: no own data, no index.
 - **example** (`example`): One concrete before-and-after: the real inputs (documents, fields, data) and the real output (decision, draft, flag) a reader in a 40-500 person firm would recognise. Mark it illustrative.

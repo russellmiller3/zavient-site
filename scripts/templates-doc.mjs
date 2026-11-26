@@ -34,12 +34,15 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: \
 - "Where does your team stay in charge?" on every page. No headcount-cut wording.
 - No Upwork, freelancer marketplaces, hourly rates or rival consulting firms.
 - Teach, then trust, then the lead: alternatives sit after "Buy or build", just above the free diagnostic.
+- The free diagnostic shows in four spots, worded for the page type: under the bottom line, beside the tool or own data, in a sticky contents box, and at the end.
+- One folder per page type; pages built before the templates stay at \`/ai-work/<slug>.html\`.
 - A fact only Zavient has on every page except tools (the tool is the fact).
 - ADHD-friendly: 25-word sentences, 2-sentence bullets, 3-sentence paragraphs.
 - Zarlent look in blue (\`public/ai-work/ai-work.css\`).
 - Required on every page: ${COMMON_REQUIRED.join(', ')}.
 
 ${Object.entries(TYPES).map(([name, t]) => `## ${t.label} (\`${name}\`)
+- Address: \`/${t.path}.html\`${name === 'consulting' ? ' (the hub, slug `ai-consulting`, is `/ai-consulting.html`)' : ''}.
 - Title shape: "${t.titleShape}". Example: "${t.example}".
 - Division-head reviewer: ${t.division}.
 - Free diagnostic offer: "${t.offer}"${t.skipDemand ? '\n- Skips the demand check (navigation page).' : ''}

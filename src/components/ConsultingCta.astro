@@ -2,9 +2,9 @@
 // api-docs-read: static offer block — no external API/protocol surface, only mailto and a booking link.
 // The offer on indexed AI-work pages (26 Nov 2026): an easy intro, a free diagnostic of how to approach this work
 // with AI, which leads to an AI consulting engagement. data-cta="consulting" is what tests/site.test.mjs looks for.
-const { job = 'this work', heading = '', ask = '' } = Astro.props;
+const { job = 'this work', heading = '', ask = '', spot = '' } = Astro.props;
 ---
-<section class="article-cta" id="diagnostic" data-cta="consulting">
+<section class="article-cta" id="diagnostic" data-cta="consulting" data-diag={spot || undefined}>
   <div class="wrap">
     <div class="label">Free diagnostic</div>
     <h2>{heading || `Not sure how to approach ${job}? Get a free diagnostic`}</h2>

@@ -1,0 +1,13 @@
+---
+// api-docs-read: static page generator — no external API/protocol surface.
+// Golden-template pages that live outside /ai-work/<slug> (site architecture doc, "URL scheme", 26 Nov 2026):
+// /ai-work/<work>/<industry>, /industries/, /for/, /ai-consulting/, /ai-rules/, /tools/, /guides/.
+// Only the addresses listed here are built, so this route never shadows another page.
+import AiWorkPage from '../components/AiWorkPage.astro';
+import { aiWorkRoutes, underAiWork } from '../lib/ai-work-routes';
+
+export async function getStaticPaths() {
+  return (await aiWorkRoutes()).filter((r) => !underAiWork(r.route)).map((r) => ({ params: { route: r.route }, props: r.props }));
+}
+---
+<AiWorkPage {...Astro.props} />

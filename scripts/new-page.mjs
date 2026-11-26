@@ -31,7 +31,7 @@ const SLOT = {
   spokes: [{ slug: T('guide-slug'), why: T('why it pays first [^n]') }],
   ranked: Array.from({ length: 4 }, () => ({ name: T('job'), slug: T('guide slug or delete this key'), why: T('cost or time today [^n]'), payoff: T('the number to measure') })),
   decisions: Array.from({ length: 3 }, () => ({ decision: T('decision this role owns'), know: T('what they need to know [^n]') })),
-  tool: { embed: `/tools/${slug}.html`, steps: [T('step 1'), T('step 2'), T('step 3')], method: [T('default + source [^n]'), T('formula + source [^n]'), T('limit [^n]')] },
+  tool: { embed: `/tools/embed/${slug}.html`, steps: [T('step 1'), T('step 2'), T('step 3')], method: [T('default + source [^n]'), T('formula + source [^n]'), T('limit [^n]')] },
   timeline: [{ date: T('date'), what: T('what happens [^n]') }, { date: T('date'), what: T('what happens [^n]') }],
   ownData: { title: T('question the own data answers?'), intro: T('what we checked, how, when [^n]'), headers: [T('col')], rows: [[T('cell [^n]')]], note: T('source, date pulled, limits') },
   example: { input: T('real inputs a reader would recognise'), output: T('real output') },
@@ -58,7 +58,7 @@ const page = {
   verdict: [1, 2, 3].map(() => T('one idea, 30 words max, 2+ sources, no number first [^n][^n]')),
   onPage: [],
   headings: {},
-  ...(type === 'crossing' ? { differs: t.differsFrom.map((k) => ({ what: k, how: T(`how ${k} differs from the parent page, or delete this row`) })) } : {}),
+  ...(type === 'crossing' ? { parent: T('work playbook slug'), industrySlug: T('industry slug, e.g. insurers'), differs: t.differsFrom.map((k) => ({ what: k, how: T(`how ${k} differs from the parent page, or delete this row`) })) } : {}),
 };
 for (const f of fields) if (SLOT[f] !== undefined) page[f] = SLOT[f];
 Object.assign(page, {
@@ -70,7 +70,7 @@ Object.assign(page, {
 
 const brief = `# Research brief: ${topic} (${t.label})
 
-Page: \`${slug}\` · type \`${type}\` · made ${today} from the golden template in \`src/lib/page-types.mjs\`.
+Page: \`${slug}\` · type \`${type}\` · address \`/${t.path}.html\` · made ${today} from the golden template in \`src/lib/page-types.mjs\`.
 Reader: lower-middle-market firm, 40-500 staff. Division head for this page: ${reader || t.division}.
 
 ## How to work

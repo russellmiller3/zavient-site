@@ -8,8 +8,11 @@ import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { spawnSync } from 'node:child_process';
 import { indexed } from '../src/lib/publish.mjs';
+import { urlFor } from '../src/lib/page-types.mjs';
 
 const root = new URL('..', import.meta.url).pathname;
+// The built file of an AI-work page at its address (src/lib/page-types.mjs routeFor).
+const aiWorkFile = (s) => { const d = JSON.parse(readFileSync(join(root, 'src/content/ai-work', `${s}.json`), 'utf8')); return join(root, 'dist', urlFor(d, s)); };
 const dist = join(root, 'dist');
 const slugs = (dir) => readdirSync(join(root, 'src/content', dir)).filter((f) => f.endsWith('.json')).map((f) => f.replace(/\.json$/, ''));
 
@@ -21,17 +24,17 @@ test('every AI-work page is built with the offer and at least one source link', 
   const all = slugs('ai-work').map((s) => ({ id: s, data: JSON.parse(readFileSync(join(root, 'src/content/ai-work', `${s}.json`), 'utf8')) }));
   for (const s of slugs('ai-work')) {
     const data = all.find((p) => p.id === s).data;
-    const html = readFileSync(join(dist, 'ai-work', `${s}.html`), 'utf8');
+    const html = readFileSync(aiWorkFile(s), 'utf8');
     if (data.templateVersion) assert.match(html, /data-cta="consulting"/, `${s}: free diagnostic missing on a template page`);
     if (indexed({ id: s, data }, all)) {
       assert.match(html, /data-cta="consulting"/, `${s}: consulting offer missing`);
       assert.match(html, /href="mailto:rmiller@zavient\.com"/, `${s}: offer email missing`);
       assert.doesNotMatch(html, /name="robots" content="noindex/, `${s}: indexed page is marked noindex`);
-      assert.ok(sitemap.includes(`/ai-work/${s}.html`), `${s}: indexed page missing from sitemap`);
+      assert.ok(sitemap.includes(urlFor(data, s)), `${s}: indexed page missing from sitemap`);
     } else {
       if (!data.templateVersion) assert.match(html, /data-cta="benchmark"/, `${s}: offer block missing`);
       assert.match(html, /name="robots" content="noindex/, `${s}: unpublished page is not noindex`);
-      assert.ok(!sitemap.includes(`/ai-work/${s}.html`), `${s}: noindex page listed in sitemap`);
+      assert.ok(!sitemap.includes(urlFor(data, s)), `${s}: noindex page listed in sitemap`);
     }
     assert.match(html, /href="\/benchmark-your-documents\.html"/, `${s}: offer link missing`);
     const sources = html.split(/<h2[^>]*>Sources<\/h2>/)[1] || '';
@@ -122,7 +125,7 @@ test('every indexed AI-work page footnotes its claims, and every footnote points
     assert.ok(marks(data.summary).length > 0, `${s}: summary has no footnote`);
     for (const st of data.stats) assert.ok(marks(st.label + st.source).length > 0, `${s}: stat ${st.num} has no footnote`);
     for (const w of [...data.watchOuts, ...data.pickElse]) assert.ok(marks(w).length > 0, `${s}: no footnote on "${w.slice(0, 60)}"`);
-    const html = readFileSync(join(dist, 'ai-work', `${s}.html`), 'utf8');
+    const html = readFileSync(aiWorkFile(s), 'utf8');
     assert.match(html, /<sup class="fn"><a href="#fn-1"/, `${s}: footnotes not rendered`);
     assert.match(html, /id="fn-1"/, `${s}: numbered sources missing`);
   }
@@ -134,7 +137,7 @@ test('every indexed AI-work page opens with a bottom line and an On this page li
   for (const s of slugs('ai-work')) {
     const data = JSON.parse(readFileSync(join(root, 'src/content/ai-work', `${s}.json`), 'utf8'));
     if (!data.index) continue;
-    const html = readFileSync(join(dist, 'ai-work', `${s}.html`), 'utf8');
+    const html = readFileSync(aiWorkFile(s), 'utf8');
     const hero = html.slice(html.indexOf('<header class="article-hero"'), html.indexOf('</header>'));
     assert.match(hero, /class="bluf"/, `${s}: no bottom line at the top`);
     const bullets = (hero.match(/<div class="bluf"[\s\S]*?<\/ul>/) || [''])[0].match(/<li/g) || [];
@@ -154,5 +157,17 @@ test('every indexed AI-work page passes the ADHD-friendly readability check', as
     if (!data.index) continue;
     const problems = checkPage(data);
     assert.equal(problems.length, 0, `${s}: hard to scan:\n  ${problems.join('\n  ')}`);
+  }
+});
+
+test('every golden-template page offers the free diagnostic in four spots', () => {
+  // Site architecture doc (26 Nov 2026), "The shared frame": under the bottom line, beside the tool or benchmark,
+  // in the sticky contents and at the end.
+  for (const s of slugs('ai-work')) {
+    const data = JSON.parse(readFileSync(join(root, 'src/content/ai-work', `${s}.json`), 'utf8'));
+    if (!data.templateVersion) continue;
+    const html = readFileSync(aiWorkFile(s), 'utf8');
+    const spots = [...html.matchAll(/data-diag="([a-z-]+)"/g)].map((m) => m[1]);
+    assert.deepEqual(spots, ['bottom-line', 'beside-proof', 'sticky', 'end'], `${s}: diagnostic spots are ${spots.join(', ')}`);
   }
 });

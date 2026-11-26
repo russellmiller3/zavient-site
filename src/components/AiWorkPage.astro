@@ -1,0 +1,76 @@
+---
+// api-docs-read: static component — no external API/protocol surface.
+// One AI-work page: hero with the bottom line, the blocks in their template order, and the offer. Rendered by
+// src/pages/ai-work/[slug].astro and src/pages/[...route].astro, so every page type shares one layout.
+// Golden-template pages carry the free diagnostic in four spots (site architecture doc, "The shared frame"):
+// under the bottom line, beside the tool or Zavient's own data, in a sticky contents box, and at the end.
+// Pages built before the templates keep their layout exactly.
+import Base from '../layouts/Base.astro';
+import BenchmarkCta from './BenchmarkCta.astro';
+import ConsultingCta from './ConsultingCta.astro';
+import Fn from './Fn.astro';
+import Block from './Block.astro';
+import { TYPES, orderFor, headingFor, hasBlock } from '../lib/page-types.mjs';
+
+const { page, related, spokes, isIndexed, urls, url } = Astro.props;
+const d = page.data;
+const t = TYPES[d.type] || TYPES.usecase;
+const tpl = Boolean(d.templateVersion);
+// The topic before the colon is set in the accent colour, as on Zarlent.
+const [topic, ...restParts] = d.title.split(':');
+const rest = restParts.join(':');
+const order = orderFor(d);
+// Golden-template pages that leave onPage empty get it built from their own section headings.
+const onPage = d.onPage.length > 0 || !tpl ? d.onPage
+  : order.filter((id) => !['what-it-is', 'resources', 'key-numbers', 'sources', 'related', 'tables'].includes(id) && hasBlock(d, id))
+      .slice(0, 6).map((id) => ({ to: id === 'spokes' ? 'where-ai-pays' : id, text: headingFor(d, id) }));
+const kind = tpl ? (t.label || 'Guide') : 'AI work';
+// The page type's offer, in its reader's words (architecture doc, "The offer, by page type").
+const offerLine = (t.offer || 'Get a free 30-minute diagnostic of how to approach this with AI.').replaceAll('{job}', d.job);
+// Spot two sits right after the tool, or else after Zavient's own data, or else after the opening answer.
+const proofAfter = tpl ? (['tool', 'own-data'].find((id) => order.includes(id) && hasBlock(d, id)) || 'what-it-is') : null;
+---
+<Base title={`${d.title} | Zavient`} description={d.description} noindex={!isIndexed} theme="blue">
+  <header class="article-hero">
+    <div class="wrap">
+      <div class="label">{kind} &middot; {d.job}{d.industry !== 'any industry' ? ` · ${d.industry}` : ''}</div>
+      <h1>{rest ? (<><span class="hl">{topic}</span>:{rest}</>) : d.title}</h1>
+      {d.verdict ? (
+        <div class="bluf">
+          <span class="bluf-label">Bottom line</span>
+          <ul>{d.verdict.map((b) => <li><Fn s={b} /></li>)}</ul>
+        </div>
+      ) : <p class="dek"><Fn s={d.summary} /></p>}
+      {tpl && <p class="diag-nudge" data-diag="bottom-line">{offerLine}{' '}<a href="#diagnostic">Get the free 30-minute diagnostic</a></p>}
+      {onPage.length > 0 && (
+        <nav class="on-page" aria-label="On this page">
+          <span class="bluf-label">On this page</span>
+          <ol>{onPage.map((o) => <li><a href={`#${o.to}`}>{o.text}</a></li>)}</ol>
+          {d.index && !tpl && <p class="on-page-cta">And at the end: <a href="#diagnostic">a free 30-minute diagnostic</a> of how to approach this with AI.</p>}
+        </nav>
+      )}
+      <p class="byline">By <a href="https://linkedin.com/in/russellmiller" rel="author">Russell Miller</a>, Zavient &middot; updated <time datetime={d.updated}>{d.updated}</time></p>
+      {isIndexed && <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: d.title, description: d.description, dateModified: d.updated, author: { '@type': 'Person', name: 'Russell Miller', url: 'https://linkedin.com/in/russellmiller' }, publisher: { '@type': 'Organization', name: 'Zavient', url: 'https://zavient.com/' }, mainEntityOfPage: `https://zavient.com${url}` })} />}
+    </div>
+  </header>
+  <article class="article-body">
+    <div class="wrap">
+      {order.map((id) => (<>
+        <Block id={id} d={d} page={page} related={related} spokes={spokes} urls={urls} />
+        {id === proofAfter && <aside class="diag-box" data-diag="beside-proof"><p><strong>Free diagnostic:</strong>{' '}{offerLine}</p><a class="btn-gold" href="#diagnostic">Book the 30 minutes &rarr;</a></aside>}
+      </>))}
+    </div>
+  </article>
+  {tpl && (
+    <div class="sticky-toc" data-diag="sticky">
+      {onPage.length > 0 && (
+        <details>
+          <summary>On this page</summary>
+          <ol>{onPage.map((o) => <li><a href={`#${o.to}`}>{o.text}</a></li>)}</ol>
+        </details>
+      )}
+      <a class="btn-gold" href="#diagnostic">Free 30-minute diagnostic</a>
+    </div>
+  )}
+  {(d.index || tpl) ? <ConsultingCta job={d.job} heading={d.offer?.heading} ask={d.offer?.body} spot={tpl ? 'end' : ''} /> : <BenchmarkCta job={d.job} />}
+</Base>

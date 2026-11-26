@@ -78,7 +78,7 @@ export const BLOCKS = {
   },
   tool: {
     field: 'tool', h: 'Use the {topic}',
-    brief: 'The tool itself (an HTML file in public/tools/), 3-5 steps to use it, and 3-6 method lines: every default and formula with its source. No made-up defaults.',
+    brief: 'The tool itself (an HTML file in public/tools/embed/), 3-5 steps to use it, and 3-6 method lines: every default and formula with its source. No made-up defaults.',
   },
   timeline: {
     field: 'timeline', h: 'When does each part of {topic} apply?',
@@ -138,6 +138,7 @@ export const BLOCKS = {
 export const TYPES = {
   usecase: {
     label: 'Work playbook',
+    path: 'ai-work/{slug}',
     titleShape: 'Can AI {do the work} {the way the buyer needs it}?',
     example: 'Can AI score loans fairly and explainably?',
     order: ['what-it-is', 'human-role', 'team-after', 'example', 'tables', 'recipes', 'own-data', 'rules', 'benchmark', 'what-goes-wrong', 'faq', 'buy-or-build', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
@@ -147,6 +148,7 @@ export const TYPES = {
   },
   crossing: {
     label: 'Work for one industry',
+    path: 'ai-work/{parent}/{industrySlug}',
     titleShape: 'Can AI {do the work} for {industry} {the way they need it}?',
     example: 'Can AI underwrite for insurers without tripping the NAIC bulletin?',
     // URL order is always work, then industry (architecture doc, "URL scheme").
@@ -159,6 +161,7 @@ export const TYPES = {
   },
   industry: {
     label: 'Industry hub',
+    path: 'industries/{slug}',
     titleShape: 'What are {industry} actually using AI for?',
     example: 'What are community banks actually using AI for?',
     order: ['what-it-is', 'human-role', 'ranked', 'own-data', 'tables', 'rules', 'what-goes-wrong', 'faq', 'buy-or-build', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
@@ -169,6 +172,7 @@ export const TYPES = {
   },
   role: {
     label: 'Role page',
+    path: 'for/{slug}',
     titleShape: 'Where should a {role} start with AI?',
     example: 'Where should a head of lending start with AI?',
     // A router and a forward, not a traffic bet: it skips the demand check (architecture doc, "Publish gate").
@@ -181,6 +185,7 @@ export const TYPES = {
   },
   consulting: {
     label: 'Consulting',
+    path: 'ai-consulting/{slug}',
     titleShape: '{The kind of help}: what should you walk away with?',
     example: 'AI automation consulting: what should you walk away with?',
     // Never named rival or partner firms, or freelancer rates (Site rules). Zavient's own price ranges only on Russell's yes.
@@ -192,6 +197,7 @@ export const TYPES = {
   },
   regulation: {
     label: 'Rules page',
+    path: 'ai-rules/{slug}',
     titleShape: 'Does {rule} apply to {a firm like yours}?',
     example: 'Does the Colorado AI Act apply to a 200-person lender?',
     order: ['what-it-is', 'applies', 'timeline', 'rules', 'human-role', 'spokes', 'benchmark', 'what-goes-wrong', 'faq', 'buy-or-build', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
@@ -202,6 +208,7 @@ export const TYPES = {
   },
   tool: {
     label: 'Free tool',
+    path: 'tools/{slug}',
     titleShape: '{Tool name}: {question it answers}?',
     example: 'AI ROI calculator: will this workflow pay back this year?',
     // The tool is the Zavient-only fact (architecture doc: "a benchmark result, a job-ad count, a worked example or a calculator").
@@ -213,6 +220,7 @@ export const TYPES = {
   },
   guide: {
     label: 'Guide',
+    path: 'guides/{slug}',
     titleShape: 'How do I {do the thing}?',
     example: 'How do I pick our first AI project?',
     order: ['what-it-is', 'human-role', 'benchmark', 'example', 'own-data', 'what-goes-wrong', 'faq', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
@@ -255,6 +263,18 @@ export function hasBlock(d, id) {
   if (typeof v === 'object') return Object.keys(v).length > 0;
   return String(v).trim().length > 0;
 }
+
+// Where a page lives (site architecture doc, "URL scheme", 26 Nov 2026): one folder per page type, short slugs,
+// work before industry for crossings, plural folders for people. Pages built before the templates stay at
+// /ai-work/<slug> so nothing already built moves. The consulting hub's slug is "ai-consulting" (/ai-consulting.html).
+// Vercel serves exact files, so the public address is the route plus ".html".
+export function routeFor(d, id) {
+  if (!d.templateVersion) return `ai-work/${id}`;
+  if (d.type === 'consulting' && id === 'ai-consulting') return 'ai-consulting';
+  const t = TYPES[d.type] || TYPES.usecase;
+  return t.path.replaceAll('{slug}', id).replaceAll('{parent}', d.parent || id).replaceAll('{industrySlug}', d.industrySlug || id);
+}
+export const urlFor = (d, id) => `/${routeFor(d, id)}.html`;
 
 export function orderFor(d) {
   return d.templateVersion ? (TYPES[d.type] || TYPES.usecase).order : LEGACY_ORDER;

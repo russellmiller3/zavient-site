@@ -53,8 +53,11 @@ const aiwork = defineCollection({
     faq: z.array(z.object({ q: z.string().min(10), a: z.string().min(20) })).default([]),
     ranked: z.array(z.object({ name: z.string(), slug: z.string().optional(), why: z.string(), payoff: z.string() })).default([]),
     decisions: z.array(z.object({ decision: z.string(), know: z.string() })).default([]),
-    tool: z.object({ embed: z.string().regex(/^\/tools\/[a-z0-9-]+\.html$/), steps: z.array(z.string()).min(3), method: z.array(z.string()).min(3) }).optional(),
+    tool: z.object({ embed: z.string().regex(/^\/tools\/embed\/[a-z0-9-]+\.html$/), steps: z.array(z.string()).min(3), method: z.array(z.string()).min(3) }).optional(),
     timeline: z.array(z.object({ date: z.string(), what: z.string() })).default([]),
+    // Crossings only: the work playbook this page narrows, and the industry's slug. Address: /ai-work/<parent>/<industrySlug>.html
+    parent: z.string().regex(/^[a-z0-9-]+$/).optional(),
+    industrySlug: z.string().regex(/^[a-z0-9-]+$/).optional(),
     differs: z.array(z.object({ what: z.string(), how: z.string() })).default([]),
     // ICP review log, in order (Russell, 26 Nov 2026). Never rendered; the publish gate checks it.
     reviews: z.array(z.object({ reader: z.string(), notes: z.string() })).default([]),
@@ -93,6 +96,7 @@ const aiwork = defineCollection({
       need(!d.index || (d.verdict && d.onPage.length >= 3 && d.stats.length >= 3 && d.sources.length >= 3), 'an indexed AI-work page needs a verdict, an On this page list of 3+ items, 3+ Zavient numbers and 3+ sources');
       return;
     }
+    need(d.type !== 'crossing' || (d.parent && d.industrySlug), 'a crossing page needs parent (its work playbook slug) and industrySlug, which make its address');
     if (!d.index) return; // drafts may build half-filled; they stay noindex
     const t = TYPES[d.type];
     for (const f of [...COMMON_REQUIRED, ...t.required]) {

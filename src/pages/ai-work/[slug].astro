@@ -1,68 +1,13 @@
 ---
 // api-docs-read: static page generator — no external API/protocol surface.
-// One page per JSON file in src/content/ai-work. Pages with index:true (26 Nov 2026 publish gate: a verdict,
-// Zavient-only numbers, 3+ sources) get the full layout and the consulting offer and are indexed; the rest keep the
-// short layout, the benchmark offer and noindex.
-import { getCollection } from 'astro:content';
-import Base from '../../layouts/Base.astro';
-import BenchmarkCta from '../../components/BenchmarkCta.astro';
-import ConsultingCta from '../../components/ConsultingCta.astro';
-import Fn from '../../components/Fn.astro';
-import Block from '../../components/Block.astro';
-import { TYPES, orderFor, headingFor, hasBlock } from '../../lib/page-types.mjs';
-import { indexed } from '../../lib/publish.mjs';
+// AI-work pages one level under /ai-work/: every page built before the golden templates, and the work playbooks.
+// Pages with index:true that pass the publish gate are indexed; the rest render noindex, follow. The layout lives in
+// src/components/AiWorkPage.astro; other page types are built by src/pages/[...route].astro.
+import AiWorkPage from '../../components/AiWorkPage.astro';
+import { aiWorkRoutes, underAiWork } from '../../lib/ai-work-routes';
 
 export async function getStaticPaths() {
-  const pages = await getCollection('aiwork');
-  const byId = Object.fromEntries(pages.map((p) => [p.id, p.data]));
-  return pages.map((page) => ({
-    params: { slug: page.id },
-    props: {
-      page,
-      isIndexed: indexed(page, pages),
-      related: page.data.related.filter((r) => byId[r]).map((r) => ({ id: r, title: byId[r].title })),
-      spokes: page.data.spokes.filter((s) => byId[s.slug]).map((s) => ({ ...s, title: byId[s.slug].title })),
-    },
-  }));
+  return (await aiWorkRoutes()).filter((r) => underAiWork(r.route)).map((r) => ({ params: { slug: r.route.split('/')[1] }, props: r.props }));
 }
-const { page, related, spokes, isIndexed } = Astro.props;
-const d = page.data;
-// The topic before the colon is set in the accent colour, as on Zarlent.
-const [topic, ...restParts] = d.title.split(':');
-const rest = restParts.join(':');
-const order = orderFor(d);
-// Golden-template pages that leave onPage empty get it built from their own section headings.
-const onPage = d.onPage.length > 0 || !d.templateVersion ? d.onPage
-  : order.filter((id) => !['what-it-is', 'resources', 'key-numbers', 'sources', 'related', 'tables'].includes(id) && hasBlock(d, id))
-      .slice(0, 6).map((id) => ({ to: id === 'spokes' ? 'where-ai-pays' : id, text: headingFor(d, id) }));
-const kind = d.templateVersion ? (TYPES[d.type]?.label || 'Guide') : 'AI work';
 ---
-<Base title={`${d.title} | Zavient`} description={d.description} noindex={!isIndexed} theme="blue">
-  <header class="article-hero">
-    <div class="wrap">
-      <div class="label">{kind} &middot; {d.job}{d.industry !== 'any industry' ? ` · ${d.industry}` : ''}</div>
-      <h1>{rest ? (<><span class="hl">{topic}</span>:{rest}</>) : d.title}</h1>
-      {d.verdict ? (
-        <div class="bluf">
-          <span class="bluf-label">Bottom line</span>
-          <ul>{d.verdict.map((b) => <li><Fn s={b} /></li>)}</ul>
-        </div>
-      ) : <p class="dek"><Fn s={d.summary} /></p>}
-      {onPage.length > 0 && (
-        <nav class="on-page" aria-label="On this page">
-          <span class="bluf-label">On this page</span>
-          <ol>{onPage.map((o) => <li><a href={`#${o.to}`}>{o.text}</a></li>)}</ol>
-          {(d.index || d.templateVersion) && <p class="on-page-cta">And at the end: <a href="#diagnostic">a free 30-minute diagnostic</a> of how to approach this with AI.</p>}
-        </nav>
-      )}
-      <p class="byline">By <a href="https://linkedin.com/in/russellmiller" rel="author">Russell Miller</a>, Zavient &middot; updated <time datetime={d.updated}>{d.updated}</time></p>
-      {isIndexed && <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: d.title, description: d.description, dateModified: d.updated, author: { '@type': 'Person', name: 'Russell Miller', url: 'https://linkedin.com/in/russellmiller' }, publisher: { '@type': 'Organization', name: 'Zavient', url: 'https://zavient.com/' }, mainEntityOfPage: `https://zavient.com/ai-work/${page.id}.html` })} />}
-    </div>
-  </header>
-  <article class="article-body">
-    <div class="wrap">
-      {order.map((id) => <Block id={id} d={d} page={page} related={related} spokes={spokes} />)}
-    </div>
-  </article>
-  {(d.index || d.templateVersion) ? <ConsultingCta job={d.job} heading={d.offer?.heading} ask={d.offer?.body} /> : <BenchmarkCta job={d.job} />}
-</Base>
+<AiWorkPage {...Astro.props} />

@@ -2,7 +2,7 @@
 // refuses a page that breaks them. These run without a build.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { TYPES, BLOCKS, REVIEWERS } from '../src/lib/page-types.mjs';
+import { TYPES, BLOCKS, REVIEWERS, urlFor } from '../src/lib/page-types.mjs';
 import { gate } from '../scripts/check-page.mjs';
 
 test('every page type keeps the rule order: teach first, alternatives after buy-or-build, people stay in charge', () => {
@@ -77,4 +77,19 @@ test('a crossing page must differ from its parent on 4 of 6 dimensions', () => {
   assert.match(gate({ ...base, differs: [{ what: 'problem', how: 'x' }] }).fail.join(' '), /differs from its parent on 1 of 6/);
   const four = ['problem', 'jobs', 'workflow', 'evidence'].map((what) => ({ what, how: 'x' }));
   assert.ok(!gate({ ...base, differs: four }).fail.some((f) => /differs/.test(f)));
+});
+
+test('each page type has its own address, and older pages stay where they are', () => {
+  const v1 = (type, extra = {}) => ({ templateVersion: 1, type, ...extra });
+  assert.equal(urlFor({}, 'ai-credit-scoring'), '/ai-work/ai-credit-scoring.html');
+  assert.equal(urlFor(v1('usecase'), 'ai-underwriting'), '/ai-work/ai-underwriting.html');
+  assert.equal(urlFor(v1('crossing', { parent: 'ai-underwriting', industrySlug: 'insurers' }), 'ai-underwriting-insurers'), '/ai-work/ai-underwriting/insurers.html');
+  assert.equal(urlFor(v1('industry'), 'banking-and-lending'), '/industries/banking-and-lending.html');
+  assert.equal(urlFor(v1('role'), 'heads-of-lending'), '/for/heads-of-lending.html');
+  assert.equal(urlFor(v1('consulting'), 'ai-consulting'), '/ai-consulting.html');
+  assert.equal(urlFor(v1('consulting'), 'automation'), '/ai-consulting/automation.html');
+  assert.equal(urlFor(v1('regulation'), 'colorado-ai-act'), '/ai-rules/colorado-ai-act.html');
+  assert.equal(urlFor(v1('tool'), 'ai-roi-calculator'), '/tools/ai-roi-calculator.html');
+  assert.equal(urlFor(v1('guide'), 'pick-your-first-ai-project'), '/guides/pick-your-first-ai-project.html');
+  for (const [name, t] of Object.entries(TYPES)) assert.ok(t.path && t.offer, `${name}: needs a path and an offer line`);
 });

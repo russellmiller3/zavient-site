@@ -5,6 +5,7 @@
 // JSON: a verdict, Zavient-only numbers, 3+ sources) is listed again. Addresses name the .html file because Vercel serves only exact paths.
 import { getCollection } from 'astro:content';
 import { indexed } from '../lib/publish.mjs';
+import { urlFor } from '../lib/page-types.mjs';
 
 export async function GET() {
   const site = 'https://zavient.com';
@@ -12,7 +13,7 @@ export async function GET() {
   const urls = [
     { loc: `${site}/data.html`, lastmod: null },
     { loc: `${site}/benchmark-your-documents.html`, lastmod: null },
-    ...aiwork.filter((p) => indexed(p, aiwork)).map((p) => ({ loc: `${site}/ai-work/${p.id}.html`, lastmod: p.data.updated })),
+    ...aiwork.filter((p) => indexed(p, aiwork)).map((p) => ({ loc: `${site}${urlFor(p.data, p.id)}`, lastmod: p.data.updated })),
     ...(await getCollection('datastory')).map((p) => ({ loc: `${site}/data/${p.id}.html`, lastmod: p.data.updated })),
   ];
   const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +

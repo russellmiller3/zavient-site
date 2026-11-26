@@ -5,7 +5,9 @@
 import Fn from './Fn.astro';
 import { headingFor } from '../lib/page-types.mjs';
 
-const { id, d, page, related = [], spokes = [] } = Astro.props;
+const { id, d, page, related = [], spokes = [], urls = {} } = Astro.props;
+// A page's address by its id (src/lib/page-types.mjs routeFor); pages not yet built fall back to /ai-work/.
+const href = (slug) => urls[slug] || `/ai-work/${slug}.html`;
 const h = headingFor(d, id);
 ---
 {id === 'what-it-is' && (d.verdict || d.templateVersion) && (<>
@@ -40,7 +42,7 @@ const h = headingFor(d, id);
 {id === 'spokes' && spokes.length > 0 && (<>
   <h2 id="where-ai-pays">{h}</h2>
   <div class="hub-grid">
-    {spokes.map((s) => <a class="hub-card" href={`/ai-work/${s.slug}.html`}><span class="hub-tag">Guide</span><h3>{s.title}</h3><p><Fn s={s.why} /></p></a>)}
+    {spokes.map((s) => <a class="hub-card" href={s.url || href(s.slug)}><span class="hub-tag">Guide</span><h3>{s.title}</h3><p><Fn s={s.why} /></p></a>)}
   </div>
 </>)}
 {id === 'ranked' && d.ranked.length > 0 && (<>
@@ -48,7 +50,7 @@ const h = headingFor(d, id);
   <ol class="ranked">
     {d.ranked.map((r) => (
       <li>
-        <h3>{r.slug ? <a href={`/ai-work/${r.slug}.html`}>{r.name}</a> : r.name}</h3>
+        <h3>{r.slug ? <a href={href(r.slug)}>{r.name}</a> : r.name}</h3>
         <p><Fn s={r.why} /></p>
         <p class="payoff"><strong>Payoff to measure:</strong>{' '}<Fn s={r.payoff} /></p>
       </li>
@@ -165,4 +167,4 @@ const h = headingFor(d, id);
     </table></div>
   </div>
 )}
-{id === 'related' && related.length > 0 && (<p>Related: {related.map((r, i) => <>{i > 0 && ' · '}<a href={`/ai-work/${r.id}.html`}>{r.title}</a></>)}</p>)}
+{id === 'related' && related.length > 0 && (<p>Related: {related.map((r, i) => <>{i > 0 && ' · '}<a href={r.url || href(r.id)}>{r.title}</a></>)}</p>)}
