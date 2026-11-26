@@ -1,29 +1,48 @@
 {
  "title": "AI underwriting: can it help underwriters, and who is using it?",
  "description": "Where AI pays in underwriting: the reading, not the decision. 19 tools checked, the US and EU rules, our benchmark data and three builds.",
+ "type": "usecase",
+ "templateVersion": 1,
+ "topic": "AI underwriting",
  "job": "underwriting",
  "industry": "lending and insurance",
  "summary": "AI underwriting does the reading: it pulls facts from applications, statements and broker emails[^12][^21]. Underwriters decide faster, and a named person still decides[^4][^2]. It fits small-business lenders, life insurers with a rules engine[^19], and commercial insurers swamped by broker submissions[^7].",
+ "humanRole": [
+  "Underwriter: decides whether to offer, decline or price, after reviewing what the software recommends.[^34] In New York, an adverse decision notice should name the information used and its source.[^37][^2]",
+  "Credit officer at a lender: owns each decline and its reasons.[^4] For a scoring model, those reasons must be the factors it actually scored.[^16]",
+  "Head of underwriting: sits on the AI committee with claims, compliance and legal.[^38][^31] Checking AI against expert review is one validation method the bulletin names.[^38]",
+  "Model reviewer at a bank lender: an expert independent of the builder challenges a scoring model before first use.[^40] Bank regulators' 2026 guidance calls this \"effective challenge\" and leaves generative AI out of scope.[^40][^39]"
+ ],
+ "teamAfter": [
+  "Referred and complex files become the core job.[^18] BLS already lists reviewing software recommendations among underwriters' duties.[^34]",
+  "Underwriters get back admin hours: 39% to 43% of their time goes to admin today.[^1][^7]",
+  "Flagged gaps go back to people: underwriters contact field representatives, medical staff and others for what the file lacks.[^34][^12]",
+  "Testing for unfair outcomes, before use and on a schedule after, becomes standing work.[^2][^15] Among US firms using AI, 66% use it only to help staff; 2% saw AI-related employment fall.[^36]"
+ ],
  "index": true,
  "verdict": [
   "Property and casualty (P&C) underwriters spend about 4 in 10 hours on admin AI can take on[^1][^7].",
   "Start AI on the reading: statements, tax returns, broker submissions and referred-case evidence[^21][^18].",
-  "AI reads long financial PDFs well: two models made zero mistakes on 30 fund reports[^12].",
+  "AI now reads financial documents well; scans still trip it, so check each fact.[^12][^42]",
   "A named underwriter keeps the decision, with reasons a regulator can check[^4][^2].",
   "Test on 50 past files before you buy; vendor speed figures are their customers' claims[^20][^27]."
  ],
  "onPage": [
   {
-   "to": "own-data",
-   "text": "Which underwriting steps AI can take on today, and which stay with a person"
-  },
-  {
-   "to": "recipes",
-   "text": "Three ways to build it"
+   "to": "human-role",
+   "text": "Who on your team decides, signs off and checks the model"
   },
   {
    "to": "table-1",
    "text": "The insurance underwriting tools we checked"
+  },
+  {
+   "to": "recipes",
+   "text": "Three ways to build it: commercial intake, small-business lending, life evidence"
+  },
+  {
+   "to": "own-data",
+   "text": "Which underwriting steps AI can take on today, and which stay with a person"
   },
   {
    "to": "rules",
@@ -38,8 +57,8 @@
    "text": "Where AI underwriting projects go wrong"
   },
   {
-   "to": "buy-or-build",
-   "text": "Buy or build"
+   "to": "faq",
+   "text": "Cost, accuracy, jobs and decline reasons: the questions buyers ask"
   }
  ],
  "stats": [
@@ -119,7 +138,7 @@
  "recipes": [
   {
    "name": "1. Commercial insurance: submission intake",
-   "when": "Commercial insurers and MGAs whose underwriters spend hours keying broker submissions; admin takes 41% to 43% of their time[^7].",
+   "when": "Commercial insurers and MGAs (managing general agents, which underwrite for a carrier) whose underwriters key in broker submissions. Admin takes 41% to 43% of their time.[^7]",
    "flow": [
     "Broker email, forms and loss runs (claims history) land in a queue the ops lead owns",
     "AI extracts each fact with page and quote",
@@ -324,10 +343,11 @@
   "Have your underwriters write the right value for every fact before any AI reads the files, and lock that answer key.",
   "Run each tool on the same files. Count wrong facts apart from blanks, and require a page and quote for every fact.",
   "For scoring, compare an explainable model with your current method on the same past files. Check that the decline reasons make sense to an underwriter.",
-  "Measure cost and time per file, and how many files still need a person. Report files decided per underwriter per week, decision turnaround and in-appetite submissions left unquoted, before and after."
+  "Measure cost and time per file, and how many files still need a person. Report files decided per underwriter per week, decision turnaround and in-appetite submissions left unquoted, before and after.",
+  "Multiply hours saved per file by files per week and your loaded hourly cost. That gives the weekly dollar value of the change."
  ],
  "buyVsBuild": {
-  "buy": "Buy when your line is standard, the vendor already handles your submission formats, and you are happy to run inside its workbench.",
+  "buy": "Buy when your line is standard, the vendor already handles your submission formats, and you are happy to run inside its workbench.[^22] Most firms buy: 76% of enterprise AI uses are bought, not built.[^43]",
   "build": "Build when your own loss history and appetite are your edge, or when you need the reading step to feed systems you already own. The reading layer is swappable: in our benchmark the top nine models were within 2 facts of each other[^12]. The decision logic is yours."
  },
  "watchOuts": [
@@ -336,6 +356,32 @@
   "A model's confidence score is not a warning sign. In our benchmark, wrong answers came back rated 70 to 100[^12].",
   "Vendor claims such as faster quotes are the vendor's own figures[^23], often from chosen customers[^20][^27]. Ask for a benchmark on your own files.",
   "Flagged facts need an owner: in our benchmark, look-alike tables tripped 7 of 10 tools on one report[^12]. Count flags per file, multiply by weekly files and name who clears them."
+ ],
+ "faq": [
+  {
+   "q": "What is AI underwriting?",
+   "a": "AI reads the file and pulls out each fact with its page and quote.[^12][^21] It can draft a risk score with its reasons for the underwriter to review.[^34] The underwriter still decides.[^34][^2]"
+  },
+  {
+   "q": "Can AI approve or decline an application on its own?",
+   "a": "For simple consumer loans, underwriting may be fully automated, BLS says.[^35] Either way, the lender still owes specific reasons for a decline.[^4] Insurers must hold vendor AI to the legal standards they meet themselves.[^38]"
+  },
+  {
+   "q": "Will AI take underwriters' jobs?",
+   "a": "BLS projects insurance underwriter jobs to fall 4% from 2025 to 2035, citing automated underwriting software.[^34] It still expects about 6,800 openings a year.[^34] Among US firms using AI, 66% use it only to help staff; 2% saw AI-related employment fall.[^36]"
+  },
+  {
+   "q": "Do you have to explain a loan decline made with AI?",
+   "a": "Yes. Reg B requires specific reasons, and for a scoring model they must be the factors it scored.[^4][^16] The CFPB withdrew its 2022 circular on AI declines in May 2025, but the rule itself still applies.[^41][^4]"
+  },
+  {
+   "q": "How accurate is AI at reading underwriting files?",
+   "a": "On clean documents, very: the best model in a Fraunhofer study got 96.5% of invoice fields right.[^42] Scans are harder: 87.5% on scanned receipts.[^42] In our own test, two models made zero mistakes on 30 long fund reports.[^12]"
+  },
+  {
+   "q": "What does AI underwriting software cost?",
+   "a": "None of the 19 products we checked publishes a price.[^23][^29] Reading a long report cost under 1 cent to about 30 cents in our test.[^12] Budget from a quote scoped to one line, after a test on 50 of your files.[^20]"
+  }
  ],
  "resources": [
   {
@@ -509,6 +555,56 @@
    "name": "AI Act Service Desk, Article 14",
    "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-14",
    "what": "High-risk AI systems must let people oversee, interpret and override their output."
+  },
+  {
+   "name": "US Bureau of Labor Statistics, Insurance Underwriters (Occupational Outlook Handbook, Aug 2026)",
+   "url": "https://www.bls.gov/ooh/business-and-financial/insurance-underwriters.htm",
+   "what": "Duties include \"Review recommendations from underwriting software\", contacting field representatives and medical personnel, and \"Decide whether to offer insurance.\" Jobs projected to decline 4% from 2025 to 2035, citing automated underwriting software; about 6,800 openings a year."
+  },
+  {
+   "name": "US Bureau of Labor Statistics, Loan Officers (Occupational Outlook Handbook, Aug 2026)",
+   "url": "https://www.bls.gov/ooh/business-and-financial/loan-officers.htm",
+   "what": "Most firms use underwriting software that produces a loan recommendation; \"for simple consumer loans, the underwriting process may be fully automated.\""
+  },
+  {
+   "name": "US Census Bureau, CES-WP-26-25, The Microstructure of AI Diffusion (Apr 2026)",
+   "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
+   "what": "\"Most users (66%) rely on AI solely to augment tasks, while AI-related employment decreases are rare, occurring in only 2% of firms.\""
+  },
+  {
+   "name": "NY DFS testimony to the NY Assembly on AI in underwriting and pricing (Dec 2025)",
+   "url": "https://www.dfs.ny.gov/system/files/documents/2025/12/assembly_hearing_on_ai_in_underwriting_and_pricing-testimony_121625.pdf",
+   "what": "After an adverse underwriting decision, the insurer should include the information the decision was based on, and its source, in the notice to the consumer."
+  },
+  {
+   "name": "Illinois Department of Insurance, Company Bulletin 2024-08 (Mar 2024)",
+   "url": "https://idoi.illinois.gov/content/dam/soi/en/web/insurance/companies/companybulletins/CB2024-08.pdf",
+   "what": "Illinois's adoption of the NAIC AI bulletin: AI committees drawing on underwriting, claims, compliance and legal; validation by \"measuring performance against expert review\"; vendor AI must meet the insurer's own legal standards."
+  },
+  {
+   "name": "OCC Bulletin 2026-13, Model Risk Management: Revised Guidance (Apr 2026)",
+   "url": "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-13.html",
+   "what": "OCC, Fed and FDIC replace the 2011 model risk guidance. Most relevant to banks over $30 billion in assets; generative and agentic AI are not within its scope."
+  },
+  {
+   "name": "Interagency Supervisory Guidance on Model Risk Management (Apr 2026)",
+   "url": "https://occ.gov/news-issuances/bulletins/2026/bulletin-2026-13a.pdf",
+   "what": "\"Effective challenge\" is critical analysis by objective experts with independence and standing; validation generally occurs before a model's first use; vendor models are validated too."
+  },
+  {
+   "name": "Federal Register, CFPB withdrawal of guidance documents (12 May 2025)",
+   "url": "https://www.federalregister.gov/documents/2025/05/12/2025-08286/interpretive-rules-policy-statements-and-advisory-opinions-withdrawal",
+   "what": "Withdraws many CFPB guidance documents, including Circular 2022-03 on adverse action notices for credit decisions based on complex algorithms."
+  },
+  {
+   "name": "Berghaus et al., Fraunhofer IAIS, invoice LLM benchmark (arXiv 2509.04469, Aug 2025)",
+   "url": "https://arxiv.org/abs/2509.04469",
+   "what": "Eight models on three public datasets. Best model: 96.50% of fields right on clean invoices, 92.71% on scanned invoices, 87.46% on scanned receipts."
+  },
+  {
+   "name": "Menlo Ventures, 2025 State of Generative AI in the Enterprise",
+   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+   "what": "Survey of 495 US enterprise AI decision-makers: 76% of AI use cases are purchased rather than built, up from 53% in 2024."
   }
  ],
  "related": [
@@ -524,7 +620,7 @@
  },
  "offer": {
   "heading": "Want your underwriters out of the paperwork? Get a free diagnostic",
-  "body": "Tell us your line of business and where the hours go. In 30 minutes you get our read on where AI should help your underwriters first."
+  "body": "Tell us your line of business and where the hours go. In 30 minutes you leave with the first step and a before-and-after measure, in writing, with no sales pitch."
  },
  "updated": "2026-11-26",
  "headings": {
@@ -533,8 +629,32 @@
   "rules": "What will examiners and regulators ask about AI underwriting?",
   "what-goes-wrong": "Where does AI underwriting go wrong?",
   "buy-or-build": "Should you buy an AI underwriting tool or build one?",
-  "something-else": "When should you start somewhere else?"
+  "something-else": "When should you start somewhere else?",
+  "recipes": "Where does AI fit in your underwriting workflow?",
+  "benchmark": "How do you benchmark an AI underwriting tool before you buy?"
  },
  "recipesTitle": "Where does AI fit in your underwriting workflow?",
- "testTitle": "How do you benchmark an AI underwriting tool before you buy?"
+ "testTitle": "How do you benchmark an AI underwriting tool before you buy?",
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Couldn't see from the top who decides and who checks the model. On this page now leads with who decides, signs off and checks the model, follows the page order and links the FAQ on cost, accuracy, jobs and decline reasons."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Tripped on MGA in the commercial recipe and wanted the recipes named in the On this page list. MGA is now defined where it first appears, and the recipes item names all three builds."
+  },
+  {
+   "reader": "GM",
+   "notes": "Asked what a pilot on one line is worth in dollars. The benchmark now ends with a step that turns hours saved per file into a weekly dollar value; the first step already limits the test to one line or one branch."
+  },
+  {
+   "reader": "Division head",
+   "notes": "The head of underwriting checked the regulator claims against the insurance page and asked that compliance not cite a withdrawn CFPB circular. The decline-reasons answer now says the circular was withdrawn in May 2025 and that Reg B itself still applies; the model-reviewer role notes the 2026 bank guidance leaves generative AI out of scope."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Found the cost answer and the jobs answer where they'd look, but the offer promised only 'our read'. The offer now promises the first step and a before-and-after measure in writing, with no sales pitch."
+  }
+ ]
 }
