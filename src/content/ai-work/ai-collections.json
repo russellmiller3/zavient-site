@@ -51,6 +51,16 @@
     "something-else": "When should a collections team pick something else?"
   },
   "summary": "AI for collections is software that ranks overdue loans, picks when and how to reach each borrower, and drafts the message.[^10][^2] Collectors keep the conversations that need judgment.[^1] It works only when contact limits, consent and hand-offs to people are built in.[^11][^12]",
+  "answers": {
+    "human-role": "Your collectors and managers keep every decision that changes what a borrower owes or stops contact: bankruptcy and military matches, hardship plans, disputes and message templates.[^13][^14][^16]",
+    "team-after": "Collectors spend their day on hardship cases, high balances, escalations and borrowers AI could not reach, instead of dialling cold.[^1][^2]",
+    "example": "On a 34-day-late auto loan, AI ranks it as likely to cure, schedules a 6:30pm text with a payment link, and holds the draft for a collector's approval.[^24][^11]",
+    "recipes": "Most firms should turn on the AI in the collections system they already run; add usage-priced reminders for many small early accounts, and build only with a data team.[^27][^8][^42]",
+    "rules": "A lender collecting its own loans faces unfair-practice law (UDAAP), the TCPA for calls and texts, and state collection laws; Regulation F mainly binds outside collectors.[^5][^48][^4] Bankruptcy, military, fair-lending and credit-dispute rules apply either way.[^14][^15]",
+    "benchmark": "Run the AI on a random share of accounts and today's strategy on the rest, then compare cures, roll rates, complaints and opt-outs after 90 days.[^10][^42][^36]",
+    "what-goes-wrong": "AI for collections goes wrong when it deals with borrowers alone: AI-only calls collect less, and missing consent, stacked contacts, threatening drafts and missed refusals bring legal risk.[^1][^17][^48][^18]",
+    "something-else": "Pick something else when your collections system already has AI built in, the debt is charged off and belongs with an agency, or a plain reminder will do.[^27][^4][^8]"
+  },
   "humanRole": [
     "Your people keep every decision that changes what a borrower owes or whether contact must stop. AI only ranks, times and drafts.[^12][^13]",
     "Collections manager: confirms every bankruptcy or military-service match before anyone makes contact. A bankruptcy filing stops collection, and the Servicemembers Civil Relief Act (SCRA) caps debt taken on before service at 6% interest.[^14][^15]",
@@ -70,7 +80,7 @@
   "tables": [
     {
       "title": "Which AI collections tools are there, and what do they cost?",
-      "intro": "Most AI collections tools do not publish a price; the few that do charge per minute, per month or a share of what they recover.[^25][^26] Prices were read on 26 November 2026, and results marked as vendor claims are the seller's own.",
+      "intro": "Ten tools range from collections platforms to voice bots, and four publish a price: $0.0083 a text to $4,999 a month, or 1.5% recovered.[^6][^7][^26][^35] Prices were read on 26 November 2026, and results marked as vendor claims are the seller's own.",
       "headers": [
         "Product",
         "What it does",

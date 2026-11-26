@@ -56,6 +56,16 @@
     "something-else": "When should a buying team pick something else?"
   },
   "summary": "AI in procurement takes the first pass on buying paperwork: it sorts spend into categories, compares quotes and contracts, and screens suppliers.[^1][^11] Buyers still pick suppliers and negotiate.[^2] It works only as well as your item descriptions and supplier records.[^12][^5]",
+  "answers": {
+    "human-role": "The buyer or category manager keeps the decision: they pick the supplier, set negotiation limits and sign every award, and the controller keeps PO approval.[^8][^2][^13]",
+    "team-after": "Buyers negotiate with small suppliers they never had time for, trace sub-tier suppliers, and clear the exceptions the AI could not handle.[^7][^16][^14]",
+    "example": "AI reads all three quotes, puts them on one cost per piece with tooling and freight, and flags gaps such as a wrong drawing revision; the buyer decides.[^22]",
+    "recipes": "One to three buyers: a business AI assistant on the PO export; three to ten: a purchasing tool with AI built in; many custom parts: your own classifier.[^39][^9][^12]",
+    "rules": "Trade and competition rules apply rather than any AI-specific law: OFAC sanctions, the Uyghur Forced Labor Prevention Act, Commerce export limits and antitrust limits on shared price data.[^15][^16][^46][^47]",
+    "benchmark": "Score the tool on your own past POs and quotes against your best buyer's answers, testing on suppliers it has never seen, before any contract.[^50][^12]",
+    "what-goes-wrong": "AI in procurement goes wrong when it trusts supplier documents too much, fails on new suppliers, misreads contract terms, misses screening matches or gets its savings overclaimed.[^13][^12][^34][^15][^50]",
+    "something-else": "Pick something else when a few buyers place every order, you only need sanctions screening, or your vendor and item data is too messy to classify.[^59][^23][^12]"
+  },
   "humanRole": [
     "Buyer or category manager keeps the decision: picks the supplier, sets negotiation limits and signs every award.[^8][^2] OWASP, the open web security project, advises human approval of high-risk actions by AI that reads outside documents.[^13]",
     "Head of procurement: owns the category list the AI sorts into and the queue of lines it is unsure of.[^6] Queensland's government classifier sends low-confidence lines to expert reviewers.[^14]",
@@ -217,7 +227,7 @@
     },
     {
       "title": "What did Walmart's negotiation bot actually save?",
-      "intro": "It saved 1.5% on the tail spend it negotiated in the pilot, not on Walmart's total spend.[^7][^36] Pactum's later 3% average is the vendor's own figure.[^2]",
+      "intro": "Walmart's negotiation bot saved 1.5% on the tail spend it negotiated in the pilot, not on Walmart's total spend.[^7][^36] Pactum's later 3% average is the vendor's own figure.[^2]",
       "headers": [
         "Measure",
         "Pilot (HBR report)",
@@ -439,7 +449,7 @@
     },
     {
       "q": "How accurate is AI spend classification?",
-      "a": "It is accurate on familiar suppliers and much weaker on new ones. A clean journal test scored 92-93%; an unreviewed 2026 preprint found about 32% on new, terse text.[^30][^12]"
+      "a": "AI spend classification is accurate on familiar suppliers and much weaker on new ones. A clean journal test scored 92-93%; an unreviewed 2026 preprint found about 32% on new, terse text.[^30][^12]"
     },
     {
       "q": "What are the best AI tools for procurement?",

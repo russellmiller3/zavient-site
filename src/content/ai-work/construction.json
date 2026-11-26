@@ -56,6 +56,13 @@
   "buy-or-build": "Should a contractor buy AI or build it?",
   "something-else": "When should a contractor pick something else?"
  },
+ "answers": {
+  "human-role": "Your people keep every sign-off: project managers approve AI drafts, engineers keep the seal, the competent person stops unsafe work, and estimators own the bid.[^13][^5][^6][^16]",
+  "ranked": "AI pays first in project search, since staff lose about 5.5 hours a week looking for project data; RFI drafting and submittal checks come next.[^18][^22][^19]",
+  "rules": "Mostly rules you already follow: OSHA safety, engineering licensing, contract and insurance terms, and worker data and hiring laws; we found no OSHA standard written for AI.[^6][^5]",
+  "what-goes-wrong": "AI goes wrong most when nobody checks a confident answer, when pilots add steps crews skip, and when uploads or extra logins put drawings and systems at risk.[^7][^12][^23][^54]",
+  "something-else": "Pick something else when your platform already has the feature, the job is quantity takeoff or vendor invoices, or the work is sealed design.[^3][^16][^24] Dedicated takeoff and invoice tools fit those jobs better, and sealed design belongs to the engineer or architect of record.[^5][^15]"
+ },
  "summary": "AI for construction companies means software that reads and drafts the paperwork around the job: RFIs, submittals, logs, minutes and spec searches.[^1][^11] People with the license or authority still decide and sign.[^5][^6] Whether it fits how crews already work makes or breaks it.[^12]",
  "humanRole": [
   "Your team stays in charge of every sign-off: AI drafts, and the project manager, superintendent, engineer or estimator approves.[^13][^11] Procore builds its agents to draft for a person to approve (vendor).[^13]",
@@ -109,7 +116,7 @@
  ],
  "ownData": {
   "title": "Which AI features already ship inside the contractor software you pay for?",
-  "intro": "All seven platforms we checked now ship AI features; only Bluebeam and Fieldwire publish a price for the tier that includes them.[^29][^30] On 26 Nov 2026 we read each vendor's own pricing, plan, AI and terms pages. Data-use terms differ most, from \"never without permission\" to anonymized training rights.[^21][^31]",
+  "intro": "All seven platforms we checked ship AI features, chiefly project search, drafting, document review and photo tagging, but only Bluebeam and Fieldwire publish a price.[^19][^20][^29][^30] On 26 Nov 2026 we read each vendor's own pricing, plan, AI and terms pages. Data-use terms differ most, from \"never without permission\" to anonymized training rights.[^21][^31]",
   "headers": [
    "Platform",
    "AI features named (vendor)",
@@ -215,7 +222,7 @@
   },
   {
    "title": "What do RFIs, searching and rework cost a contractor today?",
-   "intro": "They cost more than most owners see: one RFI took about 8 hours and $1,080 to process in a 1,362-project study.[^22] These are older figures, so use them as a yardstick for your own before-and-after count.[^18]",
+   "intro": "One RFI costs about 8 hours and $1,080 to process; staff lose 5.5 hours a week searching for data; rework runs 0.38% of contract value.[^22][^18][^40] These are older figures, so use them as a yardstick for your own before-and-after count.[^18]",
    "headers": [
     "Measure",
     "Figure",
@@ -362,7 +369,7 @@
   },
   {
    "q": "Has any AI construction software survived a pilot?",
-   "a": "Rarely, by managers' own accounts: one saw use fade within six months in three rollouts.[^12] MIT research found most generative AI pilots show no profit-and-loss impact.[^52]"
+   "a": "Not often, by managers' own accounts: one saw use fade within six months in three rollouts.[^12] MIT research found most generative AI pilots show no profit-and-loss impact.[^52]"
   },
   {
    "q": "Can AI review submittals?",
@@ -455,7 +462,7 @@
  ],
  "offer": {
   "heading": "Which paperwork job should your PMs hand AI first?",
-  "body": "In a free 30-minute call we map one job on one live project, such as RFIs or daily logs, against what your platform includes. You leave with a before-and-after measure and the point where your project manager or superintendent signs off."
+  "body": "Hand AI project search first, then RFI drafting, since staff lose about 5.5 hours a week hunting for project data. In a free 30-minute call we map one job on one live project, such as RFIs or daily logs, against what your platform includes. You leave with a before-and-after measure and the point where your project manager or superintendent signs off."
  },
  "keyword": {
   "phrase": "ai in construction",
