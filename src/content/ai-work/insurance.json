@@ -1,0 +1,661 @@
+{
+ "title": "What are insurers and agencies actually using AI for?",
+ "description": "Where AI pays first for carriers, MGAs and agencies: ranked jobs, tool prices, the state AI rules, who signs off, and our job-ad count.",
+ "type": "industry",
+ "templateVersion": 1,
+ "topic": "AI in insurance",
+ "job": "AI in insurance",
+ "industry": "insurance",
+ "index": true,
+ "verdict": [
+  "AI informs; people decide.[^1] Of 193 auto insurers in 2022, 96 used AI to inform adjusters; none to deny claims.[^3]",
+  "Start where admin piles up: submission intake at carriers and MGAs (managing general agents), policy checking at agencies.[^4][^6]",
+  "Nearly half of agencies use AI, but loosely.[^6] Only 8% build it into daily work; 55% have no written policy.[^7]",
+  "Thirty jurisdictions adopted the regulators' AI bulletin; Colorado and New York add their own rules.[^8] Vendor AI stays your responsibility.[^10]",
+  "Keep a named person on every claim denial. Lawsuits claiming algorithms, not reviewers, drove health denials have partly survived dismissal.[^12][^13]"
+ ],
+ "onPage": [
+  {
+   "to": "human-role",
+   "text": "Who signs off on what"
+  },
+  {
+   "to": "ranked",
+   "text": "Your first AI job: carrier, MGA or agency"
+  },
+  {
+   "to": "own-data",
+   "text": "How often insurance job ads ask for AI, by role"
+  },
+  {
+   "to": "table-1",
+   "text": "Agency and carrier AI tools, with published prices"
+  },
+  {
+   "to": "rules",
+   "text": "The state AI rules: NAIC bulletin, Colorado, New York"
+  },
+  {
+   "to": "what-goes-wrong",
+   "text": "Where it goes wrong, and the fix for each"
+  },
+  {
+   "to": "faq",
+   "text": "Straight answers to the questions buyers ask"
+  }
+ ],
+ "headings": {
+  "ranked": "Where does AI pay first in insurance?",
+  "buy-or-build": "Should you buy AI tools or build your own?"
+ },
+ "summary": "AI in insurance mostly reads and drafts: it pulls facts from submissions, claim files and policy forms so underwriters, adjusters and agents decide faster.[^4][^1][^2] People keep the decision: state regulators apply the same standards whatever tool you use.[^15][^11] Clean submission data and a real human check make or break it.[^5][^12]",
+ "humanRole": [
+  "Underwriters keep accept, decline and price. New York expects each adverse decision to state the information used and its source.[^10][^16]",
+  "Adjusters keep every claim denial. In the regulators' auto survey, 9 of 193 insurers used AI for claim approvals and none for denials.[^3]",
+  "A licensed producer checks anything a client sees. Treat AI output as a draft and verify limits, deductibles, exclusions and endorsements against the policy forms.[^17]",
+  "Senior management and the board own the AI program, with a cross-functional group such as underwriting, claims, compliance and legal.[^15][^11][^9] The bulletin lists checking AI output against expert review as one way to validate it.[^11]"
+ ],
+ "ranked": [
+  {
+   "name": "Submission intake and triage (carriers and MGAs)",
+   "slug": "ai-underwriting",
+   "why": "Underwriters spend up to 40% of their time on admin, and 51% of AI users say saving admin time is its main gain so far.[^4][^5] Only 10% of underwriting teams pre-sort broker email with AI today; 75% expect to within three years.[^18]",
+   "payoff": "Hours from submission received to quote, and the share of submissions quoted."
+  },
+  {
+   "name": "Claim file summaries for adjusters (carriers)",
+   "slug": "ai-document-processing",
+   "why": "Claims is the top AI area for auto insurers, and the main use is informing adjusters.[^3][^19] In a McKinsey case study, Aviva runs 80+ claims models and assesses complex liability 23 days faster.[^20]",
+   "payoff": "Adjuster minutes per file review, and days to first offer."
+  },
+  {
+   "name": "Policy checking and quote comparison (agencies)",
+   "why": "Coverage form analysis is agencies' second most common AI use, at 43%.[^6] Published tools start at $99 a month for 200 checks or comparisons a year.[^21]",
+   "payoff": "Minutes per policy check, and errors caught before the client sees the policy."
+  },
+  {
+   "name": "Prospect and declarations-page intake (agencies)",
+   "why": "Tools that pull a prospect's current policy and declarations page (the policy summary sheet) publish prices from $79 to $500 a month.[^22][^23] Routine data entry is one of agents' top four time-saving AI uses.[^24]",
+   "payoff": "Minutes to start a quote, and quotes per producer per week."
+  },
+  {
+   "name": "Service email, renewal prep and meeting notes (agencies)",
+   "why": "Agents who use AI say it saves them about 4 hours a week.[^24] Meeting notes (44%) and marketing content (43%) are their top time-saving uses.[^24]",
+   "payoff": "Service hours per policy, and renewals prepared on time."
+  },
+  {
+   "name": "Fraud screening (carriers)",
+   "why": "Fraud costs US consumers $308.6 billion a year, a coalition figure the NAIC cites.[^25] Among insurers the regulators surveyed, 58% in auto and 55% in home use or plan AI for it.[^19]",
+   "payoff": "Hit rate of referrals to your special investigations unit, checked by customer group."
+  }
+ ],
+ "ownData": {
+  "title": "What are your peers hiring for?",
+  "intro": "We counted US insurance job ads posted in the 30 days to 26 November 2026, by job title, in one job-ad database.[^26] An ad counts as mentioning AI if it names artificial intelligence, generative AI, ChatGPT, Copilot, AI tools, AI-powered or machine learning.[^26] AI shows up in modeling jobs far more than in the front-line jobs where the admin piles up.[^26][^4]",
+  "headers": [
+   "Role",
+   "US ads",
+   "Mention AI",
+   "Share"
+  ],
+  "rows": [
+   [
+    "Insurance underwriters",
+    "446",
+    "22",
+    "About 1 in 20 (4.9%)"
+   ],
+   [
+    "Claims adjusters, examiners and reps",
+    "3,048",
+    "135",
+    "About 1 in 23 (4.4%)"
+   ],
+   [
+    "Agency agents, producers and account staff",
+    "6,153",
+    "149",
+    "About 1 in 40 (2.4%)"
+   ],
+   [
+    "Actuaries and actuarial analysts",
+    "934",
+    "245",
+    "About 1 in 4 (26.2%)"
+   ],
+   [
+    "Any underwriter title, incl. mortgage and loans",
+    "2,669",
+    "183",
+    "About 1 in 15 (6.9%)"
+   ]
+  ],
+  "note": "Zavient count of US job ads, 30 days to 26 Nov 2026: approximate counts from one job-ad database, reposts not removed.[^26] A mention can be employer boilerplate, and 'machine learning' lifts the actuary row. One snapshot, not a trend."
+ },
+ "tables": [
+  {
+   "title": "Which AI tools do agencies and carriers use, and what do they cost?",
+   "intro": "Prices as each vendor publishes them, checked 26 November 2026.[^21][^22][^23][^27] Speed and accuracy figures are the vendor's own claims. For carrier underwriting tools, see our AI underwriting guide.",
+   "headers": [
+    "Product",
+    "What it does",
+    "Price",
+    "Worth knowing"
+   ],
+   "rows": [
+    {
+     "name": "Patra Policy Checking and Quote Compare AI",
+     "url": "https://info.patracorp.com/patra-ai-saas",
+     "cells": [
+      "Checks issued policies and compares quotes for agencies",
+      "$99 to $350 a month, annual commitment[^21]",
+      "Unlimited users. Patra says its full-service option takes on E&O (errors and omissions) risk[^21][^28]"
+     ]
+    },
+    {
+     "name": "Canopy Connect",
+     "url": "https://www.usecanopy.com/agencies/agency-pricing",
+     "cells": [
+      "Pulls a prospect's current policy and declarations pages",
+      "$100 to $500 a month, billed annually[^22]",
+      "Entry plan excludes commercial lines[^22]"
+     ]
+    },
+    {
+     "name": "InsurGrid",
+     "url": "https://insurgrid.com/pricing",
+     "cells": [
+      "Collects declarations pages and policy data from prospects",
+      "$99 a month, or $79 billed annually[^23]",
+      "Vendor says it reads declarations pages from 450+ carriers[^23]"
+     ]
+    },
+    {
+     "name": "AgencyZoom (Vertafore)",
+     "url": "http://support.agencyzoom.com/en/articles/16131002-overview-of-plan-types-in-agencyzoom",
+     "cells": [
+      "Sales and renewal CRM (customer database) for agencies",
+      "$149 to $349 a month, 7 users included[^27]",
+      "Allstate agents pay $99 or $129[^27]"
+     ]
+    },
+    {
+     "name": "Federato",
+     "url": "https://www.federato.ai/articles/federato-raises-100-million-series-d-led-by-goldman-sachs",
+     "cells": [
+      "Underwriting workbench for carriers and MGAs",
+      "Not published[^29]",
+      "Vendor claims 90% faster quotes; raised $100M in Nov 2025[^29]"
+     ]
+    },
+    {
+     "name": "Hi Marley",
+     "url": "https://aws.amazon.com/marketplace/pp/prodview-tdxtqhwhbviik",
+     "cells": [
+      "Claims texting with AI helpers, for carriers",
+      "Not published; private offer per user[^30]",
+      "Sold through AWS Marketplace[^30]"
+     ]
+    },
+    {
+     "name": "Cytora (Applied Systems)",
+     "url": "https://builtin.com/artificial-intelligence/ai-insurance",
+     "cells": [
+      "Submission intake and clearance for carriers and brokers",
+      "Not published",
+      "Bought by Applied Systems in 2025[^31]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "What do insurers use AI for, by line of business?",
+   "intro": "From the NAIC's surveys of larger insurers, summarised in its own journal.[^19][^2] Surveys covered insurers with $250M+ in premium or a large state market share.[^32] Auto and home left out simpler statistical models and health counted them, so compare lines with care.[^19][^32]",
+   "headers": [
+    "Line (year, insurers)",
+    "Use, plan or explore AI",
+    "Claims",
+    "Underwriting"
+   ],
+   "rows": [
+    {
+     "name": "Private auto (2021-22, 193)",
+     "cells": [
+      "88%[^19]",
+      "80%[^19]",
+      "31%[^19]"
+     ]
+    },
+    {
+     "name": "Homeowners (2023, 194)",
+     "cells": [
+      "70%[^19]",
+      "60%[^19]",
+      "62%[^19]"
+     ]
+    },
+    {
+     "name": "Life (2023, 161)",
+     "cells": [
+      "58%[^19]",
+      "Not reported",
+      "75%[^19]"
+     ]
+    },
+    {
+     "name": "Health (2025, 93)",
+     "cells": [
+      "92%; 84% already use it[^19][^32]",
+      "54%, for claim decisions[^19]",
+      "Not reported"
+     ]
+    }
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "name": "NAIC Model Bulletin on insurers' use of AI",
+   "url": "https://content.naic.org/sites/default/files/2023-12-4%20Model%20Bulletin_Adopted_0.pdf",
+   "status": "In force in 30 jurisdictions (NAIC map, 13 Nov 2026)",
+   "what": "You need a written AI program covering governance, risk controls and audit, scaled to the possible harm to consumers.[^15][^11] It covers vendor AI, and examiners can ask for your AI inventory, vendor contracts and testing.[^11] Recent adopters include Texas, South Carolina and North Dakota; check your state's version.[^8][^33]"
+  },
+  {
+   "name": "Colorado SB21-169 and Regulation 10-1-1",
+   "url": "https://doi.colorado.gov/for-consumers/sb21-169-protecting-consumers-from-unfair-discrimination-in-insurance-practices",
+   "status": "In force: life since Nov 2023; auto and health since 15 Oct 2025",
+   "what": "Life, private auto and health insurers need a board-overseen framework for outside consumer data and the models that use it.[^9][^34] Commercial-only carriers and agencies are outside its scope today.[^9] Bias-testing reports are waived until the Division adopts testing rules for each line.[^35]"
+  },
+  {
+   "name": "New York Department of Financial Services (DFS) Circular Letter No. 7",
+   "url": "https://www.dfs.ny.gov/industry-guidance/circular-letters/cl2024-07",
+   "status": "In force since 11 Jul 2024",
+   "what": "New York insurers must show that AI and outside data in underwriting and pricing don't discriminate unfairly, with the board responsible.[^10] You stay responsible for vendor tools, so contracts should give audit rights.[^10] Adverse-decision notices should name the information used and its source.[^16]"
+  },
+  {
+   "name": "California Insurance Bulletin 2022-5",
+   "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
+   "status": "Issued 30 Jun 2022",
+   "what": "California's own guidance on bias in AI and big data; the NAIC lists it in place of the model bulletin.[^8]"
+  },
+  {
+   "name": "NAIC third-party data and model vendor framework",
+   "url": "https://content.naic.org/sites/default/files/inline-files/third-party-framework-pc-pricing-uw-110426-exposed.pdf",
+   "status": "Draft (exposed 4 Nov 2026); not in force",
+   "what": "It proposes a multi-state registry and yearly attestation for vendors of property and casualty (P&C) pricing and underwriting data and models.[^36][^37] Insurers would still own their own compliance.[^38]"
+  }
+ ],
+ "watchOuts": [
+  "Rubber-stamp review: a lawsuit alleges Cigna doctors denied over 300,000 payment requests at about 1.2 seconds each, and a court let it proceed.[^12][^14] Nothing is proven yet; still, log review time, sample decisions and show reviewers the evidence, not only the score.",
+  "Unequal outcomes: Black homeowners allege State Farm's claim-screening algorithms slowed and questioned their claims more; the claim survived dismissal in 2023.[^39] Test outcomes by group before and after go-live; Colorado and New York expect it for covered lines.[^9][^10]",
+  "Vendor AI treated as someone else's problem. The NAIC bulletin and New York keep you responsible for vendor models, so put audit rights and regulator cooperation in the contract.[^11][^10]",
+  "Client data pasted into public chatbots: 45% of agencies use public AI chatbots, and 55% have no written AI policy.[^7] Write a one-page policy, use a business account, and keep loss runs (claims histories) out of unapproved tools.[^17]",
+  "Trusting '95% accurate' extraction: one agent noted the last 5% 'is exactly where the E&O risk lives'.[^40] Check key fields against the source form and have a producer sign off.[^17]",
+  "Pilots that never reach the desk: 65% of agents used AI last year, but only 14% of agencies have rolled out a tool.[^24][^41] Pilot one workflow on one team with one owner and one measure; only about 5% of task-specific AI tools reach production with measurable return.[^42]"
+ ],
+ "faq": [
+  {
+   "q": "How is AI used in insurance?",
+   "a": "Mostly to read and draft for the people who decide.[^1][^2] In regulators' surveys, claims and fraud lead in auto and home, and underwriting leads in life.[^19] Agencies use it most for marketing copy, coverage form analysis and contract review.[^6]"
+  },
+  {
+   "q": "Will AI replace insurance agents or underwriters?",
+   "a": "Nothing in the data points that way. Agents who use AI say it saves them about 4 hours a week.[^24] Regulators hold insurers to the same standards whatever tool helped make a decision.[^15][^11]"
+  },
+  {
+   "q": "What AI tools do insurance agents actually use?",
+   "a": "Mostly general chatbots: 45% of agencies use ChatGPT or similar public tools, 20% policy comparison tools and 13% data-extraction tools.[^7] Check what your agency management system already includes before you buy another tool.[^43]"
+  },
+  {
+   "q": "Is it safe to put client information into ChatGPT?",
+   "a": "Not in a free consumer account. Use an approved business tool, keep loss runs and financials out of unapproved platforms, and write a policy.[^17] 55% of agencies still have none.[^7]"
+  },
+  {
+   "q": "Which AI rules apply to insurers in my state?",
+   "a": "Thirty jurisdictions have issued the NAIC AI bulletin, per its 13 Nov 2026 map.[^8][^33] California, Colorado and New York have their own guidance or rules.[^8] Check your state's own text, because versions differ.[^33]"
+  },
+  {
+   "q": "How much do AI tools for insurance agencies cost?",
+   "a": "Published agency prices run from about $79 to $500 a month, checked 26 Nov 2026.[^21][^22][^23][^27] Most carrier underwriting and claims platforms publish no price.[^29][^30]"
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Buy when the job is standard, such as policy checking, declarations-page intake or call answering, and you have no data team.[^44] Most enterprise AI is now bought: 76% of use cases, up from 53% in 2024.[^44] MIT found vendor partnerships reached production about twice as often as internal builds.[^42][^45]",
+  "build": "Build when your guidelines, appetite and loss history are your edge, or you must explain every step to an examiner.[^10][^11] A thin build on your own rules also avoids lock-in while the NAIC vendor registry is still a draft.[^36] A common middle path: buy the reading step, and keep the rules and the decision log yourself."
+ },
+ "pickElse": [
+  "Your agency's real problem is a messy agency management system (AMS): fix that first, since juggling carrier systems is agencies' top tech challenge.[^6] Check the AI your AMS vendor already ships before adding a tool.[^43]",
+  "Your team only needs to write and summarise faster: a business plan of ChatGPT, Claude or Microsoft 365 Copilot will do. Add a one-page AI policy.[^7]",
+  "Missed calls are costing you quotes: an off-the-shelf AI receptionist such as Sonant beats a build. Sonant prices by call volume.[^46]",
+  "Simple, rules-based work such as renewal reminders: plain workflow automation, like the renewal automation in AgencyZoom, may be enough.[^27]"
+ ],
+ "resources": [
+  {
+   "name": "NAIC AI Model Bulletin adoption map",
+   "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
+   "what": "See whether your states adopted the bulletin, and under which bulletin number."
+  },
+  {
+   "name": "NAIC artificial intelligence topic page",
+   "url": "https://content.naic.org/insurance-topics/artificial-intelligence",
+   "what": "Links all four NAIC AI surveys, by line of business."
+  },
+  {
+   "name": "Colorado Division of Insurance SB21-169 page",
+   "url": "https://doi.colorado.gov/for-consumers/sb21-169-protecting-consumers-from-unfair-discrimination-in-insurance-practices",
+   "what": "Filing guidance and the attestation format for Colorado insurers."
+  },
+  {
+   "name": "NIST AI Risk Management Framework",
+   "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+   "what": "Free framework the NAIC bulletin lets you build your AI program on."
+  },
+  {
+   "name": "Big I Agents Council for Technology report",
+   "url": "https://www.independentagent.com/news/two-thirds-of-independent-agents-plan-to-increase-ai-use-this-year",
+   "what": "Agency AI survey results and policy resources for independent agencies."
+  }
+ ],
+ "stats": [
+  {
+   "num": "30",
+   "label": "US jurisdictions have issued the NAIC AI bulletin: 28 states, DC and Puerto Rico.[^8][^33]",
+   "source": "NAIC adoption map, 13 Nov 2026"
+  },
+  {
+   "num": "Up to 40%",
+   "label": "of P&C underwriters' time goes to admin and other non-core work.[^4]",
+   "source": "Accenture and The Institutes, 434 US underwriters"
+  },
+  {
+   "num": "8%",
+   "label": "of independent agencies have AI built into daily workflows, though 46% say they use it.[^7][^6]",
+   "source": "Big I tech survey and Agency Universe Study, 2026"
+  },
+  {
+   "num": "0 of 193",
+   "label": "auto insurers used AI to deny claims; 96 used it to inform adjusters.[^3]",
+   "source": "NAIC auto AI survey, Dec 2022"
+  },
+  {
+   "num": "33.9%",
+   "label": "of US finance and insurance firms used AI in a two-week window, vs 19.8% of all firms.[^47]",
+   "source": "US Census Bureau, May 2026"
+  }
+ ],
+ "sources": [
+  {
+   "name": "EIOPA, Generative AI market survey (Feb 2026)",
+   "url": "https://www.eiopa.europa.eu/eiopa-survey-generative-ai-shows-swift-cautious-adoption-among-europes-insurers-2026-02-02_en",
+   "what": "EU insurance regulator, 347 insurers: 64% of generative-AI uses are back-office; 'assisted' models with human oversight dominate."
+  },
+  {
+   "name": "NAIC, Insurance topics: Artificial intelligence",
+   "url": "https://content.naic.org/insurance-topics/artificial-intelligence",
+   "what": "NAIC surveys found AI across operations: underwriting, risk scoring, claims image analysis, settlement estimates and fraud detection."
+  },
+  {
+   "name": "NAIC, Private passenger auto AI/ML survey staff report (Dec 2022)",
+   "url": "https://content.naic.org/sites/default/files/committee_related_documents/PP%2520Auto%2520Survey%2520Team%2520Report%2520120822.pdf",
+   "what": "193 auto insurers: 96 use AI as an informational resource for adjusters, 9 for claim approvals, 0 for claim denials."
+  },
+  {
+   "name": "Accenture and The Institutes, underwriter survey (2022 release)",
+   "url": "https://newsroom.accenture.com/news/2022/poor-claims-experiences-could-put-up-to-170b-of-global-insurance-premiums-at-risk-by-2027-according-to-new-accenture-research",
+   "what": "434 US P&C underwriters: up to 40% of their time goes to non-core and administrative work."
+  },
+  {
+   "name": "Insurance Business on hx Underwriting Edge 2026 (Sep 2026)",
+   "url": "https://www.insurancebusinessmag.com/us/news/technology/underwriters-say-ai-is-saving-time-not-improving-decisions-589344.aspx",
+   "what": "Vendor-commissioned survey of 350 senior commercial P&C underwriters: 51% say AI mainly saves admin time, 21% say it improved decisions; 44% name inconsistent submission data."
+  },
+  {
+   "name": "Big I and Future One, 2026 Agency Universe Study (Sep 2026)",
+   "url": "https://www.independentagent.com/news/big-i-and-future-one-release-2026-agency-universe-study",
+   "what": "1,376 respondents: 46% of agencies use AI (15% in 2024); top uses marketing content 49%, coverage form analysis 43%, contract review 35%."
+  },
+  {
+   "name": "Big I Agents Council for Technology, 2026 Tech Trends Report (Feb 2026)",
+   "url": "https://www.independentagent.com/news/two-thirds-of-independent-agents-plan-to-increase-ai-use-this-year",
+   "what": "8% of agencies have AI embedded in daily workflows; 45% use public AI chatbots; 55% have no written AI policy."
+  },
+  {
+   "name": "NAIC, AI Model Bulletin adoption map (status 13 Nov 2026)",
+   "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
+   "what": "30 adopting jurisdictions: 28 states, DC and Puerto Rico. California, Colorado and New York listed under their own insurance-specific rules."
+  },
+  {
+   "name": "Colorado Regulation 10-1-1, 3 CCR 702-10 (amended, effective 15 Oct 2025)",
+   "url": "https://www.coloradosos.gov/CCR/GenerateRulePdf.do?fileName=3+CCR+702-10&ruleVersionId=12182",
+   "what": "Life, private passenger auto and health insurers: governance and risk framework for external consumer data and models, board oversight, cross-functional group."
+  },
+  {
+   "name": "NY DFS, Insurance Circular Letter No. 7 (2024)",
+   "url": "https://www.dfs.ny.gov/industry-guidance/circular-letters/cl2024-07",
+   "what": "Insurers must show AI and external data in underwriting and pricing don't unfairly discriminate; board oversight; insurers stay responsible for vendor tools; audit rights."
+  },
+  {
+   "name": "GenGuardX, NAIC AI Model Bulletin guide (Oct 2026)",
+   "url": "https://genguardx.ai/naic-ai-model-bulletin",
+   "what": "Reproduces the bulletin's text: written AI program, senior management accountable to the board, vendor AI covered, validation against expert review."
+  },
+  {
+   "name": "Kisting-Leung v. Cigna, E.D. Cal. order of 31 Mar 2025",
+   "url": "https://www.govinfo.gov/content/pkg/USCOURTS-caed-2_23-cv-01477/pdf/USCOURTS-caed-2_23-cv-01477-8.pdf",
+   "what": "Plaintiffs allege 300,000+ denials at about 1.2 seconds each; the court let an ERISA fiduciary claim proceed. Allegations, not findings."
+  },
+  {
+   "name": "Estate of Lokken v. UnitedHealth Group, D. Minn. order of 13 Feb 2025",
+   "url": "https://www.govinfo.gov/content/pkg/USCOURTS-mnd-0_23-cv-03514/pdf/USCOURTS-mnd-0_23-cv-03514-1.pdf",
+   "what": "Lawsuit alleging an algorithm drove care denials; contract claims allowed to proceed, others dismissed. Allegations, not findings."
+  },
+  {
+   "name": "Georgetown Health Care Litigation Tracker, Kisting-Leung v. Cigna (Nov 2026)",
+   "url": "https://litigationtracker.law.georgetown.edu/litigation/kisting-leung-et-al-v-cigna-corporation-et-al/",
+   "what": "Case still open; class certification motion filed 30 Oct 2026."
+  },
+  {
+   "name": "NAIC, Model Bulletin: Use of Artificial Intelligence Systems by Insurers (Dec 2023)",
+   "url": "https://content.naic.org/sites/default/files/2023-12-4%20Model%20Bulletin_Adopted_0.pdf",
+   "what": "Insurers' decisions must meet the same standards whatever tools they use; written AI program, board-level accountability, vendor AI covered."
+  },
+  {
+   "name": "NY DFS testimony to NY Assembly on AI in underwriting and pricing (16 Dec 2025)",
+   "url": "https://www.dfs.ny.gov/system/files/documents/2025/12/assembly_hearing_on_ai_in_underwriting_and_pricing-testimony_121625.pdf",
+   "what": "Under Circular Letter 7, adverse underwriting notices should include the information the decision was based on, and its source."
+  },
+  {
+   "name": "Marshall Dennehey (from PLUS Blog), Broker best practices to reduce AI-related E&O risk (Aug 2026)",
+   "url": "https://www.marshalldennehey.com/thought-leadership/insurance-broker-best-practices-to-reduce-ai-related-eo-risk",
+   "what": "Treat AI output as a draft; a qualified person verifies terms, limits, deductibles, exclusions and endorsements; keep client data out of unapproved public tools."
+  },
+  {
+   "name": "Accenture, Underwriting Rewritten (Aug 2025)",
+   "url": "https://www.accenture.com/en/insights/insurance/underwriting-rewritten",
+   "what": "430 underwriting executives: 10% use AI to pre-sort broker email to a large extent today, 75% expect to in three years."
+  },
+  {
+   "name": "NAIC Journal of Insurance Regulation, Vol. 45 No. 3 (2026), Table 1",
+   "url": "https://content.naic.org/sites/default/files/jir-45-3.pdf",
+   "what": "Cross-line summary of NAIC AI surveys: share using, planning or exploring AI, and use in claims, fraud and underwriting."
+  },
+  {
+   "name": "McKinsey, Aviva claims case study (Dec 2024)",
+   "url": "https://www.mckinsey.com/capabilities/tech-and-ai/how-we-help-clients/rewired-in-action/aviva-rewiring-the-insurance-claims-journey-with-ai",
+   "what": "Consultancy case study: 80+ AI models in claims; complex liability assessed 23 days faster; routing accuracy up 30%; complaints down 65%."
+  },
+  {
+   "name": "Patra, AI SaaS pricing (read 26 Nov 2026)",
+   "url": "https://info.patracorp.com/patra-ai-saas",
+   "what": "Policy Checking AI and Quote Compare AI: $99, $195 and $350 a month on annual commitment; 200, 450 or 900 activities a year; unlimited users."
+  },
+  {
+   "name": "Canopy Connect, agency pricing (read 26 Nov 2026)",
+   "url": "https://www.usecanopy.com/agencies/agency-pricing",
+   "what": "$100, $250 and $500 a month billed annually ($120 and $300 monthly); entry plan excludes commercial lines and direct integrations."
+  },
+  {
+   "name": "InsurGrid, pricing (read 26 Nov 2026)",
+   "url": "https://insurgrid.com/pricing",
+   "what": "$99 a month, or $79 a month billed annually; vendor says it extracts declarations pages for 450+ carriers."
+  },
+  {
+   "name": "Liberty Mutual, 2026 Independent Agency Growth Study",
+   "url": "https://www.agentforthefuture.com/topics/all-reports/2026-independent-agency-growth-study",
+   "what": "Carrier-run survey of 1,149 agency principals and staff: 65% used AI; users save about 4 hours a week (self-reported); top uses meeting notes 44%, marketing 43%, policy comparisons 34%, data entry 26%."
+  },
+  {
+   "name": "NAIC, Insurance topics: Insurance fraud (Jun 2026)",
+   "url": "https://content.naic.org/insurance-topics/insurance-fraud",
+   "what": "Cites the Coalition Against Insurance Fraud: fraud costs US consumers $308.6 billion a year."
+  },
+  {
+   "name": "Zavient count of US job ads, 30 days to 26 Nov 2026",
+   "url": "https://zavient.com/industries/insurance.html#own-data",
+   "what": "Our count of US insurance job ads mentioning AI, by role, from one job-ad database; method and limits in the table note."
+  },
+  {
+   "name": "AgencyZoom (Vertafore), Overview of plan types (Sep 2026)",
+   "url": "http://support.agencyzoom.com/en/articles/16131002-overview-of-plan-types-in-agencyzoom",
+   "what": "$149, $199 and $349 a month with 7 users included; Allstate agents $99 and $129; 20% off annual. Read 26 Nov 2026."
+  },
+  {
+   "name": "Patra, Policy Checking AI",
+   "url": "https://www.patracorp.com/technology/insurance-policy-checking-ai",
+   "what": "Vendor page: full-service option in which Patra says it assumes E&O risk on the work it delivers."
+  },
+  {
+   "name": "Federato, Series D announcement (Nov 2025)",
+   "url": "https://www.federato.ai/articles/federato-raises-100-million-series-d-led-by-goldman-sachs",
+   "what": "$100M Series D, $180M+ raised; vendor claims a 90% improvement in quote speed; no published price."
+  },
+  {
+   "name": "AWS Marketplace, Hi Marley listing",
+   "url": "https://aws.amazon.com/marketplace/pp/prodview-tdxtqhwhbviik",
+   "what": "No list price: buyers contact Hi Marley for a private offer, priced per user. Read 26 Nov 2026."
+  },
+  {
+   "name": "Built In, AI insurance examples (Oct 2026)",
+   "url": "https://builtin.com/artificial-intelligence/ai-insurance",
+   "what": "Vendor roundup; notes Applied Systems acquired Cytora in 2025."
+  },
+  {
+   "name": "NAIC, Health AI/ML survey memo (May 2025)",
+   "url": "https://content.naic.org/sites/default/files/inline-files/Health%20Survey%20Memo%20to%20BDAIWG%2005092025%20-%20Final.pdf",
+   "what": "93 health insurers, 84% use AI; survey counted simpler statistical models, unlike the auto and home surveys."
+  },
+  {
+   "name": "InsureAI Wire, NAIC bulletin adoption tracker (Nov 2026)",
+   "url": "https://insureaiwire.com/states/",
+   "what": "28 states plus DC per the 13 Nov 2026 NAIC map; notes state versions differ."
+  },
+  {
+   "name": "Colorado Division of Insurance, SB21-169 page",
+   "url": "https://doi.colorado.gov/for-consumers/sb21-169-protecting-consumers-from-unfair-discrimination-in-insurance-practices",
+   "what": "Filing guidance; amended Regulation 10-1-1 effective 15 Oct 2025; attestations due 1 December."
+  },
+  {
+   "name": "Colorado DOI, Amended Bulletin B-10.004 (Jun 2026)",
+   "url": "https://doi.colorado.gov/sites/doi/files/documents/Revised%20Bulletin%20B-10.004%20Concerning%20the%20Quantitative%20Testing%20Reporting%20Requirements.pdf",
+   "what": "Quantitative-testing reporting is waived until the Division adopts testing rules for each line."
+  },
+  {
+   "name": "NAIC, Third-party data and model vendor framework, exposure draft (4 Nov 2026)",
+   "url": "https://content.naic.org/sites/default/files/inline-files/third-party-framework-pc-pricing-uw-110426-exposed.pdf",
+   "what": "Proposed multi-state registry, annual attestation and material-change notices for P&C pricing and underwriting vendors. Not in force."
+  },
+  {
+   "name": "Mayer Brown, NAIC Spring 2026 meeting highlights (Apr 2026)",
+   "url": "https://www.mayerbrown.com/en/insights/publications/2026/04/us-naic-spring-2026-national-meeting-highlights-innovation-cybersecurity-and-technology-h-committee-update",
+   "what": "The vendor framework was narrowed in 2026 to P&C pricing and underwriting."
+  },
+  {
+   "name": "NAIC Third-Party Data and Models Working Group, Summer 2026 materials",
+   "url": "https://content.naic.org/sites/default/files/national_meeting/081226-materials-tpdmwg-su-nm.pdf",
+   "what": "'Insurers are responsible for their own compliance obligations' when they use vendor models."
+  },
+  {
+   "name": "Huskey v. State Farm, N.D. Ill. docket (order of 11 Sep 2023)",
+   "url": "https://www.courtlistener.com/docket/66635423/huskey-v-state-farm-fire-casualty-company",
+   "what": "Black homeowners allege algorithmic claim-screening slowed and questioned their claims more; Fair Housing Act claim survived dismissal. Allegations, not findings."
+  },
+  {
+   "name": "Reddit r/InsuranceAgent, 'AI tools for insurance' (Jun 2026)",
+   "url": "https://www.reddit.com/r/InsuranceAgent/comments/1u07bh7/ai_tools_for_insurance/",
+   "what": "Practitioner thread: on '95% accurate' extraction, 'that last 5% is exactly where the E&O risk lives'. Anecdote."
+  },
+  {
+   "name": "Insurance Business, 'Agents are using AI. Their agencies mostly aren't' (Oct 2026)",
+   "url": "https://www.insurancebusinessmag.com/us/news/technology/agents-are-using-ai--their-agencies-mostly-arent--why-593372.aspx",
+   "what": "Liberty Mutual data: only 14% of agencies have implemented an AI tool."
+  },
+  {
+   "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025",
+   "url": "https://www.ictworks.org/wp-content/uploads/2025/09/AI_Business_2025.pdf",
+   "what": "About 5% of task-specific generative AI tools reached production with measurable P&L impact; vendor partnerships deployed about twice as often as internal builds. Authors note caveats."
+  },
+  {
+   "name": "Risqly, Best AI tools for insurance agents (Nov 2026)",
+   "url": "https://www.risqly.io/best-ai-tools-for-insurance-agents",
+   "what": "Vendor-written roundup: Applied Epic and Vertafore now ship AI agents inside the agency management system."
+  },
+  {
+   "name": "Menlo Ventures, 2025 State of Generative AI in the Enterprise",
+   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+   "what": "495 US enterprise AI decision-makers: 76% of AI use cases are purchased, up from 53% in 2024."
+  },
+  {
+   "name": "Fortune on the MIT NANDA report (Aug 2025)",
+   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
+   "what": "Purchased AI tools succeed about 67% of the time; internal builds about one-third as often."
+  },
+  {
+   "name": "Dooza, Best AI tools for insurance agents (Oct 2026)",
+   "url": "https://www.dooza.ai/blog/best-ai-tools-for-insurance-agents",
+   "what": "Vendor-written roundup quoting Sonant: its AI receptionist is priced by call volume."
+  },
+  {
+   "name": "US Census Bureau, Business Trends and Outlook Survey story (May 2026)",
+   "url": "https://www.census.gov/library/stories/2026/05/ai-use-businesses.html",
+   "what": "33.9% of finance and insurance businesses used AI in the two weeks to 3 May 2026, vs 19.8% of all US businesses."
+  }
+ ],
+ "related": [
+  "ai-underwriting",
+  "ai-document-processing",
+  "ai-consulting-services"
+ ],
+ "offer": {
+  "heading": "Which insurance workflow should you hand to AI first?",
+  "body": "In 30 minutes we map one workflow, such as submissions, claim files or policy checks. You leave knowing who signs off, the measure to track and which of your states' AI rules apply."
+ },
+ "keyword": {
+  "phrase": "ai in insurance",
+  "searches": 1900,
+  "cpc": 35.57,
+  "difficulty": 15
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Wants the first process to fix and a before-and-after measure. Ranked list gives both, but the 'On this page' list was out of page order and the first-job line was vague; reordered it and renamed it 'Your first AI job: carrier, MGA or agency'. MGA was undefined in the bottom line; defined it. Would distrust the lawsuit bullet if it sounded settled; reworded to 'partly survived motions to dismiss'. No sourced time-to-deploy figure exists in the research, so none is given."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Reads on a phone between meetings. Tool table cells were long; shortened product names and cells so the 4-column table fits 390px. Patra's '200 checks' read as policy checks only; changed to 'checks or comparisons' to match the vendor's pricing. Acronyms DOI, DFS and ACT appeared without expansion; spelled out. A pickElse sentence ran 26 words; split it."
+  },
+  {
+   "reader": "GM",
+   "notes": "Wants to know if one team or line can pilot first. Added 'Pilot one workflow on one team, with one owner and one measured number' to the stalled-pilots watch-out. Buy-or-build claim 'most companies now buy' overstated the Menlo data; changed to 'most enterprise AI is now bought: 76% of use cases'. Offer now says what you leave with: who signs off, the measure to track and which state AI rules apply."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Head of underwriting or claims asks what the examiner will ask. NAIC rule now says examiners can ask for the AI inventory, vendor contracts and testing. Would distrust an undated survey line; the bottom line now dates the auto survey (2022). The NAIC-by-line table needed its sample scope; added that surveys covered insurers with $250M+ premium or a large state share. The 'expert review' bullet overstated the bulletin; now says it lists expert review as one way to validate. Lawsuits are described as allegations throughout."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Steve gets the answer in 10 seconds: title is his question and the bottom line is five short bullets. Published tool prices answer 'what does it cost' for agencies; carrier tools are marked 'not published'. Security worry is answered in the ChatGPT FAQ and the public-chatbot watch-out. No case from a firm his size exists in the research, so none is claimed. Job-ad count stays in its own table, not the bottom line, since it pairs with no outside source honestly."
+  }
+ ],
+ "updated": "2026-11-26"
+}

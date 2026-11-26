@@ -1,0 +1,451 @@
+{
+ "title": "AI automation consulting: is it worth it, and what should you get?",
+ "description": "What good AI automation help should leave you with, and what the software costs to run one workflow. Plus how to judge any advisor on your own work.",
+ "type": "consulting",
+ "templateVersion": 1,
+ "topic": "AI automation consulting",
+ "job": "automating business workflows with AI",
+ "industry": "any industry",
+ "index": true,
+ "verdict": [
+  "Pay for a redesigned workflow, not a tool. Firms that rebuilt the work beat AI goals about twice as often.[^1][^2]",
+  "Get a working pilot and a before-and-after number, not slides. Most custom AI pilots never reach daily use.[^3][^4]",
+  "Tools cost about $10 to $130 a month per typical workflow.[^5][^6] The real work is mapping steps, exceptions and review.",
+  "Keep a named person on anything moving money or reaching customers.[^8] Your firm stays liable for what its AI says.[^7]",
+  "Judge any advisor on your own past cases, with answers locked in advance.[^8] Ask what they would not automate.[^10]"
+ ],
+ "onPage": [],
+ "headings": {},
+ "summary": "AI automation consulting maps one workflow, decides which steps software, AI or a person should do, then builds and measures it.[^12][^13] AI takes routine steps, like reading emails and documents; people keep judgment and oversight.[^12][^8] What makes or breaks it is redesigning the steps, not picking the AI model.[^2][^1]",
+ "walkAway": [
+  "A ranked list of your workflows, with the first one picked. Finding tools that fit is the top AI challenge firms report (54%).[^14][^15]",
+  "A before-and-after number for that workflow: volume, minutes per item, errors and cost per item. Only a third of firms report measurable results from even one AI use case.[^1][^16]",
+  "A pilot running in daily work, not a demo. In one MIT study, only 5% of task-specific AI tools reached production.[^3]",
+  "A plan your team can run, with named owners and training. Most small-business owners (73%) say more training would help them use AI.[^17][^16]",
+  "Everything you paid for, handed over: logins, workflow exports, documents and test cases. Practitioners call a refusal to hand over logins a red flag.[^10][^18]"
+ ],
+ "humanRole": [
+  "The ops lead owns the workflow and its number, and decides which outputs a person checks. Firms split: 27% review every AI output, a similar share check 20% or less.[^2][^11]",
+  "A named reviewer approves anything that moves money or reaches customers, such as refunds, payments or cancellations, until the system earns trust.[^8][^9]",
+  "People can override or stop the system, and every override is logged. NIST (the US standards agency) asks for documented oversight; EU rules require a stop button for high-risk AI.[^9][^11][^19]",
+  "Your firm stays liable for what its AI tells customers. A Canadian tribunal held Air Canada to its chatbot's wrong refund advice.[^7][^20]"
+ ],
+ "recipes": [
+  {
+   "name": "1. Small team, apps you already use (about 40 to 100 staff)",
+   "when": "Pick this for one rules-based job, like lead intake or invoice routing, where one person can clear the exceptions. Fixed workflows suit well-defined tasks.[^13]",
+   "flow": [
+    "Ops lead: time today's process for two weeks",
+    "Ops lead: list the exceptions and who handles each",
+    "Builder: set the trigger (the event that starts it) and 3 to 5 steps in Zapier, Make, n8n or Power Automate",
+    "Team lead: approve every AI draft for the first month",
+    "Ops lead: compare results with the two-week baseline"
+   ],
+   "cost": "Software runs about €20 a month on n8n to $129 a month on Zapier, billed yearly.[^6][^5] Power Automate Premium is $15 per user a month.[^21]"
+  },
+  {
+   "name": "2. Mid-size firm on Microsoft 365 (about 100 to 500 staff)",
+   "when": "Pick this when the work lives in Outlook, Teams, SharePoint and Excel. Standard connectors come with Microsoft 365 plans, per a third-party read of Microsoft's licensing.[^22]",
+   "flow": [
+    "Process owner: map each step and who does it",
+    "IT lead: grant access and set data rules",
+    "Builder: build a Power Automate flow, adding a Copilot Studio agent only where rules fall short",
+    "Named reviewer: clear the queue of items the AI was unsure about",
+    "Controller: sign off anything that touches money",
+    "Ops lead: go live in one team, then scale"
+   ],
+   "cost": "Microsoft 365 Copilot Business is $21 per user a month; Copilot Studio is $200 a month per 25,000 credits.[^23][^24] A Power Automate bot that runs with no one logged in is $150 a month.[^21]"
+  },
+  {
+   "name": "3. Document-heavy back office (claims, payables, orders from email or PDF)",
+   "when": "Pick this when many emails, forms and PDFs need reading, checking and an audit trail. Agents are a growing share of AI value, but many jobs sold as agents don't need one.[^12][^25]",
+   "flow": [
+    "Ops lead: pull 50 real documents and lock the right answers",
+    "Builder: run two or three tools on those documents",
+    "Ops lead: pick on accuracy and cost per document",
+    "IT lead: connect the ERP (finance system) or CRM (customer database) and log every decision",
+    "Named reviewer: approve items the AI marks low-confidence",
+    "Ops lead: scale after 30 days on target"
+   ],
+   "cost": "UiPath Basic starts at $25 a month for up to two robots; bigger plans are by quote.[^26] Our document-processing guide shows how to benchmark tools on your own files."
+  }
+ ],
+ "ownData": {
+  "title": "What does the software cost to run one workflow?",
+  "intro": "We read six automation tools' list prices on their own pricing pages on 26 Nov 2026.[^5][^6][^21] Then we priced one workflow: a trigger plus four steps, run 2,000 times a month. On the four general workflow tools, it costs about $10 to $130 a month.[^5][^6][^27][^22]",
+  "headers": [
+   "Tool",
+   "List price",
+   "Our example workflow"
+  ],
+  "rows": [
+   [
+    "Zapier",
+    "Pro: $19.99 a month for 750 tasks, $129 for 10,000 tasks, billed yearly[^5]",
+    "About $129 a month: 4 action steps x 2,000 runs = 8,000 tasks[^5]"
+   ],
+   [
+    "n8n Cloud",
+    "Starter: €20 a month for 2,500 runs; Pro: €50 for 10,000[^6]",
+    "€20 a month: a run counts once, however many steps it has[^6]"
+   ],
+   [
+    "Make",
+    "Core: about $9 to $12 a month for 10,000 credits, per two third-party reads[^27][^28]",
+    "About $9 to $12 a month: 5 credits x 2,000 runs = 10,000[^27][^28]"
+   ],
+   [
+    "Power Automate",
+    "Premium: $15 per user a month; a bot that runs on its own $150 a month[^21]",
+    "$0 to $15 a month: standard connectors come with Microsoft 365, per a third-party read[^22][^21]"
+   ],
+   [
+    "Copilot Studio",
+    "$200 a month per 25,000 agent credits[^24]",
+    "Only if you add an AI agent to the flow[^24]"
+   ],
+   [
+    "UiPath",
+    "Free Community plan; Basic from $25 a month for 2 robots[^26]",
+    "From $25 a month; bigger plans by quote[^26]"
+   ]
+  ],
+  "note": "Method: US list prices, billed yearly unless noted, before tax, read with a web fetch tool on 26 Nov 2026. Some pages came from caches dated 20 to 24 Nov; n8n prices in euros. Make's own page would not show US prices, so its row uses two third-party reads that disagree; discounts, overages and AI add-ons cost extra."
+ },
+ "watchOuts": [
+  "Pilots stall before daily use. Gartner expected at least 30% of generative AI projects to be dropped after a small trial; plan the move to daily use on day one.[^4][^3]",
+  "Data isn't ready or safe to share. Data quality (34%) and security (30%) top mid-market firms' barriers; test on 50 real records, with IT setting access first.[^16][^29]",
+  "Agents sold where rules would do. Gartner expects over 40% of agentic AI projects (software that plans and acts on its own) to be cancelled by 2027.[^25][^13]",
+  "Measuring speed instead of quality. Klarna's CEO said cost weighed too heavily in judging its AI service and quality fell, so it hired people back.[^30][^31]",
+  "Wrong answers you're liable for. Put a named reviewer on customer-facing and money-moving outputs at launch, and log every output.[^7][^20]",
+  "Automating a process nobody wrote down. Practitioners say if a new hire couldn't follow it, it isn't ready to automate.[^32][^1]"
+ ],
+ "howToTest": [
+  "Record today's numbers for two weeks: volume, minutes per item, error or rework rate, and cost per item.[^33][^11]",
+  "Lock a test set: 50 real past cases with agreed right answers, fixed before the advisor sees any results.[^8]",
+  "Ask for a failure demo, not a happy path. Ask what happens when a connection drops or the AI is unsure.[^10]",
+  "Ask what they would not automate. A good advisor talks you out of AI where a form or a rule would do.[^10][^13]",
+  "Compare like for like: same workflow, same 50 cases, and cost per item including tool fees from the table above.[^5][^6]",
+  "Price the lift in dollars: minutes saved x items a month x loaded cost per minute (pay plus benefits). Add errors avoided x cost per error, then subtract tool and upkeep fees.",
+  "Keep expectations real. Workers using generative AI saved about 5.4% of their hours; gains on a single task can run higher.[^34][^35]",
+  "Check the hand-over: your team owns the code, workflows and logins, and can export and run them.[^10][^18]",
+  "Run one team or site first. A named person makes the go or no-go call on the numbers.[^11]"
+ ],
+ "faq": [
+  {
+   "q": "Is AI automation consulting worth it for a mid-sized firm?",
+   "a": "Yes, if you bring one workflow with a number attached. In an RSM survey, 70% of mid-market firms said they need outside help to get the most from AI.[^15] In MIT's sample, partnered projects reached daily use about twice as often as internal builds.[^3]"
+  },
+  {
+   "q": "What does an AI automation consultant actually do?",
+   "a": "They map a workflow, pick the steps worth automating, then build, test and hand over a measured result. Redesigning the work matters more than the tool.[^2][^1][^36]"
+  },
+  {
+   "q": "What will the software cost us to run?",
+   "a": "About $10 to $130 a month for one typical workflow on Zapier, Make, n8n or Power Automate, from our price check.[^5][^6][^21] The bigger spend is people's time to map, build and review it."
+  },
+  {
+   "q": "How is AI automation different from RPA?",
+   "a": "RPA (robotic process automation) follows fixed, rule-based steps. AI handles judgment-like steps, such as reading an email or sorting a document.[^8] Gartner warns some vendors rebrand old automation as agents.[^25]"
+  },
+  {
+   "q": "What if our data isn't clean?",
+   "a": "Check it first on 50 real records. Data quality is the top AI barrier for mid-market firms (34%).[^16] Gartner expects firms to drop 60% of AI projects that lack AI-ready data through 2026.[^29]"
+  },
+  {
+   "q": "Do we need an AI agent?",
+   "a": "Usually not at first. Gartner says many jobs sold as agentic don't need agents, and a fixed workflow is simpler to run and check.[^25][^13]"
+  }
+ ],
+ "pickElse": [
+  "A simple job in standard apps, like a web form feeding your customer database: build it yourself on Zapier's free plan or free self-hosted n8n.[^5][^6]",
+  "Drafting and summarising for individuals: buy Microsoft 365 Copilot or ChatGPT Business seats and train people.[^23][^37] Writing and marketing are the most common small-firm AI uses (83%).[^14]",
+  "A standard back-office job a product already does, like payables or reconciliation: buy the product and benchmark it on your own files.[^3]",
+  "A process nobody has written down: document it first, so a new hire could follow it.[^32]"
+ ],
+ "resources": [
+  {
+   "name": "NIST AI RMF Playbook",
+   "url": "https://airc.nist.gov/airmf-resources/playbook/",
+   "what": "Free US government checklist for human oversight, logging and go or no-go roles."
+  },
+  {
+   "name": "Census Business Trends and Outlook Survey, AI data",
+   "url": "https://www.census.gov/hfp/btos/data",
+   "what": "See how many firms your size and sector use AI, updated every two weeks."
+  },
+  {
+   "name": "Anthropic, Building effective agents",
+   "url": "https://www.anthropic.com/engineering/building-effective-agents",
+   "what": "Plain guide to fixed workflows versus agents; argues for the simplest build that works."
+  },
+  {
+   "name": "OpenAI, A practical guide to building agents",
+   "url": "https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents",
+   "what": "When an agent beats rules, and when a person must step in."
+  }
+ ],
+ "stats": [
+  {
+   "num": "48% vs 23%",
+   "label": "Firms that rebuilt workflows against firms that only added tools, beating their AI goals.[^1]",
+   "source": "Bain survey, Nov 2026"
+  },
+  {
+   "num": "5%",
+   "label": "Share of task-specific generative AI tools that reached production in MIT's sample.[^3]",
+   "source": "MIT NANDA, Jul 2025"
+  },
+  {
+   "num": "70%",
+   "label": "Mid-market firms that say they need outside help to get the most from AI.[^15]",
+   "source": "RSM survey of 966 executives, 2025"
+  },
+  {
+   "num": "$10 to $130",
+   "label": "Monthly software cost to run one typical workflow 2,000 times.[^5][^6][^27]",
+   "source": "Zavient price check, 26 Nov 2026"
+  },
+  {
+   "num": "32%",
+   "label": "US firms with 100 to 249 staff that used AI in the past two weeks; 37% at 250 or more.[^38]",
+   "source": "U.S. Census Bureau, May 2026"
+  },
+  {
+   "num": "34%",
+   "label": "Mid-market firms that name data quality as their top AI barrier.[^16]",
+   "source": "RSM survey of 1,030 executives, 2026"
+  }
+ ],
+ "sources": [
+  {
+   "name": "Bain, Survey: workflow redesign is key to AI success, Nov 2026",
+   "url": "http://www.bain.com/insights/survey-workflow-redesign-is-key-to-ai-success",
+   "what": "200 firms per wave. 48% of firms that rebuilt workflows beat AI goals, against about 23% that only added tools; 33% report measurable results from at least one use case."
+  },
+  {
+   "name": "McKinsey, The state of AI, Mar 2025",
+   "url": "https://www.mckinsey.com/~/media/mckinsey/business%20functions/quantumblack/our%20insights/the%20state%20of%20ai/2025/the-state-of-ai-how-organizations-are-rewiring-to-capture-value_final.pdf",
+   "what": "1,491 respondents. Of 25 attributes tested, redesigning workflows has the biggest effect on profit impact from generative AI; 27% review all AI output before use."
+  },
+  {
+   "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025, Jul 2025",
+   "url": "https://21464181.fs1.hubspotusercontent-na1.net/hubfs/21464181/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+   "what": "Interviews, a survey and 300 initiatives (preliminary, self-reported). 5% of task-specific generative AI tools reached production; partnered builds reached deployment about 67% of the time, internal builds about 33%."
+  },
+  {
+   "name": "Gartner press release, 29 Jul 2024",
+   "url": "https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025",
+   "what": "At least 30% of generative AI projects abandoned after proof of concept by end-2025: poor data, weak risk controls, rising costs or unclear value."
+  },
+  {
+   "name": "Zapier pricing, read 26 Nov 2026",
+   "url": "https://zapier.com/pricing",
+   "what": "Pro $19.99 a month for 750 tasks, $129 for 10,000 tasks, billed yearly; a task is each successful action step; free plan 100 tasks a month."
+  },
+  {
+   "name": "n8n pricing, read 26 Nov 2026 (cache dated 20 Nov 2026)",
+   "url": "https://n8n.io/pricing",
+   "what": "Cloud Starter EUR 20 a month for 2,500 workflow runs; Pro EUR 50 for 10,000; free self-hosted Community edition."
+  },
+  {
+   "name": "Moffatt v. Air Canada, 2024 BCCRT 149",
+   "url": "https://decisions.civilresolutionbc.ca/crt/crtd/en/525448/1/document.do?format=pdf",
+   "what": "British Columbia tribunal held the airline liable for its chatbot's wrong refund advice."
+  },
+  {
+   "name": "OpenAI, A practical guide to building agents",
+   "url": "https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents",
+   "what": "Model maker's guide: agents fit where rule-based approaches fall short; set evals for a baseline; keep a person on high-risk actions like refunds and payments."
+  },
+  {
+   "name": "NIST AI Risk Management Framework, Core (MAP 3.5)",
+   "url": "https://airc.nist.gov/airmf-resources/airmf/5-sec-core",
+   "what": "US standards agency framework: processes for human oversight are defined, assessed and documented."
+  },
+  {
+   "name": "Reddit r/AiAutomations, How to spot a bullshitter when hiring an AI automation agency, Oct 2026",
+   "url": "https://www.reddit.com/r/AiAutomations/comments/1x4vfhf/how_to_spot_a_bullshitter_when_hiring_an_ai/",
+   "what": "Practitioner forum opinion: ask for a failure demo, a human hand-off, workflow export and the logins; see if they talk you out of AI."
+  },
+  {
+   "name": "NIST AI RMF Playbook, MEASURE",
+   "url": "https://airc.nist.gov/airmf-resources/playbook/measure",
+   "what": "Track overrides, errors, complaints and go/no-go decisions made by accountable people; keep histories and audit logs."
+  },
+  {
+   "name": "BCG, The Widening AI Value Gap, Sept 2025",
+   "url": "https://www.bcg.com/publications/2025/are-you-generating-value-from-ai-the-widening-gap",
+   "what": "Survey of 1,250 senior executives. Defines a workflow; agents take routine steps while people provide judgment and oversight; agents 17% of AI value in 2025, 29% expected by 2028."
+  },
+  {
+   "name": "Anthropic, Building effective agents, Dec 2024",
+   "url": "https://www.anthropic.com/engineering/building-effective-agents",
+   "what": "Model maker's guide: find the simplest solution and add complexity only when needed; fixed workflows suit well-defined tasks."
+  },
+  {
+   "name": "Federal Reserve Banks, Small Business Credit Survey, 2026 report on employer firms",
+   "url": "https://www.fedsmallbusiness.org/survey/2026/2026-report-on-employer-firms",
+   "what": "6,525 firms with 1 to 499 staff. Top AI challenge: finding tools that fit (54% of planners); 83% of users use AI for writing or marketing; most saw no change in labor costs."
+  },
+  {
+   "name": "RSM, Middle Market AI Survey 2025",
+   "url": "https://www.rsmus.com/insights/services/digital-transformation/rsm-middle-market-ai-survey-2025",
+   "what": "966 middle-market executives. 70% need outside help to get the most from AI; 62% found generative AI harder to put in place than expected."
+  },
+  {
+   "name": "RSM, Middle Market AI Survey 2026",
+   "url": "https://www.rsmus.com/insights/services/digital-transformation/rsm-middle-market-ai-survey",
+   "what": "1,030 executives. Data quality is the top barrier (34%); 67% set AI controls before pilots; 85% say leaders are keener than staff; many measure early wins, not outcomes."
+  },
+  {
+   "name": "Goldman Sachs 10,000 Small Businesses Voices, AI survey, 2026",
+   "url": "https://www.goldmansachs.com/pressroom/press-releases/2026/small-businesses-embrace-ai-but-need-training-and-support-to-fully-harness-it",
+   "what": "1,256 small-business owners, Jan to Feb 2026. 73% say more training would help them use AI; 14% have AI fully in core operations; 87% say AI augments their staff."
+  },
+  {
+   "name": "Reddit r/SaaS, Is AI consulting actually worth it for small and mid-sized businesses?, Jul 2026",
+   "url": "https://www.reddit.com/r/SaaS/comments/1v4exu1/is_ai_consulting_actually_worth_it_for_small_and/",
+   "what": "Practitioner forum opinion: insist on ownership of code and credentials and an exit plan."
+  },
+  {
+   "name": "EU AI Act, Article 14 (human oversight), AI Act Service Desk",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-14",
+   "what": "For high-risk AI, people must be able to override or reverse the output and stop the system, and stay aware of automation bias."
+  },
+  {
+   "name": "American Bar Association, Business Law Today, Feb 2024",
+   "url": "https://www.americanbar.org/groups/business_law/resources/business-law-today/2024-february/bc-tribunal-confirms-companies-remain-liable-information-provided-ai-chatbot",
+   "what": "Explains the Moffatt ruling: companies stay liable for what their AI chatbot tells customers."
+  },
+  {
+   "name": "Microsoft Power Automate pricing, read 26 Nov 2026 (cache dated 24 Nov 2026)",
+   "url": "https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing",
+   "what": "Premium $15 per user a month; Process (unattended bot) $150 per bot a month."
+  },
+  {
+   "name": "IV Consulting, Power Automate vs Zapier vs n8n: we priced 3 workloads, 23 Nov 2026",
+   "url": "https://ivconsulting.in/blogs/power-automate-vs-zapier-vs-n8n-cost/",
+   "what": "Third-party read of Microsoft licensing: standard connectors come with Microsoft 365 plans."
+  },
+  {
+   "name": "Microsoft 365 Copilot business pricing, read 26 Nov 2026",
+   "url": "https://www.microsoft.com/en-us/copilot/pricing/business",
+   "what": "Microsoft 365 Copilot Business add-on $21 per user a month."
+  },
+  {
+   "name": "Microsoft Copilot Studio pricing, read 26 Nov 2026",
+   "url": "https://www.microsoft.com/en-us/copilot/pricing/copilot-studio",
+   "what": "$200 a month per pack of 25,000 Copilot Credits."
+  },
+  {
+   "name": "Gartner press release, 25 Jun 2025",
+   "url": "https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027",
+   "what": "Over 40% of agentic AI projects will be cancelled by end-2027; many use cases sold as agentic don't need agents; warns of agent washing."
+  },
+  {
+   "name": "UiPath pricing, read 26 Nov 2026 (cache dated 24 Nov 2026)",
+   "url": "https://www.uipath.com/pricing",
+   "what": "Free Community plan; Basic from $25 a month with up to 2 robots; Standard and Enterprise by quote."
+  },
+  {
+   "name": "Meetalog, Make.com pricing 2026, Sep 2026",
+   "url": "https://meetalog.com/make-com-pricing/",
+   "what": "Third-party read: Make Core about $9 a month billed yearly for 10,000 credits."
+  },
+  {
+   "name": "Automation Atlas, Zapier vs Make vs n8n: cost by workload, Nov 2026",
+   "url": "https://automationatlas.io/guides/zapier-make-n8n-cost-by-workload",
+   "what": "Third-party cost comparison by workload; reaches the same cost order. Another read (gravity.fast, 25 Nov) puts Make Core at $12."
+  },
+  {
+   "name": "Gartner press release, 26 Feb 2025",
+   "url": "https://www.gartner.com/en/newsroom/press-releases/2025-02-26-lack-of-ai-ready-data-puts-ai-projects-at-risk",
+   "what": "Through 2026, firms will abandon 60% of AI projects unsupported by AI-ready data; 63% lack or are unsure of the right data practices."
+  },
+  {
+   "name": "Fortune, Klarna brings humans back, 9 May 2025",
+   "url": "https://fortune.com/2025/05/09/klarna-ai-humans-return-on-investment/",
+   "what": "Klarna's CEO said cost was too big a factor in judging its AI service, quality fell, and it began hiring people again."
+  },
+  {
+   "name": "Bloomberg, Klarna turns from AI to real person customer service, 8 May 2025",
+   "url": "https://www.bloomberg.com/news/articles/2025-05-08/klarna-turns-from-ai-to-real-person-customer-service",
+   "what": "Reports Klarna adding human customer service after its AI push (paywall; quote via Fortune)."
+  },
+  {
+   "name": "Reddit r/n8n, AI automation agencies feel like a massive scam, May 2026",
+   "url": "https://www.reddit.com/r/n8n/comments/1tnlfsr/ai_automation_agencies_aaa_feel_like_a_massive",
+   "what": "Practitioner forum opinion: if a new employee couldn't follow the process, it isn't ready to automate."
+  },
+  {
+   "name": "Reddit r/smallbusiness, Pricing AI automation by % of savings, Jan 2026",
+   "url": "https://www.reddit.com/r/smallbusiness/comments/1qqnx1k/pricing_ai_automation_by_of_savings_shared/",
+   "what": "Practitioner forum opinion: time-box a two-week baseline of time tracking before you start."
+  },
+  {
+   "name": "Federal Reserve Bank of St. Louis, The impact of generative AI on work productivity, Feb 2025",
+   "url": "https://www.stlouisfed.org/on-the-economy/2025/feb/impact-generative-ai-work-productivity",
+   "what": "US workers using generative AI saved about 5.4% of their work hours, about 2.2 hours a week."
+  },
+  {
+   "name": "Brynjolfsson, Li and Raymond, Generative AI at Work, Quarterly Journal of Economics, 2025",
+   "url": "https://academic.oup.com/qje/article/140/2/889/7990658",
+   "what": "5,172 support agents resolved 15% more issues per hour with AI help, most for less-experienced staff."
+  },
+  {
+   "name": "Reddit r/AiAutomations, What AI consulting services are actually useful for a small business?, 2026",
+   "url": "https://www.reddit.com/r/AiAutomations/comments/1vn1foq/what_ai_consulting_services_are_actually_useful",
+   "what": "Practitioner forum thread where buyers ask what an AI automation consultant does and what is worth paying for."
+  },
+  {
+   "name": "OpenAI Help Center, ChatGPT Business overview",
+   "url": "https://help.openai.com/en/articles/8792828-chatgpt-business-overview",
+   "what": "ChatGPT Business $20 per user a month billed yearly, $25 monthly."
+  },
+  {
+   "name": "U.S. Census Bureau, Large firms are the biggest AI users, May 2026",
+   "url": "https://www.census.gov/library/stories/2026/05/ai-use-businesses.html",
+   "what": "Business Trends and Outlook Survey: 19.8% of US firms used AI in the past two weeks; 32% of firms with 100 to 249 staff, 37% at 250+."
+  }
+ ],
+ "related": [
+  "ai-consulting-services",
+  "ai-document-processing",
+  "ai-invoice-processing",
+  "account-reconciliation-automation"
+ ],
+ "offer": {
+  "heading": "Not sure which workflow to automate first?",
+  "body": "Free, before any paid work, and no sales pitch: 30 minutes on your first workflow. Bring today's numbers. Leave knowing what to automate, what stays with people, and what the tools would cost."
+ },
+ "keyword": {
+  "phrase": "ai automation consulting",
+  "searches": 590,
+  "cpc": 140.83,
+  "difficulty": 0
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Wanted the first workflow, a before-and-after measure and who does what; all present. Flagged a vague 'one use' (now 'one AI use case') and a walk-away bullet whose number didn't match its source (now the Fed's 54% tool-fit challenge plus RSM). Missing: a sourced time-to-production figure; the only ones found were consulting firms' own claims, so none is given."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Stalled on jargon: trigger, proof of concept, semi-structured documents, unattended bot. Each is now defined or swapped for plain words. Table stays three short columns so it reads on a phone."
+  },
+  {
+   "reader": "GM",
+   "notes": "Asked whether one team or site can pilot first and what it does to the unit's cost. One-team go-live is in the Microsoft build and the last test step; the dollar formula now spells out loaded cost as pay plus benefits."
+  },
+  {
+   "reader": "Division head",
+   "notes": "As the COO or head of operations hiring the help: the 27% review stat read as a so-what, now shows the split between reviewing everything and spot-checking. Wanted NIST and EU oversight kept apart; now one sentence each. Would still like a sourced range for consulting fees; none neutral exists in the research, so the page prices the software only."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Steve's worries: data, security, skills, return, paying for slides. Security was missing, so the data watch-out now names it (30%) with IT setting access first. Added 'no sales pitch' to the diagnostic offer. Bottom line passes the 10-second test; no Zavient fee is shown, per the lead's instruction."
+  }
+ ],
+ "updated": "2026-11-26"
+}

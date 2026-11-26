@@ -12,15 +12,21 @@ const BOOK = 'https://calendly.com/zavient/call';
 // the free diagnostic, which covers any workflow: no cards that jump straight to a booking page (mobile/ADHD audit,
 // 26 Nov 2026). No stub pages and no "coming soon" (research-home-allwork.md, 26 Nov 2026).
 const kinds = [
-  { href: '#guides', tag: '4 guides', title: 'Finance and accounting', text: 'Invoices, month-end close, reconciliations and financial documents.' },
-  { href: '/ai-work/ai-credit-scoring.html', tag: '2 guides', title: 'Banking and lending', text: 'Credit scoring you can explain to an examiner, then underwriting.' },
-  { href: '/ai-work/ai-underwriting.html', tag: '1 guide', title: 'Insurance', text: 'Underwriting and the reading around every file. The underwriter keeps the call.' },
+  { href: '/ai-consulting/ai-automation-consulting.html', tag: 'Any team', title: 'Operations and workflows', text: 'Which handoffs, forms and approvals to automate first, and what good help looks like.' },
+  { href: '/industries/law-firms.html', tag: 'Industry', title: 'Law firms', text: 'Research, review and first drafts. Lawyers keep the advice and the signature.' },
+  { href: '/industries/manufacturing.html', tag: 'Industry', title: 'Manufacturing', text: 'Quality checks, maintenance and planning, with your floor leads in charge.' },
+  { href: '/industries/supply-chain-logistics.html', tag: 'Industry', title: 'Supply chain and logistics', text: 'Forecasts, routing and the paperwork around every shipment.' },
+  { href: '/industries/retail-ecommerce.html', tag: 'Industry', title: 'Retail and ecommerce', text: 'Product content, customer service and demand planning.' },
+  { href: '/ai-work/ai-construction-estimating.html', tag: 'Industry', title: 'Construction', text: 'Takeoffs and estimates you can check before you bid.' },
+  { href: '/industries/insurance.html', tag: 'Industry', title: 'Insurance', text: 'Underwriting, claims and the reading around every file. People keep the call.' },
+  { href: '/ai-work/ai-credit-scoring.html', tag: 'Industry', title: 'Banking and lending', text: 'Credit scoring you can explain to an examiner, then underwriting.' },
+  { href: '#guides', tag: 'Any company', title: 'Finance and accounting', text: 'Invoices, month-end close, reconciliations and financial documents.' },
 ];
-const noGuideYet = 'operations, customer service, sales, HR, legal, purchasing, claims, IT, or your industry';
+const noGuideYet = 'customer service, sales, HR, purchasing, IT, healthcare, or your industry';
 
 // Role cards, in the order the site's readers come: COO and head of ops, GM, owner or CEO, then division heads.
 const roles = [
-  { href: '/ai-work/ai-consulting-services.html', tag: 'COO', title: 'Which workflow should we fix first?', text: 'Which work pays back first, and what outside help costs.' },
+  { href: '/ai-consulting/ai-strategy-consulting.html', tag: 'COO', title: 'Which workflow should we fix first?', text: 'Which work pays back first, and what you should walk away with from outside help.' },
   { href: '/ai-work/account-reconciliation-automation.html', tag: 'Head of operations', title: 'What changes for my team?', text: 'Which tasks AI takes and who checks its work. Month-end close is the worked example.' },
   { href: '#work', tag: 'General manager', title: 'Can one team pilot it first?', text: 'Pick one kind of work below. Test it on one team before you scale.' },
   { href: '/ai-readiness-assessment.html', tag: 'Owner or CEO', title: 'Are we ready for AI at all?', text: 'A 3-minute check. It names your first project and the one gap to fix first.' },
@@ -30,7 +36,8 @@ const roles = [
 ];
 
 const finance = [
-  { href: '/ai-work/ai-consulting-services.html', tag: 'Start here', title: 'AI consulting for finance: is it worth it, and what does it cost?', text: 'What pays back first, and what help costs against hiring or software.' },
+  { href: '/ai-consulting/ai-strategy-consulting.html', tag: 'Start here', title: 'AI strategy: where does AI pay first in your company?', text: 'What a good plan names, and what you should walk away with.' },
+  { href: '/ai-work/ai-consulting-services.html', tag: 'Finance', title: 'AI consulting for finance: is it worth it, and what does it cost?', text: 'What pays back first, and what help costs against hiring or software.' },
   { href: '/ai-work/ai-document-processing.html', tag: 'Documents', title: 'How accurate is AI on financial documents?', text: 'Our own test on 30 fund reports, answers locked before any tool ran.' },
   { href: '/ai-work/ai-invoice-processing.html', tag: 'Accounts payable', title: 'What does AI invoice processing cost, and what needs a person?', text: '13 tools and their prices. Exceptions and fraud still need a person.' },
   { href: '/ai-work/account-reconciliation-automation.html', tag: 'Month-end close', title: 'Will AI speed our close and pass audit?', text: 'What AI does, what auditors expect, and three ways to build it.' },
@@ -77,8 +84,8 @@ const updated = '26 November 2026';
     </div>
     <p class="diag-nudge">Head of another division? <a href={BOOK}>Bring one workflow to the free 30-minute diagnostic &rarr;</a></p>
 
-    <h2 id="work">Find your kind of work</h2>
-    <p>Each card opens the guides for that work.</p>
+    <h2 id="work">Find your kind of work or industry</h2>
+    <p>Pick your kind of work or your industry. Each card opens a guide.</p>
     <div class="hub-grid">
       {kinds.map((k) => (
         <a class="hub-card" href={k.href}>
