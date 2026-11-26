@@ -9,7 +9,7 @@
  "index": true,
  "verdict": [
   "Lenders mostly want consolidated monthly statements within 30 days; consolidating alone takes a median 6 days[^2][^1].",
-  "Map each add-on's chart of accounts to one group chart; you don't need one ERP first[^16][^14].",
+  "Map each add-on's chart of accounts to one group chart; you don't need one enterprise resource planning (ERP) system first[^16][^14].",
   "Let AI suggest account mappings and intercompany matches; the controller approves each one before it posts[^6][^5].",
   "Never post AI mappings unreviewed: accuracy drops on a newly bought company and on large charts[^12][^13].",
   "Close and reporting problems appear in 84% of material weaknesses; missed eliminations have forced restatements[^11][^24]."
@@ -56,7 +56,7 @@
   "faq": "Questions buyers ask about consolidated financial reporting",
   "buy-or-build": "Should you buy consolidation software or build the work around it?"
  },
- "summary": "After several add-ons, the hard part sits upstream: different ledgers, different charts of accounts and intercompany that won't tie[^34]. Most lender agreements we counted want monthly statements in 30 days[^2]. The approved mapping table and the review steps make or break it[^16][^8].",
+ "summary": "Consolidated financial reporting turns each company's books into one set of group statements, with sales and balances between them eliminated[^19][^18]. AI suggests account mappings and intercompany matches, and the controller approves each one[^6][^12]. The hard part sits upstream: different ledgers, charts of accounts and intercompany that won't tie[^34].",
  "humanRole": [
   "Controller: approves the mapping from each add-on's accounts to the group chart, then every new account[^12][^13]. AI only suggests; nothing posts without that approval.",
   "Controller: approves each intercompany match the AI suggests, and every low-confidence or unmatched pair[^6][^5]. Breaks go back to the add-on's bookkeeper with context[^5].",
@@ -643,13 +643,9 @@
   "ai-post-merger-integration",
   "private-equity",
   "ai-value-creation-plan",
-  "account-reconciliation-automation",
-  "private-credit-portfolio-monitoring",
-  "ai-integration-services",
-  "sales-analytics"
+  "account-reconciliation-automation"
  ],
  "answers": {
-  "what-it-is": "Consolidated financial reporting turns each company's books into one set of statements for the group, with sales and balances between them eliminated[^19][^18]. AI can suggest account mappings and intercompany matches, while the controller approves each one[^6][^12].",
   "human-role": "The controller stays in charge: AI suggests account mappings and intercompany matches, and the controller approves each one and signs off eliminations and statements[^6][^5][^8].",
   "team-after": "Your finance team moves from keying mappings and chasing matches to reviewing AI suggestions, fixing routed breaks and running the close checklist[^7][^5][^16].",
   "example": "Trial balances from each add-on go in, and a lender-ready consolidating workbook comes out[^3][^19]. Between them sit approved mappings, suggested intercompany matches and reviewed eliminations[^19].",
