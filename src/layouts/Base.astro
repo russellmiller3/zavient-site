@@ -81,5 +81,30 @@ const css = theme === 'blue' ? '/ai-work/ai-work.css' : '/insights/article.css';
       openFor(location.hash);
     })();
   </script>
+  <script is:inline>
+    // Phones (720px and narrower): the two-row top menu slides away while you scroll down and comes back as soon
+    // as you scroll up, so it never sits on the text you're reading (NN/g sticky headers; Chrome's sticky-UI
+    // guidance; fix of 26 Nov 2026). It stays put near the top of the page, while it has keyboard focus, and
+    // for people who ask for reduced motion.
+    (() => {
+      const nav = document.querySelector('body > nav');
+      const phone = matchMedia('(max-width: 720px)');
+      const still = matchMedia('(prefers-reduced-motion: reduce)');
+      if (!nav) return;
+      let last = scrollY, turn = scrollY, down = false, ticking = false;
+      const update = () => {
+        ticking = false;
+        const y = Math.max(0, scrollY);
+        if (!phone.matches || still.matches || y <= nav.offsetHeight + 8) { nav.classList.remove('nav-away'); last = turn = y; return; }
+        const goingDown = y > last;
+        if (goingDown !== down) { down = goingDown; turn = last; }
+        if (down && y - turn > 8) nav.classList.add('nav-away');
+        if (!down && turn - y > 8) nav.classList.remove('nav-away');
+        last = y;
+      };
+      addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+      phone.addEventListener('change', update);
+    })();
+  </script>
 </body>
 </html>
