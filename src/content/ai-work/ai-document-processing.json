@@ -2,14 +2,14 @@
  "title": "AI document processing: which AI reads files with fewest wrong numbers",
  "description": "We benchmarked AI tools on 30 fund reports, with answers locked in advance. Which ones made no mistakes, what each costs per page, and three ways to build it.",
  "job": "document processing",
- "summary": "Start with the document your team re-keys most, where a wrong number costs money; AI can read it into fields your systems use. Reading is cheap: basic OCR (turning page images into text) is $1.50 per 1,000 pages[^2][^3][^4], while APQC's $6.00 median per invoice is the all-in cost[^1]. AI does the reading part, but wrong fields on your own files are the risk, so we built a benchmark that measures them[^20][^7].",
+ "summary": "Start with the document your team re-keys most, where a wrong number costs money; AI can read it into fields your systems use. Reading itself costs cents; the staff time around it is the real cost[^7][^1]. AI does the reading part, but wrong fields on your own files are the risk, so we built a benchmark that measures them[^20][^7].",
  "index": true,
  "verdict": [
   "Pick the document your team re-keys most, where a wrong number costs money. Two models from different vendors read it; a person settles only their disagreements[^15][^16].",
   "AI reading costs cents per report[^7]. The $6.00 median to process an invoice is all-in cost, so measure staff minutes and errors per file, not just reading cost[^1].",
-  "In our benchmark of 30 fund reports, the two best models made zero mistakes[^7]. With only 30 reports, the true error rate could be up to about 1 in 10[^19].",
-  "About 2 facts per report still went to a person, so your team keeps the final say[^7].",
-  "First step: benchmark two models on 50 of your own files. Even vendors advise judging tools on your own documents[^20]."
+  "The two best models made zero mistakes on our 30 fund reports, not your files[^7]. Thirty reports still allow a true error rate of up to about 1 in 10[^19].",
+  "The two models disagreed on about 1 fact in 4 (66 of 270); your team settles those and keeps the final say[^7].",
+  "First step: benchmark two models on 50 files from one team's queue. Even vendors advise judging tools on your own documents[^20]."
  ],
  "onPage": [
   {
@@ -105,7 +105,7 @@
  },
  "example": {
   "input": "A 57-page quarterly report from a private equity fund, as a PDF.",
-  "output": "Money committed, money paid in, money paid back out, and what the fund is worth today. Each fact comes with its page number and the exact words it came from. Any fact the two models disagree on is flagged."
+  "output": "Money committed (commitment), money paid in (paid-in capital), money paid back out (distributions), and what the fund is worth today (NAV, net asset value). Each fact comes with its page number and the exact words it came from. Any fact the two models disagree on is flagged."
  },
  "recipes": [
   {
@@ -128,10 +128,11 @@
     "Model A and Model B read it",
     "Code compares fact by fact",
     "Agree: accept",
-    "Disagree: your finance or ops reviewer decides",
-    "System logs each decision and who made it"
+    "Disagree: your finance or ops checker decides (maker-checker: a second person approves)",
+    "System logs each decision and who made it",
+    "Approved facts load to your accounting or investor-reporting system"
    ],
-   "cost": "About $0.27 per report for two top models in our locked-answer round[^7]. A person also settles about 2 facts per report, 66 across all 30[^7]."
+   "cost": "About $0.27 per report for two top models in our locked-answer round[^7]. The two models disagreed on 66 of 270 facts across all 30 reports, about 1 in 4, and a person settled each[^7]."
   },
   {
    "name": "High volume, standard forms: cloud parser first, model for the hard cases",
@@ -333,19 +334,19 @@
   "Write the right answer for every fact before any AI reads the files, and lock it, so the AI's output cannot sway it.",
   "Require each answer to name its page and quote the exact words, and have code check that the quote is there.",
   "Count wrong answers apart from blanks. A blank goes to a person; a wrong number can slip through.",
-  "Compare cost and time per file, and run the winner again on new files before you go live."
+  "Report minutes per file, wrong fields reaching downstream systems and cost per file, before and after. Run the winner again on new files before you go live."
  ],
  "buyVsBuild": {
   "buy": "Buy a prebuilt parser or an accounts payable tool when your files are standard invoices, receipts or IDs. The big clouds' prebuilt models already cover those[^2][^4]. Buying fits best when you mainly need volume and an audit trail.",
   "build": "Build on frontier models (the newest, most capable ones) when your files are unique to your business and a wrong number is expensive. The build is a prompt, a fact list, a checker and a review queue where your team settles about 2 facts per report[^7]. If files must stay in-house, run open-source Docling[^6] or a local model; in our benchmark, local models made more wrong values[^7]."
  },
  "watchOuts": [
-  "Vendor accuracy numbers mostly come from the vendor's own benchmark runs[^20], and public answer keys have errors too[^18]. Even on our locked-answer set, the AI was right and our key wrong in 22 of 57 disputes, so check your key[^7].",
+  "Vendor accuracy numbers mostly come from the vendor's own benchmark runs[^20], and public answer keys have errors too[^18]. Even on our locked-answer set, when the AI and our key differed, the AI was right in 22 of 57 cases, so check your key[^7].",
   "A model that writes a plausible wrong number is worse than one that leaves the field blank[^17]. Score them separately.",
   "Two tables on one page with similar labels fooled 7 of 10 tools in our hard round[^7]. Check the facts that sit near look-alikes.",
   "Prices and model versions change: Mistral lists OCR 3 at $2 and OCR 4.1 at $4 per 1,000 pages[^8]. Re-run your benchmark when either changes, and keep the files and answers so the re-run is cheap.",
   "Read the vendor's data terms. Datalab's rate card shows prices with a 25% discount that assumes you let it train on your data[^12].",
-  "Plan reviewer time: about 2 facts per report went to a person in our benchmark[^7]. Multiply by your monthly volume to size the workload."
+  "Plan reviewer time: in our benchmark, about 1 fact in 4 (66 of 270) went to a person[^7]. Multiply by the facts you pull each month to size the workload."
  ],
  "resources": [
   {

@@ -6,11 +6,11 @@
  "summary": "AI invoice processing reads a supplier invoice, codes it, matches it to the purchase order and gets it approved and paid[^27][^21]. Reading the invoice now costs cents[^10][^11]. The money leaks in exceptions, the one invoice in five that needs a person to sort out[^8][^1], and in fake bank-change requests[^12][^13].",
  "index": true,
  "verdict": [
-  "Today an invoice takes 11.6 days to process, and only 38.3% go straight through with no manual step[^8].",
+  "Buy an accounts payable suite such as BILL, Ramp or Tipalti to run the inbox, approvals and payments[^5][^6][^7].",
+  "Build AI only for the gaps your suite misses, such as exception triage and a hold on bank-detail changes[^8][^12].",
+  "Benchmark any tool on 50 of your own invoices before you trust it; in our fund-report benchmark, 7 of 10 tools misread look-alike tables[^9].",
   "The money leaks in exceptions: about one invoice in five needs a person to sort it out[^8][^1].",
-  "Fraud arrives as invoices: a request to pay a supplier's \"new\" bank account is a known email scam the FBI warns about[^12][^13].",
-  "Let an accounts payable suite such as BILL, Ramp or Tipalti run the inbox, approvals and payments[^5][^6][^7].",
-  "Build AI only for the gaps, such as exception triage and a hold on bank-detail changes, benchmarked first on 50 of your own invoices[^8][^12]."
+  "Fraud arrives as invoices: a request to pay a supplier's \"new\" bank account is a known email scam the FBI warns about[^12][^13]."
  ],
  "onPage": [
   {
@@ -59,15 +59,15 @@
    "source": "Ardent Partners, AP Metrics That Matter in 2026 and State of ePayables 2025"
   },
   {
-   "num": "$3.0B",
+   "num": "$3.05B",
    "label": "reported lost in the US in 2025 to business email compromise, meaning email scams that pose as a supplier or boss[^3][^14]",
    "source": "FBI IC3 2025 report"
   }
  ],
  "pickElse": [
-  "Under a few hundred invoices a month and already on QuickBooks or Xero: use the bill capture built into your accounting software first[^33][^34].",
+  "Already on QuickBooks or Xero with simple bills: use the bill capture built into your accounting software first[^33][^34].",
   "Many entities, countries or currencies: look at the global suites (Tipalti, Coupa, Basware, Medius). Expect a contract and no list price[^7][^21][^24][^23].",
-  "You only need the data, not the workflow: a capture tool (Rossum, Nanonets, Docsumo) or cloud invoice parser feeds your ERP directly[^29][^30][^31][^10][^11].",
+  "You only need the data, not the workflow: a capture tool (Rossum, Nanonets, Docsumo) or cloud invoice parser feeds your accounting system (ERP) directly[^29][^30][^31][^10][^11].",
   "You run Microsoft Power Platform: AI Builder has a prebuilt invoice model, limited to 360 calls a minute and 20 MB per file[^35]."
  ],
  "ownData": {
@@ -90,7 +90,7 @@
     "Ramp Bill Pay",
     "Full AP",
     "Free; Plus $15 per user a month plus a platform fee[^6]",
-    "3-way match (invoice, purchase order and receipt agree) needs Plus or a paid Procurement add-on; ACH and wires carry per-payment fees[^6][^16][^17]"
+    "3-way match (invoice, purchase order (PO) and receipt agree) needs Plus or a paid Procurement add-on; ACH and wires carry per-payment fees[^6][^16][^17]"
    ],
    [
     "Tipalti",
@@ -174,8 +174,8 @@
     "Suite reads and codes them; AP clerk checks the flagged ones",
     "Suite matches each invoice to the PO and the receipt Receiving logged",
     "Budget owner approves; Controller approves over limit",
-    "Controller releases payment",
-    "Suite syncs to your ERP"
+    "AP manager or treasury releases payment; the approver can't release it",
+    "Suite syncs to your accounting system (ERP)"
    ],
    "cost": "BILL costs $49 to $89 per user a month[^5]. Ramp is free, or $15 per user a month plus a platform fee[^6]; Tipalti starts at $99 a month plus fees[^7]."
   },
@@ -186,8 +186,8 @@
     "New invoice lands in the AP inbox",
     "AI reads it and shows where on the page each value came from",
     "AI compares it with the PO, the receipt Receiving logged and the supplier record",
-    "AI flags any bank-detail change to the AP clerk",
-    "AP clerk holds it and calls the supplier on a known number",
+    "AI flags any bank-detail change and holds the payment",
+    "The person who owns the supplier list, not the paying clerk, calls the supplier on a number you look up yourself[^12]",
     "AP clerk releases it to approval; Controller approves over limit"
    ],
    "cost": "Reading an invoice costs cents with a cloud invoice reader[^10][^11], against a median $6.00 to an average $9.90 to process one invoice today[^2][^8]. The real cost is building and owning the hold rules; we quote that per job and don't publish a price here."
@@ -322,20 +322,23 @@
   }
  ],
  "howToTest": [
-  "Record today's baseline first: cost per invoice, exception rate, straight-through rate and days per invoice. Compare it with the benchmark figures on this page: 19.9% exceptions, 38.3% straight through and 11.6 days per invoice[^8].",
-  "Pull 50 recent invoices, including credit notes, multi-page invoices, foreign ones and the worst scans.",
+  "Record today's baseline first: cost per invoice, exception rate, straight-through rate and days per invoice. Multiply cost per invoice by your monthly volume to get your unit's AP cost today.",
+  "Compare your baseline with the benchmark figures on this page: 19.9% exceptions, 38.3% straight through and 11.6 days per invoice[^8].",
+  "For two weeks, log the minutes your team spends on each exception. That gives you your own cost of an exception.",
+  "Pull 50 recent invoices, including at least 10 past exceptions. Include credit notes, multi-page invoices, foreign ones and the worst scans.",
   "Write down the right supplier, number, date, total, tax and PO for each before any tool reads them.",
   "Run each tool on the same set. Count wrong values apart from blanks: a wrong total is worse than a missing one.",
-  "Add three test invoices that change a supplier's bank details, and check each tool holds them.",
+  "Add three invoices that change a supplier's bank details, and check each tool holds them.",
+  "Add one invoice you already paid, resubmitted, and check each tool flags it as a duplicate.",
   "Measure how many invoices go straight through, how many reach your team as exceptions, and the cost per invoice including add-ons."
  ],
  "buyVsBuild": {
   "buy": "Buy for the workflow: inbox, approvals, payments, ERP sync and an audit trail. Suites already sell all of this[^5][^6][^7], and you do not want to own payments.",
-  "build": "Build only the checks your suite misses: exception triage, fraud holds, odd document types, or coding rules specific to your business. Exceptions still hit about one invoice in five[^8]. These checks sit beside the suite and flag what your AP team should look at; the decision stays with a person."
+  "build": "Build only the checks your suite misses: exception triage, fraud holds, duplicate-invoice checks[^22], odd document types or your own coding rules. Start with one entity or one AP inbox, and keep the rest on today's process until the benchmark holds. Exceptions still hit about one invoice in five[^8], so these checks flag what your AP team should look at; the decision stays with a person."
  },
  "watchOuts": [
   "The price you see is rarely the price you pay. Matching, payments, more entities and ERP sync are often add-ons[^5][^16][^7][^23].",
-  "Payment fraud rides on invoices[^12][^13]: 74% of US organizations were hit by business email compromise in 2025, the AFP found[^4][^15]. Check any change to bank details by calling a number you look up yourself[^12].",
+  "Payment fraud rides on invoices[^12][^13]: 74% of US organizations experienced business email compromise in 2025, the AFP found[^4][^15]. Check any change to bank details by calling a number you look up yourself[^12].",
   "A tool that reads the subtotal as the total looks right at a glance. In our benchmark, 7 of 10 tools picked the wrong one of two look-alike tables[^9]."
  ],
  "resources": [
@@ -600,7 +603,7 @@
  },
  "offer": {
   "heading": "Invoices still stuck in exceptions? Get a free diagnostic",
-  "body": "Tell me your AP tool, your volume and where invoices get stuck. In 30 minutes you learn which suite fits and whether a custom check (recipe 2) pays at your volume. You get a written follow-up either way."
+  "body": "Tell me your AP tool, your volume and where invoices get stuck. In 30 minutes you learn which suite fits and whether a custom check (recipe 2) pays at your volume. You get a written follow-up either way, one you can forward to your CEO."
  },
  "updated": "2026-11-26"
 }

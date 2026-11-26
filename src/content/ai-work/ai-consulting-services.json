@@ -9,12 +9,12 @@
   "Bought or partnered AI projects succeed about 67% of the time; internal builds about a third as often[^1].",
   "Benchmark the options on your own files before anyone builds. Public leaderboards are only a first filter[^5][^23].",
   "Our AI Leverage Sprint costs $10,000 for 30 days, fixed scope. You leave with 2 or 3 AI bets and their specs[^21].",
-  "Re-check the choice as models and prices change. The price of a given level of AI performance has fallen 9 to 900 times a year[^22]."
+  "Re-check the choice as models and prices change. The same AI work gets much cheaper each year[^22]."
  ],
  "onPage": [
   {
    "to": "where-ai-pays",
-   "text": "Four finance jobs we've benchmarked"
+   "text": "Four finance jobs where AI pays first"
   },
   {
    "to": "own-data",
@@ -78,7 +78,7 @@
   },
   {
    "slug": "ai-credit-scoring",
-   "why": "If you lend or insure: score loans with a model you can explain; add boosting (stronger, harder to explain)[^36] only if your benchmark shows lift. Boosting usually scores higher, but the gap narrows on small data[^36], and every decline needs specific reasons[^24][^25]."
+   "why": "If you lend: score loans with a model you can explain, and add a stronger, harder-to-explain one only if your benchmark shows lift[^36]. Stronger models usually score higher, but the gap narrows on small data[^36], and every decline needs specific reasons[^24][^25]."
   }
  ],
  "ownData": {
@@ -117,14 +117,14 @@
   "note": "Source: Zavient sample of 2,046 US AI job ads at 1,172 employers, posted 21 to 25 November 2026, reposts removed[^8][^9][^37]. Pay is the posted minimum of the range, where an ad gives one."
  },
  "example": {
-  "input": "A mid-sized lender wants AI to read small-business loan files so underwriters stop retyping bank statements.",
-  "output": "A benchmark of the leading models on 50 of the lender's own files, with the cost per file for each. The winner, built into the loan system with a review queue for unsure cases. A monthly re-check as new models ship."
+  "input": "A mid-sized lender wants AI to read small-business loan files so underwriters stop spreading bank statements and tax returns by hand. Spreading means retyping their numbers into the lender's standard analysis sheet.",
+  "output": "A benchmark of the leading models on 50 of the lender's own files, with the cost per file for each. Today's time and error rate per file sit next to the winner's. The winner goes into the loan system with a review queue for unsure cases, and is re-checked monthly as new models ship."
  },
  "recipesTitle": "How a good engagement runs",
  "recipes": [
   {
    "name": "1. Benchmark first",
-   "when": "Before anyone builds, to settle which approach wins on your files and what it costs; public leaderboards are only a first filter[^5]. Pick a job that is high volume, repetitive and has a known cost of errors, such as invoice exceptions[^34].",
+   "when": "Before anyone builds, to settle which approach wins on your files and what it costs; public leaderboards are only a first filter[^5]. Pick a high-volume, repetitive job with a known cost of errors, and price it today: an invoice costs $9.84 on average to process[^34].",
    "flow": [
     "Process lead: measure today's time and error rate per file",
     "Process lead: pick 50 real files",
@@ -142,7 +142,7 @@
     "IT: connect it to your systems and workflow",
     "Named reviewer: clear the queue of unsure cases",
     "IT: log every decision",
-    "Process lead: go live on a share of volume",
+    "Process lead: go live at one site or team first",
     "Process lead: move to full volume"
    ],
    "cost": "Depends on the systems it touches. Gartner warns that a production system can cost orders of magnitude more than the pilot[^3][^12], so scope it from the benchmark, not the demo."
@@ -219,6 +219,7 @@
   "Ask what happens when a better model ships next month. If the answer is a new project, the system will go stale.",
   "Ask for a client where the system has run in production for at least six months.",
   "Ask where your files are stored, who can see them, and whether anyone trains AI models on them.",
+  "If you lend or insure, ask what model documentation and validation you get for your examiner, and who keeps it current.",
   "Ask who clears unsure cases, how fast, and who covers when they're out."
  ],
  "buyVsBuild": {
@@ -362,7 +363,7 @@
   {
    "name": "Cornell LII, 12 CFR 1002.9",
    "url": "https://www.law.cornell.edu/cfr/text/12/1002.9",
-   "what": "Creditors must notify within 30 days of a completed application; reasons for adverse action must be specific."
+   "what": "Creditors must notify within 30 days of a completed application; the notice gives specific reasons for adverse action or tells the applicant how to request them."
   },
   {
    "name": "CFPB, Regulation B official interpretation of 1002.9",
@@ -447,7 +448,7 @@
    "name": "AI credit scoring: the lending rules",
    "url": "https://zavient.com/ai-work/ai-credit-scoring.html",
    "status": "US in force; EU from 2 Dec 2027",
-   "what": "If you lend, US rules require the specific main reasons for a decline within 30 days[^24]. Those reasons must be the factors the model actually scored[^25]. In the EU, credit scoring of people becomes a high-risk AI use from 2 December 2027[^26][^27][^28]."
+   "what": "If you lend, US rules require a decline notice within 30 days, giving the specific reasons or how to ask for them[^24]. Those reasons must be the factors the model actually scored[^25]. In the EU, credit scoring of people becomes a high-risk AI use from 2 December 2027[^26][^27][^28]."
   },
   {
    "name": "AI underwriting: the insurance rules",

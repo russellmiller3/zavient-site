@@ -3,14 +3,14 @@
  "description": "Where AI pays in underwriting: the reading, not the decision. 19 tools checked, the US and EU rules, our benchmark data and three builds.",
  "job": "underwriting",
  "industry": "lending and insurance",
- "summary": "AI underwriting does the reading: it pulls the facts from applications, statements and broker emails so your underwriters decide faster[^13][^22]. It fits small-business lenders, commercial insurers, MGAs and life insurers that already run a rules engine[^23][^20]. Underwriters spend about 4 in 10 hours on admin, and the decision stays explainable with a person accountable[^1][^7][^4][^2].",
+ "summary": "AI underwriting does the reading: it pulls the facts from applications, statements and broker emails so your underwriters decide faster[^13][^22]. It fits small-business lenders, life insurers with a rules engine[^20], and commercial insurers and MGAs whose underwriters spend hours keying broker submissions[^7]. P&C underwriters spend about 4 in 10 hours on admin, and the decision stays explainable with a person accountable[^1][^7][^4][^2].",
  "index": true,
  "verdict": [
-  "The money is hours back for deciding. Underwriters spend about 39% of their time on admin and other non-core work, the paperwork AI can take on[^1][^8][^7].",
+  "The money is hours back for deciding. P&C underwriters spend about 39% of their time on admin and other non-core work, the paperwork AI can take on[^1][^8][^7].",
   "Start with the reading: statements and tax returns for lenders, broker submissions for commercial insurers and MGAs (managing general agents)[^22], referred-case evidence for life insurers[^19].",
-  "AI reads long financial PDFs well: the two best models made zero mistakes on 30 sealed fund reports[^13]. Those weren't loan files, so benchmark on your own[^13].",
-  "Keep the decision with an explainable model and a named underwriter. US lenders must give specific reasons for a decline; New York expects the same from insurers[^4][^17][^2].",
-  "First step: benchmark AI on 50 of your past files before you buy. Vendors' faster-quote figures are their own customers' claims[^21][^28]."
+  "AI reads long financial PDFs well: the two best models made zero mistakes on 30 fund reports, answers locked in advance[^13]. Those weren't loan files, so benchmark on your own[^13].",
+  "Keep the decision with an explainable model and a named underwriter. US lenders owe decline reasons; New York expects the same from insurers[^4][^17][^2].",
+  "First step: benchmark AI on 50 past files from one line or one branch before you buy. Vendors' faster-quote figures are their own customers' claims[^21][^28]."
  ],
  "onPage": [
   {
@@ -50,7 +50,7 @@
   },
   {
    "num": "0",
-   "label": "mistakes by the two best models reading 30 sealed fund reports[^13]",
+   "label": "mistakes by the two best models reading 30 fund reports, answers locked in advance[^13]",
    "source": "FinExtractBench, Zavient, Nov 2026"
   },
   {
@@ -82,7 +82,7 @@
    [
     "Intake: read applications, broker emails, forms",
     "Yes, with a second model checking",
-    "Two models, 0 mistakes on 30 sealed reports (FinExtractBench)[^13]"
+    "Two models, 0 mistakes on 30 reports with answers locked in advance (FinExtractBench)[^13]"
    ],
    [
     "Pull facts from statements, returns and loss runs (claims history)",
@@ -101,7 +101,7 @@
    ],
    [
     "Score the risk",
-    "Yes, with an explainable model, not a chatbot",
+    "Yes, if its stated reasons are the factors it scored[^17]; logistic regression stays the most transparent choice[^15]",
     "A standard machine-learning model beat chat models at predicting loan defaults, and the same method tops a credit-scoring review[^14][^15]. MassMutual's machine-learned life score beat traditional underwriting on claims[^5][^33]."
    ],
    [
@@ -119,11 +119,11 @@
  "recipes": [
   {
    "name": "1. Commercial insurance: submission intake",
-   "when": "Commercial insurers and MGAs where broker submissions pile up and some risks inside your appetite (the risks you want to write) never get a quote[^23].",
+   "when": "Commercial insurers and MGAs whose underwriters spend hours keying broker submissions; admin takes 41% to 43% of their time[^7].",
    "flow": [
     "Broker email, forms and loss runs (claims history) land in a queue the ops lead owns",
     "AI extracts each fact with page and quote",
-    "AI checks appetite and duplicates; an underwriting assistant clears flagged facts",
+    "AI checks appetite (the risks you want to write) and clearance (has another broker already sent this risk?); an underwriting assistant resolves flagged facts",
     "AI adds third-party data",
     "Underwriter works the queue best fit first and decides"
    ],
@@ -134,7 +134,7 @@
    "when": "Lenders whose underwriters spend the day reading statements and returns.",
    "flow": [
     "Bank statements and tax returns land in a queue the ops lead owns",
-    "AI extracts cash-flow facts",
+    "AI spreads statements and returns into your template, meaning it copies each figure into your standard credit-analysis layout",
     "An underwriting assistant clears flagged facts",
     "Explainable model drafts a score with its reasons",
     "Underwriter decides; reasons logged"
@@ -354,12 +354,12 @@
   }
  ],
  "howToTest": [
-  "Before any AI, time 50 files as your team handles them today. Record hours per file and how many files are left without a quote or decision.",
+  "Before any AI, time 50 files from one line or one branch as your team handles them today. Record hours per file, decision turnaround and how many in-appetite files are left without a quote or decision.",
   "Then take 50 past files with known outcomes, including your messiest scans and longest packets.",
   "Have your underwriters write the right value for every fact before any AI reads the files, and lock that answer key.",
   "Run each tool on the same files. Count wrong facts apart from blanks, and require a page and quote for every fact.",
   "For scoring, compare an explainable model with your current method on the same past files. Check that the decline reasons make sense to an underwriter.",
-  "Measure cost and time per file, and how many files still need a person. Compare each with your baseline from step one."
+  "Measure cost and time per file, and how many files still need a person. Report files decided per underwriter per week, decision turnaround and in-appetite submissions left unquoted, before and after."
  ],
  "buyVsBuild": {
   "buy": "Buy when your line is standard, the vendor already handles your submission formats, and you are happy to run inside its workbench.",
@@ -369,7 +369,7 @@
   "You stay responsible for a vendor's model. New York and the NAIC bulletin both expect audit rights in vendor contracts where available[^2][^34].",
   "Models can carry past bias into new decisions. New York and Colorado expect insurers to test for unfair outcomes across groups before use and on a schedule after[^2][^16].",
   "A model's confidence score is not a warning sign. In our benchmark, wrong answers came back rated 70 to 100[^13].",
-  "Vendor claims such as faster quotes come from the vendor's own chosen customers[^21][^24][^28]. Ask for a benchmark on your own files.",
+  "Vendor claims such as faster quotes are the vendor's own figures[^24], often from chosen customers[^21][^28]. Ask for a benchmark on your own files.",
   "Flagged facts need an owner: in our benchmark, look-alike tables tripped 7 of 10 tools on one report[^13]. Count flags per file, multiply by weekly files and name who clears them."
  ],
  "resources": [

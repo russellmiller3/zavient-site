@@ -5,7 +5,8 @@ Rule (26 Nov 2026), in Russell's words: "add a rule to review it as if you're ac
 Review order (Russell, 26 Nov 2026: "do the reviews wiht cicp that include coo head of ops and gm and ceo last since he is for smaller companies"):
 1. Dana, the COO or head of operations.
 2. The GM (general manager) who runs a business unit, site or region.
-3. Steve, the owner-CEO, last, because he fits the smaller firms (under about 150 people).
+3. The division head who owns the work the page is about (Russell, 26 Nov: "And finxtional heads of divisions", "Like bank head of lending or insurqnce head of inderwriting").
+4. Steve, the owner-CEO, last, because he fits the smaller firms (under about 150 people).
 There is no CFO reader (Russell, 26 Nov: "Nix cfo").
 
 Every page gets one review per reader, in that order, before it ships. The reviewer reads the page as Steve, lists what he would find hard to use or dislike, and the fixes that fit the Site rules are applied. Lines marked INFERRED are a draft for Russell to confirm.
@@ -34,7 +35,24 @@ Russell (26 Nov 2026) added the GM to the ICP.
 - A business operator such as a COO, head of operations or GM should own AI above about 50 people [21].
 - What the GM needs from a page: what it does to the unit's margin, how much of the team's time it takes, and whether one site can pilot it first. INFERRED.
 
-## Reader 3: Steve, the owner-CEO (last)
+## Reader 3: the division head who owns the work
+Pick the head who owns the page's process:
+- Credit scoring and the loan mockup: head of lending or chief credit officer.
+- Underwriting: head of underwriting, at a lender and at an insurer (chief underwriter).
+- Invoice processing: head of accounts payable, or the controller. INFERRED.
+- Document processing: head of operations for the team that handles the documents.
+- Hub (AI consulting): head of lending or credit, since the first cluster is finance. INFERRED.
+
+What the sources say about them:
+- They sit on, and often chair, the business-led group that owns AI decisions; a credit union guide lists the chief lending officer as a possible chair, with the COO [26].
+- Their worry is the model, not the software: a chief lending officer told Cornerstone Advisors regulators ask how the decision engine treats members, "and we depend on our vendor for the model" [27].
+- Underwriting heads see AI as speed and better use of data, not risk selection: 40% name faster decisions, 35% better data use, under 6% better risk selection [28].
+- Many are still piloting: 38% of life underwriting leaders say AI is in pilots; 45% use it daily or for decision support [28].
+- Executives lean to document intake (57% would invest), while front-line lenders and underwriters lean to fraud detection (63%) [29].
+- A credit union's AI lending rollout took about 10 months of testing, longer than its chief lending officer expected [30].
+- What the division head needs from a page: whether it fits their rules and exam questions, what their team checks, and how the model is explained. INFERRED.
+
+## Reader 4: Steve, the owner-CEO (last)
 Steve reads last. He signs, and he fits the smaller firms best.
 
 Steve's needs and worries:
@@ -70,7 +88,7 @@ Steve's needs and worries:
 3. Is every term he wouldn't use explained or cut?
 4. Does it say what it costs, or say plainly why it can't?
 5. Does it speak to his worries: data, security and rules, skills, return, consultant fees?
-6. Could Dana or the GM forward it to Steve as is? Does it name a first process to fix, a before-and-after measure, and whether one unit can pilot it?
+6. Could Dana, the GM or the division head forward it to Steve as is? Does it name a first process to fix, a before-and-after measure, and whether one unit can pilot it?
 7. Is the next step clear, low-risk and worth 30 minutes?
 8. What would he skip, distrust or close the tab on?
 9. Is it ADHD friendly? (Russell, 26 Nov: "In the bottom line, you have to make it bullets that are easy to scan. You have to make everything ADHD friendly.") Bottom line in 3 to 5 bullets, one idea per line, no sentence over 25 words, no block he'd have to re-read.
@@ -99,5 +117,10 @@ Steve's needs and worries:
 23. Spencer Stuart, AI in the C-Suite, 545 functional leaders, Sep 2026. https://www.spencerstuart.com/research-and-insight/ai-in-the-c-suite-ambition-anxiety-and-work-to-be-done
 24. BCG, How Midmarket Firms Can Get Value from AI in 2026, Sep 2026. https://www.bcg.com/publications/2026/midmarket-firms-get-value-from-ai
 25. Finlens, P&L Responsibility: What It Means and Who Owns It, Jun 2026. https://www.finlens.app/blogs/p-l-responsibility
+26. Forvis Mazars for ACUARP, AI Governance for Credit Unions, Oct 2026. https://www.acuarp.org/sites/acuia.org/files/AI%20Governance%20for%20Credit%20Unions%20-%20ACUARP%20Forvis%20Mazars.pdf
+27. Cornerstone Advisors for Zest AI, Achieving High-Performance Lending, survey of senior lending executives at community banks and credit unions, Jul 2024. http://www.zest.ai/wp-content/uploads/2024/08/High-Performance-Lending-Report-updated-version.pdf
+28. Pacific Life, 2026 Underwriting Outlook Survey, 100+ life underwriting executives, Mar 2026. https://www.pacificlife.com/press-releases/stories/pacific-life-polls-industry-leaders-in-2026-underwriting-outlook-survey.html
+29. MeridianLink, 2026 AI Priorities Benchmark Report, Oct 2026. https://www.meridianlink.com/press-release/2026-ai-priorities-benchmark-survey
+30. CreditUnions.com, AI Lending Is Transforming Credit Union Loan Portfolios, Aug 2025. https://creditunions.com/features/ai-lending-is-transforming-credit-union-loan-portfolios
 
 Not found: a survey of which job title searches for AI consulting at 40 to 500 person firms; a published AI consulting budget for firms that size.

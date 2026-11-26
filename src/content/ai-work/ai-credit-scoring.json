@@ -6,7 +6,7 @@
  "summary": "AI credit scoring predicts whether an applicant will repay[^5], then has to say why in plain words when it says no[^1][^43]. The model is the easy part. The decline reasons[^1][^41], the bias checks[^39][^40] and the paperwork your examiner will ask for[^7][^8] are what make or break it.",
  "index": true,
  "verdict": [
-  "The payoff is approving more good loans without adding losses; judge it at your own cutoff on your own loans, not vendor claims[^18][^29].",
+  "The payoff is extra good loans booked and losses avoided, in dollars, at your cutoff; measure it on your own loans, not vendor claims[^18][^29].",
   "Start with a scorecard you can explain line by line[^17][^16]; it gives the specific decline reasons US law requires straight from the model[^1][^43].",
   "Move to a more complex model only when your own benchmark shows it predicts better and your validators can check it[^5][^7][^41].",
   "Use AI to read loan documents, not to decide: in published studies, language models predicted defaults worse than standard models[^6][^13].",
@@ -15,7 +15,7 @@
  "onPage": [
   {
    "to": "own-data",
-   "text": "Which open-source credit scoring libraries are maintained, and which went quiet"
+   "text": "The free libraries the recipes use, and three that went quiet"
   },
   {
    "to": "table-1",
@@ -41,7 +41,7 @@
  "stats": [
   {
    "num": "30 days",
-   "label": "to give a declined applicant the specific main reasons, under US Regulation B[^1]",
+   "label": "to send a declined applicant a notice with the specific reasons, or how to ask for them, under US Regulation B[^1]",
    "source": "Regulation B, 12 CFR 1002.9"
   },
   {
@@ -66,8 +66,8 @@
   "Most of the work is reading documents: spend on extraction first (recipe 3 below). In our own benchmark, AI read each long report for under $0.30[^42]."
  ],
  "ownData": {
-  "title": "The open-source credit stack, checked 26 November 2026",
-  "intro": "For your modeler: release date, licence and monthly downloads for every open-source credit library a lender would use[^45][^58]. Downloads show what teams actually run; release dates show what is still maintained.",
+  "title": "Free software your modeler will use",
+  "intro": "For your modeler: release date, licence and monthly downloads for each free library the recipes below use[^46][^59]. Three older scorecard and bias libraries are flagged too, because they went quiet[^54][^55][^57]. Downloads show what teams actually run; release dates show what is still maintained.",
   "headers": [
    "Library",
    "What it is for",
@@ -76,13 +76,6 @@
    "Downloads a month"
   ],
   "rows": [
-   [
-    "xgboost",
-    "Gradient boosting",
-    "Apache-2.0[^45]",
-    "15 Aug 2026[^45]",
-    "32,635,743[^58]"
-   ],
    [
     "lightgbm",
     "Gradient boosting",
@@ -96,20 +89,6 @@
     "MIT[^47]",
     "16 Oct 2026[^47]",
     "8,756,041[^60]"
-   ],
-   [
-    "catboost",
-    "Gradient boosting",
-    "Apache-2.0[^48]",
-    "18 Feb 2026[^48]",
-    "5,386,405[^61]"
-   ],
-   [
-    "tabpfn",
-    "Foundation model for tables",
-    "Code Apache-2.0; weights v2.5+ non-commercial[^49]",
-    "17 Nov 2026[^49]",
-    "296,454[^62]"
    ],
    [
     "optbinning",
@@ -133,13 +112,6 @@
     "112,954[^65]"
    ],
    [
-    "dice-ml",
-    "What-if explanations",
-    "MIT[^53]",
-    "13 Jul 2025[^53]",
-    "30,082[^66]"
-   ],
-   [
     "aif360",
     "Bias checks",
     "Apache-2.0[^54]",
@@ -152,13 +124,6 @@
     "MIT[^55]",
     "29 Jul 2023 (stale)[^55]",
     "9,992[^68]"
-   ],
-   [
-    "toad",
-    "Scorecards",
-    "MIT[^73]",
-    "18 May 2026[^56]",
-    "6,178[^69]"
    ],
    [
     "skorecard (ING)",
@@ -179,28 +144,31 @@
    "name": "1. Small lender: explainable scorecard",
    "when": "Credit unions and community banks with a small analytics team, or an outside builder. The software is free[^50][^52], and the points table shows each decline reason directly[^17].",
    "flow": [
-    "Application + credit bureau report",
-    "Group each input into ranges and give each range points (optbinning)",
-    "Add up the points into a score",
-    "Credit officer sets the cutoff and policy rules",
-    "Decision with the top decline reasons",
-    "A named person sends the decline letter",
-    "Quarterly check for accuracy drift and bias (fairlearn)"
+    "IT: pull the application and credit bureau report",
+    "Modeler: group each input into ranges and give each range points (optbinning)",
+    "Modeler: add up the points into a score",
+    "Credit officer: set the cutoff and policy rules",
+    "Credit officer: run in shadow on one loan product beside today's decisions before it decides anything",
+    "Underwriter: review each decision and its top decline reasons",
+    "Compliance: one named person sends each decline letter",
+    "Modeler: check each quarter for accuracy drift and bias (fairlearn)"
    ],
-   "cost": "Free open-source software[^50][^52]; building it on your past loans is quoted per job, with no price published here. After that, the cost is your team's time for regular reviews."
+   "cost": "Free open-source software[^50][^52]; the build is quoted per job, and after launch the cost is your team's review time. Our AI Leverage Sprint is $10,000 for 30 days, fixed scope, ending in specs for 2 or 3 AI bets[^83]."
   },
   {
    "name": "2. Mid-size lender: stronger model with plain-English reasons",
    "when": "Fintechs and regional lenders with a team that can validate the model before first use[^7].",
    "flow": [
-    "Application + bureau + bank-account data",
-    "Combine into one table of inputs",
-    "Stronger model that weighs many inputs at once (LightGBM)",
-    "Find which inputs drove each score (SHAP)",
-    "Turn drivers into plain-English reasons; compliance signs them off",
-    "Credit officer sets cutoffs in the decision engine",
-    "A named person sends the decline letter",
-    "Monthly check against a simpler model that shows each input's effect (EBM)"
+    "IT: pull application, bureau and bank-account data",
+    "IT: combine them into one table of inputs",
+    "Modeler: fit a stronger model that weighs many inputs at once (LightGBM)",
+    "Modeler: find which inputs drove each score (SHAP)",
+    "Modeler: turn those drivers into plain-English reasons",
+    "Compliance: sign off the reasons",
+    "Credit officer: set cutoffs in the decision engine",
+    "Credit officer: run in shadow on one loan product beside today's decisions before it decides anything",
+    "Compliance: one named person sends each decline letter",
+    "Modeler: check monthly against a simpler model that shows each input's effect (EBM)"
    ],
    "cost": "Open-source models[^71][^47]. Cash-flow data and most decision platforms are quoted per contract[^26][^30][^19][^20]; of the platforms we checked, only Experian shows a public price[^23]."
   },
@@ -208,12 +176,12 @@
    "name": "3. Document-heavy files: AI reads, a normal model scores",
    "when": "Small business, mortgage and other files with many PDFs per application.",
    "flow": [
-    "Bank statements, pay stubs, tax returns",
-    "AI pulls out the key fields",
-    "People check the shaky ones: an underwriter reviews each field the AI flags",
-    "Scorecard or stronger model scores",
-    "Decision with reasons",
-    "A named person sends the decline letter"
+    "IT: collect bank statements, pay stubs and tax returns",
+    "Modeler: have AI pull out the key fields",
+    "Underwriter: check each field the AI flags as shaky",
+    "Modeler: score with a scorecard or stronger model",
+    "Underwriter: review each decision and its reasons",
+    "Compliance: one named person sends each decline letter"
    ],
    "cost": "In our own benchmark, AI read fund reports of up to 57 pages for about $0.006 to $0.27 each, depending on the models[^42]. That was measured on fund reports, so benchmark it on your own loan files; see the AI document processing guide[^42]."
   }
@@ -403,7 +371,13 @@
    "name": "Regulation B, 12 CFR 1002.9",
    "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1002/subpart-A/section-1002.9",
    "status": "In force",
-   "what": "A lender that declines an applicant must give the specific main reasons within 30 days, and they must match the factors the model actually scored[^1]. Every model needs a clean path from its output to plain-English reasons. Name one person who sends each decline letter on time."
+   "what": "A lender that declines an applicant must send a notice within 30 days, giving the specific reasons or how to ask for them[^1]. The reasons must match the factors the model actually scored[^1]. Every model needs a clean path to plain-English reasons, and one named person who sends each decline letter on time."
+  },
+  {
+   "name": "Fair Credit Reporting Act, 15 U.S.C. 1681m(a)",
+   "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap41-subchapIII-sec1681m.htm",
+   "status": "In force",
+   "what": "If a decline used a credit report and a credit score, the decline notice must also give that score[^76]. It must show the score's range, the key factors that hurt it (usually up to four), the date and who supplied it[^77]. Those key factors don't replace your own decline reasons[^1]."
   },
   {
    "name": "CFPB circulars 2022-03 and 2023-03",
@@ -415,7 +389,7 @@
    "name": "Fed SR 26-2 and OCC Bulletin 2026-13, model risk guidance",
    "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
    "status": "Issued 17 Apr 2026; replaced SR 11-7",
-   "what": "This mostly doesn't apply below $30 billion in assets; smaller banks are generally excluded[^3][^7]. The OCC adopted it and dropped its 1997 credit-scoring exam guide[^8]. Where it applies, validate models before first use and document them; generative and agentic AI are out of scope[^7]."
+   "what": "Banks of $30 billion or less in assets are generally excluded; where it applies, validate models before first use and document them[^3][^7]. Generative and agentic AI are out of scope[^7], and the OCC dropped its 1997 credit-scoring exam guide[^8]. Smaller lenders still answer for vendor models: outsourcing doesn't reduce a bank's or credit union's responsibility[^78][^80], and that has long covered bought models[^79]."
   },
   {
    "name": "EU AI Act, Annex III",
@@ -426,13 +400,14 @@
  ],
  "howToTest": [
   "Record today's numbers first: approval rate, loss rate, time to decision and share of files reviewed by hand.",
-  "Take two to three years of your booked loans with known outcomes, and hold out the most recent months as the test.",
+  "Take your booked loans with known outcomes. Hold out the latest loans old enough to show whether they repaid; that often takes 24 months or more[^81].",
+  "Booked loans can't show how the applicants you declined would have done[^82]. Modelers fill that gap with assumptions, a step called reject inference[^82].",
   "Fit three models on the same data, inputs and split: a scorecard, an EBM and LightGBM. An EBM (Explainable Boosting Machine) shows each input's effect; LightGBM is stronger but harder to explain.",
   "For a small loan book, try TabPFN too, a ready-trained AI model for tables[^15]. It did best on small, unbalanced default data in one 2026 study[^15], but its newest weights need a commercial licence for production[^49].",
-  "Compare AUC and KS on the held-out months. Both measure how well a model separates repayers from defaulters; AUC runs from 0.5, a coin flip, to 1.0, perfect.",
+  "Compare AUC and KS on the held-out loans. Both measure how well a model separates repayers from defaulters; AUC runs from 0.5, a coin flip, to 1.0, perfect.",
   "Turn each model's output into decline reasons, and check they stay the same when you refit on a new sample.",
   "Price the lift in dollars at your cutoff: the extra approvals you gain and the losses you avoid. That tells you what a better model is worth.",
-  "Run a bias check across the groups fair-lending exams look at, using fairlearn or your own approval-gap analysis.",
+  "Run a bias check with fairlearn or your own approval-gap analysis, across the groups fair-lending exams look at. For most non-mortgage loans, Regulation B bars asking applicants' race[^74], so estimate it with BISG, which infers race from surname and address[^75].",
   "Pick the simplest model within a point or two of the best. Extra accuracy that you cannot explain costs more than it earns."
  ],
  "buyVsBuild": {
@@ -442,7 +417,7 @@
  "watchOuts": [
   "A credit report's \"key factors\" list does not count as your decline reasons[^1]. Your model must produce its own[^1][^43].",
   "SHAP shows which inputs drove a score, but it does not write Regulation B reasons, and some versions miss the true ones[^41][^5]. Group related inputs into a reason-code map that compliance signs off[^41].",
-  "Models trained on past lending data can carry past bias forward[^39][^40]. Check approval gaps before launch and every quarter after, with a tool such as fairlearn[^52].",
+  "Models trained on past lending data can carry past bias forward[^39][^40]. Check approval gaps before launch and every quarter, with BISG estimates where you can't ask race[^74][^75] and a tool such as fairlearn[^52].",
   "TabPFN's newest weights are non-commercial[^49]. Check the licence before production use.",
   "Vendor lift numbers such as more approvals are measured on the vendor's chosen data[^18][^28][^29]. Ask for a benchmark on your own loans."
  ],
@@ -467,7 +442,7 @@
   {
    "name": "CFPB, Regulation B 12 CFR 1002.9 with official comments",
    "url": "https://www.consumerfinance.gov/rules-policy/regulations/1002/9/",
-   "what": "Decline notice within 30 days with specific, accurate reasons tied to the factors actually scored; credit-report key factors do not meet this."
+   "what": "Decline notice within 30 days giving specific, accurate reasons tied to the factors actually scored, or telling the applicant how to ask for them; credit-report key factors do not meet this."
   },
   {
    "name": "Federal Register, 12 May 2025",
@@ -828,6 +803,56 @@
    "name": "GitHub, toad licence",
    "url": "https://github.com/amphibian-dev/toad/blob/master/LICENSE",
    "what": "toad is released under the MIT licence."
+  },
+  {
+   "name": "CFPB, Regulation B 12 CFR 1002.5",
+   "url": "https://www.consumerfinance.gov/rules-policy/regulations/1002/5/",
+   "what": "A creditor may not ask about an applicant's race, color, religion, national origin or sex, except where the rule allows it, such as a voluntary self-test."
+  },
+  {
+   "name": "CFPB, proxying for unidentified race and ethnicity (2014)",
+   "url": "https://files.consumerfinance.gov/f/201409_cfpb_report_proxy-methodology.pdf",
+   "what": "Non-mortgage lenders generally can't collect applicants' demographic data; BISG (Bayesian Improved Surname Geocoding) combines surname and geography into one proxy probability."
+  },
+  {
+   "name": "US Code, 15 U.S.C. 1681m (FCRA section 615)",
+   "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap41-subchapIII-sec1681m.htm",
+   "what": "An adverse action based on a consumer report must disclose any numerical credit score used, with the details in 1681g(f)(1)(B) to (E); added by Dodd-Frank section 1100F."
+  },
+  {
+   "name": "US Code, 15 U.S.C. 1681g(f)",
+   "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap41-subchapIII-sec1681g.htm",
+   "what": "A score disclosure gives the range of possible scores, up to four key factors that hurt the score (plus inquiries if that is one), the date it was created and who provided it."
+  },
+  {
+   "name": "Federal Register, Interagency Guidance on Third-Party Relationships (9 Jun 2023)",
+   "url": "https://www.govinfo.gov/content/pkg/FR-2023-06-09/html/2023-12340.htm",
+   "what": "Fed, FDIC and OCC: a banking organization's use of third parties does not diminish its responsibility, to the same extent as if the work were done in-house."
+  },
+  {
+   "name": "Federal Reserve SR 11-7",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm",
+   "what": "Model risk guidance from 4 Apr 2011 until SR 26-2 replaced it: it applied equally to models built in-house and to those bought from vendors or consultants."
+  },
+  {
+   "name": "NCUA, Letter to Credit Unions 07-CU-13 and Supervisory Letter 07-01",
+   "url": "https://www.ncua.gov/files/supervisory-letters/LCU2007-13ENC.pdf",
+   "what": "Evaluating third-party relationships: outsourcing processes or functions does not eliminate credit union responsibility."
+  },
+  {
+   "name": "OCC, Comptroller's Handbook: Credit Card Lending (2021)",
+   "url": "https://www.occ.treas.gov/publications-and-resources/publications/comptrollers-handbook/files/credit-card-lending/pub-ch-credit-card.pdf",
+   "what": "The performance window for many scoring models is 24 to 36 months."
+  },
+  {
+   "name": "FDIC, Credit Card Activities Manual, ch. VIII Scoring and Modeling",
+   "url": "https://www.fdic.gov/system/files/2024-06/ch8.pdf",
+   "what": "Reject inference makes assumptions about how rejected applicants would have performed had they been accepted; a held-out sample can be scored to test a new model."
+  },
+  {
+   "name": "Zavient, AI offer",
+   "url": "https://zavient.com/ai-offer.html",
+   "what": "AI Leverage Sprint $10,000 for 30 days, fixed scope, 2 to 3 AI bets with specs; ongoing advisory $5,000 to $10,000 a month, quarterly commitment."
   }
  ],
  "related": [
