@@ -121,6 +121,7 @@ nav:not(.on-page) {
 .article-body ol { margin: 0 0 22px 24px; }
 .article-body ol li { margin-bottom: 10px; padding-left: 4px; }
 .article-body ol li::marker { font-family: var(--mono); font-size: 15px; color: var(--muted); }
+.article-body ol li ul > li { padding-left: 24px; } /* a bullet list inside a numbered item keeps room for its square */
 
 /* Tables: mono headers, hairlines, numbers in mono */
 .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 10px 0 8px; }
