@@ -19,7 +19,7 @@
   "tool": {
     "embed": "/tools/embed/ai-roi-calculator.html",
     "steps": [
-      "Pick the workflow closest to yours. Its defaults fill in, each with a source or marked as our estimate.",
+      "Pick the workflow closest to yours. Its defaults fill in, sized for a firm of 40 to 500 staff, each with a source or marked as our estimate.",
       "Enter your monthly volume. Count 4 weeks of real items if you can.",
       "Check minutes per item and review minutes. Time 20 real items rather than guess.",
       "Enter setup and monthly cost, or start from a typical range. Read the verdict, the range and the input that moves your answer most.",
@@ -30,7 +30,8 @@
       "Money per month counts 56% of freed hours: Gartner's example takes a 20% productivity leak, then a 70% harvesting ratio[^1].",
       "Value ramps up over 3 months while run cost starts in month 1, to show the early dip[^15][^16][^25].",
       "Hourly cost is BLS pay times 1.28 to 1.31, the BLS loading for benefits other than paid leave, because pay already includes leave[^5][^6]. Where no single job fits, we use BLS total pay and benefits per hour[^6].",
-      "Minutes per item come from APQC, MetricNet, HDI and Loopio benchmarks[^9][^10][^7][^8][^11]. Adoption starts at 80%, the active-use rate in the UK government's Copilot trial[^12].",
+      "Minutes per item come from MetricNet, APQC and Loopio benchmarks[^7][^9][^11]. Volumes and costs start where a 40 to 500 person firm usually starts, from APQC, IOFM, Loopio and list prices[^9][^26][^28][^30][^32].",
+      "Adoption starts at 80%, the active-use rate in the UK government's Copilot trial[^12].",
       "Low and high cases change AI share, review minutes and adoption; payback is not discounted. Above 40% time saved, a reality check appears, since surveyed AI users saved 5.4% of work hours[^13]."
     ]
   },
@@ -43,19 +44,16 @@
   ],
   "ownData": {
     "title": "How many items a month does each workflow need to pay back in a year?",
-    "intro": "We ran our calculator on each workflow with its sourced defaults[^9][^7]. We solved for the monthly volume that pays back within 12 months, at two cost levels. Run on 26 Nov 2026.",
-    "headers": ["Workflow", "Minutes moved per AI item", "Tool you already pay for ($6k, then $500 a month)", "Custom build ($40k, then $1,500 a month)"],
+    "intro": "We ran our calculator on each workflow at a volume and on a path typical for a firm of 40 to 500 staff[^9][^28]. We then solved for the monthly volume that pays back within 12 months. Run on 26 Nov 2026.",
+    "headers": ["Workflow (default volume a month)", "Minutes moved per AI item", "Default path (setup, then monthly)", "Payback at the defaults", "Volume to pay back in a year: default path / custom build ($80k, then $2,000)"],
     "rows": [
-      ["Customer email and chat replies[^7]", "8.3", "1,000 tickets", "4,900 tickets"],
-      ["Accounts payable invoices[^9]", "6.0", "1,200 invoices", "5,400 invoices"],
-      ["IT service desk tickets[^8]", "4.7", "1,900 tickets", "9,000 tickets"],
-      ["RFP and questionnaire answers[^11]", "6.8", "490 questions", "2,400 questions"],
-      ["Bank reconciliations[^10]", "144", "35 accounts", "170 accounts"],
-      ["Claims or loan document intake (our time estimate)", "2.1", "3,500 documents", "16,900 documents"],
-      ["Internal documents and email drafts (our time estimate)[^3]", "9.0", "320 documents", "1,600 documents"],
-      ["Meeting notes and follow-ups[^23]", "29.9", "95 meetings", "460 meetings"]
+      ["Customer email and chat replies (2,000 tickets)[^7][^29]", "8.3", "AI drafting in your help desk ($20k, then $500)[^30][^31][^33]", "Month 14", "2,200 / 8,700 tickets"],
+      ["Accounts payable invoices (1,000)[^9][^26][^27]", "6.0", "Ready-made AP tool with AI capture ($5k, then $200)[^32]", "Month 8", "700 / 9,700 invoices"],
+      ["RFP and questionnaire answers (750 questions)[^11][^28]", "6.8", "AI you already pay for, plus an answer library ($6k, then $500)[^36]", "Month 7", "490 / 4,300 questions"],
+      ["Internal documents and email drafts (200, our estimate)[^3]", "9.0", "AI you already pay for, 10 seats ($6k, then $250)[^33][^36]", "Month 16", "240 / 2,800 documents"],
+      ["Meeting notes and follow-ups (150, our estimate)[^23]", "29.9", "AI you already pay for, 15 seats ($9k, then $375)[^33][^36]", "Month 8", "110 / 830 meetings"]
     ],
-    "note": "Zavient calculation, 26 Nov 2026, with the tool's settings: 80% adoption, 56% of hours counted as money, a 3-month ramp. The two cost levels are our estimates from Clutch project reviews and seat prices[^20]. AI share and review minutes are our assumptions, so change them in the tool."
+    "note": "Zavient calculation, 26 Nov 2026: 80% adoption, 56% of hours counted as money, a 3-month ramp, costs from list prices and Forrester[^33][^20]. We left out IT tickets, bank reconciliations and document intake, because at this size they move too few hours to pay for a priced tool[^34][^10][^35]. AI share and review minutes are our assumptions, so change them in the tool."
   },
   "faq": [
     {
@@ -68,7 +66,7 @@
     },
     {
       "q": "Where do the default numbers come from?",
-      "a": "Minutes per item come from APQC, MetricNet and Loopio benchmarks[^9][^7][^11]. Hourly cost is BLS pay plus benefits other than paid leave, which pay already covers[^5][^6]. AI share and review minutes are our estimates, because no neutral benchmark exists."
+      "a": "Minutes per item come from APQC, MetricNet and Loopio benchmarks, and volumes and costs from what a 40 to 500 person firm typically has[^9][^7][^11][^26][^30]. Hourly cost is BLS pay plus benefits other than paid leave, which pay already covers[^5][^6]. AI share and review minutes are our estimates, because no neutral benchmark exists."
     },
     {
       "q": "Why does the first month lose money?",
@@ -84,12 +82,17 @@
     },
     {
       "q": "What if it says the workflow doesn't pay back?",
-      "a": "That is a useful answer. The usual fixes are more volume, a tool you already pay for, or review of exceptions only[^17]. In MIT's study, bought tools succeeded about 67% of the time and internal builds one-third as often[^18]."
+      "a": "That is a useful answer, and the result names the most likely lever: a cheaper set-up path, more volume, or less review time[^17]. In MIT's study, bought tools succeeded about 67% of the time and internal builds one-third as often[^18]. Bring the numbers to the free 30-minute diagnostic and we will find which lever fits."
+    },
+    {
+      "q": "Why are IT tickets, reconciliations and document intake not in the list?",
+      "a": "At a firm of 40 to 500 staff they move too few hours to pay for a priced tool. A 150-person firm logs about 200 IT tickets a month, at 1.3 per person[^34][^8], and has about four bank accounts, at 4 hours each[^35][^10]. If yours are bigger, use the blank workflow with your own counts."
     }
   ],
   "pickElse": [
     "Software delivery teams: DORA's free calculator models engineering metrics and the early dip in more detail[^25].",
     "Low-volume drafting and meeting notes: turn on AI in tools you already pay for before you price a build[^12][^23].",
+    "IT tickets and bank reconciliations at a firm this size: turn on what your software already includes. Too few hours move to justify a project[^34][^35].",
     "Judgment calls with thin data: keep them by hand for now. On tasks outside what AI does well, users were 19 points less likely to be right[^4].",
     "Build cost unknown: price the project first with our AI project cost estimator, then bring the numbers back here[^20]."
   ],
@@ -131,7 +134,18 @@
     { "name": "Fin (Intercom), ROI calculator (vendor)", "url": "https://fin.ai/roi-calculator", "what": "Defaults to the vendor's own 76% resolution rate, with no review or escalation cost." },
     { "name": "Microsoft WorkLab, What can Copilot's earliest users teach us about AI at work?, Nov 2023 (vendor)", "url": "https://www.microsoft.com/en-us/worklab/work-trend-index/copilots-earliest-users-teach-us-about-generative-ai-at-work", "what": "Lab test: a missed-meeting summary took 42 min 34 s by hand and 11 min 13 s with Copilot; 53% spent saved time on focus work." },
     { "name": "Gartner, Gartner predicts 30% of generative AI projects will be abandoned after proof of concept, July 2024", "url": "https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025", "what": "At least 30% of generative AI projects predicted to be abandoned after proof of concept, partly because value is hard to show." },
-    { "name": "DORA (Google Cloud), ROI of AI-assisted software development calculator", "url": "https://dora.dev/ai/roi/calculator", "what": "Models a J-curve productivity drop and its length as inputs, alongside tool and training costs." }
+    { "name": "DORA (Google Cloud), ROI of AI-assisted software development calculator", "url": "https://dora.dev/ai/roi/calculator", "what": "Models a J-curve productivity drop and its length as inputs, alongside tool and training costs." },
+    { "name": "IOFM, AP survey on invoice automation (distributed by Esker), Sept 2013", "url": "https://cloud.esker.com/fm/others/IOFM%20White%20Paper_Esker_9-4-13.pdf", "what": "Invoices processed a month by revenue band: most firms under $100 million in sales process under 2,500 a month. Older survey; used as a cross-check." },
+    { "name": "Agicap with Innofact, 2025 mid-market survey part 2: accounts payable (vendor survey)", "url": "https://hello.agicap.com/hubfs/UK%20-%20Marketing%20Resources/Agicap_UK_Ebook_2025%20Mid-Market%20Survey%20-%20Part%202.pdf", "what": "516 CFOs at firms with $30 million to $500 million in sales; UK firms handle about 2,500 supplier invoices a month." },
+    { "name": "Loopio with APMP, 2026 RFP Response Trends and Benchmarks (vendor survey)", "url": "https://loopio.com/trends-report", "what": "1,533 companies; smaller firms answer 79 RFPs a year, mid-market 164, enterprise 260." },
+    { "name": "Jitbit, Average customer support metrics from 1,000 companies", "url": "https://www.jitbit.com/news/2266-average-customer-support-metrics-from-1000-companies", "what": "An agent closes about 21 tickets a day (2017 data); typical range 15 to 30 for email and ticket work." },
+    { "name": "Zendesk, Pricing plans (vendor)", "url": "https://www.zendesk.com/pricing/", "what": "Copilot, the agent-side AI that drafts replies, is $50 per agent a month on yearly billing. Read 26 Nov 2026." },
+    { "name": "Freshworks, Freshdesk pricing (vendor)", "url": "https://www.freshworks.com/freshdesk/pricing", "what": "Freddy AI Copilot is $29 per agent a month on the Pro and Enterprise plans. Read 26 Nov 2026." },
+    { "name": "BILL, Pricing and plans (vendor)", "url": "https://www.bill.com/product/pricing", "what": "Accounts payable plans at $49, $65 and $89 per user a month, with AI multi-line bill coding on the paid tiers. Read 26 Nov 2026." },
+    { "name": "Forrester Consulting for Microsoft, The Total Economic Impact of Microsoft 365 Copilot for SMB, Oct 2024 (vendor-commissioned)", "url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/TEI-of-Microsoft-365-Copilot-for-SMB-Oct-2024.pdf", "what": "Composite small firm: about $14,000 of initial implementation and 8 to 10 hours of training per new user." },
+    { "name": "HDI, Metric of the Month: Tickets Prevented (MetricNet data), Dec 2020", "url": "https://www.thinkhdi.com/library/supportworld/2020/metric-of-month-tickets-prevented", "what": "The average service desk handles about 1.30 level 1 tickets per user a month." },
+    { "name": "Codat, Scaling mid-market commercial banking (vendor report)", "url": "https://25731646.fs1.hubspotusercontent-eu1.net/hubfs/25731646/Codat_Scaling%20mid-market%20commercial%20banking_full%20report.pdf", "what": "Platform data shows the average small business has four bank accounts." },
+    { "name": "Microsoft, Microsoft 365 Copilot for business pricing (vendor)", "url": "https://www.microsoft.com/en-us/copilot/pricing/business", "what": "Copilot Business is $21 a user a month on yearly billing and $25.20 month to month. Read 26 Nov 2026." }
   ],
   "related": ["ai-project-cost-estimator", "ai-invoice-processing", "account-reconciliation-automation", "ai-document-processing", "ai-consulting-services"],
   "offer": {
@@ -145,11 +159,11 @@
     "difficulty": 20
   },
   "reviews": [
-    { "reader": "COO", "notes": "Wanted a decision line and a range, not one point. Verdict now says this year, next year or year 3, with low, expected and high under it. Fixed: drafting and meeting presets were priced as a $40k build; each workflow now starts from its typical cost path." },
+    { "reader": "COO", "notes": "Wanted a decision line and a range, not one point. Verdict now says this year, next year or year 3, with low, expected and high under it. Fixed: drafting and meeting presets were priced as a $40k build; each workflow now starts from its typical cost path. Fixed (26 Nov): 5 of 8 presets did not pay back on their own defaults; each now starts at a sourced volume for a 40-500 person firm on the path such a firm usually takes, and IT desk, reconciliation and intake were dropped as too small at this size." },
     { "reader": "Head of operations", "notes": "Asked what to measure before trusting it. Added 'the number that moves your answer most' and three checks. Fixed: break-even volume now uses the workflow's own unit (invoices, tickets, accounts)." },
     { "reader": "GM", "notes": "Reads on a phone between meetings. Result sits first, with a sticky verdict bar while editing inputs. Fixed: replaced an FTE-equivalent figure with hours per working day, so it reads as time back, not people." },
     { "reader": "Division head", "notes": "Controller and head of support wanted their reviewers named. Human-role bullets and preset notes now say who keeps the call. Fixed: reconciliation priced at accountant cost, with the clerk rate noted." },
-    { "reader": "Owner-CEO", "notes": "Checked it is not a sales funnel: no email gate, sources on every default, and an honest 'does not pay back' state with cheaper options. Fixed: meeting preset AI share cut to 70% so its default stays inside the measured 2-40% band." }
+    { "reader": "Owner-CEO", "notes": "Checked it is not a sales funnel: no email gate, sources on every default, and an honest 'does not pay back' state with cheaper options. Fixed: meeting preset AI share cut to 70% so its default stays inside the measured 2-40% band. Fixed (26 Nov): a no-payback or AI-adds-work result now names the likely lever and links to the free diagnostic." }
   ],
   "updated": "2026-11-26"
 }

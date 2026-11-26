@@ -359,50 +359,61 @@ function roiLever(p) {
   const SR_EST = EST('No neutral benchmark exists. Our starting assumption: replace it with a timed sample of yours.');
   const RE_EST = EST('No neutral benchmark exists. Each redo costs the full minutes again.');
 
-  // Workflow presets: research section 3. Volumes are examples only (marked as such).
+  // Workflow presets: research section 3, re-based 26 Nov 2026 on a typical 40-500 person firm. Each preset starts on the
+  // path such a firm usually takes for that work at that volume, so no default lands on "does not pay back".
+  // IT service desk, reconciliation and document intake were dropped: at a typical size they move too few hours (see page FAQ).
+  const SEATS = `${L('Microsoft 365 Copilot Business', 'https://www.microsoft.com/en-us/copilot/pricing/business')} or ${L('ChatGPT Business', 'https://help.openai.com/en/articles/8542115-chatgpt-business-general-faq')}, monthly billing`;
+  const TRAIN = `8 hours of training per user (${L('Forrester for Microsoft', 'https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/TEI-of-Microsoft-365-Copilot-for-SMB-Oct-2024.pdf')}, vendor-commissioned)`;
   const P = {
-    support: { label: 'Customer email and chat replies', unit: 'tickets', V: 4000, T: 13.7, C: 29.34, s: 0.6, R: 4, e: 0.1, B: 40000, run: 1500, path: 2,
+    support: { label: 'Customer email and chat replies', unit: 'tickets', V: 2000, T: 13.7, C: 29.34, s: 0.6, R: 4, e: 0.1, B: 20000, run: 500,
+      srcV: EST(`A typical support team at a firm of 40 to 500 staff: about 5 agents. One agent clears about 250 to 450 tickets a month (${L('Jitbit, 1,000 help desks', 'https://www.jitbit.com/news/2266-average-customer-support-metrics-from-1000-companies')}: 21 a day; ${L('Gorgias data via Fin', 'https://fin.ai/learn/how-many-support-tickets-justify-a-helpdesk')}: 254 a month).`),
       srcT: SRC(`MetricNet 2023: 13.7 minutes per email or web ticket, 13.4 per chat (${L('benchmark summary', 'https://www.brighttalk.com/resource/core/447335/benchmarking-roundup---summary-of-2023-service-and-support-benchmarks-v3_954461.pdf')}).`),
       srcC: SRC(`BLS: customer service rep $22.40 an hour (${L('OEWS May 2025', OEWS)}) &times; 1.31, office staff benefits other than paid leave (${L('ECEC June 2026', ECEC)}).`),
+      srcB: EST(`Configure the AI drafting in the help desk you already pay for. Forrester's small-firm example spent $14,000 on implementation (${L('Forrester for Microsoft', 'https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/TEI-of-Microsoft-365-Copilot-for-SMB-Oct-2024.pdf')}, vendor-commissioned). We add help-article clean-up and 10 hours of training per agent.`),
+      srcRun: EST(`5 agent seats of an AI copilot: $50 each on ${L('Zendesk', 'https://www.zendesk.com/pricing/')}, $29 on ${L('Freshdesk', 'https://www.freshworks.com/freshdesk/pricing')} or ${L('Intercom', 'https://www.intercom.com/pricing')}. Plus about 8 hours a month keeping help articles current.`),
       note: `In a study of 5,172 support agents, AI help raised issues resolved per hour by 14%, and 34% for newer staff (${L('NBER', 'https://www.nber.org/papers/w31161')}).` },
-    ap: { label: 'Accounts payable: invoice capture and coding', unit: 'invoices', V: 1500, T: 10, C: 33.73, s: 0.65, R: 3, e: 0.1, B: 40000, run: 1200, path: 2,
+    ap: { label: 'Accounts payable: invoice capture and coding', unit: 'invoices', V: 1000, T: 10, C: 33.73, s: 0.65, R: 3, e: 0.1, B: 5000, run: 200,
+      srcV: SRC(`A firm of about 150 staff: one AP person at the APQC median of 12,000 invoices a year (${L('APQC', 'https://apqc.org/How-Do-You-Benchmark-Employee-Productivity')}). Most firms under $100 million in sales process under 2,500 a month (${L('IOFM survey', 'https://cloud.esker.com/fm/others/IOFM%20White%20Paper_Esker_9-4-13.pdf')}).`),
       srcT: SRC(`APQC median: 12,000 invoices a year per AP person, about 10 minutes each (${L('APQC', 'https://apqc.org/How-Do-You-Benchmark-Employee-Productivity')}).`),
       srcC: SRC(`BLS: bookkeeping clerk $25.75 an hour (${L('OEWS May 2025', OEWS)}) &times; 1.31, office staff benefits other than paid leave (${L('ECEC June 2026', ECEC)}).`),
-      note: 'At low volume, an AP tool you already pay for, or one with AI built in, usually beats a custom build.' },
-    it: { label: 'IT service desk tickets', unit: 'tickets', V: 1000, T: 8.6, C: 41.43, s: 0.4, R: 3, e: 0.1, B: 30000, run: 1500, path: 1,
-      srcT: SRC(`MetricNet: average ticket handle time 8.6 minutes (${L('HDI', 'https://www.thinkhdi.com/library/supportworld/2019/metric-of-month-ticket-handle-time')}).`),
-      srcC: SRC(`BLS: computer user support $32.37 an hour (${L('OEWS May 2025', OEWS)}) &times; 1.28, professional staff benefits other than paid leave (${L('ECEC June 2026', ECEC)}).`),
-      note: 'Password resets and how-to questions suit AI first. Outages and access changes stay with your team.' },
-    rfp: { label: 'RFP and security questionnaire answers', unit: 'questions', V: 500, T: 12, C: 73.69, s: 0.6, R: 4, e: 0.1, B: 30000, run: 1500, path: 1,
+      srcB: EST('A ready-made AP tool with AI capture: vendor import, approval rules, the link to your accounting system and training for 3 people.'),
+      srcRun: EST(`3 users at $65 a month, the ${L('BILL', 'https://www.bill.com/product/pricing')} plan with AI bill coding. ${L('Ramp', 'https://ramp.com/pricing')} includes AI invoice capture on its free plan.`),
+      note: 'At this volume, an AP tool with AI capture built in usually beats a custom build.' },
+    rfp: { label: 'RFP and security questionnaire answers', unit: 'questions', V: 750, T: 12, C: 73.69, s: 0.6, R: 4, e: 0.1, B: 6000, run: 500,
+      srcV: SRC(`Smaller firms in Loopio's survey answer 79 RFPs a year (${L('Loopio 2026', 'https://loopio.com/trends-report')}). At 115 questions each, that is about 750 a month. Vendor survey.`),
       srcT: SRC(`Loopio: the average RFP has 115 questions at about 12 minutes each (${L('Loopio', 'https://loopio.com/resources/rfp-metrics-guide')}). Vendor survey.`),
       srcC: SRC(`BLS: total pay and benefits for professional staff, $73.69 an hour (${L('ECEC June 2026', ECEC)}).`),
-      note: 'Count questions, not RFPs. Five RFPs a month at about 100 questions each is 500.' },
-    recon: { label: 'Bank and account reconciliations', unit: 'accounts', V: 40, T: 240, C: 59.23, s: 0.5, R: 60, e: 0.15, B: 30000, run: 1500, path: 1,
-      srcT: SRC(`APQC: median 4 hours to reconcile one bank account; top performers 2.6 hours (${L('APQC', 'https://www.apqc.org/resources/blog/what-bank-reconciliation-cycle-time-really-tells-you')}).`),
-      srcC: SRC(`BLS: accountant $45.56 an hour (${L('OEWS May 2025', OEWS)}) &times; 1.30, business and financial staff benefits other than paid leave (${L('ECEC June 2026', ECEC)}). A clerk is about $33.70.`),
-      note: 'AI proposes matches. The accountant still clears the breaks and signs off.' },
-    intake: { label: 'Claims or loan document intake', unit: 'documents', V: 2000, T: 4, C: 33.33, s: 0.6, R: 1.5, e: 0.1, B: 40000, run: 1500, path: 2,
-      srcT: EST('Published times here are vendor claims. Time 20 of your own documents and use that.'),
-      srcC: SRC(`BLS: insurance claims clerk $25.44 an hour (${L('OEWS May 2025', OEWS)}) &times; 1.31, office staff benefits other than paid leave (${L('ECEC June 2026', ECEC)}).`),
-      note: 'AI keys the fields. The underwriter or adjuster still makes the call.' },
-    docs: { label: 'Internal documents and email drafts', unit: 'documents', V: 200, T: 30, C: 73.69, s: 0.7, R: 18, e: 0.1, B: 6000, run: 500, path: 0,
+      srcB: EST('Use AI you already pay for, with a library of approved answers. About 80 hours of a proposal lead\'s time to build it.'),
+      srcRun: EST(`3 seats at $25 (${SEATS}), plus about 6 hours a month keeping the answer library current.`),
+      note: 'Count questions, not RFPs. Six RFPs a month at about 115 questions each is about 700.' },
+    docs: { label: 'Internal documents and email drafts', unit: 'documents', V: 200, T: 30, C: 73.69, s: 0.7, R: 18, e: 0.1, B: 6000, run: 250,
+      srcV: EST('A team of 10 who each write about one longer document or email a working day.'),
       srcT: EST('Varies widely: time a week of your own drafts.'),
       srcC: SRC(`BLS: total pay and benefits for professional staff, $73.69 an hour (${L('ECEC June 2026', ECEC)}).`),
       srcR: EST(`Set at 60% of today's time. In a writing experiment, ChatGPT cut time by 40% (${L('Science, 2023', 'https://doi.org/10.1126/science.adh2586')}).`),
+      srcB: EST(`Turn on AI in a tool you already pay for: ${TRAIN} for 10 people.`),
+      srcRun: EST(`10 seats at $25 (${SEATS}). Skip it if you already pay for them.`),
       note: `On tasks outside what AI does well, consultants using it were 19 points less likely to be right (${L('Organization Science', 'https://doi.org/10.1287/orsc.2025.21838')}).` },
-    meetings: { label: 'Meeting notes and follow-ups', unit: 'meetings', V: 150, T: 43, C: 73.69, s: 0.7, R: 11, e: 0.05, B: 6000, run: 500, path: 0,
+    meetings: { label: 'Meeting notes and follow-ups', unit: 'meetings', V: 150, T: 43, C: 73.69, s: 0.7, R: 11, e: 0.05, B: 9000, run: 375,
+      srcV: EST('A firm of about 150 staff: 15 managers who each write up about 10 meetings a month.'),
       srcT: SRC(`Microsoft lab test: summarizing a missed meeting took 42.6 minutes by hand (${L('Microsoft WorkLab', 'https://www.microsoft.com/en-us/worklab/work-trend-index/copilots-earliest-users-teach-us-about-generative-ai-at-work')}). Vendor study.`),
       srcC: SRC(`BLS: total pay and benefits for professional staff, $73.69 an hour (${L('ECEC June 2026', ECEC)}).`),
       srcR: SRC(`Same Microsoft test: 11.2 minutes with AI. Vendor study.`),
+      srcB: EST(`Turn on AI in a tool you already pay for: ${TRAIN} for 15 people.`),
+      srcRun: EST(`15 seats at $25 (${SEATS}). Skip it if you already pay for them.`),
       note: 'Count only meetings someone writes up today.' },
-    custom: { label: 'Another workflow (start from scratch)', unit: 'items', V: 1000, T: 10, C: 46.89, s: 0.5, R: 3, e: 0.1, B: 40000, run: 1500, path: 2,
+    custom: { label: 'Another workflow (start from scratch)', unit: 'items', V: 1000, T: 10, C: 46.89, s: 0.5, R: 3, e: 0.1, B: 6000, run: 500,
+      srcV: EST('Placeholder.'),
       srcT: EST('Placeholder. Time 20 real items and enter the average.'),
       srcC: SRC(`BLS: average private-sector pay and benefits, $46.89 an hour (${L('ECEC June 2026', ECEC)}).`),
+      srcB: EST(`Placeholder: turning on AI in a tool you already pay for. Most AI projects reviewed on Clutch cost $10,000 to $49,999 (${L('Clutch, 2026', 'https://clutch.co/developers/artificial-intelligence/pricing')}).`),
+      srcRun: EST('Placeholder: seats or usage fees plus upkeep. Model usage is rarely the big line; upkeep and people time are.'),
       note: 'Pick work that is high volume, repetitive and easy to check.' },
   };
-  const ORDER = ['support', 'ap', 'it', 'rfp', 'recon', 'intake', 'docs', 'meetings', 'custom'];
-  const ALIAS = { tickets: 'support', 'customer-support': 'support', email: 'support', invoices: 'ap', 'invoice-processing': 'ap', helpdesk: 'it', 'it-tickets': 'it',
-    reconciliation: 'recon', 'account-reconciliation': 'recon', documents: 'intake', 'document-processing': 'intake', drafting: 'docs', notes: 'meetings', other: 'custom' };
+  const ORDER = ['support', 'ap', 'rfp', 'docs', 'meetings', 'custom'];
+  // Old links to dropped presets (it, recon, intake) open the blank workflow.
+  const ALIAS = { tickets: 'support', 'customer-support': 'support', email: 'support', invoices: 'ap', 'invoice-processing': 'ap', helpdesk: 'custom', 'it-tickets': 'custom', it: 'custom',
+    reconciliation: 'custom', 'account-reconciliation': 'custom', recon: 'custom', documents: 'custom', 'document-processing': 'custom', intake: 'custom', drafting: 'docs', notes: 'meetings', other: 'custom' };
   const PATHS = [
     { name: 'Turn on AI in a tool you already pay for', B: 6000, run: 500, note: 'seats and setup time' },
     { name: 'Configure an AI feature in your software', B: 30000, run: 1500, note: 'setup plus usage fees' },
@@ -428,7 +439,7 @@ function roiLever(p) {
     const p = P[state.wf];
     const you = '<span class="tag you">Your number</span>Changed by you.';
     const set = (id, key, html) => { $(id).innerHTML = state.mine.has(key) ? you : html; };
-    set('srcV', 'V', EST(`Example volume only. Enter your own count of ${p.unit} a month.`));
+    set('srcV', 'V', p.srcV + ` Replace it with your own count of ${p.unit}.`);
     set('srcT', 'T', p.srcT);
     set('srcC', 'C', p.srcC);
     set('srcs', 's', SR_EST);
@@ -438,9 +449,8 @@ function roiLever(p) {
     set('srcM', 'M', EST(`Value ramps up over 3 months while you pay to run it. New technology tends to dip before it pays (${L('AEJ: Macro, 2021', 'https://www.aeaweb.org/articles?id=10.1257/mac.20180386')}).`));
     set('srck', 'k', SRC(`Gartner's example keeps 56%: a 20% productivity leak, then a 70% harvesting ratio (${L('Gartner panel, 2024', 'https://s3.amazonaws.com/bizzabo.file.upload/hCwbN4NTlKPzuyLET6Aw_Aug29NSudaCChristensenBSeesel.pdf')}). One public calculator uses 50% (${L('DoAny', 'https://doany.ai/tools/automation-roi-calculator')}).`));
     set('srcbuf', 'buf', EST('Off by default, so a cost carried over from our cost estimator is not padded twice. First AI projects often run over: 30% is a sensible buffer.'));
-    const path = ['turning on AI in a tool you already pay for', 'configuring an AI feature in your software', 'a custom build on your own data'][p.path];
-    set('srcB', 'B', EST(`Typical for ${path}. Most AI projects reviewed on Clutch cost $10,000 to $49,999 (${L('Clutch, 2026', 'https://clutch.co/developers/artificial-intelligence/pricing')}).`));
-    set('srcRun', 'run', EST('Seats or usage fees plus upkeep. Model usage is rarely the big line; upkeep and people time are.'));
+    set('srcB', 'B', p.srcB);
+    set('srcRun', 'run', p.srcRun);
     $('wfNote').innerHTML = p.note;
     $('VLabel').textContent = p.unit.charAt(0).toUpperCase() + p.unit.slice(1) + ' a month';
     $('VUnit').textContent = 'a month';
@@ -459,10 +469,28 @@ function roiLever(p) {
 
   function verdictFor(r) {
     if (r.addsWork) return { text: 'AI adds work here: checking and redoing take longer than doing it by hand.', cls: 'is-no', short: 'AI adds work here' };
-    if (r.payback === null) return { text: 'Does not pay back within 3 years on these inputs.', cls: 'is-no', short: 'No payback in 3 years' };
+    if (r.payback === null) return { text: "On these inputs it doesn't pay back within 3 years.", cls: 'is-no', short: 'No payback in 3 years' };
     if (r.payback <= 12) return { text: `Pays back in month ${r.payback}. This year.`, cls: '', short: `Pays back in month ${r.payback}` };
     if (r.payback <= 24) return { text: `Pays back in month ${r.payback}. Next year, not this one.`, cls: 'is-later', short: `Pays back in month ${r.payback}` };
     return { text: `Pays back in month ${r.payback}, in year 3.`, cls: 'is-later', short: `Pays back in month ${r.payback}` };
+  }
+  // When the answer is no (or only year 3), name the most likely lever and send the reader to the diagnostic with their numbers.
+  const DIAG = 'https://calendly.com/zavient/call';
+  function nextStep(p, r) {
+    if (r.addsWork) {
+      const after = fmt(p.R + p.e * p.T, 1);
+      return `<strong>On these inputs AI adds work.</strong> Checking and redoing take ${after} minutes per item against ${fmt(p.T, 1)} by hand. The usual fix is a narrower slice of the work where drafts need less checking, so review time is the lever. Bring these numbers to the free 30-minute diagnostic and we'll find that slice.`;
+    }
+    const head = r.payback === null ? "<strong>On these inputs it doesn't pay back.</strong>" : `<strong>On these inputs it pays back only in year 3.</strong>`;
+    const cheap = PATHS[0];
+    let lever = '';
+    if (p.B > cheap.B || p.run > cheap.run) {
+      const rp = roiModel({ ...p, B: Math.min(p.B, cheap.B), run: Math.min(p.run, cheap.run) });
+      if (rp.payback !== null && (r.payback === null || rp.payback <= r.payback - 3)) lever = `Most likely lever: the set-up path. With AI in a tool you already pay for (about ${money(cheap.B)} once and ${money(cheap.run)} a month), it pays back in month ${rp.payback}.`;
+    }
+    if (!lever && r.beReview !== null && r.beReview >= p.R * 0.5) lever = `Most likely lever: review time. At ${fmt(r.beReview, 1)} minutes per draft instead of ${fmt(p.R, 1)}, it pays back within a year.`;
+    if (!lever && r.beVolume !== null && Number.isFinite(r.beVolume)) lever = `Most likely lever: volume. It needs about ${fmt(Math.ceil(r.beVolume))} ${P[state.wf].unit} a month to pay back within a year; you entered ${fmt(p.V)}.`;
+    return `${head} The usual fix is a cheaper path or a bigger slice of the work. ${lever} Bring these numbers to the free 30-minute diagnostic and we'll find which.`.replace('  ', ' ');
   }
   const pb = (r) => (r.addsWork ? 'AI adds work' : r.payback === null ? 'Not in 3 years' : `Month ${r.payback}`);
 
@@ -504,8 +532,7 @@ function roiLever(p) {
       : `<p class="note"><strong>Reality check:</strong> your inputs imply ${pct}% of the team's time on this work saved. Measured studies mostly land between about 2% and 40%.</p>`;
 
     let no = '';
-    if (r.addsWork) no = '<p class="note bad"><strong>What to do instead:</strong> keep this work by hand for now, or find a narrower slice where drafts need little checking. A tool that only flags exceptions may help more than one that drafts.</p>';
-    else if (r.payback === null || r.payback > 24) no = '<p class="note bad"><strong>That is a useful answer.</strong> The usual fixes: pick a higher-volume workflow, use a tool you already pay for instead of a custom build, or have people review only the exceptions. Picking the right workflow first is most of the work.</p>';
+    if (r.addsWork || r.payback === null || r.payback > 24) no = `<div class="note bad"><p>${nextStep(p, r)}</p><p style="margin-top:10px"><a class="btn btn-primary" href="${DIAG}" target="_top">Book the free 30-minute diagnostic</a></p></div>`;
     $('rNo').innerHTML = no;
 
     const checks = ['Time 20 real items this week, start to finish. Use that number, not a guess.'];
