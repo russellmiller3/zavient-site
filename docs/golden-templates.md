@@ -12,6 +12,7 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: `
 3. `node scripts/check-page.mjs drafts/<slug>.json` until PASS.
 4. ICP review, in order: COO → Head of operations → GM → Division head → Owner-CEO.
 5. Move the JSON to `src/content/ai-work/`, `npm test`. `index: true` only on Russell's yes.
+6. Look at it in a live browser. Screenshot the built page at 1280px and 390px wide and check every block by eye: flows, tables, footnotes, the sticky box, buttons. A visual change is not done until those screenshots look right, and they go with the report (Russell's rule, 26 Nov 2026).
 
 ## Rules every template enforces
 - Bottom line first: 3-5 bullets, each with 2+ sources. No number leading the title or a bullet.

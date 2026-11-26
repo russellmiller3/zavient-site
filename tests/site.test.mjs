@@ -197,7 +197,7 @@ test('footnote commas only sit between back-to-back markers', () => {
   for (const s of slugs('ai-work')) {
     const html = readFileSync(aiWorkFile(s), 'utf8');
     for (const m of html.matchAll(/<sup class="fn">((?:(?!<\/sup>).)*)<\/sup>/g)) {
-      assert.match(m[1], /^<a [^>]+>\d+<\/a>(?:, <a [^>]+>\d+<\/a>)*$/, `${s}: odd footnote marker ${m[1].slice(0, 80)}`);
+      assert.match(m[1], /^<a [^>]+>\d+<\/a>(?:<span class="fn-sep">,<\/span><a [^>]+>\d+<\/a>)*$/, `${s}: odd footnote marker ${m[1].slice(0, 80)}`);
     }
   }
 });
