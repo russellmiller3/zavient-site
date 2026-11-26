@@ -1,0 +1,438 @@
+{
+  "title": "Hire an AI engineer or bring in help: which comes first?",
+  "description": "Hire an AI engineer, bring in help, or both? Census data, our job-ad count and a BLS cost build show what to do first.",
+  "type": "consulting",
+  "templateVersion": 1,
+  "topic": "Hiring an AI engineer vs bringing in help",
+  "job": "Hiring an AI engineer vs bringing in help",
+  "industry": "any industry",
+  "index": false,
+  "verdict": [
+    "Prove one workflow first, then hire a lead to own it.[^14][^26]",
+    "Firms using AI train current staff far more often than they hire AI-trained staff: about 15% versus 1.3%.[^1][^2]",
+    "Non-tech firms your size rarely advertise for AI engineers: about 125 US ads in 30 days, by our count.[^3][^4]",
+    "One AI engineer costs about $205,000 to $275,000 a year with benefits, by BLS pay data.[^5][^7]",
+    "Whoever you bring in, write the handover into the contract and name who owns it after launch.[^26][^17]"
+  ],
+  "onPage": [
+    {
+      "to": "walk-away",
+      "text": "The five things good help should leave you holding"
+    },
+    {
+      "to": "recipes",
+      "text": "Three orders of work, sized to your firm, with costs"
+    },
+    {
+      "to": "own-data",
+      "text": "Who actually posts AI-engineer jobs, by employer size and industry"
+    },
+    {
+      "to": "what-goes-wrong",
+      "text": "Six ways a first hire or pilot stalls, and the fix for each"
+    },
+    {
+      "to": "benchmark",
+      "text": "Eight checks to judge an advisor or a candidate"
+    },
+    {
+      "to": "something-else",
+      "text": "When to skip outside help, and what to do instead"
+    }
+  ],
+  "headings": {
+    "what-it-is": "Hire an AI engineer or bring in help: what is the real choice?",
+    "faq": "Questions buyers ask about hiring an AI engineer"
+  },
+  "summary": "The choice: hire an AI engineer, bring in outside help, or both, and in what order.[^14][^26] Few firms start with a hire; training staff and new workflows are far more common.[^1][^2] What makes it work is a named workflow, a measure and an owner, not the hire.[^16][^17]",
+  "walkAway": [
+    "One workflow, picked and priced: what it costs today in hours, errors or cash.[^16][^19] RAND's most common root cause of failure is a misunderstood problem.[^16]",
+    "A before-and-after measure, set before anyone builds.[^19] RAND sees models tuned to the wrong metrics; Google's second rule is to design metrics first.[^16][^19]",
+    "A working pilot in your own systems, with a go-or-stop date about 90 days out.[^15] Mid-market top performers took about 90 days from pilot to full use, in a preliminary, self-reported study.[^15]",
+    "A job spec for your first AI hire, if the pilot shows you need one.[^14] Ng's playbook builds the in-house team after pilots; one IT leader's advice is to start with a lead.[^14][^26]",
+    "A handover written into the contract: runbooks, test data and who owns the system after launch.[^26][^17]"
+  ],
+  "humanRole": [
+    "Ops lead or process owner: owns the problem and the success measure.[^17] RAND's top fix is to make sure technical staff understand the purpose and the domain.[^16]",
+    "COO or division head: signs off on go-live and owns the risk call.[^17] The AI playbook from NIST, the US standards body, puts AI risk decisions with executive leadership.[^17]",
+    "Front-line staff: check AI output before it reaches a customer.[^18] Of firms using AI, 66% use it only to help people with tasks.[^1]",
+    "A named internal owner: runs the system after handover, and the AI hire works toward that owner's goal.[^26][^17] One IT leader paid consultants again after six months just to explain their own pipeline.[^26]"
+  ],
+  "recipes": [
+    {
+      "name": "1. About 40 to 150 staff, no engineers: prove one workflow, hire later",
+      "when": "One painful workflow, no engineers on staff and no AI in production.[^1] Ng's playbook starts with pilots that show traction before building a team.[^14]",
+      "flow": [
+        "COO: pick the workflow and say what it costs today",
+        "Outside advisor: rank two or three AI bets and write specs",
+        "Ops lead: set the before-and-after measure",
+        "Division head: give the builder one subject-matter expert for the pilot",
+        "IT partner or vendor: build the pilot from the specs",
+        "Front-line staff: check every AI output during the pilot",
+        "COO: go, change or stop at about day 90"
+      ],
+      "cost": "Zavient's Sprint is $10,000 fixed for 30 days, and the build is quoted per job.[^25] That buys advice and specs, not an engineer, so it is not like for like with a hire.[^25][^5]"
+    },
+    {
+      "name": "2. About 150 to 500 staff, some IT: outside help now, a lead alongside",
+      "when": "A second and third use case are queued, and an IT or data person can host the work.[^26] Partner-led pilots reached deployment about twice as often as internal builds; the study calls that correlation, not cause.[^15]",
+      "flow": [
+        "COO: approve the role, the budget and the first workflow",
+        "Outside advisor: run the first workflow and write the AI lead's job spec",
+        "HR lead: recruit, planning for 39 to 75 days with the seat empty",
+        "New AI lead: build with the advisor, then own the system",
+        "Ops lead: own the measure, and roll out at one site or team first",
+        "Controller: track spend against the measured gain"
+      ],
+      "cost": "The hire runs about $205,000 to $275,000 a year with benefits, by BLS pay data.[^5][^7] Zavient advisory alongside is $5,000 to $10,000 a month, quarterly; not like for like, since advice is not engineering.[^25]"
+    },
+    {
+      "name": "3. Any size, everyday tasks: make the team you have better",
+      "when": "The gain is staff using AI tools in daily work, not a custom system.[^1] Lightcast found 51% of job ads asking for AI skills are outside IT.[^13]",
+      "flow": [
+        "Division head: name three to five tasks per team to try",
+        "Team leads: train staff and set rules on what data goes in",
+        "Staff: use the tools and log time saved and errors",
+        "Ops lead: review the log monthly and stop what doesn't help"
+      ],
+      "cost": "Staff time and tool licences, with no new hire. Training current staff is more than ten times as common as hiring AI-trained staff.[^1][^2]"
+    }
+  ],
+  "ownData": {
+    "title": "Who actually posts AI-engineer jobs: firms your size, or giants?",
+    "intro": "We counted US job ads for AI and machine learning engineers posted in the 30 days to 26 Nov 2026, by employer size and industry.[^3][^4] Operating firms of 51 to 500 staff posted about 125, against 1,262 from the largest firms in the same sectors.[^3] So a first in-house AI engineer is rare at firms your size, which matches the Census finding.[^1]",
+    "headers": [
+      "Employer size",
+      "Which employers",
+      "US ads, 30 days"
+    ],
+    "rows": [
+      [
+        "5,001+ staff",
+        "All industries",
+        "3,112"
+      ],
+      [
+        "501 to 5,000 staff",
+        "All industries",
+        "1,214"
+      ],
+      [
+        "51 to 500 staff",
+        "All industries",
+        "1,024"
+      ],
+      [
+        "Up to 50 staff",
+        "All industries",
+        "766"
+      ],
+      [
+        "51 to 500 staff",
+        "Tech firms: software, IT, data, R&D",
+        "447"
+      ],
+      [
+        "51 to 500 staff",
+        "Staffing agencies",
+        "217"
+      ],
+      [
+        "51 to 500 staff",
+        "Non-tech operating firms: manufacturing, finance, health, trade, transport, construction",
+        "125"
+      ],
+      [
+        "5,001+ staff",
+        "Same operating sectors",
+        "1,262"
+      ]
+    ],
+    "note": "Source: Zavient count in the JobsPipe job-ad index, pulled 26 Nov 2026, for six AI and machine learning engineer titles.[^3][^4] Counts are approximate, reposts are not removed, and 1,157 ads with no known size are left out. An ad is not a hire, and staffing agencies may recruit for clients of any size."
+  },
+  "watchOuts": [
+    "Hiring before picking the problem: RAND's most common root cause is a misunderstood or miscommunicated problem.[^16] Fix: name the workflow and its measure before you write a job ad.[^19]",
+    "One hire, no usable data: Gartner expects 60% of AI projects without AI-ready data to be abandoned through 2026.[^20][^16] Fix: check data access on a real sample and name a business owner first.[^17]",
+    "The empty seat: technical roles take a median 75 days to first fill, against 39 days for nonexecutive roles overall.[^10][^8] Fix: start the first workflow with outside help while you recruit.",
+    "Outside help that never hands over: one IT leader paid consultants again after six months to explain their own pipeline.[^26] Fix: write runbooks, test data and training into the contract as milestones.[^26][^17]",
+    "Pilots that stall: Gartner predicted 30% of generative AI projects would be dropped after a trial build (proof of concept) by end of 2025.[^21] Fix: set a go-or-stop date and a dollar measure at the start.[^15]",
+    "A lone engineer with no domain help: RAND found data scientists rely on subject-matter experts to know what the data means.[^16] Fix: pair the hire with the ops lead from day one, so the team shapes the work."
+  ],
+  "howToTest": [
+    "Write down today's numbers for one workflow: time per item, error rate and monthly cost.[^19]",
+    "Ask the advisor or candidate to restate your problem in your words before naming any tool.[^16]",
+    "Ask whether the first version needs AI at all. Google's first rule: don't be afraid to launch without machine learning.[^19]",
+    "Hold back recent real cases the builder never sees, such as last month's, and test on those.",
+    "Compare the AI-assisted output with your best person's work on the same cases. Count errors, not demos.",
+    "Price the lift: hours saved times loaded cost per hour, minus the cost to run it. BLS puts benefits at 31.5% of pay costs for professional and management staff.[^7]",
+    "Ask who owns the system after day 90, and get the answer in writing.[^26][^17]",
+    "Agree a go-or-stop date before the pilot starts. Mid-market top performers reached full use in about 90 days.[^15]"
+  ],
+  "faq": [
+    {
+      "q": "How much does an AI engineer cost?",
+      "a": "About $205,000 to $275,000 a year with benefits, using BLS pay for the closest occupation at the median and 75th percentile.[^5][^6][^7] WTW says AI and machine learning engineers commonly get base pay premiums of 15% to 20%.[^12] Recruiting comes on top: SHRM's median is $1,200 a hire, and one AI recruiter illustrates agency fees of 20% to 25% of base.[^9][^11]"
+    },
+    {
+      "q": "Should I hire full-time or use outside help?",
+      "a": "Start with outside help on one workflow, and hire once you know what works.[^14][^27] Few firms hire first: 1.3% of AI-using firms hired AI-trained staff.[^2][^1]"
+    },
+    {
+      "q": "Consulting firm or an in-house AI team: which makes more sense financially?",
+      "a": "One engineer costs about $205,000 to $275,000 a year with benefits; Zavient's 30-day Sprint is $10,000, though it is advice, not engineering.[^5][^25] A mid-size firm on Reddit said two senior AI engineers and a data scientist would eat its $400,000 budget.[^28] Partner-led pilots reached deployment more often in MIT's study, a correlation, not proof.[^15]"
+    },
+    {
+      "q": "Who owns the AI system after outside help leaves?",
+      "a": "Name an internal owner before work starts, and put knowledge transfer in the contract as milestones.[^26][^17] Without that, one IT leader on Reddit says, nobody inside can touch the system after launch.[^26]"
+    },
+    {
+      "q": "How long does it take to hire an AI engineer?",
+      "a": "Plan on about six to eleven weeks with the seat empty. SHRM's median for nonexecutive roles is 39 days; Ashby's for technical roles is 75 days.[^8][^10]"
+    }
+  ],
+  "pickElse": [
+    "The gain is everyday tool use, not a custom system: train the staff you have instead (shape 3).[^1] Training is more than ten times as common as hiring for AI.[^2]",
+    "Three or more use cases are queued and your data sits in one place: hire an AI lead now.[^14][^26] Use outside help only to scope the first quarter.",
+    "A packaged product already does the job: buy it. Menlo Ventures, an investor, found 76% of enterprise AI use cases are bought, not built.[^22]",
+    "You need free help to start: try a Small Business Development Center, or a NIST MEP center if you make things.[^23][^24]"
+  ],
+  "resources": [
+    {
+      "name": "BLS occupation pay profiles (OEWS)",
+      "url": "https://data.bls.gov/oesprofile/",
+      "what": "Free pay by percentile, state and metro area. Use it to price a hire where you are."
+    },
+    {
+      "name": "BLS Employer Costs for Employee Compensation",
+      "url": "https://www.bls.gov/news.release/ecec.t04.htm",
+      "what": "The benefit share to add on top of pay, by job group and industry."
+    },
+    {
+      "name": "Census Business Trends and Outlook Survey downloads",
+      "url": "https://www.census.gov/hfp/btos/data_downloads?tab=historical",
+      "what": "The official AI supplement table: what AI-using firms changed, by size and sector."
+    },
+    {
+      "name": "NIST AI RMF Playbook",
+      "url": "https://airc.nist.gov/airmf-resources/playbook/",
+      "what": "Free suggested actions for roles, oversight and sign-off. Pick what fits your firm."
+    },
+    {
+      "name": "Google Rules of Machine Learning",
+      "url": "https://developers.google.com/machine-learning/guides/rules-of-ml",
+      "what": "Set metrics first, and launch without machine learning when you can."
+    }
+  ],
+  "stats": [
+    {
+      "num": "1.3%",
+      "label": "of AI-using US firms hired AI-trained staff, the least common change they made[^2][^1]",
+      "source": "WeWork write-up of the Census BTOS AI supplement, 2026[^2]"
+    },
+    {
+      "num": "About 125",
+      "label": "US AI-engineer job ads from operating firms of 51 to 500 staff, 30 days to 26 Nov 2026[^3]",
+      "source": "Zavient count of US job ads[^3][^4]"
+    },
+    {
+      "num": "$188,700",
+      "label": "75th-percentile yearly pay, computer and information research scientists, May 2025[^5]",
+      "source": "BLS OEWS, May 2025[^5]"
+    },
+    {
+      "num": "68.5%",
+      "label": "wages as a share of total pay cost, private-sector professional and management staff, June 2026[^7]",
+      "source": "BLS ECEC, June 2026[^7]"
+    },
+    {
+      "num": "75 days",
+      "label": "median time to first fill for technical roles[^10]",
+      "source": "Ashby Talent Trends, 2026[^10]"
+    },
+    {
+      "num": "66%",
+      "label": "of AI-using firms use AI only to help people with tasks[^1]",
+      "source": "Census CES working paper, 2026[^1]"
+    }
+  ],
+  "sources": [
+    {
+      "name": "U.S. Census Bureau, The Microstructure of AI Diffusion, CES-WP-26-25R (7 Oct 2026)",
+      "url": "https://www2.census.gov/ces/wp/2026/CES-WP-26-25R.pdf",
+      "what": "BTOS AI supplement, Nov 2025 to Jan 2026. Hiring AI-trained staff was the least common change; training staff and new workflows about 15% each; 66% of users only augment tasks; 95.7% report no AI-driven employment change."
+    },
+    {
+      "name": "WeWork Business Intelligence, The New AI Divide (Aug 2026)",
+      "url": "https://assets.ctfassets.net/vh7r69kgcki3/1EmdQ6nBl73xaiixLwTI4B/fdfbdabc3e85749d28be13f0044e380c/260817_Business_Intelligence_AI_Report_2026.pdf",
+      "what": "Secondary write-up of the Census AI supplement table: 64.3% of AI users made no changes; 15.4% built new workflows; 15.0% trained staff; 1.3% hired AI-trained staff."
+    },
+    {
+      "name": "Zavient count of US AI-engineer job ads, pulled 26 Nov 2026",
+      "url": "https://zavient.com/ai-consulting/hire-ai-engineer.html#own-data",
+      "what": "US ads for six AI and machine learning engineer titles, 30 days to 26 Nov 2026, by employer size band and industry. 6,089 ads with a known size; 125 from operating firms of 51 to 500 staff."
+    },
+    {
+      "name": "JobsPipe job-ad index",
+      "url": "https://jobspipe.dev/",
+      "what": "The job-ad index behind the counts; counts are the provider's approximate estimates."
+    },
+    {
+      "name": "BLS, OEWS profile 15-1221, Computer and Information Research Scientists, May 2025",
+      "url": "https://data.bls.gov/oesprofile/?year=2025&major_group=150000&occupation=151221&measure=01",
+      "what": "Median $140,300; 75th percentile $188,700; 90th $230,630; employment 37,200. The closest BLS occupation to an AI engineer, by our choice."
+    },
+    {
+      "name": "BLS, Occupational Outlook Handbook: Computer and Information Research Scientists",
+      "url": "https://www.bls.gov/ooh/computer-and-information-technology/computer-and-information-research-scientists.htm",
+      "what": "Median annual wage $140,300 in May 2025; 22% projected growth, 2025 to 2035."
+    },
+    {
+      "name": "BLS, Employer Costs for Employee Compensation, Table 4 (June 2026)",
+      "url": "https://www.bls.gov/news.release/ecec.t04.htm",
+      "what": "Private industry, management, professional and related jobs: $78.88 an hour total, $54.06 wages (68.5%), benefits 31.5%."
+    },
+    {
+      "name": "SHRM, 2026 Recruiting Executives Benchmarking (24 Jun 2026)",
+      "url": "https://www.shrm.org/topics-tools/research/recruiting-benchmarking",
+      "what": "4,600+ organizations. Median time to fill fell to 39 calendar days for nonexecutive roles."
+    },
+    {
+      "name": "SHRM, 2025 Recruiting Executives Benchmarking data brief",
+      "url": "https://www.shrm.org/content/dam/en/shrm/research/2025-recruiting-benchmarking-report.pdf",
+      "what": "Median cost per hire $1,200 for nonexecutive roles and $10,625 for executives in 2025."
+    },
+    {
+      "name": "Ashby, Recruiting Operations Benchmarks, 2026 Talent Trends Report",
+      "url": "https://www.ashbyhq.com/talent-trends-report/reports/recruiting-operations-benchmarks-talent-trends",
+      "what": "Software vendor's customer data: technical jobs take a median 75 days to first fill, against 60 for business roles."
+    },
+    {
+      "name": "Acceler8 Talent (AI recruiter), What it costs to hire a machine learning engineer (Oct 2026)",
+      "url": "https://www.acceler8talent.com/resources/blog/what-it-costs-to-hire-a-machine-learning-engineer-in-2027",
+      "what": "Recruiter's own illustration: agency fees of 20% to 25% of base, which it says is not a published benchmark."
+    },
+    {
+      "name": "WTW, AI talent is moving fast; your pay data has to hold up (Nov 2026)",
+      "url": "https://www.wtwco.com/en-us/insights/2026/10/ai-talent-is-moving-fast-your-pay-data-has-to-hold-up",
+      "what": "AI and machine learning engineer roles commonly carry base pay premiums of 15% to 20%; anchoring base at the 75th percentile is the most common approach for in-demand skills."
+    },
+    {
+      "name": "Lightcast, Beyond the Buzz (23 Jul 2025)",
+      "url": "https://lightcast.io/resources/blog/beyond-the-buzz-press-release-2025-07-23",
+      "what": "Job ads with AI skills offer 28% (about $18,000) more; 51% of ads asking for AI skills are outside IT and computer science."
+    },
+    {
+      "name": "Andrew Ng, Landing AI, AI Transformation Playbook (2019)",
+      "url": "https://landing.ai/wp-content/uploads/2020/05/LandingAI_Transformation_Playbook_11-19.pdf",
+      "what": "Step 1: pilot projects to gain momentum. Step 2: build an in-house AI team; outsourced partners help early momentum. Written for larger firms."
+    },
+    {
+      "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025)",
+      "url": "https://www.ictworks.org/wp-content/uploads/2025/09/AI_Business_2025.pdf",
+      "what": "Preliminary, self-reported, 52 interviews. External partnerships reached deployment about 67% of the time, internal builds about 33%; the report says this is correlation, not proof of cause. Mid-market top performers: about 90 days from pilot to full use."
+    },
+    {
+      "name": "RAND, The Root Causes of Failure for AI Projects (13 Aug 2024)",
+      "url": "https://www.rand.org/pubs/research_reports/RRA2680-1.html",
+      "what": "Five root causes: misunderstood problem (most common), lack of data, chasing new tech, weak infrastructure, problems too hard for AI. Technical staff must understand purpose and domain."
+    },
+    {
+      "name": "NIST AI RMF Playbook, Govern",
+      "url": "https://airc.nist.gov/airmf-resources/playbook/govern",
+      "what": "GOVERN 2.1: roles and responsibilities documented and clear. 2.3: executive leadership takes responsibility for AI risk decisions. 3.2: roles for human-AI oversight."
+    },
+    {
+      "name": "NIST AI RMF Playbook, Map",
+      "url": "https://airc.nist.gov/AI_RMF_Knowledge_Base/Playbook/Map",
+      "what": "MAP 3.5: processes for human oversight are defined, assessed and documented."
+    },
+    {
+      "name": "Google for Developers, Rules of Machine Learning",
+      "url": "https://developers.google.com/machine-learning/guides/rules-of-ml",
+      "what": "Rule #1: don't be afraid to launch a product without machine learning. Rule #2: first, design and implement metrics."
+    },
+    {
+      "name": "Gartner, Lack of AI-ready data puts AI projects at risk (26 Feb 2025)",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2025-02-26-lack-of-ai-ready-data-puts-ai-projects-at-risk",
+      "what": "Gartner predicts that through 2026, organizations will abandon 60% of AI projects unsupported by AI-ready data."
+    },
+    {
+      "name": "Gartner press release (29 Jul 2024)",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025",
+      "what": "At least 30% of generative AI projects abandoned after proof of concept by end of 2025, over poor data, weak risk controls, rising costs or unclear value."
+    },
+    {
+      "name": "Menlo Ventures, 2025: The State of Generative AI in the Enterprise",
+      "url": "https://menlovc.com/perspective/2025-the-state-of-generative-AI-in-the-enterprise/",
+      "what": "Investor survey of about 500 US enterprise decision-makers: 76% of AI use cases are purchased rather than built."
+    },
+    {
+      "name": "America's SBDC",
+      "url": "https://americassbdc.org/",
+      "what": "Nearly 1,000 Small Business Development Centers give no-cost advice; 400+ AI-certified advisors."
+    },
+    {
+      "name": "NIST MEP blog, AI in manufacturing",
+      "url": "https://www.nist.gov/blogs/manufacturing-innovation-blog/artificial-intelligence-manufacturing-real-world-success-stories",
+      "what": "Manufacturing Extension Partnership centers in every state, about 1,400 advisors; centers vet outside AI experts for smaller manufacturers."
+    },
+    {
+      "name": "Zavient, how we work and what it costs",
+      "url": "https://zavient.com/about.html#engagements",
+      "what": "Free 30-minute diagnostic; 30-day AI Sprint $10,000, fixed scope; advisory $5,000 to $10,000 a month, quarterly commitment; build quoted per job."
+    },
+    {
+      "name": "Reddit r/CIO, Enterprise AI consulting vs in-house AI teams (Apr 2026)",
+      "url": "https://www.reddit.com/r/CIO/comments/1swdlah/enterprise_ai_consulting_vs_inhouse_ai_teams",
+      "what": "IT leaders: the real question is who owns it after launch; put knowledge transfer in the contract as milestones; hire the in-house team slowly, starting with a lead."
+    },
+    {
+      "name": "Reddit r/AI_Agents, Should I hire full-time or use contractors? (Feb 2025)",
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1ixtp07/business_owner_looking_to_implement_ai_solutions/",
+      "what": "A financial-services business owner asks the question; a reply: start small with outside help, then consider full-time hires once you know what works."
+    },
+    {
+      "name": "Reddit r/business, Mid-size company: AI consulting firm vs in-house team (Mar 2026)",
+      "url": "https://www.reddit.com/r/business/comments/1rinutg/were_a_midsize_company_looking_at_an_enterprise",
+      "what": "A $400,000 AI budget: two senior AI engineers and a data scientist would eat that budget instantly."
+    }
+  ],
+  "related": [
+    "ai-consulting-services",
+    "ai-strategy-consulting",
+    "ai-automation-consulting"
+  ],
+  "offer": {
+    "heading": "Not sure whether to hire, bring in help, or both?",
+    "body": "Free, before any paid work: 30 minutes on your first workflow. Bring the workflow and a rough idea of what it costs today. You'll leave knowing whether it needs a hire, outside help or neither, and what to do first."
+  },
+  "keyword": {
+    "phrase": "hire ai engineer",
+    "searches": 210,
+    "cpc": 89.07,
+    "difficulty": 14
+  },
+  "reviews": [
+    {
+      "reader": "COO",
+      "notes": "The title asks which comes first, but the order was the fourth bullet; moved 'Prove one workflow first, then hire a lead' to the top. 'Operating firms' read as jargon in the bottom line; now 'non-tech firms your size', and the table row says the same. The BLS cost range and the honest 'not like for like' line on Zavient's prices are what I'd forward to the CEO."
+    },
+    {
+      "reader": "Head of operations",
+      "notes": "NIST and 'proof of concept' appeared with no explanation; NIST is now glossed as the US standards body and proof of concept as a trial build. The hold-out step didn't say which cases; it now says last month's. Every flow step names a role, so I can hand each recipe to the people in it."
+    },
+    {
+      "reader": "GM",
+      "notes": "Wanted to know if one site can go first; recipe 2's rollout step now starts at one site or team. Pricing the lift as hours saved times loaded cost, minus run cost, is the margin view I need, and the BLS benefit share makes the loaded cost checkable. The job-ad table tells me peers my size are not hiring this role yet, which lowers the pressure to hire first."
+    },
+    {
+      "reader": "Division head",
+      "notes": "Read as the head whose team would work with the hire. My worry is a builder who works around my people; watch-out 6 covers it, and recipe 1 now has me naming one subject-matter expert for the pilot, as RAND's domain-knowledge finding suggests. Front-line staff checking output before it reaches a customer is the right line for my team."
+    },
+    {
+      "reader": "Owner-CEO",
+      "notes": "Steve wants a price and gets one: BLS cost of a hire, and Zavient's published Sprint and advisory prices, labelled plainly as not like for like. He won't know a workflow's exact cost, so the offer now asks for a rough idea. Recipe 1 fits firms under about 150 staff, and the 'when not to hire help' list gives him free SBDC and MEP routes, which builds trust."
+    }
+  ],
+  "updated": "2026-11-26"
+}
