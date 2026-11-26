@@ -37,6 +37,7 @@ export const BANNED = [
   { re: /\breplac\w*\s+(?:your\s+|the\s+)?(?:staff|team|people|workers|employees|underwriters|analysts|clerks|accountants)\b/i, why: 'augmentation, not replacement' },
   { re: /\b(?:cut|reduce|slash|eliminate)\w*\s+(?:head ?count|jobs|staff|fte)/i, why: 'augmentation, not replacement' },
   { re: /\blay ?offs?\b|\bfewer (?:people|staff|employees)\b|\bwithout (?:hiring|humans)\b/i, why: 'augmentation, not replacement' },
+  { re: /\breddit\b|\bquora\b|(?:^|[\s("])r\/[A-Za-z]{2,}|\bforum (?:posts?|threads?|repl(?:y|ies)|posters)\b/i, why: 'no forum threads as evidence: cite a regulator, study, analyst or the vendor\'s own page (26 Nov 2026)' },
   { re: /\bdelve\b|\bleverage\b|\bunlock\b|\bseamless\b|\btransformative\b|\bgame[- ]chang/i, why: 'banned filler word' },
 ];
 
@@ -120,7 +121,7 @@ export const BLOCKS = {
   },
   faq: {
     field: 'faq', h: 'Questions buyers ask about {topic}',
-    brief: '3-6 real questions from People Also Ask, Reddit, Quora, vendor FAQs and forums. Answer each in 1-3 sentences, answer first, sourced. Record where each question was seen in the draft notes.',
+    brief: '3-6 real questions from People Also Ask, Reddit, Quora, vendor FAQs and forums. Answer each in 1-3 sentences, answer first, sourced. Record where each question was seen in the draft notes, never in the source list: forum threads are not sources.',
   },
   'buy-or-build': {
     field: 'buyVsBuild', h: 'Should you buy {topic} or build it?',

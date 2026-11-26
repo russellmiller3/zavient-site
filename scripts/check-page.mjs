@@ -1,5 +1,6 @@
 // Publish gate for golden-template pages (26 Nov 2026). Run before a page gets index: true.
-// Usage: node scripts/check-page.mjs <slug | path/to/page.json> [...]   Exits 1 on any FAIL.
+// Usage: node scripts/check-page.mjs [slug | path/to/page.json ...]   No args = every page; --indexed = every page with
+// index: true (what `npm run build` runs, so a failing indexed page stops the deploy). Exits 1 on any FAIL.
 // Checks every Site rule a machine can check: BLUF bullets, question title, footnotes on every claim with 2+ sources
 // on the bottom line, enough sources from enough sites, own data, the type's required blocks, augmentation and
 // no-low-end wording, no leftover TODOs, readability, crossing-page difference test, glossary inbound links, and the
@@ -11,6 +12,7 @@ import { TYPES, COMMON_REQUIRED, REVIEWERS, MIN, BANNED, BLOCKS, DEMAND } from '
 import { checkPage as readability } from './check-readability.mjs';
 import { pageAnswerProblems } from '../src/lib/answer-first.mjs';
 import { ownPriceProblems, strings } from '../src/lib/no-own-price.mjs';
+import { sourceProblems } from '../src/lib/source-rules.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const contentDir = join(root, 'src/content/ai-work');
@@ -59,9 +61,11 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
   for (const k of used) if (k < 1 || k > n) fail.push(`footnote [^${k}] points at no source`);
   const unused = (d.sources || []).map((_, i) => i + 1).filter((k) => !used.has(k));
   if (unused.length) fail.push(`sources never cited: ${unused.join(', ')}; cite each source on the page or drop it from the list`);
+  // No forum threads, rival consulting firms or content farms as sources (26 Nov 2026 fixes, made structural)
+  for (const p of sourceProblems(d.sources)) fail.push(p);
   // Every sentence-bearing prose field should carry a footnote
   const prose = [['summary', d.summary], ...(d.humanRole || []).map((x, i) => [`humanRole ${i + 1}`, x]),
-    ...(d.watchOuts || []).map((x, i) => [`watchOut ${i + 1}`, x]), ...(d.faq || []).map((x, i) => [`faq ${i + 1}`, x.a]),
+    ...(d.watchOuts || []).map((x, i) => [`watchOut ${i + 1}`, x]), ...(d.pickElse || []).map((x, i) => [`pick-else ${i + 1}`, x]), ...(d.faq || []).map((x, i) => [`faq ${i + 1}`, x.a]),
     ...(d.ranked || []).map((x, i) => [`ranked ${i + 1}`, x.why]), ...(d.decisions || []).map((x, i) => [`decision ${i + 1}`, x.know]),
     ['buy', d.buyVsBuild?.buy], ['build', d.buyVsBuild?.build]];
   for (const [where, text] of prose) if (text && fns(text).length === 0) fail.push(`${where} has no footnote`);
@@ -115,8 +119,12 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
 
 const here = fileURLToPath(import.meta.url);
 if (process.argv[1] === here) {
-  const args = process.argv.slice(2);
   const siblings = readdirSync(contentDir).filter((f) => f.endsWith('.json')).map((f) => ({ ...JSON.parse(readFileSync(join(contentDir, f), 'utf8')), _slug: f.replace(/\.json$/, '') }));
+  // No slugs used to mean no pages were checked, so a bare run "passed" while checking nothing. Now it checks every page.
+  const named = process.argv.slice(2).filter((a) => !a.startsWith('--'));
+  const onlyIndexed = process.argv.includes('--indexed');
+  const args = named.length ? named : siblings.filter((s) => !onlyIndexed || (s.index && s.templateVersion)).map((s) => s._slug);
+  if (!args.length) { console.log('no pages to check'); process.exit(1); }
   let bad = 0;
   for (const a of args) {
     const path = a.endsWith('.json') ? a : join(contentDir, `${a}.json`);
@@ -128,6 +136,7 @@ if (process.argv[1] === here) {
     for (const w of warn) console.log(`  ! ${w}`);
     bad += fail.length;
   }
+  console.log(`${args.length} pages checked, ${bad ? `${bad} failures` : 'all pass'}`);
   process.exit(bad ? 1 : 0);
 }
 export { BLOCKS };

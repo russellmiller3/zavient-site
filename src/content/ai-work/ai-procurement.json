@@ -64,7 +64,7 @@
     "rules": "Trade and competition rules apply rather than any AI-specific law: OFAC sanctions, the Uyghur Forced Labor Prevention Act, Commerce export limits and antitrust limits on shared price data.[^15][^16][^46][^47]",
     "benchmark": "Score the tool on your own past POs and quotes against your best buyer's answers, testing on suppliers it has never seen, before any contract.[^50][^12]",
     "what-goes-wrong": "AI in procurement goes wrong when it trusts supplier documents too much, fails on new suppliers, misreads contract terms, misses screening matches or gets its savings overclaimed.[^13][^12][^34][^15][^50]",
-    "something-else": "Pick something else when a few buyers place every order, you only need sanctions screening, or your vendor and item data is too messy to classify.[^59][^23][^12]"
+    "something-else": "Pick something else when a few buyers place every order, you only need sanctions screening, or your vendor and item data is too messy to classify.[^58][^23][^12]"
   },
   "humanRole": [
     "Buyer or category manager keeps the decision: picks the supplier, sets negotiation limits and signs every award.[^8][^2] OWASP, the open web security project, advises human approval of high-risk actions by AI that reads outside documents.[^13]",
@@ -423,7 +423,7 @@
     "Price the lift on spend, not hours: use our per-$10M table and 1.5% on tail spend as the base case.[^3][^7]"
   ],
   "watchOuts": [
-    "It goes wrong most on supplier documents it trusts too much: hidden text in a bid can steer the ranking.[^13][^54] Strip hidden text, show the source page for each value and keep the award with a buyer.[^53][^55]",
+    "It goes wrong most on supplier documents it trusts too much: hidden text in a bid can steer the ranking.[^13] Strip hidden text, show the source page for each value and keep the award with a buyer.[^53][^54]",
     "Classifiers that shine in a demo fail on new suppliers.[^12][^5] Test on unseen suppliers and classify to two category levels, where accuracy holds.[^6]",
     "Contract and quote reading misses or invents terms: legal AI research tools made things up 17% to 33% of the time.[^34][^32] Check field by field against the source page, and have the buyer sign.",
     "Screening misses spelling variants or runs on stale lists, two root causes OFAC names.[^15] Keep lists current, check owners as well as names, and have a person clear every match.[^19][^46]",
@@ -457,11 +457,11 @@
     }
   ],
   "buyVsBuild": {
-    "buy": "Buy when your request, approve and order process is standard and your ERP has a supported connector.[^9][^26] About 76% of enterprise AI use cases are now bought.[^56] Bought tools reach deployment about twice as often as internal builds.[^57][^58]",
+    "buy": "Buy when your request, approve and order process is standard and your ERP has a supported connector.[^9][^26] About 76% of enterprise AI use cases are now bought.[^55] Bought tools reach deployment about twice as often as internal builds.[^56][^57]",
     "build": "Build or extend when your parts are custom, your item text is unique and quotes arrive as varied PDFs.[^12][^22] Build too when you need field-level source pages and hidden-text checks a tool lacks.[^13] Pactum says its negotiation agent typically serves firms above $250M of revenue (vendor page).[^29]"
   },
   "pickElse": [
-    "Pick your ERP's own purchasing module when a few buyers place every order and approvals rarely vary.[^59] AI adds little at that volume.",
+    "Pick your ERP's own purchasing module when a few buyers place every order and approvals rarely vary.[^58] AI adds little at that volume.",
     "Only need sanctions and export screening? Start with the free OFAC and Consolidated Screening List searches before buying a risk platform.[^23][^24]",
     "Below about $250M of revenue, run an annual quote round or an e-auction on your biggest tail suppliers instead of a negotiation agent.[^29][^37]",
     "Messy vendor master and item text? Clean the data first, because classifiers stumble most on new, terse descriptions.[^12][^5]"
@@ -790,11 +790,6 @@
       "name": "German Federal Office for Information Security (BSI), warning on hidden text in documents read by AI (2023)",
       "url": "https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/EN/2023/2023-249034-1032.pdf",
       "what": "Instructions hidden in documents, for example in font size zero or white text, can steer language models that read them."
-    },
-    {
-      "name": "Reddit r/procurement, thread on white-text instructions in bids (forum, practitioner voice)",
-      "url": "https://www.reddit.com/r/procurement/comments/1ezvug9/",
-      "what": "Practitioners describe bids carrying hidden white text aimed at AI evaluators."
     },
     {
       "name": "Microsoft Security Response Center, How Microsoft defends against indirect prompt injection (Jul 2025)",

@@ -57,38 +57,38 @@
   "something-else": "When should a contractor pick something else?"
  },
  "answers": {
-  "human-role": "Your people keep every sign-off: project managers approve AI drafts, engineers keep the seal, the competent person stops unsafe work, and estimators own the bid.[^13][^5][^6][^16]",
-  "ranked": "AI pays first in project search, since staff lose about 5.5 hours a week looking for project data; RFI drafting and submittal checks come next.[^18][^22][^19]",
+  "human-role": "Your people keep every sign-off: project managers approve AI drafts, engineers keep the seal, the competent person stops unsafe work, and estimators own the bid.[^11][^5][^6]",
+  "ranked": "AI pays first in project search, since staff lose about 5.5 hours a week looking for project data; RFI drafting and submittal checks come next.[^15][^19][^16]",
   "rules": "Mostly rules you already follow: OSHA safety, engineering licensing, contract and insurance terms, and worker data and hiring laws; we found no OSHA standard written for AI.[^6][^5]",
-  "what-goes-wrong": "AI goes wrong most when nobody checks a confident answer, when pilots add steps crews skip, and when uploads or extra logins put drawings and systems at risk.[^7][^12][^23][^54]",
-  "something-else": "Pick something else when your platform already has the feature, the job is quantity takeoff or vendor invoices, or the work is sealed design.[^3][^16][^24] Dedicated takeoff and invoice tools fit those jobs better, and sealed design belongs to the engineer or architect of record.[^5][^15]"
+  "what-goes-wrong": "AI goes wrong most when nobody checks a confident answer, when pilots add steps crews skip, and when uploads or extra logins put drawings and systems at risk.[^7][^20][^49]",
+  "something-else": "Pick something else when your platform already has the feature, the job is quantity takeoff or vendor invoices, or the work is sealed design.[^3][^21] Dedicated takeoff and invoice tools fit those jobs better, and sealed design belongs to the engineer or architect of record.[^5][^13]"
  },
- "summary": "AI for construction companies is software that reads and drafts the job's paperwork: RFIs, submittals, logs, minutes and spec searches.[^1][^11] What changes: PMs review drafts instead of writing them, and search project files instead of hunting, which took 5.5 hours a week.[^13][^18] Licensed people still decide and sign.[^5][^6]",
+ "summary": "AI for construction companies is software that reads and drafts the job's paperwork: RFIs, submittals, logs, minutes and spec searches.[^1] What changes: PMs review drafts instead of writing them, and search project files instead of hunting, which took 5.5 hours a week.[^11][^15] Licensed people still decide and sign.[^5][^6]",
  "humanRole": [
-  "Your team stays in charge of every sign-off: AI drafts, and the project manager, superintendent, engineer or estimator approves.[^13][^11] Procore builds its agents to draft for a person to approve (vendor).[^13]",
-  "Licensed engineers keep judgement and the seal on delegated design; ASCE says AI cannot stand in for a professional engineer's (PE) judgement.[^5][^14] North Carolina's board says the licensee must be able to reproduce AI output independently.[^15]",
+  "Your team stays in charge of every sign-off: AI drafts, and the project manager, superintendent, engineer or estimator approves.[^11] Procore builds its agents to draft for a person to approve (vendor).[^11]",
+  "Licensed engineers keep judgement and the seal on delegated design; ASCE says AI cannot stand in for a professional engineer's (PE) judgement.[^5][^12] North Carolina's board says the licensee must be able to reproduce AI output independently.[^13]",
   "Your competent person still stops the work: the Occupational Safety and Health Administration (OSHA) defines that role as someone with authority to correct hazards promptly.[^6] A camera can flag a missing harness; only that person can act on it.",
-  "Estimators keep the bid number they sign; one asked who pays \"when an AI misses scope and real money is lost\".[^16] The Bureau of Labor Statistics (BLS) still projects about 17,600 estimator openings a year.[^17]"
+  "Estimators keep the bid number they sign. The Bureau of Labor Statistics (BLS) still projects about 17,600 estimator openings a year.[^14]"
  ],
  "ranked": [
   {
    "name": "Project search pays first: answers from drawings, specs and files",
-   "why": "AI pays first in project search, because staff lose about 5.5 hours a week looking for project data.[^18] Procore, Autodesk and Fieldwire now ship this search inside their platforms (vendor claims).[^19][^20][^21]",
+   "why": "AI pays first in project search, because staff lose about 5.5 hours a week looking for project data.[^15] Procore, Autodesk and Fieldwire now ship this search inside their platforms (vendor claims).[^16][^17][^18]",
    "payoff": "Minutes to answer a field question from the drawings and specs, sampled before and after."
   },
   {
    "name": "Drafting and sorting requests for information (RFIs)",
-   "why": "A 2013 study of 1,362 projects put each RFI at about 8 hours and $1,080 to process.[^22] AI can draft the question, but a person must shape each RFI, says AIA Contract Documents.[^23]",
+   "why": "A 2013 study of 1,362 projects put each RFI at about 8 hours and $1,080 to process.[^19] AI can draft the question, but a person must shape each RFI, says AIA Contract Documents.[^20]",
    "payoff": "Hours from field issue to RFI sent, and the share sent back as unclear."
   },
   {
    "name": "First-pass submittal checks against the spec",
-   "why": "Procore and Buildertrend now sell submittal review features (vendor claims).[^19][^24] Construction managers stay wary of trusting a language model on structural steel and rebar shop drawings.[^25]",
+   "why": "Procore and Buildertrend now sell submittal review features (vendor claims).[^16][^21]",
    "payoff": "Days from submittal received to first comments, counting misses found later."
   },
   {
    "name": "Daily logs, meeting minutes and owner updates",
-   "why": "One project team writes minutes from meeting transcripts into Procore, then reviews them before sending.[^11] Raken and Buildertrend sell AI daily report and client update features (vendor claims).[^26][^24]",
+   "why": "AI drafts daily reports, client updates and meeting minutes for a person to review before sending. Raken and Buildertrend sell these features (vendor claims).[^22][^21]",
    "payoff": "Minutes per daily log or owner update, and the edits a superintendent makes before sending."
   },
   {
@@ -99,24 +99,24 @@
   },
   {
    "name": "Contract and subcontract risk review",
-   "why": "Procore sells a contract review agent; Trimble lists contract risk review as still in development (vendor claims).[^19][^27] A general chat model scored 0.33 accuracy on contract clauses in one study.[^7]",
+   "why": "Procore sells a contract review agent; Trimble lists contract risk review as still in development (vendor claims).[^16][^23] A general chat model scored 0.33 accuracy on contract clauses in one study.[^7]",
    "payoff": "Risky clauses flagged per contract, checked against your project manager's own markup."
   },
   {
    "name": "Back-office vendor invoice coding",
    "slug": "ai-invoice-processing",
-   "why": "Office and administrative work is the top AI use among AGC respondents, at 45%.[^1] Buildertrend sells AI bill capture (vendor claim).[^24]",
+   "why": "Office and administrative work is the top AI use among AGC respondents, at 45%.[^1] Buildertrend sells AI bill capture (vendor claim).[^21]",
    "payoff": "Minutes per vendor invoice coded, and errors caught before payment."
   },
   {
    "name": "Safety observations and protective gear flags: useful, but checked",
-   "why": "Construction had 1,034 private-industry deaths in 2024, with falls a leading cause.[^28] Detection is uneven: one 2026 model scored below 0.40 on goggles and boots.[^8]",
+   "why": "Construction had 1,034 private-industry deaths in 2024, with falls a leading cause.[^24] Detection is uneven: one 2026 model scored below 0.40 on goggles and boots.[^8]",
    "payoff": "Hazards flagged and closed each week, with false alarms counted."
   }
  ],
  "ownData": {
   "title": "Which AI features already ship inside the contractor software you pay for?",
-  "intro": "All seven platforms we checked ship AI features, chiefly project search, drafting, document review and photo tagging, but only Bluebeam and Fieldwire publish a price.[^19][^20][^29][^30] On 26 Nov 2026 we read each vendor's own pricing, plan, AI and terms pages. Data-use terms differ most, from \"never without permission\" to anonymized training rights.[^21][^31]",
+  "intro": "All seven platforms we checked ship AI features, chiefly project search, drafting, document review and photo tagging, but only Bluebeam and Fieldwire publish a price.[^16][^17][^25][^26] On 26 Nov 2026 we read each vendor's own pricing, plan, AI and terms pages. Data-use terms differ most, from \"never without permission\" to anonymized training rights.[^18][^27]",
   "headers": [
    "Platform",
    "AI features named (vendor)",
@@ -127,52 +127,52 @@
   "rows": [
    [
     "Procore",
-    "Agents for document search, submittal review, RFIs, daily logs and contract review[^19]",
+    "Agents for document search, submittal review, RFIs, daily logs and contract review[^16]",
     "Add-on packages: Starter covers up to 3 projects and 5 agents; Pro is credit-based[^3]",
     "Not published[^3]",
-    "Agents draft for a person to approve; says third-party models are not trained on customer data[^13]"
+    "Agents draft for a person to approve; says third-party models are not trained on customer data[^11]"
    ],
    [
     "Autodesk Forma (formerly Autodesk Construction Cloud)",
-    "Autodesk Assistant, out of beta in March 2026, plus Construction IQ and spec and photo tools[^20]",
+    "Autodesk Assistant, out of beta in March 2026, plus Construction IQ and spec and photo tools[^17]",
     "Standard AI features are always on; admins can switch off Advanced AI[^4]",
     "Not published for AI",
-    "Assistant prompts kept up to 45 days; de-identified or aggregated data may improve its features[^32][^4]"
+    "Assistant prompts kept up to 45 days; de-identified or aggregated data may improve its features[^28][^4]"
    ],
    [
     "Trimble (Connect, Vista, ProjectSight)",
-    "Agent Studio, Assist and ten AI capabilities announced 9 Nov 2026, six available now[^27]",
+    "Agent Studio, Assist and ten AI capabilities announced 9 Nov 2026, six available now[^23]",
     "Not published",
     "Not published",
-    "Privacy notice says de-identified datasets improve its services and underlying models[^33]"
+    "Privacy notice says de-identified datasets improve its services and underlying models[^29]"
    ],
    [
     "Bluebeam",
-    "AI drawing review, sheet comparisons and a connector to outside AI assistants[^29]",
-    "Max tier only[^29]",
-    "Max $590 per user a year, introductory; read 26 Nov 2026[^29]",
-    "AI service inputs are used only for your request; AI trials and betas allow training on de-identified files[^34]"
+    "AI drawing review, sheet comparisons and a connector to outside AI assistants[^25]",
+    "Max tier only[^25]",
+    "Max $590 per user a year, introductory; read 26 Nov 2026[^25]",
+    "AI service inputs are used only for your request; AI trials and betas allow training on de-identified files[^30]"
    ],
    [
     "Fieldwire (Hilti)",
-    "Field Intelligence: project questions, voice tasks and RFI editing, some in beta[^21]",
-    "Business tier and up[^30]",
-    "Business $64 per user a month, billed annually; read 26 Nov 2026[^30]",
-    "Never uses customer data to train AI without explicit permission[^21]"
+    "Field Intelligence: project questions, voice tasks and RFI editing, some in beta[^18]",
+    "Business tier and up[^26]",
+    "Business $64 per user a month, billed annually; read 26 Nov 2026[^26]",
+    "Never uses customer data to train AI without explicit permission[^18]"
    ],
    [
     "Buildertrend",
-    "Client Updates, Bill Capture, Page Naming, Selections and Submittals[^24]",
-    "Built in[^24]",
+    "Client Updates, Bill Capture, Page Naming, Selections and Submittals[^21]",
+    "Built in[^21]",
     "Not published (by quote)",
-    "No AI-specific statement found; privacy notice lists training machine-learning models as a use of personal data[^35]"
+    "No AI-specific statement found; privacy notice lists training machine-learning models as a use of personal data[^31]"
    ],
    [
     "Raken",
-    "Photo tagging, daily report summaries and AI Photo ID face-match clock-in[^26]",
+    "Photo tagging, daily report summaries and AI Photo ID face-match clock-in[^22]",
     "Not published",
     "Not published (by quote)",
-    "Terms let Raken use aggregated, anonymized customer data to train AI models[^31]"
+    "Terms let Raken use aggregated, anonymized customer data to train AI models[^27]"
    ]
   ],
   "note": "Zavient check of seven vendors' own public pages, 26 Nov 2026; these are vendor statements, and we tested no feature. \"Not published\" means the public pages we read gave no price or statement, and your signed contract may differ. Oracle Primavera Cloud, CMiC and Sage were left out for lack of a citable vendor page; prices and terms change often."
@@ -180,7 +180,7 @@
  "tables": [
   {
    "title": "How many contractors use AI, and who was asked?",
-   "intro": "In a Census random sample of construction firms, 17.2% used AI in two weeks of September 2026.[^36][^38] Trade surveys of volunteers find more: 61% of 951 AGC contractors use AI or plan more, and two-thirds of RICS's 3,100+ professionals worldwide use it.[^1][^37] Census counts only the past two weeks, so it runs lowest.[^38]",
+   "intro": "In a Census random sample of construction firms, 17.2% used AI in two weeks of September 2026.[^32][^34] Trade surveys of volunteers find more: 61% of 951 AGC contractors use AI or plan more, and two-thirds of RICS's 3,100+ professionals worldwide use it.[^1][^33] Census counts only the past two weeks, so it runs lowest.[^34]",
    "headers": [
     "Survey",
     "Who answered",
@@ -190,8 +190,8 @@
     {
      "name": "US Census Bureau, Business Trends and Outlook Survey (BTOS), Sep 2026",
      "cells": [
-      "Random sample of US construction firms with employees, asked about use \"in any of its business functions\"[^38]",
-      "17.2% used AI in the two weeks of 7-20 Sep 2026, against 23.8% of all firms[^36][^2]"
+      "Random sample of US construction firms with employees, asked about use \"in any of its business functions\"[^34]",
+      "17.2% used AI in the two weeks of 7-20 Sep 2026, against 23.8% of all firms[^32][^2]"
      ]
     },
     {
@@ -206,23 +206,23 @@
      "name": "RICS, AI in construction 2026",
      "url": "https://www.rics.org/content/dam/ricsglobal/documents/reports/AI-in-construction-and-commercial-property-2026_Final.pdf",
      "cells": [
-      "3,100+ surveyors and construction professionals worldwide[^37]",
-      "About two-thirds of construction respondents use AI, up from just over half[^37]"
+      "3,100+ surveyors and construction professionals worldwide[^33]",
+      "About two-thirds of construction respondents use AI, up from just over half[^33]"
      ]
     },
     {
      "name": "ServiceTitan trades survey, Sep 2026 (vendor)",
      "cells": [
-      "1,017 US trades contractors, run by a software vendor[^39]",
-      "61% want AI built into their core platform[^39]"
+      "1,017 US trades contractors, run by a software vendor[^35]",
+      "61% want AI built into their core platform[^35]"
      ]
     }
    ],
-   "note": "We could not open the Census file directly; its figures come from two sites that read it.[^36][^2] Census asks about the past two weeks only."
+   "note": "We could not open the Census file directly; its figures come from two sites that read it.[^32][^2] Census asks about the past two weeks only."
   },
   {
    "title": "What do RFIs, searching and rework cost a contractor today?",
-   "intro": "One RFI costs about 8 hours and $1,080 to process; staff lose 5.5 hours a week searching for data; rework runs 0.38% of contract value.[^22][^18][^40] These are older figures, so use them as a yardstick for your own before-and-after count.[^18]",
+   "intro": "One RFI costs about 8 hours and $1,080 to process; staff lose 5.5 hours a week searching for data; rework runs 0.38% of contract value.[^19][^15][^36] These are older figures, so use them as a yardstick for your own before-and-after count.[^15]",
    "headers": [
     "Measure",
     "Figure",
@@ -232,36 +232,36 @@
     {
      "name": "Processing one RFI",
      "cells": [
-      "About 8 hours and $1,080; 796 RFIs per project on average[^22]",
-      "From 2013; costs have likely risen since[^22]"
+      "About 8 hours and $1,080; 796 RFIs per project on average[^19]",
+      "From 2013; costs have likely risen since[^19]"
      ]
     },
     {
      "name": "Looking for project data",
      "cells": [
-      "5.5 hours per person each week[^18]",
-      "Vendor-sponsored survey of 599 people, from 2018[^18]"
+      "5.5 hours per person each week[^15]",
+      "Vendor-sponsored survey of 599 people, from 2018[^15]"
      ]
     },
     {
      "name": "Field rework, measured",
      "cells": [
-      "0.38% of contract value; 0.76% with post-completion work[^40]",
-      "Its authors say rework is underreported by about 300%[^40]"
+      "0.38% of contract value; 0.76% with post-completion work[^36]",
+      "Its authors say rework is underreported by about 300%[^36]"
      ]
     },
     {
      "name": "Rework, older rule of thumb",
      "cells": [
-      "About 5% of contract direct cost[^41]",
-      "Quote it beside the measured figure, never alone[^41]"
+      "About 5% of contract direct cost[^37]",
+      "Quote it beside the measured figure, never alone[^37]"
      ]
     }
    ]
   },
   {
    "title": "How accurate is AI on construction tasks?",
-   "intro": "AI is accurate on narrow tasks it was trained for, and weak as a general chatbot on contracts.[^7][^42] Safety cameras do well on helmets and vests, and worse on small gear and crowds.[^8][^43]",
+   "intro": "AI is accurate on narrow tasks it was trained for, and weak as a general chatbot on contracts.[^7][^38] Safety cameras do well on helmets and vests, and worse on small gear and crowds.[^8][^39]",
    "headers": [
     "Task",
     "Result",
@@ -278,8 +278,8 @@
     {
      "name": "14 language models on 1,131 contract questions",
      "cells": [
-      "Weak on accuracy, completeness and citing the clause[^42]",
-      "Expert Systems with Applications, 2026[^42]"
+      "Weak on accuracy, completeness and citing the clause[^38]",
+      "Expert Systems with Applications, 2026[^38]"
      ]
     },
     {
@@ -292,15 +292,15 @@
     {
      "name": "Matching gear to the right worker in a crowd",
      "cells": [
-      "Falls from 97.1% to 84.6% as crowds grow[^43]",
-      "Frontiers in Mechanical Engineering, 2026[^43]"
+      "Falls from 97.1% to 84.6% as crowds grow[^39]",
+      "Frontiers in Mechanical Engineering, 2026[^39]"
      ]
     },
     {
      "name": "Tracking window installation stages",
      "cells": [
-      "Score (mAP50) of 0.953 on 768 images[^44]",
-      "PLOS One, 2025[^44]"
+      "Score (mAP50) of 0.953 on 768 images[^40]",
+      "PLOS One, 2025[^40]"
      ]
     }
    ]
@@ -317,46 +317,46 @@
    "name": "Engineering board guidance on AI (NCEES 6.10, North Carolina, North Dakota)",
    "url": "https://www.ncbels.org/wp-content/uploads/2025/07/Guidelines-on-the-Use-of-Artificial-Intelligence-in-Engineering-and-Surveying-Services-FINAL.pdf",
    "status": "Guidance; NC 16 Jul 2025, ND 9 Nov 2026",
-   "what": "If you self-perform engineering or delegated design, the licensee keeps responsible charge of AI output.[^15][^14] North Dakota added its own guidelines in November 2026.[^45]"
+   "what": "If you self-perform engineering or delegated design, the licensee keeps responsible charge of AI output.[^13][^12] North Dakota added its own guidelines in November 2026.[^41]"
   },
   {
    "name": "AIA contract terms on instruments of service",
    "url": "https://learn.aiacontracts.com/articles/ai-drawing-review-architect-standard-of-care",
    "status": "Contract terms in force; guidance 29 Oct 2026",
-   "what": "Uploading an architect's drawings to a tool that trains on them may breach your license to use them.[^23] Check each tool's training terms first; our estimating guide covers the clause."
+   "what": "Uploading an architect's drawings to a tool that trains on them may breach your license to use them.[^20] Check each tool's training terms first; our estimating guide covers the clause."
   },
   {
    "name": "ISO generative AI exclusions CG 40 47, CG 40 48 and CG 35 08",
    "url": "https://core.verisk.com/Insights/Emerging-Issues/Articles/2025/July/Week-4/Emerging-Risks-in-ISO-General-Liability-Multistate-Filing",
    "status": "Optional for insurers; filed in 49 states and DC",
-   "what": "Insurers can add these to your general liability policy to exclude claims tied to generative AI.[^9][^46] Insurance Business counted 2,369 filing records in force and no admitted replacement product.[^10] Check with your broker and counsel; not legal advice."
+   "what": "Insurers can add these to your general liability policy to exclude claims tied to generative AI.[^9][^42] Insurance Business counted 2,369 filing records in force and no admitted replacement product.[^10] Check with your broker and counsel; not legal advice."
   },
   {
    "name": "Illinois Biometric Information Privacy Act (BIPA)",
    "url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
    "status": "In force; 2024 amendment limits damages",
-   "what": "Face-match clock-in, such as Raken's AI Photo ID, scans face geometry, which BIPA treats as biometric data.[^26][^47] In Illinois you need written notice, a written release and a public retention policy first.[^47] Check with your broker and counsel; not legal advice."
+   "what": "Face-match clock-in, such as Raken's AI Photo ID, scans face geometry, which BIPA treats as biometric data.[^22][^43] In Illinois you need written notice, a written release and a public retention policy first.[^43] Check with your broker and counsel; not legal advice."
   },
   {
    "name": "AI hiring rules: NYC Local Law 144 and Colorado SB 26-189",
    "url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page",
    "status": "NYC in force; Colorado from 1 Jan 2027",
-   "what": "If AI screens craft or office applicants, NYC requires a bias audit and 10 business days' notice.[^48] Colorado's law takes effect on 1 Jan 2027.[^49] AGC found 16% of contractors use AI in HR, recruiting or training.[^1]"
+   "what": "If AI screens craft or office applicants, NYC requires a bias audit and 10 business days' notice.[^44] Colorado's law takes effect on 1 Jan 2027.[^45] AGC found 16% of contractors use AI in HR, recruiting or training.[^1]"
   },
   {
    "name": "Proposed GSA clause GSAR 552.239-7001",
    "url": "https://www.lathropgpm.com/insights/your-built-environment-project-uses-ai-does-your-risk-allocation-reflect-that",
    "status": "Proposed",
-   "what": "On General Services Administration (GSA) work, you would disclose when language models process government project data, and flow that duty down to subs.[^50]"
+   "what": "On General Services Administration (GSA) work, you would disclose when language models process government project data, and flow that duty down to subs.[^46]"
   }
  ],
  "watchOuts": [
-  "AI goes wrong most when nobody checks a confident answer: general chatbots misread contract clauses and miss coordination problems.[^7][^51] Have the project manager check every flag against the document itself.",
-  "Pilots fade when the tool adds steps; one manager saw use drop within six months in three rollouts.[^12] Pilot one job on one live project, count hours before and after, and drop any step crews skip.[^52]",
-  "Fake change-of-bank emails hit subs and suppliers; the FBI logged $3.05B in business email compromise losses in 2025.[^53] Never change bank details without a call-back to a known number.",
-  "Ransomware hit 131 construction firms in early 2026, up 44% on a year earlier.[^54] Each connected AI tool is one more login to lock down.",
-  "Uploading owner drawings to tools that train on them can breach the architect's license.[^23] Read the training terms first; Bluebeam's AI beta terms, for one, allow training on your files.[^34]",
-  "Subs notice AI-written scope sheets, and one said they make general contractors \"look incompetent\".[^11] Keep a person editing anything that goes out, and keep juniors doing the work themselves.[^11]"
+  "AI goes wrong most when nobody checks a confident answer: general chatbots misread contract clauses and miss coordination problems.[^7] Have the project manager check every flag against the document itself.",
+  "Pilots fade when the tool adds steps. Pilot one job on one live project, count hours before and after, and drop any step crews skip.[^47]",
+  "Fake change-of-bank emails hit subs and suppliers; the FBI logged $3.05B in business email compromise losses in 2025.[^48] Never change bank details without a call-back to a known number.",
+  "Ransomware hit 131 construction firms in early 2026, up 44% on a year earlier.[^49] Each connected AI tool is one more login to lock down.",
+  "Uploading owner drawings to tools that train on them can breach the architect's license.[^20] Read the training terms first; Bluebeam's AI beta terms, for one, allow training on your files.[^30]",
+  "AI-written scope sheets sent to subs unedited. Keep a person editing anything that goes out, since AI output can't stand in for professional judgment, and keep juniors doing the work themselves.[^5][^20]"
  ],
  "faq": [
   {
@@ -365,34 +365,34 @@
   },
   {
    "q": "What is the best AI tool for a construction company?",
-   "a": "Usually the one already inside your project platform: Procore, Autodesk, Fieldwire and Bluebeam all ship AI features now.[^3][^20][^21][^29] Add a separate tool only for a job your platform can't do."
+   "a": "Usually the one already inside your project platform: Procore, Autodesk, Fieldwire and Bluebeam all ship AI features now.[^3][^17][^18][^25] Add a separate tool only for a job your platform can't do."
   },
   {
    "q": "Has any AI construction software survived a pilot?",
-   "a": "Not often, by managers' own accounts: one saw use fade within six months in three rollouts.[^12] MIT research found most generative AI pilots show no profit-and-loss impact.[^52]"
+   "a": "Not often: MIT research found most generative AI pilots show no profit-and-loss impact.[^47]"
   },
   {
    "q": "Can AI review submittals?",
-   "a": "Yes, as a first pass against the spec, with a person signing off; Procore and Buildertrend sell this (vendor claims).[^19][^24] Managers stay wary of it on structural steel and rebar shop drawings.[^25]"
+   "a": "Yes, as a first pass against the spec, with a person signing off; Procore and Buildertrend sell this (vendor claims).[^16][^21]"
   },
   {
    "q": "Is it safe to upload project documents to AI?",
-   "a": "Only to tools whose terms rule out training on your files, as Fieldwire's do without your permission.[^21] Raken keeps anonymized training rights, and owner drawings may carry license limits.[^31][^23]"
+   "a": "Only to tools whose terms rule out training on your files, as Fieldwire's do without your permission.[^18] Raken keeps anonymized training rights, and owner drawings may carry license limits.[^27][^20]"
   },
   {
    "q": "Will AI replace construction workers, project managers or estimators?",
-   "a": "No sign of it: BLS projects construction manager jobs to grow 9% from 2025 to 2035.[^55] AGC found 87% of firms with open craft jobs, and BLS counted 298,000 construction openings in September 2026.[^56][^57] Estimator jobs may dip 3%, yet about 17,600 open each year.[^17]"
+   "a": "No sign of it: BLS projects construction manager jobs to grow 9% from 2025 to 2035.[^50] AGC found 87% of firms with open craft jobs, and BLS counted 298,000 construction openings in September 2026.[^51][^52] Estimator jobs may dip 3%, yet about 17,600 open each year.[^14]"
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy first: switch on what your project platform already includes, then add one narrow tool.[^3][^39] Most companies now buy AI: 76% of use cases, up from 53% in 2024.[^58]",
-  "build": "Build only the glue that is your edge, such as your RFI template, spec library and approval step.[^11] MIT found bought or partnered tools succeed about 67% of the time; internal builds about a third as often.[^52]"
+  "buy": "Buy first: switch on what your project platform already includes, then add one narrow tool.[^3][^35] Most companies now buy AI: 76% of use cases, up from 53% in 2024.[^53]",
+  "build": "Build only the glue that is your edge, such as your RFI template, spec library and approval step. MIT found bought or partnered tools succeed about 67% of the time; internal builds about a third as often.[^47]"
  },
  "pickElse": [
-  "Pick something else when your platform already has the feature: turn on Procore's agents, Autodesk Assistant or Fieldwire Field Intelligence first.[^3][^20][^21]",
-  "The job is quantity takeoff: use a dedicated takeoff tool from our estimating guide. Estimators say general tools fall short there.[^16]",
-  "The work is sealed design: the engineer or architect of record owns it, not the contractor's AI.[^5][^15]",
-  "The job is vendor invoices: an accounts-payable capture tool, such as Buildertrend Bill Capture, fits better; see our invoice guide.[^24]"
+  "Pick something else when your platform already has the feature: turn on Procore's agents, Autodesk Assistant or Fieldwire Field Intelligence first.[^3][^17][^18]",
+  "The job is quantity takeoff: use a dedicated takeoff tool from our estimating guide. General chat models test weak even on construction contract questions.[^7][^38]",
+  "The work is sealed design: the engineer or architect of record owns it, not the contractor's AI.[^5][^13]",
+  "The job is vendor invoices: an accounts-payable capture tool, such as Buildertrend Bill Capture, fits better; see our invoice guide.[^21]"
  ],
  "resources": [
   {
@@ -424,7 +424,7 @@
  "stats": [
   {
    "num": "17.2%",
-   "label": "of construction firms used AI in the two weeks of 7-20 Sep 2026, against 23.8% of all firms.[^36]",
+   "label": "of construction firms used AI in the two weeks of 7-20 Sep 2026, against 23.8% of all firms.[^32]",
    "source": "Census BTOS, as reported by Work Time Alliance and Commercial Builders and Contractors[^2]"
   },
   {
@@ -434,22 +434,22 @@
   },
   {
    "num": "87%",
-   "label": "of contractors surveyed have openings for hourly craft workers.[^56]",
+   "label": "of contractors surveyed have openings for hourly craft workers.[^51]",
    "source": "AGC and NCCER 2026 Workforce Survey, 1,830 respondents"
   },
   {
    "num": "298,000",
-   "label": "construction job openings on the last business day of September 2026 (preliminary).[^57]",
+   "label": "construction job openings on the last business day of September 2026 (preliminary).[^52]",
    "source": "BLS Job Openings and Labor Turnover Survey, 3 Nov 2026"
   },
   {
    "num": "5.5 hours",
-   "label": "a week per person spent looking for project data.[^18]",
+   "label": "a week per person spent looking for project data.[^15]",
    "source": "FMI and PlanGrid, 2018, 599 respondents"
   },
   {
    "num": "$1,080",
-   "label": "average cost to process one RFI, at about 8 hours each.[^22]",
+   "label": "average cost to process one RFI, at about 8 hours each.[^19]",
    "source": "Navigant Construction Forum, 2013, 1,362 projects"
   }
  ],
@@ -545,16 +545,6 @@
    "what": "2,369 exclusion filing records in force across 49 states and DC; no admitted replacement product."
   },
   {
-   "name": "Reddit r/ConstructionManagers, Who's really using AI for work? (16 Nov 2026)",
-   "url": "https://www.reddit.com/r/ConstructionManagers/comments/1xy2gc4/whos_really_using_ai_for_work/",
-   "what": "Minutes written from meeting transcripts into Procore for review before sending; a sub says AI-written scope sheets make GCs look incompetent; a junior who blindly trusted AI could not explain his work."
-  },
-  {
-   "name": "Reddit r/ConstructionManagers, Has any AI construction software survived a pilot? (Nov 2026)",
-   "url": "https://www.reddit.com/r/ConstructionManagers/comments/1xrn0v6/has_any_ai_construction_software_survived_a_pilot/",
-   "what": "Three rollouts with strong pilot use that dropped off within six months; the tools added steps instead of removing them."
-  },
-  {
    "name": "Procore, AI agents (vendor)",
    "url": "https://www.procore.com/ai/agents",
    "what": "Vendor page: agents for search, submittal review, RFIs, daily logs and contract review draft work for a person to approve; says third-party models are not trained on customer data."
@@ -568,11 +558,6 @@
    "name": "North Carolina Board of Examiners for Engineers and Surveyors, Guidelines on the use of AI (16 Jul 2025)",
    "url": "https://www.ncbels.org/wp-content/uploads/2025/07/Guidelines-on-the-Use-of-Artificial-Intelligence-in-Engineering-and-Surveying-Services-FINAL.pdf",
    "what": "The licensee keeps responsible charge and must be able to reproduce AI output independently."
-  },
-  {
-   "name": "Reddit r/estimators, Why are there no good AI estimation tools yet? (Jan 2026)",
-   "url": "https://www.reddit.com/r/estimators/comments/1q8y03y/why_are_there_no_good_ai_estimation_tools_yet/",
-   "what": "Working estimator: \"Who's responsible when an AI misses scope and real money is lost?\"; easier to fix your own assumptions than debug AI output when you sign the number."
   },
   {
    "name": "BLS Occupational Outlook Handbook, Cost estimators (27 Aug 2026)",
@@ -613,11 +598,6 @@
    "name": "Buildertrend, Construction AI software (vendor)",
    "url": "https://buildertrend.com/ai-in-construction/",
    "what": "AI features built in: Client Updates, Bill Capture, Page Naming, Selections and Submittals."
-  },
-  {
-   "name": "Reddit r/ConstructionManagers, Is anyone using LLMs to review submittals? (Mar 2026)",
-   "url": "https://www.reddit.com/r/ConstructionManagers/comments/1s3pf5i/is_anyone_using_llms_to_review_submittals",
-   "what": "Managers hesitant to trust a language model on structural steel and rebar shop drawings."
   },
   {
    "name": "Raken, AI features (vendor)",
@@ -743,11 +723,6 @@
    "name": "Lathrop GPM, Your built environment project uses AI: does your risk allocation reflect that? (13 Oct 2026)",
    "url": "https://www.lathropgpm.com/insights/your-built-environment-project-uses-ai-does-your-risk-allocation-reflect-that",
    "what": "GSA proposed GSAR 552.239-7001, requiring disclosure when language models process government project data, with flow-down to subcontractors; still proposed."
-  },
-  {
-   "name": "Reddit r/ConstructionManagers, Are there any legitimately good AI tools? (2026)",
-   "url": "https://www.reddit.com/r/ConstructionManagers/comments/1rna2ye/are_there_any_legitimately_good_ai_tools/",
-   "what": "Commenter (who disclosed building a tool) says general chatbots \"will confidently tell you everything is coordinated\"."
   },
   {
    "name": "Fortune, MIT report: 95% of generative AI pilots at companies failing (18 Aug 2025)",

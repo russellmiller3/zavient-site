@@ -8,9 +8,9 @@
  "industry": "any industry",
  "index": true,
  "verdict": [
-  "Pick Zapier if non-technical ops staff will build and own the flows, and you want published prices[^1][^41].",
+  "Pick Zapier if non-technical ops staff will build and own the flows, and you want published prices[^1][^40].",
   "Pick Make if volume is high and budget is tight; its native approval step is still Enterprise closed beta[^18][^21].",
-  "Pick Workato if you run an ERP and need dev, test and live stages; Vendr reports a $64,544 yearly median[^29][^38].",
+  "Pick Workato if you run an ERP and need dev, test and live stages; Vendr reports a $64,544 yearly median[^28][^37].",
   "Pick on billing unit, not sticker price: Zapier bills tasks; Make bills credits, including empty trigger checks[^2][^13]."
  ],
  "onPage": [
@@ -40,11 +40,11 @@
   }
  ],
  "headings": {},
- "summary": "Zapier is easiest for non-technical staff and Make is cheapest at volume, while Workato adds the IT controls, such as separate test stages[^41][^18][^1][^29]. All three run multi-step workflows with AI steps; the choice turns on billing unit, approvals and testing before go-live[^20][^24][^2][^13][^21].",
+ "summary": "Zapier is easiest for non-technical staff and Make is cheapest at volume, while Workato adds the IT controls, such as separate test stages[^40][^18][^1][^28]. All three run multi-step workflows with AI steps; the choice turns on billing unit, approvals and testing before go-live[^20][^23][^2][^13][^21].",
  "tables": [
   {
    "title": "What does each platform cost, and how does it bill?",
-   "intro": "Prices before tax as each vendor shows them, read 26 Nov 2026[^1][^18][^25]. Make's pricing page loads its prices by script, so we use Make's own help example[^11][^18]. Workato publishes no edition prices, so that figure is Vendr's report, labelled[^24][^38].",
+   "intro": "Prices before tax as each vendor shows them, read 26 Nov 2026[^1][^18][^24]. Make's pricing page loads its prices by script, so we use Make's own help example[^11][^18]. Workato publishes no edition prices, so that figure is Vendr's report, labelled[^23][^37].",
    "headers": [
     "Platform",
     "What it does best",
@@ -56,7 +56,7 @@
      "name": "Zapier",
      "url": "https://zapier.com/pricing",
      "cells": [
-      "Lets non-technical staff build flows across '9,000+ apps', per Zapier; G2 reviewers praise its ease of use[^54][^41].",
+      "Lets non-technical staff build flows across '9,000+ apps', per Zapier; G2 reviewers praise its ease of use[^50][^40].",
       "Free: 100 tasks a month. Pro from $19.99 a month billed yearly for 750 tasks; Team from $69 for 2,000[^1].",
       "A task is one successful action step; triggers, filters, paths and failed steps are free[^1][^2]. Past your limit, tasks cost 1.25× the base rate on yearly plans, 2.5× on monthly[^1]."
      ]
@@ -65,7 +65,7 @@
      "name": "Make",
      "url": "https://www.make.com/en/pricing",
      "cells": [
-      "Visual builder with detailed error handling, across '3,500+' apps, per Make; G2 reviewers praise its price[^53][^15][^41].",
+      "Visual builder with detailed error handling, across '3,500+' apps, per Make; G2 reviewers praise its price[^49][^15][^40].",
       "Make's help example: $9 a month for 10,000 credits[^18]. Zapier, a rival, says Make's entry plan is $12[^8].",
       "Most module runs cost one credit, and every trigger check costs one, even when it finds nothing[^11][^13]. Extra credits cost 25% more; at zero, scenarios stop[^18][^11]."
      ]
@@ -74,16 +74,16 @@
      "name": "Workato",
      "url": "https://www.workato.com/pricing",
      "cells": [
-      "Built-in dev, test and live stages, and on-site connectors for ERPs such as SAP[^29][^36][^37].",
-      "Editions are quote-only[^24]. Self-service Pro is $75 to $1,275 a month; Vendr reports a $64,544 yearly median contract[^25][^38].",
-      "Billed in Workato credits; flows are metered in tasks, and only successful actions count[^26][^27]. Runs in test stages count too[^29]."
+      "Built-in dev, test and live stages, and on-site connectors for ERPs such as SAP[^28][^35][^36].",
+      "Editions are quote-only[^23]. Self-service Pro is $75 to $1,275 a month; Vendr reports a $64,544 yearly median contract[^24][^37].",
+      "Billed in Workato credits; flows are metered in tasks, and only successful actions count[^25][^26]. Runs in test stages count too[^28]."
      ]
     }
    ]
   },
   {
    "title": "Which controls does each platform give your team?",
-   "intro": "From each vendor's own pricing and help pages, read 26 Nov 2026; certifications are the vendors' claims[^1][^19][^24]. Rows are the controls a COO, controller or IT lead asks about.",
+   "intro": "From each vendor's own pricing and help pages, read 26 Nov 2026; certifications are the vendors' claims[^1][^19][^23]. Rows are the controls a COO, controller or IT lead asks about.",
    "headers": [
     "Control",
     "Zapier",
@@ -94,9 +94,9 @@
     {
      "name": "Built-in approval step",
      "cells": [
-      "Yes, from Pro; each reviewer needs a Zapier login[^4][^5]. AI steps can require approval first, and decisions are logged[^55].",
+      "Yes, from Pro; each reviewer needs a Zapier login[^4][^5]. AI steps can require approval first, and decisions are logged[^51].",
       "Enterprise only, in closed beta for invited customers[^21]. Approval from Slack or Teams is 'coming soon'[^22].",
-      "Yes, in Slack or Teams; agents can require business approvals[^35][^33]"
+      "Yes, in Slack or Teams; agents can require business approvals[^34][^32]"
      ]
     },
     {
@@ -104,7 +104,7 @@
      "cells": [
       "No separate test stage; version history kept 1 month on Pro, 1 year on Enterprise[^1]",
       "No named test stage on Make's plan pages we read[^11][^19]",
-      "Built-in DEV, TEST and PROD; deploy from DEV only, with rollback[^29][^30]"
+      "Built-in DEV, TEST and PROD; deploy from DEV only, with rollback[^28][^29]"
      ]
     },
     {
@@ -112,7 +112,7 @@
      "cells": [
       "Team: 6 months. Enterprise: 1 year, with streaming to security tools[^1][^7].",
       "Enterprise only; Team Admins can see it[^19][^17]",
-      "Kept 1 year, with streaming; AI assistant actions are labelled[^32]"
+      "Kept 1 year, with streaming; AI assistant actions are labelled[^31]"
      ]
     },
     {
@@ -120,7 +120,7 @@
      "cells": [
       "Company sign-in (SAML SSO) from Team; automatic user sync (SCIM) on Enterprise[^1]",
       "Admin, Member, Operator and Observer roles; SSO on Enterprise[^17][^19]",
-      "SAML SSO from Standard; environment, project and custom roles[^24][^31]"
+      "SAML SSO from Standard; environment, project and custom roles[^23][^30]"
      ]
     },
     {
@@ -128,7 +128,7 @@
      "cells": [
       "Autoreplay and custom error settings from Pro[^1]",
       "Retry, skip and rollback handlers; saving failed runs is off by default[^15][^16]",
-      "Only successful actions are billed; a retried action counts once[^27][^28]"
+      "Only successful actions are billed; a retried action counts once[^26][^27]"
      ]
     },
     {
@@ -136,15 +136,15 @@
      "cells": [
       "SOC 2 Type II, SOC 3, GDPR, CCPA[^6]",
       "SOC 2 Type II, SOC 3, ISO 27001, GDPR[^19]",
-      "SOC 1, 2 and 3; ISO 27001, 27701, 42001; HIPAA; PCI-DSS[^35]"
+      "SOC 1, 2 and 3; ISO 27001, 27701, 42001; HIPAA; PCI-DSS[^34]"
      ]
     },
     {
      "name": "Analyst and reviewer view, 2026",
      "cells": [
-      "Gartner Niche Player; G2 4.5 stars from 2,169 reviews[^39][^40]",
-      "Not in Gartner's 2026 integration platform report[^39]",
-      "Gartner Leader; G2 4.7 stars from 859 reviews[^39][^40]"
+      "Gartner Niche Player; G2 4.5 stars from 2,169 reviews[^38][^39]",
+      "Not in Gartner's 2026 integration platform report[^38]",
+      "Gartner Leader; G2 4.7 stars from 859 reviews[^38][^39]"
      ]
     }
    ]
@@ -153,7 +153,7 @@
  "recipes": [
   {
    "name": "1. About 50 staff, no IT team: invoice intake to approval",
-   "when": "One ops lead builds, the controller approves, and volume is in the low thousands a month[^1][^41]. Pick Zapier, because Make's native approval step is still closed beta[^4][^21].",
+   "when": "One ops lead builds, the controller approves, and volume is in the low thousands a month[^1][^40]. Pick Zapier, because Make's native approval step is still closed beta[^4][^21].",
    "flow": [
     "Ops lead: pilot one site or supplier group on a monthly plan you can stop",
     "Ops lead: time invoice handling for two weeks, so there is a before-and-after number",
@@ -179,7 +179,7 @@
   },
   {
    "name": "3. About 400 staff with an ERP: order-to-cash with change control",
-   "when": "You run SAP, Oracle or Workday, change flows often, and auditors ask who changed what[^29][^32]. Gartner says Workato is mainly used by integration specialists, so plan for one[^39][^42].",
+   "when": "You run SAP, Oracle or Workday, change flows often, and auditors ask who changed what[^28][^31]. Gartner says Workato is mainly used by integration specialists, so plan for one[^38][^41].",
    "flow": [
     "Integration owner: build and change flows in DEV",
     "QA lead: test each change in TEST",
@@ -188,18 +188,18 @@
     "Controller: approve invoices over a set amount in Slack or Teams",
     "Ops lead: review the audit log each month"
    ],
-   "cost": "Quote-only; Vendr reports a $64,544 yearly median and a $20,370 to $182,649 range, not Workato prices[^38][^24]. Vendr also reports $10,000 to $50,000+ to implement, and test-stage runs count as usage[^38][^29]."
+   "cost": "Quote-only; Vendr reports a $64,544 yearly median and a $20,370 to $182,649 range, not Workato prices[^37][^23]. Vendr also reports $10,000 to $50,000+ to implement, and test-stage runs count as usage[^37][^28]."
   }
  ],
  "humanRole": [
-  "The controller or finance lead approves payments and invoices above a set amount. Zapier and Workato have built-in approval steps; Make's is Enterprise closed beta[^4][^34][^21].",
-  "A person reviews every item at first, then less as error rates fall, per Workato's own guidance. NIST says human roles in AI oversight must be clearly defined[^34][^44].",
-  "A named ops lead owns each workflow and its failures. Make switches a scenario off when its failed-run store fills, so someone must watch it[^51][^16].",
-  "Agents stop and ask a person: Zapier's at their run cap, Make's at stop points, Workato's at business approvals[^3][^20][^33]. The EU AI Act asks that people can override and stop AI[^45]."
+  "The controller or finance lead approves payments and invoices above a set amount. Zapier and Workato have built-in approval steps; Make's is Enterprise closed beta[^4][^33][^21].",
+  "A person reviews every item at first, then less as error rates fall, per Workato's own guidance. NIST says human roles in AI oversight must be clearly defined[^33][^43].",
+  "A named ops lead owns each workflow and its failures. Make switches a scenario off when its failed-run store fills, so someone must watch it[^16].",
+  "Agents stop and ask a person: Zapier's at their run cap, Make's at stop points, Workato's at business approvals[^3][^20][^32]. The EU AI Act asks that people can override and stop AI[^44]."
  ],
  "ownData": {
   "title": "What does 2,000 invoices a month cost on each platform?",
-  "intro": "On 26 Nov 2026 we read each vendor's pricing and help pages, then priced one flow: 2,000 invoices a month, five action steps each[^1][^18][^25]. The trigger checks the inbox every 15 minutes, which costs Make credits but not Zapier tasks[^13][^2]. At this volume Make costs about a tenth of Zapier Pro, but lacks a native approval step outside Enterprise beta[^18][^1][^21].",
+  "intro": "On 26 Nov 2026 we read each vendor's pricing and help pages, then priced one flow: 2,000 invoices a month, five action steps each[^1][^18][^24]. The trigger checks the inbox every 15 minutes, which costs Make credits but not Zapier tasks[^13][^2]. At this volume Make costs about a tenth of Zapier Pro, but lacks a native approval step outside Enterprise beta[^18][^1][^21].",
   "headers": [
    "Plan",
    "What the flow uses",
@@ -233,18 +233,18 @@
    ],
    [
     "Workato self-service Pro",
-    "Not known: Workato publishes no credit-to-task rate[^25][^26]",
-    "$275 for 10,000 credits[^25]",
-    "Unused credits don't roll over[^25]"
+    "Not known: Workato publishes no credit-to-task rate[^24][^25]",
+    "$275 for 10,000 credits[^24]",
+    "Unused credits don't roll over[^24]"
    ],
    [
     "Workato enterprise edition",
-    "Set by contract[^24]",
-    "About $5,379[^38]",
-    "Vendr's reported $64,544 yearly median, divided by 12; not a Workato price[^38]"
+    "Set by contract[^23]",
+    "About $5,379[^37]",
+    "Vendr's reported $64,544 yearly median, divided by 12; not a Workato price[^37]"
    ]
   ],
-  "note": "Zavient price check, read 26 Nov 2026: prices before tax as each vendor shows them[^1][^25]. The 15-minute check is our assumption, and Make's dollar prices load by script, so we used Make's help example[^11][^18]. Workato's enterprise row is Vendr's report, not a Workato price[^38]."
+  "note": "Zavient price check, read 26 Nov 2026: prices before tax as each vendor shows them[^1][^24]. The 15-minute check is our assumption, and Make's dollar prices load by script, so we used Make's help example[^11][^18]. Workato's enterprise row is Vendr's report, not a Workato price[^37]."
  },
  "example": {
   "input": "Illustrative: a 60-person distributor gets 2,000 supplier invoices a month as PDFs in a shared inbox. An AP clerk retypes vendor, amount and due date into the accounting app. Approvals run through email chains.",
@@ -252,46 +252,46 @@
  },
  "watchOuts": [
   "Costs jump past the plan limit: Zapier overage runs 1.25× to 2.5× the base rate, and Make's extra credits cost 25% more[^1][^18]. Fix: buy headroom, and set Zapier usage alerts or Make's optional auto-purchase[^2][^18].",
-  "Empty trigger checks burn Make credits: each check costs one, even when nothing new arrived[^13][^50]. Fix: check less often, and price the flow with checks included[^13].",
-  "Editing live flows: Zapier and Make have no separate test stage, though Zapier keeps version history[^1]. Fix: test on a copy, or pick Workato if you need formal change control[^29][^30].",
-  "Assuming every tool has an approval step: Make's is Enterprise closed beta, and Zapier's can't sit inside a loop[^21][^5]. Fix: prove the controller's approval step in a trial before you buy[^4][^23].",
+  "Empty trigger checks burn Make credits: each check costs one, even when nothing new arrived[^13]. Fix: check less often, and price the flow with checks included[^13].",
+  "Editing live flows: Zapier and Make have no separate test stage, though Zapier keeps version history[^1]. Fix: test on a copy, or pick Workato if you need formal change control[^28][^29].",
+  "Assuming every tool has an approval step: Make's is Enterprise closed beta, and Zapier's can't sit inside a loop[^21][^5]. Fix: prove the controller's approval step in a trial before you buy[^4].",
   "Forgetting that connections hold the keys: in Feb 2025, an outsider reached Zapier code repositories holding some customer data[^9][^10]. Fix, on any platform: give each connection the least access it needs, use company sign-in (SSO) and rotate tokens[^10][^7].",
-  "Agent runs add usage fast: Zapier allows up to 40 activities a run, Make bills AI tokens plus credits, Workato AI steps cost extra[^3][^12][^28]. Fix: set run caps and per-team credit limits, and check agent use weekly[^3][^17]."
+  "Agent runs add usage fast: Zapier allows up to 40 activities a run, Make bills AI tokens plus credits, Workato AI steps cost extra[^3][^12][^27]. Fix: set run caps and per-team credit limits, and check agent use weekly[^3][^17]."
  ],
  "faq": [
   {
    "q": "Is Make cheaper than Zapier?",
-   "a": "Yes, usually, per unit: Make's help example is $9 for 10,000 credits, against $129 for 10,000 Zapier tasks billed yearly[^18][^1]. But the units differ, and Make charges for every trigger check[^13]. Price your real flow, as our table does[^52]."
+   "a": "Yes, usually, per unit: Make's help example is $9 for 10,000 credits, against $129 for 10,000 Zapier tasks billed yearly[^18][^1]. But the units differ, and Make charges for every trigger check[^13]. Price your real flow, as our table does."
   },
   {
    "q": "Does Make charge for trigger checks that find nothing?",
-   "a": "Yes. Each trigger check counts once, whatever it returns[^13][^50]."
+   "a": "Yes. Each trigger check counts once, whatever it returns[^13]."
   },
   {
    "q": "Why doesn't Workato publish its prices?",
-   "a": "Its editions are sold by contract, so the pricing page says 'Get a quote'[^24]. Self-service Pro is published at $75 to $1,275 a month[^25]. Vendr reports a $64,544 yearly median for contracts[^38]."
+   "a": "Its editions are sold by contract, so the pricing page says 'Get a quote'[^23]. Self-service Pro is published at $75 to $1,275 a month[^24]. Vendr reports a $64,544 yearly median for contracts[^37]."
   },
   {
    "q": "Can a person approve a step before the workflow continues?",
-   "a": "Yes, on Zapier and Workato; on Make, only in an Enterprise closed beta[^4][^35][^21]. Make users report a two-scenario workaround meanwhile[^23]."
+   "a": "Yes, on Zapier and Workato; on Make, only in an Enterprise closed beta[^4][^34][^21]."
   },
   {
    "q": "Who owns the workflow when it breaks?",
-   "a": "Name one owner per workflow, usually the ops lead for that process[^51]. Give them error tools: Zapier has autoreplay, and Make has retry and rollback handlers[^1][^15]."
+   "a": "Name one owner per workflow, usually the ops lead for that process. Give them error tools: Zapier has autoreplay, and Make has retry and rollback handlers[^1][^15]."
   },
   {
    "q": "Do we need a developer to run Workato?",
-   "a": "Not always, but plan for an integration specialist; Gartner says that's who mainly uses Workato[^39]. Zapier is built for non-developers, and G2 reviewers praise its ease of use[^41]."
+   "a": "Not always, but plan for an integration specialist; Gartner says that's who mainly uses Workato[^38]. Zapier is built for non-developers, and G2 reviewers praise its ease of use[^40]."
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy one of these when your flows join standard apps and no engineer has time to own custom code[^39][^41]. Most firms now buy AI tools: 76% of enterprise AI use cases in 2025, up from 53%[^46]. MIT found bought or partnered tools reach deployment about twice as often as internal builds[^47][^48].",
-  "build": "Build your own integration code only when the workflow is your edge and an engineer will own it[^47]. Self-hosting means you own uptime and patches, a point Zapier stresses about self-hosted rivals[^8]. MIT found only 5% of custom enterprise AI tools reach production, so start narrow[^47][^48]."
+  "buy": "Buy one of these when your flows join standard apps and no engineer has time to own custom code[^38][^40]. Most firms now buy AI tools: 76% of enterprise AI use cases in 2025, up from 53%[^45]. MIT found bought or partnered tools reach deployment about twice as often as internal builds[^46][^47].",
+  "build": "Build your own integration code only when the workflow is your edge and an engineer will own it[^46]. Self-hosting means you own uptime and patches, a point Zapier stresses about self-hosted rivals[^8]. MIT found only 5% of custom enterprise AI tools reach production, so start narrow[^46][^47]."
  },
  "pickElse": [
-  "You have an engineer and data must stay on your own servers: n8n's free self-hosted Community Edition fits[^49]. Its cloud plans bill per run, not per step[^49].",
-  "You run a large ERP estate and need a full integration platform: compare Gartner's other Leaders, such as Boomi, MuleSoft and SAP[^39].",
-  "Your firm lives in Microsoft 365: Microsoft, maker of Power Automate, is also a Gartner Leader[^39].",
+  "You have an engineer and data must stay on your own servers: n8n's free self-hosted Community Edition fits[^48]. Its cloud plans bill per run, not per step[^48].",
+  "You run a large ERP estate and need a full integration platform: compare Gartner's other Leaders, such as Boomi, MuleSoft and SAP[^38].",
+  "Your firm lives in Microsoft 365: Microsoft, maker of Power Automate, is also a Gartner Leader[^38].",
   "You run a few two-step flows, under 100 runs a month: Zapier's free plan covers it[^1]."
  ],
  "resources": [
@@ -329,7 +329,7 @@
   },
   {
    "num": "$64,544",
-   "label": "a year is Vendr's reported median Workato contract, across 345 purchases[^38].",
+   "label": "a year is Vendr's reported median Workato contract, across 345 purchases[^37].",
    "source": "Vendr, Feb 2026"
   },
   {
@@ -339,12 +339,12 @@
   },
   {
    "num": "76%",
-   "label": "of enterprise AI use cases were bought, not built, in 2025[^46].",
+   "label": "of enterprise AI use cases were bought, not built, in 2025[^45].",
    "source": "Menlo Ventures, 495 decision-makers"
   },
   {
    "num": "15%",
-   "label": "average productivity gain from AI help across 5,172 support agents[^43].",
+   "label": "average productivity gain from AI help across 5,172 support agents[^42].",
    "source": "Quarterly Journal of Economics, 2025"
   }
  ],
@@ -458,11 +458,6 @@
    "name": "Make Blog, Waves '26 (23 Oct 2026)",
    "url": "https://www.make.com/blog/waves26-the-glass-box-for-the-agentic-era",
    "what": "Approval from Slack, Teams or mobile listed as 'coming soon'; read 26 Nov 2026."
-  },
-  {
-   "name": "Make Community, Triggering scenario upon user's approval",
-   "url": "https://community.make.com/t/triggering-scenario-in-the-middle-upon-users-approval/94850",
-   "what": "User reports: no native approval step; a two-scenario workaround; read 26 Nov 2026."
   },
   {
    "name": "Workato, Pricing",
@@ -595,21 +590,6 @@
    "what": "Free self-hosted Community Edition; cloud plans billed per execution; read 26 Nov 2026."
   },
   {
-   "name": "Reddit r/zapier, Make trigger checks thread",
-   "url": "https://www.reddit.com/r/zapier/comments/1cc3sjs/",
-   "what": "User says Make counts every trigger check even when nothing is found; read 26 Nov 2026."
-  },
-  {
-   "name": "Reddit r/automation, who owns the workflow thread",
-   "url": "https://www.reddit.com/r/automation/comments/1t78cd0/",
-   "what": "Buyer question: who owns the workflow when it breaks? read 26 Nov 2026."
-  },
-  {
-   "name": "Reddit r/zapier, Zapier vs Make thread",
-   "url": "https://www.reddit.com/r/zapier/comments/1muatwz/",
-   "what": "Users say Zapier is easier, Make cheaper and more powerful; read 26 Nov 2026."
-  },
-  {
    "name": "Make, Integrations",
    "url": "https://www.make.com/en/integrations",
    "what": "Vendor claim: '3,500+' apps; read 26 Nov 2026."
@@ -664,13 +644,13 @@
  ],
  "updated": "2026-11-26",
  "answers": {
-  "recipes": "A 50-person team with no IT fits Zapier, a 150-person team running cross-team handoffs fits Zapier or Make, and a 400-person firm with an ERP fits Workato[^4][^20][^29].",
-  "human-role": "People keep control: the controller approves payments above a set amount, a named ops lead owns each workflow, and agents stop to ask a person at set points[^4][^34][^51][^3].",
+  "recipes": "A 50-person team with no IT fits Zapier, a 150-person team running cross-team handoffs fits Zapier or Make, and a 400-person firm with an ERP fits Workato[^4][^20][^28].",
+  "human-role": "People keep control: the controller approves payments above a set amount, a named ops lead owns each workflow, and agents stop to ask a person at set points[^4][^33][^3].",
   "example": "On Zapier, an AI step reads each of an illustrative distributor's 2,000 monthly invoices, and the controller approves each one, at about five tasks per invoice[^4][^1][^2].",
-  "what-goes-wrong": "Teams go wrong by missing overage and empty-trigger costs, editing live flows with no test stage, and assuming every platform has an approval step[^1][^13][^29][^21].",
-  "something-else": "Pick neither when you need self-hosting (n8n), a full integration platform for a large ERP estate, or Power Automate because your firm lives in Microsoft 365[^49][^39].",
-  "table-1": "Zapier Pro starts at $19.99 a month billed yearly, Make's help example is $9 for 10,000 credits, and Workato is quote-only[^1][^18][^24]. Zapier bills per task, Make per credit, and Workato in its own credits[^1][^11][^26].",
-  "table-2": "Workato gives the most: approvals, dev-test-live stages and a one-year audit log; Zapier adds approvals from Pro, and Make keeps approvals, audit log and SSO on Enterprise[^35][^29][^32][^4][^19][^21].",
-  "own-data": "At 2,000 invoices a month, Make costs about $12.38 and Zapier $129 to $193.50; Workato's cost is unclear, since it publishes no credit-to-task rate[^18][^1][^25]."
+  "what-goes-wrong": "Teams go wrong by missing overage and empty-trigger costs, editing live flows with no test stage, and assuming every platform has an approval step[^1][^13][^28][^21].",
+  "something-else": "Pick neither when you need self-hosting (n8n), a full integration platform for a large ERP estate, or Power Automate because your firm lives in Microsoft 365[^48][^38].",
+  "table-1": "Zapier Pro starts at $19.99 a month billed yearly, Make's help example is $9 for 10,000 credits, and Workato is quote-only[^1][^18][^23]. Zapier bills per task, Make per credit, and Workato in its own credits[^1][^11][^25].",
+  "table-2": "Workato gives the most: approvals, dev-test-live stages and a one-year audit log; Zapier adds approvals from Pro, and Make keeps approvals, audit log and SSO on Enterprise[^34][^28][^31][^4][^19][^21].",
+  "own-data": "At 2,000 invoices a month, Make costs about $12.38 and Zapier $129 to $193.50; Workato's cost is unclear, since it publishes no credit-to-task rate[^18][^1][^24]."
  }
 }

@@ -20,29 +20,29 @@
   "answers": {
     "walk-away": "You should leave with a one-page AI use rule, one named owner with set hours, and one pilot with a before-and-after number.[^3][^1][^11]",
     "human-role": "Your people check every AI draft and make the calls, with the owner-CEO setting the use rule and signing off anything customer-facing.[^12][^2]",
-    "recipes": "The work scales with firm size: one writing job at about 40 staff, one handoff fix at about 75, and one department pilot at about 150.[^12][^25][^1]",
-    "what-goes-wrong": "Most stalled AI pilots fail on people and process: a fuzzy problem, an owner with no time, or a build bought before the basics.[^8][^1][^31]",
+    "recipes": "The work scales with firm size: one writing job at about 40 staff, one handoff fix at about 75, and one department pilot at about 150.[^12][^24][^1]",
+    "what-goes-wrong": "Most stalled AI pilots fail on people and process: a fuzzy problem, an owner with no time, or a build bought before the basics.[^8][^1][^30]",
     "benchmark": "Judge any AI advisor by whether they name one job, one number that proves it worked, and who on your staff owns it after they leave.[^14][^1]",
     "something-else": "Skip paid help under about 40 staff, or before you can pay: a free SBDC advisor or your state's MEP center is a fair first step.[^9][^10]",
-    "own-data": "A seat for everyone costs about $6,700 to $10,100 a year at 40 staff, $12,600 to $18,900 at 75, and $25,200 to $37,800 at 150.[^23][^24][^27][^26]"
+    "own-data": "A seat for everyone costs about $6,700 to $10,100 a year at 40 staff, $12,600 to $18,900 at 75, and $25,200 to $37,800 at 150.[^22][^23][^26][^25]"
   },
   "walkAway": [
     "A one-page use rule: which tools, what data may go in, and who checks the output. Only 36% of small and mid-market owners have a written AI policy.[^3][^13]",
     "One named owner on your staff, with hours set aside each week. NIST's manufacturing program puts it plainly: \"It can't be this person's third job.\"[^1][^2]",
     "One pilot with a before-and-after number, such as hours or errors per job. The SBA and New York's Manufacturing Extension Partnership (MEP) center both advise starting small.[^11][^14]",
-    "A short list of what not to use AI for. On tasks outside AI's reach, consultants using it were 19 points less likely to be right.[^15][^16]",
-    "Trained staff, not just bought seats. At firms of 50+ staff, 43% of workers got no formal AI training, says security vendor Huntress.[^17]"
+    "A short list of what not to use AI for. On tasks outside AI's reach, consultants using it were 19 points less likely to be right.[^15]",
+    "Trained staff, not just bought seats. At firms of 50+ staff, 43% of workers got no formal AI training, says security vendor Huntress.[^16]"
   ],
   "humanRole": [
-    "Owner-CEO: sets the use rule and signs off any AI that talks to customers or touches hiring. NIST's AI framework puts AI risk decisions on executive leadership.[^2][^18]",
-    "Ops lead or GM: runs the pilot day to day, picks the job, tracks the number and can stop it. At a 200-person chemical maker, the process engineer led the AI test.[^1][^19]",
+    "Owner-CEO: sets the use rule and signs off any AI that talks to customers or touches hiring. NIST's AI framework puts AI risk decisions on executive leadership.[^2][^17]",
+    "Ops lead or GM: runs the pilot day to day, picks the job, tracks the number and can stop it. At a 200-person chemical maker, the process engineer led the AI test.[^1][^18]",
     "Controller: checks any AI output that feeds a price, invoice or forecast. Only 25% of owners have steps to verify AI output before decisions.[^3][^12]",
-    "HR lead: owns any AI used in hiring, reviews or discipline. Colorado's law covers AI in job decisions from 1 Jan 2027, with notice and human review.[^20][^21]"
+    "HR lead: owns any AI used in hiring, reviews or discipline. Colorado's law covers AI in job decisions from 1 Jan 2027, with notice and human review.[^19][^20]"
   ],
   "recipes": [
     {
       "name": "1. About 40 staff: a use rule, then one writing job",
-      "when": "Pick this when the owner still makes most calls and staff use free AI tools. Writing tasks are where small firms use AI most (83% of users).[^12][^22]",
+      "when": "Pick this when the owner still makes most calls and staff use free AI tools. Writing tasks are where small firms use AI most (83% of users).[^12][^21]",
       "flow": [
         "Owner-CEO: write a one-page use rule: tools, what data goes in, who checks",
         "Ops lead: pick one writing-heavy job, like quotes or customer replies, and time it for two weeks",
@@ -51,11 +51,11 @@
         "Controller: spot-check any draft with a price or number in it",
         "Owner-CEO: after six to eight weeks, keep it, change it or stop"
       ],
-      "cost": "Ten Standard seats on ChatGPT Business or Claude Team cost $2,400 a year at list price.[^23][^24] The bigger cost is staff time for the baseline, checks and training."
+      "cost": "Ten Standard seats on ChatGPT Business or Claude Team cost $2,400 a year at list price.[^22][^23] The bigger cost is staff time for the baseline, checks and training."
     },
     {
       "name": "2. About 75 staff: find the hidden AI use, then fix one handoff",
-      "when": "Pick this when staff likely use personal AI accounts. In write-ups of Census data, about 18% of firms with 50 to 99 staff don't know if staff use AI.[^25][^4]",
+      "when": "Pick this when staff likely use personal AI accounts. In write-ups of Census data, about 18% of firms with 50 to 99 staff don't know if staff use AI.[^24][^4]",
       "flow": [
         "Ops lead: run a short anonymous survey of who uses which AI tool, and for what",
         "Owner-CEO: approve one company tool and move people onto it",
@@ -64,7 +64,7 @@
         "Team leads: train their people on the approved tool and the use rule",
         "Owner-CEO: at eight weeks, keep it, change it or stop"
       ],
-      "cost": "One business plan for 75 people runs about $12,600 to $18,900 a year at list price.[^26][^23][^27] Linking two systems adds build work, so scope and price it separately."
+      "cost": "One business plan for 75 people runs about $12,600 to $18,900 a year at list price.[^25][^22][^26] Linking two systems adds build work, so scope and price it separately."
     },
     {
       "name": "3. About 150 staff: one department pilot, with a go-or-stop check before rollout",
@@ -76,12 +76,12 @@
         "Department head: run the pilot in one team or site and measure it",
         "Owner-CEO: roll out only with a measured gain, a written check step and trained users"
       ],
-      "cost": "Claude Team stops at 150 seats; Microsoft and Google business plans stop at 300 users.[^24][^27][^26] Price is driven by seats, staff time and any systems you connect."
+      "cost": "Claude Team stops at 150 seats; Microsoft and Google business plans stop at 300 users.[^23][^26][^25] Price is driven by seats, staff time and any systems you connect."
     }
   ],
   "ownData": {
     "title": "What does one AI seat per person cost a 40, 75 or 150-person firm?",
-    "intro": "We read four vendors' own price pages on 26 Nov 2026 and multiplied each list price by 40, 75 and 150 seats.[^23][^24][^27][^26] A seat for everyone costs about $6,700 to $37,800 a year, but a pilot needs far fewer. A ten-person pilot team costs about $1,700 to $2,500 a year.",
+    "intro": "We read four vendors' own price pages on 26 Nov 2026 and multiplied each list price by 40, 75 and 150 seats.[^22][^23][^26][^25] A seat for everyone costs about $6,700 to $37,800 a year, but a pilot needs far fewer. A ten-person pilot team costs about $1,700 to $2,500 a year.",
     "headers": [
       "Plan (billed yearly)",
       "List price per seat a month",
@@ -92,28 +92,28 @@
     "rows": [
       [
         "ChatGPT Business, Standard seat",
-        "$20; $25 if billed monthly[^23]",
+        "$20; $25 if billed monthly[^22]",
         "$9,600",
         "$18,000",
         "$36,000"
       ],
       [
         "Claude Team, Standard seat (2 to 150 seats)",
-        "$20; $25 if billed monthly[^24]",
+        "$20; $25 if billed monthly[^23]",
         "$9,600",
         "$18,000",
         "$36,000"
       ],
       [
         "Microsoft 365 Copilot Business (up to 300 users)",
-        "$21, added to a Microsoft 365 plan you already pay for; $18 first-year offer to 31 Dec 2026[^27]",
+        "$21, added to a Microsoft 365 plan you already pay for; $18 first-year offer to 31 Dec 2026[^26]",
         "$10,080",
         "$18,900",
         "$37,800"
       ],
       [
         "Google Workspace Business Standard (up to 300 users)",
-        "$14 for the whole suite with Gemini, not an AI-only add-on[^26]",
+        "$14 for the whole suite with Gemini, not an AI-only add-on[^25]",
         "$6,720",
         "$12,600",
         "$25,200"
@@ -122,28 +122,28 @@
     "note": "Method: US list prices before tax, read with a web fetch tool on 26 Nov 2026. The OpenAI and Microsoft pages came from caches dated 16 and 13 Nov. Promos are left out, and the full-firm columns are a ceiling, not advice; seat price leaves out staff time, training, usage extras and build work."
   },
   "watchOuts": [
-    "Pilots stall when the problem is fuzzy; RAND found a misunderstood problem is the most common root cause.[^8] Name one job and one number first: 42% of firms dropped most AI projects in 2025.[^28][^29]",
-    "Staff paste company data into personal AI accounts; security vendor LayerX says 82% of pastes come from unmanaged accounts.[^30] Approve one business tool and write what data may go in.[^3]",
-    "AI gets things wrong: accuracy is the top problem small-firm AI users report (46%).[^12] Your firm owns what its chatbot tells customers, so a person checks anything customer-facing.[^18]",
+    "Pilots stall when the problem is fuzzy; RAND found a misunderstood problem is the most common root cause.[^8] Name one job and one number first: 42% of firms dropped most AI projects in 2025.[^27][^28]",
+    "Staff paste company data into personal AI accounts; security vendor LayerX says 82% of pastes come from unmanaged accounts.[^29] Approve one business tool and write what data may go in.[^3]",
+    "AI gets things wrong: accuracy is the top problem small-firm AI users report (46%).[^12] Your firm owns what its chatbot tells customers, so a person checks anything customer-facing.[^17]",
     "An owner with no time stalls the work; NIST's manufacturing program warns it \"can't be this person's third job\".[^1] Owner-CEO: block real hours on the ops lead's calendar before kickoff.",
-    "AI in hiring or reviews faces new state rules; Colorado's law covers job decisions from 1 Jan 2027.[^20] As of Nov 2026, a federal court order pauses enforcement, so have your HR lead check first.[^21]",
-    "Buying a build before the basics wastes money. Gartner expects firms to drop 60% of AI projects that lack AI-ready data, so check your data on one job first.[^31]"
+    "AI in hiring or reviews faces new state rules; Colorado's law covers job decisions from 1 Jan 2027.[^19] As of Nov 2026, a federal court order pauses enforcement, so have your HR lead check first.[^20]",
+    "Buying a build before the basics wastes money. Gartner expects firms to drop 60% of AI projects that lack AI-ready data, so check your data on one job first.[^30]"
   ],
   "howToTest": [
     "Record today's numbers for one job for two weeks: volume, hours, errors and turnaround.[^11][^14]",
     "Ask which one job they would start with, and what number proves it worked.[^14] Walk away from a plan with no named job.",
-    "Ask what they would not use AI for here. A good advisor rules some jobs out.[^16][^15]",
+    "Ask what they would not use AI for here. A good advisor rules some jobs out.[^15]",
     "Ask who on your staff owns it after they leave, and for how many hours a week.[^1][^2]",
-    "Ask whether it can run on tools you already pay for, like Microsoft 365 or Google Workspace.[^27][^26]",
+    "Ask whether it can run on tools you already pay for, like Microsoft 365 or Google Workspace.[^26][^25]",
     "Ask to see the use rule they would write, and who signs it. NIST lists acceptable-use policies as a basic step for generative AI.[^13]",
     "Hold back real past cases the advisor never sees, and test the output on them before you trust it.",
     "Price the lift: hours saved a month times loaded cost per hour (pay plus benefits). Subtract seat costs, upkeep and the hours your checkers spend.",
-    "Ask whether any paid mapping work ends in a pilot. One clinic group's ops lead feared paying for a roadmap deck nobody uses.[^32]"
+    "Ask whether any paid mapping work ends in a pilot."
   ],
   "faq": [
     {
       "q": "How much does an AI consultant cost?",
-      "a": "On the US government's published price list, AI roles have a median hourly ceiling of $183 to $194.[^37][^38] Commercial fees aren't published, so get a fixed price in writing; most consultants price by project or by the hour.[^39] Business AI seats add $14 to $21 per person a month.[^26][^27]"
+      "a": "On the US government's published price list, AI roles have a median hourly ceiling of $183 to $194.[^35][^36] Commercial fees aren't published, so get a fixed price in writing; most consultants price by project or by the hour.[^37] Business AI seats add $14 to $21 per person a month.[^25][^26]"
     },
     {
       "q": "What is the 10-20-70 rule for AI?",
@@ -151,21 +151,21 @@
     },
     {
       "q": "What is the best AI program for a small business?",
-      "a": "Usually the one built into what you already pay for. Microsoft 365 and Google Workspace both sell AI on business plans of up to 300 users.[^27][^26] Pick on fit with your email and files, not on rankings."
+      "a": "Usually the one built into what you already pay for. Microsoft 365 and Google Workspace both sell AI on business plans of up to 300 users.[^26][^25] Pick on fit with your email and files, not on rankings."
     },
     {
       "q": "When does a custom AI agent make sense, versus ChatGPT or our existing tools?",
-      "a": "A custom agent makes sense when a job's steps can't be fixed in advance and simpler tools have already fallen short.[^40] That is rare in a first project at this size: most small-firm AI use is writing that business seats cover.[^12] Gartner says many jobs sold as agents don't need one.[^33]"
+      "a": "A custom agent makes sense when a job's steps can't be fixed in advance and simpler tools have already fallen short.[^38] That is rare in a first project at this size: most small-firm AI use is writing that business seats cover.[^12] Gartner says many jobs sold as agents don't need one.[^31]"
     },
     {
       "q": "Should a consultant map our workflows first, or is that wasted money?",
-      "a": "Map only the job you will pilot, and tie the mapping to that pilot. RAND found a misunderstood problem is the top reason AI projects fail.[^8] One clinic group's ops lead called mapping with no pilot \"paid discovery fluff\".[^32]"
+      "a": "Map only the job you will pilot, and tie the mapping to that pilot. RAND found a misunderstood problem is the top reason AI projects fail.[^8]"
     }
   ],
   "pickElse": [
     "Under about 40 staff, or not ready to pay: start with a free Small Business Development Center (SBDC) advisor trained in AI.[^9] America's SBDC says its AI U program has coached 8,000+ businesses.[^9]",
-    "You make things: call your state's Manufacturing Extension Partnership (MEP) center first.[^10] Some help fund staff AI training, as Maryland's did for a family apple processor.[^34]",
-    "Staff only need help with everyday writing: buy business seats from the table above and train people.[^12][^23]",
+    "You make things: call your state's Manufacturing Extension Partnership (MEP) center first.[^10] Some help fund staff AI training, as Maryland's did for a family apple processor.[^32]",
+    "Staff only need help with everyday writing: buy business seats from the table above and train people.[^12][^22]",
     "One clear workflow between two systems: see our AI automation consulting guide, and keep the first project small enough to manage.[^14] A plan across several departments: see AI strategy consulting."
   ],
   "resources": [
@@ -198,12 +198,12 @@
   "stats": [
     {
       "num": "40.0%",
-      "label": "Firms of 100 to 249 staff using AI in Oct 2026, per write-ups of Census data; Census's own May figure was 32%.[^25][^35][^36]",
+      "label": "Firms of 100 to 249 staff using AI in Oct 2026, per write-ups of Census data; Census's own May figure was 32%.[^24][^33][^34]",
       "source": "Census BTOS via Fifth Nine and FACTS, Nov 2026; Census, May 2026"
     },
     {
       "num": "21.4%",
-      "label": "Firms with 100 to 249 staff that don't know whether their staff use generative AI, per a write-up of Census data.[^25]",
+      "label": "Firms with 100 to 249 staff that don't know whether their staff use generative AI, per a write-up of Census data.[^24]",
       "source": "Census BTOS via Fifth Nine, Nov 2026"
     },
     {
@@ -223,7 +223,7 @@
     },
     {
       "num": "$14 to $21",
-      "label": "List price per person a month for business AI seats on four plans.[^26][^27][^23][^24]",
+      "label": "List price per person a month for business AI seats on four plans.[^25][^26][^22][^23]",
       "source": "Zavient price check, 26 Nov 2026"
     }
   ],
@@ -304,11 +304,6 @@
       "what": "758 consultants: inside AI's reach, 12.2% more tasks and 25.1% faster; outside it, 19 points less likely to be right."
     },
     {
-      "name": "Reddit r/SaaS, Is AI consulting actually worth it for small and mid-sized businesses? (Jul 2026)",
-      "url": "https://www.reddit.com/r/SaaS/comments/1v4exu1/is_ai_consulting_actually_worth_it_for_small_and/",
-      "what": "A practitioner: workshops are often more about deciding where AI should not be used."
-    },
-    {
       "name": "Huntress, Companies Push AI Use But Skip Training and Official Policy (2 Oct 2026)",
       "url": "https://www.huntress.com/blog/llm-security-report",
       "what": "Vendor survey of 501 workers at firms with 50+ staff: 43% got no formal AI training; 26% have no AI policy or guidance."
@@ -382,11 +377,6 @@
       "name": "Gartner press release, 26 Feb 2025",
       "url": "https://www.gartner.com/en/newsroom/press-releases/2025-02-26-lack-of-ai-ready-data-puts-ai-projects-at-risk",
       "what": "Through 2026, firms will abandon 60% of AI projects unsupported by AI-ready data."
-    },
-    {
-      "name": "Reddit r/AI_Agents, What should a small business expect from AI consultants? (May 2026)",
-      "url": "https://www.reddit.com/r/AI_Agents/comments/1th55du/what_should_a_small_business_expect_from_ai",
-      "what": "A clinic group's ops lead fears paying for a roadmap deck or an agent nobody uses, and for \"paid discovery fluff\". One buyer's view."
     },
     {
       "name": "Gartner press release, 25 Jun 2025",

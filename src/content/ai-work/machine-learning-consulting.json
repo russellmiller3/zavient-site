@@ -137,24 +137,24 @@
     "note": "Method: Zavient run on 26 Nov 2026; each model trained on 80% of customers and scored on the other 20%, 15 times, on default settings. Limits: one telecom dataset, no tuning, and random rather than time-based splits, since the file has no dates. The glass box and logistic regression differ by less than the run-to-run spread, so call it a tie."
   },
   "watchOuts": [
-    "Test scores that look too good. Leakage, where the model glimpses the answers, hit 294 studies in 17 fields; lock a recent holdout yourself before work starts.[^11][^28]",
-    "The model never reaches the people who would use it. Studies of Microsoft teams and of 18 ML engineers find deployment and upkeep are the hard part; name the user and screen first.[^29][^30]",
-    "Accuracy decays after launch. One study found decay in 91% of 128 model and dataset pairs; check live accuracy monthly and set a retrain trigger.[^7][^31]",
+    "Test scores that look too good. Leakage, where the model glimpses the answers, hit 294 studies in 17 fields; lock a recent holdout yourself before work starts.[^11]",
+    "The model never reaches the people who would use it. Studies of Microsoft teams and of 18 ML engineers find deployment and upkeep are the hard part; name the user and screen first.[^28][^29]",
+    "Accuracy decays after launch. One study found decay in 91% of 128 model and dataset pairs; check live accuracy monthly and set a retrain trigger.[^7][^30]",
     "The model learns the wrong lesson and nobody sees it. Start glass-box and have the domain lead review every chart; Google's rules say readable models are easier to debug.[^15][^3]",
-    "Scores used outside the range they were built for. Zillow wrote down $304 million of homes after its price forecasts missed; cap where scores apply and keep sign-off on big calls.[^32]",
-    "A churn score is not a save plan. Hold back a small random control group, so you measure customers saved, not just predictions made.[^33]"
+    "Scores used outside the range they were built for. Zillow wrote down $304 million of homes after its price forecasts missed; cap where scores apply and keep sign-off on big calls.[^31]",
+    "A churn score is not a save plan: in two field experiments, the customers most likely to leave were not the best ones to target.[^35] Hold back a small random control group, so you measure customers saved, not just predictions made."
   ],
   "howToTest": [
     "Name one decision and the money number it moves, before any data work.[^3]",
     "Write down today's rule and score it. Any model must beat it; our contract rule caught 44 churners per 100 flagged.[^3][^4]",
-    "Count past outcomes, such as customers who left, not rows. Needed size depends on the number of outcomes and fields, not one rule of thumb.[^34]",
-    "Lock a holdout, past cases the model never trains on, before the advisor sees any results. Use your most recent months if you can.[^11][^34]",
+    "Count past outcomes, such as customers who left, not rows. Needed size depends on the number of outcomes and fields, not one rule of thumb.[^32]",
+    "Lock a holdout, past cases the model never trains on, before the advisor sees any results. Use your most recent months if you can.[^11][^32]",
     "Compare four approaches on that holdout: your rule, logistic regression, a glass-box model and a black box.[^5][^3]",
     "Score what your decision needs: real cases caught in the list you will work, and results by region or product. One Google system gained 1% overall while one country fell 50%.[^14]",
     "Ask to see why for one real customer. In our benchmark, one customer's top reasons were one month of tenure, a month-to-month contract and fibre internet.[^12][^4]",
     "Price the lift: extra real cases in your list x the share you save x margin, minus the cost of acting, building and upkeep. Our 32 extra churners per 1,000 paid about $28,600 a year: revenue reached, not saved.[^4]",
-    "Run it live in one team against a small random control group for 60 to 90 days before you scale.[^33]",
-    "Check the handover against the ML Test Score's monitoring checks: code, data feed, monitoring, retrain rule and who holds the logins.[^14][^35]"
+    "Run it live in one team against a small random control group for 60 to 90 days before you scale.",
+    "Check the handover against the ML Test Score's monitoring checks: code, data feed, monitoring, retrain rule and who holds the logins.[^14]"
   ],
   "faq": [
     {
@@ -163,11 +163,11 @@
     },
     {
       "q": "How long does a machine learning project take?",
-      "a": "One vendor guide says 2 to 6 weeks to check the data and 1 to 3 months for a trial build.[^36] A first live model takes 4 to 6 months.[^36] Gartner's survey average was 8 months from prototype to production.[^2]"
+      "a": "One vendor guide says 2 to 6 weeks to check the data and 1 to 3 months for a trial build.[^33] A first live model takes 4 to 6 months.[^33] Gartner's survey average was 8 months from prototype to production.[^2]"
     },
     {
       "q": "Do we have enough data?",
-      "a": "Only if you have enough outcomes, not rows: count how many customers left, loans went bad or orders slipped.[^34] Practitioners test it with a learning curve: fit on half the data, then all; if scores still climb, more data helps.[^37] With a few dozen cases, use a rule instead.[^38]"
+      "a": "Only if you have enough outcomes, not rows: count how many customers left, loans went bad or orders slipped.[^32] Test it with a learning curve: fit on half the data, then all; if scores still climb, more data helps. With a few dozen cases, use a rule instead."
     },
     {
       "q": "Does predictive modelling actually work, or is it hype?",
@@ -179,13 +179,13 @@
     },
     {
       "q": "Can our team keep the model running after the consultant leaves?",
-      "a": "Only if the handover includes the data feed, monitoring, a retrain rule and a named owner.[^14][^8] Practitioners warn that small-firm models often go unmaintained once the consultant moves on.[^35]"
+      "a": "Only if the handover includes the data feed, monitoring, a retrain rule and a named owner.[^14][^8]"
     }
   ],
   "pickElse": [
     "Your CRM already scores leads: turn on its scoring and test it on your holdout first.[^20][^21] Salesforce's tool wants 1,000 leads in 200 days, with 120 converted.[^20]",
-    "Too few cases, or one obvious driver: use a rule or a spreadsheet score. Google's rules say a simple rule can get you about half the gain.[^3][^38]",
-    "You have an analyst and one clean table: try free InterpretML or Google's AutoML first.[^6][^39] Google lists AutoML training on tables at $21.252 per hour of computing.[^39]"
+    "Too few cases, or one obvious driver: use a rule or a spreadsheet score. Google's rules say a simple rule can get you about half the gain.[^3]",
+    "You have an analyst and one clean table: try free InterpretML or Google's AutoML first.[^6][^34] Google lists AutoML training on tables at $21.252 per hour of computing.[^34]"
   ],
   "resources": [
     {
@@ -383,11 +383,6 @@
       "what": "The OCC adopts the revised interagency model risk guidance issued with the Fed and FDIC."
     },
     {
-      "name": "Reddit r/datascience, How's your experience with consulting companies?, Aug 2023 (practitioner opinion)",
-      "url": "https://www.reddit.com/r/datascience/comments/15k2pxz/hows_your_experience_with_consulting_companies",
-      "what": "Practitioner complaint that some outside vendors tune models on the test set, then claim the model will hold up."
-    },
-    {
       "name": "Amershi et al., Software Engineering for Machine Learning: A Case Study, ICSE 2019 (Microsoft)",
       "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2019/03/amershi-icse-2019_Software_Engineering_for_Machine_Learning.pdf",
       "what": "Study of Microsoft teams (551 survey responses): data, deployment and operations, not modelling alone, are where ML work gets hard."
@@ -408,19 +403,9 @@
       "what": "$304.4 million inventory write-down in Zillow Offers; the CEO said home-price forecasting proved far less predictable than expected."
     },
     {
-      "name": "Reddit r/datascience, Question about how to use churn prediction (practitioner opinion)",
-      "url": "https://www.reddit.com/r/datascience/comments/1k80mxy/question_about_how_to_use_churn_prediction",
-      "what": "Practitioners note a risk score alone doesn't show an offer works, and advise small randomised tests with a control group."
-    },
-    {
       "name": "Riley et al., Calculating the sample size required for developing a clinical prediction model, BMJ, 2020",
       "url": "https://www.bmj.com/content/368/bmj.m441",
       "what": "Needed data depends on the number of outcomes, the number of fields, the outcome share and expected performance; the 10-events-per-field rule is only a rule of thumb."
-    },
-    {
-      "name": "Reddit r/datascience, Services a sole data scientist consultant can offer small businesses, Jul 2021 (practitioner opinion)",
-      "url": "https://www.reddit.com/r/datascience/comments/ofqq2e/what_services_could_you_provide_to_small",
-      "what": "Practitioner warning: small-business models often go unmaintained once the consultant moves on."
     },
     {
       "name": "Logix Built, Machine Learning Consultant: Services, Costs and How to Choose, 19 Nov 2026 (vendor guide)",
@@ -428,19 +413,14 @@
       "what": "Vendor's timeline: data assessment 2 to 6 weeks; proof of concept 1 to 3 months; first production model 4 to 6 months."
     },
     {
-      "name": "Reddit r/MachineLearning, How much data is enough data?, Oct 2013 (practitioner opinion)",
-      "url": "https://www.reddit.com/r/MachineLearning/comments/1pdaxo/how_much_data_is_enough_data",
-      "what": "Practitioners suggest a learning curve: fit on part of the data, then all of it; if scores still climb, more data helps."
-    },
-    {
-      "name": "Reddit r/datascience, Working with extremely limited data, Feb 2023 (practitioner opinion)",
-      "url": "https://www.reddit.com/r/datascience/comments/10u61v7/working_with_extremely_limited_data/",
-      "what": "Practitioner view: a problem that can be solved with 25 samples can be solved without machine learning."
-    },
-    {
       "name": "Google Cloud, Vertex AI pricing, read 26 Nov 2026",
       "url": "https://cloud.google.com/vertex-ai/pricing",
       "what": "AutoML on tabular data: training $21.252 per node hour for classification or regression, on Google's own pricing page."
+    },
+    {
+      "name": "Ascarza, Retention Futility: Targeting High-Risk Customers Might Be Ineffective, Journal of Marketing Research 55(1), Feb 2018 (Harvard Business School page)",
+      "url": "https://www.hbs.edu/faculty/Pages/item.aspx?num=54936",
+      "what": "Two field experiments: the customers at highest churn risk were not the best targets; targeting by response to the offer, measured against a randomized control group, worked significantly better. Read 26 Nov 2026."
     }
   ],
   "related": [
@@ -486,8 +466,8 @@
     "walk-away": "You should hold one named decision with its money number, a scored baseline and held-back test set, a model in weekly use, readable reasons per score, and a handover[^3][^1][^14].",
     "human-role": "People keep the calls: the person acting on the score can override it, the domain lead reviews the model, an independent checker tests it, and credit officers own declines[^9][^15][^16][^18].",
     "recipes": "The work takes one of three shapes: a yes-or-no score from your CRM data, a model that drafts a weekly plan, or a glass-box model for a regulated decision[^19][^10][^17].",
-    "what-goes-wrong": "Most pilots stall because the model never reaches the people who would use it, its accuracy decays without upkeep, or its test scores were too good to be true[^29][^7][^11].",
+    "what-goes-wrong": "Most pilots stall because the model never reaches the people who would use it, its accuracy decays without upkeep, or its test scores were too good to be true[^28][^7][^11].",
     "benchmark": "Judge an advisor by whether their model beats your current rule on a holdout you locked, with reasons you can read and a handover your team can run[^3][^11][^14].",
-    "something-else": "Skip a consultant when your CRM already scores leads, when a rule or spreadsheet will do, or when an analyst can try InterpretML or Google's AutoML first[^20][^3][^6][^39]."
+    "something-else": "Skip a consultant when your CRM already scores leads, when a rule or spreadsheet will do, or when an analyst can try InterpretML or Google's AutoML first[^20][^3][^6][^34]."
   }
 }

@@ -180,29 +180,29 @@
       "when": "You have a technician or engineer who likes data, and you want to own the data. Simple thresholds often do the job before any model.[^12]",
       "flow": [
         "Maintenance manager: choose up to 10 critical rotating machines from recipe 1",
-        "Technician: mount sensors and check the mounts monthly; sensors falling off is a common complaint[^32]",
+        "Technician: mount sensors and check the mounts monthly",
         "Reliability lead: set simple alarm thresholds first, such as a fixed vibration level that triggers an alert[^12]",
         "Technician: for 90 days, confirm every alert by hand and log it as caught, false or unclear",
         "Maintenance manager: review the alert log monthly and adjust thresholds"
       ],
-      "cost": "About $4,200 to $5,550 in list-price hardware for 10-12 points, before installation, per our 26 Nov 2026 check.[^7][^8] Software runs from $70 a year (Monnit Premiere) to bring your own (NCD).[^33][^34]"
+      "cost": "About $4,200 to $5,550 in list-price hardware for 10-12 points, before installation, per our 26 Nov 2026 check.[^7][^8] Software runs from $70 a year (Monnit Premiere) to bring your own (NCD).[^32][^33]"
     },
     {
       "name": "3. No one reads vibration data: a managed service",
-      "when": "No one on staff can read vibration data, and practitioners say skilled analysts are scarce.[^35] On MaintainX already, its Asset Intelligence add-on brings machine data into the CMMS, price on request.[^36]",
+      "when": "No one on staff can read vibration data. On MaintainX already, its Asset Intelligence add-on brings machine data into the CMMS, price on request.[^34]",
       "flow": [
-        "Maintenance manager: shortlist 2 services and ask for a trial on your own machines; KCF offers a $199, 30-day trial of 48 sensors[^37]",
+        "Maintenance manager: shortlist 2 services and ask for a trial on your own machines; KCF offers a $199, 30-day trial of 48 sensors[^35]",
         "Vendor analyst: sends a diagnosis with each alert",
         "Technician: confirms on the machine",
         "Planner: books the repair",
         "Maintenance manager: tracks confirmed catches and false alarms against the contract"
       ],
-      "cost": "Mostly quote-only: Tractian, Augury, Waites and Siemens Senseye publish no price.[^38][^30][^39][^40] Petasense's Starter plan lists at $999 a month, billed yearly, as read on 26 Nov 2026.[^41]"
+      "cost": "Mostly quote-only: Tractian, Augury, Waites and Siemens Senseye publish no price.[^36][^30][^37][^38] Petasense's Starter plan lists at $999 a month, billed yearly, as read on 26 Nov 2026.[^39]"
     }
   ],
   "ownData": {
     "title": "What does it cost to start monitoring 10 critical machines?",
-    "intro": "On 26 Nov 2026 we read the public price pages of 14 condition-monitoring offerings. Seven publish a price you can act on, five are quote-only, and two no longer take new buyers. For each priced kit we added sensors, one gateway and published first-year software for 10 points.[^38][^42]",
+    "intro": "On 26 Nov 2026 we read the public price pages of 14 condition-monitoring offerings. Seven publish a price you can act on, five are quote-only, and two no longer take new buyers. For each priced kit we added sensors, one gateway and published first-year software for 10 points.[^36][^40]",
     "headers": [
       "Offering",
       "What you buy",
@@ -214,29 +214,29 @@
       [
         "Banner QM30VT2 + DXM700 controller",
         "Wired vibration and temperature sensor, with controller",
-        "$328.25 each; DXM700 $917.63, at distributor RS[^7][^43]",
-        "$4,200.13[^7][^43]",
+        "$328.25 each; DXM700 $917.63, at distributor RS[^7][^41]",
+        "$4,200.13[^7][^41]",
         "Software and cabling"
       ],
       [
         "NCD.io V3 sensor + Enterprise IIoT Gateway",
         "Wireless vibration and temperature sensor, open protocol",
-        "$388.75 each at 10+; gateway $681.95[^34]",
-        "$4,569.45[^34]",
+        "$388.75 each at 10+; gateway $681.95[^33]",
+        "$4,569.45[^33]",
         "Software and analysis: yours to choose"
       ],
       [
         "Monnit ALTA Advanced Vibration Meter + Ethernet Gateway + iMonnit Premiere",
         "Wireless sensor with hosted dashboard and alerts",
-        "$440 each; gateway $242; Premiere $70 a year for 12 sensors[^44][^45][^33]",
-        "$4,712.00[^44][^33]",
+        "$440 each; gateway $242; Premiere $70 a year for 12 sensors[^42][^43][^32]",
+        "$4,712.00[^42][^32]",
         "Analysis beyond alerts and thresholds"
       ],
       [
         "ifm VVB001",
         "Wired IO-Link (industrial plug-in standard) vibration sensor, one axis",
-        "$479.04 each at 3+, at distributor RS[^46]",
-        "$4,790.40, sensors only[^46]",
+        "$479.04 each at 3+, at distributor RS[^44]",
+        "$4,790.40, sensors only[^44]",
         "IO-Link master and software"
       ],
       [
@@ -244,38 +244,38 @@
         "Wireless three-axis sensors with gateway",
         "$5,549.95 for 12 sensors and gateway[^8]",
         "$5,549.95 for 12 points[^8]",
-        "Software included, per the vendor[^47]"
+        "Software included, per the vendor[^45]"
       ],
       [
         "Petasense Vibration Mote Model 1 + Starter plan",
         "Wireless sensor plus software sized for about 50 sensors",
-        "$499 each; $999 a month, billed yearly[^41]",
-        "$16,978.00[^41]",
-        "Transmitter ($959), which Wi-Fi motes may not need[^41]"
+        "$499 each; $999 a month, billed yearly[^39]",
+        "$16,978.00[^39]",
+        "Transmitter ($959), which Wi-Fi motes may not need[^39]"
       ],
       [
         "KCF Technologies",
         "48 wireless sensors and a base station for 30 days",
-        "$199 trial; hardware returnable[^37]",
-        "$199, trial only[^37]",
-        "After the trial: custom quote[^48]"
+        "$199 trial; hardware returnable[^35]",
+        "$199, trial only[^35]",
+        "After the trial: custom quote[^46]"
       ],
       [
         "Quote only (5): Tractian, Augury, Waites, Siemens Senseye, MaintainX Asset Intelligence",
         "Sensors and software; some add analysts",
-        "Not published[^38][^30][^39][^40][^36]",
+        "Not published[^36][^30][^37][^38][^34]",
         "n/a",
         "n/a"
       ],
       [
         "No longer sold to new buyers (2): Amazon Monitron, Fluke 3563 kit",
         "Wireless sensor kits",
-        "Monitron closed to new customers 31 Oct 2024; Fluke lists the 3563 as discontinued[^42][^49]",
+        "Monitron closed to new customers 31 Oct 2024; Fluke lists the 3563 as discontinued[^40][^47]",
         "n/a",
         "n/a"
       ]
     ],
-    "note": "Zavient arithmetic on list prices read 26 Nov 2026, not vendor quotes. It leaves out installation, mounting, cabling, tax, shipping, discounts and analyst time, and the kits differ: one axis or three, wired or wireless. Softwr reports Petasense now belongs to AssetWatch and quotes on request, though its own page still listed prices that day.[^50][^41]"
+    "note": "Zavient arithmetic on list prices read 26 Nov 2026, not vendor quotes. It leaves out installation, mounting, cabling, tax, shipping, discounts and analyst time, and the kits differ: one axis or three, wired or wireless. Softwr reports Petasense now belongs to AssetWatch and quotes on request, though its own page still listed prices that day.[^48][^39]"
   },
   "rules": [
     {
@@ -300,31 +300,31 @@
       "name": "CISA, NSA and FBI: Principles for the Secure Integration of AI in Operational Technology (OT)",
       "url": "https://www.cisa.gov/news-events/news/new-joint-guide-advances-secure-integration-artificial-intelligence-operational-technology",
       "status": "Guidance, Dec 2025",
-      "what": "Be careful with AI that can act on the plant. Keep people in the loop and protect the control network that sensors join.[^51]"
+      "what": "Be careful with AI that can act on the plant. Keep people in the loop and protect the control network that sensors join.[^49]"
     },
     {
       "name": "NIST SP 800-82 Rev. 3",
       "url": "https://csrc.nist.gov/pubs/sp/800/82/r3/final",
       "status": "Guidance",
-      "what": "The US reference for securing the plant networks your sensors and gateways connect to.[^52]"
+      "what": "The US reference for securing the plant networks your sensors and gateways connect to.[^50]"
     }
   ],
   "howToTest": [
     "Pick 5-10 critical machines at one site whose failures are random and costly, using the table above.[^1][^29]",
-    "Record 12 months of baseline for those machines: unplanned downtime hours, emergency work orders and actual PM completion. Limble's vendor survey found teams complete 54% of scheduled PM.[^17][^53]",
+    "Record 12 months of baseline for those machines: unplanned downtime hours, emergency work orders and actual PM completion. Limble's vendor survey found teams complete 54% of scheduled PM.[^17]",
     "Add a \"how was this found\" field to every work order: inspection, alert, operator or breakdown. One study found it missing on 60-98% of work orders at four companies.[^6]",
     "Write the alarm rule down before day one, so nobody moves the goalposts.[^9]",
-    "Log every alert as caught (confirmed by a technician), false or unclear, with the lead time before failure and the technician hours it took.[^4][^54]",
-    "Count avoided downtime only on confirmed catches, at your own cost per downtime hour. Skip survey averages: Siemens' figures come from the world's 500 largest firms.[^55]",
+    "Log every alert as caught (confirmed by a technician), false or unclear, with the lead time before failure and the technician hours it took.[^4][^51]",
+    "Count avoided downtime only on confirmed catches, at your own cost per downtime hour. Skip survey averages: Siemens' figures come from the world's 500 largest firms.[^52]",
     "Net value is avoided downtime, minus false-alarm visits and needless stops, minus a year of fees. McKinsey saw a 10% false-alarm rate add 1,000 cases a year and erase the savings.[^4]",
     "At day 90, decide per machine: keep it, switch to a simple threshold, or go back to scheduled checks.[^12]"
   ],
   "watchOuts": [
-    "False alarms: in a McKinsey example, a model catching a quarter of breakdowns still lost money when 10% of its alerts were false.[^4][^54] Log every alert, and tune or drop noisy machines.",
-    "Dirty work orders: NIST found entry errors are non-random and skew maintenance KPIs, even with large samples.[^5][^56] Clean the history and add a how-found field before you train anything.",
-    "No one acts on the alert: practitioners say programs fail when nobody acts after the alarm.[^35] DOE warns the savings are \"not readily seen by management\", so report confirmed catches monthly.[^3]",
-    "Sensors without context: one plant's sensors couldn't tell a breakdown from a lunch break, and some fell off.[^32] Start from asset criticality, not sensor choice.",
-    "Vendor exits: Amazon closed Monitron to new customers in Oct 2024 and shut Lookout for Equipment on 7 Oct 2026.[^42][^57] Ask who owns your data and how you export it.",
+    "False alarms: in a McKinsey example, a model catching a quarter of breakdowns still lost money when 10% of its alerts were false.[^4][^51] Log every alert, and tune or drop noisy machines.",
+    "Dirty work orders: NIST found entry errors are non-random and skew maintenance KPIs, even with large samples.[^5][^53] Clean the history and add a how-found field before you train anything.",
+    "No one acts on the alert. DOE warns the savings are \"not readily seen by management\", so report confirmed catches monthly.[^3]",
+    "Sensors bought before a plan. Start from asset criticality: ISO 17359 builds monitoring on a cost-benefit and criticality review, and simple thresholds often do the job.[^9][^12]",
+    "Vendor exits: Amazon closed Monitron to new customers in Oct 2024 and shut Lookout for Equipment on 7 Oct 2026.[^40][^54] Ask who owns your data and how you export it.",
     "Over-maintaining: NASA notes scheduled overhauls can raise failure rates by adding early-life failures after the work.[^1] Drop PM tasks that don't match how the part fails."
   ],
   "faq": [
@@ -342,24 +342,24 @@
     },
     {
       "q": "How accurate is our CMMS data, really?",
-      "a": "Often less than reports suggest: NIST found entry errors hide inside KPIs.[^5] One technician wrote, \"Management thinks we're 90% compliant. We're maybe 40%.\"[^53] Clean it before you train any model.[^56]"
+      "a": "Often less than reports suggest: NIST found entry errors hide inside KPIs.[^5] One technician wrote, \"Management thinks we're 90% compliant. We're maybe 40%.\" Clean it before you train any model.[^53]"
     },
     {
       "q": "Is a sensor subscription worth it if it saves one or two breakdowns a year?",
-      "a": "Only if one avoided breakdown costs more than a year of fees plus the false-alarm visits.[^4] Test it on your own downtime cost, not survey averages from much larger firms.[^55]"
+      "a": "Only if one avoided breakdown costs more than a year of fees plus the false-alarm visits.[^4] Test it on your own downtime cost, not survey averages from much larger firms.[^52]"
     },
     {
       "q": "What does a 5-10 machine pilot cost?",
-      "a": "Our 26 Nov 2026 check found self-run hardware for 10-12 points at about $4,200 to $5,550 list.[^7][^8] KCF offers a $199, 30-day trial, and most managed services publish no price.[^37][^38]"
+      "a": "Our 26 Nov 2026 check found self-run hardware for 10-12 points at about $4,200 to $5,550 list.[^7][^8] KCF offers a $199, 30-day trial, and most managed services publish no price.[^35][^36]"
     }
   ],
   "buyVsBuild": {
-    "buy": "Buy when you have no data team and your machines are standard motors, pumps, fans and gearboxes. Most firms buy: 76% of enterprise AI use cases are bought, per Menlo Ventures.[^58] Internal builds succeed about a third as often as bought or partnered tools, in MIT research on AI pilots.[^59]",
-    "build": "Build only for fleets of identical machines or a process no vendor knows. McKinsey's offshore case took 10-15 data scientists two years and 500+ models.[^19] The middle path: buy open hardware such as NCD or Monnit, keep the data, and start with thresholds.[^34][^12]"
+    "buy": "Buy when you have no data team and your machines are standard motors, pumps, fans and gearboxes. Most firms buy: 76% of enterprise AI use cases are bought, per Menlo Ventures.[^55] Internal builds succeed about a third as often as bought or partnered tools, in MIT research on AI pilots.[^56]",
+    "build": "Build only for fleets of identical machines or a process no vendor knows. McKinsey's offshore case took 10-15 data scientists two years and 500+ models.[^19] The middle path: buy open hardware such as NCD or Monnit, keep the data, and start with thresholds.[^33][^12]"
   },
   "pickElse": [
     "Parts that wear with use and have a known life: keep time-based PM.[^1][^23]",
-    "One narrow, well-known failure mode: a simple threshold alarm in the sensor's own software.[^12][^33]",
+    "One narrow, well-known failure mode: a simple threshold alarm in the sensor's own software.[^12][^32]",
     "Low PM completion or a barely used CMMS: fix that first with planned routes in the CMMS you have. Deloitte says get the basics in place before predictive.[^29][^17]",
     "Electrical distribution gear: a scheduled NFPA 70B infrared program before any AI.[^14][^25]"
   ],
@@ -579,11 +579,6 @@
       "what": "Free NIST tool to tag free-text maintenance work orders."
     },
     {
-      "name": "r/IndustrialMaintenance, experience installing vibration monitoring (Jan 2026)",
-      "url": "https://www.reddit.com/r/IndustrialMaintenance/comments/1qc3ncm/",
-      "what": "Practitioner thread (anecdote): sensors could not tell a breakdown from a lunch break, sensors fell off; start from asset criticality."
-    },
-    {
       "name": "Monnit, iMonnit software",
       "url": "https://www.monnit.com/products/software/imonnit-sensor-management-software",
       "what": "Read 26 Nov 2026: Basic free; Premiere $70 a year for 12 sensors."
@@ -592,11 +587,6 @@
       "name": "NCD.io, Wireless Vibration Temperature Sensor V3 and Enterprise IIoT Gateway",
       "url": "https://store.ncd.io/product/industrial-iot-wireless-vibration-temperature-sensor-v3",
       "what": "Read 26 Nov 2026: sensor $388.75 each at 10+; Enterprise IIoT Gateway $681.95."
-    },
-    {
-      "name": "r/IndustrialMaintenance, vibration analysis for condition monitoring (Apr 2026)",
-      "url": "https://www.reddit.com/r/IndustrialMaintenance/comments/1sjtf1u/",
-      "what": "Practitioner thread (anecdote): programs fail on bad measurement, bad interpretation or no action after the alarm; skilled analysts are scarce."
     },
     {
       "name": "MaintainX, pricing",
@@ -684,11 +674,6 @@
       "what": "US reference for securing OT networks."
     },
     {
-      "name": "r/maintenance, how much of your CMMS data is actually accurate? (Jun 2026)",
-      "url": "https://www.reddit.com/r/maintenance/comments/1ug4757/",
-      "what": "Practitioner thread (anecdote): \"Management thinks we're 90% compliant. We're maybe 40%.\""
-    },
-    {
       "name": "McKinsey, Prediction at scale (Jul 2021)",
       "url": "https://www.mckinsey.com/capabilities/operations/our-insights/prediction-at-scale-how-industry-can-get-more-value-out-of-maintenance",
       "what": "False alarms undermine operating teams' confidence in predictive tools."
@@ -764,11 +749,11 @@
     "example": "An AI maintenance alert names the machine and the fault trend, matches it to past work orders, and suggests a next step a technician must confirm first.[^10] Each alert also carries a confidence level.[^4]",
     "table-1": "Use calendar PM for parts that wear out with use, condition checks for parts that fail at random with warning, and run-to-failure for cheap, redundant parts.[^23][^3] Trial AI prediction on critical machines with known failure modes.[^12]",
     "table-2": "Published results show predictive saving 8-12% over preventive, and 20-80% less downtime in large-firm cases, but none comes from a 40-500 person plant.[^3][^19][^29]",
-    "own-data": "Self-run sensors for 10 machines list at about $4,200 to $5,550 in hardware before installation, and most managed services publish no price.[^7][^8][^38]",
-    "recipes": "Start from work orders if PM is shaky; add open sensors to 5-10 critical machines if someone likes data, or use a managed service if nobody reads vibration data.[^29][^12][^35]",
-    "rules": "NFPA 70B covers electrical maintenance where adopted, OSHA lockout covers every repair, ISO 17359 guides the monitoring program, and CISA and NIST cover plant-network security.[^14][^15][^9][^51][^52]",
+    "own-data": "Self-run sensors for 10 machines list at about $4,200 to $5,550 in hardware before installation, and most managed services publish no price.[^7][^8][^36]",
+    "recipes": "Start from work orders if PM is shaky; add open sensors to 5-10 critical machines if someone likes data, or use a managed service if nobody reads vibration data.[^29][^12]",
+    "rules": "NFPA 70B covers electrical maintenance where adopted, OSHA lockout covers every repair, ISO 17359 guides the monitoring program, and CISA and NIST cover plant-network security.[^14][^15][^9][^49][^50]",
     "benchmark": "Pick 5-10 critical machines, record a 12-month baseline, fix the alarm rule before day one, log every alert as caught or false, then decide per machine at day 90.[^17][^9][^4][^12]",
-    "what-goes-wrong": "Predictive maintenance goes wrong through false alarms, dirty work orders, alerts nobody acts on, sensors without context, vendor exits and over-maintaining.[^4][^5][^35][^32][^42][^1]",
+    "what-goes-wrong": "Predictive maintenance goes wrong through false alarms, dirty work orders, alerts nobody acts on, sensors without context, vendor exits and over-maintaining.[^4][^5][^40][^1]",
     "something-else": "Pick something else when parts wear on a known life, one failure mode needs only a threshold alarm, your CMMS is barely used, or the gear is electrical distribution.[^1][^12][^17][^14]"
   }
 }

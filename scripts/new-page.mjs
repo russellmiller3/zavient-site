@@ -93,6 +93,8 @@ Reader: lower-middle-market firm, 40-500 staff. Division head for this page: ${r
 - **Sources**: ${MIN[t.minSources || 'sources']}+ sources from ${MIN.domains}+ different sites; every claim footnoted; several sources per claim where they exist. Vendor claims are labelled as the vendor's.
 - **Augmentation, not replacement**: the "Where does your team stay in charge?" block is required. No headcount-cut language.
 - **No Upwork, freelancer marketplaces, hourly rates or rival consulting firms.**
+- **No forum threads (Reddit, Quora, community forums), rival consulting firms or content farms as sources.** Note where a buyer's question was seen in the draft notes, not the source list. The page check fails these (src/lib/source-rules.mjs).
+- **Every fix goes into the template or the page check, never just the page.** If you fix a page, add the rule or test that stops the same mistake on every page.
 - **Teach, then trust, then the lead**: the block order below is fixed. "When to pick something else" sits after "Buy or build", just above the free diagnostic.
 - **Own data** (except tool pages, where the tool is the fact): one table only Zavient has (a benchmark, a job-ad count, a dated price check, a worked example). It must differ from every sibling page's.
 - **Measured demand**${t.skipDemand ? ' (skipped: this type is navigation)' : ''}: \`keyword\` from the keyword pull, with ${DEMAND.searches}+ US searches a month, or ${DEMAND.nicheSearches}+ at $${DEMAND.nicheCpc}+ a click. No demand, no index.

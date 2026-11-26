@@ -63,13 +63,13 @@
     "Most firms keep their people. Where AI changed tasks, 66% of firms only used it to help staff, and AI-related employment fell at 2%.[^10]"
   ],
   "example": {
-    "input": "Illustrative example, not data. A 100-person job shop has 140 open work orders, routings for 15 work centers, a changeover matrix, shift calendars and material arrival dates.[^21][^3] On Tuesday at 10:00, CNC 3 goes down for about 6 hours, and sales adds a rush order of 2,000 brackets due Friday.",
-    "output": "The software proposes a new sequence, keeps the next 24 hours frozen, and moves nine jobs from CNC 3 to CNCs 4 and 5.[^16][^22] It flags three late orders and costs two fixes: 6 hours of Saturday overtime on CNC 4, or splitting the rush order. The planner picks one, notes why and releases it, and supervisors get the new dispatch list.[^4][^9]"
+    "input": "Illustrative example, not data. A 100-person job shop has 140 open work orders, routings for 15 work centers, a changeover matrix, shift calendars and material arrival dates.[^3] On Tuesday at 10:00, CNC 3 goes down for about 6 hours, and sales adds a rush order of 2,000 brackets due Friday.",
+    "output": "The software proposes a new sequence, keeps the next 24 hours frozen, and moves nine jobs from CNC 3 to CNCs 4 and 5.[^16][^21] It flags three late orders and costs two fixes: 6 hours of Saturday overtime on CNC 4, or splitting the rush order. The planner picks one, notes why and releases it, and supervisors get the new dispatch list.[^4][^9]"
   },
   "tables": [
     {
       "title": "Which scheduling tools fit which shop?",
-      "intro": "Prices are in our own check below. Gains and AI features here are each vendor's own claim unless marked otherwise.[^23][^24]",
+      "intro": "Prices are in our own check below. Gains and AI features here are each vendor's own claim unless marked otherwise.[^22][^23]",
       "headers": [
         "Tool",
         "What it does",
@@ -80,16 +80,16 @@
           "name": "MRPeasy",
           "url": "https://www.mrpeasy.com/pricing/",
           "cells": [
-            "Cloud MRP for small makers; lists finite-capacity operations scheduling[^25]",
-            "Its only AI is a support assistant. We couldn't confirm which plan includes finite scheduling[^25]"
+            "Cloud MRP for small makers; lists finite-capacity operations scheduling[^24]",
+            "Its only AI is a support assistant. We couldn't confirm which plan includes finite scheduling[^24]"
           ]
         },
         {
           "name": "Business Central Premium",
           "url": "https://www.microsoft.com/en-us/dynamics-365/products/business-central/pricing",
           "cells": [
-            "Microsoft ERP; Premium adds manufacturing and finite loading, which books work only within machine hours[^26][^27]",
-            "AI agents run on Copilot Credits, sold separately[^26]"
+            "Microsoft ERP; Premium adds manufacturing and finite loading, which books work only within machine hours[^25][^26]",
+            "AI agents run on Copilot Credits, sold separately[^25]"
           ]
         },
         {
@@ -104,24 +104,24 @@
           "name": "Cetec ERP",
           "url": "https://cetecerp.com/pricing",
           "cells": [
-            "Shop ERP with all modules in one per-user price[^28]",
-            "Support is extra, per company: $650 a month for Standard[^28]"
+            "Shop ERP with all modules in one per-user price[^27]",
+            "Support is extra, per company: $650 a month for Standard[^27]"
           ]
         },
         {
           "name": "Autodesk Fusion Operations",
           "url": "https://www.autodesk.com/products/fusion-operations/buy",
           "cells": [
-            "Cloud production management for the shop floor[^29]",
-            "14-day free trial[^29]"
+            "Cloud production management for the shop floor[^28]",
+            "14-day free trial[^28]"
           ]
         },
         {
           "name": "SkyPlanner APS",
           "url": "https://skyplanner.ai/pricing",
           "cells": [
-            "Stand-alone scheduler priced per scheduled workstation, not per user[^30]",
-            "Lists \"AI-assisted schedule optimization\" (vendor claim)[^30]"
+            "Stand-alone scheduler priced per scheduled workstation, not per user[^29]",
+            "Lists \"AI-assisted schedule optimization\" (vendor claim)[^29]"
           ]
         },
         {
@@ -136,32 +136,32 @@
           "name": "PlanetTogether",
           "url": "https://www.planettogether.com/pricing",
           "cells": [
-            "Stand-alone scheduler that plugs into your ERP[^31]",
-            "Claims \"up to 95%\" less manual scheduling time, no method shown (vendor claim)[^24]"
+            "Stand-alone scheduler that plugs into your ERP[^30]",
+            "Claims \"up to 95%\" less manual scheduling time, no method shown (vendor claim)[^23]"
           ]
         },
         {
           "name": "Siemens Opcenter Scheduling",
           "url": "https://www.siemens.com/en-us/products/opcenter/advanced-planning-scheduling-aps/advanced-scheduling-software",
           "cells": [
-            "Enterprise scheduler[^32]",
-            "Claims +50% on-time delivery with no method given (vendor claim)[^23]"
+            "Enterprise scheduler[^31]",
+            "Claims +50% on-time delivery with no method given (vendor claim)[^22]"
           ]
         },
         {
           "name": "frePPLe",
           "url": "https://github.com/frePPLe/frepple",
           "cells": [
-            "Open-source planning and scheduling[^33]",
-            "Community Edition is free under the MIT license; paid help is extra[^33][^34]"
+            "Open-source planning and scheduling[^32]",
+            "Community Edition is free under the MIT license; paid help is extra[^32][^33]"
           ]
         },
         {
           "name": "Katana",
           "url": "https://katanamrp.com/pricing/",
           "cells": [
-            "Cloud MRP; free plan up to 30 products (SKUs)[^35]",
-            "AI purchase suggestions on the paid Advantage plan only[^35]"
+            "Cloud MRP; free plan up to 30 products (SKUs)[^34]",
+            "AI purchase suggestions on the paid Advantage plan only[^34]"
           ]
         }
       ]
@@ -195,31 +195,31 @@
           "name": "SUMIDA",
           "url": "https://resources.sw.siemens.com/en-US/case-study-sumida",
           "cells": [
-            "Siemens (vendor case)[^36]",
-            "Delivery reliability from 60% to 95%. Planners still adjust by hand when needed[^36]"
+            "Siemens (vendor case)[^35]",
+            "Delivery reliability from 60% to 95%. Planners still adjust by hand when needed[^35]"
           ]
         },
         {
           "name": "ETEM Gestamp",
           "url": "https://resources.sw.siemens.com/en-GB/case-study-etemgestamp/",
           "cells": [
-            "Siemens (vendor case)[^37]",
-            "Changeovers down 25%, press scrap down 10%, productivity up 5%[^37]"
+            "Siemens (vendor case)[^36]",
+            "Changeovers down 25%, press scrap down 10%, productivity up 5%[^36]"
           ]
         },
         {
           "name": "Sumitomo Electric Lightwave, 300 staff",
           "url": "https://www.planettogether.com/planettogether-partnerships-integrations/case-study-sumitomo-electric-lightwave",
           "cells": [
-            "PlanetTogether (vendor case)[^38]",
-            "Promise-date accuracy up 8%; output up 16%[^38]"
+            "PlanetTogether (vendor case)[^37]",
+            "Promise-date accuracy up 8%; output up 16%[^37]"
           ]
         }
       ]
     },
     {
       "title": "Can a chatbot build your schedule on its own?",
-      "intro": "No, not on its own: in 2026 research benchmarks, language models alone broke scheduling rules or failed to beat simple dispatching rules.[^5][^40] Language models do best writing and explaining a schedule, with a solver checking that it can run.[^6][^39]",
+      "intro": "No, not on its own: in 2026 research benchmarks, language models alone broke scheduling rules or failed to beat simple dispatching rules.[^5][^39] Language models do best writing and explaining a schedule, with a solver checking that it can run.[^6][^38]",
       "headers": [
         "Study",
         "What it tested",
@@ -238,8 +238,8 @@
           "name": "DynaSchedBench (2026)",
           "url": "https://proceedings.mlr.press/v306/cao26z.html",
           "cells": [
-            "AI agents re-planning as disruptions arrive[^40]",
-            "Most fail to beat strong simple dispatching rules consistently[^40]"
+            "AI agents re-planning as disruptions arrive[^39]",
+            "Most fail to beat strong simple dispatching rules consistently[^39]"
           ]
         },
         {
@@ -254,8 +254,8 @@
           "name": "Solver-writing agent (Nov 2026)",
           "url": "https://arxiv.org/abs/2611.17682",
           "cells": [
-            "An AI agent that writes a solver, against one that schedules directly[^39]",
-            "Writing the solver was repeatable. Scheduling directly cost $2-23 a schedule and varied run to run[^39]"
+            "An AI agent that writes a solver, against one that schedules directly[^38]",
+            "Writing the solver was repeatable. Scheduling directly cost $2-23 a schedule and varied run to run[^38]"
           ]
         }
       ]
@@ -264,36 +264,36 @@
   "recipes": [
     {
       "name": "1. Small shop, one planner, an ERP that already schedules (about 40-100 staff)",
-      "when": "One bottleneck, a planner on a spreadsheet or whiteboard, and an ERP with finite loading you haven't switched on.[^41][^27]",
+      "when": "One bottleneck, a planner on a spreadsheet or whiteboard, and an ERP with finite loading you haven't switched on.[^26]",
       "flow": [
         "Planner and supervisor: check routings, setup and run times for the 20 parts that take the most hours[^3]",
         "Planner: set ERP shift calendars to match real shifts and planned maintenance[^13]",
-        "Planner: run the finite schedule weekly, freeze the near term (say, 2 days), and re-run only on real events[^16][^22]",
-        "Operations manager: review on-time delivery and changeover hours each week[^42]"
+        "Planner: run the finite schedule weekly, freeze the near term (say, 2 days), and re-run only on real events[^16][^21]",
+        "Operations manager: review on-time delivery and changeover hours each week[^40]"
       ],
-      "cost": "For 5 office users, year-one list licenses run about $1,494 (Odoo Standard) to $6,600 (Business Central Premium).[^7][^26] MRPeasy Starter comes to $2,940.[^25]"
+      "cost": "For 5 office users, year-one list licenses run about $1,494 (Odoo Standard) to $6,600 (Business Central Premium).[^7][^25] MRPeasy Starter comes to $2,940.[^24]"
     },
     {
       "name": "2. Mid-size plant with many changeovers and disruptions (about 100-500 staff)",
-      "when": "Many changeovers, frequent rush orders or breakdowns, and an ERP scheduler your planners don't trust.[^41][^43]",
+      "when": "Many changeovers, frequent rush orders or breakdowns, and an ERP scheduler your planners don't trust.",
       "flow": [
         "Operations manager: write down the rules (priority rule, frozen window, overtime limits)[^15]",
-        "IT or ERP admin: connect the scheduler to the ERP for orders, routings and inventory[^31]",
+        "IT or ERP admin: connect the scheduler to the ERP for orders, routings and inventory[^30]",
         "Planner: run it daily, and approve or override each proposal with a reason[^17][^4]",
-        "Supervisor: work from the dispatch list and report actual times back[^44]"
+        "Supervisor: work from the dispatch list and report actual times back"
       ],
-      "cost": "SkyPlanner for 15 work centers lists about €4,788 a year; EDGEBIC is a $25,000 one-time license.[^30][^8] PlanetTogether quotes about 4-8 weeks to integrate but shows no price.[^31]"
+      "cost": "SkyPlanner for 15 work centers lists about €4,788 a year; EDGEBIC is a $25,000 one-time license.[^29][^8] PlanetTogether quotes about 4-8 weeks to integrate but shows no price.[^30]"
     },
     {
       "name": "3. Data-rich plant with unusual rules: build on a free solver",
-      "when": "Clean ERP or shop-floor data, odd constraints (tooling, operator skills, cure times), and someone who can maintain a model.[^45][^46]",
+      "when": "Clean ERP or shop-floor data, odd constraints (tooling, operator skills, cure times), and someone who can maintain a model.[^41][^42]",
       "flow": [
-        "Data or IT lead: model routings and calendars in OR-Tools or Timefold[^45][^46]",
+        "Data or IT lead: model routings and calendars in OR-Tools or Timefold[^41][^42]",
         "Planner: rank the goals (late orders first, then changeovers) and check output daily[^4]",
-        "AI assistant: explains changes in plain words and drafts what-ifs, while the solver checks every schedule[^6][^39]",
+        "AI assistant: explains changes in plain words and drafts what-ifs, while the solver checks every schedule[^6][^38]",
         "Operations manager: review schedule stability and on-time delivery monthly[^15]"
       ],
-      "cost": "The solvers are free: OR-Tools and Timefold are Apache 2.0, frePPLe Community is MIT.[^45][^46][^33] The cost is staff time, and internal builds succeed about a third as often as bought tools.[^47][^48]"
+      "cost": "The solvers are free: OR-Tools and Timefold are Apache 2.0, frePPLe Community is MIT.[^41][^42][^32] The cost is staff time, and internal builds succeed about a third as often as bought tools.[^43][^44]"
     }
   ],
   "ownData": {
@@ -315,31 +315,31 @@
       [
         "MRPeasy",
         "Yes, per user",
-        "$2,940 Starter to $5,940 Enterprise, billed monthly[^25]",
-        "Support assistant only[^25]"
+        "$2,940 Starter to $5,940 Enterprise, billed monthly[^24]",
+        "Support assistant only[^24]"
       ],
       [
         "Cetec ERP",
         "Yes, per user plus support",
-        "$3,000 self-supported; $10,800 with Standard support[^28]",
+        "$3,000 self-supported; $10,800 with Standard support[^27]",
         "None seen"
       ],
       [
         "SkyPlanner APS",
         "Yes, per workstation",
-        "€4,788 for 15 workstations[^30]",
-        "\"AI-assisted schedule optimization\"[^30]"
+        "€4,788 for 15 workstations[^29]",
+        "\"AI-assisted schedule optimization\"[^29]"
       ],
       [
         "Business Central Premium",
         "Yes, per user",
-        "$6,600[^26]",
-        "Copilot agents; credits extra[^26]"
+        "$6,600[^25]",
+        "Copilot agents; credits extra[^25]"
       ],
       [
         "Autodesk Fusion Operations",
         "Yes, per user",
-        "About $10,325[^29]",
+        "About $10,325[^28]",
         "None seen"
       ],
       [
@@ -351,68 +351,68 @@
       [
         "Katana",
         "Free plan only",
-        "Not published for a shop this size[^35]",
-        "AI on the paid plan only[^35]"
+        "Not published for a shop this size[^34]",
+        "AI on the paid plan only[^34]"
       ],
       [
         "frePPLe",
         "Services only",
-        "Not published; a trial project costs €2,000-5,000[^34]",
+        "Not published; a trial project costs €2,000-5,000[^33]",
         "None seen"
       ],
       [
         "PlanetTogether, Siemens Opcenter, ProShop",
         "No",
-        "Quote only[^31][^32][^49]",
-        "PlanetTogether: machine-learning \"Copilot\"[^24]"
+        "Quote only[^30][^31][^45]",
+        "PlanetTogether: machine-learning \"Copilot\"[^23]"
       ]
     ],
-    "note": "List prices on one date: discounts, shop-floor seats, setup, integration and tax are left out, and SkyPlanner bills in euros. Odoo's year-one price is a discount, and ERP schedulers do less than stand-alone ones. A separate third-party list covers 39 vendors and says only 13 or 14 publish a price.[^50]"
+    "note": "List prices on one date: discounts, shop-floor seats, setup, integration and tax are left out, and SkyPlanner bills in euros. Odoo's year-one price is a discount, and ERP schedulers do less than stand-alone ones. A separate third-party list covers 39 vendors and says only 13 or 14 publish a price.[^46]"
   },
   "rules": [
     {
       "name": "EU AI Act, Annex III point 4(b)",
       "url": "https://eur-lex.europa.eu/eli/reg/2024/1689",
       "status": "In force; Annex III high-risk rules apply from 2 Dec 2027",
-      "what": "AI that assigns tasks to workers based on their behavior or personal traits is high-risk.[^51] This point covers assigning people, not sequencing machines, and only for EU operations. A 2026 amendment moved its start date from 2 Aug 2026 to 2 Dec 2027.[^51][^52]"
+      "what": "AI that assigns tasks to workers based on their behavior or personal traits is high-risk.[^47] This point covers assigning people, not sequencing machines, and only for EU operations. A 2026 amendment moved its start date from 2 Aug 2026 to 2 Dec 2027.[^47][^48]"
     },
     {
       "name": "Chicago Fair Workweek Ordinance",
       "url": "https://311.chicago.gov/s/article/Fair-Workweek-Knowledge?language=en_US",
       "status": "In force; amended rules since 1 Jun 2026",
-      "what": "Manufacturing is covered, for employers with 100+ staff worldwide and 50+ covered employees.[^53] Shifts need 14 days' notice, and late changes owe predictability pay.[^53][^54] If software moves people's shifts, keep a person's time-stamped approval.[^54]"
+      "what": "Manufacturing is covered, for employers with 100+ staff worldwide and 50+ covered employees.[^49] Shifts need 14 days' notice, and late changes owe predictability pay.[^49][^50] If software moves people's shifts, keep a person's time-stamped approval.[^50]"
     }
   ],
   "howToTest": [
-    "Record your before numbers for 8-12 weeks: on-time delivery, changeover hours, overtime, schedule changes per week, planner hours and work in progress.[^42]",
+    "Record your before numbers for 8-12 weeks: on-time delivery, changeover hours, overtime, schedule changes per week, planner hours and work in progress.[^40]",
     "Pilot one line or cell first: pick 4-6 past weeks that had real disruptions. Freeze the data exactly as it stood on each Monday.",
-    "Replay those weeks in the tool and compare with what really happened and with a simple rule such as earliest due date. AI agents often fail to beat strong simple rules, so the rule is the bar.[^40]",
+    "Replay those weeks in the tool and compare with what really happened and with a simple rule such as earliest due date. AI agents often fail to beat strong simple rules, so the rule is the bar.[^39]",
     "Count capacity, calendar and material violations in every schedule. Language-model schedules often read well and still can't run.[^5][^6]",
-    "Count how many operations moved between runs; inside the frozen window it should be zero. Rescheduling more often than disruptions happen only makes the floor nervous.[^22][^15]",
-    "Run it in shadow for 4 weeks: the planner approves or overrides, with a reason for each override. Those reasons point to bad data and missing rules.[^4][^55]",
+    "Count how many operations moved between runs; inside the frozen window it should be zero. Rescheduling more often than disruptions happen only makes the floor nervous.[^21][^15]",
+    "Run it in shadow for 4 weeks: the planner approves or overrides, with a reason for each override. Those reasons point to bad data and missing rules.[^4][^51]",
     "Price the lift from your own books: changeover hours saved times your machine-hour cost, plus overtime and expedited freight avoided. Use your own rates, not published ones.",
     "Decide at 90 days: compare against your before numbers from step 1."
   ],
   "watchOuts": [
     "Bad master data gives a confident, wrong schedule; in one study, system times didn't match the floor.[^4][^3] Audit routings for your top-hours parts before go-live.",
-    "Shadow spreadsheets: after go-live, firms reported running parallel systems and getting incorrect plans.[^55] Retire the spreadsheet on a set date and log overrides inside the tool.",
+    "Shadow spreadsheets: after go-live, firms reported running parallel systems and getting incorrect plans.[^51] Retire the spreadsheet on a set date and log overrides inside the tool.",
     "Planners lose their say: fights over shop-floor control explain failed projects, and unexplained assignments get ignored.[^1][^4] Keep the planner's override and make the tool show why it moved each job.",
-    "Schedule churn: re-running on every blip unsettles the floor.[^22][^15] Freeze the near term and patch small events instead of rebuilding the whole plan.[^16]",
+    "Schedule churn: re-running on every blip unsettles the floor.[^21][^15] Freeze the near term and patch small events instead of rebuilding the whole plan.[^16]",
     "Calendars that don't match shifts: finite capacity goes wrong when shift changes aren't modeled.[^13] Load real shift calendars, planned maintenance included.",
-    "Vendor numbers without methods: product pages claim gains like +50% on-time delivery and show no method.[^23][^24] Test on your own past weeks before you sign."
+    "Vendor numbers without methods: product pages claim gains like +50% on-time delivery and show no method.[^22][^23] Test on your own past weeks before you sign."
   ],
   "faq": [
     {
       "q": "Can ChatGPT schedule my shop?",
-      "a": "Not by itself. Benchmarks show language models break capacity rules and fail to beat simple dispatching rules.[^5][^40] Use scheduling software or a solver, and let AI explain the changes.[^6][^39]"
+      "a": "Not by itself. Benchmarks show language models break capacity rules and fail to beat simple dispatching rules.[^5][^39] Use scheduling software or a solver, and let AI explain the changes.[^6][^38]"
     },
     {
       "q": "How much does production scheduling software cost?",
-      "a": "For a 100-person shop, year-one list licenses ran from about $1,500 to a $25,000 one-time license in our check.[^7][^8] Seven of the 12 tools we read publish a price; the rest quote.[^31][^32]"
+      "a": "For a 100-person shop, year-one list licenses ran from about $1,500 to a $25,000 one-time license in our check.[^7][^8] Seven of the 12 tools we read publish a price; the rest quote.[^30][^31]"
     },
     {
       "q": "How is an APS different from ERP scheduling?",
-      "a": "An ERP plans what to make and when material arrives, while an APS (advanced planning and scheduling tool) sequences every operation within real machine hours.[^56][^11] An APS also re-plans after disruptions.[^12]"
+      "a": "An ERP plans what to make and when material arrives, while an APS (advanced planning and scheduling tool) sequences every operation within real machine hours.[^52][^11] An APS also re-plans after disruptions.[^12]"
     },
     {
       "q": "Can it build a schedule straight from my ERP?",
@@ -420,22 +420,22 @@
     },
     {
       "q": "How long does setup take?",
-      "a": "Data clean-up comes first, then about 4-8 weeks for many integrations, by PlanetTogether's own claim.[^3][^31] Research calls these projects complex and risky.[^2]"
+      "a": "Data clean-up comes first, then about 4-8 weeks for many integrations, by PlanetTogether's own claim.[^3][^30] Research calls these projects complex and risky.[^2]"
     },
     {
       "q": "What data does scheduling software need?",
-      "a": "Open orders with due dates, routings with setup and run times, changeover times, shift calendars and material arrival dates.[^11][^31] It also needs actual times reported back from the floor.[^44]"
+      "a": "Open orders with due dates, routings with setup and run times, changeover times, shift calendars and material arrival dates.[^11][^30] It also needs actual times reported back from the floor."
     }
   ],
   "buyVsBuild": {
-    "buy": "Buy when you run one ERP, a standard job-shop or flow setup, and have no in-house optimization skills. Most firms buy: 76% of enterprise AI use cases are now bought.[^57] Bought tools succeed about twice as often as internal builds.[^48][^47]",
-    "build": "Build when your rules are unusual (tooling, skills, cure times), your data is clean and someone can maintain the model. Free solvers ship job-shop examples: OR-Tools and Timefold.[^45][^46] AI can help write the solver, which proved more repeatable than AI as the scheduler.[^39]"
+    "buy": "Buy when you run one ERP, a standard job-shop or flow setup, and have no in-house optimization skills. Most firms buy: 76% of enterprise AI use cases are now bought.[^53] Bought tools succeed about twice as often as internal builds.[^44][^43]",
+    "build": "Build when your rules are unusual (tooling, skills, cure times), your data is clean and someone can maintain the model. Free solvers ship job-shop examples: OR-Tools and Timefold.[^41][^42] AI can help write the solver, which proved more repeatable than AI as the scheduler.[^38]"
   },
   "pickElse": [
-    "One bottleneck drives everything: pace the plant to it with Drum-Buffer-Rope from the Theory of Constraints before buying software.[^58]",
-    "Steady repeat demand: level the mix (heijunka) and pull with kanban instead of scheduling every job.[^59]",
-    "Lead times swing because of material, not machines: look at DDMRP, which plans around stock buffers.[^60]",
-    "Routings and run times are wrong: start with your state's NIST MEP center, as Stainless Works did before scheduling.[^61][^3]"
+    "One bottleneck drives everything: pace the plant to it with Drum-Buffer-Rope from the Theory of Constraints before buying software.[^54]",
+    "Steady repeat demand: level the mix (heijunka) and pull with kanban instead of scheduling every job.[^55]",
+    "Lead times swing because of material, not machines: look at DDMRP, which plans around stock buffers.[^56]",
+    "Routings and run times are wrong: start with your state's NIST MEP center, as Stainless Works did before scheduling.[^57][^3]"
   ],
   "resources": [
     {
@@ -482,7 +482,7 @@
     },
     {
       "num": "76%",
-      "label": "of enterprise AI use cases are bought rather than built[^57]",
+      "label": "of enterprise AI use cases are bought rather than built[^53]",
       "source": "Menlo Ventures, 2025"
     }
   ],
@@ -588,11 +588,6 @@
       "what": "Vendor case, 80-person made-to-order maker: planning time down 75%; on-time delivery rate up 50%; internal resource use from 65% to 85%, cutting outsourcing."
     },
     {
-      "name": "Reddit r/manufacturing, Custom manufacturing: help with job scheduling (Mar 2025)",
-      "url": "https://www.reddit.com/r/manufacturing/comments/1jakmcp/custom_manufacturing_help_w_job_scheduling/",
-      "what": "A shop asks whether AI could help after trying ChatGPT; replies list routings, run times and changeovers as the data a scheduler needs. Anecdote."
-    },
-    {
       "name": "Aytug et al., Executing production schedules in the face of uncertainties: a review, European Journal of Operational Research 161 (2005)",
       "url": "https://cepac.cheme.cmu.edu/pasi2011/library/henning/Executing_production_schedules_in_the_face_of_uncertainties_a_REVIEW_and_some_future_directions.pdf",
       "what": "Rescheduling more often than disruptions happen causes nervousness without improving schedule quality."
@@ -688,24 +683,9 @@
       "what": "Most language-model agents fail to consistently beat strong dispatching rules."
     },
     {
-      "name": "Reddit r/manufacturing, How do you do your production scheduling?",
-      "url": "https://www.reddit.com/r/manufacturing/comments/1igyxv8/how_do_you_do_your_production_scheduling/",
-      "what": "Planners describe whiteboards and Excel, and ERP schedulers they don't trust. Anecdote."
-    },
-    {
       "name": "ISO 22400-2:2014, KPIs for manufacturing operations management",
       "url": "https://www.iso.org/standard/54497.html",
       "what": "Standard KPI definitions such as allocation ratio, throughput rate, setup rate and OEE; published 2014, under revision."
-    },
-    {
-      "name": "Reddit r/Machinists, ERP Systems",
-      "url": "https://www.reddit.com/r/Machinists/comments/1qjcguy/erp_systems/",
-      "what": "Machinists call their ERP's scheduling module unusable. Anecdote."
-    },
-    {
-      "name": "Reddit r/manufacturing, Advice for high-mix low-volume scheduling (Jul 2026)",
-      "url": "https://www.reddit.com/r/manufacturing/comments/1uwhe9p/advice_for_highmix_lowvolume_scheduling",
-      "what": "Without live feedback from the floor, any scheduler runs on fiction. Anecdote."
     },
     {
       "name": "Google OR-Tools, The job shop problem",
@@ -835,14 +815,14 @@
   "answers": {
     "human-role": "Your planner approves every schedule before release and can override any move, with the reason logged.[^4][^2] Supervisors confirm what the floor can run, and the operations manager sets the rules the software follows.[^9][^15]",
     "team-after": "Planners stop building the schedule by hand and work exceptions instead: late orders, material gaps, what-ifs and what to tell customers.[^9][^19]",
-    "example": "The software proposes a new sequence, moves the down machine's jobs to other machines, and costs the fixes; the planner picks one and releases it.[^16][^22][^4]",
-    "table-1": "Small shops fit ERP schedulers such as Business Central, Odoo or MRPeasy; plants with many changeovers fit stand-alone schedulers such as SkyPlanner, EDGEBIC or PlanetTogether.[^26][^7][^25][^30][^8][^31] Plants with unusual rules can build on frePPLe or a free solver.[^33][^45]",
-    "table-2": "The one independent case, from NIST MEP, cut lead time from 12-14 weeks to 5 after fixing routings first; vendor cases claim gains such as 25% fewer changeovers.[^3][^37]",
-    "recipes": "Small shops fit their ERP's own scheduler, plants with many changeovers fit a stand-alone scheduler, and data-rich plants with unusual rules can build on a free solver.[^41][^45]",
+    "example": "The software proposes a new sequence, moves the down machine's jobs to other machines, and costs the fixes; the planner picks one and releases it.[^16][^21][^4]",
+    "table-1": "Small shops fit ERP schedulers such as Business Central, Odoo or MRPeasy; plants with many changeovers fit stand-alone schedulers such as SkyPlanner, EDGEBIC or PlanetTogether.[^25][^7][^24][^29][^8][^30] Plants with unusual rules can build on frePPLe or a free solver.[^32][^41]",
+    "table-2": "The one independent case, from NIST MEP, cut lead time from 12-14 weeks to 5 after fixing routings first; vendor cases claim gains such as 25% fewer changeovers.[^3][^36]",
+    "recipes": "Small shops fit their ERP's own scheduler, plants with many changeovers fit a stand-alone scheduler, and data-rich plants with unusual rules can build on a free solver.[^41]",
     "own-data": "Year-one list licenses for a 100-person shop ran from about $1,494 (Odoo Standard) to a $25,000 one-time license (EDGEBIC), and five of 12 tools publish no usable price.[^7][^8]",
-    "rules": "The EU AI Act makes AI that assigns tasks to workers high-risk from 2 Dec 2027, and Chicago's Fair Workweek Ordinance requires 14 days' shift notice.[^51][^53] Neither covers sequencing machines alone.",
-    "benchmark": "Freeze the data from 4-6 past weeks with real disruptions, replay them in the tool, and compare against what happened and a simple earliest-due-date rule.[^40] Count every capacity or calendar violation, then run 4 weeks in shadow with the planner approving.[^5][^4]",
-    "what-goes-wrong": "Production scheduling software goes wrong through bad master data, shadow spreadsheets, planners losing their say, schedule churn, wrong shift calendars and untested vendor claims.[^4][^55][^1][^22][^13][^23]",
-    "something-else": "Pick something else when one bottleneck drives everything, demand is steady and repeats, material drives lead times, or your routings and run times are wrong.[^58][^59][^60][^61] Drum-Buffer-Rope, kanban, DDMRP or a NIST MEP center may fit better."
+    "rules": "The EU AI Act makes AI that assigns tasks to workers high-risk from 2 Dec 2027, and Chicago's Fair Workweek Ordinance requires 14 days' shift notice.[^47][^49] Neither covers sequencing machines alone.",
+    "benchmark": "Freeze the data from 4-6 past weeks with real disruptions, replay them in the tool, and compare against what happened and a simple earliest-due-date rule.[^39] Count every capacity or calendar violation, then run 4 weeks in shadow with the planner approving.[^5][^4]",
+    "what-goes-wrong": "Production scheduling software goes wrong through bad master data, shadow spreadsheets, planners losing their say, schedule churn, wrong shift calendars and untested vendor claims.[^4][^51][^1][^21][^13][^22]",
+    "something-else": "Pick something else when one bottleneck drives everything, demand is steady and repeats, material drives lead times, or your routings and run times are wrong.[^54][^55][^56][^57] Drum-Buffer-Rope, kanban, DDMRP or a NIST MEP center may fit better."
   }
 }

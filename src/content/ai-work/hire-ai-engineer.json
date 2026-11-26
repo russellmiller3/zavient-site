@@ -8,11 +8,11 @@
   "industry": "any industry",
   "index": true,
   "verdict": [
-    "Prove one workflow first, then hire a lead to own it.[^14][^26]",
+    "Prove one workflow first, then hire a lead to own it.[^14][^15]",
     "Firms using AI train current staff far more often than they hire AI-trained staff: about 15% versus 1.3%.[^1][^2]",
     "Non-tech firms your size rarely advertise for AI engineers: about 125 US ads in 30 days, by our count.[^3][^4]",
     "One AI engineer costs about $205,000 to $275,000 a year with benefits, by BLS pay data.[^5][^7]",
-    "Whoever you bring in, write the handover into the contract and name who owns it after launch.[^26][^17]"
+    "Whoever you bring in, write the handover into the contract and name who owns it after launch.[^17][^18]"
   ],
   "onPage": [
     {
@@ -44,19 +44,19 @@
     "what-it-is": "Hire an AI engineer or bring in help: what is the real choice?",
     "faq": "Questions buyers ask about hiring an AI engineer"
   },
-  "summary": "The choice: hire an AI engineer, bring in outside help, or both, and in what order.[^14][^26] Few firms start with a hire; training staff and new workflows are far more common.[^1][^2] What makes it work is a named workflow, a measure and an owner, not the hire.[^16][^17]",
+  "summary": "The choice: hire an AI engineer, bring in outside help, or both, and in what order.[^14] Few firms start with a hire; training staff and new workflows are far more common.[^1][^2] What makes it work is a named workflow, a measure and an owner, not the hire.[^16][^17]",
   "walkAway": [
     "One workflow, picked and priced: what it costs today in hours, errors or cash.[^16][^19] RAND's most common root cause of failure is a misunderstood problem.[^16]",
     "A before-and-after measure, set before anyone builds.[^19] RAND sees models tuned to the wrong metrics; Google's second rule is to design metrics first.[^16][^19]",
     "A working pilot in your own systems, with a go-or-stop date about 90 days out.[^15] Mid-market top performers took about 90 days from pilot to full use, in a preliminary, self-reported study.[^15]",
-    "A job spec for your first AI hire, if the pilot shows you need one.[^14] Ng's playbook builds the in-house team after pilots; one IT leader's advice is to start with a lead.[^14][^26]",
-    "A handover written into the contract: runbooks, test data and who owns the system after launch.[^26][^17]"
+    "A job spec for your first AI hire, if the pilot shows you need one.[^14] Ng's playbook builds the in-house team after pilots; one IT leader's advice is to start with a lead.[^14]",
+    "A handover written into the contract: runbooks, test data and who owns the system after launch.[^17]"
   ],
   "humanRole": [
     "Ops lead or process owner: owns the problem and the success measure.[^17] RAND's top fix is to make sure technical staff understand the purpose and the domain.[^16]",
     "COO or division head: signs off on go-live and owns the risk call.[^17] The AI playbook from NIST, the US standards body, puts AI risk decisions with executive leadership.[^17]",
     "Front-line staff: check AI output before it reaches a customer.[^18] Of firms using AI, 66% use it only to help people with tasks.[^1]",
-    "A named internal owner: runs the system after handover, and the AI hire works toward that owner's goal.[^26][^17] One IT leader paid consultants again after six months just to explain their own pipeline.[^26]"
+    "A named internal owner: runs the system after handover, and the AI hire works toward that owner's goal.[^17]"
   ],
   "recipes": [
     {
@@ -75,7 +75,7 @@
     },
     {
       "name": "2. About 150 to 500 staff, some IT: outside help now, a lead alongside",
-      "when": "A second and third use case are queued, and an IT or data person can host the work.[^26] Partner-led pilots reached deployment about twice as often as internal builds; the study calls that correlation, not cause.[^15]",
+      "when": "A second and third use case are queued, and an IT or data person can host the work. Partner-led pilots reached deployment about twice as often as internal builds; the study calls that correlation, not cause.[^15]",
       "flow": [
         "COO: approve the role, the budget and the first workflow",
         "Outside advisor: run the first workflow and write the AI lead's job spec",
@@ -154,7 +154,7 @@
     "Hiring before picking the problem: RAND's most common root cause is a misunderstood or miscommunicated problem.[^16] Fix: name the workflow and its measure before you write a job ad.[^19]",
     "One hire, no usable data: Gartner expects 60% of AI projects without AI-ready data to be abandoned through 2026.[^20][^16] Fix: check data access on a real sample and name a business owner first.[^17]",
     "The empty seat: technical roles take a median 75 days to first fill, against 39 days for nonexecutive roles overall.[^10][^8] Fix: start the first workflow with outside help while you recruit.",
-    "Outside help that never hands over: one IT leader paid consultants again after six months to explain their own pipeline.[^26] Fix: write runbooks, test data and training into the contract as milestones.[^26][^17]",
+    "Outside help that never hands over. Fix: write runbooks, test data and training into the contract as milestones.[^17]",
     "Pilots that stall: Gartner predicted 30% of generative AI projects would be dropped after a trial build (proof of concept) by end of 2025.[^21] Fix: set a go-or-stop date and a dollar measure at the start.[^15]",
     "A lone engineer with no domain help: RAND found data scientists rely on subject-matter experts to know what the data means.[^16] Fix: pair the hire with the ops lead from day one, so the team shapes the work."
   ],
@@ -165,7 +165,7 @@
     "Hold back recent real cases the builder never sees, such as last month's, and test on those.",
     "Compare the AI-assisted output with your best person's work on the same cases. Count errors, not demos.",
     "Price the lift: hours saved times loaded cost per hour, minus the cost to run it. BLS puts benefits at 31.5% of pay costs for professional and management staff.[^7]",
-    "Ask who owns the system after day 90, and get the answer in writing.[^26][^17]",
+    "Ask who owns the system after day 90, and get the answer in writing.[^17]",
     "Agree a go-or-stop date before the pilot starts. Mid-market top performers reached full use in about 90 days.[^15]"
   ],
   "faq": [
@@ -175,15 +175,15 @@
     },
     {
       "q": "Should I hire full-time or use outside help?",
-      "a": "Start with outside help on one workflow, and hire once you know what works.[^14][^27] Few firms hire first: 1.3% of AI-using firms hired AI-trained staff.[^2][^1]"
+      "a": "Start with outside help on one workflow, and hire once you know what works.[^14] Few firms hire first: 1.3% of AI-using firms hired AI-trained staff.[^2][^1]"
     },
     {
       "q": "Consulting firm or an in-house AI team: which makes more sense financially?",
-      "a": "Outside help makes more financial sense for a 40-500 person firm's first workflows; hire in-house once AI work fills a full-time role.[^14][^27][^26] One engineer costs about $205,000 to $275,000 a year with benefits, and a mid-size firm said three AI hires would eat its $400,000 budget.[^5][^7][^28] Partner-led pilots also reached deployment about twice as often in MIT's study, a correlation, not proof.[^15]"
+      "a": "Outside help makes more financial sense for a 40-500 person firm's first workflows; hire in-house once AI work fills a full-time role.[^14] One engineer costs about $205,000 to $275,000 a year with benefits, and a mid-size firm said three AI hires would eat its $400,000 budget.[^5][^7] Partner-led pilots also reached deployment about twice as often in MIT's study, a correlation, not proof.[^15]"
     },
     {
       "q": "Who owns the AI system after outside help leaves?",
-      "a": "Name an internal owner before work starts, and put knowledge transfer in the contract as milestones.[^26][^17] Without that, one IT leader on Reddit says, nobody inside can touch the system after launch.[^26]"
+      "a": "Name an internal owner before work starts, and put knowledge transfer in the contract as milestones.[^17]"
     },
     {
       "q": "How long does it take to hire an AI engineer?",
@@ -192,7 +192,7 @@
   ],
   "pickElse": [
     "The gain is everyday tool use, not a custom system: train the staff you have instead (shape 3).[^1] Training is more than ten times as common as hiring for AI.[^2]",
-    "Three or more use cases are queued and your data sits in one place: hire an AI lead now.[^14][^26] Use outside help only to scope the first quarter.",
+    "Three or more use cases are queued and your data sits in one place: hire an AI lead now.[^14] Use outside help only to scope the first quarter.",
     "A packaged product already does the job: buy it. Menlo Ventures, an investor, found 76% of enterprise AI use cases are bought, not built.[^22]",
     "You need free help to start: try a Small Business Development Center, or a NIST MEP center if you make things.[^23][^24]"
   ],
@@ -380,21 +380,6 @@
       "name": "Zavient, how we work and what it costs",
       "url": "https://zavient.com/about.html#engagements",
       "what": "Free 30-minute diagnostic; fixed-scope 30-day AI Sprint; optional advisory after; build quoted per job."
-    },
-    {
-      "name": "Reddit r/CIO, Enterprise AI consulting vs in-house AI teams (Apr 2026)",
-      "url": "https://www.reddit.com/r/CIO/comments/1swdlah/enterprise_ai_consulting_vs_inhouse_ai_teams",
-      "what": "IT leaders: the real question is who owns it after launch; put knowledge transfer in the contract as milestones; hire the in-house team slowly, starting with a lead."
-    },
-    {
-      "name": "Reddit r/AI_Agents, Should I hire full-time or use contractors? (Feb 2025)",
-      "url": "https://www.reddit.com/r/AI_Agents/comments/1ixtp07/business_owner_looking_to_implement_ai_solutions/",
-      "what": "A financial-services business owner asks the question; a reply: start small with outside help, then consider full-time hires once you know what works."
-    },
-    {
-      "name": "Reddit r/business, Mid-size company: AI consulting firm vs in-house team (Mar 2026)",
-      "url": "https://www.reddit.com/r/business/comments/1rinutg/were_a_midsize_company_looking_at_an_enterprise",
-      "what": "A $400,000 AI budget: two senior AI engineers and a data scientist would eat that budget instantly."
     }
   ],
   "related": [
@@ -436,11 +421,11 @@
   ],
   "updated": "2026-11-26",
   "answers": {
-    "walk-away": "You should leave with one priced workflow, a before-and-after measure, a working pilot with a go-or-stop date, a job spec if needed, and a written handover[^16][^19][^26].",
+    "walk-away": "You should leave with one priced workflow, a before-and-after measure, a working pilot with a go-or-stop date, a job spec if needed, and a written handover[^16][^19].",
     "human-role": "Your people keep the decisions: the ops lead owns the measure, the COO signs off on go-live, front-line staff check output, and a named owner runs it afterward[^17][^18].",
-    "recipes": "The work takes three shapes: prove one workflow and hire later, bring in outside help with an AI lead alongside, or train the team you already have[^14][^26][^1].",
-    "what-goes-wrong": "Most pilots stall because nobody pinned down the problem, the data isn't ready, or no one owns the system after the build[^16][^20][^26].",
-    "benchmark": "Judge an advisor on your own numbers: record today's baseline, test on real cases they never saw, price the lift, and get the owner and go-or-stop date in writing[^19][^7][^26].",
+    "recipes": "The work takes three shapes: prove one workflow and hire later, bring in outside help with an AI lead alongside, or train the team you already have[^14][^1].",
+    "what-goes-wrong": "Most pilots stall because nobody pinned down the problem, the data isn't ready, or no one owns the system after the build[^16][^20].",
+    "benchmark": "Judge an advisor on your own numbers: record today's baseline, test on real cases they never saw, price the lift, and get the owner and go-or-stop date in writing[^19][^7].",
     "something-else": "Skip outside help when the gain is everyday tool use, when three or more queued use cases justify an AI lead, or when a packaged product does the job[^1][^14][^22].",
     "own-data": "Giants do: non-tech firms of 51 to 500 staff posted about 125 US AI-engineer ads in 30 days, against 1,262 from the largest firms in the same sectors[^3]."
   }

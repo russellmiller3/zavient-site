@@ -23,6 +23,9 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: `
 - A page that fails any check renders noindex, follow and stays out of the sitemap, even with `index: true`.
 - "Where does your team stay in charge?" on every page. No headcount-cut wording.
 - No Upwork, freelancer marketplaces, hourly rates or rival consulting firms.
+- No forum threads, rival consulting firms or content farms as sources; the page check fails them.
+- Every fix is structural: it goes into the template or a failing page check, so it can't come back on any page.
+- `npm run build` runs the page check and every test, so a failing indexed page stops the deploy.
 - Teach, then trust, then the lead: alternatives sit after "Buy or build", just above the free diagnostic.
 - The free diagnostic shows in four spots, worded for the page type: under the bottom line, beside the tool or own data, in a sticky contents box, and at the end.
 - Every long page (5+ sections) gets the sticky contents automatically: a side rail at 1300px and wider, a bottom bar below that naming the section you're in, a jump link to every section, the current one marked. Nothing to fill in; it reads the page's own headings (Russell, 26 Nov 2026).
@@ -148,18 +151,19 @@ Block order:
 Block order:
 1. What is <topic>, and what does it change?
 2. What should you walk away with?
-3. Where does your team stay in charge?
-4. What shapes can the work take?
-5. What did our own check find?
-6. Why do most AI pilots stall?
-7. How do you judge any AI advisor?
-8. Questions buyers ask about <topic>
-9. When should you not hire help?
-10. Useful resources
-11. Key numbers on this page
-12. Sources
-13. Related links
-14. Free diagnostic
+3. Which kind of help do you need?
+4. Where does your team stay in charge?
+5. What shapes can the work take?
+6. What did our own check find?
+7. Why do most AI pilots stall?
+8. How do you judge any AI advisor?
+9. Questions buyers ask about <topic>
+10. When should you not hire help?
+11. Useful resources
+12. Key numbers on this page
+13. Sources
+14. Related links
+15. Free diagnostic
 
 ## Rules page (`regulation`)
 - Address: `/ai-rules/{slug}.html`.
@@ -195,16 +199,40 @@ Block order:
 
 Block order:
 1. Use the <topic>
-2. What is <topic>, and what does it change?
+2. What does the <topic> do?
 3. Where does your team stay in charge?
 4. What did our own check find?
-5. Questions buyers ask about <topic>
+5. Questions leaders ask
 6. When should you pick something else?
 7. Useful resources
 8. Key numbers on this page
 9. Sources
 10. Related links
 11. Free diagnostic
+
+## Comparison (`compare`)
+- Address: `/compare/{slug}.html`.
+- Title shape: "{A} vs {B}: which fits {a team like yours}?". Example: "ChatGPT Plus vs Business vs Enterprise: which plan fits a 40-500 person firm?".
+- Division-head reviewer: the head of the team that would use the tool most (ops lead, controller, head of service).
+- Free diagnostic offer: "Not sure which fits your team? Bring us your top workflow. Leave with a pick and a first step."
+- Required beyond the common set: tables, recipes, ownData, watchOuts, buyVsBuild, pickElse.
+
+Block order:
+1. What is the real difference?
+2. How do they compare, side by side?
+3. Which one fits your team?
+4. Where does your team stay in charge?
+5. What did our own check find?
+6. What does each look like in practice?
+7. What do teams get wrong when they choose?
+8. Questions buyers ask before they choose
+9. Should you buy a tool or build your own?
+10. When should you pick neither?
+11. Useful resources
+12. Key numbers on this page
+13. Sources
+14. Related links
+15. Free diagnostic
 
 ## Guide (`guide`)
 - Address: `/guides/{slug}.html`.
@@ -247,7 +275,7 @@ Block order:
 - **rules** (`rules`): Each law, rule or guidance that shapes the build: official link, status (in force, withdrawn, starts on a date) and what it means for the reader in 2-3 sentences. Primary sources (eCFR, Federal Register, regulator, EUR-Lex). Not legal advice.
 - **benchmark** (`howToTest`): 4-10 steps to benchmark on the reader's own data: record today's numbers, hold-out set, what to compare, how to price the lift in dollars. Source any method claim.
 - **what-goes-wrong** (`watchOuts`): 3-6 failure modes from incidents, enforcement actions, studies or vendor post-mortems. Each says what to do about it. Sourced.
-- **faq** (`faq`): 3-6 real questions from People Also Ask, Reddit, Quora, vendor FAQs and forums. Answer each in 1-3 sentences, answer first, sourced. Record where each question was seen in the draft notes.
+- **faq** (`faq`): 3-6 real questions from People Also Ask, Reddit, Quora, vendor FAQs and forums. Answer each in 1-3 sentences, answer first, sourced. Record where each question was seen in the draft notes, never in the source list: forum threads are not sources.
 - **buy-or-build** (`buyVsBuild`): When to buy (no team, standard process, vendor data) and when to build (own data is the edge, rules need control). 2-3 sentences each, sourced (Menlo Ventures, MIT NANDA, Gartner, vendor pricing).
 - **something-else** (`pickElse`): 2-4 situations where another approach beats this one, naming the alternative product or method. No rival consulting firms, no freelancer marketplaces. Sits just above the free diagnostic.
 - **resources** (`resources`): 2-5 free tools, datasets or official guides, each with one line on why it helps.

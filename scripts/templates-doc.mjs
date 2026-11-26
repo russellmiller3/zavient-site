@@ -34,6 +34,9 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: \
 - A page that fails any check renders noindex, follow and stays out of the sitemap, even with \`index: true\`.
 - "Where does your team stay in charge?" on every page. No headcount-cut wording.
 - No Upwork, freelancer marketplaces, hourly rates or rival consulting firms.
+- No forum threads, rival consulting firms or content farms as sources; the page check fails them.
+- Every fix is structural: it goes into the template or a failing page check, so it can't come back on any page.
+- \`npm run build\` runs the page check and every test, so a failing indexed page stops the deploy.
 - Teach, then trust, then the lead: alternatives sit after "Buy or build", just above the free diagnostic.
 - The free diagnostic shows in four spots, worded for the page type: under the bottom line, beside the tool or own data, in a sticky contents box, and at the end.
 - Every long page (5+ sections) gets the sticky contents automatically: a side rail at 1300px and wider, a bottom bar below that naming the section you're in, a jump link to every section, the current one marked. Nothing to fill in; it reads the page's own headings (Russell, 26 Nov 2026).
