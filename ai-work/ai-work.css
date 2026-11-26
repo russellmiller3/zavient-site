@@ -1,0 +1,403 @@
+/* Zavient AI-work pages (26 Nov 2026). Light, Zarlent-style system in blue: a faint grid with a soft gradient
+   behind the top of the page, a bold sans for headings, a book serif for reading, mono for labels and numbers. */
+:root {
+  --ink: #15202E;
+  --ink-soft: #3C4A5C;
+  --muted: #5F6B7A;
+  --line: #D8E0EA;
+  --line-strong: #B9C6D6;
+  --paper: #FFFFFF;
+  --paper-alt: #F3F6FA;
+  --blue: #1F5FBF;
+  --blue-dark: #174A96;
+  --blue-wash: #EAF1FB;
+  --blue-grid: rgba(31, 95, 191, 0.075);
+  --sans: 'Figtree', 'Helvetica Neue', Arial, sans-serif;
+  --serif: 'Crimson Pro', Georgia, serif;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+::selection { background: rgba(31, 95, 191, 0.18); }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--blue); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--blue-dark); }
+
+/* Nav */
+nav:not(.on-page) {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 32px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.logo { font-family: var(--sans); font-weight: 800; font-size: 22px; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+.logo em { color: var(--blue); font-style: normal; }
+.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-links a { font-family: var(--mono); font-size: 14px; color: var(--muted); text-decoration: none; }
+.nav-links a:hover { color: var(--blue); }
+.nav-links a.nav-cta { background: var(--blue); color: #fff; padding: 8px 14px; border-radius: 2px; font-family: var(--sans); font-weight: 600; font-size: 15px; }
+.nav-links a.nav-cta:hover { background: var(--blue-dark); color: #fff; }
+
+/* Layout */
+.wrap { max-width: 780px; margin: 0 auto; padding: 0 28px; }
+.label {
+  font-family: var(--mono); font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 10px;
+}
+
+/* Hero: faint grid that fades out, over a soft blue wash */
+.article-hero {
+  position: relative; padding: 56px 0 40px;
+  background: linear-gradient(180deg, var(--blue-wash) 0%, rgba(234, 241, 251, 0.45) 55%, var(--paper) 100%);
+  border-bottom: 1px solid var(--line);
+}
+.article-hero::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(var(--blue-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--blue-grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.5) 60%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.5) 60%, transparent 100%);
+}
+.article-hero .wrap { position: relative; }
+.article-hero h1 {
+  font-family: var(--sans); font-weight: 800; font-size: clamp(34px, 5.2vw, 52px);
+  line-height: 1.08; letter-spacing: -0.025em; color: var(--ink); margin-bottom: 26px;
+}
+.article-hero h1 .hl { color: var(--blue); }
+.article-hero .dek { font-size: 21px; color: var(--ink-soft); }
+
+/* BLUF: bottom line, then what the page covers */
+.bluf-label {
+  display: block; font-family: var(--mono); font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 8px;
+}
+.bluf { background: var(--paper); border: 1px solid var(--line); border-left: 3px solid var(--blue); padding: 20px 24px; }
+.bluf p { font-size: 21px; line-height: 1.55; color: var(--ink); }
+.bluf ul { list-style: none; margin: 0; padding: 0; }
+.bluf li { position: relative; padding: 6px 0 6px 22px; font-size: 19px; line-height: 1.45; color: var(--ink); }
+.bluf li + li { border-top: 1px solid var(--line); }
+.bluf li::before { content: ""; position: absolute; left: 2px; top: 16px; width: 8px; height: 8px; background: var(--blue); }
+.on-page { margin-top: 22px; padding: 4px 0 0; }
+.on-page ol { list-style: none; counter-reset: op; columns: 2; column-gap: 28px; }
+.on-page li { counter-increment: op; break-inside: avoid; position: relative; padding: 7px 0 7px 34px; border-top: 1px solid var(--line); font-size: 18px; line-height: 1.35; }
+.on-page li::before { content: counter(op, decimal-leading-zero); position: absolute; left: 0; top: 9px; font-family: var(--mono); font-size: 14px; color: var(--muted); }
+.on-page li a { color: var(--ink); text-decoration: none; }
+.on-page li a:hover { color: var(--blue); text-decoration: underline; }
+.on-page-cta { margin-top: 12px; font-size: 18px; color: var(--ink-soft); }
+.byline { font-family: var(--mono); font-size: 14px; color: var(--muted); margin-top: 22px; }
+.byline a { color: inherit; }
+
+/* Article body */
+.article-body { padding: 24px 0 24px; counter-reset: sec; }
+.article-body h2 {
+  counter-increment: sec;
+  font-family: var(--sans); font-weight: 700; font-size: clamp(25px, 3vw, 31px); line-height: 1.2;
+  letter-spacing: -0.015em; color: var(--ink); margin: 56px 0 16px; padding-top: 28px; border-top: 1px solid var(--line);
+  scroll-margin-top: 80px;
+}
+.article-body h2::before {
+  content: counter(sec, decimal-leading-zero); display: block; margin-bottom: 6px;
+  font-family: var(--mono); font-size: 14px; font-weight: 400; letter-spacing: 0.06em; color: var(--muted);
+}
+.article-body h3 { font-family: var(--sans); font-weight: 700; font-size: 20px; color: var(--ink); margin: 28px 0 10px; }
+.article-body p { margin-bottom: 18px; }
+.article-body strong { font-weight: 600; }
+.article-body ul { list-style: none; margin: 0 0 22px; }
+.article-body ul li { position: relative; padding-left: 24px; margin-bottom: 12px; }
+.article-body ul li::before { content: ''; position: absolute; left: 4px; top: 13px; width: 7px; height: 7px; background: var(--blue); }
+.article-body ol { margin: 0 0 22px 24px; }
+.article-body ol li { margin-bottom: 10px; padding-left: 4px; }
+.article-body ol li::marker { font-family: var(--mono); font-size: 15px; color: var(--muted); }
+
+/* Tables: mono headers, hairlines, numbers in mono */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 10px 0 8px; }
+.sources-table { width: 100%; border-collapse: collapse; font-size: 17px; line-height: 1.45; }
+.table-scroll .sources-table { min-width: 560px; }
+.sources-table th {
+  font-family: var(--mono); font-size: 14px; font-weight: 500; color: var(--muted); text-align: left;
+  padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line-strong); white-space: nowrap;
+}
+.sources-table td { padding: 11px 12px 11px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.sources-table td.num { font-family: var(--mono); font-size: 16px; font-weight: 600; white-space: nowrap; color: var(--ink); }
+.sources-table tr:target { background: var(--blue-wash); }
+.table-scroll .sources-table th:first-child, .table-scroll .sources-table td:first-child { position: sticky; left: 0; background: var(--paper); z-index: 1; }
+.table-scroll .sources-table tr:target td:first-child { background: var(--blue-wash); }
+.table-note { font-family: var(--mono); font-size: 14px; color: var(--muted); margin-top: 6px; }
+.stat-src { display: block; margin-top: 4px; font-family: var(--mono); font-size: 14px; color: var(--muted); }
+.status { font-family: var(--mono); font-size: 14px; color: var(--blue-dark); white-space: nowrap; }
+.sources { margin-top: 0; }
+
+/* Recipe cards and flows */
+.recipe { border: 1px solid var(--line); background: var(--paper); padding: 20px 22px; margin: 18px 0; }
+.recipe h3 { margin-top: 0; }
+.recipe .when { color: var(--ink-soft); margin-bottom: 14px; }
+/* Who-does-what flow: a numbered vertical list (Carbon progress indicator; Material 1 vertical stepper).
+   Two-column grid per step: the number circle in its own 32px column, role and action in the second.
+   The connector line runs only in the circle column, from one circle to the next.
+   Selectors start with .article-body ol.flow so the generic ".article-body ol li" rules can't override them. */
+.article-body ol.flow { list-style: none; margin: 6px 0 20px; padding: 0; counter-reset: step; }
+.article-body ol.flow > li {
+  position: relative; counter-increment: step; margin: 0; padding: 0 0 20px;
+  display: grid; grid-template-columns: 32px 1fr; column-gap: 16px; align-items: start;
+}
+.article-body ol.flow > li:last-child { padding-bottom: 0; }
+.article-body ol.flow > li::marker { content: ''; }
+.article-body ol.flow > li::before {
+  content: counter(step); grid-column: 1; grid-row: 1 / span 2;
+  width: 32px; height: 32px; border-radius: 50%; background: var(--blue); color: #fff;
+  font-family: var(--sans); font-weight: 700; font-size: 15px; line-height: 32px; text-align: center;
+}
+.article-body ol.flow > li:not(:last-child)::after {
+  content: ''; position: absolute; left: 15.5px; top: 38px; bottom: 6px; width: 1px; background: #B8CCE8;
+}
+.article-body ol.flow .who { grid-column: 2; display: block; font-family: var(--sans); font-weight: 700; font-size: 16px; line-height: 1.3; color: var(--ink); padding-top: 6px; }
+.article-body ol.flow .what { grid-column: 2; display: block; font-size: 18px; line-height: 1.45; color: var(--ink-soft); margin-top: 3px; }
+.article-body ol.flow > li > .what:only-child { padding-top: 4px; margin-top: 0; color: var(--ink); }
+.recipe .cost { font-size: 18px; margin: 0; }
+
+/* Hub cards */
+.hub-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 14px 0 8px; }
+.hub-card { display: flex; flex-direction: column; border: 1px solid var(--line); padding: 20px 22px; color: var(--ink); text-decoration: none; transition: border-color 0.15s, background 0.15s; }
+.hub-card:hover { border-color: var(--blue); background: var(--blue-wash); color: var(--ink); }
+.hub-tag { font-family: var(--mono); font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; }
+.hub-card h3 { font-family: var(--sans); font-weight: 700; font-size: 20px; line-height: 1.25; margin: 0 0 8px; }
+.hub-card p { font-size: 17px; color: var(--ink-soft); margin: 0; }
+/* Cards whose blurb has footnotes: the title link covers the card; footnote links sit above it */
+.hub-card.stretch { position: relative; }
+.hub-card .card-link { color: inherit; text-decoration: none; }
+.hub-card .card-link::after { content: ''; position: absolute; inset: 0; }
+.hub-card.stretch sup.fn { position: relative; z-index: 1; }
+.hub-card.stretch:focus-within { border-color: var(--blue); }
+
+/* Footnote markers */
+sup.fn { font-size: 0.62em; line-height: 0; margin-left: 1px; font-family: var(--mono); }
+sup.fn a { color: var(--blue); text-decoration: none; font-weight: 600; }
+sup.fn .fn-sep { color: var(--muted); margin-right: 1px; }
+
+
+/* Free diagnostic offer */
+.article-cta {
+  position: relative; margin-top: 56px; padding: 64px 0; border-top: 1px solid var(--line);
+  background: linear-gradient(0deg, var(--blue-wash) 0%, var(--paper) 100%);
+}
+.article-cta::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(var(--blue-grid) 1px, transparent 1px), linear-gradient(90deg, var(--blue-grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: linear-gradient(0deg, #000, transparent);
+  mask-image: linear-gradient(0deg, #000, transparent);
+}
+.article-cta .wrap { position: relative; }
+.article-cta .label { color: var(--blue); }
+.article-cta h2 { font-family: var(--sans); font-weight: 800; font-size: clamp(28px, 4vw, 38px); line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 14px; }
+.article-cta p { color: var(--ink-soft); margin-bottom: 18px; }
+.cta-steps { list-style: none; margin: 0 0 26px; }
+.cta-steps li { position: relative; padding-left: 24px; margin-bottom: 10px; }
+.cta-steps li::before { content: ''; position: absolute; left: 4px; top: 13px; width: 7px; height: 7px; background: var(--blue); }
+.btn-gold {
+  display: inline-block; background: var(--blue); color: #fff; text-decoration: none;
+  font-family: var(--sans); font-weight: 600; font-size: 16px; padding: 14px 26px; border-radius: 2px;
+}
+.btn-gold:hover { background: var(--blue-dark); color: #fff; }
+.cta-secondary { font-size: 17px; }
+
+/* Footer */
+footer {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+  padding: 24px 32px; border-top: 1px solid var(--line); background: var(--paper-alt);
+  font-family: var(--mono); font-size: 14px; color: var(--muted);
+}
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--blue); }
+
+@media (max-width: 720px) {
+  body { font-size: 19px; }
+  .wrap { padding: 0 18px; }
+  nav:not(.on-page) { padding: 12px 18px; }
+  .nav-links { gap: 14px; }
+  /* Phones (26 Nov 2026): every link stays visible on a second row, logo and button on the first.
+     Few links, so no hamburger: hidden menus get used far less (NN/g). */
+  nav:not(.on-page) { flex-wrap: wrap; row-gap: 8px; }
+  .article-body h2 { scroll-margin-top: 112px; } /* the two-row header is taller */
+  nav:not(.on-page) .nav-links { display: contents; }
+  nav:not(.on-page) .nav-links a.nav-cta { order: 1; margin-left: auto; }
+  nav:not(.on-page)::after { content: ''; order: 2; flex-basis: 100%; height: 0; }
+  nav:not(.on-page) .nav-links a:not(.nav-cta) { order: 3; margin-right: 18px; font-size: 14px; }
+  .article-hero { padding: 40px 0 32px; }
+  .on-page ol { columns: 1; }
+  .hub-grid { grid-template-columns: 1fr; }
+  .bluf { padding: 16px 18px; }
+  .bluf p { font-size: 19px; }
+  .bluf li { font-size: 17px; }
+}
+
+/* Golden-template blocks (26 Nov 2026): where people stay in charge, ranked jobs, FAQ, tool frame */
+.callout { border: 1px solid var(--line); border-left: 3px solid var(--blue); background: var(--blue-wash); padding: 16px 22px 4px; margin: 6px 0 22px; }
+.ranked { list-style: none; counter-reset: rk; margin: 8px 0 22px; padding: 0; }
+.ranked > li { counter-increment: rk; position: relative; padding: 14px 0 6px 46px; border-top: 1px solid var(--line); }
+.ranked > li::before { content: counter(rk, decimal-leading-zero); position: absolute; left: 0; top: 18px; font-family: var(--mono); font-size: 15px; color: var(--blue); }
+.ranked h3 { margin: 0 0 6px; }
+.ranked .payoff { font-size: 18px; color: var(--ink-soft); }
+.faq-item { border-top: 1px solid var(--line); padding-top: 4px; }
+.faq-item h3 { margin-top: 16px; }
+.tool-frame { border: 1px solid var(--line); margin: 10px 0 6px; }
+.tool-frame iframe { width: 100%; height: 720px; border: 0; display: block; }
+
+/* Free diagnostic in four spots on golden-template pages (site architecture doc, 26 Nov 2026):
+   under the bottom line, beside the tool or own data, a sticky contents box, and the offer at the end. */
+.diag-nudge { margin-top: 14px; font-size: 18px; color: var(--ink-soft); }
+.diag-nudge a { font-weight: 600; }
+.diag-box { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; border: 1px solid var(--line); border-left: 3px solid var(--blue); background: var(--blue-wash); padding: 14px 20px; margin: 4px 0 26px; }
+.diag-box p { margin: 0; font-size: 18px; flex: 1 1 280px; }
+.diag-box .btn-gold { white-space: nowrap; }
+/* Sticky contents + free diagnostic, on every long page (five or more sections). It never sits on the text.
+   - 1300px and wider: a rail in the empty margin right of the 780px column, listing every section, with the
+     section you're reading marked (NN/g: sticky TOC in a side rail; GOV.UK contents list).
+   - Narrower: a slim bar along the bottom, in thumb reach, that names the section you're in ("4/14 · ...") and
+     opens into the full list. The page gets matching bottom padding so nothing ends up hidden under it (WCAG 2.2
+     technique C43, scroll-padding).
+   - Hidden while the top of the page or the end offer is on screen (script in AiWorkPage.astro).
+   - Rail breakpoint is 1300px, not Wikipedia's 1000px, because our 780px column stays centred and only has a free
+     margin that wide; below it the bar takes over (research brief, 26 Nov 2026). */
+.sticky-toc { position: fixed; z-index: 90; background: var(--paper); border: 1px solid var(--line-strong); display: flex; transition: opacity .2s; }
+.sticky-toc[hidden] { display: none; }
+.sticky-toc.is-hidden { opacity: 0; pointer-events: none; }
+.sticky-toc .toc-toggle { font: inherit; background: none; border: 0; padding: 0; color: var(--ink); text-align: left; cursor: pointer; display: flex; align-items: center; gap: 8px; min-width: 0; min-height: 44px; }
+.sticky-toc .toc-label { font-family: var(--sans); font-weight: 700; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.sticky-toc .toc-count { font-weight: 600; letter-spacing: 0; text-transform: none; margin-left: 4px; }
+.sticky-toc .toc-now { font-family: var(--sans); font-weight: 600; font-size: 15px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.sticky-toc .toc-list { list-style: none; margin: 0; padding: 0; overflow-y: auto; overscroll-behavior: contain; }
+.sticky-toc .toc-list li { margin: 0; padding: 0; }
+.sticky-toc .toc-list a { display: block; padding: 6px 10px 6px 12px; border-left: 2px solid var(--line); font-family: var(--sans); font-size: 14px; line-height: 1.35; color: var(--ink-soft); text-decoration: none; }
+.sticky-toc .toc-list a:hover { color: var(--blue); border-left-color: var(--line-strong); }
+.sticky-toc .toc-list a[aria-current] { color: var(--blue); font-weight: 700; border-left: 3px solid var(--blue); padding-left: 11px; background: var(--blue-wash); }
+.sticky-toc .toc-top { display: inline-block; margin-top: 8px; font-family: var(--sans); font-size: 14px; color: var(--muted); }
+.sticky-toc .btn-gold { text-align: center; font-size: 15px; padding: 9px 14px; white-space: nowrap; }
+.sticky-toc .btn-gold .short { display: none; }
+@media (prefers-reduced-motion: no-preference) { html.has-toc { scroll-behavior: smooth; } }
+@media (min-width: 1300px) {
+  .sticky-toc { top: 92px; bottom: 24px; left: calc(50% + 390px + 32px); width: min(300px, calc(50vw - 390px - 56px)); flex-direction: column; gap: 12px; padding: 16px 14px; border-width: 0 0 0 1px; background: transparent; }
+  .sticky-toc .toc-toggle { pointer-events: none; min-height: 0; }
+  .sticky-toc .toc-now, .sticky-toc .toc-count { display: none; }
+  .sticky-toc .toc-panel { display: flex; flex-direction: column; min-height: 0; flex: 0 1 auto; }
+  .sticky-toc .toc-list { min-height: 0; }
+  .sticky-toc .btn-gold { align-self: flex-start; }
+}
+@media (max-width: 1299.98px) {
+  .sticky-toc { left: 0; right: 0; bottom: 0; flex-wrap: wrap; align-items: center; gap: 4px 12px; padding: 6px max(16px, calc(50% - 390px)); border-width: 1px 0 0; box-shadow: 0 -4px 16px rgba(21, 32, 46, 0.08); }
+  .sticky-toc .toc-toggle { flex: 1 1 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 6px; row-gap: 0; padding: 4px 0; }
+  .sticky-toc .toc-label { grid-column: 1; grid-row: 1; }
+  .sticky-toc .toc-now { grid-column: 1; grid-row: 2; }
+  .sticky-toc .toc-toggle::after { content: '\25B4'; content: '\25B4' / ''; grid-column: 2; grid-row: 1 / span 2; align-self: center; color: var(--blue); font-size: 14px; }
+  .sticky-toc.is-open .toc-toggle::after { content: '\25BE'; content: '\25BE' / ''; }
+  .sticky-toc .toc-panel { display: none; order: -1; flex: 1 0 100%; padding: 8px 0 10px; border-bottom: 1px solid var(--line); }
+  .sticky-toc.is-open .toc-panel { display: block; }
+  .sticky-toc .toc-list { max-height: min(60vh, 520px); }
+  .sticky-toc .toc-list a { padding-top: 9px; padding-bottom: 9px; font-size: 15px; }
+  html.has-toc { scroll-padding-bottom: 72px; }
+  html.has-toc body { padding-bottom: 64px; }
+}
+/* Short or zoomed-in screens: no fixed bar at all, the hero's contents list does the job (GOV.UK sticky-elements
+   testing: a fixed bar covered focused links and broke at high zoom; WCAG 2.4.11). */
+@media (max-height: 519.98px) {
+  .sticky-toc { display: none; }
+  html.has-toc { scroll-padding-bottom: 0; }
+  html.has-toc body { padding-bottom: 0; }
+}
+.article-body h2[tabindex="-1"]:focus { outline: none; }
+@media (max-width: 559.98px) {
+  .sticky-toc .btn-gold { font-size: 14px; padding: 8px 12px; }
+  .sticky-toc .btn-gold .long { display: none; }
+  .sticky-toc .btn-gold .short { display: inline; }
+}
+
+
+/* Mobile-first, ADHD-friendly reading (26 Nov 2026). Sources: NN/g long-form formatting, layer-cake scanning,
+   hamburger menus and mobile tables; GOV.UK type scale; British Dyslexia Association style guide; W3C WCAG 2.2
+   (2.5.8 target size, 1.4.12 text spacing) and COGA; Apple HIG and Android 48dp touch targets; web.dev fonts.
+   Notes: Drive handoff folder, "11 Mobile and ADHD-friendly reading". */
+
+/* Line length: 50-75 characters reads best (Baymard). Prose keeps to about 68 characters; tables and boxes use the full column. */
+.article-body > p, .article-body > ul > li, .article-body > ol > li, .faq-item p, .bluf li { max-width: 68ch; }
+.article-body p, .article-body li { text-wrap: pretty; }
+
+/* Tap targets: 44px or more for anything you tap on a phone (Apple 44pt, Android 48dp, WCAG 2.5.5) */
+.nav-links a { display: inline-flex; align-items: center; min-height: 44px; }
+.nav-links a.nav-cta { min-height: 40px; }
+sup.fn a { padding: 10px 3px; margin: -10px -1px; } /* bigger hit area, same line height */
+.on-page a, .hub-card .card-link { display: inline-block; padding: 6px 0; }
+
+/* FAQ as accordions: scan the questions, open the one you need */
+.faq-item summary { list-style: none; cursor: pointer; display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; min-height: 48px; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: '+'; content: '+' / ''; margin-left: auto; font-family: var(--sans); font-weight: 700; font-size: 24px; line-height: 1.1; color: var(--blue); }
+.faq-item[open] summary::after { content: '\2212'; content: '\2212' / ''; }
+.faq-item summary h3 { margin: 0; }
+.faq-item p { padding-bottom: 14px; }
+.faq-item summary:hover h3 { color: var(--blue); }
+
+/* Sources: closed by default so the page ends on the offer, not 40 rows of links */
+.sources-list > summary { cursor: pointer; display: inline-flex; align-items: center; min-height: 48px; font-family: var(--sans); font-weight: 600; font-size: 17px; color: var(--blue); }
+.sources-list[open] > summary { margin-bottom: 6px; }
+
+/* Wide tables: a cue while there is more to the right, and a soft edge shadow (no background-attachment: it fails in iOS Safari) */
+.scroll-cue { font-family: var(--sans); font-size: 14px; color: var(--muted); margin: 10px 0 -4px; }
+.table-scroll { position: relative; }
+.table-scroll:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.table-scroll.can-scroll:not(.at-end) { mask-image: linear-gradient(to right, #000 calc(100% - 36px), transparent); -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 36px), transparent); }
+
+@media (max-width: 720px) {
+  /* GOV.UK keeps 19px body on phones; BDA asks for 16-19px with 1.5 spacing */
+  .article-body { line-height: 1.55; }
+  .article-body h2 { font-size: 25px; margin-top: 44px; }
+  .sources-table { font-size: 16px; }
+  .table-scroll .sources-table { min-width: 520px; }
+  .sticky-toc .toc-list a { padding-top: 12px; padding-bottom: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
+
+/* Phones: 2-column prose tables become labelled cards, so nothing scrolls sideways (NN/g mobile tables; Smashing) */
+@media (max-width: 599.98px) {
+  .table-scroll .sources-table.stack-2 { min-width: 0; }
+  .sources-table.stack-2 thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .sources-table.stack-2, .sources-table.stack-2 tbody, .sources-table.stack-2 tr, .sources-table.stack-2 td { display: block; width: 100%; }
+  .sources-table.stack-2 tr { border-bottom: 1px solid var(--line); padding: 12px 0; }
+  .sources-table.stack-2 td { border: 0; padding: 2px 0; position: static; }
+  .sources-table.stack-2 td::before { content: attr(data-label); display: block; font-family: var(--mono); font-size: 14px; color: var(--muted); margin-bottom: 2px; }
+  .sources-table.stack-2 td:first-child { font-weight: 600; }
+  .sources-table.stack-2 td.num { font-size: 18px; }
+}
+
+/* Data-story bar charts: below 600px the SVG's labels shrink under 10px, so phones get the same bars as
+   HTML (label above each bar, 15px+ text). Only one of the two is ever displayed, so screen readers get one. */
+.bar-list { display: none; }
+@media (max-width: 599.98px) {
+  .data-chart.has-bar-list > div:not(.bar-list) { display: none; }
+  .bar-list { display: block; }
+  .bar-list-title { font-family: var(--sans); font-weight: 700; font-size: 18px; color: var(--blue-ink, #133F87); margin: 0 0 4px; }
+  .bar-list-sub { font-size: 15px; color: var(--ink-soft); margin: 0 0 12px; }
+  .bar-list ol { list-style: none; margin: 0; padding: 0; }
+  .bar-list li { margin: 0 0 12px; padding: 0; }
+  .bar-list li::before { content: none; }
+  .bar-label { display: block; font-family: var(--sans); font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .bar-row { display: flex; align-items: center; gap: 8px; }
+  .bar { display: block; height: 14px; background: var(--blue); border-radius: 2px; flex: 0 0 auto; }
+  .bar-value { font-family: var(--sans); font-size: 15px; font-weight: 700; white-space: nowrap; }
+  .bar-note { font-weight: 400; color: var(--ink-soft); }
+}
+
+/* "For:" line on hub cards: who the guide is for, set apart from the blurb and pinned to the card's foot. */
+.hub-card p.hub-for { margin-top: auto; padding-top: 12px; font-family: var(--sans); font-size: 15px; font-weight: 600; color: var(--ink); }
