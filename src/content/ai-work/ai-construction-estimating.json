@@ -9,10 +9,10 @@
   "index": true,
   "verdict": [
     "Trust AI most on counts; re-measure areas. In a one-job study, counts matched almost exactly; areas ran low, façades worst.[^1][^2]",
-    "Your estimator checks every line and signs the bid. After award, bid mistakes are usually your loss, AI or not.[^9][^11]",
+    "Your estimator checks every line and signs the bid. After award, bid mistakes are usually your loss, AI or not.[^8][^10]",
     "Chatbots read specs well but miscount doors and windows.[^3][^4] Use them for scope and RFIs (requests for information), not quantities.",
-    "Vendors claim 94-99% accuracy; none we checked shows its method.[^20] Time tools on 5-10 of your past bids, checking included.[^45]",
-    "Start with one trade scope. One AI takeoff seat lists at about $830 to $3,600 a year.[^31][^19]"
+    "Vendors claim 94-99% accuracy but show no method.[^19][^25] Time tools on 5-10 of your past bids, checking included.",
+    "Start with one trade scope. One AI takeoff seat lists at about $830 to $3,600 a year.[^27][^17]"
   ],
   "onPage": [
     {
@@ -48,18 +48,18 @@
     "what-goes-wrong": "Where does AI takeoff go wrong?",
     "buy-or-build": "Should you buy an AI takeoff tool or build one?"
   },
-  "summary": "AI takes the first pass at takeoff (measuring quantities from drawings): it reads PDF plans, sets scale, counts symbols, measures areas.[^1][^2][^7] Your estimator checks every line, prices it and signs the bid.[^2][^5] Best on counts and simple areas, it slips on irregular shapes and scope the drawings don't show.[^1][^3][^45]",
+  "summary": "AI takes the first pass at takeoff (measuring quantities from drawings): it reads PDF plans, sets scale, counts symbols, measures areas.[^1][^2][^7] Your estimator checks every line, prices it and signs the bid.[^2][^5] Best on counts and simple areas, it slips on irregular shapes and scope the drawings don't show.[^1][^3][^40]",
   "humanRole": [
-    "Estimator: checks every AI quantity before it enters a bid, low-confidence items first. Trimble's own rule is that nothing goes into a bid until a qualified person has looked at it.[^2][^8][^1]",
-    "Chief estimator or head of preconstruction: owns the number and signs the bid. A one-sided bid mistake is usually the bidder's loss, even on federal work.[^9][^10][^11]",
+    "Estimator: checks every AI quantity before it enters a bid, low-confidence items first. Trimble's own rule is that nothing goes into a bid until a qualified person has looked at it.[^2][^1]",
+    "Chief estimator or head of preconstruction: owns the number and signs the bid. A one-sided bid mistake is usually the bidder's loss, even on federal work.[^8][^9][^10]",
     "Estimators keep the judgment calls: pricing, allowances for waste and weather, scope gaps and which subcontractors to use.[^5][^6]",
-    "A model worth borrowing: since 9 Mar 2026, RICS (the UK surveyors' body) requires a named, qualified person to sign off each material AI output.[^12][^13]"
+    "A model worth borrowing: since 9 Mar 2026, RICS (the UK surveyors' body) requires a named, qualified person to sign off each material AI output.[^11][^12]"
   ],
   "teamAfter": [
-    "Estimators move from measuring to pricing, bid leveling (comparing subcontractor bids line by line) and risk review.[^1][^15]",
-    "Scope review gets more time. One general contractor's estimators shifted to scoping, value engineering (cheaper ways to meet the spec) and picking trade partners, per the vendor's own case study.[^33]",
-    "Some teams bid more with the same estimators. A one-estimator paving firm went from about 15 to 75 bids a month, per Beam AI's case study.[^16]",
-    "Freed hours can go to choosing which bids to chase. Under 6% of 2,000 surveyed contractors knew and tracked their bid-hit ratio.[^17][^18]"
+    "Estimators move from measuring to pricing, bid leveling (comparing subcontractor bids line by line) and risk review.[^1][^14]",
+    "Scope review gets more time. One general contractor's estimators shifted to scoping, value engineering (cheaper ways to meet the spec) and picking trade partners, per the vendor's own case study.[^29]",
+    "Some teams bid more with the same estimators. A one-estimator paving firm went from about 15 to 75 bids a month, per Beam AI's case study.[^15]",
+    "Freed hours can go to choosing which bids to chase. Only 6% of about 2,000 surveyed contractors knew and tracked their bid-hit ratio.[^16]"
   ],
   "example": {
     "input": "Illustrative, built on a published study's real numbers.[^1] A 16,000 sq ft, two-story classroom building: elevations, floor finish plan, ceiling plan and door schedule as PDFs, plus the spec book.[^1] AI sets scale, counts doors and windows, measures floors, ceilings and façades, and flags low-confidence items.[^1][^2]",
@@ -68,7 +68,7 @@
   "tables": [
     {
       "title": "Which AI takeoff tools fit which job?",
-      "intro": "Prices and trials are in our own check below. Accuracy figures here are each vendor's own claim.[^20]",
+      "intro": "Prices and trials are in our own check below. Accuracy figures here are each vendor's own claim.[^19][^46]",
       "headers": [
         "Tool",
         "What it does",
@@ -79,47 +79,47 @@
           "name": "Togal.AI",
           "url": "https://www.togal.ai/pricing",
           "cells": [
-            "AI takeoff of areas and counts; chat with plans[^19]",
-            "The tool in the one independent field study.[^1] Its president has claimed 98% accuracy, with no published method (vendor claim)[^53][^20]"
+            "AI takeoff of areas and counts; chat with plans[^17]",
+            "The tool in the one independent field study.[^1] The company has claimed 97% to 98% accuracy, with no published method (vendor claim)[^45][^46]"
           ]
         },
         {
           "name": "Kreo",
           "url": "https://www.kreo.net/pricing",
           "cells": [
-            "AI takeoff and 2D estimating[^21]",
-            "Pilot fee credited to an annual plan.[^21] Claims \"within 94% of the real geometry\" (vendor claim)[^22]"
+            "AI takeoff and 2D estimating[^18]",
+            "Pilot fee credited to an annual plan.[^18] Claims \"within 94% of the real geometry\" (vendor claim)[^19]"
           ]
         },
         {
           "name": "STACK",
           "url": "https://www.stackct.com/pricing/",
           "cells": [
-            "Cloud takeoff and estimating[^23]",
-            "Free version; guides say AI takeoff is on the paid tier[^23][^24]"
+            "Cloud takeoff and estimating[^20]",
+            "Free version; AI takeoff is on the Premium and Pro plans[^20][^48]"
           ]
         },
         {
           "name": "PlanSwift",
           "url": "https://www.planswift.com/pricing/",
           "cells": [
-            "Desktop takeoff with auto count and auto scale[^25]",
-            "Auto Takeoff needs the Core tier[^25]"
+            "Desktop takeoff with auto count and auto scale[^21]",
+            "Auto Takeoff needs the Core tier[^21]"
           ]
         },
         {
           "name": "Bluebeam Revu",
           "url": "https://www.bluebeam.com/pricing/",
           "cells": [
-            "PDF markup and measuring[^27]",
-            "Max tier flags missing sheets and missing door or fixture tags[^27]"
+            "PDF markup and measuring[^23]",
+            "Max tier flags missing sheets and missing door or fixture tags[^23]"
           ]
         },
         {
           "name": "Trimble MEP estimating",
           "url": "https://www.trimble.com/en/blog/construction/article/actual-results-mep-estimators-ai-assisted-takeoff",
           "cells": [
-            "MEP (mechanical, electrical, plumbing) takeoff with AI scale, symbol counts, conduit routing[^2][^15]",
+            "MEP (mechanical, electrical, plumbing) takeoff with AI scale, symbol counts, conduit routing[^2][^14]",
             "97% of auto-set scales needed no change, across 4,000+ contractors (vendor data)[^2]"
           ]
         },
@@ -127,24 +127,24 @@
           "name": "Civils.ai",
           "url": "https://civils.ai/pricing",
           "cells": [
-            "AI takeoff checked by a human QA (quality check) team[^28]",
-            "Month-to-month; takeoffs counted per sheet[^28]"
+            "AI takeoff checked by a human QA (quality check) team[^24]",
+            "Month-to-month; takeoffs counted per sheet[^24]"
           ]
         },
         {
           "name": "Beam AI",
           "url": "https://www.ibeam.ai/pricing",
           "cells": [
-            "Done-for-you takeoff with human QA in 24-72 hours[^29]",
-            "Its \"99%+\" covers the human-checked output (vendor claim)[^20]"
+            "Done-for-you takeoff with human QA in 24-72 hours[^25]",
+            "Its \"99%+\" covers the QA-checked output (vendor claim)[^25]"
           ]
         }
       ],
-      "note": "Residential builders: Buildxact and Handoff put AI takeoff on their top plans.[^30][^32]"
+      "note": "Residential builders: Buildxact and Handoff put AI takeoff on their top plans.[^26][^28]"
     },
     {
       "title": "What do independent tests show?",
-      "intro": "Published studies, independent first. The only field study covers one job and one tool, and none tests several tools across many projects.[^1][^20]",
+      "intro": "Published studies, independent first. The only field study covers one job and one tool. We found no study that tests several tools across many projects.[^1]",
       "headers": [
         "Study",
         "What it tested",
@@ -171,16 +171,16 @@
           "name": "DrawingVQA (2026)",
           "url": "https://arxiv.org/html/2607.15418v1",
           "cells": [
-            "General AI models on structural drawings[^34]",
-            "Best scores 58.7% to 66.3%, against 27.2% by chance[^34]"
+            "General AI models on structural drawings[^30]",
+            "Best scores 58.7% to 66.3%, against 27.2% by chance[^30]"
           ]
         },
         {
           "name": "Symbol detection, IJDAR (2024)",
           "url": "https://link.springer.com/article/10.1007/s10032-024-00492-9",
           "cells": [
-            "Trained detectors on drawing symbols[^35]",
-            "79% to 83% average precision. A symbol with only 47 examples scored zero[^35]"
+            "Trained detectors on drawing symbols[^31]",
+            "79% to 83% average precision. A symbol with only 47 examples scored zero[^31]"
           ]
         },
         {
@@ -208,41 +208,41 @@
       "when": "Your takeoffs are mostly counts and simple areas, on the same drawing types every bid. Counts are where AI is most reliable.[^1][^2]",
       "flow": [
         "Chief estimator: pick one trade scope and 10 past bids with known quantities",
-        "Estimator: run a free trial on those bids (PlanSwift 14 days, Kreo 7 days, STACK free version)[^25][^21][^23]",
+        "Estimator: run a free trial on those bids (PlanSwift 14 days, Kreo 7 days, STACK free version)[^21][^18][^20]",
         "Estimator: compare line by line and log every miss",
         "Chief estimator: buy one seat only if it beats manual time, checking included",
         "Estimator: check every count and re-measure flagged items"
       ],
-      "cost": "About $830 to $3,600 per seat a year at list price.[^31][^25][^19][^23] The top end is about 4.5% of a specialty-trade estimator's median pay of $80,330.[^5]"
+      "cost": "About $830 to $3,600 per seat a year at list price.[^27][^21][^17][^20] The top end is about 4.5% of a specialty-trade estimator's median pay of $80,330.[^5]"
     },
     {
       "name": "2. Mid-size general contractor, 4-10 estimators, mixed commercial work",
-      "when": "You bid often, and few contractors track their hit ratio.[^17][^18] One missed scope item can cost more than many small quantity errors.[^46][^45]",
+      "when": "You bid often, and few contractors track their hit ratio.[^16] Errors differ in cost: a wrong high-value assembly matters more than a small missed item.[^40]",
       "flow": [
         "Chief estimator: record time per bid and hit ratio by client type for 3 months",
         "Head of preconstruction: shortlist 2 tools and run both on the same 3 past bids",
         "AI: takes first-pass areas and counts",
         "Estimators: check every line and own façades and irregular areas[^1]",
-        "Estimator: run a drawing check for missing sheets and tags, e.g. Bluebeam Max[^27]",
+        "Estimator: run a drawing check for missing sheets and tags, e.g. Bluebeam Max[^23]",
         "Chief estimator: sign the bid; project manager reports actuals against the bid each quarter"
       ],
-      "cost": "Kreo Business for 5 users lists at $15,000 a year; Togal quotes 4+ users.[^21][^19] Add Bluebeam Max at $590 per user a year, and plan a 1-3 month pilot.[^27][^21]"
+      "cost": "Kreo Business for 5 users lists at $15,000 a year; Togal quotes 4+ users.[^18][^17] Add Bluebeam Max at $590 per user a year, and plan a 1-3 month pilot.[^23][^18]"
     },
     {
       "name": "3. Overloaded team or bid surge: done for you",
-      "when": "You need more bids out without learning new software, and can wait 24-72 hours for a takeoff.[^29]",
+      "when": "You need more bids out without learning new software, and can wait 24-72 hours for a takeoff.[^25]",
       "flow": [
         "Estimator: send the plan set and a scope note",
-        "Vendor QA team: returns a checked takeoff[^28][^29]",
+        "Vendor QA team: returns a checked takeoff[^24][^25]",
         "Estimator: spot-check high-value lines and anything irregular",
         "Chief estimator: price and sign the bid"
       ],
-      "cost": "Civils.ai lists $90 to $270 a month for 10 to 30 takeoffs; Beam AI starts at $25,000 a year.[^28][^29] Vendor \"99%+\" figures cover the human-checked output.[^20]"
+      "cost": "Civils.ai lists $90 to $270 a month for 10 to 30 takeoffs; Beam AI starts at $25,000 a year.[^24][^25] Beam's \"99%+\" figure covers the QA-checked output.[^25]"
     }
   ],
   "ownData": {
     "title": "What do AI takeoff tools cost, and do they show their accuracy method?",
-    "intro": "We read 11 AI takeoff vendors' pricing and product pages on 26 Nov 2026, from copies our reader tool captured 7-26 Nov. Ten publish a price. Four claim a headline accuracy figure, and none publishes the plan set or method behind it.[^20]",
+    "intro": "We read 11 AI takeoff vendors' pricing and product pages on 26 Nov 2026, from copies our reader tool captured 7-26 Nov. Ten publish a price. Four claim a headline accuracy figure, and none publishes the plan set or method behind it.",
     "headers": [
       "Tool",
       "List price, 1 seat a year",
@@ -252,126 +252,126 @@
     "rows": [
       [
         "Togal.AI",
-        "$3,588 ($299/mo, billed yearly)[^19]",
-        "No; demo only[^19]",
-        "No: claims 98%[^53][^20]"
+        "$3,588 ($299/mo, billed yearly)[^17]",
+        "No; demo only[^17]",
+        "No: has claimed 97% to 98%[^45][^46]"
       ],
       [
         "Kreo Pro",
-        "$2,100 ($175/mo); the $100 tier has no AI[^21]",
-        "7-day trial[^21]",
-        "No: \"within 94%\", no plan set[^22]"
+        "$2,100 ($175/mo); the $100 tier has no AI[^18]",
+        "7-day trial[^18]",
+        "No: \"within 94%\", no plan set[^19]"
       ],
       [
         "STACK",
-        "$3,588 ($299/mo)[^23]",
-        "Free version; AI on paid tier[^23][^24]",
+        "$3,588 ($299/mo)[^20]",
+        "Free version; AI on Premium and Pro plans[^20][^48]",
         "No claim found"
       ],
       [
         "PlanSwift Core",
-        "$3,000[^25]",
-        "14-day trial[^25]",
+        "$3,000[^21]",
+        "14-day trial[^21]",
         "No claim found"
       ],
       [
         "Quotr.ai Lite",
-        "$828[^31]",
-        "Free trial[^31]",
-        "No figure found; says its own estimators review each takeoff[^54]"
+        "$828[^27]",
+        "Free trial[^27]",
+        "No figure found; says its own estimators review each takeoff[^47]"
       ],
       [
         "Civils.ai Starter",
-        "$1,080 ($90/mo, 10 takeoffs)[^28]",
+        "$1,080 ($90/mo, 10 takeoffs)[^24]",
         "No",
-        "No: \"97%+\"; a QA team checks output[^8]"
+        "No: \"97%+\"; a QA team checks output[^24]"
       ],
       [
         "Beam AI",
-        "From $25,000 (licence)[^29]",
+        "From $8,000 per trade (self-serve); $25,000 done for you[^25]",
         "No",
-        "No: \"99%+\" is for human-checked output[^20]"
+        "No: \"99%+\" is for QA-checked output[^25]"
       ],
       [
         "Bluebeam Max",
-        "$590; AI drawing checks, not takeoff[^27]",
+        "$590; AI drawing checks, not takeoff[^23]",
         "Not checked",
         "No claim found"
       ],
       [
         "Buildxact Master",
-        "$599 a month[^30]",
-        "Go plan: free, 5 credits[^30]",
+        "$599 a month[^26]",
+        "Go plan: free, 5 credits[^26]",
         "No claim found"
       ],
       [
         "Handoff Scale",
-        "$8,628 ($719/mo, billed yearly)[^32]",
-        "Trial on Flex plan only[^32]",
+        "$8,628 ($719/mo, billed yearly)[^28]",
+        "Trial on Flex plan only[^28]",
         "No claim found"
       ]
     ],
-    "note": "On-Screen Takeoff publishes no price but offers a 14-day trial.[^26] List prices only: discounts, multi-seat deals and trade packs aren't captured, and three other vendors' pages couldn't be read. Each vendor defines accuracy its own way, so claims aren't comparable.[^8]"
+    "note": "On-Screen Takeoff publishes no price but offers a 14-day trial.[^22] List prices only: discounts, multi-seat deals and trade packs aren't captured, and three other vendors' pages couldn't be read. The four figures measure different things, from outline fit to QA-checked output, so they aren't comparable.[^19][^25]"
   },
   "rules": [
     {
       "name": "AIA A201-2017, section 1.5.2",
       "url": "https://help.aiacontracts.com/hc/en-us/articles/1500009310881-the-rights-of-an-architect-s-instruments-of-service",
       "status": "In force where your contract uses the AIA form",
-      "what": "You may use the drawings and specs only for this project, not others, without the owner's and architect's written consent.[^38][^39] The architect keeps the copyright.[^40] Check whether your AI vendor trains its model on uploaded plans."
+      "what": "You may use the drawings and specs only for this project, not others, without the owner's and architect's written consent.[^49][^34] The architect keeps the copyright.[^35] Check whether your AI vendor trains its model on uploaded plans."
     },
     {
       "name": "GSA Order PBS 3490.3 CHGE 1",
       "url": "https://www.gsa.gov/directives-library/security-for-sensitive-building-information-related-to-federal-buildings-grounds-or-property-1",
       "status": "In force to 22 Mar 2028",
-      "what": "Sensitive federal building drawings are CUI (controlled unclassified information): access is restricted, sending is encrypted and every recipient is logged.[^41][^42] GSA's own inspector general found 116 such files, blueprints included, overshared in Google Drive.[^43] Keep federal-job drawings out of unvetted cloud AI tools."
+      "what": "Sensitive federal building drawings are CUI (controlled unclassified information): access is restricted, sending is encrypted and every recipient is logged.[^36][^37] GSA's own inspector general found 116 such files, blueprints included, overshared in Google Drive.[^38] Keep federal-job drawings out of unvetted cloud AI tools."
     },
     {
       "name": "FAR 14.407-4, Mistakes after award",
       "url": "https://www.acquisition.gov/far/14.407-4",
       "status": "In force",
-      "what": "After award, a federal bid mistake is fixed only on clear and convincing evidence, if the contracting officer should have noticed it.[^9] Mistakes of judgment can't be recovered.[^10] Keep worksheets tied to their source sheets as evidence."
+      "what": "After award, a federal bid mistake is fixed only on clear and convincing evidence, if the contracting officer should have noticed it.[^8] Mistakes of judgment can't be recovered.[^9] Keep worksheets tied to their source sheets as evidence."
     },
     {
       "name": "Drennan v. Star Paving (subcontractor bids)",
       "url": "https://scocal.stanford.edu/opinion/drennan-v-star-paving-co-26905",
       "status": "State case law: California, followed in Arizona",
-      "what": "A subcontractor can be held to a mistaken bid that a general contractor relied on.[^11][^44] An AI miscount in a sub's bid is the sub's loss."
+      "what": "A subcontractor can be held to a mistaken bid that a general contractor relied on.[^10][^39] An AI miscount in a sub's bid is the sub's loss."
     },
     {
       "name": "RICS, Responsible use of AI in surveying practice",
       "url": "https://www.rics.org/profession-standards/rics-standards-and-guidance/conduct-competence/responsible-use-of-ai",
       "status": "In force since 9 Mar 2026 for RICS members",
-      "what": "Requires an AI register, a risk register, a named person's written sign-off on reliability, and telling clients first.[^12][^13] It binds only RICS members, but anyone can copy it as a template."
+      "what": "Requires an AI register, a risk register, a named person's written sign-off on reliability, and telling clients first.[^11][^12] It binds only RICS members, but anyone can copy it as a template."
     }
   ],
   "howToTest": [
-    "Record your before numbers: estimator hours per bid (takeoff, pricing, review), bids per month, and hit ratio by count and by dollars.[^17][^45]",
-    "Pick 5-10 past bids you already checked, from one trade scope or one office. Include hard sheets: faint scans, mixed scales, addenda (bid-time drawing changes) and façades.[^45]",
-    "Have an experienced estimator set the answer key before seeing any AI output, so the software never becomes the benchmark.[^45]",
-    "Run each tool on the same sets. Time the whole job, checking and fixing included, not just processing.[^45][^8]",
+    "Record your before numbers: estimator hours per bid (takeoff, pricing, review), bids per month, and hit ratio by count and by dollars.[^16][^40]",
+    "Pick 5-10 past bids you already checked, from one trade scope or one office. Include hard sheets: faint scans, mixed scales, addenda (bid-time drawing changes) and façades.[^40]",
+    "Have an experienced estimator set the answer key before seeing any AI output, so the software never becomes the benchmark.[^40]",
+    "Run each tool on the same sets. Time the whole job, checking and fixing included, not just processing.[^40]",
     "Compare line by line: percent off per item, split into counts, areas and lengths, and by finish type.[^1]",
-    "Log misses, false hits and wrong-revision use. Rank them by dollar impact, not by count.[^45][^46]",
-    "Check traceability: can the estimator see the sheet and revision behind each quantity, and does the tool flag low confidence[^45][^2]?",
+    "Log misses, false hits and wrong-revision use. Rank them by potential cost, not by count.[^40]",
+    "Check traceability: can the estimator see the sheet and revision behind each quantity, and does the tool flag low confidence[^40][^2]?",
     "Price the lift: hours saved times loaded estimator cost, plus extra bids times hit ratio times average margin. Use BLS median pay as a floor: $84,610 buildings, $80,330 specialty trades, $99,910 heavy civil.[^5]",
-    "Re-run the same test after every software update, so the pilot becomes your baseline.[^45]"
+    "Re-run the same test after every software update, so the pilot becomes your baseline.[^40]"
   ],
   "watchOuts": [
     "Areas come in low on complex shapes: in the field study, 12 of 15 area items ran under the contractor's, façades worst.[^1] Have the estimator re-measure façades and irregular areas, and spot-check counts.[^2]",
     "Chatbots miscount symbols: the best general models counted doors and windows exactly on under half of 120 floor plans.[^3][^4] They read drawing text well, so use ChatGPT or Claude for specs, scope letters and RFIs, not quantities.[^3]",
-    "Accuracy claims can't be checked: no vendor publishes the plan set behind its figure.[^20] Ties can be close: in 2023, Togal's founder was also an executive at Coastal Construction, the customer in Togal's case study.[^52][^33]",
-    "Checking can eat the savings: a fast first takeoff looks less fast once an estimator finds and fixes missed scope.[^45] Time the whole job, checking included, and start with count-heavy scopes, where the field study found counts held up.[^45][^1]",
-    "Drawings miss scope: temporary works, testing, access and logistics rarely show in geometry, yet your bid still binds you.[^45][^9][^11] Review scope against specs and addenda, and keep an exclusions list.",
-    "Drawings leak: federal building drawings can be CUI, and GSA itself overshared 116 such files through ordinary sharing settings.[^41][^43] Classify drawings at intake and read each vendor's data terms."
+    "Accuracy claims can't be checked: no vendor we checked publishes the plan set behind its figure.[^19][^25] Ties can be close: in 2023, Togal's founder was also an executive at Coastal Construction, the customer in Togal's case study.[^45][^29]",
+    "Checking can eat the savings: a fast first takeoff looks less fast once an estimator finds and fixes missed scope.[^40] Time the whole job, checking included, and start with count-heavy scopes, where the field study found counts held up.[^40][^1]",
+    "Drawings miss scope: temporary works, testing, access and logistics rarely show in geometry, yet your bid still binds you.[^40][^8][^10] Review scope against specs and addenda, and keep an exclusions list.",
+    "Drawings leak: federal building drawings can be CUI, and GSA itself overshared 116 such files through ordinary sharing settings.[^36][^38] Classify drawings at intake and read each vendor's data terms."
   ],
   "faq": [
     {
       "q": "Is AI takeoff accurate enough to bid on?",
-      "a": "On counts, mostly yes; on areas, check it. In the one independent field test, counts matched almost exactly while area items ran low, worst on façades.[^1] Vendor figures of 94-99% publish no method.[^20]"
+      "a": "On counts, mostly yes; on areas, check it. In the one independent field test, counts matched almost exactly while area items ran low, worst on façades.[^1] Vendor figures of 94-99% publish no method.[^19][^25]"
     },
     {
       "q": "Will AI replace estimators?",
-      "a": "The evidence says it changes the job, not the team. Only 2% of AI-using US firms saw AI-related employment fall, and 66% use AI only to help staff.[^14] BLS still expects about 17,600 estimator openings a year to 2035.[^5]"
+      "a": "The evidence says it changes the job, not the team. Only 2% of AI-using US firms saw AI-related employment fall, and 66% use AI only to help staff.[^13] BLS still expects about 17,600 estimator openings a year to 2035.[^5]"
     },
     {
       "q": "Can I just use ChatGPT or Claude for takeoff?",
@@ -379,26 +379,26 @@
     },
     {
       "q": "What is the best AI for construction estimating?",
-      "a": "The one that wins on your own past bids. Pick by trade and by who checks: self-serve takeoff (Togal, Kreo, STACK) or a QA-checked service (Civils.ai, Beam AI).[^8][^19][^29]"
+      "a": "The one that wins on your own past bids. Pick by trade and by who checks: self-serve takeoff (Togal, Kreo, STACK) or a QA-checked service (Civils.ai, Beam AI).[^17][^24][^25]"
     },
     {
       "q": "Is there free AI for construction estimating?",
-      "a": "Free versions and trials, yes; paid AI takeoff seats list at about $830 to $3,600 a year.[^31][^19] STACK has a free version and Buildxact's Go plan gives 5 free credits.[^23][^30] PlanSwift and On-Screen Takeoff offer 14-day trials, and Kreo 7 days.[^25][^26][^21]"
+      "a": "Free versions and trials, yes; paid AI takeoff seats list at about $830 to $3,600 a year.[^27][^17] STACK has a free version and Buildxact's Go plan gives 5 free credits.[^20][^26] PlanSwift and On-Screen Takeoff offer 14-day trials, and Kreo 7 days.[^21][^22][^18]"
     },
     {
       "q": "Can I upload project drawings to an AI tool?",
-      "a": "Check your contract and the owner first. AIA A201 limits drawing use to the project, and federal building drawings may be CUI.[^38][^39][^41] This is not legal advice."
+      "a": "Check your contract and the owner first. AIA A201 limits drawing use to the project, and federal building drawings may be CUI.[^49][^36] This is not legal advice."
     }
   ],
   "buyVsBuild": {
-    "buy": "Buy when you bid standard scopes from PDF drawings and have no developers. Most firms buy: 76% of enterprise AI use cases are bought, not built.[^36] Bought tools reached deployment about twice as often as internal builds.[^37]",
-    "build": "Build light when your edge is your own cost history: keep quantities in a takeoff tool and put your rates and checks on top.[^6] Don't build drawing-reading AI from scratch: detectors still score zero on rare symbols, and general models miscount.[^35][^3]"
+    "buy": "Buy when you bid standard scopes from PDF drawings and have no developers. Most firms buy: 76% of enterprise AI use cases are bought, not built.[^32] Bought tools reached deployment about twice as often as internal builds.[^33]",
+    "build": "Build light when your edge is your own cost history: keep quantities in a takeoff tool and put your rates and checks on top.[^6] Don't build drawing-reading AI from scratch: detectors still score zero on rare symbols, and general models miscount.[^31][^3]"
   },
   "pickElse": [
-    "You bid mostly from BIM (3D building information models): model-based quantity takeoff beats reading 2D PDFs. One automated BIM check covered 94.7% of elements at 91.5% precision.[^47]",
-    "Early budgets on barely started designs: AI can't measure what isn't drawn, so price from your own cost per square foot. AACE, the cost engineers' standards body, puts such estimates up to 30% under or 50% over.[^48]",
-    "Low bid volume: if you already win more than you can build, the on-screen takeoff you own may be enough. Bluebeam Core or Complete lists at $330 to $440 a year.[^27]",
-    "Federal or secure-site work: keep drawings in your own controlled setup with desktop takeoff such as PlanSwift, not unvetted cloud AI.[^41][^25]"
+    "You bid mostly from BIM (3D building information models): model-based quantity takeoff beats reading 2D PDFs. One automated BIM check covered 94.7% of elements at 91.5% precision.[^41]",
+    "Early budgets on barely started designs: AI can't measure what isn't drawn, so price from your own cost per square foot. AACE, the cost engineers' standards body, puts such estimates up to 30% under or 50% over.[^42]",
+    "Low bid volume: if you already win more than you can build, the on-screen takeoff you own may be enough. Bluebeam Core or Complete lists at $330 to $440 a year.[^23]",
+    "Federal or secure-site work: keep drawings in your own controlled setup with desktop takeoff such as PlanSwift, not unvetted cloud AI.[^36][^21]"
   ],
   "resources": [
     {
@@ -430,12 +430,12 @@
   "stats": [
     {
       "num": "23%",
-      "label": "of AGC contractor firms started or increased AI use for estimating in the past year[^49][^50]",
+      "label": "of contractor firms in AGC's survey use AI for estimating[^43]",
       "source": "AGC and Sage, n=951, Jan 2026"
     },
     {
       "num": "19%",
-      "label": "of US contractors have changed their workflows to fit AI[^51]",
+      "label": "of US contractors have changed their workflows to fit AI[^44]",
       "source": "Dodge and CMiC (vendor-sponsored), n=235, Dec 2025"
     },
     {
@@ -450,12 +450,12 @@
     },
     {
       "num": "0 of 11",
-      "label": "AI takeoff vendors we checked that publish the plan set or method behind an accuracy figure[^20]",
+      "label": "AI takeoff vendors we checked that publish the plan set or method behind an accuracy figure[^19][^25]",
       "source": "Zavient price check, 26 Nov 2026"
     },
     {
       "num": "2%",
-      "label": "of AI-using US firms saw AI-related employment fall; 66% use AI only to help staff[^14]",
+      "label": "of AI-using US firms saw AI-related employment fall; 66% use AI only to help staff[^13]",
       "source": "US Census Bureau, 2026"
     }
   ],
@@ -494,11 +494,6 @@
       "name": "Akanbi and Zhang, Automation in Construction 131 (2021)",
       "url": "https://www.sciencedirect.com/science/article/pii/S0926580521002867",
       "what": "Estimating is takeoff, specs, cost items and unit costs; text mining of specifications scored 98.2% F1."
-    },
-    {
-      "name": "Civils.ai, Best AI Takeoff Software in 2026 (2 Nov 2026)",
-      "url": "https://civils.ai/blog/best-ai-takeoff-software/",
-      "what": "Vendor guide: an estimator reviews every AI quantity before it goes into a bid; vendors define accuracy differently; quotes a 97%+ claim."
     },
     {
       "name": "FAR 14.407-4, Mistakes after award",
@@ -543,22 +538,12 @@
     {
       "name": "ENR, Bid-Hit Ratios Provide Valuable Road Map (2010)",
       "url": "https://www.enr.com/articles/23952-bid-hit-ratios-provide-valuable-road-map",
-      "what": "Fewer than 6% of 2,000 surveyed contractors knew and tracked their bid-hit ratio."
-    },
-    {
-      "name": "Sunflower Bank, Is your bid-hit ratio okay? (May 2024)",
-      "url": "https://www.sunflowerbank.com/about-us/resource-articles/is-your-lsquo;bid-hit-rsquo;-ratio-okay",
-      "what": "Repeats that under 6% of 2,000+ contractors track their bid-hit ratio."
+      "what": "Only 6% of about 2,000 surveyed contractors knew and tracked their bid-hit ratio."
     },
     {
       "name": "Togal.AI pricing",
       "url": "https://www.togal.ai/pricing",
       "what": "Read 26 Nov 2026: $299 per user a month billed yearly; custom Business plan for 4+ users."
-    },
-    {
-      "name": "Bildrix, AI Takeoff Accuracy: Advertised vs Measured (19 Aug 2026)",
-      "url": "https://bildrix.com/research/ai-takeoff-accuracy",
-      "what": "Third-party audit of 8 vendors: public benchmark datasets found, 0; Togal up to 98%, Beam 99%+ QA-checked."
     },
     {
       "name": "Kreo pricing",
@@ -574,11 +559,6 @@
       "name": "STACK pricing",
       "url": "https://www.stackct.com/pricing/",
       "what": "Read 26 Nov 2026: Takeoff and Estimate $299 per user a month; a free version exists."
-    },
-    {
-      "name": "Civils.ai, Best construction estimating software and takeoff tools in 2026 (19 Oct 2026)",
-      "url": "https://civils.ai/blog/best-construction-takeoff-estimating-software",
-      "what": "Vendor guide by trade and size; AI takeoff on STACK's paid tier."
     },
     {
       "name": "PlanSwift pricing",
@@ -598,12 +578,12 @@
     {
       "name": "Civils.ai pricing",
       "url": "https://civils.ai/pricing",
-      "what": "Read 26 Nov 2026: $90 a month for 10 takeoffs, $270 for 30; month-to-month; output reviewed by a QA team."
+      "what": "Read 26 Nov 2026: $90 a month for 10 takeoffs, $270 for 30; month-to-month; claims \"97%+ accuracy on takeoffs\", reviewed by humans; QA-reviewed output."
     },
     {
       "name": "Beam AI pricing",
       "url": "https://www.ibeam.ai/pricing",
-      "what": "Read 26 Nov 2026: from a $25,000 annual licence by trade and volume; human-checked takeoffs in 24-72 hours."
+      "what": "Read 26 Nov 2026: claims \"99%+ accurate\" QA-checked takeoffs in 24-72 hours, no method given; self-serve from $8,000 per trade, done for you from $25,000 a year."
     },
     {
       "name": "Buildxact US pricing",
@@ -646,11 +626,6 @@
       "what": "Bought or partnered AI tools reached deployment about 67% of the time, internal builds about 33%."
     },
     {
-      "name": "Regulr AI, Who owns construction documents? (Oct 2026)",
-      "url": "https://regulr.ai/data-licensing/industries/construction-contractors/who-owns-construction-documents",
-      "what": "Quotes AIA A201-2017 1.5.2: contractors use drawings only for the project without written consent."
-    },
-    {
       "name": "Lexology, AIA B101: who has rights to the instruments of service?",
       "url": "https://www.lexology.com/library/detail.aspx?g=17a82547-0cbd-452c-9d06-7c6e7913a7ca",
       "what": "Law firm note on A201 1.5.2 limits on contractor use of drawings."
@@ -686,11 +661,6 @@
       "what": "Trade press by a vendor author: answer key first, hard sheets, time the whole workflow, rank errors by dollars, re-test after updates."
     },
     {
-      "name": "IJERT, Manual, BIM-based and AI-assisted quantity takeoff (May 2026)",
-      "url": "https://www.ijert.org/research/comparative-analysis-of-manual-bim-based-and-ai-assisted-quantity-takeoff-for-residential-constructi-IJERTV15IS052475.pdf",
-      "what": "Illustrative study: one scope or rate error can outweigh many small quantity errors."
-    },
-    {
       "name": "MDPI Buildings 15(21):3942, Automated BIM quantity takeoff (Nov 2025)",
       "url": "https://www.mdpi.com/2075-5309/15/21/3942",
       "what": "Cloud BIM takeoff with quality checks: 94.7% rule coverage, 91.5% precision."
@@ -704,11 +674,6 @@
       "name": "AGC of America and Sage, 2026 Construction Hiring and Business Outlook",
       "url": "https://www.agc.org/sites/default/files/users/user21902/2026%20Construction%20Hiring%20and%20Business%20Outlook%20Report_Final.pdf",
       "what": "n=951 firms: 23% use AI for estimating, 45% for office work; 61% use AI or plan more."
-    },
-    {
-      "name": "Setmark, Construction's AI is mostly in the back office (Aug 2026)",
-      "url": "https://www.setmark.ai/post/constructions-ai-is-mostly-in-the-back-office",
-      "what": "Quotes the AGC question wording: initiated or increased use in the past year; n=857."
     },
     {
       "name": "Dodge Construction Network with CMiC, AI for Contractors (Dec 2025)",
@@ -729,6 +694,16 @@
       "name": "Quotr.ai homepage",
       "url": "https://quotr.ai/",
       "what": "Read 26 Nov 2026: \"Expert-reviewed accuracy\", with in-house estimators checking each deliverable; no accuracy figure published."
+    },
+    {
+      "name": "STACK, AI Takeoff (floor plan AI)",
+      "url": "https://www.stackct.com/floor-plan-ai/",
+      "what": "Read 26 Nov 2026: \"AI Takeoff is included in both STACK's Premium and Pro subscriptions.\""
+    },
+    {
+      "name": "AIA Document A201-2017, General Conditions, section 1.5.2 (copy in City of Rochester, NH bid documents)",
+      "url": "https://www.rochesternh.gov/sites/g/files/vyhlif9211/f/bids/att_3_a201_2017_sample.pdf",
+      "what": "Contractors, subcontractors and suppliers may use the Instruments of Service solely for execution of the Work; other projects need written consent of the owner, architect and consultants."
     }
   ],
   "related": [
