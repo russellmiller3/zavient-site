@@ -262,11 +262,11 @@ const defRate = r => Math.round(r.wage * load(ECEC[r.grp]) * 100) / 100;
 const ASSUME = {
   basics:   { v: 3,   label: "Basics, every person (hours)", why: "Three modules: how AI works and fails (45 min), your rules (45 min), checking AI output hands-on (90 min). Short 30 to 90 minute modules follow the UK government's employer guide.[^ukgov]" },
   workflow: { v: 4,   label: "Workflow practice, every person (hours)", why: "Prompting on your own work, two real workflows signed off by a person, and a show-and-tell. Hands-on practice on real work is what employers and researchers point to.[^tcb][^ukgov]" },
-  refresh:  { v: 0.5, label: "Refresh around day 75 (hours)", why: "New uses found and errors caught. Forrester's Microsoft studies also budget ongoing hours after the first training.[^forr] [V]" },
+  refresh:  { v: 0.5, label: "Refresh around day 75 (hours)", why: "New uses found and errors caught. Forrester's Microsoft studies also budget ongoing hours after the first training.[^forr]" },
   mgrAdd:   { v: 3,   label: "Extra for managers (hours)", why: "Reviewing AI-assisted work, picking tasks and naming where saved time goes, team measures. Only 8% of HR leaders think managers have the AI skills they need.[^gartner]" },
   champAdd: { v: 16,  label: "Extra for each champion (hours)", why: "8 hours of champion training, then about 1 hour a week in days 31 to 90. Practitioners put the role at 30 to 60 minutes a week.[^lwai] Microsoft says champions should be formally trained.[^mslearn]" },
-  perChamp: { v: 40,  label: "People per champion", why: "At least one per team, and more for big teams. Published ratios run from 1 per 50 to 100 people[^techcomm] to 1 per 25 to 50 in regulated firms.[^epc] [V] Microsoft sets no fixed ratio.[^copcoach]" },
-  perChampReg: { v: 25, label: "People per champion with regulated data", why: "Denser cover where mistakes cost more, at the dense end of the regulated-firm range.[^epc] [V]" }
+  perChamp: { v: 40,  label: "People per champion", why: "At least one per team, and more for big teams. Published ratios run from 1 per 50 to 100 people[^techcomm] to 1 per 25 to 50 in regulated firms.[^epc] Microsoft sets no fixed ratio.[^copcoach]" },
+  perChampReg: { v: 25, label: "People per champion with regulated data", why: "Denser cover where mistakes cost more, at the dense end of the regulated-firm range.[^epc]" }
 };
 
 const OPTS = {
@@ -321,8 +321,8 @@ const SOURCES = {
 
 const METHOD = [
   "Hours per person = basics + workflow practice + refresh. Managers add 3 hours. Champions add 16. All are Zavient estimates you can change.",
-  "The default, 7.5 hours for staff and 10.5 for managers, sits in the band where BCG found 82% regular use (5 to 10 hours).[^bcgSlides] Forrester's Microsoft studies use 8 to 10 hours of formal training.[^forr][^forrP] [V]",
-  "If most people have never used AI, staff get 1 extra hour of first-use practice. Forrester's interviews found 4 to 8 hours of trying it before people use it well.[^forrP] [V] Power users skip half of the first module.",
+  "The default, 7.5 hours for staff and 10.5 for managers, sits in the band where BCG found 82% regular use (5 to 10 hours).[^bcgSlides] Forrester's Microsoft studies use 8 to 10 hours of formal training.[^forr][^forrP]",
+  "If most people have never used AI, staff get 1 extra hour of first-use practice. Forrester's interviews found 4 to 8 hours of trying it before people use it well.[^forrP] Power users skip half of the first module.",
   "Champions = the larger of your number of teams and headcount divided by 40 (by 25 with regulated data), rounded up. Zavient estimate; no official ratio exists.[^copcoach]",
   "Cost of time = hours x each team's loaded hourly rate. Rate = BLS mean hourly wage for a matching job (May 2025)[^oews] x a benefits loading of 1.23 to 1.31 from BLS employer costs (June 2026).[^ecec4] The loading leaves out paid leave, because the wage already pays for it.[^teamshift]",
   "The 30/60/90 order follows the evidence: managers first,[^gartner][^bcg25] champions trained before roll-out,[^mslearn] high-volume teams before finance and HR,[^nber] and a person checks every output.[^jagged]",
@@ -534,7 +534,7 @@ function renderDetail(p, G) {
       <li>They run show-and-tells, hold office hours and flag risky use. They are not the help desk.</li>
       <li>${rich("Plan about 1 hour a week from day 31. Practitioners put it at 30 to 60 minutes.[^lwai]")}</li>
     </ul>
-    <p class="muted"><span class="tag est">Zavient estimate</span>${rich("Published ratios run from 1 per 25 to 50 people in regulated firms[^epc] [V] to 1 per 50 to 100.[^techcomm] We go denser because small firms have small teams.")}</p>
+    <p class="muted"><span class="tag est">Zavient estimate</span>${rich("Published ratios run from 1 per 25 to 50 people in regulated firms[^epc] to 1 per 50 to 100.[^techcomm] We go denser because small firms have small teams.")}</p>
   </section>`;
 
   const costRows = p.teams.map(t => `<div class="row"><span class="l">${esc(t.name)} (${t.n}${t.ch ? `, ${t.ch} champion${t.ch === 1 ? "" : "s"}` : ""})<small>${hrs(t.hours)} h x $${t.rate.toFixed(2)}</small></span><span class="r">${usd(t.cost)}</span></div>`).join("")
