@@ -257,7 +257,7 @@
  ],
  "ownData": {
   "title": "What is one point of each lever worth at $25M, $50M and $100M revenue?",
-  "intro": "One point of price is worth $500,000 a year at $50M revenue, about $3.5M of exit value at a 7.0x multiple[^9][^24]. A point off variable costs is worth about two-thirds as much; a point off fixed costs, under a fifth[^9]. We built this by plain arithmetic on 26 Nov 2026, from McKinsey's cost model and GF Data's average deal multiple[^9][^24].",
+  "intro": "By our math, one point of price is worth $500,000 a year at $50M revenue, about $3.5M of exit value at a 7.0x multiple[^9][^24]. A point off variable costs is worth about two-thirds as much; a point off fixed costs, under a fifth[^9]. We built this by plain arithmetic on 26 Nov 2026, from McKinsey's cost model and GF Data's average deal multiple[^9][^24].",
   "headers": [
    "Move",
    "Assumption",
@@ -269,27 +269,27 @@
    [
     "Raise price 1%[^9]",
     "No volume lost, so all of it is profit",
-    "$250,000 a year; $1.75M at 7.0x[^24]",
+    "$250,000 a year; $1.75M at 7.0x, by our math[^24]",
     "$500,000; $3.5M",
     "$1,000,000; $7.0M"
    ],
    [
     "Sell 1% more volume",
-    "Kept at a 36.7% contribution margin (what each extra sale leaves after variable costs), implied by McKinsey's model[^9]",
+    "Kept at a 36.7% contribution margin (what each extra sale leaves after variable costs), by our math from McKinsey's model[^9]",
     "$92,000; $0.64M",
     "$183,000; $1.28M",
     "$367,000; $2.57M"
    ],
    [
     "Cut variable costs 1%",
-    "Variable costs at 63% of revenue, implied by McKinsey's model[^9]",
+    "Variable costs at 63% of revenue, by our math from McKinsey's model[^9]",
     "$158,000; $1.11M",
     "$317,000; $2.22M",
     "$633,000; $4.43M"
    ],
    [
     "Cut fixed costs 1%",
-    "Fixed costs at 18% of revenue, implied by McKinsey's model[^9]",
+    "Fixed costs at 18% of revenue, by our math from McKinsey's model[^9]",
     "$46,000; $0.32M",
     "$92,000; $0.64M",
     "$183,000; $1.28M"
@@ -428,7 +428,7 @@
   },
   {
    "num": "$500,000",
-   "label": "Yearly profit from one point of price at $50M revenue, assuming no lost volume[^9].",
+   "label": "Yearly profit from one point of price at $50M revenue by our math, assuming no lost volume[^9].",
    "source": "Zavient lever sizer, 26 Nov 2026"
   }
  ],
@@ -446,7 +446,7 @@
   {
    "name": "European Bank for Reconstruction and Development, Working Paper 242 (2020), on 1,136 private equity value creation plans",
    "url": "https://www.ebrd.com/content/dam/ebrd_dxp/assets/pdfs/office-of-the-chief-economist/working-papers/working-papers-2020/WP-242.pdf",
-   "what": "Operational improvement in 84% of plans, top-line growth 74%, pricing changes 14%, receivables and payables 11%. Finishing one standard deviation more actions goes with 10.2% higher money multiple. Read 26 Nov 2026."
+   "what": "Operational improvement in 84% of plans, top-line growth 74%, pricing changes 14%, receivables and payables 11%. Finishing one standard deviation more actions goes with 10.2% higher money multiple. 55% of deals add an operational improvement item after the holding period's first year. Read 26 Nov 2026."
   },
   {
    "name": "Bain & Company (consultancy), Global Private Equity Report 2024",
@@ -461,7 +461,7 @@
   {
    "name": "EY (consultancy), Global PE Operating Partner and Value Creation Study 2026, 120 operating partners and deal professionals",
    "url": "https://www.ey.com/content/dam/ey-unified-site/ey-com/en-gl/insights/private-equity/documents/ey-gl-pe-value-creation-priorities-11-2026.pdf",
-   "what": "Priority vs delivered value, out of 5: AI 3.8 vs 3.1, the widest gap; sales 4.0 vs 3.7; cost 3.8 vs 3.7; pricing 3.7 vs 3.6; working capital 3.6 vs 3.5. Survey run August to September 2026. Read 26 Nov 2026."
+   "what": "Survey of 120 private equity deal professionals and operating partners, August to September 2026. Priority vs delivered value, out of 5: AI 3.8 vs 3.1, the widest gap; sales 4.0 vs 3.7; cost 3.8 vs 3.7; pricing 3.7 vs 3.6; working capital 3.6 vs 3.5. Read 26 Nov 2026."
   },
   {
    "name": "Accordion (consulting firm), PE AI Adoption Benchmark 2026, sponsored survey of 150 operating partners",
@@ -645,7 +645,10 @@
    "NIST [22]: answer reworded to match the Measure page",
    "CVC [23]: cut '12 to 24 months' detail the source does not give",
    "Menlo [25]: CRM line now cites the buy-vs-build figure the source holds",
-   "Answer table-1: pricing/selling cited the collections case [15]; now [8][11], and case study gets [15]"
+   "Answer table-1: pricing/selling cited the collections case [15]; now [8][11], and case study gets [15]",
+   "Lever sizer: every money figure and the cost mix (36.7%, 63%, 18%) are our arithmetic on sources [9] and [24]; now labelled \"by our math\"",
+   "EBRD [3]: note now carries the 55% of deals that add an operational item after year one (Table IA.4)",
+   "EY [6]: note names the sample, 120 PE deal professionals and operating partners"
   ]
  }
 }

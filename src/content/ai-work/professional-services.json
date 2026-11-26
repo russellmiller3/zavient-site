@@ -111,47 +111,47 @@
   ],
   "ownData": {
     "title": "What is one hour a week worth at a 100-person firm?",
-    "intro": "One hour a week per person at a 100-person firm is worth $573,000-$700,000 in revenue on hourly work, or $219,000-$272,000 in payroll on fixed fees.[^6] This is our own calculation from the Census Bureau's 2022 Economic Census, for firms with 50-499 staff, pulled 26 Nov 2026.[^6][^31] Method: receipts and payroll per employee, divided by a 2,000-hour year, times 5,000 hours (100 people, one hour, 50 weeks).[^32]",
+    "intro": "By our math, one hour a week per person at a 100-person firm is $573,000-$700,000 of hourly revenue, or $219,000-$272,000 of payroll on fixed fees.[^6] The inputs are receipts, payroll and staff from the Census Bureau's 2022 Economic Census, for firms with 50-499 staff, pulled 26 Nov 2026.[^6][^31] Method: receipts and payroll per employee, divided by a 2,000-hour year, times 5,000 hours (100 people, one hour, 50 weeks).[^32]",
     "headers": [
       "Kind of firm (Census code)",
       "Firms and staff (50-499 staff firms)",
-      "Revenue per staff hour",
-      "Payroll per staff hour",
-      "Hourly work: revenue at stake a year",
-      "Fixed fee: payroll freed a year"
+      "Revenue per staff hour (our math)",
+      "Payroll per staff hour (our math)",
+      "Hourly work: revenue at stake a year (our math)",
+      "Fixed fee: payroll freed a year (our math)"
     ],
     "rows": [
       [
         "Architecture and engineering (5413)",
         "3,784 firms; 484,420 staff[^6]",
-        "$120[^6]",
-        "$48[^6]",
-        "About $599,000[^6]",
-        "About $238,000[^6]"
+        "$120",
+        "$48",
+        "About $599,000",
+        "About $238,000"
       ],
       [
         "Management and technical consulting (5416)",
         "3,825 firms; 487,214 staff[^6]",
-        "$115[^6]",
-        "$44[^6]",
-        "About $573,000[^6]",
-        "About $219,000[^6]"
+        "$115",
+        "$44",
+        "About $573,000",
+        "About $219,000"
       ],
       [
         "Advertising, public relations and agencies (5418)",
         "1,087 firms; 141,216 staff[^6]",
-        "$140[^6]",
-        "$44[^6]",
-        "About $700,000[^6]",
-        "About $219,000[^6]"
+        "$140",
+        "$44",
+        "About $700,000",
+        "About $219,000"
       ],
       [
         "IT services and computer systems design (5415)",
         "4,501 firms; 600,911 staff[^6]",
-        "$137[^6]",
-        "$54[^6]",
-        "About $683,000[^6]",
-        "About $272,000[^6]"
+        "$137",
+        "$54",
+        "About $683,000",
+        "About $272,000"
       ]
     ],
     "note": "Limits: 2022 figures, not inflation-adjusted, counting all staff, so revenue per billable hour runs higher; payroll excludes benefits and payroll taxes.[^6] Agency receipts can include pass-through media billings, and averages hide a wide spread between firms. Staffing firms are left out because placed workers on their payroll distort these figures."
@@ -363,12 +363,12 @@
     "On a task outside AI's range, consultants using it were 19 points less likely to be right.[^14][^24] Test AI on your own past work before trusting it on a new kind of task.",
     "Sloppy AI drafts pass the work to colleagues: 40% of US desk workers got one in a month, at about two hours each to fix.[^49][^50] Make the sender check the draft, not the receiver.",
     "Client data in the wrong tool: an engineering ethics board found putting client data into AI without permission partly unethical.[^41][^39] Get client consent, and use a business plan with training switched off.",
-    "Saving time without capturing it: only 18% of professionals say their organization tracks AI return.[^3][^5] Set the pricing rule for saved hours before rollout, not after."
+    "Saving time without capturing it: only 18% of legal, tax and risk professionals surveyed say their organization tracks AI return.[^3][^5] Set the pricing rule for saved hours before rollout, not after."
   ],
   "faq": [
     {
       "q": "Will AI cut our billable hours and revenue?",
-      "a": "Only on hourly work where saved hours aren't resold: one hour a week per person at a 100-person firm puts $573,000-$700,000 of revenue at stake.[^6] Professionals expect AI to free about five hours a week, which multiplies that.[^51] Fixed fees turn the same hours into margin.[^7]"
+      "a": "Only on hourly work where saved hours aren't resold: by our math, one weekly hour per person risks $573,000-$700,000 of revenue at a 100-person firm.[^6] Professionals expect AI to free about five hours a week, which multiplies that.[^51] Fixed fees turn the same hours into margin.[^7]"
     },
     {
       "q": "Are clients asking for AI discounts?",
@@ -451,7 +451,7 @@
     },
     {
       "num": "$599,000",
-      "label": "of revenue a year rides on one hour a week per person at a 100-person architecture and engineering firm billing hourly.[^6]",
+      "label": "of revenue a year rides on one hour a week per person at a 100-person architecture and engineering firm billing hourly, by our math.[^6]",
       "source": "Zavient calculation from the 2022 Economic Census"
     }
   ],
@@ -469,7 +469,7 @@
     {
       "name": "Thomson Reuters, 2026 AI in Professional Services Report",
       "url": "https://www.thomsonreuters.com/en/institute/articles/ai-in-professional-services-report-2026",
-      "what": "1,514 respondents: top uses are research, summarization and document review; 40% report organization-wide generative AI use, up from 22%; 18% say their organization tracks AI return on investment. Read 26 Nov 2026."
+      "what": "Survey of 1,514 professionals in legal, tax, audit and accounting, risk and fraud, and government, 27 countries, Oct-Nov 2025: top uses are research, document review and summarization; about 40% report organization-wide generative AI use, up from 22% in 2025; 18% say their organization collects AI return on investment metrics. Read 26 Nov 2026."
     },
     {
       "name": "Forrester and the 4A's, US agency AI study (24 Jun 2026)",
@@ -484,12 +484,12 @@
     {
       "name": "U.S. Census Bureau, 2022 Economic Census, table EC2200SIZEEMPFIRM (employer firms by employment size)",
       "url": "https://data.census.gov/api/access/data/table?id=ECNSIZE2022.EC2200SIZEEMPFIRM&g=010XX00US&codeset=naics~5413",
-      "what": "Receipts, annual payroll, employees and firm counts for firms with 50-99, 100-249 and 250-499 staff in NAICS 5413, 5415, 5416 and 5418 (same table with each code). Pulled 26 Nov 2026."
+      "what": "Firms operated the entire year, by staff size (50-99 / 100-249 / 250-499), receipts and annual payroll in $1,000: 5413 firms 2,104 / 1,251 / 429, staff 145,073 / 189,979 / 149,368, receipts 33,779,219 / 46,527,771 / 35,786,314, payroll 13,358,625 / 18,296,310 / 14,370,531; 5416 firms 2,151 / 1,244 / 430, staff 148,901 / 188,821 / 149,492, receipts 34,597,838 / 44,804,316 / 32,215,523, payroll 13,130,560 / 16,635,554 / 12,976,283; 5418 firms 584 / 371 / 132, staff 40,398 / 56,587 / 44,231, receipts 11,757,895 / 15,766,113 / 12,035,120, payroll 3,436,347 / 5,049,288 / 3,875,252; 5415 firms 2,359 / 1,581 / 561, staff 164,769 / 240,853 / 195,289, receipts 44,901,576 / 63,426,163 / 55,722,017, payroll 17,551,616 / 25,981,796 / 21,875,402 (same table with each code). Pulled 26 Nov 2026."
     },
     {
       "name": "Thomson Reuters, 2025 Generative AI in Professional Services",
       "url": "https://www.thomsonreuters.com/content/dam/ewp-m/documents/thomsonreuters/en/pdf/reports/2025-generative-ai-in-professional-services-report-tr5433489-rgb.pdf",
-      "what": "40% of law respondents expect alternative fee arrangements to rise; 46% expect no rate impact. Read 26 Nov 2026."
+      "what": "Survey of 1,702 professionals in legal, tax, accounting and audit, risk and fraud, and government, Jan-Feb 2025: 40% of respondents expect alternative fee arrangements to rise as a result of generative AI; 46% of respondents at law and tax firms expect no impact on their rates. Read 26 Nov 2026."
     },
     {
       "name": "NCEES Policy Manual 2026, Position Statement 6.10 on artificial intelligence",

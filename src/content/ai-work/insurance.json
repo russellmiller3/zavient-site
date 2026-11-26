@@ -98,12 +98,12 @@
   },
   {
    "name": "Fraud screening (carriers)",
-   "why": "Fraud costs US consumers $308.6 billion a year, a coalition figure the NAIC cites.[^22] Among insurers the regulators surveyed, 58% in auto and 55% in home use or plan AI for it.[^18]",
+   "why": "Fraud costs US consumers $308.6 billion a year, a coalition figure the NAIC cites.[^22] Among insurers the regulators surveyed, 58% in auto and 55% in home use, plan or explore AI for fraud detection.[^18]",
    "payoff": "Hit rate of referrals to your special investigations unit, checked by customer group."
   },
   {
    "name": "Policy checking and coverage comparison (large agencies)",
-   "why": "Coverage form analysis is agencies' second most common AI use, at 43%.[^23] A qualified person still verifies limits, deductibles, exclusions and endorsements against the policy.[^16]",
+   "why": "Coverage form analysis is the second most common AI use among independent agencies, at 43%.[^23] A qualified person still verifies limits, deductibles, exclusions and endorsements against the policy.[^16]",
    "payoff": "Minutes per policy check, and errors caught before the client sees the policy."
   }
  ],
@@ -201,7 +201,7 @@
   },
   {
    "title": "What do insurers use AI for, by line of business?",
-   "intro": "From the NAIC's surveys of larger insurers, summarised in its own journal.[^18][^11] Surveys covered insurers with $250M+ in premium or a large state market share.[^29] Auto and home left out simpler statistical models and health counted them, so compare lines with care.[^18][^29]",
+   "intro": "From the NAIC's surveys of larger insurers, summarised in its own journal.[^18][^11] The bar to take part was $50 million in home premium and $250 million in life or health premium.[^18] Auto and home left out simpler statistical models and health counted them, so compare lines with care.[^18][^29]",
    "headers": [
     "Line (year, insurers)",
     "Use, plan or explore AI",
@@ -236,7 +236,7 @@
     {
      "name": "Health (2025, 93)",
      "cells": [
-      "92%; 84% already use it[^18][^29]",
+      "92% of health insurers[^29]",
       "54%, for claim decisions[^18]",
       "Not reported"
      ]
@@ -372,7 +372,7 @@
  "faq": [
   {
    "q": "How is AI used in insurance?",
-   "a": "Insurers use AI mostly to read and draft for the people who decide.[^1][^11] In regulators' surveys, claims and fraud lead in auto and home, and underwriting leads in life.[^18] Conning names AI and data-driven underwriting among the drivers of MGA growth.[^6]"
+   "a": "Insurers use AI mostly to read and draft for the people who decide.[^1][^11] In regulators' surveys, claims leads in auto, claims and underwriting run close in home, and underwriting leads in life.[^18] Conning names AI and data-driven underwriting among the drivers of MGA growth.[^6]"
   },
   {
    "q": "What is a predictive model in insurance?",
@@ -408,7 +408,7 @@
   },
   {
    "q": "What does an AI platform for a carrier or MGA cost?",
-   "a": "One published list price runs from $20,000 a year for a 5-user MGA underwriting tool to $98,000 for its enterprise tier.[^70] Most carrier platforms, such as Hi Marley and Federato, publish no price, so budget from a scoped quote for one workflow.[^25][^26]"
+   "a": "One published list price runs from $1,667 a month for a 5-user MGA underwriting tool to $8,167 a month for its enterprise tier.[^70] Most carrier platforms, such as Hi Marley and Federato, publish no price, so budget from a scoped quote for one workflow.[^25][^26]"
   }
  ],
  "buyVsBuild": {
@@ -569,7 +569,7 @@
   {
    "name": "NAIC Journal of Insurance Regulation, Vol. 45 No. 3 (2026), Table 1",
    "url": "https://content.naic.org/sites/default/files/jir-45-3.pdf",
-   "what": "Cross-line summary of NAIC AI surveys: share using, planning or exploring AI, and use in claims, fraud and underwriting."
+   "what": "Table 1 summary of four NAIC AI surveys, share of insurers using, planning or exploring AI: private auto (2021, 193 insurers) 88%, claims 80%, fraud detection 58%, underwriting 31%; homeowners (2023, 194) 70%, claims 60%, fraud detection 55%, underwriting 62%; life (2023, 161) 58%, underwriting 75%; health (2025, 93) 84%, claims adjudication 54%. Entry bars: more than $75 million in auto premium, at least $50 million in home premium, at least $250 million for life and health."
   },
   {
    "name": "J.D. Power, 2026 U.S. Property Claims Satisfaction Study (Mar 2026)",
@@ -594,7 +594,7 @@
   {
    "name": "Big I and Future One, 2026 Agency Universe Study (Sep 2026)",
    "url": "https://www.independentagent.com/news/big-i-and-future-one-release-2026-agency-universe-study",
-   "what": "1,376 respondents: 46% of agencies use AI (15% in 2024); top uses marketing content 49%, coverage form analysis 43%, contract review 35%."
+   "what": "Survey of 1,376 respondents at independent agencies (Sep 2026): 46% of agencies use AI (15% in 2024); top uses marketing content 49%, coverage form analysis 43%, contract review 35%."
   },
   {
    "name": "Zavient count of US job ads, 30 days to 26 Nov 2026",
@@ -624,7 +624,7 @@
   {
    "name": "NAIC, Health AI/ML survey memo (May 2025)",
    "url": "https://content.naic.org/sites/default/files/inline-files/Health%20Survey%20Memo%20to%20BDAIWG%2005092025%20-%20Final.pdf",
-   "what": "93 health insurers, 84% use AI; survey counted simpler statistical models, unlike the auto and home surveys."
+   "what": "Survey of 93 health insurers (May 2025), each with more than $250 million in earned premium or a significant market share in a participating state: 86 of 93 (92%) use, plan or explore AI. Unlike the auto and home surveys, it counted simpler statistical models (generalized linear and additive models)."
   },
   {
    "name": "Colorado Regulation 10-1-1, 3 CCR 702-10 (amended, effective 15 Oct 2025)",
@@ -829,7 +829,7 @@
   {
    "name": "AWS Marketplace, InsureAI Underwriting Hub listing (Global Unity Logic; read 26 Nov 2026)",
    "url": "https://aws.amazon.com/marketplace/pp/prodview-w3bii2pphk7p4",
-   "what": "Underwriting workbench for MGAs and specialty insurers, list prices for 12 months: $20,000 Starter (5 users, 1,000 submissions), $50,000 Professional, $98,000 Enterprise."
+   "what": "Underwriting workbench for MGAs and specialty insurers, 1-month contract list prices: $1,667 a month Starter (up to 5 users, 1,000 submissions a year), $4,167 Professional, $8,167 Enterprise. Read 26 Nov 2026."
   }
  ],
  "related": [

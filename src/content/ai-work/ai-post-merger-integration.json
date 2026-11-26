@@ -10,7 +10,7 @@
  "verdict": [
   "Revenue synergies are the ones deals miss: fewer than 20% hit cross-sell goals, in consulting surveys[^22][^20].",
   "AI's best job here is matching customers, products and vendors across both systems, then flagging overlap and cross-sell[^34][^33].",
-  "Even vendor cases send 10% to 20% of matches to a person, so your team keeps every merge decision[^41][^42].",
+  "Even vendor cases send 10% to 20% of mappings to a person, so your team keeps every merge decision[^41][^42].",
   "Don't pull a target's customer file before close without counsel and a clean team; one gun-jumping fine hit $5.6M[^2][^1].",
   "Test matching on your own lists first: published AI accuracy runs from poor to near-perfect[^13][^17]."
  ],
@@ -54,7 +54,7 @@
  },
  "summary": "AI for post-merger integration matches customers, products, vendors and accounts across the platform and each add-on, then flags overlap, cross-sell and price gaps[^34][^33]. It changes where the team's hours go: less data mapping, more customer and pricing work[^26][^36]. Agreed definitions, and a person checking unsure matches, make or break it[^43][^41].",
  "humanRole": [
-  "Controller and sales operations lead: approve every customer and product merge below the confidence cut, the score under which a person checks the match. Vendor cases still send 10% to 20% of matches to a person[^41][^42].",
+  "Controller and sales operations lead: approve every customer and product merge below the confidence cut, the score under which a person checks the match. Vendor cases still send 10% to 20% of data or account mappings to a person[^41][^42].",
   "Head of sales and the COO: decide every price change for acquired customers. In one consultancy case, price harmonisation covered just 6 select SKUs (stock-keeping units)[^33].",
   "Account owners: write and send what acquired customers hear. Acquired bank customers were two to three times likelier to say they would switch, and one customer-first bank integration lost none[^38][^28].",
   "COO: owns people decisions and picks the integration lead. Leaders with experience in the target's industry capture more synergies, and culture is a top reason deals fail[^12][^27]."
@@ -115,7 +115,7 @@
      "name": "PwC 2019, cited by TriVista",
      "url": "https://trivista.com/wp-content/uploads/2025/12/Post-Merger-Integration-Mid-Market-Survey.pdf",
      "cells": [
-      "Share of deals that realised the expected value lift: 70% for cost, 53% for working capital, 45% for revenue[^31]",
+      "PE executives' share of deals that realised the expected value lift: 70% for cost, 53% for working capital, 45% for revenue[^31]",
       "Consulting survey of 100 PE executives"
      ]
     },
@@ -277,7 +277,7 @@
     "Finance lead: feed the synergy tracker from ERP and CRM data each month",
     "Integration lead: have AI redraft the 100-day checklist from the deal's facts, then mark each item keep, edit or drop"
    ],
-   "cost": "Mostly controller review time: vendors report 10% to 20% of rows still checked by hand[^41][^42]. Practitioners say the master-data map is where consolidations fail, so budget time there[^46]."
+   "cost": "Mostly controller review time: vendors report 10% to 20% of mappings still checked by hand[^41][^42]. Practitioners say the master-data map is where consolidations fail, so budget time there[^46]."
   },
   {
    "name": "3. Bought tracker plus your own matching",
@@ -711,12 +711,12 @@
   {
    "name": "Quinnox, data integration case study (28 Feb 2026), vendor claim",
    "url": "https://www.quinnox.com/case-study/data-integration-transformation",
-   "what": "Vendor says 80-85% of schema mapping automated, subject experts reviewed the 10-15% low-confidence rows, and migration fell from 2 months to 3 weeks."
+   "what": "Vendor says 80% to 85% of schema mappings automated with high confidence, subject experts reviewed the 10% to 15% low-confidence mappings, and migration fell from 2 months to 3 weeks."
   },
   {
    "name": "Turing, trial-balance mapping case study (9 Jan 2026), vendor claim",
    "url": "https://www.turing.com/case-study/automating-mmr-models",
-   "what": "Vendor says mapping fell from 5 days to 3 hours, with about 20% of accounts still reviewed by hand."
+   "what": "Vendor says trial-balance mapping and statement build fell from 5 days to 3 hours, with about 20% of accounts, those flagged complex or low-confidence, still reviewed by hand."
   },
   {
    "name": "Sphere, PavingX Unify case study (9 Jul 2026), vendor claim",
@@ -766,7 +766,7 @@
   "team-after": "The same small team covers more add-ons: AI drafts maps and plans, and people spend the time on customer calls, pricing and keeping staff[^26][^11].",
   "example": "In an illustrative case, a distributor matches its customer and product lists against an add-on's, and the team picks a short list of cross-sell and price moves[^33][^34].",
   "table-1": "Cost synergies usually land and revenue synergies often don't: about 60% of deals delivered cost synergies, but almost 70% missed revenue ones[^20][^22].",
-  "table-2": "AI has drafted plans, mapped data and matched records in published cases, yet vendor cases still send 10% to 20% of items to a person[^26][^41][^42][^43].",
+  "table-2": "AI has drafted plans, mapped data and matched records in published cases, yet vendor cases still send 10% to 20% of mappings to a person[^26][^41][^42][^43].",
   "table-3": "DealRoom covers integration planning, project management and progress tracking, and it prices by deal volume with no published figure[^45].",
   "recipes": "A first add-on fits a spreadsheet plus an AI pass, a platform doing three or more deals a year fits a standing mapping layer, and a bought tracker fits either[^17][^25][^45].",
   "own-data": "Accuracy varies widely: untrained AI scored as low as 29 out of 100 on a public product test, while trained or escalation setups reached 84 to 96[^13][^17].",
@@ -829,7 +829,9 @@
    "src 38 J.D. Power study was banking-only, vs a year earlier: reworded humanRole",
    "Updated source 'what' notes for 2, 4, 5, 9, 11, 31, 45, 48 (DealDen) to match what each source says",
    "Midaxo pricing page would not load live on two tries: cut the $25k price and synergy-dashboard claims, dropped the Midaxo table row and source, renumbered sources 47-50 to 46-49",
-   "Cost table retitled 'What does a bought integration tool cover?' since no confirmed tool price remains"
+   "Cost table retitled 'What does a bought integration tool cover?' since no confirmed tool price remains",
+   "src 41 Quinnox note now states its own 10% to 15% low-confidence share; src 42 Turing ~20% of accounts: kept 10% to 20%, now called mappings, not matches, rows or items (verdict, humanRole, recipe 2 cost, table-2 answer)",
+   "src 31 PwC via TriVista is a survey of 100 PE executives: table row now names PE executives"
   ]
  }
 }

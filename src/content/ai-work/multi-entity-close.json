@@ -360,7 +360,7 @@
  ],
  "watchOuts": [
   "Off-the-shelf models pick badly from thousands of options: under 19% right linking facts to the full US-GAAP taxonomy[^13]. Limit choices to your group chart and show the top candidates for approval[^14].",
-  "A company the model hasn't seen maps worse: in one study, transactions were classified about 65% right, against 80% within known companies[^12]. Review every mapping for each new add-on.",
+  "A company the model hasn't seen maps worse: in one study, transactions were classified 64.6% right, against 80.5% within known companies[^12]. Review every mapping for each new add-on.",
   "Messy inputs raise AI errors: over 8% scaling errors from text, against 0.11% from structured data[^27]. Feed trial balances as data, not PDFs.",
   "Missed eliminations overstate the group: INTL FCStone overstated sales by $1.3B and $2.6B in two years[^24]. Eliminate every month, not at year end.",
   "Breaks pile up without hands: Cambrex logged intercompany imbalances, but its finance team was too thinly staffed to reconcile them[^23]. Give every break an owner and an age.",
@@ -515,7 +515,7 @@
   {
    "name": "Jorgensen et al., Intelligent Systems in Accounting, Finance and Management (2021)",
    "url": "https://onlinelibrary.wiley.com/doi/10.1002/isaf.1500",
-   "what": "Classifying transactions to accounts: about 80.5% top-1 accuracy within each of 473 companies; 64.6% on a company the model never saw, after standardizing account structures."
+   "what": "Classifying transactions to accounts: 80.50% average top-1 accuracy across 473 companies taken one by one; 64.62% (64.6% rounded) when trained on 43 companies and tested on the one left out, after standardizing account structures."
   },
   {
    "name": "FinTagging benchmark, arXiv 2505.20650 (2025)",
@@ -651,7 +651,7 @@
   "example": "Trial balances from each add-on go in, and a lender-ready consolidating workbook comes out[^3][^19]. Between them sit approved mappings, suggested intercompany matches and reviewed eliminations[^19].",
   "table-1": "AI can suggest account mappings and intercompany matches, flag anomalies and draft eliminations, while your controller approves each one and signs the statements[^6][^5][^17].",
   "table-2": "Six calendar days is the median from first trial balance to monthly consolidated statements[^1]. Top performers take 5 and bottom performers 10[^1][^16].",
-  "table-3": "AI mapping is accurate enough to suggest, not to post: about 80% right within known companies, 65% on a new one, and under 19% on the full US-GAAP taxonomy[^12][^13].",
+  "table-3": "AI mapping is accurate enough to suggest, not to post: 80.5% right within known companies, 64.6% on a new one, and under 19% on the full US-GAAP taxonomy[^12][^13].",
   "recipes": "Few add-ons on QuickBooks or Xero fit a reporting tool[^30]. Mixed ledgers need a mapping layer with reviewed AI matching, and a large group fits an enterprise performance management (EPM) suite[^31][^5].",
   "own-data": "Most want them within 30 days of month end: 479 of 599 SEC-filed credit documents we counted, about 80%, set that deadline[^2][^3].",
   "rules": "ASC 810 sets what a consolidation must show, while auditing standards and AICPA and COSO guidance set how auditors judge the close, AI steps included[^19][^20][^8][^22].",
@@ -713,7 +713,8 @@
    "BlackLine survey release dated Jun 2023 (fielded Mar); respondents are intercompany stakeholders, not finance staff",
    "Deloitte 2025 poll covers intercompany tax management: renamed table row; dropped unverified 9.2% from the 2016 poll note",
    "Table-2 intro said two surveys; it cites three",
-   "SEC EDGAR count (source 2) not re-run: SEC's search service was unreachable here; the page opens and the arithmetic (599 total, 80.0%) checks"
+   "SEC EDGAR count (source 2) not re-run: SEC's search service was unreachable here; the page opens and the arithmetic (599 total, 80.0%) checks",
+   "src 12 Jorgensen abstract gives 80.50% and 64.62%, not about 80% and 65%: watch-out and table-3 answer now use 80.5% and 64.6%"
   ]
  }
 }
