@@ -1,0 +1,761 @@
+{
+  "title": "Can AI predict machine failures before they stop your line?",
+  "description": "When predictive maintenance software pays, when your PM program is enough, and what a 10-machine start costs: 14 offerings priced 26 Nov 2026.",
+  "type": "usecase",
+  "templateVersion": 1,
+  "topic": "AI predictive maintenance",
+  "job": "predictive maintenance of plant equipment",
+  "industry": "manufacturing and facilities",
+  "index": false,
+  "verdict": [
+    "Scheduled overhauls miss most failures. In airline and navy studies, most failures were random, not age-based.[^1][^2]",
+    "Predictive saves 8-12% over preventive, per DOE, but false alarms can wipe that out.[^3][^4]",
+    "Clean your work orders first. Entry errors skew maintenance KPIs, and most records skip how a fault was found.[^5][^6]",
+    "Self-run sensors for 10 machines list at about $4,200 to $5,550 in hardware, per our 26 Nov check.[^7][^8]",
+    "People still make the call. ISO 17359 leaves inspect, slow down or stop to your team.[^9][^10]"
+  ],
+  "onPage": [
+    {
+      "to": "table-1",
+      "text": "Predictive or preventive: which fits each kind of machine"
+    },
+    {
+      "to": "recipes",
+      "text": "Three ways to start, with or without sensors"
+    },
+    {
+      "to": "own-data",
+      "text": "What a 10-machine start costs: 14 offerings priced"
+    },
+    {
+      "to": "benchmark",
+      "text": "A fair 90-day pilot you can run on your own machines"
+    },
+    {
+      "to": "what-goes-wrong",
+      "text": "Where it goes wrong: false alarms, dirty work orders, vendor exits"
+    }
+  ],
+  "headings": {
+    "what-it-is": "What does predictive maintenance software do, and what does AI change?",
+    "human-role": "Who confirms the alert and makes the call?",
+    "example": "What does an AI maintenance alert look like?",
+    "recipes": "Which way to start fits your maintenance team?",
+    "benchmark": "How do you run a fair 90-day pilot?",
+    "what-goes-wrong": "Where does predictive maintenance go wrong?",
+    "faq": "Questions buyers ask about predictive maintenance",
+    "buy-or-build": "Should you buy predictive maintenance software or build it?"
+  },
+  "summary": "AI predictive maintenance reads machine data, such as vibration and temperature, plus your work-order history, and flags machines starting to fail.[^3][^11] It fits a few critical machines whose failures are random, not age-based.[^12][^1] False alarms and messy work orders decide whether it pays.[^4][^5]",
+  "humanRole": [
+    "Technician: confirms each alert on the machine, with a handheld reading or a look and listen, before parts are ordered. Inspection is one of the calls ISO 17359 lists after an alert.[^9][^10]",
+    "Maintenance planner: decides when the repair happens, around production. The standard's options run from keep monitoring to bring maintenance forward or stop the machine.[^10]",
+    "Maintenance manager: picks which machines are watched, sets alarm levels and signs off run-or-stop calls. Time to failure still needs expert judgment, per NIST's summary of ISO 13381-1.[^13]",
+    "Electrical gear stays with qualified people: NFPA 70B wants corrective action decided and recorded by them. OSHA lockout rules still cover every repair an alert triggers.[^14][^15]"
+  ],
+  "teamAfter": [
+    "From firefighting to planned work: an alert gives lead time, so the planner books the job before the breakdown does. In MaintainX's vendor survey, half of teams spend under 40% of their time on planned work.[^16]",
+    "From tribal knowledge to written work orders: 74% of teams have a critical asset only one person can repair, per Limble's vendor survey. Better notes feed the model and keep that know-how.[^17][^18]",
+    "Technicians make the model better. In McKinsey's offshore case, maintenance teams and data scientists removed false alarms failure by failure.[^19][^20]",
+    "Jobs grow: BLS projects maintenance mechanic jobs up 14% to 2035. Among AI-using firms, 66% only use it to help staff; 2% saw AI-related employment fall.[^21][^22]"
+  ],
+  "example": {
+    "input": "Illustrative. A wireless vibration and temperature sensor on a critical cooling-water pump with no spare, reading every few minutes for 3 months. Plus 18 months of the pump's free-text work orders (\"brg noisy\", \"greased\", \"replaced coupling insert\") and its run hours.[^18]",
+    "output": "Flag: Pump P-12 outboard bearing vibration has risen for 3 weeks, temperature normal, matching two past bearing work orders. Next step: a technician confirms with a handheld reading this week; if confirmed, the planner books the swap for Saturday changeover.[^10] Confidence: medium, after one false alarm in August; stores hold the bearing but not the insert.[^4]"
+  },
+  "tables": [
+    {
+      "title": "Predictive or preventive maintenance: which fits each machine?",
+      "intro": "In airline and navy studies, most failures were random, so calendar work alone can't prevent them.[^1][^23] Those figures come from aircraft and ships, not plant averages, so treat them as a guide.[^24]",
+      "headers": [
+        "Machine looks like",
+        "Best fit",
+        "Why"
+      ],
+      "rows": [
+        {
+          "name": "Wears out with use and has a clear life (belts, filters, brushes)",
+          "cells": [
+            "Time- or usage-based preventive maintenance (PM)[^23]",
+            "Age-related failures were 8-23% in the studies NASA cites; calendar PM does catch these.[^1][^23]"
+          ]
+        },
+        {
+          "name": "Fails at random but gives warning (bearings, gearboxes, motors, pumps)",
+          "cells": [
+            "Condition checks, then predictive[^23]",
+            "Random failures were 77-92% in the same studies; a warning period lets a check catch them.[^1][^23]"
+          ]
+        },
+        {
+          "name": "Cheap, redundant and quick to swap",
+          "cells": [
+            "Run to failure, by choice[^3]",
+            "Monitoring would cost more than the failure.[^3][^2]"
+          ]
+        },
+        {
+          "name": "Critical, with known failure modes, or many identical units",
+          "cells": [
+            "AI prediction worth a trial[^12]",
+            "This is where McKinsey finds advanced prediction pays; for one narrow failure mode, simple thresholds often do.[^12][^19]"
+          ]
+        },
+        {
+          "name": "Electrical gear (switchgear, panels, motor control centers)",
+          "cells": [
+            "Scheduled infrared scans under an NFPA 70B program[^14]",
+            "NFPA 70B sets scans every 12 months for gear in good condition, every 6 months in poor condition (Condition 3).[^25][^26]"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "What do published results show?",
+      "intro": "None of these is a 40-500 person plant. Small-firm studies report barriers, such as know-how, data and no business case, not results.[^27]",
+      "headers": [
+        "Who",
+        "Result",
+        "Type of source"
+      ],
+      "rows": [
+        {
+          "name": "US DOE FEMP",
+          "url": "https://www.energy.gov/sites/prod/files/2020/04/f74/omguide_complete_w-eo-disclaimer.pdf",
+          "cells": [
+            "Predictive saves 8-12% over preventive; preventive saves 12-18% over reactive[^3]",
+            "Government guide, 2010; rated high-confidence by Reliamag[^28]"
+          ]
+        },
+        {
+          "name": "McKinsey (2018)",
+          "url": "https://www.mckinsey.com/capabilities/operations/our-insights/digitally-enabled-reliability-beyond-predictive-maintenance",
+          "cells": [
+            "Digital reliability: 5-15% more availability, 18-25% lower maintenance cost[^12]",
+            "Consultancy, large industrials"
+          ]
+        },
+        {
+          "name": "McKinsey (2021), offshore operator",
+          "url": "https://www.mckinsey.com/capabilities/operations/our-insights/a-smarter-way-to-digitize-maintenance-and-reliability",
+          "cells": [
+            "20% less downtime, after 10-15 data scientists spent two years on 500+ models[^19]",
+            "Consultancy case, nine platforms"
+          ]
+        },
+        {
+          "name": "Deloitte (2017), chemical extruder",
+          "url": "https://www.deloitte.com/us/en/insights/industry/manufacturing-industrial-products/industry-4-0/using-predictive-technologies-for-asset-maintenance.html",
+          "cells": [
+            "80% less unplanned downtime, about $300,000 saved per asset[^29]",
+            "Consultancy case"
+          ]
+        },
+        {
+          "name": "Augury",
+          "url": "https://www.augury.com/",
+          "cells": [
+            "310% ROI[^30]",
+            "Vendor claim, from a Forrester study Augury commissioned"
+          ]
+        }
+      ]
+    }
+  ],
+  "recipes": [
+    {
+      "name": "1. No sensors yet: start from your work orders",
+      "when": "PM completion is shaky, the CMMS (maintenance software) is half-used, or there's no hardware budget. Deloitte says get the basics in place first; in Limble's vendor survey, 39% of teams use their CMMS consistently.[^29][^17]",
+      "flow": [
+        "Maintenance planner: export 2-3 years of work orders to a spreadsheet",
+        "Reliability lead: tag them with NIST's free Nestor tool, or an AI chatbot checked by hand, to find repeat failures by asset[^31][^18]",
+        "Maintenance manager: rank assets by criticality and repeat failures, and pick the top 10 within a month",
+        "Planner: review each PM task on those assets; keep it if the wear is age-related, else switch it to an inspection[^1][^23]",
+        "Technician: add a \"how was this found\" field to every new work order[^6]"
+      ],
+      "cost": "Staff time and the CMMS you already pay for. Nestor is free.[^31]"
+    },
+    {
+      "name": "2. Five to ten critical machines: open sensors you run",
+      "when": "You have a technician or engineer who likes data, and you want to own the data. Simple thresholds often do the job before any model.[^12]",
+      "flow": [
+        "Maintenance manager: choose up to 10 critical rotating machines from recipe 1",
+        "Technician: mount sensors and check the mounts monthly; sensors falling off is a common complaint[^32]",
+        "Reliability lead: set simple alarm thresholds first, such as a fixed vibration level that triggers an alert[^12]",
+        "Technician: for 90 days, confirm every alert by hand and log it as caught, false or unclear",
+        "Maintenance manager: review the alert log monthly and adjust thresholds"
+      ],
+      "cost": "About $4,200 to $5,550 in list-price hardware for 10-12 points, before installation, per our 26 Nov 2026 check.[^7][^8] Software runs from $70 a year (Monnit Premiere) to bring your own (NCD).[^33][^34]"
+    },
+    {
+      "name": "3. No one reads vibration data: a managed service",
+      "when": "No one on staff can read vibration data, and practitioners say skilled analysts are scarce.[^35] On MaintainX already, its Asset Intelligence add-on brings machine data into the CMMS, price on request.[^36]",
+      "flow": [
+        "Maintenance manager: shortlist 2 services and ask for a trial on your own machines; KCF offers a $199, 30-day trial of 48 sensors[^37]",
+        "Vendor analyst: sends a diagnosis with each alert",
+        "Technician: confirms on the machine",
+        "Planner: books the repair",
+        "Maintenance manager: tracks confirmed catches and false alarms against the contract"
+      ],
+      "cost": "Mostly quote-only: Tractian, Augury, Waites and Siemens Senseye publish no price.[^38][^30][^39][^40] Petasense's Starter plan lists at $999 a month, billed yearly, as read on 26 Nov 2026.[^41]"
+    }
+  ],
+  "ownData": {
+    "title": "What does it cost to start monitoring 10 critical machines?",
+    "intro": "On 26 Nov 2026 we read the public price pages of 14 condition-monitoring offerings. Seven publish a price you can act on, five are quote-only, and two no longer take new buyers. For each priced kit we added sensors, one gateway and published first-year software for 10 points.[^38][^42]",
+    "headers": [
+      "Offering",
+      "What you buy",
+      "Published price (26 Nov 2026)",
+      "10 points, first year (our sum)",
+      "Not included"
+    ],
+    "rows": [
+      [
+        "Banner QM30VT2 + DXM700 controller",
+        "Wired vibration and temperature sensor, with controller",
+        "$328.25 each; DXM700 $917.63, at distributor RS[^7][^43]",
+        "$4,200.13[^7][^43]",
+        "Software and cabling"
+      ],
+      [
+        "NCD.io V3 sensor + Enterprise IIoT Gateway",
+        "Wireless vibration and temperature sensor, open protocol",
+        "$388.75 each at 10+; gateway $681.95[^34]",
+        "$4,569.45[^34]",
+        "Software and analysis: yours to choose"
+      ],
+      [
+        "Monnit ALTA Advanced Vibration Meter + Ethernet Gateway + iMonnit Premiere",
+        "Wireless sensor with hosted dashboard and alerts",
+        "$440 each; gateway $242; Premiere $70 a year for 12 sensors[^44][^45][^33]",
+        "$4,712.00[^44][^33]",
+        "Analysis beyond alerts and thresholds"
+      ],
+      [
+        "ifm VVB001",
+        "Wired IO-Link (industrial plug-in standard) vibration sensor, one axis",
+        "$479.04 each at 3+, at distributor RS[^46]",
+        "$4,790.40, sensors only[^46]",
+        "IO-Link master and software"
+      ],
+      [
+        "Erbessd PHANTOM Expert Gen 4, 12-sensor kit",
+        "Wireless three-axis sensors with gateway",
+        "$5,549.95 for 12 sensors and gateway[^8]",
+        "$5,549.95 for 12 points[^8]",
+        "Software included, per the vendor[^47]"
+      ],
+      [
+        "Petasense Vibration Mote Model 1 + Starter plan",
+        "Wireless sensor plus software sized for about 50 sensors",
+        "$499 each; $999 a month, billed yearly[^41]",
+        "$16,978.00[^41]",
+        "Transmitter ($959), which Wi-Fi motes may not need[^41]"
+      ],
+      [
+        "KCF Technologies",
+        "48 wireless sensors and a base station for 30 days",
+        "$199 trial; hardware returnable[^37]",
+        "$199, trial only[^37]",
+        "After the trial: custom quote[^48]"
+      ],
+      [
+        "Quote only (5): Tractian, Augury, Waites, Siemens Senseye, MaintainX Asset Intelligence",
+        "Sensors and software; some add analysts",
+        "Not published[^38][^30][^39][^40][^36]",
+        "n/a",
+        "n/a"
+      ],
+      [
+        "No longer sold to new buyers (2): Amazon Monitron, Fluke 3563 kit",
+        "Wireless sensor kits",
+        "Monitron closed to new customers 31 Oct 2024; Fluke lists the 3563 as discontinued[^42][^49]",
+        "n/a",
+        "n/a"
+      ]
+    ],
+    "note": "Zavient arithmetic on list prices read 26 Nov 2026, not vendor quotes. It leaves out installation, mounting, cabling, tax, shipping, discounts and analyst time, and the kits differ: one axis or three, wired or wireless. Softwr reports Petasense now belongs to AssetWatch and quotes on request, though its own page still listed prices that day.[^50][^41]"
+  },
+  "rules": [
+    {
+      "name": "NFPA 70B, Standard for Electrical Equipment Maintenance",
+      "url": "https://www.nfpa.org/product/nfpa-70b-standard-for-electrical-equipment-maintenance/p0070bcode/nfpa-70b-standard-for-electrical-equipment-maintenance-2023/70b23",
+      "status": "Standard since the 2023 edition; binding where adopted",
+      "what": "Requires a written electrical maintenance program, qualified people and recorded corrective actions.[^14][^26] It sets infrared scan intervals by equipment condition, so monitoring data feeds the schedule.[^25] It binds where your inspector, insurer or contract adopts it."
+    },
+    {
+      "name": "OSHA 29 CFR 1910.147 (lockout/tagout)",
+      "url": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.147",
+      "status": "In force",
+      "what": "An AI alert changes when you service a machine, not how. Lock out and tag out before any repair it triggers.[^15]"
+    },
+    {
+      "name": "ISO 17359:2018, condition monitoring guidelines",
+      "url": "https://www.iso.org/standard/71194.html",
+      "status": "Voluntary; confirmed 2023",
+      "what": "A checklist for a monitoring program: cost-benefit, a criticality review, alert criteria, the decisions that follow and training.[^9][^10]"
+    },
+    {
+      "name": "CISA, NSA and FBI: Principles for the Secure Integration of AI in Operational Technology (OT)",
+      "url": "https://www.cisa.gov/news-events/news/new-joint-guide-advances-secure-integration-artificial-intelligence-operational-technology",
+      "status": "Guidance, Dec 2025",
+      "what": "Be careful with AI that can act on the plant. Keep people in the loop and protect the control network that sensors join.[^51]"
+    },
+    {
+      "name": "NIST SP 800-82 Rev. 3",
+      "url": "https://csrc.nist.gov/pubs/sp/800/82/r3/final",
+      "status": "Guidance",
+      "what": "The US reference for securing the plant networks your sensors and gateways connect to.[^52]"
+    }
+  ],
+  "howToTest": [
+    "Pick 5-10 critical machines at one site whose failures are random and costly, using the table above.[^1][^29]",
+    "Record 12 months of baseline for those machines: unplanned downtime hours, emergency work orders and actual PM completion. Limble's vendor survey found teams complete 54% of scheduled PM.[^17][^53]",
+    "Add a \"how was this found\" field to every work order: inspection, alert, operator or breakdown. One study found it missing on 60-98% of work orders at four companies.[^6]",
+    "Write the alarm rule down before day one, so nobody moves the goalposts.[^9]",
+    "Log every alert as caught (confirmed by a technician), false or unclear, with the lead time before failure and the technician hours it took.[^4][^54]",
+    "Count avoided downtime only on confirmed catches, at your own cost per downtime hour. Skip survey averages: Siemens' figures come from the world's 500 largest firms.[^55]",
+    "Net value is avoided downtime, minus false-alarm visits and needless stops, minus a year of fees. McKinsey saw a 10% false-alarm rate add 1,000 cases a year and erase the savings.[^4]",
+    "At day 90, decide per machine: keep it, switch to a simple threshold, or go back to scheduled checks.[^12]"
+  ],
+  "watchOuts": [
+    "False alarms: in a McKinsey example, a model catching a quarter of breakdowns still lost money when 10% of its alerts were false.[^4][^54] Log every alert, and tune or drop noisy machines.",
+    "Dirty work orders: NIST found entry errors are non-random and skew maintenance KPIs, even with large samples.[^5][^56] Clean the history and add a how-found field before you train anything.",
+    "No one acts on the alert: practitioners say programs fail when nobody acts after the alarm.[^35] DOE warns the savings are \"not readily seen by management\", so report confirmed catches monthly.[^3]",
+    "Sensors without context: one plant's sensors couldn't tell a breakdown from a lunch break, and some fell off.[^32] Start from asset criticality, not sensor choice.",
+    "Vendor exits: Amazon closed Monitron to new customers in Oct 2024 and shut Lookout for Equipment on 7 Oct 2026.[^42][^57] Ask who owns your data and how you export it.",
+    "Over-maintaining: NASA notes scheduled overhauls can raise failure rates by adding early-life failures after the work.[^1] Drop PM tasks that don't match how the part fails."
+  ],
+  "faq": [
+    {
+      "q": "Predictive vs preventive maintenance: which should come first?",
+      "a": "Preventive for parts that wear with use; condition checks for parts that fail at random, which is most of them in reliability-centred maintenance studies.[^1][^23] DOE puts predictive savings at 8-12% over preventive.[^3]"
+    },
+    {
+      "q": "Is predictive maintenance worth it, or mostly a sales pitch?",
+      "a": "On a few critical machines with costly random failures, often yes; across the whole plant, often no.[^12] A 10% false-positive rate erased the savings in one McKinsey example.[^4]"
+    },
+    {
+      "q": "Do we need sensors, or can we start with the data we have?",
+      "a": "Start with your work orders: find repeat failures and fix the PM.[^18] NIST's free Nestor tool tags free-text work orders.[^31] Then add sensors to the few machines that justify them.[^12]"
+    },
+    {
+      "q": "How accurate is our CMMS data, really?",
+      "a": "Often less than reports suggest: NIST found entry errors hide inside KPIs.[^5] One technician wrote, \"Management thinks we're 90% compliant. We're maybe 40%.\"[^53] Clean it before you train any model.[^56]"
+    },
+    {
+      "q": "Is a sensor subscription worth it if it saves one or two breakdowns a year?",
+      "a": "Only if one avoided breakdown costs more than a year of fees plus the false-alarm visits.[^4] Test it on your own downtime cost, not survey averages from much larger firms.[^55]"
+    },
+    {
+      "q": "What does a 5-10 machine pilot cost?",
+      "a": "Our 26 Nov 2026 check found self-run hardware for 10-12 points at about $4,200 to $5,550 list.[^7][^8] KCF offers a $199, 30-day trial, and most managed services publish no price.[^37][^38]"
+    }
+  ],
+  "buyVsBuild": {
+    "buy": "Buy when you have no data team and your machines are standard motors, pumps, fans and gearboxes. Most firms buy: 76% of enterprise AI use cases are bought, per Menlo Ventures.[^58] Internal builds succeed about a third as often as bought or partnered tools, in MIT research on AI pilots.[^59]",
+    "build": "Build only for fleets of identical machines or a process no vendor knows. McKinsey's offshore case took 10-15 data scientists two years and 500+ models.[^19] The middle path: buy open hardware such as NCD or Monnit, keep the data, and start with thresholds.[^34][^12]"
+  },
+  "pickElse": [
+    "Parts that wear with use and have a known life: keep time-based PM.[^1][^23]",
+    "One narrow, well-known failure mode: a simple threshold alarm in the sensor's own software.[^12][^33]",
+    "Low PM completion or a barely used CMMS: fix that first with planned routes in the CMMS you have. Deloitte says get the basics in place before predictive.[^29][^17]",
+    "Electrical distribution gear: a scheduled NFPA 70B infrared program before any AI.[^14][^25]"
+  ],
+  "resources": [
+    {
+      "name": "NIST Nestor",
+      "url": "https://www.nist.gov/services-resources/software/nestor",
+      "what": "Free tool to tag free-text work orders and find repeat failures."
+    },
+    {
+      "name": "NASA Reliability Centered Maintenance Guide",
+      "url": "https://www.nasa.gov/wp-content/uploads/2023/06/nasa-rcmguide.pdf",
+      "what": "Free guide to matching each machine to run-to-failure, PM or condition checks."
+    },
+    {
+      "name": "US DOE O&M Best Practices Guide",
+      "url": "https://www.energy.gov/sites/prod/files/2020/04/f74/omguide_complete_w-eo-disclaimer.pdf",
+      "what": "Plain chapter on reactive, preventive and predictive maintenance and their costs."
+    },
+    {
+      "name": "NASA Prognostics Data Repository",
+      "url": "https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository",
+      "what": "Free run-to-failure data (bearings, milling, turbofans) for a vendor bake-off on known answers."
+    },
+    {
+      "name": "Case Western Reserve University Bearing Data Center",
+      "url": "https://engineering.case.edu/bearingdatacenter",
+      "what": "Free motor-bearing vibration data with documented faults, a common test set."
+    }
+  ],
+  "stats": [
+    {
+      "num": "8-12%",
+      "label": "savings of predictive over preventive maintenance.[^3]",
+      "source": "US DOE FEMP O&M guide, 2010"
+    },
+    {
+      "num": "77-92%",
+      "label": "of failures were random, not age-related, in airline and navy studies.[^1]",
+      "source": "NASA RCM Guide, 2008"
+    },
+    {
+      "num": "10%",
+      "label": "false-alarm (false-positive) rate that erased predictive savings in one McKinsey example.[^4]",
+      "source": "McKinsey, 2021"
+    },
+    {
+      "num": "60-98%",
+      "label": "of work orders missing how the fault was found, at four companies.[^6]",
+      "source": "Rethinking Maintenance Terminology study (PMC)"
+    },
+    {
+      "num": "$4,200 to $5,550",
+      "label": "list-price hardware for a self-run start on 10-12 points.[^7][^8]",
+      "source": "Zavient price check, 26 Nov 2026"
+    },
+    {
+      "num": "2%",
+      "label": "of AI-using US firms saw AI-related employment fall; 66% only use AI to help staff.[^22]",
+      "source": "US Census Bureau, 2026"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NASA, Reliability Centered Maintenance Guide for Facilities and Collateral Equipment (Sept 2008)",
+      "url": "https://www.nasa.gov/wp-content/uploads/2023/06/nasa-rcmguide.pdf",
+      "what": "Across UAL, Bromberg and US Navy studies, 77-92% of failures were random and 8-23% age-related; scheduled overhauls can raise failure rates."
+    },
+    {
+      "name": "FTA / WMATA, Reliability-Centered Maintenance and Maintenance Planning (2019)",
+      "url": "https://www.transit.dot.gov/sites/fta.dot.gov/files/docs/regulations-and-guidance/asset-management/133321/reliability-centered-maintenance-and-maintenance-planningwmata2019.pdf",
+      "what": "Federal transit deck: 11% of items might benefit from an age limit, 89% get no benefit."
+    },
+    {
+      "name": "US DOE FEMP / PNNL, O&M Best Practices Guide, Release 3.0 (Aug 2010)",
+      "url": "https://www.energy.gov/sites/prod/files/2020/04/f74/omguide_complete_w-eo-disclaimer.pdf",
+      "what": "Government guide: predictive maintenance saves 8-12% over preventive, preventive 12-18% over reactive; warns savings are \"not readily seen by management\"."
+    },
+    {
+      "name": "McKinsey, Establishing the right analytics-based maintenance strategy (Jul 2021)",
+      "url": "https://www.mckinsey.com/capabilities/operations/our-insights/establishing-the-right-analytics-based-maintenance-strategy",
+      "what": "A model catching a quarter of breakdowns at 85% accuracy lost money at a 10% false-positive rate, which created 1,000 extra cases a year."
+    },
+    {
+      "name": "NIST (Conte et al.), The Impact of Data Quality on Maintenance Work Order Analysis (Jul 2021)",
+      "url": "https://www.nist.gov/publications/impact-data-quality-maintenance-work-order-analysis-case-study-historical-hvac",
+      "what": "Human data-entry errors are highly non-random and cause large errors in KPI calculation, even with large samples."
+    },
+    {
+      "name": "Rethinking Maintenance Terminology for an Industry 4.0 Future (PMC)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11984357/",
+      "what": "Peer-reviewed study: detection-method codes missing on 60-98% of work orders at four companies (Table 5)."
+    },
+    {
+      "name": "RS, Banner QM30VT2 vibration and temperature sensor",
+      "url": "https://us.rs-online.com/product/banner-engineering/qm30vt2/71866470",
+      "what": "Read 26 Nov 2026: $328.25 (distributor price; Newark lists the same)."
+    },
+    {
+      "name": "Erbessd, PHANTOM Expert Gen 4 12-kit",
+      "url": "https://store.erbessd-instruments.com/products/wireless-high-range-triaxial-accelerometer-for-condition-monitoring-sensors-phantom-expert-gen-4-12-kit",
+      "what": "Read 26 Nov 2026: $5,549.95 for 12 triaxial wireless sensors plus gateway."
+    },
+    {
+      "name": "ISO 17359:2018, Condition monitoring and diagnostics of machines: General guidelines",
+      "url": "https://www.iso.org/standard/71194.html",
+      "what": "Standard for condition-monitoring programs (confirmed 2023): cost-benefit, criticality review, alert criteria, decisions and training."
+    },
+    {
+      "name": "iTeh Standards, preview of ISO 17359:2018",
+      "url": "https://standards.iteh.ai/catalog/standards/iso/c664dc56-e63a-41c3-a056-f39595d15752/iso-17359-2018",
+      "what": "Lists the decisions after an alert: keep monitoring, shorten the interval, change load or speed, stop, inspect or bring maintenance forward, or repair."
+    },
+    {
+      "name": "ISO 13374-1:2003, Condition monitoring: data processing, communication and presentation",
+      "url": "https://www.iso.org/standard/21832.html",
+      "what": "Sets the chain from sensor data to health assessment, prognosis and advisories presented to people."
+    },
+    {
+      "name": "McKinsey, Digitally enabled reliability: beyond predictive maintenance (Oct 2018)",
+      "url": "https://www.mckinsey.com/capabilities/operations/our-insights/digitally-enabled-reliability-beyond-predictive-maintenance",
+      "what": "Advanced predictive maintenance fits a subset of cases; simple thresholds often suffice; digital reliability can add 5-15% availability and cut maintenance cost 18-25%."
+    },
+    {
+      "name": "NIST IR 8012, Standards related to prognostics and health management (2014)",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ir/2014/NIST.IR.8012.pdf",
+      "what": "Summarises ISO 13381-1: time to failure needs to be determined by expert opinion and/or empirical methods; set points come from standards, makers and experience."
+    },
+    {
+      "name": "ESFI, NFPA 70B",
+      "url": "https://www.esfi.org/nfpa-70b",
+      "what": "70B requires a documented electrical maintenance program, a coordinator, qualified people and documented corrective measures based on collected data."
+    },
+    {
+      "name": "OSHA, 29 CFR 1910.147, Control of hazardous energy (lockout/tagout)",
+      "url": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.147",
+      "what": "Machines must be locked out before servicing and maintenance."
+    },
+    {
+      "name": "MaintainX, State of Industrial Maintenance 2026 (vendor survey, n=2,234)",
+      "url": "https://www.getmaintainx.com/state-of-industrial-maintenance-report",
+      "what": "Vendor survey: 64% run a PM program, but 50% of teams spend under 40% of their time on planned work."
+    },
+    {
+      "name": "Plant Engineering, The maintenance execution gap (Oct 2026), on Limble's State of Maintenance (vendor survey, n=686)",
+      "url": "https://www.plantengineering.com/the-maintenance-execution-gap-why-planned-work-still-falls-behind/",
+      "what": "Vendor survey: teams complete 54% of scheduled PM; 39% use their CMMS consistently; 74% have critical assets only one employee can repair; 62% of technicians do three hours or less of maintenance a shift."
+    },
+    {
+      "name": "NIST / TechSolve, Using Text Analytics Solutions with Small to Medium Sized Manufacturers (Feb 2020)",
+      "url": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=930321",
+      "what": "Lessons from small and mid-size manufacturers: free-text work orders carry the maintenance history."
+    },
+    {
+      "name": "McKinsey, A smarter way to digitize maintenance and reliability (Apr 2021)",
+      "url": "https://www.mckinsey.com/capabilities/operations/our-insights/a-smarter-way-to-digitize-maintenance-and-reliability",
+      "what": "Offshore case: 20% less downtime after 10-15 data scientists built 500+ models over two years, refined with maintenance teams failure by failure. Re-read 26 Nov 2026."
+    },
+    {
+      "name": "Industrial Equipment News, AI Is Not Replacing Factory Workers (MaintainX executive, Feb 2026)",
+      "url": "https://www.ien.com/artificial-intelligence/blog/22961124/ai-is-not-replacing-factory-workers-its-elevating-them",
+      "what": "Vendor op-ed: the technician's new task is signal-to-action judgment: interpret the alert, validate the diagnosis, decide the fix."
+    },
+    {
+      "name": "BLS Occupational Outlook Handbook, Industrial Machinery Mechanics, Machinery Maintenance Workers, and Millwrights (Aug 2026)",
+      "url": "https://www.bls.gov/ooh/installation-maintenance-and-repair/industrial-machinery-mechanics-and-maintenance-workers-and-millwrights.htm",
+      "what": "547,300 jobs in 2025, projected to grow 14% to 2035, about 51,900 openings a year."
+    },
+    {
+      "name": "US Census Bureau, CES-WP-26-25, The Microstructure of AI Diffusion (Apr 2026)",
+      "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
+      "what": "66% of AI-using firms use it only to augment tasks; AI-related employment fell at 2% of firms."
+    },
+    {
+      "name": "Reliabilityweb (Moore, Plucknette), RCM failure modes and patterns (Feb 2022)",
+      "url": "https://reliabilityweb.com/en/articles/rcm-failure-modes-patterns",
+      "what": "Most failure modes are not age-related; time-based tasks suit only those that are."
+    },
+    {
+      "name": "Reliamag, Six failure patterns (Nowlan and Heap) (Sept 2026)",
+      "url": "https://reliamag.com/topics/guides/six-failure-patterns-nowlan-heap",
+      "what": "The 89% random-failure figure comes from United Airlines aircraft items, not a plant average."
+    },
+    {
+      "name": "TÜV SÜD, NFPA 70B 2023 and infrared testing",
+      "url": "https://www.tuvsud.com/en-us/knowledge-hub/articles/nfpa-70b-2023-new-standard-for-electrical-equipment-and-infrared-testing",
+      "what": "Infrared scans every 12 months for equipment in Condition 1-2 and every 6 months in poor condition (Condition 3)."
+    },
+    {
+      "name": "NFPA, NFPA 70B: Standard for Electrical Equipment Maintenance",
+      "url": "https://www.nfpa.org/product/nfpa-70b-standard-for-electrical-equipment-maintenance/p0070bcode/nfpa-70b-standard-for-electrical-equipment-maintenance-2023/70b23",
+      "what": "Became a standard, not a recommended practice, from the 2023 edition."
+    },
+    {
+      "name": "PredMAIn survey, Interreg AT-CZ (Dec 2022)",
+      "url": "https://2014-2020.at-cz.eu/data/projects/f/91/768.pdf",
+      "what": "Survey of 24 SMEs: barriers to predictive maintenance are know-how, data and no business case."
+    },
+    {
+      "name": "Reliamag, Predictive maintenance ROI benchmarks (Jun 2026)",
+      "url": "https://reliamag.com/topics/guides/predictive-maintenance-roi-benchmarks-what-the-studies-show",
+      "what": "Rates DOE's 8-12% figure high-confidence; its 10x ROI list is weakly sourced."
+    },
+    {
+      "name": "Deloitte Insights, Industry 4.0 and predictive technologies for asset maintenance (May 2017)",
+      "url": "https://www.deloitte.com/us/en/insights/industry/manufacturing-industrial-products/industry-4-0/using-predictive-technologies-for-asset-maintenance.html",
+      "what": "Get preventive basics in place first, then pilot on assets that matter; chemical extruder case: 80% less unplanned downtime, about $300,000 saved per asset."
+    },
+    {
+      "name": "Augury",
+      "url": "https://www.augury.com/",
+      "what": "Read 26 Nov 2026: no published price; cites a 310% ROI from a Forrester study it commissioned (vendor claim)."
+    },
+    {
+      "name": "NIST, Nestor",
+      "url": "https://www.nist.gov/services-resources/software/nestor",
+      "what": "Free NIST tool to tag free-text maintenance work orders."
+    },
+    {
+      "name": "r/IndustrialMaintenance, experience installing vibration monitoring (Jan 2026)",
+      "url": "https://www.reddit.com/r/IndustrialMaintenance/comments/1qc3ncm/",
+      "what": "Practitioner thread (anecdote): sensors could not tell a breakdown from a lunch break, sensors fell off; start from asset criticality."
+    },
+    {
+      "name": "Monnit, iMonnit software",
+      "url": "https://www.monnit.com/products/software/imonnit-sensor-management-software",
+      "what": "Read 26 Nov 2026: Basic free; Premiere $70 a year for 12 sensors."
+    },
+    {
+      "name": "NCD.io, Wireless Vibration Temperature Sensor V3 and Enterprise IIoT Gateway",
+      "url": "https://store.ncd.io/product/industrial-iot-wireless-vibration-temperature-sensor-v3",
+      "what": "Read 26 Nov 2026: sensor $388.75 each at 10+; Enterprise IIoT Gateway $681.95."
+    },
+    {
+      "name": "r/IndustrialMaintenance, vibration analysis for condition monitoring (Apr 2026)",
+      "url": "https://www.reddit.com/r/IndustrialMaintenance/comments/1sjtf1u/",
+      "what": "Practitioner thread (anecdote): programs fail on bad measurement, bad interpretation or no action after the alarm; skilled analysts are scarce."
+    },
+    {
+      "name": "MaintainX, pricing",
+      "url": "https://www.getmaintainx.com/pricing",
+      "what": "Read 26 Nov 2026: Asset Intelligence add-on (machine data, AI anomaly detection) is Contact Sales."
+    },
+    {
+      "name": "KCF Technologies, risk-free trial",
+      "url": "https://kcftech.com/risk-free-trial",
+      "what": "Read 26 Nov 2026: $199 for a 30-day trial of 48 sensors and a base station, hardware returnable."
+    },
+    {
+      "name": "Tractian, pricing",
+      "url": "https://tractian.com/en/pricing",
+      "what": "Read 26 Nov 2026: quote only, by asset tier."
+    },
+    {
+      "name": "Waites",
+      "url": "https://www.waites.net/",
+      "what": "Read 26 Nov 2026: no published price."
+    },
+    {
+      "name": "Siemens, Senseye Predictive Maintenance",
+      "url": "https://www.siemens.com/global/en/products/services/digital-enterprise-services/analytics-artificial-intelligence-services/predictive-services/senseye-predictive-maintenance.html",
+      "what": "Read 26 Nov 2026: \"Contact us for sales and pricing information\"."
+    },
+    {
+      "name": "Petasense, pricing",
+      "url": "https://petasense.com/products/pricing/",
+      "what": "Read live 26 Nov 2026: Vibration Mote Model 1 $499; Starter plan (200 channels, 1 site) $999 a month billed annually; Transmitter $959."
+    },
+    {
+      "name": "AWS, Maintain access and consider alternatives for Amazon Monitron",
+      "url": "https://aws.amazon.com/blogs/machine-learning/maintain-access-and-consider-alternatives-for-amazon-monitron",
+      "what": "Monitron closed to new customers on 31 Oct 2024."
+    },
+    {
+      "name": "RS, Banner DXM700-B1R1 controller",
+      "url": "https://us.rs-online.com/product/banner-engineering/dxm700-b1r1/71552967",
+      "what": "Read 26 Nov 2026: $917.63 (distributor price; Motion lists $1,238.72)."
+    },
+    {
+      "name": "Monnit, ALTA Advanced Vibration Meter",
+      "url": "https://www.monnit.com/products/sensors/accelerometers/advanced-vibration-meter/MNS2-9-IN-AC-AV2-L10",
+      "what": "Read 26 Nov 2026: $440 each."
+    },
+    {
+      "name": "Monnit, ALTA Ethernet Gateway",
+      "url": "https://www.monnit.com/products/gateways/ethernet-gateways/egw4/MNG2-9-EGW-CCE",
+      "what": "Read 26 Nov 2026: $242; up to 100 sensors."
+    },
+    {
+      "name": "RS, ifm VVB001 vibration sensor",
+      "url": "https://us.rs-online.com/product/ifm-efector/vvb001/75013380",
+      "what": "Read 26 Nov 2026: $515.10 each, $479.04 at 3+ (distributor price)."
+    },
+    {
+      "name": "Erbessd, Best vibration monitoring systems (Sept 2026)",
+      "url": "https://www.erbessd-instruments.com/en/articles/best-vibration-monitoring-systems",
+      "what": "Vendor article: says its software is included with its sensors."
+    },
+    {
+      "name": "KCF Technologies, home page FAQ",
+      "url": "https://kcftech.com/",
+      "what": "Read 26 Nov 2026: pricing is custom after the trial."
+    },
+    {
+      "name": "Fluke, 3563 Analysis Vibration Sensor",
+      "url": "https://www.fluke.com/en-us/product/condition-monitoring/vibration/3563",
+      "what": "Read 26 Nov 2026: listed as discontinued."
+    },
+    {
+      "name": "Softwr, Waites and Petasense listings",
+      "url": "https://www.softwr.com/software/waites-sensor-technologies",
+      "what": "Third-party listing: says Petasense is owned by AssetWatch and priced on request."
+    },
+    {
+      "name": "CISA, NSA, FBI and partners, Principles for the Secure Integration of AI in OT (Dec 2025)",
+      "url": "https://www.cisa.gov/news-events/news/new-joint-guide-advances-secure-integration-artificial-intelligence-operational-technology",
+      "what": "Joint guidance: keep people in the loop on AI that touches plant operations and protect the control network."
+    },
+    {
+      "name": "NIST SP 800-82 Rev. 3, Guide to Operational Technology Security",
+      "url": "https://csrc.nist.gov/pubs/sp/800/82/r3/final",
+      "what": "US reference for securing OT networks."
+    },
+    {
+      "name": "r/maintenance, how much of your CMMS data is actually accurate? (Jun 2026)",
+      "url": "https://www.reddit.com/r/maintenance/comments/1ug4757/",
+      "what": "Practitioner thread (anecdote): \"Management thinks we're 90% compliant. We're maybe 40%.\""
+    },
+    {
+      "name": "McKinsey, Prediction at scale (Jul 2021)",
+      "url": "https://www.mckinsey.com/capabilities/operations/our-insights/prediction-at-scale-how-industry-can-get-more-value-out-of-maintenance",
+      "what": "False alarms undermine operating teams' confidence in predictive tools."
+    },
+    {
+      "name": "Siemens, The True Cost of Downtime 2024 (vendor report)",
+      "url": "https://assets.new.siemens.com/siemens/assets/api/uuid:1b43afb5-2d07-47f7-9eb7-893fe7d0bc59/TCOD-2024_original.pdf",
+      "what": "Vendor report on downtime costs at the world's 500 largest companies."
+    },
+    {
+      "name": "Hodkiewicz and Ho, Cleaning historical maintenance work order data for reliability analysis, JQME (2016)",
+      "url": "https://www.emerald.com/jqme/article/22/2/146/252589/Cleaning-historical-maintenance-work-order-data",
+      "what": "Work-order records frequently contain missing or incorrect location, failure-mode and action fields."
+    },
+    {
+      "name": "AWS, Preserve access and explore alternatives for Amazon Lookout for Equipment",
+      "url": "https://aws.amazon.com/blogs/machine-learning/preserve-access-and-explore-alternatives-for-amazon-lookout-for-equipment",
+      "what": "Closed to new customers 7 Oct 2025; discontinued 7 Oct 2026."
+    },
+    {
+      "name": "Menlo Ventures, 2025: The State of Generative AI in the Enterprise (Dec 2025)",
+      "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+      "what": "76% of enterprise AI use cases are purchased rather than built internally. Re-read 26 Nov 2026."
+    },
+    {
+      "name": "Fortune on MIT NANDA, The GenAI Divide (Aug 2025)",
+      "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
+      "what": "Buying from specialised vendors and partnering succeed about 67% of the time; internal builds succeed one-third as often. Re-read 26 Nov 2026."
+    }
+  ],
+  "related": [
+    "manufacturing",
+    "ai-production-scheduling",
+    "ai-demand-forecasting",
+    "machine-learning-consulting"
+  ],
+  "offer": {
+    "heading": "Not sure which machines are worth monitoring? Get a free 30-minute diagnostic",
+    "body": "Bring your 10 most critical machines and last year's breakdowns. In 30 minutes you leave with which need sensors, which just need better PM, and a before-and-after measure for a 90-day pilot. No sales pitch."
+  },
+  "keyword": {
+    "phrase": "predictive maintenance software",
+    "searches": 480,
+    "cpc": 82.39,
+    "difficulty": 10
+  },
+  "reviews": [
+    {
+      "reader": "COO",
+      "notes": "Wanted durations and the order of moves, not just roles. Recipe 1 now picks the top 10 machines within a month and recipe 2 runs a 90-day alert log. teamAfter trimmed to four bullets (dropped the routes bullet, which repeated the technician role) so each one is a distinct change in the team's week."
+    },
+    {
+      "reader": "Head of operations",
+      "notes": "Stalled on maintenance jargon: CMMS, PM, RCM, vibration spectra, IO-Link, OT, Condition 3, false-positive rate, thresholds. Each is now spelled out in plain words where it first appears (CMMS as maintenance software, PM as preventive maintenance, Condition 3 as poor condition, threshold as a fixed vibration level that triggers an alert)."
+    },
+    {
+      "reader": "GM",
+      "notes": "Asked whether one site can pilot first, what it does to the unit's margin, and how much technician time it eats. The test now picks 5-10 machines at one site, logs technician hours per alert, and gives a net-value line: avoided downtime minus false-alarm visits, needless stops and a year of fees."
+    },
+    {
+      "reader": "Division head",
+      "notes": "The maintenance manager wanted to know if this lives inside the CMMS they already run, and distrusted kit prices that hide install work. Recipe 3 now names MaintainX's Asset Intelligence add-on (Contact Sales) as the in-CMMS route, and the recipe 2 cost says before installation. Liked that alarm levels, run-or-stop calls and electrical work stay with named roles; no vibration severity numbers added because none were sourced."
+    },
+    {
+      "reader": "Owner-CEO",
+      "notes": "Steve could see the question, the hardware price and the first step (clean the work orders) in 10 seconds, and liked that a free start with no sensors comes first. He wanted the next step to say what it is and how long: the offer heading now names the free 30-minute diagnostic. He'd distrust vendor ROI claims, so the Augury 310% stays labelled as vendor-commissioned, and the published-results table says plainly that none comes from a firm his size."
+    }
+  ],
+  "updated": "2026-11-26"
+}
