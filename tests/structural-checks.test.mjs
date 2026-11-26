@@ -281,3 +281,7 @@ test('the brief sends research to the fetch tool where the proxy blocks curl, an
   assert.match(src, /check-source-figures\.mjs/);
   assert.match(src, /indented lines under the finding/);
 });
+
+test('naming the FIL-58-2026 proposal is enough for the 2023 third-party guidance', () => {
+  assert.equal(staleProblems({ summary: 'FIL-29-2023 governs vendor models until FIL-58-2026 is final.' }).length, 0);
+});

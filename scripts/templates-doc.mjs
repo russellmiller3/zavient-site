@@ -38,7 +38,7 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: \
 - No forum threads, rival consulting firms or content farms as sources; the page check fails them.
 - Every fix is structural: it goes into the template or a failing page check, so it can't come back on any page.
 - Every lead text says the thing: no meta pointers, no restated heading, no semicolon joining two answers (src/lib/lead-rules.mjs).
-- Superseded rules (SR 11-7, FIL-27-2021, withdrawn CFPB circulars, the OCC's 1998 Loan Portfolio Management booklet) always name their replacement or say withdrawn; the 2023 third-party guidance says a replacement is proposed (src/lib/stale-rules.mjs).
+- Superseded rules (SR 11-7, FIL-27-2021, withdrawn CFPB circulars, the OCC's 1998 Loan Portfolio Management booklet) always name their replacement or say withdrawn; the 2023 third-party guidance says a replacement (FIL-58-2026) is proposed (src/lib/stale-rules.mjs).
 - Every footnoted %, multiple and price appears in its source's note; survey figures name their group; one figure per claim per study; price sources carry a read date within 120 days of the update. New pages must be clean; older pages may not get worse than src/lib/claim-baseline.mjs, and \`node scripts/claim-baseline.mjs --write\` lowers it as they're fixed (src/lib/source-numbers.mjs).
 - No cached or archived copies and no stat aggregators as sources (src/lib/source-rules.mjs).
 - No rival consulting firm offered or priced, and no consultant fee ranges (src/lib/rival-firms.mjs).

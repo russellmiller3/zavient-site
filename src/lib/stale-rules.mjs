@@ -31,10 +31,11 @@ export const STALE = [
     // Still in force, but a replacement is proposed: a page citing it says so, so the reader isn't surprised.
     name: 'the 2023 interagency third-party risk guidance (FIL-29-2023)',
     re: /\bFIL-29-2023\b|\bOCC Bulletin 2023-17\b|\bSR ?23-4\b|\binteragency guidance on third-party relationships\b/i,
-    ok: /\bpropos|\b2026-18859\b|\breplac|\bcomment/i,
-    why: 'proposed for replacement on 11 Sep 2026 (Federal Register 2026-18859; comments due 16 Dec 2026)',
+    ok: /\bpropos|\b2026-18859\b|\bFIL-58-2026\b|\breplac|\bcomment/i,
+    why: 'proposed for replacement on 11 Sep 2026 (FDIC FIL-58-2026, Federal Register 2026-18859; comments due 16 Dec 2026)',
     fix: 'say a replacement was proposed in Sep 2026',
-    source: 'https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261113a.htm',
+    // FIL-58-2026 confirmed on the FDIC's own page, read 26 Nov 2026.
+    source: 'https://www.fdic.gov/news/financial-institution-letters/2026/proposed-interagency-third-party-risk-management-guidance',
   },
   {
     // SR 14-4's loan sampling scope was widened in 2021 to banks of $10B to $100B; the old $10B-$50B range is stale.
