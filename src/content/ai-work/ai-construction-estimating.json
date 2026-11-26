@@ -12,7 +12,7 @@
     "Your estimator checks every line and signs the bid. After award, bid mistakes are usually your loss, AI or not.[^8][^10]",
     "Chatbots read specs well but miscount doors and windows.[^3][^4] Use them for scope and RFIs (requests for information), not quantities.",
     "Vendors claim 94-99% accuracy but show no method.[^19][^25] Time tools on 5-10 of your past bids, checking included.",
-    "Start with one trade scope. One AI takeoff seat lists at about $830 to $3,600 a year.[^27][^17]"
+    "Start with one trade scope. One AI takeoff seat lists at $828 to $3,588 a year, by our math.[^27][^17]"
   ],
   "onPage": [
     {
@@ -213,7 +213,7 @@
         "Chief estimator: buy one seat only if it beats manual time, checking included",
         "Estimator: check every count and re-measure flagged items"
       ],
-      "cost": "About $830 to $3,600 per seat a year at list price.[^27][^21][^17][^20] The top end is about 4.5% of a specialty-trade estimator's median pay of $80,330.[^5]"
+      "cost": "By our math, one seat lists at $828 to $3,588 a year.[^27][^21][^17][^20] By our math, the top end is about 4.5% of a specialty-trade estimator's median pay of $80,330.[^5]"
     },
     {
       "name": "2. Mid-size general contractor, 4-10 estimators, mixed commercial work",
@@ -226,7 +226,7 @@
         "Estimator: run a drawing check for missing sheets and tags, e.g. Bluebeam Max[^23]",
         "Chief estimator: sign the bid; project manager reports actuals against the bid each quarter"
       ],
-      "cost": "Kreo Business for 5 users lists at $15,000 a year; Togal quotes 4+ users.[^18][^17] Add Bluebeam Max at $590 per user a year, and plan a 1-3 month pilot.[^23][^18]"
+      "cost": "Kreo Business for 5 users lists at $15,000 a year, and Togal quotes 4+ users.[^18][^17] Add Bluebeam Max at $590 per user a year, and plan a 1-3 month pilot.[^23][^18]"
     },
     {
       "name": "3. Overloaded team or bid surge: done for you",
@@ -252,19 +252,19 @@
     "rows": [
       [
         "Togal.AI",
-        "$3,588 ($299/mo, billed yearly)[^17]",
+        "$3,588 by our math ($299/mo, billed yearly)[^17]",
         "No; demo only[^17]",
         "No: has claimed 97% to 98%[^45][^46]"
       ],
       [
         "Kreo Pro",
-        "$2,100 ($175/mo); the $100 tier has no AI[^18]",
+        "$2,100 ($175/mo, billed yearly); the $100 tier has no AI[^18]",
         "7-day trial[^18]",
         "No: \"within 94%\", no plan set[^19]"
       ],
       [
         "STACK",
-        "$3,588 ($299/mo)[^20]",
+        "$3,588 by our math ($299/mo)[^20]",
         "Free version; AI on Premium and Pro plans[^20][^48]",
         "No claim found"
       ],
@@ -282,7 +282,7 @@
       ],
       [
         "Civils.ai Starter",
-        "$1,080 ($90/mo, 10 takeoffs)[^24]",
+        "$1,080 by our math ($90/mo, 10 takeoffs)[^24]",
         "No",
         "No: \"97%+\"; a QA team checks output[^24]"
       ],
@@ -306,8 +306,8 @@
       ],
       [
         "Handoff Scale",
-        "$8,628 ($719/mo, billed yearly)[^28]",
-        "Trial on Flex plan only[^28]",
+        "$8,628 by our math ($719/mo, billed yearly)[^28]",
+        "No; Flex plan has a 7-day trial[^28]",
         "No claim found"
       ]
     ],
@@ -375,7 +375,7 @@
     },
     {
       "q": "Can I just use ChatGPT or Claude for takeoff?",
-      "a": "No for counts, yes for specs and scope. General models read drawing text about 95% right but counted doors and windows exactly on under half of plans.[^3][^4] Prices still come from your own cost history, a core estimator task.[^6]"
+      "a": "No for counts, yes for specs and scope. General models read drawing text up to 95% right but counted doors and windows exactly on under half of plans.[^3][^4] Prices still come from your own cost history, a core estimator task.[^6]"
     },
     {
       "q": "What is the best AI for construction estimating?",
@@ -383,7 +383,7 @@
     },
     {
       "q": "Is there free AI for construction estimating?",
-      "a": "Yes, as free versions and trials; paid AI takeoff seats list at about $830 to $3,600 a year.[^27][^17] STACK has a free version and Buildxact's Go plan gives 5 free credits.[^20][^26] PlanSwift and On-Screen Takeoff offer 14-day trials, and Kreo 7 days.[^21][^22][^18]"
+      "a": "Yes, as free versions and trials; by our math, paid AI takeoff seats list at $828 to $3,588 a year.[^27][^17] STACK has a free version and Buildxact's Go plan gives 5 free credits.[^20][^26] PlanSwift and On-Screen Takeoff offer 14-day trials, and Kreo 7 days.[^21][^22][^18]"
     },
     {
       "q": "Can I upload project drawings to an AI tool?",
@@ -435,7 +435,7 @@
     },
     {
       "num": "19%",
-      "label": "of US contractors have changed their workflows to fit AI[^44]",
+      "label": "of US contractors have changed their workflows to fit AI[^44][^50]",
       "source": "Dodge and CMiC (vendor-sponsored), n=235, Dec 2025"
     },
     {
@@ -473,7 +473,7 @@
     {
       "name": "AECV-Bench, arXiv 2601.04819 (Jan 2026)",
       "url": "https://arxiv.org/abs/2601.04819",
-      "what": "General multimodal AI models on 120 floor plans: text reading about 0.95; door and window counting often 0.40 to 0.55."
+      "what": "General multimodal AI models on 120 floor plans: OCR and text-centric document questions reach up to 0.95 accuracy (95%); symbol counting such as doors and windows often 0.40 to 0.55."
     },
     {
       "name": "AECV-Bench leaderboard (updated 11 Jun 2026)",
@@ -538,17 +538,17 @@
     {
       "name": "ENR, Bid-Hit Ratios Provide Valuable Road Map (2010)",
       "url": "https://www.enr.com/articles/23952-bid-hit-ratios-provide-valuable-road-map",
-      "what": "Only 6% of about 2,000 surveyed contractors knew and tracked their bid-hit ratio."
+      "what": "Survey of 2,000 general contractors, subcontractors and design-build companies (surveyor not named): only 6% knew and tracked their bid-hit ratio."
     },
     {
       "name": "Togal.AI pricing",
       "url": "https://www.togal.ai/pricing",
-      "what": "Read 26 Nov 2026: $299 per user a month billed yearly; custom Business plan for 4+ users."
+      "what": "Read 26 Nov 2026: Growth $299 per user a month billed yearly; custom Business plan for 4+ users."
     },
     {
       "name": "Kreo pricing",
       "url": "https://www.kreo.net/pricing",
-      "what": "Read 26 Nov 2026: $100 Essential (no AI), $175 Pro, $250 Business per user a month billed yearly; 7-day trial; 1-3 month pilots credited."
+      "what": "Read 26 Nov 2026: $100 Essential (no AI), $175 Pro, $250 Business per user a month billed yearly; Pro billed at $2,100 a year for 1 user; Business for 5 to 20 users, billed at $15,000 a year for 5; 7-day trial; 1-3 month pilots credited."
     },
     {
       "name": "Kreo homepage, Auto Measure 3.0",
@@ -558,7 +558,7 @@
     {
       "name": "STACK pricing",
       "url": "https://www.stackct.com/pricing/",
-      "what": "Read 26 Nov 2026: Takeoff and Estimate $299 per user a month; a free version exists."
+      "what": "Read 26 Nov 2026: Takeoff and Estimate from $299 per user a month; a free version exists."
     },
     {
       "name": "PlanSwift pricing",
@@ -578,7 +578,7 @@
     {
       "name": "Civils.ai pricing",
       "url": "https://civils.ai/pricing",
-      "what": "Read 26 Nov 2026: $90 a month for 10 takeoffs, $270 for 30; month-to-month; claims \"97%+ accuracy on takeoffs\", reviewed by humans; QA-reviewed output."
+      "what": "Read 26 Nov 2026: Starter $90 a month for 10 takeoffs, Professional $270 for 30; billed monthly, cancel anytime; claims \"97%+ accuracy on takeoffs\", reviewed by humans; QA-reviewed output."
     },
     {
       "name": "Beam AI pricing",
@@ -598,7 +598,7 @@
     {
       "name": "Handoff pricing",
       "url": "https://www.handoff.ai/pricing",
-      "what": "Read 26 Nov 2026: AI takeoffs on Scale at $719 a month billed yearly, plans up to 7,000 sq ft; trial on Flex only."
+      "what": "Read 26 Nov 2026: AI takeoffs on Scale at $719 a month billed annually, 12-month commitment, plans up to 7,000 sq ft; only Flex is labelled a 7-day free trial."
     },
     {
       "name": "Togal.AI, Coastal Construction case study",
@@ -678,7 +678,7 @@
     {
       "name": "Dodge Construction Network with CMiC, AI for Contractors (Dec 2025)",
       "url": "https://www.construction.com/resource/ai-for-contractors",
-      "what": "Vendor-sponsored survey, n=235: 19% of contractors have adapted workflows for AI."
+      "what": "Vendor-sponsored survey of 235 US general and trade contractors (162 general, 73 specialty trade), Sep-Oct 2025: only 19% have adapted workflows for AI."
     },
     {
       "name": "Construction Dive, Togal.AI raises $5M (29 Mar 2023)",
@@ -704,6 +704,11 @@
       "name": "AIA Document A201-2017, General Conditions, section 1.5.2 (copy in City of Rochester, NH bid documents)",
       "url": "https://www.rochesternh.gov/sites/g/files/vyhlif9211/f/bids/att_3_a201_2017_sample.pdf",
       "what": "Contractors, subcontractors and suppliers may use the Instruments of Service solely for execution of the Work; other projects need written consent of the owner, architect and consultants."
+    },
+    {
+      "name": "Construction Dive, AI nears 'tipping point' in construction as contractors pilot tech (10 Dec 2025)",
+      "url": "https://www.constructiondive.com/news/builders-ai-transform-businesses-survey/807555/",
+      "what": "Trade press on the Dodge and CMiC report: survey of 235 general and trade contractors across the US, Sep-Oct 2025; 51% evaluating AI changes, 40% allocating an AI budget."
     }
   ],
   "related": [
@@ -752,7 +757,7 @@
     "table-1": "Togal, Kreo and STACK fit estimators doing their own takeoff. PlanSwift fits desktop work; Civils.ai and Beam AI fit teams wanting a human-checked takeoff done for them[^17][^18][^20][^21][^24][^25]. Trimble fits MEP trades, and Bluebeam fits PDF markup and drawing checks[^2][^23].",
     "table-2": "Independent tests show AI counts hold up while areas drift low, and general chatbots read drawing text well but miscount doors and windows[^1][^3][^4]. Only one field study exists, and it covers one job and one tool[^1].",
     "recipes": "Specialty contractors with 1-3 estimators start with one seat on one trade scope. Mid-size general contractors pilot two tools; overloaded teams buy a done-for-you takeoff[^27][^17][^18][^25].",
-    "own-data": "Most self-serve AI takeoff seats list at about $830 to $3,600 a year[^27][^17]. None of the 11 vendors we checked publishes the method behind its accuracy figure[^19][^25].",
+    "own-data": "By our math, most self-serve AI takeoff seats list at $828 to $3,588 a year[^27][^17]. None of the 11 vendors we checked publishes the method behind its accuracy figure[^19][^25].",
     "rules": "AIA A201 section 1.5.2 limits contractors to using the drawings only for this project, and GSA's PBS 3490.3 treats sensitive federal building drawings as restricted CUI[^49][^36]. FAR 14.407-4 makes federal bid mistakes hard to fix after award[^8].",
     "benchmark": "Run each tool on 5-10 past bids whose quantities your estimator already set, time the whole job with checking included, and compare line by line[^40][^1]. Rank misses by what they would cost, not by how many there are[^40].",
     "what-goes-wrong": "AI takeoff goes wrong on areas of complex shapes like façades, on chatbot symbol counts, and on scope the drawings never show[^1][^3][^40]. Unchecked vendor accuracy claims and leaked drawings are the other two risks[^19][^36].",

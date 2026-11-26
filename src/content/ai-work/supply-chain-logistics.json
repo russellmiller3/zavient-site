@@ -80,7 +80,7 @@
     },
     {
       "name": "Procurement: spend analysis, contract review, supplier screening",
-      "why": "Hackett finds 43% of procurement teams pursuing AI but only 12% at scale, in a mostly large-firm sample.[^32] Most (69%) use AI already built into their procurement software.[^32]",
+      "why": "Hackett finds 43% of procurement teams pursuing AI but only 12% at large scale.[^32] Most (69%) use AI already built into their procurement software.[^32]",
       "payoff": "Spend under contract, days per sourcing event and contract review hours."
     },
     {
@@ -90,7 +90,7 @@
     },
     {
       "name": "Warehouse slotting and labor planning",
-      "why": "APQC finds 40% of firms have no plan for AI in warehouse automation.[^34] It needs a WMS (warehouse management system) and clean data first, and quota laws apply.[^4][^15]",
+      "why": "APQC finds 40% of participants say their organization has no plan for AI in warehouse automation.[^34] It needs a WMS (warehouse management system) and clean data first, and quota laws apply.[^4][^15]",
       "payoff": "Travel per pick, picks per labor hour and injury rate."
     }
   ],
@@ -210,7 +210,7 @@
     },
     {
       "title": "What do the studies and surveys say?",
-      "intro": "Sample sizes shown so you can weigh each one. Most samples skew to large firms.[^32][^4]",
+      "intro": "Sample sizes shown so you can weigh each one.[^1][^2][^3][^4]",
       "headers": [
         "Study",
         "Sample",
@@ -221,14 +221,14 @@
           "name": "MHI and Deloitte, 2025",
           "cells": [
             "700+, mostly executives[^3]",
-            "28% use AI; 82% expect to within 5 years[^3]"
+            "28% of these supply chain leaders use AI; 82% expect to within 5 years[^3]"
           ]
         },
         {
           "name": "PwC, 2025",
           "cells": [
             "610 US leaders[^2]",
-            "57% have integrated AI; 92% say tech spend hasn't fully delivered[^2]"
+            "57% of these US leaders have integrated AI; 92% say tech spend hasn't fully delivered[^2]"
           ]
         },
         {
@@ -335,7 +335,7 @@
     },
     {
       "q": "Is AI for supply chain only for large companies?",
-      "a": "No, but upfront cost weighs more on small firms: 44% cite it, against 25% of large firms.[^1] MIT and Mecalux find a typical payback of 2-3 years.[^4]"
+      "a": "No, but upfront cost weighs more on small firms: 44% of logistics experts there cite it, against 25% at large firms.[^1] MIT and Mecalux find a typical payback of 2-3 years.[^4]"
     },
     {
       "q": "How is AI changing logistics and supply chain jobs?",
@@ -347,7 +347,7 @@
     }
   ],
   "buyVsBuild": {
-    "buy": "Buy for forecasting, routing, visibility and freight audit, where tools are mature. About 76% of AI uses are now bought, up from 53% in 2024.[^33] Bought or partnered tools succeed about twice as often as internal builds.[^7]",
+    "buy": "Buy for forecasting, routing, visibility and freight audit, where tools are mature. About 76% of AI use cases at US enterprises are now bought, up from 53% in 2024.[^33] Bought or partnered tools succeed about twice as often as internal builds.[^7]",
     "build": "Build only the glue: email-to-ERP order intake, data clean-up and approval steps. Hackett's leaders first check where AI pays, then pick built-in features, AI-native tools or custom builds.[^32] Turn on what your ERP or WMS already has before you buy more."
   },
   "pickElse": [
@@ -429,22 +429,22 @@
     {
       "name": "BCG and Alpega, AI is already moving the logistics industry forward",
       "url": "https://www.bcg.com/publications/2026/ai-is-already-moving-the-logistics-industry-forward",
-      "what": "Survey of 180+ logistics providers and shippers (98 shipper leaders), Jan 2026: 13% of providers and 7% of shippers report measurable AI value; transport planning leads provider use at 64%. Published 24 Mar 2026."
+      "what": "Survey of 84 logistics provider experts and 98 shipper leaders (more than 180 in all) across Europe, North America, Asia and the Middle East, Jan 2026: 13% of providers and 7% of shippers report measurable AI value; transport planning leads provider use at 64%; high upfront cost is a hurdle for 44% of respondents at small firms and 25% at large firms. Published 24 Mar 2026."
     },
     {
       "name": "PwC, 2025 Digital Trends in Operations survey",
-      "url": "https://www.pwc.co.uk/ghost/us-digital-supply-chain-survey.html",
-      "what": "Survey of 610 US operations and supply chain leaders: 57% have integrated AI partly or fully; 92% say tech investments haven't fully delivered; top challenges are integration (42%) and data (37%)."
+      "url": "https://www.pwc.com/us/en/services/consulting/supply-chain-operations/digital-supply-chain-survey.html",
+      "what": "Survey of 610 US operations and supply chain leaders, Feb-Mar 2025: 57% have integrated AI into selected functions or throughout; 92% cite at least one reason tech investments haven't fully delivered; top AI-scaling challenges are integration (42%) and data (37%)."
     },
     {
       "name": "MHI and Deloitte, 2025 MHI Annual Industry Report (via Business Wire)",
       "url": "https://www.businesswire.com/news/home/20250319048739/en/",
-      "what": "Survey of 700+ supply chain leaders, 83% executives: AI in use at 28%; 82% expect to use it within 5 years. 19 Mar 2025."
+      "what": "Survey of 700 manufacturing and supply chain industry leaders (the release says over 700), 83% at executive level, end of 2024: AI in use at 28%; 82% expect to use it by 2029, within 5 years. 19 Mar 2025."
     },
     {
       "name": "MIT Intelligent Logistics Systems Lab and Mecalux, 2025 report",
       "url": "https://www.mecalux.com/documents/d/global/2025-mit_report_un",
-      "what": "Survey of 2,000+ firms of 100+ staff in 21 countries (542 US): about 6 in 10 have implemented AI; typical payback 2-3 years; top barriers are skills (48.6%), integration (47.7%) and data quality (46.2%)."
+      "what": "Survey of 2,000 supply chain and warehousing professionals (the report says 2,000+) at companies of 100+ employees in 21 countries (542 US): about 6 in 10 have implemented some AI; typical payback 2-3 years; top barriers are technical expertise (48.6%), integration (47.7%) and data quality (46.2%)."
     },
     {
       "name": "APQC Open Standards Benchmarking, total cost to order materials and services",
@@ -459,7 +459,7 @@
     {
       "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025",
       "url": "https://nanda.media.mit.edu/ai_report_2025.pdf",
-      "what": "Jul 2025; 52 interviews, 153 survey responses, 300 initiatives reviewed. Bought or partnered tools succeed about 67% of the time vs about 33% for internal builds; the biggest return is in back-office automation."
+      "what": "Jul 2025: survey of 153 senior leaders at four industry conferences, plus 52 interviews and a review of over 300 public AI initiatives. Bought or partnered tools reach deployment about 67% of the time vs about 33% for internal builds; the biggest return is in back-office automation."
     },
     {
       "name": "Makridakis et al., The M5 accuracy competition, International Journal of Forecasting",
@@ -584,7 +584,7 @@
     {
       "name": "The Hackett Group, 2026 Procurement Key Issues Study",
       "url": "https://www.thehackettgroup.com/the-hackett-group-reports-rapid-progress-in-procurements-ai-agenda",
-      "what": "Press release 17 Mar 2026: 43% pursuing AI, 12% at large scale, 69% using AI built into existing platforms. 63% of respondents have revenue over $5B."
+      "what": "Press release 17 Mar 2026 on its 2026 Procurement Key Issues Study of procurement leaders (no sample size given): 43% of organizations actively pursue AI deployment, 12% report large-scale implementation, 69% access AI embedded in existing procurement platforms."
     },
     {
       "name": "Menlo Ventures, 2025 State of Generative AI in the Enterprise",
@@ -594,7 +594,7 @@
     {
       "name": "APQC and ASCM, Supply Chain Priorities 2025",
       "url": "https://apics.hclspdev.com/assets/ascm-common/files/cpim2/pdf/trend04-supply-chain-priorities-2025.pdf",
-      "what": "Survey of 379: firms rely on AI most for demand forecasting; 84% use or plan gen AI; 40% have no plan for AI in warehouse automation."
+      "what": "Survey of 379 valid participants, early 2025: organizations rely on AI most for demand forecasting; 84% use or plan to use generative AI; 40% say their organization has no adoption plan for AI in warehouse automation."
     },
     {
       "name": "BLS Occupational Outlook Handbook, Logisticians",
@@ -614,17 +614,17 @@
     {
       "name": "C.H. Robinson, how it ensures ROI from agentic AI",
       "url": "https://www.chrobinson.com/en-us/resources/blog/how-chrobinson-ensures-roi-from-agentic-ai",
-      "what": "Vendor claim: quotes in 32 seconds and orders in 90 seconds. No price published."
+      "what": "Vendor claim: an AI agent answers emailed quote requests in 32 seconds. No price published. Read 26 Nov 2026."
     },
     {
       "name": "project44, AI agent orchestration",
       "url": "https://www.project44.com/ai-agent-orchestration/",
-      "what": "Vendor claim: up to 4% lower freight spend and 70% less manual coordination. No price published."
+      "what": "Vendor claim: up to 4% lower freight spend and 70% less manual coordination. No price published. Read 26 Nov 2026."
     },
     {
       "name": "Parade",
       "url": "https://www.parade.ai/",
-      "what": "Vendor claim: 4x the bandwidth for carrier sales reps. No price published."
+      "what": "Vendor claim: 4x carrier rep bandwidth. No price published. Read 26 Nov 2026."
     },
     {
       "name": "INFORMS, UPS ORION wins the 2016 Franz Edelman Award",
@@ -659,7 +659,7 @@
     {
       "name": "StockIQ Technologies, pricing (vendor page, read 26 Nov 2026)",
       "url": "https://stockiqtech.com/pricing/",
-      "what": "Quote only; priced by ERP integration, SKU and location scale and capabilities; unlimited users."
+      "what": "Quote only; priced by ERP integration, SKU and location scale and capabilities; unlimited users. Read 26 Nov 2026."
     }
   ],
   "reviews": [

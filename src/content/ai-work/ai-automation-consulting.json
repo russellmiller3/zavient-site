@@ -10,7 +10,7 @@
  "verdict": [
   "Pay for a redesigned workflow, not a tool. Firms that rebuilt the work beat AI goals about twice as often.[^1][^2]",
   "Get a working pilot and a before-and-after number, not slides. Most custom AI pilots never reach daily use.[^3][^4]",
-  "Tools cost about $10 to $130 a month per typical workflow.[^5][^6] The real work is mapping steps, exceptions and review.",
+  "Tools cost $9 to $129 a month per workflow, by our math.[^5][^25] The real work is mapping steps and exceptions.",
   "Keep a named person on anything moving money or reaching customers.[^8] Your firm stays liable for what its AI says.[^7]",
   "Judge any advisor on your own past cases, answers locked in advance.[^8] Ask what they would not automate.[^13]"
  ],
@@ -20,12 +20,12 @@
  "walkAway": [
   "A ranked list of your workflows, with the first one picked. Finding tools that fit is the top AI challenge firms report (54%).[^13][^14]",
   "A before-and-after number for that workflow: volume, minutes per item, errors and cost per item. Only a third of firms report measurable results from even one AI use case.[^1][^15]",
-  "A pilot running in daily work, not a demo. In one MIT study, only 5% of task-specific AI tools reached production.[^3]",
+  "A pilot running in daily work, not a demo. In MIT's study of 52 organizations and 153 senior leaders, only 5% of custom enterprise AI tools reached production.[^3]",
   "A plan your team can run, with named owners and training. Most small-business owners (73%) say more training would help them use AI.[^16][^15]",
   "Everything you paid for, handed over: logins, workflow exports, documents and test cases. Your team should be able to run it without the advisor."
  ],
  "humanRole": [
-  "The ops lead owns the workflow and its number, and decides which outputs a person checks. Firms split: 27% review every AI output, a similar share check 20% or less.[^2][^10]",
+  "The ops lead owns the workflow and its number, and decides which outputs a person checks.[^10] In McKinsey's survey, 27% of respondents say staff review every generative AI output, and a similar share say 20% or less gets checked.[^2]",
   "A named reviewer approves anything that moves money or reaches customers, such as refunds, payments or cancellations, until the system earns trust.[^8][^9]",
   "People can override or stop the system, and every override is logged. NIST (the US standards agency) asks for documented oversight; EU rules require a stop button for high-risk AI.[^9][^10][^17]",
   "Your firm stays liable for what its AI tells customers. A Canadian tribunal held Air Canada to its chatbot's wrong refund advice.[^7][^18]"
@@ -54,7 +54,7 @@
     "Controller: sign off anything that touches money",
     "Ops lead: go live in one team, then scale"
    ],
-   "cost": "Microsoft 365 Copilot Business is $21 per user a month; Copilot Studio is $200 a month per 25,000 credits.[^21][^22] A Power Automate bot that runs with no one logged in is $150 a month.[^19]"
+   "cost": "Microsoft 365 Copilot Business is $21 per user a month, or $18 for eligible customers until 31 Dec 2026.[^21] Copilot Studio is $200 a month per 25,000 credits, and a Power Automate bot running with no one logged in is $150 a month.[^22][^19]"
   },
   {
    "name": "3. Document-heavy back office (claims, payables, orders from email or PDF)",
@@ -72,7 +72,7 @@
  ],
  "ownData": {
   "title": "What does the software cost to run one workflow?",
-  "intro": "Software to run one typical workflow costs about $10 to $130 a month on the four general workflow tools.[^5][^6][^25][^20] We priced a trigger plus four steps, run 2,000 times a month, from six tools' own pricing pages on 26 Nov 2026.[^5][^6][^19]",
+  "intro": "Software for one typical workflow costs about $9 to $129 a month on Make, n8n or Zapier, by our math.[^25][^6][^5] Power Automate adds nothing if Microsoft 365 covers it.[^20] We priced a trigger plus four steps, run 2,000 times a month, from six tools' own pricing pages on 26 Nov 2026.[^5][^6][^19]",
   "headers": [
    "Tool",
    "List price",
@@ -86,7 +86,7 @@
    ],
    [
     "n8n Cloud",
-    "Starter: €20 a month for 2,500 runs; Pro: €50 for 10,000[^6]",
+    "Starter: €20 a month for 2,500 runs; Pro: €50 for 10,000, billed yearly[^6]",
     "€20 a month: a run counts once, however many steps it has[^6]"
    ],
    [
@@ -97,7 +97,7 @@
    [
     "Power Automate",
     "Premium: $15 per user a month; a bot that runs on its own $150 a month[^19]",
-    "$0 to $15 a month: Microsoft 365 includes standard connectors, but Microsoft advises Premium for company-wide use[^20][^19]"
+    "Nothing extra on Microsoft 365, or $15 a month for Premium, which Microsoft advises for company-wide use[^20][^19]"
    ],
    [
     "Copilot Studio",
@@ -110,11 +110,11 @@
     "From $25 a month; bigger plans by quote[^24]"
    ]
   ],
-  "note": "Method: US list prices billed yearly unless noted, before tax, read 26 Nov 2026, some via caches dated 20 to 24 Nov; n8n in euros. Make's page hid prices from our tool, so its row uses Make's own comparison page; check the live page before you buy. Discounts, overages and AI add-ons cost extra."
+  "note": "Method: US list prices billed yearly unless noted, before tax, read on each vendor's live page on 26 Nov 2026; n8n in euros. Make's pricing page hid prices from our tool, so its row uses Make's own comparison page; check the live page before you buy. Discounts, overages and AI add-ons cost extra."
  },
  "watchOuts": [
   "Pilots stall before daily use. Gartner expected at least 30% of generative AI projects to be dropped after a small trial; plan the move to daily use on day one.[^4][^3]",
-  "Data isn't ready or safe to share. Data quality (34%) and security (30%) top mid-market firms' barriers; test on 50 real records, with IT setting access first.[^15][^27]",
+  "Data isn't ready or safe to share. Data quality (34%) and security (30%) top the AI barriers middle market executives name; test on 50 real records, with IT setting access first.[^15][^27]",
   "Agents sold where rules would do. Gartner expects over 40% of agentic AI projects (software that plans and acts on its own) to be cancelled by 2027.[^23][^12]",
   "Measuring speed instead of quality. Klarna's CEO said cost weighed too heavily in judging its AI service and quality fell, so it hired people back.[^28][^29]",
   "Wrong answers you're liable for. Put a named reviewer on customer-facing and money-moving outputs at launch, and log every output.[^7][^18]",
@@ -142,7 +142,7 @@
   },
   {
    "q": "What will the software cost us to run?",
-   "a": "About $10 to $130 a month for one typical workflow on Zapier, Make, n8n or Power Automate, from our price check.[^5][^6][^19] The bigger spend is people's time to map, build and review it."
+   "a": "About $9 to $129 a month for one typical workflow on Make, n8n or Zapier, from our price check.[^5][^6][^25] Power Automate adds nothing if Microsoft 365 covers it.[^20] The bigger spend is people's time to map, build and review it."
   },
   {
    "q": "How is AI automation different from RPA?",
@@ -150,7 +150,7 @@
   },
   {
    "q": "What if our data isn't clean?",
-   "a": "Test your data on 50 real records before anything is built, because data quality is the top AI barrier for mid-market firms (34%).[^15] Gartner expects firms to drop 60% of AI projects that lack AI-ready data through 2026.[^27]"
+   "a": "Test your data on 50 real records before anything is built, because middle market executives name data quality as the top AI barrier (34%).[^15] Gartner expects firms to drop 60% of AI projects that lack AI-ready data through 2026.[^27]"
   },
   {
    "q": "Do we need an AI agent?",
@@ -158,7 +158,7 @@
   }
  ],
  "pickElse": [
-  "A simple job in standard apps, like a web form feeding your customer database: build it yourself on Zapier's free plan or free self-hosted n8n.[^5][^6]",
+  "A simple job in standard apps, like a web form feeding your customer database: build it on Zapier's free plan or self-hosted n8n.[^5][^6]",
   "Drafting and summarising for individuals: buy Microsoft 365 Copilot or ChatGPT Business seats and train people.[^21][^32] Writing and marketing are the most common small-firm AI uses (83%).[^13]",
   "A standard back-office job a product already does, like payables or reconciliation: buy the product and benchmark it on your own files.[^3]",
   "A process nobody has written down: map and fix it first, since redesigning the work drives the gain.[^1]"
@@ -193,7 +193,7 @@
   },
   {
    "num": "5%",
-   "label": "Share of task-specific generative AI tools that reached production in MIT's sample.[^3]",
+   "label": "Share of custom enterprise AI tools that reached production, in MIT's study of 52 organizations and 153 senior leaders.[^3]",
    "source": "MIT NANDA, Jul 2025"
   },
   {
@@ -202,18 +202,18 @@
    "source": "RSM survey of 966 executives, 2025"
   },
   {
-   "num": "$10 to $130",
-   "label": "Monthly software cost to run one typical workflow 2,000 times.[^5][^6][^25]",
+   "num": "$9 to $129",
+   "label": "Monthly software cost, by our math, to run one typical workflow 2,000 times on Make, n8n or Zapier.[^5][^6][^25]",
    "source": "Zavient price check, 26 Nov 2026"
   },
   {
    "num": "32%",
-   "label": "US firms with 100 to 249 staff that used AI in the past two weeks; 37% at 250 or more.[^33]",
+   "label": "US firms with 100 to 249 staff that used AI in the past two weeks; 37% at 250 or more.[^33][^34]",
    "source": "U.S. Census Bureau, May 2026"
   },
   {
    "num": "34%",
-   "label": "Mid-market firms that name data quality as their top AI barrier.[^15]",
+   "label": "Middle market executives who name data quality as their top AI barrier.[^15]",
    "source": "RSM survey of 1,030 executives, 2026"
   }
  ],
@@ -226,12 +226,12 @@
   {
    "name": "McKinsey, The state of AI, Mar 2025",
    "url": "https://www.mckinsey.com/~/media/mckinsey/business%20functions/quantumblack/our%20insights/the%20state%20of%20ai/2025/the-state-of-ai-how-organizations-are-rewiring-to-capture-value_final.pdf",
-   "what": "1,491 respondents. Of 25 attributes tested, redesigning workflows has the biggest effect on profit impact from generative AI; 27% review all AI output before use."
+   "what": "Survey of 1,491 respondents in 101 nations, Jul 2024. Of 25 attributes tested, redesigning workflows has the biggest effect on profit impact from generative AI. 27% of respondents whose organizations use generative AI say employees review all its content before use, and a similar share say 20% or less is checked."
   },
   {
    "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025, Jul 2025",
    "url": "https://21464181.fs1.hubspotusercontent-na1.net/hubfs/21464181/v0.1_State_of_AI_in_Business_2025_Report.pdf",
-   "what": "Interviews, a survey and 300 initiatives (preliminary, self-reported). 5% of task-specific generative AI tools reached production; partnered builds reached deployment about 67% of the time, internal builds about 33%."
+   "what": "Survey of 153 senior leaders, plus interviews with 52 organizations and a review of over 300 public AI initiatives, Jan to Jun 2025 (preliminary, self-reported). Only 5% of custom enterprise AI tools reach production. External partnerships reached deployment about 67% of the time, internal builds about 33%."
   },
   {
    "name": "Gartner press release, 29 Jul 2024",
@@ -241,12 +241,12 @@
   {
    "name": "Zapier pricing, read 26 Nov 2026",
    "url": "https://zapier.com/pricing",
-   "what": "Pro $19.99 a month for 750 tasks, $129 for 10,000 tasks, billed yearly; a task is each successful action step; free plan 100 tasks a month."
+   "what": "Pro $19.99 a month for 750 tasks, $129 for 10,000 tasks, billed yearly. A task is each successful action step, and triggers don't count. Free plan 100 tasks a month. Read 26 Nov 2026."
   },
   {
-   "name": "n8n pricing, read 26 Nov 2026 (cache dated 20 Nov 2026)",
+   "name": "n8n pricing, read 26 Nov 2026",
    "url": "https://n8n.io/pricing",
-   "what": "Cloud Starter EUR 20 a month for 2,500 workflow runs; Pro EUR 50 for 10,000; free self-hosted Community edition."
+   "what": "Cloud Starter €20 a month for 2,500 workflow executions, Pro €50 for 10,000, billed annually. A self-hosted Community Edition is available on GitHub. Read 26 Nov 2026."
   },
   {
    "name": "Moffatt v. Air Canada, 2024 BCCRT 149",
@@ -291,7 +291,7 @@
   {
    "name": "RSM, Middle Market AI Survey 2026",
    "url": "https://www.rsmus.com/insights/services/digital-transformation/rsm-middle-market-ai-survey",
-   "what": "1,030 executives. Data quality is the top barrier (34%); 67% set AI controls before pilots; 85% say leaders are keener than staff; many measure early wins, not outcomes."
+   "what": "Survey of 1,030 middle market executives (827 US, 203 Canadian). Top barriers to deploying AI: data quality 34%, security and privacy concerns 30%, legacy systems integration 28%. 85% say leadership is keener on AI than employees."
   },
   {
    "name": "Goldman Sachs 10,000 Small Businesses Voices, AI survey, 2026",
@@ -309,24 +309,24 @@
    "what": "Explains the Moffatt ruling: companies stay liable for what their AI chatbot tells customers."
   },
   {
-   "name": "Microsoft Power Automate pricing, read 26 Nov 2026 (cache dated 24 Nov 2026)",
+   "name": "Microsoft Power Automate pricing, read 26 Nov 2026",
    "url": "https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing",
-   "what": "Premium $15 per user a month; Process (unattended bot) $150 per bot a month."
+   "what": "Premium $15 per user a month, Process (unattended bot) $150 per bot a month, both paid yearly. Read 26 Nov 2026."
   },
   {
    "name": "Microsoft Learn, Power Automate licensing FAQ, read 26 Nov 2026",
    "url": "https://learn.microsoft.com/en-us/power-platform/admin/power-automate-licensing/faqs",
-   "what": "Microsoft 365 (Office 365) business licenses include limited Power Automate rights: automated and scheduled cloud flows, standard connectors and 6,000 actions a day; Microsoft recommends Premium for enterprise scenarios."
+   "what": "Microsoft 365 (Office 365) business licenses include limited Power Automate rights: automated and scheduled cloud flows, standard connectors and 6,000 actions a day. For enterprise scenarios, Microsoft recommends the Premium license. Read 26 Nov 2026."
   },
   {
    "name": "Microsoft 365 Copilot business pricing, read 26 Nov 2026",
    "url": "https://www.microsoft.com/en-us/copilot/pricing/business",
-   "what": "Microsoft 365 Copilot Business add-on $21 per user a month."
+   "what": "Microsoft 365 Copilot Business $21 per user a month list price, billed yearly. Promotional price $18 for existing customers on an eligible Microsoft 365 business plan, 1 Jul to 31 Dec 2026, first year only. Read 26 Nov 2026."
   },
   {
    "name": "Microsoft Copilot Studio pricing, read 26 Nov 2026",
    "url": "https://www.microsoft.com/en-us/copilot/pricing/copilot-studio",
-   "what": "$200 a month per pack of 25,000 Copilot Credits."
+   "what": "$200 a month per pack of 25,000 Copilot Credits. Read 26 Nov 2026."
   },
   {
    "name": "Gartner press release, 25 Jun 2025",
@@ -334,19 +334,19 @@
    "what": "Over 40% of agentic AI projects will be cancelled by end-2027; many use cases sold as agentic don't need agents; warns of agent washing."
   },
   {
-   "name": "UiPath pricing, read 26 Nov 2026 (cache dated 24 Nov 2026)",
+   "name": "UiPath pricing, read 26 Nov 2026",
    "url": "https://www.uipath.com/pricing",
-   "what": "Free Community plan; Basic from $25 a month with up to 2 robots; Standard and Enterprise by quote."
+   "what": "Free Community plan; Basic from $25 a month with up to 2 robots; Standard and Enterprise by quote. Read 26 Nov 2026."
   },
   {
-   "name": "Make, Make vs Zapier, 20 Oct 2026",
+   "name": "Make, Make vs Zapier, Apr 2026",
    "url": "https://www.make.com/en/blog/make-vs-zapier",
-   "what": "Make's own page: Core plan $9 a month for 10,000 credits on annual billing; free plan 1,000 credits a month."
+   "what": "Make's own page: Core plan $9 a month for 10,000 credits on annual billing. Make's pricing page gives the free plan as 1,000 credits a month but shows no plan prices to our fetch tool. Read 26 Nov 2026."
   },
   {
    "name": "Make Help Center, Operations",
    "url": "https://help.make.com/operations",
-   "what": "A trigger module uses 1 operation per check; each other module uses 1 operation per bundle (item) it processes. Make's pricing page says most actions use 1 credit."
+   "what": "A trigger module uses 1 operation per check; each other module uses 1 operation per bundle (item) it processes. Make's pricing page says most actions use 1 credit. Read 26 Nov 2026."
   },
   {
    "name": "Gartner press release, 26 Feb 2025",
@@ -381,7 +381,12 @@
   {
    "name": "U.S. Census Bureau, Large firms are the biggest AI users, May 2026",
    "url": "https://www.census.gov/library/stories/2026/05/ai-use-businesses.html",
-   "what": "Business Trends and Outlook Survey: 19.8% of US firms used AI in the past two weeks; 32% of firms with 100 to 249 staff, 37% at 250+."
+   "what": "Business Trends and Outlook Survey of 200,000 US employer businesses every two weeks (sample size from the Census Bureau's BTOS methodology page), Dec 2025 to May 2026. 19.8% of US firms used AI in the past two weeks as of 3 May 2026; 32% of firms with 100 to 249 employees, 37% at 250 or more."
+  },
+  {
+   "name": "U.S. Census Bureau, Business Trends and Outlook Survey methodology, Oct 2026",
+   "url": "https://www.census.gov/hfp/btos/methodology",
+   "what": "Survey of 200,000 US employer businesses every two weeks, from a sample of about 1.2 million a year; voluntary, 24 core questions."
   }
  ],
  "related": [

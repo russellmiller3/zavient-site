@@ -8,9 +8,9 @@
  "industry": "manufacturing",
  "index": true,
  "verdict": [
-  "Fix basic maintenance first. The most reactive plants had 3.3x the downtime and 16x the defects of the least reactive.[^1][^2]",
+  "Fix maintenance first. The most reactive quarter of plants had 3.3x the downtime and 16x the defects of the least.[^1][^2]",
   "Start with a troubleshooting assistant reading manuals and repair history, no new sensors needed.[^4] One plant cut repair time 40%.[^3]",
-  "Trained inspectors miss about 15% of defects.[^6] Most published camera AI systems stall at pilot, so test on your parts.[^7]",
+  "Trained inspectors caught just 85% of bad parts.[^6] Most published camera AI stalls at pilot, so test on your parts.[^7]",
   "Expect a dip before the gain. Productivity falls first after AI adoption; plants that drop structured management lose more.[^8][^9]",
   "People keep the switch. Federal guidance keeps humans in the loop on machine-control AI,[^10] and OSHA lockout rules cover repairs.[^11]"
  ],
@@ -344,15 +344,15 @@
   },
   {
    "q": "Does predictive maintenance only work for big companies?",
-   "a": "No, small plants can use predictive maintenance too, starting with one troubled machine. The Department of Energy says to fix one troubled system first and leave cheap, unimportant equipment to reactive repair.[^47] Maintenance software runs $20 to $75 per user a month, while sensor systems are quoted per site.[^25][^26][^50][^49]"
+   "a": "No, small plants can use predictive maintenance too, starting with one troubled machine. The Department of Energy says to fix one troubled system first and leave cheap, unimportant equipment to reactive repair.[^47] Maintenance software runs $20 to $75 per user a month,[^25][^26] while sensor systems are quoted per site.[^50][^49]"
   },
   {
    "q": "How much does AI visual inspection cost?",
-   "a": "AI visual inspection runs from $0 on a free trial tier to six figures for a custom system.[^28][^13] NIST MEP puts simple industrial AI setups at a few thousand dollars and custom ones at hundreds of thousands.[^13] The LandingLens free model download is for non-commercial use only.[^28]"
+   "a": "AI visual inspection costs $0 on a free tier and up to six figures for a custom system.[^28][^13] NIST MEP puts simple industrial AI setups at a few thousand dollars and custom ones at hundreds of thousands.[^13] The LandingLens free model download is for non-commercial use only.[^28]"
   },
   {
    "q": "How many manufacturers actually use AI?",
-   "a": "Fewer than the hype suggests: about 12% of manufacturing businesses reported using AI in the Census survey of April 2026.[^41] Hiring runs ahead, with about 11% of manufacturing job postings asking for AI skills.[^23]"
+   "a": "Fewer than the hype suggests: about 12% of US manufacturing businesses reported using AI in the Census survey of April 2026.[^41][^54] Hiring runs ahead, with about 11% of manufacturing job postings asking for AI skills.[^23]"
   },
   {
    "q": "Will AI take jobs on the plant floor?",
@@ -414,7 +414,7 @@
   },
   {
    "num": "About 12%",
-   "label": "of manufacturing businesses used AI in the Census survey of April 2026[^41]",
+   "label": "of US manufacturing businesses used AI in the Census survey of April 2026[^41][^54]",
    "source": "Federal Reserve Bank of Minneapolis, May 2026"
   },
   {
@@ -471,12 +471,12 @@
   {
    "name": "NIST AMS 100-34, Thomas and Weiss, Economics of Manufacturing Machinery Maintenance (2020)",
    "url": "https://nvlpubs.nist.gov/nistpubs/ams/NIST.AMS.100-34.pdf",
-   "what": "Most reactive 25% of plants: 3.3 times the downtime and 16 times the defects; 45.7% of maintenance is reactive on average."
+   "what": "Top 25% of plants by reliance on reactive maintenance vs the bottom 25%: 3.3x the downtime (3.28 times, 13.0% vs 4.0%) and 16x the defects (16.00 times, 3.3% vs 0.2% defect rate); 45.7% of maintenance is reactive on average."
   },
   {
    "name": "NIST news, Research Suggests Significant Benefits to Investing in Advanced Machinery Maintenance (June 2020)",
    "url": "https://www.nist.gov/news-events/news/2020/06/research-suggests-significant-benefits-investing-advanced-machinery",
-   "what": "Maintenance mix 45.7% reactive, 31.8% preventive, 17.3% predictive; $119.1 billion a year in preventable losses."
+   "what": "Top 25% most reactive plants vs the comparison group: 3.3x the downtime and 16x the defects; maintenance mix 45.7% reactive, 31.8% preventive, 17.3% predictive; $119.1 billion in preventable losses."
   },
   {
    "name": "McKinsey, How manufacturing's Lighthouses are capturing the full value of AI (Apr 2024)",
@@ -496,7 +496,7 @@
   {
    "name": "See, Visual Inspection Reliability for Precision Manufactured Parts, Human Factors 57(8), Sandia (2015)",
    "url": "https://journals.sagepub.com/doi/10.1177/0018720815602389",
-   "what": "82 inspectors caught 85% of defective parts (industry average 80%) and wrongly rejected 35% of good parts."
+   "what": "82 inspectors correctly rejected 85% of defective parts (industry average 80%) and wrongly rejected 35% of good parts."
   },
   {
    "name": "Machine Learning-Powered Vision for Robotic Inspection in Manufacturing: A Review, Sensors 26(3):788 (2026)",
@@ -531,7 +531,7 @@
   {
    "name": "NIST MEP, Artificial Intelligence: Key Considerations and Effective Implementation Strategies (July 2025)",
    "url": "https://www.nist.gov/system/files/documents/2025/07/11/Artificial%20Intelligence-%20Key%20Consideration%20and%20Effective%20Implementation%20Strategies%20508%20Compliant.pdf",
-   "what": "Industrial AI is \"a smart assistant for your factory, but it must have human support to work\"; written for small and mid-size manufacturers."
+   "what": "Industrial AI is \"a smart assistant for your factory, but it must have human support to work\"; written for small and mid-size manufacturers. A 2% false alarm rate can mean dozens or even hundreds of false alarms a day and alarm fatigue. Tools range from a few thousand dollars for simple solutions to hundreds of thousands for custom systems."
   },
   {
    "name": "NIST MEP blog, AI in Manufacturing: Real World Success Stories and Lessons Learned (Jan 2022)",
@@ -591,22 +591,22 @@
   {
    "name": "MaintainX pricing page (checked 26 Nov 2026)",
    "url": "https://www.getmaintainx.com/pricing",
-   "what": "Free Basic; Essential $20 and Premium $65 per user a month, billed yearly; Enterprise and the Asset Intelligence AI add-on by quote."
+   "what": "Free Basic; Essential $20 and Premium $65 per user a month billed yearly ($25 and $75 billed monthly); Enterprise and the Asset Intelligence AI add-on by quote. Read 26 Nov 2026."
   },
   {
    "name": "Fiix (Rockwell Automation) pricing page (checked 26 Nov 2026)",
    "url": "https://fiixsoftware.com/cmms/pricing/",
-   "what": "Free tier; Basic $45 and Professional $75 per user a month; Fiix Foresight AI on Professional and up."
+   "what": "Free tier; Basic $45 and Professional $75 per user a month; Fiix Foresight AI on Professional and up. Read 26 Nov 2026."
   },
   {
    "name": "Limble, CMMS Software Cost guide (Limble's own page, read 26 Nov 2026)",
    "url": "https://limble.com/learn/cost",
-   "what": "Limble's own plans: Standard $28 and Premium+ $69 per user a month; Enterprise by custom quote."
+   "what": "Limble's own plans: Standard $28 and Premium+ $69 per user a month; Enterprise by custom quote. Read 26 Nov 2026."
   },
   {
    "name": "LandingAI, LandingLens plans",
    "url": "https://landinglens.docs.landing.ai/plans",
-   "what": "Free plan: $0, 1,000 credits a month, 3 users; Enterprise through sales."
+   "what": "Free plan: $0, 1,000 credits a month, 3 users, one non-commercial model download; Enterprise through sales. Read 26 Nov 2026."
   },
   {
    "name": "Safety+Health (National Safety Council), The most frequently cited OSHA standards in FY 2025 (Nov 2025)",
@@ -671,7 +671,7 @@
   {
    "name": "Federal Reserve Bank of Minneapolis, AI adoption in business grows steadily but unevenly (May 2026)",
    "url": "https://www.minneapolisfed.org/article/2026/ai-adoption-in-business-grows-steadily-but-unevenly",
-   "what": "About 12% of manufacturing businesses reported using AI in the Census survey's April 2026 supplement."
+   "what": "Survey of 117,000 or more US firms (the Census Bureau's 2026 AI supplement to its Business Trends and Outlook Survey, published April 2026; count from the Census working paper, as the Fed article gives none): about 12% of US manufacturing businesses reported using AI."
   },
   {
    "name": "NAM, Study: Manufacturing in U.S. Could Need Up to 3.8 Million Workers (Apr 2024)",
@@ -711,12 +711,12 @@
   {
    "name": "Augury, Machine Health (vendor page, read 26 Nov 2026)",
    "url": "https://www.augury.com/machine-health/",
-   "what": "Industrial IoT sensors included in every subscription; AI diagnosis plus expert vibration analysts; no price published."
+   "what": "Industrial IoT sensors included in every subscription; AI diagnosis plus expert vibration analysts; no price published. Read 26 Nov 2026."
   },
   {
    "name": "Tractian, pricing page (read 26 Nov 2026)",
    "url": "https://tractian.com/en/pricing",
-   "what": "Custom quote; pricing scoped to your assets and their criticality, confirmed on site."
+   "what": "Custom quote; pricing scoped to your assets and their criticality, confirmed on site; no price published. Read 26 Nov 2026."
   },
   {
    "name": "NIST/SEMATECH e-Handbook of Statistical Methods, 6.1.2 What are process control techniques?",
@@ -732,6 +732,11 @@
    "name": "McKinsey, Making the leap with generative AI in procurement (Mar 2024)",
    "url": "https://www.mckinsey.com/capabilities/operations/our-insights/operations-blog/making-the-leap-with-generative-ai-in-procurement",
    "what": "Language models draft requests for proposal and contracts; one RFP engine drew on 10,000+ past RFPs and bids."
+  },
+  {
+   "name": "US Census Bureau, Bonney et al., The Microstructure of AI Diffusion, working paper CES-WP-26-25 (April 2026)",
+   "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
+   "what": "Survey of 117,000 or more US firms: the 2026 AI supplement to the Business Trends and Outlook Survey pooled more than 117,000 distinct firms, collected 17 Nov 2025 to 8 Feb 2026; 18% of firms used AI in a business function."
   }
  ],
  "answers": {

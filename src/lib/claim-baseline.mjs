@@ -1,13 +1,9 @@
 // Written by scripts/claim-baseline.mjs; see the note there. Counts only ever go down.
 export default {
  "account-reconciliation-automation": 2,
- "accounting-firms": 8,
  "ai-adoption-change-management": 8,
  "ai-agent-development-services": 2,
- "ai-automation-consulting": 24,
- "ai-claims-processing": 34,
  "ai-collections": 8,
- "ai-construction-estimating": 18,
  "ai-consulting-small-business": 16,
  "ai-demand-forecasting": 16,
  "ai-document-processing": 5,
@@ -15,7 +11,6 @@ export default {
  "ai-governance-consulting": 5,
  "ai-implementation-services": 3,
  "ai-integration-services": 6,
- "ai-inventory-management": 39,
  "ai-invoice-processing": 10,
  "ai-policy-generator": 1,
  "ai-predictive-maintenance": 12,
@@ -32,16 +27,12 @@ export default {
  "build-vs-buy-ai": 17,
  "chatgpt-plus-vs-business-vs-enterprise": 13,
  "chatgpt-vs-claude-vs-copilot-for-work": 14,
- "community-banks-credit-unions": 10,
  "custom-ai-solutions": 13,
  "fractional-chief-ai-officer": 5,
  "generative-ai-vs-predictive-ai": 8,
  "hire-ai-engineer": 13,
  "machine-learning-consulting": 12,
- "manufacturing": 14,
- "private-credit-portfolio-monitoring": 20,
  "rpa-vs-agentic-automation": 9,
  "sales-analytics": 9,
- "supply-chain-logistics": 14,
  "zapier-vs-make-vs-workato": 5
 };

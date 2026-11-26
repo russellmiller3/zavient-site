@@ -499,7 +499,7 @@
   },
   {
    "q": "What does CECL cost a community bank?",
-   "a": "One bank spent $475K to implement CECL and $260K+ a year to run it, a figure Fed Vice Chair Bowman cited in her own op-ed.[^71][^70] Of community banks, 70% pay vendors for CECL, per the ABA; the Risk Management Association (RMA) found 4 in 5 in 2022.[^68][^81] RMA's 2021 survey put full validation of one vendor model at $75K or more.[^82]"
+   "a": "One bank spent $475K to implement CECL and $260K+ a year to run it, a figure Fed Vice Chair Bowman cited in her own op-ed.[^71][^70] Of community banks, 70% pay vendors for CECL, per the ABA; the Risk Management Association (RMA) found 4 in 5 in 2022.[^68][^81] In 2021, RMA found banks typically pay $75K or more to fully validate one vendor model.[^82]"
   },
   {
    "q": "Do we need an annual CECL model validation?",
@@ -515,7 +515,7 @@
   }
  ],
  "buyVsBuild": {
-  "buy": "Mostly buy, when your core or an established vendor already sells the job, such as fraud triage or memo drafting.[^14][^44] ICBA told the OCC that partnering with a core provider is often the only practical path for community banks.[^46] Most enterprise AI is now bought: 76% of use cases, up from 53% in 2024.[^63]",
+  "buy": "Mostly buy, when your core or an established vendor already sells the job, such as fraud triage or memo drafting.[^14][^44] ICBA told the OCC that partnering with a core provider is often the only practical path for community banks.[^46] Most enterprise AI at US firms is now bought: 76% of use cases, up from 53% in 2024.[^63]",
   "build": "Build only thin layers where your own procedures are the edge, such as a staff knowledge base. MIT research found bought tools succeed about 67% of the time; internal builds about a third as often.[^64][^63] For credit models, buy and validate; you still owe specific denial reasons.[^8]"
  },
  "pickElse": [
@@ -732,7 +732,7 @@
   {
    "name": "FDIC BankFind Suite API, institutions endpoint (index built 24 Nov 2026)",
    "url": "https://api.fdic.gov/banks/institutions",
-   "what": "Source of the Zavient bank counts: active institutions, assets as of the 30 Sep 2026 call report, split by primary federal regulator; pulled 26 Nov 2026."
+   "what": "Source of the Zavient bank counts, our own pull, read 26 Nov 2026: active institutions, assets as of the 30 Sep 2026 call report. 2,415 hold $250M to $5B in assets: 1,657 at $250M to under $1B and, by our math, 758 at $1B to $5B. Split by primary federal regulator."
   },
   {
    "name": "NCUA, Quarterly Credit Union Data Summary, Q2 2026",
@@ -787,7 +787,7 @@
   {
    "name": "ICBA, How to build an AI policy at your community bank (2026)",
    "url": "https://www.icba.org/w/how-to-build-an-ai-policy-at-your-community-bank-1",
-   "what": "Warns that an employee may load a customer spreadsheet into ChatGPT or Gemini; policy guidance, not a survey."
+   "what": "Warns that an employee may load a customer spreadsheet into ChatGPT or Gemini; policy guidance with no AI adoption figures."
   },
   {
    "name": "FDIC, FIL-58-2026, proposed interagency third-party risk management guidance (11 Sep 2026)",
@@ -942,12 +942,12 @@
   {
    "name": "Fed Vice Chair Michelle Bowman, letter to FASB (13 Aug 2026; her own view)",
    "url": "https://storage.fasb.org/CLPIR.UNS.003.BOARD%20OF%20GOVERNORS%20FEDERAL%20RESERVE%20SYSTEM%20MICHELLE%20W.%20BOWMAN.pdf",
-   "what": "Individual letter, not a joint agency view: urges FASB to repeal CECL or exempt community banks; says they spend hundreds of thousands a year on vendor models, validation and consultants."
+   "what": "Individual letter, not a joint agency view: urges FASB to repeal CECL or exempt community banks; says they spend hundreds of thousands a year on vendor models, validation and consultants. Read 26 Nov 2026."
   },
   {
    "name": "Bank Director, Banks examine the cost of an untested CECL (30 Oct 2026)",
    "url": "https://www.bankdirector.com/article/banks-examine-the-cost-of-an-untested-cecl",
-   "what": "Reports Bowman's Sep 2026 op-ed figure of one bank spending $475K to implement CECL and $260K+ a year to run it; experts expect little change from FASB."
+   "what": "Reports Bowman's 8 Sep 2026 op-ed example of one community bank spending $475K to implement CECL and $260K+ a year to run it; experts expect little change from FASB. Read 26 Nov 2026."
   },
   {
    "name": "OCC Bulletin 2025-26, model risk management for community banks (6 Oct 2025)",
@@ -1001,8 +1001,8 @@
   },
   {
    "name": "RMA, Cost is the biggest challenge to validate vendor models (2021)",
-   "url": "https://www.rmahq.org/blogs/2021/cost-is-the-biggest-challenge-to-validate-vendor-models/",
-   "what": "2021 survey: full validation of a CECL or BSA vendor model cost $75K or more. Dated."
+   "url": "https://www.prosightfa.org/insights/cost-is-the-biggest-challenge-to-validate-vendor-models/",
+   "what": "18 Nov 2021, early results from model risk managers, no count given: banks typically pay $75K ($75,000) or more to fully validate vendor frameworks such as BSA/AML and CECL. Dated."
   },
   {
    "name": "Federal Reserve, SR 20-13, Interagency Guidance on Credit Risk Review Systems (May 2020)",
