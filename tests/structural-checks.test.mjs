@@ -113,3 +113,89 @@ test('page JSON is machine-formatted, ends in a newline and keeps its indent', (
     }
   }
 });
+
+// Round 3 (26 Nov 2026): the PE / family-office / holdco batch's 16 hand fixes, made structural.
+import { answerProblems } from '../src/lib/answer-first.mjs';
+import { acronymProblems } from '../src/lib/acronyms.mjs';
+import { structureProblems } from '../src/lib/structure-rules.mjs';
+import { searchResultProblems } from '../src/lib/source-rules.mjs';
+import { splitSentences } from '../src/lib/sentences.mjs';
+import { researchProblems } from '../scripts/check-research.mjs';
+import { REVIEWERS } from '../src/lib/page-types.mjs';
+import { sentences as readabilitySentences } from '../scripts/check-readability.mjs';
+
+const base = pages.find(([s]) => s === 'ai-invoice-processing')[1];
+const slugSet = new Set(pages.map(([s]) => s));
+
+test('a bare yes or no first sentence fails; the answer must carry its reason', () => {
+  assert.ok(answerProblems('Is RPA dead?', 'No. Gartner still says to use it for routine work.[^1]').some((p) => /bare/.test(p)));
+  assert.ok(answerProblems('Should we block AI tools or approve some?', 'Approve some. Bans doubled misuse.[^1]').some((p) => /bare/.test(p)));
+  assert.equal(answerProblems('Is RPA dead?', 'No: Gartner still says to use automation for routine workflows.[^1]').filter((p) => /bare/.test(p)).length, 0);
+});
+
+test('one sentence splitter for every check: initials, abbreviations and quotes do not end a sentence', () => {
+  assert.deepEqual(splitSentences('No. Gartner says so.'), ['No.', 'Gartner says so.']);
+  assert.deepEqual(splitSentences('J.D. Power found 40% liked it. The U.S. Census agrees.'), ['J.D. Power found 40% liked it.', 'The U.S. Census agrees.']);
+  assert.deepEqual(splitSentences('St. Louis Fed data (No. 7) agree. One wrote, "We are 90%. Maybe 40%." Clean it.'), ['St. Louis Fed data (No. 7) agree.', 'One wrote, "We are 90%. Maybe 40%."', 'Clean it.']);
+  assert.deepEqual(splitSentences('Use drawing revision C. Back come three quotes.'), ['Use drawing revision C.', 'Back come three quotes.']);
+  assert.deepEqual(readabilitySentences('J.D. Power found it. Next one.'), ['J.D. Power found it.', 'Next one.']);
+});
+
+test('a jargon acronym that is never spelled out fails', () => {
+  // The build thread's hand fix: "EPM suite" with no spelled-out form on multi-entity-close
+  const bare = { ...base, summary: 'Pick an EPM suite when you consolidate many entities.[^1]' };
+  assert.ok(acronymProblems(bare).some((p) => p.includes('"EPM"')));
+  assert.equal(acronymProblems({ ...base, summary: 'Pick an enterprise performance management (EPM) suite.[^1]' }).filter((p) => p.includes('"EPM"')).length, 0);
+  assert.equal(acronymProblems({ ...base, summary: 'Pick an EPM (enterprise performance management) suite.[^1]' }).filter((p) => p.includes('"EPM"')).length, 0);
+  // A name that only contains the letters is not the acronym
+  assert.equal(acronymProblems({ ...base, summary: 'UI-CUBE tests agents.[^1]' }).filter((p) => p.includes('"UI"')).length, 0);
+});
+
+test('search-results pages fail as sources; a government price list does not', () => {
+  assert.equal(searchResultProblems([{ url: 'https://www.google.com/search?q=ai+consulting' }]).length, 1);
+  assert.equal(searchResultProblems([{ url: 'https://duckduckgo.com/?q=ai' }]).length, 1);
+  assert.equal(searchResultProblems([{ url: 'https://www.bls.gov/search.htm?query=wages' }]).length, 1);
+  assert.equal(searchResultProblems([{ url: 'https://buy.gsa.gov/pricing/qr/mas?q=Artificial%20Intelligence' }]).length, 0);
+});
+
+test('page structure: description, footnotes, real slugs, repeated heading words and stray answer slots fail', () => {
+  const p = (d) => structureProblems({ ...base, ...d }, slugSet);
+  assert.ok(p({ description: 'x'.repeat(161) }).some((x) => /description is 161/.test(x)));
+  assert.ok(p({ title: 'Can AI pay invoices?[^1]' }).some((x) => /footnote marker in the title/.test(x)));
+  assert.ok(p({ stats: [{ num: '5%', label: 'error rate', source: 'APQC, 2025' }] }).some((x) => /key number 5% has no footnote/.test(x)));
+  assert.ok(p({ related: ['ai-consulting', 'ai-procurement'] }).some((x) => /"ai-consulting" is not a page/.test(x)));
+  assert.ok(p({ related: ['ai-procurement'] }).some((x) => /related has 1 links/.test(x)));
+  assert.ok(p({ type: 'industry', topic: 'AI in insurance', related: ['ai-procurement', 'ai-collections'], spokes: [{ slug: 'ai-underwriting', why: 'x[^1]' }, { slug: 'ai-underwriting', why: 'y[^1]' }] }).some((x) => /listed twice/.test(x)));
+  assert.ok(p({ type: 'industry', topic: 'AI in insurance', related: ['ai-procurement', 'ai-collections'] }).some((x) => /repeats "ai"/.test(x)));
+  assert.ok(p({ answers: { ...base.answers, 'what-it-is': 'AI reads invoices and codes them for review.[^1]' } }).some((x) => /what-it-is renders above the summary/.test(x)));
+  assert.ok(p({ answers: { ...base.answers, sources: 'Sources we read on the day.[^1]' } }).some((x) => /answers.sources/.test(x)));
+});
+
+test('a research file fails on any finding without a URL or read date', () => {
+  assert.equal(researchProblems('## Slot\n- Finding | Source: BLS | URL: https://www.bls.gov/x | Read: 2026-11-26\n').length, 0);
+  assert.ok(researchProblems('## Slot\n- Finding | Source: BLS | Read: 2026-11-26\n').some((x) => /no URL/.test(x)));
+  assert.ok(researchProblems('## Slot\n- Finding | URL: https://www.bls.gov/x\n').some((x) => /no read date/.test(x)));
+  assert.ok(researchProblems('## Empty slot\n\n## Next\n- no source found: searched BLS, Census\n').some((x) => /Empty slot/.test(x)));
+});
+
+test('the persona doc lists the same five reviewers, in order, that the page check enforces', () => {
+  const doc = readFileSync(join(root, 'docs/steve-persona.md'), 'utf8');
+  const listed = [...doc.matchAll(/^\d+\. ([^:]+):/gm)].map((m) => m[1]).slice(0, REVIEWERS.length + 1);
+  assert.deepEqual(listed.slice(0, REVIEWERS.length), REVIEWERS);
+});
+
+test('no live page has an acronym, structure, bare-answer or search-result problem', () => {
+  const bad = [];
+  for (const [s, d] of pages) {
+    for (const p of [...acronymProblems(d), ...structureProblems(d, slugSet), ...searchResultProblems(d.sources)]) bad.push(`${s}: ${p}`);
+  }
+  assert.deepEqual(bad, []);
+});
+
+test('the skeleton maker writes no answer slot the page check would fail, at one-space indent', () => {
+  const src = readFileSync(join(root, 'scripts/new-page.mjs'), 'utf8');
+  assert.match(src, /JSON\.stringify\(page, null, 1\)/);
+  assert.match(src, /id !== 'what-it-is' && isQuestion\(id\)/);
+  assert.match(src, /check-research\.mjs/);
+  assert.doesNotMatch(readFileSync(join(root, 'src/lib/page-types.mjs'), 'utf8'), /\b2% cut jobs\b/);
+});

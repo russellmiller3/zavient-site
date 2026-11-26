@@ -63,7 +63,7 @@
       "name": "1. One yes-or-no decision, data in your CRM (about 40 to 150 staff)",
       "when": "Pick this for churn or lead priority: one yes-or-no outcome, a few thousand past cases and a team that acts weekly.[^19] Check your CRM's (customer database's) built-in score first.[^20][^21]",
       "flow": [
-        "GM: name the decision and the money number it moves",
+        "GM (general manager): name the decision and the money number it moves",
         "Ops lead: write down today's rule and how often it is right",
         "IT lead: export two to three years of history",
         "Builder: hold back the latest 3 to 6 months, unseen in training, then test the rule against two or three models",
@@ -105,7 +105,7 @@
     "headers": [
       "Approach",
       "Real churners among the 100 riskiest",
-      "Ranking score (AUC: 0.5 is a coin flip, 1.0 is perfect)",
+      "Ranking score (AUC, area under the curve: 0.5 is a coin flip, 1.0 is perfect)",
       "Can a manager see why?"
     ],
     "rows": [

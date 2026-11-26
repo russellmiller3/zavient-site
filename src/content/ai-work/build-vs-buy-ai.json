@@ -227,13 +227,13 @@
    "cost": "Copilot Studio is $200 a month per 25,000 credits, or pay-as-you-go, read 26 Nov 2026[^23]. Credits used vary per action, so pilot on real traffic before you commit[^23]."
   },
   {
-   "name": "3. Build a narrow tool: supplier documents into your ERP",
+   "name": "3. Build a narrow tool: supplier documents into your ERP (enterprise resource planning) system",
    "when": "Pick it when your own data or process is the edge and no product does the job[^6][^1]. Get the data ready first: Gartner expects 60% of projects without AI-ready data to be dropped[^7].",
    "flow": [
     "Business owner: confirm no product fits and your data is the edge[^1][^6]",
     "Build team, in-house or outside: call a rented model from your own tool[^16][^17]",
     "Build team: add tests, monitoring and a tested fallback model[^25][^26]",
-    "AP lead: approve anything the tool posts to the ERP above a set value[^35]",
+    "AP (accounts payable) lead: approve anything the tool posts to the ERP above a set value[^35]",
     "IT lead: track the model's retirement date and re-test before the cut-off[^27][^28]"
    ],
    "cost": "Model use for 2,000 documents a month: about $60 on a $2/$10 model, or $3 on a $0.10/$0.50 model (our arithmetic)[^16][^17]. Integration, testing and upkeep cost far more than tokens[^25][^26]."
@@ -315,7 +315,7 @@
  "faq": [
   {
    "q": "Do most companies buy AI tools or build their own?",
-   "a": "Most buy. Menlo Ventures, an AI investor, found 76% of enterprise AI use cases were bought in 2025, up from 53% in 2024[^3][^4]. Wharton found about a third of GenAI tech budgets still go to internal R&D[^14]."
+   "a": "Most buy: Menlo Ventures, an AI investor, found 76% of enterprise AI use cases were bought in 2025, up from 53% in 2024[^3][^4]. Wharton found about a third of GenAI tech budgets still go to internal research and development[^14]."
   },
   {
    "q": "Should we build or buy AI agents?",
@@ -323,7 +323,7 @@
   },
   {
    "q": "Should I learn to build it, pay someone, or buy?",
-   "a": "For most owner-run firms, buy first and spend your time on the workflow. If you pay someone to build, budget for upkeep: Google engineers found maintaining ML systems is the hard, costly part[^25][^26]."
+   "a": "For most owner-run firms, buy first and spend your time on the workflow. If you pay someone to build, budget for upkeep: Google engineers found maintaining machine learning (ML) systems is the hard, costly part[^25][^26]."
   },
   {
    "q": "Is enterprise knowledge search worth building?",

@@ -3,11 +3,12 @@
 Rule (26 Nov 2026), in Russell's words: "add a rule to review it as if you're actually a persona? We'll call that persona Steve. That's a part of our ICP. And we want Steve to review it and suggest anything that would make it more usable to him. or that he doesn't like."
 
 Review order (Russell, 26 Nov 2026: "do the reviews wiht cicp that include coo head of ops and gm and ceo last since he is for smaller companies"):
-1. Dana, the COO or head of operations.
-2. The GM (general manager) who runs a business unit, site or region.
-3. The division head who owns the work the page is about (Russell, 26 Nov: "And finxtional heads of divisions", "Like bank head of lending or insurqnce head of inderwriting").
-4. Steve, the owner-CEO, last, because he fits the smaller firms (under about 150 people).
-There is no CFO reader (Russell, 26 Nov: "Nix cfo").
+1. COO: Dana as chief operating officer.
+2. Head of operations: Dana's role at firms with no COO, read as a separate pass.
+3. GM: the general manager who runs a business unit, site or region.
+4. Division head: the head who owns the work the page is about (Russell, 26 Nov: "And finxtional heads of divisions", "Like bank head of lending or insurqnce head of inderwriting").
+5. Owner-CEO: Steve, last, because he fits the smaller firms (under about 150 people).
+There is no CFO reader (Russell, 26 Nov: "Nix cfo"). These five names are REVIEWERS in src/lib/page-types.mjs, the order the page check enforces; a test fails if this list drifts from it.
 
 Every page gets one review per reader, in that order, before it ships. The reviewer reads the page as Steve, lists what he would find hard to use or dislike, and the fixes that fit the Site rules are applied. Lines marked INFERRED are a draft for Russell to confirm.
 

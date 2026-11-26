@@ -7,12 +7,13 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: `
 (this file is generated from it by `node scripts/templates-doc.mjs`).
 
 ## Make a page
-1. `node scripts/new-page.mjs --type <type> --slug <slug> --topic "<topic>" --job "<job>"` writes a skeleton JSON and a research brief to `drafts/`.
-2. A research agent fills `drafts/<slug>.research.md` from the brief. A separate writer agent fills the JSON from it.
+1. `node scripts/new-page.mjs --type <type> --slug <slug> --topic "<topic>" --job "<job>"` writes a skeleton JSON, a research skeleton and a research brief to `drafts/`.
+2. A research agent fills `drafts/<slug>.research.md`, one line per finding with its URL and read date, until `node scripts/check-research.mjs` passes. A separate writer agent fills the JSON from it.
 3. `node scripts/check-page.mjs drafts/<slug>.json` until PASS.
-4. ICP review, in order: COO → Head of operations → GM → Division head → Owner-CEO.
-5. Move the JSON to `src/content/ai-work/`, `npm test`. `index: true` only on Russell's yes.
-6. Look at it in a live browser. Screenshot the built page at 1280px and 390px wide and check every block by eye: flows, tables, footnotes, the sticky box, buttons. A visual change is not done until those screenshots look right, and they go with the report (Russell's rule, 26 Nov 2026).
+4. Source-claim check: a separate agent opens every cited source, confirms it states the claim, and logs `sourceCheck` (the page check warns until it does).
+5. ICP review, in order: COO → Head of operations → GM → Division head → Owner-CEO.
+6. Move the JSON to `src/content/ai-work/`, `npm test`. `index: true` only on Russell's yes.
+7. Look at it in a live browser. Screenshot the built page at 1280px and 390px wide and check every block by eye: flows, tables, footnotes, the sticky box, buttons. A visual change is not done until those screenshots look right, and they go with the report (Russell's rule, 26 Nov 2026).
 
 ## Rules every template enforces
 - Bottom line first: 3-5 bullets, each with 2+ sources. No number leading the title or a bullet.
@@ -29,6 +30,10 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: `
 - Superseded rules (SR 11-7, withdrawn CFPB circulars) always name their replacement or say withdrawn (src/lib/stale-rules.mjs).
 - No rival consulting firm offered or priced, and no consultant fee ranges (src/lib/rival-firms.mjs).
 - Own-site links are root-relative; page JSON keeps its own indent and ends in a newline.
+- A question's first sentence is 6 words or more: a bare "No." carries its reason ("No, because ...").
+- Every jargon acronym is spelled out on the page (src/lib/acronyms.mjs). No search-results pages as sources.
+- Description 50-160 characters; no footnote in the title or description; a footnote on every key number.
+- Every ranked, spoke and related slug is a real page; related 2-5 links (industry hubs 10, role and tool pages 8). No heading repeats a template word ("AI ... AI"). No answer slot on what-it-is or under a heading that is not a question (src/lib/structure-rules.mjs).
 - `npm run build` runs the page check and every test, so a failing indexed page stops the deploy.
 - Teach, then trust, then the lead: alternatives sit after "Buy or build", just above the free diagnostic.
 - The free diagnostic shows in four spots, worded for the page type: under the bottom line, beside the tool or own data, in a sticky contents box, and at the end.
@@ -266,7 +271,7 @@ Block order:
 - **spokes** (`spokes`): 4-8 linked guides, ranked by payoff for a 40-500 person firm. For each: one sentence on why it pays first, with a source (adoption survey, cost benchmark).
 - **ranked** (`ranked`): 4-8 jobs ranked by payoff then effort. For each: the job, why it pays (cost or time today, sourced), the payoff to measure, and the guide slug if one exists. Sources: industry cost benchmarks (APQC, Ardent, trade bodies), adoption surveys with sample sizes, regulator data.
 - **decisions** (`decisions`): 3-6 decisions this role owns (what to fix first, buy or build, who checks output, how to measure). For each, what they need to know to decide, sourced. Use surveys of that role (Vistage, McKinsey, Gartner, trade bodies) with sample sizes.
-- **team-after** (`teamAfter`): 2-4 bullets: the work people move to once AI takes the first pass (checking exceptions, talking to customers, deeper review). Source each to a study, survey or published case. Census data: where AI changed tasks, 66% of firms only use it to help staff and 2% cut jobs (CES-26-25). Augmentation, never headcount cuts.
+- **team-after** (`teamAfter`): 2-4 bullets: the work people move to once AI takes the first pass (checking exceptions, talking to customers, deeper review). Source each to a study, survey or published case. Census data: where AI changed tasks, 66% of firms only use it to help staff and 2% saw AI-related job losses (CES-26-25). Augmentation, never headcount cuts.
 - **walk-away** (`walkAway`): 3-5 bullets: what a buyer should hold at the end of good help (a ranked workflow list, a before-and-after measure, a working pilot, a plan their team can run). Source to buyer surveys where possible.
 - **forward** (`forward`): 4-6 short lines a reader can print or forward to the owner-CEO: the top workflow, what it saves, the risk and who checks it, the first step, the cost range. Every number footnoted. This is the role page's forward to Steve.
 - **applies** (`applies`): 3-6 if/then lines a reader can answer yes or no to (size, state, what the AI decides, who is affected), each from the rule's own text. Primary sources only. Not legal advice.
@@ -285,4 +290,4 @@ Block order:
 - **resources** (`resources`): 2-5 free tools, datasets or official guides, each with one line on why it helps.
 - **key-numbers** (`stats`): 3-6 numbers used on the page, each with what it measures and its source. Never shown at the top.
 - **sources** (`sources`): Numbered list: name, URL, what it says. 10+ sources from 4+ different sites. Prefer primary sources. Date read in the what line for prices.
-- **related** (`related`): Slugs of 2-5 related pages (parent hub, sibling guides, the industry page).
+- **related** (`related`): Slugs of related pages that exist in src/content/ai-work (parent hub, sibling guides, the industry page): 2-5, or up to the type's relatedMax on industry hubs, role and tool pages. The page check fails an unknown slug.

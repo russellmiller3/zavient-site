@@ -25,7 +25,11 @@ export const COMMON_REQUIRED = ['verdict', 'summary', 'humanRole', 'faq', 'stats
 export const REVIEWERS = ['COO', 'Head of operations', 'GM', 'Division head', 'Owner-CEO'];
 
 // Minimums for a publishable (index: true) page.
-export const MIN = { verdict: [3, 5], onPage: 3, sources: 10, toolSources: 5, domains: 4, stats: 3, faq: 3, verdictFootnotes: 2 };
+export const MIN = { verdict: [3, 5], onPage: 3, sources: 10, toolSources: 5, domains: 4, stats: 3, faq: 3, verdictFootnotes: 2, related: [2, 5] };
+// Hubs link out more than one guide does (build thread, 26 Nov 2026): a type may raise the related-links cap with relatedMax.
+export const relatedRange = (type) => [MIN.related[0], TYPES[type]?.relatedMax || MIN.related[1]];
+// A page's description is its search snippet: 50-160 characters (the schema enforces it at build; the gate says it first).
+export const DESCRIPTION = [50, 160];
 
 // Measured demand (architecture doc, "Publish gate"): 100+ US searches a month, or 30+ at $20+ a click.
 export const DEMAND = { searches: 100, nicheSearches: 30, nicheCpc: 20 };
@@ -69,7 +73,7 @@ export const BLOCKS = {
   },
   'team-after': {
     field: 'teamAfter', h: 'What does your team do after?',
-    brief: '2-4 bullets: the work people move to once AI takes the first pass (checking exceptions, talking to customers, deeper review). Source each to a study, survey or published case. Census data: where AI changed tasks, 66% of firms only use it to help staff and 2% cut jobs (CES-26-25). Augmentation, never headcount cuts.',
+    brief: '2-4 bullets: the work people move to once AI takes the first pass (checking exceptions, talking to customers, deeper review). Source each to a study, survey or published case. Census data: where AI changed tasks, 66% of firms only use it to help staff and 2% saw AI-related job losses (CES-26-25). Augmentation, never headcount cuts.',
   },
   'walk-away': {
     field: 'walkAway', h: 'What should you walk away with?',
@@ -134,7 +138,7 @@ export const BLOCKS = {
   resources: { field: 'resources', h: 'Useful resources', brief: '2-5 free tools, datasets or official guides, each with one line on why it helps.' },
   'key-numbers': { field: 'stats', h: 'Key numbers on this page', brief: '3-6 numbers used on the page, each with what it measures and its source. Never shown at the top.' },
   sources: { field: 'sources', h: 'Sources', brief: 'Numbered list: name, URL, what it says. 10+ sources from 4+ different sites. Prefer primary sources. Date read in the what line for prices.' },
-  related: { field: 'related', h: null, brief: 'Slugs of 2-5 related pages (parent hub, sibling guides, the industry page).' },
+  related: { field: 'related', h: null, brief: 'Slugs of related pages that exist in src/content/ai-work (parent hub, sibling guides, the industry page): 2-5, or up to the type\'s relatedMax on industry hubs, role and tool pages. The page check fails an unknown slug.' },
 };
 
 // The order a page's blocks render in, per type. Teach first, then proof, then buy-or-build, then alternatives,
@@ -168,6 +172,7 @@ export const TYPES = {
   },
   industry: {
     label: 'Industry hub',
+    relatedMax: 10,
     path: 'industries/{slug}',
     titleShape: 'What are {industry} actually using AI for?',
     example: 'What are community banks actually using AI for?',
@@ -179,6 +184,7 @@ export const TYPES = {
   },
   role: {
     label: 'Role page',
+    relatedMax: 8,
     path: 'for/{slug}',
     titleShape: 'Where should a {role} start with AI?',
     example: 'Where should a head of lending start with AI?',
@@ -215,6 +221,7 @@ export const TYPES = {
   },
   tool: {
     label: 'Free tool',
+    relatedMax: 8,
     path: 'tools/{slug}',
     titleShape: '{Tool name}: {question it answers}?',
     example: 'AI ROI calculator: will this workflow pay back this year?',

@@ -205,12 +205,12 @@
  ],
  "recipes": [
   {
-   "name": "1. Small AP or ops team on Microsoft 365: invoices into an old system (both)",
+   "name": "1. Small AP (accounts payable) or ops team on Microsoft 365: invoices into an old system (both)",
    "when": "A team keying PDF invoices into a finance system (ERP) with no API. From 1 Nov 2026, new Microsoft licences carry no seeded AI Builder credits, so page reading draws Copilot Credits[^15][^13].",
    "flow": [
     "Ops lead: time today's keying and count errors for two weeks, as the baseline to beat",
     "AP clerk: save incoming invoices to one shared folder",
-    "AI document step: pull vendor, PO number and amounts from each page[^13]",
+    "AI document step: pull vendor, PO (purchase order) number and amounts from each page[^13]",
     "Unattended desktop bot: key matched invoices into the finance system[^10]",
     "Controller: approve every mismatch in a built-in approval step before it posts[^16][^38]",
     "Ops lead: check the run log and the mismatch rate each week[^40]",
@@ -299,7 +299,7 @@
     "Its own site lists no price[^19]"
    ]
   ],
-  "note": "Zavient price check of 12 vendor pages and filings, read 26 Nov 2026. UK figures are pounds, ex VAT, public-sector list prices, and may differ from US quotes; Microsoft calls its prices 'for marketing purposes only'. Arithmetic assumes full use of packs and leaves out third-party model fees[^23]."
+  "note": "Zavient price check of 12 vendor pages and filings, read 26 Nov 2026. UK figures are pounds, ex VAT (value-added tax), public-sector list prices, and may differ from US quotes; Microsoft calls its prices 'for marketing purposes only'. Arithmetic assumes full use of packs and leaves out third-party model fees[^23]."
  },
  "example": {
   "input": "Illustrative: an AP clerk keys 300 vendor invoices a week from PDFs into an in-house finance system (ERP) with no API. Each one means reading vendor, PO and amounts, then typing them in[^13][^10].",
@@ -316,11 +316,11 @@
  "faq": [
   {
    "q": "Is RPA dead?",
-   "a": "No. Gartner still says to use automation for routine workflows and agents where decisions are needed[^26]. UiPath, Microsoft and Automation Anywhere all still sell robots, now next to agents[^1][^10][^21]."
+   "a": "No: Gartner still says to use automation for routine workflows and agents where decisions are needed[^26]. UiPath, Microsoft and Automation Anywhere all still sell robots, now next to agents[^1][^10][^21]."
   },
   {
    "q": "Does agentic AI replace RPA?",
-   "a": "Not for stable, rule-based steps. Gartner says agents are far less suited where only one correct answer exists[^27]. Vendors now run bots and agents together in one flow[^6][^17]."
+   "a": "Not for stable, rule-based steps, because Gartner says agents are far less suited where only one correct answer exists[^27]. Vendors now run bots and agents together in one flow[^6][^17]."
   },
   {
    "q": "Can RPA bots and AI agents work together?",

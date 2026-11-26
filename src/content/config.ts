@@ -46,6 +46,8 @@ const aiwork = defineCollection({
     differs: z.array(z.object({ what: z.string(), how: z.string() })).default([]),
     // ICP review log, in order (Russell, 26 Nov 2026). Never rendered; the publish gate checks it.
     reviews: z.array(z.object({ reader: z.string(), notes: z.string() })).default([]),
+    // Source-claim check (26 Nov 2026): who opened each cited source and confirmed it states the claim, and what was fixed.
+    sourceCheck: z.object({ date: z.string(), by: z.string(), checked: z.number(), fixed: z.array(z.string()).default([]) }).optional(),
     resources: z.array(link).min(1),
     sources: z.array(link).min(1),
     related: z.array(z.string()).default([]),

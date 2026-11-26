@@ -26,3 +26,20 @@ export function sourceProblems(sources = []) {
   });
   return out;
 }
+
+// A search-results page is not a source (26 Nov 2026 hand fix, made structural): it shows whatever ranks today, not the
+// claim. Cite the page the result leads to. Government price-list queries (GSA's buy.gsa.gov pricing tool) are the
+// data itself, not a search engine, so only search engines and site-search paths fail.
+const SEARCH_ENGINE = /(^|\.)(google\.[a-z.]+|bing\.com|duckduckgo\.com|search\.yahoo\.com|yandex\.[a-z]+|baidu\.com|perplexity\.ai)$/;
+export function searchResultProblems(sources = []) {
+  const out = [];
+  sources.forEach((s, i) => {
+    let u;
+    try { u = new URL(s.url); } catch { return; }
+    const h = u.hostname.replace(/^www\./, '').toLowerCase();
+    const engine = SEARCH_ENGINE.test(h) && (/\/search\b/.test(u.pathname) || u.searchParams.has('q'));
+    const siteSearch = /\/search\/?$|\/search\.(?:html?|aspx?|php)$/i.test(u.pathname) && [...u.searchParams.keys()].some((k) => /^(q|query|s|search|keywords?|term)$/i.test(k));
+    if (engine || siteSearch) out.push(`source ${i + 1} is a search-results page (${h}${u.pathname}): cite the page the result leads to`);
+  });
+  return out;
+}

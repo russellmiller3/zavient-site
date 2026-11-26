@@ -19,16 +19,22 @@
 //    the first sentence (while, but, whereas, unlike, than, instead), not one side or a shared trait;
 // 10. a "How much ... cost" or "What does ... cost" heading gets a figure ($ or a number that is not a date) in the first
 //    two sentences: "publish no price, so expect a quote" alone is not an answer.
+// 11. the first sentence is at least 6 words: a bare "Yes." or "Not yet." must carry its reason in the same sentence.
 // Rules 8-10 come from a semantic audit of 26 Nov 2026 that found answers passing 1-7 while dodging the question.
 // Research behind these (26 Nov 2026): NN/g inverted pyramid and first-2-words studies; GOV.UK and Australian
 // Style Manual (answer must make sense with the heading removed); Microsoft Bing guidance on AI answers (1-2 sentence
 // answer, numbers for quantity questions); Portent and Semrush snippet-length studies (40-60 word first paragraph).
 // Whether the sentence truly answers the heading is the reviewers' job: every page is read heading by heading.
 
+import { splitSentences } from './sentences.mjs';
+
 const YES_NO = /^(is|are|am|can|could|does|do|did|should|will|would|has|have|was|were|must|may)\b/i;
 const COST = /\b(how much|what does .* cost|what do .* cost|cost\b|price|pricing)\b/i;
 const HOW = /^how\b(?! much| many| long| often| accurate| big| fast| soon)/i;
 export const MAX_WORDS = 30;
+// Rule 11 (26 Nov 2026, build thread): a bare "No." or "Yes." passed rule 2 with the reason left to the next sentence.
+// A first sentence under 6 words is a bare answer: put the reason in the same sentence ("No, because ...").
+export const MIN_WORDS = 6;
 // Openings that say where the numbers came from instead of answering (a live miss on the comparison pages, 26 Nov 2026).
 const SOURCE_NOTE = /^((us |listed |list )?prices? (are|come|from)\b|(us )?list prices (before|from|as|are)\b|from (each|the|our|vendor)\b|(on|as of) \d{1,2} \w+ \d{4}\b|we (read|checked|pulled|counted|logged|compared|lined up|looked|set|gathered|collected)\b|(?!.*\b(find|finds|found|show|shows|showed)\b)(peer-reviewed|government|vendor|independent|primary)\b.*\b(studies|surveys|sources|figures)\b|each (study|survey|source|vendor)\b|(figures|numbers|data|prices) (from|as of|read|are from)\b|the primary studies\b)|\bas reported by\b/i;
 const DATES = /\b\d{1,2} (jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]* \d{4}\b|\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]* \d{1,2},? \d{4}\b|\b(19|20)\d{2}\b/gi;
@@ -38,14 +44,13 @@ const tidy = (text) => String(text).replace(/\[\^\d+\]/g, '').replace(/\s+([.,;:
 
 // The first sentence of a paragraph's text, with footnote numbers and markers taken out.
 export function firstSentence(text) {
-  const t = tidy(text);
-  const m = t.match(/^.*?[.!?](?=\s+[A-Z0-9"“(]|$)/);
-  return (m ? m[0] : t).trim();
+  return sentencesOf(text)[0] || '';
 }
 
-// Every sentence of a paragraph's text, split the same way firstSentence finds the first one.
+// Every sentence of a paragraph's text, split by the shared splitter (src/lib/sentences.mjs), so initials and
+// abbreviations ("J.D. Power", "U.S. Census") don't end a sentence.
 export function sentencesOf(text) {
-  return tidy(text).split(/(?<=[.!?])\s+(?=[A-Z0-9"“(])/).map((s) => s.trim()).filter(Boolean);
+  return splitSentences(tidy(text));
 }
 
 // Rule 8: two questions in one heading, joined by ", and" ("What is X, and what does it change?").
@@ -66,6 +71,7 @@ export function answerProblems(heading, text) {
   const s = firstSentence(text);
   const out = [];
   const words = s.split(/\s+/).filter(Boolean).length;
+  if (words < MIN_WORDS) out.push(`first sentence is a bare ${words}-word answer (min ${MIN_WORDS}): give the reason in the same sentence ("No, because ..."): "${s}"`);
   if (words > MAX_WORDS) out.push(`first sentence is ${words} words (max ${MAX_WORDS}): "${s.slice(0, 80)}..."`);
   if (YES_NO.test(q) && !/\bor\b/i.test(q) && !/^(yes|no|not|only)\b/i.test(s)) out.push(`yes/no question, but the answer doesn't start with Yes or No: "${s.slice(0, 80)}"`);
   if (COST.test(q) && !/[\d$€£]|\b(no (public |list )?price|not published|quote only|free)\b/i.test(s.replace(DATES, ''))) out.push(`cost question, but the first sentence has no number: "${s.slice(0, 80)}"`);

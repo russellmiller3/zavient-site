@@ -18,12 +18,13 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: \
 (this file is generated from it by \`node scripts/templates-doc.mjs\`).
 
 ## Make a page
-1. \`node scripts/new-page.mjs --type <type> --slug <slug> --topic "<topic>" --job "<job>"\` writes a skeleton JSON and a research brief to \`drafts/\`.
-2. A research agent fills \`drafts/<slug>.research.md\` from the brief. A separate writer agent fills the JSON from it.
+1. \`node scripts/new-page.mjs --type <type> --slug <slug> --topic "<topic>" --job "<job>"\` writes a skeleton JSON, a research skeleton and a research brief to \`drafts/\`.
+2. A research agent fills \`drafts/<slug>.research.md\`, one line per finding with its URL and read date, until \`node scripts/check-research.mjs\` passes. A separate writer agent fills the JSON from it.
 3. \`node scripts/check-page.mjs drafts/<slug>.json\` until PASS.
-4. ICP review, in order: ${REVIEWERS.join(' → ')}.
-5. Move the JSON to \`src/content/ai-work/\`, \`npm test\`. \`index: true\` only on Russell's yes.
-6. Look at it in a live browser. Screenshot the built page at 1280px and 390px wide and check every block by eye: flows, tables, footnotes, the sticky box, buttons. A visual change is not done until those screenshots look right, and they go with the report (Russell's rule, 26 Nov 2026).
+4. Source-claim check: a separate agent opens every cited source, confirms it states the claim, and logs \`sourceCheck\` (the page check warns until it does).
+5. ICP review, in order: ${REVIEWERS.join(' → ')}.
+6. Move the JSON to \`src/content/ai-work/\`, \`npm test\`. \`index: true\` only on Russell's yes.
+7. Look at it in a live browser. Screenshot the built page at 1280px and 390px wide and check every block by eye: flows, tables, footnotes, the sticky box, buttons. A visual change is not done until those screenshots look right, and they go with the report (Russell's rule, 26 Nov 2026).
 
 ## Rules every template enforces
 - Bottom line first: ${MIN.verdict[0]}-${MIN.verdict[1]} bullets, each with ${MIN.verdictFootnotes}+ sources. No number leading the title or a bullet.
@@ -40,6 +41,10 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: \
 - Superseded rules (SR 11-7, withdrawn CFPB circulars) always name their replacement or say withdrawn (src/lib/stale-rules.mjs).
 - No rival consulting firm offered or priced, and no consultant fee ranges (src/lib/rival-firms.mjs).
 - Own-site links are root-relative; page JSON keeps its own indent and ends in a newline.
+- A question's first sentence is 6 words or more: a bare "No." carries its reason ("No, because ...").
+- Every jargon acronym is spelled out on the page (src/lib/acronyms.mjs). No search-results pages as sources.
+- Description 50-160 characters; no footnote in the title or description; a footnote on every key number.
+- Every ranked, spoke and related slug is a real page; related ${MIN.related[0]}-${MIN.related[1]} links (industry hubs 10, role and tool pages 8). No heading repeats a template word ("AI ... AI"). No answer slot on what-it-is or under a heading that is not a question (src/lib/structure-rules.mjs).
 - \`npm run build\` runs the page check and every test, so a failing indexed page stops the deploy.
 - Teach, then trust, then the lead: alternatives sit after "Buy or build", just above the free diagnostic.
 - The free diagnostic shows in four spots, worded for the page type: under the bottom line, beside the tool or own data, in a sticky contents box, and at the end.

@@ -155,7 +155,7 @@
           "name": "Augury",
           "url": "https://www.augury.com/",
           "cells": [
-            "310% ROI[^30]",
+            "310% ROI (return on investment)[^30]",
             "Vendor claim, from a Forrester study Augury commissioned"
           ]
         }
@@ -321,7 +321,7 @@
   ],
   "watchOuts": [
     "False alarms: in a McKinsey example, a model catching a quarter of breakdowns still lost money when 10% of its alerts were false.[^4][^51] Log every alert, and tune or drop noisy machines.",
-    "Dirty work orders: NIST found entry errors are non-random and skew maintenance KPIs, even with large samples.[^5][^53] Clean the history and add a how-found field before you train anything.",
+    "Dirty work orders: NIST found entry errors are non-random and skew maintenance KPIs (key performance indicators), even with large samples.[^5][^53] Clean the history and add a how-found field before you train anything.",
     "No one acts on the alert. DOE warns the savings are \"not readily seen by management\", so report confirmed catches monthly.[^3]",
     "Sensors bought before a plan. Start from asset criticality: ISO 17359 builds monitoring on a cost-benefit and criticality review, and simple thresholds often do the job.[^9][^12]",
     "Vendor exits: Amazon closed Monitron to new customers in Oct 2024 and shut Lookout for Equipment on 7 Oct 2026.[^40][^54] Ask who owns your data and how you export it.",
@@ -375,7 +375,7 @@
       "what": "Free guide to matching each machine to run-to-failure, PM or condition checks."
     },
     {
-      "name": "US DOE O&M Best Practices Guide",
+      "name": "US DOE O&M (operations and maintenance) Best Practices Guide",
       "url": "https://www.energy.gov/sites/prod/files/2020/04/f74/omguide_complete_w-eo-disclaimer.pdf",
       "what": "Plain chapter on reactive, preventive and predictive maintenance and their costs."
     },

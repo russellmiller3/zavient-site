@@ -49,7 +49,7 @@
       "name": "2. Pulling fields from documents into your system (batch work)",
       "when": "Pick this for forms, orders or statements that arrive in volume and can wait a day. All four providers we checked halve the price for batch work, with results within a day.[^15][^16]",
       "flow": [
-        "AP lead or clerk: label 100 sample documents with the right fields",
+        "AP (accounts payable) lead or clerk: label 100 sample documents with the right fields",
         "Developer: run batch extraction and score it against the labels",
         "Reviewer: check low-confidence fields before anything posts",
         "Controller: approve go-live once accuracy meets the agreed mark"
@@ -133,7 +133,7 @@
         "$7,812"
       ]
     ],
-    "note": "Standard US list prices before tax, discounts and caching; token counts are our estimates, and the 3-year column assumes flat prices, which Google already breaks.[^20][^17] Excludes reasoning tokens, hosting, the search index, engineering and review time, and tests no quality: a cheap model may fail your test. Mistral's two official pages disagree on Large 4, so we used the higher; Google rows are the Gemini Developer API paid tier.[^18][^19]"
+    "note": "Standard US list prices before tax, discounts and caching; token counts are our estimates, and the 3-year column assumes flat prices, which Google already breaks.[^20][^17] Excludes reasoning tokens, hosting, the search index, engineering and review time, and tests no quality: a cheap model may fail your test. Mistral's two official pages disagree on Large 4, so we used the higher; Google rows are the Gemini Developer API (application programming interface) paid tier.[^18][^19]"
   },
   "watchOuts": [
     "Most stall from building what could be bought, messy documents, model changes, unnoticed quality slips, weak contracts and cost surprises at volume.[^1][^8] Each fix is below.",
@@ -185,7 +185,7 @@
   ],
   "resources": [
     {
-      "name": "NIST AI RMF Playbook, MEASURE",
+      "name": "NIST AI RMF (Risk Management Framework) Playbook, MEASURE",
       "url": "https://airc.nist.gov/airmf-resources/playbook/measure/",
       "what": "Free US government checklist for testing AI in real conditions and monitoring it after launch."
     },

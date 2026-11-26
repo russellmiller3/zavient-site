@@ -1,9 +1,10 @@
 // Start a new page from its golden template (26 Nov 2026).
 // Usage: node scripts/new-page.mjs --type usecase --slug ai-account-reconciliation --topic "AI account reconciliation"
 //          --job "account reconciliation" [--industry "any industry"] [--reader "controller"]
-// Writes two files in drafts/ (git-ignored):
-//   <slug>.json      the page skeleton: every block of the type, in order, with TODO slots
-//   <slug>.brief.md  the research brief: what to find for each slot, the rules, the ICP review order, the gate
+// Writes three files in drafts/ (git-ignored):
+//   <slug>.json         the page skeleton: every block of the type, in order, with TODO slots
+//   <slug>.research.md  the research skeleton: one heading per slot, one line per finding with its URL and read date
+//   <slug>.brief.md     the research brief: what to find for each slot, the rules, the ICP review order, the gate
 // A writer agent researches and fills the JSON, runs `node scripts/check-page.mjs drafts/<slug>.json` until it
 // passes, then moves it into src/content/ai-work/. Research and writing are done by separate agents (Russell's rule).
 import { writeFileSync, mkdirSync, existsSync } from 'node:fs';
@@ -61,9 +62,12 @@ const page = {
   ...(type === 'crossing' ? { parent: T('work playbook slug'), industrySlug: T('industry slug, e.g. insurers'), differs: t.differsFrom.map((k) => ({ what: k, how: T(`how ${k} differs from the parent page, or delete this row`) })) } : {}),
 };
 for (const f of fields) if (SLOT[f] !== undefined) page[f] = SLOT[f];
-// Answer-first rule (26 Nov 2026): one answer slot per question-heading block, rendered straight under the heading.
-page.answers = Object.fromEntries(t.order.filter((id) => !['sources', 'related', 'tables', 'resources', 'key-numbers'].includes(id))
-  .map((id) => [id, T('one sentence, 30 words max, that answers the heading outright [^n]')]));
+// Answer-first rule (26 Nov 2026): one answer slot per block whose heading is a question, rendered straight under it.
+// No slot for what-it-is (the summary is that answer, so a slot rendered it twice) or for a heading that is not a
+// question, like "Questions buyers ask about X" (the slot rendered as a stray paragraph). The page check fails both.
+const isQuestion = (id) => String((t.headings && t.headings[id]) || BLOCKS[id]?.h || '').trim().endsWith('?');
+page.answers = Object.fromEntries(t.order.filter((id) => id === 'own-data' || (id !== 'what-it-is' && isQuestion(id)))
+  .map((id) => [id, T('one sentence, 6-30 words, that answers the heading outright and gives the reason [^n]')]));
 Object.assign(page, {
   offer: { heading: T('free-diagnostic heading in the buyer\'s words'), body: t.offer ? t.offer.replaceAll('{job}', job) : T('what the 30 minutes gets them, 1-2 sentences') },
   keyword: { phrase: T('main search phrase from docs/ai-work-site/keyword-research'), searches: 0, cpc: 0, difficulty: null },
@@ -77,14 +81,19 @@ Page: \`${slug}\` · type \`${type}\` · address \`/${t.path}.html\` · made ${t
 Reader: lower-middle-market firm, 40-500 staff. Division head for this page: ${reader || t.division}.
 
 ## How to work
-1. **Research agent** (separate from the writer): fill \`drafts/${slug}.research.md\` with findings for every slot below,
-   each with source name, URL and date read. Primary sources first. Then stop.
+1. **Research agent** (separate from the writer): fill \`drafts/${slug}.research.md\`, one line per finding under its slot:
+   \`- finding | Source: name | URL: https://... | Read: YYYY-MM-DD\`. Every finding needs its URL and read date; a slot
+   with nothing says \`- no source found\` and the searches run. Primary sources first. Run
+   \`node scripts/check-research.mjs drafts/${slug}.research.md\` until it says PASS. Then stop.
 2. **Writer agent**: fill \`drafts/${slug}.json\` from the research only. Footnote every claim as [^n], where n is
    the source's 1-based place in \`sources\`. Delete optional blocks you can't source; never pad.
 3. Run \`node scripts/check-page.mjs drafts/${slug}.json\` and fix until it says PASS (the ICP reviews are the last FAILs).
-4. **ICP review**, in this order, one pass each, fixes applied between passes: ${REVIEWERS.join(' → ')}.
+4. **Source-claim check** (a separate agent from the writer): open every cited source and confirm it states the claim
+   its footnote backs, with the same number, date and scope. Fix or cut what it doesn't back, then log
+   \`sourceCheck: {date, by, checked, fixed}\`. The page check warns until it is logged.
+5. **ICP review**, in this order, one pass each, fixes applied between passes: ${REVIEWERS.join(' → ')}.
    Each reviewer reads as that buyer and logs \`{reader, notes}\` in \`reviews\`. Persona notes: docs/steve-persona.md.
-5. Move the JSON to \`src/content/ai-work/${slug}.json\`, run \`npm test\`. Set \`index: true\` only on Russell's yes.
+6. Move the JSON to \`src/content/ai-work/${slug}.json\`, run \`npm test\`. Set \`index: true\` only on Russell's yes.
 
 ## Rules baked into this template
 - **Title** is the buyer's real question (People Also Ask, Reddit, Quora, vendor FAQs). Shape: "${t.titleShape}". Example: "${t.example}".
@@ -98,6 +107,12 @@ Reader: lower-middle-market firm, 40-500 staff. Division head for this page: ${r
 - **Superseded rules name their replacement.** SR 11-7 was replaced by SR 26-2 (17 Apr 2026); CFPB circulars 2022-03 and 2023-03 were withdrawn (12 May 2025). Say so wherever they appear; add new cases to src/lib/stale-rules.mjs.
 - **No rival consulting firm as an option or with a price, and no consultant, agency or retainer fee ranges.** A firm's survey, cited as evidence, is fine (src/lib/rival-firms.mjs).
 - **Links to our own pages are root-relative** ("/about.html"), never https://zavient.com/...
+- **Answers carry their reason**: a first sentence under 6 words ("No.", "Not yet.") fails; write "No, because ...".
+- **Spell out every acronym** the first time: "enterprise resource planning (ERP)". Jargon the page check knows is in src/lib/acronyms.mjs; add new ones there.
+- **Description** is 50-160 characters. No footnote markers in the title or description; every key number carries one.
+- **Slugs are real pages**: every ranked, spoke and related slug exists in src/content/ai-work. Related: ${MIN.related[0]}-${t.relatedMax || MIN.related[1]} links for this type.
+- **Headings don't repeat words**: if the topic repeats a template word ("AI ... AI"), set \`headings[blockId]\`.
+- **No search-results pages as sources** (Google, Bing, a site's /search?q=): cite the page the result leads to.
 - **Save the JSON at the file's own indent**, JSON.stringify(data, null, n) plus a newline, so a fix stays a small diff.
 - **Every fix goes into the template or the page check, never just the page.** If you fix a page, add the rule or test that stops the same mistake on every page.
 - **Teach, then trust, then the lead**: the block order below is fixed. "When to pick something else" sits after "Buy or build", just above the free diagnostic.
@@ -115,6 +130,11 @@ Then the free diagnostic (rendered on every page): write \`offer.heading\` and \
 mkdirSync(join(root, 'drafts'), { recursive: true });
 const jp = join(root, 'drafts', `${slug}.json`);
 if (existsSync(jp)) { console.error(`${jp} exists; not overwriting`); process.exit(1); }
-writeFileSync(jp, JSON.stringify(page, null, 2) + '\n');
+// One-space indent, the house format for new pages (the format test then holds each file to its own indent).
+writeFileSync(jp, JSON.stringify(page, null, 1) + '\n');
+const research = `# Research: ${topic}\n\nOne line per finding: \`- finding | Source: name | URL: https://... | Read: YYYY-MM-DD\`.\n` +
+  `Check: node scripts/check-research.mjs drafts/${slug}.research.md\n\n` +
+  t.order.filter((id) => !['sources', 'related'].includes(id)).map((id) => `## ${((t.headings && t.headings[id]) || BLOCKS[id].h || id).replaceAll('{topic}', topic)}\n`).join('\n');
+writeFileSync(join(root, 'drafts', `${slug}.research.md`), research);
 writeFileSync(join(root, 'drafts', `${slug}.brief.md`), brief);
-console.log(`wrote drafts/${slug}.json and drafts/${slug}.brief.md`);
+console.log(`wrote drafts/${slug}.json, drafts/${slug}.research.md and drafts/${slug}.brief.md`);

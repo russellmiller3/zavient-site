@@ -4,7 +4,8 @@
 // Checks every Site rule a machine can check: BLUF bullets, question title, footnotes on every claim with 2+ sources
 // on the bottom line, enough sources from enough sites, own data, the type's required blocks, augmentation and
 // no-low-end wording, no leftover TODOs, readability, crossing-page difference test, glossary inbound links, and the
-// ICP review log in order, lead sentences, superseded rules, rival firms and own-site links. What it can't check (is the question real, is the source honest) is the reviewers' job.
+// ICP review log in order, lead sentences, superseded rules, rival firms, own-site links, search-result sources,
+// undefined acronyms and page structure (description, key-number footnotes, real slugs, headings, answer slots). What it can't check (is the question real, is the source honest) is the reviewers' job.
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -12,10 +13,12 @@ import { TYPES, COMMON_REQUIRED, REVIEWERS, MIN, BANNED, BLOCKS, DEMAND } from '
 import { checkPage as readability } from './check-readability.mjs';
 import { pageAnswerProblems } from '../src/lib/answer-first.mjs';
 import { ownPriceProblems, strings } from '../src/lib/no-own-price.mjs';
-import { sourceProblems } from '../src/lib/source-rules.mjs';
+import { sourceProblems, searchResultProblems } from '../src/lib/source-rules.mjs';
 import { pageLeadProblems } from '../src/lib/lead-rules.mjs';
 import { staleProblems } from '../src/lib/stale-rules.mjs';
 import { rivalProblems } from '../src/lib/rival-firms.mjs';
+import { acronymProblems } from '../src/lib/acronyms.mjs';
+import { structureProblems } from '../src/lib/structure-rules.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const contentDir = join(root, 'src/content/ai-work');
@@ -67,6 +70,7 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
   if (unused.length) fail.push(`sources never cited: ${unused.join(', ')}; cite each source on the page or drop it from the list`);
   // No forum threads, rival consulting firms or content farms as sources (26 Nov 2026 fixes, made structural)
   for (const p of sourceProblems(d.sources)) fail.push(p);
+  for (const p of searchResultProblems(d.sources)) fail.push(p);
   // Every sentence-bearing prose field should carry a footnote
   const prose = [['summary', d.summary], ...(d.humanRole || []).map((x, i) => [`humanRole ${i + 1}`, x]),
     ...(d.watchOuts || []).map((x, i) => [`watchOut ${i + 1}`, x]), ...(d.pickElse || []).map((x, i) => [`pick-else ${i + 1}`, x]), ...(d.faq || []).map((x, i) => [`faq ${i + 1}`, x.a]),
@@ -123,9 +127,18 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
     if (inbound < t.minInbound) fail.push(`only ${inbound} pages link here; a ${d.type} page needs ${t.minInbound}+`);
   }
 
+  // Page structure: description length, footnotes on key numbers, real slugs, headings, answer slots (26 Nov 2026)
+  const slugs = siblings.length ? new Set(siblings.map((x) => x._slug)) : null;
+  for (const p of structureProblems(d, slugs)) fail.push(`structure: ${p}`);
+  // No undefined shorthand: every business-jargon acronym is spelled out on the page (src/lib/acronyms.mjs)
+  for (const p of acronymProblems(d)) fail.push(`acronym: ${p}`);
+
   // ICP review log, in order
   const readers = (d.reviews || []).map((r) => r.reader);
   if (readers.join('|') !== REVIEWERS.join('|')) fail.push(`ICP reviews must be ${REVIEWERS.join(' → ')}; log has ${readers.join(' → ') || 'none'}`);
+  // Source-claim check (26 Nov 2026): a reviewer opens each cited source and confirms it says what the footnote claims.
+  // A warning, not a fail, until the pages built before the rule have a log.
+  if (!d.sourceCheck) warn.push('no source-claim check logged: open each cited source, confirm it states the claim it backs, and log sourceCheck {date, by, checked, fixed}');
 
   return { fail, warn };
 }

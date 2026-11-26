@@ -63,7 +63,7 @@
     "Most firms keep their people. Where AI changed tasks, 66% of firms only used it to help staff, and AI-related employment fell at 2%.[^10]"
   ],
   "example": {
-    "input": "Illustrative example, not data. A 100-person job shop has 140 open work orders, routings for 15 work centers, a changeover matrix, shift calendars and material arrival dates.[^3] On Tuesday at 10:00, CNC 3 goes down for about 6 hours, and sales adds a rush order of 2,000 brackets due Friday.",
+    "input": "Illustrative example, not data. A 100-person job shop has 140 open work orders, routings for 15 work centers, a changeover matrix, shift calendars and material arrival dates.[^3] On Tuesday at 10:00, CNC (computer-controlled) machine 3 goes down for about 6 hours, and sales adds a rush order of 2,000 brackets due Friday.",
     "output": "The software proposes a new sequence, keeps the next 24 hours frozen, and moves nine jobs from CNC 3 to CNCs 4 and 5.[^16][^21] It flags three late orders and costs two fixes: 6 hours of Saturday overtime on CNC 4, or splitting the rush order. The planner picks one, notes why and releases it, and supervisors get the new dispatch list.[^4][^9]"
   },
   "tables": [
@@ -80,7 +80,7 @@
           "name": "MRPeasy",
           "url": "https://www.mrpeasy.com/pricing/",
           "cells": [
-            "Cloud MRP for small makers; lists finite-capacity operations scheduling[^24]",
+            "Cloud MRP (material requirements planning) for small makers; lists finite-capacity operations scheduling[^24]",
             "Its only AI is a support assistant. We couldn't confirm which plan includes finite scheduling[^24]"
           ]
         },
@@ -404,7 +404,7 @@
   "faq": [
     {
       "q": "Can ChatGPT schedule my shop?",
-      "a": "Not by itself. Benchmarks show language models break capacity rules and fail to beat simple dispatching rules.[^5][^39] Use scheduling software or a solver, and let AI explain the changes.[^6][^38]"
+      "a": "Not by itself, because benchmarks show language models break capacity rules and fail to beat simple dispatching rules.[^5][^39] Use scheduling software or a solver, and let AI explain the changes.[^6][^38]"
     },
     {
       "q": "How much does production scheduling software cost?",

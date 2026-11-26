@@ -8,11 +8,13 @@
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { splitSentences } from '../src/lib/sentences.mjs';
 
 export const LIMITS = { sentenceWords: 25, bulletSentences: 2, paraSentences: 3, cellSentences: 2, verdictMin: 3, verdictMax: 5, verdictItemWords: 20, verdictFootnotes: 2, summaryWords: 50 };
 
 const clean = (t) => String(t).replace(/\[\^\d+\]/g, '').replace(/https?:\/\/\S+/g, 'URL').trim();
-export const sentences = (t) => clean(t).split(/(?<=[.!?])\s+(?=[A-Z0-9"“$(])/).filter((s) => s.trim());
+// Shared splitter (src/lib/sentences.mjs): initials and abbreviations ("J.D. Power", "U.S. Census") don't end a sentence.
+export const sentences = (t) => splitSentences(clean(t));
 const words = (s) => s.split(/\s+/).filter(Boolean).length;
 
 export function checkPage(d) {

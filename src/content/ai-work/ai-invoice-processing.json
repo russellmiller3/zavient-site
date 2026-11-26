@@ -6,7 +6,7 @@
  "topic": "accounts payable automation",
  "job": "accounts payable automation",
  "industry": "finance and accounts payable",
- "summary": "OCR only turns an invoice into text; AI AP automation also codes it, matches it to the purchase order (PO) and routes it for approval[^27][^21]. Reading costs cents[^10][^11]. Money leaks in two places: exceptions, about 1 invoice in 5[^8], and fake bank-change requests[^12].",
+ "summary": "OCR (optical character recognition) only turns an invoice into text. AI AP automation also codes it, matches it to the purchase order (PO) and routes it for approval[^27][^21]. Reading costs cents[^10][^11], but money leaks in two places: exceptions, about 1 invoice in 5[^8], and fake bank-change requests[^12].",
  "humanRole": [
   "AP specialist: clears the exceptions, about 1 invoice in 5, and makes the call the tool only flags.[^8][^1] Keep three-way match (invoice, PO and receipt agree) on; Washington's state auditor says it \"should not be eliminated in order to save time.\"[^48]",
   "Supplier-list owner, not the paying clerk: adds suppliers and approves any bank-detail change.[^47][^49] Each change gets a call-back on a number already on file, never one from the request.[^49][^12]",
@@ -318,7 +318,7 @@
  ],
  "rules": [
   {
-   "name": "Germany: B2B e-invoicing",
+   "name": "Germany: business-to-business e-invoicing",
    "url": "https://ec.europa.eu/digital-building-blocks/sites/display/DIGITAL/eInvoicing%2Bin%2BGermany",
    "status": "Issuing from 1 Jan 2027 (over €800,000 turnover)",
    "what": "All businesses must be able to receive EN 16931 e-invoices since 1 Jan 2025. Larger firms must issue them from 2027 and nearly all from 2028[^36][^37][^41]."

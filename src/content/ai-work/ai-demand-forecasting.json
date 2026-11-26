@@ -319,7 +319,7 @@
   ],
   "ownData": {
     "title": "How much better than last year plus growth is an AI forecast?",
-    "intro": "On 26 Nov 2026 we backtested six forecasting methods on public Walmart sales data from the M5 competition.[^1][^2] We summed 2,524 items across 10 stores, like one warehouse, and forecast May 2015 to May 2016 from four start dates.[^39] Error is WAPE: units missed divided by units sold, so lower is better.[^42]",
+    "intro": "On 26 Nov 2026 we backtested six forecasting methods on public Walmart sales data from the M5 competition.[^1][^2] We summed 2,524 items across 10 stores, like one warehouse, and forecast May 2015 to May 2016 from four start dates.[^39] Error is WAPE (weighted absolute percentage error): units missed divided by units sold, so lower is better.[^42]",
     "headers": [
       "Items (count)",
       "Last year + growth",
@@ -385,14 +385,14 @@
         "No method wins every item"
       ]
     ],
-    "note": "Retail sales are smoother than many B2B order books, and we gave the models no promotion inputs.[^1][^2] The AI model was lightly tuned, we used an item-level growth rate, and we did not test new items or stock dollars. Simple smoothing got most of the gain: AI added 1.3 points at warehouse level and 2.8 at one store."
+    "note": "Retail sales are smoother than many business-to-business order books, and we gave the models no promotion inputs.[^1][^2] The AI model was lightly tuned, we used an item-level growth rate, and we did not test new items or stock dollars. Simple smoothing got most of the gain: AI added 1.3 points at warehouse level and 2.8 at one store."
   },
   "howToTest": [
     "Record your before numbers: today's forecast error, bias, fill rate and safety stock dollars. Score your current method on the same weeks you test the tools on.",
     "Pull 2-3 years of weekly demand by item; two years is the minimum to learn seasons.[^23][^43] Use orders, not shipments, where you can, and mark stockout weeks.[^14]",
     "Pick one warehouse or product family, and hold back its latest 13-26 weeks to forecast from several start dates. Never score a model on weeks it trained on.[^39]",
     "Set three baselines: same week last year, last year plus growth, and Excel's FORECAST.ETS.[^19][^26] A tool must beat these to earn its fee.[^7]",
-    "Score with WAPE and bias (whether you run high or low), not MAPE, which breaks on zero-sales weeks.[^44][^42] Weight by dollars if a few items matter most.",
+    "Score with WAPE and bias (whether you run high or low), not MAPE (mean absolute percentage error), which breaks on zero-sales weeks.[^44][^42] Weight by dollars if a few items matter most.",
     "Split results by demand pattern: smooth, erratic, intermittent and lumpy.[^3] Expect the biggest gains on steady and erratic sellers.[^2][^4]",
     "Run forecast value added on your overrides: naive, then system forecast, then the planner's final number.[^7][^18] Stop the kinds of override that cost accuracy.[^6]",
     "Price the lift in dollars: safety stock scales with error spread, so 10% less spread frees about 10% of safety stock.[^9][^10] Multiply by unit cost and your yearly carrying-cost rate.",
@@ -413,7 +413,7 @@
     },
     {
       "q": "Do we need to hire a data scientist?",
-      "a": "Not to buy. Tools like StockTrim and ERP add-ons ship with built-in models.[^24][^31] You need one to build your own, and internal builds succeed less often.[^41]"
+      "a": "Not to buy, because tools like StockTrim and ERP add-ons ship with built-in models.[^24][^31] You need one to build your own, and internal builds succeed less often.[^41]"
     },
     {
       "q": "How much sales history do we need?",
@@ -421,7 +421,7 @@
     },
     {
       "q": "Can we run S&OP in Excel?",
-      "a": "Yes. S&OP is a monthly meeting process, not a tool.[^12][^13] Excel is the most used forecasting tool in supply chains.[^38]"
+      "a": "Yes, because S&OP is a monthly meeting process, not a tool.[^12][^13] Excel is the most used forecasting tool in supply chains.[^38]"
     },
     {
       "q": "What does demand forecasting software cost?",
