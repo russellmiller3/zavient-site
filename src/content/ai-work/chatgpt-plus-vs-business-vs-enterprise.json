@@ -1,0 +1,644 @@
+{
+ "title": "ChatGPT Plus vs Business vs Enterprise: which should your staff get?",
+ "description": "Which ChatGPT plan to roll out at a 40-500 person firm: dated prices at 50 and 200 seats, data and admin controls, and who each plan fits.",
+ "type": "compare",
+ "templateVersion": 1,
+ "topic": "ChatGPT Plus vs Business vs Enterprise",
+ "job": "choosing a ChatGPT plan for the team",
+ "industry": "any industry",
+ "index": false,
+ "verdict": [
+  "Pick Business Standard, billed yearly, for most firms under 200 staff: same $20 a seat as Plus, with admin controls[^2][^3].",
+  "Pick Plus only for one person's own, non-confidential work; OpenAI may train on those chats unless they opt out[^1][^12].",
+  "Pick Enterprise if you need automatic offboarding, audit logs, a BAA (health-data contract) or over 200 seats[^2][^5].",
+  "Pick a monthly Business pilot first if use is unproven; firms leave 36% of software licences unused[^2][^32].",
+  "Pick neither until you check the AI chat already in your Microsoft 365 or Google Workspace plan[^36][^37]."
+ ],
+ "onPage": [
+  {
+   "to": "table-1",
+   "text": "Every plan's price and data terms, checked 26 Nov 2026"
+  },
+  {
+   "to": "recipes",
+   "text": "Which plan fits a pilot, a rollout or a regulated firm"
+  },
+  {
+   "to": "human-role",
+   "text": "Who keeps control: IT, ops, reviewers and compliance"
+  },
+  {
+   "to": "own-data",
+   "text": "What a year costs at 50 and 200 seats"
+  },
+  {
+   "to": "what-goes-wrong",
+   "text": "Mistakes teams make when they choose a plan"
+  },
+  {
+   "to": "faq",
+   "text": "Straight answers to the questions buyers ask"
+  }
+ ],
+ "headings": {},
+ "summary": "Plus, Business and Enterprise run near-identical ChatGPT; the plan decides who controls the account and data[^1][^2]. Plus belongs to one person, and OpenAI may train on those chats unless they opt out[^12]. Business gives the firm sign-in, admin and no training by default; Enterprise adds audit logs and retention control[^2][^11].",
+ "tables": [
+  {
+   "title": "What does each ChatGPT plan cost, and who controls it?",
+   "intro": "US list prices before tax, as OpenAI publishes them, read 26 Nov 2026[^1][^2]. Enterprise has no public price, so we show third-party reports and label them[^23].",
+   "headers": [
+    "Plan",
+    "Price",
+    "Who it's for",
+    "Data and admin"
+   ],
+   "rows": [
+    {
+     "name": "Free",
+     "url": "https://chatgpt.com/pricing",
+     "cells": [
+      "$0[^1]",
+      "One person[^1]",
+      "OpenAI may train on chats unless the user opts out. Personal account, no admin[^12]."
+     ]
+    },
+    {
+     "name": "Plus",
+     "url": "https://chatgpt.com/pricing",
+     "cells": [
+      "$20 a month, monthly billing only[^3][^21]",
+      "One person[^1]",
+      "Same data terms as Free. No company sign-in or admin[^12][^1]."
+     ]
+    },
+    {
+     "name": "Pro",
+     "url": "https://chatgpt.com/pricing",
+     "cells": [
+      "$100, $200 or $500 a month[^4]",
+      "One very heavy individual user[^4]",
+      "Same data terms as Plus[^12]."
+     ]
+    },
+    {
+     "name": "Business, Standard seat",
+     "url": "https://openai.com/business/pricing",
+     "cells": [
+      "$20 a seat a month billed yearly, $25 monthly[^2][^5]",
+      "Teams of 2 to 200, per OpenAI's pricing page[^2]",
+      "No training by default. Company sign-in (SSO) and admin roles, but no automatic offboarding[^2][^9]."
+     ]
+    },
+    {
+     "name": "Business, Premium seat",
+     "url": "https://openai.com/business/pricing",
+     "cells": [
+      "$100 a seat a month billed yearly, $125 monthly[^2][^5]",
+      "Heavy users of ChatGPT Work and Codex, OpenAI's coding agent[^2]",
+      "Higher usage limits, per OpenAI. Same controls as Standard[^5][^2]."
+     ]
+    },
+    {
+     "name": "Enterprise",
+     "url": "https://openai.com/business/pricing",
+     "cells": [
+      "Not published: 'custom pricing'. Third parties report about $60 a seat a month[^2][^23].",
+      "Firms at scale, or with contract and compliance needs[^2]",
+      "Adds automatic offboarding (SCIM), role-based access, audit-log feeds and data residency[^2][^10]."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "What does Enterprise add over Business?",
+   "intro": "From OpenAI's own Business vs Enterprise table, read 26 Nov 2026; these are the vendor's claims[^2]. Rows are the controls a COO, IT lead or compliance lead asks about.",
+   "headers": [
+    "Control",
+    "Business",
+    "Enterprise"
+   ],
+   "rows": [
+    {
+     "name": "No training on your data by default",
+     "cells": [
+      "Yes[^2][^11]",
+      "Yes[^2][^11]"
+     ]
+    },
+    {
+     "name": "Company sign-in (SSO) and admin console",
+     "cells": [
+      "Yes[^2][^9]",
+      "Yes[^2]"
+     ]
+    },
+    {
+     "name": "Automatic add and remove from your identity system (SCIM)",
+     "cells": [
+      "No: IT adds and removes people by hand[^9][^10]",
+      "Yes[^2][^10]"
+     ]
+    },
+    {
+     "name": "Chat logs sent to your legal-hold and security tools (eDiscovery, DLP, SIEM)",
+     "cells": [
+      "No[^2]",
+      "Yes, through the Compliance API[^19]"
+     ]
+    },
+    {
+     "name": "Custom data retention",
+     "cells": [
+      "OpenAI's Business wording is mixed; the table lists it for Enterprise only[^2][^11]",
+      "Yes[^2][^11]"
+     ]
+    },
+    {
+     "name": "Data residency (US, EU, UK and others)",
+     "cells": [
+      "No[^2]",
+      "Yes[^2]"
+     ]
+    },
+    {
+     "name": "Security certifications",
+     "cells": [
+      "SOC 2 Type 2; no ISO 27001 family, per OpenAI's table[^2]",
+      "SOC 2 Type 2 and ISO 27001, 27017, 27018, 27701[^2]"
+     ]
+    },
+    {
+     "name": "BAA, invoicing, purchase orders",
+     "cells": [
+      "Not on self-serve Business[^5]",
+      "Through a sales contract[^2][^5]"
+     ]
+    },
+    {
+     "name": "Long documents, fast model",
+     "cells": [
+      "About 40 pages at once[^2]",
+      "About 250 pages at once[^2]"
+     ]
+    },
+    {
+     "name": "Seat limit",
+     "cells": [
+      "200 paid seats for workspaces made since 24 Aug 2026[^6][^8]",
+      "None published[^2]"
+     ]
+    }
+   ]
+  }
+ ],
+ "recipes": [
+  {
+   "name": "1. Pilot in one unit: 8-15 staff for 60-90 days",
+   "when": "You want proof in one unit or site before a firm-wide spend. Use Business billed monthly, not Plus, because pilot staff will still paste company data[^2][^12].",
+   "flow": [
+    "Ops lead: pick two or three repeat tasks and 8-12 volunteers from two departments",
+    "IT: create the Business workspace, verify the email domain, turn on company sign-in (SSO) and two-step sign-in (MFA)",
+    "IT: choose which connected apps are switched on",
+    "Department head: name who checks AI output before it leaves the team",
+    "Ops lead: time each task before the pilot, so there is a before-and-after number",
+    "Ops lead: read weekly use in the admin analytics dashboard",
+    "Ops lead and finance: at day 60-90, move to yearly billing or stop"
+   ],
+   "cost": "10 seats × $25 × 3 months = $750; 12 seats = $900, at list prices read 26 Nov 2026[^2][^5]. OpenAI's pages differ on the minimum seat count, so check at checkout[^5][^8]."
+  },
+  {
+   "name": "2. Whole-firm rollout, 40-200 staff",
+   "when": "Your firm has no BAA or data-residency rule and stays under Business's 200-seat cap[^5][^6]. Buy Standard yearly for everyone who will use it, and Premium only for proven heavy users[^2][^5].",
+   "flow": [
+    "Ops lead: write a one-page AI use policy: what data may go in, who reviews what",
+    "IT: set up SSO and a verified domain, and make auto-join need approval",
+    "IT: keep a manual offboarding checklist, since Business has no SCIM",
+    "IT: help staff with personal Plus accounts move or separate their history",
+    "Department heads: pick uses for each role and name a reviewer for each",
+    "Finance: set credit usage alerts if you buy extra credits",
+    "Ops lead: review seats each quarter and reassign idle ones"
+   ],
+   "cost": "Worked example, 120 staff billed yearly: 108 Standard and 12 Premium seats come to $40,320 a year[^2][^5]. All Standard, the same 120 seats cost $28,800 a year[^2]."
+  },
+  {
+   "name": "3. Regulated firm, or more than 200 staff",
+   "when": "Pick this past 200 seats, because new Business workspaces stop there[^6]. Also pick it if you need a BAA, retention control, audit logs, data residency or automatic offboarding[^2][^5].",
+   "flow": [
+    "Compliance or legal: list hard needs: BAA, retention period, residency, eDiscovery",
+    "Ops lead: get a written quote with seat minimum, included credits and true-up terms (charges for seats added mid-contract)",
+    "IT: connect SCIM to your identity system and set role-based access",
+    "IT and security: copy Compliance API logs to your archive; OpenAI keeps them 30 days",
+    "IT: plan the personal-account move; on Enterprise, staff get 7 days to choose",
+    "Department heads: keep sign-off rules for each role"
+   ],
+   "cost": "OpenAI publishes no Enterprise price[^2]. Third parties report about $60 a seat a month with a 150-seat minimum, about $108,000 a year at the floor[^23][^22]."
+  }
+ ],
+ "humanRole": [
+  "IT decides who gets in and who gets out. On Business, IT removes leavers by hand because there is no SCIM; Enterprise automates it[^8][^9][^10].",
+  "The ops lead and IT decide which company systems ChatGPT can read. Business admins choose which apps are on; on Enterprise, all apps start switched off[^18].",
+  "A named reviewer in each team, such as the controller for finance drafts, checks AI output before it leaves the firm. NIST advises checking sources and citations, and ChatGPT Work can pause for a person to approve key steps[^24][^15].",
+  "Licensed staff keep their professional duties, and compliance owns the record. Lawyers keep confidentiality duties, and FINRA says its supervision rules apply to AI[^25][^26][^19]."
+ ],
+ "ownData": {
+  "title": "What does a year of ChatGPT cost at 50 and 200 seats?",
+  "intro": "On 26 Nov 2026 we read OpenAI's pricing and help pages, then multiplied each monthly list price by 12 and by 50 or 200 seats[^1][^2][^3][^5]. OpenAI publishes no Enterprise price, so that row uses third-party reports[^23][^22]. At 50 staff, that reported floor costs about nine times Business Standard[^23][^2].",
+  "headers": [
+   "Option",
+   "Per seat a year",
+   "50 seats a year",
+   "200 seats a year",
+   "Note"
+  ],
+  "rows": [
+   [
+    "Plus (each person buys)",
+    "$240",
+    "$12,000",
+    "$48,000",
+    "Monthly only, no admin, may train on chats[^3][^12]"
+   ],
+   [
+    "Business Standard, yearly",
+    "$240",
+    "$12,000",
+    "$48,000",
+    "Same cash as Plus, with company controls[^2]"
+   ],
+   [
+    "Business Standard, monthly",
+    "$300",
+    "$15,000",
+    "$60,000",
+    "25% more for the right to stop any month[^2]"
+   ],
+   [
+    "Business Premium, yearly",
+    "$1,200",
+    "$60,000",
+    "$240,000",
+    "Higher usage limits, per OpenAI[^2][^5]"
+   ],
+   [
+    "Business mix, 10% Premium, yearly",
+    "Blended",
+    "$16,800",
+    "$67,200",
+    "45 + 5 seats at 50; 180 + 20 at 200[^2]"
+   ],
+   [
+    "Enterprise at a reported $60 a seat",
+    "$720",
+    "$108,000 (150-seat floor)",
+    "$144,000",
+    "Reported, not an OpenAI price. Range $45-75 a seat a month[^23][^22]."
+   ]
+  ],
+  "note": "Zavient price check, read 26 Nov 2026: US list prices before tax, which can vary by country[^5]. It leaves out extra usage credits, promotions and API spend[^17][^2]. Plus is shown for cost only, and 200 seats is the Business cap for new workspaces[^6]."
+ },
+ "example": {
+  "input": "Illustrative: a 90-person distributor where six staff expense personal Plus accounts. A buyer pastes a supplier's price list into a personal chat to draft a reorder email. The firm can't see or delete that chat, and training is on unless the buyer opted out[^12][^13].",
+  "output": "After: those six and 30 more get Business Standard seats at the same $20 a month, billed yearly[^2]. IT verifies the domain and turns on SSO, and work chats stay in the company workspace with no training by default[^9][^11]. When the buyer leaves, IT removes the seat by hand and gives it to someone else[^9][^5]."
+ },
+ "watchOuts": [
+  "Letting staff keep personal accounts: 32.3% of workplace ChatGPT use runs through them, and 57% of surveyed workers admit entering sensitive data[^27][^28]. Fix: buy a workspace and move people over with OpenAI's onboarding steps[^20].",
+  "Paying for seats nobody uses: firms leave 36% of software licences unused, and only 30% of one UK government Copilot pilot used it daily[^32][^35]. Fix: start monthly with volunteers, check admin analytics and reassign idle seats[^2][^5].",
+  "Leaving workspace defaults on: Business members can invite others, and each accepted invite is a paid seat[^8][^7]. Fix: an owner reviews pending invites, auto-join needs approval, and IT runs an offboarding checklist[^8][^9].",
+  "Assuming Business covers regulated data: self-serve Business offers no BAAs, Zero Data Retention or invoicing, and OpenAI points you to a contracted plan[^5]. Fix: if you need a BAA, residency or eDiscovery, price Enterprise from day one[^2].",
+  "Planning a Business rollout past 200 people: since 24 Aug 2026, new Business workspaces cap at 200 paid seats, and support can't raise it[^6][^8]. Fix: past about 150 staff, get an Enterprise quote before the workspace fills[^2].",
+  "Budgeting seats, not usage: from December, Plus and Business share one allowance across ChatGPT and Codex, and longer Work tasks use more[^16][^15]. Fix: set credit usage alerts, since 78% of IT leaders report surprise AI charges[^17][^33]."
+ ],
+ "faq": [
+  {
+   "q": "Is ChatGPT Business worth it over Plus for a team?",
+   "a": "Yes, on yearly billing: a Standard seat costs $20 a month, the same as Plus[^2][^3]. It adds company sign-in, admin controls and no training on your data by default[^2][^12]. Billed monthly, it costs $25[^2]."
+  },
+  {
+   "q": "Can admins see employees' ChatGPT Business chats?",
+   "a": "Plan as if they can. OpenAI's privacy page says Business admins can view, export and delete members' conversations[^11]. On Enterprise, compliance teams pull logs through the Compliance API[^19]."
+  },
+  {
+   "q": "Can we buy ChatGPT Business for just a few people?",
+   "a": "Yes, but OpenAI's pages differ on the minimum[^5][^8]. One help article says one paid seat starts a workspace; the pricing page says from two users[^5][^1]. Check at checkout."
+  },
+  {
+   "q": "Is ChatGPT Team the same as ChatGPT Business?",
+   "a": "Yes. OpenAI renamed Team to Business on 29 Aug 2025, and existing contracts stayed in effect[^6]."
+  },
+  {
+   "q": "What is the difference between Chat and Work in ChatGPT?",
+   "a": "Chat answers questions and drafts short pieces; Work is an agent for multi-step tasks that end in a file you review[^14][^15]. Work runs on Plus, Business and Enterprise, and shares usage limits with Codex[^39][^21]."
+  },
+  {
+   "q": "How much does ChatGPT Enterprise cost?",
+   "a": "OpenAI doesn't publish it; its pricing page says custom pricing[^2]. Third parties report about $60 a seat a month with a 150-seat minimum[^23][^22]. Treat that as a planning number and get a written quote."
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Buy a ChatGPT plan when the job is everyday writing, research and analysis for many staff[^30]. Most enterprise AI is now bought: 76% of solutions in 2025, up from 53% in 2024[^30]. MIT found bought or partnered tools reached deployment about twice as often as internal builds[^29][^40].",
+  "build": "Build when your own data or rules are the edge, such as one narrow workflow tied to your systems[^29]. A build runs on OpenAI's API (developer access), billed apart from ChatGPT; Business includes up to $500 a month in API credits, per OpenAI[^5][^2]. Gartner says at least half of GenAI projects were dropped after proof of concept, so start small[^31]."
+ },
+ "pickElse": [
+  "You already pay for Microsoft 365: Copilot Chat comes at no extra cost on eligible plans[^36]. Microsoft 365 Copilot Business adds answers drawn from your email and files for $21 a user a month on top, billed yearly[^36].",
+  "You run Google Workspace: Business Standard, at $14 a user a month billed yearly, includes Gemini in Gmail, Docs and Meet[^37][^38]. Google says it doesn't train models on your company data[^37].",
+  "You need one narrow workflow, not a chat tool for everyone: a purpose-built tool or a small API build fits better[^29]. MIT found generic chat tools stall in critical workflows that need memory and customisation[^29].",
+  "Staff won't use it yet: fix the task list and training first[^35]. In one UK government pilot of 1,000 Copilot licences, only 30% used it daily[^34][^35]."
+ ],
+ "resources": [
+  {
+   "name": "OpenAI Business pricing and compare table",
+   "url": "https://openai.com/business/pricing",
+   "what": "The only official side-by-side of Business and Enterprise controls."
+  },
+  {
+   "name": "OpenAI: Onboarding employees with existing ChatGPT accounts",
+   "url": "https://help.openai.com/en/articles/10479654-onboarding-employees-with-existing-chatgpt-accounts",
+   "what": "What happens to staff's personal Plus history when they join your workspace."
+  },
+  {
+   "name": "OpenAI Enterprise privacy page",
+   "url": "https://openai.com/enterprise-privacy",
+   "what": "Data ownership, retention and admin access in one place."
+  },
+  {
+   "name": "NIST AI 600-1 Generative AI Profile",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+   "what": "Free US standard checklist for governing generative AI use."
+  },
+  {
+   "name": "FINRA Regulatory Notice 24-09",
+   "url": "https://www.finra.org/rules-guidance/notices/24-09",
+   "what": "What financial firms must check before staff use generative AI."
+  }
+ ],
+ "stats": [
+  {
+   "num": "$20",
+   "label": "a month buys Plus, or a Business Standard seat billed yearly[^3][^2].",
+   "source": "OpenAI pricing pages, read 26 Nov 2026"
+  },
+  {
+   "num": "200",
+   "label": "paid seats is the Business cap for workspaces created since 24 Aug 2026[^6].",
+   "source": "OpenAI Help, 2026"
+  },
+  {
+   "num": "$12,000 vs $48,000",
+   "label": "a year for Business Standard at 50 vs 200 seats, billed yearly[^2].",
+   "source": "Zavient price check, 26 Nov 2026"
+  },
+  {
+   "num": "32.3%",
+   "label": "of workplace ChatGPT use runs through personal accounts[^27].",
+   "source": "Cyberhaven, 222 companies, Jan 2026"
+  },
+  {
+   "num": "36%",
+   "label": "of software licences go unused on average[^32].",
+   "source": "Zylo 2026 SaaS Management Index"
+  },
+  {
+   "num": "76%",
+   "label": "of enterprise AI solutions were bought, not built, in 2025[^30].",
+   "source": "Menlo Ventures, 495 US decision-makers"
+  }
+ ],
+ "sources": [
+  {
+   "name": "OpenAI, Plans and Pricing | ChatGPT",
+   "url": "https://chatgpt.com/pricing",
+   "what": "OpenAI's plan page: Free, Go and Plus are for individuals, Business and Enterprise for businesses; Business 'starting at 2 users'; read 26 Nov 2026."
+  },
+  {
+   "name": "OpenAI, Business Pricing",
+   "url": "https://openai.com/business/pricing",
+   "what": "Business Standard $20 a seat a month yearly or $25 monthly; Premium $100 or $125; 'teams of 2-200'; Enterprise 'custom pricing'; full Business vs Enterprise table; read 26 Nov 2026."
+  },
+  {
+   "name": "OpenAI Help, What is ChatGPT Plus?",
+   "url": "https://help.openai.com/en/articles/6950777-what-is-chatgpt-plus",
+   "what": "Plus costs $20 a month, billed monthly; no annual billing; read 26 Nov 2026."
+  },
+  {
+   "name": "OpenAI Help, About ChatGPT Pro tiers",
+   "url": "https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers",
+   "what": "Pro 100, 200 and 500 tiers at $100, $200 and $500 a month; read 26 Nov 2026."
+  },
+  {
+   "name": "OpenAI Help, ChatGPT Business overview",
+   "url": "https://help.openai.com/en/articles/8792828-chatgpt-business-overview",
+   "what": "Seat prices; seats can be reassigned; one paid seat starts a workspace; no BAAs, Zero Data Retention or invoicing on self-serve Business; read 26 Nov 2026."
+  },
+  {
+   "name": "OpenAI Help, ChatGPT Business: General FAQ",
+   "url": "https://help.openai.com/en/articles/8542115-chatgpt-business-general-faq",
+   "what": "Team renamed Business on 29 Aug 2025; 200 paid seat cap since 24 Aug 2026 that support cannot raise; read 26 Nov 2026."
+  },
+  {
+   "name": "OpenAI Help, Managing billing and seats in ChatGPT Business",
+   "url": "https://help.openai.com/en/articles/8792536-managing-billing-and-seats-in-chatgpt-business",
+   "what": "Each accepted invite is a paid seat; billing and proration examples; read 26 Nov 2026."
+  },
+  {
+   "name": "OpenAI Help, Managing members, seat types and roles in ChatGPT Business",
+   "url": "https://help.openai.com/en/articles/8542216-manage-your-chatgpt-business-workspace",
+   "what": "Owner, admin and member roles; members can invite members; 'at least two paid seats'; workspace auto-join; read 26 Nov 2026."
+  },
+  {
+   "name": "OpenAI Help, SSO for ChatGPT Business FAQ",
+   "url": "https://help.openai.com/en/articles/11489188-sso-for-chatgpt-business-faq",
+   "what": "Business supports SAML and OIDC sign-in; 'No SCIM / AD group sync on the Business plan', so provisioning is manual; read 26 Nov 2026."
+  },
+  {
+   "name": "OpenAI Help, SCIM provisioning and management",
+   "url": "https://help.openai.com/en/articles/10011769-scim-provisioning-and-management",
+   "what": "A standalone Business plan does not include SCIM; Enterprise does; read 26 Nov 2026."
+  },
+  {
+   "name": "OpenAI, Enterprise privacy at OpenAI (updated 8 Jan 2026)",
+   "url": "https://openai.com/enterprise-privacy",
+   "what": "No training on business data by default; Business admins can view, export and delete members' conversations; retention control; read 26 Nov 2026."
+  },
+  {
+   "name": "OpenAI Help, How your data is used to improve model performance",
+   "url": "https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance",
+   "what": "Free, Plus and Pro content may train models unless the user opts out; Business and Enterprise not by default; read 26 Nov 2026."
+  },
+  {
+   "name": "OpenAI Help, Chat and file retention in ChatGPT",
+   "url": "https://help.openai.com/en/articles/8983778-chat-and-file-retention-in-chatgpt",
+   "what": "Chats are kept until the user deletes them; deletion within 30 days; read 26 Nov 2026."
+  },
+  {
+   "name": "OpenAI Help, ChatGPT Work and Codex",
+   "url": "https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex",
+   "what": "Chat is for fast answers; Work is an agent for multi-step tasks and finished deliverables; read 26 Nov 2026."
+  },
+  {
+   "name": "ChatGPT Learn, Get started with ChatGPT Work",
+   "url": "https://learn.chatgpt.com/docs/get-started-with-work",
+   "what": "When to use Chat vs Work; Work lets users approve important actions; longer tasks may use more credits; read 26 Nov 2026."
+  },
+  {
+   "name": "OpenAI Help, Understanding ChatGPT and Codex usage limits",
+   "url": "https://help.openai.com/articles/20001625",
+   "what": "From December 2026, Plus, Pro and Business share one usage allowance across ChatGPT and Codex; read 26 Nov 2026."
+  },
+  {
+   "name": "OpenAI Help, Flexible pricing for the Enterprise, Edu and Business plans",
+   "url": "https://help.openai.com/en/articles/11487671",
+   "what": "Per-seat limits on Business, optional pooled credits, Enterprise shared pool, quarterly true-ups and usage alerts; read 26 Nov 2026."
+  },
+  {
+   "name": "OpenAI Help, Admin controls, security and compliance in apps",
+   "url": "https://help.openai.com/en/articles/11509118-admin-controls-security-and-compliance-in-connectors-enterprise-edu-and-team",
+   "what": "Business admins choose which apps are on; on Enterprise all apps start disabled; read 26 Nov 2026."
+  },
+  {
+   "name": "OpenAI Help, OpenAI Compliance Platform for Enterprise and Edu customers",
+   "url": "https://help.openai.com/en/articles/9261474-compliance-api-for-enterprise",
+   "what": "Sends conversation logs to eDiscovery, DLP and SIEM tools; logs kept 30 days; read 26 Nov 2026."
+  },
+  {
+   "name": "OpenAI Help, Onboarding employees with existing ChatGPT accounts",
+   "url": "https://help.openai.com/en/articles/10479654-onboarding-employees-with-existing-chatgpt-accounts",
+   "what": "What happens to personal accounts when staff join; 7-day requirement on Enterprise with a verified domain; read 26 Nov 2026."
+  },
+  {
+   "name": "ChatGPT Learn, Pricing",
+   "url": "https://learn.chatgpt.com/docs/pricing",
+   "what": "Plus $20 a month; ChatGPT Work and Codex share pricing, credits and usage limits; read 26 Nov 2026."
+  },
+  {
+   "name": "CDW, ChatGPT Enterprise Standard License 1Y Subscription",
+   "url": "https://www.cdw.com/product/chatgpt-enterprise-standard-license-1y-subscription-500-credits-seat-month/9097307",
+   "what": "Reseller listing: '1-year ChatGPT Enterprise subscription (150-seat minimum)'; listing captured Aug 2026, read 26 Nov 2026."
+  },
+  {
+   "name": "CloudZero, ChatGPT Enterprise pricing in 2026 (20 Oct 2026)",
+   "url": "https://www.cloudzero.com/blog/chatgpt-enterprise-pricing",
+   "what": "Reported, not confirmed by OpenAI: about $60 a seat a month, range $45-75, 150-seat minimum, about $108,000 a year at the floor; read 26 Nov 2026."
+  },
+  {
+   "name": "NIST, AI 600-1 Generative AI Profile (Jul 2024)",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+   "what": "US standards body: data privacy and confabulation are core generative AI risks; suggests verifying sources and citations in output."
+  },
+  {
+   "name": "American Bar Association, Formal Opinion 512 (29 Jul 2024)",
+   "url": "https://www.americanbar.org/news/abanews/aba-news-archives/2024/07/aba-issues-first-ethics-guidance-ai-tools",
+   "what": "Lawyers using generative AI keep their duties of competence, confidentiality, communication and reasonable fees."
+  },
+  {
+   "name": "FINRA, Regulatory Notice 24-09 (27 Jun 2024)",
+   "url": "https://www.finra.org/rules-guidance/notices/24-09",
+   "what": "FINRA rules continue to apply to generative AI; firms should evaluate tools before deploying them; supervision rule 3110 applies."
+  },
+  {
+   "name": "Cyberhaven, 2026 AI Adoption and Risk Report (Jan 2026)",
+   "url": "https://info.cyberhaven.com/hubfs/Webflow_Resources/Cyberhaven-AI-Risk-Report-2026.pdf",
+   "what": "Telemetry from 222 companies: 32.3% of workplace ChatGPT use runs through personal accounts."
+  },
+  {
+   "name": "TELUS Digital, AI at work survey (26 Feb 2025)",
+   "url": "https://www.telusdigital.com/about/newsroom/telus-digital-survey-reveals-enterprise-employees-use-of-shadow-ai",
+   "what": "1,000 US workers at firms of 5,000+: 68% use AI assistants through personal accounts; 57% admit entering sensitive data."
+  },
+  {
+   "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025)",
+   "url": "https://www.artificialintelligence-news.com/wp-content/uploads/2025/08/ai_report_2025.pdf",
+   "what": "Bought or partnered tools reached deployment about 67% of the time vs 33% for internal builds; generic tools stall in critical workflows."
+  },
+  {
+   "name": "Menlo Ventures, 2025: The State of Generative AI in the Enterprise (9 Dec 2025)",
+   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+   "what": "Survey of 495 US enterprise AI decision-makers: 76% of AI solutions were purchased, up from 53% in 2024."
+  },
+  {
+   "name": "Gartner, Why Half of GenAI Projects Fail (26 Jan 2026)",
+   "url": "https://www.gartner.com/en/articles/genai-project-failure",
+   "what": "At least 50% of generative AI projects were abandoned after proof of concept, citing data quality, risk controls, cost or unclear value."
+  },
+  {
+   "name": "Zylo, 2026 SaaS Management Index press release (29 Jan 2026)",
+   "url": "https://zylo.com/news/2026-saas-management-index",
+   "what": "Firms leave an average of 36% of SaaS licences unused; ChatGPT is the most expensed app."
+  },
+  {
+   "name": "Zylo, 2026 SaaS Management Index",
+   "url": "https://zylo.com/2026-saas-management-index",
+   "what": "78% of IT leaders reported unexpected charges tied to AI features or consumption pricing."
+  },
+  {
+   "name": "UK Department for Business and Trade, Microsoft 365 Copilot pilot evaluation (28 Aug 2025)",
+   "url": "https://www.gov.uk/government/publications/microsoft-365-copilot-pilot-dbt-evaluation-report",
+   "what": "Government pilot of 1,000 Copilot licences, Oct-Dec 2024."
+  },
+  {
+   "name": "The Register, UK government trial of M365 Copilot (4 Sep 2025)",
+   "url": "https://www.theregister.com/2025/09/04/m365_copilot_uk_government/",
+   "what": "In the UK pilot, about two-thirds used Copilot weekly and 30% daily."
+  },
+  {
+   "name": "Microsoft, Copilot plans and pricing for business",
+   "url": "https://www.microsoft.com/en-us/copilot/pricing/business",
+   "what": "Copilot Chat included at no extra cost with eligible Microsoft 365 plans; Microsoft 365 Copilot Business $21 a user a month, billed yearly, up to 300 users; read 26 Nov 2026."
+  },
+  {
+   "name": "Google, Google Workspace pricing",
+   "url": "https://workspace.google.com/pricing",
+   "what": "Business Standard $14 a user a month, billed yearly, with Gemini included; company data not used to train models; read 26 Nov 2026."
+  },
+  {
+   "name": "Google, Google Workspace with Gemini (help)",
+   "url": "https://knowledge.workspace.google.com/admin/generative-ai/workspace-with-gemini/google-workspace-with-gemini",
+   "what": "Gemini app and Gemini in Gmail, Docs and Meet are included in Workspace plans."
+  },
+  {
+   "name": "OpenAI, ChatGPT Work product page",
+   "url": "https://chatgpt.com/work",
+   "what": "Vendor claim: Work is on all plans on desktop, and on Plus, Pro, Business, Enterprise and Edu on web and mobile; read 26 Nov 2026."
+  },
+  {
+   "name": "Fortune, MIT report: 95% of generative AI pilots at companies are failing (18 Aug 2025)",
+   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
+   "what": "Reports MIT's finding that bought or partnered AI succeeds about 67% of the time, about twice the rate of internal builds."
+  }
+ ],
+ "related": [
+  "copilot-vs-microsoft-365-copilot"
+ ],
+ "offer": {
+  "heading": "Not sure which ChatGPT plan your staff need?",
+  "body": "In 30 minutes we map your seat count, data rules and current tools to a plan. You leave with a year-one cost and a first pilot to run."
+ },
+ "keyword": {
+  "phrase": "chatgpt plus vs business",
+  "searches": 1000,
+  "cpc": 48.11,
+  "difficulty": 0
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Wants one pick to forward, a cost and a first step. Bottom line gives the pick by firm size; own-data table gives the yearly cost. The pilot had no before-and-after measure; added 'Ops lead: time each task before the pilot' to recipe 1. FAQ questions are real buyer questions, seen on r/ChatGPT (Aug and Oct 2025), r/OpenAI (Feb and May 2026), OpenAI's own Business FAQ, and the keyword list (chat vs work in chatgpt, 390 a month); Enterprise cost is the business vs enterprise search."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Reads on a phone. The Business vs Enterprise table ran 11 rows; cut the vendor-marketing Support row. Expanded jargon a non-IT reader would stall on: SSO and MFA in the pilot steps, true-up in the Enterprise quote step, and eDiscovery/DLP/SIEM as legal-hold and security tools. One own-data sentence ran 26 words; split and shortened."
+  },
+  {
+   "reader": "GM",
+   "notes": "Wants to know if one unit or site can pilot first and what it costs that unit. Renamed recipe 1 to 'Pilot in one unit' and said it gives proof in one unit or site before a firm-wide spend. Pilot cost ($750-$900) is in the recipe. No sourced figure exists for time saved, so none is claimed."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Read as the controller or ops lead whose team would use it most. Wants to know who checks output and whether regulated data is allowed. Made the reviewer bullet concrete (the controller for finance drafts). The 'Assuming Business covers regulated data' watch-out and the Enterprise table rows answer the rules question; ABA and FINRA lines cover licensed staff."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Steve, 60-150 staff, decides in 10 seconds: the title and first bullet answer him (Business, yearly, same $20 as Plus). He worries Enterprise is being upsold; added to the own-data intro that a reported Enterprise floor costs about nine times Business Standard at 50 staff, labelled as reported. The Copilot alternative now says the $21 is on top of an eligible Microsoft 365 plan, so he doesn't compare it to $20 unfairly. Offer says what he leaves with: a plan, a year-one cost and a first pilot."
+  }
+ ],
+ "updated": "2026-11-26"
+}

@@ -1,0 +1,630 @@
+{
+ "title": "Microsoft Copilot vs Microsoft 365 Copilot: which fits your firm?",
+ "description": "Copilot Chat, Copilot Business and enterprise Copilot side by side: what each can see, dated prices at 50 and 200 seats, and who should pay.",
+ "type": "compare",
+ "templateVersion": 1,
+ "topic": "Microsoft Copilot vs Microsoft 365 Copilot",
+ "job": "choosing a Microsoft Copilot plan",
+ "industry": "any industry",
+ "index": false,
+ "verdict": [
+  "Pick Copilot Chat if staff mostly draft, search the web and summarize files they open. It comes with your plan.[^1][^2]",
+  "Pick Copilot Business if you have under 300 users who need answers from their own email, meetings and files.[^3][^4]",
+  "Pick a “with Copilot” bundle over the add-on when renewing Business Standard or Premium. The bundle costs less.[^5][^6]",
+  "Pick enterprise Copilot if you run E3 or E5, or have more than 300 users.[^7][^8]",
+  "Pick neither yet if SharePoint permissions are messy. Microsoft says fix oversharing first; Gartner found it delayed rollouts.[^9][^10]"
+ ],
+ "onPage": [],
+ "headings": {},
+ "summary": "Microsoft 365 Copilot is now named “Microsoft Copilot”, so the real choice is Copilot Chat or paid Copilot.[^11][^1] Included Copilot Chat sees the web plus what a user opens or pastes.[^1][^2] Paid Copilot also searches the mail, meetings and files each user can open, so permissions make or break it.[^3][^9]",
+ "tables": [
+  {
+   "title": "Which Copilot is which?",
+   "intro": "Five products carry the Copilot name. Prices are Microsoft's US list prices, read 26 Nov 2026, and features are as Microsoft describes them.[^4][^7][^12]",
+   "headers": [
+    "Option",
+    "What it can see",
+    "Price (read 26 Nov 2026)",
+    "Worth knowing"
+   ],
+   "rows": [
+    {
+     "name": "Free Microsoft Copilot (consumer app)",
+     "url": "https://www.microsoft.com/en-us/copilot/pricing/individuals",
+     "cells": [
+      "The web, with a personal Microsoft account. Not your firm's data.[^13]",
+      "Free, “subject to available capacity and limits”[^14]",
+      "Outside enterprise data protection. IT can block it on work devices.[^13][^15]"
+     ]
+    },
+    {
+     "name": "Microsoft Copilot Chat (was Copilot Chat)",
+     "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/how-copilot-chat-works-with-and-without-a-microsoft-365-copilot-license",
+     "cells": [
+      "The web, plus what a user pastes, uploads or has open. No search across your files.[^1][^2]",
+      "$0 extra with Business Basic, Standard or Premium, or E3 or E5[^1][^8]",
+      "Same data protection as paid, with a work sign-in. No Researcher or Analyst agents.[^16][^1]"
+     ]
+    },
+    {
+     "name": "Copilot Business",
+     "url": "https://www.microsoft.com/en-us/copilot/pricing/business",
+     "cells": [
+      "The user's email, meetings, chats and files, but only what they can already open.[^3][^4]",
+      "$21 per user a month, paid yearly. $18 for year one if bought by 31 Dec 2026.[^4]",
+      "For firms of up to 300 users, from one seat. Includes Researcher, Analyst and internal agents.[^4][^17]"
+     ]
+    },
+    {
+     "name": "Enterprise Microsoft Copilot (was Microsoft 365 Copilot)",
+     "url": "https://www.microsoft.com/en-us/copilot/pricing/enterprise",
+     "cells": [
+      "Same as Business, plus advanced analytics.[^3][^7]",
+      "$30 per user a month, paid yearly[^7]",
+      "Usually added to E3 or E5. No seat minimum since January 2024.[^8][^18]"
+     ]
+    },
+    {
+     "name": "Copilot Studio",
+     "url": "https://www.microsoft.com/en-us/copilot/pricing/copilot-studio",
+     "cells": [
+      "Whatever data its maker connects. Using your firm's data is billed per action.[^19]",
+      "$200 a month per 25,000-credit pack, or $0.01 a credit pay-as-you-go[^12]",
+      "Needed to publish agents to websites, apps or staff without a paid seat.[^12][^20]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "What changes when you add a paid seat?",
+   "intro": "A paid license changes what Copilot can reach and do, not the data protection, per a Microsoft forum answer that matches its docs.[^21][^16]",
+   "headers": [
+    "Question",
+    "Copilot Chat",
+    "Paid Copilot (Business or enterprise)"
+   ],
+   "rows": [
+    {
+     "name": "Find last week's email thread with a client",
+     "cells": [
+      "Only if the user opens it or pastes it in[^2]",
+      "Yes, if the user can open it[^3]"
+     ]
+    },
+    {
+     "name": "Summarize a Teams meeting the user attended",
+     "cells": [
+      "Only content open in the app[^2]",
+      "Yes, including transcripts[^3][^4]"
+     ]
+    },
+    {
+     "name": "Enterprise data protection",
+     "cells": [
+      "Yes, with a work sign-in[^16]",
+      "Yes, the same[^16][^21]"
+     ]
+    },
+    {
+     "name": "Researcher and Analyst agents",
+     "cells": [
+      "No[^1]",
+      "Yes[^4][^7]"
+     ]
+    },
+    {
+     "name": "Agents that use company data",
+     "cells": [
+      "Pay-as-you-go, off by default[^22]",
+      "Included for internal users[^3]"
+     ]
+    },
+    {
+     "name": "Cowork and other usage-billed extras",
+     "cells": [
+      "Not available[^23]",
+      "Yes, billed per credit on top of the seat[^24][^25]"
+     ]
+    },
+    {
+     "name": "Access at busy times",
+     "cells": [
+      "Fair-use limits, with numbers not published[^26]",
+      "Priority access[^3]"
+     ]
+    }
+   ]
+  }
+ ],
+ "recipes": [
+  {
+   "name": "1. A 40-80 person firm on Business Standard, testing the water",
+   "when": "Pick this when you have no pilot yet. Copilot Chat costs nothing extra, so start there and buy a few seats at the promo price.[^1][^4]",
+   "flow": [
+    "IT admin: make sure everyone signs in to Copilot with a work account, and block personal-account Copilot on work devices[^15]",
+    "Ops lead: roll out Copilot Chat to everyone, with one page on what to use it for and what not to paste in",
+    "Ops lead: buy Copilot Business for 10 people who live in email and meetings, such as account managers and project leads[^4]",
+    "Department heads: after 60 to 90 days, time two named tasks, such as meeting follow-ups and proposal first drafts, against Chat-only staff. Then keep, widen or drop"
+   ],
+   "cost": "10 seats at the $18 first-year promo: $2,160 for year one, if bought by 31 Dec 2026.[^4] At the standard $21, it is $2,520 a year.[^4]"
+  },
+  {
+   "name": "2. A 150-250 person firm on Business Premium, ready for a real pilot",
+   "when": "Pick this when leaders want answers from their own mail and files, and you can fix permissions first.[^9][^6]",
+   "flow": [
+    "IT admin: run the SharePoint Advanced Management content assessment, which comes with the Copilot license[^27]",
+    "IT admin: run the Purview oversharing assessment, which scans the top 100 sites weekly by default[^28]",
+    "Site owners: review access on flagged sites and remove links shared with the whole company or with anyone[^9][^29]",
+    "Ops lead: choose about 30 pilot seats across ops, finance and sales leadership",
+    "Finance: price the Business Premium with Copilot bundle against base plan plus add-on[^6][^17]",
+    "IT admin: set a spending cap for usage-billed features before the default policy starts[^24][^30]"
+   ],
+   "cost": "30 seats on the bundle: $3,600 a year more than Business Premium alone.[^6][^31] The same 30 seats as a $21 add-on: $7,560 a year.[^4]"
+  },
+  {
+   "name": "3. A 300-500 person firm on E3",
+   "when": "Pick this when you are past the 300-user cap for Copilot Business, or already on E3 or E5.[^4][^8]",
+   "flow": [
+    "IT admin: turn on Copilot Chat for everyone, since E3 already includes it[^1]",
+    "Ops lead and department heads: name the 40 to 60 roles with the heaviest email and meeting load",
+    "Finance: buy enterprise Copilot for those roles only[^7]",
+    "Ops lead: if staff without a seat need one internal agent, such as HR policy questions, buy one Copilot Studio pack[^12]",
+    "IT admin: hide sensitive sites with Restricted Content Discovery while permissions get fixed[^32]"
+   ],
+   "cost": "50 seats at $30 a month is $18,000 a year, plus $2,400 for one Studio pack.[^7][^12] Total: $20,400 a year before usage-billed extras.[^7][^12]"
+  }
+ ],
+ "humanRole": [
+  "Site owners and IT decide who can see what. Copilot only shows each user what they can already open, so access reviews come first.[^3][^16][^9]",
+  "The person who owns the work signs off client emails, contract clauses, numbers and slides. Government trials found it useful for basic admin but weaker on complex work, including Excel analysis.[^33][^34]",
+  "Finance and IT own the spend. Admins set the cap for usage-billed features such as Cowork, Autopilot and agents.[^24][^25]",
+  "Every agent gets a named owner who checks what it answers and what data it can reach.[^20][^22]"
+ ],
+ "ownData": {
+  "title": "What does each route cost at 50 and 200 seats?",
+  "intro": "We read Microsoft's public US pricing pages on 26 Nov 2026 and multiplied seats by monthly price by 12.[^4][^7][^5][^6][^31][^12] The bundles cost less than base plan plus add-on.[^5][^6] Copilot Studio is priced per firm, not per seat.[^12]",
+  "headers": [
+   "Option",
+   "Per user a month",
+   "50 seats a year",
+   "200 seats a year",
+   "Notes"
+  ],
+  "rows": [
+   [
+    "Copilot Chat",
+    "$0 extra",
+    "$0",
+    "$0",
+    "Included with eligible plans[^1]"
+   ],
+   [
+    "Copilot Business add-on",
+    "$21",
+    "$12,600",
+    "$50,400",
+    "Up to 300 users[^4]"
+   ],
+   [
+    "Copilot Business, first-year promo",
+    "$18",
+    "$10,800",
+    "$43,200",
+    "Bought 1 Jul to 31 Dec 2026, year one only[^4]"
+   ],
+   [
+    "Enterprise Copilot add-on",
+    "$30",
+    "$18,000",
+    "$72,000",
+    "Needs a qualifying plan today[^7][^8]"
+   ],
+   [
+    "Business Standard + Copilot add-on",
+    "$35",
+    "$21,000",
+    "$84,000",
+    "$14 base plus $21 add-on[^4][^31]"
+   ],
+   [
+    "Business Standard with Copilot bundle",
+    "$23.50",
+    "$14,100",
+    "$56,400",
+    "Saves $6,900 or $27,600 a year against the line above[^5][^31]"
+   ],
+   [
+    "Business Premium + Copilot add-on",
+    "$43",
+    "$25,800",
+    "$103,200",
+    "$22 base plus $21 add-on[^4][^31]"
+   ],
+   [
+    "Business Premium with Copilot bundle",
+    "$32",
+    "$19,200",
+    "$76,800",
+    "Saves $6,600 or $26,400 a year against the line above[^6][^31]"
+   ],
+   [
+    "Copilot Studio, one 25,000-credit pack",
+    "$200 per firm",
+    "$2,400",
+    "$2,400",
+    "Not per seat. Unused credits do not roll over.[^12]"
+   ],
+   [
+    "Usage-billed ceiling at the default cap",
+    "Up to $40",
+    "Up to $24,000",
+    "Up to $96,000",
+    "Only if every user hits 4,000 credits a month[^24][^25]"
+   ]
+  ],
+  "note": "Zavient price check of Microsoft's US list prices, read 26 Nov 2026, before tax; partner quotes and discounts differ.[^4][^7] Monthly-billing prices are left out because we could not confirm them on Microsoft's own pages. The usage line is a ceiling, not a forecast.[^24]"
+ },
+ "example": {
+  "input": "A 120-person firm on Business Standard gives everyone Copilot Chat.[^1] It wants paid Copilot for 25 client-facing staff who live in email and meetings.[^3]",
+  "output": "It moves those 25 to Business Standard with Copilot for $2,850 a year extra, against $6,300 for the add-on.[^5][^31][^4] Before the switch, IT runs the content assessment and fixes the most overshared sites.[^27]"
+ },
+ "watchOuts": [
+  "Copilot surfaces whatever is already overshared, and Microsoft says fix that before rollout.[^9][^29] In Gartner's 2024 survey of IT leaders, 40% delayed rollout three months or more over it.[^10]",
+  "The names changed on 28 Oct 2026, so quotes and old documents may use either. Check the product code on the quote, not the label.[^11][^35]",
+  "Usage billing sits on top of the seat: Cowork, Autopilot and some agents bill per credit.[^24][^25] New Copilot Business partner purchases get a default cap of up to $40 per user a month from early 2027, so set your own.[^30][^24]",
+  "Staff on personal Microsoft accounts fall outside enterprise data protection. Look for the green shield and Work label, and block personal Copilot with tenant restrictions v2.[^13][^15]",
+  "The promo and the bundles can skew a budget. The $18 price is year one only, and bundles cost less than base plus add-on, so price both routes.[^4][^5][^6]",
+  "Evidence on value is mixed, so pilot one team on one timed task first. UK staff self-reported 26 minutes saved a day, but one UK department found no proof of a productivity gain.[^36][^34]"
+ ],
+ "faq": [
+  {
+   "q": "Is Microsoft Copilot the same as Microsoft 365 Copilot?",
+   "a": "Yes. On 28 Oct 2026 Microsoft renamed Microsoft 365 Copilot to Microsoft Copilot, and Copilot Chat to Microsoft Copilot Chat.[^11] The free consumer app is also called Microsoft Copilot, so check the product on the quote.[^11][^13]"
+  },
+  {
+   "q": "Is Copilot Chat as secure as the paid license for internal documents?",
+   "a": "Yes, on data protection: both get it with a work sign-in, and prompts are not used to train foundation models.[^16] The license changes what Copilot can reach, not the protection.[^21] Web searches it sends to Bing fall outside Microsoft's data protection addendum.[^16]"
+  },
+  {
+   "q": "What's the difference between Copilot Chat and Microsoft 365 Copilot?",
+   "a": "Copilot Chat knows the web plus what a user uploads or has open.[^1][^2] Paid Copilot also searches the email, meetings, chats and files that user can already open.[^3] One buyer on Reddit put it as “the free one knows the internet and the paid one knows your company”.[^37][^38]"
+  },
+  {
+   "q": "Do we need Copilot Studio, or does Copilot Chat cover agents?",
+   "a": "Copilot Chat includes agents built on instructions or public websites; agents on company data are pay-as-you-go and off by default.[^22] You need Copilot Studio to publish agents to websites, apps or staff without a paid seat.[^12][^20][^39]"
+  },
+  {
+   "q": "Half my team has no paid license. Can I build them agents instead?",
+   "a": "Yes, through pay-as-you-go agents in Copilot Chat.[^22] A grounded answer costs 12 credits, or $0.12, in Microsoft's example.[^19][^25] As a rough guide, past about 175 such answers a month per person, a $21 seat is cheaper.[^19][^4]"
+  },
+  {
+   "q": "Is there a minimum seat count for Copilot?",
+   "a": "No. Copilot Business sells from 1 to 300 seats, and enterprise Copilot has had no minimum since January 2024.[^4][^17][^18]"
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Buy for this job. Copilot runs inside the Microsoft 365 apps you already pay for, under the same data protection.[^3][^16] Most enterprise AI is now bought: 76% of use cases in Menlo Ventures' 2025 survey of 495 US decision-makers.[^40]",
+  "build": "Build only the narrow parts, such as one or two internal agents in Copilot Studio, priced per credit.[^12][^19] Either way, you still own the permissions clean-up, the pilot measure and the spending cap.[^9][^24]"
+ },
+ "pickElse": [
+  "Your firm runs on Google Workspace, not Microsoft 365: use Gemini, which comes with Workspace business plans.[^41] Those cost $7, $14 or $22 per user a month, paid yearly (read 26 Nov 2026).[^41]",
+  "Your main need is general writing and analysis, not searching your Microsoft 365 files: look at ChatGPT Business or Claude Team.[^42][^43] Both list standard seats at $20 per user a month, paid yearly (read 26 Nov 2026).[^42][^43]",
+  "Only a few staff need answers from company data, a few times a day: a pay-as-you-go agent in Copilot Chat can cost less than seats.[^19][^22]",
+  "Your SharePoint permissions are a mess: fix oversharing before buying seats, as Microsoft's own guidance says.[^9][^29] Microsoft's Restricted Content Discovery setting can hide sensitive sites meanwhile, but Microsoft calls it temporary.[^32]"
+ ],
+ "resources": [
+  {
+   "name": "Microsoft Learn: Microsoft Copilot requirements",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-copilot-requirements",
+   "what": "The rename notice and what each plan needs first."
+  },
+  {
+   "name": "Microsoft Learn: enterprise data protection",
+   "url": "https://learn.microsoft.com/en-us/copilot/plan/enterprise-data-protection",
+   "what": "What protection Chat and paid Copilot share, in Microsoft's words."
+  },
+  {
+   "name": "Microsoft Learn: secure and govern Copilot",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/secure-govern-copilot-foundational-deployment-guidance",
+   "what": "Microsoft's own checklist for fixing oversharing before rollout."
+  },
+  {
+   "name": "Microsoft Learn: Copilot Credits overview",
+   "url": "https://learn.microsoft.com/en-us/copilot/plan/usage-based-billing-overview-copilot-credits",
+   "what": "Which features bill per credit, so finance can set a cap."
+  },
+  {
+   "name": "UK government Copilot trial findings",
+   "url": "https://www.gov.uk/government/publications/microsoft-365-copilot-experiment-cross-government-findings-report/microsoft-365-copilot-experiment-cross-government-findings-report-html",
+   "what": "A large public trial with honest limits, useful for planning your pilot measure."
+  }
+ ],
+ "stats": [
+  {
+   "num": "$21",
+   "label": "Copilot Business per user a month, paid yearly, read 26 Nov 2026.[^4]",
+   "source": "Microsoft Copilot Business pricing"
+  },
+  {
+   "num": "$30",
+   "label": "Enterprise Copilot per user a month, paid yearly, read 26 Nov 2026.[^7]",
+   "source": "Microsoft enterprise Copilot pricing"
+  },
+  {
+   "num": "$9.50",
+   "label": "Extra per user a month for Copilot inside the Business Standard bundle ($23.50 minus $14).[^5][^31]",
+   "source": "Microsoft pricing pages, read 26 Nov 2026"
+  },
+  {
+   "num": "300",
+   "label": "Most users a firm can put on Copilot Business.[^4]",
+   "source": "Microsoft Copilot Business pricing"
+  },
+  {
+   "num": "40%",
+   "label": "IT leaders who delayed Copilot rollout three months or more over oversharing.[^10]",
+   "source": "Gartner, 2024, 132 IT leaders, via Computerworld[^44]"
+  },
+  {
+   "num": "26 minutes",
+   "label": "Daily time saved, self-reported, in a UK government trial of 20,000 staff.[^36]",
+   "source": "UK Government Digital Service, trial late 2024"
+  }
+ ],
+ "sources": [
+  {
+   "name": "Microsoft Learn, Copilot overview (17 Nov 2026)",
+   "url": "https://learn.microsoft.com/en-us/copilot/plan/copilot-overview",
+   "what": "License tiers: Copilot Chat included with eligible plans, paid Microsoft 365 Copilot, usage-based billing; Chat has no Researcher or Analyst."
+  },
+  {
+   "name": "Microsoft Support, How Copilot Chat works with and without a Microsoft 365 Copilot license (8 Jul 2026)",
+   "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/how-copilot-chat-works-with-and-without-a-microsoft-365-copilot-license",
+   "what": "What Copilot Chat can see with and without a paid license."
+  },
+  {
+   "name": "Microsoft Learn, Copilot overview: licensed vs Copilot Chat (9 Sep 2026)",
+   "url": "https://learn.microsoft.com/copilot/overview",
+   "what": "Paid Copilot grounds answers in Microsoft Graph and Work IQ, gets priority access, and includes agents at no extra cost."
+  },
+  {
+   "name": "Microsoft, Copilot Business pricing",
+   "url": "https://www.microsoft.com/en-us/copilot/pricing/business",
+   "what": "Read 26 Nov 2026: $21 per user a month paid yearly, $18 first-year promo to 31 Dec 2026, up to 300 users, eligible base plans."
+  },
+  {
+   "name": "Microsoft, Microsoft 365 Business Standard with Copilot",
+   "url": "https://www.microsoft.com/en-us/microsoft-365/business/microsoft-365-business-standard-with-copilot",
+   "what": "Read 26 Nov 2026: $23.50 per user a month, paid yearly."
+  },
+  {
+   "name": "Microsoft, Microsoft 365 Business Premium with Copilot",
+   "url": "https://www.microsoft.com/en-us/microsoft-365/business/microsoft-365-business-premium-with-copilot",
+   "what": "Read 26 Nov 2026: $32 per user a month, paid yearly."
+  },
+  {
+   "name": "Microsoft, Microsoft 365 Copilot enterprise pricing",
+   "url": "https://www.microsoft.com/en-us/copilot/pricing/enterprise",
+   "what": "Read 26 Nov 2026: $30 per user a month paid yearly; included features and FAQ."
+  },
+  {
+   "name": "Microsoft Learn, Microsoft 365 Copilot licensing (updated 3 Nov 2026)",
+   "url": "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-licensing",
+   "what": "Qualifying base plans; Copilot Business vs enterprise Copilot."
+  },
+  {
+   "name": "Microsoft Learn, Secure and govern Copilot: foundational deployment guidance (11 Nov 2026)",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/secure-govern-copilot-foundational-deployment-guidance",
+   "what": "Fix oversharing before rollout; site owners run access reviews."
+  },
+  {
+   "name": "Computerworld, Microsoft 365 Copilot rollouts slowed by data security, ROI concerns (27 Sep 2024)",
+   "url": "https://www.computerworld.com/article/3542000/microsoft-365-copilot-rollouts-slowed-by-data-security-roi-concerns.html",
+   "what": "Gartner, 132 IT leaders: 40% delayed rollout 3+ months over oversharing; 64% said governance took significant time."
+  },
+  {
+   "name": "Microsoft Learn, Microsoft Copilot requirements (updated 28 Oct 2026)",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-copilot-requirements",
+   "what": "Rename notice: Microsoft 365 Copilot is now named Microsoft Copilot, and Microsoft 365 Copilot Chat is now Microsoft Copilot Chat."
+  },
+  {
+   "name": "Microsoft, Copilot Studio pricing",
+   "url": "https://www.microsoft.com/en-us/copilot/pricing/copilot-studio",
+   "what": "Read 26 Nov 2026: $200 a month per 25,000-credit pack per tenant, or $0.01 a credit pay-as-you-go."
+  },
+  {
+   "name": "Microsoft Support, What's the difference between Microsoft Copilot (free) and Copilot in Microsoft 365 (9 Nov 2026)",
+   "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/what-s-the-difference-between-microsoft-copilot-free-and-copilot-in-microsoft-365",
+   "what": "Consumer Copilot uses a personal account; enterprise data protection applies only with a work account."
+  },
+  {
+   "name": "Microsoft, Copilot for individuals pricing",
+   "url": "https://www.microsoft.com/en-us/copilot/pricing/individuals",
+   "what": "Read 26 Nov 2026: free Copilot is 'subject to available capacity and limits'; Copilot Pro retired."
+  },
+  {
+   "name": "Microsoft Learn, Manage Microsoft Copilot",
+   "url": "https://learn.microsoft.com/en-us/copilot/manage",
+   "what": "Work and personal accounts kept apart; green shield and Work label; tenant restrictions v2."
+  },
+  {
+   "name": "Microsoft Learn, Enterprise data protection in Microsoft 365 Copilot and Copilot Chat (4 Nov 2026)",
+   "url": "https://learn.microsoft.com/en-us/copilot/plan/enterprise-data-protection",
+   "what": "Same enterprise data protection for Chat and paid Copilot; prompts are not used to train foundation models."
+  },
+  {
+   "name": "Microsoft Partner blog, New Microsoft 365 Business with Copilot SKUs available July 1 (29 May 2026)",
+   "url": "https://microsoftpartners.microsoft.com/abs/Blog/?title=New%20Microsoft%20365%20Business%20with%20Copilot%20SKUs%20available%20July%201",
+   "what": "Bundles are permanent products from 1 Jul 2026, sold from 1 to 300 seats."
+  },
+  {
+   "name": "Microsoft blog, Bringing the full power of Copilot to more people and businesses (15 Jan 2024)",
+   "url": "https://blogs.microsoft.com/blog/2024/01/15/bringing-the-full-power-of-copilot-to-more-people-and-businesses/",
+   "what": "Seat minimum for Microsoft 365 Copilot removed."
+  },
+  {
+   "name": "Microsoft Learn, Copilot Studio billing rates and management (24 Nov 2026)",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management",
+   "what": "Credit rates per action; a generative answer grounded in tenant data costs 12 credits in Microsoft's example."
+  },
+  {
+   "name": "Microsoft Learn, Copilot Studio licensing",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing",
+   "what": "When standalone Copilot Studio is needed, including publishing agents to sites, apps or unlicensed users."
+  },
+  {
+   "name": "Microsoft Q&A, Privacy regarding Copilot Chat (Aug 2026)",
+   "url": "https://learn.microsoft.com/en-my/answers/questions/5977034/privacy-regarding-copilot-chat",
+   "what": "Forum answer: a paid license 'changes data access and product capabilities, not the baseline enterprise data protection model'."
+  },
+  {
+   "name": "Microsoft Learn, Manage agents for Copilot Chat (9 Nov 2026)",
+   "url": "https://learn.microsoft.com/en-us/copilot/manage/manage-agents-copilot-chat",
+   "what": "Agents on instructions or public websites are included; agents on tenant data are pay-as-you-go and off by default."
+  },
+  {
+   "name": "Microsoft Copilot blog, Copilot Cowork is now generally available (16 Jun 2026)",
+   "url": "https://www.microsoft.com/en-us/copilot/blog/2026/06/16/copilot-cowork-is-now-generally-available",
+   "what": "Cowork is generally available and needs a Copilot license."
+  },
+  {
+   "name": "Microsoft Learn, Usage-based billing FAQ for Microsoft 365 Copilot Business (18 Nov 2026)",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/commerce/usage-based-billing-faq-microsoft-365-copilot-business",
+   "what": "What bills on usage; default policy of 4,000 credits per user a month; caps set in Cost Management."
+  },
+  {
+   "name": "Microsoft Learn, Usage-based billing overview: Copilot Credits (17 Nov 2026)",
+   "url": "https://learn.microsoft.com/en-us/copilot/plan/usage-based-billing-overview-copilot-credits",
+   "what": "Read 26 Nov 2026: $0.01 per Copilot Credit; which features are included and which bill per credit."
+  },
+  {
+   "name": "Microsoft Support, Limits for features in Copilot Chat (31 Oct 2026)",
+   "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/limits-for-features-copilot-chat",
+   "what": "Fair-use limits apply; Microsoft 'does not publish or share specific numeric limits'."
+  },
+  {
+   "name": "Microsoft Learn, Get ready for Copilot with SharePoint Advanced Management (16 Jul 2026)",
+   "url": "https://learn.microsoft.com/en-us/sharepoint/get-ready-copilot-sharepoint-advanced-management",
+   "what": "SharePoint Advanced Management comes with the Copilot license; content management assessment."
+  },
+  {
+   "name": "Microsoft Learn, Purview DSPM oversharing assessments",
+   "url": "https://learn.microsoft.com/en-us/purview/data-security-posture-management-oversharing",
+   "what": "Default weekly assessment of the top 100 SharePoint sites."
+  },
+  {
+   "name": "Microsoft Learn, Configure a secure and governed data foundation (28 Oct 2026)",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-secure-governed-data-foundation-microsoft-365-copilot",
+   "what": "Default SharePoint sharing is 'the most permissive option'; fix company-wide and Anyone links."
+  },
+  {
+   "name": "Microsoft Partner Center announcements, November 2026",
+   "url": "https://learn.microsoft.com/en-us/partner-center/announcements/2026-november",
+   "what": "Default spending policy for usage-billed Copilot features moved to Jan to Mar 2027."
+  },
+  {
+   "name": "Microsoft Licensing news, 2026 Microsoft 365 packaging and pricing updates",
+   "url": "https://www.microsoft.com/en-us/licensing/news/2026-M365-Packaging-Pricing-Updates",
+   "what": "Read 26 Nov 2026: base plan prices from 1 Jul 2026 (Business Basic $7, Standard $14, Premium $22, paid yearly)."
+  },
+  {
+   "name": "Microsoft Learn, Restricted Content Discovery (11 Oct 2026)",
+   "url": "https://learn.microsoft.com/en-us/sharepoint/restricted-content-discovery",
+   "what": "'A temporary governance control' that hides sites from Copilot without changing permissions."
+  },
+  {
+   "name": "Australian Treasury, Evaluation of generative AI (2024)",
+   "url": "https://evaluation.treasury.gov.au/publications/evaluation-generative-artificial-intelligence",
+   "what": "218 staff, 14 weeks: useful for basic admin, limited value on complex work."
+  },
+  {
+   "name": "UK Department for Business and Trade, Microsoft 365 Copilot evaluation (PDF)",
+   "url": "https://assets.publishing.service.gov.uk/media/68adbe409e1cebdd2c96a19d/dbt-microsoft-365-copilot-evaluation.pdf",
+   "what": "'Did not find evidence that time savings have led to improved productivity'; Excel work slower and lower quality."
+  },
+  {
+   "name": "Microsoft Partner Center announcements, October 2026 (14 Oct 2026)",
+   "url": "https://learn.microsoft.com/en-us/partner-center/announcements/2026-october",
+   "what": "From 1 Dec 2026, Copilot offers can be sold without a qualifying base plan; current offers renamed '(add-on)'."
+  },
+  {
+   "name": "UK Government Digital Service, Microsoft 365 Copilot experiment: cross-government findings report",
+   "url": "https://www.gov.uk/government/publications/microsoft-365-copilot-experiment-cross-government-findings-report/microsoft-365-copilot-experiment-cross-government-findings-report-html",
+   "what": "Trial of 20,000 staff, Sep to Dec 2024: 26 minutes a day saved, self-reported; access problems can surface files."
+  },
+  {
+   "name": "Reddit r/microsoft_365_copilot, explaining free Copilot Chat vs Microsoft 365 Copilot (Jul 2026)",
+   "url": "https://www.reddit.com/r/microsoft_365_copilot/comments/1va0d8e/",
+   "what": "Buyer thread: 'the free one knows the internet and the paid one knows your company'."
+  },
+  {
+   "name": "Microsoft Tech Community, Copilot Chat vs. Microsoft 365 Copilot: what's the difference?",
+   "url": "https://techcommunity.microsoft.com/discussions/microsoft-copilot/copilot-chat-vsus-microsoft-365-copilot-whats-the-difference/4506965",
+   "what": "Buyer thread asking the difference between Chat and paid Copilot."
+  },
+  {
+   "name": "Power Platform Community, Copilot Chat vs Copilot Studio licensing thread",
+   "url": "https://community.powerplatform.com/forums/thread/details?threadid=9fe4b4d0-52cb-f011-bbd3-000d3a13d3fe",
+   "what": "Buyer thread asking whether Copilot Studio is needed for agents."
+  },
+  {
+   "name": "Menlo Ventures, 2025: The State of Generative AI in the Enterprise",
+   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise",
+   "what": "Survey of 495 US decision-makers: 76% of AI use cases bought, up from 53% in 2024."
+  },
+  {
+   "name": "Google Workspace pricing",
+   "url": "https://workspace.google.com/pricing",
+   "what": "Read 26 Nov 2026: Business Starter, Standard and Plus at $7, $14 and $22 per user a month paid yearly, Gemini included."
+  },
+  {
+   "name": "OpenAI Help, ChatGPT Business overview",
+   "url": "https://help.openai.com/en/articles/8792828-chatgpt-business-overview",
+   "what": "Read 26 Nov 2026: $20 per user a month paid yearly, $25 monthly."
+  },
+  {
+   "name": "Anthropic Support, What is the Claude Team plan",
+   "url": "https://support.anthropic.com/en/articles/9266767-what-is-the-claude-team-plan",
+   "what": "Read 26 Nov 2026: standard seats $20 paid yearly or $25 monthly, 2 to 150 seats."
+  },
+  {
+   "name": "Gartner, survey abstract (8 Aug 2024)",
+   "url": "https://www.gartner.com/en/documents/5659223",
+   "what": "Source of the 2024 Copilot rollout survey of IT leaders."
+  }
+ ],
+ "related": [],
+ "offer": {
+  "heading": "Not sure which Copilot to pay for?",
+  "body": "In 30 minutes we map who would use paid Copilot and what your SharePoint permissions expose. You leave with a seat count, the cost of each route and a first pilot. Your team keeps every decision."
+ },
+ "keyword": {
+  "phrase": "microsoft copilot vs microsoft 365 copilot",
+  "searches": 260,
+  "cpc": 9.52,
+  "difficulty": null
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Gets the answer fast: the summary clears up the rename, and the bottom line says who should pick what. The pilot step said 'two named tasks' with no measure; it now names meeting follow-ups and proposal first drafts, timed against Chat-only staff. 'Delayed many rollouts' read as vague; the bottom line now credits Gartner. Recipes name a role on every step, so the page can go to the CEO as is."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Reads on a phone. The Copilot Chat cell in the main table ran long; cut to one short line. 'Anyone links' was jargon; now 'links shared with the whole company or with anyone'. Restricted Content Discovery now says it is a Microsoft setting. Monthly-billing prices stay out because Microsoft's own pages could not confirm them."
+  },
+  {
+   "reader": "GM",
+   "notes": "Wants to know whether one unit can go first and what it costs. The 50 and 200 seat table answers cost; the value watch-out now says to pilot one team on one timed task first. Recipe one already sizes a 10-seat pilot with a year-one cost. No sourced margin figure exists for firms this size, so none is claimed."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Ops lead or controller asks whether output can be trusted on their work. The sign-off bullet now cites two government trials: useful for basic admin, weaker on complex work such as Excel analysis. The security answer now adds that web searches sent to Bing fall outside Microsoft's data protection addendum, which a controller would want to know."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Steve gets it in 10 seconds: title is his question and five short bullets say what to pick. Security is his top worry, so that FAQ moved to second. Prices stay in the dated tables, not the bottom line, so every price carries its read date. The pay-as-you-go break-even is now marked a rough guide. No case study from a firm his size is in the research, and the vendor-paid ROI study is left out."
+  }
+ ],
+ "updated": "2026-11-26"
+}
