@@ -93,7 +93,7 @@ test('every indexed AI-work page footnotes its claims, and every footnote points
     for (const b of data.verdict) assert.ok(marks(b).length > 0, `${s}: bottom-line bullet has no footnote: "${b.slice(0, 60)}"`);
     assert.ok(marks(data.summary).length > 0, `${s}: summary has no footnote`);
     for (const st of data.stats) assert.ok(marks(st.label + st.source).length > 0, `${s}: stat ${st.num} has no footnote`);
-    for (const w of [...data.watchOuts, ...data.pickElse]) assert.ok(marks(w).length > 0, `${s}: no footnote on "${w.slice(0, 60)}"`);
+    for (const w of [...(data.watchOuts || []), ...(data.pickElse || [])]) assert.ok(marks(w).length > 0, `${s}: no footnote on "${w.slice(0, 60)}"`);
     const html = readFileSync(aiWorkFile(s), 'utf8');
     // Back-to-back markers share one superscript ("8, 1"), so source 1 may not be first inside it.
     assert.match(html, /<sup class="fn">(?:(?!<\/sup>).)*?<a href="#fn-1"/, `${s}: footnotes not rendered`);

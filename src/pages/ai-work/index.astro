@@ -7,6 +7,7 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import ConsultingCta from '../../components/ConsultingCta.astro';
 import { urlFor, TYPES } from '../../lib/page-types.mjs';
+import { indexed } from '../../lib/publish.mjs';
 
 const BOOK = 'https://calendly.com/zavient/call';
 // Reader order, who each guide is for, and a short blurb. A guide missing here still lists, after these, with its description.
@@ -17,14 +18,15 @@ const guideOrder = {
   'ai-document-processing': { for: 'Anyone whose team re-keys documents', blurb: 'Our own accuracy test on 30 fund reports.' },
   'ai-credit-scoring': { for: 'Head of lending, credit risk', blurb: 'Fair, explainable credit models and the rules that apply.' },
   'ai-underwriting': { for: 'Head of underwriting, lenders and insurers', blurb: 'AI does the reading; the underwriter keeps the call.' },
-  'chatgpt-plus-vs-business-vs-enterprise': { for: 'COO, head of operations', blurb: 'Which ChatGPT plan your staff should get, with dated prices.' },
   'generative-ai-vs-predictive-ai': { for: 'Head of lending, underwriting or planning', blurb: 'Which kind of AI fits forecasting, scoring and drafting.' },
   'rpa-vs-agentic-automation': { for: 'COO, head of operations', blurb: 'Which workflows get bots, agents, both or neither.' },
   'zapier-vs-make-vs-workato': { for: 'Head of operations, COO', blurb: 'Which automation tool fits your ops team, with dated prices.' },
   'build-vs-buy-ai': { for: 'COO, owner-CEO', blurb: 'Buy, configure or build: how to call it for each workflow.' },
   'chatgpt-vs-claude-vs-copilot-for-work': { for: 'COO, head of operations', blurb: 'Which assistant to roll out to staff, with dated prices.' },
 };
-const all = await getCollection('aiwork');
+const every = await getCollection('aiwork');
+// List only pages that are live (indexed); drafts and held pages stay off the hub.
+const all = every.filter((p) => indexed(p, every));
 const keys = Object.keys(guideOrder);
 const pages = [...all.filter((p) => keys.includes(p.id)).sort((a, b) => keys.indexOf(a.id) - keys.indexOf(b.id)), ...all.filter((p) => !keys.includes(p.id))];
 ---

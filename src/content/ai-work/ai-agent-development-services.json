@@ -86,13 +86,13 @@
     "tau2-bench (Sierra leaderboard)",
     "Retail, airline and phone-company support[^11]",
     "87.9% for the top model[^11]",
-    "Repeated-try scores not published on the board[^11]"
+    "Check the board's pass^k view for repeated-try scores[^11]"
    ],
    [
     "tau3-Banking (Sierra leaderboard)",
     "Banking support that needs knowledge lookups[^11]",
     "55.2% for the top model; others 46.9% to 48.7%[^11]",
-    "Repeated-try scores not yet published[^11]"
+    "Drops when every try must succeed: Claude Opus 5 falls from 48.7% to 32.0% over 4 tries[^11][^57]"
    ],
    [
     "CRMArena-Pro (Salesforce AI Research, 2025)",
@@ -122,7 +122,7 @@
     "OSWorld 2.0 (2026)",
     "108 long computer workflows; people take about 1.6 hours each[^18]",
     "44.3% fully done now, up from 20.6% at release[^19][^18]",
-    "Under 10% for tasks over 137 minutes; 0% over 163 minutes[^19]"
+    "In the release study, no model topped 10% on tasks of 137 to 163 minutes, and all scored 0% above 163 minutes[^19]"
    ]
   ],
   "note": "Method: published primary scores only, read 26 Nov 2026; Zavient re-ran none. Boards use different models and test rigs, so rows don't compare directly, and older rows use older models. All use made-up firms and data, not yours, and scores move fast, so re-check before you rely on one.[^26]"
@@ -323,14 +323,14 @@
    "what": "Multi-step knowledge-work tasks: best agent 2.1% against 93.9% for people on a 98-task subset."
   },
   {
-   "name": "OSWorld 2.0, arXiv, Jul 2026",
+   "name": "OSWorld 2.0, arXiv, 2026",
    "url": "https://arxiv.org/html/2606.29537",
    "what": "108 long computer workflows, median human time about 1.6 hours. 20.6% fully done at release; agents guess instead of asking and skip checks."
   },
   {
    "name": "Snorkel AI, OSWorld long-horizon evaluation, 16 Sep 2026",
    "url": "https://snorkel.ai/osworld-2-1-long-horizon-computer-use-evaluation",
-   "what": "Top model now 44.3% fully done, 77.7% partial. No model above 10% on tasks over 137 minutes; 0% over 163 minutes."
+   "what": "Top model now 44.3% fully done, 77.7% partial. In the release study, no model above 10% on tasks of 137 to 163 minutes; 0% over 163 minutes."
   },
   {
    "name": "Gartner press release, 25 Jun 2025",
@@ -516,7 +516,12 @@
    "name": "Reddit r/smallbusiness, Has anyone actually used AI agents to automate real work?, Feb 2026",
    "url": "https://www.reddit.com/r/smallbusiness/comments/1r6r9fg/",
    "what": "Buyer question on whether agents work for smaller firms. Forum post, used only as a source for the question."
-  }
+  },
+   {
+     "name": "Cekura, tau-bench explainer (Nov 2026)",
+     "url": "https://www.cekura.ai/blogs/tau-bench",
+     "what": "Reads Claude Opus 5's tau3-Banking submission as 48.7% at pass^1 and 32.0% at pass^4."
+   }
  ],
  "related": [
   "ai-integration-services",
