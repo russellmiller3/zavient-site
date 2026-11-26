@@ -315,7 +315,7 @@
   },
   {
    "q": "Can admins see employees' ChatGPT Business chats?",
-   "a": "Plan as if they can. OpenAI's privacy page says Business admins can view, export and delete members' conversations[^11]. On Enterprise, compliance teams pull logs through the Compliance API[^19]."
+   "a": "Yes, plan as if they can. OpenAI's privacy page says Business admins can view, export and delete members' conversations[^11]. On Enterprise, compliance teams pull logs through the Compliance API[^19]."
   },
   {
    "q": "Can we buy ChatGPT Business for just a few people?",
@@ -331,7 +331,7 @@
   },
   {
    "q": "How much does ChatGPT Enterprise cost?",
-   "a": "OpenAI doesn't publish it; its pricing page says custom pricing[^2]. Third parties report about $60 a seat a month with a 150-seat minimum[^23][^22]. Treat that as a planning number and get a written quote."
+   "a": "About $60 a seat a month with a 150-seat minimum, by third-party reports; OpenAI publishes no price and quotes each deal[^23][^22][^2]. Treat that as a planning number and get a written quote."
   }
  ],
  "buyVsBuild": {
@@ -641,5 +641,12 @@
    "notes": "Steve, 60-150 staff, decides in 10 seconds: the title and first bullet answer him (Business, yearly, same $20 as Plus). He worries Enterprise is being upsold; added to the own-data intro that a reported Enterprise floor costs about nine times Business Standard at 50 staff, labelled as reported. The Copilot alternative now says the $21 is on top of an eligible Microsoft 365 plan, so he doesn't compare it to $20 unfairly. Offer says what he leaves with: a plan, a year-one cost and a first pilot."
   }
  ],
- "updated": "2026-11-26"
+ "updated": "2026-11-26",
+ "answers": {
+  "recipes": "Business Standard, billed yearly, fits most firms under 200 staff; Plus suits one person, and Enterprise suits firms needing audit logs, a BAA or over 200 seats.[^2][^3][^5]",
+  "human-role": "Your IT team controls who gets in and out, the ops lead and IT pick which systems ChatGPT can read, and a named reviewer checks AI output before it leaves the firm.[^8][^18][^24]",
+  "example": "ChatGPT itself works almost the same on all three plans; what changes is who controls the account, the data and the audit trail.[^1][^2]",
+  "what-goes-wrong": "Teams most often leave staff on personal accounts, pay for seats nobody uses, and keep risky workspace defaults on.[^27][^32][^8]",
+  "something-else": "Pick neither if your Microsoft 365 or Google Workspace plan already includes AI chat, or you need one narrow workflow rather than chat for everyone.[^36][^37][^29]"
+ }
 }
