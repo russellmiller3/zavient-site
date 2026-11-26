@@ -1,0 +1,835 @@
+{
+  "title": "Can AI schedule production while your planner stays in charge?",
+  "description": "What AI scheduling software does and what stays with your planner. We priced 12 tools and show how to test one on your past weeks.",
+  "type": "usecase",
+  "templateVersion": 1,
+  "topic": "AI production scheduling",
+  "job": "AI production scheduling",
+  "industry": "manufacturing",
+  "index": false,
+  "verdict": [
+    "Software proposes the schedule; your planner approves it. Fights over planner control are a key reason scheduling software fails.[^1][^2]",
+    "Fix routings and run times first. One NIST-backed shop did, and lead time fell from 12-14 weeks to five.[^3][^4]",
+    "Chatbots alone can't build a schedule you can run. Benchmarks show language models break capacity rules without a solver checking.[^5][^6]",
+    "Only seven of 12 tools we checked publish a price. For a 100-person shop, year one ran $1,500 to $25,000.[^7][^8]",
+    "Planners shift to exceptions and what-ifs. Where AI changed tasks, two in three firms used it only to help staff.[^9][^10]"
+  ],
+  "onPage": [
+    {
+      "to": "own-data",
+      "text": "What 12 scheduling tools cost a 100-person shop, from their own price pages"
+    },
+    {
+      "to": "human-role",
+      "text": "Which calls your planner, supervisor and ops manager keep"
+    },
+    {
+      "to": "table-3",
+      "text": "Why a chatbot alone can't build a schedule you can run"
+    },
+    {
+      "to": "recipes",
+      "text": "Three ways to start, sized to your plant"
+    },
+    {
+      "to": "benchmark",
+      "text": "How to test a tool on your own past weeks before you buy"
+    },
+    {
+      "to": "what-goes-wrong",
+      "text": "Where scheduling software goes wrong, and the fix for each"
+    }
+  ],
+  "headings": {
+    "human-role": "Which scheduling calls stay with your planner?",
+    "team-after": "What do your planners do once software drafts the schedule?",
+    "example": "What happens when a machine goes down on Tuesday?",
+    "rules": "Which rules apply when software schedules people?",
+    "benchmark": "How do you test scheduling software on your own past weeks?",
+    "what-goes-wrong": "Where does production scheduling software go wrong?",
+    "buy-or-build": "Should you buy scheduling software or build your own?"
+  },
+  "summary": "AI scheduling software books work within each machine's real hours, then re-plans when a machine breaks or a rush order lands.[^11][^12] Your planner reviews, adjusts and approves every schedule.[^2][^4] Accurate routings, run times and shift calendars make or break it.[^3][^13]",
+  "humanRole": [
+    "Planner: approves every schedule before release and can override any move, with the reason logged. In one field study, schedulers ignored machine-made assignments that came with no explanation.[^4][^2]",
+    "Supervisor: confirms what the floor can really run today (people, tooling, material) before dispatch. Research treats planning, scheduling and dispatching as separate jobs with separate owners.[^9][^14]",
+    "Operations manager: sets the rules the software follows. These include the frozen window (the next hours or days nobody changes), the priority rule and overtime limits.[^15][^16]",
+    "You choose how much the software decides. A usability study found decision support improved schedules, and recommends letting users pick the level of automation.[^17]"
+  ],
+  "teamAfter": [
+    "Planners move from building the schedule to working exceptions: late orders, material gaps and what to tell customers.[^9] At Dauper, a monthly schedule fell from 2-5 days to about 10 minutes, per Siemens' own case study.[^18]",
+    "Planners test what-ifs before the week starts: overtime, a split batch, a second shift. At Vetnil, weekly scheduling fell from 4 hours to 40 minutes, per Siemens' case study.[^19]",
+    "More work can stay in-house. Artis Matriz, an 80-person maker, raised internal resource use from 65% to 85% and outsourced less, per Siemens' case study.[^20]",
+    "Most firms keep their people. Where AI changed tasks, 66% of firms only used it to help staff, and AI-related employment fell at 2%.[^10]"
+  ],
+  "example": {
+    "input": "Illustrative example, not data. A 100-person job shop has 140 open work orders, routings for 15 work centers, a changeover matrix, shift calendars and material arrival dates.[^21][^3] On Tuesday at 10:00, CNC 3 goes down for about 6 hours, and sales adds a rush order of 2,000 brackets due Friday.",
+    "output": "The software proposes a new sequence, keeps the next 24 hours frozen, and moves nine jobs from CNC 3 to CNCs 4 and 5.[^16][^22] It flags three late orders and costs two fixes: 6 hours of Saturday overtime on CNC 4, or splitting the rush order. The planner picks one, notes why and releases it, and supervisors get the new dispatch list.[^4][^9]"
+  },
+  "tables": [
+    {
+      "title": "Which scheduling tools fit which shop?",
+      "intro": "Prices are in our own check below. Gains and AI features here are each vendor's own claim unless marked otherwise.[^23][^24]",
+      "headers": [
+        "Tool",
+        "What it does",
+        "Worth knowing"
+      ],
+      "rows": [
+        {
+          "name": "MRPeasy",
+          "url": "https://www.mrpeasy.com/pricing/",
+          "cells": [
+            "Cloud MRP for small makers; lists finite-capacity operations scheduling[^25]",
+            "Its only AI is a support assistant. We couldn't confirm which plan includes finite scheduling[^25]"
+          ]
+        },
+        {
+          "name": "Business Central Premium",
+          "url": "https://www.microsoft.com/en-us/dynamics-365/products/business-central/pricing",
+          "cells": [
+            "Microsoft ERP; Premium adds manufacturing and finite loading, which books work only within machine hours[^26][^27]",
+            "AI agents run on Copilot Credits, sold separately[^26]"
+          ]
+        },
+        {
+          "name": "Odoo",
+          "url": "https://www.odoo.com/pricing?country=US&lang=en_US",
+          "cells": [
+            "ERP with manufacturing and planning apps[^7]",
+            "\"Agentic AI\" is listed on the Custom plan only[^7]"
+          ]
+        },
+        {
+          "name": "Cetec ERP",
+          "url": "https://cetecerp.com/pricing",
+          "cells": [
+            "Shop ERP with all modules in one per-user price[^28]",
+            "Support is extra, per company: $650 a month for Standard[^28]"
+          ]
+        },
+        {
+          "name": "Autodesk Fusion Operations",
+          "url": "https://www.autodesk.com/products/fusion-operations/buy",
+          "cells": [
+            "Cloud production management for the shop floor[^29]",
+            "14-day free trial[^29]"
+          ]
+        },
+        {
+          "name": "SkyPlanner APS",
+          "url": "https://skyplanner.ai/pricing",
+          "cells": [
+            "Stand-alone scheduler priced per scheduled workstation, not per user[^30]",
+            "Lists \"AI-assisted schedule optimization\" (vendor claim)[^30]"
+          ]
+        },
+        {
+          "name": "EDGEBIC (User Solutions)",
+          "url": "https://usersolutions.com/pricing",
+          "cells": [
+            "Windows scheduler sold as a one-time license[^8]",
+            "Runs on your own Windows PCs, not in the cloud. Makes no AI claim[^8]"
+          ]
+        },
+        {
+          "name": "PlanetTogether",
+          "url": "https://www.planettogether.com/pricing",
+          "cells": [
+            "Stand-alone scheduler that plugs into your ERP[^31]",
+            "Claims \"up to 95%\" less manual scheduling time, no method shown (vendor claim)[^24]"
+          ]
+        },
+        {
+          "name": "Siemens Opcenter Scheduling",
+          "url": "https://www.siemens.com/en-us/products/opcenter/advanced-planning-scheduling-aps/advanced-scheduling-software",
+          "cells": [
+            "Enterprise scheduler[^32]",
+            "Claims +50% on-time delivery with no method given (vendor claim)[^23]"
+          ]
+        },
+        {
+          "name": "frePPLe",
+          "url": "https://github.com/frePPLe/frepple",
+          "cells": [
+            "Open-source planning and scheduling[^33]",
+            "Community Edition is free under the MIT license; paid help is extra[^33][^34]"
+          ]
+        },
+        {
+          "name": "Katana",
+          "url": "https://katanamrp.com/pricing/",
+          "cells": [
+            "Cloud MRP; free plan up to 30 products (SKUs)[^35]",
+            "AI purchase suggestions on the paid Advantage plan only[^35]"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "What did published results find?",
+      "intro": "Only the first row is independent, from a government program. The rest are vendors' own customer stories: treat them as claims to test on your own weeks.[^3][^20]",
+      "headers": [
+        "Case",
+        "Who published it",
+        "What changed"
+      ],
+      "rows": [
+        {
+          "name": "Stainless Works",
+          "url": "https://www.nist.gov/mep/successstories/2025/continuous-improvement-enhances-scheduling-and-capacity-planning-processes",
+          "cells": [
+            "NIST MEP (US government). Routings fixed first, then the welding bottleneck scheduled[^3]",
+            "Lead time from 12-14 weeks to 5; $250,000 in new or kept sales; $50,000 saved[^3]"
+          ]
+        },
+        {
+          "name": "Artis Matriz, 80 staff",
+          "url": "https://resources.sw.siemens.com/en-US/case-study-artis-matriz",
+          "cells": [
+            "Siemens (vendor case)[^20]",
+            "Planning time down 75%; on-time delivery rate up 50%[^20]"
+          ]
+        },
+        {
+          "name": "SUMIDA",
+          "url": "https://resources.sw.siemens.com/en-US/case-study-sumida",
+          "cells": [
+            "Siemens (vendor case)[^36]",
+            "Delivery reliability from 60% to 95%. Planners still adjust by hand when needed[^36]"
+          ]
+        },
+        {
+          "name": "ETEM Gestamp",
+          "url": "https://resources.sw.siemens.com/en-GB/case-study-etemgestamp/",
+          "cells": [
+            "Siemens (vendor case)[^37]",
+            "Changeovers down 25%, press scrap down 10%, productivity up 5%[^37]"
+          ]
+        },
+        {
+          "name": "Sumitomo Electric Lightwave, 300 staff",
+          "url": "https://www.planettogether.com/planettogether-partnerships-integrations/case-study-sumitomo-electric-lightwave",
+          "cells": [
+            "PlanetTogether (vendor case)[^38]",
+            "Promise-date accuracy up 8%; output up 16%[^38]"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Can a chatbot build your schedule on its own?",
+      "intro": "Research benchmarks from 2026. Language models do best writing and explaining a schedule, with a solver checking that it can run.[^6][^39]",
+      "headers": [
+        "Study",
+        "What it tested",
+        "What it found"
+      ],
+      "rows": [
+        {
+          "name": "SCHEDBench (2026)",
+          "url": "https://arxiv.org/html/2608.00991v2",
+          "cells": [
+            "13 language models on 1,132 scheduling problems[^5]",
+            "They \"largely fail\"; rewording a prompt changes whether rules are met[^5]"
+          ]
+        },
+        {
+          "name": "DynaSchedBench (2026)",
+          "url": "https://proceedings.mlr.press/v306/cao26z.html",
+          "cells": [
+            "AI agents re-planning as disruptions arrive[^40]",
+            "Most fail to beat strong simple dispatching rules consistently[^40]"
+          ]
+        },
+        {
+          "name": "Job-shop study, J. Manufacturing Systems (2026)",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0278612526000877",
+          "cells": [
+            "Language models building job-shop schedules[^6]",
+            "Plain models give \"fluent but physically infeasible\" schedules; with checks, 97% were valid[^6]"
+          ]
+        },
+        {
+          "name": "Solver-writing agent (Nov 2026)",
+          "url": "https://arxiv.org/abs/2611.17682",
+          "cells": [
+            "An AI agent that writes a solver, against one that schedules directly[^39]",
+            "Writing the solver was repeatable. Scheduling directly cost $2-23 a schedule and varied run to run[^39]"
+          ]
+        }
+      ]
+    }
+  ],
+  "recipes": [
+    {
+      "name": "1. Small shop, one planner, an ERP that already schedules (about 40-100 staff)",
+      "when": "One bottleneck, a planner on a spreadsheet or whiteboard, and an ERP with finite loading you haven't switched on.[^41][^27]",
+      "flow": [
+        "Planner and supervisor: check routings, setup and run times for the 20 parts that take the most hours[^3]",
+        "Planner: set ERP shift calendars to match real shifts and planned maintenance[^13]",
+        "Planner: run the finite schedule weekly, freeze the near term (say, 2 days), and re-run only on real events[^16][^22]",
+        "Operations manager: review on-time delivery and changeover hours each week[^42]"
+      ],
+      "cost": "For 5 office users, year-one list licenses run about $1,494 (Odoo Standard) to $6,600 (Business Central Premium).[^7][^26] MRPeasy Starter comes to $2,940.[^25]"
+    },
+    {
+      "name": "2. Mid-size plant with many changeovers and disruptions (about 100-500 staff)",
+      "when": "Many changeovers, frequent rush orders or breakdowns, and an ERP scheduler your planners don't trust.[^41][^43]",
+      "flow": [
+        "Operations manager: write down the rules (priority rule, frozen window, overtime limits)[^15]",
+        "IT or ERP admin: connect the scheduler to the ERP for orders, routings and inventory[^31]",
+        "Planner: run it daily, and approve or override each proposal with a reason[^17][^4]",
+        "Supervisor: work from the dispatch list and report actual times back[^44]"
+      ],
+      "cost": "SkyPlanner for 15 work centers lists about €4,788 a year; EDGEBIC is a $25,000 one-time license.[^30][^8] PlanetTogether quotes about 4-8 weeks to integrate but shows no price.[^31]"
+    },
+    {
+      "name": "3. Data-rich plant with unusual rules: build on a free solver",
+      "when": "Clean ERP or shop-floor data, odd constraints (tooling, operator skills, cure times), and someone who can maintain a model.[^45][^46]",
+      "flow": [
+        "Data or IT lead: model routings and calendars in OR-Tools or Timefold[^45][^46]",
+        "Planner: rank the goals (late orders first, then changeovers) and check output daily[^4]",
+        "AI assistant: explains changes in plain words and drafts what-ifs, while the solver checks every schedule[^6][^39]",
+        "Operations manager: review schedule stability and on-time delivery monthly[^15]"
+      ],
+      "cost": "The solvers are free: OR-Tools and Timefold are Apache 2.0, frePPLe Community is MIT.[^45][^46][^33] The cost is staff time, and internal builds succeed about a third as often as bought tools.[^47][^48]"
+    }
+  ],
+  "ownData": {
+    "title": "What does production scheduling software cost a 100-person shop?",
+    "intro": "On 26 Nov 2026 we read the public pricing pages of 12 tools sold for production scheduling. Seven publish a usable license price, and three publish nothing at all. We priced year one for a reference shop with 5 office scheduling users and 15 scheduled work centers.",
+    "headers": [
+      "Tool",
+      "Price published?",
+      "Year 1, reference shop (list)",
+      "AI on the page"
+    ],
+    "rows": [
+      [
+        "Odoo Standard / Custom",
+        "Yes, per user",
+        "$1,494 Standard ($1,866 from year 2); $2,940 Custom[^7]",
+        "\"Agentic AI\" on Custom only[^7]"
+      ],
+      [
+        "MRPeasy",
+        "Yes, per user",
+        "$2,940 Starter to $5,940 Enterprise, billed monthly[^25]",
+        "Support assistant only[^25]"
+      ],
+      [
+        "Cetec ERP",
+        "Yes, per user plus support",
+        "$3,000 self-supported; $10,800 with Standard support[^28]",
+        "None seen"
+      ],
+      [
+        "SkyPlanner APS",
+        "Yes, per workstation",
+        "€4,788 for 15 workstations[^30]",
+        "\"AI-assisted schedule optimization\"[^30]"
+      ],
+      [
+        "Business Central Premium",
+        "Yes, per user",
+        "$6,600[^26]",
+        "Copilot agents; credits extra[^26]"
+      ],
+      [
+        "Autodesk Fusion Operations",
+        "Yes, per user",
+        "About $10,325[^29]",
+        "None seen"
+      ],
+      [
+        "EDGEBIC APS",
+        "Yes, one-time license",
+        "$25,000 once; upkeep not stated[^8]",
+        "None; sells a math optimizer[^8]"
+      ],
+      [
+        "Katana",
+        "Free plan only",
+        "Not published for a shop this size[^35]",
+        "AI on the paid plan only[^35]"
+      ],
+      [
+        "frePPLe",
+        "Services only",
+        "Not published; a trial project costs €2,000-5,000[^34]",
+        "None seen"
+      ],
+      [
+        "PlanetTogether, Siemens Opcenter, ProShop",
+        "No",
+        "Quote only[^31][^32][^49]",
+        "PlanetTogether: machine-learning \"Copilot\"[^24]"
+      ]
+    ],
+    "note": "List prices on one date: discounts, shop-floor seats, setup, integration and tax are left out, and SkyPlanner bills in euros. Odoo's year-one price is a discount, and ERP schedulers do less than stand-alone ones. A separate third-party list covers 39 vendors and says only 13 or 14 publish a price.[^50]"
+  },
+  "rules": [
+    {
+      "name": "EU AI Act, Annex III point 4(b)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689",
+      "status": "In force; Annex III high-risk rules apply from 2 Dec 2027",
+      "what": "AI that assigns tasks to workers based on their behavior or personal traits is high-risk.[^51] This point covers assigning people, not sequencing machines, and only for EU operations. A 2026 amendment moved its start date from 2 Aug 2026 to 2 Dec 2027.[^51][^52]"
+    },
+    {
+      "name": "Chicago Fair Workweek Ordinance",
+      "url": "https://311.chicago.gov/s/article/Fair-Workweek-Knowledge?language=en_US",
+      "status": "In force; amended rules since 1 Jun 2026",
+      "what": "Manufacturing is covered, for employers with 100+ staff worldwide and 50+ covered employees.[^53] Shifts need 14 days' notice, and late changes owe predictability pay.[^53][^54] If software moves people's shifts, keep a person's time-stamped approval.[^54]"
+    }
+  ],
+  "howToTest": [
+    "Record your before numbers for 8-12 weeks: on-time delivery, changeover hours, overtime, schedule changes per week, planner hours and work in progress.[^42]",
+    "Pilot one line or cell first: pick 4-6 past weeks that had real disruptions. Freeze the data exactly as it stood on each Monday.",
+    "Replay those weeks in the tool and compare with what really happened and with a simple rule such as earliest due date. AI agents often fail to beat strong simple rules, so the rule is the bar.[^40]",
+    "Count capacity, calendar and material violations in every schedule. Language-model schedules often read well and still can't run.[^5][^6]",
+    "Count how many operations moved between runs; inside the frozen window it should be zero. Rescheduling more often than disruptions happen only makes the floor nervous.[^22][^15]",
+    "Run it in shadow for 4 weeks: the planner approves or overrides, with a reason for each override. Those reasons point to bad data and missing rules.[^4][^55]",
+    "Price the lift from your own books: changeover hours saved times your machine-hour cost, plus overtime and expedited freight avoided. Use your own rates, not published ones.",
+    "Decide at 90 days: compare against your before numbers from step 1."
+  ],
+  "watchOuts": [
+    "Bad master data gives a confident, wrong schedule; in one study, system times didn't match the floor.[^4][^3] Audit routings for your top-hours parts before go-live.",
+    "Shadow spreadsheets: after go-live, firms reported running parallel systems and getting incorrect plans.[^55] Retire the spreadsheet on a set date and log overrides inside the tool.",
+    "Planners lose their say: fights over shop-floor control explain failed projects, and unexplained assignments get ignored.[^1][^4] Keep the planner's override and make the tool show why it moved each job.",
+    "Schedule churn: re-running on every blip unsettles the floor.[^22][^15] Freeze the near term and patch small events instead of rebuilding the whole plan.[^16]",
+    "Calendars that don't match shifts: finite capacity goes wrong when shift changes aren't modeled.[^13] Load real shift calendars, planned maintenance included.",
+    "Vendor numbers without methods: product pages claim gains like +50% on-time delivery and show no method.[^23][^24] Test on your own past weeks before you sign."
+  ],
+  "faq": [
+    {
+      "q": "Can ChatGPT schedule my shop?",
+      "a": "Not by itself. Benchmarks show language models break capacity rules and fail to beat simple dispatching rules.[^5][^40] Use scheduling software or a solver, and let AI explain the changes.[^6][^39]"
+    },
+    {
+      "q": "How much does production scheduling software cost?",
+      "a": "For a 100-person shop, year-one list licenses ran from about $1,500 to a $25,000 one-time license in our check.[^7][^8] Seven of the 12 tools we read publish a price; the rest quote.[^31][^32]"
+    },
+    {
+      "q": "How is an APS different from ERP scheduling?",
+      "a": "The ERP plans what to make and when material arrives.[^56] An APS (advanced planning and scheduling tool) sequences every operation within real machine hours and re-plans after disruptions.[^11][^12]"
+    },
+    {
+      "q": "Can it build a schedule straight from my ERP?",
+      "a": "Yes, if the routings, run times and calendars in the ERP are correct.[^3][^13] The planner still approves the result.[^4]"
+    },
+    {
+      "q": "How long does setup take?",
+      "a": "Data clean-up comes first.[^3] PlanetTogether says many integrations take about 4-8 weeks (vendor claim), and research calls these projects complex and risky.[^31][^2]"
+    },
+    {
+      "q": "What data does scheduling software need?",
+      "a": "Open orders with due dates, routings with setup and run times, changeover times, shift calendars and material arrival dates.[^11][^31] It also needs actual times reported back from the floor.[^44]"
+    }
+  ],
+  "buyVsBuild": {
+    "buy": "Buy when you run one ERP, a standard job-shop or flow setup, and have no in-house optimization skills. Most firms buy: 76% of enterprise AI use cases are now bought.[^57] Bought tools succeed about twice as often as internal builds.[^48][^47]",
+    "build": "Build when your rules are unusual (tooling, skills, cure times), your data is clean and someone can maintain the model. Free solvers ship job-shop examples: OR-Tools and Timefold.[^45][^46] AI can help write the solver, which proved more repeatable than AI as the scheduler.[^39]"
+  },
+  "pickElse": [
+    "One bottleneck drives everything: pace the plant to it with Drum-Buffer-Rope from the Theory of Constraints before buying software.[^58]",
+    "Steady repeat demand: level the mix (heijunka) and pull with kanban instead of scheduling every job.[^59]",
+    "Lead times swing because of material, not machines: look at DDMRP, which plans around stock buffers.[^60]",
+    "Routings and run times are wrong: start with your state's NIST MEP center, as Stainless Works did before scheduling.[^61][^3]"
+  ],
+  "resources": [
+    {
+      "name": "Google OR-Tools: the job shop problem",
+      "url": "https://developers.google.com/optimization/scheduling/job_shop",
+      "what": "A free, runnable example of an optimized shop schedule."
+    },
+    {
+      "name": "Timefold Solver",
+      "url": "https://solver.timefold.ai/",
+      "what": "Open-source solver with a job-shop quickstart to try on your data."
+    },
+    {
+      "name": "frePPLe Community Edition",
+      "url": "https://github.com/frePPLe/frepple",
+      "what": "Free, open-source planning and scheduling you can run yourself."
+    },
+    {
+      "name": "NIST Manufacturing Extension Partnership",
+      "url": "https://www.nist.gov/mep",
+      "what": "Find your state's center for help fixing routings and flow."
+    },
+    {
+      "name": "Lean Enterprise Institute: heijunka",
+      "url": "https://www.lean.org/lexicon-terms/heijunka",
+      "what": "A plain explanation of leveled scheduling."
+    }
+  ],
+  "stats": [
+    {
+      "num": "66%",
+      "label": "of firms where AI changed tasks used it only to help staff[^10]",
+      "source": "US Census Bureau, 2026"
+    },
+    {
+      "num": "12-14 weeks to 5",
+      "label": "Stainless Works lead time after fixing routings and scheduling its bottleneck[^3]",
+      "source": "NIST MEP, 2025"
+    },
+    {
+      "num": "7 of 12",
+      "label": "scheduling tools we checked that publish a usable license price[^7][^8]",
+      "source": "Zavient price check, 26 Nov 2026"
+    },
+    {
+      "num": "76%",
+      "label": "of enterprise AI use cases are bought rather than built[^57]",
+      "source": "Menlo Ventures, 2025"
+    }
+  ],
+  "sources": [
+    {
+      "name": "Wiers, The relationship between shop floor autonomy and APS implementation success, Production Planning and Control 20(7) (2009)",
+      "url": "https://research.tue.nl/en/publications/the-relationship-between-shop-floor-autonomy-and-aps-implementati",
+      "what": "Disagreement over how much autonomy the shop floor keeps is a key factor in why APS implementations fail."
+    },
+    {
+      "name": "Wiers and de Kok, Designing, Selecting, Implementing and Using APS Systems (Springer, 2018)",
+      "url": "https://www.springerprofessional.de/en/designing-selecting-implementing-and-using-aps-systems/15205676",
+      "what": "APS systems serve to support the people doing production control, not replace them; projects are complex, costly and carry significant risk of failure."
+    },
+    {
+      "name": "NIST MEP success story, Stainless Works and MAGNET (5 Dec 2025)",
+      "url": "https://www.nist.gov/mep/successstories/2025/continuous-improvement-enhances-scheduling-and-capacity-planning-processes",
+      "what": "Routings corrected first, then forward scheduling at the welding bottleneck; lead time from 12-14 weeks to 5; $250,000 increased or retained sales; $50,000 cost savings."
+    },
+    {
+      "name": "Exploring AI Integration in SME Production Planning, Computer Supported Cooperative Work (2025)",
+      "url": "https://link.springer.com/article/10.1007/s10606-025-09512-6",
+      "what": "Field study of three German metal-processing SMEs: a planner spent 60-70% of the day adjusting the plan; schedulers overrode unexplained assignments; master-data times didn't match reality; authors urge keeping planner autonomy."
+    },
+    {
+      "name": "SCHEDBench, arXiv 2608.00991 (2026)",
+      "url": "https://arxiv.org/html/2608.00991v2",
+      "what": "1,132 scheduling instances: 13 language models largely fail, and whether they meet constraints changes with the wording."
+    },
+    {
+      "name": "Dual-enhancement LLM approach to job-shop scheduling, Journal of Manufacturing Systems (2026)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0278612526000877",
+      "what": "Standard language models produce schedules that are fluent but physically infeasible; with checks the method reaches 97% validity."
+    },
+    {
+      "name": "Odoo pricing, US list",
+      "url": "https://www.odoo.com/pricing?country=US&lang=en_US",
+      "what": "Read 26 Nov 2026 via a search-tool copy, cross-checked with third-party pages: Standard $24.90 per user a month in year one billed yearly, then $31.10; Custom $49 then $61, lists Agentic AI."
+    },
+    {
+      "name": "User Solutions, EDGEBIC pricing",
+      "url": "https://usersolutions.com/pricing",
+      "what": "Read 26 Nov 2026: $25,000 APS or $35,000 Complete, one-time perpetual license; Windows desktop."
+    },
+    {
+      "name": "McKay and Wiers, The human factor in planning and scheduling, Handbook of Production Scheduling (Springer, 2006)",
+      "url": "https://ftp.idu.ac.id/wp-content/uploads/ebook/ip/BUKU%20SCHEDULING/Handbook%20of%20Production%20Scheduling.pdf",
+      "what": "Splits the work into planner, scheduler and dispatcher; scheduling systems should fit the tasks each role does."
+    },
+    {
+      "name": "US Census Bureau, CES-WP-26-25, The Microstructure of AI Diffusion (2026)",
+      "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
+      "what": "Among firms where AI changed tasks, 66% only augment workers; AI-related employment fell at 2% of firms."
+    },
+    {
+      "name": "ANSI/ISA-95.00.03-2013, Enterprise-Control System Integration Part 3 (preview)",
+      "url": "https://webstore.ansi.org/preview-pages/ISA/preview_ANSI+ISA+95.00.03-2013.pdf",
+      "what": "Standard: finite capacity scheduling books work so no scheduled capacity exceeds the capacity available; section 6.6 covers detailed production scheduling."
+    },
+    {
+      "name": "Smart scheduling review of 123 papers, Journal of Intelligent Manufacturing (2024)",
+      "url": "https://link.springer.com/article/10.1007/s10845-024-02484-2",
+      "what": "Dynamic events scheduling tools must handle: machine failures, demand changes, cancellations and worker unavailability."
+    },
+    {
+      "name": "Microsoft Learn, Finite capacity in Planning Optimization",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/finite-capacity",
+      "what": "Warns that finite capacity planning goes wrong where capacity changes with shifts that aren't modeled."
+    },
+    {
+      "name": "Human, technological and organizational aspects influencing the production scheduling process, International Journal of Production Economics (Oct 2007)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0925527307000898",
+      "what": "Field study of schedulers in four companies: the job runs on flexibility, handling uncertainty and constant interruptions."
+    },
+    {
+      "name": "Vieira, Herrmann and Lin, Rescheduling manufacturing systems: a framework of strategies, policies and methods, Journal of Scheduling (2003)",
+      "url": "https://isr.umd.edu/Labs/CIM/projects/jos-rescheduling.pdf",
+      "what": "Rescheduling policies (periodic, event-driven), repair methods and the cost of schedule nervousness."
+    },
+    {
+      "name": "Kadipasaoglu and Sridharan, Journal of Operations Management 13(3) (1995)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/027269639500023L",
+      "what": "Freezing the near-term schedule is the most effective way to cut schedule instability."
+    },
+    {
+      "name": "Prenzel and Ringwelski, usability study of interactive scheduling, ICEIS 2012",
+      "url": "https://www.scitepress.org/Papers/2012/39874/39874.pdf",
+      "what": "35 subjects, 105 hours: decision-support features improved schedule quality; recommends letting users choose the level of automation."
+    },
+    {
+      "name": "Siemens case study, Dauper (vendor case)",
+      "url": "https://resources.sw.siemens.com/en-US/case-study-dauper-opcenter",
+      "what": "Vendor case: monthly schedule went from 2-5 days to about 10 minutes, freeing the planning team for analysis."
+    },
+    {
+      "name": "Siemens case study, Vetnil (vendor case)",
+      "url": "https://resources.sw.siemens.com/en-US/case-study-vetnil",
+      "what": "Vendor case: weekly scheduling from 4 hours to 40 minutes; fixed horizon from 2 to 4 weeks; scheduling moved from the operations director to the scheduling team."
+    },
+    {
+      "name": "Siemens case study, Artis Matriz (vendor case)",
+      "url": "https://resources.sw.siemens.com/en-US/case-study-artis-matriz",
+      "what": "Vendor case, 80-person made-to-order maker: planning time down 75%; on-time delivery rate up 50%; internal resource use from 65% to 85%, cutting outsourcing."
+    },
+    {
+      "name": "Reddit r/manufacturing, Custom manufacturing: help with job scheduling (Mar 2025)",
+      "url": "https://www.reddit.com/r/manufacturing/comments/1jakmcp/custom_manufacturing_help_w_job_scheduling/",
+      "what": "A shop asks whether AI could help after trying ChatGPT; replies list routings, run times and changeovers as the data a scheduler needs. Anecdote."
+    },
+    {
+      "name": "Aytug et al., Executing production schedules in the face of uncertainties: a review, European Journal of Operational Research 161 (2005)",
+      "url": "https://cepac.cheme.cmu.edu/pasi2011/library/henning/Executing_production_schedules_in_the_face_of_uncertainties_a_REVIEW_and_some_future_directions.pdf",
+      "what": "Rescheduling more often than disruptions happen causes nervousness without improving schedule quality."
+    },
+    {
+      "name": "Siemens Opcenter APS product family page",
+      "url": "https://www.siemens.com/en-us/products/opcenter/advanced-planning-scheduling-aps",
+      "what": "Vendor claim: +25% productivity, -50% inventory, +50% on-time delivery; no method given."
+    },
+    {
+      "name": "PlanetTogether Copilot",
+      "url": "https://www.planettogether.com/en-us/planettogether-copilot",
+      "what": "Vendor claim: machine-learning Copilot reduces manual scheduling time by up to 95%; no method shown."
+    },
+    {
+      "name": "MRPeasy pricing",
+      "url": "https://www.mrpeasy.com/pricing/",
+      "what": "Read 26 Nov 2026: $49, $69, $99, $149 per user a month; lists operations scheduling (MRP II, finite capacity); support AI assistant only."
+    },
+    {
+      "name": "Microsoft Dynamics 365 Business Central pricing",
+      "url": "https://www.microsoft.com/en-us/dynamics-365/products/business-central/pricing",
+      "what": "Read 26 Nov 2026: Essentials $80, Premium $110 per user a month paid yearly; Premium adds manufacturing; Copilot Credits sold separately."
+    },
+    {
+      "name": "Microsoft Dynamics 365 Licensing Guide",
+      "url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/bade/documents/products-and-services/en-us/bizapps/Dynamics-365-Licensing-Guide.pdf",
+      "what": "Business Central Premium lists Finite Loading and Basic Capacity Planning."
+    },
+    {
+      "name": "Cetec ERP pricing",
+      "url": "https://cetecerp.com/pricing",
+      "what": "Read 26 Nov 2026: $50 per user a month, 5-user minimum; support per company per month: Lite $0, Standard $650, Enterprise $3,200."
+    },
+    {
+      "name": "Autodesk Fusion Operations, buy page",
+      "url": "https://www.autodesk.com/products/fusion-operations/buy",
+      "what": "Read 26 Nov 2026: $173 a month paid annually, $2,065 a year for one user; 14-day free trial."
+    },
+    {
+      "name": "SkyPlanner APS pricing",
+      "url": "https://skyplanner.ai/pricing",
+      "what": "Read 26 Nov 2026: 199 euros a month including 5 workstations, plus 20 euros per extra workstation; no per-user fee; lists AI-assisted schedule optimization (vendor claim)."
+    },
+    {
+      "name": "PlanetTogether, APS integrations and pricing page",
+      "url": "https://www.planettogether.com/pricing",
+      "what": "Read 26 Nov 2026: no price shown; many integrations take about 4-8 weeks (vendor claim)."
+    },
+    {
+      "name": "Siemens Opcenter advanced scheduling",
+      "url": "https://www.siemens.com/en-us/products/opcenter/advanced-planning-scheduling-aps/advanced-scheduling-software",
+      "what": "Read 26 Nov 2026: enterprise APS; no price, contact sales."
+    },
+    {
+      "name": "frePPLe Community Edition on GitHub",
+      "url": "https://github.com/frePPLe/frepple",
+      "what": "Open-source planning and scheduling, MIT license."
+    },
+    {
+      "name": "frePPLe pricing",
+      "url": "https://frepple.com/pricing/",
+      "what": "Read 26 Nov 2026: subscription price not shown; proof of concept 2,000-5,000 euros; implementation 5,000-25,000 euros."
+    },
+    {
+      "name": "Katana pricing",
+      "url": "https://katanamrp.com/pricing/",
+      "what": "Read 26 Nov 2026: free plan up to 30 SKUs; Advantage is a custom annual contract; AI replenishment on Advantage only."
+    },
+    {
+      "name": "Siemens case study, SUMIDA (vendor case)",
+      "url": "https://resources.sw.siemens.com/en-US/case-study-sumida",
+      "what": "Vendor case: delivery reliability from 60% to 95%; planners can still adjust schedules by hand."
+    },
+    {
+      "name": "Siemens case study, ETEM Gestamp (vendor case)",
+      "url": "https://resources.sw.siemens.com/en-GB/case-study-etemgestamp/",
+      "what": "Vendor case: changeovers down 25%, press scrap down 10%, productivity up 5%."
+    },
+    {
+      "name": "PlanetTogether case study, Sumitomo Electric Lightwave (vendor case)",
+      "url": "https://www.planettogether.com/planettogether-partnerships-integrations/case-study-sumitomo-electric-lightwave",
+      "what": "Vendor case, 300 staff and 6,000 parts: promise-date accuracy up 8%, output up 16%."
+    },
+    {
+      "name": "Language-model coding agent that writes a scheduling solver, arXiv 2611.17682 (Nov 2026)",
+      "url": "https://arxiv.org/abs/2611.17682",
+      "what": "An agent that writes a solver is repeatable and beat commercial solvers on benchmarks; using the agent as the solver cost $2-23 a schedule and varied between runs."
+    },
+    {
+      "name": "DynaSchedBench, PMLR volume 306 (Sep 2026)",
+      "url": "https://proceedings.mlr.press/v306/cao26z.html",
+      "what": "Most language-model agents fail to consistently beat strong dispatching rules."
+    },
+    {
+      "name": "Reddit r/manufacturing, How do you do your production scheduling?",
+      "url": "https://www.reddit.com/r/manufacturing/comments/1igyxv8/how_do_you_do_your_production_scheduling/",
+      "what": "Planners describe whiteboards and Excel, and ERP schedulers they don't trust. Anecdote."
+    },
+    {
+      "name": "ISO 22400-2:2014, KPIs for manufacturing operations management",
+      "url": "https://www.iso.org/standard/54497.html",
+      "what": "Standard KPI definitions such as allocation ratio, throughput rate, setup rate and OEE; published 2014, under revision."
+    },
+    {
+      "name": "Reddit r/Machinists, ERP Systems",
+      "url": "https://www.reddit.com/r/Machinists/comments/1qjcguy/erp_systems/",
+      "what": "Machinists call their ERP's scheduling module unusable. Anecdote."
+    },
+    {
+      "name": "Reddit r/manufacturing, Advice for high-mix low-volume scheduling (Jul 2026)",
+      "url": "https://www.reddit.com/r/manufacturing/comments/1uwhe9p/advice_for_highmix_lowvolume_scheduling",
+      "what": "Without live feedback from the floor, any scheduler runs on fiction. Anecdote."
+    },
+    {
+      "name": "Google OR-Tools, The job shop problem",
+      "url": "https://developers.google.com/optimization/scheduling/job_shop",
+      "what": "Free CP-SAT job-shop example; Apache 2.0."
+    },
+    {
+      "name": "Timefold Solver",
+      "url": "https://solver.timefold.ai/",
+      "what": "Open-source solver, Apache 2.0, with a job-shop quickstart."
+    },
+    {
+      "name": "Fortune on the MIT NANDA report (18 Aug 2025)",
+      "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
+      "what": "Bought tools succeed about 67% of the time; internal builds about one-third as often."
+    },
+    {
+      "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025",
+      "url": "https://www.ictworks.org/wp-content/uploads/2025/09/AI_Business_2025.pdf",
+      "what": "Purchased AI tools and partnerships succeed far more often than internal builds."
+    },
+    {
+      "name": "ProShop ERP pricing",
+      "url": "https://proshoperp.com/pricing",
+      "what": "Read 26 Nov 2026: no price shown; pricing based on users."
+    },
+    {
+      "name": "productionschedulingreviews.com price list (verified 13 Oct 2026)",
+      "url": "https://productionschedulingreviews.com",
+      "what": "Third-party price list of 39 vendors; says only 13 or 14 publish a price."
+    },
+    {
+      "name": "Regulation (EU) 2024/1689, AI Act, consolidated text of 27 Jul 2026 (EUR-Lex)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689",
+      "what": "Annex III point 4(b): AI that allocates tasks based on workers' behavior or traits is high-risk; Article 113 as amended applies Annex III rules from 2 Dec 2027."
+    },
+    {
+      "name": "European Commission, AI Omnibus enters into force (27 Jul 2026)",
+      "url": "https://digital-strategy.ec.europa.eu/en/news/ai-omnibus-enters-force",
+      "what": "Regulation (EU) 2026/1744 moved Annex III high-risk rules to 2 Dec 2027."
+    },
+    {
+      "name": "City of Chicago 311, Fair Workweek knowledge page",
+      "url": "https://311.chicago.gov/s/article/Fair-Workweek-Knowledge?language=en_US",
+      "what": "Covered industries include manufacturing, for employers with 100+ employees worldwide and 50+ covered employees; 14 days' notice; predictability pay for late changes."
+    },
+    {
+      "name": "Epstein Becker Green, Chicago recalibrates Fair Workweek rules (2026)",
+      "url": "https://www.ebglaw.com/workforce-bulletin/chicago-recalibrates-fair-workweek-rules-which-took-effect-june-1",
+      "what": "Law-firm summary: amended rules in effect 1 Jun 2026 require time-stamped schedules and written, time-stamped consent to changes."
+    },
+    {
+      "name": "Kjellsdotter Ivert and Jonsson, International Journal of Physical Distribution and Logistics Management 41(4) (2011)",
+      "url": "https://research.chalmers.se/en/publication/140907",
+      "what": "After APS go-live, firms reported depending on consultants, running parallel systems and getting incorrect plans."
+    },
+    {
+      "name": "NIST GCR 19-022, Formalizing ISA-95 Level 3 Control (2019)",
+      "url": "https://nvlpubs.nist.gov/nistpubs/gcr/2019/NIST.GCR.19-022.pdf",
+      "what": "Level 3 consumes the production plan and creates a production schedule; scheduling is an extremely difficult decision problem."
+    },
+    {
+      "name": "Menlo Ventures, 2025 State of Generative AI in the Enterprise",
+      "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+      "what": "76% of enterprise AI use cases are bought rather than built, up from 53% in 2024 (n=495)."
+    },
+    {
+      "name": "Lean Production, Theory of Constraints and Drum-Buffer-Rope",
+      "url": "https://www.leanproduction.com/theory-of-constraints",
+      "what": "Pace the whole plant to its constraint with Drum-Buffer-Rope."
+    },
+    {
+      "name": "Lean Enterprise Institute, Heijunka",
+      "url": "https://www.lean.org/lexicon-terms/heijunka",
+      "what": "Leveling the type and quantity of production over a fixed period."
+    },
+    {
+      "name": "Demand Driven Institute, DDMRP",
+      "url": "https://www.demanddriveninstitute.com/ddmrp",
+      "what": "Demand-driven material requirements planning with strategic stock buffers."
+    },
+    {
+      "name": "NIST Manufacturing Extension Partnership",
+      "url": "https://www.nist.gov/mep",
+      "what": "A national network of centers in every state helping small and mid-size manufacturers."
+    }
+  ],
+  "related": [
+    "manufacturing",
+    "ai-demand-forecasting",
+    "ai-predictive-maintenance",
+    "supply-chain-logistics"
+  ],
+  "offer": {
+    "heading": "Bring us one bad week of your schedule",
+    "body": "Bring your scheduling process and one past week that went wrong. In 30 minutes you leave with the first step, a before-and-after measure and the data to fix first. No sales pitch."
+  },
+  "keyword": {
+    "phrase": "production scheduling software",
+    "searches": 880,
+    "cpc": 130,
+    "difficulty": 9
+  },
+  "reviews": [
+    {
+      "reader": "COO",
+      "notes": "Wanted the before-and-after measure named and the decision point dated. The first test step now says these are your before numbers, and the last step decides at 90 days against them. Every recipe step already names its role."
+    },
+    {
+      "reader": "Head of operations",
+      "notes": "Stalled on two terms: frozen window and finite loading. Both are now defined in plain words where they first appear. APS is defined in the FAQ, and WIP is spelled out as work in progress."
+    },
+    {
+      "reader": "GM",
+      "notes": "Asked whether one line can pilot first and how the gain hits margin. The test now starts with one line or cell, and a step prices the lift from changeover, overtime and expedite costs in your own books."
+    },
+    {
+      "reader": "Division head",
+      "notes": "The plant manager said most late orders are parts shortages, and the example ignored material. The example now feeds material arrival dates. The fixed 2-day freeze read as a rule, so it is now a suggested starting point. Vendor cases stay labelled, with the NIST case first."
+    },
+    {
+      "reader": "Owner-CEO",
+      "notes": "Steve wanted to know where his data would live and what the 30 minutes buys. The tools table now says EDGEBIC runs on your own PCs, not in the cloud. The offer now promises the first step, a before-and-after measure and the data to fix first, with no sales pitch."
+    }
+  ],
+  "updated": "2026-11-26"
+}
