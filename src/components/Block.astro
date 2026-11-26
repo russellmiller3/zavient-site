@@ -70,10 +70,10 @@ const h = headingFor(d, id);
   <h2 id="tool">{h}</h2>
   <div class="tool-frame"><iframe src={d.tool.embed} title={d.title} loading="lazy"></iframe></div>
   <script is:inline>
-    // Grow each same-origin tool frame to its content, so the tool never scrolls inside a fixed box on a phone.
+    // Fit each same-origin tool frame to its content (grow and shrink; body height, not documentElement, which never drops below the frame), so the tool never scrolls inside a fixed box on a phone.
     document.querySelectorAll('.tool-frame iframe').forEach(function (f) {
       function fit() {
-        try { var d = f.contentDocument; if (d && d.body) f.style.height = Math.max(480, d.documentElement.scrollHeight) + 'px'; } catch (e) {}
+        try { var d = f.contentDocument; if (!d || !d.body) return; var cs = d.defaultView.getComputedStyle(d.body); var h = Math.ceil(d.body.getBoundingClientRect().height + parseFloat(cs.marginTop) + parseFloat(cs.marginBottom)); f.style.height = Math.max(480, h) + 'px'; } catch (e) {}
       }
       f.addEventListener('load', function () {
         fit();

@@ -217,6 +217,8 @@ export const TYPES = {
     minSources: 'toolSources',
     division: 'the person most likely to run the tool',
     offer: 'Want the detailed plan behind your result? Book the free 30-minute diagnostic.',
+    // Tool names read badly in the default 'What is {topic}' and 'Questions buyers ask about {topic}' (screenshot check, 26 Nov).
+    headings: { 'what-it-is': 'What does the {topic} do?', faq: 'Questions leaders ask' },
   },
   guide: {
     label: 'Guide',
