@@ -6,13 +6,13 @@
   "topic": "AI in supply chain and logistics",
   "job": "AI in supply chain and logistics",
   "industry": "supply chain and logistics",
-  "index": false,
+  "index": true,
   "verdict": [
-    "Most firms are still piloting. Only 13% of logistics providers report measurable AI value, and 92% of operations leaders say tech spend hasn't fully delivered.[^1][^2]",
-    "Paperwork pays first: keying emailed orders, matching freight bills and making check calls. One freight firm's AI agents now handle 60% of its check calls.[^6][^5][^7]",
-    "Forecasting is the proven job. Machine-learning forecasts beat the best statistical method by over 14% in a major contest, but clean data matters more than the algorithm.[^8][^9][^10]",
-    "Planners, buyers and dispatchers stay in charge. Trade body ASCM advises keeping complex planning and sourcing under human oversight, and big planner corrections improve forecasts.[^11][^12]",
-    "Data and rules decide success. Integration and data top the barrier lists, and at least five states regulate algorithm-set warehouse quotas.[^2][^4][^15][^16]"
+    "Still mostly pilots: 13% of logistics providers see measurable AI value; 92% of ops leaders say tech hasn't fully delivered.[^1][^2]",
+    "Paperwork pays first: emailed orders, freight bills and check calls. One freight firm's AI agents handle 60% of check calls.[^6][^7]",
+    "Forecasting is proven: machine learning beat the best statistical method by over 14%. Clean data matters more than the algorithm.[^8][^10]",
+    "Planners stay in charge. Their trade body advises human oversight of complex planning, and big planner corrections improve forecasts.[^11][^12]",
+    "Data and rules decide success. Integration and data top barrier lists, and at least five states regulate algorithm-set warehouse quotas.[^2][^15]"
   ],
   "onPage": [
     {
@@ -48,7 +48,7 @@
     "faq": "Questions supply chain leaders ask about AI",
     "buy-or-build": "Should you buy supply chain AI or build it?"
   },
-  "summary": "AI in supply chain and logistics drafts the routine work: forecasts, order entry, carrier check calls, freight-bill matching and route plans.[^32][^33] McKinsey reports distributors cutting inventory 20-30% and logistics costs 5-20%, but these are consultancy ranges, not promises.[^33] What makes or breaks it is clean master data and a named owner for each decision.[^31][^30]",
+  "summary": "AI drafts routine supply chain and logistics work: forecasts, order entry, carrier check calls, freight-bill matching and route plans.[^32][^33] McKinsey reports distributors cutting inventory 20-30% and logistics costs 5-20%, but these are consultancy ranges, not promises.[^33] Clean master data and a named owner for each decision make or break it.[^30][^31]",
   "humanRole": [
     "Demand planners sign off the plan. AI drafts the baseline; planners flag promotions, new customers and lost accounts, where people add the most.[^12][^14]",
     "Buyers award the business and negotiate. AI can draft purchase orders and spend reports, but it should never create vendors or change bank details.[^45][^34]",
@@ -349,9 +349,9 @@
     "build": "Build only the glue: email-to-ERP order intake, data clean-up and approval steps. Hackett's leaders first check where AI pays, then pick built-in features, AI-native tools or custom builds.[^34] Turn on what your ERP or WMS already has before you buy more."
   },
   "pickElse": [
-    "Steady demand and a modest SKU count: your ERP's built-in reorder points may be enough. Benchmark any AI tool against them before you pay.",
+    "Steady demand and a modest SKU count: your ERP's built-in reorder points may be enough. Benchmark any AI tool against them before you pay.[^50][^51]",
     "Lumpy, slow-moving demand such as spare parts: try a simple method like Croston's first. Croston-type methods beat a seasonal baseline on low-volume items in M5.[^8]",
-    "Top customers can send structured orders: set up EDI (electronic data interchange) or an order portal instead of AI order-reading. It fixes the problem at the source.",
+    "Top customers can send structured orders: set up EDI (electronic data interchange) or an order portal instead of AI order-reading. It fixes the problem at the source.[^52][^53]",
     "One depot or a regional fleet: buy off-the-shelf routing software. A custom optimizer like UPS's ORION pays only at UPS scale.[^46]"
   ],
   "resources": [
@@ -389,7 +389,7 @@
     },
     {
       "num": "22.5% vs 2.5%",
-      "label": "Demand planner vs warehouse manager US job ads that mention AI.",
+      "label": "Demand planner vs warehouse manager US job ads that mention AI.[^49]",
       "source": "Zavient job-ad count, 30 days to 26 Nov 2026"
     },
     {
@@ -671,6 +671,31 @@
       "name": "Bureau of Transportation Statistics, Supply Chain and Freight Indicators",
       "url": "https://www.bts.gov/freight-indicators",
       "what": "Free monthly freight, port and trucking indicators."
+    },
+    {
+      "name": "Zavient, US job-ad count by supply chain role (30 days to 26 Nov 2026)",
+      "url": "https://zavient.com/industries/supply-chain-logistics.html#own-data",
+      "what": "US ads posted in 30 days per role and how many mention AI: demand planner 73 of 325 (22.5%), warehouse manager 31 of 1,235 (2.5%); rough counts."
+    },
+    {
+      "name": "Comparing statistical and machine learning methods for time series forecasting in data-driven logistics, Entropy (2024)",
+      "url": "https://www.mdpi.com/1099-4300/27/1/25",
+      "what": "Simulation study: machine learning did best on complex series; classic time-series methods were competitive when demand was low-noise."
+    },
+    {
+      "name": "Evaluating sales forecasting methods in make-to-order environments: a cross-industry benchmark, Engineering Proceedings (2025)",
+      "url": "https://www.mdpi.com/2813-0324/11/1/1",
+      "what": "Benchmark across three smaller manufacturers: simpler statistical methods held up well for stable or seasonal demand."
+    },
+    {
+      "name": "Hyperfox, Which order channel to automate first? (2026)",
+      "url": "https://www.hyperfox.com/insights/which-order-channel-to-automate-first",
+      "what": "Vendor article: a customer portal has buyers enter structured orders, validated at the source with no re-keying; works only if customers use it."
+    },
+    {
+      "name": "Mercura, EDI vs AI order entry",
+      "url": "https://mercura.ai/blog/edi-vs-ai-orders",
+      "what": "Vendor article: EDI suits large accounts with high, regular volume and runs without a review step; AI order entry needs human approval."
     }
   ],
   "reviews": [

@@ -1,18 +1,18 @@
 {
   "title": "Can AI do construction takeoffs accurately enough to bid on?",
-  "description": "Where AI takeoff helps estimators and where it slips: counts vs. areas, 11 tools priced, the drawing rules, and a test on your own past bids.",
+  "description": "Where AI takeoff helps estimators and where it slips: counts vs. areas, 11 tools priced, and a test on your own past bids.",
   "type": "usecase",
   "templateVersion": 1,
   "topic": "AI construction estimating",
   "job": "construction cost estimating and takeoff",
   "industry": "construction",
-  "index": false,
+  "index": true,
   "verdict": [
-    "Trust AI most on counts and re-measure areas. In a one-job field study, counts matched almost exactly while area items ran low, façades worst.[^1][^2]",
-    "Your estimator still checks every line and signs the bid. After award, a bid mistake is usually the bidder's own loss, AI or not.[^11][^12][^13]",
-    "General chatbots like ChatGPT read specs well but miscount doors and windows. Use them for scope and RFIs (requests for information), and a takeoff tool for quantities.[^3][^4][^8]",
-    "Vendors claim 94-99% accuracy, but none we checked publishes the plan set or method behind it. Benchmark tools on your own past bids instead.[^22][^35][^48]",
-    "Start small: one trade scope, 5-10 past bids, timed with the checking included. One AI takeoff seat lists at about $830 to $3,600 a year.[^48][^33][^21]"
+    "Trust AI most on counts; re-measure areas. On one job, counts nearly all matched while areas ran low, façades worst.[^1][^2]",
+    "Your estimator checks every line and signs the bid. After award, mistakes are usually the bidder's loss, AI or not.[^11][^13]",
+    "Chatbots like ChatGPT read specs well but miscount doors and windows. Use them for scope and RFIs (requests for information).[^3][^4]",
+    "Vendors claim 94-99% accuracy, but none we checked publishes its test drawings. Test on 5-10 past bids, checking time included.[^22][^48]",
+    "Start small, with one trade scope. One AI takeoff seat lists at about $830 to $3,600 a year.[^33][^21]"
   ],
   "onPage": [
     {
@@ -48,7 +48,7 @@
     "what-goes-wrong": "Where does AI takeoff go wrong?",
     "buy-or-build": "Should you buy an AI takeoff tool or build one?"
   },
-  "summary": "In construction estimating, AI takes the first pass at takeoff (measuring quantities from drawings): it reads PDF plans, sets scale, counts symbols and measures areas.[^1][^2][^7] Your estimator checks every line, prices it and signs the bid.[^2][^5] It works best on counts and simple areas, and slips on irregular shapes and on scope the drawings don't show.[^1][^3][^48]",
+  "summary": "In construction estimating, AI does the first takeoff pass (measuring quantities from drawings): reading plans, setting scale, counting symbols, measuring areas.[^1][^2][^7] Your estimator checks every line, prices it and signs the bid.[^2][^5] It is strongest on counts and simple areas, weakest on irregular shapes and scope the drawings don't show.[^1][^3][^48]",
   "humanRole": [
     "Estimator: checks every AI quantity before it enters a bid, low-confidence items first. Trimble's own rule is that nothing goes into a bid until a qualified person has looked at it.[^2][^10][^1]",
     "Chief estimator or head of preconstruction: owns the number and signs the bid. A one-sided bid mistake is usually the bidder's loss, even on federal work.[^11][^12][^13]",

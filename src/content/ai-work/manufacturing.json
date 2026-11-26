@@ -6,13 +6,13 @@
  "topic": "AI in manufacturing",
  "job": "AI in manufacturing",
  "industry": "manufacturing",
- "index": false,
+ "index": true,
  "verdict": [
-  "Fix basic maintenance first. NIST found the most reactive quarter of plants had 3.3 times the downtime and 16 times the defects of the least reactive.[^1][^2]",
-  "Start with a troubleshooting assistant that reads your manuals and repair history. It needs no new sensors, and one plant cut repair time 40%.[^3][^4]",
-  "Camera inspection is the most-planned AI use, and trained inspectors miss about 15% of defects. Most published AI inspection systems stall at pilot, so trial on your own parts.[^5][^6][^7]",
-  "Expect a dip before the gain. Census research found productivity falls first after AI adoption, and plants that drop structured management lose more.[^8][^9]",
-  "People keep the switch. Federal guidance on AI in plant control systems keeps a human in the loop, and OSHA lockout rules still govern every repair.[^10][^11][^12]"
+  "Fix maintenance first: NIST's most reactive plants had 3.3x the downtime and 16x the defects of the least reactive.[^1][^2]",
+  "Start with a troubleshooting assistant on your manuals and repair logs, not new sensors. One plant cut repair time 40%.[^3][^4]",
+  "Inspectors miss about 15% of defects, but most published AI camera systems stall at pilot. Test on your own parts.[^6][^7]",
+  "Expect a dip before the gain. Census research found productivity falls first, and plants that drop structured management lose more.[^8][^9]",
+  "People keep the switch. Federal guidance puts humans in the loop on plant-control AI; OSHA lockout rules cover every repair.[^10][^11]"
  ],
  "onPage": [
   {
@@ -45,7 +45,7 @@
   "buy-or-build": "Should you buy AI tools or build your own?",
   "faq": "Questions plant leaders ask about AI"
  },
- "summary": "AI in manufacturing reads the data your plant already makes: machine signals, camera images, work orders and prints.[^13][^14] It flags a failing machine, catches a defect or answers a technician's question, while people decide what to fix, ship or scrap.[^14][^10] What makes or breaks it is boring: consistent data and one problem with a dollar cost, such as downtime or scrap.[^15][^16][^8]",
+ "summary": "AI in manufacturing reads data your plant already makes: machine signals, camera images, work orders and prints.[^13][^14] It flags failing machines, catches defects and answers technicians' questions; people decide what to fix, ship or scrap.[^14][^10] It needs consistent data and one problem with a dollar cost, like downtime or scrap.[^15][^16][^8]",
  "humanRole": [
   "Operators and the maintenance lead keep control of the machines. Federal and allied guidance urges caution with AI that acts on machine control, and wants human checkpoints.[^10][^12]",
   "The maintenance planner owns the work order; AI only raises the flag. A trained person still locks out the machine's power under OSHA rules before any AI-suggested repair.[^11][^10]",
