@@ -1,0 +1,155 @@
+{
+  "title": "AI ROI calculator: will this workflow pay back this year?",
+  "description": "Pick one workflow and see the payback month, hours moved to better work and an honest low-to-high range. Sourced defaults, no email needed.",
+  "type": "tool",
+  "templateVersion": 1,
+  "topic": "AI ROI calculator",
+  "job": "AI ROI calculator",
+  "industry": "any industry",
+  "index": false,
+  "verdict": [
+    "Subtract review and redo time; vendor calculators often skip it and show bigger savings[^22][^19].",
+    "Count about half the freed hours as money, because scattered minutes rarely become output[^1][^21].",
+    "Expect a dip first: run costs start in month one while value ramps up[^15][^16].",
+    "Buying usually beats building, and a custom build needs high volume to pay back this year[^18][^20].",
+    "Time 20 real items before you trust any answer, because self-reported savings run high[^14][^12]."
+  ],
+  "onPage": [],
+  "headings": {},
+  "tool": {
+    "embed": "/tools/embed/ai-roi-calculator.html",
+    "steps": [
+      "Pick the workflow closest to yours. Its defaults fill in, each with a source or marked as our estimate.",
+      "Enter your monthly volume. Count 4 weeks of real items if you can.",
+      "Check minutes per item and review minutes. Time 20 real items rather than guess.",
+      "Enter setup and monthly cost, or start from a typical range. Read the verdict, the range and the input that moves your answer most.",
+      "Copy the link to share your inputs, or bring the result to the free diagnostic."
+    ],
+    "method": [
+      "Minutes moved per AI item = minutes today, minus review minutes, minus redo rate times minutes today. Review time is the step most calculators skip[^21][^22].",
+      "Money per month counts 56% of freed hours: Gartner's example takes a 20% productivity leak, then a 70% harvesting ratio[^1].",
+      "Value ramps up over 3 months while run cost starts in month 1, to show the early dip[^15][^16][^25].",
+      "Hourly cost is BLS pay times 1.28 to 1.31, the BLS loading for benefits other than paid leave, because pay already includes leave[^5][^6]. Where no single job fits, we use BLS total pay and benefits per hour[^6].",
+      "Minutes per item come from APQC, MetricNet, HDI and Loopio benchmarks[^9][^10][^7][^8][^11]. Adoption starts at 80%, the active-use rate in the UK government's Copilot trial[^12].",
+      "Low and high cases change AI share, review minutes and adoption; payback is not discounted. Above 40% time saved, a reality check appears, since surveyed AI users saved 5.4% of work hours[^13]."
+    ]
+  },
+  "summary": "An AI ROI calculator asks whether one workflow earns back its setup and running cost. AI drafts the first pass, and people still check each draft[^2][^12]. The answer turns on volume, review minutes and how much freed time becomes real output[^1][^19].",
+  "humanRole": [
+    "A named reviewer checks each AI draft before it goes out, such as the AP clerk, support agent or accountant. The calculator counts that time as a cost[^12][^19].",
+    "Exceptions stay with people. Teams where AI took routine items and people reviewed exceptions reported 71% median gains, against 30% where people approved every output[^17].",
+    "People decide where freed hours go: faster turnaround, fewer errors, or work that waits today. Early Copilot users spent saved time mostly on focus work[^23].",
+    "The ops lead or division head owns the go or no-go call and signs off the spend. Test on timed items first, because many AI projects stop after the proof of concept[^24][^14]."
+  ],
+  "ownData": {
+    "title": "How many items a month does each workflow need to pay back in a year?",
+    "intro": "We ran our calculator on each workflow with its sourced defaults[^9][^7]. We solved for the monthly volume that pays back within 12 months, at two cost levels. Run on 26 Nov 2026.",
+    "headers": ["Workflow", "Minutes moved per AI item", "Tool you already pay for ($6k, then $500 a month)", "Custom build ($40k, then $1,500 a month)"],
+    "rows": [
+      ["Customer email and chat replies[^7]", "8.3", "1,000 tickets", "4,900 tickets"],
+      ["Accounts payable invoices[^9]", "6.0", "1,200 invoices", "5,400 invoices"],
+      ["IT service desk tickets[^8]", "4.7", "1,900 tickets", "9,000 tickets"],
+      ["RFP and questionnaire answers[^11]", "6.8", "490 questions", "2,400 questions"],
+      ["Bank reconciliations[^10]", "144", "35 accounts", "170 accounts"],
+      ["Claims or loan document intake (our time estimate)", "2.1", "3,500 documents", "16,900 documents"],
+      ["Internal documents and email drafts (our time estimate)[^3]", "9.0", "320 documents", "1,600 documents"],
+      ["Meeting notes and follow-ups[^23]", "29.9", "95 meetings", "460 meetings"]
+    ],
+    "note": "Zavient calculation, 26 Nov 2026, with the tool's settings: 80% adoption, 56% of hours counted as money, a 3-month ramp. The two cost levels are our estimates from Clutch project reviews and seat prices[^20]. AI share and review minutes are our assumptions, so change them in the tool."
+  },
+  "faq": [
+    {
+      "q": "Why is my result lower than vendor ROI calculators show?",
+      "a": "We subtract the minutes people spend checking AI drafts, the drafts that get redone, and the slow first months[^21][^15]. Some vendor calculators skip these, and one defaults to a 76% resolution rate[^22]. We also count only part of the freed time as money[^1]."
+    },
+    {
+      "q": "Why does it show hours moved to better work, not jobs saved?",
+      "a": "Measured gains are on tasks, not whole roles: 14% more issues resolved per hour in support, and 40% less time on writing tasks[^2][^3]. The hours are real capacity. Your team decides where they go[^23]."
+    },
+    {
+      "q": "Where do the default numbers come from?",
+      "a": "Minutes per item come from APQC, MetricNet and Loopio benchmarks[^9][^7][^11]. Hourly cost is BLS pay plus benefits other than paid leave, which pay already covers[^5][^6]. AI share and review minutes are our estimates, because no neutral benchmark exists."
+    },
+    {
+      "q": "Why does the first month lose money?",
+      "a": "You pay to run it from day one while people learn the new step[^16]. Research on new technology finds a dip before the gain, and DORA's calculator models one too[^15][^25]."
+    },
+    {
+      "q": "How accurate is an AI ROI estimate?",
+      "a": "It is a planning estimate, so the tool shows low, expected and high cases. Self-reported savings run high: developers who felt 20% faster were 19% slower when measured[^14]. Time 20 real items before you decide[^12]."
+    },
+    {
+      "q": "What costs should I include?",
+      "a": "Setup covers configuration, connecting your systems, data clean-up and training. Monthly cost covers licences or usage fees plus upkeep. Most AI projects reviewed on Clutch cost $10,000 to $49,999[^20]."
+    },
+    {
+      "q": "What if it says the workflow doesn't pay back?",
+      "a": "That is a useful answer. The usual fixes are more volume, a tool you already pay for, or review of exceptions only[^17]. In MIT's study, bought tools succeeded about 67% of the time and internal builds one-third as often[^18]."
+    }
+  ],
+  "pickElse": [
+    "Software delivery teams: DORA's free calculator models engineering metrics and the early dip in more detail[^25].",
+    "Low-volume drafting and meeting notes: turn on AI in tools you already pay for before you price a build[^12][^23].",
+    "Judgment calls with thin data: keep them by hand for now. On tasks outside what AI does well, users were 19 points less likely to be right[^4].",
+    "Build cost unknown: price the project first with our AI project cost estimator, then bring the numbers back here[^20]."
+  ],
+  "resources": [
+    { "name": "DORA ROI of AI-assisted software development calculator", "url": "https://dora.dev/ai/roi/calculator", "what": "The best free model of the early productivity dip, for software teams." },
+    { "name": "BLS Occupational Employment and Wage Statistics, May 2025", "url": "https://www.bls.gov/news.release/ocwage.t01.htm", "what": "Mean hourly pay for every US occupation, to set your loaded cost." },
+    { "name": "UK government Microsoft 365 Copilot experiment report", "url": "https://www.gov.uk/government/publications/microsoft-365-copilot-experiment-cross-government-findings-report/microsoft-365-copilot-experiment-cross-government-findings-report-html", "what": "A 20,000-person trial with adoption and time-saved data, including who saw no saving." },
+    { "name": "MetricNet 2023 service and support benchmarks", "url": "https://www.brighttalk.com/resource/core/447335/benchmarking-roundup---summary-of-2023-service-and-support-benchmarks-v3_954461.pdf", "what": "Handle times and cost per contact by channel, to check your support numbers." }
+  ],
+  "stats": [
+    { "num": "56%", "label": "of freed hours counted as money in Gartner's worked example[^1]", "source": "Gartner panel, Aug 2024" },
+    { "num": "14%", "label": "more support issues resolved per hour with AI help, and 34% for newer agents[^2]", "source": "Brynjolfsson, Li and Raymond, NBER" },
+    { "num": "26 min", "label": "a day saved, self-reported, in a 20,000-person government trial, while 17% saw no saving[^12]", "source": "UK Government Digital Service, 2025" },
+    { "num": "19%", "label": "slower, when measured, for developers who believed AI made them 20% faster[^14]", "source": "METR, 2025" },
+    { "num": "71% vs 30%", "label": "median gains where people reviewed only exceptions, against approving every output[^17]", "source": "Stanford Digital Economy Lab, 2026" }
+  ],
+  "sources": [
+    { "name": "Gartner panel discussion slides (Christensen and Seesel), Aug 2024", "url": "https://s3.amazonaws.com/bizzabo.file.upload/hCwbN4NTlKPzuyLET6Aw_Aug29NSudaCChristensenBSeesel.pdf", "what": "Worked example: a 20% productivity leak, then a 70% harvesting ratio, keeps 56% of time saved as value. Read 26 Nov 2026." },
+    { "name": "Brynjolfsson, Li and Raymond, Generative AI at Work, NBER working paper 31161", "url": "https://www.nber.org/papers/w31161", "what": "AI help raised support issues resolved per hour by 14% on average and 34% for novice workers, with little gain for the most skilled." },
+    { "name": "Noy and Zhang, Experimental evidence on the productivity effects of generative AI, Science, 2023", "url": "https://doi.org/10.1126/science.adh2586", "what": "On writing tasks, ChatGPT cut time taken by 40% and raised quality by 18%." },
+    { "name": "Dell'Acqua et al., Navigating the Jagged Technological Frontier, Organization Science, 2026", "url": "https://doi.org/10.1287/orsc.2025.21838", "what": "Inside AI's frontier, consultants were 25% faster; outside it, they were 19% less likely to be correct." },
+    { "name": "US Bureau of Labor Statistics, Occupational Employment and Wage Statistics, May 2025, Table 1", "url": "https://www.bls.gov/news.release/ocwage.t01.htm", "what": "Mean hourly wages: customer service reps $22.40, bookkeeping clerks $25.75, computer user support $32.37, accountants $45.56, claims clerks $25.44." },
+    { "name": "US Bureau of Labor Statistics, Employer Costs for Employee Compensation, June 2026, Table 4", "url": "https://www.bls.gov/news.release/ecec.t04.htm", "what": "Per hour worked: office staff $25.22 wages and $11.51 benefits, including $2.77 paid leave; professional staff $73.69 total, $6.78 paid leave; all private industry $46.89 total." },
+    { "name": "MetricNet, Summary of 2023 service and support benchmarks", "url": "https://www.brighttalk.com/resource/core/447335/benchmarking-roundup---summary-of-2023-service-and-support-benchmarks-v3_954461.pdf", "what": "Average handle time 13.70 minutes per email or web ticket and 13.42 per chat." },
+    { "name": "HDI, Metric of the Month: Ticket Handle Time (MetricNet data)", "url": "https://www.thinkhdi.com/library/supportworld/2019/metric-of-month-ticket-handle-time", "what": "Average ticket handle time across service desks is 8.6 minutes." },
+    { "name": "APQC, How do you benchmark employee productivity?, Oct 2026", "url": "https://apqc.org/How-Do-You-Benchmark-Employee-Productivity", "what": "Median 12,000 invoices processed per accounts payable FTE a year, across 3,748 organizations." },
+    { "name": "APQC, What bank reconciliation cycle time really tells you, Nov 2026", "url": "https://www.apqc.org/resources/blog/what-bank-reconciliation-cycle-time-really-tells-you", "what": "Median 4 hours to reconcile one bank account; top performers 2.6 hours." },
+    { "name": "Loopio, RFP metrics that matter (vendor)", "url": "https://loopio.com/resources/rfp-metrics-guide", "what": "The average RFP has 115 questions at about 12 minutes per question (Loopio survey data)." },
+    { "name": "UK Government Digital Service, Microsoft 365 Copilot experiment: cross-government findings report, 2025", "url": "https://www.gov.uk/government/publications/microsoft-365-copilot-experiment-cross-government-findings-report/microsoft-365-copilot-experiment-cross-government-findings-report-html", "what": "20,000 staff; 26 minutes a day saved, self-reported; 17% saw no clear saving; about 80% actively used it; human oversight needed at all times." },
+    { "name": "Federal Reserve Bank of St. Louis, The impact of generative AI on work productivity, Feb 2025", "url": "https://www.stlouisfed.org/on-the-economy/2025/feb/impact-generative-ai-work-productivity", "what": "Users saved 5.4% of work hours on average; across all workers, 1.4%." },
+    { "name": "METR, Measuring the impact of early-2025 AI on experienced open-source developer productivity", "url": "https://arxiv.org/abs/2507.09089", "what": "Developers estimated AI made them 20% faster; measured, it made them 19% slower." },
+    { "name": "Brynjolfsson, Rock and Syverson, The Productivity J-Curve, AEJ: Macroeconomics, 2021", "url": "https://www.aeaweb.org/articles?id=10.1257/mac.20180386", "what": "New general-purpose technologies like AI need complementary investment, so measured productivity dips before it rises." },
+    { "name": "US Census Bureau, The Rise of Industrial AI in America, CES-WP-25-27, 2025", "url": "https://www.census.gov/library/working-papers/2025/adrm/CES-WP-25-27.html", "what": "Causal evidence that short-term performance losses come before longer-term gains after AI adoption." },
+    { "name": "Stanford Digital Economy Lab, The Enterprise AI Playbook, 2026", "url": "https://digitaleconomy.stanford.edu/app/uploads/2026/03/EnterpriseAIPlaybook_PereiraGraylinBrynjolfsson.pdf", "what": "Escalation models (AI handles 80%+, people review exceptions) delivered 71% median gains against 30% for approve-everything models." },
+    { "name": "Fortune, on MIT NANDA's The GenAI Divide, Aug 2025", "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/", "what": "Tools bought from specialized vendors succeed about 67% of the time; internal builds one-third as often." },
+    { "name": "BetterUp Labs and Stanford Social Media Lab, Workslop, Sept 2025", "url": "https://www.betterup.com/workslop", "what": "40% of US desk workers received low-quality AI output in a month; each case took about 2 hours to resolve, $186 per employee a month." },
+    { "name": "Clutch, AI development pricing guide, Nov 2026", "url": "https://clutch.co/developers/artificial-intelligence/pricing", "what": "Most AI projects reviewed cost $10,000 to $49,999; the average is $120,594 over about 10 months. Project sizes only." },
+    { "name": "DoAny, Free AI automation ROI calculator", "url": "https://doany.ai/tools/automation-roi-calculator", "what": "Subtracts review hours and counts 50% of freed time as money by default." },
+    { "name": "Fin (Intercom), ROI calculator (vendor)", "url": "https://fin.ai/roi-calculator", "what": "Defaults to the vendor's own 76% resolution rate, with no review or escalation cost." },
+    { "name": "Microsoft WorkLab, What can Copilot's earliest users teach us about AI at work?, Nov 2023 (vendor)", "url": "https://www.microsoft.com/en-us/worklab/work-trend-index/copilots-earliest-users-teach-us-about-generative-ai-at-work", "what": "Lab test: a missed-meeting summary took 42 min 34 s by hand and 11 min 13 s with Copilot; 53% spent saved time on focus work." },
+    { "name": "Gartner, Gartner predicts 30% of generative AI projects will be abandoned after proof of concept, July 2024", "url": "https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025", "what": "At least 30% of generative AI projects predicted to be abandoned after proof of concept, partly because value is hard to show." },
+    { "name": "DORA (Google Cloud), ROI of AI-assisted software development calculator", "url": "https://dora.dev/ai/roi/calculator", "what": "Models a J-curve productivity drop and its length as inputs, alongside tool and training costs." }
+  ],
+  "related": ["ai-project-cost-estimator", "ai-invoice-processing", "account-reconciliation-automation", "ai-document-processing", "ai-consulting-services"],
+  "offer": {
+    "heading": "Not sure this workflow pays back? Get a free diagnostic",
+    "body": "Want the detailed plan behind your result? Book the free 30-minute diagnostic."
+  },
+  "keyword": {
+    "phrase": "ai roi",
+    "searches": 720,
+    "cpc": 24.92,
+    "difficulty": 20
+  },
+  "reviews": [
+    { "reader": "COO", "notes": "Wanted a decision line and a range, not one point. Verdict now says this year, next year or year 3, with low, expected and high under it. Fixed: drafting and meeting presets were priced as a $40k build; each workflow now starts from its typical cost path." },
+    { "reader": "Head of operations", "notes": "Asked what to measure before trusting it. Added 'the number that moves your answer most' and three checks. Fixed: break-even volume now uses the workflow's own unit (invoices, tickets, accounts)." },
+    { "reader": "GM", "notes": "Reads on a phone between meetings. Result sits first, with a sticky verdict bar while editing inputs. Fixed: replaced an FTE-equivalent figure with hours per working day, so it reads as time back, not people." },
+    { "reader": "Division head", "notes": "Controller and head of support wanted their reviewers named. Human-role bullets and preset notes now say who keeps the call. Fixed: reconciliation priced at accountant cost, with the clerk rate noted." },
+    { "reader": "Owner-CEO", "notes": "Checked it is not a sales funnel: no email gate, sources on every default, and an honest 'does not pay back' state with cheaper options. Fixed: meeting preset AI share cut to 70% so its default stays inside the measured 2-40% band." }
+  ],
+  "updated": "2026-11-26"
+}

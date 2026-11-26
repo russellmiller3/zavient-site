@@ -4,6 +4,7 @@
 // order (start here, then AP, close, documents, credit, underwriting) with who each is for and a ~10-word blurb,
 // and a way in to the readiness check for readers who don't know which guide they need.
 import { getCollection } from 'astro:content';
+import { urlFor } from '../../lib/page-types.mjs';
 import Base from '../../layouts/Base.astro';
 import ConsultingCta from '../../components/ConsultingCta.astro';
 
@@ -46,7 +47,7 @@ const stories = (await getCollection('datastory')).sort((a, b) => a.data.title.l
     <h2>Guides</h2>
     <div class="hub-grid">{pages.map((p) => {
       const g = guideOrder[p.id];
-      return <a class="hub-card" href={`/ai-work/${p.id}.html`}><span class="hub-tag">Guide</span><h3>{p.data.title}</h3><p>{g ? g.blurb : p.data.description}</p>{g && <p class="hub-for">For: {g.for}</p>}</a>;
+      return <a class="hub-card" href={urlFor(p.data, p.id)}><span class="hub-tag">{p.data.type === 'tool' ? 'Tool' : 'Guide'}</span><h3>{p.data.title}</h3><p>{g ? g.blurb : p.data.description}</p>{g && <p class="hub-for">For: {g.for}</p>}</a>;
     })}</div>
     <h2>Data stories</h2>
     <p>What AI talent costs, and which tools employers ask for, from 2,046 US job ads. Free to republish with a link back.</p>
