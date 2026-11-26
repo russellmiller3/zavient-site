@@ -189,10 +189,10 @@ export const TYPES = {
     titleShape: '{The kind of help}: what should you walk away with?',
     example: 'AI automation consulting: what should you walk away with?',
     // Never named rival or partner firms, or freelancer rates (Site rules). Zavient's own price ranges only on Russell's yes.
-    order: ['what-it-is', 'walk-away', 'human-role', 'recipes', 'own-data', 'what-goes-wrong', 'benchmark', 'faq', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
+    order: ['what-it-is', 'walk-away', 'spokes', 'human-role', 'recipes', 'own-data', 'what-goes-wrong', 'benchmark', 'faq', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
     required: ['walkAway', 'recipes', 'watchOuts', 'howToTest', 'pickElse'],
     division: 'the operator who would hire the help (COO or head of operations)',
-    headings: { recipes: 'What shapes can the work take?', 'what-goes-wrong': 'Why do most AI pilots stall?', benchmark: 'How do you judge any AI advisor?', 'something-else': 'When should you not hire help?' },
+    headings: { spokes: 'Which kind of help do you need?', recipes: 'What shapes can the work take?', 'what-goes-wrong': 'Why do most AI pilots stall?', benchmark: 'How do you judge any AI advisor?', 'something-else': 'When should you not hire help?' },
     offer: 'Free, before any paid work: 30 minutes on your first workflow.',
   },
   regulation: {

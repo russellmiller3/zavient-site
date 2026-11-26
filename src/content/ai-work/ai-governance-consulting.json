@@ -1,0 +1,542 @@
+{
+ "title": "AI governance framework: what should consulting leave you with?",
+ "description": "What an AI governance framework for a 40-500 person firm should hold, which AI compliance rules apply, and how to judge AI governance consulting.",
+ "type": "consulting",
+ "templateVersion": 1,
+ "topic": "AI governance consulting",
+ "job": "AI governance",
+ "industry": "any industry",
+ "index": false,
+ "verdict": [
+  "Staff already use AI at work, but only about a third of firms have a formal, written AI policy.[^3][^5]",
+  "Governance speeds AI up: UK mid-size firms approving tools in days report better returns than those taking months.[^6][^7]",
+  "Rules now reach mid-size firms. Colorado's rewrite has no size exemption, though a lawsuit has paused enforcement.[^13][^15]",
+  "Ask for evidence, not just a policy: most firms doubt they'd pass an AI governance audit within 90 days.[^8][^9]",
+  "Keep a person on decisions about customers and staff, someone who understands the output and can change it.[^25][^12]"
+ ],
+ "onPage": [],
+ "headings": {},
+ "summary": "AI governance consulting builds your AI governance framework: who owns AI, which tools staff may use, with what data, and who checks output.[^2][^1] Done well, it speeds adoption: staff know what's allowed.[^6][^7] It succeeds on a fast approval route and evidence an auditor can read, not a long policy.[^6][^8]",
+ "walkAway": [
+  "A named owner, usually the COO (chief operating officer), with sign-off from the owner or board. Firms where the C-suite owns AI report a return far more often (62% vs 18%).[^2][^6]",
+  "A register: one list of every AI tool and use, including AI built into vendor software. NIST (the US standards agency) starts governance with this inventory.[^2][^31]",
+  "An approved-tools list, data rules for what may go into each tool, and a request route that answers in days. Only 27% of smaller firms have data rules today.[^3][^6]",
+  "Risk tiers: drafting an email is low risk; decisions on credit, claims or hiring are high and get a human checkpoint.[^44][^43]",
+  "An evidence file an examiner or auditor can read: training records, reviews and incidents, refreshed each quarter. Most insurers say controls exist but evidence is scattered (68%).[^9][^20]"
+ ],
+ "humanRole": [
+  "The COO owns the register and the quarterly review. The head of compliance or risk sets risk tiers and keeps the evidence file.[^2][^17]",
+  "A lending, underwriting or claims lead signs off any AI that touches a customer decision. California's rules define real review: the reviewer understands the output and can change it.[^25][^12]",
+  "The HR lead owns AI in hiring, discipline and firing. California's SB 947 bars relying on software alone to discipline or fire a worker.[^26][^24]",
+  "Every user checks AI output before it leaves the building. Two in three workers say they rely on AI output without checking it.[^11][^30]"
+ ],
+ "recipes": [
+  {
+   "name": "1. Policy and register (about 40 to 150 staff, no AI policy yet)",
+   "when": "Pick this when staff already use public AI tools and nothing is written down. Six in ten smaller firms report exactly that.[^3]",
+   "flow": [
+    "Owner-CEO: name the COO as AI owner",
+    "COO: list every AI tool in use, including features inside vendor software",
+    "IT lead: set data rules for what may go into each tool",
+    "Head of compliance: write a short policy and an approved-tools list",
+    "COO: open a request route for new tools that answers in days",
+    "Team lead: pilot the approved tools in one team or site first",
+    "COO: train every user and keep the record"
+   ],
+   "cost": "The NIST framework and playbook are free.[^1][^2] The real cost is staff time: the COO, a compliance lead and IT, plus short training for every user."
+  },
+  {
+   "name": "2. Examiner-ready (banks, credit unions and insurers)",
+   "when": "Pick this when an examiner or state insurance regulator will ask about your AI. The NAIC (the national body of state insurance regulators) holds senior management accountable to the board.[^17][^21]",
+   "flow": [
+    "Head of compliance: sort each AI use into a risk tier",
+    "Chief lending officer or claims lead: set the human checkpoint in each high-tier workflow",
+    "Vendor manager: send due-diligence questions to each AI vendor",
+    "Model risk lead: validate before first use, with someone who didn't build the model",
+    "Head of compliance: build the evidence file",
+    "COO: report to the board each quarter"
+   ],
+   "cost": "No neutral published price exists for this work, so judge it by its outputs. Expect risk tiers, vendor reviews, validation notes and an evidence file your examiner can read.[^20][^21]"
+  },
+  {
+   "name": "3. Certification track (customers or partners ask for ISO 42001)",
+   "when": "Pick this only when customers or partners ask for proof. ISO/IEC 42001 certification is voluntary, and accredited bodies certify, not ISO itself.[^34]",
+   "flow": [
+    "COO: confirm a customer actually requires the certificate",
+    "Head of compliance: buy the standard (CHF 225) and build the management system on your NIST map[^35]",
+    "Internal auditor: run an internal audit before the external one",
+    "Certification body: run the two-stage external audit",
+    "COO: budget a yearly check-up (surveillance) audit, which one vendor puts at 30% to 40% of the first fee[^36]"
+   ],
+   "cost": "One compliance software vendor puts first-year cost at $15,000 to $40,000 for a small firm and $40,000 to $90,000 mid-size.[^36] Another vendor says $20,000 to $80,000 for 50 to 250 staff (both read 26 Nov 2026).[^37]"
+  }
+ ],
+ "ownData": {
+  "title": "Which AI rules apply to your firm? Status as of 26 Nov 2026",
+  "intro": "We read 11 laws, rules and frameworks at their source on 26 Nov 2026.[^1][^12][^16] Then we marked whether each applies to four kinds of firm. The manufacturer and professional-services columns assume no lending, insurance or health-care business.",
+  "headers": [
+   "Rule (status)",
+   "Bank or credit union",
+   "Insurer",
+   "Manufacturer",
+   "Professional services"
+  ],
+  "rows": [
+   [
+    "NIST AI RMF and Generative AI Profile (voluntary, being revised)[^1]",
+    "Voluntary and free[^1]",
+    "Voluntary; the NAIC bulletin points to it[^17]",
+    "Voluntary and free[^1]",
+    "Voluntary and free[^1]"
+   ],
+   [
+    "ISO/IEC 42001 (voluntary certification)[^34]",
+    "Voluntary[^34]",
+    "Voluntary[^34]",
+    "Voluntary; certify only if customers ask[^34]",
+    "Voluntary; certify only if clients ask[^34]"
+   ],
+   [
+    "Federal Reserve SR 26-2 and OCC 2026-13, model risk (in force since Apr 2026)[^18][^19]",
+    "Examiners expect it. Generative and agentic AI (AI that acts on its own) sit outside OCC 2026-13[^19]",
+    "No",
+    "No",
+    "No"
+   ],
+   [
+    "NCUA (credit union regulator) vendor-risk letters (in force)[^21]",
+    "Examiners expect vendor due diligence at credit unions. NCUA has no AI-specific rule and no power over tech vendors[^21][^22]",
+    "No",
+    "No",
+    "No"
+   ],
+   [
+    "NAIC AI model bulletin (adopted in 30 jurisdictions)[^16]",
+    "No",
+    "Applies where adopted. California, Colorado and New York have their own rules[^16]",
+    "No",
+    "No"
+   ],
+   [
+    "Colorado SB26-189 (starts 1 Jan 2027; enforcement on hold during a lawsuit)[^12][^15]",
+    "Only if doing business in Colorado. Creditors following existing notice rules are deemed compliant; hiring stays covered[^14]",
+    "Deemed compliant through Colorado insurance law; hiring stays covered[^14]",
+    "Only if AI materially shapes hiring or other covered decisions on Colorado residents[^12][^13]",
+    "Same as manufacturer; legal services is a covered area[^12]"
+   ],
+   [
+    "NYC Local Law 144 (enforced since Jul 2023)[^23]",
+    "Only if hiring in New York City with an automated tool[^23]",
+    "Same",
+    "Same",
+    "Same"
+   ],
+   [
+    "Illinois HB 3773 (in force since 1 Jan 2026)[^24]",
+    "Only if employing in Illinois and using AI in job decisions[^24]",
+    "Same",
+    "Same",
+    "Same"
+   ],
+   [
+    "California ADMT rules (1 Jan 2027) and SB 947 (1 Jul 2027)[^25][^26]",
+    "Only if covered by the state privacy law and making significant decisions on California residents; SB 947 covers California workers[^25][^26]",
+    "Same",
+    "Same",
+    "Same"
+   ],
+   [
+    "EU AI Act (high-risk rules from 2 Dec 2027)[^28]",
+    "Only if AI output is used in the EU. Staff AI literacy applies now[^27][^29]",
+    "Same; life and health insurance pricing counts as high-risk[^28]",
+    "Only if output is used in the EU; AI inside products from 2 Aug 2028[^28]",
+    "Only if AI output is used in the EU[^27]"
+   ],
+   [
+    "FINRA Notice 24-09 and ABA Opinion 512 (in force)[^31][^30]",
+    "FINRA 24-09 for any broker-dealer arm[^31]",
+    "No",
+    "No",
+    "ABA 512 for law firms: an ethics duty to check AI output[^30]"
+   ]
+  ],
+  "note": "Not legal advice; rules change, so check the source before acting. Colorado enforcement is on hold under a court order, and its final rules are adopted but not yet in effect.[^15] Federal override of state laws (preemption) is unsettled: a 2025 order targets state AI laws but voids none.[^32][^33]"
+ },
+ "watchOuts": [
+  "A ban drives AI use underground. Misuse ran at 67% where AI was banned, against 33% with no policy, so approve safe tools instead.[^10]",
+  "A policy nobody enforces. Only 34% of firms with a policy audit for unapproved AI, so check the register against real use each quarter.[^4]",
+  "A policy so strict people ignore it. Of firms with an AI policy, 54% of HR leaders call it too restrictive; give low-risk uses a fast approval.[^38][^6]",
+  "Shadow AI (tools used without approval) leaks data: one in five breached firms in IBM's study had such a breach. Heavy shadow AI added $670,000 per breach, so give staff an approved tool.[^4]",
+  "Vendor AI nobody checked. The FTC banned Rite Aid from facial recognition for five years after undocumented vendor checks, so write down every vendor review.[^39]",
+  "AI agents acting with no sign-off. In one survey, 47% skipped governance for urgent agent rollouts; require a named approver before any agent acts alone.[^40][^41]"
+ ],
+ "howToTest": [
+  "Ask for a register and an evidence file, not just a policy. Evidence is what most firms lack.[^8][^9]",
+  "Ask which rules apply to you, by state and regulator, as of this month. Compare the answer with our table above.[^16][^15]",
+  "Ask how fast staff can get a new tool approved under their design. Days beat months on returns.[^6]",
+  "Ask who owns each control after the advisor leaves. NIST asks for named roles and executive responsibility.[^2]",
+  "Ask whether they map to NIST first and add ISO 42001 only if customers need it. Certification is voluntary.[^1][^34]",
+  "Ask how they cover AI built into software you already buy. FINRA and the NCUA both expect it reviewed.[^31][^21]",
+  "Ask whether the policy mostly bans AI or lets people use it safely. Bans push use underground.[^10][^38]",
+  "Record today's numbers first: tools in use, days to approve a new tool, and open AI incidents. Check them again after 90 days.",
+  "Ask for a fixed scope with named deliverables, so you can check what you got."
+ ],
+ "faq": [
+  {
+   "q": "Does a firm our size need an AI governance framework?",
+   "a": "Yes, if staff use AI, and in most firms they already do.[^3] Colorado's rewrite dropped its under-50-staff exemption, and insurer and credit union regulators expect oversight at any size.[^13][^17][^21]"
+  },
+  {
+   "q": "Who usually owns AI governance in a company?",
+   "a": "At 40 to 500 staff, usually the COO, with the owner or board signing off. NIST asks for named roles and executive responsibility.[^2] Firms with C-suite ownership report a return far more often.[^6][^45]"
+  },
+  {
+   "q": "Should we block AI tools or approve some?",
+   "a": "Approve some. Where AI was banned, misuse was twice as common as with no policy at all.[^10] Approve a few safe tools and set clear data rules.[^3]"
+  },
+  {
+   "q": "Does following NIST or ISO 42001 make us compliant?",
+   "a": "No. A framework is a good map, but Colorado dropped its NIST and ISO safe harbor in the 2026 rewrite.[^13] Each rule adds its own duties, such as New York City's bias audit for hiring tools.[^23]"
+  },
+  {
+   "q": "Does SR 11-7 still apply to AI at our bank?",
+   "a": "No: SR 26-2 replaced it on 17 Apr 2026, aimed mostly at banks over $30 billion in assets.[^18] The OCC's matching bulletin covers community banks within limits and leaves generative AI out of scope.[^19] It still expects validation before first use and challenge by people who didn't build the model.[^20]"
+  },
+  {
+   "q": "Will federal law override state AI laws?",
+   "a": "Not yet. A December 2025 executive order set up a Justice Department task force, but it voids no state law by itself.[^32] Congress has passed no preemption law, so plan for the state rules.[^33]"
+  }
+ ],
+ "pickElse": [
+  "You have a compliance lead with time: do it in-house with the free NIST AI RMF Playbook.[^2]",
+  "You already track a security standard (ISO 27001 or SOC 2) in compliance software: add AI governance there, in tools such as Compyl or Scytale.[^36][^37]",
+  "The question is purely legal, like a Colorado notice or a New York City bias audit: ask your law firm.[^12][^23]",
+  "You only need the ISO 42001 certificate: go straight to an accredited certification body.[^34]"
+ ],
+ "resources": [
+  {
+   "name": "NIST AI RMF Playbook, GOVERN",
+   "url": "https://airc.nist.gov/airmf-resources/playbook/govern/",
+   "what": "Free US government checklist for owners, roles, inventory and policies."
+  },
+  {
+   "name": "NIST AI 600-1, Generative AI Profile",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+   "what": "The 12 risks of generative AI, with actions for each."
+  },
+  {
+   "name": "NAIC AI model bulletin adoption map",
+   "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
+   "what": "Shows which states expect insurers to run a written AI program."
+  },
+  {
+   "name": "NCUA artificial intelligence page",
+   "url": "https://ncua.gov/regulation-supervision/regulatory-compliance-resources/artificial-intelligence-ai",
+   "what": "What credit union examiners expect when you buy an AI tool."
+  },
+  {
+   "name": "NYC automated employment decision tools page",
+   "url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page",
+   "what": "Bias audit and notice rules if you hire in New York City with AI."
+  }
+ ],
+ "stats": [
+  {
+   "num": "36%",
+   "label": "Small and mid-market owners with a written AI policy.[^3]",
+   "source": "Nationwide survey, Sep 2026"
+  },
+  {
+   "num": "78%",
+   "label": "Firms without strong confidence they could pass an AI governance audit within 90 days.[^8]",
+   "source": "Grant Thornton survey of 950, 2026"
+  },
+  {
+   "num": "30",
+   "label": "US jurisdictions that have adopted the NAIC AI model bulletin for insurers.[^16]",
+   "source": "NAIC map, 13 Nov 2026"
+  },
+  {
+   "num": "$670,000",
+   "label": "Extra breach cost where shadow AI use was high.[^4]",
+   "source": "IBM and Ponemon, 2025"
+  },
+  {
+   "num": "62% vs 38%",
+   "label": "Firms reporting AI returns when tools are approved in days, against months.[^6]",
+   "source": "aibl survey of 755 UK mid-market leaders, 2026"
+  },
+  {
+   "num": "66%",
+   "label": "AI-using US firms that use it only to help staff with their tasks.[^42]",
+   "source": "U.S. Census Bureau working paper, 2026"
+  }
+ ],
+ "related": [
+  "ai-integration-services",
+  "ai-agent-development-services",
+  "ai-credit-scoring",
+  "ai-underwriting",
+  "insurance"
+ ],
+ "offer": {
+  "heading": "Not sure which AI rules touch your firm?",
+  "body": "Free, before any paid work, and no sales pitch: 30 minutes on your first AI use. Leave knowing which rules apply, who should own AI, and what one approved use looks like."
+ },
+ "keyword": {
+  "phrase": "ai governance framework",
+  "searches": 1600,
+  "cpc": 64.38,
+  "difficulty": 31
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Read as Dana, who would own AI here. Wanted who does what, a first step and a measure: owner, register, data rules and tiers are named, and the judging steps include a 90-day before-and-after. Stalled on jargon (COO, NIST, NAIC, NCUA, agentic, preemption, SOC 2, stage audits); each is now spelled out or swapped for plain words. Missing: a sourced time to a first working package; the only figures found were unnamed practitioner claims, so none is given."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Checked the page on a phone. The rules table is five columns, so 'Does not apply' cells became 'No' and repeated rows say 'Same'. Every cell stays at two sentences or fewer."
+  },
+  {
+   "reader": "GM",
+   "notes": "Asked whether one team or site can go first. Added a pilot step to the smallest build. The margin case is the breach-cost and approval-speed numbers; there is no sourced figure for governance cost per unit."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Read as the head of compliance or risk at a bank, credit union or insurer. Wanted exam status exact: the SR 11-7 answer now says SR 26-2 targets banks over $30 billion and OCC 2026-13 covers community banks within limits; the NCUA row now says NCUA has no power over tech vendors. Colorado's paused enforcement and unsettled federal preemption are stated in the table, its note and the bottom line. Not legal advice is printed with the table."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Read as Steve. Ten-second test passes: the bottom line says staff already use AI, governance speeds it up, rules reach firms his size, and what proof to demand. The UK source behind the speed claim is now labelled UK. He will look for a price: no Zavient price is shown because none is set; the only prices are vendor-quoted ISO 42001 costs, labelled as vendor claims. Security and return worries are covered; 'no sales pitch' is in the offer."
+  }
+ ],
+ "updated": "2026-11-26",
+ "sources": [
+  {
+   "name": "NIST, AI Risk Management Framework",
+   "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+   "what": "US standards agency. Free, voluntary framework (AI RMF 1.0) and Generative AI Profile (26 Jul 2024); the framework is being revised under the White House AI Action Plan."
+  },
+  {
+   "name": "NIST AI RMF Playbook, GOVERN",
+   "url": "https://airc.nist.gov/airmf-resources/playbook/govern/",
+   "what": "Free playbook. GOVERN 1.6: keep an inventory of AI systems. GOVERN 2.1 and 2.3: documented roles and executive responsibility for AI risk."
+  },
+  {
+   "name": "Nationwide, Businesses are using AI faster than they are managing its risks, 15 Sep 2026",
+   "url": "https://news.nationwide.com/nationwide-survey-businesses-are-using-ai-faster-than-they-are-managing-its-risks",
+   "what": "Edelman online survey, Jul 2026; mid-market = 50 to 500 staff (n=300). 36% of small and mid-market owners have written AI policies; 6 in 10 say staff use public AI tools; 27% have rules on what data goes into AI; 37% train staff on AI."
+  },
+  {
+   "name": "IBM and Ponemon, Cost of a Data Breach Report 2025",
+   "url": "https://www.ibm.com/reports/data-breach",
+   "what": "600 breached organisations, Mar 2024 to Feb 2025. 63% lack an AI governance policy or are still building one; of those with policies, 34% audit for unsanctioned AI; 20% had a breach involving shadow AI; high shadow AI added $670,000 to breach cost."
+  },
+  {
+   "name": "ISACA, 2026 AI Pulse Poll press release",
+   "url": "https://www.isaca.org/about-us/newsroom/press-releases/2026/ai-use-accelerates-while-governance-and-roi-lag-says-new-isaca-research",
+   "what": "Professional body survey. 38% have a formal, comprehensive AI policy; 25% have none."
+  },
+  {
+   "name": "aibl, State of UK AI Adoption 2026",
+   "url": "https://aiblmedia.com/about/state-of-uk-ai-adoption-2026-findings/",
+   "what": "UK sample: 755 mid-market leaders (GBP 50m to 500m revenue), Jan to Mar 2026. 63-point ROI gap between no governance and mature governance; tool approval in days 62% report ROI vs 38% in months; C-suite ownership 62% vs 18% with no single owner."
+  },
+  {
+   "name": "BCG, Balance AI innovation and governance, Oct 2026",
+   "url": "https://www.bcg.com/publications/2026/balance-ai-innovation-and-governance",
+   "what": "Firms that scale innovation alongside governance see 3x the ROI; recording AI decisions linked to 30%+ higher ROI; high-accountability firms 2.5x as likely to have a kill switch."
+  },
+  {
+   "name": "Grant Thornton, 2026 AI Impact Survey",
+   "url": "https://www.grantthornton.com/services/advisory-services/artificial-intelligence/2026-ai-impact-survey",
+   "what": "950 respondents. 78% lack strong confidence they could pass an AI governance audit within 90 days."
+  },
+  {
+   "name": "Grant Thornton, Insurance insights: 2026 AI Impact Survey",
+   "url": "https://www.grantthornton.com/insights/survey-reports/insurance/2026/insurance-insights-2026-ai-impact-survey-report.html",
+   "what": "Insurance subgroup: 68% say AI controls exist but the evidence is fragmented."
+  },
+  {
+   "name": "KPMG and University of Melbourne, Trust, attitudes and use of AI, 2025 (report)",
+   "url": "https://assets.kpmg.com/content/dam/kpmgsites/kw/pdf/insights/2025/05/Trust-in-AI_Final_Report.pdf.coredownload.inline.pdf",
+   "what": "Global worker survey. 48% uploaded company information to public AI; misuse 67% where AI was banned vs 33% with no policy; 57% hide their AI use."
+  },
+  {
+   "name": "KPMG press release, Trust of AI remains a critical challenge, Apr 2025",
+   "url": "https://kpmg.com/xx/en/media/press-releases/2025/04/trust-of-ai-remains-a-critical-challenge.html",
+   "what": "66% of workers rely on AI output without checking it; 56% have made mistakes in their work due to AI."
+  },
+  {
+   "name": "Colorado General Assembly, SB26-189",
+   "url": "https://leg.colorado.gov/bills/sb26-189",
+   "what": "Rewrite of the Colorado AI Act, effective 1 Jan 2027. Human review on request after an adverse outcome, where commercially reasonable; covered decisions include employment and legal services."
+  },
+  {
+   "name": "Consumer Financial Services Law Monitor, Colorado rewrites its AI law, 13 May 2026",
+   "url": "https://www.consumerfinancialserviceslawmonitor.com/2026/05/colorado-rewrites-its-ai-law",
+   "what": "Law-firm commentary. SB26-189 has no employee-count threshold, so the old under-50 exemption is gone; the NIST and ISO safe harbor was dropped."
+  },
+  {
+   "name": "Epstein Becker Green, Inside Colorado SB26-189, 26 May 2026",
+   "url": "https://www.ebglaw.com/workforce-bulletin/inside-colorados-senate-bill-26-189-impacts-and-implications-for-employers",
+   "what": "Law-firm commentary. Creditors following existing notice rules and insurers under Colorado insurance law are deemed compliant; employment uses stay covered."
+  },
+  {
+   "name": "Hoog Law, Colorado final AI rules adopted, 24 Nov 2026",
+   "url": "https://hooglaw.com/ai-compliance/colorado-final-ai-rules-adopted.html",
+   "what": "Law-firm commentary. Attorney General final rules (4 CCR 904-6) adopted 19 Nov 2026, not yet in effect; enforcement on hold under a stipulated order in X.AI LLC v. Weiser until a ruling on the preliminary injunction."
+  },
+  {
+   "name": "NAIC, AI model bulletin adoption map, status 13 Nov 2026",
+   "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
+   "what": "Insurance regulators body. 30 jurisdictions have adopted the AI model bulletin; California, Colorado and New York have their own rules."
+  },
+  {
+   "name": "NAIC, Model Bulletin on the Use of AI Systems by Insurers, Dec 2023",
+   "url": "https://content.naic.org/sites/default/files/inline-files/2023-12-4%20Model%20Bulletin_Adopted_0.pdf",
+   "what": "Insurers need a written AI program; senior management is accountable to the board; points to the NIST AI RMF."
+  },
+  {
+   "name": "Federal Reserve, SR 26-2, 17 Apr 2026",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+   "what": "Model risk guidance that supersedes SR 11-7 and SR 21-8; most relevant to banks above $30 billion in assets."
+  },
+  {
+   "name": "OCC Bulletin 2026-13",
+   "url": "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-13.html",
+   "what": "Model risk guidance; applies to community banks within limits; generative and agentic AI are not in scope; an AI request for information is planned."
+  },
+  {
+   "name": "OCC Bulletin 2026-13a (attachment)",
+   "url": "https://occ.gov/news-issuances/bulletins/2026/bulletin-2026-13a.pdf",
+   "what": "Validation before first use and effective challenge by people who did not build the model."
+  },
+  {
+   "name": "NCUA, Artificial intelligence resource page, modified 18 Nov 2026",
+   "url": "https://ncua.gov/regulation-supervision/regulatory-compliance-resources/artificial-intelligence-ai",
+   "what": "No AI-specific NCUA rules; credit unions should do due diligence on how a tool works, its risks, fit and safeguards; board and management oversight; points to third-party letters 07-CU-13 and 01-CU-20."
+  },
+  {
+   "name": "GAO-25-107197, AI use and oversight in financial services",
+   "url": "https://www.gao.gov/products/gao-25-107197",
+   "what": "NCUA model risk guidance is limited, and it has no authority over technology service providers."
+  },
+  {
+   "name": "NYC Department of Consumer and Worker Protection, Automated employment decision tools",
+   "url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page",
+   "what": "Local Law 144, enforced from 5 Jul 2023: bias audit within one year before use, public summary, notice 10 business days before use."
+  },
+  {
+   "name": "Illinois General Assembly, Public Act 103-0804 (HB 3773)",
+   "url": "https://www.ilga.gov/legislation/publicacts/fulltext.asp?Name=103-0804",
+   "what": "Effective 1 Jan 2026: employers may not use AI with discriminatory effect or zip codes as a proxy, and must give employees notice."
+  },
+  {
+   "name": "California Privacy Protection Agency, ADMT regulations text",
+   "url": "https://cppa.ca.gov/regulations/pdf/ccpa_updates_cyber_risk_admt_appr_text.pdf",
+   "what": "Approved Sep 2025; automated decision-making duties from 1 Jan 2027. Human involvement means the reviewer knows how to interpret the output, reviews it and has authority to change the decision."
+  },
+  {
+   "name": "DLA Piper, California enacts SB 947, Oct 2026",
+   "url": "https://www.dlapiper.com/en/insights/publications/2026/10/california-enacts-sb-947",
+   "what": "Law-firm commentary. Signed 30 Sep 2026, effective 1 Jul 2027: employers may not rely solely on an automated decision system to discipline or fire; a person must corroborate."
+  },
+  {
+   "name": "EU AI Act Service Desk, Article 2 (scope)",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-2",
+   "what": "The Act reaches providers and deployers outside the EU where the AI output is used in the EU."
+  },
+  {
+   "name": "European Commission, AI Omnibus enters into force, Jul 2026",
+   "url": "https://digital-strategy.ec.europa.eu/en/news/ai-omnibus-enters-force",
+   "what": "In force 27 Jul 2026. High-risk rules for Annex III uses (such as credit, hiring, life and health insurance pricing) apply from 2 Dec 2027; AI in regulated products (Annex I) from 2 Aug 2028."
+  },
+  {
+   "name": "European Commission, AI literacy questions and answers",
+   "url": "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers",
+   "what": "Article 4 AI literacy duty applies since 2 Feb 2025, with enforcement from 2 Aug 2026."
+  },
+  {
+   "name": "American Bar Association, Formal Opinion 512, 29 Jul 2024",
+   "url": "https://www.americanbar.org/content/dam/aba/administrative/professional_responsibility/ethics-opinions/aba-formal-opinion-512.pdf",
+   "what": "Lawyers using generative AI must verify its output and supervise its use; confidentiality duties apply."
+  },
+  {
+   "name": "FINRA Regulatory Notice 24-09",
+   "url": "https://www.finra.org/rules-guidance/notices/24-09",
+   "what": "Supervision duties under Rule 3110 apply to generative AI, including AI features built into vendor tools."
+  },
+  {
+   "name": "White House, Executive Order 14365, 11 Dec 2025",
+   "url": "https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy/",
+   "what": "Creates a Justice Department AI litigation task force aimed at state AI laws; it does not void any state law by itself."
+  },
+  {
+   "name": "Recording Law, State AI law preemption tracker, 4 Nov 2026",
+   "url": "https://www.recordinglaw.com/us-laws/ai-laws/state-ai-law-preemption/",
+   "what": "Congress has passed no preemption statute; the Senate struck a proposed moratorium on state AI laws 99-1 on 1 Jul 2025."
+  },
+  {
+   "name": "ISO, ISO/IEC 42001 explained, 31 Aug 2026",
+   "url": "https://www.iso.org/insights/iso-42001-explained",
+   "what": "Certification to ISO/IEC 42001 is voluntary; accredited certification bodies certify, not ISO."
+  },
+  {
+   "name": "ISO, ISO/IEC 42001:2023 standard page, read 26 Nov 2026",
+   "url": "https://www.iso.org/standard/42001",
+   "what": "The standard text costs CHF 225."
+  },
+  {
+   "name": "Compyl, ISO 42001 certification cost, Aug 2026, read 26 Nov 2026",
+   "url": "https://compyl.com/blog/iso-42001-certification-cost/",
+   "what": "Compliance software vendor's claim: first-year cost $15,000 to $40,000 for a small firm, $40,000 to $90,000 mid-size; stage 1 and 2 audits $5,000 to $15,000 small, $15,000 to $30,000 mid-size; yearly surveillance 30% to 40% of the initial fee."
+  },
+  {
+   "name": "Scytale, ISO 42001 certification cost, Oct 2026, read 26 Nov 2026",
+   "url": "https://scytale.ai/resources/iso-42001-certification-cost/",
+   "what": "Compliance software vendor's claim: for 50 to 250 staff, audit $10,000 to $40,000 and first-year total $20,000 to $80,000."
+  },
+  {
+   "name": "SHRM, State of AI in HR 2026, executive summary",
+   "url": "https://www.shrm.org/content/dam/en/shrm/research/ai-in-hr_executive-summary.pdf",
+   "what": "HR professional body survey. 49% of organisations have an AI policy; 54% of those say it is too restrictive."
+  },
+  {
+   "name": "FTC, Rite Aid banned from using AI facial recognition, Dec 2023",
+   "url": "https://www.ftc.gov/news-events/news/press-releases/2023/12/rite-aid-banned-using-ai-facial-recognition-after-ftc-says-retailer-deployed-technology-without",
+   "what": "Five-year ban on facial recognition; the FTC said vendor checks were done orally and not documented."
+  },
+  {
+   "name": "EY, Autonomous AI implementation outpaces oversight, Sep 2026",
+   "url": "https://www.ey.com/en_us/newsroom/2026/09/ey-survey-finds-that-autonomous-ai-implementation-outpaces-oversight-yielding-an-ai-governance-gap",
+   "what": "47% skipped governance for urgent AI agent deployments; 26% cannot detect unauthorised agents."
+  },
+  {
+   "name": "Deloitte, Enterprise AI enters an ROI reckoning, Oct 2026",
+   "url": "https://www.deloitte.com/us/en/about/press-room/enterprise-ai-enters-an-roi-reckoning.html",
+   "what": "40% let AI act without human approval at least moderately; 23% say accountability for AI is unclear."
+  },
+  {
+   "name": "U.S. Census Bureau, CES-WP-26-25, 2026",
+   "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
+   "what": "66% of AI-using firms use AI only to augment tasks; AI-related employment decreases at 2% of firms."
+  },
+  {
+   "name": "NIST AI 600-1, Generative AI Profile, Jul 2024",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+   "what": "Lists 12 risks specific to generative AI, such as confabulation and data privacy, with suggested actions."
+  },
+  {
+   "name": "NIST AI 100-1, AI Risk Management Framework 1.0, Jan 2023",
+   "url": "https://nvlpubs.nist.gov/nistpubs/AI/NIST.AI.100-1.pdf",
+   "what": "The MAP function sets context and sorts AI uses by their risk and impact."
+  },
+  {
+   "name": "McKinsey, The state of AI, Mar 2025",
+   "url": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-state-of-ai-how-organizations-are-rewiring-to-capture-value",
+   "what": "CEO oversight of AI governance is among the attributes most linked to profit (EBIT) impact from generative AI."
+  }
+ ]
+}

@@ -1,0 +1,520 @@
+{
+  "title": "Data analytics consulting: what should you walk away with?",
+  "description": "Data analytics consulting for firms of 40 to 500 staff. What to get first, what BI software costs, and how to judge any advisor.",
+  "type": "consulting",
+  "templateVersion": 1,
+  "topic": "Data analytics consulting",
+  "job": "data and analytics",
+  "industry": "any industry",
+  "index": false,
+  "verdict": [
+    "Analytics should help managers decide faster, not decide for them. Start from one weekly decision.[^1][^2]",
+    "Fix the data first. Most firms don't measure data quality, and two-thirds of data staff don't fully trust it.[^3][^4]",
+    "Count weekly users, not dashboards built. Only a quarter of staff use business intelligence (BI) tools daily.[^5][^6]",
+    "A year of BI licenses for a 100-person firm often costs less than one build project.[^7][^8]",
+    "Add forecasts and scoring models only once the data is trusted. A named person owns each model's use.[^9][^2]"
+  ],
+  "onPage": [],
+  "headings": {
+    "what-goes-wrong": "Why do most analytics projects stall?",
+    "benchmark": "How do you judge any analytics advisor?",
+    "spokes": "Which kind of analytics do you need?"
+  },
+  "summary": "Data analytics consulting gets your numbers straight, then builds the dashboards, forecasts and models managers use to decide.[^10][^11] AI adds the forecasts and scores, on top of clean records.[^12] Trusted data and daily use make or break it.[^4][^5]",
+  "walkAway": [
+    "One named weekly decision, with an owner and today's number to beat. Firms that scale analytics start from the decision and work back to the data.[^1][^13]",
+    "A data-quality score on 100 of your own recent records. Most firms never measure it, and in one study 47% of new records had a critical error.[^3][^14]",
+    "One agreed definition per metric, signed off by the controller. Inconsistent definitions are a top barrier to quality data (45%).[^4][^3]",
+    "One dashboard used every week, tracked by active users. Average BI use is 25% of staff; smaller firms reach 44%.[^5][^6]",
+    "A handover your team can run: documents, training, and who refreshes what. Lack of proper training was the top obstacle to BI use (50%).[^15]"
+  ],
+  "humanRole": [
+    "The manager who owns the decision (COO, ops lead or head of sales) keeps it; the dashboard or model is one input. NIST (the US standards agency) treats AI as an additional opinion and says human roles must be defined.[^2]",
+    "A named business owner, not IT alone, owns each metric and its data. Gartner calls data quality a business discipline that needs owners.[^3]",
+    "Someone independent challenges each forecast or score before use, with the standing to force changes. US bank regulators call this effective challenge, a useful standard for any firm.[^9][^16]",
+    "The controller signs off any number that ties to the books. Each model's users stay accountable for using it as intended and minding its known limits.[^17]"
+  ],
+  "recipes": [
+    {
+      "name": "1. Small team, one decision (about 40 to 100 staff)",
+      "when": "Pick this when one weekly decision runs on spreadsheets and the data sits in one or two systems. Price follows the number of sources and how clean they are.[^18][^19]",
+      "flow": [
+        "Ops lead: name the weekly decision and today's number",
+        "IT lead: confirm who may see the data",
+        "Analyst: score 100 recent records for errors",
+        "Controller: agree each metric's definition",
+        "Analyst: build one dashboard in a tool you already own",
+        "Ops lead: use it weekly in one team or site for six weeks, counting active users"
+      ],
+      "cost": "Two vendors' published guides put one dashboard at about $1,000 to $12,000, and a small reporting project at $5,000 to $20,000.[^18][^19]"
+    },
+    {
+      "name": "2. Mid-size firm, several systems (about 100 to 300 staff)",
+      "when": "Pick this when finance, sales and ops numbers disagree because they live in separate systems. Gartner names inconsistency across sources the hardest data-quality problem.[^3][^4]",
+      "flow": [
+        "COO: pick two or three decisions to support",
+        "Data engineer: pipe the ERP (finance system), CRM (customer database) and accounting data into one store",
+        "IT lead: set who can see which data before anything is shared",
+        "Controller: reconcile totals to the books",
+        "Division heads: own their metric definitions",
+        "Analyst: build one dashboard per decision"
+      ],
+      "cost": "Vendor guides put a reporting suite at $12,000 to $30,000, and a data warehouse (one store for all your data) at $25,000 to $80,000.[^19][^20] Clutch's published pricing data puts typical BI projects at $10,000 to $49,999.[^8]"
+    },
+    {
+      "name": "3. Forecasts and scores on top (once the data is trusted)",
+      "when": "Pick this once a dashboard is used weekly and its numbers reconcile. Forecasts and recommendations are advanced analytics, built on clean records of what happened.[^12][^10]",
+      "flow": [
+        "Division head: define the decision and what a forecast must beat",
+        "Analyst: hold back recent data the model never sees",
+        "Analyst: build the forecast or score",
+        "Independent reviewer: challenge the model before use",
+        "Division head: approve use and set override rules"
+      ],
+      "cost": "One vendor guide puts predictive or AI analytics at $40,000 to $150,000 or more.[^20] Vendors say most of any build's cost is data work, not charts.[^21][^22]"
+    }
+  ],
+  "ownData": {
+    "title": "What does a year of BI software cost a 100-person firm?",
+    "intro": "We read 11 BI vendors' own pricing pages on 26 Nov 2026, then priced two seat mixes for a 100-person firm.[^7][^23] At 45 users, the eight plans with usable prices cost about $3,700 to $14,100 a year. That is often less than one build: typical BI projects run $10,000 to $49,999.[^8]",
+    "headers": [
+      "Tool and plan (list price)",
+      "45 users, a year",
+      "100 users, a year",
+      "Note"
+    ],
+    "rows": [
+      [
+        "Metabase Cloud Starter: $1,080 a year for 5 users, then $65 a user[^23]",
+        "$3,680",
+        "$7,255",
+        "The open-source version is free to self-host; hosting costs extra.[^23]"
+      ],
+      [
+        "Google Data Studio (Looker Studio) Pro: $9 a user per project a month[^24]",
+        "$4,860",
+        "$10,800",
+        "The free tier costs $0 for builders and viewers.[^24]"
+      ],
+      [
+        "Amazon Quick Sight: Author $24, Reader $3 a user a month[^25]",
+        "$5,400",
+        "$8,640",
+        "Plain-English questions need Pro seats plus a $250 monthly account fee.[^25]"
+      ],
+      [
+        "Power BI Pro: $14 a user a month, paid yearly[^7]",
+        "$7,560",
+        "$16,800",
+        "Every viewer needs a paid seat unless you buy Microsoft's large Fabric capacity plan (F64).[^7]"
+      ],
+      [
+        "Qlik Cloud Analytics Standard: $825 a month for 25 GB of data[^26]",
+        "$9,900",
+        "$9,900",
+        "Priced by data, not users, so it stays flat as use grows.[^26]"
+      ],
+      [
+        "Metabase Cloud Pro: $6,210 a year for 10 users, then $130 a user[^23]",
+        "$10,760",
+        "$17,910",
+        "Adds finer permissions and single sign-on.[^23]"
+      ],
+      [
+        "ThoughtSpot Essentials: $25 a user a month[^27]",
+        "$13,500",
+        "Not sold at 100",
+        "Essentials covers 5 to 50 users. Pro, at $50, costs $27,000 and $60,000.[^27]"
+      ],
+      [
+        "Tableau Standard: Creator $75, Explorer $42, Viewer $15 a user a month[^28]",
+        "$14,148",
+        "$26,460",
+        "Annual contract only, with at least one Creator.[^29]"
+      ],
+      [
+        "Looker, Domo and Sigma[^30][^31][^32]",
+        "Quote only",
+        "Quote only",
+        "No list price on their pricing pages.[^30][^31][^32]"
+      ],
+      [
+        "Zoho Analytics[^33]",
+        "Not shown",
+        "Not shown",
+        "Its page loads prices by script; our reader saw blank fields.[^33]"
+      ]
+    ],
+    "note": "Method: US list prices billed yearly, read on each vendor's own page on 26 Nov 2026. Our seat mixes: 3 builders, 12 explorers who filter and edit, 30 viewers (BARC's 44% small-firm use); or 5, 15 and 80.[^5] Excludes discounts, tax, data and AI add-ons and warehouse costs; Microsoft 365 E5 already includes Power BI Pro.[^7]"
+  },
+  "watchOuts": [
+    "Nobody uses the dashboard. BI use has sat near a quarter of staff for years, so start from one decision, train people and track weekly users.[^5][^6]",
+    "The data is wrong, and nobody checks. Score 100 recent records before building; in one study, only 3% of department scores met a basic standard.[^14][^3]",
+    "Teams argue about whose number is right. Write one list of agreed metric definitions and have the controller sign it; inconsistent definitions are a top barrier (45%).[^4][^3]",
+    "The budget goes to tools, not daily use. About 90% of breakaway firms spend over half their analytics budget on getting it into daily work, against 23% of others.[^1][^34]",
+    "Buying a tool without a real trial. Top BI performers ran a formal, competitive evaluation far more often (77% against 43%), so trial two tools on your own data.[^5]",
+    "People ignore what they can't see into. A call-center recommendation engine went unused until it explained its reasons, so show why, not just what.[^35]"
+  ],
+  "howToTest": [
+    "Write down the one decision and today's number before work starts: cycle time, forecast error or hours spent building reports.[^1]",
+    "Score 100 recent records for critical errors, then score them again after cleanup.[^14]",
+    "Time how long it takes to answer the decision's question today, then after. In BARC's survey, 97% of users reported faster reporting or planning.[^5]",
+    "Count weekly active users at week 4 and week 12, against seats paid for. Compare with BARC's 25% average, or 44% at smaller firms.[^5][^6]",
+    "For any forecast or score, hold back recent data the model never saw and compare it with your current rule. An independent reviewer signs off before use.[^9]",
+    "Reconcile dashboard totals to the books, and have the controller sign off.[^3]",
+    "Price the lift: hours saved times loaded cost, plus the value of the better decision. Pay is about 70% of what an employee costs a private employer.[^36]",
+    "Keep expectations real. Plants that adopted data-driven decisions were about 3% more productive, and only after adoption.[^37]",
+    "Pilot in one unit or site first. Roll out only when weekly use and the decision's number both move.[^37][^5]",
+    "Ask for a fixed-scope first release, with the code, logins and accounts in your firm's name.[^18]"
+  ],
+  "faq": [
+    {
+      "q": "What does a data analytics consultant actually do?",
+      "a": "They name the decision, get the data clean and in one place, and build reports and dashboards.[^11][^10] Good help then adds forecasts or models and trains your team to run them.[^12][^15]"
+    },
+    {
+      "q": "Is business intelligence consulting different from data analytics consulting?",
+      "a": "Business intelligence mostly shows what happened, through reports and dashboards.[^12] Analytics also asks why, what will happen and what to do.[^10][^12] Data strategy consulting picks which decisions and data come first.[^1]"
+    },
+    {
+      "q": "How much does data analytics consulting cost?",
+      "a": "Clutch's published data puts typical BI and analytics projects at $10,000 to $49,999.[^8] Vendor guides price one dashboard at a few thousand dollars and a data warehouse at $25,000 to $80,000.[^18][^19][^20] Most of the cost is data work, not charts.[^21][^22]"
+    },
+    {
+      "q": "Should we hire an analyst or a consultant?",
+      "a": "Use a consultant for a time-boxed build, and hire when the work fills a full-time role for years. Median pay for data scientists, which includes BI analysts, was $120,230 in May 2025.[^38][^39] With benefits, that is about $172,000 a year.[^36]"
+    },
+    {
+      "q": "Which analytics consulting firms are the best?",
+      "a": "Judge any firm on your own work, not on a list. Ask for today's number, a fixed first release and a weekly-use target, then check use against BARC's adoption figures.[^5][^1]"
+    },
+    {
+      "q": "Which kind of analytics do we need?",
+      "a": "Start with clean data and one dashboard, since daily use drives most of the value.[^1][^5] Then pick by decision: which accounts to call (head of sales), how much stock to hold (planner), or who will repay a loan (credit lead).[^12][^10] Our related guides cover sales analytics, demand forecasting, scoring models, credit scoring and claims."
+    }
+  ],
+  "pickElse": [
+    "You run Microsoft 365 and need a few reports: start with free Power BI Desktop. Pro is $14 a user a month, and Microsoft 365 E5 already includes it.[^7]",
+    "Your data lives in Google tools: try Google Data Studio (Looker Studio), which has a free tier.[^24]",
+    "You have one database and a technical person: self-host Metabase's free open-source version.[^23]",
+    "The work fills a full-time role for years: hire an analyst. Median pay for the role was $120,230 in May 2025.[^38][^39]"
+  ],
+  "resources": [
+    {
+      "name": "Harvard Business Review, the Friday Afternoon Measurement",
+      "url": "https://hbr.org/2017/09/only-3-of-companies-data-meets-basic-quality-standards",
+      "what": "A one-hour test of your own data quality on 100 recent records."
+    },
+    {
+      "name": "Zavient AI readiness assessment",
+      "url": "https://zavient.com/ai-readiness-assessment.html",
+      "what": "Our free check of whether your data and team are ready for forecasts and models."
+    },
+    {
+      "name": "NIST AI Risk Management Framework",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+      "what": "Free US government guide to who decides and who oversees AI and models."
+    },
+    {
+      "name": "Federal Reserve model risk guidance (SR 26-2)",
+      "url": "https://www.federalreserve.gov/frrs/guidance/supervisory-guidance-on-model-risk-management.htm",
+      "what": "How banks challenge a model before use; a sound standard for any firm."
+    },
+    {
+      "name": "Census working paper, Data in action",
+      "url": "https://www2.census.gov/ces/wp/2016/CES-WP-16-06.pdf",
+      "what": "Evidence from 18,000+ plants that data-driven decisions pay, once adopted."
+    }
+  ],
+  "stats": [
+    {
+      "num": "25%",
+      "label": "Employees who use BI tools daily; 44% at smaller firms.[^5]",
+      "source": "BARC BI & Analytics Survey 26, Nov 2025"
+    },
+    {
+      "num": "47%",
+      "label": "New data records with at least one critical error, across 75 managers' samples.[^14]",
+      "source": "Harvard Business Review, Sep 2017"
+    },
+    {
+      "num": "67%",
+      "label": "Data professionals who don't fully trust the data they use for decisions.[^4]",
+      "source": "Precisely and Drexel LeBow, Sep 2024"
+    },
+    {
+      "num": "About 3%",
+      "label": "Higher productivity at plants that adopted data-driven decisions, after adoption.[^37]",
+      "source": "Census working paper, Jan 2016"
+    },
+    {
+      "num": "$10,000 to $49,999",
+      "label": "Typical cost of a BI and analytics project, from projects reviewed on Clutch.[^8]",
+      "source": "Clutch pricing guide, read 26 Nov 2026"
+    },
+    {
+      "num": "$3,680 to $14,148",
+      "label": "A year of BI licenses for 45 users, on eight plans with usable list prices.[^23][^28]",
+      "source": "Zavient price check, 26 Nov 2026"
+    }
+  ],
+  "spokes": [
+    {
+      "slug": "sales-analytics",
+      "why": "Which accounts to call and what to offer next, from your CRM and sales history."
+    },
+    {
+      "slug": "ai-demand-forecasting",
+      "why": "Predicts sales by item and week, so the planner sets stock from a better baseline."
+    },
+    {
+      "slug": "machine-learning-consulting",
+      "why": "A model that scores each customer, loan or order, so the team works the riskiest or best first."
+    },
+    {
+      "slug": "ai-credit-scoring",
+      "why": "Predicts whether an applicant will repay, with plain-language decline reasons and bias checks."
+    },
+    {
+      "slug": "ai-claims-processing",
+      "why": "Reads and routes insurance claims faster, while the adjuster still decides."
+    }
+  ],
+  "sources": [
+    {
+      "name": "McKinsey, Breaking away: the secrets to scaling analytics, May 2018",
+      "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/breaking-away-the-secrets-to-scaling-analytics",
+      "what": "Breakaway firms start from the decisions to improve and work back to the data. About 90% of them spend over half their analytics budget on the last mile (daily use), against 23% of others."
+    },
+    {
+      "name": "NIST, AI Risk Management Framework 1.0 (NIST AI 100-1), Jan 2023",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+      "what": "Human roles in decisions and oversight need to be clearly defined; AI can serve as an additional opinion for a human decision maker; oversight processes documented (Map 3.5)."
+    },
+    {
+      "name": "Gartner, Data quality: why it matters and how to achieve it",
+      "url": "https://www.gartner.com/en/data-analytics/topics/data-quality",
+      "what": "59% of organizations don't measure data quality; inconsistency across sources is the hardest data-quality problem; data quality is a business discipline that needs owners; poor quality costs $12.9M a year on average (2020 research)."
+    },
+    {
+      "name": "Precisely and Drexel LeBow, 2025 outlook: data integrity trends and insights, Sep 2024 (vendor co-authored with a university)",
+      "url": "https://www.precisely.com/press-release/new-global-research-points-to-lack-of-data-quality-and-governance-as-major-obstacles-to-ai-readiness/",
+      "what": "565 data professionals. 64% name data quality their top challenge; 77% rate it average or worse; 67% don't fully trust the data they use for decisions; 45% cite inconsistent definitions."
+    },
+    {
+      "name": "BARC, Inside the BI market: what 1,000 users say about their tools (BI & Analytics Survey 26), Nov 2025",
+      "url": "https://barc.com/news/what-1000-users-say-about-their-bi-tools",
+      "what": "1,000+ users. 25% of employees use BI tools daily, 44% at smaller firms, 16% at large ones; 77% of leaders against 43% of laggards ran a formal tool evaluation; 97% report faster reporting or planning."
+    },
+    {
+      "name": "BARC and Eckerson Group, New study identifies drivers of BI and analytics adoption, Apr 2022",
+      "url": "https://barc.com/news/new-study-identifies-drivers-of-bi-and-analytics-adoption-in-companies-today",
+      "what": "214 companies. Average BI adoption is 25% of employees and has sat near 20% for years."
+    },
+    {
+      "name": "Microsoft, Power BI pricing",
+      "url": "https://www.microsoft.com/en-us/power-platform/products/power-bi/pricing",
+      "what": "Read 26 Nov 2026. Desktop free; Pro $14 a user a month paid yearly; viewers need paid seats below F64 capacity; Microsoft 365 E5 includes Pro."
+    },
+    {
+      "name": "Clutch, Business intelligence and data analytics pricing guide, Nov 2026",
+      "url": "https://clutch.co/it-services/analytics/pricing",
+      "what": "Read 26 Nov 2026. From projects reviewed on Clutch: typical BI and data analytics projects cost $10,000 to $49,999."
+    },
+    {
+      "name": "Federal Reserve, Supervisory guidance on model risk management (SR 26-2), Apr 2026",
+      "url": "https://www.federalreserve.gov/frrs/guidance/supervisory-guidance-on-model-risk-management.htm",
+      "what": "Replaces SR 11-7. Models need effective challenge by objective experts with standing to force change; vendor models need ongoing monitoring and outcome analysis."
+    },
+    {
+      "name": "Eurostat, Glossary: data analytics",
+      "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary%3AData_analytics",
+      "what": "Data analytics extracts patterns and insights for better decisions; four types: descriptive, diagnostic, predictive and prescriptive."
+    },
+    {
+      "name": "Coursera, What is analytics consulting?, Feb 2025",
+      "url": "https://www.coursera.org/articles/analytics-consulting",
+      "what": "An analytics consultant defines the goal, gathers and analyzes data, reports through visuals, then recommends changes."
+    },
+    {
+      "name": "Gartner, What is data and analytics",
+      "url": "https://www.gartner.com/en/topics/data-and-analytics",
+      "what": "Four techniques; descriptive analytics uses BI tools and dashboards; advanced analytics spans predictive, prescriptive and machine learning."
+    },
+    {
+      "name": "Drexel LeBow and Precisely, data integrity trends and insights report (PDF), Sep 2024",
+      "url": "http://lebow.drexel.edu/sites/default/files/2024-09/drexel-lebow-precisel-data-integrity-trends-insights-2025-outlook.pdf",
+      "what": "76% of data programs name data-driven decision-making as a goal; poor data quality (45%) and lack of adoption (45%) are top challenges."
+    },
+    {
+      "name": "Nagle, Redman and Sammon, Only 3% of companies' data meets basic quality standards, Harvard Business Review, Sep 2017",
+      "url": "https://hbr.org/2017/09/only-3-of-companies-data-meets-basic-quality-standards",
+      "what": "75 executives scored 100 recent records each (the Friday Afternoon Measurement). 47% of new records had at least one critical error; 3% of department scores were acceptable."
+    },
+    {
+      "name": "BARC and Eckerson Group, Strategies for driving adoption and usage with BI and analytics, 2022",
+      "url": "https://assets.contentstack.io/v3/assets/bltb564490bc5201f31/bltbb38f7b1760a71e5/655b71e66f7bf40aa282c563/strategies-for-driving-adoption-and-usage-with-bi-and-analytics.pdf",
+      "what": "Top obstacles to BI adoption: lack of proper training (50%), lack of quality data people trust (41%), budget (36%)."
+    },
+    {
+      "name": "OCC Bulletin 2026-13, model risk management guidance (attachment), Apr 2026",
+      "url": "https://occ.gov/news-issuances/bulletins/2026/bulletin-2026-13a.pdf",
+      "what": "The revised guidance covers statistical and non-generative AI models; generative and agentic AI are outside its scope."
+    },
+    {
+      "name": "Bank of England PRA, SS1/23 Model risk management principles for banks, May 2023",
+      "url": "https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/supervisory-statement/2023/ss123.pdf",
+      "what": "Model owners are accountable for monitoring performance; model users are accountable for using a model as intended and minding its known limits."
+    },
+    {
+      "name": "Power BI pricing guide (vendor guide from a Power BI services firm)",
+      "url": "https://powerbi-analytics.com/pricing",
+      "what": "Read 26 Nov 2026. Vendor's own figures: one dashboard $1,000 to $5,000; business reporting project $5,000 to $20,000; price follows number of sources and data readiness; recommends a fixed first scope."
+    },
+    {
+      "name": "How much do data analytics services cost? (vendor guide from a data-services firm), Apr 2026",
+      "url": "https://sweent.com/guides/how-much-do-data-analytics-services-cost",
+      "what": "Read 26 Nov 2026. Vendor's own figures: one dashboard on mostly clean data $3,000 to $12,000; reporting suite $12,000 to $30,000; data warehouse $25,000 to $60,000 or more."
+    },
+    {
+      "name": "How much do data analytics services cost? 2026 (vendor guide from a data firm)",
+      "url": "https://weevolveit.com/blog/data-analytics-services-cost",
+      "what": "Read 26 Nov 2026. Vendor's own figures: dashboard suite $5,000 to $25,000; data warehouse $25,000 to $80,000; predictive or AI analytics $40,000 to $150,000 or more."
+    },
+    {
+      "name": "Power BI consulting cost 2026 (vendor guide from a BI firm)",
+      "url": "https://lets-viz.com/blogs/power-bi-consulting-cost",
+      "what": "Read 26 Nov 2026. Vendor claim: first dashboard on a new source $5,000 to $15,000, because most of the cost is the underlying data work."
+    },
+    {
+      "name": "Cost of business intelligence dashboards (vendor guide from a BI firm)",
+      "url": "https://digitalheroesco.com/journal/cost-business-intelligence-dashboards-digital-heroes",
+      "what": "Read 26 Nov 2026. Vendor claim from 2,000+ projects: the visible charts are rarely more than a quarter of the budget."
+    },
+    {
+      "name": "Metabase, pricing",
+      "url": "https://www.metabase.com/pricing/",
+      "what": "Read 26 Nov 2026. Starter $1,080 a year with 5 users, then $65 a user; Pro $6,210 a year with 10 users, then $130 a user; open source free to self-host."
+    },
+    {
+      "name": "Google Cloud, Data Studio (Looker Studio)",
+      "url": "https://cloud.google.com/looker-studio",
+      "what": "Read 26 Nov 2026. Self-service use at no charge; Pro $9 a user per project a month."
+    },
+    {
+      "name": "AWS, Amazon Quick Sight pricing",
+      "url": "https://aws.amazon.com/quicksight/pricing/",
+      "what": "Read 26 Nov 2026. Author $24, Reader $3 a user a month; Pro seats and plain-English questions add a $250 monthly account fee."
+    },
+    {
+      "name": "Qlik, Cloud Analytics pricing",
+      "url": "https://www.qlik.com/us/pricing",
+      "what": "Read 26 Nov 2026. Standard $825 a month for 25 GB with unlimited users, billed yearly; Starter $300 a month for 10 users."
+    },
+    {
+      "name": "ThoughtSpot, pricing",
+      "url": "https://www.thoughtspot.com/pricing",
+      "what": "Read 26 Nov 2026. Essentials $25 a user a month for 5 to 50 users; Pro $50 a user a month; billed yearly."
+    },
+    {
+      "name": "Salesforce, Tableau pricing",
+      "url": "https://www.salesforce.com/analytics/tableau/",
+      "what": "Read 26 Nov 2026. Creator $75, Explorer $42, Viewer $15 a user a month, billed yearly."
+    },
+    {
+      "name": "Tableau, pricing for teams and organizations",
+      "url": "https://www.tableau.com/pricing/teams-orgs",
+      "what": "Read 26 Nov 2026. Annual contract only; at least one Creator; free Tableau Desktop edition."
+    },
+    {
+      "name": "Google Cloud, Looker pricing",
+      "url": "https://cloud.google.com/looker/pricing",
+      "what": "Read 26 Nov 2026. Editions listed; no list price."
+    },
+    {
+      "name": "Domo, pricing",
+      "url": "https://www.domo.com/pricing",
+      "what": "Read 26 Nov 2026. Credit-based, unlimited users, custom quote."
+    },
+    {
+      "name": "Sigma, pricing",
+      "url": "https://www.sigmacomputing.com/pricing",
+      "what": "Read 26 Nov 2026. Contact sales; no list price."
+    },
+    {
+      "name": "Zoho Analytics, pricing",
+      "url": "https://www.zoho.com/analytics/pricing.html",
+      "what": "Read 26 Nov 2026. Prices load by script; our reader saw blank fields."
+    },
+    {
+      "name": "McKinsey, Raising returns on analytics investments in insurance, Jul 2017",
+      "url": "https://www.mckinsey.org/industries/financial-services/our-insights/raising-returns-on-analytics-investments-in-insurance",
+      "what": "About 1 in 6 insurers report high impact from analytics; about 40% cite limited frontline adoption."
+    },
+    {
+      "name": "McKinsey, Getting big impact from big data, Jan 2015",
+      "url": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/getting-big-impact-from-big-data",
+      "what": "Call-center staff ignored a recommendation engine until it explained its reasons; then use rose."
+    },
+    {
+      "name": "US Bureau of Labor Statistics, Employer costs for employee compensation, June 2026",
+      "url": "https://www.bls.gov/news.release/ecec.htm",
+      "what": "Private industry: wages and salaries are 70.0% of employer compensation costs."
+    },
+    {
+      "name": "Brynjolfsson and McElheran, Data in action: data-driven decision making in US manufacturing, Census CES working paper 16-06, Jan 2016",
+      "url": "https://www2.census.gov/ces/wp/2016/CES-WP-16-06.pdf",
+      "what": "18,000+ plants. Data-driven decision making linked to about 3% higher value added; gains appear only after adoption; strongest at single-unit firms."
+    },
+    {
+      "name": "US Bureau of Labor Statistics, Occupational Outlook Handbook: Data scientists",
+      "url": "https://www.bls.gov/OOH/math/data-scientists.htm",
+      "what": "Median pay $120,230 in May 2025; jobs projected to grow 35% from 2025 to 2035."
+    },
+    {
+      "name": "O*NET OnLine, 15-2051.01 Business intelligence analysts",
+      "url": "https://www.onetonline.org/link/summary/15-2051.01",
+      "what": "BI analysts' wage data come from the data scientists category; sample titles include BI consultant."
+    }
+  ],
+  "related": [
+    "sales-analytics",
+    "ai-demand-forecasting",
+    "machine-learning-consulting",
+    "ai-credit-scoring",
+    "ai-claims-processing"
+  ],
+  "offer": {
+    "heading": "Not sure which decision to start with?",
+    "body": "Free, before any paid work, and no sales pitch: 30 minutes on one decision your managers make every week. Bring the report behind it. Leave with a way to score your data, the first dashboard to build and a number to beat."
+  },
+  "keyword": {
+    "phrase": "data analytics consulting",
+    "searches": 720,
+    "cpc": 31.89,
+    "difficulty": 2
+  },
+  "reviews": [
+    {
+      "reader": "COO",
+      "notes": "Dana found the first decision, the before number and who does what in each build. Stalled on builders, explorers and viewers in the price table; the method note now says what an explorer does. Asked how long it takes: no neutral time source exists in the research, so the page gives the six-week use window in the first build and no project length."
+    },
+    {
+      "reader": "Head of operations",
+      "notes": "Tripped on descriptive data, data warehouse, F64 capacity and metric dictionary. Each is now plain: clean records of what happened, one store for all your data, Microsoft's large capacity plan, one list of agreed metric definitions. ERP and CRM were already spelled out in the build steps."
+    },
+    {
+      "reader": "GM",
+      "notes": "Asked whether one site can pilot first and what it does to the unit's margin. The first build now runs in one team or site, and a new test step says to roll out only when use and the number both move. The price-the-lift step turns hours and better decisions into dollars; no sourced margin figure for a unit this size exists in the research."
+    },
+    {
+      "reader": "Division head",
+      "notes": "Read as a head of sales. The first team-in-charge bullet named only the COO and ops lead as decision owners; it now names the head of sales too. The routing answer now says who owns each kind of decision (head of sales, planner, credit lead). Metric ownership by division heads was already in the mid-size build."
+    },
+    {
+      "reader": "Owner-CEO",
+      "notes": "Steve got the answer in 10 seconds from the title and bottom line. Data, skills, return and paying for slides were covered (data score, handover, price-the-lift, fixed first release with accounts in his name). Security was missing, so both small and mid-size builds now start with an IT lead setting who can see the data. No Zavient price is shown, per the lead's rule; outside project ranges are labelled vendor or Clutch figures."
+    }
+  ],
+  "updated": "2026-11-26"
+}
