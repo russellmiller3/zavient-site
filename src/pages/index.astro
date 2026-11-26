@@ -8,47 +8,41 @@ import ConsultingCta from '../components/ConsultingCta.astro';
 
 const BOOK = 'https://calendly.com/zavient/call';
 
-// Every kind of work. Work with a guide links to it; the rest link to the free diagnostic until its guide ships, which
-// covers any workflow. No stub pages and no "coming soon" (research-home-allwork.md, 26 Nov 2026).
+// Every kind of work with a guide gets a card. Work and industries without a guide yet share one line that points to
+// the free diagnostic, which covers any workflow: no cards that jump straight to a booking page (mobile/ADHD audit,
+// 26 Nov 2026). No stub pages and no "coming soon" (research-home-allwork.md, 26 Nov 2026).
 const kinds = [
-  { href: '#guides', tag: 'Guides', title: 'Finance and accounting', text: 'Invoices, month-end close, reconciliations and financial documents.' },
-  { href: '/ai-work/ai-underwriting.html', tag: 'Guides', title: 'Lending and underwriting', text: 'Credit decisions and loan or policy files, with the underwriter keeping the call.' },
-  { href: BOOK, tag: 'Free diagnostic', title: 'Operations and supply chain', text: 'Orders, scheduling, forecasting and the paperwork between them.' },
-  { href: BOOK, tag: 'Free diagnostic', title: 'Customer service', text: 'AI finds the answer and drafts the reply. Your team checks it and sends it.' },
-  { href: BOOK, tag: 'Free diagnostic', title: 'Sales and marketing', text: 'Research, proposals, follow-ups and reporting, with your people on the relationship.' },
-  { href: BOOK, tag: 'Free diagnostic', title: 'HR and recruiting', text: 'Screening, onboarding paperwork and policy questions. People make the hiring call.' },
-  { href: BOOK, tag: 'Free diagnostic', title: 'Legal and contracts', text: 'First reads of contracts, clause checks and summaries for your lawyer to review.' },
-  { href: BOOK, tag: 'Free diagnostic', title: 'Purchasing and vendors', text: 'Quotes, vendor checks and purchase orders.' },
-  { href: BOOK, tag: 'Free diagnostic', title: 'Insurance claims', text: 'Reading claim files and pulling out the facts an adjuster needs.' },
-  { href: BOOK, tag: 'Free diagnostic', title: 'IT and internal tools', text: 'Help-desk tickets, internal search and small tools your team asks for.' },
+  { href: '#guides', tag: '4 guides', title: 'Finance and accounting', text: 'Invoices, month-end close, reconciliations and financial documents.' },
+  { href: '/ai-work/ai-credit-scoring.html', tag: '2 guides', title: 'Banking and lending', text: 'Credit scoring you can explain to an examiner, then underwriting.' },
+  { href: '/ai-work/ai-underwriting.html', tag: '1 guide', title: 'Insurance', text: 'Underwriting and the reading around every file. The underwriter keeps the call.' },
 ];
+const noGuideYet = 'operations, customer service, sales, HR, legal, purchasing, claims, IT, or your industry';
 
-const industries = [
-  { href: '/ai-work/ai-credit-scoring.html', tag: 'Guides', title: 'Banking and lending', text: 'Credit scoring you can explain to an examiner, and loan file review.' },
-  { href: '/ai-work/ai-underwriting.html', tag: 'Guides', title: 'Insurance', text: 'Underwriting and the reading around every file.' },
-  { href: '#guides', tag: 'Guides', title: 'Any company with a finance team', text: 'Invoices, close and reconciliations work the same across industries.' },
-  { href: BOOK, tag: 'Free diagnostic', title: 'Manufacturing', text: 'Quality records, supplier paperwork and planning.' },
-  { href: BOOK, tag: 'Free diagnostic', title: 'Distribution and logistics', text: 'Orders, shipping documents and demand planning.' },
-  { href: BOOK, tag: 'Free diagnostic', title: 'Property management', text: 'Leases, tenant requests and maintenance work orders.' },
-  { href: BOOK, tag: 'Free diagnostic', title: 'Professional services', text: 'Proposals, research and the reports your clients pay for.' },
-  { href: BOOK, tag: 'Free diagnostic', title: 'Any other industry', text: 'Bring one workflow. We map it with you in 30 minutes.' },
+// Role cards, in the order the site's readers come: COO and head of ops, GM, owner or CEO, then division heads.
+const roles = [
+  { href: '/ai-work/ai-consulting-services.html', tag: 'COO', title: 'Which workflow should we fix first?', text: 'Which work pays back first, and what outside help costs.' },
+  { href: '/ai-work/account-reconciliation-automation.html', tag: 'Head of operations', title: 'What changes for my team?', text: 'Which tasks AI takes and who checks its work. Month-end close is the worked example.' },
+  { href: '#work', tag: 'General manager', title: 'Can one team pilot it first?', text: 'Pick one kind of work below. Test it on one team before you scale.' },
+  { href: '/ai-readiness-assessment.html', tag: 'Owner or CEO', title: 'Are we ready for AI at all?', text: 'A 3-minute check. It names your first project and the one gap to fix first.' },
+  { href: '/ai-work/ai-credit-scoring.html', tag: 'Head of lending', title: 'Is it allowed, and does it work?', text: 'Fair credit models you can explain, the rules, and three ways to build one.' },
+  { href: '/ai-work/ai-underwriting.html', tag: 'Head of underwriting', title: 'What can AI take off my team\'s desk?', text: 'The reading around a file, for lenders and insurers. The underwriter keeps the call.' },
+  { href: '/ai-work/ai-invoice-processing.html', tag: 'Head of AP or finance ops', title: 'Can AI cut invoice cost without new fraud risk?', text: 'What invoice tools cost, what needs a person, and the fraud checks to keep.' },
 ];
 
 const finance = [
-  { href: '/ai-work/ai-consulting-services.html', tag: 'Start here', title: 'AI consulting for finance: is it worth it, and what does it cost?', text: 'Which finance work pays back first, and what help costs against hiring or buying software.' },
-  { href: '/ai-work/ai-document-processing.html', tag: 'Documents', title: 'How accurate is AI on financial documents?', text: 'Our own benchmark on 30 fund reports, with answers locked before any tool ran.' },
-  { href: '/ai-work/ai-invoice-processing.html', tag: 'Accounts payable', title: 'What does AI invoice processing cost, and what needs a person?', text: 'We checked 13 tools and their prices. Exceptions and fraud still need a person.' },
-  { href: '/ai-work/account-reconciliation-automation.html', tag: 'Month-end close', title: 'Will AI speed our close and pass audit?', text: 'What AI does in reconciliations, what auditors expect, and three ways to build it.' },
-  { href: '/ai-work/ai-credit-scoring.html', tag: 'Lending', title: 'How do lenders keep AI credit scoring fair and explainable?', text: 'Credit models you can explain to an examiner, and the rules that apply.' },
+  { href: '/ai-work/ai-consulting-services.html', tag: 'Start here', title: 'AI consulting for finance: is it worth it, and what does it cost?', text: 'What pays back first, and what help costs against hiring or software.' },
+  { href: '/ai-work/ai-document-processing.html', tag: 'Documents', title: 'How accurate is AI on financial documents?', text: 'Our own test on 30 fund reports, answers locked before any tool ran.' },
+  { href: '/ai-work/ai-invoice-processing.html', tag: 'Accounts payable', title: 'What does AI invoice processing cost, and what needs a person?', text: '13 tools and their prices. Exceptions and fraud still need a person.' },
+  { href: '/ai-work/account-reconciliation-automation.html', tag: 'Month-end close', title: 'Will AI speed our close and pass audit?', text: 'What AI does, what auditors expect, and three ways to build it.' },
+  { href: '/ai-work/ai-credit-scoring.html', tag: 'Lending', title: 'How do lenders keep AI credit scoring fair and explainable?', text: 'Credit models you can explain to an examiner, and the rules.' },
   { href: '/ai-work/ai-underwriting.html', tag: 'Underwriting', title: 'Can AI help underwriters, and who is using it?', text: 'Where AI pays in underwriting: the reading, not the decision.' },
 ];
 
 const sources = [
-  { n: 2, name: 'US Census Bureau, The Microstructure of AI Diffusion, working paper CES-WP-26-25 (April 2026)', url: 'https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html', what: '66% of firms that use AI use it only to help with tasks; AI-related job cuts happened at 2% of firms.' },
-  { n: 3, name: 'Zavient FinExtractBench (November 2026)', url: '/ai-work/ai-document-processing.html#own-data', what: 'Our benchmark of 30 private fund reports, 781 pages, with every answer written by hand and locked before any tool ran.' },
-  { n: 5, name: 'Newman, JAMA (1995), interpreting small numerators', url: 'https://jamanetwork.com/journals/jama/article-abstract/389714', what: 'With zero errors in N tries, the true error rate can still be up to about 3 in N.' },
-  { n: 4, name: 'APQC, total cost to process accounts payable', url: 'https://www.apqc.org/what-we-do/benchmarking/open-standards-benchmarking/measures/total-cost-perform-process-process', what: 'Median all-in cost of $6.00 per invoice, across 4,821 companies.' },
-  { n: 1, name: 'Gartner, 67% of B2B buyers prefer a rep-free experience (March 2026)', url: 'https://www.gartner.com/en/newsroom/press-releases/2026-03-09-gartner-sales-survey-finds-67-percent-of-b2b-buyers-prefer-a-rep-free-experience', what: 'Survey of 646 B2B buyers, August to September 2025.' },
+  { n: 1, name: 'US Census Bureau, The Microstructure of AI Diffusion, working paper CES-WP-26-25 (April 2026)', url: 'https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html', what: '66% of firms that use AI use it only to help with tasks; AI-related job cuts happened at 2% of firms.' },
+  { n: 2, name: 'Zavient FinExtractBench (November 2026)', url: '/ai-work/ai-document-processing.html#own-data', what: 'Our benchmark of 30 private fund reports, 781 pages, with every answer written by hand and locked before any tool ran.' },
+  { n: 3, name: 'APQC, total cost to process accounts payable', url: 'https://www.apqc.org/what-we-do/benchmarking/open-standards-benchmarking/measures/total-cost-perform-process-process', what: 'Median all-in cost of $6.00 per invoice, across 4,821 companies.' },
+  { n: 4, name: 'Newman, JAMA (1995), interpreting small numerators', url: 'https://jamanetwork.com/journals/jama/article-abstract/389714', what: 'With zero errors in N tries, the true error rate can still be up to about 3 in N.' },
 ];
 const fn = (n) => `#fn-${n}`;
 const updated = '26 November 2026';
@@ -62,26 +56,29 @@ const updated = '26 November 2026';
       <ul>
         <li>We help companies of 40 to 500 people put AI to work in any function and any industry.</li>
         <li>AI does the reading, matching and first draft. Your people keep the decision.</li>
-        <li>The free 30-minute diagnostic covers any kind of work, whether or not we have a guide for it yet.</li>
+        <li>Free 30-minute diagnostic, any kind of work: you leave knowing buy or build, what to test and rough cost.</li>
       </ul>
     </div>
     <p style="margin-top:22px;"><a class="btn-gold" href={BOOK}>Book a free 30-minute diagnostic &rarr;</a></p>
-    <p class="diag-nudge">Not ready to talk? <a href="#guides">Read a guide</a>, or <a href="/ai-readiness-assessment.html">take the AI readiness check</a>. It takes about 3 minutes, and your answers stay in your browser.</p>
-    <nav class="on-page" aria-label="On this page"><div class="label" style="margin-top:18px;">On this page</div><ol>
-      <li><a href="#work">Find your kind of work</a></li>
-      <li><a href="#industry">Or find your industry</a></li>
-      <li><a href="#guides">Guides you can read today</a></li>
-      <li><a href="#role">Start with your role</a></li>
-      <li><a href="#how">How we work with you</a></li>
-      <li><a href="#people">Your team stays in charge</a></li>
-      <li><a href="#proof">How we check our numbers</a></li>
-      <li><a href="#sources">Sources</a></li>
-    </ol></nav>
+    <p class="diag-nudge">Not ready to talk? <a href="/ai-readiness-assessment.html">Take the 3-minute AI readiness check</a>. Your answers stay in your browser.</p>
   </div></header>
 
   <article class="article-body"><div class="wrap">
+    <h2 id="role">Start with your role</h2>
+    <p>Pick your seat. Each card answers the first question people in that seat ask.</p>
+    <div class="hub-grid">
+      {roles.map((k) => (
+        <a class="hub-card" href={k.href}>
+          <span class="hub-tag">{k.tag}</span>
+          <h3>{k.title}</h3>
+          <p>{k.text}</p>
+        </a>
+      ))}
+    </div>
+    <p class="diag-nudge">Head of another division? <a href={BOOK}>Bring one workflow to the free 30-minute diagnostic &rarr;</a></p>
+
     <h2 id="work">Find your kind of work</h2>
-    <p>Pick the work you want AI to help with. Areas marked "Guides" have full pages you can read now. For any area, the free diagnostic maps your workflow with you, one to one.</p>
+    <p>Each card opens the guides for that work.</p>
     <div class="hub-grid">
       {kinds.map((k) => (
         <a class="hub-card" href={k.href}>
@@ -91,21 +88,10 @@ const updated = '26 November 2026';
         </a>
       ))}
     </div>
-
-    <h2 id="industry">Or find your industry</h2>
-    <p>The same work looks different in a bank, a factory or a property firm. Pick yours.</p>
-    <div class="hub-grid">
-      {industries.map((k) => (
-        <a class="hub-card" href={k.href}>
-          <span class="hub-tag">{k.tag}</span>
-          <h3>{k.title}</h3>
-          <p>{k.text}</p>
-        </a>
-      ))}
-    </div>
+    <p class="diag-nudge">No guide yet for {noGuideYet}? <a href={BOOK}>Bring it to the free 30-minute diagnostic &rarr;</a></p>
 
     <h2 id="guides">Guides you can read today</h2>
-    <p>Each guide answers one question about one kind of work. Each covers where people stay in the loop, what it costs, the rules that apply, and whether to buy or build.</p>
+    <p>Each guide answers one question about one kind of work. Each covers: who stays in the loop, cost, rules, buy or build.</p>
     <div class="hub-grid">
       {finance.map((w) => (
         <a class="hub-card" href={w.href}>
@@ -116,74 +102,34 @@ const updated = '26 November 2026';
       ))}
     </div>
 
-    <h2 id="role">Start with your role</h2>
-    <p>67% of B2B buyers would rather buy without a sales rep<sup class="fn"><a href={fn(1)} aria-label="Source 1">1</a></sup>. So start with the seat you sit in.</p>
-    <div class="hub-grid">
-      <a class="hub-card" href={BOOK}>
-        <span class="hub-tag">COO</span>
-        <h3>Which workflow should we fix first?</h3>
-        <p>Bring your list. The free diagnostic ranks it by payback and names the one to start with.</p>
-      </a>
-      <a class="hub-card" href="/ai-work/account-reconciliation-automation.html">
-        <span class="hub-tag">Head of operations</span>
-        <h3>What changes for my team?</h3>
-        <p>Which tasks AI takes, who checks its work, and what your team does after. Month-end close is a worked example.</p>
-      </a>
-      <a class="hub-card" href="#work">
-        <span class="hub-tag">General manager</span>
-        <h3>Can one team pilot it first?</h3>
-        <p>Pick one kind of work above. Test it on one team before you scale.</p>
-      </a>
-      <a class="hub-card" href="/ai-work/ai-credit-scoring.html">
-        <span class="hub-tag">Head of lending</span>
-        <h3>Is it allowed, and does it work?</h3>
-        <p>Fair, explainable credit models, the rules that apply, and three ways to build one.</p>
-      </a>
-      <a class="hub-card" href="/ai-work/ai-underwriting.html">
-        <span class="hub-tag">Head of underwriting (insurance or lending)</span>
-        <h3>What can AI take off my team's desk?</h3>
-        <p>The reading and summarizing around a file, while the underwriter keeps the call.</p>
-      </a>
-      <a class="hub-card" href="/ai-work/ai-invoice-processing.html">
-        <span class="hub-tag">Head of AP or finance ops</span>
-        <h3>Can AI cut invoice cost without new fraud risk?</h3>
-        <p>What invoice tools cost, what still needs a person, and the fraud checks to keep.</p>
-      </a>
-      <a class="hub-card" href={BOOK}>
-        <span class="hub-tag">Head of any other division</span>
-        <h3>Sales, service, HR, legal or something else?</h3>
-        <p>Bring one workflow from your division to the free diagnostic.</p>
-      </a>
-      <a class="hub-card" href="/ai-readiness-assessment.html">
-        <span class="hub-tag">Owner or CEO</span>
-        <h3>Are we ready for AI at all?</h3>
-        <p>A 3-minute check that scores five areas and names the one gap to fix first.</p>
-      </a>
-    </div>
-
-<h2 id="how">How we work with you</h2>
+    <h2 id="how">How we work with you</h2>
     <ol>
-      <li><strong>Free 30-minute diagnostic.</strong> Bring one workflow from any part of the business, and what it costs you today. You leave with our read on whether to buy or build, and what to test first.</li>
-      <li><strong>A 30-day sprint on the work that pays first.</strong> $10,000, fixed scope. It ends in written specs (what to build and how to test it) that your team or a vendor can build from.</li>
+      <li><strong>Free 30-minute diagnostic.</strong> Bring one workflow from any part of the business, and what it costs you today. You leave with our read on buy or build, and what to test first.</li>
+      <li><strong>A 30-day sprint on the work that pays first.</strong> $10,000, fixed scope. You get written specs: what to build and how to test it. Your team or a vendor builds from them.</li>
       <li><strong>Your team runs it.</strong> You own the specs and the results. We advise while it ships, then step back.</li>
     </ol>
     <p>What each step includes is on our <a href="/about.html#engagements">About page</a>.</p>
 
     <h2 id="people">Your team stays in charge</h2>
-    <p>Our focus is AI that helps people do more, not AI that replaces them. Most firms already use it that way. In a Census survey of US firms, 66% of AI users used it only to help with tasks, and just 2% of firms cut jobs because of AI<sup class="fn"><a href={fn(2)} aria-label="Source 2">2</a></sup>.</p>
+    <p>Our focus is AI that helps people do more, not AI that replaces them. Most firms already use it that way.</p>
     <ul>
+      <li><strong>Most AI use is help, not replacement.</strong> 66% of firms that use AI use it only to help with tasks<sup class="fn"><a href={fn(1)} aria-label="Source 1">1</a></sup>.</li>
+      <li><strong>Few firms cut jobs over AI.</strong> Just 2% did<sup class="fn"><a href={fn(1)} aria-label="Source 1">1</a></sup>.</li>
       <li><strong>People keep the decision.</strong> AI reads, matches and drafts. A person approves the loan, the claim or the payment.</li>
-      <li><strong>Every answer can be checked.</strong> We pick tools that show where each answer came from, so your team can check it.</li>
+      <li><strong>Every answer can be checked.</strong> We pick tools that show where each answer came from.</li>
     </ul>
 
     <h2 id="proof">How we check our numbers</h2>
-    <p>We test AI tools on real documents before we recommend them. For our own benchmark, we wrote the right answers to 30 fund reports first, before any tool ran. The two best AI models made zero mistakes<sup class="fn"><a href={fn(3)} aria-label="Source 3">3</a></sup>.</p>
-    <p>We also count the whole cost, not just the software. The median company spends $6.00 to process one invoice, all in<sup class="fn"><a href={fn(4)} aria-label="Source 4">4</a></sup>.</p>
-    <p>But 30 reports is a small test. Even with zero misses, the real miss rate could be as high as 1 in 10<sup class="fn"><a href={fn(5)} aria-label="Source 5">5</a></sup>. That is why we test on your own files before you buy. How we source and check every page is on our <a href="/about.html#method">About page</a>.</p>
+    <ul>
+      <li><strong>We write the right answers first, then test.</strong> On 30 fund reports, the two best AI models made zero mistakes<sup class="fn"><a href={fn(2)} aria-label="Source 2">2</a></sup>.</li>
+      <li><strong>We count the whole cost.</strong> The median company spends $6.00 to process one invoice, all in<sup class="fn"><a href={fn(3)} aria-label="Source 3">3</a></sup>.</li>
+      <li><strong>30 reports is a small test.</strong> The true miss rate could still be up to 1 in 10<sup class="fn"><a href={fn(4)} aria-label="Source 4">4</a></sup>. So we re-test on your files before you buy.</li>
+    </ul>
+    <p>How we source and check every page is on our <a href="/about.html#method">About page</a>.</p>
 
     <h2 id="sources">Sources</h2>
     <ol class="sources">
-      {[...sources].sort((a, b) => a.n - b.n).map((s) => <li id={`fn-${s.n}`}><a href={s.url}>{s.name}</a>. {s.what}</li>)}
+      {sources.map((s) => <li id={`fn-${s.n}`}><a href={s.url}>{s.name}</a>. {s.what}</li>)}
     </ol>
     <p class="byline">By <a href="/about.html">Zavient</a> &middot; updated {updated}</p>
   </div></article>

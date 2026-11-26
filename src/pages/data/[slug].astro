@@ -1,10 +1,13 @@
 ---
 // api-docs-read: static page generator — no external API/protocol surface.
 // One data-story page per JSON file in src/content/data-stories: headline finding, the chart (inline SVG with
-// hover titles), a table view, embed code, CSV download, method, sources and the custom-benchmark offer.
+// hover titles), a table view, what it means for the reader, method, numbered sources, then the embed code and the
+// custom-benchmark offer. Findings and method carry "[^n]" footnote markers that link to source n (Fn.astro), the
+// same as the guides (mobile/ADHD audit, 26 Nov 2026: every figure footnoted, embed code after the method).
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import ConsultingCta from '../../components/ConsultingCta.astro';
+import Fn from '../../components/Fn.astro';
 import { storySvg, fmt } from '../../lib/storyChart.js';
 
 export async function getStaticPaths() {
@@ -21,27 +24,32 @@ const embed = `<a href="https://zavient.com/data/${story.id}.html"><img src="htt
   <header class="article-hero"><div class="wrap">
     <div class="label">Data &middot; AI job market</div>
     <h1>{d.title}</h1>
-    <p class="dek">{d.dek}</p>
+    <p class="dek"><Fn s={d.dek} /></p>
     <p class="byline">By <a href="/about.html">Zavient</a> &middot; updated {d.updated}</p>
   </div></header>
   <article class="article-body"><div class="wrap">
+    {d.soWhat && (
+      <div class="bluf" data-sowhat>
+        <p><strong>What this means for you:</strong> <Fn s={d.soWhat.text} /> <a href={d.soWhat.href}>{d.soWhat.link}&nbsp;&rarr;</a></p>
+      </div>
+    )}
     <figure class="data-chart" style="margin:0 0 8px;max-width:100%;overflow:hidden"><div style="max-width:100%" set:html={svg.replace('width="760"', 'width="100%"').replace(/height="\d+"/, '')} /></figure>
     <details><summary>See the numbers as a table</summary>
-      <table class="sources-table"><thead><tr><th>{d.chart.title}</th><th>Value</th></tr></thead>
+      <table class="sources-table"><thead><tr><th>{d.chart.title}</th><th>{d.chart.valueLabel}</th></tr></thead>
         <tbody>{d.chart.bars.map((b) => <tr><td>{b.label}{b.note ? ` (${b.note})` : ''}</td><td>{f(b.value)}</td></tr>)}</tbody></table>
     </details>
     <p><a href={`/data/${story.id}.svg`}>Chart image (SVG)</a> &middot; <a href={`/data/${story.id}.csv`}>Data (CSV)</a></p>
     <h2>What we found</h2>
-    {d.findings.map((p) => <p>{p}</p>)}
-    <h2>Use this chart</h2>
-    <p>Free to republish with a link back. Copy this code:</p>
-    <pre style="white-space:pre-wrap;word-break:break-all;font-size:13px"><code>{embed}</code></pre>
+    <ul>{d.findings.map((p) => <li><Fn s={p} /></li>)}</ul>
     <h2>How we counted</h2>
-    <ul>{d.method.map((m) => <li>{m}</li>)}</ul>
-    <div class="sources"><h2>Sources</h2>
-      <table class="sources-table"><thead><tr><th>Source</th><th>What it says</th></tr></thead>
-        <tbody>{d.sources.map((s) => <tr><td><a href={s.url}>{s.name}</a></td><td>{s.what}</td></tr>)}</tbody></table></div>
-    {others.length > 0 && (<p>More data: {others.map((o, i) => <>{i > 0 && ' · '}<a href={`/data/${o.id}.html`}>{o.data.title}</a></>)}</p>)}
+    <ul>{d.method.map((m) => <li><Fn s={m} /></li>)}</ul>
+    <h2>Use this chart</h2>
+    <details><summary>Free to republish with a link back. Show the embed code</summary>
+      <pre style="white-space:pre-wrap;word-break:break-all;font-size:13px"><code>{embed}</code></pre>
+    </details>
+    <h2>Sources</h2>
+    <ol class="sources">{d.sources.map((s, i) => <li id={`fn-${i + 1}`}><a href={s.url}>{s.name}</a>. {s.what}</li>)}</ol>
+    {others.length > 0 && (<><h2>More data</h2><ul>{others.map((o) => <li><a href={`/data/${o.id}.html`}>{o.data.title}</a></li>)}</ul></>)}
   </div></article>
   <ConsultingCta job="AI in your work" />
 </Base>

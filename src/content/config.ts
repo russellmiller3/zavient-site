@@ -103,8 +103,12 @@ const datastory = defineCollection({
       creditSource: z.string().optional(),
       // true prints each bar's note (e.g. "28 ads") after its value on the chart itself, not only on hover.
       showNotes: z.boolean().default(false),
+      // Header for the value column in the page's table view, e.g. "Employers" (mobile/ADHD audit, 26 Nov 2026).
+      valueLabel: z.string().default('Value'),
       bars: z.array(z.object({ label: z.string(), value: z.number(), note: z.string().optional() })).min(3),
     }),
+    // One line on what the finding means for a buyer, with a link to the guide that helps them act on it.
+    soWhat: z.object({ text: z.string().min(20), link: z.string().min(5), href: z.string().startsWith('/') }).optional(),
     method: z.array(z.string()).min(2),
     sources: z.array(link).min(1),
     updated: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
