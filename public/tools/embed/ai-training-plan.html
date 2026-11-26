@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team AI training plan: how many hours, and who goes first? | Zavient</title>
+<meta name="description" content="Enter your teams. Get a 90-day AI training plan: who trains first, hours per person, cost of staff time and your champions. No email needed.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://zavient.com/tools/ai-training-plan.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@600;700;800&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Zavient team AI training plan (26 Nov 2026). Same light blue tokens as /ai-readiness-assessment.html, inlined so
+   the file stands alone in an iframe or full screen. The plan shows first (an example firm until you change it),
+   then your inputs, then the detail. One button font (Figtree 600). No libraries, no email gate. */
+:root {
+  --ink: #15202E; --ink-soft: #3C4A5C; --muted: #5F6B7A;
+  --line: #D8E0EA; --line-strong: #B9C6D6;
+  --paper: #FFFFFF; --paper-alt: #F3F6FA;
+  --blue: #1F5FBF; --blue-dark: #174A96; --blue-wash: #EAF1FB; --blue-grid: rgba(31, 95, 191, 0.075);
+  --low: #B5452F; --low-wash: #F8E9E5; --mid: #A86A10; --mid-wash: #FBF1DC;
+  --sans: 'Figtree', 'Helvetica Neue', Arial, sans-serif;
+  --serif: 'Crimson Pro', Georgia, serif;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 19px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+a { color: var(--blue); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--blue-dark); }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+
+/* Header: faint grid over a blue wash, as on the readiness check */
+.hero { position: relative; padding: 22px 0 18px; background: linear-gradient(180deg, var(--blue-wash) 0%, rgba(234,241,251,.45) 60%, var(--paper) 100%); border-bottom: 1px solid var(--line); }
+.hero::before { content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(var(--blue-grid) 1px, transparent 1px), linear-gradient(90deg, var(--blue-grid) 1px, transparent 1px);
+  background-size: 28px 28px; -webkit-mask-image: linear-gradient(180deg, #000, transparent); mask-image: linear-gradient(180deg, #000, transparent); }
+.hero .wrap { position: relative; }
+.label, .eyebrow { font-family: var(--mono); font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); }
+.hero h1 { font-family: var(--sans); font-weight: 800; font-size: clamp(28px, 6vw, 40px); line-height: 1.1; letter-spacing: -.02em; margin: 6px 0 8px; }
+.hero .dek { font-size: 19px; color: var(--ink-soft); max-width: 60ch; }
+
+main { padding: 18px 0 40px; display: flex; flex-direction: column; gap: 18px; }
+h2, h3 { font-family: var(--sans); color: var(--ink); text-wrap: balance; }
+h2 { font-weight: 700; font-size: clamp(22px, 4.6vw, 28px); line-height: 1.2; letter-spacing: -.01em; }
+h3 { font-weight: 700; font-size: 19px; line-height: 1.3; }
+p { max-width: 68ch; }
+.card { border: 1px solid var(--line); background: var(--paper); padding: clamp(16px, 4vw, 26px); display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.card.lead { border-color: var(--blue); box-shadow: 0 1px 0 var(--blue); }
+.note { font-size: 17px; color: var(--ink-soft); border-left: 3px solid var(--blue); background: var(--blue-wash); padding: 10px 14px; }
+.small { font-family: var(--mono); font-size: 14px; color: var(--muted); }
+.muted { color: var(--ink-soft); font-size: 17px; }
+
+/* Buttons: one font for every button */
+.btn { appearance: none; border: 1.5px solid var(--blue); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px; padding: 10px 18px; border-radius: 2px; font-family: var(--sans); font-weight: 600; font-size: 16px; text-decoration: none; line-height: 1.2; }
+.btn-primary { background: var(--blue); color: #fff; }
+.btn-primary:hover { background: var(--blue-dark); border-color: var(--blue-dark); color: #fff; }
+.btn-ghost { background: var(--paper); color: var(--blue); }
+.btn-ghost:hover { background: var(--blue-wash); }
+.btn-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn:focus-visible, .seg button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid rgba(31,95,191,.45); outline-offset: 2px; }
+
+/* Result tiles */
+.bluf { font-family: var(--sans); font-weight: 800; font-size: clamp(22px, 5vw, 30px); line-height: 1.2; letter-spacing: -.015em; }
+.tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.tile { border: 1px solid var(--line); padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.tile.primary { border-color: var(--blue); background: var(--blue-wash); }
+.tile .num { font-family: var(--sans); font-weight: 800; font-size: clamp(22px, 5vw, 30px); font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+.tile .lab { font-size: 16px; color: var(--ink-soft); line-height: 1.35; }
+.gap { border: 1px solid var(--line); border-left: 4px solid var(--mid); background: var(--mid-wash); padding: 12px 16px; display: flex; flex-direction: column; gap: 4px; }
+.gap.ok { border-left-color: var(--blue); background: var(--blue-wash); }
+.gap .k { font-family: var(--mono); font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--mid); }
+.gap.ok .k { color: var(--blue); }
+.gap strong { font-family: var(--sans); font-weight: 700; font-size: 19px; line-height: 1.3; }
+.also { font-size: 17px; color: var(--ink-soft); }
+.also li { margin-left: 20px; }
+
+/* Inputs */
+.q { display: flex; flex-direction: column; gap: 8px; padding-top: 12px; border-top: 1px solid var(--line); }
+.q:first-of-type { border-top: 0; padding-top: 0; }
+.q > .qt { font-family: var(--sans); font-weight: 700; font-size: 18px; line-height: 1.3; }
+.q > .qh { font-size: 16px; color: var(--muted); margin-top: -4px; }
+.seg { display: flex; flex-wrap: wrap; gap: 8px; }
+.seg button { appearance: none; cursor: pointer; min-height: 44px; padding: 8px 14px; border: 1.5px solid var(--line-strong); border-radius: 2px; background: var(--paper); color: var(--ink);
+  font-family: var(--sans); font-weight: 600; font-size: 16px; text-align: left; }
+.seg button:hover { border-color: var(--blue); }
+.seg button[aria-checked="true"] { border-color: var(--blue); background: var(--blue); color: #fff; }
+.counts { display: flex; flex-direction: column; }
+.count { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 6px 0; border-top: 1px solid var(--line); }
+.count:first-child { border-top: 0; }
+.count .nm { font-size: 18px; line-height: 1.3; min-width: 0; }
+.count .nm small { display: block; font-family: var(--mono); font-size: 13px; color: var(--muted); }
+.step { display: flex; align-items: center; flex: none; }
+.step button { width: 44px; height: 44px; border: 1.5px solid var(--line-strong); background: var(--paper-alt); color: var(--ink); font: 600 22px/1 var(--sans); cursor: pointer; }
+.step button:hover { border-color: var(--blue); color: var(--blue); }
+.step input { width: 64px; height: 44px; border: 1.5px solid var(--line-strong); border-left: 0; border-right: 0; text-align: center; font: 500 18px var(--mono); color: var(--ink); background: var(--paper); -moz-appearance: textfield; }
+.step input::-webkit-outer-spin-button, .step input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.total { font-family: var(--mono); font-size: 15px; color: var(--ink-soft); }
+details.more { border: 1px solid var(--line); padding: 0 14px; }
+details.more > summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; font-family: var(--sans); font-weight: 600; font-size: 16px; color: var(--blue); list-style: none; }
+details.more > summary::-webkit-details-marker { display: none; }
+details.more > summary::before { content: '+'; display: inline-block; width: 18px; font-family: var(--mono); }
+details.more[open] > summary::before { content: '–'; }
+details.more[open] { padding-bottom: 14px; }
+.field { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; align-items: center; padding: 8px 0; border-top: 1px solid var(--line); }
+.field label { font-size: 17px; line-height: 1.35; }
+.field input { width: 92px; min-height: 44px; font: 500 16px var(--mono); padding: 6px 8px; border: 1.5px solid var(--line-strong); border-radius: 2px; color: var(--ink); background: var(--paper); }
+.field .src { grid-column: 1 / -1; font-size: 15px; color: var(--muted); line-height: 1.4; }
+.field input.wide { width: 100%; }
+.field.text { grid-template-columns: 1fr; }
+.tag { display: inline-block; font-family: var(--mono); font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-soft); border: 1px solid var(--line-strong); padding: 1px 6px; margin-right: 6px; white-space: nowrap; vertical-align: 1px; }
+.tag.est { color: var(--mid); border-color: var(--mid); background: var(--mid-wash); }
+.tag.bls { color: var(--blue-dark); border-color: var(--blue); background: var(--blue-wash); }
+
+/* Plan detail */
+.phase { border-left: 3px solid var(--blue); padding: 2px 0 2px 14px; display: flex; flex-direction: column; gap: 6px; }
+.phase h3 { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.phase h3 span { font-family: var(--mono); font-weight: 500; font-size: 14px; color: var(--muted); }
+ul.pts { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+ul.pts li { position: relative; padding-left: 20px; font-size: 18px; line-height: 1.45; }
+ul.pts li::before { content: ''; position: absolute; left: 2px; top: 11px; width: 7px; height: 7px; background: var(--blue); }
+ul.pts li.warn::before { background: var(--mid); }
+.rows { display: flex; flex-direction: column; }
+.row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 8px 0; border-top: 1px solid var(--line); }
+.row:first-child { border-top: 0; }
+.row .l { font-size: 18px; min-width: 0; }
+.row .l small { display: block; font-size: 15px; color: var(--muted); }
+.row .r { font-family: var(--mono); font-size: 16px; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.row.sum { border-top: 2px solid var(--ink); font-weight: 600; }
+.wf { padding: 10px 0; border-top: 1px solid var(--line); }
+.wf:first-child { border-top: 0; }
+.wf h3 { font-size: 18px; margin-bottom: 4px; }
+.wf li { font-size: 17px; }
+.check { font-family: var(--mono); font-size: 14px; color: var(--blue-dark); }
+pre.rec { font: 14px/1.5 var(--mono); background: var(--paper-alt); border: 1px solid var(--line); padding: 10px 12px; overflow-x: auto; white-space: pre; }
+
+/* The offer: same treatment as the site's free-diagnostic block */
+.offer { position: relative; border: 1px solid var(--line); padding: clamp(20px, 5vw, 36px) clamp(16px, 4vw, 28px); background: linear-gradient(0deg, var(--blue-wash) 0%, var(--paper) 100%); overflow: hidden; display: flex; flex-direction: column; gap: 12px; }
+.offer::before { content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(var(--blue-grid) 1px, transparent 1px), linear-gradient(90deg, var(--blue-grid) 1px, transparent 1px);
+  background-size: 28px 28px; -webkit-mask-image: linear-gradient(0deg, #000, transparent); mask-image: linear-gradient(0deg, #000, transparent); }
+.offer > * { position: relative; }
+.offer h2 { font-weight: 800; font-size: clamp(24px, 5vw, 32px); line-height: 1.15; }
+.offer p { color: var(--ink-soft); }
+
+/* Method + sources */
+sup.fn { font-size: .62em; line-height: 0; margin-left: 1px; font-family: var(--mono); }
+sup.fn a { color: var(--blue); text-decoration: none; font-weight: 600; padding: 0 1px; }
+sup.fn + sup.fn::before { content: ','; color: var(--muted); }
+.sources ol { margin: 0 0 0 26px; display: flex; flex-direction: column; gap: 8px; font-size: 16px; line-height: 1.45; color: var(--ink-soft); }
+.sources li { overflow-wrap: anywhere; scroll-margin-top: 16px; }
+.sources li:target { background: var(--blue-wash); }
+.vtag { font-family: var(--mono); font-size: 12px; color: var(--mid); }
+
+/* Sticky summary: shows only while the plan summary is scrolled out of view */
+.sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: rgba(255,255,255,.97); border-top: 1px solid var(--line-strong); transform: translateY(110%); transition: transform .2s ease; }
+.sticky.on { transform: none; }
+.sticky .wrap { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 56px; }
+.sticky .s { font-family: var(--mono); font-size: 14px; color: var(--ink); line-height: 1.35; }
+.sticky .btn { min-height: 44px; padding: 8px 12px; font-size: 15px; }
+
+footer { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding: 18px 16px 80px; border-top: 1px solid var(--line); background: var(--paper-alt); font-family: var(--mono); font-size: 14px; color: var(--muted); }
+footer a { color: var(--muted); }
+@media (max-width: 520px) { .tiles { grid-template-columns: 1fr; } .step input { width: 54px; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media print {
+  .no-print, .sticky, .offer, footer, #inputs, .btn-row { display: none !important; }
+  body { font-size: 13pt; } .card { break-inside: avoid; border-color: #999; } .hero { background: none; } .hero::before { display: none; }
+  details.more { border: 0; padding: 0; } details.more > summary { display: none; }
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="label">Free tool &middot; no sign-up</div>
+    <h1>Team AI training plan</h1>
+    <p class="dek">For leaders of teams at firms of 40 to 500 people. Enter your teams and get a 90-day plan: who trains first, hours per person, the cost of staff time and your champions.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <noscript><section class="card"><p>This plan needs JavaScript. Turn it on and reload, or email <a href="mailto:hello@zavient.com">hello@zavient.com</a> with your team sizes.</p></section></noscript>
+
+  <p class="note" id="example-note"></p>
+
+  <!-- 1. The result, first -->
+  <section class="card lead" id="summary" aria-live="polite"></section>
+
+  <!-- 2. Your inputs -->
+  <section class="card" id="inputs">
+    <div class="eyebrow">Your team</div>
+    <h2>Change these and the plan updates</h2>
+    <div id="qs"></div>
+    <details class="more" id="assume">
+      <summary>Change our assumptions</summary>
+      <div id="assume-body"></div>
+    </details>
+    <div class="btn-row"><button class="btn btn-ghost" id="reset" type="button">Reset to the example</button></div>
+  </section>
+
+  <!-- 3. The detail -->
+  <div id="detail" style="display:flex;flex-direction:column;gap:18px"></div>
+
+  <section class="offer" id="diagnostic">
+    <div class="eyebrow">Free diagnostic</div>
+    <h2>Want the detailed plan behind your result? Book the free 30-minute diagnostic.</h2>
+    <div id="offer-body"><p>Bring this plan. In 30 minutes we settle the rollout order, which tasks each team trains on, and the checks that go with them.</p></div>
+    <p><a class="btn btn-primary" href="https://calendly.com/zavient/call" target="_blank" rel="noopener">Book the free diagnostic</a></p>
+    <p class="small">Or email <a href="mailto:hello@zavient.com">hello@zavient.com</a> with your team sizes and your top workflow.</p>
+  </section>
+
+  <details class="card more sources" id="method">
+    <summary>How the plan works</summary>
+    <ul class="pts" id="method-list"></ul>
+  </details>
+  <details class="card more sources" id="footnotes">
+    <summary>Sources</summary>
+    <p class="small">Each link checked 26 Nov 2026. [V] marks a vendor page or a vendor-paid study.</p>
+    <ol id="fn-list"></ol>
+  </details>
+</main>
+
+<div class="sticky" id="sticky" aria-hidden="true"><div class="wrap"><span class="s" id="sticky-s"></span><a class="btn btn-ghost" href="#summary">See plan</a></div></div>
+
+<footer>
+  <span>&copy; 2026 Zavient LLC &middot; AI that helps your team do more</span>
+  <span><a href="mailto:hello@zavient.com">hello@zavient.com</a></span>
+</footer>
+
+<script>
+/* =====================================================================
+   DATA. Every default has a source key; Zavient estimates are marked.
+   ===================================================================== */
+// BLS Employer Costs for Employee Compensation, private industry, June 2026, $ per hour worked (Table 4).
+// w = wages, b = all benefits, l = paid leave. Loading = 1 + (benefits - paid leave) / (wages + paid leave):
+// OEWS hourly wages are annual pay / 2,080 hours, so they already pay for leave; counting leave again would double it.
+const ECEC = {
+  all:    { w: 32.82, b: 14.07, l: 3.54, name: "all private industry" },
+  mbf:    { w: 59.85, b: 28.78, l: 8.47, name: "management, business and financial" },
+  sales:  { w: 26.99, b: 8.86,  l: 2.11, name: "sales and related" },
+  office: { w: 25.22, b: 11.51, l: 2.77, name: "office and administrative support" }
+};
+const load = g => 1 + (g.b - g.l) / (g.w + g.l);
+// BLS OEWS mean hourly wage, May 2025.
+const ROLES = [
+  { id: "ops",   name: "Operations and admin",   occ: "Office and administrative support occupations", wage: 24.79, grp: "office", wave: 1 },
+  { id: "cs",    name: "Customer service",       occ: "Customer service representatives",              wage: 22.40, grp: "office", wave: 1 },
+  { id: "sales", name: "Sales",                  occ: "Sales reps, wholesale and manufacturing, non-technical", wage: 39.68, grp: "sales", wave: 1 },
+  { id: "other", name: "Other teams", hint: "e.g. underwriting, projects, field teams", occ: "All occupations",                               wage: 33.54, grp: "all",    wave: 1 },
+  { id: "fin",   name: "Finance and accounting", occ: "Accountants and auditors",                      wage: 45.56, grp: "mbf",    wave: 2 },
+  { id: "hr",    name: "HR",                     occ: "Human resources specialists",                   wage: 39.42, grp: "mbf",    wave: 2 }
+];
+const MGR = { id: "mgr", name: "Managers and team leads", occ: "General and operations managers", wage: 64.87, grp: "mbf" };
+const defRate = r => Math.round(r.wage * load(ECEC[r.grp]) * 100) / 100;
+
+// Judgment defaults (Zavient estimates), checked against published benchmarks in the method notes.
+const ASSUME = {
+  basics:   { v: 3,   label: "Basics, every person (hours)", why: "Three modules: how AI works and fails (45 min), your rules (45 min), checking AI output hands-on (90 min). Short 30 to 90 minute modules follow the UK government's employer guide.[^ukgov]" },
+  workflow: { v: 4,   label: "Workflow practice, every person (hours)", why: "Prompting on your own work, two real workflows signed off by a person, and a show-and-tell. Hands-on practice on real work is what employers and researchers point to.[^tcb][^ukgov]" },
+  refresh:  { v: 0.5, label: "Refresh around day 75 (hours)", why: "New uses found and errors caught. Forrester's Microsoft studies also budget ongoing hours after the first training.[^forr] [V]" },
+  mgrAdd:   { v: 3,   label: "Extra for managers (hours)", why: "Reviewing AI-assisted work, picking tasks and naming where saved time goes, team measures. Only 8% of HR leaders think managers have the AI skills they need.[^gartner]" },
+  champAdd: { v: 16,  label: "Extra for each champion (hours)", why: "8 hours of champion training, then about 1 hour a week in days 31 to 90. Practitioners put the role at 30 to 60 minutes a week.[^lwai] Microsoft says champions should be formally trained.[^mslearn]" },
+  perChamp: { v: 40,  label: "People per champion", why: "At least one per team, and more for big teams. Published ratios run from 1 per 50 to 100 people[^techcomm] to 1 per 25 to 50 in regulated firms.[^epc] [V] Microsoft sets no fixed ratio.[^copcoach]" },
+  perChampReg: { v: 25, label: "People per champion with regulated data", why: "Denser cover where mistakes cost more, at the dense end of the regulated-firm range.[^epc] [V]" }
+};
+
+const OPTS = {
+  tool: [["copilot", "Microsoft Copilot"], ["chatgpt", "ChatGPT business plan"], ["gemini", "Gemini"], ["claude", "Claude"], ["other", "Another approved tool"], ["none", "No approved tool yet"], ["personal", "People use personal accounts"]],
+  comfort: ["Most have never used it", "Some try it now and then", "Most use it weekly", "We have power users"],
+  rules: ["Written and shared", "Informal", "None yet"],
+  yesno: ["Yes", "No"],
+  weekly: [0.5, 1, 2, 3]
+};
+
+// Workflows by team. Each ends with the person who checks. Zavient picks, shaped by published role examples.
+const WORKFLOWS = {
+  ops:   [["Meeting notes into an action list", "A person checks owners and dates"], ["A draft procedure from recorded steps", "The process owner approves"], ["Sort vendor email and draft replies", "The sender reviews before sending"]],
+  cs:    [["Draft replies from your help centre", "The agent edits and sends; nothing goes out unseen"], ["Summarise ticket history before a hand-off", "The agent confirms it"]],
+  sales: [["Account brief from public information", "The rep checks facts before the call"], ["Call notes into a CRM summary and follow-up email", "The rep reviews and sends"]],
+  other: [["First draft of a recurring report or email", "The owner checks every fact"], ["Summarise a long document into key points", "The reader checks against the source"]],
+  fin:   [["First draft of variance commentary", "The analyst checks every number against the ledger"], ["Explain reconciliation exceptions", "A reviewer signs off"]],
+  hr:    [["Job description drafts, with a check on wording", "The hiring manager approves"], ["Draft answers to policy questions", "HR confirms against the actual policy"]],
+  mgr:   [["First drafts of the team update and agendas", "The manager edits"]]
+};
+
+const SOURCES = {
+  bcgSlides: { t: "BCG, AI at Work 2025 slideshow (n=10,635), June 2025. Chart: regular use by hours of training.", u: "https://web-assets.bcg.com/fd/0d/bcc5dfae4cbaa08c718b95b16cf5/ai-at-work-2025-slideshow-june-2025-edit-02.pdf" },
+  bcg25:     { t: "BCG, AI at Work 2025: Momentum Builds, but Gaps Remain, 26 Jun 2025.", u: "https://www.bcg.com/publications/2025/ai-at-work-momentum-builds-but-gaps-remain" },
+  bcg25pr:   { t: "BCG press release, Companies Must Go Beyond AI Adoption, 26 Jun 2025.", u: "https://www.bcg.com/press/26june2025-beyond-ai-adoption-full-potential" },
+  bcg26:     { t: "BCG, AI at Work: Strategy Matters More Than Tools, 2 Jun 2026.", u: "https://www.bcg.com/publications/2026/ai-at-work-why-strategy-matters-more-than-tools" },
+  bcg26pr:   { t: "BCG press release, AI Is Reshaping Jobs Faster Than Companies Are Reshaping Work (n=11,749), 3 Jun 2026.", u: "https://www.bcg.com/press/3june2026-ai-reshaping-jobs-faster-than-companies-reshaping-work" },
+  forr:      { t: "Forrester Consulting for Microsoft, The Total Economic Impact of Microsoft 365 Copilot: 10 hours of formal training per new user. [V]", u: "https://tei.forrester.com/go/microsoft/M365Copilot" },
+  forrP:     { t: "Forrester Consulting for Microsoft, Projected Total Economic Impact of Copilot for Microsoft 365: 8 hours to start; 4 to 8 hours of trying it before people use it well. [V]", u: "https://tei.forrester.com/go/Microsoft/365Copilot/" },
+  jagged:    { t: "Dell'Acqua et al., Navigating the Jagged Technological Frontier, Organization Science, 11 Mar 2026 (758 consultants).", u: "https://pubsonline.informs.org/doi/10.1287/orsc.2025.21838", x: [["2023 working paper", "https://mitsloan.mit.edu/sites/default/files/2023-10/SSRN-id4573321.pdf"]] },
+  hbs:       { t: "Harvard Business School AI Institute, Back to the Beginnings of AI at Work, 9 Apr 2026.", u: "https://aiinstitute.hbs.edu/back-to-the-beginnings-of-ai-at-work" },
+  nber:      { t: "Brynjolfsson, Li and Raymond, Generative AI at Work, NBER Working Paper 31161 (5,179 support agents).", u: "https://www.nber.org/papers/w31161" },
+  gartner:   { t: "Gartner press release, Only 8% of HR Leaders Believe Their Managers Have the Skills to Effectively Use AI, 8 Oct 2025.", u: "https://www.gartner.com/en/newsroom/press-releases/2025-10-08-gartner-research-finds-only-8-percent-of-hr-leaders-believe-their-managers-have-the-skills-to-effectively-use-ai" },
+  wti24:     { t: "Microsoft and LinkedIn, 2024 Work Trend Index (n=31,000), 8 May 2024.", u: "https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part" },
+  ms11:      { t: "Microsoft WorkLab, AI Data Drop: The 11-by-11 Tipping Point, 19 Mar 2024.", u: "https://www.microsoft.com/en-us/worklab/ai-data-drop-the-11-by-11-tipping-point" },
+  tcb:       { t: "The Conference Board, Most Organizations Are Preparing Workers for Today's AI, 28 Jul 2026.", u: "https://www.conference-board.org/press/ai-skilling" },
+  ukgov:     { t: "UK Government, Employer guide: what works for AI upskilling in the UK, updated 27 Jul 2026.", u: "https://www.gov.uk/government/publications/skills-for-ai-what-works-for-ai-upskilling-in-the-uk/employer-guide-what-works-for-ai-upskilling-in-the-uk--2" },
+  indeed:    { t: "Indeed for Employers, How to Build an AI Upskilling Program: skill defined as \"Reviews AI outputs before applying them to work\".", u: "https://www.indeed.com/hire/c/info/build-ai-upskilling-program" },
+  mslearn:   { t: "Microsoft Learn, Create your champions program: champions should be formally trained.", u: "https://learn.microsoft.com/en-us/microsoftteams/teams-adoption-create-champions-program" },
+  lwai:      { t: "Lead with AI, AI Champion Programs: 30 to 60 minutes a week; every team should be able to reach a champion.", u: "https://www.leadwithai.co/guides/ai-champion-programs" },
+  epc:       { t: "EPC Group, Microsoft 365 Adoption and Change Management: 1 champion per 25 to 50 users in regulated firms. [V]", u: "https://www.epcgroup.net/blog/adoption-change-management-microsoft-365-program" },
+  techcomm:  { t: "Microsoft Tech Community forum, Rule of thumb for number of champions: 1 per 50 to 100 (practitioner answer).", u: "https://techcommunity.microsoft.com/discussions/drivingadoption/rule-of-thumb-for-number-of-champions/4190061" },
+  copcoach:  { t: "Copilot Coaching, How to Build a Copilot Champions Program: Microsoft gives no fixed ratio, 31 Oct 2026.", u: "https://www.copilot-coaching.de/en/guides/copilot-champions-program" },
+  ecqa:      { t: "European Commission, AI Literacy: Questions and Answers (no certificate; internal records; no duty to test staff).", u: "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers" },
+  art4:      { t: "EU AI Act Service Desk, Article 4: AI literacy (text as amended, 27 Jul 2026).", u: "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-4" },
+  omnibus:   { t: "EUR-Lex, Regulation (EU) 2026/1744 (Digital Omnibus on AI), 8 Jul 2026: new Article 4.", u: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj" },
+  annex3:    { t: "EUR-Lex, Regulation (EU) 2024/1689 (AI Act), Annex III point 4: AI for hiring, promotion, termination, task allocation and performance review is high-risk.", u: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj", x: [["Annex III, readable", "https://artificialintelligenceact.eu/annex/3/"]] },
+  ecec4:     { t: "US Bureau of Labor Statistics, Employer Costs for Employee Compensation, Table 4, private industry by occupational group, June 2026 (released 9 Sep 2026).", u: "https://www.bls.gov/news.release/ecec.t04.htm", x: [["News release", "https://www.bls.gov/news.release/ecec.htm"]] },
+  oews:      { t: "US Bureau of Labor Statistics, Occupational Employment and Wages, May 2025, Table 1 (released 15 May 2026).", u: "https://www.bls.gov/news.release/ocwage.t01.htm" },
+  teamshift: { t: "Teamshift, Customer service representative salary: the same loading method, leaving paid leave out.", u: "https://teamshift.io/guides/customer-service-representative-salary" }
+};
+
+const METHOD = [
+  "Hours per person = basics + workflow practice + refresh. Managers add 3 hours. Champions add 16. All are Zavient estimates you can change.",
+  "The default, 7.5 hours for staff and 10.5 for managers, sits in the band where BCG found 82% regular use (5 to 10 hours).[^bcgSlides] Forrester's Microsoft studies use 8 to 10 hours of formal training.[^forr][^forrP] [V]",
+  "If most people have never used AI, staff get 1 extra hour of first-use practice. Forrester's interviews found 4 to 8 hours of trying it before people use it well.[^forrP] [V] Power users skip half of the first module.",
+  "Champions = the larger of your number of teams and headcount divided by 40 (by 25 with regulated data), rounded up. Zavient estimate; no official ratio exists.[^copcoach]",
+  "Cost of time = hours x each team's loaded hourly rate. Rate = BLS mean hourly wage for a matching job (May 2025)[^oews] x a benefits loading of 1.23 to 1.31 from BLS employer costs (June 2026).[^ecec4] The loading leaves out paid leave, because the wage already pays for it.[^teamshift]",
+  "The 30/60/90 order follows the evidence: managers first,[^gartner][^bcg25] champions trained before roll-out,[^mslearn] high-volume teams before finance and HR,[^nber] and a person checks every output.[^jagged]",
+  "Your answers stay in your browser. We don't see them."
+];
+
+/* =====================================================================
+   STATE
+   ===================================================================== */
+const KEY = "zavient-training-plan-v1";
+const EXAMPLE = () => ({
+  counts: { ops: 30, cs: 30, sales: 20, other: 0, fin: 12, hr: 4, mgr: 14 },
+  tool: "copilot", comfort: 1, rules: 1, regulated: 1, weekly: 1, eu: 1,
+  a: Object.fromEntries(Object.entries(ASSUME).map(([k, x]) => [k, x.v])),
+  rates: {}, wf: {}, edited: false
+});
+let S = EXAMPLE();
+try { const s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s && s.counts) S = Object.assign(EXAMPLE(), s, { a: Object.assign(EXAMPLE().a, s.a || {}) }); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
+
+/* =====================================================================
+   HELPERS
+   ===================================================================== */
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const fnOrder = [];
+const fnNum = id => { let k = fnOrder.indexOf(id); if (k < 0) { fnOrder.push(id); k = fnOrder.length - 1; } return k + 1; };
+const rich = s => esc(s).replace(/\[\^(\w+)\]/g, (m, id) => SOURCES[id] ? `<sup class="fn"><a href="#fn-${fnNum(id)}" aria-label="Source ${fnNum(id)}">${fnNum(id)}</a></sup>` : "").replace(/\[V\]/g, '<span class="vtag">[V]</span>');
+const num = (x, d = 1) => { const r = Math.round(x * 10 ** d) / 10 ** d; return r.toLocaleString("en-US", { maximumFractionDigits: d }); };
+const hrs = x => num(x, 2).replace(/\.?0+$/, "") ;
+const about = x => x >= 200 ? Math.round(x / 10) * 10 : Math.round(x);
+const usd = x => "$" + Math.round(x).toLocaleString("en-US");
+const usd100 = x => "$" + (Math.round(x / 100) * 100).toLocaleString("en-US");
+const mins = h => Math.round(h * 60 / 5) * 5;
+const list = arr => arr.length <= 1 ? arr.join("") : arr.slice(0, -1).join(", ") + " and " + arr[arr.length - 1];
+const rateOf = r => (S.rates[r.id] > 0 ? +S.rates[r.id] : defRate(r));
+
+/* =====================================================================
+   THE MATH (also exported for the self-test: window.ZavientPlan)
+   ===================================================================== */
+function calc(st) {
+  const a = st.a, c = st.counts;
+  const adj = st.comfort === 0 ? 1 : st.comfort === 3 ? -0.25 : 0;
+  const basicsH = Math.max(0, a.basics + adj);
+  const staffH = basicsH + a.workflow + a.refresh;
+  const mgrH = staffH + a.mgrAdd;
+  const rate = r => (st.rates[r.id] > 0 ? +st.rates[r.id] : defRate(r));
+  const teams = ROLES.filter(r => (c[r.id] || 0) > 0).map(r => ({ ...r, n: c[r.id], rate: rate(r) }));
+  const staffN = teams.reduce((s, t) => s + t.n, 0);
+  const mgrN = c.mgr || 0;
+  const H = staffN + mgrN;
+  const per = st.regulated === 0 ? a.perChampReg : a.perChamp;
+  let champs = H === 0 ? 0 : Math.max(teams.length, Math.ceil(H / Math.max(1, per)));
+  if (staffN > 0) champs = Math.min(champs, staffN);
+  // Spread champions: one per team, the rest by team size (largest remainder).
+  teams.forEach(t => { t.ch = champs >= teams.length ? 1 : 0; });
+  let left = champs - teams.reduce((s, t) => s + t.ch, 0);
+  if (left > 0 && staffN > 0) {
+    const share = teams.map(t => ({ t, q: t.n / staffN * left }));
+    share.forEach(x => { const f = Math.floor(x.q); x.t.ch += f; left -= f; x.r = x.q - f; });
+    share.sort((x, y) => y.r - x.r || y.t.n - x.t.n).forEach(x => { if (left > 0) { x.t.ch++; left--; } });
+  }
+  teams.forEach(t => { t.hours = t.n * staffH + t.ch * a.champAdd; t.cost = t.hours * t.rate; t.chHours = t.ch * a.champAdd; });
+  const mgrRate = rate(MGR);
+  const mgr = { n: mgrN, hours: mgrN * mgrH, rate: mgrRate, cost: mgrN * mgrH * mgrRate };
+  const totalH = teams.reduce((s, t) => s + t.hours, 0) + mgr.hours;
+  const totalCost = teams.reduce((s, t) => s + t.cost, 0) + mgr.cost;
+  const champH = champs * a.champAdd;
+  const weeksStaff = staffH / st.weekly, weeksMgr = mgrH / st.weekly;
+  const weeksNeeded = Math.max(staffN ? weeksStaff : 0, mgrN ? weeksMgr : 0);
+  const overflow = weeksNeeded > 13;
+  return { basicsH, staffH, mgrH, teams, staffN, mgrN, H, per, champs, mgr, totalH, totalCost, champH,
+    perPerson: H ? totalH / H : 0, costPerPerson: H ? totalCost / H : 0,
+    minStaff: staffH / 12, minMgr: mgrH / 12, weeksNeeded, overflow,
+    stretchDays: Math.ceil(weeksNeeded * 7 / 30) * 30, payback: staffH * 60 / 11 };
+}
+window.ZavientPlan = { calc, EXAMPLE, ROLES, MGR, ECEC, load, defRate };
+
+/* =====================================================================
+   GAPS: the one gap that will stall this plan (first that applies)
+   ===================================================================== */
+function gaps(p) {
+  const g = [];
+  if (S.rules !== 0) g.push({ t: "Write a one-page AI use rule before week 2.", d: "It says which tools are approved, what never goes in, and who signs off. Until it is signed, people practise on public or made-up data. 54% of workers say they would use AI tools even without approval.[^bcg25pr]" });
+  if (S.tool === "none") g.push({ t: "Pick one approved tool by day 15.", d: "Without one, people find their own: 78% of AI users bring their own tools to work.[^wti24]" });
+  if (S.tool === "personal") g.push({ t: "People use personal accounts. Pick one approved tool by day 15.", d: "78% of AI users bring their own tools to work.[^wti24] Your data rules only hold inside a tool you approve." });
+  if (p.staffH < 5) g.push({ t: `Plan at least 5 hours per person, not ${hrs(p.staffH)}.`, d: "In BCG's survey of 10,635 workers, regular use was 63% with 1 to 5 hours of training and 82% with 5 to 10 hours.[^bcgSlides]" });
+  if (p.H > 0 && p.mgrN === 0) g.push({ t: "Add your managers and team leads. They train first.", d: "Only 8% of HR leaders think their managers have the AI skills they need.[^gartner] With strong leadership support, positive views of AI rise from 15% to 55%.[^bcg25]" });
+  if (p.overflow) g.push({ t: `At ${hrs(S.weekly)} hour${S.weekly === 1 ? "" : "s"} a week, this plan runs about ${Math.ceil(p.weeksNeeded)} weeks, past 90 days.`, d: `Add time each week, or stretch the plan to ${p.stretchDays} days. Microsoft found it takes about 11 weeks before most people say AI has changed how they work.[^ms11]` });
+  return g;
+}
+
+/* =====================================================================
+   RENDER
+   ===================================================================== */
+const $ = id => document.getElementById(id);
+const activeNames = (p, wave) => p.teams.filter(t => t.wave === wave).map(t => t.name.toLowerCase());
+
+function renderSummary(p, G) {
+  const top = G[0];
+  const lead = p.mgrN ? `Managers and ${p.champs} champion${p.champs === 1 ? "" : "s"} start first.` : `${p.champs} champion${p.champs === 1 ? "" : "s"} start first.`;
+  $("example-note").innerHTML = S.edited ? "This is your plan. Your answers stay in this browser." : "Showing an example: a 110-person firm. Change the numbers under <a href=\"#inputs\">Your team</a> and the plan updates.";
+  $("summary").innerHTML = p.H === 0 ? `<div class="eyebrow">Your plan</div><p class="bluf">Add the people on each team below to see your plan.</p>` : `
+    <div class="eyebrow">${S.edited ? "Your plan" : "Example plan"}</div>
+    <p class="bluf">${p.H.toLocaleString("en-US")} people, 90 days, about ${num(p.perPerson)} hours each. ${lead}</p>
+    <div class="tiles">
+      <div class="tile primary"><span class="num">${num(p.perPerson)} h</span><span class="lab">of training per person, on average</span></div>
+      <div class="tile"><span class="num">about ${about(p.totalH).toLocaleString("en-US")} h</span><span class="lab">moved from day-to-day work into learning this quarter</span></div>
+      <div class="tile"><span class="num">about ${usd100(p.totalCost)}</span><span class="lab">of staff time at US average pay plus benefits (${usd(p.costPerPerson)} a person)</span></div>
+      <div class="tile"><span class="num">${p.champs} champion${p.champs === 1 ? "" : "s"}</span><span class="lab">one in every team, about 1 hour a week after the first month</span></div>
+    </div>
+    <p class="muted">${p.staffN ? `Staff: about ${mins(p.minStaff)} minutes a week for 12 weeks.` : ""} ${p.mgrN ? `Managers: about ${mins(p.minMgr)} minutes a week.` : ""}</p>
+    ${top ? `<div class="gap"><span class="k">The one gap that will stall this plan</span><strong>${esc(top.t)}</strong><span>${rich(top.d)}</span></div>`
+          : `<div class="gap ok"><span class="k">No blocker found</span><strong>Now decide where the saved time goes.</strong><span>${rich("66% of frontline AI users get little or no guidance on what to do with the time they save.[^bcg26pr] Managers name it in month 3.")}</span></div>`}
+    ${G.length > 1 ? `<div class="also"><strong>Also fix:</strong><ul>${G.slice(1).map(x => `<li>${esc(x.t)}</li>`).join("")}</ul></div>` : ""}
+    <p class="muted">Next step: <a href="#diagnostic">book the free 30-minute diagnostic</a> to settle the rollout order and who checks what.</p>
+    <div class="btn-row"><a class="btn btn-primary" href="#inputs">${S.edited ? "Change your team" : "Enter your team"}</a><button class="btn btn-ghost" type="button" id="copy">Copy the plan</button><button class="btn btn-ghost" type="button" id="print">Print or save PDF</button></div>`;
+  $("sticky-s").textContent = p.H ? `${num(p.perPerson)} h each · ${p.champs} champions · about ${usd100(p.totalCost)}` : "";
+  const cp = $("copy"); if (cp) cp.onclick = () => copyText(planText(p, G), cp, "Copied");
+  const pr = $("print"); if (pr) pr.onclick = () => window.print();
+}
+
+function seg(name, opts, cur, toVal = (o, i) => i) {
+  return `<div class="seg" role="radiogroup">${opts.map((o, i) => { const v = toVal(o, i); const lab = Array.isArray(o) ? o[1] : String(o);
+    return `<button type="button" role="radio" aria-checked="${v === cur}" data-q="${name}" data-v="${esc(JSON.stringify(v))}">${esc(lab)}</button>`; }).join("")}</div>`;
+}
+function renderInputs() {
+  const all = [...ROLES, MGR];
+  const total = all.reduce((s, r) => s + (S.counts[r.id] || 0), 0);
+  $("qs").innerHTML = `
+    <div class="q"><div class="qt">How many people are on each team?</div><div class="qh">Count managers and team leads once, on the last line.</div>
+      <div class="counts">${all.map(r => `<div class="count"><label class="nm" for="c-${r.id}">${esc(r.name)}${r.hint ? `<small>${esc(r.hint)}</small>` : ""}</label>
+        <div class="step"><button type="button" data-step="${r.id}" data-d="-1" aria-label="One fewer in ${esc(r.name)}">&minus;</button><input id="c-${r.id}" type="number" inputmode="numeric" min="0" max="2000" value="${S.counts[r.id] || 0}" data-count="${r.id}"><button type="button" data-step="${r.id}" data-d="1" aria-label="One more in ${esc(r.name)}">+</button></div></div>`).join("")}</div>
+      <div class="total">Total: ${total.toLocaleString("en-US")} people${total && (total < 40 || total > 500) ? " · built for 40 to 500, but the math still works" : ""}</div></div>
+    <div class="q"><div class="qt">Which AI tool does the company provide?</div>${seg("tool", OPTS.tool, S.tool, o => o[0])}</div>
+    <div class="q"><div class="qt">How do most people use AI today?</div>${seg("comfort", OPTS.comfort, S.comfort)}</div>
+    <div class="q"><div class="qt">Do you have rules for what may go into an AI tool?</div>${seg("rules", OPTS.rules, S.rules)}</div>
+    <div class="q"><div class="qt">Do teams handle regulated or client-confidential data?</div><div class="qh">For example health, credit, payroll or client files.</div>${seg("regulated", OPTS.yesno, S.regulated)}</div>
+    <div class="q"><div class="qt">How many hours a week can each person give to training?</div>${seg("weekly", OPTS.weekly.map(h => [h, h === 0.5 ? "30 minutes" : h + (h === 1 ? " hour" : " hours")]), S.weekly, o => o[0])}</div>
+    <div class="q"><div class="qt">Do you have staff, customers or AI use in the EU?</div>${seg("eu", OPTS.yesno, S.eu)}</div>
+    <div class="q"><details class="more"><summary>Name each team's top workflow (optional)</summary>
+      ${ROLES.filter(r => S.counts[r.id] > 0).map(r => `<div class="field text"><label for="wf-${r.id}">${esc(r.name)}</label><input class="wide" id="wf-${r.id}" type="text" maxlength="80" placeholder="e.g. ${esc(WORKFLOWS[r.id][0][0])}" value="${esc(S.wf[r.id] || "")}" data-wf="${r.id}"></div>`).join("") || '<p class="muted">Add people to a team first.</p>'}
+    </details></div>`;
+}
+function renderAssume() {
+  const tagE = '<span class="tag est">Zavient estimate</span>';
+  const tagB = '<span class="tag bls">BLS national average</span>';
+  $("assume-body").innerHTML = `
+    <p class="muted" style="margin:8px 0">Hours and ratios are our judgment, checked against the studies linked. Wages are US averages; put in your own.</p>
+    ${Object.entries(ASSUME).map(([k, x]) => `<div class="field"><label for="a-${k}">${esc(x.label)}</label><input id="a-${k}" type="number" inputmode="decimal" min="0" step="${k.startsWith("per") ? 1 : 0.25}" value="${S.a[k]}" data-a="${k}"><div class="src">${tagE}${rich(x.why)}</div></div>`).join("")}
+    ${[...ROLES, MGR].map(r => `<div class="field"><label for="r-${r.id}">${esc(r.name)}: cost of an hour ($)</label><input id="r-${r.id}" type="number" inputmode="decimal" min="1" step="0.01" value="${rateOf(r).toFixed(2)}" data-rate="${r.id}"><div class="src">${tagB}${esc(r.occ)}: $${r.wage.toFixed(2)} mean wage (May 2025)[^oews] x ${load(ECEC[r.grp]).toFixed(2)} loading for ${ECEC[r.grp].name} jobs (June 2026, paid leave left out).[^ecec4]`.replace(/\[\^(\w+)\]/g, m => m) + `</div></div>`).join("").replace(/\[\^(\w+)\]/g, (m, id) => `<sup class="fn"><a href="#fn-${fnNum(id)}">${fnNum(id)}</a></sup>`)}`;
+}
+
+function renderDetail(p, G) {
+  if (p.H === 0) { $("detail").innerHTML = ""; return; }
+  const w1 = activeNames(p, 1), w2 = activeNames(p, 2);
+  const needRule = S.rules !== 0, needTool = S.tool === "none" || S.tool === "personal";
+  const toolName = (OPTS.tool.find(o => o[0] === S.tool) || [, ""])[1];
+  const firstUse = S.comfort === 0 ? ", plus a 1-hour first-use session" : S.comfort === 3 ? " (first module self-paced)" : "";
+  const chList = p.teams.filter(t => t.ch).map(t => `${t.name}: ${t.ch}`).join(" · ");
+
+  const phases = `
+  <section class="card"><div class="eyebrow">Your 30/60/90-day plan</div><h2>Who does what, in order</h2>
+    <div class="phase"><h3>Days 1 to 30 <span>set up and basics</span></h3><ul class="pts">
+      ${needRule ? `<li class="warn">Week 1 to 2: write the one-page AI use rule (approved tools, what never goes in, who signs off). Practice uses public or made-up data until it is signed.</li>` : ""}
+      ${needTool ? `<li class="warn">By day 15: pick one approved tool, so people stop using their own accounts.</li>` : `<li>Everyone practises in ${esc(toolName)}, the tool you approved.</li>`}
+      ${p.mgrN ? `<li>Managers (${p.mgrN}) go first: basics plus 3 hours on reviewing AI-assisted work, picking tasks and team measures. ${hrs(p.mgrH)} hours each.</li>` : ""}
+      <li>Name ${p.champs} champion${p.champs === 1 ? "" : "s"} by day 10, one from each team. They do the basics plus 8 hours of champion training.</li>
+      <li>All staff do the basics, ${hrs(p.basicsH)} hours${firstUse}: how AI works and where it fails, your rules, and checking AI output on real examples.</li>
+    </ul></div>
+    <div class="phase"><h3>Days 31 to 60 <span>workflows on real work</span></h3><ul class="pts">
+      ${w1.length ? `<li>${esc(list(w1)).replace(/^./, s => s.toUpperCase())} go first. Their work is high-volume and easy to check. ${rich("Newer support agents gained 34% with AI help.[^nber]")}</li>` : ""}
+      ${w2.length ? `<li>${esc(list(w2)).replace(/^./, s => s.toUpperCase())} follow ${needRule ? "once the data rule is signed" : "next"}${S.regulated === 0 ? ", with a champion on hand" : ""}.</li>` : ""}
+      <li>Each person spends ${hrs(S.a.workflow)} hours: prompting on their own work, two workflows done end to end with a person signing off, and a show-and-tell run by their champion.</li>
+    </ul></div>
+    <div class="phase"><h3>Days 61 to 90 <span>make it normal</span></h3><ul class="pts">
+      <li>Each team runs its 2 to 3 workflows by default, with a review checklist.</li>
+      <li>Around day 75: a ${mins(S.a.refresh)}-minute refresh on new uses found and errors caught.</li>
+      <li>Champions hold about 1 hour a week of office hours, from day 31 to day 90.</li>
+      <li>Managers name where the saved hours went: more client time, faster turnaround or backlog cleared. People stay in charge of the work.</li>
+    </ul></div>
+  </section>`;
+
+  const hoursCard = `
+  <section class="card"><div class="eyebrow">Hours per person</div><h2>${hrs(p.staffH)} hours for staff, ${hrs(p.mgrH)} for managers</h2>
+    <div class="rows">
+      <div class="row"><span class="l">Staff<small>basics ${hrs(p.basicsH)} + workflows ${hrs(S.a.workflow)} + refresh ${hrs(S.a.refresh)}</small></span><span class="r">${hrs(p.staffH)} h · ${mins(p.minStaff)} min/wk</span></div>
+      <div class="row"><span class="l">Managers<small>staff hours + ${hrs(S.a.mgrAdd)} manager hours</small></span><span class="r">${hrs(p.mgrH)} h · ${mins(p.minMgr)} min/wk</span></div>
+      <div class="row"><span class="l">Champions<small>their team's hours + ${hrs(S.a.champAdd)}</small></span><span class="r">${hrs(p.staffH + S.a.champAdd)} h</span></div>
+    </div>
+    <p class="muted"><span class="tag est">Zavient estimate</span>${rich("Inside BCG's 5 to 10 hour band, where 82% of workers used AI regularly, against 63% with 1 to 5 hours and 18% with none.[^bcgSlides] Change it under Change our assumptions.")}</p>
+  </section>`;
+
+  const champCard = `
+  <section class="card"><div class="eyebrow">Champions</div><h2>${p.champs} champion${p.champs === 1 ? "" : "s"}: ${esc(chList)}</h2>
+    <ul class="pts">
+      <li>Rule used: at least one per team, or one per ${p.per} people${S.regulated === 0 ? " because you handle regulated data" : ""}, whichever is more.</li>
+      <li>Pick people others already ask for help. Curiosity counts more than technical skill.</li>
+      <li>They run show-and-tells, hold office hours and flag risky use. They are not the help desk.</li>
+      <li>${rich("Plan about 1 hour a week from day 31. Practitioners put it at 30 to 60 minutes.[^lwai]")}</li>
+    </ul>
+    <p class="muted"><span class="tag est">Zavient estimate</span>${rich("Published ratios run from 1 per 25 to 50 people in regulated firms[^epc] [V] to 1 per 50 to 100.[^techcomm] We go denser because small firms have small teams.")}</p>
+  </section>`;
+
+  const costRows = p.teams.map(t => `<div class="row"><span class="l">${esc(t.name)} (${t.n}${t.ch ? `, ${t.ch} champion${t.ch === 1 ? "" : "s"}` : ""})<small>${hrs(t.hours)} h x $${t.rate.toFixed(2)}</small></span><span class="r">${usd(t.cost)}</span></div>`).join("")
+    + (p.mgrN ? `<div class="row"><span class="l">${MGR.name} (${p.mgrN})<small>${hrs(p.mgr.hours)} h x $${p.mgr.rate.toFixed(2)}</small></span><span class="r">${usd(p.mgr.cost)}</span></div>` : "")
+    + `<div class="row sum"><span class="l">Total: ${num(p.totalH, 0)} hours</span><span class="r">${usd(p.totalCost)}</span></div>`;
+  const costCard = `
+  <section class="card"><div class="eyebrow">Cost of staff time</div><h2>About ${usd100(p.totalCost)} of time moved into learning</h2>
+    <p class="muted">This is time people spend learning instead of on day-to-day work. It is not new spend. Course fees and tool seats are extra.</p>
+    <div class="rows">${costRows}</div>
+    <p class="muted"><span class="tag bls">BLS method</span>${rich("Each rate = the BLS mean wage for a matching job (May 2025)[^oews] x a benefits loading of 1.23 to 1.31 (June 2026),[^ecec4] leaving out paid leave so it isn't counted twice.[^teamshift]")}</p>
+    <p class="muted"><strong>Illustration, not a forecast:</strong> ${rich(`Microsoft found people feel the value once AI saves them about 11 minutes a day.[^ms11] At that rate a staff member's ${hrs(p.staffH)} hours come back in about ${Math.round(p.payback)} working days.`)}</p>
+  </section>`;
+
+  const wfCard = `
+  <section class="card"><div class="eyebrow">Workflows to practise</div><h2>Two or three per team, each with a named check</h2>
+    <p class="muted">${rich("AI makes people worse on tasks it can't do well: consultants using it on such a task were 19 percentage points less likely to be right.[^jagged][^hbs] So every workflow ends with a person who checks.[^indeed]")}</p>
+    ${[...p.teams, ...(p.mgrN ? [{ ...MGR, n: p.mgrN }] : [])].map(t => {
+      const items = [...(S.wf[t.id] ? [[S.wf[t.id], "A named owner checks before it is used"]] : []), ...WORKFLOWS[t.id]].slice(0, 3);
+      return `<div class="wf"><h3>${esc(t.name)}</h3><ul class="pts">${items.map(([w, c]) => `<li>${esc(w)}<br><span class="check">Who checks: ${esc(c)}</span></li>`).join("")}</ul>${t.id === "hr" ? `<p class="muted">${rich("This plan keeps AI out of hiring, promotion and performance decisions. The EU AI Act lists AI used for those decisions as high-risk.[^annex3]")}</p>` : ""}</div>`;
+    }).join("")}
+  </section>`;
+
+  const measures = `
+  <section class="card"><div class="eyebrow">How you'll know it works</div><h2>Six measures, checked monthly</h2>
+    <ul class="pts">
+      <li>${rich("Weekly use: the share of people using the approved tool at least weekly.[^bcg25]")}</li>
+      <li>Workflows in use: named workflows each team runs, aiming for 2 to 3.</li>
+      <li>${rich("Minutes saved per task, from a before-and-after sample. 11 minutes a day is where people feel it.[^ms11]")}</li>
+      <li>Errors caught in review, and how much rework comes back.</li>
+      <li>${rich("Where saved hours went, named by each manager.[^bcg26]")}</li>
+      <li>Training record: who did which module, and when.</li>
+    </ul>
+    <p class="muted">${rich("Skip a knowledge test. Use shows real change, and the EU AI Act sets no duty to test staff.[^ecqa]")}</p>
+  </section>`;
+
+  const modules = ["Basics: how AI works and where it fails", "Basics: our AI use rules", "Basics: checking AI output", "Workflow: prompting on your own work", "Workflow: two live workflows with sign-off", "Workflow: show-and-tell", "Refresh (around day 75)"];
+  const rec = "Name,Team,Role,Module,Date,Hours,Run by\n" + modules.map(m => `,,,${m},,,`).join("\n");
+  const euCard = S.eu === 0 ? `
+  <section class="card"><div class="eyebrow">EU AI Act, Article 4</div><h2>This plan supports your Article 4 record</h2>
+    <ul class="pts">
+      <li>${rich("Article 4 asks firms that use AI to take measures to support their staff's AI literacy.[^art4]")}</li>
+      <li>${rich("Since the July 2026 change, it sets no required level for any person.[^omnibus]")}</li>
+      <li>${rich("No certificate is needed. An internal record of training is enough.[^ecqa]")}</li>
+      <li>${rich("National authorities enforce it from 2 August 2026.[^ecqa]")}</li>
+    </ul>
+    <p class="muted">Keep one line per person per module. This is a record, not legal advice.</p>
+    <pre class="rec" id="rec">${esc(rec)}</pre>
+    <div class="btn-row"><button class="btn btn-ghost" type="button" id="copy-rec">Copy the record template</button></div>
+  </section>` : `<p class="muted">Staff, customers or AI use in the EU? Answer Yes above to add an Article 4 training record.</p>`;
+
+  $("detail").innerHTML = phases + hoursCard + champCard + costCard + wfCard + measures + euCard;
+  const cr = $("copy-rec"); if (cr) cr.onclick = () => copyText(rec, cr, "Copied");
+}
+
+// The next step, tied to this plan: champions, hours, the team where a wrong output costs most, and the open gap.
+function riskiest(p) {
+  const by = id => p.teams.find(t => t.id === id);
+  return by("hr") || by("fin") || p.teams.slice().sort((x, y) => y.n - x.n)[0];
+}
+function renderOffer(p, G) {
+  if (!p.H) return;
+  const r = riskiest(p);
+  const why = r && r.id === "hr" ? "AI must stay out of hiring and performance calls" : r && r.id === "fin" ? "every number needs a check" : "it is your biggest team";
+  const label = r ? (r.id === "hr" ? "HR" : r.name.toLowerCase()) : "your first team";
+  const toolName = (OPTS.tool.find(o => o[0] === S.tool) || [, ""])[1];
+  const toolLine = (S.tool === "none" || S.tool === "personal") ? "which one tool to approve and train on" : `which tasks to train on in ${toolName}`;
+  const items = [
+    `The rollout order, and how to bring ${esc(label)} in safely: ${why}.`,
+    `${toolLine.replace(/^./, c => c.toUpperCase())}, and the person who checks each workflow.`,
+    `Who your ${p.champs} champion${p.champs === 1 ? "" : "s"} should be, and what they cover each week.`,
+    S.eu === 0 ? "What goes in your Article 4 training record." : (G[0] ? `How to close your top gap: ${esc(G[0].t.replace(/\.$/, "").replace(/^./, c => c.toLowerCase()))}.` : "Where the saved hours should go, team by team.")
+  ];
+  $("offer-body").innerHTML = `<p>Your plan: ${p.H.toLocaleString("en-US")} people, ${p.champs} champion${p.champs === 1 ? "" : "s"} and about ${about(p.totalH).toLocaleString("en-US")} hours this quarter. In 30 minutes we settle:</p><ul class="pts">${items.map(x => `<li>${x}</li>`).join("")}</ul>`;
+}
+
+function planText(p, G) {
+  const L = [];
+  L.push(`TEAM AI TRAINING PLAN (Zavient)`);
+  L.push(`${p.H} people, 90 days, about ${num(p.perPerson)} hours each.`);
+  L.push(`Total: about ${about(p.totalH)} hours of staff time moved into learning, about ${usd100(p.totalCost)} at loaded BLS wages.`);
+  L.push(`Staff ${hrs(p.staffH)} h, managers ${hrs(p.mgrH)} h, champions +${hrs(S.a.champAdd)} h.`);
+  L.push(`Champions: ${p.champs} (${p.teams.filter(t => t.ch).map(t => `${t.name} ${t.ch}`).join(", ")}).`);
+  if (G.length) { L.push(""); L.push("Fix first:"); G.forEach(g => L.push(`- ${g.t}`)); }
+  L.push(""); L.push("Days 1-30: managers and champions first; everyone does the basics (" + hrs(p.basicsH) + " h).");
+  L.push("Days 31-60: " + list(activeNames(p, 1)) + (activeNames(p, 2).length ? ", then " + list(activeNames(p, 2)) : "") + ": two live workflows each, a person signs off.");
+  L.push("Days 61-90: workflows by default, refresh around day 75, managers name where saved hours went.");
+  L.push(""); L.push("Cost by team:");
+  p.teams.forEach(t => L.push(`- ${t.name}: ${hrs(t.hours)} h x $${t.rate.toFixed(2)} = ${usd(t.cost)}`));
+  if (p.mgrN) L.push(`- Managers: ${hrs(p.mgr.hours)} h x $${p.mgr.rate.toFixed(2)} = ${usd(p.mgr.cost)}`);
+  L.push(""); L.push("Hours and champion ratios are Zavient estimates. Rates: BLS OEWS May 2025 x BLS ECEC June 2026 loading, paid leave excluded.");
+  L.push("Made with the free tool at zavient.com/tools/ai-training-plan.html");
+  return L.join("\n");
+}
+function copyText(t, btn, done) {
+  const ok = () => { const old = btn.textContent; btn.textContent = done; setTimeout(() => btn.textContent = old, 1600); };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(ok, () => fallback());
+  else fallback();
+  function fallback() { const ta = document.createElement("textarea"); ta.value = t; document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); ok(); } catch (e) {} ta.remove(); }
+}
+
+function renderMethod() {
+  $("method-list").innerHTML = METHOD.map(m => `<li>${rich(m)}</li>`).join("");
+}
+function renderSources() {
+  $("fn-list").innerHTML = fnOrder.map((id, k) => {
+    const f = SOURCES[id];
+    const links = [[f.u.replace(/^https?:\/\//, "").split("/")[0], f.u], ...(f.x || [])].map(l => `<a href="${esc(l[1])}" target="_blank" rel="noopener">${esc(l[0])}</a>`).join(" · ");
+    return `<li id="fn-${k + 1}">${esc(f.t)} ${links}</li>`;
+  }).join("");
+}
+
+function render(full = true) {
+  const p = calc(S), G = gaps(p);
+  renderSummary(p, G);
+  renderDetail(p, G);
+  renderOffer(p, G);
+  if (full) { renderInputs(); renderAssume(); }
+  renderMethod();
+  renderSources();
+}
+
+/* =====================================================================
+   EVENTS
+   ===================================================================== */
+function touch(full) { S.edited = true; save(); render(full); }
+document.addEventListener("click", e => {
+  const b = e.target.closest("button");
+  if (!b) { const l = e.target.closest && e.target.closest('a[href^="#fn-"]'); if (l) $("footnotes").open = true; return; }
+  if (b.dataset.q) { S[b.dataset.q] = JSON.parse(b.dataset.v); touch(true); }
+  else if (b.dataset.step) { const id = b.dataset.step; S.counts[id] = Math.max(0, Math.min(2000, (S.counts[id] || 0) + +b.dataset.d)); touch(true); const f = document.querySelector(`[data-step="${id}"][data-d="${b.dataset.d}"]`); f && f.focus(); }
+});
+document.addEventListener("change", e => {
+  const t = e.target;
+  if (t.dataset.count) { S.counts[t.dataset.count] = Math.max(0, Math.min(2000, Math.round(+t.value || 0))); touch(true); }
+  else if (t.dataset.a) { const v = +t.value; if (v >= 0 && isFinite(v)) { S.a[t.dataset.a] = t.dataset.a.startsWith("per") ? Math.max(1, Math.round(v)) : v; } touch(true); $("assume").open = true; }
+  else if (t.dataset.rate) { const v = +t.value; const r = [...ROLES, MGR].find(x => x.id === t.dataset.rate); if (v > 0 && Math.abs(v - defRate(r)) > 0.004) S.rates[r.id] = v; else delete S.rates[r.id]; touch(true); $("assume").open = true; }
+  else if (t.dataset.wf) { S.wf[t.dataset.wf] = t.value.trim().slice(0, 80); touch(false); }
+});
+$("reset").onclick = () => { S = EXAMPLE(); save(); render(true); $("summary").scrollIntoView({ behavior: "smooth" }); };
+try {
+  const io = new IntersectionObserver(es => es.forEach(x => $("sticky").classList.toggle("on", !x.isIntersecting && x.boundingClientRect.top < 0)));
+  io.observe($("summary"));
+} catch (e) {}
+render(true);
+</script>
+</body>
+</html>
