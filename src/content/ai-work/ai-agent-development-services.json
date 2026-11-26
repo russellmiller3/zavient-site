@@ -1,0 +1,560 @@
+{
+ "title": "AI agent development services: what should you walk away with?",
+ "description": "What AI agent development services should leave you with, what agents cost to build and run, and how often they finish real business tasks.",
+ "type": "consulting",
+ "templateVersion": 1,
+ "topic": "AI agent development services",
+ "job": "AI agent development",
+ "industry": "any industry",
+ "index": false,
+ "verdict": [
+  "Start with one routine workflow and a draft-only agent. Many jobs sold as agentic need no agent at all.[^20][^29]",
+  "Agents now pass most short test tasks once, but far fewer when every repeat or long chat must succeed.[^9][^12]",
+  "A named person approves anything that commits money or reaches a customer. Government guidance says people set that rule.[^2][^4]",
+  "Expect vendor-published prices of roughly $15,000 to $80,000 to build a first agent with approval steps.[^53][^52]",
+  "Test it on 20 to 50 of your own past cases, each run several times, before go-live.[^32][^35]"
+ ],
+ "onPage": [],
+ "headings": {},
+ "summary": "AI agent development services build software in which an AI model picks its own next step and uses your systems to finish a task.[^1][^30] Typical jobs: order entry, supplier emails and ticket triage.[^38][^41] It works when a named person approves risky actions and tests use your real cases.[^2][^32]",
+ "walkAway": [
+  "A working agent on one workflow, plus a test set of 20 to 50 real past cases with a pass score agreed before the build.[^32][^33]",
+  "A written autonomy level for every action: draft only, ask first, or act alone. Gartner expects 40% of enterprises to pull back agents over governance gaps by 2027.[^22][^2]",
+  "A named approver for every step that commits money or reaches a customer, and a named person who can switch the agent off.[^4][^5]",
+  "A monthly run cost per task from published prices, plus one value measure. Rising costs and unclear value are two of Gartner's three reasons agent projects get cancelled.[^20][^39]",
+  "A full log of every action the agent took, kept in your systems, with the logins in your firm's name. In one security vendor's ledger of 59 agent incidents, recording every action might have helped in 90%.[^27][^6]"
+ ],
+ "humanRole": [
+  "The process owner, such as the customer service lead, sets which actions are draft-only, need approval or run alone. Government security agencies say people decide this, never the agent.[^4][^22]",
+  "The approver, such as an inside-sales rep, buyer or payables clerk, signs off every quote, order, payment or customer email. The agent drafts; your people decide.[^2][^6]",
+  "The systems owner, usually the IT or ops lead, gives the agent the narrowest access and reviews its action log. Too much access is a top-10 risk for AI applications.[^7][^5]",
+  "A named incident owner can pause or switch off the agent. The UK's cyber agency calls for named people to be responsible, and warns against relying on prompts alone.[^5][^22]"
+ ],
+ "recipes": [
+  {
+   "name": "1. Order entry from customer email (firms on Microsoft Business Central)",
+   "when": "Pick this when orders and quote requests arrive by email into Business Central, Microsoft's ERP (finance and operations system). Microsoft's Sales Order Agent drafts the quote; a person sends it.[^38]",
+   "flow": [
+    "Agent: read the email, find the customer and items, check stock",
+    "Agent: draft a quote",
+    "Customer service rep: review and send the quote",
+    "Customer service rep: approve the order once the customer confirms",
+    "Ops lead: review the action log each week"
+   ],
+   "cost": "Microsoft bills agents in credits, its usage units; its example of 100 email requests a month uses 1,650.[^39] That fits inside one Copilot Studio pack of 25,000 credits, $200 a month (vendor price, read 26 Nov 2026).[^42][^43]"
+  },
+  {
+   "name": "2. Supplier emails and purchase order changes (manufacturers and distributors)",
+   "when": "Pick this when buyers spend their day on supplier confirmations and date changes. Microsoft's Procurement Agent, in preview, sorts supplier emails and can hold its replies as drafts.[^41]",
+   "flow": [
+    "Agent: sort each supplier email as a confirmation or a change request",
+    "Agent: draft the reply and the proposed purchase order (PO) change",
+    "Buyer: approve any change to date, price or quantity",
+    "Purchasing lead: review exceptions and the action log each week"
+   ],
+   "cost": "On Dynamics 365 it bills in Copilot Studio credits.[^41][^43] Off Dynamics, one vendor guide puts a focused custom pilot at $15,000 to $40,000 over 4 to 8 weeks.[^53]"
+  },
+  {
+   "name": "3. Ticket triage and lookups, in risk tiers (support and customer service teams)",
+   "when": "Pick this when your team fields many order-status and account questions. Sort every action into automatic, approve-first or never, as in Singapore's published case.[^3]",
+   "flow": [
+    "Agent: tag, route and look up order or account status (automatic, audited every two weeks)",
+    "Agent: draft a reply or a credit",
+    "Support lead: approve the reply or credit",
+    "Ops lead: keep refunds above a limit, account deletions and contract terms off-limits to the agent"
+   ],
+   "cost": "Vendor guides put a single-workflow custom agent with approvals at $25,000 to $80,000 over 6 to 12 weeks.[^52] A vendor-run index of 122 firms found a $20,000 median for a production agent.[^50][^51]"
+  }
+ ],
+ "ownData": {
+  "title": "How often do AI agents finish realistic business tasks?",
+  "intro": "We read the published scores of eight agent benchmarks on 26 Nov 2026, from the papers and official leaderboards.[^9][^11][^14] Each tests realistic office, sales or support tasks in a made-up company. Scores are high on one try at short tasks, and fall on repeats, long chats and long jobs.[^12][^19]",
+  "headers": [
+   "Benchmark",
+   "What the tasks are",
+   "Best published success",
+   "When it gets harder"
+  ],
+  "rows": [
+   [
+    "tau-bench retail (Sierra, 2024)",
+    "Support chats that change orders under store policy[^9]",
+    "About 61% on one try, with the best model at publication[^9]",
+    "Under 25% when all eight tries must succeed[^9][^10]"
+   ],
+   [
+    "tau2-bench (Sierra leaderboard)",
+    "Retail, airline and phone-company support[^11]",
+    "87.9% for the top model[^11]",
+    "Repeated-try scores not published on the board[^11]"
+   ],
+   [
+    "tau3-Banking (Sierra leaderboard)",
+    "Banking support that needs knowledge lookups[^11]",
+    "55.2% for the top model; others 46.9% to 48.7%[^11]",
+    "Repeated-try scores not yet published[^11]"
+   ],
+   [
+    "CRMArena-Pro (Salesforce AI Research, 2025)",
+    "4,280 sales and service tasks in made-up Salesforce accounts[^12]",
+    "About 58% in a single exchange[^12]",
+    "About 35% in multi-turn chats; almost no care for confidential data[^12][^13]"
+   ],
+   [
+    "TheAgentCompany (Carnegie Mellon, 2025)",
+    "175 admin, HR, finance and project tasks[^14]",
+    "30.3% fully done in the paper; 42.9% top leaderboard score[^14][^15]",
+    "With partial credit, 39.3% in the paper[^14]"
+   ],
+   [
+    "WorkArena (ServiceNow, 2024)",
+    "33 ServiceNow tasks: forms, lists, catalog orders[^16]",
+    "42.7% (GPT-4o)[^16]",
+    "0% on list-filter tasks[^16]"
+   ],
+   [
+    "WorkArena++ (ServiceNow, 2024)",
+    "Multi-step knowledge work in ServiceNow[^17]",
+    "2.1%, against 93.9% for people[^17]",
+    "Older models; shows how hard chained steps were[^17]"
+   ],
+   [
+    "OSWorld 2.0 (2026)",
+    "108 long computer workflows; people take about 1.6 hours each[^18]",
+    "44.3% fully done now, up from 20.6% at release[^19][^18]",
+    "Under 10% for tasks over 137 minutes; 0% over 163 minutes[^19]"
+   ]
+  ],
+  "note": "Method: published primary scores only, read 26 Nov 2026; Zavient re-ran none. Boards use different models and test rigs, so rows don't compare directly, and older rows use older models. All use made-up firms and data, not yours, and scores move fast, so re-check before you rely on one.[^26]"
+ },
+ "watchOuts": [
+  "The agent invents a policy or price: a tribunal held Air Canada liable for its chatbot's made-up fare rule.[^8] Let the agent draft only from approved policy text, and a rep send.[^10]",
+  "Too much access: a coding agent with an over-broad token deleted a firm's live database and backups in April 2026.[^28] Give agents no delete rights and a separate test copy.[^7][^5]",
+  "Works in the demo, fails on repeats: one agent passed about 61% of retail tasks once, but under 25% across eight tries.[^9][^10] Run each test case several times and count only all-pass.[^32]",
+  "Guesses instead of asking: in 9 of 20 failures Salesforce examined, the agent never asked for missing information.[^13][^18] Send any case with a missing field to a person.",
+  "Approval fatigue: Gartner warns approvals degrade under time pressure.[^22] Ask a person only at the risky steps, and keep a full action log you own.[^27][^6]",
+  "Cost and value never pinned down: Gartner names both among the top reasons agent projects get cancelled.[^20][^21] Agree a cost per task and a pass score before the build."
+ ],
+ "howToTest": [
+  "Pick one workflow and write what \"done right\" means before anything is built.[^36]",
+  "Record today's numbers for two weeks: volume, minutes per item, error rate and cost per item.",
+  "Pull 20 to 50 real past cases, messy ones included.[^32]",
+  "Hide a third of them until the end, so nobody tunes the agent to the test.[^33]",
+  "Run each case three or more times, and count a pass only when every try passes. A 75% pass rate per try means about 42% for three in a row.[^32][^35]",
+  "Check the record in your system, not the agent's message. A refund counts only if it shows in your books.[^34]",
+  "Have the approver grade a sample by hand, to check any automatic grading.[^33]",
+  "Record cost and time per task next to quality.[^37][^35] Then price the lift: minutes saved x items a month x loaded cost per minute (pay plus benefits), minus run cost.",
+  "Go live in one team or site, draft-only.[^2] Let low-risk steps act alone only after they pass, with a named person making the go or no-go call.[^22][^5]"
+ ],
+ "faq": [
+  {
+   "q": "How much do AI agent development services cost?",
+   "a": "Vendor-published prices put a first single-workflow agent with approvals at roughly $15,000 to $80,000.[^53][^52] A vendor-run index of 122 firms found a $20,000 median for a production agent, and half of firms publish no price.[^50][^55]"
+  },
+  {
+   "q": "What does an agent cost to run each month?",
+   "a": "Often tens of dollars for one workflow. Our arithmetic: a 10-step task reading 30,000 tokens (chunks of text) and writing 3,000 costs about $0.09 at $2 and $10 per million.[^48][^49] So 1,000 tasks a month is about $90, before caching discounts."
+  },
+  {
+   "q": "When does a custom agent make sense versus tools we already have?",
+   "a": "Check your software's built-in agent first; Business Central, Dynamics 365, NetSuite, Salesforce, HubSpot and ServiceNow now ship them.[^38][^46][^47] Build custom when no built-in agent fits the job, or the job crosses several systems.[^54]"
+  },
+  {
+   "q": "Are AI agents for business practical at a firm our size?",
+   "a": "Yes, for routine, high-volume work with a person approving the risky steps.[^2][^56] Most firms are still early: in Deloitte's survey, 11% had agents in production and 38% were piloting.[^24]"
+  },
+  {
+   "q": "Will an AI agent take jobs from our team?",
+   "a": "That is not the design: the agent drafts and checks, and your people approve and handle exceptions.[^2][^4] Firms using agents mostly report productivity gains (66%) and faster decisions (55%), per PwC.[^25]"
+  },
+  {
+   "q": "How long does a first agent take to build?",
+   "a": "Vendor guides quote 4 to 8 weeks for a focused pilot, and 6 to 12 weeks for one integrated workflow with approvals.[^53][^52]"
+  }
+ ],
+ "pickElse": [
+  "You run Business Central, Dynamics 365, NetSuite, Salesforce, HubSpot or ServiceNow: trial the built-in agent first.[^40][^47] HubSpot charges $0.50 per resolved conversation; Agentforce about $0.10 per action (vendor prices).[^45][^44]",
+  "The steps never change: a fixed workflow in a tool like Power Automate, Zapier or Make is simpler and steadier. Agents finish fewer tasks than fixed workflows.[^29][^31]",
+  "Your data is scattered or locked away: fix access first. Data readiness is the top barrier leaders name for agents (58%).[^23]"
+ ],
+ "resources": [
+  {
+   "name": "Anthropic, Building effective agents",
+   "url": "https://www.anthropic.com/engineering/building-effective-agents",
+   "what": "Plain guide to when a fixed workflow beats an agent."
+  },
+  {
+   "name": "Anthropic, Demystifying evals for AI agents",
+   "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+   "what": "How to build a test set and why repeated tries matter."
+  },
+  {
+   "name": "Careful adoption of agentic AI services (Australia, US and partners)",
+   "url": "https://cyber.gov.au/publication/careful-adoption-of-agentic-ai-services",
+   "what": "Free government checklist of controls before an agent goes live."
+  },
+  {
+   "name": "OWASP AI Agent Security Cheat Sheet",
+   "url": "https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html",
+   "what": "Which actions need a person's approval, with example risk tiers."
+  },
+  {
+   "name": "IMDA Model AI Governance Framework for Agentic AI",
+   "url": "https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf",
+   "what": "Autonomy levels and human checkpoints, with a worked case."
+  }
+ ],
+ "stats": [
+  {
+   "num": "Over 40%",
+   "label": "Agentic AI projects Gartner expects to be cancelled by the end of 2027.[^20][^21]",
+   "source": "Gartner, Jun 2025"
+  },
+  {
+   "num": "11%",
+   "label": "Organisations with AI agents in production; 38% are piloting.[^24]",
+   "source": "Deloitte Tech Trends, 2026"
+  },
+  {
+   "num": "58%",
+   "label": "Large-firm leaders who name data readiness as the top barrier to agents.[^23]",
+   "source": "KPMG AI Pulse, Q2 2026"
+  },
+  {
+   "num": "44.3%",
+   "label": "Long computer workflows the best agent fully finishes; 0% of those over 163 minutes.[^19][^18]",
+   "source": "OSWorld 2.0 and Snorkel AI, Sep 2026"
+  },
+  {
+   "num": "$20,000",
+   "label": "Median published price for a production agent, middle half $10,000 to $32,000.[^50]",
+   "source": "Gigabit vendor-run price index, Oct 2026"
+  },
+  {
+   "num": "40%",
+   "label": "Enterprises Gartner expects to demote or switch off autonomous agents by 2027 over governance gaps.[^22]",
+   "source": "Gartner, May 2026"
+  }
+ ],
+ "sources": [
+  {
+   "name": "NIST Center for AI Standards and Innovation, request for information on AI agent security, Jan 2026",
+   "url": "https://www.regulations.gov/document/NIST-2025-0035-0001",
+   "what": "Defines AI agent systems as a generative AI model plus software that gives it tools to take discretionary actions, sometimes with little human oversight."
+  },
+  {
+   "name": "IMDA Singapore, Model AI Governance Framework for Agentic AI, Jan 2026, updated May 2026",
+   "url": "https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf",
+   "what": "Government framework. Calls for human checkpoints before high-stakes or irreversible actions, such as sending communications or making payments."
+  },
+  {
+   "name": "IMDA Singapore, factsheet on the updated agentic AI framework, 2026",
+   "url": "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/factsheets/2026/updated-model-ai-governance-framework-for-agentic-ai",
+   "what": "Case study: tier 1 actions run automatically with audits every two weeks, tier 2 need human approval, tier 3 are not allowed."
+  },
+  {
+   "name": "Australian Signals Directorate with CISA, NSA and partners, Careful adoption of agentic AI services, 30 Apr 2026",
+   "url": "https://cyber.gov.au/publication/careful-adoption-of-agentic-ai-services",
+   "what": "Joint government guidance: when human approval is needed is set by system designers or operators, not delegated to the agent; assign clear responsibility."
+  },
+  {
+   "name": "UK National Cyber Security Centre, Managing the cyber risk of agentic AI, 20 Aug 2026",
+   "url": "https://www.ncsc.gov.uk/blogs/managing-the-cyber-risk-of-agentic-ai",
+   "what": "Calls for named individuals or groups to be responsible for agents, and warns not to rely on prompting alone."
+  },
+  {
+   "name": "OWASP, AI Agent Security Cheat Sheet",
+   "url": "https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html",
+   "what": "Security standards body. Human approval for high-impact actions, with risk tiers such as send email (high) and transfer funds (critical)."
+  },
+  {
+   "name": "OWASP, Top 10 for LLM Applications 2025, LLM06 Excessive Agency",
+   "url": "https://genai.owasp.org/llmrisk/llm062025-excessive-agency/",
+   "what": "Lists too much functionality, permission or autonomy as a top-10 risk for AI applications."
+  },
+  {
+   "name": "BC Civil Resolution Tribunal, Moffatt v. Air Canada, 2024 BCCRT 149",
+   "url": "https://decisions.civilresolutionbc.ca/crt/crtd/en/item/525448/index.do",
+   "what": "Tribunal held the airline liable for a bereavement fare policy its website chatbot made up."
+  },
+  {
+   "name": "Yao et al., tau-bench, arXiv, Jun 2024 (ICLR 2025)",
+   "url": "https://arxiv.org/abs/2406.12045",
+   "what": "Customer-service benchmark under store policy. Best agent about 61% of retail tasks on one try, under 25% when all eight tries must pass."
+  },
+  {
+   "name": "Sierra, Benchmarking AI agents (tau-bench blog)",
+   "url": "https://sierra.ai/blog/benchmarking-ai-agents",
+   "what": "Benchmark maker's summary: agents struggle with consistency across repeated tries and with following policy."
+  },
+  {
+   "name": "tau-bench leaderboard (taubench.com), read 26 Nov 2026",
+   "url": "https://taubench.com/leaderboard/",
+   "what": "tau2-bench top score 87.9% on retail, airline and telecom support; tau3-Banking top score 55.2%, others 46.9% to 48.7%."
+  },
+  {
+   "name": "Salesforce AI Research, CRMArena-Pro, arXiv, May 2025",
+   "url": "https://arxiv.org/html/2505.18878",
+   "what": "4,280 tasks in made-up Salesforce orgs. About 58% single-turn success, about 35% in multi-turn chats, near-zero awareness of confidential data."
+  },
+  {
+   "name": "Salesforce, Why generic AI agents fall short",
+   "url": "https://www.salesforce.com/blog/why-generic-ai-agents-fall-short",
+   "what": "In 9 of 20 examined failures, the agent did not ask for information it needed."
+  },
+  {
+   "name": "Xu et al., TheAgentCompany, NeurIPS 2025 (Carnegie Mellon)",
+   "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/0d744742f6fac4d1134c019b7cef3c8a-Paper-Datasets_and_Benchmarks_Track.pdf",
+   "what": "175 office tasks across admin, HR, finance and project work. Best agent fully finished 30.3%, 39.3% with partial credit."
+  },
+  {
+   "name": "BenchLeader, TheAgentCompany leaderboard, read 26 Nov 2026",
+   "url": "https://www.benchleader.com/benchmarks/the_agent_company",
+   "what": "Top listed score 42.9% (entry dated 29 Sep 2025)."
+  },
+  {
+   "name": "Drouin et al., WorkArena, ICML 2024 (ServiceNow)",
+   "url": "https://arxiv.org/html/2403.07718v3",
+   "what": "33 ServiceNow tasks such as forms, lists and catalog orders. GPT-4o agent 42.7%; 0% on list-filter tasks."
+  },
+  {
+   "name": "Boisvert et al., WorkArena++, NeurIPS 2024 (ServiceNow)",
+   "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/0b82662b6c32e887bb252a74d8cb2d5e-Paper-Datasets_and_Benchmarks_Track.pdf",
+   "what": "Multi-step knowledge-work tasks: best agent 2.1% against 93.9% for people on a 98-task subset."
+  },
+  {
+   "name": "OSWorld 2.0, arXiv, Jul 2026",
+   "url": "https://arxiv.org/html/2606.29537",
+   "what": "108 long computer workflows, median human time about 1.6 hours. 20.6% fully done at release; agents guess instead of asking and skip checks."
+  },
+  {
+   "name": "Snorkel AI, OSWorld long-horizon evaluation, 16 Sep 2026",
+   "url": "https://snorkel.ai/osworld-2-1-long-horizon-computer-use-evaluation",
+   "what": "Top model now 44.3% fully done, 77.7% partial. No model above 10% on tasks over 137 minutes; 0% over 163 minutes."
+  },
+  {
+   "name": "Gartner press release, 25 Jun 2025",
+   "url": "https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027",
+   "what": "Over 40% of agentic AI projects will be cancelled by end-2027 on rising costs, unclear value or weak risk controls. Many use cases sold as agentic don't need agents."
+  },
+  {
+   "name": "Reuters, Over 40% of agentic AI projects will be scrapped by 2027, Gartner says, 25 Jun 2025",
+   "url": "https://www.reuters.com/business/over-40-agentic-ai-projects-will-be-scrapped-by-2027-gartner-says-2025-06-25",
+   "what": "Independent report of the Gartner forecast and its reasons."
+  },
+  {
+   "name": "Gartner press release, 26 May 2026",
+   "url": "https://www.gartner.com/en/newsroom/press-releases/2026-05-26-gartner-says-applying-uniform-governance-across-ai-agents-will-lead-to-enterprise-ai-agent-failure",
+   "what": "By 2027, 40% of enterprises will demote or decommission autonomous agents over governance gaps. Four autonomy levels; approvals degrade under time pressure or fatigue."
+  },
+  {
+   "name": "KPMG, AI Pulse survey, Q2 2026",
+   "url": "https://kpmg.com/kpmg-us/content/dam/kpmg/pdf/2026/aipulsesurvey-q2.pdf",
+   "what": "Top agent barriers: data readiness and access 58%, human oversight skills 43%, complexity 38%. Sample: large US firms."
+  },
+  {
+   "name": "Deloitte, Tech Trends 2026: agentic AI strategy",
+   "url": "https://www.deloitte.com/us/en/insights/topics/technology-management/tech-trends/2026/agentic-ai-strategy.html",
+   "what": "30% exploring agents, 38% piloting, 14% ready to deploy, 11% in production; 35% have no formal agent strategy."
+  },
+  {
+   "name": "PwC, AI Agent Survey, May 2025",
+   "url": "https://www.pwc.com/us/en/tech-effect/ai-analytics/ai-agent-survey.html",
+   "what": "308 US executives. Among adopters: 66% report productivity gains, 55% faster decisions, 54% better customer experience."
+  },
+  {
+   "name": "METR, Measuring AI ability to complete long tasks (time horizons), updated 8 Sep 2026",
+   "url": "https://metr.org/time-horizons/",
+   "what": "The length of task AI agents can finish half the time is doubling about every 110 days."
+  },
+  {
+   "name": "Manifold Security, Agent Incident Ledger, 27 Oct 2026 (security vendor)",
+   "url": "https://www.manifold.security/blog/introducing-agent-incident-ledger",
+   "what": "Vendor ledger of 59 agent incidents: unauthorised access in 44%; recording every action might have helped in 90%."
+  },
+  {
+   "name": "The Guardian, 29 Apr 2026",
+   "url": "https://www.theguardian.com/technology/2026/apr/29/claude-ai-deletes-firm-database",
+   "what": "News report: a coding agent with an over-scoped access token deleted a firm's production database and its backups."
+  },
+  {
+   "name": "Anthropic, Building effective agents, 19 Dec 2024",
+   "url": "https://www.anthropic.com/engineering/building-effective-agents",
+   "what": "Workflows follow set code paths; agents direct their own steps and tool use. Use the simplest solution and add agents only when needed."
+  },
+  {
+   "name": "OpenAI, A practical guide to building agents",
+   "url": "https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents",
+   "what": "Agents independently complete tasks on your behalf, built from a model, tools and instructions. Simple chatbots are not agents."
+  },
+  {
+   "name": "Anthropic Academy, Workflows vs agents",
+   "url": "https://academy.claude.com/courses/building-with-the-claude-api/workflows-vs-agents",
+   "what": "Agents have a lower task completion rate than fixed workflows; use workflows where possible."
+  },
+  {
+   "name": "Anthropic, Demystifying evals for AI agents, 9 Jan 2026",
+   "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+   "what": "20 to 50 tasks from real failures is a good start. A 75% per-try pass rate gives about 42% that all three tries pass."
+  },
+  {
+   "name": "OpenAI, Evaluation best practices",
+   "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+   "what": "Keep a held-out test set, log everything, check automatic graders against human review."
+  },
+  {
+   "name": "Microsoft, Evaluating AI agents with Microsoft Foundry, 16 Mar 2026",
+   "url": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/evaluating-ai-agents-a-practical-guide-with-microsoft-foundry/4500224",
+   "what": "Grade the system's end state, such as a refund actually issued, not what the agent said it did."
+  },
+  {
+   "name": "LangChain, Agent evaluation readiness checklist, 27 Mar 2026",
+   "url": "https://www.langchain.com/blog/agent-evaluation-readiness-checklist",
+   "what": "Run multiple trials, use pass or fail grading, and track cost per task."
+  },
+  {
+   "name": "Google Cloud, A methodical approach to agent evaluation, 18 Nov 2025",
+   "url": "https://cloud.google.com/blog/topics/developers-practitioners/a-methodical-approach-to-agent-evaluation",
+   "what": "Write success statements before building or testing."
+  },
+  {
+   "name": "Google Developers, Evaluating AI agents: moving past the vibe check, 15 Oct 2026",
+   "url": "https://developers.googleblog.com/en/evaluating-ai-agents-moving-past-the-vibe-check",
+   "what": "Track speed, tokens and cost per query alongside quality."
+  },
+  {
+   "name": "Microsoft Learn, Business Central Sales Order Agent, 2 Oct 2026",
+   "url": "https://learn.microsoft.com/en-us/dynamics365/business-central/sales-order-agent",
+   "what": "Agent reads order emails and drafts a quote; a user reviews its work, and the order is made only after the customer confirms."
+  },
+  {
+   "name": "Microsoft Learn, Business Central agent consumption billing, read 26 Nov 2026",
+   "url": "https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/tenant-admin-center-manage-consumption-billing",
+   "what": "Credits per agent step. Microsoft's example: 100 sales order requests a month use 1,650 credits. Payables Agent: 50 credits per invoice plus 5 per line."
+  },
+  {
+   "name": "Microsoft Learn, Business Central Payables Agent setup",
+   "url": "https://learn.microsoft.com/en-us/dynamics365/business-central/payables-agent-setup",
+   "what": "Payables Agent is free for the first 50 invoices."
+  },
+  {
+   "name": "Microsoft Learn, Dynamics 365 Procurement Agent for supplier communications, 10 Aug 2026",
+   "url": "https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/procurement-agent-supplier-com-overview",
+   "what": "In preview: sorts supplier emails as confirmations or change requests; follow-ups can be held as drafts for review. Billed in Copilot Studio credits."
+  },
+  {
+   "name": "Microsoft, Copilot Studio pricing, read 26 Nov 2026",
+   "url": "https://www.microsoft.com/en-us/copilot/pricing/copilot-studio",
+   "what": "Vendor price: $200 a month for 25,000 Copilot credits."
+  },
+  {
+   "name": "Microsoft Learn, Copilot Studio billing rates, read 26 Nov 2026",
+   "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management",
+   "what": "Vendor price: $200 per 25,000 credits a month; a generative answer uses 2 credits, an agent action 5."
+  },
+  {
+   "name": "Salesforce, Agentforce pricing, read 26 Nov 2026",
+   "url": "https://www.salesforce.com/agentforce/pricing/",
+   "what": "Vendor price: Flex Credits $500 per 100,000; an action is 20 credits (about $0.10). Vendor example: a two-action order-status request costs $0.20."
+  },
+  {
+   "name": "HubSpot, Customer Agent, read 26 Nov 2026",
+   "url": "https://www.hubspot.com/products/artificial-intelligence/ai-customer-service-agent",
+   "what": "Vendor price: $0.50 per resolved conversation, on Professional or Enterprise plans; 28-day trial."
+  },
+  {
+   "name": "Oracle NetSuite newsroom, 26 Oct 2026",
+   "url": "https://www.netsuite.com/portal/company/newsroom/netsuite-advances-vision-for-an-autonomous-suite.shtml",
+   "what": "Vendor news: SuiteAgents for some industries; agents run within configured permissions and approval requirements."
+  },
+  {
+   "name": "ServiceNow, AI-native SKU overview",
+   "url": "https://www.servicenow.com/docs/r/intelligent-experiences/ai-native-sku-overview.html?contentId=CD56sDU0DL0GoDZ9B9IVpw",
+   "what": "Out-of-the-box AI agents in Foundation and Advanced tiers since 9 Apr 2026; building new agents needs Prime. No public price."
+  },
+  {
+   "name": "Anthropic, Models overview, read 26 Nov 2026",
+   "url": "https://platform.claude.com/docs/en/models/overview",
+   "what": "Vendor price: mid-tier model $2 per million input tokens and $10 per million output tokens; batch 50% off; cache reads 5-10% of input price."
+  },
+  {
+   "name": "OpenAI, API pricing, read 26 Nov 2026",
+   "url": "https://developers.openai.com/api/docs/pricing",
+   "what": "Vendor price: mid-tier model $2 per million input tokens and $10 per million output tokens."
+  },
+  {
+   "name": "Gigabit, AI services price index, 22 Oct 2026, read 26 Nov 2026 (vendor-run index)",
+   "url": "https://gigabit.agency/research/ai-services-price-index/",
+   "what": "Vendor-run index of 122 firms: 50% publish no price. Median entry price for a production agent $20,000, middle half $10,000 to $32,000 (n=30)."
+  },
+  {
+   "name": "NerdHeadz, AI agent development cost, 25 Sep 2026, read 26 Nov 2026 (vendor guide)",
+   "url": "https://www.nerdheadz.com/blog/ai-agent-development-cost",
+   "what": "Vendor guide: median agent build $14,000 to $45,000 from 208 vendors' own prices."
+  },
+  {
+   "name": "MLChronix, AI agent development cost, 20 Oct 2026, read 26 Nov 2026 (vendor guide)",
+   "url": "https://www.mlchronix.com/guides/ai-agent-development-cost",
+   "what": "Vendor guide: single-workflow agent with integrations and approvals $25,000 to $80,000 over 6 to 12 weeks."
+  },
+  {
+   "name": "BrainX, AI agent development cost, 7 Oct 2026, read 26 Nov 2026 (vendor guide)",
+   "url": "https://brainxtech.com/blog/ai-agent-development-cost",
+   "what": "Vendor guide: focused pilot $15,000 to $40,000 over 4 to 8 weeks; integrated workflow with approval controls $40,000 to $100,000."
+  },
+  {
+   "name": "Reddit r/AI_Agents, When does a custom AI agent make sense vs existing tools?, May 2026",
+   "url": "https://www.reddit.com/r/AI_Agents/comments/1th55du/",
+   "what": "Buyer question on custom agents versus tools a firm already has. Forum post, used only as a source for the question."
+  },
+  {
+   "name": "Reddit r/AI_Agents, How much does it cost to hire AI agent developers?, Jun 2025",
+   "url": "https://www.reddit.com/r/AI_Agents/comments/1lbyaov/",
+   "what": "Buyer question on build cost. Forum post, used only as a source for the question."
+  },
+  {
+   "name": "Reddit r/smallbusiness, Has anyone actually used AI agents to automate real work?, Feb 2026",
+   "url": "https://www.reddit.com/r/smallbusiness/comments/1r6r9fg/",
+   "what": "Buyer question on whether agents work for smaller firms. Forum post, used only as a source for the question."
+  }
+ ],
+ "related": [
+  "ai-integration-services",
+  "ai-implementation-services",
+  "ai-automation-consulting",
+  "ai-governance-consulting"
+ ],
+ "offer": {
+  "heading": "Not sure which workflow an agent should take first?",
+  "body": "Free, before any paid work, and no sales pitch: 30 minutes on your first workflow. Bring one routine job and today's numbers. Leave knowing whether it needs an agent, who approves what, and what it would cost to run."
+ },
+ "keyword": {
+  "phrase": "ai agent development services",
+  "searches": 480,
+  "cpc": 75.71,
+  "difficulty": 0
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "As Dana: wanted the first workflow, who approves what, cost and timeline; all present. The Business Central run cost gave credits but not what you pay, so it now says 1,650 credits fit inside one $200 pack of 25,000. 'Tokens' was undefined in the run-cost answer; now glossed as chunks of text."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Read on a phone: the four-column benchmark table holds short cells and reads fine. 'Credits' was jargon in the first build; now defined as Microsoft's usage units. ERP and purchase order (PO) are spelled out at first use."
+  },
+  {
+   "reader": "GM",
+   "notes": "Asked whether one team or site can pilot first and who makes the go or no-go call. The last test step now says go live in one team or site, draft-only, with a named person deciding. Merged the cost-per-task and dollar-lift steps so the unit's margin math sits in one place."
+  },
+  {
+   "reader": "Division head",
+   "notes": "As the operations head who would hire the help: wanted to own what gets built. The log walk-away now says logins stay in the firm's name. Would like a neutral consulting fee range; none exists in the research, so build prices are vendor-published and labelled. Checked that large-firm surveys (KPMG, Deloitte) are labelled or used only as context."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Steve's worries: paying for slides, security, data, return. Walk-away now opens with a working agent on one workflow, not a plan. Security sits in the access and log watch-outs and the systems-owner role; data in the 'fix access first' alternative. Bottom line passes the 10-second test; no Zavient fee is shown."
+  }
+ ],
+ "updated": "2026-11-26"
+}

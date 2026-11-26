@@ -1,0 +1,886 @@
+{
+  "title": "Insurance claims automation: can AI speed claims and stay compliant?",
+  "description": "Insurance claims automation for P&C carriers, MGAs and TPAs: what AI takes on, what adjusters keep, state AI rules and claim deadlines.",
+  "type": "usecase",
+  "templateVersion": 1,
+  "topic": "AI claims processing",
+  "job": "insurance claims handling",
+  "industry": "P&C insurers, MGAs and TPAs",
+  "index": false,
+  "verdict": [
+    "AI takes the first pass: intake, documents, triage, fraud flags, reserve suggestions. Adjusters keep coverage, payment and the customer.[^1][^2]",
+    "Regulators apply the same unfair-claims rules to AI-assisted decisions. Texas expects a person to agree before acting.[^3][^4]",
+    "Nearly half of US P&C premium sits where the NAIC AI bulletin applies, by our count.[^5][^6]",
+    "No claims AI vendor we checked publishes a price. Start with intake on one line, tested on your closed claims.[^7][^8]",
+    "This page covers property and casualty (P&C) claims. Health claims follow different laws on medical necessity and AI.[^9][^10]"
+  ],
+  "onPage": [
+    {
+      "to": "human-role",
+      "text": "Who on your claims team keeps coverage, payment and denials"
+    },
+    {
+      "to": "own-data",
+      "text": "The 10 biggest P&C states: AI rule status and claim deadlines"
+    },
+    {
+      "to": "table-1",
+      "text": "Which kind of claims AI tool does which job, and what each costs"
+    },
+    {
+      "to": "recipes",
+      "text": "Three builds: small MGA, multi-client TPA, document-heavy lines"
+    },
+    {
+      "to": "rules",
+      "text": "The rules: NAIC bulletin, Texas, Florida, California, and health"
+    },
+    {
+      "to": "benchmark",
+      "text": "A closed-file test you can run before any contract"
+    },
+    {
+      "to": "faq",
+      "text": "Jobs, AI-only denials, TPAs and health claims: straight answers"
+    }
+  ],
+  "headings": {
+    "what-it-is": "What is insurance claims automation, and what does it change?",
+    "human-role": "Who on your claims team keeps the decision?",
+    "team-after": "What does your claims team do once AI takes the first pass?",
+    "example": "What does AI claims processing look like on one claim?",
+    "recipes": "Which way to build AI claims processing fits your firm?",
+    "something-else": "When should a claims team pick something else?"
+  },
+  "summary": "Insurance claims automation, or AI claims processing, gives software the first pass on a claim: reading the report, documents and photos, then flagging it.[^11][^12] Adjusters still decide coverage, reserves and payment.[^1] It works only if the file shows who decided what, inside each state's deadlines.[^4][^13]",
+  "humanRole": [
+    "Adjuster: decides coverage, sets the reserve, signs any denial and talks to the customer.[^1][^3] Texas expects a person to review and agree with any consequential AI decision before action.[^4]",
+    "Claims supervisor or examiner: approves payments within their authority and spot-checks AI-filled files.[^1] The insurer answers for every AI-supported decision, vendor tools included.[^11][^14]",
+    "Special investigations unit (SIU) investigator: works each fraud flag as a lead to investigate, not a finding.[^3] A homeowners' lawsuit alleges an insurer's claim-screening algorithms scrutinised Black policyholders more; that claim survived dismissal.[^15][^16]",
+    "Head of claims with the compliance lead: own the written AI program and the list of AI tools in use.[^11][^14] Both report to senior management, which answers to the board.[^11]"
+  ],
+  "teamAfter": [
+    "Adjusters spend freed time on investigation, coverage analysis and customers, a TPA's own survey reports.[^17] Analysts see the next value in the roughly 15% of claims that are complex.[^12]",
+    "Intake reps confirm AI-filled fields instead of keying them. One TPA says intake fell from 10 days to 36 hours (vendor claim).[^18]",
+    "Customers still get a person on hard claims: 77% prefer a human for complex or emotional claims (vendor survey).[^19]",
+    "Among US firms using AI, 66% use it only to help existing staff, and 2% report AI-related job cuts.[^20] In one labor study, 49% of carriers expect to add staff.[^21]"
+  ],
+  "example": {
+    "input": "Illustrative: a homeowners water-damage claim at a regional carrier, or a TPA handling it for an MGA. The file holds the first report of loss, 14 photos, the policy declarations and endorsements, a plumber's invoice and a mitigation estimate.",
+    "output": "AI fills the claim fields, flags the ones it is unsure of, quotes the water and mold clauses with page numbers, and tags it desk-adjustable. It drafts the acknowledgment letter and sets a deadline task: 7 days in Florida, 15 in Texas.[^22][^23] The adjuster confirms coverage, sets the reserve, calls the customer and approves payment; the tool never sends a denial.[^4]"
+  },
+  "tables": [
+    {
+      "title": "Which kind of claims AI tool does which job?",
+      "intro": "Tool types and example products, read 26 November 2026.[^7][^8] Figures marked as vendor claims are the seller's own. None of the vendors list a price, so budget from a quote on your claim volume.[^7][^24]",
+      "headers": [
+        "Tool type and examples",
+        "What it does",
+        "Price",
+        "Worth knowing"
+      ],
+      "rows": [
+        {
+          "name": "Core claims system with AI: Guidewire ClaimCenter, Duck Creek Claims, Five Sigma",
+          "cells": [
+            "Holds the file, reserves and payments, with AI for triage and data entry[^7]",
+            "Not published[^7]",
+            "Five Sigma claims 33% higher adjuster productivity (vendor claim)[^25]"
+          ]
+        },
+        {
+          "name": "First report and texting: Hi Marley, Ushur",
+          "cells": [
+            "Takes the first report of loss by text and runs claim conversations[^8]",
+            "Not published; private offer per user[^24]",
+            "Sold on AWS Marketplace[^24]"
+          ]
+        },
+        {
+          "name": "Photo estimating: CCC, Tractable, Snapsheet",
+          "cells": [
+            "Estimates damage from photos and spots likely total losses[^7]",
+            "Not published[^7]",
+            "CCC agreed to a $6.1B sale in Oct 2026. The deal is pending, with closing expected in Q1 2027.[^26]"
+          ]
+        },
+        {
+          "name": "Fraud scoring: Shift Technology, FRISS",
+          "cells": [
+            "Scores claims at first report and routes leads to SIU[^8]",
+            "Not published[^8]",
+            "Algorithmic claim screening is at issue in a pending homeowners' lawsuit (allegations)[^15]"
+          ]
+        },
+        {
+          "name": "Casualty and workers' comp triage: CLARA Analytics, Milliman IntelliScript",
+          "cells": [
+            "Flags claims likely to turn severe or go to litigation[^27]",
+            "Not published[^8]",
+            "A public-entity pool flagged 85% of severe comp claims within 10 days (vendor case study)[^27]"
+          ]
+        },
+        {
+          "name": "Document reading: Sprout.ai, Roots (Bevaya)",
+          "cells": [
+            "Reads medical records, invoices and police reports into claim fields[^28]",
+            "Not published[^8]",
+            "A comp carrier handles 87% of documents with no manual touch (vendor case study)[^28]"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "What do claims take today, before any AI?",
+      "intro": "Public baselines to set beside your own numbers.[^6][^29] Use them to see whether your cycle times and adjusting cost sit high or low.",
+      "headers": [
+        "Measure",
+        "Figure",
+        "Who measured it"
+      ],
+      "rows": [
+        {
+          "name": "US P&C loss adjustment expense, 2025",
+          "cells": [
+            "$86.0 billion, up from $85.7 billion[^6]",
+            "State regulators (NAIC)"
+          ]
+        },
+        {
+          "name": "Adjusting cost per premium dollar",
+          "cells": [
+            "About 9 cents: 9.0% of earned premium in 2025, our arithmetic; 9.35% in 2024[^6][^30]",
+            "NAIC; US Treasury"
+          ]
+        },
+        {
+          "name": "Auto repair, keys to keys",
+          "cells": [
+            "15.3 days, 10 days shorter than Q1 2024[^29]",
+            "J.D. Power, 8,261 claimants"
+          ]
+        },
+        {
+          "name": "Auto claims that are total losses",
+          "cells": [
+            "26%, up from 16% four years earlier[^29]",
+            "J.D. Power"
+          ]
+        },
+        {
+          "name": "Home claims, first report to final payment",
+          "cells": [
+            "40.7 days[^31]",
+            "J.D. Power, 5,093 claimants"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "What do published results show, and who measured them?",
+      "intro": "Most published claims AI results come from vendors.[^27][^28] The regulator survey is the only independent count here, so read the rest as upper bounds.[^2]",
+      "headers": [
+        "Study or case",
+        "Result",
+        "Type"
+      ],
+      "rows": [
+        {
+          "name": "Regulators' auto insurer survey (193 insurers, 2022)",
+          "cells": [
+            "96 used AI to inform adjusters, 9 for approvals, 0 for denials[^2]",
+            "Regulator survey"
+          ]
+        },
+        {
+          "name": "Nordic insurer, claim documents",
+          "cells": [
+            "70% of documents read correctly, so people still handled 30%[^32]",
+            "Published case"
+          ]
+        },
+        {
+          "name": "Aviva, complex liability claims",
+          "cells": [
+            "Assessed 23 days faster; complaints down 65%[^33]",
+            "Published case"
+          ]
+        },
+        {
+          "name": "Claim summaries, 263 insurance executives",
+          "cells": [
+            "35-45% of time saved on complex claims[^34]",
+            "Industry survey"
+          ]
+        },
+        {
+          "name": "Specialty carrier, document intake",
+          "cells": [
+            "80% less manual data entry[^35]",
+            "Vendor case study"
+          ]
+        }
+      ]
+    }
+  ],
+  "recipes": [
+    {
+      "name": "1. Small claims team (MGA or small carrier): AI at intake and documents",
+      "when": "Teams on an existing claims system who want fewer re-keyed fields and on-time acknowledgments. A review site lists Snapsheet, Hi Marley and Ushur as fits under 5,000 claims a month.[^8]",
+      "flow": [
+        "Intake rep: confirm the fields AI filled from the first report",
+        "Desk adjuster: check the AI coverage summary against the policy, then set the reserve",
+        "Desk adjuster: send the acknowledgment letter AI drafted, inside the state deadline",
+        "Claims supervisor: spot-check 10% of AI-filled files each week",
+        "Compliance lead: add the tool to the AI inventory the bulletin asks for"
+      ],
+      "cost": "Not published; vendors quote by claim volume or users, so ask for a price on your volume.[^24][^8] Size it against your adjusting cost, about 9 cents per premium dollar across US P&C.[^6][^30]"
+    },
+    {
+      "name": "2. Multi-client TPA or mid-size carrier: triage plus deadline tracking",
+      "when": "TPAs handling claims for several carriers or self-insured clients across states, each with its own service levels. Carriers will ask about your AI, since the bulletin makes them answer for outside tools.[^11]",
+      "flow": [
+        "Claims ops lead: have the tool score each new claim for complexity and litigation risk",
+        "Claims ops lead: have the tool open a state-deadline task on every new claim",
+        "Claims supervisor: assign claims by score",
+        "Adjuster: decide coverage and set the reserve",
+        "SIU investigator: work the ranked fraud referrals and record which proved out",
+        "Client service lead: report deadline compliance per client each month"
+      ],
+      "cost": "Not published; triage tools are licensed by claim volume or line.[^8] Late-reported claims carry about ten times the litigation risk (TPA survey), which is where triage pays.[^17]"
+    },
+    {
+      "name": "3. Document-heavy lines (workers' comp, casualty, bodily injury): summaries with citations",
+      "when": "Teams buried in medical records, legal demands and invoices. In a survey of 263 insurance executives, claim summaries saved 35-45% of time on complex claims.[^34]",
+      "flow": [
+        "Claims ops lead: route medical records, demands and invoices to the reading tool",
+        "Adjuster or nurse case manager: check each fact against the page the summary cites",
+        "Claims supervisor: approve any reserve change",
+        "Adjuster: send the checked summary to defense counsel"
+      ],
+      "cost": "Not published; document tools price by volume and lines.[^8] Budget review time too: a Nordic insurer's tool read 70% of documents correctly.[^32]"
+    }
+  ],
+  "ownData": {
+    "title": "The 10 biggest P&C states: AI bulletin status and claim deadlines",
+    "intro": "We ranked states by 2025 P&C direct premium (NAIC), then read each AI rule status on the NAIC map of 13 Nov 2026.[^6][^5] Six of the ten adopted the NAIC AI bulletin, two run their own rules and two have neither.[^5] Texas alone lifted the adopted share of US premium from 37.1% to 46.6%.[^5][^36]",
+    "headers": [
+      "State",
+      "2025 premium",
+      "AI bulletin",
+      "Acknowledge",
+      "Decide or pay"
+    ],
+    "rows": [
+      [
+        "California",
+        "$133.9B (12.1%)[^6]",
+        "Own rules: Bulletin 2022-5[^5]",
+        "15 calendar days[^37]",
+        "Accept or deny within 40 days of proof; pay within 30 days of accepting[^38]"
+      ],
+      [
+        "Texas",
+        "$105.2B (9.5%)[^6]",
+        "Adopted: B-0003-26, Jun 2026; expects human review[^4][^5]",
+        "15 days[^23]",
+        "15 business days after all items (45 more with notice); pay within 5 business days[^23]"
+      ],
+      [
+        "Florida",
+        "$94.4B (8.5%)[^6]",
+        "Not adopted; AI-denial bills died Mar 2026[^5][^39]",
+        "7 calendar days[^22]",
+        "Pay or deny residential property claims within 60 days of notice[^22]"
+      ],
+      [
+        "New York",
+        "$72.3B (6.5%)[^6]",
+        "Own rules: DFS Circular Letter 7, Jul 2024[^5][^40]",
+        "15 business days[^41]",
+        "Accept or deny within 15 business days of proof of loss[^42]"
+      ],
+      [
+        "Illinois",
+        "$40.6B (3.7%)[^6]",
+        "Adopted: Bulletin 2024-08, Mar 2024[^14]",
+        "15 working days[^43]",
+        "Pay within 30 days of affirming liability; written delay notice by day 75[^43]"
+      ],
+      [
+        "Georgia",
+        "$37.7B (3.4%)[^6]",
+        "Not adopted[^5]",
+        "15 days[^44]",
+        "Motor vehicle: 15 days after proof of loss. Fire: 60 days, then pay within 10[^44]"
+      ],
+      [
+        "Pennsylvania",
+        "$36.7B (3.3%)[^6]",
+        "Adopted: Notice 2024-04, Apr 2024[^5]",
+        "10 working days[^45]",
+        "Accept or deny within 15 working days of proofs of loss[^45]"
+      ],
+      [
+        "New Jersey",
+        "$34.2B (3.1%)[^6]",
+        "Adopted: Bulletin 25-03, Feb 2025[^5]",
+        "10 working days[^46]",
+        "Pay first-party claims within 30 calendar days of proof of loss[^46]"
+      ],
+      [
+        "Michigan",
+        "$28.4B (2.6%)[^6]",
+        "Adopted: Bulletin 2024-20-INS, Aug 2024[^5]",
+        "30 days to say what proof of loss is needed[^47]",
+        "Timely if paid within 60 days of proof of loss; after that, 12% interest[^47]"
+      ],
+      [
+        "North Carolina",
+        "$28.1B (2.5%)[^6]",
+        "Adopted: Bulletin 24-B-19, Dec 2024[^5]",
+        "30 days[^67]",
+        "No fixed day count; must affirm or deny within a reasonable time after proof of loss[^48]"
+      ],
+      [
+        "All US",
+        "$1,105.3B; the top 10 write 55.3%[^6]",
+        "Adopted: 46.6%; own rules (CA, CO, NY): 20.8%; neither: about 32%[^5][^6]",
+        "7 calendar days (FL) to 15 business days (NY)",
+        "15 business or working days (TX, NY, PA) to 60 days (FL, MI)"
+      ]
+    ],
+    "note": "Zavient check, 26 Nov 2026, from the NAIC state premium table (Arizona split from Arkansas by hand) and each state's rule text.[^6] The NAIC map dated 13 Nov 2026 counts 30 jurisdictions; trackers reading other versions count 29.[^5][^49][^36] Deadlines show the main first-party rule only; Georgia mixes motor and fire rules, and none of this is legal advice."
+  },
+  "rules": [
+    {
+      "name": "NAIC Model Bulletin: Use of AI Systems by Insurers",
+      "url": "https://content.naic.org/sites/default/files/2023-12-4%20Model%20Bulletin_Adopted_0.pdf",
+      "status": "Adopted in 30 jurisdictions (NAIC map, 13 Nov 2026)",
+      "what": "It names claim administration, payment and fraud detection as covered uses.[^11] Decisions must not be inaccurate, arbitrary, capricious or unfairly discriminatory.[^11][^50] You answer for vendor AI, so keep it in your written AI program.[^11]"
+    },
+    {
+      "name": "NAIC Unfair Claims Settlement Practices Act (Model 900)",
+      "url": "https://content.naic.org/sites/default/files/model-law-900.pdf",
+      "status": "Model law; states adopted their own versions (NAIC chart MC-50)",
+      "what": "It bars refusing to pay without a reasonable investigation, and failing to explain a denial.[^3][^51] A rule built into software runs on every claim, so one bad rule can become a general business practice.[^3][^52]"
+    },
+    {
+      "name": "NAIC Unfair P&C Claims Settlement Practices Model Regulation (Model 902)",
+      "url": "https://content.naic.org/sites/default/files/model-law-902.pdf",
+      "status": "Model regulation; state versions vary",
+      "what": "The model clock: acknowledge in 15 days, accept or deny within 21 days of proof of loss, pay within 30.[^13] Your state's own rule governs; see our table above.[^51]"
+    },
+    {
+      "name": "Texas Commissioner's Bulletin B-0003-26",
+      "url": "https://www.tdi.texas.gov/bulletins/2026/B-0003-26.html",
+      "status": "Issued 12 Jun 2026",
+      "what": "TDI expects a person to review and agree with every consequential AI decision before action.[^4] It ties AI use to the Chapter 542 prompt-payment deadlines.[^4][^23]"
+    },
+    {
+      "name": "Florida HB 527 and SB 202 (2026)",
+      "url": "https://www.flsenate.gov/Session/Bill/2026/527/Analyses/h0527a.IBS.PDF",
+      "status": "Died 13 Mar 2026",
+      "what": "They would have required a qualified human professional to review AI output and be named on any claim denial.[^39][^53] HB 527 passed the House 108-0 before it died, so the idea may return.[^39]"
+    },
+    {
+      "name": "California fair claims rules (10 CCR 2695) and Bulletin 2022-5",
+      "url": "https://govt.westlaw.com/calregs/Document/IE642F9A05C2F11EC9C68000D3A7C4BC3",
+      "status": "In force",
+      "what": "California issues its own AI guidance instead of the NAIC bulletin.[^5] Its 2026 exam of one insurer's wildfire claims found 398 violations in 114 of 220 sampled files, many on missed deadlines.[^54]"
+    },
+    {
+      "name": "NAIC AI Risk Evaluation Supplement",
+      "url": "https://content.naic.org/sites/default/files/national_meeting/slides-bdaiwg20261116.pdf",
+      "status": "Piloted by 12 states Mar-Sep 2026; version 7.0 up for adoption Nov 2026",
+      "what": "Examiners will use it to ask which AI you use, how you govern it and which systems are high-risk.[^55][^56] P&C insurers made up 55% of the pilot survey responses.[^56]"
+    },
+    {
+      "name": "Health claims: Medicare Advantage rule and state laws",
+      "url": "https://www.kff.org/patient-consumer-protections/regulation-of-ai-in-prior-authorization-and-claims-review-a-look-at-federal-and-state-consumer-protections",
+      "status": "Health only; in force",
+      "what": "Medicare Advantage decisions must rest on the patient's own circumstances, though an algorithm may assist.[^10][^57] California bars AI as the sole basis for medical-necessity denials.[^58][^9] None of this binds P&C claims.[^59]"
+    }
+  ],
+  "howToTest": [
+    "Pick one line or office and pull 200 to 500 of its closed claims from the last 12 months, split by state and outcome. Examiners sample closed files the same way; California's 2026 exam sampled 220.[^54]",
+    "Record today's numbers on those files: days to acknowledge, decide and pay, the share inside each state's deadline, reopens and complaints.[^23][^37]",
+    "Run the tool in shadow mode on the same files. It fills fields, scores triage and fraud and suggests reserves, but changes nothing.",
+    "Score document reading field by field against what the adjuster recorded, counting wrong fields as well as missing ones. Published rates run from 70% read correctly to 87% handled with no manual touch.[^32][^28]",
+    "Compare flags with what happened: how many fraud flags SIU would have opened and proved, and how many simple files went to litigation. Late reporting carries about ten times the litigation risk (TPA survey).[^17]",
+    "Compare reserve suggestions with the adjuster's reserve and with what the claim finally cost, at 30 and 90 days.",
+    "Check for unfair discrimination: compare flag rates and days to payment across ZIP codes and other proxies for protected groups.[^11][^60]",
+    "Price the lift in dollars: hours saved times loaded adjuster cost, plus late-payment interest avoided, such as Michigan's 12%.[^47][^1] Set it against your adjusting cost baseline.[^6]",
+    "Write the decision rule before go-live: which outputs a person confirms, who signs off and what the file shows. Texas expects that sign-off, and examiners will ask for the record.[^4][^55]"
+  ],
+  "watchOuts": [
+    "Biased fraud and routing scores. A homeowners' lawsuit alleges an insurer's tools gave Black policyholders' claims more scrutiny; test flag rates by area before go-live and each quarter.[^15][^60]",
+    "One bad rule, repeated on every claim, can become a general business practice under unfair-claims law.[^3][^52] Have compliance review each automated rule before it runs.",
+    "Missed state deadlines. California's 2026 wildfire-claims exam cited missed 15-, 40- and 30-day clocks; have the tool open a deadline task on day one.[^54][^37]",
+    "Adjusters fixing the AI instead of being helped by it: one adjuster describes 15 to 20 minutes correcting AI mistakes.[^21][^19] Show the source page for every fact the tool pulls, and track rework time.",
+    "Vendor black boxes: you answer for vendor AI, and in a health case a court ordered an insurer to show how its tool worked.[^11][^61] Put audit and testing rights in the contract.",
+    "A thinner talent pipeline: junior adjuster postings are down about half since early 2024, and 25% of adjusters may retire by 2027 (TPA survey).[^21][^17] Keep juniors on AI-checked files so they still learn."
+  ],
+  "faq": [
+    {
+      "q": "Can AI do insurance claims?",
+      "a": "Yes, for the first pass: intake, document reading, triage, fraud flags and reserve suggestions.[^11][^12] In the regulators' 2022 survey, 96 of 193 auto insurers used AI to inform adjusters and none used it to deny claims.[^2]"
+    },
+    {
+      "q": "Is AI taking over claims adjuster jobs?",
+      "a": "Not on the evidence: BLS expects about 21,600 openings a year to 2035, even as total jobs dip 6%.[^1] In one labor study, 49% of carriers expect to add staff and 11% to cut.[^21] Among US firms using AI, 2% report AI-related job cuts.[^20]"
+    },
+    {
+      "q": "How do you automate claims processing?",
+      "a": "Start with first-report intake and document reading on one line of business, test on closed files, then add triage.[^12][^11] Keep coverage and payment decisions with adjusters.[^4]"
+    },
+    {
+      "q": "Can an insurer deny a P&C claim using AI alone?",
+      "a": "No P&C state law bans it outright yet; Florida's attempt died in March 2026.[^39][^59] Denials still need a reasonable investigation and a stated reason, and Texas expects a person to agree first.[^3][^4]"
+    },
+    {
+      "q": "Does the AI bulletin reach a TPA or MGA handling claims for a carrier?",
+      "a": "Indirectly. It is addressed to insurers, but they stay responsible for AI from outside firms, so expect questions in your contracts and audits.[^11][^62]"
+    },
+    {
+      "q": "Do the same rules apply to health insurance claims?",
+      "a": "No. Health claims run on medical-necessity rules, and California bars AI as the sole basis for those denials.[^58][^9] Medicare Advantage decisions must rest on each patient's circumstances.[^10]"
+    }
+  ],
+  "buyVsBuild": {
+    "buy": "Buy when you have no data team, run a common core claims system and the job is standard: first reports, photos, documents.[^63] Purchased AI tools succeed about 67% of the time; internal builds about a third as often.[^64][^65]",
+    "build": "Build, or configure heavily, when your own claims history is the edge or you must show a regulator every rule.[^11] Either way, 45% of insurers name data quality as a barrier, so clean the claim data first.[^34] Only 24% of insurance leaders are very confident they'd pass an AI governance review in 90 days.[^66]"
+  },
+  "pickElse": [
+    "Mostly simple auto physical damage: a photo-estimating network such as CCC, Tractable or Snapsheet already does this job.[^7][^26]",
+    "The problem is talking to claimants, not reading files: a texting platform such as Hi Marley may fix more.[^24][^7]",
+    "Your core claims system is the bottleneck: upgrade or replace it first, such as Guidewire, Duck Creek or Five Sigma.[^7] AI on a system nobody trusts adds rework.",
+    "Low volume across varied lines: rules in your current system plus a weekly report on state deadlines may cost less than AI.[^13][^23]"
+  ],
+  "resources": [
+    {
+      "name": "NAIC AI Model Bulletin (full text)",
+      "url": "https://content.naic.org/sites/default/files/2023-12-4%20Model%20Bulletin_Adopted_0.pdf",
+      "what": "The expectations every adopting state examines against, including the vendor section."
+    },
+    {
+      "name": "NAIC chart MC-50: claims settlement provisions",
+      "url": "https://content.naic.org/sites/default/files/model-law-chart-mc-50-claims-settlement-provisions.pdf",
+      "what": "State-by-state summary of claim handling laws, to check deadlines beyond our top 10."
+    },
+    {
+      "name": "Texas Bulletin B-0003-26",
+      "url": "https://www.tdi.texas.gov/bulletins/2026/B-0003-26.html",
+      "what": "The clearest state statement yet of when a person must agree with an AI decision."
+    },
+    {
+      "name": "KFF: regulation of AI in claims review",
+      "url": "https://www.kff.org/patient-consumer-protections/regulation-of-ai-in-prior-authorization-and-claims-review-a-look-at-federal-and-state-consumer-protections",
+      "what": "Map of the health-insurance AI laws, if your team also touches health claims."
+    }
+  ],
+  "stats": [
+    {
+      "num": "$86.0B",
+      "label": "US P&C loss adjustment expense in 2025, the cost of handling claims.[^6]",
+      "source": "NAIC 2025 full-year P&C report"
+    },
+    {
+      "num": "46.6%",
+      "label": "Share of US P&C premium written where the NAIC AI bulletin is adopted, by our count.[^5][^6]",
+      "source": "Zavient, from NAIC map (13 Nov 2026) and premium table"
+    },
+    {
+      "num": "55.3%",
+      "label": "Share of US P&C premium written in the 10 biggest states.[^6]",
+      "source": "Zavient, from NAIC 2025 premium table"
+    },
+    {
+      "num": "15.3 days",
+      "label": "Auto repair cycle time, keys to keys, in the 2026 study, 10 days shorter than Q1 2024.[^29]",
+      "source": "J.D. Power, Oct 2026"
+    },
+    {
+      "num": "66%",
+      "label": "Share of AI-using US firms that use AI only to help existing staff.[^20]",
+      "source": "US Census Bureau, 2026"
+    }
+  ],
+  "sources": [
+    {
+      "name": "US Bureau of Labor Statistics, Occupational Outlook Handbook: Claims adjusters, appraisers, examiners and investigators (updated 27 Aug 2026)",
+      "url": "https://www.bls.gov/ooh/business-and-financial/claims-adjusters-appraisers-examiners-and-investigators.htm",
+      "what": "Duties include determining coverage, negotiating settlements and authorizing payments; about 21,600 openings a year 2025-35; employment projected -6%."
+    },
+    {
+      "name": "NAIC, Private passenger auto AI/ML survey staff report (Dec 2022)",
+      "url": "https://content.naic.org/sites/default/files/committee_related_documents/PP%2520Auto%2520Survey%2520Team%2520Report%2520120822.pdf",
+      "what": "193 auto insurers: 96 use AI to inform adjusters, 9 for claim approvals, 0 for claim denials."
+    },
+    {
+      "name": "NAIC, Unfair Claims Settlement Practices Act (Model 900)",
+      "url": "https://content.naic.org/sites/default/files/model-law-900.pdf",
+      "what": "Lists unfair claim practices, including refusing to pay without a reasonable investigation and failing to explain a denial, when done as a general business practice."
+    },
+    {
+      "name": "Texas Department of Insurance, Commissioner's Bulletin B-0003-26 (12 Jun 2026)",
+      "url": "https://www.tdi.texas.gov/bulletins/2026/B-0003-26.html",
+      "what": "If a regulated entity uses AI to make a consequential decision, TDI expects a person to review and agree with all decisions before action is taken; cites Chapter 542."
+    },
+    {
+      "name": "NAIC, Implementation of the AI Model Bulletin, adoption map (status 13 Nov 2026)",
+      "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
+      "what": "30 adopting jurisdictions (28 states, DC, Puerto Rico); California, Colorado and New York listed under their own rules. Read 26 Nov 2026."
+    },
+    {
+      "name": "NAIC, U.S. Property & Casualty and Title Insurance Industries, 2025 Full Year Results",
+      "url": "https://content.naic.org/sites/default/files/2025-annual-property-and-casualty-and-title-insurance-industries-analysis-report.pdf",
+      "what": "Loss adjustment expense $86.0B in 2025 ($85.7B in 2024); net losses incurred $551.8B; net premiums earned $958.7B; state direct premium table, total $1,105.3B."
+    },
+    {
+      "name": "AI Insurance Tools, Best claims management software 2026 (21 Oct 2026, review site; read 26 Nov 2026)",
+      "url": "https://insuranceaitools.com/best/claims-management-software",
+      "what": "None of seven claims-software vendors reviewed publish pricing; product functions for Five Sigma, Snapsheet, Hi Marley and others."
+    },
+    {
+      "name": "Rework, Best AI tools for insurance claims 2026 (17 Jul 2026, review site; read 26 Nov 2026)",
+      "url": "https://resources.rework.com/tools/ai-tools/best-ai-tools-for-insurance-claims-2026",
+      "what": "Pricing not published for any of 14 claims AI tools; lists Snapsheet, Hi Marley and Ushur as fits under 5,000 claims a month."
+    },
+    {
+      "name": "KFF, Regulation of AI in prior authorization and claims review (6 May 2026)",
+      "url": "https://www.kff.org/patient-consumer-protections/regulation-of-ai-in-prior-authorization-and-claims-review-a-look-at-federal-and-state-consumer-protections",
+      "what": "Map of state health-insurance AI laws to 28 Apr 2026: human review, individual circumstances, disclosure."
+    },
+    {
+      "name": "CMS, HPMS memo FAQ on coverage criteria and utilization management (6 Feb 2024)",
+      "url": "https://www.cms.gov/files/document/hpms-memo-faq-coverage-criteria-and-utilization-management-020604pdf.pdf",
+      "what": "An algorithm may assist Medicare Advantage coverage decisions, but each must rest on the individual patient's circumstances."
+    },
+    {
+      "name": "NAIC, Model Bulletin: Use of Artificial Intelligence Systems by Insurers (adopted 4 Dec 2023)",
+      "url": "https://content.naic.org/sites/default/files/2023-12-4%20Model%20Bulletin_Adopted_0.pdf",
+      "what": "Covers claim administration, payment and fraud detection; decisions must not be inaccurate, arbitrary, capricious or unfairly discriminatory; written AI program; insurer responsible for third-party AI."
+    },
+    {
+      "name": "Celent, Claims analytics and claims modernization in Q2 2026",
+      "url": "https://www.celent.com/en/insights/claims-analytics-and-claims-modernization-in-q2-2026",
+      "what": "Analyst: straight-through processing is common on simple motor claims; the next value is in the roughly 15% of claims that are complex."
+    },
+    {
+      "name": "NAIC, Unfair Property/Casualty Claims Settlement Practices Model Regulation (Model 902)",
+      "url": "https://content.naic.org/sites/default/files/model-law-902.pdf",
+      "what": "Model clock: acknowledge in 15 days, accept or deny within 21 days of proof of loss, delay letters every 45 days, pay within 30 days."
+    },
+    {
+      "name": "Illinois Department of Insurance, Company Bulletin 2024-08 (13 Mar 2024)",
+      "url": "https://idoi.illinois.gov/content/dam/soi/en/web/insurance/companies/companybulletins/CB2024-08.pdf",
+      "what": "Illinois adoption of the NAIC AI bulletin, with the written AI program and board oversight."
+    },
+    {
+      "name": "Huskey v. State Farm Fire & Casualty Co., N.D. Ill. No. 1:22-cv-07014, docket (CourtListener)",
+      "url": "https://www.courtlistener.com/docket/66635423/huskey-v-state-farm-fire-casualty-company",
+      "what": "Fair Housing Act disparate-impact claim over algorithmic claim screening survived dismissal on 11 Sep 2023; allegations, not findings."
+    },
+    {
+      "name": "Civil Rights Litigation Clearinghouse, Huskey v. State Farm",
+      "url": "https://clearinghouse.net/case/44310",
+      "what": "Case summary; discovery ongoing as of 19 Feb 2026."
+    },
+    {
+      "name": "Sedgwick, 2026 Loss Adjusting Insights Report (vendor survey)",
+      "url": "https://info.sedgwick.com/hubfs/Loss-Adjusting-Insights-Report_Final.pdf",
+      "what": "TPA's survey: AI frees adjusters for investigations, coverage analysis and customers; 25% of adjusters expected to retire by end-2027; litigation risk about 10 times higher when claims are reported after 90 days."
+    },
+    {
+      "name": "Sedgwick, How property carriers can scale AI (vendor article)",
+      "url": "https://www.sedgwick.com/article/how-property-carriers-can-scale-ai",
+      "what": "Vendor claim: claim intake cut from 10 days to 36 hours."
+    },
+    {
+      "name": "Sedgwick, claims administration intelligence report release (vendor survey)",
+      "url": "https://www.sedgwick.com/press-release/sedgwick-launches-new-claims-administration-intelligence-report",
+      "what": "77% of consumers prefer a human for complex or emotional claims; 75% of claims professionals say AI needs human oversight."
+    },
+    {
+      "name": "US Census Bureau, CES Working Paper 26-25 (2026)",
+      "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
+      "what": "Among AI-using firms, 66% only use AI to help existing staff; 2% report AI-related employment decreases."
+    },
+    {
+      "name": "Insurance Business, Entry-level adjuster hiring falls as insurers turn to AI (28 Aug 2026)",
+      "url": "https://www.insurancebusinessmag.com/us/news/benefits/entrylevel-adjuster-hiring-falls-as-insurers-turn-to-ai-587852.aspx",
+      "what": "Entry-level adjuster postings down about 50% since early 2024 (Glassdoor); labor study: 49% of carriers expect to add staff, 11% to cut; an adjuster describes 15-20 minutes correcting AI mistakes."
+    },
+    {
+      "name": "Florida Statutes, section 627.70131",
+      "url": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699%2F0627%2FSections%2F0627.70131.html",
+      "what": "Acknowledge within 7 days; pay or deny residential property claims within 60 days of notice."
+    },
+    {
+      "name": "Texas Insurance Code, Chapter 542 (prompt payment of claims)",
+      "url": "https://statutes.capitol.texas.gov/Docs/IN/htm/IN.542.htm",
+      "what": "542.055: acknowledge in 15 days; 542.056: accept or reject in 15 business days of all items, 45 more days with notice; 542.057: pay in 5 business days."
+    },
+    {
+      "name": "AWS Marketplace, Hi Marley listing (read 26 Nov 2026)",
+      "url": "https://aws.amazon.com/marketplace/pp/prodview-tdxtqhwhbviik",
+      "what": "No list price; sold by private offer priced per user."
+    },
+    {
+      "name": "Five Sigma homepage (vendor claims, read 26 Nov 2026)",
+      "url": "https://fivesigmalabs.com/",
+      "what": "Vendor claims: 33% higher adjuster productivity and 70% fewer errors; its Clive agents run on any claims system. No price shown."
+    },
+    {
+      "name": "CCC Intelligent Solutions, definitive agreement to be acquired (15 Oct 2026)",
+      "url": "https://ir.cccis.com/news-releases/news-release-details/ccc-intelligent-solutions-signs-definitive-agreement-be-acquired",
+      "what": "Agreement to be acquired by a GTCR-led group at about $6.1B enterprise value; closing expected Q1 2027."
+    },
+    {
+      "name": "Milliman IntelliScript, IRMA workers' compensation claims triage (vendor case study)",
+      "url": "https://www.rxhistories.com/irma-saves-4-million-in-workers-compensation-costs-with-nodal-claims-triage",
+      "what": "Vendor case: 85% of severe workers' comp claims flagged within 10 days; 14% cost cut in year one; $4.1M saved over 8 years."
+    },
+    {
+      "name": "Roots (Bevaya), Eastern Alliance case study (vendor case study)",
+      "url": "https://catalogartifact.azureedge.net/publicartifacts/rootsautomationinc1583180676112.roots-automation-saas-14292b5b-ff64-4dc3-95ed-f351a3931712/Artifacts/Documents/Bevaya-Case-Study-Eastern-Alliance.pdf",
+      "what": "Vendor case: 87% of documents processed straight through; 60% fewer manual reviews at a workers' comp carrier."
+    },
+    {
+      "name": "J.D. Power, 2026 U.S. Auto Claims Satisfaction Study (27 Oct 2026)",
+      "url": "https://www.jdpower.com/business/press-releases/2026-u.s.-auto-claims-satisfaction-study/",
+      "what": "Repair cycle time 15.3 days, 10 days shorter than Q1 2024; 26% of claims are total losses, up from 16% four years earlier; 8,261 claimants."
+    },
+    {
+      "name": "US Treasury, Federal Insurance Office Annual Report 2025",
+      "url": "https://home.treasury.gov/system/files/311/Final%20FIO%202025%20Annual%20Report.pdf",
+      "what": "P&C loss adjustment expense ratio 9.35% in 2024 (S&P data)."
+    },
+    {
+      "name": "J.D. Power, 2026 U.S. Property Claims Satisfaction Study",
+      "url": "https://www.jdpower.com/business/press-releases/2026-us-property-claims-satisfaction-study",
+      "what": "40.7 days from first notice of loss to final payment; repairs 29.6 days; 5,093 claimants."
+    },
+    {
+      "name": "EY, How a Nordic insurance company automated claims processing",
+      "url": "https://www.ey.com/en_gl/insights/financial-services/emeia/how-a-nordic-insurance-company-automated-claims-processing",
+      "what": "Published case: 70% of claim documents correctly extracted."
+    },
+    {
+      "name": "McKinsey, Aviva: rewiring the insurance claims journey with AI (Dec 2024)",
+      "url": "https://www.mckinsey.com/capabilities/tech-and-ai/how-we-help-clients/rewired-in-action/aviva-rewiring-the-insurance-claims-journey-with-ai",
+      "what": "Published case: 80+ claims models; complex liability claims assessed 23 days faster; complaints down 65%."
+    },
+    {
+      "name": "Accenture, An AI future for insurance (FY26, Jun 2026)",
+      "url": "https://www.accenture.com/content/dam/accenture/final/accenture-com/document-fy26/q4/An-AI-Future-For-Insurance-FY26-TL-Report.pdf",
+      "what": "Survey of 263 insurance executives: a claims summary tool saved 35-45% of time on complex claims; 45% name data quality as a barrier."
+    },
+    {
+      "name": "ValueMomentum, Specialty carrier reduces LAE with intelligent document processing (vendor case study)",
+      "url": "https://www.valuemomentum.com/case-studies/specialty-carrier-reduces-lae-with-intelligent-document-processing",
+      "what": "Vendor case: 80% less manual data entry."
+    },
+    {
+      "name": "AI Insurance Tracker, NAIC AI bulletin (22 Oct 2026)",
+      "url": "https://aiinsurancetracker.com/naic-ai-bulletin",
+      "what": "Counted 29 on the 8 Oct 2026 map, which listed Texas under its own rules."
+    },
+    {
+      "name": "California Code of Regulations, 10 CCR 2695.5",
+      "url": "https://govt.westlaw.com/calregs/Document/IE63146575C2F11EC9C68000D3A7C4BC3",
+      "what": "Acknowledge a claim and begin investigating within 15 calendar days."
+    },
+    {
+      "name": "California Code of Regulations, 10 CCR 2695.7",
+      "url": "https://govt.westlaw.com/calregs/Document/IE642F9A05C2F11EC9C68000D3A7C4BC3",
+      "what": "Accept or deny within 40 days of proof of claim; pay within 30 days of acceptance."
+    },
+    {
+      "name": "Florida House, HB 527 (2026) staff analysis",
+      "url": "https://www.flsenate.gov/Session/Bill/2026/527/Analyses/h0527a.IBS.PDF",
+      "what": "Would have required a qualified human professional to review AI output on claim denials; passed the House 108-0; died 13 Mar 2026."
+    },
+    {
+      "name": "New York DFS, Insurance Circular Letter No. 7 (11 Jul 2024)",
+      "url": "https://www.dfs.ny.gov/industry-guidance/circular-letters/cl2024-07",
+      "what": "New York's own AI and outside-data guidance, focused on underwriting and pricing; insurer responsible for vendor tools."
+    },
+    {
+      "name": "New York, 11 NYCRR 216.4 (Cornell LII)",
+      "url": "https://www.law.cornell.edu/regulations/new-york/11-NYCRR-216.4",
+      "what": "Acknowledge a claim within 15 business days."
+    },
+    {
+      "name": "New York, 11 NYCRR 216.6 (Cornell LII)",
+      "url": "https://www.law.cornell.edu/regulations/new-york/11-NYCRR-216.6",
+      "what": "Accept or deny within 15 business days of proof of loss; 30 if arson is suspected; 90-day status letters."
+    },
+    {
+      "name": "Illinois Administrative Code, 50 Ill. Adm. Code 919",
+      "url": "https://www.ilga.gov/agencies/JCAR/EntirePart?titlepart=05000919",
+      "what": "919.40: acknowledge in 15 working days; 919.50: pay within 30 days of affirming liability; 919.80: written delay notices."
+    },
+    {
+      "name": "Georgia Rules and Regulations, Chapter 120-2-52",
+      "url": "https://rules.sos.ga.gov/gac/120-2-52",
+      "what": "Claim acknowledgment in 15 days; motor vehicle decisions 15 days after proof of loss; fire and extended coverage 60 days; payment in 10 days."
+    },
+    {
+      "name": "Pennsylvania Code, 31 Pa. Code 146.5 and 146.7",
+      "url": "https://www.pacodeandbulletin.gov/Display/pacode?d=reduce&file=/secure/pacode/data/031/chapter146/s146.7.html",
+      "what": "Acknowledge within 10 working days; accept or deny within 15 working days of proofs of loss."
+    },
+    {
+      "name": "New Jersey Administrative Code, N.J.A.C. 11:2-17.6 and 17.7 (Justia)",
+      "url": "https://regulations.justia.com/states/new-jersey/title-11/chapter-2/subchapter-17/section-11-2-17-7",
+      "what": "Acknowledge in 10 working days; pay first-party claims within 30 calendar days of proof of loss."
+    },
+    {
+      "name": "Michigan Compiled Laws, MCL 500.2006",
+      "url": "https://www.legislature.mi.gov/Laws/MCL?objectName=MCL-500-2006",
+      "what": "Specify required proof of loss within 30 days; timely if paid within 60 days of proof of loss, else 12% a year interest."
+    },
+    {
+      "name": "North Carolina General Statutes, Chapter 58",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByChapter/Chapter_58.html",
+      "what": "58-63-15(11) lists unfair claim practices without a fixed day count; the 30-day acknowledgment reference was not confirmed against the statute text."
+    },
+    {
+      "name": "InsureAI Wire, NAIC model bulletin adoption tracker (20 Nov 2026)",
+      "url": "https://insureaiwire.com/news/naic-model-bulletin-adoption",
+      "what": "Counts 28 states plus DC, 29 in all, leaving out Puerto Rico."
+    },
+    {
+      "name": "Sullivan & Cromwell, NAIC model bulletin memo",
+      "url": "https://www.sullcrom.com/SullivanCromwell/_Assets/PDFs/Memos/NAIC-Model-Bulletin-Use-AI-Insurers.pdf",
+      "what": "Law firm summary of the bulletin's scope: machine learning and generative AI, governance, testing and vendor oversight."
+    },
+    {
+      "name": "NAIC, Model law chart MC-50: claims settlement provisions",
+      "url": "https://content.naic.org/sites/default/files/model-law-chart-mc-50-claims-settlement-provisions.pdf",
+      "what": "State-by-state summary of claims settlement laws and regulations."
+    },
+    {
+      "name": "Elysian, The potential pitfalls in automated decisions and actions (29 Sep 2026)",
+      "url": "https://www.elysian.is/updates/insights/the-potential-pitfalls-in-automated-decisions-and-actions",
+      "what": "No court has held AI use in a claim decision unlawful in itself; a rule built into software runs on every claim; total-loss valuation suits (allegations)."
+    },
+    {
+      "name": "Florida Senate, SB 202 (2026) filed text",
+      "url": "https://flsenate.gov/Session/Bill/2026/202/BillText/Filed/HTML",
+      "what": "Senate companion to HB 527; died in session."
+    },
+    {
+      "name": "California Department of Insurance, State Farm wildfire claims exam release (4 May 2026)",
+      "url": "https://www.insurance.ca.gov/0400-news/0100-press-releases/2026/release019-2026.cfm",
+      "what": "220 claims sampled; 398 violations in 114 files, including missed 15-, 40- and 30-day deadlines."
+    },
+    {
+      "name": "NAIC, AI Systems Evaluation Tool pilot: project background (Mar 2026)",
+      "url": "https://content.naic.org/sites/default/files/inline-files/Pilot%20Project%20Summary_1.pdf",
+      "what": "12 pilot states; regulators use the tool in market conduct and financial exams across P&C, life and health."
+    },
+    {
+      "name": "NAIC Big Data and AI (H) Working Group, 2026 Fall National Meeting materials",
+      "url": "https://content.naic.org/sites/default/files/national_meeting/slides-bdaiwg20261116.pdf",
+      "what": "AI Risk Evaluation Supplement v7.0 up for adoption; 55% of pilot survey responses from P&C insurers."
+    },
+    {
+      "name": "eCFR, 42 CFR 422.101",
+      "url": "https://www.ecfr.gov/current/title-42/section-422.101",
+      "what": "Medicare Advantage basic benefits and the medical-necessity basis for coverage decisions."
+    },
+    {
+      "name": "California Legislature, SB 1120 (2024)",
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240SB1120",
+      "what": "Health plans: AI can't be the sole basis for denying a claim on medical-necessity grounds."
+    },
+    {
+      "name": "Elysian, The impact of P&C rules and adjuster licensing on AI denials (Sep 2026)",
+      "url": "https://www.elysian.is/updates/insights/the-impact-of-pc-rules-and-adjuster-licensing-on-ai-denials",
+      "what": "Claims-software company: no P&C statute comparable to health AI-denial laws; adjuster licensing acts as a partial check."
+    },
+    {
+      "name": "arXiv 2605.21816, Barriers to evidence in AI-related cases and the privatization of proof (Apr 2026)",
+      "url": "https://arxiv.org/html/2605.21816",
+      "what": "Academic paper: insurer acknowledged about two dozen automated or rules-based routing and fraud tools; cited survey found Black claimants 39% more likely to be asked for more documents."
+    },
+    {
+      "name": "Estate of Lokken v. UnitedHealth Group, D. Minn. order (13 Feb 2025)",
+      "url": "https://www.govinfo.gov/content/pkg/USCOURTS-mnd-0_23-cv-03514/pdf/USCOURTS-mnd-0_23-cv-03514-1.pdf",
+      "what": "Health case over an algorithm in Medicare Advantage claims; contract claims proceed; allegations, not findings."
+    },
+    {
+      "name": "Enlyte, AI claims handling compliance 2026 (services vendor)",
+      "url": "https://www.enlyte.com/insights/article/compliance/ai-claims-handling-compliance-2026",
+      "what": "Vendor summary of AI claims compliance, including what carriers ask of claims partners."
+    },
+    {
+      "name": "Menlo Ventures, 2025 State of Generative AI in the Enterprise",
+      "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+      "what": "76% of enterprise AI use cases are purchased rather than built."
+    },
+    {
+      "name": "Fortune on the MIT NANDA report (18 Aug 2025)",
+      "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
+      "what": "Purchased AI tools succeed about 67% of the time; internal builds about a third as often."
+    },
+    {
+      "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025",
+      "url": "https://www.ictworks.org/wp-content/uploads/2025/09/AI_Business_2025.pdf",
+      "what": "About 5% of task-specific AI tools reach production with P&L impact; vendor partnerships reach deployment about twice as often as internal builds."
+    },
+    {
+      "name": "Grant Thornton, Insurance insights: 2026 AI Impact Survey (Apr 2026)",
+      "url": "https://www.grantthornton.com/insights/survey-reports/insurance/2026/insurance-insights-2026-ai-impact-survey-report.html",
+      "what": "24% of insurance leaders are very confident they could pass an independent AI governance review within 90 days."
+    },
+    {
+      "name": "North Carolina General Statutes Chapter 58, Article 3, G.S. 58-3-100(c)",
+      "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/PDF/ByArticle/Chapter_58/Article_3.pdf",
+      "what": "The Commissioner may fine an insurer that fails to acknowledge a claim within 30 days of written or electronic notice. Read 26 Nov 2026."
+    }
+  ],
+  "related": [
+    "insurance",
+    "ai-document-processing",
+    "ai-underwriting",
+    "ai-governance-consulting",
+    "data-analytics-consulting"
+  ],
+  "offer": {
+    "heading": "Which part of your claims process should AI take first?",
+    "body": "Bring us your claims intake and your list of states. In 30 minutes we map first report to decision against each state's deadline. You leave with the first step, a closed-file test and a before-and-after measure, with no sales pitch."
+  },
+  "keyword": {
+    "phrase": "insurance claims automation",
+    "searches": 3600,
+    "cpc": 77.79,
+    "difficulty": 11
+  },
+  "reviews": [
+    {
+      "reader": "COO",
+      "notes": "Dana, as COO: could see who decides what and the state deadlines, but the bottom line never said where to start. The no-price bullet now names the first step: intake on one line, tested on closed claims. 'Straight-through' was jargon; it now reads 'handled with no manual touch'. No sourced time-to-pilot figure exists in the research, so none is given."
+    },
+    {
+      "reader": "Head of operations",
+      "notes": "Dana, as head of claims operations: the five-column state table was heavy on a phone, so the Texas status and deadline cells were cut to the essentials. 'Final incurred losses' became 'what the claim finally cost'. Every recipe step already names the role doing it."
+    },
+    {
+      "reader": "GM",
+      "notes": "Asked whether one office or one line can pilot first and what it does to margin. The first test step now starts with one line or office. The margin baseline is on the page twice: about 9 cents of each premium dollar goes on adjusting, and each recipe's cost line says to size quotes against it."
+    },
+    {
+      "reader": "Division head",
+      "notes": "Head of claims at a regional carrier, MGA or TPA: the SIU bullet leaned on the bulletin for a point it doesn't make; it now rests on the unfair-claims law's reasonable-investigation duty. The example now shows the tool flagging fields it is unsure of. North Carolina's 30-day acknowledgment was confirmed in G.S. 58-3-100(c). Health is kept to one bullet, one rule and one FAQ."
+    },
+    {
+      "reader": "Owner-CEO",
+      "notes": "Steve gets the answer in 10 seconds and sees plainly that no vendor publishes a price; no Zavient price is shown. His data worry was missing, so buy-or-build now cites the 45% of insurers naming data quality as a barrier. Security has no claims-specific source in the research, so it is covered only as contract audit rights. Every mid-size result on the page is a vendor case, labelled as such; no independent case from a firm his size exists."
+    }
+  ],
+  "updated": "2026-11-26"
+}

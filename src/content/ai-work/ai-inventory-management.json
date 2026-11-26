@@ -1,0 +1,709 @@
+{
+ "title": "Can AI inventory management free up cash without more stockouts?",
+ "description": "AI inventory management for distributors and manufacturers: what it changes, what your ERP already does, and how much cash a 10% stock cut frees.",
+ "type": "usecase",
+ "templateVersion": 1,
+ "topic": "AI inventory management",
+ "job": "inventory management",
+ "industry": "distributors and manufacturers",
+ "index": false,
+ "verdict": [
+  "Cash is the prize: machinery distributors hold 81 days of sales in stock, often costing 20%+ a year to carry[^1][^4].",
+  "Check your ERP first: NetSuite now sets safety stock by segment; Business Central still takes it by hand[^25][^27].",
+  "Buyers keep approving every order; log their overrides, which cut profit 5.77% in one parts-retailer field test[^8][^9].",
+  "Fix stock records before any model: one study found 65% wrong, and small errors can stall automatic reordering[^17][^18].",
+  "Supplier deliveries have slowed 11 months running; machine-learned lead times cut stock 7% at equal service in one study[^3][^13]."
+ ],
+ "onPage": [
+  {
+   "to": "human-role",
+   "text": "Who approves orders, transfers and write-downs"
+  },
+  {
+   "to": "table-1",
+   "text": "What AI changes in each stock decision"
+  },
+  {
+   "to": "table-2",
+   "text": "What NetSuite, Business Central, Acumatica and Epicor already do"
+  },
+  {
+   "to": "own-data",
+   "text": "Cash tied up in stock by sector, and what a 10% cut frees"
+  },
+  {
+   "to": "rules",
+   "text": "Tax rules on writing down dead stock"
+  },
+  {
+   "to": "benchmark",
+   "text": "How to test a tool on your own history before you sign"
+  },
+  {
+   "to": "faq",
+   "text": "Cash, carrying cost, ERP and write-off questions"
+  }
+ ],
+ "headings": {
+  "human-role": "Who on your team keeps the order decision?",
+  "team-after": "What do buyers and planners do once AI takes the first pass?",
+  "example": "What does AI inventory management look like at a parts distributor?",
+  "recipes": "Which way to start fits your firm?",
+  "own-data": "How much cash sits in stock in your sector?",
+  "rules": "Which tax and accounting rules touch dead stock?",
+  "benchmark": "How do you test AI inventory management before you trust it?",
+  "buy-or-build": "Should you buy AI inventory management software or build it?"
+ },
+ "summary": "AI inventory management resets each item's safety stock and reorder point from real demand and supplier lead times[^25][^13]. It also flags slow stock and suggests branch transfers, while buyers approve every order[^21][^8]. Clean stock records and honest lead times make or break it[^17][^15].",
+ "humanRole": [
+  "Buyer: approves every suggested purchase order and transfer before it goes out[^11][^8]. Logs a reason for each override, since overrides of one parts retailer's stocking tool cut profit 5.77%[^8][^9].",
+  "Planner or inventory analyst: sets the service level (the share of orders filled from stock) for each segment, and owns lead-time and demand inputs[^25][^23]. Adjusting the tool's inputs, not its outputs, raised profit 4.92% in a later field test[^10].",
+  "Branch or warehouse manager: accepts or rejects each transfer suggestion, and recounts the items the system flags[^21][^17].",
+  "Controller: decides markdown, return or scrap for flagged dead stock before year end[^35][^36]. A flag alone creates no tax write-down; the goods must be scrapped or offered at a lower price[^35][^37]."
+ ],
+ "teamAfter": [
+  "Buyers work a ranked list of exceptions (stockout risk, excess, late orders) instead of scanning every item[^11]. In one store-chain study, ordering time fell 36.5% while service rose 2.9%[^11].",
+  "Buyers spend more time chasing suppliers: at one machinery maker, about 14% of orders arrived late[^14]. Lead-time models flag those orders early, but only roughly[^15].",
+  "Planners review the override log each month against results, and adjust inputs where a supplier or item has changed[^10][^8].",
+  "Among US firms where AI changed tasks, 66% use it only to help staff; 2% report AI-related falls in employment[^12]."
+ ],
+ "example": {
+  "input": "A parts distributor with $40M of sales and three branches. At the machinery-distributor ratio of 2.65, it holds about $8.8M of stock[^1]. The pilot reads 24 months of sales by item and branch, plus each supplier's order and receipt dates.",
+  "output": "Safety stock per item from measured supplier lead times, dead-stock flags at 180 and 365 days, and transfer suggestions a branch manager approves. A 10% stock cut would free about $880k and save $88k-$265k a year to carry, 0.2-0.7% of sales[^5][^4]. Buyers approve every order and transfer."
+ },
+ "tables": [
+  {
+   "title": "What does AI change in each stock decision?",
+   "intro": "Each row compares a typical ERP setting with what an AI planning tool does instead[^24][^27]. Features vary by vendor, so ask which rows a tool really recalculates[^16].",
+   "headers": [
+    "Decision",
+    "Typical ERP today",
+    "With AI planning"
+   ],
+   "rows": [
+    {
+     "name": "Safety stock",
+     "cells": [
+      "A quantity typed in by hand, or 7 days of cover by default in NetSuite[^27][^24]",
+      "Set per item from demand and lead-time swings, at a service level for each segment[^25]"
+     ]
+    },
+    {
+     "name": "Reorder point",
+     "cells": [
+      "Lead time from the last 3 purchase orders, mixed across vendors[^24]",
+      "Lead time predicted per supplier and order line from its own history[^13][^14]"
+     ]
+    },
+    {
+     "name": "Item segments",
+     "cells": [
+      "ABC classes by value[^28]",
+      "Value (ABC) crossed with demand swings (XYZ); NetSuite now ships 9 segments[^23][^25]"
+     ]
+    },
+    {
+     "name": "Slow and dead stock",
+     "cells": [
+      "Easy to miss: in one parts case, C items were 79% of parts and drove the dead stock[^23]",
+      "Fast, slow and non-moving flags, refreshed and sent to a buyer to act on[^23]"
+     ]
+    },
+    {
+     "name": "Branch balancing",
+     "cells": [
+      "Business Central's AI forecast adds up all locations together[^29]",
+      "Planned and on-demand transfers between branches; in models, planned ones cut cost and safety stock[^21][^20]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "What does your ERP or an add-on already do?",
+   "intro": "Check these before you buy anything new. Claims are each vendor's own; prices read 26 Nov 2026[^33][^34].",
+   "headers": [
+    "Name",
+    "What it sets",
+    "Price",
+    "Worth knowing"
+   ],
+   "rows": [
+    {
+     "name": "NetSuite Advanced Inventory Management",
+     "url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/article_162488535703.html",
+     "cells": [
+      "Reorder point and preferred stock, calculated automatically[^24]",
+      "Part of NetSuite; needs the module[^24]",
+      "Defaults to a 14-day lead time and 7 days of safety stock[^24]"
+     ]
+    },
+    {
+     "name": "NetSuite Inventory Optimization (2026.2)",
+     "url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_1508852924.html",
+     "cells": [
+      "Safety stock, reorder point and preferred level by ABC/123 segment[^25]",
+      "Part of NetSuite[^25]",
+      "Assumes normal demand, so results are rough on lumpy, promotional or seasonal items[^26]"
+     ]
+    },
+    {
+     "name": "Microsoft Dynamics 365 Business Central",
+     "url": "https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-planning-parameters",
+     "cells": [
+      "Reorder rules: fixed quantity, up to a maximum, or per order; safety stock typed in[^27]",
+      "Built in[^27]",
+      "Its AI forecast adds up all locations and gives none when data is thin[^29]"
+     ]
+    },
+    {
+     "name": "Acumatica",
+     "url": "https://beacon.acumatica.com/r/Implementation-Guide/Implementing-Inventory-Planning/Configuring-Inventory-Planning/Inventory-Planning-Configuration-General-Information?contentId=2vhtG3nRGrc2zYUOq40_og",
+     "cells": [
+      "Basic replenishment; safety stock and reorder point entered by hand in material and distribution planning (MRP, DRP)[^31]",
+      "Built in; add-ons from partners[^30]",
+      "Acumatica's own guide recommends partner add-ons for more[^30]"
+     ]
+    },
+    {
+     "name": "Epicor Kinetic with Smart IP&O",
+     "url": "https://www.epicor.com/en/newsroom/news-releases/epicor-acquires-smart-software/",
+     "cells": [
+      "Kinetic min/max uses average daily demand; Smart IP&O plans from the odds of each demand level[^43][^32]",
+      "Smart IP&O from $695 a month, per Capterra[^33]",
+      "Epicor bought Smart Software on 1 May 2024[^32]"
+     ]
+    },
+    {
+     "name": "EazyStock",
+     "url": "https://www.eazystock.com/pricing",
+     "cells": [
+      "Inventory planning add-on[^34]",
+      "Quote only[^34]",
+      "Billed yearly, or 10% more if paid monthly[^34]"
+     ]
+    }
+   ]
+  }
+ ],
+ "recipes": [
+  {
+   "name": "1. Start here: lead-time and dead-stock checks on your own history",
+   "when": "Firms with an analyst who can work an ERP export. Buyers' reported lead times for production materials rose six days in a year, so old settings may run short[^3].",
+   "flow": [
+    "Analyst: export purchase-order lines with order date, receipt date and supplier",
+    "Analyst: work out each supplier's average lead time and spread, and compare with the ERP field",
+    "Buyer: review the outliers and update the ERP",
+    "Analyst: list items with no sale in 180 or 365 days and over 12 months of cover",
+    "Buyer: choose return, transfer, markdown or scrap for each",
+    "Controller: sign off any write-down before year end"
+   ],
+   "cost": "Mostly analyst time, with no new licence. Keep it narrow: internal builds reached deployment about half as often as outside partnerships, as reported in a copy of MIT NANDA's 2025 report[^40]."
+  },
+  {
+   "name": "2. One warehouse on NetSuite or Business Central: tune what you own",
+   "when": "Single-site firms whose ERP already holds clean sales and order history. NetSuite 2026.2 sets safety stock by segment; Business Central needs it typed in[^25][^27].",
+   "flow": [
+    "Planner: export 24 months of sales and purchase-order dates",
+    "Planner: sort items into ABC (value) and XYZ (demand swings) classes",
+    "Ops head: set a target service level for each class",
+    "Planner: switch on Inventory Optimization, or set reorder rules by class in Business Central",
+    "Buyer: approve suggested orders each week and log each override with a reason",
+    "Ops head: after 12 weeks, compare stock and fill rate with the same weeks last year"
+   ],
+   "cost": "Mostly your planner's time. The features sit inside the ERP you already pay for[^25][^28]."
+  },
+  {
+   "name": "3. Several branches and thousands of parts: a planning add-on",
+   "when": "Distributors with branches, lumpy spare parts or many suppliers. Transfers between branches pay most where moving stock is cheap next to holding it[^20][^22].",
+   "flow": [
+    "Ops head: shortlist two add-ons that connect to your ERP",
+    "Planner: give each vendor the same 24 months of history",
+    "Vendor: replay last year under its suggested settings",
+    "Planner: check the replay against what really happened",
+    "Branch manager: approve or reject suggested transfers before any new order",
+    "Buyer: approve orders; planner reviews overrides monthly"
+   ],
+   "cost": "Smart IP&O lists from $695 a month on Capterra; EazyStock quotes only[^33][^34]. Vendors claim 6-12 weeks to go live: Netstock 6-10, StockIQ about 12[^41][^42]."
+  }
+ ],
+ "ownData": {
+  "title": "How much cash sits in stock in your sector?",
+  "intro": "We turned Census inventories-to-sales ratios for September 2026 into cash; a 10% cut frees a tenth of the stock[^1][^2]. The ratio is months of sales in stock; times 30.4 gives days, and times $10M/12 gives stock per $10M of yearly sales. Carrying cost is that stock times 10-30% a year, from APQC's median to textbook rates; use your own rate[^5][^4][^6].",
+  "headers": [
+   "Sector",
+   "Months in stock, Sep 2026 (2025)",
+   "Days of stock",
+   "Stock per $10M of sales",
+   "Carrying cost a year, 10-30%",
+   "Cash freed by a 10% cut"
+  ],
+  "rows": [
+   [
+    "All merchant wholesalers",
+    "1.21 (1.34)[^1]",
+    "37",
+    "$1.01M",
+    "$101k-$302k[^5][^4]",
+    "$101k"
+   ],
+   [
+    "Machinery, equipment and supplies distributors",
+    "2.65 (3.03)[^1]",
+    "81",
+    "$2.21M",
+    "$221k-$662k[^5][^4]",
+    "$221k"
+   ],
+   [
+    "Hardware, plumbing and heating distributors",
+    "2.26 (2.31)[^1]",
+    "69",
+    "$1.88M",
+    "$188k-$565k[^5][^4]",
+    "$188k"
+   ],
+   [
+    "Motor vehicle parts distributors",
+    "1.69 (1.70)[^1]",
+    "51",
+    "$1.41M",
+    "$141k-$422k[^5][^4]",
+    "$141k"
+   ],
+   [
+    "Metals service centers",
+    "1.46 (1.96)[^1]",
+    "44",
+    "$1.22M",
+    "$122k-$365k[^5][^4]",
+    "$122k"
+   ],
+   [
+    "Electrical and electronic goods distributors",
+    "0.98 (1.13)[^1]",
+    "30",
+    "$817k",
+    "$82k-$245k[^5][^4]",
+    "$82k"
+   ],
+   [
+    "Grocery distributors",
+    "0.73 (0.73)[^1]",
+    "22",
+    "$608k",
+    "$61k-$182k[^5][^4]",
+    "$61k"
+   ],
+   [
+    "All manufacturers",
+    "1.46[^2]",
+    "44",
+    "$1.22M",
+    "$122k-$365k[^5][^4]",
+    "$122k"
+   ],
+   [
+    "Machinery manufacturers",
+    "2.39[^2]",
+    "73",
+    "$1.99M",
+    "$199k-$598k[^5][^4]",
+    "$199k"
+   ],
+   [
+    "Fabricated metal product makers",
+    "1.72[^2]",
+    "52",
+    "$1.43M",
+    "$143k-$430k[^5][^4]",
+    "$143k"
+   ]
+  ],
+  "note": "Pulled 26 Nov 2026; national averages for all firm sizes, seasonally adjusted but not price-adjusted, so not a mid-size benchmark[^1][^2]. Stock is at cost and sales at selling price, and manufacturer rows use shipments. Ratios fell partly because wholesale sales grew 19.8% in a year while stock grew 7.6%[^1]."
+ },
+ "rules": [
+  {
+   "name": "Treasury Regulation 1.471-2(c), subnormal goods",
+   "url": "https://www.ecfr.gov/current/title-26/chapter-I/subchapter-A/part-1/subject-group-ECFRb3578fa14bdb9ea/section-1.471-2",
+   "status": "In force",
+   "what": "Damaged, shop-worn or obsolete goods can be valued below cost for tax when actually offered for sale at the lower price[^35]. The offer must come within 30 days after the inventory date[^35]. Time dead-stock flags so you can act before year end."
+  },
+  {
+   "name": "IRS practice unit, lower of cost or market",
+   "url": "https://www.irs.gov/pub/fatca/int_practice_units/lower-of-cost-or-market.pdf",
+   "status": "IRS examiner guidance",
+   "what": "Excess or overstock is not subnormal unless it is scrapped or actually offered at reduced prices[^36]. A tool's dead-stock list is a prompt to act, not a write-down[^36]."
+  },
+  {
+   "name": "Thor Power Tool Co. v. Commissioner, 439 U.S. 522",
+   "url": "https://www.govinfo.gov/content/pkg/USREPORTS-439/pdf/USREPORTS-439-522.pdf",
+   "status": "Supreme Court ruling, 1979",
+   "what": "The court disallowed a tax write-down of excess spare parts still held for sale at full price[^37]. Keeping the old price while writing the stock down does not work for tax."
+  },
+  {
+   "name": "FASB ASU 2015-11, Inventory (ASC 330)",
+   "url": "https://storage.fasb.org/ASU%202015-11.pdf",
+   "status": "In force",
+   "what": "For FIFO or average-cost inventory, your books carry it at the lower of cost and net realizable value[^38]. Your accountant sets any reserve; this page is not tax or accounting advice."
+  }
+ ],
+ "howToTest": [
+  "Cycle-count a random sample of about 200 item-locations first. If many records are wrong, fix counting before you test any tool[^17].",
+  "Pull 24 months of demand by item and location, plus each purchase order's order, promised and receipt dates. Add today's ERP safety stock, reorder point and lead time.",
+  "Measure each supplier's real lead time against the ERP field, and count late order lines[^14][^24].",
+  "Sort items into ABC by value and XYZ by demand swings: X under 50% variation, Y 50-100%, Z over 100%[^23].",
+  "Replay the last 12 months twice on the same demand: once with today's settings, once with the tool's. Compare average stock value, fill rate (share of order lines shipped complete) and number of orders[^13].",
+  "Then run it live on one branch or product family for 8-12 weeks, with buyers approving, beside a matched branch. Log every override with a reason code[^8][^10].",
+  "Price the result in cash and service: stock-to-sales ratio, fill rate, dead-stock value and buyer hours. Compare your ratio with your sector in our table above[^1].",
+  "Ask each vendor to run the replay on your data before you sign anything."
+ ],
+ "watchOuts": [
+  "Wrong stock records feed wrong orders: one study found 65% of 370,000 store records inaccurate[^17]. Undetected losses can freeze automatic reordering, so recount flagged items first[^18][^19].",
+  "Lumpy parts break the maths. NetSuite warns its results are approximate for intermittent, promotional or seasonal demand, so review those items by hand[^26].",
+  "Lead-time predictions are useful, not precise: one model explained only 30-55% of the variation[^15]. Keep a buyer's judgment on top and refresh lead times often[^15][^3].",
+  "Overrides can cost money: on mature and declining items they hurt profit in a field test[^8]. Log every override and review the log against results[^9].",
+  "Much of the research behind these tools ignores lead time: most papers in a 2025 review assumed it was zero[^16]. Ask each vendor how its model treats lead time.",
+  "Averages hide branches: Business Central's AI forecast adds up all locations and variants[^29]. Check each branch's numbers before you trust a transfer or order."
+ ],
+ "faq": [
+  {
+   "q": "Is AI inventory management just reorder points with a new name?",
+   "a": "Sometimes. Ask whether safety stock recalculates per item from demand and lead-time swings, and how often[^25][^24]. A fixed days-of-cover default is not that[^24]."
+  },
+  {
+   "q": "Do we need new AI inventory management software, or does our ERP do this?",
+   "a": "Check the ERP first. NetSuite 2026.2 sets safety stock by segment, Business Central takes it typed in, and Acumatica points to partner add-ons[^25][^27][^30]."
+  },
+  {
+   "q": "How much cash could a 10% stock cut free?",
+   "a": "A tenth of your stock value: about $221k per $10M of sales for a typical machinery distributor[^1]. Carrying savings then add 10-30% of that each year, depending on your rate[^5][^4]."
+  },
+  {
+   "q": "What carrying cost rate should we use?",
+   "a": "Work out your own, item by item if you can[^6]. APQC's median across 6,468 organizations is 10%, while textbooks say 20-50%[^5][^4]. One case firm used 19% but measured 37.8%[^7]."
+  },
+  {
+   "q": "Can we write off the dead stock the AI flags?",
+   "a": "Only once you act on it. For tax, goods must be scrapped or actually offered at a reduced price[^35][^36]. Ask your accountant well before year end."
+  },
+  {
+   "q": "Will buyers still approve the orders?",
+   "a": "Yes, and they should. In field tests at a parts retailer, adjusting the tool's inputs added profit, while overriding its outputs cut it[^10][^8]."
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Switch on what your ERP already has, then buy a planning add-on for several branches, lumpy parts or many suppliers[^25][^33]. Most firms now buy: 76% of enterprise AI use cases were bought in 2025, up from 53%[^39].",
+  "build": "Build only the narrow pieces your own data does best, such as late-order prediction from your purchase history[^14][^13]. As reported in a copy of MIT NANDA's 2025 report, internal builds reached deployment about 33% of the time, against 67% for partnerships[^40]."
+ },
+ "pickElse": [
+  "A few hundred steady items in one warehouse: ERP reorder rules by ABC class, reviewed each quarter, may be enough[^28].",
+  "New items, promotions or strong seasons: fix the demand forecast first; see our AI demand forecasting guide[^26].",
+  "Counts you can't trust: fix cycle counting before you buy any planning tool[^17][^18]."
+ ],
+ "resources": [
+  {
+   "name": "Census Bureau, Monthly Wholesale Trade",
+   "url": "https://www.census.gov/wholesale/pdf/mwts/currentwhl.pdf",
+   "what": "The monthly inventories-to-sales ratios by sector behind our table; compare your own ratio each month."
+  },
+  {
+   "name": "ISM Manufacturing PMI report",
+   "url": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/october",
+   "what": "Monthly lead times for production materials, MRO and capital goods, to sanity-check your ERP lead times."
+  },
+  {
+   "name": "NetSuite Inventory Optimization docs",
+   "url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_1508852924.html",
+   "what": "How NetSuite's native inventory optimization segments items and sets safety stock."
+  },
+  {
+   "name": "IRS practice unit, lower of cost or market",
+   "url": "https://www.irs.gov/pub/fatca/int_practice_units/lower-of-cost-or-market.pdf",
+   "what": "What the IRS accepts as a write-down of excess and obsolete stock."
+  }
+ ],
+ "stats": [
+  {
+   "num": "2.65",
+   "label": "months of sales that US machinery and equipment distributors held in stock in September 2026[^1]",
+   "source": "Census Bureau, Monthly Wholesale Trade, Nov 2026"
+  },
+  {
+   "num": "87 days",
+   "label": "average lead time buyers reported for production materials in October 2026, up from 81 a year earlier[^3]",
+   "source": "ISM Manufacturing PMI, Nov 2026"
+  },
+  {
+   "num": "65%",
+   "label": "of about 370,000 store inventory records were inaccurate in one study[^17]",
+   "source": "DeHoratius and Raman, Management Science, 2008"
+  },
+  {
+   "num": "5.77%",
+   "label": "profit lost when buyers overrode a parts retailer's stocking tool[^8]",
+   "source": "Kesavan and Kushwaha, Management Science, 2020"
+  },
+  {
+   "num": "10%",
+   "label": "median carrying cost as a share of average inventory value, across 6,468 organizations[^5]",
+   "source": "APQC Open Standards Benchmarking"
+  }
+ ],
+ "sources": [
+  {
+   "name": "US Census Bureau, Monthly Wholesale Trade, September 2026 (CB26-168)",
+   "url": "https://www.census.gov/wholesale/pdf/mwts/currentwhl.pdf",
+   "what": "Released 9 Nov 2026, seasonally adjusted: wholesale inventories $1,013.1B, up 7.6% a year; sales up 19.8%; inventories-to-sales ratio 1.21 against 1.34 a year earlier, with ratios by sector."
+  },
+  {
+   "name": "US Census Bureau, M3 Full Report, Table 7, September 2026",
+   "url": "https://www.census.gov/manufacturing/m3/prel/pdf/table78p.pdf",
+   "what": "Released 3 Nov 2026: manufacturers' inventories-to-shipments ratios by industry, e.g. all manufacturing 1.46, machinery 2.39."
+  },
+  {
+   "name": "ISM, Manufacturing PMI Report, October 2026",
+   "url": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/october",
+   "what": "Released 2 Nov 2026: average lead time for production materials 87 days (81 in Nov 2025); supplier deliveries slower for the 11th month. ISM reports these as buyers' commitment horizons."
+  },
+  {
+   "name": "Azzi et al., inventory holding costs, International Journal of Logistics Management 25(1), 2014",
+   "url": "https://www.emerald.com/ijlm/article/25/1/109/135053",
+   "what": "Textbooks put carrying costs at 20-50% of inventory value a year; firms often don't know their holding cost precisely."
+  },
+  {
+   "name": "APQC Open Standards Benchmarking, inventory carrying cost as a percentage of average inventory value",
+   "url": "https://www.apqc.org/what-we-do/benchmarking/open-standards-benchmarking/measures/inventory-carrying-cost-percentage",
+   "what": "Median 10.0% across 6,468 organizations."
+  },
+  {
+   "name": "Gurtu, inventory holding cost, Journal of Risk and Financial Management 14(2):65, 2021",
+   "url": "https://www.mdpi.com/1911-8074/14/2/65",
+   "what": "Literature assumes 16-20%; holding cost should be computed per item."
+  },
+  {
+   "name": "LaLonde and Lambert, inventory carrying costs, Journal of Food Distribution Research",
+   "url": "https://ageconsearch.umn.edu/nanna/record/27880/files/07030020.pdf",
+   "what": "A case company measured its carrying rate at 37.8% against the 19% it had been using."
+  },
+  {
+   "name": "Kesavan and Kushwaha, Management Science 66(11), 2020",
+   "url": "https://pubsonline.informs.org/doi/abs/10.1287/mnsc.2020.3743",
+   "what": "Field experiment at an auto replacement parts retailer: merchants' overrides of a data-driven tool cut profit 5.77% overall; overrides helped growth items and hurt mature and declining ones."
+  },
+  {
+   "name": "George Mason University, The algorithmic workplace: how can humans excel? (2021)",
+   "url": "https://www.gmu.edu/news/2021-12/algorithmic-workplace-how-can-humans-excel",
+   "what": "Summary of the field experiment: 12 months, 30,000+ products; buyers rejected the tool's removal flags more than half the time."
+  },
+  {
+   "name": "Kesavan, Kushwaha and Steele, Management Science 72(1), 2025",
+   "url": "https://pubsonline.informs.org/doi/10.1287/mnsc.2024.06321",
+   "what": "Letting merchants adjust the tool's inputs, not its outputs, raised profit 4.92%; gains were largest on high-margin items and items with little history."
+  },
+  {
+   "name": "Li, Wang and Xu, Production and Operations Management 35(3), 2026",
+   "url": "https://journals.sagepub.com/doi/10.1177/10591478251367129",
+   "what": "Store replenishment recommender: service level up 2.9% with no extra inventory; managers' daily ordering time down 36.5%; managers still override some items."
+  },
+  {
+   "name": "US Census Bureau, working paper CES-WP-26-25 (rev. Oct 2026)",
+   "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
+   "what": "Among firms where AI changed tasks, 66% use it only to augment work; 2% report AI-related employment decreases."
+  },
+  {
+   "name": "Reiners, Haubitz and Thonemann, Production and Operations Management, 2025",
+   "url": "https://journals.sagepub.com/doi/10.1177/10591478251328630",
+   "what": "Global equipment maker: machine-learned planned lead times over 30% more accurate; simulation showed about 7% less inventory at the same service level."
+  },
+  {
+   "name": "Predicting late deliveries with machine learning, Supply Chain Analytics, 2023",
+   "url": "https://www.sciencedirect.com/science/article/pii/S294986352300002X",
+   "what": "German machinery maker: about 14% of orders were late; machine learning predicted delivery lateness."
+  },
+  {
+   "name": "Supplier lead-time prediction at Siemens Energy, thesis (DiVA)",
+   "url": "https://www.diva-portal.org/smash/get/diva2:2012929/FULLTEXT01.pdf",
+   "what": "139,000 purchase-order items: random forest R-squared only 0.3-0.55, error 3-5 days; recommends combining with human judgment."
+  },
+  {
+   "name": "Systematic review of machine learning in inventory control, 2025",
+   "url": "https://www.sciencedirect.com/science/article/pii/S2214716025000430",
+   "what": "Most papers reviewed assume zero lead time."
+  },
+  {
+   "name": "DeHoratius and Raman, Management Science, 2008",
+   "url": "https://pubsonline.informs.org/doi/10.1287/mnsc.1070.0789",
+   "what": "65% of about 370,000 inventory records across 37 stores were inaccurate."
+  },
+  {
+   "name": "Kang and Gershwin, information inaccuracy in inventory systems, MIT, 2004",
+   "url": "https://web.mit.edu/manuf-sys/www/oldcell1/papers/kang-gershwin-autoid04.pdf",
+   "what": "Small undetected stock losses can freeze automated replenishment: the system believes stock exists and never reorders."
+  },
+  {
+   "name": "Akkerman et al., European Journal of Operational Research, 2025",
+   "url": "https://www.sciencedirect.com/science/article/pii/S0377221724007367",
+   "what": "Ignoring shrinkage in inventory decisions can raise costs by up to 95%."
+  },
+  {
+   "name": "Paterson, Kiesmüller, Teunter and Glazebrook, lateral transshipment review, European Journal of Operational Research, 2011",
+   "url": "https://www.sciencedirect.com/science/article/pii/S0377221710004042",
+   "what": "Reactive transfers between locations suit settings where moving stock is cheap next to holding and stockout costs, such as spare parts."
+  },
+  {
+   "name": "Paterson, Teunter and Glazebrook, enhanced lateral transshipments, European Journal of Operational Research, 2012",
+   "url": "https://sciencedirect.com/science/article/pii/S0377221712001981",
+   "what": "Adding planned (proactive) transfers cuts operating cost and safety stock and improves service; benefits grow with more locations."
+  },
+  {
+   "name": "INSEAD Knowledge, pooling risks with transshipment, 2023",
+   "url": "https://knowledge.insead.edu/operations/pooling-risks-transshipment-more-cost-effective-hubs",
+   "what": "Pooling stock information with transfers can beat a central hub when transfer cost is low enough."
+  },
+  {
+   "name": "ABC-XYZ-FSN inventory case, South African Journal of Industrial Engineering, 2025",
+   "url": "https://scielo.org.za/scielo.php?pid=S2224-78902025000400022&script=sci_arttext",
+   "what": "XYZ by demand variation: X under 50%, Y 50-100%, Z over 100%; C items were 79% of parts but 20% of consumption, and C-class excess drove dead stock."
+  },
+  {
+   "name": "Oracle NetSuite Help, Advanced Inventory Management reorder points",
+   "url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/article_162488535703.html",
+   "what": "Auto-calculates reorder point and preferred stock; lead time from the last 3 purchase orders, combined across vendors; defaults 14 days lead time, 7 days safety stock."
+  },
+  {
+   "name": "Oracle NetSuite Help, Inventory Optimization (2026.2)",
+   "url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_1508852924.html",
+   "what": "ABC/123 segmentation into 9 segments, a service level per segment, planner override; calculates safety stock, reorder point and preferred level from demand and lead-time variability."
+  },
+  {
+   "name": "Oracle NetSuite Help, inventory optimization calculations",
+   "url": "http://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/article_0702045810.html",
+   "what": "Assumes normal demand; results can be approximate when demand is intermittent, promotional, strongly seasonal or skewed."
+  },
+  {
+   "name": "Microsoft Learn, Business Central planning parameters",
+   "url": "https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-planning-parameters",
+   "what": "Reordering policies: fixed reorder quantity, maximum quantity, order, lot-for-lot; safety stock is a quantity you enter."
+  },
+  {
+   "name": "Microsoft Learn, Business Central best practices for reordering policies",
+   "url": "https://learn.microsoft.com/en-us/dynamics365/business-central/setup-best-practices-reordering-policies",
+   "what": "Recommends reordering policies by item class (ABC)."
+  },
+  {
+   "name": "Microsoft Learn, Business Central Sales and Inventory Forecast extension",
+   "url": "https://learn.microsoft.com/en-us/dynamics365/business-central/ui-extensions-sales-forecast",
+   "what": "Forecast is aggregated across all locations and variants; no prediction when data is too thin or volatile."
+  },
+  {
+   "name": "Acumatica Implementation Guide, replenishment for stock items (2026 R2)",
+   "url": "https://beacon.acumatica.com/r/Implementation-Guide/Implementing-Order-Management/Replenishment-for-Stock-Items/Configuration-of-Replenishment-General-Information?contentId=e5Qs0PjyWnhh0Rri0oBjxQ",
+   "what": "Only basic replenishment is built in; Acumatica recommends partner (ISV) solutions for more."
+  },
+  {
+   "name": "Acumatica Implementation Guide, inventory planning configuration (2026 R2)",
+   "url": "https://beacon.acumatica.com/r/Implementation-Guide/Implementing-Inventory-Planning/Configuring-Inventory-Planning/Inventory-Planning-Configuration-General-Information?contentId=2vhtG3nRGrc2zYUOq40_og",
+   "what": "MRP and DRP do not calculate safety stock, reorder point or maximum quantity; you enter them by hand."
+  },
+  {
+   "name": "Epicor news release, Epicor acquires Smart Software",
+   "url": "https://www.epicor.com/en/newsroom/news-releases/epicor-acquires-smart-software/",
+   "what": "Acquisition announced 1 May 2024; Smart IP&O adds probabilistic inventory planning."
+  },
+  {
+   "name": "Capterra, GMDH Streamline vs Smart IP&O (price read 26 Nov 2026)",
+   "url": "https://www.capterra.com/compare/168356-175581/GMDH-Streamline-vs-Smart-IP-O",
+   "what": "Lists Smart IP&O from $695 a month."
+  },
+  {
+   "name": "EazyStock, pricing page (vendor; read 26 Nov 2026)",
+   "url": "https://www.eazystock.com/pricing",
+   "what": "No published price; quote only; annual billing, or 10% more billed monthly."
+  },
+  {
+   "name": "eCFR, Treasury Regulation 1.471-2",
+   "url": "https://www.ecfr.gov/current/title-26/chapter-I/subchapter-A/part-1/subject-group-ECFRb3578fa14bdb9ea/section-1.471-2",
+   "what": "Paragraph (c): subnormal goods (damaged, shop-worn, obsolete) valued at bona fide selling price less disposal cost when actually offered for sale within 30 days after the inventory date."
+  },
+  {
+   "name": "IRS LB&I practice unit, lower of cost or market",
+   "url": "https://www.irs.gov/pub/fatca/int_practice_units/lower-of-cost-or-market.pdf",
+   "what": "Excess or overstocked goods are not subnormal unless scrapped or actually offered at reduced prices."
+  },
+  {
+   "name": "Thor Power Tool Co. v. Commissioner, 439 U.S. 522 (1979)",
+   "url": "https://www.govinfo.gov/content/pkg/USREPORTS-439/pdf/USREPORTS-439-522.pdf",
+   "what": "Supreme Court disallowed a tax write-down of excess spare parts still held for sale at original prices."
+  },
+  {
+   "name": "FASB, ASU 2015-11, Inventory (Topic 330)",
+   "url": "https://storage.fasb.org/ASU%202015-11.pdf",
+   "what": "Inventory under FIFO or average cost is measured at the lower of cost and net realizable value."
+  },
+  {
+   "name": "Menlo Ventures, 2025 State of Generative AI in the Enterprise",
+   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+   "what": "Survey of 495 US enterprise AI decision-makers: 76% of AI use cases bought rather than built, up from 53% in 2024."
+  },
+  {
+   "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025, as reported in a copy hosted by mlq.ai (no MIT-hosted original found, 26 Nov 2026)",
+   "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+   "what": "Interview sample of 52 organizations, self-reported: external partnerships reached deployment about 67% of the time, internal builds about 33%."
+  },
+  {
+   "name": "Netstock, pricing (vendor; read 26 Nov 2026)",
+   "url": "https://www.netstock.com/pricing",
+   "what": "Vendor says implementation takes 6-10 weeks; plans from $900 a month billed annually."
+  },
+  {
+   "name": "StockIQ Technologies, pricing (vendor; read 26 Nov 2026)",
+   "url": "https://stockiqtech.com/pricing",
+   "what": "No published price; vendor says average implementation is 12 weeks."
+  },
+  {
+   "name": "Smart Software blog, extending Epicor Kinetic min/max planning (vendor)",
+   "url": "https://smartcorp.com/blog/extend-epicor-kinetic-forecasting-min-max-planning",
+   "what": "Kinetic min/max/safety relies on average daily demand; forecasts must be imported and seasonality adjusted outside."
+  }
+ ],
+ "related": [
+  "ai-demand-forecasting",
+  "supply-chain-logistics",
+  "manufacturing",
+  "data-analytics-consulting",
+  "ai-integration-services"
+ ],
+ "offer": {
+  "heading": "Not sure how much cash is stuck in your stock? Get a free diagnostic",
+  "body": "Bring us your inventory management process and a stock export. In 30 minutes we compare your stock-to-sales ratio with your sector, and you leave with the first step and a before-and-after measure. You get it in writing, with no sales pitch."
+ },
+ "keyword": {
+  "phrase": "ai inventory management",
+  "searches": 1000,
+  "cpc": 48.26,
+  "difficulty": 30
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Wanted to know where to start and how to measure it. The no-licence first step (lead-time and dead-stock checks on our own purchase history) was buried as recipe 3; it now leads as recipe 1. Each recipe names who does each step, and the test plan ends in cash and fill rate against the sector ratio. Time to go live is only given as vendor claims (6-12 weeks), labelled as such."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Stalled on service level, fill rate, MRP and DRP, lot-for-lot and 'probabilistic planning'. Each is now defined in plain words or swapped out. The own-data column header was too long for a phone and is now 'Months in stock, Sep 2026 (2025)'."
+  },
+  {
+   "reader": "GM",
+   "notes": "Asked what it does to the unit's margin and whether one branch can go first. The example now turns the carrying saving into 0.4-0.7% of sales. The live test already runs on one branch or product family beside a matched branch, and team time is covered by the 36.5% cut in ordering time from the store study. Reworded the last ERP recipe step so the 12-week check reads cleanly."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Read as head of supply chain and purchasing. Pushed back that ISM figures are buyers' reported lead times, not measured deliveries; the bottom line now says deliveries slowed 11 months running and the recipe says 'reported lead times'. Wanted the override evidence labelled by setting, so the bottom line and FAQ now say parts retailer. Buyer, planner, branch manager and controller each own a named decision, which matches how purchasing runs. No study from a mid-size distributor exists in the research, so none is claimed."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Passes the 10-second test: the title is his question and the bottom line leads with cash. Return is answered in dollars per $10M of sales; skills by a first step that needs an analyst, not a data scientist; data by the recount-first step. The offer now promises his ratio against his sector, a concrete thing to walk away with. Gaps he'd notice: no security or data-sharing guidance for add-ons and no case from a firm his size, because the research has neither; no Zavient fee is shown, per site rules. Lead's decision after review: carrying cost widened to 10-30% (APQC median to textbook range), own-data columns recomputed at both ends, and the MIT NANDA figure labelled as read from a published copy."
+  }
+ ],
+ "updated": "2026-11-26"
+}

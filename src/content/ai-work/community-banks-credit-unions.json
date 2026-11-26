@@ -1,0 +1,832 @@
+{
+ "title": "AI in banking: what are community banks actually using it for?",
+ "description": "AI in banking for community banks and credit unions: where it pays first, which AI guidance your charter faces, and where people stay in charge.",
+ "type": "industry",
+ "templateVersion": 1,
+ "topic": "AI in community banking",
+ "job": "AI in banking",
+ "industry": "community banks and credit unions",
+ "index": false,
+ "verdict": [
+  "Generative AI is spreading fast at banks and credit unions, but few run AI across the whole institution.[^1][^2]",
+  "Fraud detection leads AI use at community banks; credit unions also use AI to help contact-center staff.[^2][^3]",
+  "Your core provider is the gate: three in four banks need it to reach their own data.[^4][^5]",
+  "The April 2026 model risk guidance mostly targets banks over $30B and leaves out generative AI.[^6][^7]",
+  "Fair lending still applies: you owe specific denial reasons, and some states kept disparate impact.[^8][^9]"
+ ],
+ "onPage": [
+  {
+   "to": "human-role",
+   "text": "Who signs off on credit, alerts and member answers"
+  },
+  {
+   "to": "ranked",
+   "text": "Eight AI jobs, ranked by payoff then effort"
+  },
+  {
+   "to": "own-data",
+   "text": "Our count of banks and credit unions by examiner, and the AI guidance each one uses"
+  },
+  {
+   "to": "table-1",
+   "text": "Adoption surveys, with who was actually asked"
+  },
+  {
+   "to": "table-2",
+   "text": "What changes between a bank and a credit union"
+  },
+  {
+   "to": "table-3",
+   "text": "What AI your core provider is selling"
+  },
+  {
+   "to": "rules",
+   "text": "The rules and guidance in force, proposed or changed in 2026"
+  },
+  {
+   "to": "what-goes-wrong",
+   "text": "Where it goes wrong, and the fix for each"
+  }
+ ],
+ "headings": {
+  "ranked": "Where does AI pay first at a community bank or credit union?",
+  "rules": "Which rules apply to AI at a community bank or credit union?",
+  "what-goes-wrong": "Where does AI go wrong at community banks and credit unions?",
+  "faq": "Questions bankers ask about AI",
+  "buy-or-build": "Should you buy AI from your core and vendors, or build it?"
+ },
+ "summary": "AI in banking, at a community bank or credit union, mostly sorts, drafts and answers: fraud alerts, credit memos and staff questions.[^2][^3][^10] People still decide, and you stay responsible for AI you buy from vendors.[^11][^12] Getting your data out of the core makes or breaks it.[^4][^5]",
+ "humanRole": [
+  "Credit officers keep each credit decision and sign every memo AI drafts; TD sends its AI drafts to expert review.[^10] The Office of the Comptroller of the Currency (OCC) rates AI risk partly by whether a person approves each output.[^12][^13]",
+  "Your Bank Secrecy Act (BSA) officer decides what gets filed; AI only sorts alerts first, as Fiserv's triage agent does (vendor).[^14] Most alerts are false positives, so that sorting is where analyst time goes.[^15]",
+  "Member-service staff keep the conversation; AI suggests answers from your own procedures.[^3] In a 5,172-agent study, AI help raised issues resolved per hour about 15%, most for newer staff.[^16]",
+  "Management owns vendor oversight: using a vendor does not reduce your responsibility.[^11][^17] Census data shows 66% of firms where AI changed tasks use it only to help staff; 2% report employment decreases.[^18]"
+ ],
+ "ranked": [
+  {
+   "name": "Fraud and anti-money-laundering (AML) alert triage",
+   "why": "Of community banks using AI, 77% use it for fraud detection and security.[^2] About 90-95% of anti-money-laundering alerts are false positives, so analysts spend most of their time clearing noise.[^15]",
+   "payoff": "Analyst minutes per alert, and the share of alerts closed as false positives."
+  },
+  {
+   "name": "Commercial credit spreading and memo drafts",
+   "slug": "ai-underwriting",
+   "why": "At TD, an AI tool cut first-draft credit memos from up to 3 days to under 30 minutes.[^10] Experts passed 95% of drafts on 220 deals; TD is a large bank, so treat that as a ceiling.[^10]",
+   "payoff": "Hours from complete financials to a signed credit memo."
+  },
+  {
+   "name": "Staff knowledge search and contact-center agent assist",
+   "why": "Among credit unions using AI in the contact center, 80% run generative AI agent assist.[^3] In a large published study, AI help raised issues resolved per hour about 15%.[^16]",
+   "payoff": "Handle time and first-contact resolution, checked against a weekly sample of answers."
+  },
+  {
+   "name": "Loan files and back-office documents",
+   "slug": "ai-document-processing",
+   "why": "APQC's median cost to process one invoice is $6.00, a fair yardstick for any paper-heavy step.[^19] Machine reading costs $1.50 per 1,000 pages on AWS Textract's price list.[^20]",
+   "payoff": "Minutes per loan file or exception cleared, and re-keying errors caught."
+  },
+  {
+   "name": "Consumer credit decisioning",
+   "slug": "ai-credit-scoring",
+   "why": "Two in three credit unions plan AI credit decisioning, per America's Credit Unions.[^21] It takes the most work: fair lending tests and specific reasons for every denial.[^8][^22]",
+   "payoff": "Share of applications auto-decided, with approval and delinquency rates by group."
+  },
+  {
+   "name": "Member chatbots and voice AI",
+   "why": "One credit union told Congress its voice AI handles over 60% of business-hours calls.[^23] The CFPB found chatbots giving wrong answers and trapping people in loops.[^24]",
+   "payoff": "Share of calls and chats resolved without a hand-off, and complaints about the bot."
+  },
+  {
+   "name": "Share of wallet and next products for existing customers",
+   "slug": "sales-analytics",
+   "why": "In a McKinsey study, relationship managers with analytics tools grew portfolios 9%, against 5% for a control group.[^25] Many banks have not yet linked accounts into households, which comes first.[^26]",
+   "payoff": "Products per household, and new accounts opened by existing customers."
+  },
+  {
+   "name": "CECL (current expected credit loss) estimates and loan monitoring: watch, don't lead",
+   "why": "The Fed's free SCALE tool already serves banks under $1B, in a spreadsheet.[^27] We found no independent evidence that machine learning beats it at this size.",
+   "payoff": "Hours per quarter spent on the allowance estimate."
+  }
+ ],
+ "ownData": {
+  "title": "Who examines you, and which AI guidance applies?",
+  "intro": "On 26 Nov 2026 we counted active banks holding $250M to $5B, by primary federal regulator, in Federal Deposit Insurance Corporation (FDIC) data.[^28] Assets are as of 30 Sep 2026; credit union counts come from the National Credit Union Administration (NCUA), Q2 2026.[^29] Then we mapped the AI-related guidance each examiner has issued or joined.[^6][^12][^30]",
+  "headers": [
+   "Charter (federal examiner)",
+   "Active, all sizes",
+   "$250M to $5B in assets",
+   "AI guidance your examiner points to"
+  ],
+  "rows": [
+   [
+    "National bank or federal savings association (OCC)",
+    "873[^28]",
+    "490[^28]",
+    "OCC 2026-13 model guidance, aimed at banks over $30B.[^31] OCC's AI exam framework, which sets no new expectations.[^12]"
+   ],
+   [
+    "State member bank (Federal Reserve, with your state)",
+    "696[^28]",
+    "438[^28]",
+    "SR 26-2, with the same $30B focus.[^6] The Conference of State Bank Supervisors (CSBS) AI framework, if your state adopts it.[^32]"
+   ],
+   [
+    "State nonmember bank (FDIC, with your state)",
+    "2,633[^28]",
+    "1,487[^28]",
+    "FIL-15-2026, which 'generally does not apply' at $30B or less.[^7] The CSBS framework, if your state adopts it.[^32]"
+   ],
+   [
+    "All FDIC-insured banks",
+    "4,204[^28]",
+    "2,415: 1,657 under $1B and 758 at $1B to $5B[^28]",
+    "Generative and agentic AI sit outside the April 2026 model guidance.[^6][^7]"
+   ],
+   [
+    "Federal credit union (NCUA)",
+    "2,649[^29]",
+    "Not counted for this exact band",
+    "No AI-specific rules; NCUA points to letters 07-CU-13 and 01-CU-20.[^30] NCUA cannot examine your vendors directly.[^33]"
+   ],
+   [
+    "Federally insured state credit union (NCUA, with your state)",
+    "1,565[^29]",
+    "Not counted for this exact band",
+    "The same NCUA letters.[^30] Ask your state regulator about its own approach."
+   ],
+   [
+    "All federally insured credit unions",
+    "4,214[^29]",
+    "About 748 hold over $500M (third-party reads of NCUA data)[^34][^35]",
+    "NCUA joined the Sep 2026 proposed vendor guidance.[^36]"
+   ]
+  ],
+  "note": "Zavient count from the FDIC BankFind API, pulled 26 Nov 2026; regulator rows sum to 4,202, two short of the 4,204 total, unexplained.[^28] The API has no staff-count field, and credit union bands are third-party reads of NCUA data, not our own pull.[^34][^35] Guidance is not a rule, and this is not legal advice.[^7]"
+ },
+ "tables": [
+  {
+   "title": "How many banks and credit unions use AI, and who was asked?",
+   "intro": "Each survey asked a different group, so compare them with care.[^2][^37] The second column is who answered, from each publisher's own report.",
+   "headers": [
+    "Survey",
+    "Who answered",
+    "What it found"
+   ],
+   "rows": [
+    {
+     "name": "CSBS Annual Survey, 2026",
+     "url": "https://www.csbs.org/2026-csbs-annual-survey",
+     "cells": [
+      "330 bankers, mostly state banks under $10B; not a random sample[^2]",
+      "53% piloting or in limited use; 9% deployed across functions[^2]"
+     ]
+    },
+    {
+     "name": "Cornerstone Advisors, 2026",
+     "url": "https://www.crnrstone.com/press-release/cornerstone-advisors-whats-going-on-in-banking-research-finds-ai-crypto-and-fraud-are-top-of-mind-for-banking-executives-in-2026",
+     "cells": [
+      "416 executives at $250M to $50B institutions[^1]",
+      "Generative AI deployed at 49% of banks and 59% of credit unions, up from 16% and 36%[^1]"
+     ]
+    },
+    {
+     "name": "Bank Director Technology Survey, 2026",
+     "url": "https://www.bankdirector.com/wp-content/uploads/2026/09/2026TechReport-Open-Version.pdf",
+     "cells": [
+      "136 banks under $100B, over half at $1B to $10B[^37]",
+      "72% use generative AI; 88% have an AI use policy[^37]"
+     ]
+    },
+    {
+     "name": "Wipfli State of the Credit Union, 2026",
+     "url": "https://48118069.hs-sites.com/hubfs/Blog%20Files/Wipfli_2026CUIndustry_RPT.pdf",
+     "cells": [
+      "100 credit union executives, 62% of them CFOs[^38]",
+      "66% implementing AI in targeted areas; 16% have an enterprise roadmap[^38]"
+     ]
+    },
+    {
+     "name": "The League and Cornerstone, 2026",
+     "url": "https://the-league.coop/whitepapers/AI-in-Credit-Unions_League-Cornerstone-Advisors.pdf",
+     "cells": [
+      "78 credit unions, $13M to $9.8B in assets[^3]",
+      "Two-thirds cite risk concerns; 52% cite an expertise gap[^3]"
+     ]
+    }
+   ],
+   "note": "We found no AI adoption survey from the Independent Community Bankers of America (ICBA); its AI material is policy guidance.[^39]"
+  },
+  {
+   "title": "What changes between a bank and a credit union?",
+   "intro": "Our read of which agency issued or joined each item, as of 26 Nov 2026.[^40][^41] Not legal advice.",
+   "headers": [
+    "Item",
+    "Banks (OCC, Fed, FDIC)",
+    "Credit unions (NCUA)"
+   ],
+   "rows": [
+    {
+     "name": "Vendor guidance in force",
+     "cells": [
+      "2023 interagency guidance, plus a 2024 guide for community banks[^11][^17]",
+      "NCUA letters 07-CU-13 and 01-CU-20[^30]"
+     ]
+    },
+    {
+     "name": "Proposed vendor guidance (11 Sep 2026)",
+     "cells": [
+      "Proposed; would replace the 2023 guidance once final[^40]",
+      "NCUA joined the proposal[^36]"
+     ]
+    },
+    {
+     "name": "Can the regulator examine your AI vendor?",
+     "cells": [
+      "Yes, bank regulators have that authority[^33]",
+      "No; the Government Accountability Office (GAO) has asked Congress to grant it[^33]"
+     ]
+    },
+    {
+     "name": "Core-provider joint statement (Sep 2026)",
+     "cells": [
+      "Yes: names opaque pricing, deconversion fees and integration limits[^41]",
+      "No; bank agencies only[^41]"
+     ]
+    },
+    {
+     "name": "Consumer Financial Protection Bureau (CFPB) exams",
+     "cells": [
+      "Not at $10B or less in assets[^42]",
+      "Not at $10B or less in assets[^42]"
+     ]
+    },
+    {
+     "name": "Reg B adverse action notices",
+     "cells": [
+      "Apply to every creditor[^8]",
+      "Apply to every creditor[^8]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "What AI is your core provider selling?",
+   "intro": "The big three cores serve over 70% of banks and nearly half of credit unions.[^43] The American Bankers Association (ABA) says some cores charge extra for data connections (APIs), and extraction can take 12 to 18 months.[^5]",
+   "headers": [
+    "Core provider",
+    "Share of banks / credit unions",
+    "AI offer",
+    "Worth knowing"
+   ],
+   "rows": [
+    {
+     "name": "Fiserv",
+     "url": "https://investors.fiserv.com/news-releases/news-release-details/fiserv-launches-agentos-operating-system-agentic-ai-banking",
+     "cells": [
+      "42% / 31%[^43]",
+      "agentOS, built with OpenAI and AWS; agents include commercial loan onboarding and AML triage[^14]",
+      "Priced by credits, per Fiserv[^14]"
+     ]
+    },
+    {
+     "name": "Jack Henry",
+     "url": "https://ir.jackhenry.com/news-releases/news-release-details/jack-henry-and-google-cloud-expand-collaboration-deliver-ai",
+     "cells": [
+      "21% / 12%[^43]",
+      "Google Cloud partnership (Jun 2026); vendor claims admin time savings of up to 70%[^44]",
+      "Data Hub core data sets for banks and credit unions are in closed beta[^45]"
+     ]
+    },
+    {
+     "name": "FIS",
+     "cells": [
+      "9% / 3%[^43]",
+      "Works with Anthropic, per American Banker[^46]",
+      "Not published"
+     ]
+    }
+   ],
+   "note": "Shares are from the Kansas City Fed's 2024 study.[^43] Product details are vendor claims, read 26 Nov 2026."
+  }
+ ],
+ "rules": [
+  {
+   "name": "Model risk guidance: SR 26-2, OCC 2026-13, FDIC FIL-15-2026",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/sr2602.htm",
+   "status": "In force since 17 Apr 2026",
+   "what": "Replaces SR 11-7 and is 'most relevant' above $30B in assets.[^6][^31] The FDIC says it generally doesn't apply at $30B or less without significant model risk.[^7] Generative and agentic AI are outside its scope.[^47][^48]"
+  },
+  {
+   "name": "OCC Bulletin 2026-54: framework for Super Intelligence",
+   "url": "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-54.html",
+   "status": "Issued 4 Nov 2026 (OCC-supervised banks)",
+   "what": "How OCC examiners will look at AI, which the bulletin calls Super Intelligence. It sets no new expectations and can be tailored to community banks.[^12][^49] Its vendor items include change notice, liability and vendor training on your data.[^50]"
+  },
+  {
+   "name": "CSBS AI Supervisory Framework",
+   "url": "https://www.csbs.org/csbs-artificial-intelligence-supervisory-framework",
+   "status": "Released 16 Sep 2026; each state chooses",
+   "what": "An optional tool for state examiners, built on the AI Risk Management Framework from NIST, the federal standards body.[^32][^51] It covers AI inside vendor products and doesn't apply to national banks.[^51][^52]"
+  },
+  {
+   "name": "Interagency third-party guidance (2023) and proposed revision (2026)",
+   "url": "https://www.occ.gov/news-issuances/bulletins/2023/bulletin-2023-17.html",
+   "status": "2023 guidance in force for banks; revision proposed 11 Sep 2026",
+   "what": "Using a vendor doesn't reduce your responsibility.[^11][^17] The proposal says the 2023 guidance was read too broadly and would replace it; NCUA joined.[^40][^36]"
+  },
+  {
+   "name": "Joint statement on community banks and core service providers",
+   "url": "https://www.fdic.gov/joint-statement-community-banks-engagement-core-service-providers.pdf",
+   "status": "Issued Sep 2026 (bank agencies only)",
+   "what": "Examiners may weigh opaque pricing, back billing, excessive deconversion fees and limits on third-party integration.[^41] Bring it to your next core contract talk."
+  },
+  {
+   "name": "NCUA Super Intelligence (SI) page",
+   "url": "https://ncua.gov/regulation-supervision/regulatory-compliance-resources/super-intelligence-si",
+   "status": "Current; renamed 18 Nov 2026",
+   "what": "NCUA says it has no AI-specific rules and points to letters 07-CU-13 and 01-CU-20 on vendor due diligence.[^30] NCUA can't examine vendors directly, so that checking falls on you.[^33]"
+  },
+  {
+   "name": "Regulation B (Equal Credit Opportunity Act) final rule",
+   "url": "https://www.cfpb.gov/rules-policy/final-rules/equal-credit-opportunity-act-regulation-b",
+   "status": "In force since 21 Jul 2026; litigation pending",
+   "what": "Removes the federal disparate impact (effects) test and narrows 'discouragement'.[^53][^22] Adverse action notices under 12 CFR 1002.9 still need specific reasons, even from complex models.[^8][^54] A suit challenging the rule is pending.[^55]"
+  },
+  {
+   "name": "State fair lending law",
+   "url": "https://www.hklaw.com/en/insights/publications/2026/01/nj-attorney-general-preserves-disparate-impact-theory-of-lending-discrimination-for-borrowers",
+   "status": "Varies by state; New Jersey rule adopted Dec 2025",
+   "what": "New Jersey kept disparate impact in its lending rule.[^9] Massachusetts settled for $2.5M with a student lender over an AI model it had not tested for disparate impact.[^56]"
+  }
+ ],
+ "watchOuts": [
+  "Staff paste member data into personal ChatGPT or Gemini accounts, as ICBA warns.[^39] Approve one business tool and write down that member data stays out of anything else, as CU*Answers does.[^57]",
+  "Chatbots give wrong answers or trap members in loops, which the CFPB flagged.[^24] Keep a fast path to a person, and test fees and rates, which the OCC names as hallucination risks.[^12]",
+  "A vendor's credit model can't give the specific reasons a denial needs.[^8][^58] Before you sign, have the vendor show the reasons its model gives on a sample of your own denials.",
+  "Treating the April 2026 Reg B rule as the end of fair lending risk.[^22] State law can still reach disparate impact, so keep testing outcomes by group.[^9][^56]",
+  "Core contracts that block integration or charge for your own data.[^5][^41] Read the contract before you pick an AI vendor, and cite the 2026 joint statement at renewal.",
+  "Deepfake video and voice used to open accounts or fool call centers, per Treasury's Financial Crimes Enforcement Network.[^59] Add a callback or second check before changing account details or moving money."
+ ],
+ "faq": [
+  {
+   "q": "Where should a community bank or credit union start with AI?",
+   "a": "Most start with drafting tools and the fraud tools their vendors already sell.[^4][^2] Pilot one workflow on one team or branch, with a before-and-after number such as analyst minutes per alert."
+  },
+  {
+   "q": "Can AI make credit decisions at a community bank or credit union?",
+   "a": "Yes, but you owe specific reasons for every denial and must keep application records for 25 months, 12 for business credit.[^8][^54] The OCC also rescinded its 1997 credit scoring exam guidance in April 2026.[^31]"
+  },
+  {
+   "q": "What does NCUA expect from credit unions using AI?",
+   "a": "NCUA has no AI-specific rules; its existing rules and vendor due diligence letters apply.[^30] It can't examine your vendors directly, so that work falls on you.[^33]"
+  },
+  {
+   "q": "Did the April 2026 Reg B rule end fair lending risk for AI models?",
+   "a": "No. Federal disparate impact is gone, but intentional discrimination, the Fair Housing Act and state law still apply.[^22][^55][^9] Adverse action notices are unchanged.[^54]"
+  },
+  {
+   "q": "What does AI cost a community bank or credit union?",
+   "a": "Drafting tools run about $20 to $21 per user a month, prices read 26 Nov 2026.[^60][^61] Alkami lists data and marketing tiers from $23K a year (vendor).[^62] Core providers' AI, such as Fiserv's credit pricing, isn't published, so get a scoped quote.[^14]"
+  },
+  {
+   "q": "Will examiners criticize us for using AI?",
+   "a": "The OCC says its AI framework sets no new expectations and can be tailored to community banks.[^12][^49] The FDIC says not following its model guidance does not, by itself, bring criticism.[^7]"
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Buy when your core or an established vendor already sells the job, such as fraud triage or memo drafting.[^14][^44] ICBA told the OCC that partnering with a core provider is often the only practical path for community banks.[^46] Most enterprise AI is now bought: 76% of use cases, up from 53% in 2024.[^63]",
+  "build": "Build only thin layers where your own procedures are the edge, such as a staff knowledge base. MIT research found bought tools succeed about 67% of the time; internal builds about a third as often.[^64][^63] For credit models, buy and validate; you still owe specific denial reasons.[^8]"
+ },
+ "pickElse": [
+  "Your core already sells the AI job: check Fiserv agentOS, Jack Henry's Google Cloud tools or FIS before adding a separate vendor.[^14][^44][^46]",
+  "Staff only need drafting and summaries: Microsoft 365 Copilot ($21 per user a month) or ChatGPT Business ($20), prices read 26 Nov 2026.[^60][^61] Copilot is what 95% of AI-using banks report.[^4]",
+  "You are under $1B and need a CECL estimate: the Fed's free SCALE tool runs in a spreadsheet.[^27]",
+  "Consumer credit decisions: buy from a specialist such as Zest AI, which claims 25% higher approvals, then validate it yourself.[^65][^8]"
+ ],
+ "resources": [
+  {
+   "name": "OCC Bulletin 2026-54 and its AI framework",
+   "url": "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-54.html",
+   "what": "Shows how OCC examiners will sort your AI uses by risk and human oversight."
+  },
+  {
+   "name": "CSBS AI Supervisory Framework",
+   "url": "https://www.csbs.org/csbs-artificial-intelligence-supervisory-framework",
+   "what": "Includes an optional risk-tiering worksheet you can run on your own AI list."
+  },
+  {
+   "name": "FDIC third-party risk guide for community banks",
+   "url": "https://www.fdic.gov/system/files/2024-06/third-party-risk-management-guide.pdf",
+   "what": "Step-by-step vendor review, written for community banks."
+  },
+  {
+   "name": "NCUA Super Intelligence (SI) page",
+   "url": "https://ncua.gov/regulation-supervision/regulatory-compliance-resources/super-intelligence-si",
+   "what": "NCUA's current position on AI and the letters it points to."
+  },
+  {
+   "name": "Federal Reserve SCALE tool",
+   "url": "https://www.supervisionoutreach.org/cecl/scale",
+   "what": "Free CECL estimate for banks under $1B, before you buy a model."
+  }
+ ],
+ "stats": [
+  {
+   "num": "2,415",
+   "label": "FDIC-insured banks hold $250M to $5B in assets, as of 30 Sep 2026.[^28]",
+   "source": "Zavient count, FDIC BankFind API, 26 Nov 2026"
+  },
+  {
+   "num": "4,214",
+   "label": "federally insured credit unions operated at 30 Jun 2026.[^29]",
+   "source": "NCUA Quarterly Data Summary, Q2 2026"
+  },
+  {
+   "num": "53%",
+   "label": "of surveyed community bankers are piloting AI or using it in limited ways; 9% use it across functions.[^2]",
+   "source": "CSBS 2026 survey, 330 bankers"
+  },
+  {
+   "num": "59%",
+   "label": "of credit unions and 49% of banks have deployed generative AI.[^1]",
+   "source": "Cornerstone Advisors 2026, 416 executives"
+  },
+  {
+   "num": "75%",
+   "label": "of banks rely on their core provider to reach their own data, up from 56%.[^4]",
+   "source": "Bank Director 2026 survey, via Jack Henry"
+  },
+  {
+   "num": "77%",
+   "label": "of community banks using AI use it for fraud detection and security.[^2]",
+   "source": "CSBS 2026 survey, 330 bankers"
+  }
+ ],
+ "sources": [
+  {
+   "name": "Cornerstone Advisors, What's Going On in Banking 2026 (press release)",
+   "url": "https://www.crnrstone.com/press-release/cornerstone-advisors-whats-going-on-in-banking-research-finds-ai-crypto-and-fraud-are-top-of-mind-for-banking-executives-in-2026",
+   "what": "416 executives at $250M-$50B institutions: generative AI deployed at 49% of banks and 59% of credit unions, up from 16% and 36%; machine learning at 29% and 41%."
+  },
+  {
+   "name": "CSBS, 2026 Annual Survey of Community Banks",
+   "url": "https://www.csbs.org/2026-csbs-annual-survey",
+   "what": "330 bankers, convenience sample, Apr-Jul 2026, mostly state banks under $10B: 53% piloting or in limited use, 9% deployed across functions; 77% of AI users use it for fraud detection and security."
+  },
+  {
+   "name": "The League and Cornerstone Advisors, AI in Credit Unions (2026)",
+   "url": "https://the-league.coop/whitepapers/AI-in-Credit-Unions_League-Cornerstone-Advisors.pdf",
+   "what": "78 credit unions, $13M-$9.8B: 80% of contact-center AI users run generative AI agent assist; 96% of operations users use it for knowledge; two-thirds cite risk concerns, 52% an expertise gap."
+  },
+  {
+   "name": "Jack Henry FinTalk, on the Bank Director 2026 Technology Survey (27 Oct 2026; vendor blog)",
+   "url": "https://www.jackhenry.com/fintalk/three-strategic-blindspots-holding-banks-back",
+   "what": "95% of AI-using banks use Microsoft Copilot; banks relying on their core provider to reach their own data rose from 56% to 75%; integration blamed for missed projects rose from 22% to 58%."
+  },
+  {
+   "name": "American Bankers Association, comment letter to the OCC (27 Jan 2026)",
+   "url": "https://downloads.regulations.gov/OCC-2025-0537-0023/attachment_1.pdf",
+   "what": "Top three core providers hold 72% of the bank market; some treat APIs as a premium feature; banks can wait 12-18 months for data extraction."
+  },
+  {
+   "name": "Federal Reserve, SR 26-2, revised model risk management guidance (17 Apr 2026)",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/sr2602.htm",
+   "what": "Replaces SR 11-7; most relevant for organizations over $30B in assets; generative and agentic AI are outside its scope."
+  },
+  {
+   "name": "FDIC, FIL-15-2026, agencies revise interagency model risk management guidance",
+   "url": "https://www.fdic.gov/news/financial-institution-letters/2026/agencies-revise-interagency-model-risk-management-guidance",
+   "what": "Generally does not apply to banks of $30B or less without significant model risk; non-compliance with the guidance alone brings no supervisory criticism."
+  },
+  {
+   "name": "CFPB, 12 CFR 1002.9 (notifications) with official commentary",
+   "url": "https://www.consumerfinance.gov/rules-policy/regulations/1002/9/",
+   "what": "Creditors must give the specific principal reasons for adverse action, whatever model they use."
+  },
+  {
+   "name": "Holland & Knight, NJ Attorney General preserves disparate impact theory of lending discrimination (Jan 2026)",
+   "url": "https://www.hklaw.com/en/insights/publications/2026/01/nj-attorney-general-preserves-disparate-impact-theory-of-lending-discrimination-for-borrowers",
+   "what": "New Jersey kept disparate impact in its lending discrimination rule (Dec 2025)."
+  },
+  {
+   "name": "TD Stories, TD launches Credit Assist (22 Oct 2026)",
+   "url": "https://stories.td.com/us/en/article/td-launches-credit-assist-turning-days-of-commercial-credit-work-into-minutes",
+   "what": "Large-bank case: first-draft commercial credit memos from up to 3 days to under 30 minutes; 95% passed expert review on 220 deals."
+  },
+  {
+   "name": "OCC Bulletin 2023-17, interagency guidance on third-party relationships (June 2023)",
+   "url": "https://www.occ.gov/news-issuances/bulletins/2023/bulletin-2023-17.html",
+   "what": "Using a third party does not reduce a bank's responsibility to operate safely and comply with the law; issued with the Fed (SR 23-4) and FDIC (FIL-29-2023)."
+  },
+  {
+   "name": "OCC Bulletin 2026-54, supervisory framework for Super Intelligence (4 Nov 2026)",
+   "url": "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-54.html",
+   "what": "Examiner framework for AI ('Super Intelligence'); sets no new expectations; may be tailored to community banks; tiers risk by consequences and human oversight; names hallucinated fees, rates and policies, and vendor training on bank data."
+  },
+  {
+   "name": "Arnold & Porter, OCC issues supervisory framework for bank use of Super Intelligence (Nov 2026)",
+   "url": "https://www.arnoldporter.com/en/perspectives/advisories/2026/11/occ-issues-supervisory-framework-for-bank-use-of-super-intelligence",
+   "what": "Law-firm summary of the OCC framework: risk tiers, human oversight and the lowest tier for internal productivity tools."
+  },
+  {
+   "name": "Fiserv, Fiserv launches agentOS (14 May 2026; vendor)",
+   "url": "https://investors.fiserv.com/news-releases/news-release-details/fiserv-launches-agentos-operating-system-agentic-ai-banking",
+   "what": "Vendor announcement: agentOS built with OpenAI and AWS; first-party agents include Commercial Loan Onboarding and Agentic AML Triage Analysis; priced by credits."
+  },
+  {
+   "name": "Future Generation Computer Systems (ScienceDirect, 2024), study of AML false positives",
+   "url": "https://www.sciencedirect.com/science/article/pii/S0167739X24002607",
+   "what": "About 90-95% of anti-money-laundering alerts are false positives."
+  },
+  {
+   "name": "Brynjolfsson, Li and Raymond, Generative AI at Work, Quarterly Journal of Economics (2025)",
+   "url": "https://academic.oup.com/qje/article/140/2/889/7990658",
+   "what": "5,172 support agents resolved about 15% more issues per hour with an AI assistant, most for less experienced staff."
+  },
+  {
+   "name": "FDIC, Third-Party Risk Management: A Guide for Community Banks (May 2024)",
+   "url": "https://www.fdic.gov/system/files/2024-06/third-party-risk-management-guide.pdf",
+   "what": "Interagency guide that walks a community bank through each stage of a vendor relationship."
+  },
+  {
+   "name": "US Census Bureau, CES Working Paper 26-25 (2026)",
+   "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
+   "what": "Among firms where AI changed tasks, 66% only use it to help existing staff; 2% report AI-related employment decreases."
+  },
+  {
+   "name": "APQC, cost to process an invoice",
+   "url": "https://www.apqc.org/what-we-do/benchmarking/open-standards-benchmarking/measures/total-cost-perform-process-process",
+   "what": "Median total cost to process accounts payable is $6.00 per invoice, across 4,821 companies."
+  },
+  {
+   "name": "AWS Textract pricing (read 26 Nov 2026)",
+   "url": "https://aws.amazon.com/textract/pricing/",
+   "what": "Text detection $1.50 per 1,000 pages; forms $50 per 1,000 pages."
+  },
+  {
+   "name": "America's Credit Unions, Credit unions deliver exceptional member experiences through AI (28 Aug 2026)",
+   "url": "https://www.americascreditunions.org/blogs/americas-credit-unions/credit-unions-deliver-exceptional-member-experiences-through-ai",
+   "what": "Citing Cornerstone: 17% of credit unions use agentic AI vs 7% of banks; 66% of credit unions plan AI credit decisioning."
+  },
+  {
+   "name": "Cooley, CFPB finalizes significant changes to Regulation B",
+   "url": "https://finsights.cooley.com/cfpb-finalizes-significant-changes-to-regulation-b/",
+   "what": "Law-firm summary of the April 2026 Reg B rule: disparate impact removed under federal ECOA; intentional discrimination still prohibited."
+  },
+  {
+   "name": "House Financial Services Committee, testimony of Great Lakes Credit Union (23 Jul 2024)",
+   "url": "https://docs.house.gov/meetings/BA/BA00/20240723/117527/HHRG-118-BA00-Wstate-OsborneE-20240723.pdf",
+   "what": "Credit union testimony: voice AI handles over 60% of business-hours calls and over 75% after hours."
+  },
+  {
+   "name": "CFPB, Chatbots in consumer finance (Jun 2023)",
+   "url": "https://www.consumerfinance.gov/data-research/research-reports/chatbots-in-consumer-finance/chatbots-in-consumer-finance",
+   "what": "Chatbots can give wrong information, trap customers in loops without a human and create compliance risk."
+  },
+  {
+   "name": "McKinsey, The data and analytics edge in corporate and commercial banking (2023)",
+   "url": "https://www.mckinsey.com/industries/financial-services/our-insights/the-data-and-analytics-edge-in-corporate-and-commercial-banking",
+   "what": "Relationship managers with analytics workbenches grew portfolios 9% vs 5% for a control group over 12 months."
+  },
+  {
+   "name": "ABA Banking Journal, Effective cross-selling (24 Mar 2025)",
+   "url": "http://bankingjournal.aba.com/2025/03/effective-cross-selling-the-key-to-meeting-deposit-and-loan-growth-goals",
+   "what": "Many banks have not effectively householded their customers."
+  },
+  {
+   "name": "Federal Reserve, SCALE tool for CECL",
+   "url": "https://www.supervisionoutreach.org/cecl/scale",
+   "what": "Free spreadsheet-based tool for estimating the CECL allowance at banks under $1B."
+  },
+  {
+   "name": "FDIC BankFind Suite API, institutions endpoint (index built 24 Nov 2026)",
+   "url": "https://api.fdic.gov/banks/institutions",
+   "what": "Source of the Zavient bank counts: active institutions, assets as of the 30 Sep 2026 call report, split by primary federal regulator; pulled 26 Nov 2026."
+  },
+  {
+   "name": "NCUA, Quarterly Credit Union Data Summary, Q2 2026",
+   "url": "https://ncua.gov/files/publications/analysis/quarterly-data-summary-2026-Q2.pdf",
+   "what": "4,214 federally insured credit unions at 30 Jun 2026: 2,649 federal charters and 1,565 state charters."
+  },
+  {
+   "name": "NCUA, Super Intelligence (SI) page (renamed 18 Nov 2026)",
+   "url": "https://ncua.gov/regulation-supervision/regulatory-compliance-resources/super-intelligence-si",
+   "what": "No AI-specific rules; existing rules are technology-neutral; points to letters 07-CU-13 and 01-CU-20 on vendor due diligence."
+  },
+  {
+   "name": "OCC Bulletin 2026-13, model risk management",
+   "url": "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-13.html",
+   "what": "OCC version of the April 2026 model guidance: same $30B focus, generative and agentic AI out of scope; rescinds the 1997 credit scoring exam guidance."
+  },
+  {
+   "name": "CSBS, Artificial Intelligence Supervisory Framework (16 Sep 2026)",
+   "url": "https://www.csbs.org/csbs-artificial-intelligence-supervisory-framework",
+   "what": "Discretionary tool for state examiners, each state choosing whether to use it; built on the NIST AI Risk Management Framework; optional risk-tiering worksheet."
+  },
+  {
+   "name": "GAO-25-107197 (May 2025)",
+   "url": "https://www.gao.gov/products/gao-25-107197",
+   "what": "NCUA lacks the authority bank regulators have to examine third-party service providers; GAO recommends Congress grant it."
+  },
+  {
+   "name": "Finantrix, Credit union concentration (third-party read of NCUA data)",
+   "url": "https://www.finantrix.com/articles/credit-union-concentration",
+   "what": "Credit union counts by asset tier from NCUA call report data, mid-2026."
+  },
+  {
+   "name": "Moraph, NCUA credit unions 2021-2026: counts and assets by asset band (third-party read)",
+   "url": "https://insights.moraph.com/ncua-credit-unions-2021-2026-counts-and-assets-by-asset-band",
+   "what": "Credit union counts by asset band: $500M-$1B: 277; $1B and over: 471."
+  },
+  {
+   "name": "NCUA, Agencies seek comment on proposed third-party risk management guidance (Sep 2026)",
+   "url": "https://ncua.gov/newsroom/press-release/2026/agencies-seek-comment-proposed-third-party-risk-management-guidance-and-issue-statement-community",
+   "what": "NCUA joined the bank agencies' Sep 2026 proposed third-party guidance."
+  },
+  {
+   "name": "Bank Director, 2026 Technology Survey",
+   "url": "https://www.bankdirector.com/wp-content/uploads/2026/09/2026TechReport-Open-Version.pdf",
+   "what": "136 banks under $100B, over half at $1B-$10B: 72% use generative AI, 30% agentic AI, 88% have an AI acceptable use policy, 74% train staff on AI-enabled fraud."
+  },
+  {
+   "name": "Wipfli, 2026 State of the Credit Union",
+   "url": "https://48118069.hs-sites.com/hubfs/Blog%20Files/Wipfli_2026CUIndustry_RPT.pdf",
+   "what": "100 credit union executives (62% CFOs), Sep-Oct 2025: 66% implementing AI in targeted areas; 16% have an enterprise AI roadmap; data readiness is the top barrier."
+  },
+  {
+   "name": "ICBA, How to build an AI policy at your community bank (2026)",
+   "url": "https://www.icba.org/w/how-to-build-an-ai-policy-at-your-community-bank-1",
+   "what": "Warns that an employee may load a customer spreadsheet into ChatGPT or Gemini; policy guidance, not a survey."
+  },
+  {
+   "name": "FDIC, FIL-58-2026, proposed interagency third-party risk management guidance (11 Sep 2026)",
+   "url": "https://www.fdic.gov/news/financial-institution-letters/2026/proposed-interagency-third-party-risk-management-guidance",
+   "what": "Proposal by the FDIC, OCC, Fed and NCUA; says the 2023 guidance was interpreted in an overly broad manner; would replace it once final."
+  },
+  {
+   "name": "FDIC, OCC and Fed, Joint Statement on Community Banks' Engagement with Core Service Providers (Sep 2026)",
+   "url": "https://www.fdic.gov/joint-statement-community-banks-engagement-core-service-providers.pdf",
+   "what": "Names opaque pricing, back billing, excessive deconversion fees and excessive limits on third-party integration as supervisory factors; bank agencies only."
+  },
+  {
+   "name": "12 U.S.C. 5516, supervision of depository institutions of $10B or less",
+   "url": "https://uscode.house.gov/view.xhtml?edition=prelim&num=0&req=granuleid%3AUSC-prelim-title12-section5516",
+   "what": "Banks and credit unions of $10B or less are examined for consumer law by their prudential regulator, not the CFPB."
+  },
+  {
+   "name": "Federal Reserve Bank of Kansas City, Market Structure of Core Banking Services Providers (2024)",
+   "url": "https://www.kansascityfed.org/research/payments-system-research-briefings/market-structure-of-core-banking-services-providers",
+   "what": "Fiserv serves 42% of banks and 31% of credit unions, Jack Henry 21% and 12%, FIS 9% and 3%; the big three serve over 70% of banks and nearly half of credit unions."
+  },
+  {
+   "name": "Jack Henry, Jack Henry and Google Cloud expand collaboration (25 Jun 2026; vendor)",
+   "url": "https://ir.jackhenry.com/news-releases/news-release-details/jack-henry-and-google-cloud-expand-collaboration-deliver-ai",
+   "what": "Vendor claim: early adopters report time savings of up to 70% on administrative tasks."
+  },
+  {
+   "name": "Jack Henry Platform, State of the Platform (vendor docs)",
+   "url": "https://knowledge.banno.com/platform/state-of-the-platform",
+   "what": "Data Hub delivers purchased data sets to BigQuery, Azure or AWS; bank and credit union core data sets are in closed beta."
+  },
+  {
+   "name": "American Banker, Jack Henry is using Google AI to defend 7,400 institutions (14 Jul 2026)",
+   "url": "https://www.americanbanker.com/news/jack-henry-is-using-google-ai-to-defend-7-400-institutions",
+   "what": "Fiserv works with OpenAI, FIS with Anthropic and Jack Henry with Google; quotes ICBA telling the OCC that partnering with a core provider is the most practical, often the only, path for community banks."
+  },
+  {
+   "name": "Federal Reserve, speech of 1 May 2026",
+   "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260501a.htm",
+   "what": "Generative AI is outside the revised model guidance; an update to third-party guidance is coming."
+  },
+  {
+   "name": "Sullivan & Cromwell, OCC, Fed and FDIC issue revised model risk management guidance (29 Apr 2026)",
+   "url": "https://www.sullcrom.com/insights/memo/2026/April/OCC-Fed-FDIC-Issue-Revised-Guidance-Model-Risk-Management",
+   "what": "Law-firm summary: the revised guidance targets larger banks and leaves generative and agentic AI out of scope."
+  },
+  {
+   "name": "Reed Smith, OCC issues supervisory framework on use of AI (Nov 2026)",
+   "url": "https://www.reedsmith.com/articles/occ-issues-supervisory-framework-on-use-of-ai",
+   "what": "Law-firm summary: the framework sets no new expectations for banks and is scaled to bank size and risk."
+  },
+  {
+   "name": "Mayer Brown, The OCC's supervisory framework for Super Intelligence: AI contracts (Nov 2026)",
+   "url": "https://www.mayerbrown.com/en/insights/publications/2026/11/the-occs-supervisory-framework-for-super-intelligence-what-banks-should-know-about-their-ai-contracts",
+   "what": "Law-firm summary: the framework's vendor items include change notice, liability and vendor use of bank data for model training."
+  },
+  {
+   "name": "White & Case, CSBS releases AI supervisory framework",
+   "url": "https://www.whitecase.com/insight-alert/csbs-releases-artificial-intelligence-supervisory-framework",
+   "what": "Law-firm summary: scoping covers AI inside vendor products; the framework is optional for states."
+  },
+  {
+   "name": "Cooley, State regulators enter the AI chat: CSBS releases AI supervisory framework",
+   "url": "https://finsights.cooley.com/state-regulators-enter-ai-chat-csbs-releases-ai-supervisory-framework",
+   "what": "Law-firm summary: the framework is for state-chartered institutions and does not apply to national banks."
+  },
+  {
+   "name": "CFPB, Equal Credit Opportunity Act (Regulation B) final rule (22 Apr 2026)",
+   "url": "https://www.cfpb.gov/rules-policy/final-rules/equal-credit-opportunity-act-regulation-b",
+   "what": "Final rule, 91 FR 21620, effective 21 Jul 2026: removes the federal effects test (disparate impact), narrows discouragement and limits special purpose credit programs."
+  },
+  {
+   "name": "KPMG Regulatory Alert, CFPB final rules: Regulation B, Section 1071 and disparate impact (2026)",
+   "url": "https://kpmg.com/us/en/articles/2026/cfpb-final-rules-regulation-b-Section-1071-and-disparate-impact-liability-reg-alert.html",
+   "what": "Adverse action notices (1002.9) and record keeping (1002.12) are unchanged by the 2026 rule."
+  },
+  {
+   "name": "National Consumer Law Center, CFPB guts core ECOA protections in Regulation B",
+   "url": "https://library.nclc.org/article/cfpb-guts-core-equal-credit-opportunity-act-protections-regulation-b",
+   "what": "Analysis of the rule and pending litigation (NFHA v. CFPB); the Fair Housing Act and state laws still apply."
+  },
+  {
+   "name": "Massachusetts Attorney General, $2.5M settlement with student loan lender over AI use (10 Jul 2025)",
+   "url": "https://www.mass.gov/news/ag-campbell-announces-25-million-settlement-with-student-loan-lender-for-unlawful-practices-through-ai-use-other-consumer-protection-violations",
+   "what": "Settlement over an AI underwriting model the lender had not tested for disparate impact."
+  },
+  {
+   "name": "CU*Answers, Responsible use of AI (8 May 2026)",
+   "url": "https://www.cuanswers.com/about/responsible-use-of-artificial-intelligence-ai-at-cuanswers",
+   "what": "Publishes its approved AI tools with the rule that member PII is not to be uploaded."
+  },
+  {
+   "name": "Upstart, comment letter to Treasury's AI request for information (Aug 2024; vendor)",
+   "url": "https://downloads.regulations.gov/TREAS-DO-2024-0011-0026/attachment_1.pdf",
+   "what": "Vendor letter: smaller institutions fear technical model documentation questions from examiners."
+  },
+  {
+   "name": "FinCEN, Alert FIN-2024-Alert004 on deepfake media fraud",
+   "url": "https://www.fincen.gov/news/news-releases/fincen-issues-alert-fraud-schemes-involving-deepfake-media-targeting-financial",
+   "what": "Criminals use deepfake media to get past identity checks at account opening and elsewhere."
+  },
+  {
+   "name": "Microsoft, Copilot business pricing (read 26 Nov 2026)",
+   "url": "https://www.microsoft.com/en-us/copilot/pricing/business",
+   "what": "Microsoft 365 Copilot Business add-on $21 per user a month; read 26 Nov 2026."
+  },
+  {
+   "name": "OpenAI Help, ChatGPT Business overview (read 26 Nov 2026)",
+   "url": "https://help.openai.com/en/articles/8792828-chatgpt-business-overview",
+   "what": "ChatGPT Business $20 per user a month billed annually; read 26 Nov 2026."
+  },
+  {
+   "name": "Alkami, Data and Marketing solutions (vendor; prices read 26 Nov 2026)",
+   "url": "https://www.alkami.com/data-marketing-solutions?m-search",
+   "what": "Vendor prices: from $23K (Data Insights), $47K (Predictive AI) or $77K (Full Funnel) a year; read 26 Nov 2026."
+  },
+  {
+   "name": "Menlo Ventures, 2025 State of Generative AI in the Enterprise",
+   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+   "what": "Survey of 495 US decision-makers: 76% of enterprise AI use cases were bought, up from 53% in 2024."
+  },
+  {
+   "name": "Fortune, MIT report: 95% of generative AI pilots at companies failing (18 Aug 2025)",
+   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
+   "what": "MIT NANDA research: bought or partnered AI tools succeed about 67% of the time; internal builds about a third as often."
+  },
+  {
+   "name": "Zest AI, solutions page (vendor)",
+   "url": "https://www.zest.ai/solutions",
+   "what": "Vendor claims 25% higher approval rates without added risk; no price published."
+  }
+ ],
+ "related": [
+  "ai-credit-scoring",
+  "ai-underwriting",
+  "ai-document-processing",
+  "account-reconciliation-automation",
+  "ai-governance-consulting"
+ ],
+ "offer": {
+  "heading": "Which two AI jobs can your core already support?",
+  "body": "In a free 30-minute call we map your fraud, lending and member-service work against what your core and vendors already sell. You leave knowing which guidance applies to your charter and where a person must sign off."
+ },
+ "keyword": {
+  "phrase": "ai in banking",
+  "searches": 1900,
+  "cpc": 18.06,
+  "difficulty": 33
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Dana (COO): ranked list gives one job per line with a payoff to measure, and the human-role block says who signs. Problem: BSA, AML, CECL, OCC, NCUA, CSBS, CFPB, ICBA, ABA, GAO, FinCEN and NIST were used unexplained. Fixed: each spelled out on first use. FAQ questions came from trade Q&As and search phrasings (no People Also Ask box on either results page)."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Ops head: the back-office row promised reconciliation but linked only document processing; renamed to loan files and back-office documents (reconciliation stays in related pages). Swapped the chatbot adoption stat for a credit union's own testimony on voice AI call share, and the payoff now counts calls as well as chats. Deepfake watch-out ends in a concrete control: a callback before changing account details."
+  },
+  {
+   "reader": "GM",
+   "notes": "GM: wanted to know if one unit can pilot it and what it costs. Start-here FAQ now says pilot one workflow on one team or branch. Replaced the core-data FAQ (already covered by the core table and watch-outs) with a cost FAQ: dated Copilot and ChatGPT Business prices, Alkami's vendor tiers, and a plain note that core-provider AI pricing isn't published. No Zavient price, per site rules."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Head of lending: cares about exam questions and explaining the model. Replaced the SR 26-2 FAQ (still covered in the own-data table and rules) with 'Can AI make credit decisions?': specific denial reasons, 25-month record keeping (12 for business credit) and the rescinded 1997 OCC credit scoring guidance. TD memo figures stay labelled as a large-bank ceiling; vendor credit-union case studies were dropped because no exact page URL could be cited."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Steve: title and five bottom-line bullets answer the question in 10 seconds; the charter table tells him which examiner guidance is his. Worries covered: data (core gate), security (staff pasting member data), rules, cost. Gap he will notice: no case from an institution his size, because the vendor case pages lacked citable URLs; none is claimed. Offer now says the 30-minute call is free."
+  }
+ ],
+ "updated": "2026-11-26"
+}

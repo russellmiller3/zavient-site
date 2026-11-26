@@ -1,0 +1,872 @@
+{
+  "title": "Can AI sales analytics tell your reps who to call and what to offer?",
+  "description": "Sales analytics for banks, credit unions and insurers: six methods in plain words, list prices, fair lending rules and how to test a call list.",
+  "type": "usecase",
+  "templateVersion": 1,
+  "topic": "Sales analytics",
+  "job": "sales analytics",
+  "industry": "banks, credit unions and insurers",
+  "index": false,
+  "verdict": [
+    "Reps keep the relationships; the model ranks which accounts to call and what to offer[^1][^2].",
+    "Start from what customers already own: it predicts their next product better than anything else[^3][^4].",
+    "Keep a random group uncalled, or you will pay for sales that would have happened anyway[^5][^6].",
+    "Disparate treatment is still illegal under the 2026 Regulation B rule, so compliance reviews targeting first[^7][^8].",
+    "Reward conversations and fit, not product counts: sales quotas cost Wells Fargo a $100 million fine[^9][^10]."
+  ],
+  "onPage": [
+    {
+      "to": "human-role",
+      "text": "Who decides who gets called, who approves the offer list, who sets goals"
+    },
+    {
+      "to": "table-1",
+      "text": "The six methods in plain words, with a bank or insurer example and the rep's role"
+    },
+    {
+      "to": "own-data",
+      "text": "What 9 vendor pages say about price, fair lending and who decides"
+    },
+    {
+      "to": "recipes",
+      "text": "Three builds sized to your firm, with the role on every step and list prices"
+    },
+    {
+      "to": "rules",
+      "text": "The rules on targeting: Regulation B, incentives, privacy, model risk, insurance"
+    },
+    {
+      "to": "benchmark",
+      "text": "How to test a call list with a holdout group and price the lift"
+    },
+    {
+      "to": "faq",
+      "text": "Share of wallet, uplift, lookalikes, the new rule and cost"
+    }
+  ],
+  "headings": {
+    "what-it-is": "What is sales analytics, and what does it change for a bank or insurer?",
+    "human-role": "Who on your sales team keeps the decision?",
+    "team-after": "What do your reps do once the model ranks the list?",
+    "example": "What does sales analytics look like at a credit union?",
+    "recipes": "Which way to build sales analytics fits your firm?",
+    "rules": "Which rules apply to sales targeting at banks and insurers?",
+    "benchmark": "How do you test a call list before you trust it?",
+    "what-goes-wrong": "Where does sales analytics go wrong?",
+    "buy-or-build": "Should you buy sales analytics or build it?",
+    "something-else": "When should you pick something else?"
+  },
+  "summary": "Sales analytics turns sales data into decisions about where to spend effort[^11]. At a bank, credit union or insurer, AI ranks who to call, what to offer and why[^1]. Clean customer data and a holdout test make or break it[^12][^6].",
+  "humanRole": [
+    "Rep, relationship manager or licensed agent: picks who to call from the top of the list, and can skip anyone[^2][^13]. Their logged outcomes train the next version[^4].",
+    "Compliance officer: approves the offer list, targeting fields and exclusions before launch, and keeps the sign-off on file. Examiners review the criteria used to pick who gets prescreened offers[^8].",
+    "Head of retail banking or sales: sets goals on conversations and fit, not product counts[^14]. Pays no incentive tied to products per customer without risk controls[^10].",
+    "Analyst or marketing lead: owns the list, the uncalled holdout group and the monthly lift report[^6][^15]."
+  ],
+  "teamAfter": [
+    "Same people, better calls: commercial banking relationship managers with an analytics workbench grew portfolios 9%, against 5% for a control group[^1].",
+    "Less desk time: those managers spent 90% less time on account planning and got 5 times more cross-sell ideas[^1].",
+    "Most firms use AI to help staff: of firms reporting AI task effects, 66% only augment and 2% saw AI-related employment fall[^16][^17].",
+    "New workflows and staff training are the most common changes firms make with AI, at about 15% each[^16]."
+  ],
+  "example": {
+    "input": "Illustrative $400 million credit union, not a real one. Its tier averages 58.2 checking accounts per 100 members, against 66.0 above $1 billion[^18]. One vendor puts credit unions' average share of members' auto loans at 21.8%[^19].",
+    "output": "A list of 200 members ranked for auto refinance, each with a reason, such as \"$412 a month car payment to another lender\". The rep picks who to call and what to offer. A random 10% stay uncalled to measure lift[^6]."
+  },
+  "tables": [
+    {
+      "title": "What are the six sales analytics methods, in plain words?",
+      "intro": "Each method answers one question about a customer[^11][^1]. The model ranks; the rep decides.",
+      "headers": [
+        "Method",
+        "Plain words",
+        "Bank, credit union or insurer example",
+        "The rep's role"
+      ],
+      "rows": [
+        {
+          "name": "Share of wallet",
+          "cells": [
+            "Of all the money a customer keeps or borrows everywhere, the share you hold[^20][^21].",
+            "In one study, a top credit union held 38.8% of its members' auto loans; a top bank held 5.6%[^22].",
+            "Asks about outside accounts in conversation. Treats one customer's estimate as a lead, not a fact[^23]."
+          ]
+        },
+        {
+          "name": "White space analysis",
+          "cells": [
+            "A grid of customers by products. Each empty cell is a product they could hold but don't[^24][^25].",
+            "An insurance agency ranks clients with missing coverages, called account rounding[^26][^2].",
+            "Checks the gap is real before offering. An empty cell is a question, not proof of demand[^27]."
+          ]
+        },
+        {
+          "name": "Propensity model",
+          "cells": [
+            "A score for how likely each customer is to take one product soon. What they already own is the strongest clue[^3].",
+            "A credit union scores each member for a second product from holdings, balances and transactions[^4].",
+            "Works the top of the list and logs each outcome, which becomes training data[^4]."
+          ]
+        },
+        {
+          "name": "Next best action",
+          "cells": [
+            "For one customer right now, the single most useful step: an offer, a service call, a save, or nothing[^1].",
+            "A banker's CRM suggests a call after a credit inquiry or rate change (vendor's signals)[^28][^29].",
+            "Accepts, edits or dismisses each suggestion. Skipping is valid: some customers react badly to any offer[^5]."
+          ]
+        },
+        {
+          "name": "Churn prediction",
+          "cells": [
+            "A score for who is likely to leave, close accounts or let a policy lapse soon[^30][^31].",
+            "A bank flags customers likely to close checking; a life insurer flags policies likely to lapse[^30][^31].",
+            "Makes the save call and decides, within policy, if a fee waiver is justified. Agree what counts as leaving first[^32]."
+          ]
+        },
+        {
+          "name": "Lookalike model",
+          "cells": [
+            "Start from your best customers and find others who resemble them. It predicts resemblance, not intent[^33].",
+            "Fits internal lists and distributor accounts[^34]. Meta bars lookalikes in financial product ads[^35].",
+            "Treats lookalike prospects as cold leads. Compliance reviews the seed list for credit products[^36]."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "What do sales analytics tools cost?",
+      "intro": "List prices read on 26 Nov 2026[^37][^29]. Vendor claims are marked as the vendor's. Seat prices leave out setup and data work.",
+      "headers": [
+        "Name",
+        "What it does",
+        "Price",
+        "Worth knowing"
+      ],
+      "rows": [
+        {
+          "name": "Salesforce Financial Services Cloud",
+          "url": "https://www.salesforce.com/financial-services/pricing",
+          "cells": [
+            "CRM for banks, credit unions and insurers",
+            "$325, $500 or $700 a user a month, billed yearly[^37]",
+            "Digital Origination lists at $175,000 per org a year[^37]"
+          ]
+        },
+        {
+          "name": "Microsoft Dynamics 365 Sales",
+          "url": "https://www.microsoft.com/en-us/dynamics-365/products/sales/pricing",
+          "cells": [
+            "CRM with sales AI",
+            "$65, $105 or $150 a user a month, billed yearly[^29]",
+            "The $150 Premium tier includes AI recommended actions[^29]"
+          ]
+        },
+        {
+          "name": "HubSpot Sales Hub",
+          "url": "https://www.hubspot.com/pricing/sales",
+          "cells": [
+            "CRM for smaller teams",
+            "Pro: $90 a seat a month billed yearly, or $100 monthly[^38]",
+            "Lead scoring starts at Pro[^38]"
+          ]
+        },
+        {
+          "name": "Alkami Data and Marketing",
+          "url": "https://www.alkami.com/data-marketing-solutions?m-search",
+          "cells": [
+            "Data and campaigns for banks and credit unions",
+            "From $23,000, $47,000 or $77,000 a year, by tier (vendor page)[^39]",
+            "Predictive AI starts at the $47,000 tier[^39]"
+          ]
+        },
+        {
+          "name": "AgencyKPI",
+          "url": "https://growth.agencykpi.com/",
+          "cells": [
+            "Account rounding for insurance agencies",
+            "$250 a month, or $166.67 a month billed yearly[^26]",
+            "Vendor says it hands each lead to a producer in one click[^26]"
+          ]
+        },
+        {
+          "name": "Gong, Clari",
+          "cells": [
+            "Revenue intelligence: calls and pipeline forecasts",
+            "Not published[^40]. Third-party medians: about $55,000 and $76,000 a year[^41]",
+            "Gong prices per user plus a platform fee[^40]"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "What did published studies find?",
+      "intro": "Other teams' results. Your book of business can differ, which is why you test.",
+      "headers": [
+        "Study",
+        "Finding"
+      ],
+      "rows": [
+        {
+          "name": "McKinsey, 2023",
+          "url": "https://www.mckinsey.com/industries/financial-services/our-insights/the-data-and-analytics-edge-in-corporate-and-commercial-banking",
+          "cells": [
+            "Commercial banking relationship managers with an analytics workbench grew portfolios 9% in 12 months, against 5% for a control group[^1]."
+          ]
+        },
+        {
+          "name": "Knott, Hayes and Neslin, 2002",
+          "url": "https://journals.sagepub.com/doi/10.1002/dir.10038",
+          "cells": [
+            "In a bank field test, a next-product-to-buy model beat a rule of thumb on profit. Current product ownership predicted best[^3]."
+          ]
+        },
+        {
+          "name": "Harland Clarke case (vendor)",
+          "url": "https://insight.harlandclarke.com/wp-content/uploads/2014/07/HC-Cross-SellCaseStudy.pdf",
+          "cells": [
+            "At a $22 billion bank, a checking offer opened 82% more accounts than a same-propensity control group[^42]."
+          ]
+        },
+        {
+          "name": "Portrait Software, 2006 (vendor)",
+          "url": "http://www.crmxchange.com/uploadedFiles/White_Papers/PDF/Optimal_Targeting_with_Uplift_Modeling_white_paper.pdf",
+          "cells": [
+            "In bank cross-sell, an uplift model scored 19.03% on the vendor's measure, against 15.29% for the best response model[^15]."
+          ]
+        },
+        {
+          "name": "Annals of Operations Research, 2023",
+          "url": "https://link.springer.com/article/10.1007/s10479-023-05209-5",
+          "cells": [
+            "Adding transaction data to demographics raised AUC, a ranking-accuracy score, by 4 to 5.4 points[^43]."
+          ]
+        },
+        {
+          "name": "Insurance: Mathematics and Economics, 2024",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0167668724000817",
+          "cells": [
+            "For a Taiwan life insurer, XGBoost predicted lapses best. A two-stage model raised net present value[^31]."
+          ]
+        }
+      ]
+    }
+  ],
+  "recipes": [
+    {
+      "name": "1. Community bank or credit union: first call list on the CRM you own",
+      "when": "You have a CRM or marketing customer file and one analyst. Start with two products, such as auto refinance and home equity, and read the result after 60 days[^4][^3].",
+      "flow": [
+        "Data lead: export 24 months of holdings, balances and transactions from the core",
+        "Data lead: link accounts into households",
+        "Analyst: build the white-space grid and a propensity score for two products",
+        "Compliance officer: review targeting fields and the offer list, then sign off",
+        "Head of retail: set goals on conversations and outcomes, not product counts",
+        "Reps: call the top of the list, with the reason shown, and log each outcome",
+        "Analyst: compare against the 10% uncalled group after 60 days"
+      ],
+      "cost": "Use a CRM you own, or a listed one: HubSpot Sales Hub Pro is $90 a seat a month[^38]. Dynamics 365 Sales Premium is $150 a user a month[^29]."
+    },
+    {
+      "name": "2. Bank or credit union on a digital banking platform: bought module",
+      "when": "You run Alkami or a similar platform and want campaigns plus scoring without a modelling team[^39]. Vendor models still need validation and outcomes checks[^44].",
+      "flow": [
+        "Head of retail: pick the module tier",
+        "Vendor and data lead: connect core and digital banking data",
+        "Compliance officer: ask the vendor for its fair lending tests, the reason shown for each pick and its validation papers",
+        "Marketing lead and reps: run campaigns and calls from the list, keeping a holdout",
+        "Analyst: each quarter, check the lift and whether the scores still hold up"
+      ],
+      "cost": "Alkami lists $23,000, $47,000 or $77,000 a year by tier, read 26 Nov 2026[^39]. Data connection work is extra."
+    },
+    {
+      "name": "3. Insurance agency: account rounding",
+      "when": "An agency that wants each client's missing coverages ranked for producers[^26][^2]. Check your state's AI bulletin first[^45].",
+      "flow": [
+        "Agency operations: connect the agency management system to a rounding tool",
+        "Producer: work the ranked list of missing coverages",
+        "Licensed agent: judge suitability before any offer",
+        "Agency principal: check state AI bulletin duties, such as Colorado's",
+        "Agency operations: track the rounding rate against an uncalled holdout"
+      ],
+      "cost": "AgencyKPI lists $250 a month, or $166.67 a month billed yearly, read 26 Nov 2026[^26]. OpSpring prices by credits and publishes no amounts[^2]."
+    }
+  ],
+  "ownData": {
+    "title": "What do sales analytics vendors show on their own pages?",
+    "intro": "We read the product or pricing pages of 9 sales analytics vendors on 26 Nov 2026[^39][^46][^13][^47][^28][^48][^2][^26][^49]. Eight sell to banks, credit unions or insurance agencies; one sells to distributors. For each we recorded yes, no or in part.",
+    "headers": [
+      "What the page shows",
+      "Vendors",
+      "Ask the vendor"
+    ],
+    "rows": [
+      [
+        "A published price",
+        "2 of 9[^39][^26]",
+        "What does year one cost, all in?"
+      ],
+      [
+        "Fair lending or bias named",
+        "1 of 9, naming ECOA[^28]",
+        "How is the list tested for fair lending?"
+      ],
+      [
+        "Any compliance wording",
+        "2 of 9, one only in general terms[^28][^48]",
+        "Which rules does it help you meet, in writing?"
+      ],
+      [
+        "A reason for each pick",
+        "4 of 9, plus 1 in part[^13][^49]",
+        "Can the rep see why this account is on the list?"
+      ],
+      [
+        "A person reviews or decides",
+        "4 of 9, plus 1 in part[^2][^28]",
+        "Who signs off before an offer goes out?"
+      ]
+    ],
+    "note": "Zavient check of vendor marketing pages on 26 Nov 2026, not contracts, documents or demos. A page silent on fairness doesn't mean the product lacks controls. Nine vendors from search results, one date, not a census."
+  },
+  "rules": [
+    {
+      "name": "Regulation B final rule, 91 FR 21620",
+      "url": "https://www.federalregister.gov/documents/2026/04/22/2026-07804/equal-credit-opportunity-act-regulation-b",
+      "status": "Published 22 Apr 2026; effective 21 Jul 2026",
+      "what": "Removes disparate-impact liability under the Equal Credit Opportunity Act (ECOA)[^7][^50]. Discouragement now covers words and images, not acts such as ad targeting[^7][^51]. Disparate treatment is still banned, and the Fair Housing Act and state laws still apply[^7][^36][^66][^67]."
+    },
+    {
+      "name": "Regulation B, 12 CFR 1002.4(b)",
+      "url": "https://www.consumerfinance.gov/rules-policy/regulations/1002/4",
+      "status": "In force",
+      "what": "You may not say things that would discourage people from applying on a prohibited basis[^52]. Marketing that encourages a group to apply is allowed[^52]."
+    },
+    {
+      "name": "CFPB ECOA exam procedures",
+      "url": "https://files.consumerfinance.gov/f/documents/cfpb_ecoa-narrative-and-procedures_2026-07.pdf",
+      "status": "Current, July 2026",
+      "what": "Examiners review marketing materials, prescreened offers and the criteria used to pick recipients[^8]. Keep your targeting fields and sign-off on file."
+    },
+    {
+      "name": "CFPB Compliance Bulletin 2016-03, production incentives",
+      "url": "https://www.consumerfinance.gov/compliance/supervisory-guidance/cfpb-compliance-bulletin-2016-03-detecting-and-preventing-consumer-harm-from-production-incentives/",
+      "status": "Issued 2016",
+      "what": "The CFPB's 2016 bulletin warned that sales goals and incentives can drive steering and unrealistic quotas[^53]. The same year, Wells Fargo paid a $100 million CFPB fine over about 1.5 million unauthorized accounts[^9]. New York's regulator warned against pay tied to products per customer without risk controls[^10]."
+    },
+    {
+      "name": "Regulation V, 12 CFR 1022.21, affiliate marketing",
+      "url": "https://www.ecfr.gov/current/title-12/part-1022/section-1022.21",
+      "status": "In force",
+      "what": "Using an affiliate's data to market, such as insurance data to sell a home equity loan, needs notice and an opt-out[^54]. The opt-out lasts at least 5 years[^54]."
+    },
+    {
+      "name": "Regulation P, 12 CFR 1016.13",
+      "url": "https://www.ecfr.gov/current/title-12/part-1016/section-1016.13",
+      "status": "In force",
+      "what": "Sharing customer data with an outside analytics firm or joint marketer needs a privacy notice[^55]. It also needs a contract limiting how the firm uses the data[^55]."
+    },
+    {
+      "name": "Federal Reserve SR 26-2 and OCC Bulletin 2026-13, model risk",
+      "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+      "status": "Issued 17 Apr 2026; replaced SR 11-7",
+      "what": "Aimed mainly at banks over $30 billion; for smaller banks and credit unions, treat it as best practice[^44]. It still expects an independent challenge of the model, checks on its results and validation of vendor models[^44]. Generative AI is out of scope[^44]."
+    },
+    {
+      "name": "NCUA guidance on artificial intelligence",
+      "url": "https://ncua.gov/regulation-supervision/regulatory-compliance-resources/artificial-intelligence-ai",
+      "status": "No AI-specific rule",
+      "what": "NCUA has not issued AI-specific rules; existing rules apply[^56]. Examiners look at due diligence on third-party vendors[^56]."
+    },
+    {
+      "name": "NAIC AI Model Bulletin",
+      "url": "https://content.naic.org/sites/default/files/cmte-h-big-data-artificial-intelligence-wg-ai-model-bulletin.pdf.pdf",
+      "status": "Adopted by about 27-28 states plus DC and Puerto Rico (map of 13 Nov 2026)",
+      "what": "Covers insurers' AI use, marketing included: governance, testing for unfair discrimination and vendor oversight[^57][^45]. Colorado adds its own testing rules for life, private auto and health insurers[^58]."
+    }
+  ],
+  "howToTest": [
+    "Pilot one product in one branch or region. Record today's numbers there first: contacts made, offers taken, balances opened and rep time per conversation.",
+    "Back-test: score last quarter's customers using data as of its first day. Check whether the top tenth really opened more products than the rest.",
+    "Keep a random 10% of the top of the list uncalled. Lift is the called group's take-up minus the uncalled group's[^6].",
+    "Also call a small random group below the cut-off. That tests the ranking itself, not just the calls[^15].",
+    "If many top-scored customers buy without a call, switch to uplift targeting: aim at people a call actually persuades[^59][^5].",
+    "For credit products, compare who gets picked and what they are offered across groups, and document the review[^8]. Insurers in Colorado must test for unfair discrimination[^58].",
+    "Price the lift: extra balances or premium times margin, minus rep time and tool cost, over 90 days.",
+    "Rescore monthly or quarterly. Propensity models need a periodic refresh[^60]."
+  ],
+  "watchOuts": [
+    "Quotas built on model lists invite abuse: Wells Fargo staff opened about 1.5 million unauthorized deposit accounts[^9]. Reward conversations and fit, not product counts[^10][^14].",
+    "Lookalike seeds copy the seed list's makeup. Meta bars lookalikes for financial product ads, and HUD flags them for housing[^35][^36].",
+    "Targeting fields can stand in for a protected trait. Disparate treatment is still illegal, so compliance reviews each field before launch[^7][^8].",
+    "Poor householding hides customers, and many banks haven't linked accounts into households[^12]. Fix the data before you score it.",
+    "Response models chase people who would buy anyway, and some customers react badly to any contact[^5][^15]. Test with an uncalled group and consider uplift[^59].",
+    "A list with no reasons leaves reps unable to explain and compliance unable to review. Only 4 of the 9 vendor pages we checked showed a reason per pick[^13][^2]."
+  ],
+  "faq": [
+    {
+      "q": "How do banks calculate share of wallet?",
+      "a": "Divide what a customer keeps or borrows with you by their total across all institutions[^21][^20]. US consumers hold about 8.5 banking products across institutions, so most wallets are split[^61][^62]."
+    },
+    {
+      "q": "What is the difference between a propensity model and an uplift model?",
+      "a": "A propensity model finds who is likely to buy; an uplift model finds who buys because you called[^59]. Response models tend to target people who would have bought anyway[^5]."
+    },
+    {
+      "q": "Can banks use lookalike audiences on Facebook?",
+      "a": "Not for financial product ads. Meta's special ad category for financial products and services bars lookalike audiences in the US[^35][^63]."
+    },
+    {
+      "q": "Does the 2026 Regulation B rule mean targeting is unrestricted?",
+      "a": "No. From 21 Jul 2026 it drops disparate-impact liability and limits discouragement to words and images[^7][^50]. Disparate treatment, the Fair Housing Act and state laws still apply[^7][^36][^66][^67]."
+    },
+    {
+      "q": "What does sales analytics software cost?",
+      "a": "CRM seats with AI scoring list at $90 to $150 a user a month[^38][^29]. Alkami's bank marketing module starts at $23,000 a year[^39]. Revenue intelligence tools such as Gong don't publish prices[^40][^41]."
+    },
+    {
+      "q": "Does sales analytics take over from our reps?",
+      "a": "No: it ranks the list, and reps still choose who to call and what to say[^2][^1]. Of firms reporting AI task effects, 66% use it only to help staff[^16]."
+    }
+  ],
+  "buyVsBuild": {
+    "buy": "Buy the scoring and workflow inside the CRM or digital banking platform you already run[^29][^39]. In one survey of enterprise buyers, 76% of AI use cases were bought rather than built[^64].",
+    "build": "Build the parts that are yours: the household data join, the holdout test and the fair lending review[^12][^8]. Few vendor pages we checked show these[^28]. In MIT's study, outside partners reached deployment about twice as often as internal builds[^65]."
+  },
+  "pickElse": [
+    "Few products or a small customer base: a spreadsheet white-space grid is enough to start[^24][^25].",
+    "Already on Salesforce Financial Services Cloud, Dynamics 365 Sales Premium or HubSpot Sales Hub Pro: turn on the built-in scoring first[^29][^38].",
+    "Insurance agency: try a rounding tool such as AgencyKPI before a custom model[^26].",
+    "Need to forecast the pipeline, not pick accounts: revenue intelligence tools such as Gong or Clari fit better[^40][^41]."
+  ],
+  "resources": [
+    {
+      "name": "SAS paper 941-2017, cross-sell for banks and credit unions",
+      "url": "https://support.sas.com/resources/papers/proceedings17/0941-2017.pdf",
+      "what": "A step-by-step propensity build on bank and credit union data."
+    },
+    {
+      "name": "California Management Review, five lessons from uplift modeling",
+      "url": "https://cmr.berkeley.edu/2025/11/to-treat-or-not-to-treat-five-lessons-learned-from-using-uplift-modeling-to-optimize-marketing-campaigns",
+      "what": "When to target people a call persuades, not people who buy anyway."
+    },
+    {
+      "name": "CFPB ECOA exam procedures, July 2026",
+      "url": "https://files.consumerfinance.gov/f/documents/cfpb_ecoa-narrative-and-procedures_2026-07.pdf",
+      "what": "What examiners ask about your marketing and targeting criteria."
+    },
+    {
+      "name": "NAIC AI Model Bulletin adoption map",
+      "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
+      "what": "Whether your state has adopted the insurers' AI bulletin."
+    },
+    {
+      "name": "Meta, special ad category",
+      "url": "https://developers.facebook.com/docs/marketing-api/audiences/special-ad-category",
+      "what": "Which targeting options financial product ads lose."
+    }
+  ],
+  "stats": [
+    {
+      "num": "9% vs 5%",
+      "label": "portfolio growth over 12 months for commercial banking relationship managers with an analytics workbench, against a control group[^1]",
+      "source": "McKinsey, 2023"
+    },
+    {
+      "num": "8.5",
+      "label": "banking products the average US consumer holds across institutions[^61][^62]",
+      "source": "RFi Group via Prisma Campaigns and FI Works"
+    },
+    {
+      "num": "1 of 9",
+      "label": "sales analytics vendor pages we checked that names fair lending[^28]",
+      "source": "Zavient check of vendor pages, 26 Nov 2026"
+    },
+    {
+      "num": "$100 million",
+      "label": "CFPB fine on Wells Fargo in 2016 over about 1.5 million unauthorized accounts driven by sales goals[^9]",
+      "source": "CFPB, 2016"
+    },
+    {
+      "num": "66%",
+      "label": "of firms reporting AI task effects use AI only to help staff; 2% saw AI-related employment fall[^16]",
+      "source": "US Census Bureau, CES-WP-26-25R, 2026"
+    }
+  ],
+  "sources": [
+    {
+      "name": "McKinsey, The data and analytics edge in corporate and commercial banking (2023)",
+      "url": "https://www.mckinsey.com/industries/financial-services/our-insights/the-data-and-analytics-edge-in-corporate-and-commercial-banking",
+      "what": "Relationship managers with analytics workbenches grew portfolios 9% vs 5% for a control group over 12 months, got 5x more cross-sell ideas and spent 90% less time on account planning; over half of banks embed next-action recommendations."
+    },
+    {
+      "name": "OpSpring ProducerHQ cross-sell (vendor)",
+      "url": "https://opspring.ai/products/producer-hq/cross-sell",
+      "what": "Shows the reason for each opening; openings are suggestions for a licensed agent to judge."
+    },
+    {
+      "name": "Knott, Hayes and Neslin, Journal of Interactive Marketing (2002)",
+      "url": "https://journals.sagepub.com/doi/10.1002/dir.10038",
+      "what": "Bank field test: a next-product-to-buy model raised profit over a heuristic, and the gain was incremental; current product ownership was the best predictor."
+    },
+    {
+      "name": "SAS Global Forum paper 941-2017, cross-sell propensity for banks and credit unions",
+      "url": "https://support.sas.com/resources/papers/proceedings17/0941-2017.pdf",
+      "what": "Step-by-step cross-sell model built from product holdings, balances, transactions and campaign responses."
+    },
+    {
+      "name": "Stochastic Solutions, Generating incremental sales (vendor white paper)",
+      "url": "https://stochasticsolutions.com/pdf/cross-sell.pdf",
+      "what": "Response models tend to concentrate on people who would have bought anyway; some customers are more likely to leave if targeted."
+    },
+    {
+      "name": "Radcliffe and Surry, Significance-based uplift trees (2011)",
+      "url": "https://stochasticsolutions.com/pdf/sig-based-up-trees.pdf",
+      "what": "Comparing a treated group with a uniformly random control group is the established way to measure incremental impact."
+    },
+    {
+      "name": "Federal Register 91 FR 21620, Regulation B final rule (22 Apr 2026)",
+      "url": "https://www.federalregister.gov/documents/2026/04/22/2026-07804/equal-credit-opportunity-act-regulation-b",
+      "what": "Effective 21 Jul 2026: removes disparate-impact liability under ECOA, limits discouragement to words and images rather than acts such as ad targeting; disparate treatment still prohibited."
+    },
+    {
+      "name": "CFPB, ECOA examination procedures (July 2026)",
+      "url": "https://files.consumerfinance.gov/f/documents/cfpb_ecoa-narrative-and-procedures_2026-07.pdf",
+      "what": "Examiners review marketing materials, prescreened solicitations and the criteria used to determine the potential recipients."
+    },
+    {
+      "name": "CFPB, fines Wells Fargo $100 million (8 Sep 2016)",
+      "url": "https://www.consumerfinance.gov/about-us/newsroom/consumer-financial-protection-bureau-fines-wells-fargo-100-million-widespread-illegal-practice-secretly-opening-unauthorized-accounts",
+      "what": "About 1.5 million unauthorized deposit accounts opened under sales goals; $100 million fine."
+    },
+    {
+      "name": "NY DFS industry letter on incentive compensation (11 Oct 2016)",
+      "url": "https://www.dfs.ny.gov/industry_guidance/industry_letters/il20161011_guidance_incentive_compensation_arrangements",
+      "what": "No incentive pay tied to products per customer without risk controls."
+    },
+    {
+      "name": "IBM Think, What is sales analytics?",
+      "url": "https://www.ibm.com/think/topics/sales-analytics",
+      "what": "Sales analytics is gathering and analyzing sales data to see how a firm is progressing toward its goals."
+    },
+    {
+      "name": "ABA Banking Journal, Effective cross-selling (24 Mar 2025)",
+      "url": "http://bankingjournal.aba.com/2025/03/effective-cross-selling-the-key-to-meeting-deposit-and-loan-growth-goals",
+      "what": "Many banks have not effectively householded their customers."
+    },
+    {
+      "name": "Aunalytics Auna (vendor)",
+      "url": "https://www.aunalytics.com/products/auna",
+      "what": "Every score can be traced back to the signals and rules behind it; AI-generated content to review and edit before sending."
+    },
+    {
+      "name": "OCC, Wells Fargo consent order (2016)",
+      "url": "https://www.occ.gov/news-issuances/news-releases/2016/nr-occ-2016-106a.pdf",
+      "what": "Incentive plan not aligned with branch traffic, staff turnover or customer demand; $35 million penalty."
+    },
+    {
+      "name": "Portrait Software, Optimal targeting with uplift modeling (vendor white paper, 2006)",
+      "url": "http://www.crmxchange.com/uploadedFiles/White_Papers/PDF/Optimal_Targeting_with_Uplift_Modeling_white_paper.pdf",
+      "what": "Bank cross-sell: uplift model Q of 19.03% vs 15.29% for the champion response model; recommends a targeting control group."
+    },
+    {
+      "name": "US Census Bureau, CES-WP-26-25R (Oct 2026)",
+      "url": "https://www2.census.gov/ces/wp/2026/CES-WP-26-25R.pdf",
+      "what": "Of firms reporting AI task effects, 66% only augment and 2% report AI-related employment decreases; new workflows and staff training are the most common changes, about 15% each."
+    },
+    {
+      "name": "Federal Reserve Bank of Minneapolis, AI adoption in business (29 May 2026)",
+      "url": "https://www.minneapolisfed.org/article/2026/ai-adoption-in-business-grows-steadily-but-unevenly",
+      "what": "About 96% of AI-using firms report no employment change."
+    },
+    {
+      "name": "Depository360, credit union members and shares by tier (analysis of NCUA data, Q2 2026)",
+      "url": "https://www.depository360.com/credit-unions/index/members-share",
+      "what": "58.2 checking accounts per 100 members at $100M-$500M credit unions vs 66.0 at those over $1B."
+    },
+    {
+      "name": "Clutch, Credit union share of wallet (vendor)",
+      "url": "https://withclutch.com/blog/credit-union-share-of-wallet",
+      "what": "Vendor data from 9,000+ applicants at 17+ credit unions: credit unions hold 21.8% of members' auto loans on average."
+    },
+    {
+      "name": "Harvard Business Review, Customer loyalty isn't enough: grow your share of wallet (2011)",
+      "url": "https://hbr.org/2011/10/customer-loyalty-isnt-enough-grow-your-share-of-wallet",
+      "what": "Share of wallet is the percentage of a customer's spending in a category captured by a given brand."
+    },
+    {
+      "name": "Cooil, Keiningham et al., Journal of Marketing (2007)",
+      "url": "https://cdm21054.contentdm.oclc.org/digital/api/collection/IR/id/624/download",
+      "what": "Study of 4,319 Canadian households; share of wallet measured as dollars at the institution divided by dollars at all institutions."
+    },
+    {
+      "name": "Gutenberg et al., Journal of Applied Finance and Banking (2014)",
+      "url": "http://www.scienpress.com/Upload/JAFB/Vol%204_4_4.pdf",
+      "what": "1,699 respondents: members of the top credit union kept 49.8% of checking balances and 38.8% of auto loans there; at the top bank, 45.6% and 5.6%."
+    },
+    {
+      "name": "Garland, Journal of Financial Services Marketing (2004)",
+      "url": "https://link.springer.com/article/10.1057/palgrave.fsm.4770124",
+      "what": "1,100 bank customers: share of wallet works as a profitability proxy only at the aggregate level, not for each customer."
+    },
+    {
+      "name": "Altify glossary, What is whitespace analysis? (vendor)",
+      "url": "https://altify.com/glossary/what-is-whitespace-analysis/",
+      "what": "Whitespace analysis maps customers against products to find products a customer could buy but does not."
+    },
+    {
+      "name": "Simon-Kucher, Whitespace analysis (20 Nov 2026)",
+      "url": "https://www.simon-kucher.com/en/insights/whitespace-analysis-key-uncovering-your-next-revenue-growth-opportunities",
+      "what": "Whitespace analysis as a grid of customers by products, used to rank growth gaps."
+    },
+    {
+      "name": "AgencyKPI growth page (vendor; price read 26 Nov 2026)",
+      "url": "https://growth.agencykpi.com/",
+      "what": "Ranked list of agency clients with missing coverages and top carriers; one-click producer handoff; $250 a month, or $166.67 a month billed annually."
+    },
+    {
+      "name": "EntityReach, White space analysis in enterprise sales (vendor)",
+      "url": "https://entityreach.com/blog/white-space-analysis-enterprise-sales",
+      "what": "An empty cell is a question to investigate, not automatic evidence of demand."
+    },
+    {
+      "name": "Total Expert platform overview (vendor)",
+      "url": "https://www.totalexpert.com/products/platform-overview",
+      "what": "Signals such as credit inquiries, equity changes, rate opportunities, new listings and life events; names RESPA, TILA, TCPA and ECOA guardrails."
+    },
+    {
+      "name": "Microsoft Dynamics 365 Sales pricing (price read 26 Nov 2026)",
+      "url": "https://www.microsoft.com/en-us/dynamics-365/products/sales/pricing",
+      "what": "Professional $65, Enterprise $105, Premium $150 per user a month, billed annually; Premium includes AI recommended actions."
+    },
+    {
+      "name": "Neural Computing and Applications, bank churn (2022)",
+      "url": "https://link.springer.com/article/10.1007/s00521-022-07067-x",
+      "what": "Large Brazilian bank: random forest predicted checking-account closure best; customers with more products and borrowing were less likely to close."
+    },
+    {
+      "name": "Insurance: Mathematics and Economics, life policy lapse (2024)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0167668724000817",
+      "what": "Taiwan life insurer: XGBoost predicted surrender and lapse best; a two-stage model improved net present value."
+    },
+    {
+      "name": "EPJ Data Science, churn definitions (2018)",
+      "url": "https://link.springer.com/article/10.1140/epjds/s13688-018-0165-5",
+      "what": "Churn labels are subjective choices, such as inactivity across a set window."
+    },
+    {
+      "name": "PPC Land, Lookalike modeling (9 Oct 2026)",
+      "url": "https://ppc.land/lookalike-modeling",
+      "what": "Lookalikes go from a seed list to similarity scores; a lookalike predicts resemblance, not intent."
+    },
+    {
+      "name": "DiGGrowth, Lookalike account modeling (vendor)",
+      "url": "https://diggrowth.com/blogs/thought-leadership/lookalike-account-modeling",
+      "what": "Lookalike modeling applied to B2B accounts rather than individual consumers."
+    },
+    {
+      "name": "Meta for Developers, Special ad category (updated 21 May 2026)",
+      "url": "https://developers.facebook.com/docs/marketing-api/audiences/special-ad-category",
+      "what": "Lookalike audiences are unavailable for housing, employment and financial products and services ads; financial products category required in the US since January 2025."
+    },
+    {
+      "name": "HUD FHEO, Guidance on advertising through digital platforms (29 Apr 2024)",
+      "url": "https://archives.hud.gov/news/2024/FHEO_Guidance_on_Advertising_through_Digital_Platforms.pdf",
+      "what": "Mirror or lookalike audiences may violate the Fair Housing Act."
+    },
+    {
+      "name": "Salesforce Financial Services Cloud pricing (price read 26 Nov 2026)",
+      "url": "https://www.salesforce.com/financial-services/pricing",
+      "what": "$325, $500 or $700 per user a month billed annually; Digital Origination $175,000 per org a year."
+    },
+    {
+      "name": "HubSpot Sales Hub pricing (price read 26 Nov 2026)",
+      "url": "https://www.hubspot.com/pricing/sales",
+      "what": "Pro $90 a seat a month billed annually or $100 monthly; Enterprise $150; lead scoring from Pro."
+    },
+    {
+      "name": "Alkami Data and Marketing solutions (vendor; prices read 26 Nov 2026)",
+      "url": "https://www.alkami.com/data-marketing-solutions?m-search",
+      "what": "From $23K (Data Insights), $47K (Predictive AI) or $77K (Full Funnel) a year."
+    },
+    {
+      "name": "Gong pricing page (read 26 Nov 2026)",
+      "url": "https://www.gong.io/pricing",
+      "what": "No price shown; priced per user plus a platform fee."
+    },
+    {
+      "name": "Market Intelligence Tools, revenue intelligence pricing (third party; read 26 Nov 2026)",
+      "url": "https://marketintelligencetools.com/reports/revenue-intelligence-pricing/",
+      "what": "Median contract about $55,333 a year for Gong and $76,000 for Clari, from Vendr data."
+    },
+    {
+      "name": "Harland Clarke, cross-sell case study (vendor)",
+      "url": "https://insight.harlandclarke.com/wp-content/uploads/2014/07/HC-Cross-SellCaseStudy.pdf",
+      "what": "A $22B bank: checking offer opened 82% more accounts than a same-propensity control group; 6.81% response."
+    },
+    {
+      "name": "Annals of Operations Research (2023)",
+      "url": "https://link.springer.com/article/10.1007/s10479-023-05209-5",
+      "what": "Adding transaction data to demographics raised AUC by 4 to 5.4 points."
+    },
+    {
+      "name": "Federal Reserve SR 26-2",
+      "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+      "what": "17 Apr 2026: replaces SR 11-7; most relevant to banks over $30 billion; generative and agentic AI out of scope; keeps effective challenge, outcomes analysis and vendor-model validation."
+    },
+    {
+      "name": "NAIC, AI Model Bulletin adoption map (13 Nov 2026)",
+      "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
+      "what": "States that have adopted the bulletin, about 27-28 plus DC and Puerto Rico depending on the tracker."
+    },
+    {
+      "name": "Vertice AI Grow (vendor)",
+      "url": "https://verticeanalytics.ai/vertice-grow",
+      "what": "Scores each account holder for marketers to use; no price, no fair lending wording."
+    },
+    {
+      "name": "Rise Analytics, Essential Analytics press release (vendor, 1 Oct 2025)",
+      "url": "https://www.riseanalytics.com/resources/press-release/introducing-essential-analytics",
+      "what": "Credit union analytics launch; no price, fairness or review wording."
+    },
+    {
+      "name": "Earnix Customer Engagement, formerly Zelros (vendor)",
+      "url": "https://earnix.com/our-solutions/products/customer-engagement-product/",
+      "what": "Calls itself explainable and compliant; no bias or fairness wording; automates decision logic and engagement workflows."
+    },
+    {
+      "name": "Proton (vendor)",
+      "url": "https://www.proton.ai/",
+      "what": "Distributor sales AI with labels such as Late reorder and Spending gap; you decide what agents do alone and what needs approval."
+    },
+    {
+      "name": "KPMG Regulatory Alert, CFPB final rules on Regulation B (2026)",
+      "url": "http://kpmg.com/us/en/articles/2026/cfpb-final-rules-regulation-b-Section-1071-and-disparate-impact-liability-reg-alert.html",
+      "what": "Summary of the rule removing disparate-impact liability and narrowing discouragement."
+    },
+    {
+      "name": "CFPB, Equal Credit Opportunity Act (Regulation B) final rule page",
+      "url": "https://www.consumerfinance.gov/rules-policy/final-rules/equal-credit-opportunity-act-regulation-b/",
+      "what": "CFPB summary of the 2026 Regulation B final rule and its effective date."
+    },
+    {
+      "name": "CFPB, Regulation B 12 CFR 1002.4",
+      "url": "https://www.consumerfinance.gov/rules-policy/regulations/1002/4",
+      "what": "Bars statements that would discourage applicants on a prohibited basis; encouraging a group to apply is allowed."
+    },
+    {
+      "name": "CFPB Compliance Bulletin 2016-03, production incentives",
+      "url": "https://www.consumerfinance.gov/compliance/supervisory-guidance/cfpb-compliance-bulletin-2016-03-detecting-and-preventing-consumer-harm-from-production-incentives/",
+      "what": "2016 guidance: sales goals and incentives can drive steering and unrealistic quotas that harm consumers."
+    },
+    {
+      "name": "eCFR, Regulation V 12 CFR 1022.21, affiliate marketing",
+      "url": "https://www.ecfr.gov/current/title-12/part-1022/section-1022.21",
+      "what": "Using an affiliate's eligibility data to market needs notice and an opt-out, unless a business relationship exists; the opt-out lasts at least 5 years."
+    },
+    {
+      "name": "eCFR, Regulation P 12 CFR 1016.13",
+      "url": "https://www.ecfr.gov/current/title-12/part-1016/section-1016.13",
+      "what": "Sharing with a service provider or joint marketer needs a privacy notice and a contract limiting the provider's use."
+    },
+    {
+      "name": "NCUA, Artificial intelligence resources page",
+      "url": "https://ncua.gov/regulation-supervision/regulatory-compliance-resources/artificial-intelligence-ai",
+      "what": "NCUA has not issued AI-specific rules; existing technology-neutral rules apply, including third-party due diligence."
+    },
+    {
+      "name": "NAIC, Model Bulletin on the use of AI systems by insurers",
+      "url": "https://content.naic.org/sites/default/files/cmte-h-big-data-artificial-intelligence-wg-ai-model-bulletin.pdf.pdf",
+      "what": "Governance, testing for unfair discrimination and third-party oversight for insurers' AI, marketing included."
+    },
+    {
+      "name": "Colorado Division of Insurance, SB21-169",
+      "url": "https://doi.colorado.gov/for-consumers/sb21-169-protecting-consumers-from-unfair-discrimination-in-insurance-practices",
+      "what": "Insurers must test external data and models for unfair discrimination; life, private passenger auto and health; governance includes marketing."
+    },
+    {
+      "name": "California Management Review, Five lessons from uplift modeling (11 Nov 2025)",
+      "url": "https://cmr.berkeley.edu/2025/11/to-treat-or-not-to-treat-five-lessons-learned-from-using-uplift-modeling-to-optimize-marketing-campaigns",
+      "what": "Uplift modeling targets people a contact persuades and avoids those who buy anyway or react badly."
+    },
+    {
+      "name": "McKinsey, Four innovative ways Asian banks can create actionable insights from customer data",
+      "url": "https://mckinsey.com/industries/financial-services/our-insights/four-innovative-ways-asian-banks-can-create-actionable-insights-from-customer-data",
+      "what": "A propensity-to-buy model, simple in itself, is periodically refreshed."
+    },
+    {
+      "name": "Prisma Campaigns, tactics to increase share of wallet in banks (vendor, citing RFi Group)",
+      "url": "https://resources.prismacampaigns.com/blog/tactics-to-increase-share-of-wallet-in-banks",
+      "what": "US consumers hold about 8.5 banking products across institutions, per RFi Group data."
+    },
+    {
+      "name": "FI Works, debunking wallet share (vendor)",
+      "url": "https://www.fiworks.com/banking/cross-sell/debunking-wallet-share",
+      "what": "Repeats the RFi Group figure of about 8.5 banking products per US consumer across institutions."
+    },
+    {
+      "name": "Meta Business Help, financial products and services ads",
+      "url": "https://www.facebook.com/business/help/298000447747885",
+      "what": "The financial products and services category covers credit, insurance and checking or savings ads, with limited targeting."
+    },
+    {
+      "name": "Menlo Ventures, 2025 State of Generative AI in the Enterprise (9 Dec 2025)",
+      "url": "https://menlovc.com/perspective/2025-the-state-of-generative-AI-in-the-enterprise/",
+      "what": "Survey of 495 US enterprise AI decision-makers: 76% of AI use cases bought rather than built."
+    },
+    {
+      "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025",
+      "url": "https://www.unique.ai/hubfs/white_papers_and_downloadable_material/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+      "what": "External partnerships reached deployment about 67% of the time vs about 33% for internal builds; self-reported."
+    },
+    {
+      "name": "National Consumer Law Center, CFPB Guts Core Equal Credit Opportunity Act Protections in Regulation B, 20 Jul 2026",
+      "url": "https://library.nclc.org/article/cfpb-guts-core-equal-credit-opportunity-act-protections-regulation-b",
+      "what": "State fair lending and civil rights laws may still allow disparate impact claims; names California, Illinois, Massachusetts, New Jersey and New York. Read 26 Nov 2026."
+    },
+    {
+      "name": "Cooley Finsights, CFPB Finalizes Significant Changes to Regulation B, 27 Apr 2026",
+      "url": "https://finsights.cooley.com/cfpb-finalizes-significant-changes-to-regulation-b/",
+      "what": "Disparate treatment and proxies stay banned; state fair lending laws and the Fair Housing Act may still impose disparate impact liability. Read 26 Nov 2026."
+    }
+  ],
+  "related": [
+    "data-analytics-consulting",
+    "ai-credit-scoring",
+    "insurance",
+    "ai-claims-processing"
+  ],
+  "offer": {
+    "heading": "Get a ranked call list your compliance officer can sign off on",
+    "body": "Bring us your sales analytics process: your core, CRM or policy data and how reps work today. In 30 minutes you leave with the first product and branch to pilot, and a before-and-after measure. You get it in writing, with no sales pitch."
+  },
+  "keyword": {
+    "phrase": "sales analytics",
+    "searches": 320,
+    "cpc": 44.61,
+    "difficulty": 20
+  },
+  "reviews": [
+    {
+      "reader": "COO",
+      "notes": "Dana wanted the first process, the measure and something to forward. On this page now links the three builds, each with a role on every step. Recipe 1 names two first products and when to read the result: 60 days, against the uncalled group."
+    },
+    {
+      "reader": "Head of operations",
+      "notes": "Tripped on drift, reason codes, effective challenge and outcomes analysis. Each is now in plain words: whether scores still hold up, the reason shown for each pick, an independent challenge of the model, checks on its results."
+    },
+    {
+      "reader": "GM",
+      "notes": "Asked whether one unit can pilot first and what it does to margin. The first test step now pilots one product in one branch or region. The pricing step already turns lift into dollars net of rep time and tool cost."
+    },
+    {
+      "reader": "Division head",
+      "notes": "Head of retail banking checked the roles against the exam procedures and the incentive lessons. Compliance now keeps its sign-off on file for examiners. The head of retail now owns pay rules: no incentive tied to products per customer without risk controls. Next best action example now uses a banker, not a loan officer."
+    },
+    {
+      "reader": "Owner-CEO",
+      "notes": "Gets the answer from the title and five short bullets. Would distrust a commercial-banking result passed off as retail, so the McKinsey figure now says commercial banking relationship managers everywhere. Offer now promises the first product and branch to pilot. External list prices are shown; no Zavient price is set, so none is shown."
+    }
+  ],
+  "updated": "2026-11-26"
+}
