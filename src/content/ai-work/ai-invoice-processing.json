@@ -1,33 +1,44 @@
 {
  "title": "Accounts payable automation: what does it cost, what needs a person?",
  "description": "13 accounts payable (AP) automation and invoice-capture tools checked, with prices where they exist. Reading invoices is solved; exceptions and fraud are not.",
+ "type": "usecase",
+ "templateVersion": 1,
+ "topic": "accounts payable automation",
  "job": "accounts payable automation",
  "industry": "finance and accounts payable",
  "summary": "Accounts payable (AP) automation with AI reads a supplier invoice, codes it, matches it to the purchase order (PO) and routes it for approval[^27][^21]. Reading costs cents[^10][^11]. Money leaks in two places: exceptions, about 1 invoice in 5[^8], and fake bank-change requests[^12].",
+ "humanRole": [
+  "AP specialist: clears the exceptions, about 1 invoice in 5, and makes the call the tool only flags.[^8][^1] Keep three-way match (invoice, PO and receipt agree) on; Washington's state auditor says it \"should not be eliminated in order to save time.\"[^49]",
+  "Supplier-list owner, not the paying clerk: adds suppliers and approves any bank-detail change.[^48][^50] Each change gets a call-back on a number already on file, never one from the request.[^50][^12]",
+  "AP manager or treasury: releases payment, and is never the person who entered the invoice.[^48][^49] Federal standards split approving, recording and paying so no one person controls a payment; small teams can use other checks instead.[^51][^48]",
+  "Controller: owns fraud monitoring on ACH (US bank-transfer) payments. Since June 2026, Nacha, which runs ACH, requires every business that sends ACH payments to have risk-based fraud checks, covering vendor impersonation.[^52][^53]"
+ ],
+ "teamAfter": [
+  "Exceptions become the main job. Ardent calls them the biggest single reason AP costs are not lower, and they hit about 1 invoice in 5.[^1][^8]",
+  "Fewer \"where's my payment?\" calls: AP staff spend 21.9% to 29.4% of their time on supplier questions.[^1][^56] Ardent's top-performing teams spend about half as much, and exceptions cause much of it.[^1]",
+  "Fraud checks: most AP teams already help prevent fraud, 72% heavily and 79% at least moderately.[^56][^55] Ardent calls AP \"often the last line of defense against fraud.\"[^55]",
+  "Analysis: BLS expects clerks to take on \"a more analytical and advisory role\" as software automates routine tasks.[^54] Among US firms using AI, 66% use it only to help staff; 2% saw AI-related employment fall.[^57]"
+ ],
  "index": true,
  "verdict": [
-  "The money leaks in exceptions: about 1 invoice in 5 needs a person[^8].",
+  "The money leaks in exceptions: about 1 invoice in 5 needs a person.[^8][^1]",
   "Buy an AP suite such as BILL, Ramp or Tipalti to run approvals and payments[^5][^6].",
   "Build AI only for the gaps, such as exception triage and holds on bank-detail changes[^8][^12].",
-  "Benchmark any tool on 50 of your own invoices: look-alike tables fooled 7 of 10 tools in our test[^9].",
-  "Treat any \"new bank account\" request as fraud until you call the supplier back[^12][^13]."
+  "Benchmark any tool on 50 of your own invoices: look-alike tables fooled 7 of 10 tools in our test.[^9][^61]",
+  "Treat any \"new bank account\" request as fraud until you call the supplier back on a number already on file.[^50][^12]"
  ],
  "onPage": [
   {
-   "to": "what-goes-wrong",
-   "text": "Where the money leaks: exceptions, fraud and the wrong total"
-  },
-  {
-   "to": "own-data",
-   "text": "Which accounts payable suites publish a price"
+   "to": "human-role",
+   "text": "Who on your AP team decides, approves and releases payment"
   },
   {
    "to": "recipes",
    "text": "Three ways to do it, and what each costs"
   },
   {
-   "to": "table-1",
-   "text": "The six AP suites that sell only by demo or quote"
+   "to": "own-data",
+   "text": "Which accounts payable suites publish a price"
   },
   {
    "to": "rules",
@@ -38,8 +49,12 @@
    "text": "How to benchmark AI on your own invoices"
   },
   {
-   "to": "buy-or-build",
-   "text": "What to buy and what to build yourself"
+   "to": "what-goes-wrong",
+   "text": "Where the money leaks: exceptions, fraud and the wrong total"
+  },
+  {
+   "to": "faq",
+   "text": "Cost, setup time and jobs: the questions buyers ask"
   }
  ],
  "stats": [
@@ -187,7 +202,7 @@
     "AI reads it and shows where on the page each value came from",
     "AI compares it with the PO, the receipt that Receiving logged and the supplier record",
     "AI flags any bank-detail change and holds the payment",
-    "The person who owns the supplier list, not the paying clerk, calls the supplier on a number you look up yourself[^12]",
+    "The person who owns the supplier list, not the paying clerk, calls the supplier back on a number already on file.[^50][^12]",
     "AP clerk releases it to approval; Controller approves over limit"
    ],
    "cost": "Reading an invoice costs cents with a cloud invoice reader[^10][^11], against a median $6.00 to an average $9.90 to process one invoice today[^2][^8]. The real cost is building and owning the hold rules; we quote that per job and don't publish a price here."
@@ -322,15 +337,15 @@
   }
  ],
  "howToTest": [
-  "Record today's baseline first: cost per invoice, exception rate, straight-through rate and days per invoice. Multiply cost per invoice by your monthly volume to get your unit's AP cost today.",
+  "Record your before numbers first: cost per invoice, exception rate, straight-through rate and days per invoice. Multiply cost per invoice by your monthly volume to get your unit's AP cost today.",
   "Compare your baseline with the benchmark figures on this page: 19.9% exceptions, 38.3% straight through and 11.6 days per invoice[^8].",
   "For two weeks, log the minutes your team spends on each exception. That gives you your own cost of an exception.",
-  "Pull 50 recent invoices, including at least 10 past exceptions. Include credit notes, multi-page invoices, foreign ones and the worst scans.",
+  "Pull 50 recent invoices from one entity or one AP inbox, including at least 10 past exceptions. Include credit notes, multi-page invoices, foreign ones and the worst scans.",
   "Write down the right supplier, number, date, total, tax and PO for each before any tool reads them.",
   "Run each tool on the same set. Count wrong values apart from blanks: a wrong total is worse than a missing one.",
   "Add three invoices that change a supplier's bank details, and check each tool holds them.",
   "Add one invoice you already paid, resubmitted, and check each tool flags it as a duplicate.",
-  "Measure how many invoices go straight through, how many reach your team as exceptions, and the cost per invoice including add-ons."
+  "Measure how many invoices go straight through, how many reach your team as exceptions, and the cost per invoice including add-ons. Multiply the change in cost per invoice by your monthly volume to get the saving in dollars."
  ],
  "buyVsBuild": {
   "buy": "Buy for the workflow: inbox, approvals, payments, ERP sync and an audit trail. Suites already sell all of this[^5][^6][^7], and you do not want to own payments.",
@@ -338,8 +353,30 @@
  },
  "watchOuts": [
   "The price you see is rarely the price you pay. Matching, payments, more entities and ERP sync are often add-ons[^5][^16][^7][^23].",
-  "Payment fraud rides on invoices[^12][^13]: 74% of US organizations experienced business email compromise in 2025, the AFP found[^4][^15]. Check any change to bank details by calling a number you look up yourself[^12].",
+  "Payment fraud rides on invoices[^12][^13]: 74% of US organizations experienced business email compromise in 2025, the AFP found[^4][^15]. Check any change to bank details by calling the supplier on a number already on file.[^50][^12]",
   "A tool that reads the subtotal as the total looks right at a glance. In our benchmark, 7 of 10 tools picked the wrong one of two look-alike tables[^9]."
+ ],
+ "faq": [
+  {
+   "q": "What is accounts payable automation?",
+   "a": "Software that reads supplier invoices, codes them, matches them to the purchase order and routes them for approval and payment.[^19][^27] AI does the reading and suggests the coding; your AP team still clears exceptions and approves payments.[^8][^48]"
+  },
+  {
+   "q": "How much does AP automation cost?",
+   "a": "Only 3 of the 9 full AP suites we checked publish a price.[^5][^6][^7] Ramp has a free plan, BILL charges $49 to $89 per user a month, and Tipalti starts at $99 a month.[^6][^5][^7] The rest quote after a demo, and add-ons such as matching and payment fees cost extra.[^18][^19][^16][^17]"
+  },
+  {
+   "q": "Will AI replace accounts payable?",
+   "a": "It changes the job more than it removes it. Among US firms using AI, 66% use it only to help staff, and 2% saw AI-related employment fall.[^57] BLS still projects bookkeeping and accounting clerk jobs to fall 6% by 2035, with about 144,100 openings a year.[^54]"
+  },
+  {
+   "q": "How long does AP automation take to set up?",
+   "a": "Vendors say weeks, not months: AvidXchange says many customers are live in as little as six weeks; Ramp says 2 to 12.[^19][^58] Ramp says most of that time goes to cleaning supplier data and settling who approves what.[^58] Tipalti says technical setup takes days, but company checks and account setup can take several weeks.[^59]"
+  },
+  {
+   "q": "Can I trust AP automation accuracy claims?",
+   "a": "Only after a test on your own invoices.[^61] In a Fraunhofer study, the best model got 96.5% of fields right on clean invoices but 87.5% on scanned receipts.[^60] In our own test, two look-alike tables fooled 7 of 10 tools.[^9]"
+  }
  ],
  "resources": [
   {
@@ -412,7 +449,7 @@
   {
    "name": "FBI, Business Email Compromise",
    "url": "https://www.fbi.gov/how-we-can-help-you/scams-and-safety/common-scams-and-crimes/business-email-compromise",
-   "what": "BEC examples include a known vendor sending an invoice with changed details; advises verifying any change in account number by calling a number you look up yourself."
+   "what": "BEC examples include a known vendor sending an invoice with changed details. Advises verifying \"any change in account number or payment procedures with the person making the request,\" using a phone number you look up yourself, not one the requester gives."
   },
   {
    "name": "FBI IC3 public service announcement I-050417-PSA",
@@ -447,7 +484,7 @@
   {
    "name": "AvidXchange, AP automation",
    "url": "https://www.avidxchange.com/solutions/accounts-payable-automation",
-   "what": "Built for middle-market businesses; automates invoice capture, approvals and payments; integrates with 265+ accounting systems."
+   "what": "Built for middle-market businesses; automates invoice capture, approvals and payments; integrates with 265+ accounting systems. FAQ: many customers are up and running \"in as little as six weeks.\""
   },
   {
    "name": "AvidXchange, purchase order automation",
@@ -588,6 +625,76 @@
    "name": "SROIE (ICDAR 2019) repository",
    "url": "https://github.com/zzzDavid/ICDAR-2019-SROIE",
    "what": "1,000 scanned receipts; the repository code is MIT licensed and no separate data licence is given."
+  },
+  {
+   "name": "Washington State Auditor, Segregation of Duties guide (2nd ed., Mar 2026)",
+   "url": "https://sao.wa.gov/sites/default/files/2023-05/Segregation-of-Duties-Guide%20%283%29.pdf",
+   "what": "An accounts payable processor should not create vendors or change the vendor master file (risk: fictitious vendor schemes). A second person should review the ACH payment file and authorize the bank to release funds."
+  },
+  {
+   "name": "Washington State Auditor, Accounts Payable Guide",
+   "url": "https://sao.wa.gov/sites/default/files/2023-05/Accounts-Payable-Guide.pdf",
+   "what": "AP clerks should not perform or approve the check run or add or edit vendors. The three-way match \"should not be eliminated in order to save time.\""
+  },
+  {
+   "name": "Washington State Auditor, Protect your vendor master file from fraudsters (Apr 2023)",
+   "url": "https://sao.wa.gov/the-audit-connection-blog/protect-your-vendor-master-file-fraudsters",
+   "what": "Verify any vendor change request directly with the vendor \"by phone, using contact information that is known, reliable and already on file.\" AP clerks should not add vendors or change vendor information."
+  },
+  {
+   "name": "US GAO, Green Book (2025), Principle 10",
+   "url": "https://guides.gaoinnovations.gov/greenbook/2025/principle-10-design-control-activities",
+   "what": "Segregation of duties separates authorizing, processing and recording, reviewing and handling assets \"so that no one individual controls all key aspects of a transaction.\" Where staff are too few, design alternative controls."
+  },
+  {
+   "name": "Nacha, Fraud Monitoring Phase 2 (effective 19 Jun 2026)",
+   "url": "https://www.nacha.org/rules/risk-management-topics-fraud-monitoring-phase-2",
+   "what": "All non-consumer Originators must have risk-based processes to identify ACH entries initiated due to fraud, reviewed at least annually. Practical effective date 22 Jun 2026."
+  },
+  {
+   "name": "Nacha, Fraud Monitoring Phase 1 (effective 20 Mar 2026)",
+   "url": "https://www.nacha.org/rules/risk-management-topics-fraud-monitoring-phase-1",
+   "what": "Defines False Pretenses, covering business email compromise, vendor impersonation and payroll impersonation. Phase 1 applied to banks and Originators with 6 million+ ACH entries in 2023."
+  },
+  {
+   "name": "US Bureau of Labor Statistics, Bookkeeping, Accounting, and Auditing Clerks (Aug 2026)",
+   "url": "https://www.bls.gov/ooh/office-and-administrative-support/bookkeeping-accounting-and-auditing-clerks.htm",
+   "what": "Employment projected to decline 6% from 2025 to 2035, with about 144,100 openings a year. Clerks are expected \"to take on a more analytical and advisory role.\""
+  },
+  {
+   "name": "Ardent Partners, State of ePayables 2025 full report (Bottomline-sponsored)",
+   "url": "https://www.bottomline.com/download_file/3d6cd137-fa7a-43be-9d71-71e265098e90/6211",
+   "what": "Survey of 204 respondents. 79% of AP teams have heavy or moderate involvement in fraud prevention; \"AP is often the last line of defense against fraud.\""
+  },
+  {
+   "name": "Bottomline, State of ePayables 2026 summary (vendor page, Ardent data)",
+   "url": "https://www.bottomline.com/resources/state-epayables",
+   "what": "72% of AP teams say they are heavily involved in fraud prevention; 29.4% of staff time goes to supplier inquiries; $9.90 and 11.6 days per invoice."
+  },
+  {
+   "name": "US Census Bureau, CES-WP-26-25, The Microstructure of AI Diffusion (Apr 2026)",
+   "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
+   "what": "\"Most users (66%) rely on AI solely to augment tasks, while AI-related employment decreases are rare, occurring in only 2% of firms.\""
+  },
+  {
+   "name": "Ramp, How long does AP software implementation take? (vendor blog, Jul 2025)",
+   "url": "https://ramp.com/blog/accounts-payable/how-to-implement-ap-software",
+   "what": "Usually 2 to 12 weeks: cloud tools 2-4 weeks, legacy systems 8-12 or more. \"Most of that time goes to cleaning vendor data and settling who approves what.\""
+  },
+  {
+   "name": "Tipalti FAQs (vendor)",
+   "url": "https://tipalti.com/faqs",
+   "what": "\"Technical implementation is a matter of days,\" but due diligence and account setup \"can take several weeks.\""
+  },
+  {
+   "name": "Berghaus et al., Fraunhofer IAIS, invoice LLM benchmark (arXiv 2509.04469, Aug 2025)",
+   "url": "https://arxiv.org/abs/2509.04469",
+   "what": "Eight models on three public datasets. Best model: 96.50% of fields right on clean invoices, 92.71% on scanned invoices, 87.46% on scanned receipts."
+  },
+  {
+   "name": "NIST, AI Risk Management Framework 1.0 (NIST AI 100-1, Jan 2023)",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf",
+   "what": "\"Accuracy measurements should always be paired with clearly defined and realistic test sets... representative of conditions of expected use.\""
   }
  ],
  "related": [
@@ -603,16 +710,40 @@
  },
  "offer": {
   "heading": "Invoices still stuck in exceptions? Get a free diagnostic",
-  "body": "Tell us your AP tool, your volume and where invoices get stuck. In 30 minutes you learn which suite fits and whether a custom check (recipe 2) pays at your volume. You get a written follow-up either way, one you can forward to your CEO."
+  "body": "Tell us your AP tool, your monthly invoice count and where invoices get stuck. In 30 minutes you learn which suite fits and whether a custom check (recipe 2) pays at your volume. You leave with the first step and a before-and-after measure in writing, with no sales pitch."
  },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Couldn't see who does what from the top, and the before-and-after measure was called a baseline. On this page now leads with who decides, approves and releases payment, follows the page order and links the cost and setup-time answers. The first test step now says these are your before numbers."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Tripped on ACH, Nacha and Best-in-Class. ACH is now defined as US bank transfers, Nacha as the body that runs it, and Best-in-Class as Ardent's top-performing teams. Three-way match is defined where it first appears, and the setup-time answer says company checks instead of due diligence."
+  },
+  {
+   "reader": "GM",
+   "notes": "Asked whether one unit can pilot first and what it does to the unit's cost. The test now pulls its 50 invoices from one entity or one AP inbox, and the last step turns the change in cost per invoice into dollars a month. The setup-time answer gives the vendors' week ranges, marked as their claims."
+  },
+  {
+   "reader": "Division head",
+   "notes": "The head of AP and controller checked the controls against the sources. The bottom line's call-back now says a number already on file, matching the state auditor and FBI, and the recipe and watch-out say the same. The payment-release role now notes that small teams can use other checks when they can't split duties."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Steve found the price answer and the jobs answer where he would look, but the offer told him to forward the follow-up to his CEO, which is him. The offer now asks for his monthly invoice count and promises the first step and a before-and-after measure in writing, with no sales pitch."
+  }
+ ],
  "updated": "2026-11-26",
  "headings": {
   "what-it-is": "How is AI accounts payable automation different from OCR?",
   "example": "How does AI move an invoice from email to your ERP?",
   "rules": "Which e-invoicing and tax rules apply?",
-  "what-goes-wrong": "What still needs a person in accounts payable?",
+  "what-goes-wrong": "Where does accounts payable automation go wrong?",
   "buy-or-build": "Should you buy an AP suite or build your own checks?",
-  "something-else": "When is an AP suite the wrong fit?"
+  "something-else": "When is an AP suite the wrong fit?",
+  "recipes": "Where do you start automating accounts payable?",
+  "benchmark": "How do you benchmark an AP tool on your own invoices?"
  },
  "recipesTitle": "Where do you start automating accounts payable?",
  "testTitle": "How do you benchmark an AP tool on your own invoices?"
