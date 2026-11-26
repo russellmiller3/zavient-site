@@ -1,0 +1,698 @@
+{
+  "title": "What are supply chain and logistics firms actually using AI for?",
+  "description": "Where AI pays first for distributors, 3PLs and shippers: order entry, forecasts, freight bills. Real tool prices, the rules, and who stays in charge.",
+  "type": "industry",
+  "templateVersion": 1,
+  "topic": "AI in supply chain and logistics",
+  "job": "AI in supply chain and logistics",
+  "industry": "supply chain and logistics",
+  "index": false,
+  "verdict": [
+    "Most firms are still piloting. Only 13% of logistics providers report measurable AI value, and 92% of operations leaders say tech spend hasn't fully delivered.[^1][^2]",
+    "Paperwork pays first: keying emailed orders, matching freight bills and making check calls. One freight firm's AI agents now handle 60% of its check calls.[^6][^5][^7]",
+    "Forecasting is the proven job. Machine-learning forecasts beat the best statistical method by over 14% in a major contest, but clean data matters more than the algorithm.[^8][^9][^10]",
+    "Planners, buyers and dispatchers stay in charge. Trade body ASCM advises keeping complex planning and sourcing under human oversight, and big planner corrections improve forecasts.[^11][^12]",
+    "Data and rules decide success. Integration and data top the barrier lists, and at least five states regulate algorithm-set warehouse quotas.[^2][^4][^15][^16]"
+  ],
+  "onPage": [
+    {
+      "to": "ranked",
+      "text": "Seven jobs ranked by where AI pays first, each with the number to track"
+    },
+    {
+      "to": "own-data",
+      "text": "Which supply chain roles ask for AI skills, from our job-ad count"
+    },
+    {
+      "to": "table-1",
+      "text": "What forecasting and freight AI tools cost"
+    },
+    {
+      "to": "rules",
+      "text": "The quota, trucking, import and AI rules that apply"
+    },
+    {
+      "to": "what-goes-wrong",
+      "text": "Where supply chain AI goes wrong, and what to do"
+    },
+    {
+      "to": "buy-or-build",
+      "text": "Buy or build"
+    }
+  ],
+  "headings": {
+    "what-it-is": "What does AI actually do in supply chain and logistics?",
+    "ranked": "Where does AI pay first in supply chain and logistics?",
+    "rules": "Which rules apply to AI in warehouses and freight?",
+    "what-goes-wrong": "Where does supply chain AI go wrong?",
+    "faq": "Questions supply chain leaders ask about AI",
+    "buy-or-build": "Should you buy supply chain AI or build it?"
+  },
+  "summary": "AI in supply chain and logistics drafts the routine work: forecasts, order entry, carrier check calls, freight-bill matching and route plans.[^32][^33] McKinsey reports distributors cutting inventory 20-30% and logistics costs 5-20%, but these are consultancy ranges, not promises.[^33] What makes or breaks it is clean master data and a named owner for each decision.[^31][^30]",
+  "humanRole": [
+    "Demand planners sign off the plan. AI drafts the baseline; planners flag promotions, new customers and lost accounts, where people add the most.[^12][^14]",
+    "Buyers award the business and negotiate. AI can draft purchase orders and spend reports, but it should never create vendors or change bank details.[^45][^34]",
+    "Dispatchers and carrier reps keep final routes, carrier vetting and rate calls. Fake-carrier pickups are about a quarter of cargo thefts, so a person verifies every carrier.[^26][^25]",
+    "Warehouse managers set quotas and own safety. Several states treat an algorithm-set pick rate as a quota that must be disclosed in writing.[^15][^16]"
+  ],
+  "ranked": [
+    {
+      "name": "Keying emailed and PDF orders into your ERP (enterprise resource planning system)",
+      "slug": "ai-document-processing",
+      "why": "Benchmarking body APQC puts the median cost to process one purchase order at $55, across 4,620 firms.[^5] Order-entry vendors Esker and Conexiom say a manual order takes 11-12 minutes to key (their claim).[^41]",
+      "payoff": "Minutes per order, keying errors and orders handled per rep."
+    },
+    {
+      "name": "Demand forecasting and reorder suggestions",
+      "why": "Machine-learning forecasts beat the best statistical method by over 14% in the M5 contest.[^8] McKinsey reports 20-50% fewer forecast errors, if your sales history is clean.[^9][^10]",
+      "payoff": "Forecast error by SKU (stock-keeping unit), fill rate and inventory turns."
+    },
+    {
+      "name": "Check calls, tracking updates and quotes (for 3PLs, or third-party logistics firms, and brokers)",
+      "why": "At one freight firm, 50 AI agents automate 60% of check calls (calls asking carriers where a load is).[^6] Transport planning leads AI use among logistics providers, at 64%.[^1]",
+      "payoff": "Check calls per rep per day, quote turnaround and loads per rep."
+    },
+    {
+      "name": "Freight invoice audit and AP (accounts payable) matching",
+      "slug": "ai-invoice-processing",
+      "why": "The same firm's agents handle 80% of its paper invoice payments.[^6] MIT found the biggest generative AI return in back-office work like this.[^7]",
+      "payoff": "Invoices matched with no touch, overcharges caught and days to pay."
+    },
+    {
+      "name": "Procurement: spend analysis, contract review, supplier screening",
+      "why": "Hackett finds 43% of procurement teams pursuing AI but only 12% at scale, in a mostly large-firm sample.[^34] Most (69%) use AI already built into their procurement software.[^34]",
+      "payoff": "Spend under contract, days per sourcing event and contract review hours."
+    },
+    {
+      "name": "Route and load planning (if you run your own fleet)",
+      "why": "UPS's ORION routing saves about 100 million miles a year, but it's a custom build at UPS scale.[^46] Every route must fit federal hours-of-service limits.[^20]",
+      "payoff": "Miles per stop, on-time delivery and driver hours used."
+    },
+    {
+      "name": "Warehouse slotting and labor planning",
+      "why": "APQC finds 40% of firms have no plan for AI in warehouse automation.[^36] It needs a WMS (warehouse management system) and clean data first, and quota laws apply.[^31][^15]",
+      "payoff": "Travel per pick, picks per labor hour and injury rate."
+    }
+  ],
+  "ownData": {
+    "title": "Which supply chain jobs now ask for AI skills?",
+    "intro": "We counted US job ads posted in the 30 days to 26 November 2026, by role, using the JobsPipe job-ad index's free count. Then we counted the ads that mention AI terms such as machine learning, Copilot or ChatGPT. Peers are hiring planners and buyers who use AI; floor and dispatch ads rarely mention it.",
+    "headers": [
+      "Role",
+      "US ads, 30 days",
+      "Ads mentioning AI"
+    ],
+    "rows": [
+      [
+        "Demand planner",
+        "325",
+        "73 (22.5%)"
+      ],
+      [
+        "Supply chain analyst",
+        "362",
+        "74 (20.4%)"
+      ],
+      [
+        "Supply chain manager",
+        "1,038",
+        "162 (15.6%)"
+      ],
+      [
+        "Procurement manager or specialist",
+        "1,908",
+        "277 (14.5%)"
+      ],
+      [
+        "Buyer or purchasing agent",
+        "5,844",
+        "713 (12.2%)"
+      ],
+      [
+        "Freight broker or carrier sales",
+        "335",
+        "40 (11.9%)"
+      ],
+      [
+        "Logistics manager",
+        "897",
+        "52 (5.8%)"
+      ],
+      [
+        "Dispatcher",
+        "3,488",
+        "143 (4.1%)"
+      ],
+      [
+        "Transportation manager or planner",
+        "533",
+        "21 (3.9%)"
+      ],
+      [
+        "Warehouse manager",
+        "1,235",
+        "31 (2.5%)"
+      ]
+    ],
+    "note": "Counts are approximate; the index caps them at 10,000 and has no company-size filter. Matching is on ad text, so employer boilerplate can inflate counts, and a mention doesn't prove the job uses AI. Buyer titles include some media buyers, and this is one 30-day window, not a trend."
+  },
+  "tables": [
+    {
+      "title": "What do forecasting and freight AI tools cost?",
+      "intro": "Prices from vendor pages or, where marked, third-party reports, read 26 November 2026.[^38][^40] Freight agents publish no price.[^42][^43][^44]",
+      "headers": [
+        "Tool",
+        "Job",
+        "Price"
+      ],
+      "rows": [
+        {
+          "name": "Netstock",
+          "url": "https://www.netstock.com/packages",
+          "cells": [
+            "Demand planning and reorders for mid-size firms",
+            "From $900/mo; $1,500 and $2,000 tiers; annual terms[^38]"
+          ]
+        },
+        {
+          "name": "Inventory Planner (Sage)",
+          "url": "https://www.inventory-planner.com/pricing",
+          "cells": [
+            "Forecasts and reorders for wholesale and ecommerce",
+            "Quote only; priced by inventory volume[^39]"
+          ]
+        },
+        {
+          "name": "Lokad",
+          "cells": [
+            "Probabilistic forecasting and inventory optimization",
+            "Third-party report: low thousands a month, about 6 months to onboard[^40]"
+          ]
+        },
+        {
+          "name": "StockIQ",
+          "cells": [
+            "Supply chain planning",
+            "About $750/mo (third-party report)[^40]"
+          ]
+        },
+        {
+          "name": "C.H. Robinson, project44, Parade",
+          "cells": [
+            "Quote, visibility and carrier-sales agents",
+            "Not published[^42][^43][^44]"
+          ]
+        }
+      ],
+      "note": "A third-party guide puts Netstock's setup at 6-10 weeks.[^40] Freight vendors' speed claims are their own: C.H. Robinson says quotes in 32 seconds, Parade says 4x rep bandwidth.[^42][^44]"
+    },
+    {
+      "title": "What do the studies and surveys say?",
+      "intro": "Sample sizes shown so you can weigh each one. Most samples skew to large firms.[^34][^4]",
+      "headers": [
+        "Study",
+        "Sample",
+        "Key finding"
+      ],
+      "rows": [
+        {
+          "name": "MHI and Deloitte, 2025",
+          "cells": [
+            "700+, mostly executives[^3]",
+            "28% use AI; 82% expect to within 5 years[^3]"
+          ]
+        },
+        {
+          "name": "PwC, 2025",
+          "cells": [
+            "610 US leaders[^2]",
+            "57% have integrated AI; 92% say tech spend hasn't fully delivered[^2]"
+          ]
+        },
+        {
+          "name": "BCG and Alpega, 2026",
+          "cells": [
+            "180+ providers and shippers[^1]",
+            "13% of providers see measurable value[^1]"
+          ]
+        },
+        {
+          "name": "MIT and Mecalux, 2025",
+          "cells": [
+            "2,000+, incl. 542 US[^4]",
+            "About 6 in 10 have implemented; 2-3 year payback[^4]"
+          ]
+        },
+        {
+          "name": "ASCM and DSCI, 2026",
+          "cells": [
+            "107[^11]",
+            "83% say staff aren't prepared[^11]"
+          ]
+        },
+        {
+          "name": "M5 contest",
+          "cells": [
+            "42,840 Walmart series[^8]",
+            "Machine learning over 14% better than the best statistical method[^8]"
+          ]
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "name": "California warehouse quota law (AB 701)",
+      "url": "https://www.dir.ca.gov/dlse/FAQ_warehousequotas.htm",
+      "status": "In force since 1 Jan 2022",
+      "what": "Covers distribution centers with 100+ staff at one site or 1,000+ statewide.[^15] Quotas must be disclosed in writing and can't block meal, rest or bathroom breaks. An algorithm that sets pick rates is a quota.[^15]"
+    },
+    {
+      "name": "New York Warehouse Worker Protection Act",
+      "url": "https://dol.ny.gov/WWPA",
+      "status": "In force; injury program required since 1 Jun 2025",
+      "what": "Quota changes must be disclosed within 2 business days.[^16] Workers can ask for 90 days of their work-speed data, due within 14 days.[^16]"
+    },
+    {
+      "name": "Washington, Minnesota and Oregon warehouse quota laws",
+      "url": "https://lni.wa.gov/workers-rights/industry-specific-requirements/warehouse-quota-standards",
+      "status": "In force (MN 2023, WA 2024, OR 2025)",
+      "what": "Large warehouses must disclose quotas, including ones an algorithm sets.[^17][^18][^19] Check each state where you run a site."
+    },
+    {
+      "name": "FMCSA (federal trucking safety agency) hours of service, 49 CFR 395.3",
+      "url": "https://www.ecfr.gov/current/title-49/subtitle-B/chapter-III/subchapter-B/part-395/subpart-A/section-395.3",
+      "status": "In force",
+      "what": "Applies if you run your own trucks. Route AI must respect the 11-hour driving limit, 14-hour window, 30-minute break and 60/70-hour limits.[^20]"
+    },
+    {
+      "name": "Uyghur Forced Labor Prevention Act (UFLPA): CBP importer guidance",
+      "url": "https://www.cbp.gov/trade/forced-labor/UFLPA",
+      "status": "In force; guidance updated June 2026",
+      "what": "Importers must prove where their goods came from, and 43 entities were added to the banned list in mid-2026.[^21] AI screening helps find risks, but you still carry the proof.[^21]"
+    },
+    {
+      "name": "Colorado AI law (SB 26-189)",
+      "url": "https://coag.gov/ai/",
+      "status": "Starts 1 Jan 2027; enforcement paused by a federal court order",
+      "what": "Covers automated decisions about people, including hiring.[^22] Watch it if AI screens applicants or sets schedules. This is not legal advice; check with counsel."
+    },
+    {
+      "name": "FTC Operation AI Comply",
+      "url": "https://www.ftc.gov/news-events/news/press-releases/2024/09/ftc-announces-crackdown-deceptive-ai-claims-schemes",
+      "status": "Enforcement ongoing since Sept 2024",
+      "what": "Companies must back up their AI claims.[^24] Ask vendors for proof on your own data before you sign."
+    },
+    {
+      "name": "EU AI Act, Annex III (only if you run EU sites)",
+      "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3",
+      "status": "Starts 2 Dec 2027",
+      "what": "AI that assigns tasks or monitors workers is high-risk.[^23] You must tell workers before you use it.[^23]"
+    }
+  ],
+  "watchOuts": [
+    "Lab wins can fail on the floor. Starbucks dropped an AI shelf-counting tool after about nine months when reflections doubled milk counts; pilot on one real site first.[^28]",
+    "Bad master data sinks the forecast. Nike's 2000-01 planning rollout overbought about $90M of product, so clean your SKU data and launch in phases.[^29][^31]",
+    "Some 'AI agents' aren't. Gartner expects over 40% of agentic AI projects to be canceled by 2027; ask vendors to prove claims, which the FTC also polices.[^27][^24]",
+    "Email-reading agents are a fraud target. Cyber-enabled cargo theft cost about $725M in 2025, so any agent that books carriers or changes payment details needs a person's check.[^25][^26]",
+    "Planner corrections can hurt as well as help. Small, upward tweaks make forecasts worse, so track whether each touch improved accuracy.[^12][^13]",
+    "Pilots stall without an owner. Name who owns the data and the decision before you start; that's where most predictive pilots break.[^30][^11]"
+  ],
+  "faq": [
+    {
+      "q": "Is AI actually useful for demand forecasting, or is it mostly hype?",
+      "a": "Useful, if you have clean sales history. Machine learning beat statistical methods by over 14% in the M5 contest.[^8][^9] A 2026 study found data access mattered more than the algorithm.[^10]"
+    },
+    {
+      "q": "Are AI purchase order recommendations useful yet for a midsize distributor?",
+      "a": "Often, but benchmark them against a plain reorder point first. Mid-size planning tools start around $900 a month.[^38] Most procurement teams use AI already built into their software.[^34]"
+    },
+    {
+      "q": "What exactly has AI improved for 3PL providers?",
+      "a": "Transport planning and the paperwork around it. It leads providers' AI use at 64%, and one firm's agents automate 60% of check calls.[^1][^6] Only 13% of providers report measurable value so far.[^1]"
+    },
+    {
+      "q": "Is AI for supply chain only for large companies?",
+      "a": "No, but upfront cost weighs more on small firms: 44% cite it, against 25% of large firms.[^1] MIT and Mecalux find a typical payback of 2-3 years.[^4]"
+    },
+    {
+      "q": "How is AI changing logistics and supply chain jobs?",
+      "a": "It adds skills to jobs more than it removes them. About half of logistics providers expect reskilling, and logistician jobs are projected to grow 18% by 2035.[^1][^37] In our job-ad count, about 1 in 5 demand planner ads mention AI."
+    },
+    {
+      "q": "Management wants AI in our operations. Where do we start?",
+      "a": "Start with one paperwork workflow you can measure, such as order entry or freight-bill matching. APQC's $55 median cost per purchase order gives you a baseline.[^5] Bought tools succeed about twice as often as internal builds.[^7]"
+    }
+  ],
+  "buyVsBuild": {
+    "buy": "Buy for forecasting, routing, visibility and freight audit, where tools are mature. About 76% of AI uses are now bought, up from 53% in 2024.[^35] Bought or partnered tools succeed about twice as often as internal builds.[^7]",
+    "build": "Build only the glue: email-to-ERP order intake, data clean-up and approval steps. Hackett's leaders first check where AI pays, then pick built-in features, AI-native tools or custom builds.[^34] Turn on what your ERP or WMS already has before you buy more."
+  },
+  "pickElse": [
+    "Steady demand and a modest SKU count: your ERP's built-in reorder points may be enough. Benchmark any AI tool against them before you pay.",
+    "Lumpy, slow-moving demand such as spare parts: try a simple method like Croston's first. Croston-type methods beat a seasonal baseline on low-volume items in M5.[^8]",
+    "Top customers can send structured orders: set up EDI (electronic data interchange) or an order portal instead of AI order-reading. It fixes the problem at the source.",
+    "One depot or a regional fleet: buy off-the-shelf routing software. A custom optimizer like UPS's ORION pays only at UPS scale.[^46]"
+  ],
+  "resources": [
+    {
+      "name": "US Census Bureau, Monthly Wholesale Trade",
+      "url": "https://www.census.gov/wholesale/current/index.html",
+      "what": "Benchmark your inventory-to-sales ratio against wholesalers nationally (1.21 in Sept 2026).[^47]"
+    },
+    {
+      "name": "BTS Supply Chain and Freight Indicators",
+      "url": "https://www.bts.gov/freight-indicators",
+      "what": "Free monthly freight, port and trucking signals to sense-check a forecast.[^48]"
+    },
+    {
+      "name": "APQC Open Standards Benchmarking",
+      "url": "https://www.apqc.org/resources/benchmarking/open-standards-benchmarking/measures/total-cost-perform-process-order-1",
+      "what": "Cost per purchase order and other process costs to set a before number."
+    },
+    {
+      "name": "CBP UFLPA page and importer guidance",
+      "url": "https://www.cbp.gov/trade/forced-labor/UFLPA",
+      "what": "What importers must prove about supplier tracing, from the agency that enforces it."
+    },
+    {
+      "name": "The M5 forecasting competition paper",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0169207021001874",
+      "what": "Plain evidence of what machine-learning forecasting can and can't do on real sales data."
+    }
+  ],
+  "stats": [
+    {
+      "num": "13%",
+      "label": "Logistics providers reporting measurable value from AI.[^1]",
+      "source": "BCG and Alpega, 2026 (180+ respondents)"
+    },
+    {
+      "num": "22.5% vs 2.5%",
+      "label": "Demand planner vs warehouse manager US job ads that mention AI.",
+      "source": "Zavient job-ad count, 30 days to 26 Nov 2026"
+    },
+    {
+      "num": "Over 14%",
+      "label": "Accuracy gain of machine-learning forecasts over the best statistical method.[^8]",
+      "source": "M5 competition, International Journal of Forecasting"
+    },
+    {
+      "num": "$55",
+      "label": "Median cost to process one purchase order, across 4,620 firms.[^5]",
+      "source": "APQC Open Standards Benchmarking"
+    },
+    {
+      "num": "2-3 years",
+      "label": "Typical payback reported by AI adopters.[^4]",
+      "source": "MIT and Mecalux, 2025 (2,000+ firms)"
+    },
+    {
+      "num": "About $725M",
+      "label": "Lost to cyber-enabled cargo theft in 2025.[^25]",
+      "source": "FBI IC3, 2026"
+    }
+  ],
+  "related": [
+    "manufacturing",
+    "retail-ecommerce",
+    "ai-document-processing",
+    "ai-invoice-processing",
+    "ai-automation-consulting"
+  ],
+  "offer": {
+    "heading": "Which of these pays back first at your company?",
+    "body": "Bring one workflow from one site or desk: order entry, the forecast, freight bills or check calls. In 30 minutes we'll map where AI fits, what it would cost and who stays in charge. Free, and no slides."
+  },
+  "keyword": {
+    "phrase": "ai in supply chain",
+    "searches": 2400,
+    "cpc": 25.07,
+    "difficulty": 9
+  },
+  "updated": "2026-11-26",
+  "sources": [
+    {
+      "name": "BCG and Alpega, AI is already moving the logistics industry forward",
+      "url": "https://www.bcg.com/publications/2026/ai-is-already-moving-the-logistics-industry-forward",
+      "what": "Survey of 180+ logistics providers and shippers (98 shipper leaders), Jan 2026: 13% of providers and 7% of shippers report measurable AI value; transport planning leads provider use at 64%. Published 24 Mar 2026."
+    },
+    {
+      "name": "PwC, 2025 Digital Trends in Operations survey",
+      "url": "https://www.pwc.co.uk/ghost/us-digital-supply-chain-survey.html",
+      "what": "Survey of 610 US operations and supply chain leaders: 57% have integrated AI partly or fully; 92% say tech investments haven't fully delivered; top challenges are integration (42%) and data (37%)."
+    },
+    {
+      "name": "MHI and Deloitte, 2025 MHI Annual Industry Report (via Business Wire)",
+      "url": "https://www.businesswire.com/news/home/20250319048739/en/",
+      "what": "Survey of 700+ supply chain leaders, 83% executives: AI in use at 28%; 82% expect to use it within 5 years. 19 Mar 2025."
+    },
+    {
+      "name": "MIT Intelligent Logistics Systems Lab and Mecalux, 2025 report",
+      "url": "https://www.mecalux.com/documents/d/global/2025-mit_report_un",
+      "what": "Survey of 2,000+ firms of 100+ staff in 21 countries (542 US): about 6 in 10 have implemented AI; typical payback 2-3 years; top barriers are skills (48.6%), integration (47.7%) and data quality (46.2%)."
+    },
+    {
+      "name": "APQC Open Standards Benchmarking, total cost to order materials and services",
+      "url": "https://www.apqc.org/resources/benchmarking/open-standards-benchmarking/measures/total-cost-perform-process-order-1",
+      "what": "Median total cost to process one purchase order: $55 (n=4,620). Read 26 Nov 2026."
+    },
+    {
+      "name": "McKinsey, Code and cargo: how AI could change freight logistics",
+      "url": "https://www.mckinsey.com/industries/logistics/our-insights/code-and-cargo-how-ai-could-change-freight-logistics",
+      "what": "May 2026. One transportation firm deployed 50 agents that automate 60% of check calls, 73% of order acceptances and 80% of paper invoice payments."
+    },
+    {
+      "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025",
+      "url": "https://nanda.media.mit.edu/ai_report_2025.pdf",
+      "what": "Jul 2025; 52 interviews, 153 survey responses, 300 initiatives reviewed. Bought or partnered tools succeed about 67% of the time vs about 33% for internal builds; the biggest return is in back-office automation."
+    },
+    {
+      "name": "Makridakis et al., The M5 accuracy competition, International Journal of Forecasting",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0169207021001874",
+      "what": "42,840 Walmart sales series. All 50 top methods were machine learning, more than 14% more accurate than the best statistical benchmark; Croston-type methods beat seasonal naive at low aggregation levels."
+    },
+    {
+      "name": "McKinsey, AI-driven operations forecasting in data-light environments",
+      "url": "https://www.mckinsey.com/capabilities/operations/our-insights/ai-driven-operations-forecasting-in-data-light-environments",
+      "what": "2022. AI forecasting cuts errors 20-50%, lost sales up to 65% and warehousing costs 5-10%."
+    },
+    {
+      "name": "Weisz and Prataviera, joint AI forecasting with retailer data (2026)",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2949863526000440",
+      "what": "Academic study, 2026: adding retailer data cut forecast error 44.7% vs AI on shipment data alone; access to data mattered more than the algorithm."
+    },
+    {
+      "name": "ASCM and DSCI, The People Paradox: AI in supply chain report",
+      "url": "https://www.ascm.org/globalassets/ascm_website_assets/docs/ascm-dsci-ai-report.pdf",
+      "what": "Oct 2026; 107 valid responses. 83% say staff are not prepared. Recommends restricting autonomous AI to transactional tasks and keeping complex planning and sourcing under human oversight."
+    },
+    {
+      "name": "Fildes, Goodwin, Lawrence and Nikolopoulos, judgmental adjustments to forecasts, International Journal of Forecasting (2009)",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0169207008001362",
+      "what": "60,000+ forecasts from 4 companies; up to 80% were adjusted by people. Large, downward adjustments improved accuracy; small and upward ones hurt it."
+    },
+    {
+      "name": "Forecast value added in demand planning, International Journal of Forecasting (2025)",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0169207024000736",
+      "what": "About 147,000 forecasts: planner adjustments improved accuracy for just over half of SKUs."
+    },
+    {
+      "name": "Brau et al., Journal of Operations Management (2023)",
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/joom.1257",
+      "what": "The best setup has planners flag special events and the algorithm estimate their impact."
+    },
+    {
+      "name": "California DIR, warehouse quotas FAQ (AB 701, Labor Code 2100+)",
+      "url": "https://www.dir.ca.gov/dlse/FAQ_warehousequotas.htm",
+      "what": "In force 1 Jan 2022 for warehouse distribution centers with 100+ staff at one site or 1,000+ statewide. Quotas must be disclosed in writing and can't block meal, rest or bathroom breaks."
+    },
+    {
+      "name": "New York DOL, Warehouse Worker Protection Act",
+      "url": "https://dol.ny.gov/WWPA",
+      "what": "Quota changes disclosed within 2 business days; workers can request 90 days of work-speed data, due within 14 days; injury reduction program from 1 Jun 2025."
+    },
+    {
+      "name": "Washington L&I, warehouse quota standards (RCW 49.84)",
+      "url": "https://lni.wa.gov/workers-rights/industry-specific-requirements/warehouse-quota-standards",
+      "what": "Quota disclosure and limits for large warehouse distribution centers from 1 Jul 2024."
+    },
+    {
+      "name": "Minnesota DLI, warehouse worker FAQ (Minn. Stat. 182.6526)",
+      "url": "https://www.dli.mn.gov/business/workplace-safety-and-health/faqs-warehouse-workers-minn-stat-1826526",
+      "what": "Quota disclosure for large warehouses from 1 Aug 2023."
+    },
+    {
+      "name": "Oregon BOLI, warehouse quotas (HB 4127)",
+      "url": "http://www.oregon.gov/boli/employers/Pages/warehouse-quotas.aspx",
+      "what": "Quota disclosure for large warehouses from 1 Jan 2025."
+    },
+    {
+      "name": "eCFR, 49 CFR 395.3, maximum driving time",
+      "url": "https://www.ecfr.gov/current/title-49/subtitle-B/chapter-III/subchapter-B/part-395/subpart-A/section-395.3",
+      "what": "FMCSA hours-of-service limits: 11-hour driving limit, 14-hour window, 30-minute break, 60/70-hour limits."
+    },
+    {
+      "name": "US Customs and Border Protection, UFLPA and forced labor importer guidance",
+      "url": "https://www.cbp.gov/trade/forced-labor/UFLPA",
+      "what": "June 2026 guidance: the importer must prove supply-chain tracing. 43 entities were added to the UFLPA Entity List in mid-2026."
+    },
+    {
+      "name": "Colorado Attorney General, artificial intelligence (SB 26-189)",
+      "url": "https://coag.gov/ai/",
+      "what": "Replaces SB 24-205; signed 14 May 2026; effective 1 Jan 2027; a federal court order pauses enforcement; AG rules adopted 19 Nov 2026."
+    },
+    {
+      "name": "EU AI Act Service Desk, Annex III",
+      "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3",
+      "what": "Point 4: AI for task allocation, performance monitoring or worker management is high-risk. Obligations start 2 Dec 2027 under the Digital Omnibus; deployers must inform workers before use (Art. 26)."
+    },
+    {
+      "name": "FTC, Operation AI Comply",
+      "url": "https://www.ftc.gov/news-events/news/press-releases/2024/09/ftc-announces-crackdown-deceptive-ai-claims-schemes",
+      "what": "Sept 2024 crackdown on deceptive AI claims; enforcement continued through 2026 (Holland & Knight, Aug 2026)."
+    },
+    {
+      "name": "FBI IC3, cyber-enabled strategic cargo theft surging",
+      "url": "https://www.fbi.gov/investigate/cyber/alerts/2026/cyber-enabled-strategic-cargo-theft-surging",
+      "what": "Public service announcement, 30 Apr 2026: 2025 losses about $725M, up 60%; average loss $273,990."
+    },
+    {
+      "name": "CargoNet, Q3 2026 theft trends",
+      "url": "https://www.cargonet.com/news-and-events/cargonet-in-the-media/2026-q3-theft-trends/",
+      "what": "547 incidents in Q3 2026 (down 33%) but $718.9M stolen year to date (up 39%); fictitious pickups about 25% of incidents."
+    },
+    {
+      "name": "Gartner, over 40% of agentic AI projects will be canceled by end of 2027",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027",
+      "what": "Press release, 25 Jun 2025, warning of 'agent washing' by vendors."
+    },
+    {
+      "name": "Reuters, Starbucks scraps AI inventory tool across North America",
+      "url": "https://www.reuters.com/business/starbucks-scraps-ai-inventory-tool-across-north-america-2026-05-21",
+      "what": "21 May 2026: the computer-vision counting tool was dropped after about 9 months; 99% accurate in tests, but reflections doubled milk counts in stores and the backend was legacy."
+    },
+    {
+      "name": "CIO.com, Nike's i2 supply chain failure",
+      "url": "https://www.cio.com/article/264637/",
+      "what": "Nike's 2000-01 planning rollout led to about $90M of overbought product and $80-100M of popular models short, blamed on bad data, heavy customization and a big-bang launch."
+    },
+    {
+      "name": "Supply Chain Management Review, Beyond the pilot",
+      "url": "https://www.scmr.com/article/beyond-the-pilot-why-most-predictive-ai-investments-in-supply-chain-still-fail-to-scale",
+      "what": "Oct 2026: predictive AI pilots stall on data and decision ownership."
+    },
+    {
+      "name": "Miebach, AI in warehouse operations whitepaper",
+      "url": "https://www.miebach.com/ca/en/news-and-resources/whitepaper/2026/ai-in-warehouse-operations",
+      "what": "2 Nov 2026: AI's value depends on accurate master data, dependable processes and clear accountability for decisions."
+    },
+    {
+      "name": "IBM Think, What is AI in supply chain?",
+      "url": "https://www.ibm.com/think/topics/ai-supply-chain",
+      "what": "Explainer, updated 1 Apr 2026: use cases across forecasting, logistics and procurement; implementation requires thoughtful preparation."
+    },
+    {
+      "name": "McKinsey Distribution Blog, AI in distribution operations",
+      "url": "https://www.mckinsey.com/industries/industrials/our-insights/distribution-blog/harnessing-the-power-of-ai-in-distribution-operations",
+      "what": "15 Nov 2024: reductions of 20-30% in inventory, 5-20% in logistics costs and 5-15% in procurement spend; a building products distributor raised fill rates 5-8%."
+    },
+    {
+      "name": "The Hackett Group, 2026 Procurement Key Issues Study",
+      "url": "https://www.thehackettgroup.com/the-hackett-group-reports-rapid-progress-in-procurements-ai-agenda",
+      "what": "Press release 17 Mar 2026: 43% pursuing AI, 12% at large scale, 69% using AI built into existing platforms. 63% of respondents have revenue over $5B."
+    },
+    {
+      "name": "Menlo Ventures, 2025 State of Generative AI in the Enterprise",
+      "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+      "what": "Survey of 495 US decision makers: 76% of AI use cases are now bought, up from 53% in 2024."
+    },
+    {
+      "name": "APQC and ASCM, Supply Chain Priorities 2025",
+      "url": "https://apics.hclspdev.com/assets/ascm-common/files/cpim2/pdf/trend04-supply-chain-priorities-2025.pdf",
+      "what": "Survey of 379: firms rely on AI most for demand forecasting; 84% use or plan gen AI; 40% have no plan for AI in warehouse automation."
+    },
+    {
+      "name": "BLS Occupational Outlook Handbook, Logisticians",
+      "url": "https://www.bls.gov/ooh/business-and-financial/logisticians.htm",
+      "what": "255,100 jobs in 2025, projected to grow 18% from 2025 to 2035; median pay $82,320 (May 2025). Page dated 27 Aug 2026."
+    },
+    {
+      "name": "Netstock, packages and pricing",
+      "url": "https://www.netstock.com/packages",
+      "what": "Vendor price page, read 26 Nov 2026: Essentials from $900/mo, Advanced $1,500/mo, Commercial $2,000/mo, annual terms; 60+ ERP integrations."
+    },
+    {
+      "name": "Inventory Planner by Sage, pricing",
+      "url": "https://www.inventory-planner.com/pricing",
+      "what": "Vendor price page, read 26 Nov 2026: priced by inventory volume, quote only, unlimited users."
+    },
+    {
+      "name": "Morsa.ai, inventory planning software pricing guide",
+      "url": "https://morsa.ai/guides/inventory-planning-software-pricing",
+      "what": "Third-party guide, read 26 Nov 2026: Lokad 'low-digit thousands' a month with about 6 months of onboarding; StockIQ about $750/mo; Netstock implementation 6-10 weeks."
+    },
+    {
+      "name": "Ordana blog, purchase order processing (citing Esker and Conexiom)",
+      "url": "https://ordana.ai/blog/purchase-orders-process",
+      "what": "Vendor claims: a manual order takes 11-12 minutes to key (Esker, Conexiom)."
+    },
+    {
+      "name": "C.H. Robinson, how it ensures ROI from agentic AI",
+      "url": "https://www.chrobinson.com/en-us/resources/blog/how-chrobinson-ensures-roi-from-agentic-ai",
+      "what": "Vendor claim: quotes in 32 seconds and orders in 90 seconds. No price published."
+    },
+    {
+      "name": "project44, AI agent orchestration",
+      "url": "https://www.project44.com/ai-agent-orchestration/",
+      "what": "Vendor claim: up to 4% lower freight spend and 70% less manual coordination. No price published."
+    },
+    {
+      "name": "Parade",
+      "url": "https://www.parade.ai/",
+      "what": "Vendor claim: 4x the bandwidth for carrier sales reps. No price published."
+    },
+    {
+      "name": "SlipperDigital, AI in supply chain readiness guide",
+      "url": "https://hub.slipperdigital.com/articles/supply-chain-logistics-procurement/ai-in-supply-chain-practical-readiness-guide",
+      "what": "AI must not approve awards, create vendors or change bank details; the category owner signs the award."
+    },
+    {
+      "name": "INFORMS, UPS ORION wins the 2016 Franz Edelman Award",
+      "url": "https://pubsonline.informs.org/do/10.1287/orms.2016.03.10/full",
+      "what": "ORION saves about 100M miles and 10M gallons of fuel a year, worth $300-400M; middle managers resisted more than drivers."
+    },
+    {
+      "name": "US Census Bureau, Monthly Wholesale Trade",
+      "url": "https://www.census.gov/wholesale/current/index.html",
+      "what": "Sept 2026: merchant wholesalers' inventories-to-sales ratio 1.21, vs 1.34 a year earlier."
+    },
+    {
+      "name": "Bureau of Transportation Statistics, Supply Chain and Freight Indicators",
+      "url": "https://www.bts.gov/freight-indicators",
+      "what": "Free monthly freight, port and trucking indicators."
+    }
+  ],
+  "reviews": [
+    {
+      "reader": "COO",
+      "notes": "Bottom line reads in seconds and each bullet maps to a section below. Wouldn't know '3PL', 'ASCM' or 'APQC' on first sight. Fixed: 3PL spelled out in the ranked list, ASCM called a trade body and APQC a benchmarking body. Every ranked job ends in a before-and-after number, which is what an operator reports up."
+    },
+    {
+      "reader": "Head of operations",
+      "notes": "Who checks AI output is named: planners, buyers, dispatchers, carrier reps, warehouse managers. Vendor numbers (Esker, Conexiom, C.H. Robinson, Parade) are labelled as the vendor's, and third-party prices are marked. Would distrust the job-ad count without its weak spots. Fixed: the note now says matching is on ad text, so employer boilerplate can inflate counts. Tables are 3 short columns, readable at 390px."
+    },
+    {
+      "reader": "GM",
+      "notes": "Wants to know if one site or desk can go first, and what it does to margin. Margin hooks are there: $55 per purchase order, McKinsey's inventory and logistics-cost ranges flagged as consultancy figures, 2-3 year payback. Fixed: the free diagnostic now asks for one workflow from one site or desk; the first watch-out already says pilot on one real site."
+    },
+    {
+      "reader": "Division head",
+      "notes": "Read as a VP of supply chain or head of logistics. Cargo fraud, hours of service, UFLPA and the warehouse quota laws are all covered, which page-one competitors skip. 'FMCSA' was unexplained. Fixed: defined as the federal trucking safety agency. FAQ said 'test' a tool; changed to 'benchmark' against a plain reorder point. Hackett's large-firm skew is flagged where it's used."
+    },
+    {
+      "reader": "Owner-CEO",
+      "notes": "Steve gets the answer from the title and five bullets, and sees real tool prices (from $900/mo) and a free next step. The studies table was eight rows of survey names he'd skip on a phone. Fixed: cut to six, keeping the ones with the biggest samples or the clearest finding. Speaks to his worries: data (summary, watch-outs), rules, skills (job-ad count), return (payoff measures), and no slides in the offer."
+    }
+  ]
+}
