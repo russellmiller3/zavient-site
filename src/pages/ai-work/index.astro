@@ -4,6 +4,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import ConsultingCta from '../../components/ConsultingCta.astro';
+import { urlFor } from '../../lib/page-types.mjs';
 const pages = (await getCollection('aiwork')).sort((a, b) => a.data.title.localeCompare(b.data.title));
 const stories = (await getCollection('datastory')).sort((a, b) => a.data.title.localeCompare(b.data.title));
 // A title that ends in a question mark or full stop takes no colon before its description.
@@ -17,7 +18,7 @@ const sep = (title) => (/[?.!]$/.test(title) ? ' ' : ': ');
   </div></header>
   <article class="article-body"><div class="wrap">
     <h2>Guides</h2>
-    <ul>{pages.map((p) => <li><a href={`/ai-work/${p.id}.html`}>{p.data.title}</a>{sep(p.data.title)}{p.data.description}</li>)}</ul>
+    <ul>{pages.map((p) => <li><a href={urlFor(p.data, p.id)}>{p.data.title}</a>{sep(p.data.title)}{p.data.description}</li>)}</ul>
     <h2>Data stories</h2>
     <p>Our own counts from recent US AI job ads, free to republish with a link back.</p>
     <ul>{stories.map((s) => <li><a href={`/data/${s.id}.html`}>{s.data.title}</a>{sep(s.data.title)}{s.data.description}</li>)}</ul>
