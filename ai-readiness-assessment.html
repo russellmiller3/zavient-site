@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="robots" content="noindex">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI readiness assessment: is your company ready for AI?</title>
+<meta name="description" content="A free 3-minute AI readiness assessment for companies with 40 to 500 people. Get a score out of 100, the one gap to fix first and your first AI project.">
+<link rel="canonical" href="https://zavient.com/ai-readiness-assessment.html">
+<meta property="article:modified_time" content="2026-11-26">
+<link rel="icon" href="https://raw.githack.com/russellmiller3/zavient-site/preview-dist/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI readiness assessment: is your company ready for AI?">
+<meta property="og:description" content="A free 3-minute assessment: a score out of 100, the one gap to fix first and your first AI project.">
+<meta property="og:url" content="https://zavient.com/ai-readiness-assessment.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Zavient AI readiness assessment. Same light blue system as /ai-work/ai-work.css (nav, footer, grid hero),
+   inlined so the page stands alone. One question per screen; results as a gauge, five bars, then the time-back estimate. */
+:root {
+  --ink: #15202E;
+  --ink-soft: #3C4A5C;
+  --muted: #5F6B7A;
+  --line: #D8E0EA;
+  --line-strong: #B9C6D6;
+  --paper: #FFFFFF;
+  --paper-alt: #F3F6FA;
+  --blue: #1F5FBF;
+  --blue-dark: #174A96;
+  --blue-wash: #EAF1FB;
+  --blue-grid: rgba(31, 95, 191, 0.075);
+  --low: #B5452F;
+  --low-wash: #F8E9E5;
+  --mid: #A86A10;
+  --mid-wash: #FBF1DC;
+  --high: #1F5FBF;
+  --high-wash: #EAF1FB;
+  --sans: 'Figtree', 'Helvetica Neue', Arial, sans-serif;
+  --serif: 'Crimson Pro', Georgia, serif;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+::selection { background: rgba(31, 95, 191, 0.18); }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--serif); font-size: 20px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--blue); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--blue-dark); }
+
+/* Nav (as on the rest of the site) */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 32px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.logo { font-family: var(--sans); font-weight: 800; font-size: 22px; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+.logo em { color: var(--blue); font-style: normal; }
+.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-links a { font-family: var(--mono); font-size: 14px; color: var(--muted); text-decoration: none; }
+.nav-links a:hover { color: var(--blue); }
+.nav-links a[aria-current="page"] { color: var(--ink); }
+.nav-links a.nav-cta { background: var(--blue); color: #fff; padding: 8px 14px; border-radius: 2px; }
+.nav-links a.nav-cta:hover { background: var(--blue-dark); color: #fff; }
+
+.wrap { max-width: 780px; margin: 0 auto; padding: 0 28px; }
+
+/* Hero: faint grid that fades out, over a soft blue wash */
+.hero {
+  position: relative; padding: 48px 0 34px;
+  background: linear-gradient(180deg, var(--blue-wash) 0%, rgba(234, 241, 251, 0.45) 55%, var(--paper) 100%);
+  border-bottom: 1px solid var(--line);
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(var(--blue-grid) 1px, transparent 1px), linear-gradient(90deg, var(--blue-grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.5) 60%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.5) 60%, transparent 100%);
+}
+.hero .wrap { position: relative; }
+.label { font-family: var(--mono); font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+.hero h1 {
+  font-family: var(--sans); font-weight: 800; font-size: clamp(34px, 5.2vw, 52px);
+  line-height: 1.08; letter-spacing: -0.025em; margin-bottom: 18px; text-wrap: balance;
+}
+.hero .dek { font-size: 21px; color: var(--ink-soft); max-width: 62ch; }
+body.in-quiz .hero { padding: 22px 0 18px; }
+body.in-quiz .hero h1 { font-size: clamp(24px, 3.4vw, 30px); margin-bottom: 0; }
+body.in-quiz .hero .dek, body.in-quiz .hero .label { display: none; }
+
+main { padding: 30px 0 56px; }
+#app { display: flex; flex-direction: column; gap: 22px; }
+
+h2, h3 { font-family: var(--sans); color: var(--ink); text-wrap: balance; }
+h2 { font-weight: 700; font-size: clamp(24px, 3vw, 30px); line-height: 1.2; letter-spacing: -0.015em; }
+h3 { font-weight: 700; font-size: 20px; line-height: 1.3; }
+p { max-width: 68ch; }
+
+.card { background: var(--paper); border: 1px solid var(--line); padding: clamp(20px, 4vw, 34px); display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.eyebrow { font-family: var(--mono); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); }
+.facts { list-style: none; display: flex; flex-direction: column; }
+.facts li { position: relative; padding: 7px 0 7px 22px; font-size: 19px; line-height: 1.45; }
+.facts li + li { border-top: 1px solid var(--line); }
+.facts li::before { content: ""; position: absolute; left: 2px; top: 17px; width: 8px; height: 8px; background: var(--blue); }
+.disclose { font-size: 18px; color: var(--ink-soft); border-left: 3px solid var(--blue); background: var(--blue-wash); padding: 12px 16px; max-width: none; }
+
+/* Buttons */
+.btn {
+  appearance: none; border: 0; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; justify-content: center;
+  font-family: var(--mono); font-size: 16px; padding: 13px 22px; border-radius: 2px; text-decoration: none;
+  transition: background .12s ease, color .12s ease;
+}
+.btn svg { width: 18px; height: 18px; }
+.btn-primary { background: var(--blue); color: #fff; }
+.btn-primary:hover { background: var(--blue-dark); color: #fff; }
+.btn-ghost { background: transparent; color: var(--muted); padding: 8px 4px; font-size: 14px; }
+.btn-ghost:hover { color: var(--blue); }
+.btn[disabled] { opacity: .45; cursor: not-allowed; }
+.btn:focus-visible, .opt:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid rgba(31, 95, 191, 0.45); outline-offset: 2px; }
+
+/* Progress + questions */
+.progress { height: 6px; background: var(--blue-wash); overflow: hidden; }
+.progress > div { height: 100%; background: var(--blue); transition: width .35s ease; }
+.dimtag { font-family: var(--mono); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); display: inline-flex; gap: 6px; align-items: center; }
+.dimtag svg { width: 15px; height: 15px; color: var(--blue); }
+.qtext { font-family: var(--sans); font-weight: 700; font-size: clamp(22px, 3.4vw, 28px); line-height: 1.25; letter-spacing: -0.01em; text-wrap: balance; }
+.opts { display: flex; flex-direction: column; gap: 10px; }
+.opt {
+  text-align: left; width: 100%; background: var(--paper); color: var(--ink); border: 1.5px solid var(--line); border-radius: 2px;
+  padding: 12px 16px; font: 400 19px/1.4 var(--serif); cursor: pointer;
+  display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: start; transition: border-color .12s ease, background .12s ease;
+}
+.opt:hover { border-color: var(--blue); }
+.opt.sel { border-color: var(--blue); background: var(--blue-wash); }
+.opt .key { font-family: var(--mono); font-size: 13px; color: var(--muted); border: 1px solid var(--line-strong); width: 26px; height: 26px; display: grid; place-items: center; margin-top: 1px; }
+.opt.sel .key { background: var(--blue); color: #fff; border-color: var(--blue); }
+.qnav { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.hint { font-family: var(--mono); font-size: 13px; color: var(--muted); }
+
+/* Results */
+.result-top { display: grid; grid-template-columns: 180px 1fr; gap: 24px; align-items: center; }
+@media (max-width: 560px) { .result-top { grid-template-columns: 1fr; justify-items: start; } }
+.gauge { width: 180px; max-width: 100%; }
+.gauge .num { font-family: var(--sans); font-weight: 800; fill: var(--ink); }
+.gauge .sub { font-family: var(--mono); fill: var(--muted); font-size: 11px; letter-spacing: .06em; }
+.band { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 13px; text-transform: uppercase; letter-spacing: .06em; padding: 5px 10px; align-self: flex-start; }
+.band svg { width: 15px; height: 15px; }
+.scale { display: flex; gap: 4px; flex-wrap: wrap; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.scale span { padding: 3px 8px; border: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.scale span.on { border-color: var(--ink); color: var(--ink); }
+.dims { display: flex; flex-direction: column; gap: 14px; }
+.dim { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.dim-row { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.dim-name { font-family: var(--sans); font-weight: 600; font-size: 18px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.dim-name svg { width: 17px; height: 17px; color: var(--blue); }
+.dim-score { font-family: var(--mono); font-size: 15px; font-variant-numeric: tabular-nums; color: var(--muted); }
+.bar { height: 10px; background: var(--paper-alt); border: 1px solid var(--line); overflow: hidden; }
+.bar > div { height: 100%; }
+.flag { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--blue-dark); background: var(--blue-wash); padding: 2px 6px; }
+.gap { display: flex; gap: 12px; align-items: flex-start; border: 1px solid var(--line); border-left: 3px solid var(--blue); background: var(--blue-wash); padding: 14px 18px; }
+.gap svg { flex: none; color: var(--blue); width: 20px; height: 20px; margin-top: 5px; }
+.gap strong { display: block; font-family: var(--sans); font-weight: 700; font-size: 18px; }
+.timeback { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 520px) { .timeback { grid-template-columns: 1fr; } }
+.tb { border: 1px solid var(--line); padding: 14px 16px; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.tb .num { font-family: var(--sans); font-weight: 800; font-size: clamp(24px, 4vw, 32px); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.tb .lab { font-size: 17px; color: var(--ink-soft); }
+.tb.primary { border-color: var(--blue); background: var(--blue-wash); }
+.rate { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 17px; color: var(--ink-soft); }
+.rate input { width: 96px; font: 500 16px var(--mono); padding: 8px 10px; border-radius: 2px; border: 1.5px solid var(--line-strong); background: var(--paper); color: var(--ink); }
+.tag-default { font-family: var(--mono); font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line); padding: 2px 6px; white-space: nowrap; }
+.basis { font-size: 16px; color: var(--muted); display: flex; flex-direction: column; gap: 6px; line-height: 1.5; }
+.areas { display: flex; flex-direction: column; }
+.area { padding: 12px 0; border-top: 1px solid var(--line); }
+.area h3 { font-size: 18px; margin-bottom: 4px; }
+.area p { color: var(--ink-soft); font-size: 18px; }
+.peer { border-left: 3px solid var(--blue); padding-left: 14px; font-size: 18px; }
+
+/* The offer: same treatment as the site's free-diagnostic block */
+.offer { position: relative; border: 1px solid var(--line); padding: clamp(24px, 5vw, 44px) clamp(20px, 4vw, 34px); background: linear-gradient(0deg, var(--blue-wash) 0%, var(--paper) 100%); overflow: hidden; }
+.offer::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(var(--blue-grid) 1px, transparent 1px), linear-gradient(90deg, var(--blue-grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: linear-gradient(0deg, #000, transparent); mask-image: linear-gradient(0deg, #000, transparent);
+}
+.offer > * { position: relative; }
+.offer h2 { font-weight: 800; font-size: clamp(26px, 4vw, 36px); line-height: 1.12; letter-spacing: -0.02em; margin: 6px 0 12px; }
+.offer p { color: var(--ink-soft); margin-bottom: 18px; }
+.offer .cta-secondary { font-size: 17px; margin: 16px 0 0; }
+.restart { align-self: flex-start; }
+
+/* Method + sources */
+.method, .sources { margin-top: 22px; }
+.method ul { list-style: none; }
+.method li { position: relative; padding: 0 0 0 24px; margin-bottom: 10px; font-size: 18px; color: var(--ink-soft); }
+.method li::before { content: ''; position: absolute; left: 4px; top: 12px; width: 7px; height: 7px; background: var(--blue); }
+sup.fn { font-size: 0.62em; line-height: 0; margin-left: 1px; font-family: var(--mono); }
+sup.fn a { color: var(--blue); text-decoration: none; font-weight: 600; }
+sup.fn + sup.fn::before { content: ','; color: var(--muted); }
+.sources ol { margin: 0 0 0 26px; display: flex; flex-direction: column; gap: 8px; font-size: 16px; line-height: 1.5; color: var(--ink-soft); }
+.sources li { overflow-wrap: anywhere; scroll-margin-top: 80px; }
+.sources li::marker { font-family: var(--mono); font-size: 14px; color: var(--muted); }
+.sources li:target { background: var(--blue-wash); }
+.small { font-family: var(--mono); font-size: 13px; color: var(--muted); }
+
+/* Footer (as on the rest of the site) */
+footer {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+  padding: 24px 32px; border-top: 1px solid var(--line); background: var(--paper-alt);
+  font-family: var(--mono); font-size: 13px; color: var(--muted);
+}
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--blue); }
+
+@media (max-width: 720px) {
+  body { font-size: 19px; }
+  .wrap { padding: 0 16px; }
+  nav { padding: 12px 16px; }
+  .nav-links { gap: 14px; }
+  .nav-links a:not(.nav-cta) { display: none; }
+  .hero { padding: 36px 0 28px; }
+  footer { padding: 22px 16px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<nav>
+  <a href="https://raw.githack.com/russellmiller3/zavient-site/preview-dist/index.html" class="logo">Zavient<em>.</em></a>
+  <div class="nav-links">
+    <a href="https://raw.githack.com/russellmiller3/zavient-site/preview-dist/ai-work.html">AI work</a>
+    <a href="https://raw.githack.com/russellmiller3/zavient-site/preview-dist/ai-readiness-assessment.html" aria-current="page">Readiness check</a>
+    <a href="https://raw.githack.com/russellmiller3/zavient-site/preview-dist/about.html">About</a>
+    <a href="https://calendly.com/zavient/call" class="nav-cta">Free diagnostic</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="label">AI readiness assessment</div>
+    <h1>Is your company ready for AI?</h1>
+    <p class="dek">For companies with 40 to 500 people. In about 3 minutes, find the first job where AI can help your team do more, the one gap to fix first, and how many hours a week it could hand back.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div id="app" aria-live="polite">
+    <noscript><section class="card"><p>This assessment needs JavaScript. Turn it on and reload, or email <a href="mailto:rmiller@zavient.com">rmiller@zavient.com</a> with two sentences on the work.</p></section></noscript>
+  </div>
+
+  <section class="card method" id="method" aria-labelledby="m-h">
+    <h3 id="m-h">How the score works</h3>
+    <ul>
+      <li>Nine scored questions across five areas: the work, the data, the people, the guardrails and the systems. The questions about your company up front and the one at the end shape your result but carry no points.</li>
+      <li>Each scored answer is worth 0 to 3 points. 27 points is a perfect score, shown out of 100. Each area gets its own 0 to 100 bar.</li>
+      <li>Three stages: 0 to 39, Clear the runway. 40 to 69, Ready for a first win. 70 to 100, Ready to scale.</li>
+      <li>The areas draw on Cisco's AI Readiness Index, Microsoft's AI readiness assessment and the NIST AI Risk Management Framework, cut down for a company without a data team.[^1][^3][^6]</li>
+      <li>Your answers stay in your browser; we don't see them.</li>
+    </ul>
+  </section>
+
+  <section class="card sources" id="footnotes" aria-labelledby="fn-h">
+    <h3 id="fn-h">Sources</h3>
+    <p class="small">Checked 26 Nov 2026.</p>
+    <ol id="fn-list"></ol>
+  </section>
+</main>
+
+<footer>
+  <a href="https://raw.githack.com/russellmiller3/zavient-site/preview-dist/index.html" class="logo" style="font-size:18px;">Zavient<em>.</em></a>
+  <span>&copy; 2026 Zavient LLC &middot; AI that helps your team do more</span>
+  <span><a href="https://raw.githack.com/russellmiller3/zavient-site/preview-dist/about.html">About</a> &middot; <a href="mailto:rmiller@zavient.com">Email us</a></span>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script>
+/* =====================================================================
+   CONTENT. Footnote keys are stable source ids; the page numbers them
+   in order of first use.
+   ===================================================================== */
+const C = {
+  booking: "https://calendly.com/zavient/call",
+  email: "rmiller@zavient.com",
+  areas: {
+    work:   { name: "The work",       icon: "briefcase",
+              why: "Do you know which job AI should help with and how you'd measure it? Unclear ROI is a top-3 blocker,[^15] and companies that measure see strong ROI far more often.[^22]",
+              fix: "Pick the one job and the one number that will show it's working." },
+    data:   { name: "The data",       icon: "database",
+              why: "Is the information for that job digital, in one place and owned? Data quality is the top scaling barrier in the middle market.[^14]",
+              fix: "Get the information for that job into one system with a named owner." },
+    people: { name: "The people",     icon: "users",
+              why: "Does someone own AI, and how does the team use it today? Resistance and missing skills top the barrier list,[^13] and shadow AI is everywhere.[^19][^20]",
+              fix: "Name one person who owns AI, with time set aside for it." },
+    guard:  { name: "The guardrails", icon: "shield-check",
+              why: "Is there a policy, and does a person check the output? Most firms have no written policy.[^15][^16] NIST's govern function is the model.[^6]",
+              fix: "Write down what must never go into an AI tool, and who checks the output." },
+    sys:    { name: "The systems",    icon: "plug",
+              why: "Can your tools connect? Integration is a top barrier at 35%.[^13]",
+              fix: "Find out which of your main systems can connect to other software." }
+  },
+  // Steps in order. kind: "open" (unscored), "flag" (conditional, unscored), "q" (scored 0-3), "close" (unscored).
+  steps: [
+    { id: "size", kind: "open", text: "How many people work at your company?", options: ["Under 40", "40 to 99", "100 to 249", "250 to 500", "Over 500"] },
+    { id: "industry", kind: "open", text: "What industry are you in?", options: ["Financial services", "Healthcare", "Manufacturing", "Professional services", "Construction and real estate", "Retail and distribution", "Technology", "Other"] },
+    { id: "sensitive", kind: "flag", showIf: a => a.industry === 0 || a.industry === 1, text: "Does the work touch health, financial, credit or hiring data?", options: ["Yes", "No"] },
+    { id: "job", kind: "open", text: "Which repetitive job eats the most of your team's time?", options: ["Answering customer questions", "Processing documents and invoices", "Reports and spreadsheets", "Sales follow-up and proposals", "Scheduling and dispatch", "Hiring and HR admin", "Other"] },
+    { id: "hours", kind: "open", text: "Roughly how many hours a week does that job take, across everyone?", options: ["Under 10", "10 to 40", "40 to 100", "Over 100"] },
+    { id: "q5", kind: "q", area: "work", text: "Do you know what a good result for that job would be worth?", options: ["No idea", "It would “save time”", "We've picked one number to track", "We've measured today's baseline for that number"] },
+    { id: "q6", kind: "q", area: "work", text: "Has leadership agreed on the first AI project?", options: ["Not discussed", "Lots of ideas, no pick", "A pick, no owner or budget", "A pick with an owner and budget"] },
+    { id: "q7", kind: "q", area: "data", text: "Where does the information for that job live?", options: ["In people's heads or on paper", "Email and spreadsheets", "Mostly in one system, like a CRM, ERP or accounting tool", "One system, kept clean, with a named owner"] },
+    { id: "q8", kind: "q", area: "data", text: "Could you pull 50 finished examples of that work today, like answered tickets, processed invoices or sent proposals?", options: ["No", "With a lot of digging", "Yes, within a day", "Yes, they're already organized"] },
+    { id: "q9", kind: "q", area: "people", text: "Who owns AI at your company?", options: ["Nobody", "Whoever's interested", "A named person, on the side of their job", "A named person with time and budget for it"] },
+    { id: "q10", kind: "q", area: "people", text: "How does your team use AI today?", options: ["Not at all, as far as we know", "Some people, on personal accounts", "Company accounts, a few regular users", "Most people weekly, with training"] },
+    { id: "q11", kind: "q", area: "guard", text: "Do you have a written rule for what must never go into an AI tool?", options: ["No", "An informal understanding", "Written down", "Written down, and people are trained on it"] },
+    { id: "q12", kind: "q", area: "guard", text: "If AI did that job, would a person check the output before it reached a customer?", options: ["No", "Sometimes", "Yes, always", "Yes, and we track the mistakes"] },
+    { id: "q13", kind: "q", area: "sys", text: "Can your main systems connect to other software?", options: ["Don't know", "Mostly no", "Some do", "Yes, we already automate between them"] },
+    { id: "timeline", kind: "close", text: "When do you want a first AI workflow live?", options: ["This quarter", "In 6 months", "Just researching"] }
+  ],
+  stages: [
+    { min: 70, name: "Ready to scale",         tone: "high", text: "Move from one project to a pipeline, with measurement." },
+    { min: 40, name: "Ready for a first win",  tone: "mid",  text: "Pick one workflow and run a supervised pilot." },
+    { min: 0,  name: "Clear the runway",       tone: "low",  text: "Fix the basics before spending. One job named, one owner, one policy." }
+  ],
+  // Time-back estimate: hours/week (midpoint of the answer) x 48 weeks x hourly cost x 15% to 40%.
+  hoursMid: [5, 25, 70, 100],          // "Over 100" is costed at its low end
+  weeks: 48, rate: 47, gainLow: 0.15, gainHigh: 0.40,
+  basisRate: "$47 an hour is the average total compensation, wages plus benefits, per hour worked in US private industry in June 2026 ($46.89).[^39][^40]",
+  basisGain: "Controlled studies found gains of 14% for customer service agents, nearly 40% for consultants and over 50% for programmers. Those are narrow tasks; across all work hours the gain is far smaller, so 40% is the cap here.[^41]",
+  // Peer line by size answer index. Census size classes don't split at 40.
+  peers: [
+    "Companies of 20 to 49 people: 29% used AI in the last two weeks.[^17]",
+    "Companies of 50 to 99 people: 33% used AI in the last two weeks.[^17]",
+    "Companies of 100 to 249 people: 40% used AI in the last two weeks;[^17] 39% have it live in production.[^13]",
+    "Companies of 250 or more people: 44% used AI in the last two weeks.[^17] At 250 to 499 people, 50% have it live in production.[^13]",
+    "Companies of 250 or more people: 44% used AI in the last two weeks.[^17]"
+  ],
+  footnotes: {
+    1:  { text: "AI readiness assessment, Microsoft Learn.", url: "https://learn.microsoft.com/en-us/assessments/94f1c697-9ba7-4d47-ad83-7c6bd94b1505/" },
+    3:  { text: "AI Readiness Index methodology, Cisco.", url: "https://www.cisco.com/c/m/en_us/solutions/ai/readiness-index/methodology.html" },
+    6:  { text: "AI Risk Management Framework 1.0, NIST.", url: "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf" },
+    13: { text: "Mid-Market AI Pulse 2026, SMB Group, Oct 2026.", url: "https://www.smb-gr.com/wp-content/uploads/2026/10/SMB_Pulse_2026_AI_MidMarket-final.pdf" },
+    14: { text: "Middle Market AI Survey 2026, RSM.", url: "https://www.rsmus.com/insights/services/digital-transformation/rsm-middle-market-ai-survey" },
+    15: { text: "SMB AI Pulse Report, Q2 2026, Pax8.", url: "https://www.pax8nebula.com/asset/fe4dadef-4c18-437a-b5d4-1c430feddb4f/Pax8-Pulse-Report-2026-Q2.pdf" },
+    16: { text: "Businesses are using AI faster than they are managing its risks, Nationwide, 15 Sep 2026.", url: "https://news.nationwide.com/nationwide-survey-businesses-are-using-ai-faster-than-they-are-managing-its-risks" },
+    17: { text: "Census: AI use by size and sector, Lirium, 9 Nov 2026, citing the US Census Bureau's Business Trends and Outlook Survey for 5 to 18 Oct 2026.", url: "https://lirium.ai/blog/census-ai-use-benchmark-small-business", extra: [["Census Bureau survey data", "https://www.census.gov/hfp/btos/data"]] },
+    19: { text: "The State of AI in Business 2025, MIT NANDA.", url: "https://21464181.fs1.hubspotusercontent-na1.net/hubfs/21464181/v0.1_State_of_AI_in_Business_2025_Report.pdf" },
+    20: { text: "Shadow AI workplace survey 2026, PagerDuty, 11 Jun 2026.", url: "https://www.pagerduty.com/newsroom/shadow-ai-workplace-survey-2026" },
+    22: { text: "AI study 2026, Wharton and GBK Collective.", url: "https://www.gbkcollective.com/thoughtleadership/wharton-gbk-ai-study-2026-press-release" },
+    39: { text: "Compensation costs for private industry workers averaged $46.89 per hour worked in June 2026, US Bureau of Labor Statistics.", url: "https://www.bls.gov/opub/ted/2026/compensation-costs-for-private-industry-workers-averaged-46-89-per-hour-worked-in-june-2026.htm" },
+    40: { text: "Employer Costs for Employee Compensation news release, US Bureau of Labor Statistics.", url: "https://www.bls.gov/news.release/ecec.htm" },
+    41: { text: "Generative AI and the SME workforce, OECD, Nov 2025, summarizing Brynjolfsson, Li and Raymond (2023), Noy and Zhang (2023) and Peng et al. (2023).", url: "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/11/generative-ai-and-the-sme-workforce_83bafdfb/2d08b99d-en.pdf" }
+  }
+};
+
+/* =====================================================================
+   ENGINE
+   ===================================================================== */
+const STORE_KEY = "zavient-readiness-v3";
+const fresh = () => ({ step: "intro", i: 0, a: {}, rate: C.rate, maxPct: 0 });
+const state = fresh();
+try {
+  const saved = JSON.parse(localStorage.getItem(STORE_KEY) || "{}");
+  if (saved && typeof saved === "object") Object.assign(state, saved);
+} catch (e) {}
+function save() { try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (e) {} }
+
+const app = document.getElementById("app");
+const visibleSteps = () => C.steps.filter(s => !s.showIf || s.showIf(state.a));
+
+// Footnotes number in order of first use in the page source.
+const fnOrder = [];
+function fnNum(id) { let k = fnOrder.indexOf(String(id)); if (k < 0) { fnOrder.push(String(id)); k = fnOrder.length - 1; } return k + 1; }
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function rich(s) {
+  return esc(s).replace(/\[\^(\w+)\]/g, (m, id) => { const n = fnNum(id); return `<sup class="fn"><a href="#fn-${n}" aria-label="Source ${n}">${n}</a></sup>`; });
+}
+function renderFootnotes() {
+  const src = document.getElementById("method").innerHTML + JSON.stringify(C);
+  src.replace(/\[\^(\w+)\]/g, (m, id) => { fnNum(id); return m; });
+  document.querySelectorAll("#method li").forEach(li => li.innerHTML = rich(li.textContent));
+  document.getElementById("fn-list").innerHTML = fnOrder.map((id, k) => {
+    const f = C.footnotes[id];
+    if (!f) return "";
+    const links = [[f.url.replace(/^https?:\/\//, "").split("/")[0], f.url], ...(f.extra || [])]
+      .filter(l => l[1]).map(l => `<a href="${esc(l[1])}" target="_blank" rel="noopener">${esc(l[0])}</a>`).join(" · ");
+    return `<li id="fn-${k + 1}">${esc(f.text)} ${links}</li>`;
+  }).join("");
+}
+
+// Fast-to-slow progress that never moves backwards when a step is added.
+function progressPct(done, total) { const p = Math.min(1, done / total); return Math.round((1 - Math.pow(1 - p, 1.7)) * 100); }
+
+function score() {
+  const per = {};
+  Object.keys(C.areas).forEach(k => per[k] = { got: 0, max: 0 });
+  let got = 0, max = 0;
+  C.steps.filter(s => s.kind === "q").forEach(s => {
+    per[s.area].max += 3; max += 3;
+    const v = state.a[s.id];
+    if (v != null) { per[s.area].got += v; got += v; }
+  });
+  const overall = Math.round(got / max * 100);
+  const stage = C.stages.find(b => overall >= b.min);
+  const areas = Object.entries(C.areas).map(([id, ar]) => ({ id, ...ar, score: Math.round(per[id].got / per[id].max * 100) }));
+  const order = ["work", "data", "people", "guard", "sys"];
+  const weakest = [...areas].sort((x, y) => x.score - y.score || order.indexOf(x.id) - order.indexOf(y.id))[0];
+  const areaOf = id => areas.find(x => x.id === id);
+  // Override rules: sensitive data with no policy puts the policy first; no usable data puts the data first.
+  const policyFirst = areaOf("guard").score === 0 && state.a.sensitive === 0;
+  const dataFirst = areaOf("data").score === 0;
+  return { overall, stage, areas, weakest, policyFirst, dataFirst };
+}
+const tierTone = s => s >= 70 ? "high" : s >= 40 ? "mid" : "low";
+const toneColor = t => `var(--${t})`;
+const toneWash = t => `var(--${t}-wash)`;
+const fmt$ = n => "$" + (Math.round(n / 1000) * 1000).toLocaleString("en-US");
+const fmtN = n => Math.round(n).toLocaleString("en-US");
+
+function icons() { try { window.lucide && lucide.createIcons(); } catch (e) {} }
+
+/* ---------- screens ---------- */
+function intro() {
+  app.innerHTML = `
+    <section class="card">
+      <div class="eyebrow">Free · about 3 minutes · no sign-up</div>
+      <h2>What you get</h2>
+      <ul class="facts">
+        <li>A score out of 100 and a stage: clear the runway, ready for a first win, or ready to scale.</li>
+        <li>A 0 to 100 bar for each of five areas: the work, the data, the people, the guardrails and the systems.</li>
+        <li>The one gap to fix first, and the first job where AI can help your team.</li>
+        <li>An estimate of the hours a week that job could hand back to your team.</li>
+      </ul>
+      <p class="disclose">The full result shows on this page when you finish. No email needed, and your answers stay in your browser.</p>
+      <div><button class="btn btn-primary" id="start"><i data-lucide="play"></i>${state.i > 0 ? "Pick up where you left off" : "Start the assessment"}</button></div>
+    </section>`;
+  document.getElementById("start").onclick = () => { state.step = "q"; save(); render(); };
+}
+
+function question() {
+  const steps = visibleSteps();
+  if (state.i >= steps.length) { state.step = "result"; save(); return render(); }
+  const s = steps[state.i];
+  const cur = state.a[s.id];
+  const pct = Math.max(state.maxPct || 0, progressPct(state.i, steps.length));
+  state.maxPct = pct;
+  const tag = s.kind === "q" ? `<i data-lucide="${C.areas[s.area].icon}"></i>${esc(C.areas[s.area].name)}` : s.kind === "close" ? "Last one" : "About your company";
+  app.innerHTML = `
+    <section class="card">
+      <div class="progress" role="progressbar" aria-label="Progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}"><div style="width:${pct}%"></div></div>
+      <span class="dimtag">${tag}</span>
+      <div class="qtext" id="qt">${rich(s.text)}</div>
+      <div class="opts" role="radiogroup" aria-labelledby="qt">
+        ${s.options.map((o, k) => `<button class="opt${cur === k ? " sel" : ""}" role="radio" aria-checked="${cur === k}" data-k="${k}" id="opt-${s.id}-${k}"><span class="key">${k + 1}</span><span>${rich(o)}</span></button>`).join("")}
+      </div>
+      <div class="qnav">
+        <button class="btn btn-ghost" id="back" ${state.i === 0 ? "disabled" : ""}><i data-lucide="arrow-left"></i>Back</button>
+        <span class="hint">Tip: press 1 to ${s.options.length} to answer</span>
+      </div>
+    </section>`;
+  app.querySelectorAll(".opt").forEach(b => b.onclick = () => choose(+b.dataset.k));
+  document.getElementById("back").onclick = () => {
+    if (state.i > 0) { state.i--; state.maxPct = progressPct(state.i, visibleSteps().length); save(); render(); }
+  };
+  const first = app.querySelector(".opt.sel") || app.querySelector(".opt"); first && first.focus({ preventScroll: true });
+}
+let busy = false;
+function choose(k) {
+  if (busy) return;
+  const s = visibleSteps()[state.i];
+  if (!s) return;
+  state.a[s.id] = k;
+  if (s.id === "industry" && !(k === 0 || k === 1)) delete state.a.sensitive; // flag question no longer applies
+  app.querySelectorAll(".opt").forEach(b => b.classList.toggle("sel", +b.dataset.k === k));
+  busy = true;
+  setTimeout(() => { busy = false; state.i++; save(); render(); }, 180);
+}
+document.addEventListener("keydown", e => {
+  if (state.step !== "q" || e.target.tagName === "INPUT" || e.metaKey || e.ctrlKey || e.altKey) return;
+  const k = parseInt(e.key, 10);
+  const btns = app.querySelectorAll(".opt");
+  if (k >= 1 && k <= btns.length) choose(k - 1);
+});
+
+function gauge(v, tone) {
+  const r = 70, c = 2 * Math.PI * r, arc = c * 0.75, dash = arc * v / 100;
+  return `<svg class="gauge" viewBox="0 0 180 170" role="img" aria-label="Overall score ${v} out of 100">
+    <circle cx="90" cy="90" r="${r}" fill="none" stroke="var(--paper-alt)" stroke-width="14" stroke-dasharray="${arc} ${c}" transform="rotate(135 90 90)"/>
+    <circle cx="90" cy="90" r="${r}" fill="none" stroke="${toneColor(tone)}" stroke-width="14" stroke-dasharray="${dash} ${c}" transform="rotate(135 90 90)"/>
+    <text x="90" y="98" text-anchor="middle" font-size="44" class="num">${v}</text>
+    <text x="90" y="122" text-anchor="middle" class="sub">OUT OF 100</text>
+  </svg>`;
+}
+
+function timeBack() {
+  const hw = C.hoursMid[state.a.hours ?? 0];
+  const rate = Math.max(1, +state.rate || C.rate);
+  return {
+    hw, rate,
+    wkLow: hw * C.gainLow, wkHigh: hw * C.gainHigh,
+    yrLow: hw * C.weeks * C.gainLow, yrHigh: hw * C.weeks * C.gainHigh,
+    $Low: hw * C.weeks * rate * C.gainLow, $High: hw * C.weeks * rate * C.gainHigh
+  };
+}
+
+// The offer, matched to company size, score stage and timeline.
+function offer(r, size, timeline) {
+  const pitch = "Bring your score; in 30 minutes we'll pick the first workflow worth handing to AI and what it would take.";
+  if (size === 4) return { h: "Book a free 30-minute diagnostic for one department", p: "Bring your score; we'll pick the first workflow in one department and what it would take." };
+  if (size === 0) return { h: "Book a free 30-minute diagnostic", p: pitch };
+  if (r.overall >= 40 && timeline !== 2) return { h: "Book a free 30-minute diagnostic", p: pitch };
+  if (timeline === 2) return { h: "Keep this score for when you're ready", p: "When you're ready to pick a first workflow, the free 30-minute diagnostic is here. " + pitch };
+  return { h: "Start with the fix above, then pick a workflow", p: "The fix-first step comes before any spending. When it's done, or if you want a second opinion on it, book the free 30-minute diagnostic." };
+}
+
+function result() {
+  const r = score();
+  const a = state.a;
+  const jobOpts = C.steps.find(s => s.id === "job").options;
+  const jobName = a.job == null || a.job === jobOpts.length - 1 ? "the repetitive job you picked" : jobOpts[a.job].toLowerCase();
+  const tb = timeBack();
+  const size = a.size ?? 1, timeline = a.timeline ?? 2;
+
+  // The one gap to fix first, with the override rules.
+  let gapTitle, gapText;
+  if (r.weakest.score === 100) { gapTitle = "No gap to fix first."; gapText = "Every area scored full marks. The next step is measuring results across more than one workflow."; }
+  else if (r.policyFirst) { gapTitle = "Start with a written AI use policy."; gapText = "Your work touches sensitive data and there is no rule yet for what must never go into an AI tool. That comes before any project."; }
+  else { gapTitle = `Fix first: ${r.weakest.name.toLowerCase()}.`; gapText = r.weakest.fix; }
+  const project = r.dataFirst
+    ? `Get the information for ${esc(jobName)} into one place first. Until it is, no AI tool can help with it.`
+    : `Bring AI into ${esc(jobName)}, with a person checking the output, so your team spends those hours on higher-value work.`;
+
+  const scale = [...C.stages].reverse().map((b, k, arr) => {
+    const hi = k < arr.length - 1 ? arr[k + 1].min - 1 : 100;
+    return `<span class="${b === r.stage ? "on" : ""}">${b.min}–${hi} ${esc(b.name)}</span>`;
+  }).join("");
+  const startHere = d => (r.policyFirst ? d.id === "guard" : d === r.weakest && d.score < 100) ? '<span class="flag">Start here</span>' : "";
+  const bars = r.areas.map(d => `<div class="dim">
+      <div class="dim-row"><span class="dim-name"><i data-lucide="${d.icon}"></i>${esc(d.name)}${startHere(d)}</span><span class="dim-score">${d.score}</span></div>
+      <div class="bar"><div style="width:${d.score}%;background:${toneColor(tierTone(d.score))}"></div></div>
+    </div>`).join("");
+
+  const o = offer(r, size, timeline);
+  const mailto = `mailto:${C.email}?subject=${encodeURIComponent("AI readiness score: " + r.overall)}`;
+
+  app.innerHTML = `
+    <section class="card">
+      <div class="eyebrow">Your result</div>
+      <div class="result-top">
+        ${gauge(r.overall, r.stage.tone)}
+        <div style="display:flex;flex-direction:column;gap:10px;min-width:0">
+          <span class="band" style="background:${toneWash(r.stage.tone)};color:${toneColor(r.stage.tone)}"><i data-lucide="flag"></i>${esc(r.stage.name)}</span>
+          <h2>${esc(r.stage.text)}</h2>
+          <div class="scale" aria-label="Stages">${scale}</div>
+        </div>
+      </div>
+      <div class="dims">${bars}</div>
+      <div class="gap"><i data-lucide="target"></i><div><strong>${esc(gapTitle)}</strong>${esc(gapText)}</div></div>
+    </section>
+
+    <section class="card">
+      <div class="eyebrow">Your first project</div>
+      <h2>${project}</h2>
+      ${r.dataFirst ? "" : `
+      <div class="timeback">
+        <div class="tb primary"><span class="num">${fmtN(tb.wkLow)}–${fmtN(tb.wkHigh)} hrs</span><span class="lab">a week handed back to your team</span></div>
+        <div class="tb"><span class="num">${fmt$(tb.$Low)}–${fmt$(tb.$High)}</span><span class="lab">a year of time, at the hourly cost below</span></div>
+      </div>
+      <div class="rate"><label for="rate">Cost of an hour of work, wages plus benefits</label> <span>$<input id="rate" type="number" min="1" step="1" value="${tb.rate}" inputmode="numeric"></span> <span class="tag-default">Default: US average</span></div>
+      <div class="basis">
+        <span>This is an estimate. ${a.hours === 3 ? "Based on 100 hours a week, the low end of your answer" : `Based on ${tb.hw} hours a week, the middle of your answer`}, over 48 weeks, with AI freeing 15% to 40% of those hours (${fmtN(tb.yrLow)} to ${fmtN(tb.yrHigh)} hours a year).</span>
+        <span>${rich(C.basisRate)}</span>
+        <span>${rich(C.basisGain)}</span>
+      </div>`}
+    </section>
+
+    <section class="card">
+      <div class="eyebrow">What each area means</div>
+      <p class="peer"><strong>How you compare.</strong> ${rich(C.peers[size] || C.peers[1])}</p>
+      <div class="areas">
+        ${r.areas.map(d => `<div class="area"><h3>${esc(d.name)} · ${d.score}</h3><p>${rich(d.why)}</p></div>`).join("")}
+      </div>
+    </section>
+
+    <section class="offer">
+      <div class="eyebrow">Next step</div>
+      <h2>${esc(o.h)}</h2>
+      <p>${esc(o.p)}</p>
+      <a class="btn btn-primary" href="${C.booking}" target="_blank" rel="noopener"><i data-lucide="calendar-check"></i>Book the free 30-minute diagnostic</a>
+      <p class="cta-secondary">Or email <a href="${esc(mailto)}">${C.email}</a> with your score and two sentences on the work.</p>
+    </section>
+    <button class="btn btn-ghost restart" id="restart"><i data-lucide="rotate-ccw"></i>Retake the assessment</button>`;
+
+  const rateEl = document.getElementById("rate");
+  if (rateEl) rateEl.addEventListener("change", () => { const v = +rateEl.value; if (v > 0) { state.rate = v; save(); render(false); } });
+  document.getElementById("restart").onclick = () => { Object.assign(state, fresh()); state.a = {}; save(); render(); };
+}
+
+function render(scrollTop = true) {
+  if (state.step === "q") question(); else if (state.step === "result") result(); else intro();
+  document.body.classList.toggle("in-quiz", state.step !== "intro");
+  icons();
+  if (scrollTop && state.step !== "intro") window.scrollTo({ top: 0 });
+}
+renderFootnotes();
+render(false);
+</script>
+</body>
+</html>
