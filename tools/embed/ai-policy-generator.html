@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta name="robots" content="noindex">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI policy generator: your company's AI use policy in 10 minutes</title>
@@ -794,7 +794,7 @@ function download(name, type, body) {
 }
 const fileBase = () => ((state.a.company || "").trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "company") + "-ai-use-policy";
 function docHtml(inner) {
-  return `﻿<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>AI use policy</title>
+  return `﻿<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta name="robots" content="noindex"><meta charset="utf-8"><title>AI use policy</title>
 <style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.4}h1{font-size:18pt}h2{font-size:13pt;margin-top:14pt}h3{font-size:11.5pt}table{border-collapse:collapse;width:100%}td,th{border:1px solid #999;padding:4pt;vertical-align:top;text-align:left}th{background:#eef2f7}sup{font-size:8pt}mark{background:#fff4c2}.meta,.disclaimer{color:#555}</style></head><body>${inner}</body></html>`;
 }
 function flash(msg) { const s = document.getElementById("status"); if (s) { s.textContent = msg; setTimeout(() => { if (s.textContent === msg) s.textContent = ""; }, 3000); } }
