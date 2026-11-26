@@ -8,11 +8,11 @@
  "industry": "any industry",
  "index": true,
  "verdict": [
-  "AI clears the confident matches and queues the rest for a person; QuickBooks, Xero and Workday all work this way[^4][^5][^7].",
-  "Surveys link automated reconciliations to faster closes, but AI on weak controls just speeds up the errors[^21][^22][^8].",
-  "Your auditor will test the controls around the AI: who reviews, who signs, and whether each match leaves a trail[^13][^16][^9].",
-  "Close platforms hide their prices: none of the eight we checked publish one, and third-party data puts typical spend at $15,000 to $72,000 a year[^37][^39][^30].",
-  "On QuickBooks or Xero with one entity, try the built-in AI reconcile before you buy a close platform[^7][^47][^48]."
+  "AI clears the matches it is sure of and queues the rest for a person[^4][^5].",
+  "Fix controls first: AI on weak controls just speeds up the errors[^8][^9].",
+  "Your auditor will test who reviews, who signs, and whether each match leaves a trail[^16][^9].",
+  "Close platforms don't list prices; buyers report a median $15,000 to $25,000 a year[^37][^30].",
+  "On QuickBooks or Xero with one entity, try the built-in AI reconcile first[^7][^47]."
  ],
  "onPage": [],
  "headings": {
@@ -21,7 +21,7 @@
   "rules": "What will your auditor expect?",
   "buy-or-build": "Should you buy a close platform or use what you have?"
  },
- "summary": "Account reconciliation checks each ledger balance against an independent record, such as a bank statement, and explains every difference[^1][^2]. AI suggests matches with a confidence level and leaves the unsure ones for a person[^4][^5]. Controls make or break it: a vendor study by FloQast warns AI on weak controls \"accelerates the errors\"[^8][^9].",
+ "summary": "Account reconciliation checks each ledger balance against an independent record, such as a bank statement[^1][^2]. AI suggests matches with a confidence level and leaves the unsure ones for a person[^4][^5]. Controls make or break it: AI on weak controls \"accelerates the errors,\" one vendor study warns[^8].",
  "humanRole": [
   "A staff accountant prepares each reconciliation and a different person reviews it, and both sign every month[^3][^10]. \"The system matched it\" is not a control[^10].",
   "The controller approves reconciliations on time. The SEC has cited late review as a control deficiency, and public companies report it as a material weakness, a serious control gap[^11][^12].",
@@ -70,7 +70,7 @@
     "Close platform",
     "No[^40]",
     "One fee by close scope, not per user[^40]",
-    "Agentic close, AI flux (variance) analysis, continuous reconciliation[^40]"
+    "Agentic close, AI variance analysis (explains month-to-month swings), continuous reconciliation[^40]"
    ],
    [
     "Nominal",
@@ -298,7 +298,7 @@
   },
   {
    "q": "Will reconciliation software actually make the work faster?",
-   "a": "It helps most with organizing, sign-offs and audit trails. A top r/Accounting answer said FloQast helps with SOX but may not speed the recs themselves[^33]. Surveys still link automated reconciliations to faster closes[^21][^22]."
+   "a": "It helps most with organizing, sign-offs and audit trails. A top r/Accounting answer said FloQast helps with SOX but may not speed up the reconciliations themselves[^33]. Surveys still link automated reconciliations to faster closes[^21][^22]."
   },
   {
    "q": "My company wants our reconciliation rebuilt in AI. Should it be?",

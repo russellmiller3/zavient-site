@@ -3,14 +3,14 @@
  "description": "Where AI pays in underwriting: the reading, not the decision. 19 tools checked, the US and EU rules, our benchmark data and three builds.",
  "job": "underwriting",
  "industry": "lending and insurance",
- "summary": "AI underwriting does the reading: it pulls the facts from applications, statements and broker emails so your underwriters decide faster[^13][^22]. It fits small-business lenders, life insurers with a rules engine[^20], and commercial insurers and MGAs whose underwriters spend hours keying broker submissions[^7]. P&C underwriters spend about 4 in 10 hours on admin, and the decision stays explainable with a person accountable[^1][^7][^4][^2].",
+ "summary": "AI underwriting does the reading: it pulls facts from applications, statements and broker emails[^13][^22]. Underwriters decide faster, and a named person still decides[^4][^2]. It fits small-business lenders, life insurers with a rules engine[^20], and commercial insurers swamped by broker submissions[^7].",
  "index": true,
  "verdict": [
-  "The money is hours back for deciding. P&C underwriters spend about 39% of their time on admin and other non-core work, the paperwork AI can take on[^1][^8][^7].",
-  "Start with the reading: statements and tax returns for lenders, broker submissions for commercial insurers and MGAs (managing general agents)[^22], referred-case evidence for life insurers[^19].",
-  "AI reads long financial PDFs well: the two best models made zero mistakes on 30 fund reports, answers locked in advance[^13]. Those weren't loan files, so benchmark on your own[^13].",
-  "Keep the decision with an explainable model and a named underwriter. US lenders owe decline reasons; New York expects the same from insurers[^4][^17][^2].",
-  "First step: benchmark AI on 50 past files from one line or one branch before you buy. Vendors' faster-quote figures are their own customers' claims[^21][^28]."
+  "Property and casualty (P&C) underwriters spend about 4 in 10 hours on admin AI can take on[^1][^7].",
+  "Start AI on the reading: statements, tax returns, broker submissions and referred-case evidence[^22][^19].",
+  "AI reads long financial PDFs well: two models made zero mistakes on 30 fund reports[^13].",
+  "A named underwriter keeps the decision, with reasons a regulator can check[^4][^2].",
+  "Test on 50 past files before you buy; vendor speed figures are their customers' claims[^21][^28]."
  ],
  "onPage": [
   {
@@ -45,7 +45,7 @@
  "stats": [
   {
    "num": "0 of 19",
-   "label": "underwriting products we checked publish a price on their site; the ones we opened ask you to book a demo[^24][^25][^26][^27][^30]",
+   "label": "products we checked publish a price on their site: 13 insurance tools in our tools table, plus 6 lending platforms[^24][^30]",
    "source": "Zavient review of vendor sites, 26 Nov 2026"
   },
   {
@@ -67,7 +67,7 @@
  "pickElse": [
   "Consumer lending where the score is the product: start with the AI credit scoring guide[^30]. The decline reasons are the regulated part[^4][^17].",
   "Life and health insurer: start from a rules engine such as Swiss Re MagnumXP or Munich Re ALLFINANZ[^18][^20]. AI earns its keep summarising the evidence on referred cases so the underwriter decides faster, not making the call[^19][^20].",
-  "Commercial insurer or MGA swamped by broker submissions: an off-the-shelf intake product (Cytora, Convr, FurtherAI, Sixfold) may beat a build[^23][^24][^22][^21]. Benchmark one on 50 of your own past submissions before you sign.",
+  "Swamped by broker submissions? An off-the-shelf intake tool may beat a build, if it passes a test on 50 past submissions[^23][^22].",
   "The question is price, not whether to take the risk: look at actuarial pricing platforms such as Akur8, Earnix or hyperexponential[^25][^26][^27]."
  ],
  "ownData": {
@@ -127,7 +127,7 @@
     "AI adds third-party data",
     "Underwriter works the queue best fit first and decides"
    ],
-   "cost": "Reading cost $0.12 to $0.15 per fund report with the two best models in our benchmark, not per loan file[^13]. Intake products publish no price[^24]; a Zavient build is quoted per job, not listed here."
+   "cost": "Reading: about 12 to 15 cents a long fund report in our test[^13]. Intake products publish no price[^24]; a Zavient build is quoted per job, not listed here."
   },
   {
    "name": "2. Small-business lending: file to decision",
@@ -139,7 +139,7 @@
     "Explainable model drafts a score with its reasons",
     "Underwriter decides; reasons logged"
    ],
-   "cost": "Under $0.01 to about $0.30 per fund report to read with current models in our benchmark, not per loan file[^13]. The build, including a scorecard you own, is quoted per job, not listed here."
+   "cost": "Reading: under 1 cent to about 30 cents a long fund report in our test[^13]. The build, including a scorecard you own, is quoted per job, not listed here."
   },
   {
    "name": "3. Life insurance: evidence summary for the rules engine",

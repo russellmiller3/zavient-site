@@ -3,14 +3,14 @@
  "description": "Approve more good loans with an AI credit model you can explain: the tools, US and EU rules, three builds and our pick.",
  "job": "credit scoring",
  "industry": "lending",
- "summary": "AI credit scoring predicts whether an applicant will repay[^5], then has to say why in plain words when it says no[^1][^43]. The model is the easy part. The decline reasons[^1][^41], the bias checks[^39][^40] and the paperwork your examiner will ask for[^7][^8] are what make or break it.",
+ "summary": "AI credit scoring predicts whether an applicant will repay[^5]. When it says no, it must say why in plain words[^1][^43]. The model is the easy part; decline reasons[^41], bias checks[^39] and examiner paperwork[^7] make or break it.",
  "index": true,
  "verdict": [
-  "The payoff is extra good loans booked and losses avoided, in dollars, at your cutoff; measure it on your own loans, not vendor claims[^18][^29].",
-  "Start with a scorecard you can explain line by line[^17][^16]; it gives the specific decline reasons US law requires straight from the model[^1][^43].",
-  "Move to a more complex model only when your own benchmark shows it predicts better and your validators can check it[^5][^7][^41].",
-  "Use AI to read loan documents, not to decide: in published studies, language models predicted defaults worse than standard models[^6][^13].",
-  "The main software is free; the real cost is your team's time on data, validation and decline reasons[^50][^52][^7][^41]."
+  "Measure the payoff on your own loans, in dollars at your cutoff, not vendor claims[^18][^29].",
+  "Start with a scorecard: it gives the decline reasons US law requires[^1][^17].",
+  "Move to a complex model only if it beats the scorecard and your validators can check it[^7][^41].",
+  "Use AI to read loan documents, not to predict defaults; standard models predict better[^6][^13].",
+  "The software is free; the real cost is your team's time on data and decline reasons[^50][^41]."
  ],
  "onPage": [
   {
@@ -63,7 +63,7 @@
  "pickElse": [
   "No data science team: look at a platform such as Zest AI, Provenir, Taktile or Scienaptic. None publish prices; expect a contract[^18][^19][^20][^21].",
   "Many thin-file applicants, with little credit history: their scores are less accurate[^40]. Add bank-account cash-flow data from Plaid Check, Prism Data or Nova Credit before you change the model[^27][^28][^30].",
-  "Most of the work is reading documents: spend on extraction first (recipe 3 below). In our own benchmark, AI read each long report for under $0.30[^42]."
+  "Most of the work is reading documents: spend on extraction first (recipe 3 above). In our own benchmark, AI read each long report for under $0.30[^42]."
  ],
  "ownData": {
   "title": "Which open-source tools can build an AI credit model?",
@@ -153,7 +153,7 @@
     "Compliance: one named person sends each decline letter",
     "Modeler: check each quarter for accuracy drift and bias (fairlearn)"
    ],
-   "cost": "Free open-source software[^50][^52]; the build is quoted per job, and after launch the cost is your team's review time. Our 30-day AI Sprint is $10,000 for 30 days, fixed scope, ending in specs for 2 or 3 AI bets[^83]."
+   "cost": "Free open-source software[^50][^52]; the build is quoted per job, and after launch the cost is your team's review time. Our AI Sprint: $10,000, 30 days, fixed scope, with specs for 2 or 3 AI bets[^83]."
   },
   {
    "name": "2. Mid-size lender: stronger model with plain-English reasons",

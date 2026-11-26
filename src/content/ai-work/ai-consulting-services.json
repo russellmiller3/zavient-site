@@ -2,14 +2,14 @@
  "title": "AI consulting for finance: is it worth it, and what does it cost?",
  "description": "What AI consulting should deliver, what it costs against hiring a team or buying software, and the finance work where AI pays first. With our own data.",
  "job": "AI consulting",
- "summary": "AI consulting should take the busywork of one costly finance job off your team's plate, such as invoice exceptions, which hit 18.4% of invoices[^34]. Most generative AI efforts never show up in the P&L[^1][^16]; the winners measure AI's impact and redesign the work around it[^15]. They benchmark on their own files[^5][^23] and plan for life after launch, where most of the cost sits[^3][^12].",
+ "summary": "AI consulting should take one costly job off your team, such as invoice exceptions, which hit about 1 invoice in 5[^34]. Most generative AI never shows up in profit[^1][^16]. Winners benchmark on their own files[^5] and budget for after launch, where most of the cost sits[^3][^12].",
  "index": true,
  "verdict": [
-  "Hire AI consulting for one problem with a number attached, not a strategy deck. The projects that pay pick one pain point[^1].",
-  "Bought or partnered AI projects succeed about 67% of the time; internal builds about a third as often[^1].",
-  "Benchmark the options on your own files before anyone builds. Public leaderboards are only a first filter[^5][^23].",
-  "Our 30-day AI Sprint costs $10,000 for 30 days, fixed scope. You leave with 2 or 3 AI bets and their specs[^21].",
-  "Re-check the choice as models and prices change. The same AI work gets much cheaper each year[^22]."
+  "Hire AI help for one problem with a number attached, not a strategy deck[^1].",
+  "Bought or partnered AI projects succeed about 67% of the time, about three times internal builds[^1].",
+  "Benchmark the options on your own files before anyone builds[^5][^23].",
+  "Our AI Sprint: $10,000, 30 days, fixed scope, ending in specs for 2 or 3 AI bets[^21].",
+  "Re-check the choice each year: the same AI work keeps getting much cheaper[^22]."
  ],
  "onPage": [
   {
@@ -44,9 +44,9 @@
    "source": "AFP 2026 Payments Fraud and Control Survey[^35]"
   },
   {
-   "num": "18.4%",
+   "num": "19.9%",
    "label": "average share of invoices that hit an exception, a mismatch a person must sort out[^34]",
-   "source": "Ardent Partners, State of ePayables[^34]; average cost $9.84 per invoice[^34]"
+   "source": "Ardent Partners, State of ePayables[^34]; average cost $9.90 per invoice[^34]"
   },
   {
    "num": "$155,300",
@@ -66,7 +66,7 @@
  "spokes": [
   {
    "slug": "ai-invoice-processing",
-   "why": "Accounts payable: reading invoices is the easy part, but about 18% hit an exception, a mismatch someone must fix[^34]. The money is in those exceptions and in payments fraud, which 76% of US firms faced in 2025[^35]."
+   "why": "Accounts payable: reading invoices is the easy part, but about 1 in 5 (19.9%) hit an exception, a mismatch someone must fix[^34]. The money is in those exceptions and in payments fraud, which 76% of US firms faced in 2025[^35]."
   },
   {
    "slug": "ai-document-processing",
@@ -124,7 +124,7 @@
  "recipes": [
   {
    "name": "1. Benchmark first",
-   "when": "Before anyone builds, to settle which approach wins on your files and what it costs; public leaderboards are only a first filter[^5]. Pick a high-volume, repetitive job with a known cost of errors, and price it today: an invoice costs $9.84 on average to process[^34].",
+   "when": "Before anyone builds, to settle which approach wins on your files and what it costs; public leaderboards are only a first filter[^5]. Pick a high-volume, repetitive job with a known cost of errors, and price it today: an invoice costs $9.90 on average to process[^34].",
    "flow": [
     "Process lead: measure today's time and error rate per file",
     "Process lead: pick 50 real files",
@@ -145,11 +145,11 @@
     "Process lead: go live at one site or team first",
     "Process lead: move to full volume"
    ],
-   "cost": "Depends on the systems it touches. Gartner warns that a production system can cost orders of magnitude more than the pilot[^3][^12], so scope it from the benchmark, not the demo."
+   "cost": "Depends on the systems it touches. Gartner warns that a production system can cost many times the pilot[^3][^12], so scope it from the benchmark, not the demo."
   },
   {
    "name": "3. Keep it right",
-   "when": "Always, because models, prices and your documents change. The price of a given level of AI performance has fallen 9 to 900 times a year[^22].",
+   "when": "Always, because models, prices and your documents change. The same AI performance gets 9 to 900 times cheaper each year[^22].",
    "flow": [
     "Consultant: flag a new model or price change",
     "Consultant: re-run the benchmark",
@@ -411,9 +411,9 @@
    "what": "Effective 15 Oct 2025, the governance rule covers life, private auto and health benefit plan insurers."
   },
   {
-   "name": "Ardent Partners, State of ePayables",
-   "url": "https://payablesplace.ardentpartners.com/2026/01/state-of-epayables-part-nine-ap-benchmarks-and-best-in-class-performance/",
-   "what": "Average invoice exception rate 18.4%; average cost $9.84 per invoice."
+   "name": "Ardent Partners, AP Metrics That Matter in 2026 (Oct 2026)",
+   "url": "https://payablesplace.ardentpartners.com/2026/10/this-webinar-reveals-the-numbers-behind-smarter-faster-ap/",
+   "what": "Nearly 1 in 5 invoices (19.9%) needs manual exception handling; average cost $9.90 and 11.6 days per invoice."
   },
   {
    "name": "AFP 2026 Payments Fraud and Control Survey",

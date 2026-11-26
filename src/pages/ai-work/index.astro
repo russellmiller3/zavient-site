@@ -1,26 +1,56 @@
 ---
 // api-docs-read: static hub page — no external API/protocol surface.
-// Hub listing every AI-work page.
+// Hub listing every AI-work page and data story. Mobile/ADHD audit (26 Nov 2026): bottom line first, guides in reader
+// order (start here, then AP, close, documents, credit, underwriting) with who each is for and a ~10-word blurb,
+// and a way in to the readiness check for readers who don't know which guide they need.
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import ConsultingCta from '../../components/ConsultingCta.astro';
-const pages = (await getCollection('aiwork')).sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+const BOOK = 'https://calendly.com/zavient/call';
+// Reader order, who each guide is for, and a short blurb. A guide missing here still lists, after these, with its description.
+const guideOrder = {
+  'ai-consulting-services': { for: 'COO, CEO, head of finance', blurb: 'Start here: what pays back first, and what help costs.' },
+  'ai-invoice-processing': { for: 'Head of AP, controller', blurb: 'What invoice tools cost, and what still needs a person.' },
+  'account-reconciliation-automation': { for: 'Controller, head of close', blurb: 'What AI does, what auditors expect, 3 ways to build it.' },
+  'ai-document-processing': { for: 'Anyone whose team re-keys documents', blurb: 'Our own accuracy test on 30 fund reports.' },
+  'ai-credit-scoring': { for: 'Head of lending, credit risk', blurb: 'Fair, explainable credit models and the rules that apply.' },
+  'ai-underwriting': { for: 'Head of underwriting, lenders and insurers', blurb: 'AI does the reading; the underwriter keeps the call.' },
+};
+const storyBlurb = {
+  'claude-vs-chatgpt-in-ai-job-ads': 'Claude and OpenAI tie in 2,046 US AI job ads; more employers name Claude.',
+  'forward-deployed-engineer-rise': 'Engineers who build on site with the customer are as common as ML engineers.',
+  'ai-job-pay-by-title': 'Median posted pay for 9 AI job titles, from 1,038 ads.',
+};
+const all = await getCollection('aiwork');
+const keys = Object.keys(guideOrder);
+const pages = [...all.filter((p) => keys.includes(p.id)).sort((a, b) => keys.indexOf(a.id) - keys.indexOf(b.id)), ...all.filter((p) => !keys.includes(p.id))];
 const stories = (await getCollection('datastory')).sort((a, b) => a.data.title.localeCompare(b.data.title));
-// A title that ends in a question mark or full stop takes no colon before its description.
-const sep = (title) => (/[?.!]$/.test(title) ? ' ' : ': ');
 ---
-<Base title="AI in finance work, job by job | Zavient" description="Where AI helps finance teams, how to benchmark it before you buy, and when to buy or build. One page per job." noindex>
+<Base title="AI guides by job: finance, lending and insurance | Zavient" description="Where AI helps finance, lending and insurance teams, how to benchmark it before you buy, and when to buy or build. One guide per job." noindex>
   <header class="article-hero"><div class="wrap">
     <div class="label">AI work</div>
-    <h1>AI in finance work, job by job</h1>
-    <p class="dek">One page per job: where AI helps your team, how to benchmark it on your own files before you buy, and when to buy or build.</p>
+    <h1>AI guides by job: finance, lending and insurance</h1>
+    <span class="bluf-label">Bottom line</span>
+    <div class="bluf">
+      <ul>
+        <li>6 guides on finance, lending and insurance work.</li>
+        <li>Each covers where AI helps, cost, rules, and buy or build.</li>
+        <li>Start with the job that costs you most.</li>
+      </ul>
+    </div>
+    <p class="diag-nudge">Not sure which guide? <a href="/ai-readiness-assessment.html">Take the 3-minute readiness check</a>.</p>
+    <p class="diag-nudge">Other work? <a href={BOOK}>Bring it to the free 30-minute diagnostic &rarr;</a></p>
   </div></header>
   <article class="article-body"><div class="wrap">
     <h2>Guides</h2>
-    <ul>{pages.map((p) => <li><a href={`/ai-work/${p.id}.html`}>{p.data.title}</a>{sep(p.data.title)}{p.data.description}</li>)}</ul>
+    <ul>{pages.map((p) => {
+      const g = guideOrder[p.id];
+      return <li><a href={`/ai-work/${p.id}.html`}><strong>{p.data.title}</strong></a><br />{g ? <>{g.blurb} <em>For: {g.for}.</em></> : p.data.description}</li>;
+    })}</ul>
     <h2>Data stories</h2>
-    <p>Our own counts from recent US AI job ads, free to republish with a link back.</p>
-    <ul>{stories.map((s) => <li><a href={`/data/${s.id}.html`}>{s.data.title}</a>{sep(s.data.title)}{s.data.description}</li>)}</ul>
+    <p>What AI talent costs, and which tools employers ask for, from 2,046 US job ads. Free to republish with a link back.</p>
+    <ul>{stories.map((s) => <li><a href={`/data/${s.id}.html`}><strong>{s.data.title}</strong></a><br />{storyBlurb[s.id] || s.data.description}</li>)}</ul>
   </div></article>
   <ConsultingCta job="AI in your finance work" />
 </Base>

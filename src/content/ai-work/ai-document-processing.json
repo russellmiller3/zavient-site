@@ -2,14 +2,14 @@
  "title": "AI document processing: how accurate is it on financial documents?",
  "description": "We benchmarked AI tools on 30 fund reports, with answers locked in advance. Which ones made no mistakes, what each costs per page, and three ways to build it.",
  "job": "document processing",
- "summary": "Start with the document your team re-keys most, where a wrong number costs money; AI can read it into fields your systems use. Reading itself costs cents; the staff time around it is the real cost[^7][^1]. AI does the reading part, but wrong fields on your own files are the risk, so we built a benchmark that measures them[^20][^7].",
+ "summary": "Document AI reads a PDF or scan and returns the fields your systems use, like totals and dates[^3][^4]. OCR returns raw text only; document AI knows which number is which[^2][^3]. Start with the document your team re-keys most: reading costs cents, and staff time is the real cost[^7][^1].",
  "index": true,
  "verdict": [
-  "Pick the document your team re-keys most, where a wrong number costs money. Two models from different vendors read it; a person settles only their disagreements[^15][^16].",
-  "AI reading costs cents per report[^7]. The $6.00 median to process an invoice is all-in cost, so measure staff minutes and errors per file, not just reading cost[^1].",
-  "The two best models made zero mistakes on our 30 fund reports, not your files[^7]. Thirty reports still allow a true error rate of up to about 1 in 10[^19].",
-  "The two models disagreed on about 1 fact in 4 (66 of 270); your team settles those and keeps the final say[^7].",
-  "First step: benchmark two models on 50 files from one team's queue. Even vendors advise judging tools on your own documents[^20]."
+  "Have two models from different vendors read each file; a person settles their disagreements[^15][^16].",
+  "AI reading costs cents per report; staff time and errors are the real cost[^7][^1].",
+  "The two best models made zero mistakes on our 30 fund reports[^7].",
+  "Thirty clean reports still allow a true error rate of up to about 1 in 10[^19].",
+  "First step: benchmark two models on 50 files from one team's queue[^20]."
  ],
  "onPage": [
   {
@@ -64,13 +64,13 @@
   }
  ],
  "pickElse": [
-  "You process thousands of standard invoices or receipts a day. A cloud prebuilt parser (a ready-made reader for standard forms) costs about $10 per 1,000 pages and handles the volume[^2][^4][^3].",
+  "Thousands of standard invoices a day? A prebuilt cloud parser, a ready-made reader for standard forms, costs about $10 per 1,000 pages[^2][^4].",
   "Your files cannot leave your network: run open-source Docling (free for business use)[^6] or a local model. Expect more wrong values: in our first round the two local models made 8 each, where Anthropic's Claude Haiku 5.5 made none[^7].",
   "You only need searchable text, not fields: basic OCR is about $1.50 per 1,000 pages at all three big clouds[^2][^3][^4]."
  ],
  "ownData": {
   "title": "Which AI made the fewest mistakes on 30 fund reports?",
-  "intro": "FinExtractBench is our own benchmark of 30 public private-fund reports, 781 pages in all[^7]. We wrote every correct answer by hand and sealed it, meaning locked, before any tool ran[^7]. Each tool read each raw PDF once; a mistake is a wrong value or a value the report never states.",
+  "intro": "FinExtractBench is our own benchmark of 30 public private-fund reports, 781 pages in all[^7]. We wrote every right answer by hand and locked it before any tool ran[^7]. Each tool read each raw PDF once; a mistake is a wrong value or a value the report never states.",
   "headers": [
    "Tool",
    "Mistakes",

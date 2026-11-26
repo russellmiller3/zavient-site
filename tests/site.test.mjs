@@ -163,6 +163,31 @@ test('every indexed AI-work page passes the ADHD-friendly readability check', as
   }
 });
 
+test('the home, About, hub, data story and readiness pages pass the same readability check', async () => {
+  // Mobile/ADHD audit (26 Nov 2026): the hand-built pages were never checked. Sentences of 25 words or fewer and
+  // 3 sentences or fewer per paragraph or list item, read from the built HTML.
+  const { checkHtml, HTML_PAGES } = await import('../scripts/check-readability.mjs');
+  const pages = [...HTML_PAGES, ...slugs('data-stories').map((s) => `data/${s}.html`)];
+  for (const page of pages) {
+    const problems = checkHtml(readFileSync(join(dist, page), 'utf8'));
+    assert.equal(problems.length, 0, `${page}: hard to scan:\n  ${problems.join('\n  ')}`);
+  }
+});
+
+test('every data story footnotes its findings and says what they mean for the reader', () => {
+  // Rule: every market number footnoted. "[^n]" in a finding links to source n.
+  for (const s of slugs('data-stories')) {
+    const data = JSON.parse(readFileSync(join(root, 'src/content/data-stories', `${s}.json`), 'utf8'));
+    const marks = [...JSON.stringify(data).matchAll(/\[\^(\d+)\]/g)].map((m) => Number(m[1]));
+    for (const m of marks) assert.ok(m >= 1 && m <= data.sources.length, `${s}: footnote [^${m}] has no source`);
+    for (const f of data.findings) if (/\d/.test(f)) assert.match(f, /\[\^\d+\]/, `${s}: finding with a number has no footnote: "${f.slice(0, 60)}"`);
+    assert.ok(data.soWhat, `${s}: no "What this means for you" line`);
+    const html = readFileSync(join(dist, 'data', `${s}.html`), 'utf8');
+    assert.match(html, /id="fn-1"/, `${s}: numbered sources missing`);
+    assert.ok(html.indexOf('How we counted') < html.indexOf('Use this chart'), `${s}: embed code sits above the method`);
+  }
+});
+
 test('every golden-template page offers the free diagnostic in four spots', () => {
   // Site architecture doc (26 Nov 2026), "The shared frame": under the bottom line, beside the tool or benchmark,
   // in the sticky contents and at the end.

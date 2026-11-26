@@ -253,7 +253,7 @@ footer a:hover { color: var(--blue); }
   <div class="wrap">
     <div class="label">AI readiness assessment</div>
     <h1>Is your company ready for AI?</h1>
-    <p class="dek">For companies with 40 to 500 people. In about 3 minutes, find the first job where AI can help your team do more, the one gap to fix first, and how many hours a week it could hand back.</p>
+    <p class="dek">For companies of 40 to 500 people. 3 minutes, no sign-up. Find your first AI job and the one gap to fix first.</p>
   </div>
 </header>
 
@@ -262,22 +262,23 @@ footer a:hover { color: var(--blue); }
     <noscript><section class="card"><p>This assessment needs JavaScript. Turn it on and reload, or email <a href="mailto:rmiller@zavient.com">rmiller@zavient.com</a> with two sentences on the work.</p></section></noscript>
   </div>
 
-  <section class="card method" id="method" aria-labelledby="m-h">
-    <h3 id="m-h">How the score works</h3>
+  <details class="card method" id="method">
+    <summary><h3 id="m-h" style="display:inline">How the score works</h3></summary>
     <ul>
-      <li>Nine scored questions across five areas: the work, the data, the people, the guardrails and the systems. The questions about your company up front and the one at the end shape your result but carry no points.</li>
+      <li>Nine scored questions across five areas: the work, the data, the people, the guardrails and the systems.</li>
+      <li>Questions about your company aren't scored; they tailor your result.</li>
       <li>Each scored answer is worth 0 to 3 points. 27 points is a perfect score, shown out of 100. Each area gets its own 0 to 100 bar.</li>
       <li>Three stages: 0 to 39, Clear the runway. 40 to 69, Ready for a first win. 70 to 100, Ready to scale.</li>
-      <li>The areas draw on Cisco's AI Readiness Index, Microsoft's AI readiness assessment and the NIST AI Risk Management Framework, cut down for a company without a data team.[^1][^3][^6]</li>
+      <li>The areas draw on three published readiness frameworks: Cisco's, Microsoft's and the US standards body NIST's.[^1][^3][^6] We cut them down for a company without a data team.</li>
       <li>Your answers stay in your browser; we don't see them.</li>
     </ul>
-  </section>
+  </details>
 
-  <section class="card sources" id="footnotes" aria-labelledby="fn-h">
-    <h3 id="fn-h">Sources</h3>
+  <details class="card sources" id="footnotes">
+    <summary><h3 id="fn-h" style="display:inline">Sources</h3></summary>
     <p class="small">Checked 26 Nov 2026.</p>
     <ol id="fn-list"></ol>
-  </section>
+  </details>
 </main>
 
 <footer>
@@ -297,16 +298,16 @@ const C = {
   email: "rmiller@zavient.com",
   areas: {
     work:   { name: "The work",       icon: "briefcase",
-              why: "Do you know which job AI should help with and how you'd measure it? Unclear ROI is a top-3 blocker,[^15] and companies that measure see strong ROI far more often.[^22]",
+              why: "Do you know which job AI should help with and how you'd measure it? Unclear payback is a top-3 blocker,[^15] and companies that measure see strong ROI far more often.[^22]",
               fix: "Pick the one job and the one number that will show it's working." },
     data:   { name: "The data",       icon: "database",
               why: "Is the information for that job digital, in one place and owned? Data quality is the top scaling barrier in the middle market.[^14]",
               fix: "Get the information for that job into one system with a named owner." },
     people: { name: "The people",     icon: "users",
-              why: "Does someone own AI, and how does the team use it today? Resistance and missing skills top the barrier list,[^13] and shadow AI is everywhere.[^19][^20]",
+              why: "Does someone own AI, and how does the team use it today? Resistance and missing skills top the barrier list,[^13] and staff already use personal AI accounts at work.[^19][^20]",
               fix: "Name one person who owns AI, with time set aside for it." },
     guard:  { name: "The guardrails", icon: "shield-check",
-              why: "Is there a policy, and does a person check the output? Most firms have no written policy.[^15][^16] NIST's govern function is the model.[^6]",
+              why: "Is there a policy, and does a person check the output? Most firms have no written policy.[^15][^16] The US standards body (NIST) puts a written policy first.[^6]",
               fix: "Write down what must never go into an AI tool, and who checks the output." },
     sys:    { name: "The systems",    icon: "plug",
               why: "Can your tools connect? Integration is a top barrier at 35%.[^13]",
@@ -319,7 +320,7 @@ const C = {
     { id: "sensitive", kind: "flag", showIf: a => a.industry === 0 || a.industry === 1, text: "Does the work touch health, financial, credit or hiring data?", options: ["Yes", "No"] },
     { id: "job", kind: "open", text: "Which repetitive job eats the most of your team's time?", options: ["Answering customer questions", "Processing documents and invoices", "Reports and spreadsheets", "Sales follow-up and proposals", "Scheduling and dispatch", "Hiring and HR admin", "Other"] },
     { id: "hours", kind: "open", text: "Roughly how many hours a week does that job take, across everyone?", options: ["Under 10", "10 to 40", "40 to 100", "Over 100"] },
-    { id: "q5", kind: "q", area: "work", text: "Do you know what a good result for that job would be worth?", options: ["No idea", "It would “save time”", "We've picked one number to track", "We've measured today's baseline for that number"] },
+    { id: "q5", kind: "q", area: "work", text: "Do you know what a good result for that job would be worth?", options: ["No idea", "It would “save time”", "We've picked one number to track", "We've measured where that number is today"] },
     { id: "q6", kind: "q", area: "work", text: "Has leadership agreed on the first AI project?", options: ["Not discussed", "Lots of ideas, no pick", "A pick, no owner or budget", "A pick with an owner and budget"] },
     { id: "q7", kind: "q", area: "data", text: "Where does the information for that job live?", options: ["In people's heads or on paper", "Email and spreadsheets", "Mostly in one system, like a CRM, ERP or accounting tool", "One system, kept clean, with a named owner"] },
     { id: "q8", kind: "q", area: "data", text: "Could you pull 50 finished examples of that work today, like answered tickets, processed invoices or sent proposals?", options: ["No", "With a lot of digging", "Yes, within a day", "Yes, they're already organized"] },
@@ -385,6 +386,11 @@ const visibleSteps = () => C.steps.filter(s => !s.showIf || s.showIf(state.a));
 const fnOrder = [];
 function fnNum(id) { let k = fnOrder.indexOf(String(id)); if (k < 0) { fnOrder.push(String(id)); k = fnOrder.length - 1; } return k + 1; }
 function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+// Footnotes sit in a collapsed Sources list: open it when a footnote link is used.
+document.addEventListener("click", (e) => {
+  const l = e.target.closest && e.target.closest('a[href^="#fn-"]');
+  if (l) { const d = document.getElementById("footnotes"); if (d) d.open = true; }
+});
 function rich(s) {
   return esc(s).replace(/\[\^(\w+)\]/g, (m, id) => { const n = fnNum(id); return `<sup class="fn"><a href="#fn-${n}" aria-label="Source ${n}">${n}</a></sup>`; });
 }
@@ -526,6 +532,18 @@ function offer(r, size, timeline) {
   return { h: "Start with the fix above, then pick a workflow", p: "The fix-first step comes before any spending. When it's done, or if you want a second opinion on it, book the free 30-minute diagnostic." };
 }
 
+// The guide for the job the reader picked (mobile/ADHD audit, 26 Nov 2026). Jobs without a guide yet go to the free
+// diagnostic, which covers any workflow. Indexes follow the "job" step's options.
+const JOB_GUIDES = {
+  1: [["/ai-work/ai-invoice-processing.html", "AI invoice processing"], ["/ai-work/ai-document-processing.html", "AI document processing"]],
+  2: [["/ai-work/account-reconciliation-automation.html", "AI account reconciliation"]],
+};
+function guideFor(job) {
+  const g = JOB_GUIDES[job];
+  if (!g) return `No guide for this job yet. <a href="${C.booking}">Bring it to the free 30-minute diagnostic &rarr;</a>`;
+  return "Read the guide for this job: " + g.map(([href, name]) => `<a href="${href}">${esc(name)} &rarr;</a>`).join(" or ");
+}
+
 function result() {
   const r = score();
   const a = state.a;
@@ -574,10 +592,11 @@ function result() {
     <section class="card">
       <div class="eyebrow">Your first project</div>
       <h2>${project}</h2>
+      <p class="guide-next">${guideFor(a.job)}</p>
       ${r.dataFirst ? "" : `
       <div class="timeback">
         <div class="tb primary"><span class="num">${fmtN(tb.wkLow)}–${fmtN(tb.wkHigh)} hrs</span><span class="lab">a week handed back to your team</span></div>
-        <div class="tb"><span class="num">${fmt$(tb.$Low)}–${fmt$(tb.$High)}</span><span class="lab">a year of time, at the hourly cost below</span></div>
+        <div class="tb"><span class="num">${fmt$(tb.$Low)}–${fmt$(tb.$High)}</span><span class="lab">worth of staff time a year, at $${fmtN(tb.rate)} an hour</span></div>
       </div>
       <div class="rate"><label for="rate">Cost of an hour of work, wages plus benefits</label> <span>$<input id="rate" type="number" min="1" step="1" value="${tb.rate}" inputmode="numeric"></span> <span class="tag-default">Default: US average</span></div>
       <div class="basis">

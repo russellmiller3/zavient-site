@@ -3,14 +3,14 @@
  "description": "13 AP and invoice-capture tools checked, with prices where they exist. Why reading invoices is solved and exceptions and fraud are not.",
  "job": "invoice processing",
  "industry": "finance and accounts payable",
- "summary": "AI invoice processing reads a supplier invoice, codes it, matches it to the purchase order and gets it approved and paid[^27][^21]. Reading the invoice now costs cents[^10][^11]. The money leaks in exceptions, the one invoice in five that needs a person to sort out[^8][^1], and in fake bank-change requests[^12][^13].",
+ "summary": "AI invoice processing reads a supplier invoice, codes it, matches it to the purchase order (PO) and routes it for approval[^27][^21]. Reading costs cents[^10][^11]. Money leaks in two places: exceptions, about 1 invoice in 5[^8], and fake bank-change requests[^12].",
  "index": true,
  "verdict": [
-  "Buy an accounts payable suite such as BILL, Ramp or Tipalti to run the inbox, approvals and payments[^5][^6][^7].",
-  "Build AI only for the gaps your suite misses, such as exception triage and a hold on bank-detail changes[^8][^12].",
-  "Benchmark any tool on 50 of your own invoices before you trust it; in our fund-report benchmark, 7 of 10 tools misread look-alike tables[^9].",
-  "The money leaks in exceptions: about one invoice in five needs a person to sort it out[^8][^1].",
-  "Fraud arrives as invoices: a request to pay a supplier's \"new\" bank account is a known email scam the FBI warns about[^12][^13]."
+  "The money leaks in exceptions: about 1 invoice in 5 needs a person[^8].",
+  "Buy an AP suite such as BILL, Ramp or Tipalti to run approvals and payments[^5][^6].",
+  "Build AI only for the gaps, such as exception triage and holds on bank-detail changes[^8][^12].",
+  "Benchmark any tool on 50 of your own invoices: look-alike tables fooled 7 of 10 tools in our test[^9].",
+  "Treat any \"new bank account\" request as fraud until you call the supplier back[^12][^13]."
  ],
  "onPage": [
   {
@@ -67,7 +67,7 @@
  "pickElse": [
   "Already on QuickBooks or Xero with simple bills: use the bill capture built into your accounting software first[^33][^34].",
   "Many entities, countries or currencies: look at the global suites (Tipalti, Coupa, Basware, Medius). Expect a contract and no list price[^7][^21][^24][^23].",
-  "You only need the data, not the workflow: a capture tool (Rossum, Nanonets, Docsumo) or cloud invoice parser feeds your accounting system (ERP) directly[^29][^30][^31][^10][^11].",
+  "Need data, not workflow? A capture tool or cloud parser feeds your accounting system (ERP) directly[^29][^10].",
   "You run Microsoft Power Platform: AI Builder has a prebuilt invoice model, limited to 360 calls a minute and 20 MB per file[^35]."
  ],
  "ownData": {
@@ -90,7 +90,7 @@
     "Ramp Bill Pay",
     "Full AP",
     "Free; Plus $15 per user a month plus a platform fee[^6]",
-    "3-way match (invoice, purchase order (PO) and receipt agree) needs Plus or a paid Procurement add-on; ACH and wires carry per-payment fees[^6][^16][^17]"
+    "3-way match (invoice, PO and receipt agree) needs Plus or a paid Procurement add-on; ACH and wires carry per-payment fees[^6][^16][^17]"
    ],
    [
     "Tipalti",
@@ -198,7 +198,7 @@
    "flow": [
     "AP clerk scans paper invoices or forwards the PDFs",
     "Capture tool or cloud invoice parser reads them",
-    "Low confidence: AI re-reads",
+    "If AI is unsure, it reads again",
     "AP clerk checks what is still unsure",
     "AP clerk posts to the ERP"
    ],
