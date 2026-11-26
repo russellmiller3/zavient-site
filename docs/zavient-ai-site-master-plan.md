@@ -2,6 +2,19 @@
 
 25 Nov 2026 · The master plan for zavient.com's AI-work database and data stories. Current state, code and next steps live in `TRUTH.md` at the repository root; this file owns strategy, page lists, revenue lines and the data map.
 
+## Site rules (apply to every page and every build)
+
+1. **Goal of every page,** in Russell's words (26 Nov): "Optimize for education trust and getting me leads." Each page teaches, earns trust and wins Zavient leads.
+2. **Augmentation, not replacement,** in his words (26 Nov): "our focus and the focus of the site is on augmentation, not replacement." Show where people stay in the loop and what AI takes off their plate. Never frame AI as cutting headcount.
+3. **Sourcing,** in his words (26 Nov): "make sure that everything is well sourced and with footnotes" and "we always source and we use multiple sources where possible." Every claim gets a numbered footnote, two or more sources where they exist, and every number matches its source. The build fails if an indexed page's verdict, summary, key numbers or warnings lack one.
+4. **Research before every build,** in his words (26 Nov): "always do research on what's out there to make it the absolute best it can be." Research and build are done by separate agents.
+5. **The call to action** on every page is the free 30-minute diagnostic. Benchmarks are proof inside the page, not the sell.
+6. **Page order:** the answer and verdict first. "When to pick something else" sits near the end, after "Buy or build" and just above the free diagnostic.
+7. **No pages about other consulting firms,** rivals or partners, and never rate or list rival consulting firms. Pages on software and tools are fine.
+8. **Never on the site:** low-end Upwork-style freelancer content, meaning no freelancer rates, listings or price comparisons.
+9. **Words:** say "benchmark", never "test", for Zavient's own measurements.
+10. **Publishing:** nothing goes live on zavient.com without Russell's yes.
+
 **Your requests (25 Nov):**
 - 10:15: "think thru a plan to make a cmpoeting sitewith data that includes but supersedes them with more valuable data. research ideas"
 - 10:23: "add in kw resarch arouhnd highest value AI and ML work that a company might do or buy, for all the idndustries you can think of . it mihbgt be better to do a db of ai types of work and best resoruces for each, in addition to model info."
@@ -19,11 +32,8 @@
 - The offer: "get a quick diagnostic of how to approach this, contact me, a really easy intro offer". It is free.
 
 **Decided on 26 Nov:**
-- **The offer:** every indexed page ends with a free 30-minute diagnostic that leads into consulting. Benchmarks stay on the page as proof, not as the ask.
-- **No pages for other consulting firms.** Ranking or listing rival or partner firms sends searchers to them.
+- **Site rules:** all page and build rules now live in one place, the "Site rules" section at the top of this plan.
 - **First cluster:** the 10 pages below did not hang together, so the first batch is 5 finance pages: the ai consulting services hub plus ai credit scoring, ai underwriting, ai document processing and ai invoice processing.
-- **The rule for every page, in your words:** "Optimize for education, trust and getting me leads." Teach first, prove it with our own data, and end on the free diagnostic. Nothing that sends readers elsewhere goes near the top.
-- **Never on the site:** low-end freelance marketplace rates such as Upwork.
 - **Every page covers four things:** how to do the work, the tools, the models and the regulations.
 - **Publish gate:** a page is indexed only with a verdict, 3 or more Zavient numbers and 3 or more sources. The site build refuses an indexed page without them. Everything else stays noindexed.
 

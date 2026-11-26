@@ -3,40 +3,40 @@
  "description": "Every library, platform and dataset a lender can use to score loans with AI, checked against US and EU rules, plus three builds and our pick.",
  "job": "credit scoring",
  "industry": "lending",
- "summary": "AI credit scoring predicts whether an applicant will repay, then has to say why in plain words when it says no. The model is the easy part. The decline reasons, the bias checks and the paperwork your examiner will ask for are what make or break it.",
+ "summary": "AI credit scoring predicts whether an applicant will repay[^5], then has to say why in plain words when it says no[^1][^43]. The model is the easy part. The decline reasons[^1][^41], the bias checks[^39][^40] and the paperwork your examiner will ask for[^7][^8] are what make or break it.",
  "index": true,
- "verdict": "Start with a scorecard you can explain line by line: a weight-of-evidence scorecard in optbinning, or an Explainable Boosting Machine in interpret. Both give exact decline reasons, which US law requires. Move to LightGBM or XGBoost with SHAP only when your own benchmark shows the lift and you have a team to validate it. Use large language models to read documents, not to score: in published tests they lose to gradient boosting on credit data.",
+ "verdict": "Start with a scorecard you can explain line by line: a weight-of-evidence scorecard in optbinning[^17], or an Explainable Boosting Machine in interpret[^16]. Both show how much each input added to or took from the score, so decline reasons come straight from the model[^17][^16]. US law requires specific reasons for every decline[^1][^43]. Move to LightGBM or XGBoost with SHAP only when your own benchmark shows the lift[^5] and you have a team to validate it[^7][^41]. Use large language models to read documents, not to score: in published benchmarks they lose to gradient boosting on credit data[^6][^13].",
  "stats": [
   {
-   "num": "150x",
-   "label": "monthly downloads of XGBoost against optbinning, the top scorecard library",
-   "source": "Zavient count from PyPI and pypistats, 26 Nov 2026"
+   "num": "166x",
+   "label": "monthly downloads of XGBoost against optbinning, the top scorecard library[^58][^63][^68][^69][^70]",
+   "source": "Zavient count from pypistats, 26 Nov 2026"
   },
   {
    "num": "3 of 13",
-   "label": "open-source credit libraries we track have shipped nothing in over two years",
-   "source": "Zavient count from PyPI and pypistats, 26 Nov 2026"
+   "label": "open-source credit libraries we track have shipped nothing in over two years[^54][^55][^57]",
+   "source": "Zavient count from PyPI release histories, 26 Nov 2026"
   },
   {
-   "num": "0 of 6",
-   "label": "commercial scoring platforms publish a price",
-   "source": "Zavient review of vendor sites, 26 Nov 2026"
+   "num": "1 of 6",
+   "label": "commercial scoring platforms we checked shows a public price: Experian, on the UK government's G-Cloud store[^23][^18][^19][^20][^21][^22]",
+   "source": "Zavient review of vendor sites, G-Cloud and G2, 26 Nov 2026"
   },
   {
    "num": "2 Dec 2027",
-   "label": "EU AI Act rules for credit scoring start; it counts as high-risk",
-   "source": "EU AI Act, Annex III"
+   "label": "EU AI Act rules for credit scoring start; it counts as high-risk[^4][^9][^10]",
+   "source": "EU AI Act, Annex III, as amended by the 2026 AI omnibus"
   }
  ],
  "pickElse": [
-  "No data science team: look at a platform such as Zest AI, Provenir, Taktile or Scienaptic. None publish prices; expect a contract.",
-  "Many thin-file applicants with little credit history: add bank-account cash-flow data from Plaid Check, Prism Data or Nova Credit before you change the model.",
-  "Most of the work is reading documents: spend on extraction first (recipe 3 below). The score is the easy part.",
-  "A small loan book: benchmark TabPFN against the scorecard. It did best on small, unbalanced default data in one 2026 study, but its newest weights need a paid licence for production."
+  "No data science team: look at a platform such as Zest AI, Provenir, Taktile or Scienaptic. None publish prices; expect a contract[^18][^19][^20][^21].",
+  "Many thin-file applicants with little credit history: their scores are less accurate[^40], so add bank-account cash-flow data from Plaid Check, Prism Data or Nova Credit before you change the model[^27][^28][^30].",
+  "Most of the work is reading documents: spend on extraction first (recipe 3 below). In our own benchmark, AI read each long report for under $0.30[^42].",
+  "A small loan book: benchmark TabPFN against the scorecard. It did best on small, unbalanced default data in one 2026 study[^15], but its newest weights need a commercial licence for production[^49]."
  ],
  "ownData": {
   "title": "The open-source credit stack, checked 26 November 2026",
-  "intro": "We pulled the latest release date, licence and monthly downloads for every open-source library a lender would use. Downloads show what teams actually run. Release dates show what is still maintained.",
+  "intro": "We pulled the latest release date, licence and monthly downloads for every open-source library a lender would use[^45][^58]. Downloads show what teams actually run. Release dates show what is still maintained.",
   "headers": [
    "Library",
    "What it is for",
@@ -48,96 +48,96 @@
    [
     "xgboost",
     "Gradient boosting",
-    "Apache-2.0",
-    "15 Aug 2026",
-    "32,317,553"
+    "Apache-2.0[^45]",
+    "15 Aug 2026[^45]",
+    "32,635,743[^58]"
    ],
    [
     "lightgbm",
     "Gradient boosting",
-    "MIT",
-    "18 Jul 2026",
-    "23,957,205"
+    "MIT[^71]",
+    "18 Jul 2026[^46]",
+    "24,493,615[^59]"
    ],
    [
     "shap",
     "Explains any model's drivers",
-    "MIT",
-    "16 Oct 2026",
-    "9,737,033"
+    "MIT[^47]",
+    "16 Oct 2026[^47]",
+    "8,756,041[^60]"
    ],
    [
     "catboost",
     "Gradient boosting",
-    "Apache-2.0",
-    "18 Feb 2026",
-    "6,657,812"
+    "Apache-2.0[^48]",
+    "18 Feb 2026[^48]",
+    "5,386,405[^61]"
    ],
    [
     "tabpfn",
     "Foundation model for tables",
-    "Weights v2.5+ non-commercial",
-    "17 Nov 2026",
-    "305,605"
+    "Code Apache-2.0; weights v2.5+ non-commercial[^49]",
+    "17 Nov 2026[^49]",
+    "296,454[^62]"
    ],
    [
     "optbinning",
     "Scorecards (binning and WoE)",
-    "Apache-2.0",
-    "22 Nov 2026",
-    "212,969"
+    "Apache-2.0[^50]",
+    "22 Nov 2026[^50]",
+    "196,070[^63]"
    ],
    [
     "interpret (EBM)",
     "Explainable boosting",
-    "MIT",
-    "17 Mar 2026",
-    "157,485"
+    "MIT[^72]",
+    "17 Mar 2026[^51]",
+    "158,540[^64]"
    ],
    [
     "fairlearn",
     "Bias checks",
-    "MIT",
-    "12 Oct 2026",
-    "131,148"
+    "MIT[^52]",
+    "12 Oct 2026[^52]",
+    "112,954[^65]"
    ],
    [
     "dice-ml",
     "What-if explanations",
-    "MIT",
-    "13 Jul 2025",
-    "26,746"
+    "MIT[^53]",
+    "13 Jul 2025[^53]",
+    "30,082[^66]"
    ],
    [
     "aif360",
     "Bias checks",
-    "Apache-2.0",
-    "8 Apr 2024 (stale)",
-    "17,129"
+    "Apache-2.0[^54]",
+    "8 Apr 2024 (stale)[^54]",
+    "17,129[^67]"
    ],
    [
     "scorecardpy",
     "Scorecards",
-    "MIT",
-    "29 Jul 2023 (stale)",
-    "9,439"
+    "MIT[^55]",
+    "29 Jul 2023 (stale)[^55]",
+    "9,992[^68]"
    ],
    [
     "toad",
     "Scorecards",
-    "MIT",
-    "18 May 2026",
-    "6,178"
+    "MIT[^73]",
+    "18 May 2026[^56]",
+    "6,178[^69]"
    ],
    [
     "skorecard (ING)",
     "Scorecards",
-    "MIT",
-    "17 Aug 2024 (stale)",
-    "500"
+    "MIT[^57]",
+    "17 Aug 2024 (stale)[^57]",
+    "328[^70]"
    ]
   ],
-  "note": "Source: PyPI release history and pypistats, pulled 26 November 2026. Stale means no release in over two years. Downloads include automated installs, so read them as relative popularity, not user counts."
+  "note": "Source: PyPI release history and pypistats, pulled 26 November 2026. Stale means no release in over two years. Download counts include CI and build-tool installs[^44], so read them as relative popularity, not user counts."
  },
  "example": {
   "input": "An application with income, debts and time at address, plus a credit bureau report pulled with consent.",
@@ -146,7 +146,7 @@
  "recipes": [
   {
    "name": "1. Small lender: explainable scorecard",
-   "when": "Credit unions and community banks with no data science team. Cheapest to build and to defend in an exam.",
+   "when": "Credit unions and community banks with no data science team. The software is free[^50][^52], and the points table shows each decline reason directly[^17].",
    "flow": [
     "Application + bureau report",
     "Bins and weight of evidence (optbinning)",
@@ -155,11 +155,11 @@
     "Decision with top reasons",
     "Quarterly drift and bias check (fairlearn)"
    ],
-   "cost": "Open-source software. The cost is a few weeks of modelling on your past loans, then a quarterly review."
+   "cost": "Open-source software[^50][^52]. The cost is your team's time to model your past loans, then a regular review."
   },
   {
    "name": "2. Mid-size lender: gradient boosting with reason codes",
-   "when": "Fintechs and regional lenders with a validation team.",
+   "when": "Fintechs and regional lenders with a team that can validate the model before first use[^7].",
    "flow": [
     "Application + bureau + bank-account data",
     "One feature table",
@@ -169,7 +169,7 @@
     "Decision engine",
     "Monthly check against an EBM challenger"
    ],
-   "cost": "Open-source models. Cash-flow data and decision platforms are sold by contract; none we checked publish a price."
+   "cost": "Open-source models[^71][^47]. Cash-flow data and most decision platforms are quoted per contract[^26][^30][^19][^20]; of the platforms we checked, only Experian shows a public price[^23]."
   },
   {
    "name": "3. Document-heavy files: AI reads, a normal model scores",
@@ -181,13 +181,13 @@
     "Scorecard or boosted model scores",
     "Decision with reasons"
    ],
-   "cost": "Extraction cost about $0.01 to $0.30 per long report with current models in our own benchmark; see the AI document processing guide."
+   "cost": "In our own benchmark, AI read fund reports of up to 57 pages for about $0.006 to $0.27 each, depending on the models[^42]; see the AI document processing guide."
   }
  ],
  "tables": [
   {
    "title": "Platforms and data services",
-   "intro": "Sold by contract. Claims below are each vendor's own unless marked.",
+   "intro": "Mostly sold by contract[^18][^19][^20][^21][^22]. Claims below are each vendor's own unless marked.",
    "headers": [
     "Name",
     "What it does",
@@ -199,64 +199,64 @@
      "name": "Zest AI",
      "cells": [
       "Credit models for lenders",
-      "Not published",
-      "Vendor claims about 25% more approvals"
+      "Not published[^18]",
+      "Vendor claims about 25% more approvals with no added risk[^18]"
      ]
     },
     {
      "name": "Provenir",
      "cells": [
       "Decision platform",
-      "Not published",
-      "Vendor says 4 billion+ decisions run"
+      "Not published[^19]",
+      "Vendor says 4 billion+ decisions a year[^19]"
      ]
     },
     {
      "name": "Taktile",
      "cells": [
       "Decision platform",
-      "Not published",
-      "A rival vendor estimates $50K+ a year (floowed.com)"
+      "Not published[^20]",
+      "G2 reviewers report about 3 months to set up[^20]"
      ]
     },
     {
      "name": "Scienaptic",
      "cells": [
       "Credit models for lenders",
-      "Not published",
-      "Vendor says 160+ lenders"
+      "Not published[^21]",
+      "Vendor says 160+ lenders[^21]"
      ]
     },
     {
      "name": "FICO Platform, Experian PowerCurve",
      "cells": [
       "Enterprise decisioning",
-      "Not published",
-      "Contracts run to six figures (lenderanalyzer.com)"
+      "FICO: not published[^22]. Experian: 4,200 pounds a licence on G-Cloud[^23]",
+      "G2 lists a PowerCurve plan at $1,500 per user a month, data extra[^24]"
      ]
     },
     {
      "name": "Plaid Check LendScore",
      "cells": [
-      "Cash-flow score from bank data",
-      "Not published",
-      "Returns the top 5 reasons for a decline"
+      "Cash-flow score from bank data[^27]",
+      "Not published[^26]",
+      "Returns the top 5 reasons for a decline[^25]"
      ]
     },
     {
      "name": "Prism Data CashScore",
      "cells": [
-      "Cash-flow score",
-      "Not published",
-      "Vendor claims a 30% lift in KS"
+      "Cash-flow score[^28]",
+      "Not published[^28]",
+      "Vendor claims a 30% average lift in KS[^28]"
      ]
     },
     {
      "name": "UltraFICO",
      "cells": [
-      "FICO score plus bank data",
-      "Not published",
-      "Generally available since 20 May 2026"
+      "FICO score plus bank data[^31]",
+      "Not published[^31]",
+      "Generally available since 20 May 2026[^31]"
      ]
     }
    ]
@@ -273,41 +273,46 @@
    "rows": [
     {
      "name": "UCI Default of Credit Card Clients",
+     "url": "https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients",
      "cells": [
-      "30,000 accounts",
-      "CC BY 4.0",
-      "The largest openly licensed default dataset"
+      "30,000 accounts[^32]",
+      "CC BY 4.0[^32]",
+      "The largest openly licensed default dataset here"
      ]
     },
     {
      "name": "UCI German Credit",
+     "url": "https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data",
      "cells": [
-      "1,000 applicants",
-      "See the UCI page",
+      "1,000 applicants[^33]",
+      "CC BY 4.0[^33]",
       "Quick sanity checks only; too small to rank models"
      ]
     },
     {
      "name": "Home Credit Default Risk",
+     "url": "https://www.kaggle.com/competitions/home-credit-default-risk",
      "cells": [
-      "Large",
-      "Kaggle competition rules",
-      "Research; not cleared for commercial use"
+      "Several linked tables[^34]",
+      "Kaggle competition rules[^35]",
+      "Research; commercial use is not clearly allowed[^35]"
      ]
     },
     {
      "name": "HMDA",
+     "url": "https://www.consumerfinance.gov/about-us/newsroom/2025-hmda-data-on-mortgage-lending-now-available/",
      "cells": [
-      "Millions of US mortgage applications",
-      "Public",
+      "About 10 million US mortgage applications a year[^36]",
+      "Public[^37]",
       "Fair-lending and approval-gap analysis"
      ]
     },
     {
      "name": "Freddie Mac loan-level data",
+     "url": "https://www.freddiemac.com/research/datasets/sf-loanlevel-dataset",
      "cells": [
-      "Millions of loans",
-      "Non-commercial",
+      "About 56 million loans[^38]",
+      "Free for research; commercial use needs a licence[^38]",
       "Mortgage default research"
      ]
     }
@@ -325,35 +330,35 @@
      "name": "arXiv 2510.25701",
      "url": "https://arxiv.org/html/2510.25701",
      "cells": [
-      "LightGBM scored an AUC of 0.73; the best zero-shot language model scored 0.67."
+      "On LendingClub loans, LightGBM scored an AUC of 0.73; the best zero-shot language model scored 0.67[^6]."
      ]
     },
     {
      "name": "FinNLP 2025",
      "url": "https://aclanthology.org/2025.finnlp-1.11.pdf",
      "cells": [
-      "XGBoost beat large language models on credit ratings."
+      "XGBoost beat generative language models at forecasting credit ratings[^13]."
      ]
     },
     {
      "name": "arXiv 2401.16458",
      "url": "https://arxiv.org/html/2401.16458v3",
      "cells": [
-      "Text features written by a language model, fed into XGBoost, added lift."
+      "A BERT risk score built from loan descriptions, added to XGBoost, raised AUC slightly, from 0.658 to 0.664[^14]."
      ]
     },
     {
      "name": "arXiv 2605.18147",
      "url": "https://arxiv.org/abs/2605.18147",
      "cells": [
-      "TabPFN-3 and TabICLv2 had the best average across 14 default datasets, with the biggest gains on small or unbalanced sets."
+      "TabPFN-3 and TabICLv2 had the best average across 14 default datasets, with the biggest gains on small or unbalanced sets[^15]."
      ]
     },
     {
      "name": "MDPI review, 2026",
      "url": "https://www.mdpi.com/1911-8074/19/7/526",
      "cells": [
-      "XGBoost leads on accuracy, logistic regression holds up on small data, and SHAP is the standard explainer."
+      "XGBoost leads on accuracy, logistic regression holds up on small data, and SHAP is the standard explainer[^5]."
      ]
     }
    ]
@@ -364,31 +369,31 @@
    "name": "Regulation B, 12 CFR 1002.9",
    "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1002/subpart-A/section-1002.9",
    "status": "In force",
-   "what": "A lender that declines an applicant must give the specific main reasons within 30 days. Every model needs a clean path from its output to plain-English reasons."
+   "what": "A lender that declines an applicant must give the specific main reasons within 30 days, and they must match the factors the model actually scored[^1]. Every model needs a clean path from its output to plain-English reasons."
   },
   {
    "name": "CFPB circulars 2022-03 and 2023-03",
    "url": "https://www.federalregister.gov/documents/2025/05/12/2025-08286/interpretive-rules-policy-statements-and-advisory-opinions-withdrawal",
    "status": "Withdrawn 12 May 2025",
-   "what": "They said complex algorithms are no excuse for vague reasons. The guidance is gone; the rule it explained is not. Don't read the withdrawal as a pass."
+   "what": "They said complex algorithms are no excuse for vague reasons[^43]. The guidance is gone; the rule it explained is not[^2][^1]. Don't read the withdrawal as a pass."
   },
   {
    "name": "Fed SR 26-2, model risk guidance",
    "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
    "status": "Replaced SR 11-7, 17 Apr 2026",
-   "what": "Mainly aimed at banks over $30 billion in assets, with generative AI out of scope. Community banks get lighter validation; large banks still document everything."
+   "what": "Mainly aimed at banking organizations over $30 billion in assets[^3][^7], with generative and agentic AI out of scope[^7]. Smaller banks are generally left to risk practices that fit their size; where it applies, models are validated before first use and documented[^7]."
   },
   {
    "name": "OCC Bulletin 2026-13",
    "url": "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-13.html",
-   "status": "Issued 2026",
-   "what": "The OCC adopted the revised model risk guidance and dropped its 1997 credit-scoring exam guide."
+   "status": "Issued 17 Apr 2026",
+   "what": "The OCC adopted the revised model risk guidance and dropped its 1997 credit-scoring exam guide, Bulletin 1997-24[^8]."
   },
   {
    "name": "EU AI Act, Annex III",
    "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3",
    "status": "Starts 2 Dec 2027",
-   "what": "Scoring people's creditworthiness is high-risk; fraud detection is exempt. Plan logging, human oversight and a rights impact assessment now if you lend in the EU."
+   "what": "Scoring people's creditworthiness is high-risk; fraud detection is exempt[^4]. Lenders using it must assign trained human oversight and keep its logs[^11], and do a fundamental rights impact assessment[^12]. Plan now if you lend in the EU."
   }
  ],
  "howToTest": [
@@ -399,15 +404,15 @@
   "Pick the simplest model within a point or two of the best. Extra accuracy that you cannot explain costs more than it earns."
  ],
  "buyVsBuild": {
-  "buy": "Buy a platform when you have no modelling team, need a decision engine anyway, and are happy to use the vendor's models and data partners.",
-  "build": "Build when your own loan history is your edge. Open-source scorecards and boosted models are free, mature and accepted by examiners; the work is data, validation and reason codes."
+  "buy": "Buy a platform when you have no modelling team, need a decision engine anyway, and are happy to use the vendor's models and data partners. Expect a quote, not a price list[^18][^19][^20].",
+  "build": "Build when your own loan history is your edge. The main scorecard and boosting libraries are free under MIT or Apache licences[^50][^45][^71], and examiners judge any model by its validation and documentation[^7]. The work is data, validation and reason codes[^41]."
  },
  "watchOuts": [
-  "A credit report's \"key factors\" list does not count as your decline reasons. Your model must produce its own.",
-  "SHAP explains a model; it does not write Regulation B reasons. You need a reason-code map that compliance signs off.",
-  "Models trained on past approvals learn past bias. Check approval gaps before launch and every quarter after.",
-  "TabPFN's newest weights are non-commercial. Check the licence before production use.",
-  "Vendor lift numbers such as more approvals are measured on the vendor's chosen data. Ask for a benchmark on your own loans."
+  "A credit report's \"key factors\" list does not count as your decline reasons[^1]. Your model must produce its own[^1][^43].",
+  "SHAP explains a model; it does not write Regulation B reasons. Not every SHAP tool finds the true reasons reliably[^41][^5]. Group related inputs into a reason-code map that compliance signs off[^41].",
+  "Models trained on past lending data can carry past bias forward[^39][^40]. Check approval gaps before launch and every quarter after, with a tool such as fairlearn[^52].",
+  "TabPFN's newest weights are non-commercial[^49]. Check the licence before production use.",
+  "Vendor lift numbers such as more approvals are measured on the vendor's chosen data[^18][^28][^29]. Ask for a benchmark on your own loans."
  ],
  "resources": [
   {
@@ -428,34 +433,369 @@
  ],
  "sources": [
   {
-   "name": "eCFR, 12 CFR 1002.9",
-   "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1002/subpart-A/section-1002.9",
-   "what": "Notice and specific reasons for adverse action within 30 days."
+   "name": "CFPB, Regulation B 12 CFR 1002.9 with official comments",
+   "url": "https://www.consumerfinance.gov/rules-policy/regulations/1002/9/",
+   "what": "Decline notice within 30 days with specific, accurate reasons tied to the factors actually scored; credit-report key factors do not meet this."
   },
   {
    "name": "Federal Register, 12 May 2025",
    "url": "https://www.federalregister.gov/documents/2025/05/12/2025-08286/interpretive-rules-policy-statements-and-advisory-opinions-withdrawal",
-   "what": "CFPB withdraws guidance documents, including its AI adverse-action circulars."
+   "what": "CFPB withdraws guidance, including Circulars 2022-03 and 2023-03 on adverse action, as of 12 May 2025; no regulation is amended."
   },
   {
    "name": "Federal Reserve SR 26-2",
    "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
-   "what": "Revised interagency model risk management guidance, replacing SR 11-7."
+   "what": "17 Apr 2026 letter replacing SR 11-7; most relevant to banking organizations over $30 billion in assets."
   },
   {
    "name": "EU AI Act, Annex III",
    "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3",
-   "what": "Creditworthiness scoring of people is a high-risk AI use."
+   "what": "Point 5(b): creditworthiness and credit scoring of people is high-risk, except fraud detection."
   },
   {
-   "name": "MDPI, credit-scoring review (2026)",
+   "name": "MDPI JRFM, credit-scoring review (2026)",
    "url": "https://www.mdpi.com/1911-8074/19/7/526",
-   "what": "Review of credit-scoring studies: XGBoost leads, logistic regression holds up on small data, SHAP is standard."
+   "what": "Review: XGBoost leads on accuracy, logistic regression holds up on small data, SHAP is the de facto explainer but its outputs are approximations."
   },
   {
    "name": "arXiv 2510.25701",
    "url": "https://arxiv.org/html/2510.25701",
-   "what": "Gradient boosting beats zero-shot language models on credit default."
+   "what": "On LendingClub loans, LightGBM scored ROC-AUC 0.73; the best zero-shot language model scored 0.67."
+  },
+  {
+   "name": "Federal Reserve SR 26-2 attachment",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602a1.pdf",
+   "what": "Guidance text: generative and agentic AI out of scope; banks of $30 billion or less generally excluded; validation before first use; documentation."
+  },
+  {
+   "name": "OCC Bulletin 2026-13",
+   "url": "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-13.html",
+   "what": "Issued 17 Apr 2026; adopts the revised model risk guidance and rescinds Bulletin 1997-24 on credit-scoring exams."
+  },
+  {
+   "name": "Council of the EU via EEAS, 30 Jun 2026",
+   "url": "https://www.eeas.europa.eu/delegations/chile/artificial-intelligence-council-gives-final-green-light-simplify-and-streamline-rules_en",
+   "what": "Council's final approval of the AI omnibus; stand-alone high-risk rules apply from 2 Dec 2027."
+  },
+  {
+   "name": "Cuatrecasas, Digital Omnibus on AI published",
+   "url": "https://www.cuatrecasas.com/en/spain/intellectual-property/art/digital-omnibus-ai-has-been-published",
+   "what": "Regulation (EU) 2026/1744 published 24 Jul 2026; Annex III high-risk systems apply from 2 Dec 2027."
+  },
+  {
+   "name": "EU AI Act, Article 26",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-26",
+   "what": "Deployers of high-risk AI must assign trained human oversight and keep the system's logs for at least six months."
+  },
+  {
+   "name": "EU AI Act, Article 27",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-27",
+   "what": "Deployers of Annex III point 5(b) credit-scoring systems must do a fundamental rights impact assessment."
+  },
+  {
+   "name": "Drinkall et al., FinNLP 2025",
+   "url": "https://aclanthology.org/2025.finnlp-1.11.pdf",
+   "what": "Forecasting credit ratings: current generative language models do worse than an XGBoost model."
+  },
+  {
+   "name": "arXiv 2401.16458",
+   "url": "https://arxiv.org/html/2401.16458v3",
+   "what": "A BERT risk score from loan descriptions, added to XGBoost, lifted AUC from 0.658 to 0.664."
+  },
+  {
+   "name": "arXiv 2605.18147",
+   "url": "https://arxiv.org/abs/2605.18147",
+   "what": "TabPFN-3 and TabICLv2 had the strongest average across 14 default datasets, with the biggest gains on small or unbalanced sets."
+  },
+  {
+   "name": "InterpretML docs, Explainable Boosting Machine",
+   "url": "https://interpret.ml/docs/ebm.html",
+   "what": "EBMs are glassbox additive models: each input's contribution is looked up and added up to make the score."
+  },
+  {
+   "name": "optbinning docs, Scorecard",
+   "url": "https://gnpalencia.org/optbinning/scorecard.html",
+   "what": "Builds a scorecard table giving points for each bin of each variable."
+  },
+  {
+   "name": "Zest AI, solutions page",
+   "url": "https://www.zest.ai/solutions",
+   "what": "Vendor claims 25% higher approval rates without added risk; no price, asks for a call."
+  },
+  {
+   "name": "Provenir, platform page",
+   "url": "https://www.provenir.com/platform/",
+   "what": "Vendor says 4+ billion decisions a year; no price, asks visitors to contact sales."
+  },
+  {
+   "name": "G2, Taktile pricing",
+   "url": "https://www.g2.com/products/taktile/pricing",
+   "what": "No public Taktile price; custom quotes; cost rated top of G2's scale; reviewers report about 3 months to implement."
+  },
+  {
+   "name": "Scienaptic AI, home page",
+   "url": "https://www.scienaptic.ai/",
+   "what": "Vendor says 160+ lenders run on it; no price, asks for a demo."
+  },
+  {
+   "name": "FICO Platform page",
+   "url": "https://www.fico.com/en/platform",
+   "what": "No price published; asks visitors to contact FICO."
+  },
+  {
+   "name": "UK G-Cloud 14, Experian PowerCurve Customer Acquisition",
+   "url": "https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud-14/services/476712422312258",
+   "what": "Experian lists PowerCurve Customer Acquisition at 4,200 pounds per licence on the UK government store."
+  },
+  {
+   "name": "G2, Experian PowerCurve Customer Acquisition pricing",
+   "url": "https://www.g2.com/products/experian-powercurve-customer-acquisition-uk/pricing",
+   "what": "Lists a Basic plan at $1,500 per user a month, with data costs separate."
+  },
+  {
+   "name": "Plaid, How we built LendScore",
+   "url": "https://plaid.com/blog/how-we-built-lendscore/",
+   "what": "LendScore returns five reason codes with every score, for use in adverse action letters."
+  },
+  {
+   "name": "Plaid Check, LendScore page",
+   "url": "https://plaid.com/check/lendscore/",
+   "what": "Cash-flow score with standardized reason codes; no price, contact sales."
+  },
+  {
+   "name": "Plaid Check, Consumer Report for underwriting",
+   "url": "https://plaid.com/check/underwriting/",
+   "what": "Plaid Check, a consumer reporting agency, sells bank-account cash-flow data and LendScore to lenders."
+  },
+  {
+   "name": "Equifax, how lenders can use open banking",
+   "url": "https://www.equifax.com/business/blog/-/insight/article/how-lenders-can-take-advantage-of-open-banking",
+   "what": "Prism CashScore gives an average 30% lift in KS over credit scores alone, per Prism's own client analysis."
+  },
+  {
+   "name": "Prism Data, CashScore v4 release",
+   "url": "https://www.prweb.com/releases/prism-data-introduces-cashscore-v4-raising-the-bar-for-cash-flow-underwriting-tools-as-the-us-adopts-open-banking-302281511.html",
+   "what": "Prism says v4 lets lenders approve 28% more loans at the same risk than the prior version."
+  },
+  {
+   "name": "Nova Credit, Cash Atlas",
+   "url": "https://novacredit.com/cash-atlas",
+   "what": "Turns consumer-permissioned bank transactions into risk attributes and scores for thin-file applicants; no price published."
+  },
+  {
+   "name": "FICO, next-generation UltraFICO now available",
+   "url": "https://investors.fico.com/news-releases/news-release-details/next-generation-ultraficor-score-now-available/",
+   "what": "20 May 2026: UltraFICO, FICO score plus Plaid bank data, is generally available."
+  },
+  {
+   "name": "UCI, Default of Credit Card Clients",
+   "url": "https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients",
+   "what": "30,000 instances, CC BY 4.0 licence."
+  },
+  {
+   "name": "UCI, Statlog German Credit",
+   "url": "https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data",
+   "what": "1,000 instances, CC BY 4.0 licence."
+  },
+  {
+   "name": "Kaggle, Home Credit Default Risk",
+   "url": "https://www.kaggle.com/competitions/home-credit-default-risk",
+   "what": "Competition dataset for predicting whether applicants repay a loan."
+  },
+  {
+   "name": "Credit-scoring textbook, datasets appendix",
+   "url": "https://mikenguyen13.github.io/credit_score/appendices/C-datasets.html",
+   "what": "Home Credit data falls under Kaggle competition rules: research use, no redistribution, commercial use case by case."
+  },
+  {
+   "name": "CFPB, summary of 2023 HMDA data",
+   "url": "https://consumerfinance.gov/data-research/hmda/summary-of-2023-data-on-mortgage-lending",
+   "what": "2023 HMDA data cover about 10 million home-loan applications from 5,113 institutions."
+  },
+  {
+   "name": "CFPB, 2025 HMDA data now available",
+   "url": "https://www.consumerfinance.gov/about-us/newsroom/2025-hmda-data-on-mortgage-lending-now-available/",
+   "what": "2025 loan-level HMDA data are public on the FFIEC platform, modified for privacy."
+  },
+  {
+   "name": "Freddie Mac, Single-Family Loan-Level Dataset",
+   "url": "https://www.freddiemac.com/research/datasets/sf-loanlevel-dataset",
+   "what": "About 56 million mortgages; free for academic and research use; commercial redistribution needs a licence."
+  },
+  {
+   "name": "Brookings, AI fair lending policy agenda (2021)",
+   "url": "https://www.brookings.edu/articles/an-ai-fair-lending-policy-agenda-for-the-federal-financial-regulators/",
+   "what": "Models trained on historical data that reflect discriminatory patterns can perpetuate them."
+  },
+  {
+   "name": "Stanford HAI, flawed data and credit inequality (2021)",
+   "url": "https://hai.stanford.edu/news/how-flawed-data-aggravates-inequality-credit",
+   "what": "Credit scores are 5 to 10 percent less accurate for minority and low-income borrowers, mainly because of thin credit files."
+  },
+  {
+   "name": "FinRegLab, ML explainability and fairness findings (2023)",
+   "url": "https://finreglab.org/wp-content/uploads/2023/07/FRL_ML-FindingsOverview_Final.pdf",
+   "what": "Not all explainability tools, including some SHAP versions, reliably find adverse action reasons; grouping related features into reason codes helps."
+  },
+  {
+   "name": "Zavient FinExtractBench (Nov 2026)",
+   "url": "https://zavient.com/ai-work/ai-document-processing.html#own-data",
+   "what": "Our document benchmark: fund reports read for about $0.006 to $0.27 each, depending on the models used."
+  },
+  {
+   "name": "CFPB Circular 2022-03",
+   "url": "https://www.consumerfinance.gov/compliance/circulars/circular-2022-03-adverse-action-notification-requirements-in-connection-with-credit-decisions-based-on-complex-algorithms/",
+   "what": "Complex algorithms are no defence for failing to give specific, accurate decline reasons."
+  },
+  {
+   "name": "pypistats FAQ",
+   "url": "https://pypistats.org/faqs",
+   "what": "Counts exclude known mirrors but include CI and build-tool downloads, so they are not pure user counts."
+  },
+  {
+   "name": "PyPI, xgboost",
+   "url": "https://pypi.org/project/xgboost/#history",
+   "what": "Release history: latest release 15 Aug 2026; licence as listed in the package metadata."
+  },
+  {
+   "name": "PyPI, lightgbm",
+   "url": "https://pypi.org/project/lightgbm/#history",
+   "what": "Release history: latest release 18 Jul 2026; licence as listed in the package metadata."
+  },
+  {
+   "name": "PyPI, shap",
+   "url": "https://pypi.org/project/shap/#history",
+   "what": "Release history: latest release 16 Oct 2026; licence as listed in the package metadata."
+  },
+  {
+   "name": "PyPI, catboost",
+   "url": "https://pypi.org/project/catboost/#history",
+   "what": "Release history: latest release 18 Feb 2026; licence as listed in the package metadata."
+  },
+  {
+   "name": "PyPI, tabpfn",
+   "url": "https://pypi.org/project/tabpfn/#history",
+   "what": "Release history: latest release 17 Nov 2026; licence as listed in the package metadata."
+  },
+  {
+   "name": "PyPI, optbinning",
+   "url": "https://pypi.org/project/optbinning/#history",
+   "what": "Release history: latest release 22 Nov 2026; licence as listed in the package metadata."
+  },
+  {
+   "name": "PyPI, interpret",
+   "url": "https://pypi.org/project/interpret/#history",
+   "what": "Release history: latest release 17 Mar 2026; licence as listed in the package metadata."
+  },
+  {
+   "name": "PyPI, fairlearn",
+   "url": "https://pypi.org/project/fairlearn/#history",
+   "what": "Release history: latest release 12 Oct 2026; licence as listed in the package metadata."
+  },
+  {
+   "name": "PyPI, dice-ml",
+   "url": "https://pypi.org/project/dice-ml/#history",
+   "what": "Release history: latest release 13 Jul 2025; licence as listed in the package metadata."
+  },
+  {
+   "name": "PyPI, aif360",
+   "url": "https://pypi.org/project/aif360/#history",
+   "what": "Release history: latest release 8 Apr 2024; licence as listed in the package metadata."
+  },
+  {
+   "name": "PyPI, scorecardpy",
+   "url": "https://pypi.org/project/scorecardpy/#history",
+   "what": "Release history: latest release 29 Jul 2023; licence as listed in the package metadata."
+  },
+  {
+   "name": "PyPI, toad",
+   "url": "https://pypi.org/project/toad/#history",
+   "what": "Release history: latest release 18 May 2026; licence as listed in the package metadata."
+  },
+  {
+   "name": "PyPI, skorecard",
+   "url": "https://pypi.org/project/skorecard/#history",
+   "what": "Release history: latest release 17 Aug 2024; licence as listed in the package metadata."
+  },
+  {
+   "name": "pypistats, xgboost",
+   "url": "https://pypistats.org/packages/xgboost",
+   "what": "32,635,743 downloads in the month to 26 Nov 2026."
+  },
+  {
+   "name": "pypistats, lightgbm",
+   "url": "https://pypistats.org/packages/lightgbm",
+   "what": "24,493,615 downloads in the month to 26 Nov 2026."
+  },
+  {
+   "name": "pypistats, shap",
+   "url": "https://pypistats.org/packages/shap",
+   "what": "8,756,041 downloads in the month to 26 Nov 2026."
+  },
+  {
+   "name": "pypistats, catboost",
+   "url": "https://pypistats.org/packages/catboost",
+   "what": "5,386,405 downloads in the month to 26 Nov 2026."
+  },
+  {
+   "name": "pypistats, tabpfn",
+   "url": "https://pypistats.org/packages/tabpfn",
+   "what": "296,454 downloads in the month to 26 Nov 2026."
+  },
+  {
+   "name": "pypistats, optbinning",
+   "url": "https://pypistats.org/packages/optbinning",
+   "what": "196,070 downloads in the month to 26 Nov 2026."
+  },
+  {
+   "name": "pypistats, interpret",
+   "url": "https://pypistats.org/packages/interpret",
+   "what": "158,540 downloads in the month to 26 Nov 2026."
+  },
+  {
+   "name": "pypistats, fairlearn",
+   "url": "https://pypistats.org/packages/fairlearn",
+   "what": "112,954 downloads in the month to 26 Nov 2026."
+  },
+  {
+   "name": "pypistats, dice-ml",
+   "url": "https://pypistats.org/packages/dice-ml",
+   "what": "30,082 downloads in the month to 26 Nov 2026."
+  },
+  {
+   "name": "pypistats, aif360",
+   "url": "https://pypistats.org/packages/aif360",
+   "what": "17,129 downloads in the month to 26 Nov 2026."
+  },
+  {
+   "name": "pypistats, scorecardpy",
+   "url": "https://pypistats.org/packages/scorecardpy",
+   "what": "9,992 downloads in the month to 26 Nov 2026."
+  },
+  {
+   "name": "pypistats, toad",
+   "url": "https://pypistats.org/packages/toad",
+   "what": "6,178 downloads in the month to 26 Nov 2026."
+  },
+  {
+   "name": "pypistats, skorecard",
+   "url": "https://pypistats.org/packages/skorecard",
+   "what": "328 downloads in the month to 26 Nov 2026."
+  },
+  {
+   "name": "GitHub, LightGBM licence",
+   "url": "https://github.com/lightgbm-org/LightGBM/blob/master/LICENSE",
+   "what": "LightGBM is released under the MIT licence."
+  },
+  {
+   "name": "GitHub, InterpretML licence",
+   "url": "https://github.com/interpretml/interpret/blob/main/LICENSE",
+   "what": "InterpretML is released under the MIT licence."
+  },
+  {
+   "name": "GitHub, toad licence",
+   "url": "https://github.com/amphibian-dev/toad/blob/master/LICENSE",
+   "what": "toad is released under the MIT licence."
   }
  ],
  "related": [

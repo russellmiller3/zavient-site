@@ -102,3 +102,24 @@ test('the schema refuses an indexed AI-work page with no verdict', () => {
     rmSync(tmp, { recursive: true, force: true });
   }
 });
+
+test('every indexed AI-work page footnotes its claims, and every footnote points at a real source', () => {
+  // Rule (26 Nov 2026, Russell): always source, use several sources where possible, and show footnotes.
+  // "[^n]" in page text renders as a link to source n. The verdict, the summary, every key number, every
+  // "what goes wrong" line and every "pick something else" line must carry at least one.
+  const marks = (t) => [...String(t).matchAll(/\[\^(\d+)\]/g)].map((m) => Number(m[1]));
+  for (const s of slugs('ai-work')) {
+    const data = JSON.parse(readFileSync(join(root, 'src/content/ai-work', `${s}.json`), 'utf8'));
+    if (!data.index) continue;
+    const n = data.sources.length;
+    for (const m of marks(JSON.stringify(data))) assert.ok(m >= 1 && m <= n, `${s}: footnote [^${m}] has no source (sources: ${n})`);
+    assert.equal(marks(data.title + data.description).length, 0, `${s}: footnote in title or description`);
+    assert.ok(marks(data.verdict).length > 0, `${s}: verdict has no footnote`);
+    assert.ok(marks(data.summary).length > 0, `${s}: summary has no footnote`);
+    for (const st of data.stats) assert.ok(marks(st.label + st.source).length > 0, `${s}: stat ${st.num} has no footnote`);
+    for (const w of [...data.watchOuts, ...data.pickElse]) assert.ok(marks(w).length > 0, `${s}: no footnote on "${w.slice(0, 60)}"`);
+    const html = readFileSync(join(dist, 'ai-work', `${s}.html`), 'utf8');
+    assert.match(html, /<sup class="fn"><a href="#fn-1"/, `${s}: footnotes not rendered`);
+    assert.match(html, /id="fn-1"/, `${s}: numbered sources missing`);
+  }
+});

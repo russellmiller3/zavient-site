@@ -1,0 +1,12 @@
+---
+// api-docs-read: static text renderer — no external API surface.
+// Renders page text with footnote markers. "[^3]" in a JSON string becomes a superscript link to source 3
+// in the page's numbered Sources list (#fn-3). Rule (26 Nov 2026): every claim is sourced, with several
+// sources where possible. tests/site.test.mjs checks that every marker points at a real source.
+const { s = '' } = Astro.props;
+const parts = String(s).split(/(\[\^\d+\])/g).filter((p) => p !== '');
+---
+{parts.map((p) => {
+  const m = p.match(/^\[\^(\d+)\]$/);
+  return m ? <sup class="fn"><a href={`#fn-${m[1]}`} aria-label={`Source ${m[1]}`}>{m[1]}</a></sup> : p;
+})}
