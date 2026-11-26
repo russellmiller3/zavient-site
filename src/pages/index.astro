@@ -1,0 +1,145 @@
+---
+// api-docs-read: static home page — no external API/protocol surface, only a booking link and mailto.
+// Home (site architecture doc, page type 12, 26 Nov 2026): route a visitor in three clicks by role, by work, or to
+// the readiness check. Research notes: one main button (the free diagnostic), the readiness check as the quiet
+// second door, no headline stats, a method block for trust. Russell is named only on the About page.
+import Base from '../layouts/Base.astro';
+import ConsultingCta from '../components/ConsultingCta.astro';
+
+const work = [
+  { href: '/ai-work/ai-consulting-services.html', tag: 'Start here', title: 'AI consulting for finance: is it worth it, and what does it cost?', text: 'Which finance work pays back first, and what help costs against hiring or buying software.' },
+  { href: '/ai-work/ai-document-processing.html', tag: 'Documents', title: 'How accurate is AI on financial documents?', text: 'Our own benchmark on 30 fund reports, with answers locked before any tool ran.' },
+  { href: '/ai-work/ai-invoice-processing.html', tag: 'Accounts payable', title: 'What does AI invoice processing cost, and what needs a person?', text: 'We checked 13 tools and their prices. Exceptions and fraud still need a person.' },
+  { href: '/ai-work/account-reconciliation-automation.html', tag: 'Month-end close', title: 'Will AI speed our close and pass audit?', text: 'What AI does in reconciliations, what auditors expect, and three ways to build it.' },
+  { href: '/ai-work/ai-credit-scoring.html', tag: 'Lending', title: 'How do lenders keep AI credit scoring fair and explainable?', text: 'Credit models you can explain to an examiner, and the rules that apply.' },
+  { href: '/ai-work/ai-underwriting.html', tag: 'Underwriting', title: 'Can AI help underwriters, and who is using it?', text: 'Where AI pays in underwriting: the reading, not the decision.' },
+];
+
+const sources = [
+  { n: 2, name: 'US Census Bureau, The Microstructure of AI Diffusion, working paper CES-WP-26-25 (April 2026)', url: 'https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html', what: '66% of firms that use AI use it only to help with tasks; AI-related job cuts happened at 2% of firms.' },
+  { n: 3, name: 'Zavient FinExtractBench (November 2026)', url: '/ai-work/ai-document-processing.html#own-data', what: 'Our benchmark of 30 private fund reports, 781 pages, with every answer written by hand and locked before any tool ran.' },
+  { n: 5, name: 'Newman, JAMA (1995), interpreting small numerators', url: 'https://jamanetwork.com/journals/jama/article-abstract/389714', what: 'With zero errors in N tries, the true error rate can still be up to about 3 in N.' },
+  { n: 4, name: 'APQC, total cost to process accounts payable', url: 'https://www.apqc.org/what-we-do/benchmarking/open-standards-benchmarking/measures/total-cost-perform-process-process', what: 'Median all-in cost of $6.00 per invoice, across 4,821 companies.' },
+  { n: 1, name: 'Gartner, 67% of B2B buyers prefer a rep-free experience (March 2026)', url: 'https://www.gartner.com/en/newsroom/press-releases/2026-03-09-gartner-sales-survey-finds-67-percent-of-b2b-buyers-prefer-a-rep-free-experience', what: 'Survey of 646 B2B buyers, August to September 2025.' },
+];
+const fn = (n) => `#fn-${n}`;
+const updated = '26 November 2026';
+---
+<Base title="AI for finance and operations teams: where do you start? | Zavient" description="Zavient helps companies of 40 to 500 people put AI to work in finance and operations. Pick your role or your work, or take the free readiness check." canonical="https://zavient.com/">
+  <header class="article-hero"><div class="wrap">
+    <div class="label">Zavient &middot; AI that helps your team do more</div>
+    <h1>AI for finance and operations teams: where do you <span class="hl">start?</span></h1>
+    <span class="bluf-label">Bottom line</span>
+    <div class="bluf">
+      <ul>
+        <li>We help companies of 40 to 500 people put AI to work in finance and operations.</li>
+        <li>AI does the reading, matching and first draft. Your people keep the decision.</li>
+        <li>Every market number on this site links to its source, and we test tools on real documents before we recommend them.</li>
+        <li>Start with a free 30-minute diagnostic, or take the readiness check first.</li>
+      </ul>
+    </div>
+    <p style="margin-top:22px;"><a class="btn-gold" href="https://calendly.com/zavient/call">Book a free 30-minute diagnostic &rarr;</a></p>
+    <p class="diag-nudge">Not ready to talk? <a href="/ai-readiness-assessment.html">Take the AI readiness check</a>. It takes about 3 minutes, and your answers stay in your browser.</p>
+    <nav class="on-page" aria-label="On this page"><div class="label" style="margin-top:18px;">On this page</div><ol>
+      <li><a href="#role">Start with your role</a></li>
+      <li><a href="#work">Or start with the work</a></li>
+      <li><a href="#how">How we work with you</a></li>
+      <li><a href="#people">Your team stays in charge</a></li>
+      <li><a href="#proof">How we check our numbers</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol></nav>
+  </div></header>
+
+  <article class="article-body"><div class="wrap">
+    <h2 id="role">Start with your role</h2>
+    <p>67% of B2B buyers would rather buy without a sales rep<sup class="fn"><a href={fn(1)} aria-label="Source 1">1</a></sup>. So start with the seat you sit in.</p>
+    <div class="hub-grid">
+      <a class="hub-card" href="/ai-work/ai-consulting-services.html">
+        <span class="hub-tag">COO</span>
+        <h3>Which workflow should we fix first?</h3>
+        <p>Where AI pays back first in finance work, what it costs, and how to measure before and after.</p>
+      </a>
+      <a class="hub-card" href="/ai-work/account-reconciliation-automation.html">
+        <span class="hub-tag">Head of operations</span>
+        <h3>What changes for my team?</h3>
+        <p>Which tasks AI takes, who checks its work, and what your team does after. Month-end close is a good first example.</p>
+      </a>
+      <a class="hub-card" href="/ai-work.html">
+        <span class="hub-tag">General manager</span>
+        <h3>Can one team pilot it first?</h3>
+        <p>Pick one workflow. Each page shows how to test it on one team before you scale.</p>
+      </a>
+      <a class="hub-card" href="/ai-work/ai-credit-scoring.html">
+        <span class="hub-tag">Head of lending</span>
+        <h3>Is it allowed, and does it work?</h3>
+        <p>Fair, explainable credit models, the rules that apply, and three ways to build one.</p>
+      </a>
+      <a class="hub-card" href="/ai-work/ai-underwriting.html">
+        <span class="hub-tag">Head of underwriting (insurance or lending)</span>
+        <h3>What can AI take off my team's desk?</h3>
+        <p>The reading and summarizing around a file, while the underwriter keeps the call.</p>
+      </a>
+      <a class="hub-card" href="/ai-work/ai-invoice-processing.html">
+        <span class="hub-tag">Head of AP or finance ops</span>
+        <h3>Can AI cut invoice cost without new fraud risk?</h3>
+        <p>What invoice tools cost, what still needs a person, and the fraud checks to keep.</p>
+      </a>
+      <a class="hub-card" href="/ai-readiness-assessment.html">
+        <span class="hub-tag">Owner or CEO</span>
+        <h3>Are we ready for AI at all?</h3>
+        <p>A 3-minute check that scores five areas and names the one gap to fix first.</p>
+      </a>
+    </div>
+
+    <h2 id="work">Or start with the work</h2>
+    <p>Each page answers one question about one kind of finance work. Each covers where people stay in the loop, what it costs, the rules that apply, and whether to buy or build.</p>
+    <div class="hub-grid">
+      {work.map((w) => (
+        <a class="hub-card" href={w.href}>
+          <span class="hub-tag">{w.tag}</span>
+          <h3>{w.title}</h3>
+          <p>{w.text}</p>
+        </a>
+      ))}
+    </div>
+
+    <h2 id="how">How we work with you</h2>
+    <ol>
+      <li><strong>Free 30-minute diagnostic.</strong> Bring one workflow and what it costs you today. You leave with our read on whether to buy or build, and what to test first.</li>
+      <li><strong>A 30-day sprint on the work that pays first.</strong> $10,000, fixed scope. It ends in written specs (what to build and how to test it) that your team or a vendor can build from.</li>
+      <li><strong>Your team runs it.</strong> You own the specs and the results. We advise while it ships, then step back.</li>
+    </ol>
+    <p>What each step includes is on our <a href="/about.html#engagements">About page</a>.</p>
+
+    <h2 id="people">Your team stays in charge</h2>
+    <p>Our focus is AI that helps people do more, not AI that replaces them. Most firms already use it that way. In a Census survey of US firms, 66% of AI users used it only to help with tasks, and just 2% of firms cut jobs because of AI<sup class="fn"><a href={fn(2)} aria-label="Source 2">2</a></sup>.</p>
+    <ul>
+      <li><strong>People keep the decision.</strong> AI reads, matches and drafts. A person approves the loan, the claim or the payment.</li>
+      <li><strong>Every answer can be checked.</strong> We pick tools that show where each answer came from, so your team can check it.</li>
+    </ul>
+
+    <h2 id="proof">How we check our numbers</h2>
+    <p>We test AI tools on real documents before we recommend them. For our own benchmark, we wrote the right answers to 30 fund reports first, before any tool ran. The two best AI models made zero mistakes<sup class="fn"><a href={fn(3)} aria-label="Source 3">3</a></sup>.</p>
+    <p>We also count the whole cost, not just the software. The median company spends $6.00 to process one invoice, all in<sup class="fn"><a href={fn(4)} aria-label="Source 4">4</a></sup>.</p>
+    <p>But 30 reports is a small test. Even with zero misses, the real miss rate could be as high as 1 in 10<sup class="fn"><a href={fn(5)} aria-label="Source 5">5</a></sup>. That is why we test on your own files before you buy. How we source and check every page is on our <a href="/about.html#method">About page</a>.</p>
+
+    <h2 id="sources">Sources</h2>
+    <ol class="sources">
+      {[...sources].sort((a, b) => a.n - b.n).map((s) => <li id={`fn-${s.n}`}><a href={s.url}>{s.name}</a>. {s.what}</li>)}
+    </ol>
+    <p class="byline">By <a href="/about.html">Zavient</a> &middot; updated {updated}</p>
+  </div></article>
+
+  <ConsultingCta job="AI in your finance or operations work" heading="Not sure where to start? Get a free diagnostic" />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Zavient',
+    legalName: 'Zavient LLC',
+    url: 'https://zavient.com/',
+    logo: 'https://zavient.com/favicon.svg',
+    description: 'AI consulting for finance and operations teams at companies of 40 to 500 people.',
+    contactPoint: { '@type': 'ContactPoint', contactType: 'sales', email: 'rmiller@zavient.com' },
+  })} />
+</Base>

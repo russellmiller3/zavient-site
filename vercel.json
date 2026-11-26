@@ -1,5 +1,177 @@
 {
   "framework": "astro",
   "buildCommand": "astro build",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/ai-offer.html",
+      "destination": "/about.html#engagements",
+      "permanent": true
+    },
+    {
+      "source": "/ai-offer",
+      "destination": "/about.html#engagements",
+      "permanent": true
+    },
+    {
+      "source": "/benchmark-your-documents.html",
+      "destination": "/ai-work/ai-document-processing.html",
+      "permanent": true
+    },
+    {
+      "source": "/benchmark-your-documents",
+      "destination": "/ai-work/ai-document-processing.html",
+      "permanent": true
+    },
+    {
+      "source": "/insights/insurance-financial-services.html",
+      "destination": "/ai-work/ai-underwriting.html",
+      "permanent": true
+    },
+    {
+      "source": "/insights.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/insights",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/data.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/data",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/data/ai-in-us-job-postings.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/data/ai-in-us-job-postings.csv",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/data/ai-in-us-job-postings.svg",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/data/ai-skills-in-job-ads.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/data/ai-skills-in-job-ads.csv",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/data/ai-skills-in-job-ads.svg",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-work/invoice-processing-automation.html",
+      "destination": "/ai-work/ai-invoice-processing.html",
+      "permanent": true
+    },
+    {
+      "source": "/ai-work/ai-consulting-companies.html",
+      "destination": "/ai-work/ai-consulting-services.html",
+      "permanent": true
+    },
+    {
+      "source": "/ai-work/ai-agents-for-business.html",
+      "destination": "/ai-work.html",
+      "permanent": true
+    },
+    {
+      "source": "/ai-work/ai-contract-review.html",
+      "destination": "/ai-work.html",
+      "permanent": true
+    },
+    {
+      "source": "/ai-work/ai-customer-service.html",
+      "destination": "/ai-work.html",
+      "permanent": true
+    },
+    {
+      "source": "/ai-work/ai-estimating-and-quoting.html",
+      "destination": "/ai-work.html",
+      "permanent": true
+    },
+    {
+      "source": "/ai-work/ai-legal-research.html",
+      "destination": "/ai-work.html",
+      "permanent": true
+    },
+    {
+      "source": "/ai-work/ai-medical-scribe.html",
+      "destination": "/ai-work.html",
+      "permanent": true
+    },
+    {
+      "source": "/ai-work/ai-sales-development-rep.html",
+      "destination": "/ai-work.html",
+      "permanent": true
+    },
+    {
+      "source": "/ai-work/ai-voice-agents.html",
+      "destination": "/ai-work.html",
+      "permanent": true
+    },
+    {
+      "source": "/ai-work/marketing-attribution-modeling.html",
+      "destination": "/ai-work.html",
+      "permanent": true
+    },
+    {
+      "source": "/ai-work/marketing-mix-modeling.html",
+      "destination": "/ai-work.html",
+      "permanent": true
+    },
+    {
+      "source": "/ai-work/predictive-maintenance.html",
+      "destination": "/ai-work.html",
+      "permanent": true
+    },
+    {
+      "source": "/ai-work/production-scheduling-optimization.html",
+      "destination": "/ai-work.html",
+      "permanent": true
+    },
+    {
+      "source": "/ai-work/rag-chatbot.html",
+      "destination": "/ai-work.html",
+      "permanent": true
+    },
+    {
+      "source": "/ai-work/route-optimization.html",
+      "destination": "/ai-work.html",
+      "permanent": true
+    },
+    {
+      "source": "/admin",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/admin/:path*",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
 }

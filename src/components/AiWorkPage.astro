@@ -6,7 +6,6 @@
 // under the bottom line, beside the tool or Zavient's own data, in a sticky contents box, and at the end.
 // Pages built before the templates keep their layout exactly.
 import Base from '../layouts/Base.astro';
-import BenchmarkCta from './BenchmarkCta.astro';
 import ConsultingCta from './ConsultingCta.astro';
 import Fn from './Fn.astro';
 import Block from './Block.astro';
@@ -49,8 +48,8 @@ const proofAfter = tpl ? (['tool', 'own-data'].find((id) => order.includes(id) &
           {d.index && !tpl && <p class="on-page-cta">And at the end: <a href="#diagnostic">a free 30-minute diagnostic</a> of how to approach this with AI.</p>}
         </nav>
       )}
-      <p class="byline">By <a href="https://linkedin.com/in/russellmiller" rel="author">Russell Miller</a>, Zavient &middot; updated <time datetime={d.updated}>{d.updated}</time></p>
-      {isIndexed && <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: d.title, description: d.description, dateModified: d.updated, author: { '@type': 'Person', name: 'Russell Miller', url: 'https://linkedin.com/in/russellmiller' }, publisher: { '@type': 'Organization', name: 'Zavient', url: 'https://zavient.com/' }, mainEntityOfPage: `https://zavient.com${url}` })} />}
+      <p class="byline">By <a href="/about.html" rel="author">Zavient</a> &middot; updated <time datetime={d.updated}>{d.updated}</time></p>
+      {isIndexed && <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: d.title, description: d.description, dateModified: d.updated, author: { '@type': 'Organization', name: 'Zavient', url: 'https://zavient.com/about.html' }, publisher: { '@type': 'Organization', name: 'Zavient', url: 'https://zavient.com/' }, mainEntityOfPage: `https://zavient.com${url}` })} />}
     </div>
   </header>
   <article class="article-body">
@@ -72,5 +71,5 @@ const proofAfter = tpl ? (['tool', 'own-data'].find((id) => order.includes(id) &
       <a class="btn-gold" href="#diagnostic">Free 30-minute diagnostic</a>
     </div>
   )}
-  {(d.index || tpl) ? <ConsultingCta job={d.job} heading={d.offer?.heading} ask={d.offer?.body} spot={tpl ? 'end' : ''} /> : <BenchmarkCta job={d.job} />}
+  <ConsultingCta job={d.job} heading={d.offer?.heading} ask={d.offer?.body} spot={tpl ? 'end' : ''} />
 </Base>

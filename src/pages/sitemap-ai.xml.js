@@ -11,8 +11,6 @@ export async function GET() {
   const site = 'https://zavient.com';
   const aiwork = await getCollection('aiwork');
   const urls = [
-    { loc: `${site}/data.html`, lastmod: null },
-    { loc: `${site}/benchmark-your-documents.html`, lastmod: null },
     ...aiwork.filter((p) => indexed(p, aiwork)).map((p) => ({ loc: `${site}${urlFor(p.data, p.id)}`, lastmod: p.data.updated })),
     ...(await getCollection('datastory')).map((p) => ({ loc: `${site}/data/${p.id}.html`, lastmod: p.data.updated })),
   ];

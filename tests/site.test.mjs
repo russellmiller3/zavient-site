@@ -32,11 +32,12 @@ test('every AI-work page is built with the offer and at least one source link', 
       assert.doesNotMatch(html, /name="robots" content="noindex/, `${s}: indexed page is marked noindex`);
       assert.ok(sitemap.includes(urlFor(data, s)), `${s}: indexed page missing from sitemap`);
     } else {
-      if (!data.templateVersion) assert.match(html, /data-cta="benchmark"/, `${s}: offer block missing`);
+      if (!data.templateVersion) assert.match(html, /data-cta="consulting"/, `${s}: offer block missing`);
       assert.match(html, /name="robots" content="noindex/, `${s}: unpublished page is not noindex`);
       assert.ok(!sitemap.includes(urlFor(data, s)), `${s}: noindex page listed in sitemap`);
     }
-    assert.match(html, /href="\/benchmark-your-documents\.html"/, `${s}: offer link missing`);
+    assert.match(html, /href="\/ai-readiness-assessment\.html"/, `${s}: readiness check link missing`);
+    assert.doesNotMatch(html, /Russell/, `${s}: names Russell; only the About page may`);
     const sources = html.split(/<h2[^>]*>Sources<\/h2>/)[1] || '';
     assert.match(sources, /<a href="https?:\/\//, `${s}: no source link`);
   }
@@ -48,7 +49,7 @@ test('every data story has its chart, embed code, CSV and SVG, and they match th
     const html = readFileSync(join(dist, 'data', `${s}.html`), 'utf8');
     assert.match(html, /<svg[^>]*role="img"/, `${s}: chart missing`);
     assert.ok(html.includes(`https://zavient.com/data/${s}.svg`), `${s}: embed code missing`);
-    assert.match(html, /data-cta="benchmark"/, `${s}: offer block missing`);
+    assert.match(html, /data-cta="consulting"/, `${s}: offer block missing`);
     const svg = readFileSync(join(dist, 'data', `${s}.svg`), 'utf8');
     assert.ok(svg.includes(`zavient.com/data/${s}.html`), `${s}: SVG credit link missing`);
     // Borrowed data (Indeed's is CC BY 4.0) must be credited on the chart itself, which travels without the page.
@@ -100,7 +101,8 @@ test('the schema refuses an indexed AI-work page with no verdict', () => {
   try {
     for (const p of ['src', 'public', 'astro.config.mjs', 'package.json']) cpSync(join(root, p), join(tmp, p), { recursive: true });
     symlinkSync(join(root, 'node_modules'), join(tmp, 'node_modules'));
-    const thin = JSON.parse(readFileSync(join(root, 'src/content/ai-work/rag-chatbot.json'), 'utf8'));
+    // A real page with its verdict removed (rag-chatbot.json, the old thin example, was archived 26 Nov 2026).
+    const { verdict, ...thin } = JSON.parse(readFileSync(join(root, 'src/content/ai-work/ai-credit-scoring.json'), 'utf8'));
     writeFileSync(join(tmp, 'src/content/ai-work/zz-thin.json'), JSON.stringify({ ...thin, index: true }));
     const r = spawnSync('npx', ['astro', 'sync'], { cwd: tmp, encoding: 'utf8' });
     assert.notEqual(r.status, 0, 'astro sync accepted an indexed page with no verdict');

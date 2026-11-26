@@ -2,27 +2,6 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { TYPES, COMMON_REQUIRED, MIN } from '../lib/page-types.mjs';
 
-// One Insights article = this shape. Decap CMS edits these same fields.
-// Prose (sections, "Ask your CEO" blockquotes, the "What kills these" list)
-// lives in the Markdown body; structured metadata lives here.
-const insights = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/insights' }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    dek: z.string(),
-    tag: z.string(),
-    order: z.number().default(50),
-    flagship: z.boolean().default(false),
-    blurb: z.string(),
-    ctaHeading: z.string().default('Send me the metric you want to move.'),
-    ctaBlurb: z.string().default("Company URL, revenue motion, the number that matters. I'll tell you where I'd look first and whether an engagement is worth it."),
-    ctaSubject: z.string().default('AI Value Creation'),
-    stats: z.array(z.object({ num: z.string(), label: z.string() })).default([]),
-    sources: z.array(z.object({ name: z.string(), url: z.string(), what: z.string(), conf: z.string() })).default([]),
-  }),
-});
-
 // One AI-work page = one JSON file in src/content/ai-work. The schema is strict on purpose: these pages are
 // written and refreshed by an AI, so a missing source, a missing offer or a malformed field fails the build
 // instead of shipping. Keyword fields are for planning and are never rendered.
@@ -130,4 +109,4 @@ const datastory = defineCollection({
   }),
 });
 
-export const collections = { insights, aiwork, datastory };
+export const collections = { aiwork, datastory };

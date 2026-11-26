@@ -3,17 +3,17 @@
 // Hub listing every AI-work page.
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import BenchmarkCta from '../../components/BenchmarkCta.astro';
+import ConsultingCta from '../../components/ConsultingCta.astro';
 const pages = (await getCollection('aiwork')).sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
-<Base title="AI work, job by job | Zavient" description="Which AI jobs are worth doing, how to test AI on each one before you buy, and when to buy or build. One page per job." noindex>
+<Base title="AI in finance work, job by job | Zavient" description="Where AI helps finance teams, how to benchmark it before you buy, and when to buy or build. One page per job." noindex>
   <header class="article-hero"><div class="wrap">
     <div class="label">AI work</div>
-    <h1>AI work, job by job</h1>
-    <p class="dek">One page per job: what it is, how to test AI on it before you buy, and when to buy or build.</p>
+    <h1>AI in finance work, job by job</h1>
+    <p class="dek">One page per job: where AI helps your team, how to benchmark it on your own files before you buy, and when to buy or build.</p>
   </div></header>
   <article class="article-body"><div class="wrap">
     <ul>{pages.map((p) => <li><a href={`/ai-work/${p.id}.html`}>{p.data.title}</a>: {p.data.description}</li>)}</ul>
   </div></article>
-  <BenchmarkCta job="any AI job" />
+  <ConsultingCta job="AI in your finance work" />
 </Base>

@@ -1,0 +1,106 @@
+---
+// api-docs-read: static About page — no external API/protocol surface, only a booking link, mailto and LinkedIn.
+// About (site architecture doc, trust pages, 26 Nov 2026). The only page that names the founder (Russell's rule,
+// 26 Nov 2026). Holds #engagements (prices the AI-work pages cite) and #method (how pages are sourced and checked).
+// The record below is the founder's own account, moved from the archived offer page; it is labeled as such.
+import Base from '../layouts/Base.astro';
+import ConsultingCta from '../components/ConsultingCta.astro';
+
+const sources = [
+  { n: 1, name: 'US Census Bureau, The Microstructure of AI Diffusion, working paper CES-WP-26-25 (April 2026)', url: 'https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html', what: '66% of firms that use AI use it only to help with tasks; AI-related job cuts happened at 2% of firms.' },
+  { n: 2, name: 'Zavient FinExtractBench (November 2026)', url: '/ai-work/ai-document-processing.html#own-data', what: 'Our benchmark of 30 private fund reports, 781 pages, with every answer written by hand and locked before any tool ran.' },
+];
+const fn = (n) => `#fn-${n}`;
+const updated = '26 November 2026';
+---
+<Base title="About Zavient: who we are and how we work" description="Who runs Zavient, how an engagement works and what it costs, and how we source and check every number on this site." canonical="https://zavient.com/about.html">
+  <header class="article-hero"><div class="wrap">
+    <div class="label">About</div>
+    <h1>About Zavient: who we are and <span class="hl">how we work</span></h1>
+    <span class="bluf-label">Bottom line</span>
+    <div class="bluf">
+      <ul>
+        <li>Zavient helps companies of 40 to 500 people put AI to work in finance and operations.</li>
+        <li>The goal is AI that helps your people do more, not AI that replaces them.</li>
+        <li>Work starts with a free 30-minute diagnostic. Paid work is a fixed-price sprint, then optional advisory.</li>
+        <li>Every market number on this site links to its source. Our own benchmarks show their method and limits.</li>
+      </ul>
+    </div>
+    <nav class="on-page" aria-label="On this page"><div class="label" style="margin-top:18px;">On this page</div><ol>
+      <li><a href="#why">Why Zavient exists</a></li>
+      <li><a href="#founder">Who runs it</a></li>
+      <li><a href="#engagements">How we work, and what it costs</a></li>
+      <li><a href="#method">How we check our numbers</a></li>
+      <li><a href="#limits">What we won't do</a></li>
+      <li><a href="#contact">How to reach us</a></li>
+    </ol></nav>
+  </div></header>
+
+  <article class="article-body"><div class="wrap">
+    <h2 id="why">Why Zavient exists</h2>
+    <p>Mid-size companies hear a lot about AI and get little help choosing where to start. We are a small firm, and we sell no software.</p>
+    <p>We sit in between. We tell you which workflow to start with, whether to buy or build, and what to test before you spend. We aim for AI that takes the reading, matching and first drafts off your team, so they spend their time on judgment. Most firms already use AI this way. In a Census survey of US firms, 66% of AI users used it only to help with tasks<sup class="fn"><a href={fn(1)} aria-label="Source 1">1</a></sup>.</p>
+
+    <h2 id="founder">Who runs it</h2>
+    <p><strong>Russell Miller, founder.</strong> Russell has spent about 20 years across B2B software, AI and machine learning, and private equity. He holds a degree in mathematics from MIT and an MBA from Texas A&amp;M. <a href="https://www.linkedin.com/in/russellmiller" rel="me">Russell on LinkedIn</a>.</p>
+    <p>His record, in his own account (client names withheld). Unlike the rest of the site, these numbers are not footnoted:</p>
+    <ul>
+      <li><strong>Machine learning in production:</strong> built an ML system that set search-ad bids, credited with over $20M in revenue and over $8M in EBITDA (profit before interest, taxes and write-downs).</li>
+      <li><strong>AI for a B2B marketplace:</strong> an AI system that rewrote headlines in real time, with an 18% lift in click-through and over $900K in new pipeline.</li>
+      <li><strong>Ad testing at an automotive marketplace:</strong> 5 times the click-through rate at 40% lower cost.</li>
+      <li><strong>Operating role:</strong> COO of a private-equity-backed software company through its turnaround and sale.</li>
+      <li><strong>Deals:</strong> five years as an independent sponsor (raising money deal by deal) alongside CIVC, Stonehenge and BlackRock, on deals from $7M to over $300M.</li>
+      <li><strong>Benchmarks:</strong> built FinExtractBench, our test of AI tools on financial documents<sup class="fn"><a href={fn(2)} aria-label="Source 2">2</a></sup>.</li>
+    </ul>
+    <p>You work with Russell directly, not a team of juniors.</p>
+
+    <h2 id="engagements">How we work, and what it costs</h2>
+    <ol>
+      <li><strong>Free 30-minute diagnostic.</strong> Bring one workflow and what it costs you today. You leave with our read on buy or build, what to test, the rules that apply and a rough cost. No charge, and no obligation.</li>
+      <li><strong>30-day AI Sprint: $10,000, fixed scope.</strong> We pick the 2 or 3 AI bets that pay back first, rank them by payoff and effort, and write specs your team or a vendor can build from. You also get a written case for your board, lender or partners, and a 90-day plan with owners and a list of what not to do.</li>
+      <li><strong>Ongoing advisory: $5,000 to $10,000 a month.</strong> Two working sessions a month, plus questions answered between them, while the work ships. Quarterly commitment, renewed only if both sides want to.</li>
+    </ol>
+    <p>Building the software itself is quoted per job, or done by your team or a vendor from our specs. You own the specs, the code and the results.</p>
+
+    <h2 id="method">How we check our numbers</h2>
+    <ul>
+      <li><strong>Every market claim has a source.</strong> Each number links to a numbered source at the foot of the page, with two or more sources where they exist.</li>
+      <li><strong>Our own tests show their method.</strong> In FinExtractBench, our test of AI on financial documents, we wrote the right answers first, before any tool ran<sup class="fn"><a href={fn(2)} aria-label="Source 2">2</a></sup>. Each page lists the sample, what was measured and the limits.</li>
+      <li><strong>We say what the numbers don't prove.</strong> A test on 30 documents is not a test on your documents, so we tell you to re-run it on your own files.</li>
+      <li><strong>We use AI to help research and draft.</strong> Every number still links to the place it came from, so you can check it yourself.</li>
+      <li><strong>Corrections.</strong> If you find an error, email <a href="mailto:rmiller@zavient.com">rmiller@zavient.com</a>. We fix it and update the page's date.</li>
+    </ul>
+
+    <h2 id="limits">What we won't do</h2>
+    <ul>
+      <li>Plan AI whose main goal is cutting your staff.</li>
+      <li>Recommend tools your team can't check.</li>
+      <li>Lock you in. You keep the specs and can build with anyone.</li>
+      <li>Hand you a 200-page slide deck.</li>
+      <li>Run AI experiments with no measure of what they're worth. If we can't find the return, we'll tell you.</li>
+    </ul>
+
+    <h2 id="contact">How to reach us</h2>
+    <p>Book the <a href="https://calendly.com/zavient/call">free 30-minute diagnostic</a>, or email <a href="mailto:rmiller@zavient.com">rmiller@zavient.com</a> with two sentences on the work. A person reads every email.</p>
+
+    <h2 id="sources">Sources</h2>
+    <ol class="sources">
+      {sources.map((s) => <li id={`fn-${s.n}`}><a href={s.url}>{s.name}</a>. {s.what}</li>)}
+    </ol>
+    <p class="byline">By Zavient &middot; last reviewed {updated}</p>
+  </div></article>
+
+  <ConsultingCta job="AI in your finance or operations work" heading="Start with a free 30-minute diagnostic" />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Zavient',
+    legalName: 'Zavient LLC',
+    url: 'https://zavient.com/',
+    logo: 'https://zavient.com/favicon.svg',
+    description: 'AI consulting for finance and operations teams at companies of 40 to 500 people.',
+    founder: { '@type': 'Person', name: 'Russell Miller', jobTitle: 'Founder', sameAs: ['https://www.linkedin.com/in/russellmiller'] },
+    contactPoint: { '@type': 'ContactPoint', contactType: 'sales', email: 'rmiller@zavient.com' },
+  })} />
+</Base>

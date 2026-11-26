@@ -4,7 +4,7 @@
 // hover titles), a table view, embed code, CSV download, method, sources and the custom-benchmark offer.
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import BenchmarkCta from '../../components/BenchmarkCta.astro';
+import ConsultingCta from '../../components/ConsultingCta.astro';
 import { storySvg, fmt } from '../../lib/storyChart.js';
 
 export async function getStaticPaths() {
@@ -22,7 +22,7 @@ const embed = `<a href="https://zavient.com/data/${story.id}.html"><img src="htt
     <div class="label">Data &middot; AI job market</div>
     <h1>{d.title}</h1>
     <p class="dek">{d.dek}</p>
-    <p class="byline">Russell Miller, Zavient &middot; updated {d.updated}</p>
+    <p class="byline">By <a href="/about.html">Zavient</a> &middot; updated {d.updated}</p>
   </div></header>
   <article class="article-body"><div class="wrap">
     <figure class="data-chart" style="margin:0 0 8px;max-width:100%;overflow:hidden"><div style="max-width:100%" set:html={svg.replace('width="760"', 'width="100%"').replace(/height="\d+"/, '')} /></figure>
@@ -43,5 +43,5 @@ const embed = `<a href="https://zavient.com/data/${story.id}.html"><img src="htt
         <tbody>{d.sources.map((s) => <tr><td><a href={s.url}>{s.name}</a></td><td>{s.what}</td></tr>)}</tbody></table></div>
     {others.length > 0 && (<p>More data: {others.map((o, i) => <>{i > 0 && ' · '}<a href={`/data/${o.id}.html`}>{o.data.title}</a></>)}</p>)}
   </div></article>
-  <BenchmarkCta job="your AI work" />
+  <ConsultingCta job="AI in your work" />
 </Base>

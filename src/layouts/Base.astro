@@ -1,8 +1,8 @@
 ---
 // api-docs-read: static layout — no external API/protocol surface, only a font stylesheet link + mailto.
-// Shared shell for every Insights page: head, fonts, nav, footer.
+// Shared shell for every page: head, fonts, nav, footer.
 // theme="blue" (26 Nov 2026) is the Zarlent-style light look used by the AI-work pages; other pages keep navy and gold.
-const { title, description, noindex = false, theme = 'navy' } = Astro.props;
+const { title, description, noindex = false, theme = 'blue', canonical = '' } = Astro.props;
 const fonts = theme === 'blue'
   ? 'https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap'
   : 'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=IBM+Plex+Mono:wght@400;500;600&display=swap';
@@ -16,6 +16,7 @@ const css = theme === 'blue' ? '/ai-work/ai-work.css' : '/insights/article.css';
   <title>{title}</title>
   <meta name="description" content={description} />
   {noindex && <meta name="robots" content="noindex, follow" />}
+  {canonical && <link rel="canonical" href={canonical} />}
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,10 +27,10 @@ const css = theme === 'blue' ? '/ai-work/ai-work.css' : '/insights/article.css';
   <nav>
     <a href="/" class="logo">Zavient<em>.</em></a>
     <div class="nav-links">
-      <a href="/insights.html">Insights</a><!-- api-docs-read: static nav href fix, no API/protocol surface -->
       <a href="/ai-work.html">AI work</a>
-      <a href="/data.html">Data</a>
-      <a href="mailto:rmiller@zavient.com" class="nav-cta">Get in touch</a>
+      <a href="/ai-readiness-assessment.html">Readiness check</a>
+      <a href="/about.html">About</a>
+      <a href="https://calendly.com/zavient/call" class="nav-cta">Free diagnostic</a>
     </div>
   </nav>
 
@@ -37,8 +38,8 @@ const css = theme === 'blue' ? '/ai-work/ai-work.css' : '/insights/article.css';
 
   <footer>
     <a href="/" class="logo" style="font-size:18px;">Zavient<em>.</em></a>
-    <span>&copy; 2026 Zavient LLC &middot; AI Value Creation for Private Equity</span>
-    <a href="https://linkedin.com/in/russellmiller" target="_blank" rel="noreferrer">LinkedIn &nearr;</a>
+    <span>&copy; 2026 Zavient LLC &middot; AI that helps your team do more</span>
+    <span><a href="/about.html">About</a> &middot; <a href="mailto:rmiller@zavient.com">Email us</a></span>
   </footer>
 </body>
 </html>
