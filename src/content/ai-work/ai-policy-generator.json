@@ -1,0 +1,129 @@
+{
+  "title": "AI policy generator: what should your company's AI use policy say?",
+  "description": "Free AI policy generator and template: answer 10 questions and get an editable AI use policy for your industry, data and locations.",
+  "type": "tool",
+  "templateVersion": 1,
+  "topic": "AI policy generator",
+  "job": "AI policy generator",
+  "industry": "any industry",
+  "index": false,
+  "verdict": [
+    "Most staff already use AI at work, and nearly half have put company information into public tools.[^1][^4]",
+    "Bans backfire: misuse was highest where AI was banned, so write rules for using approved tools well.[^4][^5]",
+    "The rules that matter most are which tools, what data goes in, who approves, and who reviews output.[^6][^16]",
+    "Hiring, lending, insurance and health decisions carry extra legal rules; the generator adds those clauses only where they apply.[^11][^13]"
+  ],
+  "onPage": [],
+  "headings": {},
+  "tool": {
+    "embed": "/tools/embed/ai-policy-generator.html",
+    "steps": [
+      "Answer 10 plain questions about your industry, size, data, AI tools, people decisions and locations.",
+      "Read your full policy on the page, with the three things to fix next. Edit any line directly.",
+      "See which of your AI uses are high risk and what control the policy adds, then check any other use.",
+      "Copy it, download it for Word or as Markdown, or print it."
+    ],
+    "method": [
+      "Every policy has 18 sections: scope, owner, approved tools, data rules, human review, training, incidents and yearly review.[^6][^7]",
+      "Answers switch clauses on. Health data adds the business associate rule, credit adds adverse-action reasons, and clinical AI adds the Section 1557 check.[^12][^13][^22]",
+      "State, city and EU clauses come from the law's text or the regulator's own page, checked on 26 Nov 2026.[^10][^11]",
+      "The risk check sorts each AI use into Low, Medium, High or Not allowed, following the EU AI Act's risk levels and NIST.[^9][^7]",
+      "Defaults we chose ourselves are marked Zavient estimate: a 5-day answer on tool requests and 24-hour incident reports.[^7]"
+    ]
+  },
+  "summary": "An AI use policy tells staff which AI tools they can use, what information may go in, and who checks the output.[^6][^7] This generator builds yours from 10 questions, adding clauses for your industry, data and locations. It's a starting draft for your adviser, not legal advice.",
+  "humanRole": [
+    "Your COO or head of operations owns the policy and names who approves new AI tools.[^7][^19]",
+    "A qualified person reviews AI output before it reaches customers, regulators or the public.[^6][^1]",
+    "People make every decision about someone's job, credit, insurance or care; AI only prepares the information.[^14][^18]",
+    "Your legal or compliance adviser reviews the draft before you adopt it, because state and EU rules keep changing.[^10][^9]"
+  ],
+  "faq": [
+    {
+      "q": "Is there a free AI policy template we can use?",
+      "a": "Yes. This generator is free, needs no email, and builds a full AI use policy from your answers. You edit it instead of adapting a fixed template.[^6][^15]"
+    },
+    {
+      "q": "Should we ban ChatGPT at work?",
+      "a": "Usually not. In one global study, policy-breaking AI use was most common where AI was banned, so approved tools plus clear rules work better.[^4][^5]"
+    },
+    {
+      "q": "What should an AI acceptable use policy include?",
+      "a": "Scope, an owner, approved tools, a rule for each kind of data, human review, approval for new tools, training, incident reporting and a yearly review.[^7][^16]"
+    },
+    {
+      "q": "Who should own the AI policy at a mid-size company?",
+      "a": "One named senior owner, often the COO, with input from IT, HR and legal. Larger firms often use a small working group instead.[^7][^19]"
+    },
+    {
+      "q": "Do we need an AI policy if we have EU staff or customers?",
+      "a": "The EU AI Act asks deployers to take steps to build staff AI literacy, supervised nationally from 2 August 2026. A written policy with a training record helps show you did.[^8][^9]"
+    },
+    {
+      "q": "Do we need separate rules for AI in hiring?",
+      "a": "Hiring AI carries extra duties. New York City requires a bias audit within a year of use, and federal anti-discrimination law still applies to AI-assisted decisions.[^11][^14]"
+    },
+    {
+      "q": "How often should we update our AI policy?",
+      "a": "At least every 12 months, and sooner when a law, a major tool or an incident changes things. Colorado rewrote its AI law in 2026, for example.[^7][^10]"
+    }
+  ],
+  "pickElse": [
+    "You are a broker-dealer using AI in client communications → start from FINRA's notice and your supervisory procedures, then use this draft for staff use.[^20]",
+    "You are an insurer → also write the AI program the NAIC model bulletin describes; this policy covers how staff use AI.[^21]",
+    "You use AI in clinical decisions → also review each tool's inputs under Section 1557; the generator adds the clause, not the review.[^22]",
+    "You want a certified AI management system → use ISO 42001; an AI policy is one part of it.[^19]"
+  ],
+  "resources": [
+    { "name": "NIST AI Risk Management Framework", "url": "https://www.nist.gov/itl/ai-risk-management-framework", "what": "The free US framework most AI policies borrow from. Being revised in 2026." },
+    { "name": "NIST AI 600-1, Generative AI Profile", "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf", "what": "Lists generative AI risks and the controls that answer each one." },
+    { "name": "European Commission, AI literacy questions and answers", "url": "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers", "what": "What the EU training duty asks of companies that use AI, in plain terms." },
+    { "name": "NYC DCWP, Automated Employment Decision Tools", "url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page", "what": "The bias audit and notice rules for AI hiring tools used for New York City jobs." }
+  ],
+  "stats": [
+    { "num": "58%", "label": "Share of employees who use AI at work on purpose.[^1]", "source": "KPMG and University of Melbourne, 2025" },
+    { "num": "48%", "label": "Share of employees who have uploaded company information to public AI tools.[^4]", "source": "University of Melbourne and KPMG, 2025" },
+    { "num": "68%", "label": "Share of US employers with a formal AI policy, up from 38% a year earlier.[^2]", "source": "Littler, 2026" },
+    { "num": "38%", "label": "Share of organisations with a formal, comprehensive AI policy.[^3]", "source": "ISACA, 2026" },
+    { "num": "71%", "label": "Share of UK employees who have used unapproved consumer AI at work.[^5]", "source": "Microsoft UK, 2025" },
+    { "num": "54%", "label": "Share of HR teams with an AI policy who say it is too restrictive.[^17]", "source": "SHRM, 2026" }
+  ],
+  "sources": [
+    { "name": "KPMG and University of Melbourne, Trust in AI global study (Apr 2025)", "url": "https://kpmg.com/xx/en/media/press-releases/2025/04/trust-of-ai-remains-a-critical-challenge.html", "what": "48,000 people in 47 countries: 58% use AI at work, 40% say there is a policy or guidance, 47% trained." },
+    { "name": "Littler, 14th Annual Employer Survey (May 2026)", "url": "https://www.littler.com/press/press-release/employers-brace-ai-driven-workplace-shifts-and-rising-risk-littlers-annual", "what": "300+ US executives: 68% have a formal AI policy, 55% a review process for AI tools." },
+    { "name": "ISACA, 2026 AI Pulse Poll (May 2026)", "url": "https://www.isaca.org/about-us/newsroom/press-releases/2026/ai-use-accelerates-while-governance-and-roi-lag-says-new-isaca-research", "what": "3,400+ professionals: 38% have a formal, comprehensive AI policy; 25% have none." },
+    { "name": "University of Melbourne and KPMG, Trust in AI full report (2025)", "url": "https://assets.kpmg.com/content/dam/kpmgsites/kw/pdf/insights/2025/05/Trust-in-AI_Final_Report.pdf.coredownload.inline.pdf", "what": "48% uploaded company information to public AI; misuse was 67% where AI was banned and 33% with no policy." },
+    { "name": "Microsoft UK, Rise in Shadow AI tools (Oct 2025, vendor)", "url": "https://ukstories.microsoft.com/features/rise-in-shadow-ai-tools-raising-security-concerns-for-uk", "what": "2,003 UK employees: 71% used unapproved consumer AI; 28% say there is no approved option." },
+    { "name": "NIST AI 600-1, Generative AI Profile (Jul 2024)", "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf", "what": "Recommends acceptable use policies, an AI inventory and review of generative AI output." },
+    { "name": "NIST AI RMF Playbook, Govern function", "url": "https://airc.nist.gov/airmf-resources/playbook/govern/", "what": "Policies for incident response, an AI inventory with named owners, and periodic review." },
+    { "name": "European Commission, AI literacy questions and answers", "url": "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers", "what": "Deployers take measures to support AI literacy; applies since 2 Feb 2025, supervised from 2 Aug 2026." },
+    { "name": "European Commission, AI Act overview", "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai", "what": "Risk levels, banned practices such as emotion recognition at work, and chatbot disclosure duties." },
+    { "name": "Colorado General Assembly, SB26-189", "url": "https://leg.colorado.gov/bills/sb26-189", "what": "Rewrote Colorado's AI law in 2026: notice and plain-language explanations from 1 Jan 2027." },
+    { "name": "NYC Department of Consumer and Worker Protection, Automated Employment Decision Tools", "url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page", "what": "Local Law 144: bias audit within a year of use, public summary, and notice to candidates." },
+    { "name": "HHS, Business Associates under HIPAA", "url": "https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/business-associates/index.html", "what": "Health information goes to a vendor only under a business associate agreement." },
+    { "name": "eCFR, 12 CFR 1002.9 (Regulation B notifications)", "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1002/section-1002.9", "what": "Creditors give specific reasons for adverse action, whatever model they use." },
+    { "name": "Cooley, Federal laws still apply despite AI guidance removal (Feb 2025)", "url": "https://www.cooley.com/news/insight/2025/2025-02-21-gone-but-not-forgotten-federal-laws-still-apply-despite-guidance-disappearance-act", "what": "Removed agency AI guidance does not change anti-discrimination law for AI-assisted decisions." },
+    { "name": "Forcepoint, AI Acceptable Use Policy Template (Sep 2026, vendor)", "url": "https://www.forcepoint.com/blog/insights/ai-acceptable-use-policy", "what": "Covers AI inside approved apps and agents; agents get least access and human approval for consequential actions." },
+    { "name": "Harmonic Security, Write an AI acceptable use policy that holds up (vendor)", "url": "https://handbook.harmonic.security/reference/governance-and-frameworks/g.6-write-an-ai-acceptable-use-policy-that-holds-up", "what": "A data rule for each kind of information, and approval for agents that act." },
+    { "name": "SHRM, The State of AI in HR 2026 (executive summary)", "url": "https://www.shrm.org/content/dam/en/shrm/research/ai-in-hr_executive-summary.pdf", "what": "1,908 HR professionals: 49% have a workforce AI policy; 54% of those say it is too restrictive." },
+    { "name": "Crowell & Moring, California's No Robo Bosses Act is now law (Oct 2026)", "url": "https://www.crowell.com/en/insights/client-alerts/californias-no-robo-bosses-act-is-now-law-human-oversight-required-for-ai-driven-discipline-and-termination", "what": "From 1 Jul 2027, a person reviews the data before AI-driven discipline or firing in California." },
+    { "name": "ISO Managed, ISO 42001 clause 5.2: AI policy", "url": "https://isomanaged.com/knowledge-base/iso-standards/iso-42001/iso-42001-clause-5-2-ai-policy", "what": "Top management sets, approves and communicates an AI policy that fits the organisation." },
+    { "name": "FINRA, Regulatory Notice 24-09 (Jun 2024)", "url": "https://www.finra.org/rules-guidance/notices/24-09", "what": "FINRA rules on supervision and communications apply to generative AI like any other tool." },
+    { "name": "NAIC, Model Bulletin on the Use of AI Systems by Insurers (Dec 2023)", "url": "https://content.naic.org/sites/default/files/inline-files/2023-12-4%20Model%20Bulletin_Adopted_0.pdf", "what": "Insurers keep a written AI program covering governance, testing for bias and vendor oversight." },
+    { "name": "eCFR, 45 CFR 92.210 (patient care decision support tools)", "url": "https://www.ecfr.gov/current/title-45/section-92.210", "what": "Covered health programs find and reduce discrimination risk in decision support tools." }
+  ],
+  "related": ["ai-credit-scoring", "ai-underwriting", "ai-roi-calculator", "ai-project-cost-estimator"],
+  "offer": {
+    "heading": "Not sure which of your AI uses need sign-off? Get a free diagnostic",
+    "body": "Want the detailed plan behind your result? Book the free 30-minute diagnostic."
+  },
+  "keyword": { "phrase": "ai policy template", "searches": 320, "cpc": 25.63, "difficulty": 9 },
+  "reviews": [
+    { "reader": "COO", "notes": "Wanted to know who owns it and how fast requests get answered. Owner and a 5-day default are in sections 3 and 10; an undecided owner becomes a fix-next item." },
+    { "reader": "Head of operations", "notes": "Needed it in Word for the handbook. Added Download for Word and Markdown, and yellow marks for the gaps to fill." },
+    { "reader": "GM", "notes": "Worried it would read as a ban. Section 1 and the encouraged-uses list lead with using AI well; people stay in charge." },
+    { "reader": "Division head", "notes": "Asked whether their team's AI use needs sign-off. Added the risk summary from the answers, with the control for each high-risk use, plus the per-use check." },
+    { "reader": "Owner-CEO", "notes": "Asked what legal exposure is left. Fix-next lists legal items first; the disclaimer and law date sit at the top and in the policy footer." }
+  ],
+  "updated": "2026-11-26"
+}
