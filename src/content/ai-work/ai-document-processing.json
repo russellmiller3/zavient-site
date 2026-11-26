@@ -1,15 +1,15 @@
 {
- "title": "AI document processing: which AI reads files with no wrong numbers",
+ "title": "AI document processing: which AI reads files with fewest wrong numbers",
  "description": "We benchmarked AI tools on 30 fund reports, with answers locked in advance. Which ones made no mistakes, what each costs per page, and three ways to build it.",
  "job": "document processing",
- "summary": "AI document processing turns PDFs, scans and forms into fields your systems can use; for invoices, see our AI invoice processing page. Reading is cheap: basic OCR (turning page images into text) is $1.50 per 1,000 pages[^2][^3][^4], against APQC's $6.00 median cost to process one invoice[^1]. The hard part is catching wrong fields on your own files, not a vendor's demo set, so we built a benchmark[^20][^7].",
+ "summary": "Start with the document your team re-keys most, where a wrong number costs money; AI can read it into fields your systems use. Reading is cheap: basic OCR (turning page images into text) is $1.50 per 1,000 pages[^2][^3][^4], while APQC's $6.00 median per invoice is the all-in cost[^1]. AI does the reading part, but wrong fields on your own files are the risk, so we built a benchmark that measures them[^20][^7].",
  "index": true,
  "verdict": [
-  "Have two top models from different vendors read each PDF, and have a person decide only the facts they disagree on[^15][^16].",
-  "Reading costs cents per report, while processing one invoice costs a median $6.00 in total; the gap is staff hours back for review work[^7][^1].",
+  "Pick the document your team re-keys most, where a wrong number costs money. Two models from different vendors read it; a person settles only their disagreements[^15][^16].",
+  "AI reading costs cents per report[^7]. The $6.00 median to process an invoice is all-in cost, so measure staff minutes and errors per file, not just reading cost[^1].",
   "In our benchmark of 30 fund reports, the two best models made zero mistakes[^7]. With only 30 reports, the true error rate could be up to about 1 in 10[^19].",
   "About 2 facts per report still went to a person, so your team keeps the final say[^7].",
-  "Don't trust a model's own confidence score: wrong answers came back rated 70 to 100[^7][^14]."
+  "First step: benchmark two models on 50 of your own files. Even vendors advise judging tools on your own documents[^20]."
  ],
  "onPage": [
   {
@@ -17,11 +17,11 @@
    "text": "Our benchmark: which AI tools read 30 fund reports without a wrong number"
   },
   {
-   "to": "table-1",
-   "text": "The hard round, where every answer had to quote its page"
+   "to": "recipes",
+   "text": "Three ways to build it"
   },
   {
-   "to": "table-2",
+   "to": "table-1",
    "text": "What reading 1,000 pages costs, tool by tool"
   },
   {
@@ -35,6 +35,10 @@
   {
    "to": "what-goes-wrong",
    "text": "Where document AI goes wrong, and how to catch it"
+  },
+  {
+   "to": "buy-or-build",
+   "text": "Buy or build"
   }
  ],
  "stats": [
@@ -61,12 +65,12 @@
  ],
  "pickElse": [
   "You process thousands of standard invoices or receipts a day. A cloud prebuilt parser (a ready-made reader for standard forms) costs about $10 per 1,000 pages and handles the volume[^2][^4][^3].",
-  "Your files cannot leave your network: run open-source Docling (MIT licence)[^6] or a local model. Expect more wrong values: in our first round the two local models made 8 each, where Anthropic's Claude Haiku 5.5 made none[^7].",
+  "Your files cannot leave your network: run open-source Docling (free for business use)[^6] or a local model. Expect more wrong values: in our first round the two local models made 8 each, where Anthropic's Claude Haiku 5.5 made none[^7].",
   "You only need searchable text, not fields: basic OCR is about $1.50 per 1,000 pages at all three big clouds[^2][^3][^4]."
  ],
  "ownData": {
   "title": "Our benchmark: 30 fund reports, keys sealed before any AI read them",
-  "intro": "FinExtractBench is our own benchmark of 30 public private-fund reports, 781 pages in all[^7]. We wrote every correct answer by hand and sealed it, meaning locked, before any tool ran[^7]. Each tool read each raw PDF once; a mistake is a wrong value, a value the report never states, or an unsupported event.",
+  "intro": "FinExtractBench is our own benchmark of 30 public private-fund reports, 781 pages in all[^7]. We wrote every correct answer by hand and sealed it, meaning locked, before any tool ran[^7]. Each tool read each raw PDF once; a mistake is a wrong value or a value the report never states.",
   "headers": [
    "Tool",
    "Mistakes",
@@ -101,7 +105,7 @@
  },
  "example": {
   "input": "A 57-page quarterly report from a private equity fund, as a PDF.",
-  "output": "Committed capital, paid-in capital, distributions, net asset value, DPI (cash returned per dollar paid in) and TVPI (total value per dollar paid in). Each fact comes with its page number and the exact words it came from. Any fact the two models disagree on is flagged."
+  "output": "Money committed, money paid in, money paid back out, and what the fund is worth today. Each fact comes with its page number and the exact words it came from. Any fact the two models disagree on is flagged."
  },
  "recipes": [
   {
@@ -112,20 +116,20 @@
     "Small model reads it",
     "Each fact + page + quote",
     "Code checks the quote is on that page",
-    "Person reviews failures"
+    "Your reviewer fixes failures and logs each fix"
    ],
    "cost": "Under 2 cents per 57-page report with OpenAI's GPT-6 Luna, Anthropic's Claude Haiku 5.5 or DeepSeek V4.1 Flash in our hard round[^7]. Add review time."
   },
   {
-   "name": "No wrong numbers: two models, a person on disagreements",
+   "name": "Fewest wrong numbers: two models, a person on disagreements",
    "when": "The numbers feed money decisions, reports to investors or a regulator.",
    "flow": [
     "PDF",
     "Model A and Model B read it",
-    "Compare fact by fact",
+    "Code compares fact by fact",
     "Agree: accept",
-    "Disagree: a person decides",
-    "Log every decision"
+    "Disagree: your finance or ops reviewer decides",
+    "System logs each decision and who made it"
    ],
    "cost": "About $0.27 per report for two top models in our locked-answer round[^7]. A person also settles about 2 facts per report, 66 across all 30[^7]."
   },
@@ -143,92 +147,6 @@
   }
  ],
  "tables": [
-  {
-   "title": "Hard round: every answer had to quote its page",
-   "intro": "Eight public fund reports, two of them 47 and 57 pages long. A fact counts only if it is right and the quoted words are on the cited page. One run each, on cleaned text[^7].",
-   "headers": [
-    "Tool",
-    "Proved, 6 short reports (of 96)",
-    "Proved, 2 long reports (of 22)",
-    "Wrong answers, all 8",
-    "Cost per long report"
-   ],
-   "rows": [
-    {
-     "name": "GPT-6 Luna (OpenAI)",
-     "cells": [
-      "96",
-      "21",
-      "2",
-      "under 1 cent"
-     ]
-    },
-    {
-     "name": "DeepSeek V4.1 Flash",
-     "cells": [
-      "96",
-      "21",
-      "2",
-      "under 2 cents"
-     ]
-    },
-    {
-     "name": "Claude Haiku 5.5 (Anthropic)",
-     "cells": [
-      "95",
-      "20",
-      "2",
-      "under 1 cent"
-     ]
-    },
-    {
-     "name": "Gemini Flash Lite 3.5 (Google)",
-     "cells": [
-      "95",
-      "21",
-      "4",
-      "under 2 cents"
-     ]
-    },
-    {
-     "name": "Claude Sonnet 5.5 (Anthropic)",
-     "cells": [
-      "94",
-      "21",
-      "0",
-      "about 15 cents"
-     ]
-    },
-    {
-     "name": "Claude Opus 5.5 (Anthropic)",
-     "cells": [
-      "94",
-      "21",
-      "0",
-      "about 30 cents"
-     ]
-    },
-    {
-     "name": "Qwen3.6 35B (Alibaba)",
-     "cells": [
-      "88",
-      "19",
-      "16",
-      "under 1 cent"
-     ]
-    },
-    {
-     "name": "Levanto Sage 2",
-     "cells": [
-      "73",
-      "too long for it",
-      "7",
-      "n/a"
-     ]
-    }
-   ],
-   "note": "Source: FinExtractBench, Zavient, 21 Nov 2026[^7]. The top nine tools were within 2 facts of each other, so pick on wrong answers, cost and speed. All 8 reports have since been read while fixing the answers, so they are no longer unseen[^7]."
-  },
   {
    "title": "What reading 1,000 pages costs",
    "intro": "List prices on each vendor's own pricing page or price feed, checked 26 November 2026. For comparison, the median total cost to process one supplier invoice is $6.00 (APQC)[^1].",
@@ -272,7 +190,7 @@
      "cells": [
       "Model API",
       "$4[^8]",
-      "Returns text with layout boxes; structured fields use its annotations feature[^29]"
+      "Returns text and page layout; pulling out set fields is a separate feature[^29]"
      ]
     },
     {
@@ -316,7 +234,7 @@
      "url": "https://pypi.org/project/docling/",
      "cells": [
       "Open source",
-      "Free (MIT licence)[^6]",
+      "Free for business use[^6]",
       "You run and maintain it"
      ]
     },
@@ -330,9 +248,87 @@
      ]
     }
    ]
+  },
+  {
+   "title": "Hard round: every answer had to quote its page",
+   "intro": "Eight public fund reports, two of them 47 and 57 pages long, one run each on cleaned text[^7]. A fact counts only if it is right and its quote is on the cited page. The top tools were within 2 facts of each other, so pick on wrong answers, cost and speed[^7].",
+   "headers": [
+    "Tool",
+    "Facts right, with page proof (of 118)",
+    "Wrong answers (all 8 reports)",
+    "Cost per long report"
+   ],
+   "rows": [
+    {
+     "name": "GPT-6 Luna (OpenAI)",
+     "cells": [
+      "117",
+      "2",
+      "under 1 cent"
+     ]
+    },
+    {
+     "name": "DeepSeek V4.1 Flash",
+     "cells": [
+      "117",
+      "2",
+      "under 2 cents"
+     ]
+    },
+    {
+     "name": "Claude Haiku 5.5 (Anthropic)",
+     "cells": [
+      "115",
+      "2",
+      "under 1 cent"
+     ]
+    },
+    {
+     "name": "Gemini Flash Lite 3.5 (Google)",
+     "cells": [
+      "116",
+      "4",
+      "under 2 cents"
+     ]
+    },
+    {
+     "name": "Claude Sonnet 5.5 (Anthropic)",
+     "cells": [
+      "115",
+      "0",
+      "about 15 cents"
+     ]
+    },
+    {
+     "name": "Claude Opus 5.5 (Anthropic)",
+     "cells": [
+      "115",
+      "0",
+      "about 30 cents"
+     ]
+    },
+    {
+     "name": "Qwen3.6 35B (Alibaba)",
+     "cells": [
+      "107",
+      "16",
+      "under 1 cent"
+     ]
+    },
+    {
+     "name": "Levanto Sage 2",
+     "cells": [
+      "73 of 96; long reports too long for it",
+      "7",
+      "n/a"
+     ]
+    }
+   ],
+   "note": "Source: FinExtractBench, Zavient, 21 Nov 2026[^7]. All 8 reports have since been read while fixing the answers, so they are no longer unseen[^7]."
   }
  ],
  "howToTest": [
+  "Record today's baseline first: staff minutes per file, and errors that reach the systems and reports downstream.",
   "Pick 50 real files, including your worst scans and longest reports, plus facts some files never state, to catch invented answers. Even vendors advise benchmarking on your own documents[^20].",
   "Write the right answer for every fact before any AI reads the files, and lock it, so the AI's output cannot sway it.",
   "Require each answer to name its page and quote the exact words, and have code check that the quote is there.",
@@ -348,7 +344,8 @@
   "A model that writes a plausible wrong number is worse than one that leaves the field blank[^17]. Score them separately.",
   "Two tables on one page with similar labels fooled 7 of 10 tools in our hard round[^7]. Check the facts that sit near look-alikes.",
   "Prices and model versions change: Mistral lists OCR 3 at $2 and OCR 4.1 at $4 per 1,000 pages[^8]. Re-run your benchmark when either changes, and keep the files and answers so the re-run is cheap.",
-  "Read the vendor's data terms. Datalab's rate card shows prices with a 25% discount that assumes you let it train on your data[^12]."
+  "Read the vendor's data terms. Datalab's rate card shows prices with a 25% discount that assumes you let it train on your data[^12].",
+  "Plan reviewer time: about 2 facts per report went to a person in our benchmark[^7]. Multiply by your monthly volume to size the workload."
  ],
  "resources": [
   {

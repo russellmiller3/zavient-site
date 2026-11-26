@@ -3,14 +3,14 @@
  "description": "13 AP and invoice-capture tools checked, with prices where they exist. Why reading invoices is solved and exceptions and fraud are not.",
  "job": "invoice processing",
  "industry": "finance and accounts payable",
- "summary": "AI invoice processing reads a supplier invoice, codes it, matches it to the purchase order and gets it approved and paid[^27][^21]. Reading the invoice now costs cents[^10][^11][^9]. The money leaks in exceptions, the one invoice in five that needs a person to sort out[^8][^1], and in fake bank-change requests[^12][^13].",
+ "summary": "AI invoice processing reads a supplier invoice, codes it, matches it to the purchase order and gets it approved and paid[^27][^21]. Reading the invoice now costs cents[^10][^11]. The money leaks in exceptions, the one invoice in five that needs a person to sort out[^8][^1], and in fake bank-change requests[^12][^13].",
  "index": true,
  "verdict": [
-  "Reading invoices is now cheap and largely solved: cloud invoice readers cost cents per invoice[^10][^11][^9].",
+  "Today an invoice takes 11.6 days to process, and only 38.3% go straight through with no manual step[^8].",
   "The money leaks in exceptions: about one invoice in five needs a person to sort it out[^8][^1].",
   "Fraud arrives as invoices: a request to pay a supplier's \"new\" bank account is a known email scam the FBI warns about[^12][^13].",
   "Let an accounts payable suite such as BILL, Ramp or Tipalti run the inbox, approvals and payments[^5][^6][^7].",
-  "Build AI only for the gaps, such as exception triage and a hold on bank-detail changes[^8][^12]. Benchmark it on 50 of your own invoices first."
+  "Build AI only for the gaps, such as exception triage and a hold on bank-detail changes, benchmarked first on 50 of your own invoices[^8][^12]."
  ],
  "onPage": [
   {
@@ -22,12 +22,12 @@
    "text": "Which accounts payable suites publish a price"
   },
   {
-   "to": "table-1",
-   "text": "The six AP suites that sell only by demo or quote"
+   "to": "recipes",
+   "text": "Three ways to do it, and what each costs"
   },
   {
-   "to": "table-2",
-   "text": "Public receipt and invoice data you can benchmark on"
+   "to": "table-1",
+   "text": "The six AP suites that sell only by demo or quote"
   },
   {
    "to": "rules",
@@ -36,6 +36,10 @@
   {
    "to": "benchmark",
    "text": "How to benchmark AI on your own invoices"
+  },
+  {
+   "to": "buy-or-build",
+   "text": "What to buy and what to build yourself"
   }
  ],
  "stats": [
@@ -45,9 +49,9 @@
    "source": "Zavient review of vendor pricing pages, 26 Nov 2026"
   },
   {
-   "num": "<$0.02",
-   "label": "for a small model to read a long financial report (47 to 57 pages) in our benchmark[^9]",
-   "source": "FinExtractBench, Zavient, Nov 2026"
+   "num": "38.3%",
+   "label": "of invoices go straight through, with no manual step[^8]",
+   "source": "Ardent Partners, AP Metrics That Matter in 2026"
   },
   {
    "num": "19.9%",
@@ -68,7 +72,7 @@
  ],
  "ownData": {
   "title": "Who publishes a price, checked 26 November 2026",
-  "intro": "We read the pricing page of all 13 tools below: 9 full AP suites, 3 capture tools and QuickBooks. Seven of the 13 give no list price for a paid plan[^18][^19][^21][^23][^24][^26][^31]. Where a price exists, the catch is usually in the add-ons[^5][^16][^7].",
+  "intro": "Of the 9 full AP suites, only BILL, Ramp and Tipalti publish a price[^5][^6][^7]. Budget for add-ons on top, such as matching and per-invoice or per-payment fees[^6][^16][^17][^7]. We read all 13 pricing pages below (9 suites, 3 capture tools and QuickBooks), and 7 give no list price for a paid plan[^18][^19][^21][^23][^24][^26][^31].",
   "headers": [
    "Tool",
    "Covers",
@@ -86,7 +90,7 @@
     "Ramp Bill Pay",
     "Full AP",
     "Free; Plus $15 per user a month plus a platform fee[^6]",
-    "3-way match needs Plus or a paid Procurement add-on; ACH and wires carry per-payment fees[^6][^16][^17]"
+    "3-way match (invoice, purchase order and receipt agree) needs Plus or a paid Procurement add-on; ACH and wires carry per-payment fees[^6][^16][^17]"
    ],
    [
     "Tipalti",
@@ -166,12 +170,12 @@
    "name": "1. Buy the suite and switch on its AI",
    "when": "Most small and mid-size companies.",
    "flow": [
-    "Invoices to an AP inbox",
-    "Suite reads and codes them",
-    "Match to PO and receipt",
-    "Approval rules",
-    "Payment",
-    "Sync to your ERP"
+    "Suppliers email invoices to the AP inbox",
+    "Suite reads and codes them; AP clerk checks the flagged ones",
+    "Suite matches each invoice to the PO and the receipt Receiving logged",
+    "Budget owner approves; Controller approves over limit",
+    "Controller releases payment",
+    "Suite syncs to your ERP"
    ],
    "cost": "BILL costs $49 to $89 per user a month[^5]. Ramp is free, or $15 per user a month plus a platform fee[^6]; Tipalti starts at $99 a month plus fees[^7]."
   },
@@ -179,24 +183,24 @@
    "name": "2. Add an AI check where your suite falls short",
    "when": "You already have AP software but exceptions and fraud attempts still get through.",
    "flow": [
-    "New invoice",
-    "AI reads it with page and quote",
-    "Compare with PO, receipt and supplier record",
-    "Bank details changed?",
-    "Hold and call the supplier on a known number",
-    "Release to approval"
+    "New invoice lands in the AP inbox",
+    "AI reads it and shows where on the page each value came from",
+    "AI compares it with the PO, the receipt Receiving logged and the supplier record",
+    "AI flags any bank-detail change to the AP clerk",
+    "AP clerk holds it and calls the supplier on a known number",
+    "AP clerk releases it to approval; Controller approves over limit"
    ],
-   "cost": "Cents per invoice to run a current model[^9][^10], against a median $6.00 to an average $9.90 to process one invoice today[^2][^8]. The real cost is building and owning the hold rules; we quote that per job and don't publish a price here."
+   "cost": "Reading an invoice costs cents with a cloud invoice reader[^10][^11], against a median $6.00 to an average $9.90 to process one invoice today[^2][^8]. The real cost is building and owning the hold rules; we quote that per job and don't publish a price here."
   },
   {
    "name": "3. Capture only, into your own ERP",
    "when": "High volume of standard invoices and an ERP that already handles approvals and payment.",
    "flow": [
-    "Scan or PDF",
-    "Capture tool or cloud invoice parser",
+    "AP clerk scans paper invoices or forwards the PDFs",
+    "Capture tool or cloud invoice parser reads them",
     "Low confidence: AI re-reads",
-    "Person checks what is still unsure",
-    "Post to ERP"
+    "AP clerk checks what is still unsure",
+    "AP clerk posts to the ERP"
    ],
    "cost": "Amazon Textract reads invoices for $10 per 1,000 pages[^10]; Google charges $0.10 per invoice of up to 10 pages[^11]; Rossum starts at $18,000 a year[^29]."
   }
@@ -308,13 +312,7 @@
    "name": "France: B2B e-invoicing",
    "url": "https://www.impots.gouv.fr/actualite/facturation-electronique",
    "status": "Started 1 Sep 2026",
-   "what": "Every business must be able to receive e-invoices; large and mid-size firms must issue them. Small firms issue from 1 Sep 2027[^38][^39]."
-  },
-  {
-   "name": "EU VAT in the Digital Age (ViDA)",
-   "url": "https://taxation-customs.ec.europa.eu/news/adoption-vat-digital-age-package-2025-03-11_en",
-   "status": "Adopted Mar 2025",
-   "what": "Member states can require e-invoicing; digital reporting for cross-border B2B starts 1 Jul 2030[^41][^42]."
+   "what": "Every business must be able to receive e-invoices; large and mid-size firms must issue them. Small firms issue from 1 Sep 2027[^38][^39]. A scan or an ordinary PDF sent by email no longer counts as an e-invoice[^40]."
   },
   {
    "name": "United States",
@@ -324,6 +322,7 @@
   }
  ],
  "howToTest": [
+  "Record today's baseline first: cost per invoice, exception rate, straight-through rate and days per invoice. Compare it with the benchmark figures on this page: 19.9% exceptions, 38.3% straight through and 11.6 days per invoice[^8].",
   "Pull 50 recent invoices, including credit notes, multi-page invoices, foreign ones and the worst scans.",
   "Write down the right supplier, number, date, total, tax and PO for each before any tool reads them.",
   "Run each tool on the same set. Count wrong values apart from blanks: a wrong total is worse than a missing one.",
@@ -337,8 +336,7 @@
  "watchOuts": [
   "The price you see is rarely the price you pay. Matching, payments, more entities and ERP sync are often add-ons[^5][^16][^7][^23].",
   "Payment fraud rides on invoices[^12][^13]: 74% of US organizations were hit by business email compromise in 2025, the AFP found[^4][^15]. Check any change to bank details by calling a number you look up yourself[^12].",
-  "A tool that reads the subtotal as the total looks right at a glance. In our benchmark, 7 of 10 tools picked the wrong one of two look-alike tables[^9].",
-  "If you operate in Germany or France, e-invoices arrive as structured data, and an ordinary PDF no longer counts[^36][^40]. A tool that only reads PDFs will miss the point and the deadlines[^37][^39]."
+  "A tool that reads the subtotal as the total looks right at a glance. In our benchmark, 7 of 10 tools picked the wrong one of two look-alike tables[^9]."
  ],
  "resources": [
   {
@@ -602,7 +600,7 @@
  },
  "offer": {
   "heading": "Invoices still stuck in exceptions? Get a free diagnostic",
-  "body": "Tell me your AP tool, your volume and where invoices get stuck. In 30 minutes you get my read on what to fix and whether to buy or build."
+  "body": "Tell me your AP tool, your volume and where invoices get stuck. In 30 minutes you learn which suite fits and whether a custom check (recipe 2) pays at your volume. You get a written follow-up either way."
  },
  "updated": "2026-11-26"
 }

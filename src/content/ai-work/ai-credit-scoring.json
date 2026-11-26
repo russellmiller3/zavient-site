@@ -1,13 +1,13 @@
 {
  "title": "AI credit scoring: the tools, the rules and what to build first",
- "description": "Every library, platform and dataset a lender can use to score loans with AI, checked against US and EU rules, plus three builds and our pick.",
+ "description": "Approve more good loans with an AI credit model you can explain: the tools, US and EU rules, three builds and our pick.",
  "job": "credit scoring",
  "industry": "lending",
  "summary": "AI credit scoring predicts whether an applicant will repay[^5], then has to say why in plain words when it says no[^1][^43]. The model is the easy part. The decline reasons[^1][^41], the bias checks[^39][^40] and the paperwork your examiner will ask for[^7][^8] are what make or break it.",
  "index": true,
  "verdict": [
-  "Start with a scorecard you can explain line by line: it shows how much each input added to or took from the score[^17][^16].",
-  "US law requires specific reasons for every decline, and a simple scorecard gives them straight from the model[^1][^43][^17].",
+  "The payoff is approving more good loans without adding losses; judge it at your own cutoff on your own loans, not vendor claims[^18][^29].",
+  "Start with a scorecard you can explain line by line[^17][^16]; it gives the specific decline reasons US law requires straight from the model[^1][^43].",
   "Move to a more complex model only when your own benchmark shows it predicts better and your validators can check it[^5][^7][^41].",
   "Use AI to read loan documents, not to decide: in published studies, language models predicted defaults worse than standard models[^6][^13].",
   "The main software is free; the real cost is your team's time on data, validation and decline reasons[^50][^52][^7][^41]."
@@ -45,9 +45,9 @@
    "source": "Regulation B, 12 CFR 1002.9"
   },
   {
-   "num": "3 of 13",
-   "label": "open-source credit libraries we track have shipped nothing in over two years[^54][^55][^57]",
-   "source": "Zavient count from PyPI release histories, 26 Nov 2026"
+   "num": "5 to 10%",
+   "label": "less accurate credit scores for minority and low-income borrowers, mostly because of thin credit files (little credit history)[^40]",
+   "source": "Stanford HAI, 2021"
   },
   {
    "num": "1 of 6",
@@ -63,12 +63,11 @@
  "pickElse": [
   "No data science team: look at a platform such as Zest AI, Provenir, Taktile or Scienaptic. None publish prices; expect a contract[^18][^19][^20][^21].",
   "Many thin-file applicants, with little credit history: their scores are less accurate[^40]. Add bank-account cash-flow data from Plaid Check, Prism Data or Nova Credit before you change the model[^27][^28][^30].",
-  "Most of the work is reading documents: spend on extraction first (recipe 3 below). In our own benchmark, AI read each long report for under $0.30[^42].",
-  "A small loan book: benchmark TabPFN, a ready-trained AI model for tables, against the scorecard. It did best on small, unbalanced default data in one 2026 study[^15], but its newest weights need a commercial licence for production[^49]."
+  "Most of the work is reading documents: spend on extraction first (recipe 3 below). In our own benchmark, AI read each long report for under $0.30[^42]."
  ],
  "ownData": {
   "title": "The open-source credit stack, checked 26 November 2026",
-  "intro": "We pulled the latest release date, licence and monthly downloads for every open-source library a lender would use[^45][^58]. Downloads show what teams actually run; release dates show what is still maintained. Hand this table to your modeler.",
+  "intro": "For your modeler: release date, licence and monthly downloads for every open-source credit library a lender would use[^45][^58]. Downloads show what teams actually run; release dates show what is still maintained.",
   "headers": [
    "Library",
    "What it is for",
@@ -178,28 +177,30 @@
  "recipes": [
   {
    "name": "1. Small lender: explainable scorecard",
-   "when": "Credit unions and community banks with no data science team. The software is free[^50][^52], and the points table shows each decline reason directly[^17].",
+   "when": "Credit unions and community banks with a small analytics team, or an outside builder. The software is free[^50][^52], and the points table shows each decline reason directly[^17].",
    "flow": [
-    "Application + bureau report",
-    "Bins and weight of evidence (optbinning)",
-    "Scorecard points",
-    "Cutoff and policy rules",
-    "Decision with top reasons",
+    "Application + credit bureau report",
+    "Group each input into ranges and give each range points (optbinning)",
+    "Add up the points into a score",
+    "Credit officer sets the cutoff and policy rules",
+    "Decision with the top decline reasons",
+    "A named person sends the decline letter",
     "Quarterly check for accuracy drift and bias (fairlearn)"
    ],
    "cost": "Free open-source software[^50][^52]; building it on your past loans is quoted per job, with no price published here. After that, the cost is your team's time for regular reviews."
   },
   {
-   "name": "2. Mid-size lender: gradient boosting with reason codes",
+   "name": "2. Mid-size lender: stronger model with plain-English reasons",
    "when": "Fintechs and regional lenders with a team that can validate the model before first use[^7].",
    "flow": [
     "Application + bureau + bank-account data",
-    "One feature table",
-    "LightGBM model",
-    "SHAP drivers",
-    "Reason-code map signed off by compliance",
-    "Decision engine",
-    "Monthly check against an EBM challenger"
+    "Combine into one table of inputs",
+    "Stronger model that weighs many inputs at once (LightGBM)",
+    "Find which inputs drove each score (SHAP)",
+    "Turn drivers into plain-English reasons; compliance signs them off",
+    "Credit officer sets cutoffs in the decision engine",
+    "A named person sends the decline letter",
+    "Monthly check against a simpler model that shows each input's effect (EBM)"
    ],
    "cost": "Open-source models[^71][^47]. Cash-flow data and most decision platforms are quoted per contract[^26][^30][^19][^20]; of the platforms we checked, only Experian shows a public price[^23]."
   },
@@ -208,12 +209,13 @@
    "when": "Small business, mortgage and other files with many PDFs per application.",
    "flow": [
     "Bank statements, pay stubs, tax returns",
-    "AI extracts the fields",
-    "People check the shaky ones",
-    "Scorecard or boosted model scores",
-    "Decision with reasons"
+    "AI pulls out the key fields",
+    "People check the shaky ones: an underwriter reviews each field the AI flags",
+    "Scorecard or stronger model scores",
+    "Decision with reasons",
+    "A named person sends the decline letter"
    ],
-   "cost": "In our own benchmark, AI read fund reports of up to 57 pages for about $0.006 to $0.27 each[^42]. The cost depends on the models; see the AI document processing guide."
+   "cost": "In our own benchmark, AI read fund reports of up to 57 pages for about $0.006 to $0.27 each, depending on the models[^42]. That was measured on fund reports, so benchmark it on your own loan files; see the AI document processing guide[^42]."
   }
  ],
  "tables": [
@@ -264,7 +266,7 @@
      "cells": [
       "Enterprise decisioning",
       "FICO: not published[^22]. Experian: 4,200 pounds a licence on G-Cloud[^23]",
-      "G2 lists a PowerCurve plan at $1,500 per user a month, data extra[^24]"
+      "G2 lists a PowerCurve plan at $1,500 per user a month, data extra[^24]. Pounds per licence and dollars per user a month aren't comparable units[^23][^24]."
      ]
     },
     {
@@ -401,7 +403,7 @@
    "name": "Regulation B, 12 CFR 1002.9",
    "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1002/subpart-A/section-1002.9",
    "status": "In force",
-   "what": "A lender that declines an applicant must give the specific main reasons within 30 days, and they must match the factors the model actually scored[^1]. Every model needs a clean path from its output to plain-English reasons."
+   "what": "A lender that declines an applicant must give the specific main reasons within 30 days, and they must match the factors the model actually scored[^1]. Every model needs a clean path from its output to plain-English reasons. Name one person who sends each decline letter on time."
   },
   {
    "name": "CFPB circulars 2022-03 and 2023-03",
@@ -410,16 +412,10 @@
    "what": "They said complex algorithms are no excuse for vague reasons[^43]. The guidance is gone; the rule it explained is not[^2][^1]. Don't read the withdrawal as a pass."
   },
   {
-   "name": "Fed SR 26-2, model risk guidance",
+   "name": "Fed SR 26-2 and OCC Bulletin 2026-13, model risk guidance",
    "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
-   "status": "Replaced SR 11-7, 17 Apr 2026",
-   "what": "Mainly aimed at banking organizations over $30 billion in assets[^3][^7], with generative and agentic AI out of scope[^7]. Smaller banks are generally left to risk practices that fit their size; where it applies, models are validated before first use and documented[^7]."
-  },
-  {
-   "name": "OCC Bulletin 2026-13",
-   "url": "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-13.html",
-   "status": "Issued 17 Apr 2026",
-   "what": "The OCC adopted the revised model risk guidance and dropped its 1997 credit-scoring exam guide, Bulletin 1997-24[^8]."
+   "status": "Issued 17 Apr 2026; replaced SR 11-7",
+   "what": "This mostly doesn't apply below $30 billion in assets; smaller banks are generally excluded[^3][^7]. The OCC adopted it and dropped its 1997 credit-scoring exam guide[^8]. Where it applies, validate models before first use and document them; generative and agentic AI are out of scope[^7]."
   },
   {
    "name": "EU AI Act, Annex III",
@@ -429,8 +425,10 @@
   }
  ],
  "howToTest": [
+  "Record today's numbers first: approval rate, loss rate, time to decision and share of files reviewed by hand.",
   "Take two to three years of your booked loans with known outcomes, and hold out the most recent months as the test.",
-  "Fit a scorecard, an EBM (Explainable Boosting Machine, a model that shows each input's effect) and LightGBM on the same data, inputs and split.",
+  "Fit three models on the same data, inputs and split: a scorecard, an EBM and LightGBM. An EBM (Explainable Boosting Machine) shows each input's effect; LightGBM is stronger but harder to explain.",
+  "For a small loan book, try TabPFN too, a ready-trained AI model for tables[^15]. It did best on small, unbalanced default data in one 2026 study[^15], but its newest weights need a commercial licence for production[^49].",
   "Compare AUC and KS on the held-out months. Both measure how well a model separates repayers from defaulters; AUC runs from 0.5, a coin flip, to 1.0, perfect.",
   "Turn each model's output into decline reasons, and check they stay the same when you refit on a new sample.",
   "Price the lift in dollars at your cutoff: the extra approvals you gain and the losses you avoid. That tells you what a better model is worth.",
@@ -452,7 +450,7 @@
   {
    "name": "optbinning",
    "url": "https://pypi.org/project/optbinning/",
-   "what": "Open-source scorecard builder: binning, weight of evidence and points."
+   "what": "Open-source scorecard builder: groups each input into ranges and gives each range points."
   },
   {
    "name": "interpret (EBM)",

@@ -2,7 +2,7 @@
  "title": "AI consulting services: what to buy, what it costs, where it pays",
  "description": "What AI consulting should deliver, what it costs against hiring a team or buying software, and the finance work where AI pays first. With our own data.",
  "job": "AI consulting",
- "summary": "AI consulting should turn one business problem into a working system you can prove works; most generative AI efforts never show up in the P&L[^1][^16][^15]. The companies that get results measure AI's impact and redesign the work around it[^15]. They benchmark on their own files[^5][^23] and plan for life after launch, where most of the cost sits[^3][^12].",
+ "summary": "AI consulting should take the busywork of one costly finance job off your team's plate, such as invoice exceptions, which hit 18.4% of invoices[^34]. Most generative AI efforts never show up in the P&L[^1][^16]; the winners measure AI's impact and redesign the work around it[^15]. They benchmark on their own files[^5][^23] and plan for life after launch, where most of the cost sits[^3][^12].",
  "index": true,
  "verdict": [
   "Hire AI consulting for one problem with a number attached, not a strategy deck. The projects that pay pick one pain point[^1].",
@@ -39,9 +39,9 @@
  ],
  "stats": [
   {
-   "num": "48x",
-   "label": "cost gap between AI tools that found nearly the same facts in our benchmark[^7]",
-   "source": "FinExtractBench, Zavient, Nov 2026[^7]; Claude list prices span about 40x[^11]"
+   "num": "76%",
+   "label": "of US organizations faced attempted or actual payments fraud in 2025[^35]",
+   "source": "AFP 2026 Payments Fraud and Control Survey[^35]"
   },
   {
    "num": "18.4%",
@@ -83,55 +83,34 @@
  ],
  "ownData": {
   "title": "What it costs to hire the team yourself",
-  "intro": "These are posted minimum salaries from our sample of US AI job ads, the floor for building an AI team in-house[^8]. Benefits are 30% of US private employers' total pay costs[^19], and technical roles take a median 75 days to fill[^20]. Before benefits, one AI engineer's median posted minimum of $155,300 a year[^8] would pay for 15 Zavient Sprints at $10,000 each[^21].",
+  "intro": "These are posted minimum salaries from our sample of US AI job ads, the floor for building an AI team in-house[^8]. Benefits are 30% of US private employers' total pay costs[^19]. Technical roles take a median 75 days to fill[^20].",
   "headers": [
    "Role",
-   "Ads",
-   "Employers",
-   "Ads with pay",
    "Median posted minimum pay"
   ],
   "rows": [
    [
     "Head or director of AI",
-    "34",
-    "24",
-    "28",
     "$220,600"
    ],
    [
     "Machine learning engineer",
-    "306",
-    "210",
-    "195",
     "$170,600"
    ],
    [
     "AI architect or consultant",
-    "78",
-    "62",
-    "34",
     "$166,400"
    ],
    [
     "Forward deployed engineer",
-    "304",
-    "213",
-    "174",
     "$161,359"
    ],
    [
     "AI engineer",
-    "435",
-    "326",
-    "247",
     "$155,300"
    ],
    [
     "Data scientist",
-    "479",
-    "353",
-    "287",
     "$130,000"
    ]
   ],
@@ -145,13 +124,13 @@
  "recipes": [
   {
    "name": "1. Benchmark first",
-   "when": "Before anyone writes production code, to settle which approach wins on your files and what it costs. Enterprises treat public leaderboards as a first filter only[^5].",
+   "when": "Before anyone builds, to settle which approach wins on your files and what it costs; public leaderboards are only a first filter[^5]. Pick a job that is high volume, repetitive and has a known cost of errors, such as invoice exceptions[^34].",
    "flow": [
-    "Pick one job with a number to move",
-    "50 of your real files",
-    "Answers your team checked, locked first",
-    "Run the leading options",
-    "Accuracy and cost per file"
+    "Process lead: measure today's time and error rate per file",
+    "Process lead: pick 50 real files",
+    "Your team: agree the right answers, then lock them",
+    "Consultant: run the leading options",
+    "Consultant: report accuracy and cost per file"
    ],
    "cost": "Quoted per job, with a fixed scope. Make sure you keep the files, the answer key and the code, so you can re-run it."
   },
@@ -159,12 +138,12 @@
    "name": "2. Build the winner into the work",
    "when": "Once the benchmark shows a clear winner that pays back.",
    "flow": [
-    "Winning model",
-    "Your systems and workflow",
-    "Review queue for unsure cases",
-    "Every decision logged",
-    "Go live on a share of volume",
-    "Full volume"
+    "Consultant: set up the winning model",
+    "IT: connect it to your systems and workflow",
+    "Named reviewer: clear the queue of unsure cases",
+    "IT: log every decision",
+    "Process lead: go live on a share of volume",
+    "Process lead: move to full volume"
    ],
    "cost": "Depends on the systems it touches. Gartner warns that a production system can cost orders of magnitude more than the pilot[^3][^12], so scope it from the benchmark, not the demo."
   },
@@ -172,10 +151,10 @@
    "name": "3. Keep it right",
    "when": "Always, because models, prices and your documents change. The price of a given level of AI performance has fallen 9 to 900 times a year[^22].",
    "flow": [
-    "New model or price change",
-    "Re-run the benchmark",
-    "Cheaper or better?",
-    "Switch, or keep"
+    "Consultant: flag a new model or price change",
+    "Consultant: re-run the benchmark",
+    "Process lead: check if it's cheaper or better",
+    "You: decide to switch, or keep"
    ],
    "cost": "Small, because the benchmark already exists. Running the model is at least 70% of its lifetime cost[^3][^12], so a cheaper model that passes the benchmark saves on every file."
   }
@@ -195,7 +174,7 @@
      "name": "In-house data scientist (BLS)",
      "url": "https://www.bls.gov/ooh/math/data-scientists.htm",
      "cells": [
-      "Median $120,230 a year, May 2025[^4]",
+      "BLS median pay: $120,230 a year, May 2025[^4]. Job ads post a median minimum of $130,000[^8].",
       "Many systems over years",
       "Salary only; technical roles take a median 75 days to fill[^20]"
      ]
@@ -232,12 +211,15 @@
  ],
  "testTitle": "How to benchmark a consultant's claims before you sign",
  "howToTest": [
+  "Measure today first, so the after has a before.",
   "Ask for a benchmark on 20 to 50 of your own files before you sign for a full build.",
   "Agree the right answers with your own team first, and lock them, so the result is graded against your standard.",
   "Ask for cost per correct answer, not price per token. In our benchmark the cheapest tool made 16 wrong answers; the two best made none[^7].",
+  "Ask why they picked their model. In our benchmark, two tools found nearly the same facts at prices 48 times apart[^7]; Claude's own list prices span about 40 times[^11].",
   "Ask what happens when a better model ships next month. If the answer is a new project, the system will go stale.",
   "Ask for a client where the system has run in production for at least six months.",
-  "Ask where your files are stored, who can see them, and whether anyone trains AI models on them."
+  "Ask where your files are stored, who can see them, and whether anyone trains AI models on them.",
+  "Ask who clears unsure cases, how fast, and who covers when they're out."
  ],
  "buyVsBuild": {
   "buy": "Hire a consultant when you need one system working this quarter, have no AI engineers, and want someone accountable for the result. Pay for a fixed scope with a benchmark you can check. Bought or partnered projects succeed about 3 times as often as internal builds[^1].",
@@ -457,39 +439,21 @@
  },
  "offer": {
   "heading": "Not sure where AI pays in your business? Get a free diagnostic",
-  "body": "Bring one job with a number attached. In 30 minutes you get my read on how to approach it with AI. You get me, not a team of juniors."
+  "body": "Bring one job with a number attached. In 30 minutes you leave knowing which job to start with, whether to buy or build, and what to benchmark first. You get me, not a team of juniors."
  },
  "updated": "2026-11-26",
  "rules": [
   {
-   "name": "EU AI Act, Annex III",
-   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3",
-   "status": "Starts 2 Dec 2027",
-   "what": "If you lend or insure in the EU, credit scoring of people and life and health insurance pricing are high-risk uses[^26]. The EU's Digital Omnibus moved their start to 2 December 2027[^27][^28]. Any consultant building them for EU operations should plan logging, oversight and documentation from day one."
+   "name": "AI credit scoring: the lending rules",
+   "url": "https://zavient.com/ai-work/ai-credit-scoring.html",
+   "status": "US in force; EU from 2 Dec 2027",
+   "what": "If you lend, US rules require the specific main reasons for a decline within 30 days[^24]. Those reasons must be the factors the model actually scored[^25]. In the EU, credit scoring of people becomes a high-risk AI use from 2 December 2027[^26][^27][^28]."
   },
   {
-   "name": "Regulation B, 12 CFR 1002.9",
-   "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1002/subpart-A/section-1002.9",
-   "status": "In force",
-   "what": "US lenders must give the specific main reasons for a decline within 30 days[^24]. When a scoring system decides, the reasons must be the factors it actually scored[^25]."
-  },
-  {
-   "name": "NYDFS Circular Letter No. 7",
-   "url": "https://www.dfs.ny.gov/industry-guidance/circular-letters/cl2024-07",
-   "status": "In force since Jul 2024",
-   "what": "New York insurers are expected to test AI and outside data for unfair discrimination and keep board oversight[^29]. They also stay responsible for vendor tools and owe specific reasons and data sources for adverse decisions, such as denials[^29]."
-  },
-  {
-   "name": "NAIC Model Bulletin on AI",
-   "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
-   "status": "30 jurisdictions",
-   "what": "Insurers are expected to keep a written AI program with governance, risk controls and vendor oversight[^31]. 30 jurisdictions had adopted it by 13 November 2026; California, Colorado and New York have their own rules instead[^30]."
-  },
-  {
-   "name": "Colorado SB21-169",
-   "url": "https://doi.colorado.gov/for-consumers/sb21-169-protecting-consumers-from-unfair-discrimination-in-insurance-practices",
-   "status": "Life; auto and health from 15 Oct 2025",
-   "what": "Insurers must test outside data and models for unfair discrimination, fix harm found and report to the Division[^32]. Since 15 October 2025 this covers auto and health insurers as well as life[^33]."
+   "name": "AI underwriting: the insurance rules",
+   "url": "https://zavient.com/ai-work/ai-underwriting.html",
+   "status": "US in force; EU from 2 Dec 2027",
+   "what": "If you insure, New York expects and Colorado requires testing AI and outside data for unfair discrimination[^29][^32]. 30 jurisdictions expect a written AI program with vendor oversight[^30][^31]. In the EU, life and health insurance pricing becomes a high-risk AI use from 2 December 2027[^26][^27][^28]."
   }
  ]
 }

@@ -6,11 +6,11 @@
  "summary": "AI underwriting does the reading: it pulls the facts from applications, statements and broker emails so your underwriters decide faster[^13][^22]. It fits small-business lenders, commercial insurers, MGAs and life insurers that already run a rules engine[^23][^20]. Underwriters spend about 4 in 10 hours on admin, and the decision stays explainable with a person accountable[^1][^7][^4][^2].",
  "index": true,
  "verdict": [
-  "Point AI at the reading, not the decision; people decide. It fits small-business lenders, commercial insurers, MGAs (managing general agents) and life insurers with a rules engine[^23][^20].",
-  "Underwriters spend about 39% of their time on admin and other non-core work, so the paperwork is where AI pays first[^1][^8][^7].",
-  "In our sealed benchmark on 30 fund reports, not loan files, the two best models made zero mistakes[^13]. About 2 facts per report still went to a person[^13].",
+  "The money is hours back for deciding. Underwriters spend about 39% of their time on admin and other non-core work, the paperwork AI can take on[^1][^8][^7].",
+  "Start with the reading: statements and tax returns for lenders, broker submissions for commercial insurers and MGAs (managing general agents)[^22], referred-case evidence for life insurers[^19].",
+  "AI reads long financial PDFs well: the two best models made zero mistakes on 30 sealed fund reports[^13]. Those weren't loan files, so benchmark on your own[^13].",
   "Keep the decision with an explainable model and a named underwriter. US lenders must give specific reasons for a decline; New York expects the same from insurers[^4][^17][^2].",
-  "30 US jurisdictions have adopted the NAIC (US state insurance regulators' body) bulletin asking insurers to govern and test their AI[^9][^10][^34]."
+  "First step: benchmark AI on 50 of your past files before you buy. Vendors' faster-quote figures are their own customers' claims[^21][^28]."
  ],
  "onPage": [
   {
@@ -18,12 +18,12 @@
    "text": "Which underwriting steps AI can take on today, and which stay with a person"
   },
   {
-   "to": "table-1",
-   "text": "The insurance underwriting tools we checked"
+   "to": "recipes",
+   "text": "Three ways to build it"
   },
   {
-   "to": "table-2",
-   "text": "Public data you can benchmark on"
+   "to": "table-1",
+   "text": "The insurance underwriting tools we checked"
   },
   {
    "to": "rules",
@@ -36,6 +36,10 @@
   {
    "to": "what-goes-wrong",
    "text": "Where AI underwriting projects go wrong"
+  },
+  {
+   "to": "buy-or-build",
+   "text": "Buy or build"
   }
  ],
  "stats": [
@@ -56,7 +60,7 @@
   },
   {
    "num": "30",
-   "label": "US jurisdictions have adopted the NAIC bulletin on insurers' use of AI[^9][^10]",
+   "label": "US jurisdictions have adopted the NAIC (state insurance regulators' body) bulletin on insurers' use of AI[^9][^10]",
    "source": "NAIC adoption map, 13 Nov 2026"
   }
  ],
@@ -98,7 +102,7 @@
    [
     "Score the risk",
     "Yes, with an explainable model, not a chatbot",
-    "Gradient boosting, a common machine-learning method, beat language models on loan default[^14] and leads a 117-study review[^15]. MassMutual's machine-learned life score beat traditional underwriting on claims[^5][^33]."
+    "A standard machine-learning model beat chat models at predicting loan defaults, and the same method tops a credit-scoring review[^14][^15]. MassMutual's machine-learned life score beat traditional underwriting on claims[^5][^33]."
    ],
    [
     "Decide and explain the decision",
@@ -117,35 +121,35 @@
    "name": "1. Commercial insurance: submission intake",
    "when": "Commercial insurers and MGAs where broker submissions pile up and some risks inside your appetite (the risks you want to write) never get a quote[^23].",
    "flow": [
-    "Broker email, forms, claims history (loss runs)",
+    "Broker email, forms and loss runs (claims history) land in a queue the ops lead owns",
     "AI extracts each fact with page and quote",
-    "Appetite and duplicate check",
-    "Enrich with third-party data",
-    "Underwriter queue, best fit first"
+    "AI checks appetite and duplicates; an underwriting assistant clears flagged facts",
+    "AI adds third-party data",
+    "Underwriter works the queue best fit first and decides"
    ],
-   "cost": "Reading cost $0.12 to $0.15 per long report with the two best models in our benchmark[^13]. Intake products publish no price[^24]; a Zavient build is quoted per job, not listed here."
+   "cost": "Reading cost $0.12 to $0.15 per fund report with the two best models in our benchmark, not per loan file[^13]. Intake products publish no price[^24]; a Zavient build is quoted per job, not listed here."
   },
   {
    "name": "2. Small-business lending: file to decision",
    "when": "Lenders whose underwriters spend the day reading statements and returns.",
    "flow": [
-    "Bank statements and tax returns",
+    "Bank statements and tax returns land in a queue the ops lead owns",
     "AI extracts cash-flow facts",
-    "People check flagged facts",
-    "Explainable score",
-    "Underwriter decides, reasons logged"
+    "An underwriting assistant clears flagged facts",
+    "Explainable model drafts a score with its reasons",
+    "Underwriter decides; reasons logged"
    ],
-   "cost": "Under $0.01 to about $0.30 per long document to read with current models in our benchmark[^13]. The build, including a scorecard you own, is quoted per job, not listed here."
+   "cost": "Under $0.01 to about $0.30 per fund report to read with current models in our benchmark, not per loan file[^13]. The build, including a scorecard you own, is quoted per job, not listed here."
   },
   {
    "name": "3. Life insurance: evidence summary for the rules engine",
    "when": "Life and health carriers with an existing rules engine.",
    "flow": [
-    "Application and medical evidence",
+    "Application and medical evidence land in a queue the ops lead owns",
     "AI summarises with page citations",
     "Rules engine applies your manual",
     "Clean cases: offer drafted, an underwriter spot-checks a sample",
-    "Others: referred to an underwriter"
+    "Others: referred to an underwriter, who decides"
    ],
    "cost": "Rules engines such as MagnumXP and ALLFINANZ publish no price; you contact the vendor[^18][^20]. The AI reading layer is quoted per job, and you can benchmark and swap it."
   }
@@ -283,7 +287,7 @@
   },
   {
    "title": "Public data you can benchmark on",
-   "intro": "Use these to compare approaches before you touch your own book. Check each licence before commercial use.",
+   "intro": "For the team that builds it: compare approaches here before you touch your own book. Check each licence before commercial use.",
    "headers": [
     "Dataset",
     "Size",
@@ -334,7 +338,7 @@
    "name": "NAIC Model Bulletin on AI",
    "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
    "status": "30 jurisdictions",
-   "what": "Insurers should keep a written AI program with governance, risk controls, testing and vendor oversight[^34]. California, Colorado and New York have their own rules instead[^9]."
+   "what": "The NAIC (the US state insurance regulators' body) asks insurers to keep a written AI program with governance, risk controls, testing and vendor oversight[^34]. 30 US jurisdictions have adopted it[^9][^10]. California, Colorado and New York have their own rules instead[^9]."
   },
   {
    "name": "Colorado SB21-169",
@@ -350,11 +354,12 @@
   }
  ],
  "howToTest": [
-  "Take 50 past files with known outcomes, including your messiest scans and longest packets.",
+  "Before any AI, time 50 files as your team handles them today. Record hours per file and how many files are left without a quote or decision.",
+  "Then take 50 past files with known outcomes, including your messiest scans and longest packets.",
   "Have your underwriters write the right value for every fact before any AI reads the files, and lock that answer key.",
   "Run each tool on the same files. Count wrong facts apart from blanks, and require a page and quote for every fact.",
   "For scoring, compare an explainable model with your current method on the same past files. Check that the decline reasons make sense to an underwriter.",
-  "Measure cost and time per file, and how many files still need a person."
+  "Measure cost and time per file, and how many files still need a person. Compare each with your baseline from step one."
  ],
  "buyVsBuild": {
   "buy": "Buy when your line is standard, the vendor already handles your submission formats, and you are happy to run inside its workbench.",
@@ -364,7 +369,8 @@
   "You stay responsible for a vendor's model. New York and the NAIC bulletin both expect audit rights in vendor contracts where available[^2][^34].",
   "Models can carry past bias into new decisions. New York and Colorado expect insurers to test for unfair outcomes across groups before use and on a schedule after[^2][^16].",
   "A model's confidence score is not a warning sign. In our benchmark, wrong answers came back rated 70 to 100[^13].",
-  "Vendor claims such as faster quotes come from the vendor's own chosen customers[^21][^24][^28]. Ask for a benchmark on your own files."
+  "Vendor claims such as faster quotes come from the vendor's own chosen customers[^21][^24][^28]. Ask for a benchmark on your own files.",
+  "Flagged facts need an owner: in our benchmark, look-alike tables tripped 7 of 10 tools on one report[^13]. Count flags per file, multiply by weekly files and name who clears them."
  ],
  "resources": [
   {
