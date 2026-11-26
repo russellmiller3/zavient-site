@@ -5,7 +5,7 @@
  "templateVersion": 1,
  "topic": "AI document processing",
  "job": "document processing",
- "summary": "Document AI reads a PDF or scan and returns named fields, like the total and due date[^3][^4]. OCR (text recognition) returns only raw text[^2][^3]. Start with the document your team re-keys most: reading costs cents, and staff time is the real cost[^5][^1].",
+ "summary": "AI document processing reads a page's text like OCR does, then labels which value is which, such as the total or due date[^3][^4]. Plain OCR (text recognition) stops at raw text[^2][^3]. Start with the document your team re-keys most: reading costs cents, and staff time is the real cost[^5][^1].",
  "humanRole": [
   "Reviewer, someone who knows the documents: settles every fact the two models disagree on.[^5] The reviewer can override any AI value.[^17][^23]",
   "Team lead: sets the error rate the team will accept and signs off before go-live. NIST says people, not the tool, should set those limits.[^23]",

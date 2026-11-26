@@ -54,7 +54,7 @@
   "benchmark": "How do you test AI inventory management before you trust it?",
   "buy-or-build": "Should you buy AI inventory management software or build it?"
  },
- "summary": "AI inventory management resets each item's safety stock and reorder point from real demand and supplier lead times[^25][^13]. It also flags slow stock and suggests branch transfers, while buyers approve every order[^21][^8]. Clean stock records and honest lead times make or break it[^17][^15].",
+ "summary": "AI inventory management resets each item's safety stock and reorder point from real demand and supplier lead times[^25][^13]. What changes: buyers approve suggested orders instead of building them; one store study cut managers' ordering time 36.5%[^11]. Clean stock records and honest lead times make or break it[^17][^15].",
  "humanRole": [
   "The buyer keeps it: they approve every suggested purchase order and transfer before it goes out[^11][^8]. They log a reason for each override, since overrides of one parts retailer's stocking tool cut profit 5.77%[^8][^9].",
   "Planner or inventory analyst: sets the service level (the share of orders filled from stock) for each segment, and owns lead-time and demand inputs[^25][^23]. Adjusting the tool's inputs, not its outputs, raised profit 4.92% in a later field test[^10].",
@@ -373,7 +373,7 @@
   },
   {
    "q": "Do we need new AI inventory management software, or does our ERP do this?",
-   "a": "Check the ERP first. NetSuite 2026.2 sets safety stock by segment, Business Central takes it typed in, and Acumatica points to partner add-ons[^25][^27][^30]."
+   "a": "Use your ERP for a single warehouse with steady demand; buy a planning add-on for several branches, lumpy parts or many suppliers[^25][^28][^26]. NetSuite 2026.2 sets safety stock by segment, while Business Central and Acumatica need it typed in by hand, which add-ons automate[^25][^27][^31][^32]."
   },
   {
    "q": "How much cash could a 10% stock cut free?",

@@ -41,7 +41,7 @@
   }
  ],
  "headings": {},
- "summary": "Plus, Business and Enterprise run near-identical ChatGPT; the plan decides who controls the account and data[^1][^2]. Plus belongs to one person, and OpenAI may train on those chats unless they opt out[^12]. Business gives the firm sign-in, admin and no training by default; Enterprise adds audit logs and retention control[^2][^11].",
+ "summary": "Plus, Business and Enterprise run near-identical ChatGPT, but the plan decides who controls accounts and data[^1][^2]. Plus belongs to one person, and OpenAI may train on those chats unless they opt out[^12]. Business gives the firm sign-in, admin and no training by default; Enterprise adds audit logs and retention control[^2][^11].",
  "tables": [
   {
    "title": "What does each ChatGPT plan cost, and who controls it?",
@@ -111,7 +111,7 @@
   },
   {
    "title": "What does Enterprise add over Business?",
-   "intro": "From OpenAI's own Business vs Enterprise table, read 26 Nov 2026; these are the vendor's claims[^2]. Rows are the controls a COO, IT lead or compliance lead asks about.",
+   "intro": "Enterprise adds automatic staff sync (SCIM), chat logs fed to your security tools, data residency, more security certifications and a health-data contract (BAA).[^2][^10][^19][^5] These are OpenAI's own claims from its Business vs Enterprise table, read 26 Nov 2026.[^2] Rows are the controls a COO, IT lead or compliance lead asks about.",
    "headers": [
     "Control",
     "Business",
@@ -327,7 +327,7 @@
   },
   {
    "q": "What is the difference between Chat and Work in ChatGPT?",
-   "a": "Chat answers questions and drafts short pieces; Work is an agent for multi-step tasks that end in a file you review[^14][^15]. Work runs on Plus, Business and Enterprise, and shares usage limits with Codex[^39][^21]."
+   "a": "Chat answers questions and drafts short pieces, while Work is an agent for multi-step tasks that end in a file you review[^14][^15]. Work runs on Plus, Business and Enterprise, and shares usage limits with Codex[^39][^21]."
   },
   {
    "q": "How much does ChatGPT Enterprise cost?",

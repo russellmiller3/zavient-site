@@ -14,6 +14,12 @@
 // 7. it is not a source or method note ("Prices are US list prices, read 26 Nov 2026", "From each vendor's help pages",
 //    "On 26 Nov 2026 we read...", "Each study defines success differently"). Those go after the answer, never first.
 //    Dates and years don't count as the number a cost question needs.
+// 8. a two-part heading ("What is X, and what does it change?") gets at least 2 sentences, one per part;
+// 9. a difference heading ("What is the real difference?", "What is the difference between...") states the contrast in
+//    the first sentence (while, but, whereas, unlike, than, instead), not one side or a shared trait;
+// 10. a "How much ... cost" or "What does ... cost" heading gets a figure ($ or a number that is not a date) in the first
+//    two sentences: "publish no price, so expect a quote" alone is not an answer.
+// Rules 8-10 come from a semantic audit of 26 Nov 2026 that found answers passing 1-7 while dodging the question.
 // Research behind these (26 Nov 2026): NN/g inverted pyramid and first-2-words studies; GOV.UK and Australian
 // Style Manual (answer must make sense with the heading removed); Microsoft Bing guidance on AI answers (1-2 sentence
 // answer, numbers for quantity questions); Portent and Semrush snippet-length studies (40-60 word first paragraph).
@@ -27,12 +33,30 @@ export const MAX_WORDS = 30;
 const SOURCE_NOTE = /^((us |listed |list )?prices? (are|come|from)\b|(us )?list prices (before|from|as|are)\b|from (each|the|our|vendor)\b|(on|as of) \d{1,2} \w+ \d{4}\b|we (read|checked|pulled|counted|logged|compared|lined up|looked|set|gathered|collected)\b|(?!.*\b(find|finds|found|show|shows|showed)\b)(peer-reviewed|government|vendor|independent|primary)\b.*\b(studies|surveys|sources|figures)\b|each (study|survey|source|vendor)\b|(figures|numbers|data|prices) (from|as of|read|are from)\b|the primary studies\b)|\bas reported by\b/i;
 const DATES = /\b\d{1,2} (jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]* \d{4}\b|\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]* \d{1,2},? \d{4}\b|\b(19|20)\d{2}\b/gi;
 
+// Footnote numbers and markers taken out, spaces tidied.
+const tidy = (text) => String(text).replace(/\[\^\d+\]/g, '').replace(/\s+([.,;:!?])/g, '$1').replace(/\s+/g, ' ').trim();
+
 // The first sentence of a paragraph's text, with footnote numbers and markers taken out.
 export function firstSentence(text) {
-  const t = String(text).replace(/\[\^\d+\]/g, '').replace(/\s+([.,;:!?])/g, '$1').replace(/\s+/g, ' ').trim();
+  const t = tidy(text);
   const m = t.match(/^.*?[.!?](?=\s+[A-Z0-9"“(]|$)/);
   return (m ? m[0] : t).trim();
 }
+
+// Every sentence of a paragraph's text, split the same way firstSentence finds the first one.
+export function sentencesOf(text) {
+  return tidy(text).split(/(?<=[.!?])\s+(?=[A-Z0-9"“(])/).map((s) => s.trim()).filter(Boolean);
+}
+
+// Rule 8: two questions in one heading, joined by ", and" ("What is X, and what does it change?").
+export const TWO_PART = /,\s+and\s+(what|how|who|whom|which|why|where|when|whether|is|are|does|do|did|can|could|should|will|would|has|have)\b/i;
+// Rule 9: a heading that asks for the difference between options, and the words that state a contrast.
+export const DIFFERENCE = /\breal difference\b|^what is the difference\b/i;
+export const CONTRAST = /\b(while|but|whereas|unlike|than|instead)\b/i;
+// Rule 10: a heading that asks for a cost outright.
+export const COST_FIGURE_Q = /^(how much\b.*\bcosts?\b|what (does|do)\b.*\bcosts?\b)/i;
+// A figure: a $ sign, or any digit left once dates and years are taken out.
+export const hasFigure = (s) => /[$€£]|\d/.test(String(s).replace(DATES, ''));
 
 // Problems with one question heading and the paragraph text straight under it ('' when no paragraph follows).
 export function answerProblems(heading, text) {
@@ -50,6 +74,10 @@ export function answerProblems(heading, text) {
   if (SOURCE_NOTE.test(s)) out.push(`the first sentence is a source or method note, not the answer; answer first, then say where the numbers came from: "${s.slice(0, 80)}"`);
   if (/^(bring|see|here'?s|read|click|book)\b/i.test(s)) out.push(`the first sentence points elsewhere instead of answering: "${s.slice(0, 80)}"`);
   if (HOW.test(q) && /^(it depends|that depends)\b/i.test(s)) out.push(`"how" question answered with "it depends": "${s.slice(0, 80)}"`);
+  const all = sentencesOf(text);
+  if (TWO_PART.test(q) && all.length < 2) out.push(`two-part question, but the answer is ${all.length} sentence; answer each part (at least 2 sentences): "${s.slice(0, 80)}"`);
+  if (DIFFERENCE.test(q) && !CONTRAST.test(s)) out.push(`difference question, but the first sentence states no contrast (while, but, whereas, unlike, than, instead): "${s.slice(0, 80)}"`);
+  if (COST_FIGURE_Q.test(q) && !all.slice(0, 2).some(hasFigure)) out.push(`cost question, but the first two sentences give no figure ($ or a number that is not a date): "${s.slice(0, 80)}"`);
   return out;
 }
 

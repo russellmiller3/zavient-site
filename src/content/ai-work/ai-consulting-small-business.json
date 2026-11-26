@@ -16,7 +16,7 @@
   ],
   "onPage": [],
   "headings": {},
-  "summary": "At a firm of 40 to 150 staff with no data team, AI consulting picks one or two jobs.[^5][^11] AI drafts and sorts the work; your people check it and make the calls.[^12][^2] Staff often use AI already, so a use rule and an owner with time decide success.[^3][^1]",
+  "summary": "AI consulting for a small business is outside help that picks one or two jobs for AI and gets your staff using it.[^11][^1] What changes: AI drafts and sorts the work, and your people check it and make the calls.[^12][^2] Staff with AI help resolved 15% more issues per hour.[^6]",
   "answers": {
     "walk-away": "You should leave with a one-page AI use rule, one named owner with set hours, and one pilot with a before-and-after number.[^3][^1][^11]",
     "human-role": "Your people check every AI draft and make the calls, with the owner-CEO setting the use rule and signing off anything customer-facing.[^12][^2]",
@@ -143,7 +143,7 @@
   "faq": [
     {
       "q": "How much does an AI consultant cost?",
-      "a": "We found no neutral fee data, so get a fixed price in writing; business AI seats alone run $14 to $21 per person a month.[^26][^27][^23] Cost is also driven by staff time and any systems you connect."
+      "a": "On the US government's published price list, AI roles have a median hourly ceiling of $183 to $194.[^37][^38] Commercial fees aren't published, so get a fixed price in writing; most consultants price by project or by the hour.[^39] Business AI seats add $14 to $21 per person a month.[^26][^27]"
     },
     {
       "q": "What is the 10-20-70 rule for AI?",
@@ -155,7 +155,7 @@
     },
     {
       "q": "When does a custom AI agent make sense, versus ChatGPT or our existing tools?",
-      "a": "Rarely for a first project at this size. Most small-firm AI use is writing and everyday work that business seats already cover.[^12] Gartner says many jobs sold as agents don't need one.[^33]"
+      "a": "A custom agent makes sense when a job's steps can't be fixed in advance and simpler tools have already fallen short.[^40] That is rare in a first project at this size: most small-firm AI use is writing that business seats cover.[^12] Gartner says many jobs sold as agents don't need one.[^33]"
     },
     {
       "q": "Should a consultant map our workflows first, or is that wasted money?",
@@ -407,6 +407,26 @@
       "name": "US Census Bureau, Large Firms With at Least 20 Employees Biggest AI Users (22 May 2026)",
       "url": "https://www.census.gov/library/stories/2026/05/ai-use-businesses.html",
       "what": "Business Trends and Outlook Survey: 32% of firms with 100 to 249 staff and 37% with 250+ used AI; use rose at 20+ staff, not below."
+    },
+    {
+      "name": "US General Services Administration, CALC+ hourly labor ceiling rates, search \"Artificial Intelligence\" (read 26 Nov 2026)",
+      "url": "https://buy.gsa.gov/pricing/qr/mas?q=Artificial%20Intelligence",
+      "what": "Government price list of not-to-exceed hourly rates on GSA schedule contracts. Labor categories matching artificial intelligence: median $193.60, middle half $142.00 to $258.18. Ceilings, not prices paid."
+    },
+    {
+      "name": "AI Services Companies, AI consulting hourly rates 2026 (10 Oct 2026; read 26 Nov 2026)",
+      "url": "https://aiservicescompanies.com/research/ai-consulting-hourly-rates-2026",
+      "what": "Analysis of 267 GSA CALC+ rates for AI and machine learning labor categories: median ceiling $183.05 an hour, middle half $147.04 to $234.28. Agencies often pay less than the ceiling."
+    },
+    {
+      "name": "Consulting Success, consulting fees study (updated Oct 2026; read 26 Nov 2026)",
+      "url": "https://www.consultingsuccess.com/consulting-fees",
+      "what": "Study of nearly 1,000 consultants: 30% price by project, 29% hourly, 16% by monthly retainer, 15% on value and 10% by the day."
+    },
+    {
+      "name": "Anthropic, Building effective agents (19 Dec 2024; read 26 Nov 2026)",
+      "url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "what": "Use agents for open-ended problems where the number of steps can't be predicted or hardcoded; start simple and add agents only when simpler solutions fall short."
     }
   ],
   "related": [

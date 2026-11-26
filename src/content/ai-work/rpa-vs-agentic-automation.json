@@ -41,7 +41,7 @@
   }
  ],
  "headings": {},
- "summary": "An RPA bot copies a person's clicks along a fixed script, so the same input gives the same output[^16][^46]. An AI agent chooses its next step from the input, so it handles messy work but can vary between runs[^43][^30]. Stable screens make bots work; checked outputs make agents work[^42][^27].",
+ "summary": "An RPA bot repeats a fixed script exactly, while an AI agent picks its next step from the input, so its path can vary[^16][^43]. Agents handle messy documents and judgment calls; bots are steadier on stable screens with fixed steps[^27][^46][^42].",
  "tables": [
   {
    "title": "How do RPA bots and AI agents differ in practice?",
@@ -328,7 +328,7 @@
   },
   {
    "q": "What is the difference between an AI agent and an RPA bot?",
-   "a": "A bot follows a fixed script, so the same input gives the same output[^16]. An agent chooses its next step from the input, so its path can vary[^43]."
+   "a": "An RPA bot runs the same fixed steps every time, while an AI agent decides its next step from the input[^16][^43]. So a bot gives the same output for the same input, but an agent handles messy work and can vary between runs[^16][^30]."
   },
   {
    "q": "Where does an agent earn its keep over plain RPA?",
@@ -336,7 +336,7 @@
   },
   {
    "q": "How much does an AI agent cost to run compared with a bot?",
-   "a": "Bots are mostly flat: $150 a bot a month on Power Automate, read 26 Nov 2026[^10]. Agents are metered per model call, credit or run, so cost grows with volume[^2][^13][^22]."
+   "a": "A bot is a flat fee, about $150 a month on Power Automate, while an agent is metered, about $0.04-$0.05 per action in Copilot Studio[^10][^13][^14]. Agent cost rises with every action, so at pay-as-you-go rates 3,000 actions a month cost the same as one bot[^10][^13][^14]."
   }
  ],
  "buyVsBuild": {
@@ -654,7 +654,7 @@
  ],
  "offer": {
   "heading": "Not sure which workflows need a bot, an agent or neither?",
-  "body": "In 30 minutes we sort your manual workflows into bot, agent, both or neither. Bring your list. You leave with the first one to pilot."
+  "body": "Give a bot fixed, high-volume steps on stable screens and an agent messy documents or judgment calls; use neither if the app has an API. In a free 30-minute call we sort your manual workflows into bot, agent, both or neither. You leave with the first one to pilot."
  },
  "keyword": {
   "phrase": "rpa vs agentic ai",

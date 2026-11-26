@@ -1,6 +1,9 @@
 // Answer-first check on page JSON, no build needed (Russell, 26 Nov 2026: every question heading is answered in the
 // first sentence under it). Usage: node scripts/check-answers.mjs [slug ...]   (no slugs = every page). Exits 1 on a miss.
 // It also prints every question with its first sentence, so a person can read whether each one truly answers.
+// Since 26 Nov 2026 it also fails two-part headings answered in one sentence, difference headings whose first sentence
+// states no contrast, and "How much / What does ... cost" headings with no figure in the first two sentences (rules 8-10
+// in src/lib/answer-first.mjs). --show prints every question, passing or not.
 import { readFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';

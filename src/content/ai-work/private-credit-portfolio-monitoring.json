@@ -382,7 +382,7 @@
   },
   {
    "q": "What does portfolio monitoring software cost?",
-   "a": "The platforms we checked publish no price, so expect a quote[^46][^47][^48]. The AI underneath is cheap: document extraction lists at $10 per 1,000 pages (read 26 Nov 2026)[^43]."
+   "a": "Expect a yearly quote, often six figures: buyers report a median Allvue contract of $201,144 a year, from $77,562 to $939,024[^55]. None of the platforms we checked publish a price, and that figure covers all Allvue contracts, not monitoring alone[^46][^47][^48]. The AI underneath is cheap: document extraction lists at $10 per 1,000 pages (read 26 Nov 2026)[^43]."
   }
  ],
  "buyVsBuild": {
@@ -763,6 +763,11 @@
    "name": "Reddit r/CreditAnalysis, AI tools that can write credit memos",
    "url": "https://www.reddit.com/r/CreditAnalysis/comments/1ghdgcn/has_anyone_come_across_ai_tools_that_can_write",
    "what": "Credit analysts asking whether AI tools can write a credit memo."
+  },
+  {
+   "name": "Vendr, Allvue Systems pricing (buyer-reported)",
+   "url": "https://www.vendr.com/marketplace/allvue-systems",
+   "what": "Reported by Vendr from buyers' contracts, not by Allvue: median $201,144 a year, low $77,562, high $939,024; covers all Allvue contracts, not monitoring alone; read 26 Nov 2026."
   }
  ],
  "answers": {
@@ -774,8 +779,8 @@
   "benchmark": "Run the tool on last quarter's packages for 10 borrowers, score every line against your existing spreads, recompute the covenants, and list every flag raised and issue missed[^36][^29].",
   "what-goes-wrong": "Monitoring goes wrong when extraction errors flow into covenant tests, the borrower's own math is trusted, inputs go stale, data is messy, or fraud hides behind clean numbers[^51][^29][^17][^41][^18].",
   "something-else": "Buy a platform such as Allvue or iLEVEL when you want one system for the whole book, or use a service such as 73 Strings for extraction[^46][^47][^48].",
-  "table-1": "AI can sort packages, spread figures, recompute covenants, flag trends and draft memos and valuation inputs, while an analyst, the portfolio head or the valuation designee signs each step[^28][^33][^11].",
-  "table-2": "Stress is high: Fitch's private credit default rate hit a record 6.0% in mid-2026, but other measures run from about 1% to over 10% because each defines default differently[^24][^23][^27].",
+  "table-1": "AI can sort packages, spread figures, recompute covenants, flag trends and draft memos and valuation inputs[^28][^33]. An analyst, the portfolio head or the valuation designee signs each step[^33][^11].",
+  "table-2": "Stress is high: Fitch's private credit default rate hit a record 6.0% in mid-2026[^24]. The numbers disagree because each source defines default differently, so other measures run from about 1% to over 10%[^23][^27].",
   "own-data": "The eight filings mark non-accrual loans at roughly 19% to 61% of cost, and report PIK so differently that five needed our own arithmetic or a second document[^7][^5][^1][^4]."
  }
 }

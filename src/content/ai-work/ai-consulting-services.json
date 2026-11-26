@@ -41,7 +41,7 @@
     }
   ],
   "headings": {},
-  "summary": "AI consulting is outside help to pick one workflow, prove AI on your own work and get it into daily use.[^5][^1] Good help leaves your team running it, with a before-and-after number.[^7][^6] Most pilots stall on the wrong problem or missing data, not on the model.[^4]",
+  "summary": "AI consulting is outside help to pick one workflow, prove AI on your own work and get it into daily use.[^5][^1] What changes: your team runs AI on that work every day, measured against a before number.[^7][^6] Partnered projects reached daily use about twice as often as internal builds.[^1]",
   "walkAway": [
     "One workflow, picked from a ranked list, with a named owner and the business number it should move.[^5] RAND's most common cause of AI failure is a misunderstood problem or the wrong metric.[^4]",
     "A before number, measured before any tool is bought: volume, hours, errors or cost per item.[^7] High performers are twice as likely to measure AI's impact.[^8]",
@@ -156,7 +156,7 @@
     },
     {
       "q": "How much does AI consulting cost?",
-      "a": "No list price exists for AI consulting, because we found no neutral survey of fees. The usual alternative, a lean in-house AI team of three, costs about $630,000 a year with benefits.[^34][^30][^35][^36]"
+      "a": "On the US government's published price list, median hourly ceilings run $183 to $194 for AI roles and $164 to $167 for management consultants.[^44][^45][^46][^47] Those are caps, not prices paid; most consultants quote by project (30%) or by the hour (29%).[^47][^48] A lean in-house AI team of three costs about $630,000 a year with benefits.[^34][^30][^35][^36]"
     },
     {
       "q": "Should we hire a consultant or build an in-house AI team?",
@@ -491,6 +491,31 @@
       "name": "Anthropic, Claude API pricing",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "what": "List prices per million tokens: Claude Opus 5.5 $4 in, $20 out; Claude Haiku 5.5 $0.10 in, $0.50 out for prompts up to 100,000 tokens."
+    },
+    {
+      "name": "US General Services Administration, CALC+ hourly labor ceiling rates, search \"Artificial Intelligence\" (read 26 Nov 2026)",
+      "url": "https://buy.gsa.gov/pricing/qr/mas?q=Artificial%20Intelligence",
+      "what": "Government price list of not-to-exceed hourly rates on GSA schedule contracts. Labor categories matching artificial intelligence: median $193.60, middle half $142.00 to $258.18. Ceilings, not prices paid."
+    },
+    {
+      "name": "AI Services Companies, AI consulting hourly rates 2026 (10 Oct 2026; read 26 Nov 2026)",
+      "url": "https://aiservicescompanies.com/research/ai-consulting-hourly-rates-2026",
+      "what": "Analysis of 267 GSA CALC+ rates for AI and machine learning labor categories: median ceiling $183.05 an hour, middle half $147.04 to $234.28. Agencies often pay less than the ceiling."
+    },
+    {
+      "name": "US General Services Administration, CALC+ hourly labor ceiling rates, search \"Management Consultant\" (read 26 Nov 2026)",
+      "url": "https://buy.gsa.gov/pricing/qr/mas?q=Management%20Consultant",
+      "what": "Government price list of not-to-exceed hourly rates on GSA schedule contracts. Labor categories matching management consultant: median $164.37, middle half $126.83 to $209.97."
+    },
+    {
+      "name": "Hyperresearch, GSA consulting rates by role (data pulled 8 Nov 2026; read 26 Nov 2026)",
+      "url": "https://hyperresearch.ai/guides/gsa-consulting-rates",
+      "what": "Independent analysis of the full GSA CALC+ file: management consultant median ceiling $166.89 an hour across 1,143 rates, middle half $130 to $213. Ceilings, not prices paid; commercial rates are not covered."
+    },
+    {
+      "name": "Consulting Success, consulting fees study (updated Oct 2026; read 26 Nov 2026)",
+      "url": "https://www.consultingsuccess.com/consulting-fees",
+      "what": "Study of nearly 1,000 consultants: 30% price by project, 29% hourly, 16% by monthly retainer, 15% on value and 10% by the day."
     }
   ],
   "answers": {

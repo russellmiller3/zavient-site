@@ -40,8 +40,11 @@
       "text": "When a rule, your CRM or a free tool beats hiring help"
     }
   ],
-  "headings": {},
-  "summary": "Machine learning consulting builds a model that scores each new customer, loan or order from your own history.[^3][^5] Your team works the highest scores first, and a named person decides. The code is the small part; the decision, the test and the upkeep make or break it.[^8][^3]",
+  "headings": {
+    "what-it-is": "What is machine learning consulting, and what does it change?",
+    "faq": "Questions buyers ask about machine learning consulting"
+  },
+  "summary": "Machine learning consulting builds a model that scores each new customer, loan or order from your own history.[^3][^5] What changes: your team calls the riskiest cases first; on our churn benchmark, 76 in 100 flagged customers left, against 44 for a contract-type rule.[^4] A named person still decides.",
   "walkAway": [
     "One named decision and the money number it moves, agreed before any build. Google's rules for machine learning say to design the metric first.[^3]",
     "Today's rule, scored, and a held-back test set that you keep. A simple first model sets the baseline; leaked test data makes weak models look strong.[^3][^11]",
@@ -168,7 +171,7 @@
     },
     {
       "q": "Does predictive modelling actually work, or is it hype?",
-      "a": "Predictive modelling works when it beats your current rule on data it never saw.[^3] On our churn benchmark, models caught about 76 churners per 100 flagged, against 44 for a contract-type rule.[^4]"
+      "a": "Yes, predictive modelling works, but only when it beats your current rule on data it never saw.[^3] On our churn benchmark, models caught about 76 churners per 100 flagged, against 44 for a contract-type rule.[^4]"
     },
     {
       "q": "Will we lose accuracy if the model has to be explainable?",
@@ -448,7 +451,7 @@
   ],
   "offer": {
     "heading": "Not sure your data can support a model?",
-    "body": "Free, before any paid work, and no sales pitch: 30 minutes on your first workflow. Bring the decision and a rough count of past cases. You leave knowing whether a rule, your CRM's score or a custom model fits, and what to test first."
+    "body": "Your data can support a model if it holds enough past outcomes, such as customers who left or loans that went bad, not just rows. With only a few dozen cases, use a rule instead. In a free 30-minute call, no pitch, we check your decision and case count and name the first test."
   },
   "keyword": {
     "phrase": "machine learning consulting",

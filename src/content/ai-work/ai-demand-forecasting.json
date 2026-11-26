@@ -46,7 +46,7 @@
     "what-goes-wrong": "Where does AI demand forecasting go wrong?",
     "buy-or-build": "Should you buy demand forecasting software or build your own?"
   },
-  "summary": "AI demand forecasting predicts sales by item and week from your history and drivers like price and season.[^2][^11] Your planner reviews it before it sets the monthly plan and how much buffer stock you carry.[^12][^13] Clean history, and overrides made only with real news, make or break it.[^14][^6]",
+  "summary": "AI demand forecasting predicts sales by item and week from your history and drivers like price and season.[^2][^11] What changes: planners review exceptions instead of building numbers, and error fell about 40% against last year plus growth in our test.[^7][^1] Clean history and news-backed overrides make or break it.[^14][^6]",
   "answers": {
     "human-role": "Your demand planner owns the final number and every override, with a written reason for each, and the supply planner picks the service level.[^15][^7][^13]",
     "team-after": "Planners stop building numbers and start reviewing exceptions, spending their time on the few big calls like a promotion, a new customer or a lost account.[^7][^16]",
@@ -162,7 +162,7 @@
     },
     {
       "title": "When does machine learning beat simpler methods?",
-      "intro": "Published results on real retail data. The pattern: big gains on totals, small gains at the item you actually order.[^2][^35]",
+      "intro": "Machine learning beats simpler methods on totals, by about 40%, but by only about 3% at the item you actually order.[^2] On items that often sell zero, simple methods still hold their own.[^4][^35] These are published results on real retail data.",
       "headers": [
         "Study",
         "What it found",
@@ -221,7 +221,7 @@
     },
     {
       "title": "What do planner overrides do to accuracy?",
-      "intro": "Studies of what happens when planners change the system forecast. Most changes cost accuracy; big ones backed by news help.[^5][^6]",
+      "intro": "Most planner overrides make forecasts less accurate; only large, downward changes backed by real news help.[^5][^6] Each row is a study of planners changing the system forecast.",
       "headers": [
         "Study",
         "What was measured",
