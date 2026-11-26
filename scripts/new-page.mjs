@@ -85,7 +85,13 @@ Reader: lower-middle-market firm, 40-500 staff. Division head for this page: ${r
    \`- finding | Source: name | URL: https://... | Read: YYYY-MM-DD\`. Every finding needs its URL and read date; a slot
    with nothing says \`- no source found\` and the searches run. Primary sources first. Copy each figure exactly as
    the source prints it, with its group and unit ("51% of 300 finance leaders", "hours a week"), and a survey's sample
-   ("Survey of 200 PE leaders"); if one study prints two figures for one claim, note both and which release each is in.
+   ("Survey of 200 PE leaders", or "Survey, sample size not published"; never leave the word survey out to dodge the
+   check); if one study prints two figures for one claim, note both and which release each is in. Note both ends of a
+   range, and a word figure as the source prints it ("about 2x", "67% vs 33%"). Cite the publisher's own copy of a
+   report, never a third-party host (ictworks.org, Scribd, a vendor's mirror). Where a URL carries a date, note the
+   document's own date and say "URL dated ..." if the two differ. EDGAR own data: save one row per counted document
+   in data/own-data/${slug}.csv (accession,form,filed,file,kind) and say in ownData.method whether exhibits count;
+   check it with \`node scripts/check-edgar-hits.mjs drafts/${slug}.json\`.
    Prices come from the vendor's live page, read today; never a cached or archived copy. The writer copies these into
    each source's \`what\` note, and the page check fails any footnoted figure that isn't there. In this sandbox, curl
    and Node's fetch can't reach some sites through the proxy (sec.gov, efts.sec.gov, the FDIC's API and many vendor
@@ -97,8 +103,11 @@ Reader: lower-middle-market firm, 40-500 staff. Division head for this page: ${r
 4. **Source-claim check** (a separate agent from the writer): open every cited source and confirm it states the claim
    its footnote backs, with the same number, date and scope (the group surveyed, the unit, the region). Start with
    \`NODE_USE_ENV_PROXY=1 node scripts/check-source-figures.mjs drafts/${slug}.json\`, which looks for each footnoted
-   figure on its source's live page, then open by hand every page it couldn't read. Fix or cut what it doesn't back, then log
-   \`sourceCheck: {date, by, checked, fixed}\`. The page check warns until it is logged.
+   figure on its source's live page, near the claim's own words, and fails a cited URL that redirects. Fix or cut what
+   it doesn't back, then rerun it with \`--write\`: it records \`figureCheck\` on the page. For every figure it lists
+   under byHand (a page it couldn't read, or a figure found away from the claim), open the source and copy its own
+   sentence into that entry's \`quote\`; the page check fails a page without the record, with a record older than
+   \`updated\`, or with an unquoted byHand figure. Then log \`sourceCheck: {date, by, checked, fixed}\`.
 5. **ICP review**, in this order, one pass each, fixes applied between passes: ${REVIEWERS.join(' → ')}.
    Each reviewer reads as that buyer and logs \`{reader, notes}\` in \`reviews\`. Persona notes: docs/steve-persona.md.
 6. Move the JSON to \`src/content/ai-work/${slug}.json\`, run \`npm test\`. Set \`index: true\` only on Russell's yes.
@@ -121,7 +130,7 @@ Reader: lower-middle-market firm, 40-500 staff. Division head for this page: ${r
 - **Slugs are real pages**: every ranked, spoke and related slug exists in src/content/ai-work. Related: ${MIN.related[0]}-${t.relatedMax || MIN.related[1]} links for this type.
 - **Headings don't repeat words**: if the topic repeats a template word ("AI ... AI"), set \`headings[blockId]\`.
 - **No search-results pages as sources** (Google, Bing, a site's /search?q=): cite the page the result leads to.
-- **Every footnoted figure is in its source's note.** Each %, multiple and price in a footnoted sentence appears in the cited source's \`what\` note, copied from the source; a figure we work out ourselves says so in the sentence ("by our math"). A survey figure names its group in the note's words, one study gives one figure per claim, and a price's source note carries the date it was read (within 120 days of \`updated\`). No cached or archived copies, and no stat aggregators. Checked by src/lib/source-numbers.mjs; a new page must be clean.
+- **Every footnoted figure is in its source's note.** Each %, multiple and price in a footnoted sentence appears in the cited source's \`what\` note, copied from the source; a figure we work out ourselves says so in the sentence ("by our math"). A survey figure names its group in the note's words, one study gives one figure per claim, and a price's source note carries the date it was read (within 120 days of \`updated\`). Both ends of a range are checked, and word figures ("twice as", "3 to 1") too. A bare figure is the source's, rounded (32.6% is "33%", or "about 32%"); "more than", "nearly", "under" say which side the source's figure is on. "Most" or "the majority" never sits on a share under 50%. A table column headed "our math" is our math. No cached or archived copies, no third-party copies of a report, no stat aggregators, and no source listed twice. Checked by src/lib/source-numbers.mjs and src/lib/source-rules.mjs; a new page must be clean.
 - **Save the JSON at the file's own indent**, JSON.stringify(data, null, n) plus a newline, so a fix stays a small diff.
 - **Every fix goes into the template or the page check, never just the page.** If you fix a page, add the rule or test that stops the same mistake on every page.
 - **Teach, then trust, then the lead**: the block order below is fixed. "When to pick something else" sits after "Buy or build", just above the free diagnostic.

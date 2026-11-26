@@ -28,7 +28,8 @@ function* strings(x, path = '') {
 
 export function rivalProblems(d) {
   const out = [];
-  const { sources, reviews, keyword, ...page } = d;
+  // sourceCheck is the source-claim log ("fixed: cut the Anaptyss price"), not page text: it never counts (round 5).
+  const { sources, reviews, keyword, sourceCheck, figureCheck, ...page } = d;
   for (const [where, text] of strings(page)) {
     for (const s of sentences(text)) {
       const firm = s.match(FIRMS)?.[0];

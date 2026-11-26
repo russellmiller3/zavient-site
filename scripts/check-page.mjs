@@ -21,11 +21,14 @@ import { acronymProblems } from '../src/lib/acronyms.mjs';
 import { structureProblems } from '../src/lib/structure-rules.mjs';
 import { claimProblems } from '../src/lib/source-numbers.mjs';
 import CLAIM_BASELINE from '../src/lib/claim-baseline.mjs';
+import { figureCheckProblems } from '../src/lib/figure-check.mjs';
+import { edgarProblems } from '../src/lib/edgar-hits.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const contentDir = join(root, 'src/content/ai-work');
 const fns = (t) => [...String(t).matchAll(/\[\^(\d+)\]/g)].map((m) => Number(m[1]));
-const allText = (d) => JSON.stringify({ ...d, sources: undefined, reviews: undefined, keyword: undefined });
+// Logs (sourceCheck, figureCheck) are never page text (round 5: the rival check hit sourceCheck.fixed lines).
+const allText = (d) => JSON.stringify({ ...d, sources: undefined, reviews: undefined, keyword: undefined, sourceCheck: undefined, figureCheck: undefined });
 
 export function gate(d, { slug = '', siblings = [] } = {}) {
   const fail = []; const warn = [];
@@ -149,6 +152,10 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
   const allowed = CLAIM_BASELINE[slug] ?? 0;
   if (claims.length > allowed) for (const p of claims) fail.push(`claim: ${p}`);
   else if (claims.length) warn.push(`${claims.length} claims not yet matched to their source notes (the most this page may have is ${allowed}; see src/lib/claim-baseline.mjs), e.g. ${claims[0]}`);
+  // Round 5 (26 Nov 2026): the live figure check's record (src/lib/figure-check.mjs) and EDGAR hit lists
+  // (src/lib/edgar-hits.mjs). Pages built before each rule are listed there, and those lists only shrink.
+  for (const p of figureCheckProblems(d, slug)) fail.push(`figure check: ${p}`);
+  for (const p of edgarProblems(d, slug)) fail.push(`own data: ${p}`);
 
   return { fail, warn };
 }

@@ -43,6 +43,8 @@ const good = () => ({
   teamAfter: ['The preparer works the exceptions the software leaves [^4].'],
   keyword: { phrase: 'account reconciliation software', searches: 590, cpc: 212, difficulty: 21 },
   updated: '2026-11-26',
+  // The live figure record (src/lib/figure-check.mjs): new pages need one, no older than the page.
+  figureCheck: { date: '2026-11-26', checked: 3, notFound: [], byHand: [], redirects: [] },
   ownData: { title: 'What does tool A cost?', intro: 'Tool A costs $20 a seat a month [^5].', headers: ['Tool'], rows: [['A [^5]']], note: 'Pulled 26 Nov 2026.' },
   example: { input: 'A month of bank lines.', output: 'Matched lines and a short exceptions list.' },
   recipes: [{ name: 'Small team', when: 'Few accounts [^6].', flow: ['Staff accountant: export', 'Controller: approve'], cost: 'Included in many ERPs [^6].' }],

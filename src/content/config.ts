@@ -48,6 +48,10 @@ const aiwork = defineCollection({
     reviews: z.array(z.object({ reader: z.string(), notes: z.string() })).default([]),
     // Source-claim check (26 Nov 2026): who opened each cited source and confirmed it states the claim, and what was fixed.
     sourceCheck: z.object({ date: z.string(), by: z.string(), checked: z.number(), fixed: z.array(z.string()).default([]) }).optional(),
+    // Live figure check (round 5, 26 Nov 2026): written by scripts/check-source-figures.mjs --write. Never rendered.
+    figureCheck: z.object({ date: z.string(), checked: z.number(), notFound: z.array(z.string()).default([]),
+      byHand: z.array(z.object({ where: z.string(), figure: z.string(), url: z.string(), why: z.string(), quote: z.string().optional() })).default([]),
+      redirects: z.array(z.string()).default([]) }).optional(),
     resources: z.array(link).min(1),
     sources: z.array(link).min(1),
     related: z.array(z.string()).default([]),
@@ -64,7 +68,9 @@ const aiwork = defineCollection({
     onPage: z.array(z.object({ to: z.string().regex(/^[a-z0-9-]+$/), text: z.string().min(10) })).default([]),
     pickElse: z.array(z.string()).default([]),
     stats: z.array(z.object({ num: z.string(), label: z.string(), source: z.string() })).default([]),
-    ownData: z.object({ title: z.string(), intro: z.string(), headers: z.array(z.string()), rows: z.array(z.array(z.string())), note: z.string() }).optional(),
+    ownData: z.object({ title: z.string(), intro: z.string(), headers: z.array(z.string()), rows: z.array(z.array(z.string())), note: z.string(),
+      // EDGAR own data (round 5): which documents count, and the hit list file (src/lib/edgar-hits.mjs). Never rendered.
+      method: z.string().optional(), hitList: z.string().optional() }).optional(),
     tables: z.array(z.object({
       title: z.string(), intro: z.string(), headers: z.array(z.string()),
       rows: z.array(z.object({ name: z.string(), url: href.optional(), cells: z.array(z.string()) })),
