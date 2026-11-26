@@ -10,7 +10,10 @@
 // 4. a "how" question gets the steps or the mechanism, not "Bring", "See" or "Here's";
 // 5. the first sentence is short enough to be quoted whole: 30 words or fewer, so it reads as a complete answer when
 //    lifted out by a skimmer, a search snippet or an AI answer;
-// 6. it stands on its own: no opening It/This/That/They/These, and no filler opening ("In this section", "There are many").
+// 6. it stands on its own: no opening It/This/That/They/These, and no filler opening ("In this section", "There are many");
+// 7. it is not a source or method note ("Prices are US list prices, read 26 Nov 2026", "From each vendor's help pages",
+//    "On 26 Nov 2026 we read...", "Each study defines success differently"). Those go after the answer, never first.
+//    Dates and years don't count as the number a cost question needs.
 // Research behind these (26 Nov 2026): NN/g inverted pyramid and first-2-words studies; GOV.UK and Australian
 // Style Manual (answer must make sense with the heading removed); Microsoft Bing guidance on AI answers (1-2 sentence
 // answer, numbers for quantity questions); Portent and Semrush snippet-length studies (40-60 word first paragraph).
@@ -20,6 +23,9 @@ const YES_NO = /^(is|are|am|can|could|does|do|did|should|will|would|has|have|was
 const COST = /\b(how much|what does .* cost|what do .* cost|cost\b|price|pricing)\b/i;
 const HOW = /^how\b(?! much| many| long| often| accurate| big| fast| soon)/i;
 export const MAX_WORDS = 30;
+// Openings that say where the numbers came from instead of answering (a live miss on the comparison pages, 26 Nov 2026).
+const SOURCE_NOTE = /^((us |listed |list )?prices? (are|come|from)\b|(us )?list prices (before|from|as|are)\b|from (each|the|our|vendor)\b|(on|as of) \d{1,2} \w+ \d{4}\b|we (read|checked|pulled|counted|logged|compared|lined up|looked|set|gathered|collected)\b|(?!.*\b(find|finds|found|show|shows|showed)\b)(peer-reviewed|government|vendor|independent|primary)\b.*\b(studies|surveys|sources|figures)\b|each (study|survey|source|vendor)\b|(figures|numbers|data|prices) (from|as of|read|are from)\b|the primary studies\b)|\bas reported by\b/i;
+const DATES = /\b\d{1,2} (jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]* \d{4}\b|\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]* \d{1,2},? \d{4}\b|\b(19|20)\d{2}\b/gi;
 
 // The first sentence of a paragraph's text, with footnote numbers and markers taken out.
 export function firstSentence(text) {
@@ -38,9 +44,10 @@ export function answerProblems(heading, text) {
   const words = s.split(/\s+/).filter(Boolean).length;
   if (words > MAX_WORDS) out.push(`first sentence is ${words} words (max ${MAX_WORDS}): "${s.slice(0, 80)}..."`);
   if (YES_NO.test(q) && !/\bor\b/i.test(q) && !/^(yes|no|not|only)\b/i.test(s)) out.push(`yes/no question, but the answer doesn't start with Yes or No: "${s.slice(0, 80)}"`);
-  if (COST.test(q) && !/[\d$€£]|\b(no (public |list )?price|not published|quote only|free)\b/i.test(s)) out.push(`cost question, but the first sentence has no number: "${s.slice(0, 80)}"`);
+  if (COST.test(q) && !/[\d$€£]|\b(no (public |list )?price|not published|quote only|free)\b/i.test(s.replace(DATES, ''))) out.push(`cost question, but the first sentence has no number: "${s.slice(0, 80)}"`);
   if (/^(it|this|that|they|these|those)\b/i.test(s)) out.push(`the first sentence leans on the heading (starts "${s.split(' ')[0]}"); name the subject so it stands alone`);
   if (/^(great question|in this (section|guide|page)|there are (many|several|a few)|when it comes to|before we|let's|let us)\b/i.test(s)) out.push(`filler opening instead of the answer: "${s.slice(0, 80)}"`);
+  if (SOURCE_NOTE.test(s)) out.push(`the first sentence is a source or method note, not the answer; answer first, then say where the numbers came from: "${s.slice(0, 80)}"`);
   if (/^(bring|see|here'?s|read|click|book)\b/i.test(s)) out.push(`the first sentence points elsewhere instead of answering: "${s.slice(0, 80)}"`);
   if (HOW.test(q) && /^(it depends|that depends)\b/i.test(s)) out.push(`"how" question answered with "it depends": "${s.slice(0, 80)}"`);
   return out;
