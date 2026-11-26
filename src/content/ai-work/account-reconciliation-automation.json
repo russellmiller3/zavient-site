@@ -8,11 +8,11 @@
  "industry": "any industry",
  "index": true,
  "verdict": [
-  "AI clears the matches it is sure of and queues the rest for a person[^4][^5].",
-  "Fix controls first: AI on weak controls just speeds up the errors[^8][^9].",
-  "Your auditor will test who reviews, who signs, and whether each match leaves a trail[^16][^9].",
-  "Close platforms don't list prices; buyers report a median $15,000 to $25,000 a year[^37][^30].",
-  "On QuickBooks or Xero with one entity, try the built-in AI reconcile first[^7][^47]."
+  "AI clears the matches it is sure of and queues the rest for a person[^3][^4].",
+  "Fix review controls first, because late reconciliation review already causes material weaknesses[^8][^7].",
+  "Your auditor will test who reviews and signs, and whether the data behind each match is reliable[^13][^12].",
+  "Close platforms don't list prices; quotes scale with transactions, seats or close scope[^28][^30].",
+  "On QuickBooks or Xero with one entity, try the built-in AI reconcile first[^6][^37]."
  ],
  "onPage": [],
  "headings": {
@@ -21,21 +21,21 @@
   "rules": "What will your auditor expect?",
   "buy-or-build": "Should you buy a close platform or use what you have?"
  },
- "summary": "Account reconciliation checks each ledger balance against an independent record, such as a bank statement[^1][^2]. AI suggests matches with a confidence level and leaves the unsure ones for a person[^4][^5]. Controls make or break it: AI on weak controls \"accelerates the errors,\" one vendor study warns[^8].",
+ "summary": "Account reconciliation compares two sets of records, such as your ledger and a bank statement, and explains each difference[^1]. AI suggests matches with a confidence level and leaves the unsure ones for a person[^3][^4]. Controls make or break it: late reconciliation review already shows up in material weakness reports[^8].",
  "humanRole": [
-  "A staff accountant prepares each reconciliation and a different person reviews it, and both sign every month[^3][^10]. \"The system matched it\" is not a control[^10].",
-  "The controller approves reconciliations on time. The SEC has cited late review as a control deficiency, and public companies report it as a material weakness, a serious control gap[^11][^12].",
-  "Keep duties split: whoever sets the AI's matching thresholds should not approve the reconciliation[^10]. Route anomaly flags to someone independent of the preparer[^10].",
-  "Auditors still reach their own conclusions, and AICPA guidance flags made-up answers and unexplainable output as AI risks[^13][^14]. Treat AI-written explanations as drafts a person checks[^9]."
+  "A staff accountant prepares each reconciliation and a different person reviews it, and both sign every month[^2][^1]. The reviewer checks the support behind it, not just the final balance[^2][^1].",
+  "The controller approves reconciliations on time. The SEC has cited late review as a control deficiency, and public companies report it as a material weakness, a serious control gap[^7][^8].",
+  "Keep duties split, so no one person controls every step or can override the automated matching[^1]. Whoever sets the AI's matching rules and thresholds should not also approve the reconciliation[^1].",
+  "Auditors still reach their own conclusions, and AICPA guidance flags made-up answers and unexplainable output as AI risks[^9][^10]. Treat AI-written explanations as drafts a person checks[^9]."
  ],
  "teamAfter": [
-  "The preparer works the exceptions. Xero and Workday post only the matches they are sure of and leave the unsure lines for a person[^4][^5].",
-  "Preparers check each AI-written explanation before it reaches the reviewer, and nothing posts without approval[^9][^10].",
-  "Reconciliation is the biggest time sink in the close, and finance teams in one survey wanted better integration more than more staff[^24][^23]."
+  "The preparer works the exceptions. Xero posts only the matches it is sure of, and Workday suggests matches for a person to accept[^4][^3].",
+  "Preparers accept or reject each AI suggestion and check each AI-written explanation before the reviewer sees it[^3][^9].",
+  "Most finance teams already use AI somewhere: 59% in Gartner's 2025 survey, with error and anomaly detection a top use[^19]. Fewer than half say they can show auditors how their AI works[^20]."
  ],
  "ownData": {
   "title": "Which reconciliation tools publish a price? We checked 15 pages",
-  "intro": "We checked 15 vendor pricing pages on 26 Nov 2026 for a published price and a named AI feature[^37][^47]. Five of the 15 publish a price. None of the eight dedicated close and reconciliation platforms do[^37][^39][^44].",
+  "intro": "We checked 15 vendor pricing pages on 26 Nov 2026 for a published price and a named AI feature[^27][^37]. Five of the 15 publish a price. None of the eight dedicated close and reconciliation platforms do[^27][^29][^34].",
   "headers": [
    "Tool",
    "Type",
@@ -47,130 +47,130 @@
    [
     "FloQast",
     "Close platform",
-    "No[^37]",
-    "Quote only; \"no per-user fees\"[^37]",
-    "AI matching, variance explanations, anomaly routing[^37]"
+    "No[^27]",
+    "Quote only; \"no per-user fees\"[^27]",
+    "AI matching, variance explanations, anomaly routing[^27]"
    ],
    [
     "Numeric",
     "Close platform",
-    "No[^38]",
-    "Quote by transactions and seats[^38]",
-    "Cash matching of \"up to 95%\" of bank lines (vendor claim)[^38]"
+    "No[^28]",
+    "Quote by transactions and seats[^28]",
+    "Cash matching of \"up to 95%\" of bank lines (vendor claim)[^28]"
    ],
    [
     "BlackLine",
     "Close platform",
-    "No[^39]",
-    "Page returned a server error[^39]",
+    "No[^29]",
+    "Page returned a server error[^29]",
     "Not read"
    ],
    [
     "Ledge",
     "Close platform",
-    "No[^40]",
-    "One fee by close scope, not per user[^40]",
-    "Agentic close, AI variance analysis (explains month-to-month swings), continuous reconciliation[^40]"
+    "No[^30]",
+    "One fee by close scope, not per user[^30]",
+    "Agentic close, AI variance analysis (explains month-to-month swings), continuous reconciliation[^30]"
    ],
    [
     "Nominal",
     "Close platform",
-    "No[^41]",
-    "Demo only; no pricing page[^41]",
-    "\"Deterministic\" matching agents[^41]"
+    "No[^31]",
+    "Demo only; no pricing page[^31]",
+    "\"Deterministic\" matching agents[^31]"
    ],
    [
     "Trintech Adra",
     "Close platform",
-    "No[^42]",
-    "No pricing page[^42]",
-    "AI-assisted workflows, multi-way matching[^42]"
+    "No[^32]",
+    "No pricing page[^32]",
+    "AI-assisted workflows, multi-way matching[^32]"
    ],
    [
     "ReconArt",
     "Reconciliation platform",
-    "No[^43]",
-    "Editions listed, no dollar figure[^43]",
+    "No[^33]",
+    "Editions listed, no dollar figure[^33]",
     "None recorded"
    ],
    [
     "SolveXia",
     "Reconciliation platform",
-    "No[^44]",
-    "Demo request form only[^44]",
+    "No[^34]",
+    "Demo request form only[^34]",
     "None recorded"
    ],
    [
     "Sage Intacct",
     "ERP",
-    "No[^45]",
-    "Module-based quote[^45]",
-    "AI \"built into the core\"[^45]"
+    "No[^35]",
+    "Module-based quote[^35]",
+    "AI \"built into the core\"[^35]"
    ],
    [
     "NetSuite Account Reconciliation",
     "ERP add-on",
-    "No[^46]",
-    "Quote plus implementation fee[^46]",
+    "No[^36]",
+    "Quote plus implementation fee[^36]",
     "None recorded"
    ],
    [
     "Oracle EPM",
     "Enterprise suite",
-    "Yes[^27]",
-    "$250 per named user a month, 10-user minimum[^27]",
+    "Yes[^23]",
+    "$250 per named user a month, 10-user minimum[^23]",
     "None recorded"
    ],
    [
     "Xero (US)",
     "Small-business ledger",
-    "Yes[^47]",
-    "$27, $59 or $97 a month list[^47]",
-    "JAX auto-reconcile[^47][^5]"
+    "Yes[^37]",
+    "$27, $59 or $97 a month list[^37]",
+    "JAX auto-reconcile[^37][^4]"
    ],
    [
     "QuickBooks Online",
     "Small-business ledger",
-    "Yes[^48]",
-    "$38 to $340 a month list[^48]",
-    "AI-powered reconciliation on Plus and up[^48][^7]"
+    "Yes[^38]",
+    "$38 to $340 a month list[^38]",
+    "AI-powered reconciliation on Plus and up[^38][^6]"
    ],
    [
     "Digits",
     "Small-business ledger",
-    "Yes[^49]",
-    "$65, $100 or $250 a month[^49]",
-    "AI bookkeeping and reconciliation on all plans[^49]"
+    "Yes[^39]",
+    "$65, $100 or $250 a month[^39]",
+    "AI bookkeeping and reconciliation on all plans[^39]"
    ],
    [
     "Reconciler",
     "Reconciliation-only tool",
-    "Yes[^50]",
-    "From $29 a month, billed yearly[^50]",
-    "Read-only matching with plain-English reasons[^50]"
+    "Yes[^40]",
+    "From $29 a month, billed yearly[^40]",
+    "Read-only matching with plain-English reasons[^40]"
    ]
   ],
   "note": "Method: we fetched each vendor's own pricing page, or its product page where none exists, on 26 Nov 2026. Some fetches returned cached copies, dated 13 Nov 2025 to 25 Nov 2026, as noted in the sources. List prices are not what firms pay, and ERP add-ons bundle other modules."
  },
  "example": {
-  "input": "Illustrative. A month's bank statement as CSV or PDF, the ledger's cash detail, a card processor's payout report, open customer invoices and remittance emails[^10][^4]. One bulk transfer pays 12 invoices at once[^36].",
-  "output": "Matched pairs, each showing how it was matched and how confident the tool is[^4][^6]. An exception queue sorted by type: no match, several candidates, outside tolerance, possible duplicate or timing difference[^10][^7]. A drafted explanation for each exception, which the reviewer checks before sign-off[^9]."
+  "input": "Illustrative. A month's bank statement as CSV or PDF, the ledger's cash detail, a card processor's payout report, open customer invoices and remittance emails[^1][^3]. One bulk transfer may pay several invoices at once, a one-to-many match[^32].",
+  "output": "Matched pairs, each showing how it was matched and how confident the tool is[^3][^5]. An exception list with a suggested reason for each, such as a timing difference or a possible duplicate[^6]. A drafted explanation for each exception, which the reviewer checks before sign-off[^9]."
  },
  "recipes": [
   {
    "name": "1. Small team on QuickBooks or Xero, one entity",
-   "when": "Pick this for one entity and modest bank volume. The ledger's own AI reconcile is in your plan or a small add-on[^47][^48].",
+   "when": "Pick this for one entity and modest bank volume. The ledger's own AI reconcile is in your plan or a small add-on[^37][^38].",
    "flow": [
     "Staff accountant: turn on the built-in AI reconcile for each bank account",
     "Staff accountant: review the auto-reconciled list, which shows whether a rule, match, memory or prediction made each one",
     "Staff accountant: clear the suggestions the tool was unsure about",
     "Controller: sample auto-matched lines, then review and sign the reconciliation"
    ],
-   "cost": "Xero Growing is $59 a month and QuickBooks Plus is $140 a month at list, read 26 Nov 2026[^47][^48]. Xero sells auto-reconcile as a $5 monthly add-on on its Early plan[^47]."
+   "cost": "Xero Growing is $59 a month and QuickBooks Plus is $140 a month at list, read 26 Nov 2026[^37][^38]. Xero sells auto-reconcile as a $5 monthly add-on on its Early plan[^37]."
   },
   {
    "name": "2. Mid-size firm on NetSuite or Sage Intacct, several entities",
-   "when": "Pick this for several entities, many accounts and an audit that tests your controls. Close platforms add matching, task lists and audit trails[^37][^40].",
+   "when": "Pick this for several entities, many accounts and an audit that tests your controls. Close platforms add matching, task lists and audit trails[^27][^30].",
    "flow": [
     "Controller: choose the accounts in scope and write match rules and tolerances (how far two amounts may differ and still match)",
     "IT: connect the ERP and bank feeds, and own user access and change control",
@@ -179,24 +179,24 @@
     "Controller: certify each reconciliation",
     "Auditor: review the match logs and IT controls"
    ],
-   "cost": "Close platforms are quote-only[^37][^38]. Third-party purchase data puts median spend near $15,000 to $25,000 a year, and averages near $43,000 to $46,000 for firms of 50 to 1,000 staff[^30]."
+   "cost": "Close platforms are quote-only[^27][^28]. Quotes scale with transactions and seats, close scope, or modules and users plus a one-time implementation fee[^28][^30][^36]."
   },
   {
    "name": "3. Light build on tools you already own",
-   "when": "Pick this when your matching rules are unusual and volume is low[^33][^36]. Practitioners say keep matching in a script, since prompts can answer differently each run[^31].",
+   "when": "Pick this when your matching rules are unusual and volume is low. Keep matching in fixed rules you can test, since your auditor must be able to rely on the data[^12][^9].",
    "flow": [
     "Staff accountant: standardize reconciliation templates and import data with Power Query",
     "Finance systems lead: write the matching rules as a script, not a prompt",
     "Staff accountant: have an AI assistant draft explanations for exceptions only",
     "Controller: approve every draft and keep the log"
    ],
-   "cost": "Microsoft 365 Copilot Business is $21 per user a month, read 26 Nov 2026[^28]. ChatGPT Business is $20 per user a month billed yearly[^29]."
+   "cost": "Microsoft 365 Copilot Business is $21 per user a month, read 26 Nov 2026[^24]. ChatGPT Business is $20 per user a month billed yearly[^25]."
   }
  ],
  "tables": [
   {
    "title": "What do close studies say about automating reconciliations?",
-   "intro": "Published benchmarks and surveys on how fast teams close the month[^20][^21][^23]. Vendor surveys are marked, so read them as directional.",
+   "intro": "Published benchmarks and surveys on close speed and AI in finance[^16][^17][^19]. The sponsored study is marked, so read it as directional.",
    "headers": [
     "Study",
     "Who was asked",
@@ -207,48 +207,40 @@
      "name": "APQC Open Standards Benchmarking",
      "url": "https://www.apqc.org/resource-library/resource-listing/cycle-time-days-complete-monthly-consolidated-financial-0",
      "cells": [
-      "10,201 organizations[^20]",
-      "Median 6 days to produce monthly consolidated statements; top performers 5, bottom 10[^20]"
+      "10,201 organizations[^16]",
+      "Median 6 days to produce monthly consolidated statements; top performers 5, bottom 10[^16]"
      ]
     },
     {
      "name": "Ventana Research, 2018",
      "url": "https://research.ventanaresearch.com/hubfs/Research/White_Papers_Research_Perspectives_etc/Finance/Ventana_Research_Perspective_Achieving_a_Shorter_Close_2018.pdf",
      "cells": [
-      "Finance organizations[^21]",
-      "57% with automated reconciliations closed within 6 business days, vs 27% without[^21]"
+      "Finance organizations[^17]",
+      "57% with automated reconciliations closed within 6 business days, vs 27% without[^17]"
      ]
     },
     {
      "name": "Ventana Research, 2021 (sponsored by BlackLine)",
      "url": "https://www.ventanaresearch.com/hubfs/Research/White_Papers_Research_Perspectives_etc/Finance/Ventana_Research_Perspective_BlackLine_Best_Practices_for_a_More_Effective_Close.pdf",
      "cells": [
-      "Finance organizations; vendor-sponsored[^22]",
-      "Spreadsheet-heavy teams took 7.7 days to close the month, vs 5.5 for others[^22]"
+      "Finance organizations; vendor-sponsored[^18]",
+      "Spreadsheet-heavy teams took 7.7 days to close the month, vs 5.5 for others[^18]"
      ]
     },
     {
-     "name": "Vena (vendor), Oct 2026",
-     "url": "https://www.venasolutions.com/blog/month-end-close-benchmarks-survey",
+     "name": "Gartner AI in Finance Survey, 2025",
+     "url": "https://www.gartner.com/en/newsroom/press-releases/2025-11-18-gartner-survey-shows-finance-ai-adoption-remains-steady-in-2025",
      "cells": [
-      "624 finance staff, margin of error 3.9%[^23]",
-      "Average close 6.2 business days; 78% corrected numbers after the close was marked complete[^23]"
+      "183 CFOs and senior finance leaders[^19]",
+      "59% use AI in finance; 34% of users apply it to error and anomaly detection; 91% saw low or moderate impact at first[^19]"
      ]
     },
     {
-     "name": "FloQast (vendor), Aug 2026",
-     "url": "https://www.floqast.com/press-releases/accounting-ai-maturity-study-2026",
+     "name": "KPMG Global AI in Finance, 2026",
+     "url": "https://home.kpmg.com/xx/en/media/press-releases/2026/05/ai-adoption-in-finance-doubles-but-assurance-readiness-determines-who-wins.html",
      "cells": [
-      "Accounting teams; sample size not stated[^8]",
-      "57% take 7+ days to close; the most mature AI users close in 6.7 days vs 8.7[^8]"
-     ]
-    },
-    {
-     "name": "Ledge (vendor), 2025",
-     "url": "https://www.ledge.co/content/month-end-close-benchmarks-for-2025",
-     "cells": [
-      "100 finance teams[^24]",
-      "94% use Excel in the close; reconciliation is the biggest time sink[^24]"
+      "1,013 senior finance leaders, firms with US$250M+ revenue[^20]",
+      "42% are fully assurance-ready for AI-enabled finance processes; 36% name data quality as the top barrier[^20]"
      ]
     }
    ]
@@ -259,73 +251,73 @@
    "name": "SOX 404 and PCAOB AS 2201",
    "url": "https://pcaobus.org/oversight/standards/auditing-standards/details/AS2201",
    "status": "In force; amendments effective 15 Dec 2026",
-   "what": "Public companies have their internal controls over financial reporting audited, and reconciliation review is one of those controls[^17][^12]. Late or failed reviews show up as material weaknesses in 10-Ks and SEC orders[^12][^11][^19]. SOX 404 covers public companies; private-company audits follow AICPA standards instead[^17][^14]."
+   "what": "Public companies have their internal controls over financial reporting audited, and reconciliation review is one of those controls[^13][^8]. Late or failed reviews show up as material weaknesses in 10-Ks and SEC orders[^8][^7][^15]. SOX 404 covers public companies; private-company audits follow AICPA standards instead[^13][^10]."
   },
   {
    "name": "PCAOB AS 1105 and AS 2301 amendments (technology-assisted analysis)",
    "url": "https://pcaobus.org/oversight/standards/implementation-resources-PCAOB-standards-rules/amendments-related-to-aspects-of-designing-and-performing-audit-procedures-that-involve-technology-assisted-analysis-of-information-in-electronic-form",
    "status": "In force for audits of fiscal years starting on or after 15 Dec 2025",
-   "what": "Auditors must check that the electronic data you give them is reliable, with more weight on IT controls[^16][^15]. The rules are not AI-specific; they cover electronic information in general[^16]. Calendar-2026 audits are the first under them[^15]."
+   "what": "Auditors must check that the electronic data you give them is reliable, with more weight on IT controls[^12][^11]. The rules are not AI-specific; they cover electronic information in general[^12]. Calendar-2026 audits are the first under them[^11]."
   },
   {
    "name": "AICPA practice aid: AI Considerations for Financial Statement Auditors",
    "url": "https://www.aicpa-cima.com/news/article/aicpa-releases-guidance-to-help-auditors-address-the-use-of-ai-in-financial-reporting-and-auditing",
    "status": "Issued Oct 2026; nonauthoritative",
-   "what": "A 51-page guide on how a client's AI affects financial reporting and controls[^13][^14]. It is not binding. Private-company audits follow AICPA standards, so expect your auditor to know it[^14]."
+   "what": "A 51-page guide on how a client's AI affects financial reporting and controls[^9][^10]. It is not binding. Private-company audits follow AICPA standards, so expect your auditor to know it[^10]."
   }
  ],
  "howToTest": [
-  "Start with one process, such as bank reconciliations, and record today's days to close, hours per reconciliation and corrections after close[^20][^24]. Note calendar or business days, since benchmarks use both[^20][^24].",
+  "Start with one process, such as bank reconciliations, and record today's days to close, hours per reconciliation and corrections after close[^16]. Note calendar or business days, since benchmarks use both[^16][^17].",
   "Pilot on one entity or a few bank accounts first. Run the tool in parallel for two or three closes on prior months and compare it with the signed-off manual reconciliations.",
-  "Measure the auto-match rate, then sample auto-matched lines by match reason[^9]. A match can tie on amount and still pair unrelated items[^9].",
-  "Count both kinds of error: false matches and missed exceptions[^9].",
-  "Check completeness: every bank and ledger line entered the run, and opening and closing balances agree[^10].",
-  "Log the method, confidence, software version and human action for every match[^10][^6].",
-  "Price the lift: hours freed times your loaded staff cost, plus days cut from the close. One preparer reported about 10 hours a month on bank reconciliations[^32]."
+  "Measure the auto-match rate, then sample auto-matched lines by the reason the tool records for each[^5][^6]. Check that each pair is the same transaction, not just the same amount.",
+  "Count both kinds of error: false matches and missed exceptions.",
+  "Check completeness: every bank and ledger line entered the run, and opening balances agree with last month's closing balances[^2][^1].",
+  "Log the method, confidence, software version and human action for every match[^3][^5].",
+  "Price the lift: hours freed times your loaded staff cost, plus days cut from the close. Compare your days to close with APQC's median of 6[^16]."
  ],
  "watchOuts": [
-  "Right total, wrong pairing: amounts tie but the transactions are unrelated[^9]. Sample matches by reason, not just the total[^9].",
-  "Over-trusting suggestions: Xero auto-reconciles only when highly confident[^5]. Set your own auto-accept level from testing, and review everything below it[^10].",
-  "Made-up explanations: AICPA names hallucinations and explainability as AI risks[^13]. Treat AI-written causes as drafts a person verifies[^9].",
-  "Missing audit trail: CalCPA reports PCAOB findings where AI anomaly tools lacked documented calibration[^18]. In FloQast's vendor survey, traceability was a top barrier[^8].",
-  "Weak controls get faster, not better: FloQast says AI on weak controls \"accelerates the errors\"[^8]. Reconciliation review failures already drive material weaknesses, so fix review first[^12][^11].",
-  "Bank data leaving the building: a QuickBooks user objected that uploaded statements get human review at Intuit[^34]. Read the vendor's data terms before uploading bank files[^34]."
+  "Right total, wrong pairing: amounts can tie while the transactions are unrelated. Sample matches by the reason the tool records, not just the total[^5][^6].",
+  "Over-trusting suggestions: Xero auto-reconciles only when highly confident[^4]. Set your own auto-accept level from testing, and review everything below it[^3].",
+  "Made-up explanations: AICPA names hallucinations and explainability as AI risks[^9]. Treat AI-written causes as drafts a person verifies[^9].",
+  "Missing audit trail: CalCPA reports PCAOB findings where AI anomaly tools lacked documented calibration[^14]. Fewer than half of large finance teams say they can produce AI audit evidence without disruption[^20].",
+  "Weak controls get faster, not better: AI does not fix a review step that already fails. Reconciliation review failures already drive material weaknesses, so fix review first[^8][^7].",
+  "Bank data leaving the building: Intuit's privacy terms let it train AI on customer data and let people process what its AI assistants receive[^26]. Read your vendor's data terms before uploading bank files[^26]."
  ],
  "faq": [
   {
    "q": "Do companies actually use AI for bank reconciliations?",
-   "a": "Yes, mostly through features built into the ledger[^7][^5]. QuickBooks and Xero suggest or confirm matches and leave unsure ones for a person[^7][^5]."
+   "a": "Yes, mostly through features built into the ledger[^6][^4]. QuickBooks and Xero suggest or confirm matches and leave unsure ones for a person[^6][^4]."
   },
   {
    "q": "Will reconciliation software actually make the work faster?",
-   "a": "It helps most with organizing, sign-offs and audit trails. A top r/Accounting answer said FloQast helps with SOX but may not speed up the reconciliations themselves[^33]. Surveys still link automated reconciliations to faster closes[^21][^22]."
+   "a": "Often, if your data and review steps are in order. Ventana found 57% of firms with automated reconciliations closed within six business days, against 27% without[^17]. In Gartner's survey, 91% of finance teams saw only low or moderate AI impact at first, so plan for a ramp[^19]."
   },
   {
    "q": "My company wants our reconciliation rebuilt in AI. Should it be?",
-   "a": "Keep the matching in a fixed-rule script that gives the same answer every run, and use AI for explanations. Prompts can answer differently each run, and you need a control either way[^31][^9]."
+   "a": "Keep the matching in fixed rules that give the same answer every run, and use AI to draft explanations. Your auditor must be able to rely on the data, and AICPA flags unexplainable AI output as a risk[^12][^9]."
   },
   {
    "q": "Will our auditor accept AI-matched reconciliations?",
-   "a": "Yes, if the controls hold: a named preparer and reviewer, tested thresholds and a log for every match[^10][^9]. New PCAOB rules have auditors check how reliable your electronic data is[^16][^15]."
+   "a": "Yes, if the controls hold: a named preparer and reviewer, split duties, tested thresholds and a log for every match[^2][^1]. New PCAOB rules have auditors check how reliable your electronic data is[^12][^11]."
   },
   {
    "q": "How much does account reconciliation software cost?",
-   "a": "Small-business ledgers with AI reconcile list at $27 to $340 a month[^47][^48]. Dedicated close platforms don't publish prices; third-party data puts median spend near $15,000 to $25,000 a year[^37][^30]."
+   "a": "Small-business ledgers with AI reconcile list at $27 to $340 a month[^37][^38]. Dedicated close platforms quote on request, scaled by transactions, seats or close scope[^28][^30]. Oracle's EPM suite lists $250 per named user a month, with a 10-user minimum[^23]."
   },
   {
    "q": "Can AI handle one payment that covers many invoices?",
-   "a": "Not with simple one-to-one matchers, which send it to exceptions[^36]. Machine-learning suggestions and multi-way matchers aim at these cases[^4][^42]. One accountant reported building AI matching for invoices with tax deductions, with nothing posted without approval[^35]."
+   "a": "Some tools can: Trintech says its Adra matcher handles one-to-many and many-to-one matches[^32]. Workday's AI suggests matches for lines its rules left, with a confidence level a person reviews[^3]. Test your own hard cases in the pilot before you buy."
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy when your process is standard and you have no systems team. Firms now buy 76% of their AI use cases, up from 53% in 2024[^25]. MIT research found internal builds succeed about one-third as often as bought tools[^26].",
-  "build": "Build a light layer when matching rules are unusual, such as processor formats or one payment for many invoices, and volume is low[^36][^33]. One practitioner said dedicated tooling isn't worth it at low volume[^33]. Keep matching deterministic and let AI draft explanations only[^31]."
+  "buy": "Buy when your process is standard and you have no systems team. Firms now buy 76% of their AI use cases, up from 53% in 2024[^21]. MIT research found internal builds succeed about one-third as often as bought tools[^22].",
+  "build": "Build a light layer when matching rules are unusual, such as processor formats or one payment for many invoices, and volume is low. Keep matching in fixed, testable rules and let AI draft explanations only, since AICPA flags unexplainable output as a risk[^9]."
  },
  "pickElse": [
-  "Low volume and few accounts: use your ledger's own reconcile screen and bank rules in QuickBooks or Xero[^7][^5].",
-  "The real problem is upstream data: in Vena's vendor survey, teams wanted system integration (32%) and standard processes (28%) more than extra staff (19%)[^23]. Fix integration and process first.",
-  "You need consolidation or a new ERP, not matching: look at a suite such as Oracle EPM or your ERP's own reconciliation module[^27][^46].",
-  "Messy multi-system matching with fixed rules: a Python or Power Query script beats an AI prompt, because it gives the same answer every run[^31]."
+  "Low volume and few accounts: use your ledger's own reconcile screen and bank rules in QuickBooks or Xero[^6][^4].",
+  "The real problem is upstream data: Gartner and KPMG both find data quality is the top barrier to AI in finance[^19][^20]. Fix integration and process first.",
+  "You need consolidation or a new ERP, not matching: look at a suite such as Oracle EPM or your ERP's own reconciliation module[^23][^36].",
+  "Messy multi-system matching with fixed rules: a Python or Power Query script gives the same answer every run, which is easier to test and audit[^12]."
  ],
  "resources": [
   {
@@ -357,45 +349,40 @@
  "stats": [
   {
    "num": "6 days",
-   "label": "median time to produce monthly consolidated statements; top performers take 5 and bottom performers 10[^20]",
+   "label": "median time to produce monthly consolidated statements; top performers take 5 and bottom performers 10[^16]",
    "source": "APQC, n=10,201"
   },
   {
    "num": "57% vs 27%",
-   "label": "share of firms closing within 6 business days, with and without automated reconciliations[^21]",
+   "label": "share of firms closing within 6 business days, with and without automated reconciliations[^17]",
    "source": "Ventana Research, 2018"
   },
   {
-   "num": "78%",
-   "label": "finance teams that corrected numbers after the close was marked complete, in a vendor survey[^23]",
-   "source": "Vena (vendor), n=624, Oct 2026"
-  },
-  {
    "num": "0 of 8",
-   "label": "dedicated close and reconciliation platforms we checked that publish a price[^37][^39][^44]",
+   "label": "dedicated close and reconciliation platforms we checked that publish a price[^27][^29][^34]",
    "source": "Zavient price check, 26 Nov 2026"
   },
   {
    "num": "76%",
-   "label": "share of enterprise AI use cases bought rather than built[^25]",
+   "label": "share of enterprise AI use cases bought rather than built[^21]",
    "source": "Menlo Ventures, 2025"
   },
   {
-   "num": "94%",
-   "label": "finance teams using Excel in the close, in a vendor survey that found reconciliation the biggest time sink[^24]",
-   "source": "Ledge (vendor), n=100, 2025"
+   "num": "59%",
+   "label": "finance functions using AI; error and anomaly detection is among the top uses[^19]",
+   "source": "Gartner, n=183, Nov 2025"
+  },
+  {
+   "num": "42%",
+   "label": "large finance teams fully ready to show auditors how their AI-enabled processes work[^20]",
+   "source": "KPMG, n=1,013, May 2026"
   }
  ],
  "sources": [
   {
-   "name": "NetSuite, What is account reconciliation?",
-   "url": "https://www.netsuite.com/portal/resource/articles/accounting/account-reconciliation.shtml",
-   "what": "Reconciliation compares a ledger balance with an independent record and investigates differences before the statements are issued."
-  },
-  {
-   "name": "Corporate Finance Institute, Reconciliation",
-   "url": "https://corporatefinanceinstitute.com/resources/accounting/reconciliation/",
-   "what": "Plain explainer: reconciliation checks that two sets of records agree and explains any gap."
+   "name": "US GAO, Standards for Internal Control in the Federal Government (Green Book), GAO-25-107721 (May 2025)",
+   "url": "https://www.gao.gov/assets/gao-25-107721.pdf",
+   "what": "Reconciliations compare two sets of records, such as a bank reconciliation, to confirm transactions are recorded completely and accurately; segregation of duties keeps any one person from controlling all key steps, including overriding automated processes; management inspects documentation that reconciliations were done."
   },
   {
    "name": "University of Kentucky, account reconciliation training handout (2023)",
@@ -421,21 +408,6 @@
    "name": "Intuit, Learn the reconcile workflow in QuickBooks Online (updated 18 Nov 2026)",
    "url": "https://quickbooks.intuit.com/learn-support/en-us/help-article/reconciliation-reports/learn-reconcile-workflow-quickbooks/L8ZibUuVE_US_en_US",
    "what": "AI-powered reconciliation on Plus, Advanced and Enterprise Suite lists paired lines, items in review and suggested reasons such as timing differences or duplicates."
-  },
-  {
-   "name": "FloQast (vendor), accounting AI maturity study, 11 Aug 2026",
-   "url": "https://www.floqast.com/press-releases/accounting-ai-maturity-study-2026",
-   "what": "Vendor study: AI over weak controls accelerates the errors; traceability is a top barrier; 57% take 7+ days to close."
-  },
-  {
-   "name": "OneStream (vendor), AI in the close: what your auditor will ask (19 Nov 2026)",
-   "url": "https://www.onestream.com/resources/ai-in-the-close-what-your-auditor-will-ask-and-how-to-prove-it",
-   "what": "Vendor guide: a match can tie by amount but pair unrelated items; test the logic, measure false matches and missed exceptions, treat AI text as drafts."
-  },
-  {
-   "name": "LearnSignal, AI for account reconciliations (Jun 2026)",
-   "url": "https://www.learnsignal.com/blog/ai-for-account-reconciliations/",
-   "what": "Keep a named preparer and independent reviewer; split who sets thresholds from who approves; check completeness and log each match."
   },
   {
    "name": "SEC, In re Joseph R. Allred (Magnum Hunter), Release 34-77342 (2016)",
@@ -498,14 +470,14 @@
    "what": "Vendor-sponsored: spreadsheet-heavy teams took 7.7 days to close the month vs 5.5 for others."
   },
   {
-   "name": "Vena (vendor), month-end close benchmarks survey (23 Oct 2026)",
-   "url": "https://www.venasolutions.com/blog/month-end-close-benchmarks-survey",
-   "what": "Vendor survey, n=624, margin of error 3.9%: average close 6.2 business days; 78% corrected numbers after close; integration wanted over staff."
+   "name": "Gartner, Survey Shows Finance AI Adoption Remains Steady in 2025 (18 Nov 2025)",
+   "url": "https://www.gartner.com/en/newsroom/press-releases/2025-11-18-gartner-survey-shows-finance-ai-adoption-remains-steady-in-2025",
+   "what": "Survey of 183 CFOs and senior finance leaders: 59% use AI in finance; among them 34% use it for error and anomaly detection; 91% report low or moderate impact at first; data quality and skills are the largest obstacles."
   },
   {
-   "name": "Ledge (vendor), Month-end close benchmarks for 2025",
-   "url": "https://www.ledge.co/content/month-end-close-benchmarks-for-2025",
-   "what": "Vendor survey, n=100: 94% use Excel in the close; reconciliation is the biggest time sink."
+   "name": "KPMG International, AI adoption in finance doubles, but assurance readiness determines who wins (11 May 2026)",
+   "url": "https://home.kpmg.com/xx/en/media/press-releases/2026/05/ai-adoption-in-finance-doubles-but-assurance-readiness-determines-who-wins.html",
+   "what": "Survey of 1,013 senior finance leaders at firms with US$250M+ revenue: 42% are fully assurance-ready for AI-enabled finance processes; 36% name data quality as their top barrier."
   },
   {
    "name": "Menlo Ventures, 2025 State of Generative AI in the Enterprise",
@@ -533,39 +505,9 @@
    "what": "ChatGPT Business $20 per user a month billed annually, $25 billed monthly; read 26 Nov 2026."
   },
   {
-   "name": "The D*AI*LY Brief, month-end close software cost benchmarks (12 Nov 2026)",
-   "url": "https://www.beri.net/article/best-ai-month-end-close-software-numeric-floqast-blackline-trintech-2026",
-   "what": "Cites Vendr medians (FloQast $24,663 a year, Numeric $15,000) and SpendHound averages for 50-1,000 staff firms (FloQast $43,303, BlackLine $45,515)."
-  },
-  {
-   "name": "Reddit r/Accounting, I automated a bank reconciliation process; now my company wants it rebuilt in AI (Jun 2026)",
-   "url": "https://www.reddit.com/r/Accounting/comments/1ue5zr7/i_automated_a_bank_reconciliation_process_now_my",
-   "what": "Practitioners: you need a control for AI recon regardless; use a script, since prompts are non-deterministic."
-  },
-  {
-   "name": "Reddit r/Accounting, Any of your companies use AI for bank reconciliations?",
-   "url": "https://www.reddit.com/r/Accounting/comments/1bfdkwy/any_of_your_companies_use_ai_for_bank",
-   "what": "Self-reported: a preparer on Sage Intacct spends about 10 hours a month on bank reconciliations."
-  },
-  {
-   "name": "Reddit r/Accounting, What reconciliation software actually saves time? (Nov 2025)",
-   "url": "https://www.reddit.com/r/Accounting/comments/1pak6il/what_accounting_reconciliation_software_are_you/",
-   "what": "Top answer: FloQast helps organize and with SOX, but may not make the recs themselves much faster; tooling not worth it at low volume."
-  },
-  {
-   "name": "Reddit r/QuickBooks, Bank reconciliation with new AI",
-   "url": "https://www.reddit.com/r/QuickBooks/comments/1m5sjw4/bank_reconciliation_with_new_fin_ai",
-   "what": "User objection that uploaded statements are checked by a person at Intuit (user claim)."
-  },
-  {
-   "name": "Reddit r/Accounting, automating AR reconciliation actually using AI (Jul 2025)",
-   "url": "https://www.reddit.com/r/Accounting/comments/1m68dy9/delusions_epiphanies_automating_my_companys_ar",
-   "what": "Self-reported case: AI agents match payments to invoices; nothing posts without approval; took two months to build."
-  },
-  {
-   "name": "Reddit r/Accounting, Reconciliation tools are just fancy VLOOKUPs (Apr 2026)",
-   "url": "https://www.reddit.com/r/Accounting/comments/1smq2rr/reconciliation_tools_are_just_fancy_vlookups_and",
-   "what": "One bulk transfer covering 12 invoices lands in exceptions with exact one-to-one matchers."
+   "name": "Intuit, Global Privacy Statement (last updated 9 Mar 2026)",
+   "url": "https://www.intuit.com/privacy/statement/",
+   "what": "Intuit may use personal information to train its AI and machine learning models, and may process information from AI chatbots and assistants by automated and manual (human) methods; read 26 Nov 2026."
   },
   {
    "name": "FloQast pricing page",
@@ -667,7 +609,7 @@
   },
   {
    "reader": "Division head",
-   "notes": "The controller of a private firm could not tell whether SOX applied, and saw a vendor study cited as neutral. The SOX rule now says it covers public companies and points private firms to AICPA standards; the FloQast study is labelled as a vendor's."
+   "notes": "The controller of a private firm could not tell whether SOX applied, and saw vendor studies cited as neutral. The SOX rule now says it covers public companies and points private firms to AICPA standards; vendor surveys and forum posts are cut in favor of GAO, Gartner and KPMG."
   },
   {
    "reader": "Owner-CEO",
