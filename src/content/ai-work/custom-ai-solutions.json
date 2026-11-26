@@ -1,0 +1,483 @@
+{
+ "title": "Custom AI solutions: what should you walk away with?",
+  "description": "Custom AI solutions: when to build or buy, what 9 AI models cost per typical job, and how to test any build.",
+ "type": "consulting",
+ "templateVersion": 1,
+ "topic": "Custom AI solutions",
+ "job": "custom AI builds",
+ "industry": "any industry",
+ "index": false,
+ "verdict": [
+  "Buy the AI model. Build only the part that holds your own data and workflow.[^4][^3]",
+  "Bought or partnered tools reached daily use about twice as often as internal builds in one MIT study.[^1][^2]",
+  "Custom usually means search over your own documents, not training a model. Search beats retraining for adding facts.[^5][^24]",
+  "Usage is cheap: $35 to $1,400 a month for 50,000 questions in our check. Upkeep is the hard part.[^17][^30]",
+  "Get it in writing: you own the prompts, test cases, search index, tuned models and code.[^13][^36]"
+ ],
+ "onPage": [],
+ "headings": {},
+ "summary": "Custom AI solutions fit AI to your own data, rules and software, usually by connecting a bought model to your documents.[^5][^6] AI drafts, finds and extracts; your staff check and decide.[^10] Testing on your own cases and planning upkeep make or break it.[^23][^30]",
+ "walkAway": [
+  "A written build, buy or leave-it call for each use, with the off-the-shelf option tested first. Most AI uses at large firms are now bought, not built.[^3][^4]",
+  "A 3-year cost sheet: build, AI usage at dated list prices, upkeep and model changes. Gartner warns AI cost estimates can be off by 500% to 1,000%.[^9][^25]",
+  "A test set of 20 to 50 real cases from your files, with today's results and a pass mark agreed before any demo.[^23][^12]",
+  "A contract that says you own the prompts, test cases, search index, any tuned model and the code, and can take them with you.[^13][^36][^37]",
+  "A named owner who reruns the tests every month and whenever the vendor changes or retires a model.[^10][^12]"
+ ],
+ "humanRole": [
+  "The COO or process owner owns the result and makes the go or no-go call. NIST asks for checks by people who did not build the system.[^10]",
+  "A domain reviewer, such as the controller or an ops lead, sets the right answers and spot-checks output. Model makers say human judgment should calibrate any automated scoring.[^12][^23]",
+  "Your legal or contracts lead settles who owns data, outputs and any model tuned on your data before signing.[^13][^37] If the use is high-risk under EU rules, like hiring or credit, heavy changes can make your firm the legal provider.[^11]",
+  "Your firm stays liable for what its AI tells customers, so a named person approves customer-facing answers at launch.[^14]"
+ ],
+ "recipes": [
+  {
+   "name": "1. Answers from your own documents (the most common first build)",
+   "when": "Pick this when staff hunt through manuals, contracts or specs for answers. Cloud providers advise starting with retrieval, which cites its sources and updates in minutes.[^5][^6]",
+   "flow": [
+    "Ops lead: pick one document set and 20 to 50 real questions with known answers",
+    "Developer: build retrieval (search that hands the AI the right passages) on a bought model",
+    "IT lead: limit each person to the documents they can already open",
+    "Domain reviewer: grade answers against the test set and sign off",
+    "Ops lead: go live in one team first, then rerun the test set monthly"
+   ],
+   "cost": "Our check: $35 to $1,400 a month in AI usage for 50,000 questions.[^15][^17] A search index on Pinecone, a hosted search service, has a $50 monthly minimum on its Standard plan.[^21][^22]"
+  },
+  {
+   "name": "2. Pulling fields from documents into your system (batch work)",
+   "when": "Pick this for forms, orders or statements that arrive in volume and can wait a day. All four providers we checked halve the price for batch work, with results within a day.[^15][^16]",
+   "flow": [
+    "AP lead or clerk: label 100 sample documents with the right fields",
+    "Developer: run batch extraction and score it against the labels",
+    "Reviewer: check low-confidence fields before anything posts",
+    "Controller: approve go-live once accuracy meets the agreed mark"
+   ],
+   "cost": "Our check: $3 (batch) to $240 a month in AI usage for 10,000 documents.[^15][^17] Labelling, review time and the link into your system cost more than the tokens.[^30]"
+  },
+  {
+   "name": "3. Tuning a model for format or sorting (only with many labelled examples)",
+   "when": "Pick this for a stable task, like sorting tickets or a fixed output format, with many labelled past examples. Do not tune it to learn facts; retrieval does that better.[^6][^24]",
+   "flow": [
+    "Ops lead: collect labelled past examples and hold some back for testing",
+    "Developer: tune a small model and compare it with the untuned one",
+    "Reviewer: check results on the held-back cases",
+    "Ops lead: plan a re-tune for when the base model retires"
+   ],
+   "cost": "Training is cheap: OpenAI lists $5 to $25 per million training tokens, so 6 million tokens costs $30 to $150 a run.[^16] The bigger costs are labelling data and re-tuning after model retirements.[^26][^25]"
+  }
+ ],
+ "ownData": {
+  "title": "What does a custom AI workload cost to run each month?",
+  "intro": "We priced two typical workloads on 9 models from 4 providers, using list prices read on 26 Nov 2026.[^15][^16][^17][^18] A token, the unit AI usage is billed in, is about three-quarters of a word, so a 5-page document is about 3,500 tokens.[^20] Worked example: 50,000 questions make 250 million tokens in, $500 at $2 per million, plus 20 million out, $200 at $10: $700 a month.",
+  "headers": [
+   "Model (list price per million tokens, in / out)",
+   "10,000 documents a month (3,500 tokens in, 500 out each)",
+   "50,000 questions a month (5,000 tokens in, 400 out each)",
+   "50,000 questions over 3 years, at a flat price"
+  ],
+  "rows": [
+   [
+    "Anthropic Haiku 5.5 ($0.10 / $0.50)[^15]",
+    "$6, or $3 by batch",
+    "$35",
+    "$1,260"
+   ],
+   [
+    "Anthropic Sonnet 5.5 ($2 / $10)[^15]",
+    "$120, or $60 by batch",
+    "$700",
+    "$25,200"
+   ],
+   [
+    "OpenAI gpt-6-luna ($0.10 / $0.50)[^16]",
+    "$6, or $3 by batch",
+    "$35",
+    "$1,260"
+   ],
+   [
+    "OpenAI gpt-6.2-sol ($2 / $10)[^16]",
+    "$120, or $60 by batch",
+    "$700",
+    "$25,200"
+   ],
+   [
+    "Google Gemini 3.5 Flash-Lite ($0.30 / $2.50)[^17]",
+    "$23, or $12 by batch",
+    "$125",
+    "$4,500"
+   ],
+   [
+    "Google Gemini 3.8 Flash ($0.75 / $3.75; doubles on 1 Jan 2027)[^17]",
+    "$45, then $90; half by batch",
+    "$263, then $525",
+    "$18,900 at the 2027 price"
+   ],
+   [
+    "Google Gemini 4 Argon ($2 / $10; doubles on 1 Dec 2026)[^17]",
+    "$120, then $240; half by batch",
+    "$700, then $1,400",
+    "$50,400 at the December price"
+   ],
+   [
+    "Mistral Small 4 ($0.15 / $0.60)[^18]",
+    "$8, or $4 by batch",
+    "$50",
+    "$1,782"
+   ],
+   [
+    "Mistral Large 4 ($0.70 / $2.10, the higher of two official prices)[^18][^19]",
+    "$35, or $18 by batch",
+    "$217",
+    "$7,812"
+   ]
+  ],
+  "note": "Standard US list prices before tax, discounts and caching; token counts are our estimates, and the 3-year column assumes flat prices, which Google already breaks.[^20][^17] Excludes reasoning tokens, hosting, the search index, engineering and review time, and tests no quality: a cheap model may fail your test. Mistral's two official pages disagree on Large 4, so we used the higher; Google rows are the Gemini Developer API paid tier.[^18][^19]"
+ },
+ "watchOuts": [
+  "Building what you could buy. Internal builds reached daily use about half as often as partnered ones, so test the off-the-shelf option on the same cases first.[^1][^4]",
+  "Messy or scattered documents. Most firms (63%) lack or are unsure of AI-ready data practices, so test on 50 real records before you build.[^8][^6]",
+  "Model retirements and price changes break the build. Two Google prices we checked double within about 5 weeks; vendors retire models on 2 to 6 months' notice.[^17][^25][^26][^27]",
+  "Quality slips without anyone noticing. Quality decayed over time in 91% of 128 model and dataset pairs in one study, so rerun your test set monthly.[^28][^29]",
+  "A contract that leaves the build with the vendor. Government buying guides say settle ownership, data rights and exit terms before signing.[^13][^36]",
+  "Cost surprises at full volume. Gartner warns cost estimates can be off by 500% to 1,000%, so price the pilot at real volume, not demo volume.[^9]"
+ ],
+ "howToTest": [
+  "Write the pass mark before any demo, such as 95% of fields right and every answer citing its source.[^38][^12]",
+  "Pull 20 to 50 real cases from your files, messy ones included, and keep them from the vendor until test day.[^23][^12]",
+  "Have two staff mark the right answers on their own, and drop cases they disagree on.[^23]",
+  "Run the custom build, an off-the-shelf tool and today's process on the same cases.[^10][^7]",
+  "Run each case more than once, since AI answers vary from run to run.[^23]",
+  "Ask the vendor in writing how they tested any accuracy claim, and on what data. The FTC has acted against AI accuracy claims made without solid evidence.[^39][^40]",
+  "Measure cost per case at your real volume, not just accuracy.[^9]",
+  "Price the lift in dollars: minutes saved x cases a month x loaded cost per minute (pay plus benefits). Subtract AI usage and upkeep.",
+  "Rerun the same set every month after go-live and whenever the model changes.[^12][^10]"
+ ],
+ "faq": [
+  {
+   "q": "How much does custom AI development cost?",
+   "a": "The AI usage is often the small part: $35 to $1,400 a month for 50,000 questions in our check.[^15][^17] Building, data preparation, testing and upkeep cost more.[^30][^9] We found no neutral price range for mid-size builds, so ask for each part priced separately."
+  },
+  {
+   "q": "Can I create my own custom AI?",
+   "a": "Yes, usually by connecting a bought model to your own documents, not by training one from scratch.[^5][^6] Google's engineers advise launching without machine learning until you have the data.[^7]"
+  },
+  {
+   "q": "Should we fine-tune on our documents or use RAG?",
+   "a": "Use RAG (retrieval-augmented generation: search that hands the AI the right passages). It beat fine-tuning (further training the model on your examples) for adding facts in a Microsoft study.[^24][^5] RAG also cites its sources; tune only for format or sorting.[^5][^6]"
+  },
+  {
+   "q": "Does the AI vendor train on our data, and who owns the output?",
+   "a": "Anthropic's and OpenAI's business terms say you own outputs and they don't train on your content.[^31][^32][^33] Google's paid Gemini tier isn't used for training, but its free tier may be, so keep confidential files off it.[^35][^34]"
+  },
+  {
+   "q": "Should we build, buy or assemble AI solutions for our business?",
+   "a": "Buy the model, and build only the layer that holds your data and workflow.[^4][^1] In one investor's survey, firms bought 76% of their AI uses in 2025, up from 53%.[^3]"
+  }
+ ],
+ "pickElse": [
+  "The job follows clear rules: use a rule or a no-code tool such as Zapier or Power Automate. Google says a simple rule often gets you about half the way.[^7]",
+  "Staff need drafting, summaries and search across email and files: buy seats of ChatGPT Enterprise, Claude for Work, Microsoft 365 Copilot or Gemini for Workspace.[^3][^1]",
+  "Your ERP (finance system) or CRM (customer database) already has AI built in: try it before building.[^4] Our AI integration guide shows what each system connects to."
+ ],
+ "resources": [
+  {
+   "name": "NIST AI RMF Playbook, MEASURE",
+   "url": "https://airc.nist.gov/airmf-resources/playbook/measure/",
+   "what": "Free US government checklist for testing AI in real conditions and monitoring it after launch."
+  },
+  {
+   "name": "OpenAI, Evaluation best practices",
+   "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+   "what": "Plain steps for building a test set from your own work and avoiding tests that flatter the system."
+  },
+  {
+   "name": "EU model contractual clauses for AI (MCC-AI)",
+   "url": "https://public-buyers-community.ec.europa.eu/communities/procurement-ai/resources/updated-eu-ai-model-contractual-clauses",
+   "what": "Free contract clauses you can adapt when buying a custom build."
+  },
+  {
+   "name": "UK Guidelines for AI procurement",
+   "url": "https://www.gov.uk/government/publications/guidelines-for-ai-procurement/guidelines-for-ai-procurement",
+   "what": "Short government checklist on IP, data, knowledge transfer and lock-in."
+  },
+  {
+   "name": "Google, Rules of Machine Learning",
+   "url": "https://developers.google.com/machine-learning/guides/rules-of-ml",
+   "what": "When a simple rule beats a model, from Google's engineers."
+  }
+ ],
+ "stats": [
+  {
+   "num": "76%",
+   "label": "Share of enterprise AI uses bought rather than built in 2025, up from 53%.[^3]",
+   "source": "Menlo Ventures survey of 495 US decision-makers, Dec 2025"
+  },
+  {
+   "num": "67% vs 33%",
+   "label": "Deployment rate of partnered or bought tools against internal builds in MIT's sample.[^1]",
+   "source": "MIT NANDA, Jul 2025"
+  },
+  {
+   "num": "$35 to $1,400",
+   "label": "Monthly AI usage cost of 50,000 retrieval questions across 9 models.[^15][^16][^17][^18]",
+   "source": "Zavient price check, 26 Nov 2026"
+  },
+  {
+   "num": "91%",
+   "label": "Share of 128 model and dataset pairs whose quality decayed over time.[^28]",
+   "source": "Scientific Reports, 2022"
+  },
+  {
+   "num": "500% to 1,000%",
+   "label": "Possible error in AI cost estimates when firms miss how costs scale.[^9]",
+   "source": "Gartner, Oct 2024"
+  },
+  {
+   "num": "63%",
+   "label": "Organisations that lack or are unsure of AI-ready data practices.[^8]",
+   "source": "Gartner, Feb 2025"
+  }
+ ],
+ "sources": [
+  {
+   "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025, Jul 2025",
+   "url": "https://www.artificialintelligence-news.com/wp-content/uploads/2025/08/ai_report_2025.pdf",
+   "what": "300+ public initiatives, 52 interviews, 153 survey responses (self-reported; authors say correlation is not causation). Partnered or bought tools reached deployment about 67% of the time, internal builds about 33%."
+  },
+  {
+   "name": "Fortune, MIT report: 95% of generative AI pilots at companies are failing, 18 Aug 2025",
+   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
+   "what": "Reports the MIT NANDA finding that purchased or partnered tools succeed about twice as often as internal builds."
+  },
+  {
+   "name": "Menlo Ventures, 2025: The State of Generative AI in the Enterprise, 9 Dec 2025",
+   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise",
+   "what": "Investor survey of 495 US decision-makers, Nov 2025: 76% of AI use cases bought rather than built, up from 53% in 2024 (2024 counted solutions, not use cases). Menlo invests in vendors it covers."
+  },
+  {
+   "name": "a16z, How 100 Enterprise CIOs Are Building and Buying Gen AI in 2025, 10 Jun 2025",
+   "url": "https://a16z.com/ai-enterprise-2025/",
+   "what": "Investor survey: a shift from build to buy; internally built tools are hard to maintain and often give no business advantage; regulated industries the exception."
+  },
+  {
+   "name": "AWS Prescriptive Guidance, RAG and fine-tuning compared",
+   "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/retrieval-augmented-generation-options/rag-vs-fine-tuning.html",
+   "what": "Advises starting with retrieval (RAG): updates in minutes and cites sources; fine-tuning takes hours to days, needs a data scientist and gives no source reference."
+  },
+  {
+   "name": "Google Cloud blog, To tune or not to tune, 17 May 2024",
+   "url": "https://cloud.google.com/blog/products/ai-machine-learning/to-tune-or-not-to-tune-a-guide-to-leveraging-your-data-with-llms",
+   "what": "Use retrieval when you need citations and up-to-date facts; retrieval can enforce per-user access; supervised tuning suits classification and structured output."
+  },
+  {
+   "name": "Google for Developers, Rules of Machine Learning",
+   "url": "https://developers.google.com/machine-learning/guides/rules-of-ml",
+   "what": "Rule 1: do not be afraid to launch without machine learning; a simple rule can get about 50% of the way there; use ML only once you have data."
+  },
+  {
+   "name": "Gartner press release, 26 Feb 2025",
+   "url": "https://www.gartner.com/en/newsroom/press-releases/2025-02-26-lack-of-ai-ready-data-puts-ai-projects-at-risk",
+   "what": "63% of organisations lack or are unsure of AI-ready data practices (1,203 data leaders); through 2026, 60% of AI projects without AI-ready data will be abandoned."
+  },
+  {
+   "name": "Gartner press release, 21 Oct 2024",
+   "url": "https://www.gartner.com/en/newsroom/press-releases/2024-10-21-gartner-identifies-four-emerging-challenges-to-delivering-value-from-ai-safely-and-at-scale",
+   "what": "CIOs who do not understand how generative AI costs scale could make a 500% to 1,000% error in cost estimates; pilots should test how costs scale."
+  },
+  {
+   "name": "NIST AI RMF Playbook, MEASURE",
+   "url": "https://airc.nist.gov/airmf-resources/playbook/measure/",
+   "what": "US standards agency: assessments involve people who did not build the system (1.3); test in conditions like real use (2.3); monitor in production (2.4)."
+  },
+  {
+   "name": "EU AI Act, Article 25, AI Act Service Desk",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-25",
+   "what": "A firm becomes the provider of a high-risk AI system if it puts its name on it, substantially modifies it, or changes its purpose so it becomes high-risk."
+  },
+  {
+   "name": "OpenAI, Evaluation best practices",
+   "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+   "what": "Model maker's guide: define the objective, collect a dataset that reflects real traffic, set metrics, compare, and keep evaluating; use human feedback to calibrate automated scoring."
+  },
+  {
+   "name": "UK Government, Guidelines for AI procurement",
+   "url": "https://www.gov.uk/government/publications/guidelines-for-ai-procurement/guidelines-for-ai-procurement",
+   "what": "Decide IP ownership when a model is retrained on your data; plan knowledge transfer; avoid vendor lock-in."
+  },
+  {
+   "name": "American Bar Association, Business Law Today, Feb 2024",
+   "url": "https://www.americanbar.org/groups/business_law/resources/business-law-today/2024-february/bc-tribunal-confirms-companies-remain-liable-information-provided-ai-chatbot",
+   "what": "Explains Moffatt v. Air Canada (2024 BCCRT 149): companies stay liable for what their AI chatbot tells customers."
+  },
+  {
+   "name": "Anthropic, Claude API pricing, read 26 Nov 2026",
+   "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+   "what": "Per million tokens: Haiku 5.5 $0.10 in, $0.50 out (prompts up to 100,000 tokens); Sonnet 5.5 $2 in, $10 out; batch at 50% off."
+  },
+  {
+   "name": "OpenAI, API pricing, read 26 Nov 2026",
+   "url": "https://developers.openai.com/api/docs/pricing",
+   "what": "Per million tokens: gpt-6-luna $0.10 in, $0.50 out; gpt-6.2-sol $2 in, $10 out; batch at 50% off; fine-tuning gpt-4.1 $25 and gpt-4.1-mini $5 per million training tokens."
+  },
+  {
+   "name": "Google, Gemini Developer API pricing, read 26 Nov 2026",
+   "url": "https://aistudio.google.com/docs/pricing",
+   "what": "Paid tier, per million tokens: Gemini 3.5 Flash-Lite $0.30 in, $2.50 out; 3.8 Flash $0.75/$3.75 to 31 Dec 2026, then $1.50/$7.50; 4 Argon $2/$10 to 30 Nov 2026, then $4/$20; batch 50% off."
+  },
+  {
+   "name": "Mistral AI docs, pricing, read 26 Nov 2026",
+   "url": "https://docs.mistral.ai/inference/pricing",
+   "what": "Per million tokens: Mistral Small 4 $0.15 in, $0.60 out; Mistral Large 4 $0.70 in, $2.10 out."
+  },
+  {
+   "name": "Mistral AI, pricing page, read 26 Nov 2026",
+   "url": "https://mistral.ai/pricing",
+   "what": "Lists Mistral Large at $0.50 in, $1.50 out per million tokens, lower than the docs page; batch at 50% off."
+  },
+  {
+   "name": "OpenAI Help Center, What are tokens and how to count them",
+   "url": "https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them",
+   "what": "One token is about three-quarters of a word; 100 tokens is about 75 words; counts differ by model and language; reasoning tokens bill as output."
+  },
+  {
+   "name": "Pinecone, pricing, read 26 Nov 2026",
+   "url": "https://www.pinecone.io/pricing",
+   "what": "Vendor price list: Standard plan $50 a month minimum; storage $0.33 per GB a month; reads $16 to $18 per million read units."
+  },
+  {
+   "name": "Pinecone docs, Understanding cost, read 26 Nov 2026",
+   "url": "https://docs.pinecone.io/guides/cost/understand-cost",
+   "what": "A query uses 1 read unit per GB of namespace, minimum 0.25, so a small index costs well under the monthly minimum."
+  },
+  {
+   "name": "Anthropic, Demystifying evals for AI agents, 9 Jan 2026",
+   "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+   "what": "Model maker's guide: 20 to 50 tasks drawn from real failures is a good start; a good task is one two experts would grade the same; run several trials because outputs vary."
+  },
+  {
+   "name": "Ovadia et al. (Microsoft), Fine-tuning or retrieval?, EMNLP 2024",
+   "url": "https://aclanthology.org/2024.emnlp-main.15.pdf",
+   "what": "Peer-reviewed study: retrieval consistently outperformed unsupervised fine-tuning for adding both known and new knowledge."
+  },
+  {
+   "name": "Anthropic, Model deprecations, read 26 Nov 2026",
+   "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+   "what": "At least 60 days' notice before retiring a model; for example Sonnet 4.5 deprecated 30 Sep 2026, retires 30 Nov 2026."
+  },
+  {
+   "name": "OpenAI, Deprecations, read 26 Nov 2026",
+   "url": "https://developers.openai.com/api/docs/deprecations",
+   "what": "Generally available models get at least 6 months' notice, specialised models 3 months, previews as little as 2 weeks."
+  },
+  {
+   "name": "Google, Gemini API deprecations, read 26 Nov 2026",
+   "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+   "what": "Lists earliest possible shutdown dates; some model aliases move to newer models billed at the new price, e.g. 2.5 Flash to 3.5 Flash-Lite from 1 Dec 2026."
+  },
+  {
+   "name": "Vela et al., Temporal quality degradation in AI models, Scientific Reports, 2022",
+   "url": "https://www.nature.com/articles/s41598-022-15245-z",
+   "what": "Peer-reviewed study: 91% of 128 model and dataset pairs showed quality decaying over time."
+  },
+  {
+   "name": "Chen, Zaharia and Zou, How is ChatGPT's behavior changing over time?, Harvard Data Science Review, 2024",
+   "url": "https://hdsr.mitpress.mit.edu/pub/y95zitmz",
+   "what": "Stanford and UC Berkeley study: GPT-4 accuracy on one task fell from 84% to 51% between Mar and Jun 2023; calls for continuous monitoring."
+  },
+  {
+   "name": "Sculley et al. (Google), Hidden technical debt in machine learning systems, NeurIPS 2015",
+   "url": "https://papers.neurips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf",
+   "what": "Machine learning systems are relatively fast and cheap to build but difficult and expensive to maintain."
+  },
+  {
+   "name": "Anthropic, Commercial Terms of Service, read 26 Nov 2026",
+   "url": "https://www.anthropic.com/legal/commercial-terms",
+   "what": "The customer owns its outputs; Anthropic does not train models on customer content from its commercial services."
+  },
+  {
+   "name": "OpenAI, Services Agreement, effective 1 Jan 2026",
+   "url": "https://openai.com/policies/services-agreement/",
+   "what": "The customer owns its output; customer content is not used to improve the services without opt-in; output may not be unique."
+  },
+  {
+   "name": "OpenAI, Enterprise privacy, read 26 Nov 2026",
+   "url": "https://openai.com/enterprise-privacy",
+   "what": "Business data is not used for training by default; fine-tuned models are for the customer's use alone."
+  },
+  {
+   "name": "Google, Gemini API Additional Terms of Service, read 26 Nov 2026",
+   "url": "https://ai.google.dev/gemini-api/terms",
+   "what": "Unpaid tier data may be used to improve Google products and reviewed by people; do not submit confidential information to the unpaid services."
+  },
+  {
+   "name": "Google, Gemini API data logging and zero data retention, read 26 Nov 2026",
+   "url": "https://ai.google.dev/gemini-api/docs/zdr",
+   "what": "Paid-tier prompts and responses are not used to train models; limited logs kept for abuse monitoring."
+  },
+  {
+   "name": "US Department of the Interior, Joint AI acquisition guidance (implements OMB M-25-22), Jan 2026",
+   "url": "https://www.doi.gov/sites/default/files/documents/2026-02/joint-ai-acquisition-pdf-final.pdf",
+   "what": "Federal buying guidance: secure knowledge transfer, data and model portability, and clear IP and data rights in AI contracts."
+  },
+  {
+   "name": "European Commission, Updated EU AI model contractual clauses (MCC-AI), 5 Mar 2025",
+   "url": "https://public-buyers-community.ec.europa.eu/communities/procurement-ai/resources/updated-eu-ai-model-contractual-clauses",
+   "what": "Free model contract clauses for buying AI, covering data, documentation and supplier duties."
+  },
+  {
+   "name": "Anthropic docs, Define success criteria and build evaluations",
+   "url": "https://platform.claude.com/docs/en/test-and-evaluate/develop-tests",
+   "what": "Model maker's guide: success criteria should be specific, measurable, achievable and relevant, written for the task, with edge cases."
+  },
+  {
+   "name": "FTC, Final order against Workado, 28 Aug 2025",
+   "url": "https://www.ftc.gov/news-events/news/press-releases/2025/08/ftc-approves-final-order-against-workado-llc-which-misrepresented-accuracy-its-artificial",
+   "what": "US regulator: the firm may not claim AI accuracy without competent and reliable evidence; its detector, sold as 98% accurate, tested lower on mixed content."
+  },
+  {
+   "name": "FTC, Operation AI Comply, 25 Sep 2024",
+   "url": "https://www.ftc.gov/news-events/news/press-releases/2024/09/ftc-announces-crackdown-deceptive-ai-claims-schemes",
+   "what": "US regulator: there is no AI exemption from existing law; actions against AI claims made without testing."
+  }
+ ],
+ "related": [
+  "ai-agent-development-services",
+  "ai-integration-services",
+  "ai-governance-consulting",
+  "data-analytics-consulting",
+  "ai-consulting-services"
+ ],
+ "offer": {
+  "heading": "Not sure whether to build or buy?",
+  "body": "Free, before any paid work, and no sales pitch: 30 minutes on your first workflow. Bring the use you are weighing. Leave knowing whether to build, buy or leave it, and what it would cost to run."
+ },
+ "keyword": {
+  "phrase": "custom ai solutions",
+  "searches": 590,
+  "cpc": 37.15,
+  "difficulty": 0
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Wanted a first workflow, a before-and-after measure and who does what. Roles are named in every recipe step; the test-set bullet now includes today's results, so there is a baseline to beat. Missing: a sourced time to build; the research found none neutral, so none is given."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Stalled on tokens, batch, fine-tuning and Pinecone. Token is now defined in the own-data intro, batch as results within a day, fine-tuning in the FAQ, Pinecone as a hosted search service. Moved the token counts per document and question into the table headers so the note stays short on a phone."
+  },
+  {
+   "reader": "GM",
+   "notes": "Asked whether one team can pilot first. The document-answers recipe now goes live in one team before rollout. Would like a figure for reviewer hours a week; nothing sourced exists, so the dollar formula in the test steps asks them to count it."
+  },
+  {
+   "reader": "Division head",
+   "notes": "As the COO hiring the build: the 3-year column now says it assumes a flat price, and the Google rows show both prices and dates. Wanted the contract items concrete; walk-away and bottom line both list what to own. No neutral build-cost range exists, so the FAQ says so and asks for each part priced separately."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Steve's worries: data, security, skills, return, consultant fees. Data has its own watch-out; security is the vendor-training FAQ and the IT access step; return is the dollar formula. Cut 'thin layer' and 'document index' from the bottom line as jargon. No Zavient fee shown, since prices are not set; offer says no sales pitch."
+  }
+ ],
+ "updated": "2026-11-26"
+}
