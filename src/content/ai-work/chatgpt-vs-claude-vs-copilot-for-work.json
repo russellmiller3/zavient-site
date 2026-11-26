@@ -1,803 +1,803 @@
 {
-  "title": "ChatGPT vs Claude vs Copilot: which should your team roll out?",
-  "description": "ChatGPT, Claude or Copilot for a 40-500 person firm: prices read 26 Nov 2026, seat caps, data and admin controls, and who each fits.",
-  "type": "compare",
-  "templateVersion": 1,
-  "topic": "ChatGPT vs Claude vs Microsoft Copilot for your team",
-  "job": "pick which AI assistant to roll out to staff",
-  "industry": "any industry",
-  "index": false,
-  "verdict": [
-    "Pick Copilot if your mail, files and meetings live in Microsoft 365 and you want audit logs there[^29][^34].",
-    "Pick ChatGPT if you run Google Workspace or a mixed stack and may grow past 150 seats[^17][^18].",
-    "Pick Claude if your team works in long documents and spreadsheets and has 150 people or fewer[^3][^16].",
-    "Run two if you're on Microsoft 365: Copilot Chat costs nothing extra; buy ChatGPT or Claude for heavy users[^31][^17]."
-  ],
-  "onPage": [
-    {
-      "to": "table-1",
-      "text": "What each business plan costs, read 26 Nov 2026"
-    },
-    {
-      "to": "recipes",
-      "text": "Which one fits a Microsoft firm, a Google firm or a regulated firm"
-    },
-    {
-      "to": "human-role",
-      "text": "Who keeps control: the COO, IT, reviewers and compliance"
-    },
-    {
-      "to": "own-data",
-      "text": "Seat caps, training defaults and admin controls side by side"
-    },
-    {
-      "to": "what-goes-wrong",
-      "text": "Mistakes teams make when they choose"
-    },
-    {
-      "to": "faq",
-      "text": "Straight answers to the questions buyers ask"
-    }
-  ],
-  "headings": {},
-  "summary": "All three keep business chats out of model training by default[^7][^20][^32]. Copilot works inside Microsoft 365 and sees what each person can already open; ChatGPT and Claude reach your files through admin-approved connectors[^31][^12][^26]. What makes or breaks it: who controls access and who checks output[^51][^33].",
-  "tables": [
-    {
-      "title": "What does each business plan cost?",
-      "intro": "US list prices before tax, from each vendor's pricing page, read 26 Nov 2026[^1][^17][^29]. At 50 seats, the three business plans land within $600 a year of each other[^17][^3][^29]. OpenAI publishes no ChatGPT Enterprise price, so that row uses third-party reports and says so[^28].",
-      "headers": [
-        "Plan",
-        "Price a seat, read 26 Nov 2026",
-        "50 seats, a year",
-        "Worth knowing"
-      ],
-      "rows": [
-        {
-          "name": "ChatGPT Business",
-          "url": "https://openai.com/business/pricing",
-          "cells": [
-            "$20 a month billed yearly, $25 monthly. Premium seats $100 or $125[^17].",
-            "$12,000 on Standard, billed yearly[^17]",
-            "From 2 to 200 seats, per OpenAI's pricing page. No automatic seat sync (SCIM)[^17][^19]."
-          ]
-        },
-        {
-          "name": "ChatGPT Enterprise",
-          "url": "https://openai.com/business/pricing",
-          "cells": [
-            "Not published: 'custom pricing'. Third parties report about $60 a month[^17][^28].",
-            "Reported 150-seat minimum, about $108,000 a year at the floor. Not an OpenAI price[^27][^28].",
-            "Adds SCIM, audit-log export and data residency[^17][^23]."
-          ]
-        },
-        {
-          "name": "Claude Team",
-          "url": "https://claude.com/pricing",
-          "cells": [
-            "$20 a month billed yearly, $25 monthly. Premium seats $100 or $125[^3].",
-            "$12,000 on Standard, billed yearly[^3]",
-            "From 2 to 150 seats. Cowork and Claude Code come with the seat[^3]."
-          ]
-        },
-        {
-          "name": "Claude Enterprise",
-          "url": "https://claude.com/pricing/enterprise",
-          "cells": [
-            "$20 a month billed yearly, plus all usage at pay-per-use API rates[^1][^2]",
-            "$12,000 in seat fees, plus usage[^2]",
-            "Minimum 20 seats on a yearly contract. Adds audit logs, SCIM, retention control and a health-data contract (BAA)[^6][^5]."
-          ]
-        },
-        {
-          "name": "Microsoft 365 Copilot Chat",
-          "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/how-copilot-chat-works-with-and-without-a-microsoft-365-copilot-license",
-          "cells": [
-            "No extra cost with eligible Microsoft 365 plans[^31]",
-            "$0 extra[^31]",
-            "Answers from the web and files you open or upload. It does not search your mail and files[^31]."
-          ]
-        },
-        {
-          "name": "Microsoft 365 Copilot Business",
-          "url": "https://www.microsoft.com/en-us/copilot/pricing/business",
-          "cells": [
-            "$21 a month paid yearly. Promo: $18 for year one if bought by 31 Dec 2026[^29].",
-            "$12,600, or $10,800 at the promo price[^29]",
-            "Up to 300 users. Cowork and other agents bill per use on top[^29]."
-          ]
-        },
-        {
-          "name": "Microsoft 365 Copilot (enterprise)",
-          "url": "https://www.microsoft.com/en-us/copilot/pricing/enterprise",
-          "cells": [
-            "$30 a month paid yearly[^30]",
-            "$18,000[^30]",
-            "Microsoft's enterprise price. Copilot Business stops at 300 users[^29][^30]."
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Which one handles which part of ops work?",
-      "intro": "From each vendor's help and product pages, read 26 Nov 2026[^15][^24][^29]. Lines marked 'vendor claim' are the vendor's own description, not our test.",
-      "headers": [
-        "Work",
-        "ChatGPT",
-        "Claude",
-        "Copilot"
-      ],
-      "rows": [
-        {
-          "name": "Email",
-          "cells": [
-            "Outlook mail and calendar app, if a Microsoft admin consents[^57]",
-            "Outlook drafts wait for you to click send (vendor claim)[^15]",
-            "Drafts and summarizes Outlook threads (vendor claim)[^29]"
-          ]
-        },
-        {
-          "name": "Meetings",
-          "cells": [
-            "Record takes notes in the Mac app only. The Teams app reads transcripts that already exist[^56][^25].",
-            "No meeting recorder found. Reads Teams through the Microsoft 365 connector[^12].",
-            "Recaps Teams meetings and lists action items (vendor claim)[^29]"
-          ]
-        },
-        {
-          "name": "Spreadsheets",
-          "cells": [
-            "Sidebar in Excel and Google Sheets. OpenAI says to review changed cells before sharing[^24].",
-            "Excel add-in cites the cells it used and warns before overwriting[^16]",
-            "Analyzes data and builds charts (vendor claim). A UK government test found its Excel analysis slower and weaker[^29][^54]."
-          ]
-        },
-        {
-          "name": "Word and Google Docs",
-          "cells": [
-            "Word and PowerPoint add-ins for Business (vendor listing). Google Drive app covers Docs, Sheets and Slides[^58][^59].",
-            "Edits Word with tracked changes (vendor claim). Edits Google Docs and Sheets beside the chat[^15][^14].",
-            "Drafts and summarizes in Word (vendor claim)[^29]"
-          ]
-        },
-        {
-          "name": "Long files in one go",
-          "cells": [
-            "54K tokens (a token is a word or part of one) on the fast model, 256K on reasoning[^17]",
-            "200K tokens on Team[^3]",
-            "Searches across your Microsoft 365 files instead of one big upload[^31]"
-          ]
-        },
-        {
-          "name": "Agent mode (multi-step tasks)",
-          "cells": [
-            "ChatGPT Work: multi-step tasks that end in a finished file. Uses the seat's shared usage[^21][^60].",
-            "Cowork: on by default. Write actions need approval unless an admin allows skipping it[^10].",
-            "Copilot Cowork: billed per use on top of the seat. Runs mostly on Claude models[^29][^37]."
-          ]
-        }
-      ]
-    },
-    {
-      "title": "What do independent studies find when staff use these tools?",
-      "intro": "Peer-reviewed and government studies, not vendor surveys[^42][^45]. Gains are real but uneven, and people still check the work[^54].",
-      "headers": [
-        "Study",
-        "Who was studied",
-        "What changed"
-      ],
-      "rows": [
-        {
-          "name": "Brynjolfsson, Li and Raymond, Quarterly Journal of Economics, 2025",
-          "url": "https://academic.oup.com/qje/article/140/2/889/7990658",
-          "cells": [
-            "5,172 customer support agents[^42]",
-            "15% more issues resolved an hour. Newer staff gained most[^42]."
-          ]
-        },
-        {
-          "name": "Noy and Zhang, Science, 2023",
-          "url": "https://www.science.org/doi/10.1126/science.adh2586",
-          "cells": [
-            "453 professionals on writing tasks[^43]",
-            "40% less time and 18% higher quality[^43]"
-          ]
-        },
-        {
-          "name": "Dillon et al., NBER working paper, 2025 (Microsoft-affiliated researchers)",
-          "url": "https://www.nber.org/papers/w33795",
-          "cells": [
-            "7,137 workers at 66 firms with AI in email, meetings and writing apps[^44]",
-            "Two fewer hours on email a week, and less after-hours work[^44]"
-          ]
-        },
-        {
-          "name": "US Census Bureau, 2026",
-          "url": "https://www.census.gov/library/stories/2026/08/ai-use-at-work.html",
-          "cells": [
-            "US workers who used AI in the past week[^45]",
-            "31% saved one to two hours. 10% saved none and 4% lost time[^45]."
-          ]
-        },
-        {
-          "name": "St. Louis Fed, 2026",
-          "url": "https://fredblog.stlouisfed.org/2026/08/does-generative-ai-save-time-at-work",
-          "cells": [
-            "Employed US adults[^46]",
-            "Share of work hours saved rose from 1.6% to 2.2%, late 2024 to mid-2026[^46]"
-          ]
-        },
-        {
-          "name": "UK Department for Business and Trade, 2025",
-          "url": "https://assets.publishing.service.gov.uk/media/68adbe409e1cebdd2c96a19d/dbt-microsoft-365-copilot-evaluation.pdf",
-          "cells": [
-            "Civil servants with Microsoft 365 Copilot[^54]",
-            "No evidence that time saved raised productivity. Excel analysis was slower and lower quality[^54]."
-          ]
-        }
-      ]
-    }
-  ],
-  "recipes": [
-    {
-      "name": "1. Microsoft 365 firm, 40-150 staff",
-      "when": "Your mail, files and Teams meetings already live in Microsoft 365[^29]. Start with Copilot Chat for everyone, then buy paid seats for proven heavy users[^31][^29].",
-      "flow": [
-        "IT admin: turn on Copilot Chat for all staff at no extra cost",
-        "IT admin: run Microsoft's readiness check and fix overshared SharePoint sites",
-        "COO: write a one-page use policy: what data goes in, who reviews what",
-        "Ops lead: pick 10-30 heavy email and meeting users in one unit or site for paid Copilot Business",
-        "IT admin: set a spending limit for per-use agents such as Cowork",
-        "Department heads: name a reviewer for anything that leaves the firm",
-        "Ops lead: at day 60-90, add seats or reassign idle ones"
-      ],
-      "cost": "25 paid seats × $21 × 12 = $6,300 a year at list, read 26 Nov 2026[^29]. Bought by 31 Dec 2026, the $18 promo makes year one $5,400[^29]."
-    },
-    {
-      "name": "2. Google Workspace or mixed-stack firm, 40-150 staff",
-      "when": "Your mail and files sit in Gmail and Drive, or across several tools[^14][^59]. ChatGPT Business and Claude Team cost the same $20 a seat billed yearly, so pilot one against the other[^17][^3].",
-      "flow": [
-        "IT or owner: create the workspace, verify the domain, turn on company sign-in (SSO)",
-        "IT: switch on only Drive, Gmail and Calendar, and keep approval before send",
-        "Ops lead: time three repeat tasks first, so there is a before-and-after number",
-        "Ops lead: run a 60-90 day pilot with 10-20 people in one unit or site, on monthly billing",
-        "Department heads: name who checks output before it leaves the team",
-        "COO and finance: at day 60-90, move to yearly billing; buy Premium only for heavy agent users"
-      ],
-      "cost": "Pilot: 15 seats × $25 × 3 months = $1,125 on either plan[^17][^3]. Rollout: 100 Standard seats billed yearly cost $24,000 on either, read 26 Nov 2026[^17][^3]."
-    },
-    {
-      "name": "3. Regulated firm, or 150-500 staff",
-      "when": "Claude Team stops at 150 seats, new ChatGPT Business workspaces at 200 and Copilot Business at 300[^3][^18][^29]. Go to an enterprise tier if you need audit logs, automatic offboarding (SCIM) or retention control[^5][^17].",
-      "flow": [
-        "Compliance lead: list hard needs: health-data contract (BAA), retention period, legal hold",
-        "COO: get written quotes with seat minimums and usage terms",
-        "Finance: model Claude Enterprise usage and set firm and per-user spend limits",
-        "IT: connect automatic add and remove (SCIM) to your identity system",
-        "Compliance lead: confirm where chat logs land: Purview for Copilot, audit logs or the Compliance API for the others",
-        "Department heads: keep sign-off rules for each role"
-      ],
-      "cost": "300 seats: Claude Enterprise seat fees are $72,000 a year plus usage; Microsoft 365 Copilot is $108,000[^2][^30]. ChatGPT Enterprise is quote-only; third parties report about $60 a seat a month[^17][^28]."
-    }
-  ],
-  "humanRole": [
-    "The COO sets the usage policy and owns the rollout; IT decides what the assistant can read. Claude and ChatGPT admins switch on each connector, and Copilot sees only what each person can already open[^12][^22][^31].",
-    "A person presses send: Claude blocks Team users from auto-approving send tools, and ChatGPT may ask before posting to Teams[^13][^25]. OWASP advises human confirmation for high-stakes actions[^50].",
-    "The owner of each number checks it, such as the controller for finance work. Both spreadsheet add-ins tell users to review changed cells, and NIST advises checking output[^24][^16][^51].",
-    "Compliance owns the record. Copilot logs each interaction to Purview Audit, Microsoft's compliance log, while Claude and ChatGPT audit logs need their enterprise tiers[^34][^5][^23]."
-  ],
-  "ownData": {
-    "title": "How do the three business plans compare on seats, data and admin control?",
-    "intro": "On 26 Nov 2026 we read each vendor's pricing and admin help pages and lined up the controls a COO signs off on[^17][^3][^29]. On its business tier, only Copilot logs AI use for audit[^34][^5][^23]. Past 150 staff, seat caps decide more than price[^3][^18].",
-    "headers": [
-      "Control, read 26 Nov 2026",
-      "ChatGPT Business",
-      "Claude Team",
-      "Microsoft 365 Copilot Business"
-    ],
-    "rows": [
-      [
-        "Price a seat, billed yearly",
-        "$20; $25 monthly[^17]",
-        "$20; $25 monthly[^3]",
-        "$21; $18 for year one if bought by 31 Dec 2026[^29]"
-      ],
-      [
-        "Seats allowed",
-        "2 to 200, per the pricing page. The 200 cap covers workspaces made since 24 Aug 2026[^17][^18].",
-        "2 to 150[^3]",
-        "Up to 300[^29]"
-      ],
-      [
-        "Trains on your chats by default",
-        "No[^20]",
-        "No[^7]",
-        "No[^29][^32]"
-      ],
-      [
-        "Sign-in and seat sync",
-        "Company sign-in (SSO); no automatic seat sync (SCIM)[^19]",
-        "SSO and domain capture. Anthropic's pages disagree on SCIM for Team[^3][^4][^5].",
-        "Your Microsoft 365 sign-in[^34]"
-      ],
-      [
-        "Audit log of AI use",
-        "Enterprise only, through the Compliance API[^23]",
-        "Enterprise only[^5]",
-        "Yes: Purview Audit logs it automatically, kept 180 days on Audit Standard[^34][^35]"
-      ],
-      [
-        "Admin-set chat retention",
-        "Listed for Enterprise only in OpenAI's compare table[^17]",
-        "Enterprise only, 30 days minimum[^9]",
-        "Yes, through Purview retention policies[^34][^61]"
-      ],
-      [
-        "Who chooses what it can read",
-        "Admins pick which apps are on[^22]",
-        "Owner turns on each connector; a Microsoft admin consents for Microsoft 365[^12][^14]",
-        "Whatever each person can already open in Microsoft 365[^31][^33]"
-      ],
-      [
-        "Agent mode and how it bills",
-        "ChatGPT Work, inside the seat's shared usage[^21][^60]",
-        "Cowork, on by default and included in the seat[^3][^10]",
-        "Copilot Cowork, billed per use on top of the seat[^29]"
-      ]
-    ],
-    "note": "Zavient side-by-side of vendor pages, read 26 Nov 2026; ChatGPT rows match our same-day check for the ChatGPT plans page. US list prices before tax; usage credits and promos other than the one named are left out. Vendors change these pages often, so check them before you sign."
+ "title": "ChatGPT vs Claude vs Copilot: which should your team roll out?",
+ "description": "ChatGPT, Claude or Copilot for a 40-500 person firm: prices read 26 Nov 2026, seat caps, data and admin controls, and who each fits.",
+ "type": "compare",
+ "templateVersion": 1,
+ "topic": "ChatGPT vs Claude vs Microsoft Copilot for your team",
+ "job": "pick which AI assistant to roll out to staff",
+ "industry": "any industry",
+ "index": true,
+ "verdict": [
+  "Pick Copilot if your mail, files and meetings live in Microsoft 365 and you want audit logs there[^29][^34].",
+  "Pick ChatGPT if you run Google Workspace or a mixed stack and may grow past 150 seats[^17][^18].",
+  "Pick Claude if your team works in long documents and spreadsheets and has 150 people or fewer[^3][^16].",
+  "Run two if you're on Microsoft 365: Copilot Chat costs nothing extra; buy ChatGPT or Claude for heavy users[^31][^17]."
+ ],
+ "onPage": [
+  {
+   "to": "table-1",
+   "text": "What each business plan costs, read 26 Nov 2026"
   },
-  "example": {
-    "input": "Illustrative: a 120-person distributor on Microsoft 365. Ops coordinators paste supplier price lists into personal ChatGPT or Claude accounts, which may train on chats depending on a user setting[^20][^8]. In one survey, 68% of enterprise workers used personal AI accounts and 57% entered sensitive data[^52].",
-    "output": "After: all 120 get Copilot Chat at no extra cost, and 15 ops and finance leads get Copilot Business for $3,780 a year[^31][^29]. IT fixes overshared SharePoint sites first[^33]. Two pricing analysts get Claude Team or ChatGPT Business seats, and the buyer checks every price change before it reaches a supplier[^16][^24]."
+  {
+   "to": "recipes",
+   "text": "Which one fits a Microsoft firm, a Google firm or a regulated firm"
   },
-  "watchOuts": [
-    "Leaving staff on personal accounts: 68% of surveyed workers use them, and personal ChatGPT and Claude plans may train on chats[^52][^20][^8]. Fix: buy a business plan and move people over.",
-    "Switching on Copilot before fixing file permissions: it sees whatever each person can open[^31][^33]. Fix: run Microsoft's readiness check and clean up overshared sites first[^38][^39].",
-    "Buying seats nobody uses: firms leave 36% of software licences unused, and AI use is 'widespread but shallow'[^53][^47]. Fix: pilot first; Claude Team seats can be reassigned but removals aren't refunded[^4].",
-    "Budgeting seats, not usage: Copilot Cowork bills per use, and Claude Enterprise bills all usage at API rates[^29][^5]. Fix: set firm and per-user spend limits before launch[^5].",
-    "Trusting it on analysis it's weak at: a UK government test found Copilot's Excel analysis slower and lower quality[^54]. Fix: name which tasks always get a human check[^51].",
-    "Letting agents act on email and files unchecked: hidden instructions in a document or email can hijack an assistant, OWASP's top AI risk[^49]. Fix: keep approval on for send and write actions[^10][^50]."
-  ],
-  "faq": [
-    {
-      "q": "Is ChatGPT Business or Claude Team better for a small team?",
-      "a": "On price they tie: $20 a seat billed yearly and $25 monthly on both, read 26 Nov 2026[^17][^3]. Claude Team caps at 150 seats and ChatGPT Business at 200[^3][^18]. Pick on where your files live and which one your pilot group prefers."
-    },
-    {
-      "q": "Claude or Copilot for a 40-person company on Microsoft 365?",
-      "a": "Copilot, if most work is email, meetings and SharePoint: it searches them directly and logs to Purview[^31][^34]. Claude reaches the same data through a connector a Microsoft admin approves, and suits heavy document and Excel work[^12][^16]."
-    },
-    {
-      "q": "Does Microsoft Copilot use Claude?",
-      "a": "Yes, in most US business accounts: Claude models are on by default in Copilot, Researcher and Cowork[^36][^37]. Admins can turn them off, and they sit outside Microsoft's EU Data Boundary[^36]."
-    },
-    {
-      "q": "What is the difference between ChatGPT Work and Claude Cowork?",
-      "a": "Little in kind: both are agent modes that run multi-step tasks and hand back files[^21][^11]. Both draw on the business seat's usage; Copilot's Cowork bills per use on top[^60][^3][^29]."
-    },
-    {
-      "q": "Will ChatGPT, Claude or Copilot train on our company data?",
-      "a": "Not by default on business plans, per all three vendors[^20][^7][^32]. Personal plans differ: ChatGPT and Claude may train on those chats unless the user opts out[^20][^8]."
-    },
-    {
-      "q": "Is Copilot safer than Claude for a company rollout?",
-      "a": "Neither trains on business data by default, so the gap is records[^7][^32]. Copilot logs every interaction to Purview Audit; Claude and ChatGPT audit logs need their enterprise tiers[^34][^5][^23]."
-    }
-  ],
-  "buyVsBuild": {
-    "buy": "Buy one of these when the job is everyday drafting, summarizing and spreadsheet work for many staff[^55]. MIT found bought tools reached deployment about twice as often as internal builds[^55]. Over half of US businesses on Ramp already pay for AI this way[^48].",
-    "build": "Build on a vendor's API when your own data or a fixed process is the edge, such as document intake tied to your systems[^55]. Claude Enterprise already bills usage at API rates, which blurs the line[^5]."
+  {
+   "to": "human-role",
+   "text": "Who keeps control: the COO, IT, reviewers and compliance"
   },
-  "pickElse": [
-    "You run Google Workspace and needs are light: Business Standard, at $14 a user a month billed yearly, includes Gemini in Gmail, Docs and Meet[^40]. Google says it doesn't train on your data without permission[^41].",
-    "You're on Microsoft 365 and testing the water: start with Copilot Chat at no extra cost[^31]. Buy paid seats once usage shows who needs them[^53].",
-    "You need one repeat process fixed, such as invoice intake: a purpose-built tool beats a general assistant[^55].",
-    "Staff won't use it yet: fix the task list and training first[^47]. In one large field study, a three-hour onboarding came first, and newer staff gained most[^42]."
-  ],
-  "resources": [
-    {
-      "name": "Microsoft Copilot Success Kit",
-      "url": "https://adoption.microsoft.com/en-us/copilot/success-kit",
-      "what": "Free adoption checklist and licence allocation guide for a Copilot rollout."
-    },
-    {
-      "name": "Anthropic: Use Claude Cowork on Team and Enterprise plans",
-      "url": "https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans",
-      "what": "Which Cowork settings an admin controls, and their defaults."
-    },
-    {
-      "name": "OpenAI: Admin controls, security and compliance in apps",
-      "url": "https://help.openai.com/en/articles/11509118-admin-controls-security-and-compliance-in-connectors-enterprise-edu-and-team",
-      "what": "How ChatGPT admins choose which company systems it can reach."
-    },
-    {
-      "name": "OWASP LLM01:2026 Prompt Injection",
-      "url": "https://genai.owasp.org/llm2026/llm012026-prompt-injection/",
-      "what": "Plain list of how hidden instructions in files and email hijack assistants, and the controls that help."
-    },
-    {
-      "name": "NIST AI 600-1 Generative AI Profile",
-      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
-      "what": "Free US standard checklist for governing generative AI use."
-    }
-  ],
-  "stats": [
-    {
-      "num": "$20",
-      "label": "a month buys a ChatGPT Business or Claude Team Standard seat, billed yearly[^17][^3].",
-      "source": "OpenAI and Anthropic pricing pages, read 26 Nov 2026"
-    },
-    {
-      "num": "$21",
-      "label": "a month buys Microsoft 365 Copilot Business, paid yearly; the $18 promo ends 31 Dec 2026[^29].",
-      "source": "Microsoft pricing page, read 26 Nov 2026"
-    },
-    {
-      "num": "150 / 200 / 300",
-      "label": "seats are the caps on Claude Team, new ChatGPT Business workspaces and Copilot Business[^3][^18][^29].",
-      "source": "Anthropic, OpenAI and Microsoft pages, read 26 Nov 2026"
-    },
-    {
-      "num": "44.8% vs 40.6%",
-      "label": "of US businesses on Ramp paid Anthropic and OpenAI in Oct 2026; many pay both[^48].",
-      "source": "Ramp AI Index, Oct 2026"
-    },
-    {
-      "num": "Two hours",
-      "label": "less time on email a week for workers given AI in a field test at 66 firms[^44].",
-      "source": "Dillon et al., NBER, 2025"
-    },
-    {
-      "num": "31%",
-      "label": "of US workers who used AI last week said it saved them one to two hours[^45].",
-      "source": "US Census Bureau, Aug 2026"
-    }
-  ],
-  "sources": [
-    {
-      "name": "Anthropic, Plans and pricing | Claude",
-      "url": "https://claude.com/pricing",
-      "what": "Claude plans; Enterprise is $20 a seat a month plus usage at API rates, billed yearly; read 26 Nov 2026."
-    },
-    {
-      "name": "Anthropic, Claude Enterprise plan",
-      "url": "https://claude.com/pricing/enterprise",
-      "what": "$20 a seat a month billed yearly, usage billed at API rates, annual commitment, minimum 20 seats; retention controls on Enterprise only; read 26 Nov 2026."
-    },
-    {
-      "name": "Claude Help Center, What is the Team plan?",
-      "url": "https://support.claude.com/en/articles/9266767-what-is-the-team-plan",
-      "what": "Standard $20 yearly or $25 monthly, Premium $100 or $125; 2 to 150 seats; SSO, domain capture, connectors, 200K context, Cowork and Claude Code included; read 26 Nov 2026."
-    },
-    {
-      "name": "Claude Help Center, Purchase and manage seats on Team plans (16 Oct 2026)",
-      "url": "https://support.claude.com/en/articles/12004354-purchase-and-manage-seats-on-team-plans",
-      "what": "Seats can be reassigned; removing a member gives no refund; mentions JIT or SCIM provisioning for seat assignment; read 26 Nov 2026."
-    },
-    {
-      "name": "Claude Help Center, What is the Enterprise plan? (1 Sep 2026)",
-      "url": "https://support.anthropic.com/en/articles/9797531-what-is-the-claude-enterprise-plan",
-      "what": "Adds audit logs, SCIM, custom retention, Compliance API and spend limits; all usage billed separately at API rates; read 26 Nov 2026."
-    },
-    {
-      "name": "Claude Help Center, Purchase and manage seats on Enterprise plans (16 Oct 2026)",
-      "url": "https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans",
-      "what": "Enterprise plans need at least 20 seats; read 26 Nov 2026."
-    },
-    {
-      "name": "Anthropic Privacy Center, Is my data used for model training? (commercial, 18 Aug 2026)",
-      "url": "https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training",
-      "what": "By default, inputs and outputs from commercial products such as Claude for Work are not used to train models."
-    },
-    {
-      "name": "Anthropic, Updates to Consumer Terms and Privacy Policy (28 Aug 2025)",
-      "url": "https://www.anthropic.com/news/updates-to-our-consumer-terms",
-      "what": "Free, Pro and Max chats are used for training when the user setting is on; does not apply to Team or Enterprise."
-    },
-    {
-      "name": "Claude Help Center, Configure custom data retention controls for Enterprise plans",
-      "url": "https://support.claude.com/en/articles/10440198-configure-custom-data-retention-controls-for-enterprise-plans",
-      "what": "Enterprise only; minimum 30 days; data kept indefinitely unless a period is set."
-    },
-    {
-      "name": "Claude Help Center, Use Claude Cowork on Team and Enterprise plans (9 Nov 2026)",
-      "url": "https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans",
-      "what": "Cowork is on by default and owners can turn it off; skipping approval for write tools is off by default."
-    },
-    {
-      "name": "Claude Help Center, Get started with Claude Cowork",
-      "url": "https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork",
-      "what": "Cowork brings Claude Code's agent abilities to knowledge work beyond coding; auto mode's check can miss risky actions."
-    },
-    {
-      "name": "Claude Help Center, Set up the Microsoft 365 connector",
-      "url": "https://support.claude.com/en/articles/12542951-set-up-the-microsoft-365-connector",
-      "what": "Searches SharePoint, OneDrive, Outlook and Teams; the owner enables it and a Microsoft Entra admin consents once."
-    },
-    {
-      "name": "Claude Help Center, Microsoft 365 connector security guide (Nov 2026)",
-      "url": "https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide",
-      "what": "Reads only what the user can already open; Team users cannot set send-mail and Teams-message tools to always allow."
-    },
-    {
-      "name": "Claude Help Center, Use Google Workspace connectors (Nov 2026)",
-      "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
-      "what": "Gmail, Calendar and Drive; live editing of Google Docs, Sheets and Slides; owner must enable on Team and Enterprise."
-    },
-    {
-      "name": "Anthropic, Claude for Microsoft 365",
-      "url": "https://claude.com/claude-for-microsoft-365",
-      "what": "Vendor claim: Excel, PowerPoint, Word and Outlook add-ins on all paid plans; Word tracked changes; Outlook drafts wait for you to click send."
-    },
-    {
-      "name": "Claude Help Center, Use Claude for Excel",
-      "url": "https://support.claude.com/en/articles/12650343-using-claude-in-excel",
-      "what": "On Pro, Max, Team and Enterprise; cell-level citations; warns before overwriting."
-    },
-    {
-      "name": "OpenAI, Business Pricing",
-      "url": "https://openai.com/business/pricing",
-      "what": "Business Standard $20 yearly or $25 monthly, Premium $100 or $125, 2-200 employees; Enterprise custom pricing; Business vs Enterprise table; 54K and 256K context; read 26 Nov 2026."
-    },
-    {
-      "name": "OpenAI Help, ChatGPT Business: General FAQ",
-      "url": "https://help.openai.com/en/articles/8542115-chatgpt-business-general-faq",
-      "what": "200 paid-seat cap for workspaces created on or after 24 Aug 2026; no training on workspace data."
-    },
-    {
-      "name": "OpenAI Help, SSO for ChatGPT Business FAQ",
-      "url": "https://help.openai.com/en/articles/11489188-sso-for-chatgpt-business-faq",
-      "what": "SAML and OIDC sign-in; no SCIM or AD group sync on Business."
-    },
-    {
-      "name": "OpenAI Help, How your data is used to improve model performance",
-      "url": "https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance",
-      "what": "Free, Plus and Pro may be used for training unless the user opts out; Business and Enterprise not by default."
-    },
-    {
-      "name": "OpenAI Help, ChatGPT Work and Codex",
-      "url": "https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex",
-      "what": "Work is an agent for longer, multi-step work and finished deliverables."
-    },
-    {
-      "name": "OpenAI Help, Admin controls, security and compliance in apps",
-      "url": "https://help.openai.com/en/articles/11509118-admin-controls-security-and-compliance-in-connectors-enterprise-edu-and-team",
-      "what": "Business admins choose which apps are enabled; Enterprise apps start off."
-    },
-    {
-      "name": "OpenAI Help, OpenAI Compliance Platform for Enterprise and Edu",
-      "url": "https://help.openai.com/en/articles/9261474-compliance-api-for-enterprise",
-      "what": "Sends conversation logs to eDiscovery, DLP and SIEM tools; Enterprise and Edu only."
-    },
-    {
-      "name": "OpenAI Help, ChatGPT for Excel and Google Sheets",
-      "url": "https://help.openai.com/en/articles/20001063-chatgpt-for-excel-and-google-sheets",
-      "what": "Sidebar in Excel and Google Sheets on Business and Enterprise; review formulas, citations and changed cells before sharing."
-    },
-    {
-      "name": "OpenAI Help, Microsoft Teams app and setup in ChatGPT",
-      "url": "https://help.openai.com/en/articles/12552368-microsoft-teams-connector-for-chatgpt",
-      "what": "Searches Teams chats and channels, retrieves existing meeting transcripts, may ask you to confirm before it sends a message."
-    },
-    {
-      "name": "OpenAI Help, SharePoint app and setup in ChatGPT",
-      "url": "https://help.openai.com/en/articles/12143177-sharepoint-app-and-setup-in-chatgpt",
-      "what": "Searches SharePoint and OneDrive content the user can already open; may need Entra admin consent."
-    },
-    {
-      "name": "CDW, ChatGPT Enterprise Standard License 1Y Subscription",
-      "url": "https://www.cdw.com/product/chatgpt-enterprise-standard-license-1y-subscription-500-credits-seat-month/9097307",
-      "what": "Reseller listing, not OpenAI: ChatGPT Enterprise with a 150-seat minimum; read 26 Nov 2026."
-    },
-    {
-      "name": "CloudZero, ChatGPT Enterprise pricing (20 Oct 2026)",
-      "url": "https://www.cloudzero.com/blog/chatgpt-enterprise-pricing",
-      "what": "Reported, not confirmed by OpenAI: about $60 a seat a month with a 150-seat minimum; read 26 Nov 2026."
-    },
-    {
-      "name": "Microsoft, Copilot plans and pricing for business",
-      "url": "https://www.microsoft.com/en-us/copilot/pricing/business",
-      "what": "Copilot Business $21 a user a month paid yearly, $18 promo for year one if bought 1 Jul-31 Dec 2026; up to 300 users; Cowork usage-billed; no training on prompts; read 26 Nov 2026."
-    },
-    {
-      "name": "Microsoft, Microsoft 365 Copilot enterprise pricing",
-      "url": "https://www.microsoft.com/en-us/copilot/pricing/enterprise",
-      "what": "$30 a user a month paid yearly; read 26 Nov 2026."
-    },
-    {
-      "name": "Microsoft Support, How Copilot Chat works with and without a Microsoft 365 Copilot license",
-      "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/how-copilot-chat-works-with-and-without-a-microsoft-365-copilot-license",
-      "what": "Copilot Chat at no extra cost with eligible plans, grounded in the web and open or uploaded content; the paid licence searches the user's Microsoft 365 data."
-    },
-    {
-      "name": "Microsoft Learn, Enterprise data protection in Microsoft 365 Copilot and Copilot Chat",
-      "url": "https://learn.microsoft.com/en-us/copilot/plan/enterprise-data-protection",
-      "what": "Covered by Microsoft's data protection terms; prompts and responses not used to train models."
-    },
-    {
-      "name": "Microsoft Learn, Configure a secure and governed data foundation for Microsoft 365 Copilot",
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-secure-governed-data-foundation-microsoft-365-copilot",
-      "what": "Fix oversharing before rollout; default sharing settings are the most permissive option."
-    },
-    {
-      "name": "Microsoft Learn, Data protection and auditing for Microsoft Copilot (9 Nov 2026)",
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/architecture-data-protection-auditing",
-      "what": "Purview Audit automatically logs Copilot interactions; prompts searchable in eDiscovery and covered by retention policies."
-    },
-    {
-      "name": "Microsoft Learn, Manage audit log retention policies (19 Jun 2026)",
-      "url": "https://learn.microsoft.com/en-us/purview/audit-log-retention-policies",
-      "what": "Audit (Standard) keeps logs 180 days by default; up to 10 years with Audit (Premium)."
-    },
-    {
-      "name": "Microsoft Learn, Claude models from Anthropic in Microsoft Online Services (20 Nov 2026)",
-      "url": "https://learn.microsoft.com/en-us/copilot/implement/connect-to-ai-subprocessor",
-      "what": "Claude models on by default for most commercial tenants outside the EU, EFTA and UK; excluded from the EU Data Boundary; admins can turn them off."
-    },
-    {
-      "name": "Microsoft Learn, Copilot Cowork common questions (18 Nov 2026)",
-      "url": "https://learn.microsoft.com/en-us/copilot/cowork/cowork-faq",
-      "what": "Cowork can use Anthropic Claude models as a subprocessor for most reasoning, drafting and tool-using work."
-    },
-    {
-      "name": "Microsoft Learn, Microsoft Copilot adoption guide for IT admins (4 Nov 2026)",
-      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-enablement-resources",
-      "what": "Run the readiness assessment and get data ready before rollout; training and scenario resources."
-    },
-    {
-      "name": "Microsoft Adoption, Copilot Success Kit",
-      "url": "https://adoption.microsoft.com/en-us/copilot/success-kit",
-      "what": "Implementation guide, adoption planning checklist and licence allocation guide."
-    },
-    {
-      "name": "Google, Google Workspace pricing",
-      "url": "https://workspace.google.com/pricing",
-      "what": "Business Standard $14 a user a month billed yearly, with Gemini in Gmail, Docs and Meet; read 26 Nov 2026."
-    },
-    {
-      "name": "Google, Generative AI in Google Workspace Privacy Hub (10 Nov 2026)",
-      "url": "https://knowledge.workspace.google.com/admin/generative-ai/generative-ai-in-google-workspace-privacy-hub",
-      "what": "Workspace does not use customer data to train models without permission; admins set Gemini retention."
-    },
-    {
-      "name": "Brynjolfsson, Li and Raymond, Generative AI at Work, Quarterly Journal of Economics 140(2), 2025",
-      "url": "https://academic.oup.com/qje/article/140/2/889/7990658",
-      "what": "5,172 support agents: 15% more issues resolved an hour; less experienced staff gained most; three-hour onboarding."
-    },
-    {
-      "name": "Noy and Zhang, Science 381, 2023",
-      "url": "https://www.science.org/doi/10.1126/science.adh2586",
-      "what": "453 professionals on writing tasks: 40% less time, 18% higher quality."
-    },
-    {
-      "name": "Dillon, Jaffe, Immorlica and Stanton, Shifting Work Patterns with Generative AI, NBER w33795 (Nov 2025)",
-      "url": "https://www.nber.org/papers/w33795",
-      "what": "Field experiment, 66 firms and 7,137 workers: two fewer hours on email a week, less after-hours work. Authors include Microsoft researchers."
-    },
-    {
-      "name": "US Census Bureau, AI use at work (11 Aug 2026, revised 24 Sep)",
-      "url": "https://www.census.gov/library/stories/2026/08/ai-use-at-work.html",
-      "what": "Of last-week AI users, 31% saved one to two hours, 10% none, 4% needed more time."
-    },
-    {
-      "name": "St. Louis Fed FRED Blog, Does generative AI save time at work? (27 Aug 2026)",
-      "url": "https://fredblog.stlouisfed.org/2026/08/does-generative-ai-save-time-at-work",
-      "what": "Share of work hours saved rose from 1.6% to 2.2%, Q3 2024 to Q2 2026."
-    },
-    {
-      "name": "St. Louis Fed, What Work Does Generative AI Do? (1 Sep 2026)",
-      "url": "https://www.stlouisfed.org/on-the-economy/2026/sep/what-work-does-generative-ai-do",
-      "what": "Adoption is widespread but shallow."
-    },
-    {
-      "name": "Ramp, Ramp AI Index (data through Oct 2026)",
-      "url": "https://ramp.com/data/ai-index",
-      "what": "56.8% of US businesses on Ramp paid for AI in Oct 2026; Anthropic 44.8%, OpenAI 40.6%; Ramp customers only, firms can pay both."
-    },
-    {
-      "name": "OWASP GenAI Security Project, LLM01:2026 Prompt Injection (27 Oct 2026)",
-      "url": "https://genai.owasp.org/llm2026/llm012026-prompt-injection/",
-      "what": "Top-ranked LLM risk: hidden instructions in retrieved content, email and documents."
-    },
-    {
-      "name": "OWASP GenAI Security Project glossary, Prompt Injection",
-      "url": "https://genai.owasp.org/glossary/prompt-injection/",
-      "what": "Privilege minimization is the most effective control; add human confirmation for high-consequence actions."
-    },
-    {
-      "name": "NIST, AI 600-1 Generative AI Profile (Jul 2024)",
-      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
-      "what": "US standards body: data privacy and confabulation are core generative AI risks; verify output."
-    },
-    {
-      "name": "TELUS Digital, AI at work survey (26 Feb 2025)",
-      "url": "https://www.telusdigital.com/about/newsroom/telus-digital-survey-reveals-enterprise-employees-use-of-shadow-ai",
-      "what": "68% of enterprise workers use AI assistants through personal accounts; 57% admit entering sensitive data."
-    },
-    {
-      "name": "Zylo, 2026 SaaS Management Index press release (29 Jan 2026)",
-      "url": "https://zylo.com/news/2026-saas-management-index",
-      "what": "Firms leave an average of 36% of software licences unused."
-    },
-    {
-      "name": "UK Department for Business and Trade, Microsoft 365 Copilot evaluation (2025)",
-      "url": "https://assets.publishing.service.gov.uk/media/68adbe409e1cebdd2c96a19d/dbt-microsoft-365-copilot-evaluation.pdf",
-      "what": "No evidence that time savings raised productivity; Excel analysis slower and lower quality with Copilot."
-    },
-    {
-      "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025",
-      "url": "https://www.artificialintelligence-news.com/wp-content/uploads/2025/08/ai_report_2025.pdf",
-      "what": "Bought tools reached deployment about twice as often as internal builds."
-    },
-    {
-      "name": "OpenAI Help, ChatGPT Record",
-      "url": "https://help.openai.com/en/articles/11487532-chatgpt-record",
-      "what": "Meeting notes in the ChatGPT app for macOS; owners can turn it off; get consent before recording."
-    },
-    {
-      "name": "OpenAI Help, Outlook Email and Calendar apps in ChatGPT",
-      "url": "https://help.openai.com/en/articles/12512241-outlook-email-and-calendar-apps-in-chatgpt",
-      "what": "Outlook mail and calendar actions depend on Entra consent and workspace settings."
-    },
-    {
-      "name": "Microsoft Marketplace, ChatGPT add-in by OpenAI (15 Sep 2026)",
-      "url": "https://marketplace.microsoft.com/en-us/product/wa200010215",
-      "what": "Vendor listing: ChatGPT for Excel, Word and PowerPoint generally available to Business and Enterprise."
-    },
-    {
-      "name": "OpenAI Help, ChatGPT release notes",
-      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
-      "what": "Google Drive app covers Docs, Sheets and Slides; ChatGPT for Excel and Google Sheets generally available."
-    },
-    {
-      "name": "ChatGPT Learn, Pricing",
-      "url": "https://learn.chatgpt.com/docs/pricing",
-      "what": "ChatGPT Work and Codex share pricing, credits and usage limits; read 26 Nov 2026."
-    },
-    {
-      "name": "Microsoft Learn, Learn about retention for Copilot and AI apps",
-      "url": "https://learn.microsoft.com/en-us/purview/retention-policies-copilot",
-      "what": "Purview retention policies cover Copilot experiences and some other AI apps."
-    }
-  ],
-  "related": [
-    "chatgpt-plus-vs-business-vs-enterprise",
-    "generative-ai-vs-predictive-ai",
-    "ai-consulting-services",
-    "ai-document-processing",
-    "ai-invoice-processing"
-  ],
-  "offer": {
-    "heading": "Not sure which assistant to roll out to your team?",
-    "body": "In 30 minutes we look at where your files live, your seat count and your data rules. You leave with a pick, a year-one cost and a pilot plan."
+  {
+   "to": "own-data",
+   "text": "Seat caps, training defaults and admin controls side by side"
   },
-  "keyword": {
-    "phrase": "claude vs chatgpt pricing",
-    "searches": 390,
-    "cpc": 31,
-    "difficulty": null
+  {
+   "to": "what-goes-wrong",
+   "text": "Mistakes teams make when they choose"
   },
-  "reviews": [
+  {
+   "to": "faq",
+   "text": "Straight answers to the questions buyers ask"
+  }
+ ],
+ "headings": {},
+ "summary": "All three keep business chats out of model training by default[^7][^20][^32]. Copilot works inside Microsoft 365 and sees what each person can already open; ChatGPT and Claude reach your files through admin-approved connectors[^31][^12][^26]. What makes or breaks it: who controls access and who checks output[^51][^33].",
+ "tables": [
+  {
+   "title": "What does each business plan cost?",
+   "intro": "US list prices before tax, from each vendor's pricing page, read 26 Nov 2026[^1][^17][^29]. At 50 seats, the three business plans land within $600 a year of each other[^17][^3][^29]. OpenAI publishes no ChatGPT Enterprise price, so that row uses third-party reports and says so[^28].",
+   "headers": [
+    "Plan",
+    "Price a seat, read 26 Nov 2026",
+    "50 seats, a year",
+    "Worth knowing"
+   ],
+   "rows": [
     {
-      "reader": "COO",
-      "notes": "Wants one pick to forward, a cost and a first step. Bottom line gives a pick per stack and size; recipes give costs and first steps; the COO now owns policy and rollout in the human-role block. Price parity was buried in the own-data block, so the price table intro now says the three business plans land within $600 a year at 50 seats. FAQ questions are real: ChatGPT Business vs Claude Team (r/ChatGPT, Sep 2026); Claude vs Copilot for a 40-person firm (r/ClaudeAI, Aug 2026); Copilot risk vs Claude and does Copilot use Claude (r/microsoft_365_copilot, Jun 2026); ChatGPT Work vs Claude Cowork (keyword list, 320 a month; also r/microsoft_365_copilot); training on company data (vendor FAQs at OpenAI, Anthropic, Microsoft). Reddit is used only as where a question was seen."
+     "name": "ChatGPT Business",
+     "url": "https://openai.com/business/pricing",
+     "cells": [
+      "$20 a month billed yearly, $25 monthly. Premium seats $100 or $125[^17].",
+      "$12,000 on Standard, billed yearly[^17]",
+      "From 2 to 200 seats, per OpenAI's pricing page. No automatic seat sync (SCIM)[^17][^19]."
+     ]
     },
     {
-      "reader": "Head of operations",
-      "notes": "Reads on a phone and isn't in IT. Stalled on jargon: added a plain gloss for tokens, called API rates pay-per-use, named Purview as Microsoft's compliance log, and changed 'tenants' to business accounts in the FAQ. Tables stay at six or seven rows each."
+     "name": "ChatGPT Enterprise",
+     "url": "https://openai.com/business/pricing",
+     "cells": [
+      "Not published: 'custom pricing'. Third parties report about $60 a month[^17][^28].",
+      "Reported 150-seat minimum, about $108,000 a year at the floor. Not an OpenAI price[^27][^28].",
+      "Adds SCIM, audit-log export and data residency[^17][^23]."
+     ]
     },
     {
-      "reader": "GM",
-      "notes": "Wants to know if one unit or site can pilot first and what that costs. Recipes 1 and 2 now pick pilot users in one unit or site; recipe 2 prices a 15-seat, three-month pilot at $1,125. No sourced time-saved figure exists for these tools in a unit like his, so none is claimed; the studies table shows uneven results instead."
+     "name": "Claude Team",
+     "url": "https://claude.com/pricing",
+     "cells": [
+      "$20 a month billed yearly, $25 monthly. Premium seats $100 or $125[^3].",
+      "$12,000 on Standard, billed yearly[^3]",
+      "From 2 to 150 seats. Cowork and Claude Code come with the seat[^3]."
+     ]
     },
     {
-      "reader": "Division head",
-      "notes": "Read as the controller or head of service whose team would use it most. Wants who checks output and whether regulated data is allowed. The human-role block names the controller as checker; added that Claude Enterprise offers a health-data contract (BAA). Copilot's Excel weakness from the UK government test is in the work-type table and watch-outs, so a controller knows where to keep a human check."
+     "name": "Claude Enterprise",
+     "url": "https://claude.com/pricing/enterprise",
+     "cells": [
+      "$20 a month billed yearly, plus all usage at pay-per-use API rates[^1][^2]",
+      "$12,000 in seat fees, plus usage[^2]",
+      "Minimum 20 seats on a yearly contract. Adds audit logs, SCIM, retention control and a health-data contract (BAA)[^6][^5]."
+     ]
     },
     {
-      "reader": "Owner-CEO",
-      "notes": "Steve, 60-150 staff, decides in 10 seconds: the title and bottom line answer by stack. He worried 'Run two' meant paying twice; the bullet now says Copilot Chat costs nothing extra and only heavy users get a second paid seat. The ChatGPT Enterprise floor is labelled as a third-party report so he doesn't think he's being upsold. Offer says what he leaves with: a pick, a year-one cost and a pilot plan."
+     "name": "Microsoft 365 Copilot Chat",
+     "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/how-copilot-chat-works-with-and-without-a-microsoft-365-copilot-license",
+     "cells": [
+      "No extra cost with eligible Microsoft 365 plans[^31]",
+      "$0 extra[^31]",
+      "Answers from the web and files you open or upload. It does not search your mail and files[^31]."
+     ]
+    },
+    {
+     "name": "Microsoft 365 Copilot Business",
+     "url": "https://www.microsoft.com/en-us/copilot/pricing/business",
+     "cells": [
+      "$21 a month paid yearly. Promo: $18 for year one if bought by 31 Dec 2026[^29].",
+      "$12,600, or $10,800 at the promo price[^29]",
+      "Up to 300 users. Cowork and other agents bill per use on top[^29]."
+     ]
+    },
+    {
+     "name": "Microsoft 365 Copilot (enterprise)",
+     "url": "https://www.microsoft.com/en-us/copilot/pricing/enterprise",
+     "cells": [
+      "$30 a month paid yearly[^30]",
+      "$18,000[^30]",
+      "Microsoft's enterprise price. Copilot Business stops at 300 users[^29][^30]."
+     ]
     }
+   ]
+  },
+  {
+   "title": "Which one handles which part of ops work?",
+   "intro": "From each vendor's help and product pages, read 26 Nov 2026[^15][^24][^29]. Lines marked 'vendor claim' are the vendor's own description, not our test.",
+   "headers": [
+    "Work",
+    "ChatGPT",
+    "Claude",
+    "Copilot"
+   ],
+   "rows": [
+    {
+     "name": "Email",
+     "cells": [
+      "Outlook mail and calendar app, if a Microsoft admin consents[^57]",
+      "Outlook drafts wait for you to click send (vendor claim)[^15]",
+      "Drafts and summarizes Outlook threads (vendor claim)[^29]"
+     ]
+    },
+    {
+     "name": "Meetings",
+     "cells": [
+      "Record takes notes in the Mac app only. The Teams app reads transcripts that already exist[^56][^25].",
+      "No meeting recorder found. Reads Teams through the Microsoft 365 connector[^12].",
+      "Recaps Teams meetings and lists action items (vendor claim)[^29]"
+     ]
+    },
+    {
+     "name": "Spreadsheets",
+     "cells": [
+      "Sidebar in Excel and Google Sheets. OpenAI says to review changed cells before sharing[^24].",
+      "Excel add-in cites the cells it used and warns before overwriting[^16]",
+      "Analyzes data and builds charts (vendor claim). A UK government test found its Excel analysis slower and weaker[^29][^54]."
+     ]
+    },
+    {
+     "name": "Word and Google Docs",
+     "cells": [
+      "Word and PowerPoint add-ins for Business (vendor listing). Google Drive app covers Docs, Sheets and Slides[^58][^59].",
+      "Edits Word with tracked changes (vendor claim). Edits Google Docs and Sheets beside the chat[^15][^14].",
+      "Drafts and summarizes in Word (vendor claim)[^29]"
+     ]
+    },
+    {
+     "name": "Long files in one go",
+     "cells": [
+      "54K tokens (a token is a word or part of one) on the fast model, 256K on reasoning[^17]",
+      "200K tokens on Team[^3]",
+      "Searches across your Microsoft 365 files instead of one big upload[^31]"
+     ]
+    },
+    {
+     "name": "Agent mode (multi-step tasks)",
+     "cells": [
+      "ChatGPT Work: multi-step tasks that end in a finished file. Uses the seat's shared usage[^21][^60].",
+      "Cowork: on by default. Write actions need approval unless an admin allows skipping it[^10].",
+      "Copilot Cowork: billed per use on top of the seat. Runs mostly on Claude models[^29][^37]."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "What do independent studies find when staff use these tools?",
+   "intro": "Peer-reviewed and government studies, not vendor surveys[^42][^45]. Gains are real but uneven, and people still check the work[^54].",
+   "headers": [
+    "Study",
+    "Who was studied",
+    "What changed"
+   ],
+   "rows": [
+    {
+     "name": "Brynjolfsson, Li and Raymond, Quarterly Journal of Economics, 2025",
+     "url": "https://academic.oup.com/qje/article/140/2/889/7990658",
+     "cells": [
+      "5,172 customer support agents[^42]",
+      "15% more issues resolved an hour. Newer staff gained most[^42]."
+     ]
+    },
+    {
+     "name": "Noy and Zhang, Science, 2023",
+     "url": "https://www.science.org/doi/10.1126/science.adh2586",
+     "cells": [
+      "453 professionals on writing tasks[^43]",
+      "40% less time and 18% higher quality[^43]"
+     ]
+    },
+    {
+     "name": "Dillon et al., NBER working paper, 2025 (Microsoft-affiliated researchers)",
+     "url": "https://www.nber.org/papers/w33795",
+     "cells": [
+      "7,137 workers at 66 firms with AI in email, meetings and writing apps[^44]",
+      "Two fewer hours on email a week, and less after-hours work[^44]"
+     ]
+    },
+    {
+     "name": "US Census Bureau, 2026",
+     "url": "https://www.census.gov/library/stories/2026/08/ai-use-at-work.html",
+     "cells": [
+      "US workers who used AI in the past week[^45]",
+      "31% saved one to two hours. 10% saved none and 4% lost time[^45]."
+     ]
+    },
+    {
+     "name": "St. Louis Fed, 2026",
+     "url": "https://fredblog.stlouisfed.org/2026/08/does-generative-ai-save-time-at-work",
+     "cells": [
+      "Employed US adults[^46]",
+      "Share of work hours saved rose from 1.6% to 2.2%, late 2024 to mid-2026[^46]"
+     ]
+    },
+    {
+     "name": "UK Department for Business and Trade, 2025",
+     "url": "https://assets.publishing.service.gov.uk/media/68adbe409e1cebdd2c96a19d/dbt-microsoft-365-copilot-evaluation.pdf",
+     "cells": [
+      "Civil servants with Microsoft 365 Copilot[^54]",
+      "No evidence that time saved raised productivity. Excel analysis was slower and lower quality[^54]."
+     ]
+    }
+   ]
+  }
+ ],
+ "recipes": [
+  {
+   "name": "1. Microsoft 365 firm, 40-150 staff",
+   "when": "Your mail, files and Teams meetings already live in Microsoft 365[^29]. Start with Copilot Chat for everyone, then buy paid seats for proven heavy users[^31][^29].",
+   "flow": [
+    "IT admin: turn on Copilot Chat for all staff at no extra cost",
+    "IT admin: run Microsoft's readiness check and fix overshared SharePoint sites",
+    "COO: write a one-page use policy: what data goes in, who reviews what",
+    "Ops lead: pick 10-30 heavy email and meeting users in one unit or site for paid Copilot Business",
+    "IT admin: set a spending limit for per-use agents such as Cowork",
+    "Department heads: name a reviewer for anything that leaves the firm",
+    "Ops lead: at day 60-90, add seats or reassign idle ones"
+   ],
+   "cost": "25 paid seats × $21 × 12 = $6,300 a year at list, read 26 Nov 2026[^29]. Bought by 31 Dec 2026, the $18 promo makes year one $5,400[^29]."
+  },
+  {
+   "name": "2. Google Workspace or mixed-stack firm, 40-150 staff",
+   "when": "Your mail and files sit in Gmail and Drive, or across several tools[^14][^59]. ChatGPT Business and Claude Team cost the same $20 a seat billed yearly, so pilot one against the other[^17][^3].",
+   "flow": [
+    "IT or owner: create the workspace, verify the domain, turn on company sign-in (SSO)",
+    "IT: switch on only Drive, Gmail and Calendar, and keep approval before send",
+    "Ops lead: time three repeat tasks first, so there is a before-and-after number",
+    "Ops lead: run a 60-90 day pilot with 10-20 people in one unit or site, on monthly billing",
+    "Department heads: name who checks output before it leaves the team",
+    "COO and finance: at day 60-90, move to yearly billing; buy Premium only for heavy agent users"
+   ],
+   "cost": "Pilot: 15 seats × $25 × 3 months = $1,125 on either plan[^17][^3]. Rollout: 100 Standard seats billed yearly cost $24,000 on either, read 26 Nov 2026[^17][^3]."
+  },
+  {
+   "name": "3. Regulated firm, or 150-500 staff",
+   "when": "Claude Team stops at 150 seats, new ChatGPT Business workspaces at 200 and Copilot Business at 300[^3][^18][^29]. Go to an enterprise tier if you need audit logs, automatic offboarding (SCIM) or retention control[^5][^17].",
+   "flow": [
+    "Compliance lead: list hard needs: health-data contract (BAA), retention period, legal hold",
+    "COO: get written quotes with seat minimums and usage terms",
+    "Finance: model Claude Enterprise usage and set firm and per-user spend limits",
+    "IT: connect automatic add and remove (SCIM) to your identity system",
+    "Compliance lead: confirm where chat logs land: Purview for Copilot, audit logs or the Compliance API for the others",
+    "Department heads: keep sign-off rules for each role"
+   ],
+   "cost": "300 seats: Claude Enterprise seat fees are $72,000 a year plus usage; Microsoft 365 Copilot is $108,000[^2][^30]. ChatGPT Enterprise is quote-only; third parties report about $60 a seat a month[^17][^28]."
+  }
+ ],
+ "humanRole": [
+  "The COO sets the usage policy and owns the rollout; IT decides what the assistant can read. Claude and ChatGPT admins switch on each connector, and Copilot sees only what each person can already open[^12][^22][^31].",
+  "A person presses send: Claude blocks Team users from auto-approving send tools, and ChatGPT may ask before posting to Teams[^13][^25]. OWASP advises human confirmation for high-stakes actions[^50].",
+  "The owner of each number checks it, such as the controller for finance work. Both spreadsheet add-ins tell users to review changed cells, and NIST advises checking output[^24][^16][^51].",
+  "Compliance owns the record. Copilot logs each interaction to Purview Audit, Microsoft's compliance log, while Claude and ChatGPT audit logs need their enterprise tiers[^34][^5][^23]."
+ ],
+ "ownData": {
+  "title": "How do the three business plans compare on seats, data and admin control?",
+  "intro": "On 26 Nov 2026 we read each vendor's pricing and admin help pages and lined up the controls a COO signs off on[^17][^3][^29]. On its business tier, only Copilot logs AI use for audit[^34][^5][^23]. Past 150 staff, seat caps decide more than price[^3][^18].",
+  "headers": [
+   "Control, read 26 Nov 2026",
+   "ChatGPT Business",
+   "Claude Team",
+   "Microsoft 365 Copilot Business"
   ],
-  "updated": "2026-11-26"
+  "rows": [
+   [
+    "Price a seat, billed yearly",
+    "$20; $25 monthly[^17]",
+    "$20; $25 monthly[^3]",
+    "$21; $18 for year one if bought by 31 Dec 2026[^29]"
+   ],
+   [
+    "Seats allowed",
+    "2 to 200, per the pricing page. The 200 cap covers workspaces made since 24 Aug 2026[^17][^18].",
+    "2 to 150[^3]",
+    "Up to 300[^29]"
+   ],
+   [
+    "Trains on your chats by default",
+    "No[^20]",
+    "No[^7]",
+    "No[^29][^32]"
+   ],
+   [
+    "Sign-in and seat sync",
+    "Company sign-in (SSO); no automatic seat sync (SCIM)[^19]",
+    "SSO and domain capture. Anthropic's pages disagree on SCIM for Team[^3][^4][^5].",
+    "Your Microsoft 365 sign-in[^34]"
+   ],
+   [
+    "Audit log of AI use",
+    "Enterprise only, through the Compliance API[^23]",
+    "Enterprise only[^5]",
+    "Yes: Purview Audit logs it automatically, kept 180 days on Audit Standard[^34][^35]"
+   ],
+   [
+    "Admin-set chat retention",
+    "Listed for Enterprise only in OpenAI's compare table[^17]",
+    "Enterprise only, 30 days minimum[^9]",
+    "Yes, through Purview retention policies[^34][^61]"
+   ],
+   [
+    "Who chooses what it can read",
+    "Admins pick which apps are on[^22]",
+    "Owner turns on each connector; a Microsoft admin consents for Microsoft 365[^12][^14]",
+    "Whatever each person can already open in Microsoft 365[^31][^33]"
+   ],
+   [
+    "Agent mode and how it bills",
+    "ChatGPT Work, inside the seat's shared usage[^21][^60]",
+    "Cowork, on by default and included in the seat[^3][^10]",
+    "Copilot Cowork, billed per use on top of the seat[^29]"
+   ]
+  ],
+  "note": "Zavient side-by-side of vendor pages, read 26 Nov 2026; ChatGPT rows match our same-day check for the ChatGPT plans page. US list prices before tax; usage credits and promos other than the one named are left out. Vendors change these pages often, so check them before you sign."
+ },
+ "example": {
+  "input": "Illustrative: a 120-person distributor on Microsoft 365. Ops coordinators paste supplier price lists into personal ChatGPT or Claude accounts, which may train on chats depending on a user setting[^20][^8]. In one survey, 68% of enterprise workers used personal AI accounts and 57% entered sensitive data[^52].",
+  "output": "After: all 120 get Copilot Chat at no extra cost, and 15 ops and finance leads get Copilot Business for $3,780 a year[^31][^29]. IT fixes overshared SharePoint sites first[^33]. Two pricing analysts get Claude Team or ChatGPT Business seats, and the buyer checks every price change before it reaches a supplier[^16][^24]."
+ },
+ "watchOuts": [
+  "Leaving staff on personal accounts: 68% of surveyed workers use them, and personal ChatGPT and Claude plans may train on chats[^52][^20][^8]. Fix: buy a business plan and move people over.",
+  "Switching on Copilot before fixing file permissions: it sees whatever each person can open[^31][^33]. Fix: run Microsoft's readiness check and clean up overshared sites first[^38][^39].",
+  "Buying seats nobody uses: firms leave 36% of software licences unused, and AI use is 'widespread but shallow'[^53][^47]. Fix: pilot first; Claude Team seats can be reassigned but removals aren't refunded[^4].",
+  "Budgeting seats, not usage: Copilot Cowork bills per use, and Claude Enterprise bills all usage at API rates[^29][^5]. Fix: set firm and per-user spend limits before launch[^5].",
+  "Trusting it on analysis it's weak at: a UK government test found Copilot's Excel analysis slower and lower quality[^54]. Fix: name which tasks always get a human check[^51].",
+  "Letting agents act on email and files unchecked: hidden instructions in a document or email can hijack an assistant, OWASP's top AI risk[^49]. Fix: keep approval on for send and write actions[^10][^50]."
+ ],
+ "faq": [
+  {
+   "q": "Is ChatGPT Business or Claude Team better for a small team?",
+   "a": "On price they tie: $20 a seat billed yearly and $25 monthly on both, read 26 Nov 2026[^17][^3]. Claude Team caps at 150 seats and ChatGPT Business at 200[^3][^18]. Pick on where your files live and which one your pilot group prefers."
+  },
+  {
+   "q": "Claude or Copilot for a 40-person company on Microsoft 365?",
+   "a": "Copilot, if most work is email, meetings and SharePoint: it searches them directly and logs to Purview[^31][^34]. Claude reaches the same data through a connector a Microsoft admin approves, and suits heavy document and Excel work[^12][^16]."
+  },
+  {
+   "q": "Does Microsoft Copilot use Claude?",
+   "a": "Yes, in most US business accounts: Claude models are on by default in Copilot, Researcher and Cowork[^36][^37]. Admins can turn them off, and they sit outside Microsoft's EU Data Boundary[^36]."
+  },
+  {
+   "q": "What is the difference between ChatGPT Work and Claude Cowork?",
+   "a": "Little in kind: both are agent modes that run multi-step tasks and hand back files[^21][^11]. Both draw on the business seat's usage; Copilot's Cowork bills per use on top[^60][^3][^29]."
+  },
+  {
+   "q": "Will ChatGPT, Claude or Copilot train on our company data?",
+   "a": "Not by default on business plans, per all three vendors[^20][^7][^32]. Personal plans differ: ChatGPT and Claude may train on those chats unless the user opts out[^20][^8]."
+  },
+  {
+   "q": "Is Copilot safer than Claude for a company rollout?",
+   "a": "Neither trains on business data by default, so the gap is records[^7][^32]. Copilot logs every interaction to Purview Audit; Claude and ChatGPT audit logs need their enterprise tiers[^34][^5][^23]."
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Buy one of these when the job is everyday drafting, summarizing and spreadsheet work for many staff[^55]. MIT found bought tools reached deployment about twice as often as internal builds[^55]. Over half of US businesses on Ramp already pay for AI this way[^48].",
+  "build": "Build on a vendor's API when your own data or a fixed process is the edge, such as document intake tied to your systems[^55]. Claude Enterprise already bills usage at API rates, which blurs the line[^5]."
+ },
+ "pickElse": [
+  "You run Google Workspace and needs are light: Business Standard, at $14 a user a month billed yearly, includes Gemini in Gmail, Docs and Meet[^40]. Google says it doesn't train on your data without permission[^41].",
+  "You're on Microsoft 365 and testing the water: start with Copilot Chat at no extra cost[^31]. Buy paid seats once usage shows who needs them[^53].",
+  "You need one repeat process fixed, such as invoice intake: a purpose-built tool beats a general assistant[^55].",
+  "Staff won't use it yet: fix the task list and training first[^47]. In one large field study, a three-hour onboarding came first, and newer staff gained most[^42]."
+ ],
+ "resources": [
+  {
+   "name": "Microsoft Copilot Success Kit",
+   "url": "https://adoption.microsoft.com/en-us/copilot/success-kit",
+   "what": "Free adoption checklist and licence allocation guide for a Copilot rollout."
+  },
+  {
+   "name": "Anthropic: Use Claude Cowork on Team and Enterprise plans",
+   "url": "https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans",
+   "what": "Which Cowork settings an admin controls, and their defaults."
+  },
+  {
+   "name": "OpenAI: Admin controls, security and compliance in apps",
+   "url": "https://help.openai.com/en/articles/11509118-admin-controls-security-and-compliance-in-connectors-enterprise-edu-and-team",
+   "what": "How ChatGPT admins choose which company systems it can reach."
+  },
+  {
+   "name": "OWASP LLM01:2026 Prompt Injection",
+   "url": "https://genai.owasp.org/llm2026/llm012026-prompt-injection/",
+   "what": "Plain list of how hidden instructions in files and email hijack assistants, and the controls that help."
+  },
+  {
+   "name": "NIST AI 600-1 Generative AI Profile",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+   "what": "Free US standard checklist for governing generative AI use."
+  }
+ ],
+ "stats": [
+  {
+   "num": "$20",
+   "label": "a month buys a ChatGPT Business or Claude Team Standard seat, billed yearly[^17][^3].",
+   "source": "OpenAI and Anthropic pricing pages, read 26 Nov 2026"
+  },
+  {
+   "num": "$21",
+   "label": "a month buys Microsoft 365 Copilot Business, paid yearly; the $18 promo ends 31 Dec 2026[^29].",
+   "source": "Microsoft pricing page, read 26 Nov 2026"
+  },
+  {
+   "num": "150 / 200 / 300",
+   "label": "seats are the caps on Claude Team, new ChatGPT Business workspaces and Copilot Business[^3][^18][^29].",
+   "source": "Anthropic, OpenAI and Microsoft pages, read 26 Nov 2026"
+  },
+  {
+   "num": "44.8% vs 40.6%",
+   "label": "of US businesses on Ramp paid Anthropic and OpenAI in Oct 2026; many pay both[^48].",
+   "source": "Ramp AI Index, Oct 2026"
+  },
+  {
+   "num": "Two hours",
+   "label": "less time on email a week for workers given AI in a field test at 66 firms[^44].",
+   "source": "Dillon et al., NBER, 2025"
+  },
+  {
+   "num": "31%",
+   "label": "of US workers who used AI last week said it saved them one to two hours[^45].",
+   "source": "US Census Bureau, Aug 2026"
+  }
+ ],
+ "sources": [
+  {
+   "name": "Anthropic, Plans and pricing | Claude",
+   "url": "https://claude.com/pricing",
+   "what": "Claude plans; Enterprise is $20 a seat a month plus usage at API rates, billed yearly; read 26 Nov 2026."
+  },
+  {
+   "name": "Anthropic, Claude Enterprise plan",
+   "url": "https://claude.com/pricing/enterprise",
+   "what": "$20 a seat a month billed yearly, usage billed at API rates, annual commitment, minimum 20 seats; retention controls on Enterprise only; read 26 Nov 2026."
+  },
+  {
+   "name": "Claude Help Center, What is the Team plan?",
+   "url": "https://support.claude.com/en/articles/9266767-what-is-the-team-plan",
+   "what": "Standard $20 yearly or $25 monthly, Premium $100 or $125; 2 to 150 seats; SSO, domain capture, connectors, 200K context, Cowork and Claude Code included; read 26 Nov 2026."
+  },
+  {
+   "name": "Claude Help Center, Purchase and manage seats on Team plans (16 Oct 2026)",
+   "url": "https://support.claude.com/en/articles/12004354-purchase-and-manage-seats-on-team-plans",
+   "what": "Seats can be reassigned; removing a member gives no refund; mentions JIT or SCIM provisioning for seat assignment; read 26 Nov 2026."
+  },
+  {
+   "name": "Claude Help Center, What is the Enterprise plan? (1 Sep 2026)",
+   "url": "https://support.anthropic.com/en/articles/9797531-what-is-the-claude-enterprise-plan",
+   "what": "Adds audit logs, SCIM, custom retention, Compliance API and spend limits; all usage billed separately at API rates; read 26 Nov 2026."
+  },
+  {
+   "name": "Claude Help Center, Purchase and manage seats on Enterprise plans (16 Oct 2026)",
+   "url": "https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans",
+   "what": "Enterprise plans need at least 20 seats; read 26 Nov 2026."
+  },
+  {
+   "name": "Anthropic Privacy Center, Is my data used for model training? (commercial, 18 Aug 2026)",
+   "url": "https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training",
+   "what": "By default, inputs and outputs from commercial products such as Claude for Work are not used to train models."
+  },
+  {
+   "name": "Anthropic, Updates to Consumer Terms and Privacy Policy (28 Aug 2025)",
+   "url": "https://www.anthropic.com/news/updates-to-our-consumer-terms",
+   "what": "Free, Pro and Max chats are used for training when the user setting is on; does not apply to Team or Enterprise."
+  },
+  {
+   "name": "Claude Help Center, Configure custom data retention controls for Enterprise plans",
+   "url": "https://support.claude.com/en/articles/10440198-configure-custom-data-retention-controls-for-enterprise-plans",
+   "what": "Enterprise only; minimum 30 days; data kept indefinitely unless a period is set."
+  },
+  {
+   "name": "Claude Help Center, Use Claude Cowork on Team and Enterprise plans (9 Nov 2026)",
+   "url": "https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans",
+   "what": "Cowork is on by default and owners can turn it off; skipping approval for write tools is off by default."
+  },
+  {
+   "name": "Claude Help Center, Get started with Claude Cowork",
+   "url": "https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork",
+   "what": "Cowork brings Claude Code's agent abilities to knowledge work beyond coding; auto mode's check can miss risky actions."
+  },
+  {
+   "name": "Claude Help Center, Set up the Microsoft 365 connector",
+   "url": "https://support.claude.com/en/articles/12542951-set-up-the-microsoft-365-connector",
+   "what": "Searches SharePoint, OneDrive, Outlook and Teams; the owner enables it and a Microsoft Entra admin consents once."
+  },
+  {
+   "name": "Claude Help Center, Microsoft 365 connector security guide (Nov 2026)",
+   "url": "https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide",
+   "what": "Reads only what the user can already open; Team users cannot set send-mail and Teams-message tools to always allow."
+  },
+  {
+   "name": "Claude Help Center, Use Google Workspace connectors (Nov 2026)",
+   "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+   "what": "Gmail, Calendar and Drive; live editing of Google Docs, Sheets and Slides; owner must enable on Team and Enterprise."
+  },
+  {
+   "name": "Anthropic, Claude for Microsoft 365",
+   "url": "https://claude.com/claude-for-microsoft-365",
+   "what": "Vendor claim: Excel, PowerPoint, Word and Outlook add-ins on all paid plans; Word tracked changes; Outlook drafts wait for you to click send."
+  },
+  {
+   "name": "Claude Help Center, Use Claude for Excel",
+   "url": "https://support.claude.com/en/articles/12650343-using-claude-in-excel",
+   "what": "On Pro, Max, Team and Enterprise; cell-level citations; warns before overwriting."
+  },
+  {
+   "name": "OpenAI, Business Pricing",
+   "url": "https://openai.com/business/pricing",
+   "what": "Business Standard $20 yearly or $25 monthly, Premium $100 or $125, 2-200 employees; Enterprise custom pricing; Business vs Enterprise table; 54K and 256K context; read 26 Nov 2026."
+  },
+  {
+   "name": "OpenAI Help, ChatGPT Business: General FAQ",
+   "url": "https://help.openai.com/en/articles/8542115-chatgpt-business-general-faq",
+   "what": "200 paid-seat cap for workspaces created on or after 24 Aug 2026; no training on workspace data."
+  },
+  {
+   "name": "OpenAI Help, SSO for ChatGPT Business FAQ",
+   "url": "https://help.openai.com/en/articles/11489188-sso-for-chatgpt-business-faq",
+   "what": "SAML and OIDC sign-in; no SCIM or AD group sync on Business."
+  },
+  {
+   "name": "OpenAI Help, How your data is used to improve model performance",
+   "url": "https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance",
+   "what": "Free, Plus and Pro may be used for training unless the user opts out; Business and Enterprise not by default."
+  },
+  {
+   "name": "OpenAI Help, ChatGPT Work and Codex",
+   "url": "https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex",
+   "what": "Work is an agent for longer, multi-step work and finished deliverables."
+  },
+  {
+   "name": "OpenAI Help, Admin controls, security and compliance in apps",
+   "url": "https://help.openai.com/en/articles/11509118-admin-controls-security-and-compliance-in-connectors-enterprise-edu-and-team",
+   "what": "Business admins choose which apps are enabled; Enterprise apps start off."
+  },
+  {
+   "name": "OpenAI Help, OpenAI Compliance Platform for Enterprise and Edu",
+   "url": "https://help.openai.com/en/articles/9261474-compliance-api-for-enterprise",
+   "what": "Sends conversation logs to eDiscovery, DLP and SIEM tools; Enterprise and Edu only."
+  },
+  {
+   "name": "OpenAI Help, ChatGPT for Excel and Google Sheets",
+   "url": "https://help.openai.com/en/articles/20001063-chatgpt-for-excel-and-google-sheets",
+   "what": "Sidebar in Excel and Google Sheets on Business and Enterprise; review formulas, citations and changed cells before sharing."
+  },
+  {
+   "name": "OpenAI Help, Microsoft Teams app and setup in ChatGPT",
+   "url": "https://help.openai.com/en/articles/12552368-microsoft-teams-connector-for-chatgpt",
+   "what": "Searches Teams chats and channels, retrieves existing meeting transcripts, may ask you to confirm before it sends a message."
+  },
+  {
+   "name": "OpenAI Help, SharePoint app and setup in ChatGPT",
+   "url": "https://help.openai.com/en/articles/12143177-sharepoint-app-and-setup-in-chatgpt",
+   "what": "Searches SharePoint and OneDrive content the user can already open; may need Entra admin consent."
+  },
+  {
+   "name": "CDW, ChatGPT Enterprise Standard License 1Y Subscription",
+   "url": "https://www.cdw.com/product/chatgpt-enterprise-standard-license-1y-subscription-500-credits-seat-month/9097307",
+   "what": "Reseller listing, not OpenAI: ChatGPT Enterprise with a 150-seat minimum; read 26 Nov 2026."
+  },
+  {
+   "name": "CloudZero, ChatGPT Enterprise pricing (20 Oct 2026)",
+   "url": "https://www.cloudzero.com/blog/chatgpt-enterprise-pricing",
+   "what": "Reported, not confirmed by OpenAI: about $60 a seat a month with a 150-seat minimum; read 26 Nov 2026."
+  },
+  {
+   "name": "Microsoft, Copilot plans and pricing for business",
+   "url": "https://www.microsoft.com/en-us/copilot/pricing/business",
+   "what": "Copilot Business $21 a user a month paid yearly, $18 promo for year one if bought 1 Jul-31 Dec 2026; up to 300 users; Cowork usage-billed; no training on prompts; read 26 Nov 2026."
+  },
+  {
+   "name": "Microsoft, Microsoft 365 Copilot enterprise pricing",
+   "url": "https://www.microsoft.com/en-us/copilot/pricing/enterprise",
+   "what": "$30 a user a month paid yearly; read 26 Nov 2026."
+  },
+  {
+   "name": "Microsoft Support, How Copilot Chat works with and without a Microsoft 365 Copilot license",
+   "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/how-copilot-chat-works-with-and-without-a-microsoft-365-copilot-license",
+   "what": "Copilot Chat at no extra cost with eligible plans, grounded in the web and open or uploaded content; the paid licence searches the user's Microsoft 365 data."
+  },
+  {
+   "name": "Microsoft Learn, Enterprise data protection in Microsoft 365 Copilot and Copilot Chat",
+   "url": "https://learn.microsoft.com/en-us/copilot/plan/enterprise-data-protection",
+   "what": "Covered by Microsoft's data protection terms; prompts and responses not used to train models."
+  },
+  {
+   "name": "Microsoft Learn, Configure a secure and governed data foundation for Microsoft 365 Copilot",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/configure-secure-governed-data-foundation-microsoft-365-copilot",
+   "what": "Fix oversharing before rollout; default sharing settings are the most permissive option."
+  },
+  {
+   "name": "Microsoft Learn, Data protection and auditing for Microsoft Copilot (9 Nov 2026)",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/architecture-data-protection-auditing",
+   "what": "Purview Audit automatically logs Copilot interactions; prompts searchable in eDiscovery and covered by retention policies."
+  },
+  {
+   "name": "Microsoft Learn, Manage audit log retention policies (19 Jun 2026)",
+   "url": "https://learn.microsoft.com/en-us/purview/audit-log-retention-policies",
+   "what": "Audit (Standard) keeps logs 180 days by default; up to 10 years with Audit (Premium)."
+  },
+  {
+   "name": "Microsoft Learn, Claude models from Anthropic in Microsoft Online Services (20 Nov 2026)",
+   "url": "https://learn.microsoft.com/en-us/copilot/implement/connect-to-ai-subprocessor",
+   "what": "Claude models on by default for most commercial tenants outside the EU, EFTA and UK; excluded from the EU Data Boundary; admins can turn them off."
+  },
+  {
+   "name": "Microsoft Learn, Copilot Cowork common questions (18 Nov 2026)",
+   "url": "https://learn.microsoft.com/en-us/copilot/cowork/cowork-faq",
+   "what": "Cowork can use Anthropic Claude models as a subprocessor for most reasoning, drafting and tool-using work."
+  },
+  {
+   "name": "Microsoft Learn, Microsoft Copilot adoption guide for IT admins (4 Nov 2026)",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-enablement-resources",
+   "what": "Run the readiness assessment and get data ready before rollout; training and scenario resources."
+  },
+  {
+   "name": "Microsoft Adoption, Copilot Success Kit",
+   "url": "https://adoption.microsoft.com/en-us/copilot/success-kit",
+   "what": "Implementation guide, adoption planning checklist and licence allocation guide."
+  },
+  {
+   "name": "Google, Google Workspace pricing",
+   "url": "https://workspace.google.com/pricing",
+   "what": "Business Standard $14 a user a month billed yearly, with Gemini in Gmail, Docs and Meet; read 26 Nov 2026."
+  },
+  {
+   "name": "Google, Generative AI in Google Workspace Privacy Hub (10 Nov 2026)",
+   "url": "https://knowledge.workspace.google.com/admin/generative-ai/generative-ai-in-google-workspace-privacy-hub",
+   "what": "Workspace does not use customer data to train models without permission; admins set Gemini retention."
+  },
+  {
+   "name": "Brynjolfsson, Li and Raymond, Generative AI at Work, Quarterly Journal of Economics 140(2), 2025",
+   "url": "https://academic.oup.com/qje/article/140/2/889/7990658",
+   "what": "5,172 support agents: 15% more issues resolved an hour; less experienced staff gained most; three-hour onboarding."
+  },
+  {
+   "name": "Noy and Zhang, Science 381, 2023",
+   "url": "https://www.science.org/doi/10.1126/science.adh2586",
+   "what": "453 professionals on writing tasks: 40% less time, 18% higher quality."
+  },
+  {
+   "name": "Dillon, Jaffe, Immorlica and Stanton, Shifting Work Patterns with Generative AI, NBER w33795 (Nov 2025)",
+   "url": "https://www.nber.org/papers/w33795",
+   "what": "Field experiment, 66 firms and 7,137 workers: two fewer hours on email a week, less after-hours work. Authors include Microsoft researchers."
+  },
+  {
+   "name": "US Census Bureau, AI use at work (11 Aug 2026, revised 24 Sep)",
+   "url": "https://www.census.gov/library/stories/2026/08/ai-use-at-work.html",
+   "what": "Of last-week AI users, 31% saved one to two hours, 10% none, 4% needed more time."
+  },
+  {
+   "name": "St. Louis Fed FRED Blog, Does generative AI save time at work? (27 Aug 2026)",
+   "url": "https://fredblog.stlouisfed.org/2026/08/does-generative-ai-save-time-at-work",
+   "what": "Share of work hours saved rose from 1.6% to 2.2%, Q3 2024 to Q2 2026."
+  },
+  {
+   "name": "St. Louis Fed, What Work Does Generative AI Do? (1 Sep 2026)",
+   "url": "https://www.stlouisfed.org/on-the-economy/2026/sep/what-work-does-generative-ai-do",
+   "what": "Adoption is widespread but shallow."
+  },
+  {
+   "name": "Ramp, Ramp AI Index (data through Oct 2026)",
+   "url": "https://ramp.com/data/ai-index",
+   "what": "56.8% of US businesses on Ramp paid for AI in Oct 2026; Anthropic 44.8%, OpenAI 40.6%; Ramp customers only, firms can pay both."
+  },
+  {
+   "name": "OWASP GenAI Security Project, LLM01:2026 Prompt Injection (27 Oct 2026)",
+   "url": "https://genai.owasp.org/llm2026/llm012026-prompt-injection/",
+   "what": "Top-ranked LLM risk: hidden instructions in retrieved content, email and documents."
+  },
+  {
+   "name": "OWASP GenAI Security Project glossary, Prompt Injection",
+   "url": "https://genai.owasp.org/glossary/prompt-injection/",
+   "what": "Privilege minimization is the most effective control; add human confirmation for high-consequence actions."
+  },
+  {
+   "name": "NIST, AI 600-1 Generative AI Profile (Jul 2024)",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+   "what": "US standards body: data privacy and confabulation are core generative AI risks; verify output."
+  },
+  {
+   "name": "TELUS Digital, AI at work survey (26 Feb 2025)",
+   "url": "https://www.telusdigital.com/about/newsroom/telus-digital-survey-reveals-enterprise-employees-use-of-shadow-ai",
+   "what": "68% of enterprise workers use AI assistants through personal accounts; 57% admit entering sensitive data."
+  },
+  {
+   "name": "Zylo, 2026 SaaS Management Index press release (29 Jan 2026)",
+   "url": "https://zylo.com/news/2026-saas-management-index",
+   "what": "Firms leave an average of 36% of software licences unused."
+  },
+  {
+   "name": "UK Department for Business and Trade, Microsoft 365 Copilot evaluation (2025)",
+   "url": "https://assets.publishing.service.gov.uk/media/68adbe409e1cebdd2c96a19d/dbt-microsoft-365-copilot-evaluation.pdf",
+   "what": "No evidence that time savings raised productivity; Excel analysis slower and lower quality with Copilot."
+  },
+  {
+   "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025",
+   "url": "https://www.artificialintelligence-news.com/wp-content/uploads/2025/08/ai_report_2025.pdf",
+   "what": "Bought tools reached deployment about twice as often as internal builds."
+  },
+  {
+   "name": "OpenAI Help, ChatGPT Record",
+   "url": "https://help.openai.com/en/articles/11487532-chatgpt-record",
+   "what": "Meeting notes in the ChatGPT app for macOS; owners can turn it off; get consent before recording."
+  },
+  {
+   "name": "OpenAI Help, Outlook Email and Calendar apps in ChatGPT",
+   "url": "https://help.openai.com/en/articles/12512241-outlook-email-and-calendar-apps-in-chatgpt",
+   "what": "Outlook mail and calendar actions depend on Entra consent and workspace settings."
+  },
+  {
+   "name": "Microsoft Marketplace, ChatGPT add-in by OpenAI (15 Sep 2026)",
+   "url": "https://marketplace.microsoft.com/en-us/product/wa200010215",
+   "what": "Vendor listing: ChatGPT for Excel, Word and PowerPoint generally available to Business and Enterprise."
+  },
+  {
+   "name": "OpenAI Help, ChatGPT release notes",
+   "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+   "what": "Google Drive app covers Docs, Sheets and Slides; ChatGPT for Excel and Google Sheets generally available."
+  },
+  {
+   "name": "ChatGPT Learn, Pricing",
+   "url": "https://learn.chatgpt.com/docs/pricing",
+   "what": "ChatGPT Work and Codex share pricing, credits and usage limits; read 26 Nov 2026."
+  },
+  {
+   "name": "Microsoft Learn, Learn about retention for Copilot and AI apps",
+   "url": "https://learn.microsoft.com/en-us/purview/retention-policies-copilot",
+   "what": "Purview retention policies cover Copilot experiences and some other AI apps."
+  }
+ ],
+ "related": [
+  "chatgpt-plus-vs-business-vs-enterprise",
+  "generative-ai-vs-predictive-ai",
+  "ai-consulting-services",
+  "ai-document-processing",
+  "ai-invoice-processing"
+ ],
+ "offer": {
+  "heading": "Not sure which assistant to roll out to your team?",
+  "body": "In 30 minutes we look at where your files live, your seat count and your data rules. You leave with a pick, a year-one cost and a pilot plan."
+ },
+ "keyword": {
+  "phrase": "claude vs chatgpt pricing",
+  "searches": 390,
+  "cpc": 31,
+  "difficulty": null
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Wants one pick to forward, a cost and a first step. Bottom line gives a pick per stack and size; recipes give costs and first steps; the COO now owns policy and rollout in the human-role block. Price parity was buried in the own-data block, so the price table intro now says the three business plans land within $600 a year at 50 seats. FAQ questions are real: ChatGPT Business vs Claude Team (r/ChatGPT, Sep 2026); Claude vs Copilot for a 40-person firm (r/ClaudeAI, Aug 2026); Copilot risk vs Claude and does Copilot use Claude (r/microsoft_365_copilot, Jun 2026); ChatGPT Work vs Claude Cowork (keyword list, 320 a month; also r/microsoft_365_copilot); training on company data (vendor FAQs at OpenAI, Anthropic, Microsoft). Reddit is used only as where a question was seen."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Reads on a phone and isn't in IT. Stalled on jargon: added a plain gloss for tokens, called API rates pay-per-use, named Purview as Microsoft's compliance log, and changed 'tenants' to business accounts in the FAQ. Tables stay at six or seven rows each."
+  },
+  {
+   "reader": "GM",
+   "notes": "Wants to know if one unit or site can pilot first and what that costs. Recipes 1 and 2 now pick pilot users in one unit or site; recipe 2 prices a 15-seat, three-month pilot at $1,125. No sourced time-saved figure exists for these tools in a unit like his, so none is claimed; the studies table shows uneven results instead."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Read as the controller or head of service whose team would use it most. Wants who checks output and whether regulated data is allowed. The human-role block names the controller as checker; added that Claude Enterprise offers a health-data contract (BAA). Copilot's Excel weakness from the UK government test is in the work-type table and watch-outs, so a controller knows where to keep a human check."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Steve, 60-150 staff, decides in 10 seconds: the title and bottom line answer by stack. He worried 'Run two' meant paying twice; the bullet now says Copilot Chat costs nothing extra and only heavy users get a second paid seat. The ChatGPT Enterprise floor is labelled as a third-party report so he doesn't think he's being upsold. Offer says what he leaves with: a pick, a year-one cost and a pilot plan."
+  }
+ ],
+ "updated": "2026-11-26"
 }
