@@ -61,23 +61,24 @@ const proofAfter = tpl ? (['tool', 'own-data'].find((id) => order.includes(id) &
         {id === proofAfter && <aside class="diag-box" data-diag="beside-proof"><p><strong>Free diagnostic:</strong>{' '}{offerLine}</p><a class="btn-gold" href="#diagnostic">Book the 30 minutes &rarr;</a></aside>}
       </>))}
     </div>
-  </article>
-  {/* Sticky contents on every long page (Russell, 26 Nov 2026: a TOC "that stays sticky and jumplinks you on
-      long pages"). The list is built in the browser from the page's own section headings, so every section is
-      listed and every page type gets it with no extra data; the hero's "On this page" list is the no-script
-      fallback. Rail at 1300px and wider; below that a bottom bar that names the section you're in and opens
-      into the full list. */}
-  <div class="sticky-toc is-hidden" role="navigation" aria-label="Contents" data-diag={tpl ? 'sticky' : undefined} hidden>
-    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
-      <span class="toc-label">Contents <span class="toc-count"></span></span>
-      <span class="toc-now"></span>
-    </button>
-    <div class="toc-panel" id="toc-panel">
-      <ol class="toc-list"></ol>
-      <a class="toc-top" href="#top">Back to top</a>
+    {/* Sticky contents on every long page (Russell, 26 Nov 2026: a TOC "that stays sticky and jumplinks you on
+        long pages"). The list is built in the browser from the page's own section headings, so every section is
+        listed and every page type gets it with no extra data; the hero's "On this page" list is the no-script
+        fallback. Rail at 1300px and wider; below that a one-row bottom bar that names the section you're in and
+        opens into the full list. It sits inside the article and sticks to the bottom of the screen only while the
+        article is on screen, so it can never cover the end offer or the footer (fix of 26 Nov 2026). */}
+    <div class="sticky-toc is-hidden" role="navigation" aria-label="Contents" data-diag={tpl ? 'sticky' : undefined} hidden>
+      <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
+        <span class="toc-label"><span class="toc-word">Contents</span><span class="toc-count"></span></span>
+        <span class="toc-now"></span>
+      </button>
+      <div class="toc-panel" id="toc-panel">
+        <ol class="toc-list"></ol>
+        <a class="toc-top" href="#top">Back to top</a>
+      </div>
+      <a class="btn-gold" href="#diagnostic"><span class="long">Free 30-minute diagnostic</span><span class="short">Free diagnostic</span></a>
     </div>
-    <a class="btn-gold" href="#diagnostic"><span class="long">Free 30-minute diagnostic</span><span class="short">Free diagnostic</span></a>
-  </div>
+  </article>
   <script is:inline>
     (() => {
       const box = document.querySelector('.sticky-toc');
@@ -89,6 +90,7 @@ const proofAfter = tpl ? (['tool', 'own-data'].find((id) => order.includes(id) &
       const label = box.querySelector('.toc-count');
       const toggle = box.querySelector('.toc-toggle');
       const wide = matchMedia('(min-width: 1300px)');
+      const menu = document.querySelector('body > nav');
       const links = heads.map((h) => {
         const li = document.createElement('li');
         const a = document.createElement('a');
@@ -123,7 +125,10 @@ const proofAfter = tpl ? (['tool', 'own-data'].find((id) => order.includes(id) &
       const mark = () => {
         if (Date.now() < hold) return;
         let i = -1;
-        const line = Math.max(140, innerHeight / 3); // a section counts once its heading reaches the top third of the screen
+        // The reading line sits 40% down the part of the screen not covered by the top menu, so the bar names a
+        // section as soon as its heading reaches the upper part of what you can see (scroll-spy research, 26 Nov 2026).
+        const top = menu ? Math.max(0, menu.getBoundingClientRect().bottom) : 0;
+        const line = top + (innerHeight - top) * 0.4;
         heads.forEach((h, k) => { if (h.getBoundingClientRect().top <= line) i = k; });
         if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) i = heads.length - 1;
         show(i);
@@ -143,9 +148,9 @@ const proofAfter = tpl ? (['tool', 'own-data'].find((id) => order.includes(id) &
       addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { ticking = false; mark(); }); } }, { passive: true });
       addEventListener('resize', mark);
       mark();
-      // Hidden while the top of the page or the end offer is on screen, so the offer never shows twice at once.
+      // Hidden while the top of the page, the end offer or the footer is on screen, so the offer never shows twice at once.
       const seen = new Set();
-      const watch = [document.querySelector('.article-hero'), document.querySelector('#diagnostic')].filter(Boolean);
+      const watch = [document.querySelector('.article-hero'), document.querySelector('#diagnostic'), document.querySelector('body > footer')].filter(Boolean);
       if (!('IntersectionObserver' in window) || !watch.length) { box.classList.remove('is-hidden'); return; }
       const io = new IntersectionObserver((es) => {
         es.forEach((e) => (e.isIntersecting ? seen.add(e.target) : seen.delete(e.target)));
