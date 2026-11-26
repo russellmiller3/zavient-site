@@ -31,12 +31,12 @@ const embed = `<a href="https://zavient.com/data/${story.id}.html"><img src="htt
         <tbody>{d.chart.bars.map((b) => <tr><td>{b.label}{b.note ? ` (${b.note})` : ''}</td><td>{f(b.value)}</td></tr>)}</tbody></table>
     </details>
     <p><a href={`/data/${story.id}.svg`}>Chart image (SVG)</a> &middot; <a href={`/data/${story.id}.csv`}>Data (CSV)</a></p>
-    <h2>What I found</h2>
+    <h2>What we found</h2>
     {d.findings.map((p) => <p>{p}</p>)}
     <h2>Use this chart</h2>
     <p>Free to republish with a link back. Copy this code:</p>
     <pre style="white-space:pre-wrap;word-break:break-all;font-size:13px"><code>{embed}</code></pre>
-    <h2>How I counted</h2>
+    <h2>How we counted</h2>
     <ul>{d.method.map((m) => <li>{m}</li>)}</ul>
     <div class="sources"><h2>Sources</h2>
       <table class="sources-table"><thead><tr><th>Source</th><th>What it says</th></tr></thead>

@@ -8,7 +8,7 @@ export const fmt = (unit) => (v) =>
 export const credit = (id, extra) => `Source: ${extra ? `${extra}; ` : ''}Zavient analysis · zavient.com/data/${id}.html`;
 export const storySvg = (id, chart) => {
   const args = { title: chart.title, subtitle: chart.subtitle, format: fmt(chart.unit), credit: credit(id, chart.creditSource) };
-  return chart.kind === 'line' ? lineChartSvg({ ...args, points: chart.bars }) : barChartSvg({ ...args, bars: chart.bars });
+  return chart.kind === 'line' ? lineChartSvg({ ...args, points: chart.bars }) : barChartSvg({ ...args, bars: chart.bars, showNotes: chart.showNotes });
 };
 export const storyCsv = (chart) =>
   ['label,value,note', ...chart.bars.map((b) => [b.label, b.value, b.note || ''].map((x) => `"${String(x).replace(/"/g, '""')}"`).join(','))].join('\n') + '\n';

@@ -101,6 +101,8 @@ const datastory = defineCollection({
       kind: z.enum(['bar', 'line']).default('bar'),
       // Named first in the chart's credit line when the numbers come from someone else's data (CC BY needs it).
       creditSource: z.string().optional(),
+      // true prints each bar's note (e.g. "28 ads") after its value on the chart itself, not only on hover.
+      showNotes: z.boolean().default(false),
       bars: z.array(z.object({ label: z.string(), value: z.number(), note: z.string().optional() })).min(3),
     }),
     method: z.array(z.string()).min(2),
