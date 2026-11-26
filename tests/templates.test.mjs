@@ -54,7 +54,8 @@ const good = () => ({
   pickElse: ['Few accounts: use your ERP\'s built-in matching [^6].'],
   stats: [{ num: '1', label: 'a [^1]', source: 'x' }, { num: '2', label: 'b [^2]', source: 'y' }, { num: '3', label: 'c [^3]', source: 'z' }],
   offer: { heading: 'Get a free diagnostic', body: 'Thirty minutes on your close.' },
-  sources: Array.from({ length: 10 }, (_, i) => ({ name: `S${i + 1}`, url: `https://site${i % 5}.example/${i}`, what: 'says something' })),
+  // Sources 5 and 7 back prices, so their notes carry the figure and a read date (src/lib/source-numbers.mjs).
+  sources: Array.from({ length: 10 }, (_, i) => ({ name: `S${i + 1}`, url: `https://site${i % 5}.example/${i}`, what: { 4: 'Tool A: $20 a seat a month. Read 26 Nov 2026.', 6: 'Plans from $50 a month. Read 26 Nov 2026.' }[i] || 'says something' })),
   reviews: REVIEWERS.map((reader) => ({ reader, notes: 'ok' })),
 });
 

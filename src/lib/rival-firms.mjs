@@ -5,13 +5,14 @@
 // fails a rival firm offered as an option or priced, and a fee range quoted for consultants, agencies or retainers.
 // A firm's survey or study, cited as evidence ("Gartner expects", "in Deloitte's survey"), stays allowed: whether to
 // keep big-firm sources at all is Russell's call (open as of 26 Nov 2026), not this check's.
-export const FIRMS = /\b(?:Accenture|Deloitte|McKinsey|BCG|Boston Consulting Group|Bain(?: & Company)?|PwC|PricewaterhouseCoopers|EY|Ernst & Young|KPMG|Capgemini|Cognizant|Infosys|Wipro|TCS|Tata Consultancy(?: Services)?|IBM Consulting|Genpact|Slalom|Booz Allen(?: Hamilton)?|Grant Thornton|RSM|BDO|Protiviti|Huron|Oliver Wyman|West Monroe|Thoughtworks|EPAM|Globant|HCLTech|Kearney|Alvarez & Marsal|Guidehouse)\b/;
+// 26 Nov 2026 (PE batch): outsourced credit-analysis firms (Anaptyss, Evalueserve) and loan-review service firms added.
+export const FIRMS = /\b(?:Accenture|Deloitte|McKinsey|BCG|Boston Consulting Group|Bain(?: & Company)?|PwC|PricewaterhouseCoopers|EY|Ernst & Young|KPMG|Capgemini|Cognizant|Infosys|Wipro|TCS|Tata Consultancy(?: Services)?|IBM Consulting|Genpact|Slalom|Booz Allen(?: Hamilton)?|Grant Thornton|RSM|BDO|Protiviti|Huron|Oliver Wyman|West Monroe|Thoughtworks|EPAM|Globant|HCLTech|Kearney|Alvarez & Marsal|Guidehouse|Anaptyss|Evalueserve)\b/;
 const MONEY = /[$€£]\s?\d/;
 const FEE = /\b(?:fees?|rates?|charges?|bills?|billing|retainers?|per (?:hour|day|month)|an hour|a day|day rate|engagements?|quotes?|priced?|costs?)\b/i;
 // A fee range: $X to $Y, $X-$Y, $Xk-$Yk.
 const RANGE = /[$€£]\s?\d[\d,.]*\s?[kKmM]?\s?(?:-|–|to)\s?[$€£]?\s?\d/;
 // Who sells the service. "Firm" alone is left out: on this site it usually means the buyer's firm.
-const SELLER = /\b(?:consultanc(?:y|ies)|consultants?|consulting firms?|ai (?:firms?|agenc(?:y|ies)|shops?)|agenc(?:y|ies) (?:fees?|rates?|retainers?)|development shops?|dev shops?|boutiques?|retainers?|specialist firms?|systems integrators?|integrators?)\b/i;
+const SELLER = /\b(?:consultanc(?:y|ies)|consultants?|consulting firms?|ai (?:firms?|agenc(?:y|ies)|shops?)|agenc(?:y|ies) (?:fees?|rates?|retainers?)|development shops?|dev shops?|boutiques?|retainers?|specialist firms?|systems integrators?|integrators?|loan review (?:firms?|providers?|vendors?|services?|outsourcers?)|outsourced (?:credit|loan) (?:analysis|analysts?|review)(?: firms?| providers?| services?)?|credit analysis (?:firms?|providers?|outsourcers?))\b/i;
 // Published government price-list ceilings are allowed, labelled as caps (memory: cost answers use them).
 const GOV_CAP = /\b(?:price list|ceilings?|caps?|GSA|schedule|BLS|Bureau of Labor)\b/i;
 const HIRE = new RegExp(String.raw`\b(?:hire|engage|retain|call in|bring in|go with|try|use|consider|ask)\s+(?:a firm like |firms like |firms such as |such as )?` + FIRMS.source);

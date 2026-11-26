@@ -574,7 +574,7 @@
  "answers": {
   "example": "AI pulls out the fund's commitment, paid-in capital, distributions and NAV (net asset value), each with its page number and the exact words it came from[^5].",
   "recipes": "A person should check only the exceptions: the facts whose quote fails the code check or where two models disagree, about 1 fact in 4 in our benchmark[^5].",
-  "rules": "Three rules can apply: the EU AI Act when extracted facts feed credit scoring or insurance pricing, US Regulation B for credit declines, and New York's DFS guidance for insurers[^15][^20][^22]. Reading documents is not high-risk on its own; the rules bite when the facts feed those decisions[^15].",
+  "rules": "Three rules can apply: the EU AI Act for credit or insurance pricing, US Regulation B for credit declines, and New York Department of Financial Services (DFS) insurer guidance[^15][^20][^22]. Reading documents is not high-risk on its own; the rules bite when the facts feed those decisions[^15].",
   "benchmark": "Lock the right answers for 50 of your own files first, run each tool on them, make every answer quote its page, and count wrong values apart from blanks[^14][^11].",
   "what-goes-wrong": "Not on their own: most vendor accuracy numbers come from the vendor's own benchmark runs, so test on your own files[^14]. Public answer keys have errors too[^12].",
   "buy-or-build": "Buy a prebuilt parser for standard invoices, receipts or IDs, and build on frontier models when your files are unique and a wrong number is expensive[^2][^4][^5].",

@@ -83,13 +83,21 @@ Reader: lower-middle-market firm, 40-500 staff. Division head for this page: ${r
 ## How to work
 1. **Research agent** (separate from the writer): fill \`drafts/${slug}.research.md\`, one line per finding under its slot:
    \`- finding | Source: name | URL: https://... | Read: YYYY-MM-DD\`. Every finding needs its URL and read date; a slot
-   with nothing says \`- no source found\` and the searches run. Primary sources first. Run
+   with nothing says \`- no source found\` and the searches run. Primary sources first. Copy each figure exactly as
+   the source prints it, with its group and unit ("51% of 300 finance leaders", "hours a week"), and a survey's sample
+   ("Survey of 200 PE leaders"); if one study prints two figures for one claim, note both and which release each is in.
+   Prices come from the vendor's live page, read today; never a cached or archived copy. The writer copies these into
+   each source's \`what\` note, and the page check fails any footnoted figure that isn't there. In this sandbox, curl
+   and Node's fetch can't reach some sites through the proxy (sec.gov, efts.sec.gov, the FDIC's API and many vendor
+   pages): read those with the web fetch tool or Treg instead, and don't record a site as down because curl failed. Run
    \`node scripts/check-research.mjs drafts/${slug}.research.md\` until it says PASS. Then stop.
 2. **Writer agent**: fill \`drafts/${slug}.json\` from the research only. Footnote every claim as [^n], where n is
    the source's 1-based place in \`sources\`. Delete optional blocks you can't source; never pad.
 3. Run \`node scripts/check-page.mjs drafts/${slug}.json\` and fix until it says PASS (the ICP reviews are the last FAILs).
 4. **Source-claim check** (a separate agent from the writer): open every cited source and confirm it states the claim
-   its footnote backs, with the same number, date and scope. Fix or cut what it doesn't back, then log
+   its footnote backs, with the same number, date and scope (the group surveyed, the unit, the region). Start with
+   \`NODE_USE_ENV_PROXY=1 node scripts/check-source-figures.mjs drafts/${slug}.json\`, which looks for each footnoted
+   figure on its source's live page, then open by hand every page it couldn't read. Fix or cut what it doesn't back, then log
    \`sourceCheck: {date, by, checked, fixed}\`. The page check warns until it is logged.
 5. **ICP review**, in this order, one pass each, fixes applied between passes: ${REVIEWERS.join(' → ')}.
    Each reviewer reads as that buyer and logs \`{reader, notes}\` in \`reviews\`. Persona notes: docs/steve-persona.md.
@@ -104,7 +112,7 @@ Reader: lower-middle-market firm, 40-500 staff. Division head for this page: ${r
 - **No Upwork, freelancer marketplaces, hourly rates or rival consulting firms.**
 - **No forum threads (Reddit, Quora, community forums), rival consulting firms or content farms as sources.** Note where a buyer's question was seen in the draft notes, not the source list. The page check fails these (src/lib/source-rules.mjs).
 - **Every lead says the thing.** No meta pointers ("The work takes three shapes", "There are several options", "Below is"), no first paragraph opening "It" or "These", no first sentence that only restates its heading, and no answers[...] first sentence joining two answers with a semicolon. Checked in recipe "when" and "cost", table intros, the summary and the offer body too (src/lib/lead-rules.mjs).
-- **Superseded rules name their replacement.** SR 11-7 was replaced by SR 26-2 (17 Apr 2026); CFPB circulars 2022-03 and 2023-03 were withdrawn (12 May 2025). Say so wherever they appear; add new cases to src/lib/stale-rules.mjs.
+- **Superseded rules name their replacement.** SR 11-7 and FIL-27-2021 were replaced or rescinded with SR 26-2 (17 Apr 2026); CFPB circulars 2022-03 and 2023-03 were withdrawn (12 May 2025); the OCC's 1998 Loan Portfolio Management booklet was rescinded (25 Jun 2026); the 2023 third-party guidance (FIL-29-2023) has a proposed replacement (comments due 16 Dec 2026). Say so wherever they appear; add new cases to src/lib/stale-rules.mjs.
 - **No rival consulting firm as an option or with a price, and no consultant, agency or retainer fee ranges.** A firm's survey, cited as evidence, is fine (src/lib/rival-firms.mjs).
 - **Links to our own pages are root-relative** ("/about.html"), never https://zavient.com/...
 - **Answers carry their reason**: a first sentence under 6 words ("No.", "Not yet.") fails; write "No, because ...".
@@ -113,6 +121,7 @@ Reader: lower-middle-market firm, 40-500 staff. Division head for this page: ${r
 - **Slugs are real pages**: every ranked, spoke and related slug exists in src/content/ai-work. Related: ${MIN.related[0]}-${t.relatedMax || MIN.related[1]} links for this type.
 - **Headings don't repeat words**: if the topic repeats a template word ("AI ... AI"), set \`headings[blockId]\`.
 - **No search-results pages as sources** (Google, Bing, a site's /search?q=): cite the page the result leads to.
+- **Every footnoted figure is in its source's note.** Each %, multiple and price in a footnoted sentence appears in the cited source's \`what\` note, copied from the source; a figure we work out ourselves says so in the sentence ("by our math"). A survey figure names its group in the note's words, one study gives one figure per claim, and a price's source note carries the date it was read (within 120 days of \`updated\`). No cached or archived copies, and no stat aggregators. Checked by src/lib/source-numbers.mjs; a new page must be clean.
 - **Save the JSON at the file's own indent**, JSON.stringify(data, null, n) plus a newline, so a fix stays a small diff.
 - **Every fix goes into the template or the page check, never just the page.** If you fix a page, add the rule or test that stops the same mistake on every page.
 - **Teach, then trust, then the lead**: the block order below is fixed. "When to pick something else" sits after "Buy or build", just above the free diagnostic.
@@ -133,6 +142,8 @@ if (existsSync(jp)) { console.error(`${jp} exists; not overwriting`); process.ex
 // One-space indent, the house format for new pages (the format test then holds each file to its own indent).
 writeFileSync(jp, JSON.stringify(page, null, 1) + '\n');
 const research = `# Research: ${topic}\n\nOne line per finding: \`- finding | Source: name | URL: https://... | Read: YYYY-MM-DD\`.\n` +
+  `The source, URL and read date may go on indented lines under the finding. Copy figures exactly, with their group and unit.\n` +
+  `curl and Node's fetch can't reach some sites through this sandbox's proxy (sec.gov, efts.sec.gov, the FDIC's API): use the web fetch tool or Treg.\n` +
   `Check: node scripts/check-research.mjs drafts/${slug}.research.md\n\n` +
   t.order.filter((id) => !['sources', 'related'].includes(id)).map((id) => `## ${((t.headings && t.headings[id]) || BLOCKS[id].h || id).replaceAll('{topic}', topic)}\n`).join('\n');
 writeFileSync(join(root, 'drafts', `${slug}.research.md`), research);

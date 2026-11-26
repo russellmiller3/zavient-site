@@ -19,6 +19,8 @@ import { staleProblems } from '../src/lib/stale-rules.mjs';
 import { rivalProblems } from '../src/lib/rival-firms.mjs';
 import { acronymProblems } from '../src/lib/acronyms.mjs';
 import { structureProblems } from '../src/lib/structure-rules.mjs';
+import { claimProblems } from '../src/lib/source-numbers.mjs';
+import CLAIM_BASELINE from '../src/lib/claim-baseline.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const contentDir = join(root, 'src/content/ai-work');
@@ -139,6 +141,12 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
   // Source-claim check (26 Nov 2026): a reviewer opens each cited source and confirms it says what the footnote claims.
   // A warning, not a fail, until the pages built before the rule have a log.
   if (!d.sourceCheck) warn.push('no source-claim check logged: open each cited source, confirm it states the claim it backs, and log sourceCheck {date, by, checked, fixed}');
+  // Every footnoted figure in its source's note, survey figures with their group, one figure per claim, dated prices
+  // (src/lib/source-numbers.mjs, 26 Nov 2026). A checked page or a new page must be clean; an older page may not get worse.
+  const claims = claimProblems(d);
+  const allowed = d.sourceCheck ? 0 : (CLAIM_BASELINE[slug] ?? 0);
+  if (claims.length > allowed) for (const p of claims) fail.push(`claim: ${p}`);
+  else if (claims.length) warn.push(`${claims.length} claims not yet matched to their source notes (the most this page may have is ${allowed}; see src/lib/claim-baseline.mjs), e.g. ${claims[0]}`);
 
   return { fail, warn };
 }

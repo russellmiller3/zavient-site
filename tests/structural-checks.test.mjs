@@ -199,3 +199,85 @@ test('the skeleton maker writes no answer slot the page check would fail, at one
   assert.match(src, /check-research\.mjs/);
   assert.doesNotMatch(readFileSync(join(root, 'src/lib/page-types.mjs'), 'utf8'), /\b2% cut jobs\b/);
 });
+
+// Round 4 (26 Nov 2026): the build thread's 10 fixes from the PE and lending batches, made structural.
+import { figure, numberProblems, twoFigureProblems, surveyScopeProblems, priceProblems, claimProblems } from '../src/lib/source-numbers.mjs';
+import { sourceProblems } from '../src/lib/source-rules.mjs';
+
+test('a footnoted figure must be in its source note, unless the sentence says it is our math', () => {
+  assert.equal(figure('$205,000'), figure('$205k'));
+  assert.equal(figure('56 percent'), figure('56%'));
+  assert.equal(figure('3-fold'), figure('3x'));
+  const src = [{ name: 'KPMG survey', what: 'Survey of 300 finance leaders: 51% use AI. Read 26 Nov 2026.' }];
+  assert.equal(numberProblems({ sources: src, summary: 'About 56% of finance leaders use AI.[^1]' }).length, 1);
+  assert.equal(numberProblems({ sources: src, summary: 'About 51% of finance leaders use AI.[^1]' }).length, 0);
+  assert.equal(numberProblems({ sources: src, summary: 'By our math that is $40,000 a year.[^1]' }).length, 0);
+  assert.equal(numberProblems({ sources: src, summary: 'About 51% use it.[^1] By our math that is $40,000 a year.[^1]' }).length, 0);
+});
+
+test('one study giving two figures for one claim fails; parallel table rows do not', () => {
+  const sources = [{ name: 'Big I', what: 'Survey of 1,000 independent agencies: 54%; release says 46%.' }];
+  assert.equal(twoFigureProblems({ sources, summary: 'AI quoting tools are used by 54% of independent insurance agencies.[^1]', faq: [{ q: 'x?', a: 'About 46% of independent insurance agencies use AI quoting tools.[^1]' }] }).length, 1);
+  assert.equal(twoFigureProblems({ sources, tables: [{ rows: [{ cells: ['Small agencies use AI tools: 17%[^1]'] }, { cells: ['Large agencies use AI tools: 33%[^1]'] }] }] }).length, 0);
+});
+
+test("a survey figure names its group in the note's words, and a survey note says who answered", () => {
+  const sources = [{ name: 'FTI', what: 'Survey of 200 PE leaders at funds of $1B+: 36% of portfolio companies use AI.' }];
+  assert.equal(surveyScopeProblems({ sources, summary: '36% of portfolio companies use AI day to day.[^1]' }).length, 1);
+  assert.equal(surveyScopeProblems({ sources, summary: 'PE leaders say 36% of portfolio companies use AI day to day.[^1]' }).length, 0);
+  assert.ok(surveyScopeProblems({ sources: [{ name: 'X', what: 'An annual survey: 40% of firms use AI.' }], summary: 'x' }).some((p) => /who answered/.test(p)));
+});
+
+test('a price needs a source read within 120 days of the update', () => {
+  const page = (what) => ({ updated: '2026-11-26', sources: [{ name: 'DealRoom pricing', what }], summary: 'DealRoom starts at $1,250 a month.[^1]' });
+  assert.equal(priceProblems(page('Plans: $1,250 a month.')).length, 1);
+  assert.equal(priceProblems(page('Plans: $1,250 a month. Read 1 Feb 2026.')).length, 1);
+  assert.equal(priceProblems(page('Plans: $1,250 a month. Read 26 Nov 2026.')).length, 0);
+  assert.equal(priceProblems(page('Plans: $1,250 a month. Read: 2026-11-20')).length, 0);
+});
+
+test('cached or archived copies and stat aggregators are not sources', () => {
+  for (const url of ['https://web.archive.org/web/2024/https://dealroom.net/pricing', 'https://archive.ph/abc', 'https://webcache.googleusercontent.com/search?q=cache:x', 'https://www.brokerageaudit.com/stats'])
+    assert.equal(sourceProblems([{ url }]).length, 1, url);
+});
+
+test('superseded bank guidance, outsourced credit firms and new acronyms are caught', () => {
+  const stale = (t) => staleProblems({ summary: t });
+  assert.equal(stale('FIL-27-2021 sets the standard for BSA models.').length, 1);
+  assert.equal(stale("The OCC's Loan Portfolio Management booklet says to review loans yearly.").length, 1);
+  assert.equal(stale('The Loan Portfolio Management booklet was rescinded in 2026.').length, 0);
+  assert.equal(stale('FIL-29-2023 governs vendor models.').length, 1);
+  assert.equal(stale('FIL-29-2023 governs vendor models; a replacement was proposed in Sep 2026.').length, 0);
+  assert.equal(stale('SR 14-4 covers banks of $10B to $50B.').length, 1);
+  assert.ok(rivalProblems({ summary: 'Hire Evalueserve to write credit memos.', pickElse: ['Evalueserve: outsourced analysts.[^1]'] }).length >= 1);
+  assert.ok(rivalProblems({ summary: 'Loan review firms charge $5,000 to $15,000 a review.' }).length >= 1);
+  assert.ok(acronymProblems({ summary: 'The NAIC bulletin applies.' }).some((p) => /NAIC/.test(p)));
+  assert.equal(acronymProblems({ summary: 'The National Association of Insurance Commissioners (NAIC) bulletin applies.' }).length, 0);
+});
+
+test('a research finding may carry its URL and read date on the lines under it', () => {
+  assert.equal(researchProblems('## Slot\n- KPMG: 51% of 300 finance leaders\n  Source: KPMG | URL: https://kpmg.com/x\n  Read: 2026-11-26\n').length, 0);
+  assert.ok(researchProblems('## Slot\n- KPMG: 51%\n  URL: https://kpmg.com/x\n- next\n  Read: 2026-11-26\n').length === 2);
+});
+
+test('the claim baseline only shrinks: never above a page\'s current count, and only real pages', async () => {
+  const { default: baseline } = await import('../src/lib/claim-baseline.mjs');
+  const bad = [];
+  for (const [slug, n] of Object.entries(baseline)) {
+    const page = pages.find(([s]) => s === slug);
+    if (!page) { bad.push(`${slug}: no such page; run node scripts/claim-baseline.mjs --write`); continue; }
+    const now = claimProblems(page[1]).length;
+    if (now < n) bad.push(`${slug}: ${now} claims now, baseline ${n}; lower it with node scripts/claim-baseline.mjs --write`);
+    if (now > n) bad.push(`${slug}: ${now} claims, more than its baseline of ${n}: fix the new ones`);
+    if (page[1].sourceCheck) bad.push(`${slug}: has a logged source-claim check, so it must be at 0, not in the baseline`);
+  }
+  for (const [s, d] of pages) if (!(s in baseline) && claimProblems(d).length) bad.push(`${s}: ${claimProblems(d).length} claims and no baseline: new pages start clean`);
+  assert.deepEqual(bad, []);
+});
+
+test('the brief sends research to the fetch tool where the proxy blocks curl, and runs the live figure check', () => {
+  const src = readFileSync(join(root, 'scripts/new-page.mjs'), 'utf8');
+  assert.match(src, /sec\.gov/);
+  assert.match(src, /check-source-figures\.mjs/);
+  assert.match(src, /indented lines under the finding/);
+});

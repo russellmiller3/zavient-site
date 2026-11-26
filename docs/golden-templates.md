@@ -10,7 +10,7 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: `
 1. `node scripts/new-page.mjs --type <type> --slug <slug> --topic "<topic>" --job "<job>"` writes a skeleton JSON, a research skeleton and a research brief to `drafts/`.
 2. A research agent fills `drafts/<slug>.research.md`, one line per finding with its URL and read date, until `node scripts/check-research.mjs` passes. A separate writer agent fills the JSON from it.
 3. `node scripts/check-page.mjs drafts/<slug>.json` until PASS.
-4. Source-claim check: a separate agent opens every cited source, confirms it states the claim, and logs `sourceCheck` (the page check warns until it does).
+4. Source-claim check: a separate agent runs `NODE_USE_ENV_PROXY=1 node scripts/check-source-figures.mjs drafts/<slug>.json`, opens every cited source it couldn't read, confirms each states the claim with the same figure, group and date, and logs `sourceCheck` (the page check warns until it does, and a logged page must have every figure in its source's note).
 5. ICP review, in order: COO → Head of operations → GM → Division head → Owner-CEO.
 6. Move the JSON to `src/content/ai-work/`, `npm test`. `index: true` only on Russell's yes.
 7. Look at it in a live browser. Screenshot the built page at 1280px and 390px wide and check every block by eye: flows, tables, footnotes, the sticky box, buttons. A visual change is not done until those screenshots look right, and they go with the report (Russell's rule, 26 Nov 2026).
@@ -27,7 +27,9 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: `
 - No forum threads, rival consulting firms or content farms as sources; the page check fails them.
 - Every fix is structural: it goes into the template or a failing page check, so it can't come back on any page.
 - Every lead text says the thing: no meta pointers, no restated heading, no semicolon joining two answers (src/lib/lead-rules.mjs).
-- Superseded rules (SR 11-7, withdrawn CFPB circulars) always name their replacement or say withdrawn (src/lib/stale-rules.mjs).
+- Superseded rules (SR 11-7, FIL-27-2021, withdrawn CFPB circulars, the OCC's 1998 Loan Portfolio Management booklet) always name their replacement or say withdrawn; the 2023 third-party guidance says a replacement is proposed (src/lib/stale-rules.mjs).
+- Every footnoted %, multiple and price appears in its source's note; survey figures name their group; one figure per claim per study; price sources carry a read date within 120 days of the update. New pages must be clean; older pages may not get worse than src/lib/claim-baseline.mjs, and `node scripts/claim-baseline.mjs --write` lowers it as they're fixed (src/lib/source-numbers.mjs).
+- No cached or archived copies and no stat aggregators as sources (src/lib/source-rules.mjs).
 - No rival consulting firm offered or priced, and no consultant fee ranges (src/lib/rival-firms.mjs).
 - Own-site links are root-relative; page JSON keeps its own indent and ends in a newline.
 - A question's first sentence is 6 words or more: a bare "No." carries its reason ("No, because ...").

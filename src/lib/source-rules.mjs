@@ -13,7 +13,12 @@ export const WEAK = {
   'skillmammoth.com': 'content farm', 'meetalog.com': 'content farm', 'automationatlas.io': 'content farm',
   'learnsignal.com': 'SEO blog', 'corporatefinanceinstitute.com': 'SEO blog', 'genguardx.ai': 'SEO blog', 'risqly.io': 'SEO blog',
   'structify.ai': 'SEO blog',
+  // Stat aggregators that list figures without a traceable origin (26 Nov 2026, PE batch): cite the study itself
+  'brokerageaudit.com': 'stat aggregator with no traceable origin',
 };
+// A cached or archived copy is not the source (26 Nov 2026, PE batch: stale DealRoom and Midaxo prices). It shows the
+// page as it once was, so a price or claim from it may be gone. Cite the live page, or drop the claim.
+export const CACHE = /(^|\.)(web\.archive\.org|archive\.org|archive\.ph|archive\.today|archive\.is|archive\.li|webcache\.googleusercontent\.com|cachedview\.nl|cachedview\.com|ghostarchive\.org)$/;
 export const host = (url) => { try { return new URL(url).hostname.replace(/^www\./, '').toLowerCase(); } catch { return ''; } };
 // One problem per bad source, numbered as the page numbers its footnotes.
 export function sourceProblems(sources = []) {
@@ -23,6 +28,7 @@ export function sourceProblems(sources = []) {
     if (FORUM.test(h)) out.push(`source ${i + 1} is a forum thread (${h}): back the claim with a regulator, study, analyst or the vendor's own page, or cut it`);
     const weak = Object.keys(WEAK).find((d) => h === d || h.endsWith(`.${d}`));
     if (weak) out.push(`source ${i + 1} is a ${WEAK[weak]} (${h}): use a neutral source`);
+    if (CACHE.test(h)) out.push(`source ${i + 1} is a cached or archived copy (${h}): cite the live page, or drop the claim if the live page no longer says it`);
   });
   return out;
 }

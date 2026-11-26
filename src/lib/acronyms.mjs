@@ -19,6 +19,10 @@ export const JARGON = {
   RMF: 'Risk Management Framework', ROI: 'return on investment', RPA: 'robotic process automation', 'S&OP': 'sales and operations planning',
   SIEM: 'security information and event management', SLA: 'service-level agreement', SOC: 'System and Organization Controls',
   SOX: 'Sarbanes-Oxley', TPA: 'third-party administrator', UI: 'user interface', VAT: 'value-added tax', WAPE: 'weighted absolute percentage error',
+  // Added 26 Nov 2026 from the build thread's insurance and PE batches
+  AMS: 'agency management system', DFS: 'Department of Financial Services', 'E&O': 'errors and omissions',
+  FCC: 'Federal Communications Commission', NAIC: 'National Association of Insurance Commissioners',
+  SEC: 'Securities and Exchange Commission', TCPA: 'Telephone Consumer Protection Act',
 };
 
 const esc = (s) => s.replace(/[&]/g, '\\&');
