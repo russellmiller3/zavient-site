@@ -364,7 +364,7 @@
     },
     {
       "name": "Zavient, About: how we work and what it costs, read 26 Nov 2026",
-      "url": "https://zavient.com/about.html",
+      "url": "/about.html",
       "what": "Free 30-minute diagnostic; fixed-scope 30-day AI Sprint, delivering ranked AI bets, specs, a written case and a 90-day plan; advisory after."
     },
     {
@@ -465,7 +465,7 @@
   "answers": {
     "walk-away": "You should hold one named decision with its money number, a scored baseline and held-back test set, a model in weekly use, readable reasons per score, and a handover[^3][^1][^14].",
     "human-role": "People keep the calls: the person acting on the score can override it, the domain lead reviews the model, an independent checker tests it, and credit officers own declines[^9][^15][^16][^18].",
-    "recipes": "The work takes one of three shapes: a yes-or-no score from your CRM data, a model that drafts a weekly plan, or a glass-box model for a regulated decision[^19][^10][^17].",
+    "recipes": "Start with a yes-or-no score from CRM data, add a model that drafts a weekly plan, and use a glass-box model for regulated decisions.[^19][^10][^17]",
     "what-goes-wrong": "Most pilots stall because the model never reaches the people who would use it, its accuracy decays without upkeep, or its test scores were too good to be true[^28][^7][^11].",
     "benchmark": "Judge an advisor by whether their model beats your current rule on a holdout you locked, with reasons you can read and a handover your team can run[^3][^11][^14].",
     "something-else": "Skip a consultant when your CRM already scores leads, when a rule or spreadsheet will do, or when an analyst can try InterpretML or Google's AutoML first[^20][^3][^6][^34]."

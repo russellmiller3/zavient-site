@@ -4,7 +4,7 @@
 // Checks every Site rule a machine can check: BLUF bullets, question title, footnotes on every claim with 2+ sources
 // on the bottom line, enough sources from enough sites, own data, the type's required blocks, augmentation and
 // no-low-end wording, no leftover TODOs, readability, crossing-page difference test, glossary inbound links, and the
-// ICP review log in order. What it can't check (is the question real, is the source honest) is the reviewers' job.
+// ICP review log in order, lead sentences, superseded rules, rival firms and own-site links. What it can't check (is the question real, is the source honest) is the reviewers' job.
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -13,6 +13,9 @@ import { checkPage as readability } from './check-readability.mjs';
 import { pageAnswerProblems } from '../src/lib/answer-first.mjs';
 import { ownPriceProblems, strings } from '../src/lib/no-own-price.mjs';
 import { sourceProblems } from '../src/lib/source-rules.mjs';
+import { pageLeadProblems } from '../src/lib/lead-rules.mjs';
+import { staleProblems } from '../src/lib/stale-rules.mjs';
+import { rivalProblems } from '../src/lib/rival-firms.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const contentDir = join(root, 'src/content/ai-work');
@@ -55,7 +58,8 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
   const n = (d.sources || []).length;
   const minSrc = MIN[t.minSources || 'sources'];
   if (n < minSrc) fail.push(`needs ${minSrc}+ sources, has ${n}`);
-  const domains = new Set((d.sources || []).map((s) => { try { return new URL(s.url).hostname.replace(/^www\./, ''); } catch { return s.url; } }));
+  // A root-relative link is our own page: it counts as one site, zavient.com, however many of them there are.
+  const domains = new Set((d.sources || []).map((s) => { if (String(s.url).startsWith('/')) return 'zavient.com'; try { return new URL(s.url).hostname.replace(/^www\./, ''); } catch { return s.url; } }));
   if (domains.size < Math.min(MIN.domains, minSrc)) fail.push(`sources come from only ${domains.size} sites (want ${MIN.domains}+)`);
   const used = new Set(fns(allText(d)));
   for (const k of used) if (k < 1 || k > n) fail.push(`footnote [^${k}] points at no source`);
@@ -91,6 +95,15 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
 
   // Answer-first rule (Russell, 26 Nov 2026): every question heading answered in the first sentence under it
   for (const p of pageAnswerProblems(d)) fail.push(`answer first: ${p}`);
+  // Every lead text says the thing: no meta pointers, no two answers joined by a semicolon, no restated heading (26 Nov 2026)
+  for (const p of pageLeadProblems(d)) fail.push(`lead: ${p}`);
+  // Superseded rules (SR 11-7, withdrawn CFPB circulars) never cited as current (26 Nov 2026)
+  for (const p of staleProblems(d)) fail.push(`stale rule: ${p}`);
+  // No rival consulting firm offered or priced, no consultant fee ranges (26 Nov 2026)
+  for (const p of rivalProblems(d)) fail.push(`rival firm: ${p}`);
+  // Links to our own pages are root-relative ("/about.html"), so previews and a domain move keep working (26 Nov 2026)
+  const own = JSON.stringify(d).match(/https?:\/\/(?:www\.)?zavient\.com[^"\s]*/i);
+  if (own) fail.push(`absolute link to our own site (${own[0]}): use the root-relative path, e.g. "/about.html"`);
 
   // No Zavient price or range anywhere (Russell, 26 Nov 2026); market prices with a source stay
   for (const str of strings(d)) for (const p of ownPriceProblems(str)) fail.push(p);

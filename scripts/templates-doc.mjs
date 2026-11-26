@@ -36,6 +36,10 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: \
 - No Upwork, freelancer marketplaces, hourly rates or rival consulting firms.
 - No forum threads, rival consulting firms or content farms as sources; the page check fails them.
 - Every fix is structural: it goes into the template or a failing page check, so it can't come back on any page.
+- Every lead text says the thing: no meta pointers, no restated heading, no semicolon joining two answers (src/lib/lead-rules.mjs).
+- Superseded rules (SR 11-7, withdrawn CFPB circulars) always name their replacement or say withdrawn (src/lib/stale-rules.mjs).
+- No rival consulting firm offered or priced, and no consultant fee ranges (src/lib/rival-firms.mjs).
+- Own-site links are root-relative; page JSON keeps its own indent and ends in a newline.
 - \`npm run build\` runs the page check and every test, so a failing indexed page stops the deploy.
 - Teach, then trust, then the lead: alternatives sit after "Buy or build", just above the free diagnostic.
 - The free diagnostic shows in four spots, worded for the page type: under the bottom line, beside the tool or own data, in a sticky contents box, and at the end.

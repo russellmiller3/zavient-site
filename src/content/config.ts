@@ -5,7 +5,10 @@ import { TYPES, COMMON_REQUIRED, MIN } from '../lib/page-types.mjs';
 // One AI-work page = one JSON file in src/content/ai-work. The schema is strict on purpose: these pages are
 // written and refreshed by an AI, so a missing source, a missing offer or a malformed field fails the build
 // instead of shipping. Keyword fields are for planning and are never rendered.
-const link = z.object({ name: z.string().min(2), url: z.string().url(), what: z.string().min(10) });
+// A link is a full https address, or a root-relative path to one of our own pages ("/about.html#engagements"), never
+// https://zavient.com/... (26 Nov 2026: own-site links stay relative so previews and a domain move keep working).
+const href = z.string().refine((u) => /^\/(?!\/)/.test(u) || /^https?:\/\/[^/\s]+\.[^/\s]+/.test(u), 'a full URL or a root-relative path');
+const link = z.object({ name: z.string().min(2), url: href, what: z.string().min(10) });
 const aiwork = defineCollection({
   loader: glob({ pattern: '**/*.json', base: './src/content/ai-work' }),
   schema: z.object({
@@ -62,11 +65,11 @@ const aiwork = defineCollection({
     ownData: z.object({ title: z.string(), intro: z.string(), headers: z.array(z.string()), rows: z.array(z.array(z.string())), note: z.string() }).optional(),
     tables: z.array(z.object({
       title: z.string(), intro: z.string(), headers: z.array(z.string()),
-      rows: z.array(z.object({ name: z.string(), url: z.string().url().optional(), cells: z.array(z.string()) })),
+      rows: z.array(z.object({ name: z.string(), url: href.optional(), cells: z.array(z.string()) })),
       note: z.string().optional(),
     })).default([]),
     recipes: z.array(z.object({ name: z.string(), when: z.string(), flow: z.array(z.string()).min(2), cost: z.string() })).default([]),
-    rules: z.array(z.object({ name: z.string(), url: z.string().url(), status: z.string(), what: z.string() })).default([]),
+    rules: z.array(z.object({ name: z.string(), url: href, status: z.string(), what: z.string() })).default([]),
     spokes: z.array(z.object({ slug: z.string(), why: z.string() })).default([]),
     offer: z.object({ heading: z.string(), body: z.string() }).optional(),
     recipesTitle: z.string().default('Three ways to build it'),

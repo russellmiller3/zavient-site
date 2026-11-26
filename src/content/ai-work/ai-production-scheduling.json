@@ -815,9 +815,9 @@
   "answers": {
     "human-role": "Your planner approves every schedule before release and can override any move, with the reason logged.[^4][^2] Supervisors confirm what the floor can run, and the operations manager sets the rules the software follows.[^9][^15]",
     "team-after": "Planners stop building the schedule by hand and work exceptions instead: late orders, material gaps, what-ifs and what to tell customers.[^9][^19]",
-    "example": "The software proposes a new sequence, moves the down machine's jobs to other machines, and costs the fixes; the planner picks one and releases it.[^16][^21][^4]",
-    "table-1": "Small shops fit ERP schedulers such as Business Central, Odoo or MRPeasy; plants with many changeovers fit stand-alone schedulers such as SkyPlanner, EDGEBIC or PlanetTogether.[^25][^7][^24][^29][^8][^30] Plants with unusual rules can build on frePPLe or a free solver.[^32][^41]",
-    "table-2": "The one independent case, from NIST MEP, cut lead time from 12-14 weeks to 5 after fixing routings first; vendor cases claim gains such as 25% fewer changeovers.[^3][^36]",
+    "example": "The software proposes a new sequence, moves the down machine's jobs to other machines, and costs the fixes. The planner picks one and releases it.[^16][^21][^4]",
+    "table-1": "Small shops fit ERP schedulers such as Business Central, Odoo or MRPeasy. Plants with many changeovers fit stand-alone schedulers such as SkyPlanner, EDGEBIC or PlanetTogether.[^25][^7][^24][^29][^8][^30] Plants with unusual rules can build on frePPLe or a free solver.[^32][^41]",
+    "table-2": "The one independent case, from NIST MEP, cut lead time from 12-14 weeks to 5 after fixing routings first. Vendor cases claim gains such as 25% fewer changeovers.[^3][^36]",
     "recipes": "Small shops fit their ERP's own scheduler, plants with many changeovers fit a stand-alone scheduler, and data-rich plants with unusual rules can build on a free solver.[^41]",
     "own-data": "Year-one list licenses for a 100-person shop ran from about $1,494 (Odoo Standard) to a $25,000 one-time license (EDGEBIC), and five of 12 tools publish no usable price.[^7][^8]",
     "rules": "The EU AI Act makes AI that assigns tasks to workers high-risk from 2 Dec 2027, and Chicago's Fair Workweek Ordinance requires 14 days' shift notice.[^47][^49] Neither covers sequencing machines alone.",

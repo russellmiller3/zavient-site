@@ -94,6 +94,11 @@ Reader: lower-middle-market firm, 40-500 staff. Division head for this page: ${r
 - **Augmentation, not replacement**: the "Where does your team stay in charge?" block is required. No headcount-cut language.
 - **No Upwork, freelancer marketplaces, hourly rates or rival consulting firms.**
 - **No forum threads (Reddit, Quora, community forums), rival consulting firms or content farms as sources.** Note where a buyer's question was seen in the draft notes, not the source list. The page check fails these (src/lib/source-rules.mjs).
+- **Every lead says the thing.** No meta pointers ("The work takes three shapes", "There are several options", "Below is"), no first paragraph opening "It" or "These", no first sentence that only restates its heading, and no answers[...] first sentence joining two answers with a semicolon. Checked in recipe "when" and "cost", table intros, the summary and the offer body too (src/lib/lead-rules.mjs).
+- **Superseded rules name their replacement.** SR 11-7 was replaced by SR 26-2 (17 Apr 2026); CFPB circulars 2022-03 and 2023-03 were withdrawn (12 May 2025). Say so wherever they appear; add new cases to src/lib/stale-rules.mjs.
+- **No rival consulting firm as an option or with a price, and no consultant, agency or retainer fee ranges.** A firm's survey, cited as evidence, is fine (src/lib/rival-firms.mjs).
+- **Links to our own pages are root-relative** ("/about.html"), never https://zavient.com/...
+- **Save the JSON at the file's own indent**, JSON.stringify(data, null, n) plus a newline, so a fix stays a small diff.
 - **Every fix goes into the template or the page check, never just the page.** If you fix a page, add the rule or test that stops the same mistake on every page.
 - **Teach, then trust, then the lead**: the block order below is fixed. "When to pick something else" sits after "Buy or build", just above the free diagnostic.
 - **Own data** (except tool pages, where the tool is the fact): one table only Zavient has (a benchmark, a job-ad count, a dated price check, a worked example). It must differ from every sibling page's.

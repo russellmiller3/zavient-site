@@ -549,13 +549,13 @@
   },
   {
    "name": "Zavient FinExtractBench (Nov 2026)",
-   "url": "https://zavient.com/ai-work/ai-document-processing.html#own-data",
+   "url": "/ai-work/ai-document-processing.html#own-data",
    "what": "Our document benchmark: fund reports read for about $0.006 to $0.27 each, depending on the models used."
   },
   {
    "name": "CFPB Circular 2022-03",
    "url": "https://www.consumerfinance.gov/compliance/circulars/circular-2022-03-adverse-action-notification-requirements-in-connection-with-credit-decisions-based-on-complex-algorithms/",
-   "what": "Complex algorithms are no defence for failing to give specific, accurate decline reasons."
+   "what": "Withdrawn by the CFPB on 12 May 2025. It said complex algorithms are no defence for vague decline reasons, and Regulation B still requires specific reasons."
   },
   {
    "name": "CFPB, Regulation B 12 CFR 1002.5",
@@ -702,13 +702,13 @@
  "testTitle": "How do you benchmark an AI credit model before you trust it?",
  "answers": {
   "example": "Lenders feed the application and a credit bureau report into a model that returns a score and an approve-or-decline decision, plus plain-word reasons for any decline[^5][^1]. A credit officer sets the cutoff, and one named person sends each decline letter[^1].",
-  "recipes": "Small lenders should start with a points scorecard; mid-size lenders with validators can use a stronger model with plain-English reasons; document-heavy lenders should use AI to read files[^16][^7][^34].",
+  "recipes": "Small lenders should start with a points scorecard. Mid-size lenders with validators can use a stronger model with plain-English reasons; document-heavy lenders should use AI to read files[^16][^7][^34].",
   "rules": "In the US, Regulation B and the Fair Credit Reporting Act govern decline notices, and Fed SR 26-2 covers model validation at larger banks[^1][^38][^7]. In the EU, the AI Act treats credit scoring as high-risk from 2 Dec 2027[^4][^10].",
   "benchmark": "Fit a scorecard, an EBM and LightGBM on the same booked loans, compare them on held-out loans, price the lift at your cutoff, and run a bias check[^43][^37]. Pick the simplest model within a point or two of the best.",
   "what-goes-wrong": "AI credit scoring goes wrong when lenders use a credit report's key factors or raw SHAP output as decline reasons, carry past bias forward, or trust vendor lift numbers[^1][^33][^31][^17].",
   "something-else": "A lender should pick something else when it has no data science team, many thin-file applicants, or mostly document-reading work[^17][^32][^34]. Those point to a vendor platform, cash-flow data, or document extraction first[^18][^26][^34].",
   "human-role": "The underwriter keeps each loan decision between the approve and decline cutoffs, and any override, inside rules the chief credit officer sets[^48][^51]. Compliance owns each decline letter, and an independent validator checks the model before first use[^1][^7].",
   "team-after": "After AI scores the file, underwriters work the gray zone and overrides, credit officers review a monthly override report, compliance tests overrides for fair lending, and modelers watch for drift[^48][^43][^49][^7].",
-  "buy-or-build": "Buy a platform when you have no modelling team and need a decision engine anyway; build your own model when your loan history is your edge[^17][^18][^7]. The scorecard, explainable-model and bias-check software for building is free and open source[^45][^47][^46]."
+  "buy-or-build": "Buy a platform when you have no modelling team and need a decision engine anyway. Build your own model when your loan history is your edge[^17][^18][^7]. The scorecard, explainable-model and bias-check software for building is free and open source[^45][^47][^46]."
  }
 }

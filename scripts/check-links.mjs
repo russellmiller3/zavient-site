@@ -8,7 +8,8 @@ const links = [];
 for (const dir of ['ai-work']) {
   for (const f of readdirSync(join(root, 'src/content', dir)).filter((x) => x.endsWith('.json'))) {
     const d = JSON.parse(readFileSync(join(root, 'src/content', dir, f), 'utf8'));
-    for (const l of [...(d.resources || []), ...(d.sources || [])]) links.push({ page: `${dir}/${f}`, url: l.url });
+    // Root-relative links are our own pages; tests/own-links.test.mjs checks they exist in the build.
+    for (const l of [...(d.resources || []), ...(d.sources || [])]) if (!String(l.url).startsWith('/')) links.push({ page: `${dir}/${f}`, url: l.url });
   }
 }
 const uniq = [...new Set(links.map((l) => l.url))];
