@@ -10,7 +10,7 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: `
 1. `node scripts/new-page.mjs --type <type> --slug <slug> --topic "<topic>" --job "<job>"` writes a skeleton JSON, a research skeleton and a research brief to `drafts/`.
 2. A research agent fills `drafts/<slug>.research.md`, one line per finding with its URL and read date, until `node scripts/check-research.mjs` passes. A separate writer agent fills the JSON from it.
 3. `node scripts/check-page.mjs drafts/<slug>.json` until PASS.
-4. Source-claim check: a separate agent runs `NODE_USE_ENV_PROXY=1 node scripts/check-source-figures.mjs drafts/<slug>.json`, opens every cited source it couldn't read, confirms each states the claim with the same figure, group and date, and logs `sourceCheck` (the page check warns until it does, and a logged page must have every figure in its source's note).
+4. Source-claim check: a separate agent runs `NODE_USE_ENV_PROXY=1 node scripts/check-source-figures.mjs drafts/<slug>.json`, opens every cited source it couldn't read, confirms each states the claim with the same figure, group and date, and logs `sourceCheck` (the page check warns until it does; a new page must have every figure in its source's note).
 5. ICP review, in order: COO → Head of operations → GM → Division head → Owner-CEO.
 6. Move the JSON to `src/content/ai-work/`, `npm test`. `index: true` only on Russell's yes.
 7. Look at it in a live browser. Screenshot the built page at 1280px and 390px wide and check every block by eye: flows, tables, footnotes, the sticky box, buttons. A visual change is not done until those screenshots look right, and they go with the report (Russell's rule, 26 Nov 2026).

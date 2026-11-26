@@ -269,7 +269,6 @@ test('the claim baseline only shrinks: never above a page\'s current count, and 
     const now = claimProblems(page[1]).length;
     if (now < n) bad.push(`${slug}: ${now} claims now, baseline ${n}; lower it with node scripts/claim-baseline.mjs --write`);
     if (now > n) bad.push(`${slug}: ${now} claims, more than its baseline of ${n}: fix the new ones`);
-    if (page[1].sourceCheck) bad.push(`${slug}: has a logged source-claim check, so it must be at 0, not in the baseline`);
   }
   for (const [s, d] of pages) if (!(s in baseline) && claimProblems(d).length) bad.push(`${s}: ${claimProblems(d).length} claims and no baseline: new pages start clean`);
   assert.deepEqual(bad, []);

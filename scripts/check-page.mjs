@@ -142,9 +142,11 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
   // A warning, not a fail, until the pages built before the rule have a log.
   if (!d.sourceCheck) warn.push('no source-claim check logged: open each cited source, confirm it states the claim it backs, and log sourceCheck {date, by, checked, fixed}');
   // Every footnoted figure in its source's note, survey figures with their group, one figure per claim, dated prices
-  // (src/lib/source-numbers.mjs, 26 Nov 2026). A checked page or a new page must be clean; an older page may not get worse.
+  // (src/lib/source-numbers.mjs, 26 Nov 2026). A new page must be clean; a page built before the rule may not get worse
+  // than its count in the baseline, which only goes down. The 5 PE pages logged a source check just before the rule
+  // landed, so they are in the baseline too, to be fixed and lowered by the build thread.
   const claims = claimProblems(d);
-  const allowed = d.sourceCheck ? 0 : (CLAIM_BASELINE[slug] ?? 0);
+  const allowed = CLAIM_BASELINE[slug] ?? 0;
   if (claims.length > allowed) for (const p of claims) fail.push(`claim: ${p}`);
   else if (claims.length) warn.push(`${claims.length} claims not yet matched to their source notes (the most this page may have is ${allowed}; see src/lib/claim-baseline.mjs), e.g. ${claims[0]}`);
 

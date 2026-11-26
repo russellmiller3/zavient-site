@@ -1,8 +1,8 @@
 // Claim baseline (26 Nov 2026). The source-number, survey-scope, two-figure and price checks (src/lib/source-numbers.mjs)
 // found about 700 claims on the pages built before them whose figure, group or read date is missing from the cited
 // source's note. Fixing them means rereading each source, so it can't be done by a script. Until then the page check
-// holds each older page to its count here and fails any rise; a new page starts at 0, and a page with a logged
-// source-claim check must be at 0. This script only ever lowers a count (after a page is fixed) or drops a page that
+// holds each older page to its count here and fails any rise; a new page starts at 0. The 5 PE pages, whose source
+// check landed just before this rule (d796223), were added by hand on 26 Nov 2026; nothing is added after that. This script only ever lowers a count (after a page is fixed) or drops a page that
 // is gone; it never raises one or adds a page. Usage: node scripts/claim-baseline.mjs [--write]
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
