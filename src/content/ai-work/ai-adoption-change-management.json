@@ -1,0 +1,518 @@
+{
+  "title": "AI adoption and change management: what should you walk away with?",
+  "description": "Why AI seats go unused at firms of 40 to 500 staff, and how to redesign the work to make AI the default.",
+  "type": "consulting",
+  "templateVersion": 1,
+  "topic": "AI adoption and change management",
+  "job": "AI adoption and change management",
+  "industry": "any industry",
+  "index": true,
+  "verdict": [
+    "Buying seats rarely changes the work. Most AI-using firms changed nothing else; top performers redesign workflows.[^1][^2]",
+    "Manager backing and clear encouragement drive use more than courses do.[^3][^4]",
+    "Most staff rank learning from peers among their top ways to build AI skill. Name a champion in each team.[^5][^6]",
+    "Measure use from your admin report, then time the work. Logins are not results.[^7][^8]",
+    "Say plainly that AI is there to help people. Few AI-using firms have shed jobs because of it.[^1][^6]"
+  ],
+  "onPage": [],
+  "headings": {},
+  "answers": {
+    "walk-away": "You should walk away with ranked workflows, a champion per team, a baseline, written manager expectations and a plan your team runs alone.[^2][^8]",
+    "spokes": "Start with strategy help if nobody has picked the workflows; choose training, rules or measurement help when that is where use stalls.[^9][^4]",
+    "human-role": "Your people keep the decisions, the checks and the sign-off, while AI drafts, sorts and does a first check.[^6][^2]",
+    "recipes": "The work takes one of three shapes by firm size: one team in 90 days, three functions over two quarters, or several sites tied to governance.[^1][^10]",
+    "what-goes-wrong": "Most AI pilots stall because the tool arrives while the work, the manager's asks and the measure stay the same.[^1][^11]",
+    "benchmark": "Judge any AI advisor by whether they start from your own usage report and baseline, and can source every number they quote.[^7][^8]",
+    "something-else": "Skip outside help when the gap is a skill, a rule or a single process rather than the way a team works.[^4][^12]"
+  },
+  "summary": "AI adoption and change management makes an AI tool the normal way a team does a task.[^1][^2] AI drafts, sorts or checks; the steps, manager asks and measures change around it.[^2][^8] Managers who back it and a workflow that expects it make or break it.[^3][^11]",
+  "walkAway": [
+    "A ranked list of three to five workflows where AI becomes the default step, with old and new steps written down. Workers name an unclear use case as the top barrier.[^9][^2]",
+    "A named champion in each pilot team, with time protected and a simple charter. In one consultancy survey, 69% put peer learning in their top three ways to build AI skills.[^5][^6]",
+    "A baseline on each workflow: today's time and error rate, plus the active-user rate (seat holders who used it) from your admin report. Fewer than one in five firms track well-defined AI measures, the practice most linked to profit.[^8][^7]",
+    "Written manager expectations and a plain statement on jobs. Only 26% of workers say a clear AI plan was shared, and 52% are worried about AI's impact.[^11][^13]",
+    "A 90-day plan your team runs without outside help: review dates, who checks output and what to stop doing. Most firms are still working out how to use the AI they give staff.[^14]"
+  ],
+  "spokes": [
+    {
+      "slug": "ai-strategy-consulting",
+      "why": "Pick this when nobody has chosen which workflows matter. An unclear use case is the top barrier workers name, and only 16% strongly agree their AI tools are useful.[^9]"
+    },
+    {
+      "slug": "ai-training-for-employees",
+      "why": "Pick this when people want to use AI but lack the skill. Training alone does not predict use, so pair it with the work changes on this page.[^4]"
+    },
+    {
+      "slug": "ai-governance-consulting",
+      "why": "Pick this when staff don't know what is allowed. In a global survey, 66% of workers were unsure whether their AI use was allowed.[^12]"
+    },
+    {
+      "slug": "data-analytics-consulting",
+      "why": "Pick this when you can't measure the before and after. Fewer than one in five firms track well-defined measures for generative AI.[^8]"
+    },
+    {
+      "slug": "ai-automation-consulting",
+      "why": "Pick this when one task repeats with clear inputs and needs nobody to prompt it. Most firms start by helping staff: 66% of firms with changed tasks only assisted people.[^1]"
+    },
+    {
+      "slug": "generative-ai-consulting",
+      "why": "Pick this when the open question is which AI plan to buy first. Business seats list at about $20 to $25 a user a month.[^15][^16]"
+    }
+  ],
+  "humanRole": [
+    "COO or sponsor: picks the workflows and owns the measure. High performers are about twice as likely to have committed leaders and defined ways to measure impact.[^2]",
+    "Team manager: sets the expectation, gives time to practise and protects people who use AI openly.[^17] Strong manager support makes frequent use 2.1 times as likely.[^3]",
+    "Process owner (controller, ops lead or team lead): checks AI output before it reaches a customer, a ledger or a regulator. One firm in a New York Fed report runs payables and receivables with a person in the loop.[^6]",
+    "Peer champion: shows real examples and passes problems back to IT and managers, without policing anyone.[^6] Controlling messages from people leading a change lower readiness for it.[^18]"
+  ],
+  "recipes": [
+    {
+      "name": "1. One team on a 90-day roadmap (about 40 to 100 staff)",
+      "when": "Pick this if you bought seats and use stays low. Workers name an unclear use case as the top barrier, so start with two real outputs.[^9][^1]",
+      "flow": [
+        "COO: pick one team and two workflows with a clear output, such as quotes or client emails",
+        "Ops lead: time ten examples of each today and log rework, as the baseline",
+        "Team manager: name one champion and protect about two hours a week for them",
+        "Champion: run a weekly 30-minute show-and-tell on real work and collect prompts that worked",
+        "Process owner: rewrite the checklist so 'AI first draft, person checks' is the default step",
+        "IT admin: turn on the admin usage report and share team numbers, not individual rankings",
+        "COO: review at day 30, 60 and 90 against the baseline, then keep, change or stop"
+      ],
+      "cost": "Seats for 15 users: $300 to $375 a month on ChatGPT Business or Claude Team, list prices read 26 Nov 2026.[^15][^16] Champion time is about $108 a week of your own staff cost, at the US average employer cost per hour worked.[^19]"
+    },
+    {
+      "name": "2. Three functions and a champion network over two quarters (about 100 to 250 staff)",
+      "when": "Pick this when use is scattered and nobody shares a way of working. Most AI-using firms (57%) use it in three or fewer functions.[^1]",
+      "flow": [
+        "COO and function heads: rank six to ten candidate workflows by volume and pain, and pick one per function",
+        "Process owners: map current steps, and mark where AI drafts, sorts or checks and where a person signs off",
+        "HR lead: update role descriptions or standard procedures so the new step is part of the job",
+        "Managers: state the expectation in team meetings and say what AI will not be used for",
+        "Champions, one per team: hold a monthly cross-team session and log blockers to IT and the person who owns AI rules",
+        "IT admin: group users by team in the admin console and share team numbers monthly, never individual rankings",
+        "Ops lead: rerun the timed baseline at 90 and 180 days",
+        "COO: decide which workflows scale, and expect a dip before gains"
+      ],
+      "cost": "Seats for 100 to 250 users: $2,000 to $6,250 a month at $20 to $25 each; Claude Team stops at 150 seats.[^15][^16][^20] Ten champions at two hours a week cost about $1,080 a week of staff time.[^19]"
+    },
+    {
+      "name": "3. Several sites, tied to governance and manager training (about 250 to 500 staff)",
+      "when": "Pick this when use is uneven across sites. About 37% of US firms with 250 or more staff use AI.[^10]",
+      "flow": [
+        "COO and governance owner: publish an allowed-tools list and data rules",
+        "Site GMs: pick two workflows per site from a shared list, name a site champion and own the site baseline",
+        "HR or training lead: run manager sessions on backing AI use and judging its output",
+        "IT admin: with 50 or more Copilot licences, use the dashboard's trendlines and manager view",
+        "Champions: run a peer network across sites and share one worked example a fortnight",
+        "Finance or ops lead: price the lift on each workflow, hours saved times employer cost, at 90 and 180 days",
+        "COO: retire tools that stay unused and move idle seats to teams that use them"
+      ],
+      "cost": "Copilot Business lists at $21 a user a month billed yearly, $18 on offer to 31 Dec 2026, for up to 300 users.[^21] For scale, surveyed firms planned $2,068 of AI spend per employee in 2026.[^22]"
+    }
+  ],
+  "ownData": {
+    "title": "What can the AI tools you already pay for tell you about who uses them?",
+    "intro": "Every plan we checked shows admins each person's activity; none measures whether the work got faster or better.[^23][^7][^24] We read each vendor's admin help pages on 26 Nov 2026. For each, we logged who sees the report, what it counts, per-person detail and the limits.",
+    "headers": [
+      "Tool and plan",
+      "Who sees it",
+      "What it counts",
+      "Per-person detail",
+      "Limits worth knowing"
+    ],
+    "rows": [
+      [
+        "ChatGPT Business[^23]",
+        "Workspace owners and admins.[^25]",
+        "Active users, messages and credits, over 7 days to 12 months.[^23]",
+        "A member-level table you can search and filter.[^23]",
+        "Admins don't read chats.[^26] We found no team-group view in the Business docs.[^23]"
+      ],
+      [
+        "ChatGPT Enterprise or Edu[^27]",
+        "Admins, owners and an analytics-viewer role.[^27]",
+        "Weekly and unique active users, and seats enabled and activated.[^27]",
+        "Per-user CSV, power users, group views and impact surveys.[^27]",
+        "No message text; the heat map hides groups under 10. Needs an Enterprise contract.[^27]"
+      ],
+      [
+        "Claude Team[^24]",
+        "Owners and Primary Owners.[^24]",
+        "Weekly active members against assigned seats.[^24]",
+        "Members and groups views, and a per-user spend export up to 90 days back.[^24]",
+        "Members see their own usage by default since 11 Jul 2026. Data runs to yesterday.[^24]"
+      ],
+      [
+        "Claude Enterprise[^24]",
+        "Owners, Primary Owners and Admins; Admins can't see spend.[^24]",
+        "As Team, plus product analytics and surveys.[^24]",
+        "As Team, plus an Analytics API.[^28]",
+        "Needs an Enterprise contract.[^24]"
+      ],
+      [
+        "Microsoft 365 Copilot usage report[^7]",
+        "Microsoft 365 admins.[^7]",
+        "Enabled and active users, active-user rate and prompts, over 7 to 180 days.[^7]",
+        "Last activity per user, with CSV export.[^7]",
+        "User names hidden by default. Data can lag up to 48 hours.[^7]"
+      ],
+      [
+        "Microsoft Copilot Dashboard (Viva Insights)[^29]",
+        "Leaders and managers given access.[^29]",
+        "Active users over 28 days, assisted hours and satisfaction.[^29]",
+        "Group views only, with a minimum group size.[^29]",
+        "Under 50 Copilot licences: no trendlines, benchmarks or manager view. Up to 6 days' delay.[^29]"
+      ],
+      [
+        "GitHub Copilot Business or Enterprise[^30]",
+        "Organization and enterprise owners.[^30]",
+        "Daily and weekly active users, and suggestion acceptance rate.[^30]",
+        "User-level data through the API.[^30]",
+        "Only matters if you employ developers.[^30]"
+      ]
+    ],
+    "note": "Source: each vendor's own admin help pages, read 26 Nov 2026; we did not log in to any console. We left out Gemini for Google Workspace because its help page would not load when we re-checked it. Active users show use, not better work; the closest measures are survey scores and Microsoft's assisted-hours figure."
+  },
+  "watchOuts": [
+    "Seats bought, work unchanged: 64% of AI-using firms made no organizational changes. Pick named workflows and rewrite the steps before rollout.[^1][^8]",
+    "No manager backing and no plan: only 26% of workers say a clear AI plan was shared. Managers should state the expectation and protect practice time.[^11][^4]",
+    "Use goes underground: 61% of workers avoided revealing their AI use. Publish what is allowed, reward open use, and check the output rather than whether AI was used.[^12][^1]",
+    "A quiet penalty for users: in four experiments with 4,439 people, AI users were rated less competent. Leaders and champions should use it visibly and credit it in reviews.[^17]",
+    "Counting logins as success, then quitting in the dip: firms often lose performance before AI gains show. Set a baseline, give it 90 days, and judge the work.[^31][^32]",
+    "Fear for jobs: 52% of US workers are worried about AI's impact at work. Say what AI will and won't be used for, and that most firms use it to help staff.[^13][^1]"
+  ],
+  "howToTest": [
+    "Pull your own admin usage report first, and ask the advisor to read it with you before proposing anything.[^7][^27]",
+    "Record today's numbers on two workflows: time per item, rework rate and volume.[^8]",
+    "Ask what changes in the work, not which tool. A good answer names steps and roles.[^2][^1]",
+    "Ask where every failure rate comes from. The '70% of change fails' line has no evidence base, and the MIT '95% of pilots fail' figure is disputed.[^33][^34]",
+    "Hold out one team doing the same work without the change for 60 to 90 days, and expect an early dip.[^32][^31]",
+    "Price the lift: hours saved a month, times your employer cost per hour (US average $54.00), times staff in scope, minus seat costs.[^19][^15]",
+    "Ask what staff will be told about usage reports, and refuse individual leaderboards.[^17][^12]",
+    "Check the handover: named champions, written workflows and a review calendar your team runs.[^14]",
+    "Ask how they avoid the ban-or-mandate trap. Bans sharply cut use, and controlling messages lower readiness for change.[^35][^18]"
+  ],
+  "faq": [
+    {
+      "q": "Why aren't employees using the AI tools we bought?",
+      "a": "Usually because nothing else changed: the workflow, the manager's asks and the measure stayed the same.[^1] Workers name an unclear use case as the top barrier.[^9]"
+    },
+    {
+      "q": "How do you measure AI adoption?",
+      "a": "Start with the active-user rate in your tool's admin report, then time a few real tasks before and after.[^7][^23] Usage shows who uses it; the timed task shows whether the work improved.[^8]"
+    },
+    {
+      "q": "Should we make AI use mandatory?",
+      "a": "No: expect and encourage use, but don't set a usage quota. Employer encouragement is linked to higher use.[^4][^36] Controlling messages lower people's readiness for change.[^18]"
+    },
+    {
+      "q": "What does an AI champion actually do?",
+      "a": "An AI champion shows colleagues how they use AI on real work and passes problems back to IT and managers.[^6] Workers rank peer learning highly, and in one small Columbia study most users said they learned mainly from peers.[^5][^37]"
+    },
+    {
+      "q": "Is AI adoption the same as AI training?",
+      "a": "No: training builds the skill, while adoption changes the work so the skill gets used.[^4] Encouragement and access to tools predict use; training alone does not.[^4]"
+    },
+    {
+      "q": "Will AI adoption mean job cuts?",
+      "a": "Not often, so far: 4% of US service firms laid off workers because of AI.[^6] AI-related employment fell at 2.0% of AI-using firms and rose at 2.3%.[^1]"
+    }
+  ],
+  "pickElse": [
+    "The gap is skill, not habit: people want to use AI but don't know how. Buy hands-on training, or start with the vendor's free materials.[^4]",
+    "You run Microsoft 365 with a few dozen seats: use Microsoft's free Copilot adoption guidance in-house (vendor material).[^38]",
+    "One repeatable process with clear inputs: automate it instead of changing habits. Most firms use AI on only a few tasks, so one process is a normal start.[^1]",
+    "Nobody knows what is allowed: write the AI use policy and data rules first. In a global survey, 66% of workers were unsure whether their AI use was allowed.[^12]"
+  ],
+  "resources": [
+    {
+      "name": "US Census Bureau, Business Trends and Outlook Survey data",
+      "url": "https://www.census.gov/hfp/btos/data",
+      "what": "AI use by firm size, updated every two weeks, to compare your firm with peers."
+    },
+    {
+      "name": "Gallup, Global Indicator: artificial intelligence",
+      "url": "https://www.gallup.com/699797/indicator-artificial-intelligence.aspx",
+      "what": "Worker use and manager-support benchmarks to compare with your own short staff survey."
+    },
+    {
+      "name": "Microsoft Learn, Microsoft 365 Copilot usage report",
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-usage?view=o365-worldwide",
+      "what": "How to turn on and read the Copilot admin report (vendor documentation)."
+    },
+    {
+      "name": "Anthropic Help Center, usage analytics for Team and Enterprise",
+      "url": "https://support.claude.com/en/articles/12883420-view-usage-analytics-for-team-and-enterprise-plans",
+      "what": "The same for Claude plans, including what members can see (vendor documentation)."
+    },
+    {
+      "name": "OECD, The impact of AI on the workplace: case studies of AI implementation (2023)",
+      "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2023/03/the-impact-of-ai-on-the-workplace-evidence-from-oecd-case-studies-of-ai-implementation_b4c2c6ee/2247ce58-en.pdf",
+      "what": "What involving staff early did in real firms' AI rollouts."
+    }
+  ],
+  "stats": [
+    {
+      "num": "64%",
+      "label": "AI-using US firms that made no organizational changes to go with it.[^1]",
+      "source": "US Census Bureau, CES-WP-26-25R, Oct 2026"
+    },
+    {
+      "num": "19.8%",
+      "label": "US firms using AI as of 3 May 2026, rising to 37% at 250 or more staff.[^10]",
+      "source": "US Census Bureau, May 2026"
+    },
+    {
+      "num": "2.1 times",
+      "label": "How much more likely frequent AI use is with strong manager support.[^3]",
+      "source": "Gallup, Nov 2025"
+    },
+    {
+      "num": "61%",
+      "label": "Workers who avoided revealing their AI use, in a survey of 32,352.[^12]",
+      "source": "KPMG and University of Melbourne, 2025"
+    },
+    {
+      "num": "26%",
+      "label": "Workers who say their employer communicated a clear AI plan.[^11]",
+      "source": "Gallup Global Indicator, 2026"
+    },
+    {
+      "num": "4%",
+      "label": "US service firms that laid off workers because of AI.[^6]",
+      "source": "Federal Reserve Bank of New York, Sep 2026"
+    }
+  ],
+  "sources": [
+    {
+      "name": "US Census Bureau, The microstructure of AI diffusion (CES-WP-26-25R), Bonney and others, revised Oct 2026",
+      "url": "https://www2.census.gov/ces/wp/2026/CES-WP-26-25R.pdf",
+      "what": "64% of AI-using firms made no organizational changes; 57% use AI in three or fewer functions; where tasks changed, 66% of firms only assisted staff; AI-related employment fell at 2.0% of firms and rose at 2.3%."
+    },
+    {
+      "name": "McKinsey, The state of AI, 25 Aug 2026 (consultancy survey, 1,719 respondents)",
+      "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
+      "what": "Nearly three-quarters of high performers fundamentally redesign workflows, against about a quarter of others; high performers are about twice as likely to have committed leaders and defined ways to measure impact."
+    },
+    {
+      "name": "Gallup, Manager support drives employee AI adoption, 8 Nov 2025",
+      "url": "https://www.gallup.com/workplace/694682/manager-support-drives-employee-adoption.aspx",
+      "what": "Strong manager support makes frequent AI use 2.1 times as likely."
+    },
+    {
+      "name": "Bick, Blandin, Deming, Fuchs-Schündeln and Jessen, Mind the gap: AI adoption in Europe and the US, NBER working paper w34995, Mar 2026",
+      "url": "https://www.nber.org/papers/w34995",
+      "what": "Employer encouragement and tool provision predict worker AI use, while training alone does not; encouragement explains nearly all of the US-Europe adoption gap."
+    },
+    {
+      "name": "BCG, The AI adoption puzzle, Dec 2025 (consultancy survey)",
+      "url": "https://www.bcg.com/publications/2025/ai-adoption-puzzle-why-usage-up-impact-not",
+      "what": "69% rank peer-to-peer learning among their top three ways to build AI skills."
+    },
+    {
+      "name": "Federal Reserve Bank of New York, Liberty Street Economics: Businesses are using AI to transform work, not cut jobs, 1 Sep 2026",
+      "url": "https://libertystreeteconomics.newyorkfed.org/2026/09/businesses-are-using-ai-to-transform-work-not-cut-jobs",
+      "what": "4% of service firms laid off workers because of AI and about 13% hired more; firms retrain through show-and-tell and peer learning, and train staff to verify output; one runs payables and receivables with a person in the loop."
+    },
+    {
+      "name": "Microsoft Learn, Microsoft 365 Copilot usage report (vendor documentation)",
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-usage?view=o365-worldwide",
+      "what": "Enabled and active users, active-user rate and prompts over 7, 28, 90 or 180 days; per-user last activity with CSV export; names concealed by default; data up to 48 hours behind."
+    },
+    {
+      "name": "McKinsey, The state of AI: how organizations are rewiring to capture value, Mar 2025 (consultancy survey)",
+      "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-how-organizations-are-rewiring-to-capture-value",
+      "what": "Tracking well-defined KPIs for generative AI had the most impact on EBIT of the practices tested; fewer than one in five firms track them; 21% had redesigned workflows."
+    },
+    {
+      "name": "Gallup, AI use at work has nearly doubled in two years, 15 Jun 2025",
+      "url": "https://www.gallup.com/workplace/691643/work-nearly-doubled-two-years.aspx",
+      "what": "An unclear use case or value proposition is the top challenge workers name; only 16% strongly agree the AI tools provided are useful."
+    },
+    {
+      "name": "US Census Bureau, Large firms with at least 20 employees biggest AI users, 26 May 2026",
+      "url": "https://www.census.gov/library/stories/2026/05/ai-use-businesses.html",
+      "what": "19.8% of US firms used AI as of 3 May 2026; 37% of firms with 250 or more staff and 32% with 100 to 249."
+    },
+    {
+      "name": "Gallup, Global Indicator: artificial intelligence (as of Aug 2026)",
+      "url": "https://www.gallup.com/699797/indicator-artificial-intelligence.aspx",
+      "what": "49% say their organization has integrated AI, but only 26% say a clear plan was communicated; 36% strongly agree their manager supports AI use; 14% strongly agree AI transformed how work gets done."
+    },
+    {
+      "name": "KPMG and University of Melbourne, Trust, attitudes and use of AI: a global study 2025",
+      "url": "https://assets.kpmg.com/content/dam/kpmgsites/xx/pdf/2025/05/trust-attitudes-and-use-of-ai-global-report.pdf",
+      "what": "Survey of 32,352 workers: 61% avoided revealing their AI use and 66% were unsure whether their use was allowed."
+    },
+    {
+      "name": "Pew Research Center, US workers are more worried than hopeful about future AI use in the workplace, 25 Feb 2025",
+      "url": "https://www.pewresearch.org/social-trends/2025/02/25/u-s-workers-are-more-worried-than-hopeful-about-future-ai-use-in-the-workplace/",
+      "what": "52% of workers are worried about AI's future impact at work and 36% are hopeful; 32% expect fewer job opportunities for themselves."
+    },
+    {
+      "name": "Federal Reserve Bank of Richmond, Capital and AI investment in the Fifth District, 6 Aug 2026",
+      "url": "https://www.richmondfed.org/region_communities/regional_data_analysis/regional_matters/2026/capital_and_ai_investment_in_the_fifth_district",
+      "what": "Most firms are still working out how to use the AI tools they give staff."
+    },
+    {
+      "name": "OpenAI Help Center, ChatGPT Business overview (read 26 Nov 2026)",
+      "url": "https://help.openai.com/en/articles/8792828-chatgpt-business-overview",
+      "what": "ChatGPT Business Standard lists at $20 a user a month billed yearly, or $25 monthly; price read 26 Nov 2026."
+    },
+    {
+      "name": "Anthropic, Claude pricing (read 26 Nov 2026)",
+      "url": "https://claude.com/pricing",
+      "what": "Claude Team Standard lists at $20 a user a month billed yearly, or $25 monthly; price read 26 Nov 2026."
+    },
+    {
+      "name": "Reif, Larrick and Soll, Evidence of a social evaluation penalty for using AI, PNAS 122(19), 8 May 2025",
+      "url": "https://www.pnas.org/doi/10.1073/pnas.2426766122",
+      "what": "Four preregistered experiments with 4,439 people: AI users expect, and receive, lower ratings of competence and motivation."
+    },
+    {
+      "name": "Endrejat and others, autonomy-restrictive change communication, European Management Journal 39(5), 2021",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0263237320301766",
+      "what": "Controlling, autonomy-restrictive messages from change agents lower readiness for change."
+    },
+    {
+      "name": "US Bureau of Labor Statistics, Employer costs for employee compensation, June 2026 (released 9 Sep 2026)",
+      "url": "https://www.bls.gov/news.release/ecec.htm",
+      "what": "Private-industry employers paid an average of $54.00 per hour worked for full-time staff, wages and benefits together."
+    },
+    {
+      "name": "Anthropic Help Center, What is the Team plan?",
+      "url": "https://support.claude.com/en/articles/9266767-what-is-the-team-plan",
+      "what": "The Team plan covers 2 to 150 seats."
+    },
+    {
+      "name": "Microsoft, Microsoft 365 business plans and pricing (read 26 Nov 2026)",
+      "url": "https://www.microsoft.com/en-us/microsoft-365/business/microsoft-365-plans-and-pricing",
+      "what": "Microsoft 365 Copilot Business lists at $21 a user a month billed yearly, $18 on offer to 31 Dec 2026, up to 300 users, as an add-on; price read 26 Nov 2026."
+    },
+    {
+      "name": "Federal Reserve Bank of Atlanta, macroblog: How much are firms spending on AI, 6 May 2026",
+      "url": "https://www.atlantafed.org/research-and-data/publications/policy-hub-macroblog/2026/05/06/how-much-firms-spending-on-ai-and-what-will-happen-to-headcounts",
+      "what": "Surveyed firms spent $1,358 per employee on AI in 2025 and planned $2,068 in 2026."
+    },
+    {
+      "name": "OpenAI Help Center, ChatGPT Business release notes (vendor documentation)",
+      "url": "https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes",
+      "what": "Workspace analytics for Business (16 Apr 2026): active users, messages and credits over 7 days to 12 months, with a member-level table."
+    },
+    {
+      "name": "Anthropic Help Center, View usage analytics for Team and Enterprise plans, updated 25 Nov 2026 (vendor documentation)",
+      "url": "https://support.claude.com/en/articles/12883420-view-usage-analytics-for-team-and-enterprise-plans",
+      "what": "Weekly active members against assigned seats, members and groups views, per-user spend export up to 90 days back; members see their own usage by default since 11 Jul 2026."
+    },
+    {
+      "name": "OpenAI Help Center, Managing members, seat types and roles in ChatGPT Business (vendor documentation)",
+      "url": "https://help.openai.com/en/articles/8542216-managing-members-seat-types-and-roles-in-chatgpt-business",
+      "what": "Workspace owners and admins manage the workspace and its analytics."
+    },
+    {
+      "name": "OpenAI Help Center, Managing data sharing and privacy in ChatGPT Business (vendor documentation)",
+      "url": "https://help.openai.com/en/articles/8798634-managing-data-sharing-and-privacy-in-chatgpt-business",
+      "what": "Admins do not read members' chats."
+    },
+    {
+      "name": "OpenAI Help Center, Workspace analytics for ChatGPT Enterprise and Edu (vendor documentation)",
+      "url": "https://help.openai.com/en/articles/10875114-workspace-analytics-for-chatgpt-enterprise-and-edu",
+      "what": "Unique and weekly active users, seats enabled and activated, per-user CSV, group views and impact surveys; no message text; the heat map hides groups under 10."
+    },
+    {
+      "name": "Anthropic, Claude Analytics API docs (vendor documentation)",
+      "url": "https://platform.claude.com/docs/en/manage-claude/analytics-api",
+      "what": "Enterprise usage data through an API that the Primary Owner enables."
+    },
+    {
+      "name": "Microsoft Learn, Microsoft Copilot Dashboard in Viva Insights (vendor documentation)",
+      "url": "https://learn.microsoft.com/en-us/viva/insights/org-team-insights/copilot-dashboard",
+      "what": "Group views with a minimum group size; with 1 to 49 Copilot licences, no trendlines, benchmarks or manager view; data up to 6 days behind."
+    },
+    {
+      "name": "GitHub Docs, Copilot usage metrics (vendor documentation)",
+      "url": "https://docs.github.com/en/copilot/concepts/billing-and-usage/copilot-usage-metrics/copilot-metrics",
+      "what": "Daily, weekly and total active users and acceptance rate; user-level data through the API."
+    },
+    {
+      "name": "McElheran, Yang, Kroff and Brynjolfsson, The rise of industrial AI in America, Census CES-WP-25-27, Apr 2025",
+      "url": "https://www2.census.gov/library/working-papers/2025/adrm/ces/CES-WP-25-27.pdf",
+      "what": "Firms adopting AI often see short-term performance losses before gains."
+    },
+    {
+      "name": "Brynjolfsson, Rock and Syverson, The productivity J-curve, American Economic Journal: Macroeconomics 13(1), 2021",
+      "url": "https://www.aeaweb.org/articles?id=10.1257%2Fmac.20180386",
+      "what": "General-purpose technologies need investment in process and skills before productivity gains show."
+    },
+    {
+      "name": "Hughes, Reflections: how studying organizational change lost its way, Journal of Change Management, 2022",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/14697017.2022.2030980",
+      "what": "Finds no valid evidence for the popular claim that 70% of change programs fail."
+    },
+    {
+      "name": "Wing VC, The state of AI in the enterprise (venture-capital commentary)",
+      "url": "https://www.wing.vc/content/the-state-of-ai-in-the-enterprise",
+      "what": "Critiques the method behind the MIT NANDA claim that 95% of generative AI pilots fail."
+    },
+    {
+      "name": "Humlum and Vestergaard, Large language models, small labor market effects, Becker Friedman Institute working paper 2025-56",
+      "url": "https://bfi.uchicago.edu/wp-content/uploads/2025/04/BFI_WP_2025-56-3.pdf",
+      "what": "Employer bans on AI tools sharply reduced worker adoption."
+    },
+    {
+      "name": "Henseke (UCL), analysis of 36,600 workers in the European Working Conditions Survey, arXiv 2604.18849, 2026",
+      "url": "https://arxiv.org/html/2604.18849v2",
+      "what": "Employer encouragement is linked to higher worker AI use."
+    },
+    {
+      "name": "Sahni and Chilton (Columbia University), Beyond training: how workers discover value in enterprise AI, arXiv 2502.13281 v2, Oct 2025",
+      "url": "https://arxiv.org/html/2502.13281v2",
+      "what": "Exploratory study of 10 Microsoft 365 Copilot users: 60% learned mainly from peers and none preferred formal training."
+    },
+    {
+      "name": "Microsoft Adoption, Build your AI strategy in four decisions, Oct 2026 (vendor guidance)",
+      "url": "https://adoption.microsoft.com/en-us/copilot/build-your-ai-strategy",
+      "what": "Free Copilot rollout guidance from Microsoft for firms running it in-house."
+    }
+  ],
+  "related": [
+    "ai-training-for-employees",
+    "ai-strategy-consulting",
+    "ai-governance-consulting",
+    "generative-ai-consulting",
+    "ai-consulting-services"
+  ],
+  "offer": {
+    "heading": "Bought AI seats that nobody uses?",
+    "body": "Low use usually means the work never changed, and a free 30-minute call shows where. Before any paid work, we read your admin usage report and two workflows with you. You leave knowing what to change first."
+  },
+  "keyword": {
+    "phrase": "ai adoption strategy",
+    "searches": 210,
+    "cpc": 53.67,
+    "difficulty": 24
+  },
+  "reviews": [
+    {
+      "reader": "COO",
+      "notes": "Dana got the answer from the title and bottom line and could see who does what in each shape, with review dates at 30, 60, 90 and 180 days. She reports in hours and cost, and the price-the-lift step and labelled seat and staff-time costs give her both. She tripped on 'governance owner' in the mid-size shape; it now says the person who owns AI rules. No Zavient price shown, per the lead's rule."
+    },
+    {
+      "reader": "Head of operations",
+      "notes": "Read for plain words and the steps they would run. 'Active-user rate' was undefined in the walk-away list; it now says seat holders who used it. 'Pulse survey' in the resources became a short staff survey. Process owner is named with examples (controller, ops lead, team lead). The own-data table told them which report to open in the tool they already pay for."
+    },
+    {
+      "reader": "GM",
+      "notes": "Asked whether one site or unit can go first and who owns its numbers. The first shape runs in one team, and the multi-site shape now has each site GM own the site baseline as well as pick workflows and a champion. The price-the-lift step turns saved hours into dollars for the unit. Framing stays on helping staff, not shrinking the unit."
+    },
+    {
+      "reader": "Division head",
+      "notes": "Read as head of the team that has to change how it works (for example finance or customer service). Worried usage data would be used to rank people; the mid-size IT step now shares team numbers monthly, never individual rankings, matching the first shape and the test step that refuses leaderboards. Champion time (about two hours a week) is stated up front, so the cost to the team is visible."
+    },
+    {
+      "reader": "Owner-CEO",
+      "notes": "Steve got the answer in 10 seconds from the title and bottom line: seats alone don't change the work, managers and peers do, measure with what you own. Return (price-the-lift), job fears (sourced FAQ) and free options (when not to hire help) were covered. The OECD resource line read as vague and now says what it shows. He did not ask for a Zavient price, per the lead's rule."
+    }
+  ],
+  "updated": "2026-11-26"
+}
