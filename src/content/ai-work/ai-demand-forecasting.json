@@ -51,12 +51,12 @@
     "human-role": "Your demand planner owns the final number and every override, with a written reason for each, and the supply planner picks the service level.[^15][^7][^13]",
     "team-after": "Planners stop building numbers and start reviewing exceptions, spending their time on the few big calls like a promotion, a new customer or a lost account.[^7][^16]",
     "example": "At an illustrative 120-person distributor with 6,000 items, the AI sorts items by demand pattern and forecasts 13 weeks ahead, and the planner reviews its flags.[^3][^2]",
-    "recipes": "Size decides it: Excel teams trial a low-cost tool, mid-size ERP firms switch on a forecasting module, and firms with an analyst and customer data build their own.[^38][^29][^40]",
-    "benchmark": "Hold back your latest 13 to 26 weeks of sales, have each tool forecast them, and score it against last year plus growth using WAPE and bias.[^39][^44]",
+    "recipes": "Size decides it: Excel teams trial a low-cost tool, mid-size ERP firms switch on a forecasting module, and firms with an analyst and customer data build their own.[^37][^29][^39]",
+    "benchmark": "Hold back your latest 13 to 26 weeks of sales, have each tool forecast them, and score it against last year plus growth using WAPE and bias.[^38][^43]",
     "what-goes-wrong": "AI demand forecasting goes wrong when stockouts hide real demand, small upward overrides add error, or a forecast that runs low hides behind a good error score.[^14][^6][^1]",
-    "something-else": "Pick something else when items are mostly new or have under two years of history, demand is slow and lumpy, or orders come from contracts.[^23][^4][^40]",
-    "table-1": "Published prices run from free in Excel, to $1,995 a year for Forecast Pro 100, to $300 per planner a month for Dynamics 365 Premium.[^26][^27][^25] Cin7's forecasting add-on, NetSuite and Flieber publish no price.[^28][^32][^34]",
-    "own-data": "An AI forecast cut error from 43.1% to 26.0% against last year plus growth in our backtest, but simple smoothing got most of that gain at 27.3%.[^1][^2] AI won by the widest margin on erratic sellers, 39.4% against 79.0%."
+    "something-else": "Pick something else when items are mostly new or have under two years of history, demand is slow and lumpy, or orders come from contracts.[^23][^4][^39]",
+    "table-1": "Published prices run from free in Excel, to $199 per user a month for Forecast Pro Professional, to $300 per user a month for Dynamics 365 Premium.[^26][^27][^25] Cin7's forecasting add-on, NetSuite and Flieber publish no price.[^28][^31][^33]",
+    "own-data": "In our test, an AI forecast cut error from 43.1% to 26.0% against last year plus growth, but simple smoothing got most of that gain at 27.3%.[^1] AI won by the widest margin on erratic sellers, 39.4% against 79.0%."
   },
   "humanRole": [
     "Demand planner: owns the final number and every override, with a written reason for each. Forecasting texts say to adjust sparingly and document why.[^15][^7]",
@@ -99,8 +99,8 @@
           "url": "https://www.forecastpro.com/pricing/price-list",
           "cells": [
             "Stand-alone statistical forecasting software[^27]",
-            "Forecast Pro 100: $1,995 a year per user. TRAC: $7,995 a year for one forecaster[^27]",
-            "Every license is an annual subscription[^27]"
+            "Professional: $199 a month per user, billed annually. TRAC: no published price, quote only[^27]",
+            "Billed annually with a 12-month minimum[^27]"
           ]
         },
         {
@@ -127,34 +127,34 @@
           "cells": [
             "Microsoft's ERP supply chain module[^25]",
             "$210 per user a month; Premium $300, paid yearly[^25]",
-            "Creating forecasts needs Premium.[^29] One third-party guide says only planners need those seats.[^30]"
+            "Creating forecasts needs Premium, and other users can view shared worksheets on the standard license.[^29]"
           ]
         },
         {
           "name": "Rand Group S&OP app for Business Central",
           "url": "https://www.randgroup.com/apps/microsoft/business-central/sales-and-operations-planning/",
           "cells": [
-            "Planning add-on inside Business Central[^31]",
-            "$3,500 a year per company; AI forecasting add-on $2,400 a year more[^31]",
-            "Priced per company (tenant), not per user[^31]"
+            "Planning add-on inside Business Central[^30]",
+            "$3,500 a year per company; AI forecasting add-on $2,400 a year more[^30]",
+            "Priced per company (tenant), not per user[^30]"
           ]
         },
         {
           "name": "NetSuite Demand Planning",
           "url": "https://www.netsuite.com/portal/products/erp/demand-planning.shtml",
           "cells": [
-            "ERP add-on module[^32]",
-            "Not published[^32]",
-            "A third-party review lists moving average, regression and seasonal average methods[^33]"
+            "ERP add-on module[^31]",
+            "Not published[^31]",
+            "A third-party review lists moving average, regression and seasonal average methods[^32]"
           ]
         },
         {
           "name": "Flieber",
           "url": "https://www.flieber.com/pricing",
           "cells": [
-            "Cloud planning for consumer brands[^34]",
-            "Not published: priced to features and data volume after onboarding[^34]",
-            "Monthly contracts and unlimited users[^34]"
+            "Cloud planning for consumer brands[^33]",
+            "Not published: priced to features and data volume after onboarding[^33]",
+            "Monthly contracts and unlimited users[^33]"
           ]
         }
       ],
@@ -162,7 +162,7 @@
     },
     {
       "title": "When does machine learning beat simpler methods?",
-      "intro": "Machine learning beats simpler methods on totals, by about 40%, but by only about 3% at the item you actually order.[^2] On items that often sell zero, simple methods still hold their own.[^4][^35] These are published results on real retail data.",
+      "intro": "Machine learning beats simpler methods on totals, by about 40%, but by only about 3% at the item you actually order.[^2] On items that often sell zero, simple methods still hold their own.[^4][^34] These are published results on real retail data.",
       "headers": [
         "Study",
         "What it found",
@@ -189,8 +189,8 @@
           "name": "M5 uncertainty competition (2022)",
           "url": "https://www.sciencedirect.com/science/article/pii/S0169207021001722",
           "cells": [
-            "Stop-start (intermittent) series sit only at the item level; retailers still use simple exponential smoothing.[^35]",
-            "Same data[^35]"
+            "Stop-start (intermittent) series sit only at the item level; retailers still use simple exponential smoothing.[^34]",
+            "Same data[^34]"
           ]
         },
         {
@@ -213,8 +213,8 @@
           "name": "IJPR review (2025)",
           "url": "https://www.tandfonline.com/doi/full/10.1080/00207543.2025.2578701",
           "cells": [
-            "Tree-based models are the most robust machine-learning choice for sparse demand.[^36]",
-            "Review of published studies[^36]"
+            "Tree-based models are the most robust machine-learning choice for sparse demand.[^35]",
+            "Review of published studies[^35]"
           ]
         }
       ]
@@ -248,8 +248,8 @@
           "name": "Lancaster case study (2021)",
           "url": "https://eprints.lancs.ac.uk/id/eprint/150963/1/Case_study_paper_on_FSS_revised_Jan2021.pdf",
           "cells": [
-            "Planner changes by type of news[^37]",
-            "Changes on good news lost 10.7% in value added; changes on bad news gained 20.1%[^37]"
+            "Planner changes by type of news[^36]",
+            "Changes on good news lost 10.7% in value added; changes on bad news gained 20.1%[^36]"
           ]
         },
         {
@@ -282,44 +282,44 @@
   "recipes": [
     {
       "name": "1. Small team on Excel (under about 2,000 items, one buyer)",
-      "when": "One buyer or planner, forecasts in a spreadsheet, and no planning tool yet. Excel is still the most used forecasting tool.[^38]",
+      "when": "One buyer or planner, forecasts in a spreadsheet, and no planning tool yet. Excel is still the most used forecasting tool.[^37]",
       "flow": [
         "Buyer: export 2-3 years of weekly sales by item, with stockout weeks marked[^23][^14]",
         "Buyer: build an Excel FORECAST.ETS baseline next to last year plus growth[^26]",
-        "Ops lead: score both on the latest 13 weeks you held back, using the test below[^39]",
+        "Ops lead: score both on the latest 13 weeks you held back, using the test below[^38]",
         "Buyer: trial one low-cost tool on the same held-back weeks[^24][^27]",
         "Owner: approve only if the safety stock dollars freed beat the fee[^13]"
       ],
-      "cost": "Excel's baseline is included.[^26] Forecast Pro 100 is $1,995 a year, and StockTrim is $298 a month at $3-5M revenue (prices read 26 Nov 2026).[^27][^24]"
+      "cost": "Excel's baseline is included.[^26] Forecast Pro Professional is $199 a month per user, billed annually, and StockTrim is $298 a month at $3-5M revenue (prices read 26 Nov 2026).[^27][^24]"
     },
     {
       "name": "2. Mid-size firm on an ERP (about 2,000-20,000 items, a demand planner)",
-      "when": "A distributor or manufacturer on Dynamics 365, Business Central, NetSuite or Cin7, with a planner who owns the number.[^25][^31]",
+      "when": "A distributor or manufacturer on Dynamics 365, Business Central, NetSuite or Cin7, with a planner who owns the number.[^25][^30]",
       "flow": [
         "Demand planner: sort items by pattern: smooth (steady), erratic (sells often, swings a lot), intermittent (often zero) and lumpy (often zero, then big)[^3]",
-        "IT or ERP admin: switch on the forecasting module or add-on in a test company[^29][^31]",
-        "Demand planner: test it on 13-26 held-back weeks from several start dates[^39]",
+        "IT or ERP admin: switch on the forecasting module or add-on in a test company[^29][^30]",
+        "Demand planner: test it on 13-26 held-back weeks from several start dates[^38]",
         "Supply planner: recompute safety stock from the new error spread[^9][^10]",
         "S&OP process owner: run two monthly cycles beside the old forecast[^12]",
         "COO or owner: decide at the executive S&OP meeting[^12][^13]"
       ],
-      "cost": "Dynamics 365 Supply Chain Premium is $300 per user a month, needed only for planner seats.[^25][^30] Rand Group's Business Central app is $3,500 a year plus $2,400 for AI forecasting; NetSuite and Cin7 don't publish forecasting prices.[^31][^32][^28]"
+      "cost": "Dynamics 365 Supply Chain Premium is $300 per user a month.[^25] Rand Group's Business Central app is $3,500 a year plus $2,400 for AI forecasting; NetSuite and Cin7 don't publish forecasting prices.[^30][^31][^28]"
     },
     {
       "name": "3. Data-led build (customer sell-through or EDI data the vendors don't see)",
-      "when": "You have an analyst and data a vendor won't use, like customer point-of-sale or EDI (electronic order) feeds. In one 2026 study, retailer data cut error 44.7% against shipments alone.[^40]",
+      "when": "You have an analyst and data a vendor won't use, like customer point-of-sale or EDI (electronic order) feeds. In one 2026 study, retailer data cut error 44.7% against shipments alone.[^39]",
       "flow": [
         "Analyst: build the baselines: same week last year, exponential smoothing and Croston[^2][^3]",
         "Analyst: add one gradient-boosted model across all items, with recent sales, calendar and price[^2]",
         "Demand planner: review forecast value added every month[^7]",
         "Head of supply chain: keep the model only for demand patterns where it beats the baselines[^4]"
       ],
-      "cost": "The libraries are free, and our 2,524-item test ran in about 7 minutes on a 4-core cloud machine.[^1] The real cost is staff time, and internal builds succeed about half as often as bought tools.[^41]"
+      "cost": "The libraries are free, and our 2,524-item test ran in about 7 minutes on a 4-core cloud machine.[^1] The real cost is staff time, and internal builds succeed about half as often as bought tools.[^40]"
     }
   ],
   "ownData": {
     "title": "How much better than last year plus growth is an AI forecast?",
-    "intro": "On 26 Nov 2026 we backtested six forecasting methods on public Walmart sales data from the M5 competition.[^1][^2] We summed 2,524 items across 10 stores, like one warehouse, and forecast May 2015 to May 2016 from four start dates.[^39] Error is WAPE (weighted absolute percentage error): units missed divided by units sold, so lower is better.[^42]",
+    "intro": "On 26 Nov 2026 we backtested six forecasting methods on public Walmart sales data from the M5 competition.[^1][^2] We summed 2,524 items across 10 stores, like one warehouse, and forecast May 2015 to May 2016 from four start dates.[^38] Error is WAPE (weighted absolute percentage error): units missed divided by units sold, so lower is better.[^41]",
     "headers": [
       "Items (count)",
       "Last year + growth",
@@ -389,43 +389,43 @@
   },
   "howToTest": [
     "Record your before numbers: today's forecast error, bias, fill rate and safety stock dollars. Score your current method on the same weeks you test the tools on.",
-    "Pull 2-3 years of weekly demand by item; two years is the minimum to learn seasons.[^23][^43] Use orders, not shipments, where you can, and mark stockout weeks.[^14]",
-    "Pick one warehouse or product family, and hold back its latest 13-26 weeks to forecast from several start dates. Never score a model on weeks it trained on.[^39]",
+    "Pull 2-3 years of weekly demand by item; two years is the minimum to learn seasons.[^23][^42] Use orders, not shipments, where you can, and mark stockout weeks.[^14]",
+    "Pick one warehouse or product family, and hold back its latest 13-26 weeks to forecast from several start dates. Never score a model on weeks it trained on.[^38]",
     "Set three baselines: same week last year, last year plus growth, and Excel's FORECAST.ETS.[^19][^26] A tool must beat these to earn its fee.[^7]",
-    "Score with WAPE and bias (whether you run high or low), not MAPE (mean absolute percentage error), which breaks on zero-sales weeks.[^44][^42] Weight by dollars if a few items matter most.",
+    "Score with WAPE and bias (whether you run high or low), not MAPE (mean absolute percentage error), which breaks on zero-sales weeks.[^43][^41] Weight by dollars if a few items matter most.",
     "Split results by demand pattern: smooth, erratic, intermittent and lumpy.[^3] Expect the biggest gains on steady and erratic sellers.[^2][^4]",
     "Run forecast value added on your overrides: naive, then system forecast, then the planner's final number.[^7][^18] Stop the kinds of override that cost accuracy.[^6]",
-    "Price the lift in dollars: safety stock scales with error spread, so 10% less spread frees about 10% of safety stock.[^9][^10] Multiply by unit cost and your yearly carrying-cost rate.",
+    "Price the lift in dollars: safety stock scales with error spread, so by our math 10% less spread frees about 10% of safety stock.[^9][^10] Multiply by unit cost and your yearly carrying-cost rate.",
     "Make each vendor run the same test on your data and hold-out before you sign. Published accuracy, like one vendor's 32% average error cut, uses that vendor's own baseline.[^8][^7]"
   ],
   "watchOuts": [
-    "Stockouts hide real demand, so the forecast drifts down and the next order shrinks.[^14][^45] Record stockout days; recovering lost demand cut WAPE from 31.75% to 29.02% in one study.[^46]",
+    "Stockouts hide real demand, so the forecast drifts down and the next order shrinks.[^14][^44] Record stockout days; recovering lost demand cut WAPE from 31.75% to 29.02% in one study.[^45]",
     "Small and upward overrides add optimism and error.[^5][^6] Require a reason code, track FVA by planner, and allow only large, news-backed changes.[^15][^7]",
     "Growth rates on single items amplify noise. In our test, an item-level growth rate (last 13 weeks against a year earlier) raised error from 37.0% to 43.1%.[^1][^19]",
     "A good error score can hide a forecast that runs low: our AI model was 6% under, against 1.9% for smoothing.[^1] Track bias next to error, because low forecasts mean stockouts.[^13]",
-    "The model trusts the past when the world shifts: Zillow shut its home-buying arm after a $304.4M write-down.[^47][^48] Watch error weekly, and let planners pause the model after a shock.",
-    "Services can close: AWS shut Amazon Forecast to new customers on 29 Jul 2024.[^49][^50] Keep your data, baselines and test set in-house so you can switch."
+    "The model trusts the past when the world shifts: Zillow shut its home-buying arm after a $304.4M write-down.[^46][^47] Watch error weekly, and let planners pause the model after a shock.",
+    "Services can close: AWS shut Amazon Forecast to new customers on 29 Jul 2024.[^48][^49] Keep your data, baselines and test set in-house so you can switch."
   ],
   "faq": [
     {
       "q": "Is AI actually useful for demand forecasting, or mostly hype?",
-      "a": "Useful, mostly on steady and erratic fast sellers. In our backtest AI cut error about 40% against last year plus growth, but plain smoothing got most of that.[^1] In the M5 competition, gains at the item level averaged about 3%.[^2]"
+      "a": "Useful, mostly on steady and erratic fast sellers. In our test AI cut error about 40% against last year plus growth, but plain smoothing got most of that.[^1] In the M5 competition, gains at the item level averaged about 3%.[^2]"
     },
     {
       "q": "Do we need to hire a data scientist?",
-      "a": "Not to buy, because tools like StockTrim and ERP add-ons ship with built-in models.[^24][^31] You need one to build your own, and internal builds succeed less often.[^41]"
+      "a": "Not to buy, because tools like StockTrim and ERP add-ons ship with built-in models.[^24][^30] You need one to build your own, and internal builds succeed less often.[^40]"
     },
     {
       "q": "How much sales history do we need?",
-      "a": "You need at least 2 years of weekly sales to learn seasons, and 3 is better.[^23][^43] New items need forecasts borrowed from similar items, or judgment.[^23]"
+      "a": "You need at least 2 years of weekly sales to learn seasons, and 3 is better.[^23][^42] New items need forecasts borrowed from similar items, or judgment.[^23]"
     },
     {
       "q": "Can we run S&OP in Excel?",
-      "a": "Yes, because S&OP is a monthly meeting process, not a tool.[^12][^13] Excel is the most used forecasting tool in supply chains.[^38]"
+      "a": "Yes, because S&OP is a monthly meeting process, not a tool.[^12][^13] Excel is the most used forecasting tool in supply chains.[^37]"
     },
     {
       "q": "What does demand forecasting software cost?",
-      "a": "From free in Excel, to $1,995 a year for Forecast Pro 100, to $300 per planner a month for Dynamics 365 Premium.[^26][^27][^25] We read these on vendor pages on 26 Nov 2026; Cin7's add-on, NetSuite and Flieber publish no price.[^28][^32][^34]"
+      "a": "From free in Excel, to $199 per user a month for Forecast Pro Professional, to $300 per user a month for Dynamics 365 Premium.[^26][^27][^25] We read these on vendor pages on 26 Nov 2026. Cin7's add-on, NetSuite and Flieber publish no price.[^28][^31][^33]"
     },
     {
       "q": "How do planners override the forecast without making it worse?",
@@ -433,13 +433,13 @@
     }
   ],
   "buyVsBuild": {
-    "buy": "Buy when you have no data person and your items sell in common patterns. Most firms now buy: 76% of enterprise AI uses are bought, and bought tools succeed about twice as often.[^51][^41] Start with your ERP's module or add-on, tested against Excel's free baseline.[^31][^26]",
-    "build": "Build when your data is the edge, such as customer sell-through or EDI orders a vendor won't use. Retailer data cut error 44.7% in one 2026 study.[^40] Keep baselines and data pipelines in-house, because managed services can close.[^49]"
+    "buy": "Buy when you have no data person and your items sell in common patterns. Most firms now buy: 76% of enterprise AI uses are bought, and bought tools succeed about twice as often.[^50][^40] Start with your ERP's module or add-on, tested against Excel's free baseline.[^30][^26]",
+    "build": "Build when your data is the edge, such as customer sell-through or EDI orders a vendor won't use. Retailer data cut error 44.7% in one 2026 study.[^39] Keep baselines and data pipelines in-house, because managed services can close.[^48]"
   },
   "pickElse": [
-    "Mostly new items, or under two years of history: forecast from similar items and judgment, not machine learning.[^23][^43]",
+    "Mostly new items, or under two years of history: forecast from similar items and judgment, not machine learning.[^23][^42]",
     "Slow, lumpy spare parts: use exponential smoothing, Croston's method or a reorder point.[^4][^3] In our backtest, smoothing beat AI on lumpy items.[^1]",
-    "Make-to-order or contract demand: plan from customer orders and agreed schedules, or ask customers for their own forecast.[^40]",
+    "Make-to-order or contract demand: plan from customer orders and agreed schedules, or ask customers for their own forecast.[^39]",
     "Few items with steady demand: Excel's FORECAST.ETS may be enough.[^26] Check it with step 3 of the test above."
   ],
   "resources": [
@@ -472,7 +472,7 @@
   "stats": [
     {
       "num": "About 40%",
-      "label": "Less error than last year plus growth in our backtest, 43.1% down to 26.0% WAPE.[^1]",
+      "label": "Less error than last year plus growth in our test, 43.1% down to 26.0% WAPE.[^1]",
       "source": "Zavient backtest, 26 Nov 2026"
     },
     {
@@ -492,7 +492,7 @@
     },
     {
       "num": "78%",
-      "label": "Share of supply chain planning leaders who cite forecast inaccuracy as a challenge.[^52]",
+      "label": "Share of supply chain planning leaders who cite forecast inaccuracy as a challenge.[^51]",
       "source": "BCG, 2026"
     },
     {
@@ -620,42 +620,37 @@
     {
       "name": "StockTrim, Pricing (read 26 Nov 2026)",
       "url": "https://www.stocktrim.com/pricing",
-      "what": "Priced by revenue band: $298 a month at $3-5M revenue, billed annually; +$90 a month for bill-of-materials forecasting; $299 onboarding; unlimited users and items."
+      "what": "Priced by revenue band: $298 a month at $3-5M revenue, billed annually; +$100 a month for raw materials and multi-level bill-of-materials forecasting; $299 optional onboarding below $5M; unlimited users and SKUs. Read 26 Nov 2026."
     },
     {
       "name": "Microsoft, Dynamics 365 Supply Chain Management pricing (read 26 Nov 2026)",
       "url": "https://www.microsoft.com/en-us/dynamics-365/products/supply-chain-management/pricing",
-      "what": "$210 per user a month; Premium $300 per user a month, paid yearly."
+      "what": "Supply Chain Management $210 per user a month; Premium $300 per user a month, paid yearly. Read 26 Nov 2026."
     },
     {
       "name": "Microsoft Support, FORECAST.ETS function",
       "url": "https://support.microsoft.com/en-us/office/forecast-ets-function-15389b8b-677e-4fbd-bd95-21d464333f41",
-      "what": "Excel's built-in exponential smoothing forecast (AAA version), included with Excel."
+      "what": "Excel's built-in forecast function, using the AAA version of exponential smoothing (ETS), included with Excel. Read 26 Nov 2026."
     },
     {
       "name": "Forecast Pro, Price list (read 26 Nov 2026)",
       "url": "https://www.forecastpro.com/pricing/price-list",
-      "what": "Annual licenses: Forecast Pro 100 $1,995 per user; Extended $5,700; TRAC $7,995 for one forecaster; collaborator seat $1,995."
+      "what": "Forecast Pro Professional $199 per user a month, billed annually, 12-month minimum; Forecast Pro TRAC priced by license type and volume, quote only. Read 26 Nov 2026."
     },
     {
       "name": "Cin7, Pricing (read 26 Nov 2026)",
       "url": "https://cin7.com/pricing",
-      "what": "Cin7 Core $349, $599 or $1,199 a month; ForesightAI forecasting is an add-on with no published price."
+      "what": "Cin7 Core Standard $349, Pro $599 and Advanced $1,199 a month; ForesightAI forecasting is an add-on with no published price. Read 26 Nov 2026."
     },
     {
       "name": "Microsoft, Dynamics 365 Licensing Guide (Jan 2025)",
       "url": "https://www.microsoft.com/content/dam/microsoft/final/en-us/microsoft-brand/documents/Dynamics-365-Licensing-Guide-January-2025.pdf",
-      "what": "Creating demand forecasts needs the Supply Chain Management Premium license."
-    },
-    {
-      "name": "MSDynamicsWorld, D365 Supply Chain Management Premium demand planning guide (Aug 2026)",
-      "url": "https://msdynamicsworld.com/blog-post/d365-supply-chain-management-premium-demand-planning-edi-guide-2026",
-      "what": "Third-party guide: only the planners who create forecasts need Premium seats."
+      "what": "Users who create demand plans or forecasts need the Supply Chain Management Premium license. Others can view shared demand planning worksheets as contributors."
     },
     {
       "name": "Rand Group, Sales and Operations Planning app for Business Central (read 26 Nov 2026)",
       "url": "https://www.randgroup.com/apps/microsoft/business-central/sales-and-operations-planning/",
-      "what": "$3,500 per tenant a year; AI Forecasting add-on $2,400 per tenant a year, sold separately."
+      "what": "$3,500 per tenant a year; AI Forecasting add-on $2,400 per tenant a year, sold separately. Read 26 Nov 2026."
     },
     {
       "name": "Oracle NetSuite, Demand Planning",

@@ -152,7 +152,7 @@
     "Compare four approaches on that holdout: your rule, logistic regression, a glass-box model and a black box.[^5][^3]",
     "Score what your decision needs: real cases caught in the list you will work, and results by region or product. One Google system gained 1% overall while one country fell 50%.[^14]",
     "Ask to see why for one real customer. In our benchmark, one customer's top reasons were one month of tenure, a month-to-month contract and fibre internet.[^12][^4]",
-    "Price the lift: extra real cases in your list x the share you save x margin, minus the cost of acting, building and upkeep. Our 32 extra churners per 1,000 paid about $28,600 a year: revenue reached, not saved.[^4]",
+    "Price the lift: extra real cases in your list x the share you save x margin, minus the cost of acting, building and upkeep. By our math, the 32 extra churners per 1,000 paid about $28,600 a year: revenue reached, not saved.[^4]",
     "Run it live in one team against a small random control group for 60 to 90 days before you scale.",
     "Check the handover against the ML Test Score's monitoring checks: code, data feed, monitoring, retrain rule and who holds the logins.[^14]"
   ],
@@ -227,7 +227,7 @@
     },
     {
       "num": "48%",
-      "label": "AI projects that reach production, after about 8 months on average.[^2]",
+      "label": "AI projects that reach production, after about 8 months on average, per Gartner's survey respondents.[^2]",
       "source": "Gartner survey of 644, May 2024"
     },
     {
@@ -255,7 +255,7 @@
     {
       "name": "Gartner press release, 7 May 2024",
       "url": "https://www.gartner.com/en/newsroom/press-releases/2024-05-07-gartner-survey-finds-generative-ai-is-now-the-most-frequently-deployed-ai-solution-in-organizations",
-      "what": "Survey of 644 respondents: 48% of AI projects reach production, taking about 8 months from prototype on average."
+      "what": "Survey of 644 respondents from organizations in the US, Germany and the UK (Q4 2023): on average only 48% of AI projects make it into production, and it takes 8 months to go from AI prototype to production."
     },
     {
       "name": "Google, Rules of Machine Learning (Zinkevich)",
@@ -265,7 +265,7 @@
     {
       "name": "IBM, Telco Customer Churn dataset (GitHub), used for the Zavient churn benchmark, 26 Nov 2026",
       "url": "https://github.com/IBM/telco-customer-churn-on-icp4d",
-      "what": "Public sample of 7,043 telecom customers with 19 fields and a churn flag; Zavient used 7,032 after dropping 11 with blank charges."
+      "what": "Public sample of 7,043 telecom customers with 19 fields and a churn flag; Zavient used 7,032 after dropping 11 with blank charges. In those 7,032, the 1,869 churners' average monthly charge is $74.44."
     },
     {
       "name": "Rudin, Stop explaining black box machine learning models for high stakes decisions, Nature Machine Intelligence, 2019",
@@ -340,7 +340,7 @@
     {
       "name": "Digital Colliers, Machine Learning Consulting: When and What to Expect, 30 May 2026 (vendor guide)",
       "url": "https://www.digitalcolliers.com/blog/machine-learning-consulting",
-      "what": "Vendor's figures: churn or lead-scoring models 8 to 14 weeks, EUR 30,000 to 80,000, 3 to 6 months of history; forecasting 12 to 20 weeks, EUR 50,000 to 150,000."
+      "what": "Vendor's figures: classification models (churn, fraud, lead scoring) 8 to 14 weeks, €30,000 to €80,000, 3 to 6 months of labeled history; time-series forecasting 12 to 20 weeks, €50,000 to €150,000; feasibility study €5,000 to €15,000."
     },
     {
       "name": "Salesforce, Set Up Sales Cloud Einstein implementation guide, Jul 2026",
@@ -355,7 +355,7 @@
     {
       "name": "Tensoria, Custom AI model cost, 12 Jun 2026 (vendor guide)",
       "url": "https://tensoria.fr/en/blog/custom-ai-model-cost",
-      "what": "Vendor's figures: production model on tables EUR 15,000 to 45,000; audit plus trial build EUR 5,000 to 15,000; upkeep 15% to 25% of build a year."
+      "what": "Vendor's figures, as editorial market observations: data audit plus trial build (POC) €5,000 to €15,000; production model on tables €15,000 to €45,000; upkeep 15% to 25% of the build cost a year."
     },
     {
       "name": "Unlocking Tech, AI development cost, 14 Oct 2026 (vendor guide)",
@@ -385,7 +385,7 @@
     {
       "name": "Amershi et al., Software Engineering for Machine Learning: A Case Study, ICSE 2019 (Microsoft)",
       "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2019/03/amershi-icse-2019_Software_Engineering_for_Machine_Learning.pdf",
-      "what": "Study of Microsoft teams (551 survey responses): data, deployment and operations, not modelling alone, are where ML work gets hard."
+      "what": "Survey of 551 Microsoft software engineers, plus interviews: data availability, collection, cleaning and management ranked the top challenge at every experience level, ahead of modelling."
     },
     {
       "name": "Shankar et al., Operationalizing Machine Learning: An Interview Study, 2022",
@@ -395,12 +395,12 @@
     {
       "name": "Comet, 2023 State of MLOps, survey of 500 US ML practitioners (vendor survey)",
       "url": "https://go.comet.ml/rs/912-JJP-445/images/Comet_State_of_MLOPs_Report-2023_ML_Practitioner_Survey.pdf",
-      "what": "Vendor survey: 15% of models failed after launch; deployment took 7 months on average."
+      "what": "Vendor survey of 500 US machine learning practitioners (Censuswide, Dec 2022): on average 15% of ML projects failed once launched into production in 2021; deploying one project took 7 months on average."
     },
     {
       "name": "Zillow Group, Q3 2021 shareholder letter (SEC filing), 2 Nov 2021",
       "url": "https://www.sec.gov/Archives/edgar/data/1617640/000161764021000085/exhibit993.htm",
-      "what": "$304.4 million inventory write-down in Zillow Offers; the CEO said home-price forecasting proved far less predictable than expected."
+      "what": "$304 million write-down of Zillow Offers homes; the company said it was unable to accurately forecast future home prices."
     },
     {
       "name": "Riley et al., Calculating the sample size required for developing a clinical prediction model, BMJ, 2020",

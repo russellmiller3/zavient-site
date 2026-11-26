@@ -105,7 +105,7 @@
   },
   {
    "title": "Why don't firms your size train their own model?",
-   "intro": "Gartner's 2024 figures, as reported by CACM, price each approach for large enterprises[^6][^5]. No study prices these options for 40-500 person firms. Read the table for its shape: buying is cheapest, and training your own model is out of reach.",
+   "intro": "Gartner's July 2024 figures, as reported by CACM, price three ways to get GenAI[^6][^5]. No study prices these options for 40-500 person firms. Read the table for its shape: buying is cheapest, and training your own model is out of reach.",
    "headers": [
     "Gartner approach",
     "What it means",
@@ -114,17 +114,17 @@
    ],
    "rows": [
     {
-     "name": "Consume",
+     "name": "Buy",
      "cells": [
-      "Buy a ready tool, such as a coding assistant[^6]",
+      "Buy enterprise AI licenses[^6]",
       "$100K-200K[^6]",
       "$280-550[^6]"
      ]
     },
     {
-     "name": "Extend",
+     "name": "Adapt",
      "cells": [
-      "Ground a rented model in your own documents[^6]",
+      "Build a custom app on a licensed model for content personalized to your firm[^6]",
       "$750K-1M[^6]",
       "$1.3K-11K[^6]"
      ]
@@ -132,17 +132,17 @@
     {
      "name": "Build",
      "cells": [
-      "Train a model from scratch[^6]",
+      "Build a custom model from scratch[^6]",
       "$8M-20M[^6]",
       "$11K-21K[^6]"
      ]
     }
    ],
-   "note": "Enterprise figures from 2024. We left out Gartner's embed and fine-tune rows, which we found only in vendor blogs. Gartner itself says GenAI costs are less predictable than other technologies[^5]."
+   "note": "Gartner's July 2024 figures, as CACM reports them. CACM reports three approaches, so we show three. Gartner itself says GenAI costs are less predictable than other technologies[^5]."
   },
   {
    "title": "What do the studies say about buying vs building?",
-   "intro": "Each study defines success differently, so don't add these numbers up[^1][^11]. No study covers 40-500 person firms directly. MIT's mid-market line is $100M revenue[^1].",
+   "intro": "Each study defines success differently, so don't add these numbers up[^1][^11]. No study covers 40-500 person firms directly. MIT counts firms over $100M in yearly revenue as enterprises[^1].",
    "headers": [
     "Study",
     "What it found",
@@ -166,21 +166,21 @@
     {
      "name": "Gartner survey, 2024",
      "cells": [
-      "48% of AI projects reach production, after 8 months on average[^9]",
-      "644 respondents, surveyed in late 2023. Enterprise-scale[^9]"
+      "Across organizations surveyed, 48% of AI projects reach production, after 8 months on average[^9]",
+      "644 respondents in the US, Germany and UK, surveyed in late 2023[^9]"
      ]
     },
     {
      "name": "S&P Global, 2025",
      "cells": [
-      "42% of companies dropped most AI initiatives before production, up from 17%[^11]",
+      "42% of respondents said their company dropped most AI initiatives before production, up from 17%[^11]",
       "Firms that weighed risk and data up front failed less[^11]"
      ]
     },
     {
      "name": "McKinsey, 2025",
      "cells": [
-      "Top performers were nearly 3x as likely to have redesigned workflows: 55% vs 20%[^12]",
+      "Of 1,993 participants, AI high performers were nearly 3x as likely as others to have fundamentally redesigned workflows: 55% vs 20%[^12]",
       "Workflow change, not the tool, marks the leaders[^12]"
      ]
     },
@@ -212,7 +212,7 @@
     "Team leads: run a 30-day trial and record the measure",
     "Business owner: keep it, change it or drop it"
    ],
-   "cost": "100 seats: $24,000 a year on ChatGPT Business billed yearly, or $25,200 for the Microsoft 365 Copilot Business add-on at list[^19][^21]. Prices read 26 Nov 2026; Google Workspace plans already include Gemini[^24]."
+   "cost": "By our math, 100 seats cost $24,000 a year on ChatGPT Business or $25,200 on the Copilot Business add-on at list[^19][^21]. Prices read 26 Nov 2026, and Google Workspace plans already include Gemini[^24]."
   },
   {
    "name": "2. Configure a platform: an agent for staff policy questions",
@@ -340,7 +340,7 @@
  ],
  "buyVsBuild": {
   "buy": "Buy when the job is common, you have no build team, and the vendor's data terms meet your rules[^6][^20]. Most firms do: 76% of enterprise AI use cases were bought in 2025, per Menlo Ventures, an AI investor[^3]. MIT found bought tools reached deployment about twice as often, from interviews rather than market data[^1][^2].",
-  "build": "Build when your own data or process is the edge and you need control of the rules[^6][^1]. Gartner's 2024 enterprise guide puts training a model from scratch at $8M-20M upfront[^6]. A firm your size builds a narrow tool on a rented model instead, and budgets for upkeep and model retirements[^16][^27]."
+  "build": "Build when your own data or process is the edge and you need control of the rules[^6][^1]. Gartner's July 2024 figures, as CACM reports them, put training your own model at $8M-20M upfront[^6]. A firm your size builds a narrow tool on a rented model instead, and budgets for upkeep and model retirements[^16][^27]."
  },
  "pickElse": [
   "The AI in your current suite already does the job: Microsoft 365 and Google Workspace plans include it[^21][^24]. Turn it on for one team before you buy anything new.",
@@ -406,7 +406,7 @@
   {
    "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025, hosted copy)",
    "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
-   "what": "Bought or partnered tools reached deployment about 67% of the time vs about 33% for internal builds; the report says the split rests on interviews, not market data. Method: 52 interviews, 153 surveys, 300+ public initiatives. Mid-market leaders went pilot to rollout in about 90 days; workers at 90%+ of firms use personal AI tools."
+   "what": "Bought or partnered tools reached deployment about 67% of the time vs about 33% for internal builds; the report says the split rests on interviews, not market data. Method: 52 interviews, 153 surveys, 300+ public initiatives. Defines enterprises as firms with over $100 million in annual revenue. Top mid-market performers went pilot to full rollout in about 90 days; workers at 90%+ of firms use personal AI tools."
   },
   {
    "name": "Fortune, MIT report: 95% of generative AI pilots at companies are failing (18 Aug 2025)",
@@ -431,7 +431,7 @@
   {
    "name": "Communications of the ACM, GenAI: The Buy vs. Build Solution (20 Oct 2025)",
    "url": "https://cacm.acm.org/news/genai-the-buy-vs-build-solution",
-   "what": "Reports Gartner's 2024 enterprise cost figures by approach (buy a tool, ground a model in your documents, build from scratch). Four deciding factors: cost, time, data and expertise."
+   "what": "By Amy Buttell. Citing Gartner (linking its 29 Jul 2024 release): buying enterprise AI licenses costs $100,000-$200,000 upfront and $280-$550 per user per year; adapting, such as a custom GenAI app for content personalized to an organization, $750,000-$1 million upfront and $1,300-$11,000 per user per year; building a custom model from scratch, $8 million-$20 million upfront and $11,000-$21,000 per user per year. Four main considerations: cost, time, data and expertise."
   },
   {
    "name": "Gartner press release, Lack of AI-Ready Data Puts AI Projects at Risk (26 Feb 2025)",
@@ -446,7 +446,7 @@
   {
    "name": "Gartner press release, Generative AI is now the most frequently deployed AI solution (7 May 2024)",
    "url": "https://www.gartner.com/en/newsroom/press-releases/2024-05-07-gartner-survey-finds-generative-ai-is-now-the-most-frequently-deployed-ai-solution-in-organizations",
-   "what": "Survey of 644 (Q4 2023): 48% of AI projects reach production, 8 months on average from prototype; embedding GenAI in existing apps was the most common approach (34%)."
+   "what": "Survey of 644 respondents from organizations in the US, Germany and UK, conducted Q4 2023: on average 48% of AI projects make it into production, taking 8 months from prototype to production; GenAI embedded in existing apps was the primary method for 34%."
   },
   {
    "name": "RAND, The Root Causes of Failure for Artificial Intelligence Projects (RR-A2680-1, 13 Aug 2024)",
@@ -456,17 +456,17 @@
   {
    "name": "S&P Global Market Intelligence 451 Research, Generative AI shows rapid growth but yields mixed results (2025)",
    "url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/2025/10/generative-ai-shows-rapid-growth-but-yields-mixed-results",
-   "what": "1,006 respondents: 42% of companies abandoned most AI initiatives before production in 2025, up from 17%. Firms that weighed compliance, risk and data up front failed less."
+   "what": "Survey of 1,006 respondents, mid-level and senior IT and line-of-business professionals in North America and Europe, fielded 21 Oct-25 Nov 2024: companies abandoning most AI initiatives before production rose from 17% to 42%. Firms with lower failure rates weighed more factors, including data availability, compliance and risk."
   },
   {
-   "name": "McKinsey, The state of AI in 2025 (5 Nov 2025)",
-   "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
-   "what": "Survey of 1,993 participants: high performers are nearly 3x as likely to have redesigned workflows (55% vs 20%). Cited as a survey only."
+   "name": "McKinsey, The state of AI in 2025: Agents, innovation, and transformation (5 Nov 2025)",
+   "url": "https://www.mckinsey.com/~/media/mckinsey/business%20functions/quantumblack/our%20insights/the%20state%20of%20ai/november%202025/the-state-of-ai-in-2025.pdf",
+   "what": "Survey of 1,993 participants at all levels of the organization in 105 nations, 25 Jun-29 Jul 2025: 55% of AI high performers vs 20% of all other respondents report fundamentally redesigning workflows, nearly 3x (2.8x). Cited as a survey only."
   },
   {
    "name": "BCG, The Widening AI Value Gap (Sep 2025)",
-   "url": "https://www.bcg.com/publications/2025/are-you-generating-value-from-ai-the-widening-gap",
-   "what": "Survey of 1,250+ firms. Rule of thumb: 10% algorithms, 20% technology, 70% people and processes. Cited as a survey only."
+   "url": "https://media-publications.bcg.com/The-Widening-AI-Value-Gap-Sept-2025.pdf",
+   "what": "Survey of 1,250 CxOs and senior executives who are AI decision makers, in 68 countries. 10-20-70 rule: 70% of strategic focus on people and processes, 20% on technology, 10% on algorithms. Cited as a survey only."
   },
   {
    "name": "Wharton Human-AI Research and GBK Collective, Accountable Acceleration (Oct 2025)",
@@ -636,7 +636,7 @@
   "what-goes-wrong": "Teams most often start with no business measure, build what their suite already does, or skip getting their data ready.[^5][^21][^7]",
   "something-else": "Pick neither when your suite already does it, the process is broken, the job is a score or forecast from your records, or no one can check the output.[^21][^10][^8][^5]",
   "table-1": "Buying is quickest, at $20-31.50 a user a month. Configuring a platform takes weeks to a few months; building your own averages 8 months to production.[^19][^18][^22][^1][^9] Building also costs far more in upkeep than in model fees.[^25][^26]",
-  "table-2": "Training a model from scratch costs $8M-20M upfront in Gartner's enterprise figures, against $100K-200K to buy a ready tool.[^6] For a 40-500 person firm, that puts training your own model out of reach.",
+  "table-2": "Training your own model costs $8M-20M upfront in Gartner's figures, against $100K-200K for enterprise AI licenses.[^6] For a 40-500 person firm, that puts training your own model out of reach.",
   "table-3": "Bought or partnered tools reached deployment about 67% of the time in MIT's 2025 study, against about 33% for internal builds.[^1][^2] Most firms now buy: 76% of enterprise AI use cases in Menlo's 2025 survey.[^3]",
   "own-data": "OpenAI promises at least 6 months' notice for stable models, 3 months for specialized ones and as little as 2 weeks for previews.[^27] Anthropic retired Claude Sonnet 4.5 on 61 days' notice.[^28]"
  }

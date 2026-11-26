@@ -84,7 +84,7 @@
     },
     {
       "decision": "Buy or build",
-      "know": "Firms now buy 76% of their AI solutions, up from 53%, says Menlo Ventures, an AI investor.[^31] Bought or partnered tools reached deployment about twice as often as internal builds.[^20]"
+      "know": "Firms now buy 76% of their AI use cases, up from 53%, say enterprise AI decision-makers polled by Menlo Ventures, an AI investor.[^31] Bought or partnered tools reached deployment about twice as often as internal builds.[^20]"
     },
     {
       "decision": "Which tools staff may use",
@@ -100,7 +100,7 @@
     {
       "name": "Order entry and order-to-cash paperwork",
       "slug": "ai-document-processing",
-      "why": "Median order-to-cash takes 38 days and costs $2.32 per $1,000 of revenue, per APQC, a benchmarking body.[^34][^35] A vendor-sponsored 2017 survey found automated order entry cut cycle time 46%.[^36]",
+      "why": "Median order-to-cash takes 38 days and costs $2.32 per $1,000 of revenue, per APQC, a benchmarking body.[^34][^35] A vendor-sponsored 2017 survey of 167 supply chain and customer service representatives found automated order entry cut cycle time over 46%.[^36]",
       "payoff": "Order entry hours, error rate and days to invoice."
     },
     {
@@ -145,7 +145,7 @@
     },
     {
       "q": "Are firms our size using AI yet?",
-      "a": "Yes: 32% of firms with 100 to 249 staff and 37% with 250 or more used AI, in Census data to 3 May 2026.[^2] The national rate was 19.8%, and use rose among firms with 20 or more staff.[^2][^1]"
+      "a": "Yes: 32% of US firms with 100 to 249 staff and 37% with 250 or more used AI, in Census data to 3 May 2026.[^2] The national rate was 19.8%, and use rose among firms with 20 or more staff.[^2][^1]"
     },
     {
       "q": "Is our data safe in these tools?",
@@ -157,7 +157,7 @@
     "What it saves: writing and email time first, about 40% on writing tasks.[^4][^6] Expect a few percent of total hours, not a step change.[^8][^9]",
     "Risk and who checks: the firm owns what its AI tells customers.[^23] The ops lead approves answer patterns, and the controller signs off numbers.",
     "First step: one workflow, four weeks of baseline, then a pilot against a hold-out group.[^3][^6]",
-    "Cost: AI seats list at $14 to $21 a user a month (26 Nov 2026), so 15 users for 90 days is under $1,000.[^39][^37] Connecting AI to your order or ticket system costs extra.",
+    "Cost: AI seats list at $14 to $21 a user a month, so by our math 15 users for 90 days cost at most $945.[^39][^37] Connecting AI to your order or ticket system costs extra.",
     "How we'll know: resolutions per hour, order cycle time and cost per purchase order, against APQC medians of 38 days and $55.[^34][^32]"
   ],
   "recipes": [
@@ -315,7 +315,7 @@
     "Check self-reported time savings against system data. In an early-2025 trial, developers were 19% slower with AI while believing they were 20% faster.[^26]",
     "Count rework that lands on others. In a survey with BetterUp, a coaching vendor, 40% of desk workers had received AI work needing fixes in the past month.[^24][^25]",
     "Track where saved time goes. Danish workers moved 80% of saved time to other tasks.[^7]",
-    "Price the lift: share of a role's year saved times annual pay, plus errors avoided, minus seats and setup. Example: 5% of a service rep's year at the BLS mean of $46,590 is about $2,330.[^12]",
+    "Price the lift: share of a role's year saved times annual pay, plus errors avoided, minus seats and setup. Example: by our math, 5% of a customer service rep's year at the BLS annual mean wage of $46,590 is about $2,330.[^12]",
     "Decide at day 90: keep, change or stop."
   ],
   "watchOuts": [
@@ -327,14 +327,14 @@
     "Shadow AI: 54% of workers would use AI tools even if not authorized.[^18] Fix: an allowed-tools list plus business plans with admin controls.[^39]"
   ],
   "buyVsBuild": {
-    "buy": "Most ops teams should buy first, for standard work such as email, meeting notes, helpdesk replies and document capture.[^31][^20] Firms now buy 76% of AI solutions, says Menlo Ventures, an AI investor.[^31] Bought or partnered tools reached deployment about twice as often as internal builds.[^20]",
+    "buy": "Most ops teams should buy first, for standard work such as email, meeting notes, helpdesk replies and document capture.[^31][^20] Firms now buy 76% of AI use cases, say enterprise AI decision-makers polled by Menlo Ventures, an AI investor.[^31] Bought or partnered tools reached deployment about twice as often as internal builds.[^20]",
     "build": "Build when your own data or process is the edge, such as a pricing rule, a scheduling limit or a quoting method. Gartner warns many agent products are relabeled tools, so a build on a proven model can beat a weak product.[^22] Middle path: buy the seats, then build the connection to your systems."
   },
   "pickElse": [
     "The process is broken or undocumented: map and fix it first with standard process improvement, such as lean methods and written procedures. Redesign is what pays.[^16]",
     "The work is rules-based and stable: plain workflow automation or your ERP's built-in rules may be cheaper and more predictable.[^40]",
     "The problem is a forecast or schedule with years of history: a statistical forecasting or planning tool beats a chat assistant.[^19]",
-    "Physical work dominates: hand material movers rank 678th of 785, with 88% of the job showing no AI use.[^10] Equipment, layout or a warehouse system matter more."
+    "Physical labor dominates: in our analysis, hand material movers rank 678th of 785, and 88% of their job has no AI use.[^10][^11] Equipment, layout or a warehouse system matter more."
   ],
   "resources": [
     {
@@ -404,7 +404,7 @@
     {
       "name": "US Census Bureau, America Counts: Large Firms With at Least 20 Employees Biggest AI Users (May 2026)",
       "url": "https://www.census.gov/library/stories/2026/05/ai-use-businesses.html",
-      "what": "Business Trends and Outlook Survey (BTOS): 37% of firms with 250+ staff and 32% with 100 to 249 used AI; national rate 19.8% (period ending 3 May 2026)."
+      "what": "Business Trends and Outlook Survey (BTOS). Survey of 1,200,000 US employer businesses sampled (about 1.2 million, per the BTOS page the story links). 37% of firms with 250+ staff and 32% with 100 to 249 used AI; national rate 19.8% (period ending 3 May 2026)."
     },
     {
       "name": "NBER working paper w31161, Generative AI at Work (Brynjolfsson, Li, Raymond)",
@@ -454,7 +454,7 @@
     {
       "name": "US Bureau of Labor Statistics, Occupational Employment and Wages, May 2025, Table 1",
       "url": "https://www.bls.gov/news.release/ocwage.t01.htm",
-      "what": "Employment and annual mean wage by occupation, released 15 May 2026."
+      "what": "Employment and annual mean wage by occupation, released 15 May 2026. Customer service representatives: 2,595,750 employed, annual mean wage $46,590."
     },
     {
       "name": "US Bureau of Labor Statistics, Employment Projections 2025-35, occupational table",
@@ -519,7 +519,7 @@
     {
       "name": "BetterUp, the hidden costs of workslop (vendor)",
       "url": "https://www.betterup.com/blog/hidden-costs-workslop",
-      "what": "Vendor's own write-up of its workslop survey; not peer reviewed."
+      "what": "Vendor's own write-up of its workslop survey with the Stanford Social Media Lab; not peer reviewed. Survey of 1,004 US full-time desk workers, Sept 2025 (its infographic footnote says 1,150): 40% believe they received workslop in the past month, 1 hour 51 minutes each."
     },
     {
       "name": "METR, early-2025 AI developer randomized trial (10 Jul 2025)",
@@ -549,7 +549,7 @@
     {
       "name": "Menlo Ventures, 2025: The State of Generative AI in the Enterprise (n=495; AI investor)",
       "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
-      "what": "Investor survey: 76% of AI solutions now bought, up from 53% in 2024."
+      "what": "Survey of 495 US enterprise AI decision-makers, Nov 2025: 76% of AI use cases purchased rather than built, up from 53% in 2024."
     },
     {
       "name": "APQC, total cost to process purchase orders",
@@ -574,7 +574,7 @@
     {
       "name": "APQC and Esker, Automating the Sales Order Entry Process (2017; vendor-sponsored)",
       "url": "https://cloud.esker.com/fm/others/APQC-Survey-Automating-the-Sales-Order-Entry-Process-2017.pdf",
-      "what": "167 respondents: automated order entry cut cost $5 to $15 per order and cycle time 46%. Vendor-sponsored and dated."
+      "what": "Survey of 167 representatives, mainly supply chain and customer service directors, at high-volume organizations: automated order entry could save $5 to $15 per order and cut cycle time over 46% (8.6 to 4.6 hours). Vendor-sponsored and dated."
     },
     {
       "name": "Microsoft 365 Copilot Business pricing",

@@ -150,7 +150,7 @@
     "System logs each decision and who made it",
     "Approved facts load to your accounting, CRM (customer relationship management) or reporting system"
    ],
-   "cost": "About $0.27 per report for two top models in our locked-answer round[^5]. The two models disagreed on 66 of 270 facts across all 30 reports, about 1 in 4, and a person settled each[^5]."
+   "cost": "About $0.27 per report, by our math, for the two top models together in our locked-answer round[^5]. The two models disagreed on 66 of 270 facts across all 30 reports, about 1 in 4, and a person settled each[^5]."
   },
   {
    "name": "High volume, standard forms: cloud parser first, model for the hard cases",
@@ -315,7 +315,7 @@
   },
   {
    "q": "Can AI read scanned documents?",
-   "a": "Yes, but accuracy drops on scans. In a 2025 study, the best model got 96.5% of invoice fields right on clean files and 92.7% on scanned ones.[^29] Re-run on 10 of our reports as scanned images, both top tools still made no mistakes.[^5]"
+   "a": "Yes, but accuracy drops on scans. In a 2025 study, the best model got 96.50% of invoice fields right on clean files and 92.71% on scanned ones.[^29] Re-run on 10 of our reports as scanned images, both top tools still made no mistakes.[^5]"
   },
   {
    "q": "Is it safe to send company documents to an AI model?",
@@ -357,7 +357,7 @@
   {
    "name": "Zavient FinExtractBench (Nov 2026)",
    "url": "/ai-work/ai-document-processing.html#own-data",
-   "what": "Zavient's own benchmark: 30 private fund reports with an answer key checked by hand, run in a sealed round and a hard round."
+   "what": "Zavient's own benchmark: 30 private fund reports with an answer key checked by hand, run in a sealed round and a hard round. Cost per report in the sealed round: GPT-6.2 Sol $0.15 (22 seconds), Gemini 4 Hydrogen $0.12 (61 seconds), Gemini 4 Carbon $0.14 (91 seconds)."
   },
   {
    "name": "Mistral API pricing",
@@ -472,12 +472,12 @@
   {
    "name": "Federal Reserve Bank of St. Louis, The Impact of Generative AI on Work Productivity (Feb 2025)",
    "url": "https://www.stlouisfed.org/on-the-economy/2025/feb/impact-generative-ai-work-productivity",
-   "what": "Nationally representative survey: generative AI users saved 5.4% of work hours on average, about 2.2 hours in a 40-hour week."
+   "what": "Survey of 3,697 US workers (employed adults aged 18 to 64) in the November 2024 Real-Time Population Survey, nationally representative; sample size from the authors' working paper. Workers who used generative AI the week before saved 5.4% of work hours on average, about 2.2 hours in a 40-hour week."
   },
   {
    "name": "Berghaus et al., Benchmarking LLM strategies for invoice processing (arXiv 2509.04469, Aug 2025)",
    "url": "https://arxiv.org/abs/2509.04469",
-   "what": "Eight models on three public datasets. Best model: 96.50% of fields right on clean invoices, 92.71% on scanned invoices, 87.46% on scanned receipts."
+   "what": "Eight models on three public datasets. Best model (Gemini 2.5 Pro): 96.50% of fields right on clean invoices, 92.71% on scanned invoices, 87.46% on scanned receipts."
   },
   {
    "name": "OpenAI, Enterprise privacy (updated Jan 2026)",

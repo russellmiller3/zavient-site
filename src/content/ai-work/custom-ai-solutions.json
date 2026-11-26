@@ -70,7 +70,7 @@
   ],
   "ownData": {
     "title": "What does a custom AI workload cost to run each month?",
-    "intro": "About $35 to $1,400 a month for 50,000 questions, depending on the model, at list prices read 26 Nov 2026.[^15][^16][^17] We priced two typical workloads on 9 models from 4 providers; a token, the unit AI is billed in, is about three-quarters of a word.[^18][^20] Worked example: 50,000 questions make 250 million tokens in, $500 at $2 per million, plus 20 million out, $200 at $10: $700 a month.",
+    "intro": "About $35 to $1,400 a month for 50,000 questions by our math, depending on the model, at list prices read 26 Nov 2026.[^15][^16][^17] We priced two typical workloads on 9 models from 4 providers; a token, the unit AI is billed in, is about three-quarters of a word.[^18][^20] Worked example: 50,000 questions make 250 million tokens in, $500 at $2 per million, plus 20 million out, $200 at $10: $700 a month.",
     "headers": [
       "Model (list price per million tokens, in / out)",
       "10,000 documents a month (3,500 tokens in, 500 out each)",
@@ -146,7 +146,7 @@
   ],
   "howToTest": [
     "Judge them by a test on your own cases: a pass mark set before the demo, run against an off-the-shelf tool and today's process.[^12][^23]",
-    "Write the pass mark before any demo, such as 95% of fields right and every answer citing its source.[^38][^12]",
+    "Write the pass mark before any demo, such as the share of fields that must be right, and require every answer to cite its source.[^38][^12]",
     "Pull 20 to 50 real cases from your files, messy ones included, and keep them from the vendor until test day.[^23][^12]",
     "Have two staff mark the right answers on their own, and drop cases they disagree on.[^23]",
     "Run the custom build, an off-the-shelf tool and today's process on the same cases.[^10][^7]",
@@ -175,7 +175,7 @@
     },
     {
       "q": "Should we build, buy or assemble AI solutions for our business?",
-      "a": "Buy the model, and build only the layer that holds your data and workflow.[^4][^1] In one investor's survey, firms bought 76% of their AI uses in 2025, up from 53%.[^3]"
+      "a": "Buy the model, and build only the layer that holds your data and workflow.[^4][^1] In one investor's survey of US enterprise decision-makers, 76% of AI use cases were bought rather than built in 2025, up from 53%.[^3]"
     }
   ],
   "pickElse": [
@@ -213,17 +213,17 @@
   "stats": [
     {
       "num": "76%",
-      "label": "Share of enterprise AI uses bought rather than built in 2025, up from 53%.[^3]",
+      "label": "Share of AI use cases bought rather than built in 2025, per US enterprise decision-makers, up from 53%.[^3]",
       "source": "Menlo Ventures survey of 495 US decision-makers, Dec 2025"
     },
     {
       "num": "67% vs 33%",
-      "label": "Deployment rate of partnered or bought tools against internal builds in MIT's sample.[^1]",
+      "label": "Deployment rate of partnered or bought tools against internal builds in MIT's interview sample of 52 organizations.[^1]",
       "source": "MIT NANDA, Jul 2025"
     },
     {
       "num": "$35 to $1,400",
-      "label": "Monthly AI usage cost of 50,000 retrieval questions across 9 models.[^15][^16][^17][^18]",
+      "label": "Monthly AI usage cost of 50,000 retrieval questions across 9 models, by our math.[^15][^16][^17][^18]",
       "source": "Zavient price check, 26 Nov 2026"
     },
     {
@@ -246,7 +246,7 @@
     {
       "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025, Jul 2025",
       "url": "https://www.artificialintelligence-news.com/wp-content/uploads/2025/08/ai_report_2025.pdf",
-      "what": "300+ public initiatives, 52 interviews, 153 survey responses (self-reported; authors say correlation is not causation). Partnered or bought tools reached deployment about 67% of the time, internal builds about 33%."
+      "what": "Preliminary, self-reported: 52 structured interviews (a sample of 52 organizations), 300+ public initiatives and a survey of 153 leaders; authors say correlation is not causation. In the interview sample, partnered or bought tools reached deployment about 67% of the time, internal builds about 33%."
     },
     {
       "name": "Fortune, MIT report: 95% of generative AI pilots at companies are failing, 18 Aug 2025",
@@ -256,12 +256,12 @@
     {
       "name": "Menlo Ventures, 2025: The State of Generative AI in the Enterprise, 9 Dec 2025",
       "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise",
-      "what": "Investor survey of 495 US decision-makers, Nov 2025: 76% of AI use cases bought rather than built, up from 53% in 2024 (2024 counted solutions, not use cases). Menlo invests in vendors it covers."
+      "what": "Investor survey of 495 US enterprise AI decision-makers, 7 to 25 Nov 2025: 76% of AI use cases bought rather than built, up from 53% in 2024 (2024 counted solutions, not use cases). Menlo invests in vendors it covers."
     },
     {
       "name": "a16z, How 100 Enterprise CIOs Are Building and Buying Gen AI in 2025, 10 Jun 2025",
       "url": "https://a16z.com/ai-enterprise-2025/",
-      "what": "Investor survey: a shift from build to buy; internally built tools are hard to maintain and often give no business advantage; regulated industries the exception."
+      "what": "Investor survey of 100 CIOs across 15 industries, as of 8 May 2025: a shift from build to buy; internally built tools are hard to maintain and often give no business advantage; regulated industries the exception."
     },
     {
       "name": "AWS Prescriptive Guidance, RAG and fine-tuning compared",
@@ -316,27 +316,27 @@
     {
       "name": "Anthropic, Claude API pricing, read 26 Nov 2026",
       "url": "https://platform.claude.com/docs/en/about-claude/pricing",
-      "what": "Per million tokens: Haiku 5.5 $0.10 in, $0.50 out (prompts up to 100,000 tokens); Sonnet 5.5 $2 in, $10 out; batch at 50% off."
+      "what": "Per million tokens: Haiku 5.5 $0.10 in, $0.50 out (prompts up to 100,000 tokens); Sonnet 5.5 $2 in, $10 out; batch at 50% off. Read 26 Nov 2026."
     },
     {
       "name": "OpenAI, API pricing, read 26 Nov 2026",
       "url": "https://developers.openai.com/api/docs/pricing",
-      "what": "Per million tokens: gpt-6-luna $0.10 in, $0.50 out; gpt-6.2-sol $2 in, $10 out; batch at 50% off; fine-tuning gpt-4.1 $25 and gpt-4.1-mini $5 per million training tokens; fine-tuning is now closed to new users."
+      "what": "Per million tokens, standard: gpt-6-luna $0.10 in, $0.50 out; gpt-6.2-sol $2 in, $10 out; batch prices are half (50% off); fine-tuning gpt-4.1 $25 and gpt-4.1-mini $5 per million training tokens; fine-tuning is now closed to new users. Read 26 Nov 2026."
     },
     {
       "name": "Google, Gemini Developer API pricing, read 26 Nov 2026",
       "url": "https://aistudio.google.com/docs/pricing",
-      "what": "Paid tier, per million tokens: Gemini 3.5 Flash-Lite $0.30 in, $2.50 out; 3.8 Flash $0.75/$3.75 to 31 Dec 2026, then $1.50/$7.50; 4 Argon $2/$10 to 30 Nov 2026, then $4/$20; batch 50% off."
+      "what": "Paid tier, per million tokens: Gemini 3.5 Flash-Lite $0.30 in, $2.50 out; 3.8 Flash $0.75/$3.75 to 31 Dec 2026, then $1.50/$7.50; 4 Argon $2/$10 to 30 Nov 2026, then $4/$20; batch 50% off. Read 26 Nov 2026."
     },
     {
       "name": "Mistral AI docs, pricing, read 26 Nov 2026",
       "url": "https://docs.mistral.ai/inference/pricing",
-      "what": "Per million tokens: Mistral Small 4 $0.15 in, $0.60 out; Mistral Large 4 $0.70 in, $2.10 out."
+      "what": "Per million tokens: Mistral Small 4 $0.15 in, $0.60 out; Mistral Large 4 $0.70 in, $2.10 out. Read 26 Nov 2026."
     },
     {
       "name": "Mistral AI, pricing page, read 26 Nov 2026",
       "url": "https://mistral.ai/pricing",
-      "what": "Lists Mistral Large at $0.50 in, $1.50 out per million tokens, lower than the docs page; batch at 50% off."
+      "what": "Lists Mistral Large at $0.50 in, $1.50 out per million tokens, lower than the docs page; batch at 50% off. Read 26 Nov 2026."
     },
     {
       "name": "OpenAI Help Center, What are tokens and how to count them",
@@ -446,7 +446,7 @@
     {
       "name": "Clutch, AI development pricing guide (read 26 Nov 2026)",
       "url": "https://clutch.co/developers/artificial-intelligence/pricing",
-      "what": "From client reviews on Clutch: AI development projects typically cost $10,000 to $49,999; the average project is about $120,595 and takes about 10 months."
+      "what": "From client reviews on Clutch: AI development projects typically cost $10,000 to $49,999; the average project cost is $120,594.55 (about $120,600) and the typical timeline is 10 months. Read 26 Nov 2026."
     },
     {
       "name": "Communications of the ACM, GenAI: The Buy vs. Build Solution (20 Oct 2025)",

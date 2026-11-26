@@ -24,7 +24,7 @@
     "what-goes-wrong": "Most stalled AI pilots fail on people and process: a fuzzy problem, an owner with no time, or a build bought before the basics.[^8][^1][^30]",
     "benchmark": "Judge any AI advisor by whether they name one job, one number that proves it worked, and who on your staff owns it after they leave.[^14][^1]",
     "something-else": "Skip paid help under about 40 staff, or before you can pay: a free SBDC advisor or your state's MEP center is a fair first step.[^9][^10]",
-    "own-data": "A seat for everyone costs about $6,700 to $10,100 a year at 40 staff, $12,600 to $18,900 at 75, and $25,200 to $37,800 at 150.[^22][^23][^26][^25]"
+    "own-data": "By our math, a seat for everyone costs about $6,700 to $10,100 a year at 40 staff, $12,600 to $18,900 at 75, and $25,200 to $37,800 at 150.[^22][^23][^26][^25]"
   },
   "walkAway": [
     "A one-page use rule: which tools, what data may go in, and who checks the output. Only 36% of small and mid-market owners have a written AI policy.[^3][^13]",
@@ -51,11 +51,11 @@
         "Controller: spot-check any draft with a price or number in it",
         "Owner-CEO: after six to eight weeks, keep it, change it or stop"
       ],
-      "cost": "Ten Standard seats on ChatGPT Business or Claude Team cost $2,400 a year at list price.[^22][^23] The bigger cost is staff time for the baseline, checks and training."
+      "cost": "By our math, ten Standard seats on ChatGPT Business or Claude Team cost $2,400 a year at list price.[^22][^23] The bigger cost is staff time for the baseline, checks and training."
     },
     {
       "name": "2. About 75 staff: find the hidden AI use, then fix one handoff",
-      "when": "Pick this when staff likely use personal AI accounts. In write-ups of Census data, about 18% of firms with 50 to 99 staff don't know if staff use AI.[^24][^4]",
+      "when": "Pick this when staff likely use personal AI accounts.[^4] In Census's Nov 2026 release, 17.9% of firms of 50 to 99 staff and 21.4% of 100 to 249 don't know if staff use AI.[^24]",
       "flow": [
         "Ops lead: run a short anonymous survey of who uses which AI tool, and for what",
         "Owner-CEO: approve one company tool and move people onto it",
@@ -64,7 +64,7 @@
         "Team leads: train their people on the approved tool and the use rule",
         "Owner-CEO: at eight weeks, keep it, change it or stop"
       ],
-      "cost": "One business plan for 75 people runs about $12,600 to $18,900 a year at list price.[^25][^22][^26] Linking two systems adds build work, so scope and price it separately."
+      "cost": "By our math, one business plan for 75 people runs about $12,600 to $18,900 a year at list price.[^25][^22][^26] Linking two systems adds build work, so scope and price it separately."
     },
     {
       "name": "3. About 150 staff: one department pilot, with a go-or-stop check before rollout",
@@ -119,7 +119,7 @@
         "$25,200"
       ]
     ],
-    "note": "Method: US list prices before tax, read with a web fetch tool on 26 Nov 2026. The OpenAI and Microsoft pages came from caches dated 16 and 13 Nov. Promos are left out, and the full-firm columns are a ceiling, not advice; seat price leaves out staff time, training, usage extras and build work."
+    "note": "Method: US list prices before tax, read on each vendor's live page on 26 Nov 2026. Promos are left out, and the full-firm columns are a ceiling, not advice; seat price leaves out staff time, training, usage extras and build work."
   },
   "watchOuts": [
     "Pilots stall when the problem is fuzzy; RAND found a misunderstood problem is the most common root cause.[^8] Name one job and one number first: 42% of firms dropped most AI projects in 2025.[^27][^28]",
@@ -143,11 +143,11 @@
   "faq": [
     {
       "q": "How much does an AI consultant cost?",
-      "a": "On the US government's published price list, AI roles have a median hourly ceiling of $183 to $194.[^35][^36] Commercial fees aren't published, so get a fixed price in writing; most consultants price by project or by the hour.[^37] Business AI seats add $14 to $21 per person a month.[^25][^26]"
+      "a": "On the US government's published price list, AI roles have a median hourly ceiling of $183.05 to $193.60, depending on which roles are counted.[^35][^36] Commercial fees aren't published, so get a fixed price in writing; most consultants price by project or by the hour.[^37] Business AI seats add $14 to $21 per person a month.[^25][^26]"
     },
     {
       "q": "What is the 10-20-70 rule for AI?",
-      "a": "BCG's 10-20-70 rule of thumb says about 10% of AI effort goes to algorithms, 20% to technology and data, and 70% to people and process.[^7] RAND's interviews point the same way: the top failure is a misunderstood problem.[^8]"
+      "a": "BCG's 10-20-70 rule, from surveying executives, puts 10% of AI resources into algorithms, 20% into technology and data, and 70% into people and process.[^7] RAND's interviews point the same way: the top failure is a misunderstood problem.[^8]"
     },
     {
       "q": "What is the best AI program for a small business?",
@@ -218,7 +218,7 @@
     },
     {
       "num": "70%",
-      "label": "Share of AI challenges that are about people and process, not tech.[^7]",
+      "label": "Share of AI challenges that are about people and process, not tech, in BCG's survey of senior executives.[^7]",
       "source": "BCG, Oct 2024"
     },
     {
@@ -261,7 +261,7 @@
     {
       "name": "BCG, Where's the Value in AI? (24 Oct 2024)",
       "url": "https://www.bcg.com/press/24october2024-ai-adoption-in-2024-74-of-companies-struggle-to-achieve-and-scale-value",
-      "what": "Survey of 1,000 executives: about 70% of AI challenges are people and process, 20% technology and data, 10% algorithms."
+      "what": "Survey of 1,000 CxOs and senior executives in 59 countries: about 70% of AI challenges come from people and process, 20% from technology and 10% from algorithms. Leaders put 10% of resources into algorithms, 20% into technology and data, and 70% into people and processes."
     },
     {
       "name": "RAND, Root Causes of Failure for AI Projects (Aug 2024)",
@@ -334,9 +334,9 @@
       "what": "Writing tasks with ChatGPT took 40% less time, and quality rose 18%."
     },
     {
-      "name": "OpenAI Help Center, ChatGPT Business: General FAQ",
-      "url": "https://help.openai.com/en/articles/8542115",
-      "what": "Standard seat $20 per user a month billed yearly, $25 monthly; Premium $100 or $125. Read 26 Nov 2026 (cached copy dated 16 Nov)."
+      "name": "OpenAI Help Center, ChatGPT Business overview",
+      "url": "https://help.openai.com/en/articles/8792828",
+      "what": "Standard seat $20 per user a month on the annual plan, $25 on the monthly plan (US dollars). Read 26 Nov 2026."
     },
     {
       "name": "Anthropic, What is the Team plan? (Claude Help Center)",
@@ -346,17 +346,17 @@
     {
       "name": "Fifth Nine, How many small businesses use AI in 2026? (secondary read of Census data)",
       "url": "https://fifthnine.com/blog/ai-automation/how-many-small-businesses-use-ai/",
-      "what": "Quotes the Census BTOS size-class file, 5 Nov 2026 release: business AI use 40.0% at 100 to 249 staff; 50.2% say staff use generative AI; 21.4% do not know. Secondary; census.gov file not read by us."
+      "what": "Quotes the Census BTOS size-class file, 5 Nov 2026 release: at 100 to 249 staff, business AI use 40.0%, 50.2% say staff use generative AI and 21.4% do not know; at 50 to 99 staff, 17.9% do not know. Secondary; census.gov file not read by us."
     },
     {
       "name": "Google Workspace pricing",
       "url": "https://workspace.google.com/pricing",
-      "what": "Business Standard $14 per user a month with a one-year plan, Gemini included; Starter $7, Plus $22; up to 300 users. Read 26 Nov 2026."
+      "what": "Business Standard $14 per user a month with a one-year commitment, Gemini in Gmail, Docs, Meet and more; Starter $7, Plus $22; up to 300 users. Read 26 Nov 2026."
     },
     {
-      "name": "Microsoft, Microsoft 365 Copilot for business pricing",
-      "url": "https://www.microsoft.com/en-us/microsoft-365/copilot/business",
-      "what": "Copilot Business add-on $21 per user a month, paid yearly; $18 first-year offer to 31 Dec 2026; up to 300 users. Read 26 Nov 2026 (cached copy dated 13 Nov)."
+      "name": "Microsoft, Microsoft 365 Copilot Business pricing",
+      "url": "https://www.microsoft.com/en-us/microsoft-365/business/copilot-for-microsoft-365",
+      "what": "Copilot Business add-on for existing Microsoft 365 Business customers: $21 per user a month, paid yearly, now $18 on an offer from 1 Jul to 31 Dec 2026, first year only. Business plans with Copilot cover up to 300 users. Read 26 Nov 2026."
     },
     {
       "name": "S&P Global Market Intelligence, 451 Research (Oct 2025)",
@@ -396,17 +396,17 @@
     {
       "name": "US Census Bureau, Large Firms With at Least 20 Employees Biggest AI Users (22 May 2026)",
       "url": "https://www.census.gov/library/stories/2026/05/ai-use-businesses.html",
-      "what": "Business Trends and Outlook Survey: 32% of firms with 100 to 249 staff and 37% with 250+ used AI; use rose at 20+ staff, not below."
+      "what": "Survey of 1,200,000 US employer businesses (the approximate Business Trends and Outlook Survey sample, per the program page it links): 32% of firms with 100 to 249 staff and 37% with 250+ used AI by 3 May 2026; use rose at 20+ staff, not below."
     },
     {
       "name": "US General Services Administration, CALC+ hourly labor ceiling rates, search \"Artificial Intelligence\" (read 26 Nov 2026)",
       "url": "https://buy.gsa.gov/pricing/qr/mas?q=Artificial%20Intelligence",
-      "what": "Government price list of not-to-exceed hourly rates on GSA schedule contracts. Labor categories matching artificial intelligence: median $193.60, middle half $142.00 to $258.18. Ceilings, not prices paid."
+      "what": "Government price list of not-to-exceed hourly rates on GSA schedule contracts. 185 labor categories matching artificial intelligence: median $193.60, middle half $142.00 to $258.18. Ceilings, not prices paid. Read 26 Nov 2026."
     },
     {
       "name": "AI Services Companies, AI consulting hourly rates 2026 (10 Oct 2026; read 26 Nov 2026)",
       "url": "https://aiservicescompanies.com/research/ai-consulting-hourly-rates-2026",
-      "what": "Analysis of 267 GSA CALC+ rates for AI and machine learning labor categories: median ceiling $183.05 an hour, middle half $147.04 to $234.28. Agencies often pay less than the ceiling."
+      "what": "Analysis of 267 GSA CALC+ rates for AI and machine learning labor categories: median ceiling $183.05 an hour, middle half $147.04 to $234.28. Agencies often pay less than the ceiling. Read 26 Nov 2026."
     },
     {
       "name": "Consulting Success, consulting fees study (updated Oct 2026; read 26 Nov 2026)",

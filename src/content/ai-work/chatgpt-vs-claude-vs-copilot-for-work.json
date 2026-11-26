@@ -44,7 +44,7 @@
  "tables": [
   {
    "title": "What does each business plan cost?",
-   "intro": "US list prices before tax, from each vendor's pricing page, read 26 Nov 2026[^1][^17][^29]. At 50 seats, the three business plans land within $600 a year of each other[^17][^3][^29]. OpenAI publishes no ChatGPT Enterprise price, so that row uses third-party reports and says so[^28].",
+   "intro": "US list prices before tax, from each vendor's pricing page, read 26 Nov 2026[^1][^17][^29]. By our math, at 50 seats the three business plans land within $600 a year of each other[^17][^3][^29]. OpenAI publishes no ChatGPT Enterprise price, so that row shows none[^17].",
    "headers": [
     "Plan",
     "Price a seat, read 26 Nov 2026",
@@ -57,7 +57,7 @@
      "url": "https://openai.com/business/pricing",
      "cells": [
       "$20 a month billed yearly, $25 monthly. Premium seats $100 or $125[^17].",
-      "$12,000 on Standard, billed yearly[^17]",
+      "$12,000 on Standard billed yearly, by our math[^17]",
       "From 2 to 200 seats, per OpenAI's pricing page. No automatic seat sync (SCIM)[^17][^19]."
      ]
     },
@@ -65,8 +65,8 @@
      "name": "ChatGPT Enterprise",
      "url": "https://openai.com/business/pricing",
      "cells": [
-      "Not published: 'custom pricing'. Third parties report about $60 a month[^17][^28].",
-      "Reported 150-seat minimum, about $108,000 a year at the floor. Not an OpenAI price[^27][^28].",
+      "Not published: 'custom pricing', quoted per deal[^17].",
+      "Quote only. A reseller lists a 150-seat minimum[^27][^28].",
       "Adds SCIM, audit-log export and data residency[^17][^23]."
      ]
     },
@@ -75,7 +75,7 @@
      "url": "https://claude.com/pricing",
      "cells": [
       "$20 a month billed yearly, $25 monthly. Premium seats $100 or $125[^3].",
-      "$12,000 on Standard, billed yearly[^3]",
+      "$12,000 on Standard billed yearly, by our math[^3]",
       "From 2 to 150 seats. Cowork and Claude Code come with the seat[^3]."
      ]
     },
@@ -84,7 +84,7 @@
      "url": "https://claude.com/pricing/enterprise",
      "cells": [
       "$20 a month billed yearly, plus all usage at pay-per-use API (application programming interface) rates[^1][^2]",
-      "$12,000 in seat fees, plus usage[^2]",
+      "$12,000 in seat fees plus usage, by our math[^2]",
       "Minimum 20 seats on a yearly contract. Adds audit logs, SCIM, retention control and a health-data contract (BAA)[^6][^5]."
      ]
     },
@@ -93,7 +93,7 @@
      "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/how-copilot-chat-works-with-and-without-a-microsoft-365-copilot-license",
      "cells": [
       "No extra cost with eligible Microsoft 365 plans[^31]",
-      "$0 extra[^31]",
+      "No extra cost[^31]",
       "Answers from the web and files you open or upload. It does not search your mail and files[^31]."
      ]
     },
@@ -102,7 +102,7 @@
      "url": "https://www.microsoft.com/en-us/copilot/pricing/business",
      "cells": [
       "$21 a month paid yearly. Promo: $18 for year one if bought by 31 Dec 2026[^29].",
-      "$12,600, or $10,800 at the promo price[^29]",
+      "$12,600, or $10,800 at the promo price, by our math[^29]",
       "Up to 300 users. Cowork and other agents bill per use on top[^29]."
      ]
     },
@@ -111,7 +111,7 @@
      "url": "https://www.microsoft.com/en-us/copilot/pricing/enterprise",
      "cells": [
       "$30 a month paid yearly[^30]",
-      "$18,000[^30]",
+      "$18,000, by our math[^30]",
       "Microsoft's enterprise price. Copilot Business stops at 300 users[^29][^30]."
      ]
     }
@@ -250,7 +250,7 @@
     "Department heads: name a reviewer for anything that leaves the firm",
     "Ops lead: at day 60-90, add seats or reassign idle ones"
    ],
-   "cost": "25 paid seats × $21 × 12 = $6,300 a year at list, read 26 Nov 2026[^29]. Bought by 31 Dec 2026, the $18 promo makes year one $5,400[^29]."
+   "cost": "By our math, 25 paid seats × $21 × 12 = $6,300 a year at list, read 26 Nov 2026[^29]. Bought by 31 Dec 2026, the $18 promo makes year one $5,400 by our math[^29]."
   },
   {
    "name": "2. Google Workspace or mixed-stack firm, 40-150 staff",
@@ -263,7 +263,7 @@
     "Department heads: name who checks output before it leaves the team",
     "COO and finance: at day 60-90, move to yearly billing; buy Premium only for heavy agent users"
    ],
-   "cost": "Pilot: 15 seats × $25 × 3 months = $1,125 on either plan[^17][^3]. Rollout: 100 Standard seats billed yearly cost $24,000 on either, read 26 Nov 2026[^17][^3]."
+   "cost": "Pilot, by our math: 15 seats × $25 × 3 months = $1,125 on either plan[^17][^3]. Rollout, by our math: 100 Standard seats billed yearly cost $24,000 on either, at prices read 26 Nov 2026[^17][^3]."
   },
   {
    "name": "3. Regulated firm, or 150-500 staff",
@@ -276,7 +276,7 @@
     "Compliance lead: confirm where chat logs land: Purview for Copilot, audit logs or the Compliance API for the others",
     "Department heads: keep sign-off rules for each role"
    ],
-   "cost": "300 seats: Claude Enterprise seat fees are $72,000 a year plus usage; Microsoft 365 Copilot is $108,000[^2][^30]. ChatGPT Enterprise is quote-only; third parties report about $60 a seat a month[^17][^28]."
+   "cost": "300 seats, by our math: Claude Enterprise seat fees are $72,000 a year plus usage, and Microsoft 365 Copilot is $108,000[^2][^30]. ChatGPT Enterprise is quote-only, with no published price[^17]."
   }
  ],
  "humanRole": [
@@ -389,7 +389,7 @@
   "build": "Build on a vendor's API when your own data or a fixed process is the edge, such as document intake tied to your systems[^55]. Claude Enterprise already bills usage at API rates, which blurs the line[^5]."
  },
  "pickElse": [
-  "You run Google Workspace and needs are light: Business Standard, at $14 a user a month billed yearly, includes Gemini in Gmail, Docs and Meet[^40]. Google says it doesn't train on your data without permission[^41].",
+  "You run Google Workspace and needs are light: Business Standard costs $14 a user a month on a one-year commitment[^40]. It includes Gemini in Gmail, Docs and Meet, and Google says it doesn't train on your data without permission[^40][^41].",
   "You're on Microsoft 365 and testing the water: start with Copilot Chat at no extra cost[^31]. Buy paid seats once usage shows who needs them[^53].",
   "You need one repeat process fixed, such as invoice intake: a purpose-built tool beats a general assistant[^55].",
   "Staff won't use it yet: fix the task list and training first[^47]. In one large field study, a three-hour onboarding came first, and newer staff gained most[^42]."
@@ -537,7 +537,7 @@
   {
    "name": "OpenAI, Business Pricing",
    "url": "https://openai.com/business/pricing",
-   "what": "Business Standard $20 yearly or $25 monthly, Premium $100 or $125, 2-200 employees; Enterprise custom pricing; Business vs Enterprise table; 54K and 256K context; read 26 Nov 2026."
+   "what": "Business Standard $20 a month billed yearly or $25 monthly, Premium $100 or $125, for teams of 2-200 employees; Enterprise 'custom pricing' with no published rate; Business vs Enterprise table; 54K and 256K context; read 26 Nov 2026."
   },
   {
    "name": "OpenAI Help, ChatGPT Business: General FAQ",
@@ -587,12 +587,12 @@
   {
    "name": "CDW, ChatGPT Enterprise Standard License 1Y Subscription",
    "url": "https://www.cdw.com/product/chatgpt-enterprise-standard-license-1y-subscription-500-credits-seat-month/9097307",
-   "what": "Reseller listing, not OpenAI: ChatGPT Enterprise with a 150-seat minimum; read 26 Nov 2026."
+   "what": "Reseller listing, not OpenAI: 1-year ChatGPT Enterprise subscription with a 150-seat minimum; price on request."
   },
   {
    "name": "CloudZero, ChatGPT Enterprise pricing (20 Oct 2026)",
    "url": "https://www.cloudzero.com/blog/chatgpt-enterprise-pricing",
-   "what": "Reported, not confirmed by OpenAI: about $60 a seat a month with a 150-seat minimum; read 26 Nov 2026."
+   "what": "Reported, not confirmed by OpenAI: ChatGPT Enterprise has no public list price; a 150-seat minimum is consistently reported; read 26 Nov 2026."
   },
   {
    "name": "Microsoft, Copilot plans and pricing for business",
@@ -652,7 +652,7 @@
   {
    "name": "Google, Google Workspace pricing",
    "url": "https://workspace.google.com/pricing",
-   "what": "Business Standard $14 a user a month billed yearly, with Gemini in Gmail, Docs and Meet; read 26 Nov 2026."
+   "what": "Business Standard $14 a user a month on the Annual plan (1-year commitment), with Gemini in Gmail, Docs and Meet; read 26 Nov 2026."
   },
   {
    "name": "Google, Generative AI in Google Workspace Privacy Hub (10 Nov 2026)",
