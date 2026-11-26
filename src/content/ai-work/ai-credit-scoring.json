@@ -1,9 +1,24 @@
 {
  "title": "AI credit scoring: how do lenders keep it fair and explainable?",
  "description": "Approve more good loans with an AI credit model you can explain: the tools, US and EU rules, three builds and our pick.",
+ "type": "usecase",
+ "templateVersion": 1,
+ "topic": "AI credit scoring",
  "job": "credit scoring",
  "industry": "lending",
  "summary": "AI credit scoring predicts whether an applicant will repay[^5]. When it says no, it must say why in plain words[^1][^35]. The model is the easy part; decline reasons[^33], bias checks[^31] and examiner paperwork[^7] make or break it.",
+ "humanRole": [
+  "Chief credit officer: sets the score cutoffs and who may override them.[^49][^51] Examiners ask for every cutoff, the reason for it and each change.[^51]",
+  "Underwriter: decides the files between the approve and decline cutoffs, and any override.[^49][^52] Each override records the approving officer and the reason.[^49][^43]",
+  "Compliance officer: signs off the map from model drivers to decline reasons.[^33] Owns each decline letter: specific reasons that match what the model scored, within 30 days.[^1]",
+  "Model validator, independent of whoever built the model: checks it before first use.[^7] A small lender can hire an outside reviewer, but still owns the result.[^7][^40]"
+ ],
+ "teamAfter": [
+  "Underwriters work the hard files: the gray zone between cutoffs and the overrides.[^49] For simple consumer loans, BLS notes, underwriting may be fully automated.[^53]",
+  "Credit officers read a monthly override report: how many, why, who approved them and how those loans perform.[^49][^43]",
+  "Compliance checks overrides for fair lending. Examiners test declines above the cutoff and approvals below it separately for unequal treatment.[^50][^51]",
+  "Modelers watch whether the model still performs as products and borrowers change.[^7] When it drifts, they adjust or rebuild it.[^7]"
+ ],
  "index": true,
  "verdict": [
   "Measure the payoff on your own loans, in dollars at your cutoff, not vendor claims[^17][^28].",
@@ -14,8 +29,8 @@
  ],
  "onPage": [
   {
-   "to": "own-data",
-   "text": "Three ways to get a credit model, and what each leaves you owning"
+   "to": "human-role",
+   "text": "Who on your lending team sets cutoffs, overrides and signs off decline reasons"
   },
   {
    "to": "table-1",
@@ -26,12 +41,20 @@
    "text": "What published studies found when they compared models on credit data"
   },
   {
+   "to": "own-data",
+   "text": "Three ways to get a credit model, and what each leaves you owning"
+  },
+  {
    "to": "rules",
    "text": "The rules that shape a credit model: decline reasons, bias checks, the EU AI Act"
   },
   {
    "to": "benchmark",
    "text": "How to benchmark a scoring model on your own loans"
+  },
+  {
+   "to": "faq",
+   "text": "Legality, accuracy, bias and jobs: the questions lenders ask"
   }
  ],
  "stats": [
@@ -299,7 +322,7 @@
   }
  ],
  "howToTest": [
-  "Record today's numbers first: approval rate, loss rate, time to decision and share of files reviewed by hand.",
+  "Pick one loan product and record today's numbers first: approval rate, loss rate, time to decision and share of files reviewed by hand.",
   "Take your booked loans with known outcomes. Hold out the latest loans old enough to show whether they repaid; that often takes 24 months or more[^43].",
   "Booked loans can't show how the applicants you declined would have done[^44]. Modelers fill that gap with assumptions, a step called reject inference[^44].",
   "Fit three models on the same data, inputs and split: a scorecard, an EBM and LightGBM. An EBM (Explainable Boosting Machine) shows each input's effect; LightGBM is stronger but harder to explain.",
@@ -318,6 +341,28 @@
   "SHAP shows which inputs drove a score, but it does not write Regulation B reasons, and some versions miss the true ones[^33][^5]. Group related inputs into a reason-code map that compliance signs off[^33].",
   "Models trained on past lending data can carry past bias forward[^31][^32]. Check approval gaps before launch and every quarter, with BISG estimates where you can't ask race[^36][^37] and a tool such as fairlearn[^47].",
   "Vendor lift numbers such as more approvals are measured on the vendor's chosen data[^17][^27][^28]. Ask for a benchmark on your own loans."
+ ],
+ "faq": [
+  {
+   "q": "Is it legal to use AI for credit decisions?",
+   "a": "Yes, under the same rules as any scoring model.[^1][^51] Each declined applicant gets specific reasons that match what the model scored.[^1] The OCC rates machine-learning scoring as the highest fair-lending risk.[^51]"
+  },
+  {
+   "q": "Is AI credit scoring more accurate than a scorecard?",
+   "a": "Sometimes, by a small margin.[^5] Boosted-tree models such as XGBoost lead on accuracy, but logistic regression holds up on small data.[^5] On LendingClub loans, LightGBM beat the best language model, 0.73 to 0.67 AUC.[^6]"
+  },
+  {
+   "q": "Can AI credit scoring be biased?",
+   "a": "Yes: models trained on past lending can carry past bias forward.[^31] Credit scores are already 5 to 10% less accurate for minority and low-income borrowers.[^32] Test approval gaps before launch and every quarter.[^47][^37]"
+  },
+  {
+   "q": "Do people still make the final call on a loan?",
+   "a": "Usually, yes. Few lenders let the score decide alone; files between two cutoffs get a manual review.[^49] In the EU, the people overseeing credit-scoring AI must be able to override it.[^52][^11]"
+  },
+  {
+   "q": "Will AI replace loan officers?",
+   "a": "BLS expects loan officer jobs to grow 1% from 2025 to 2035, with about 17,100 openings a year.[^53] Most lenders' software already recommends; loan officers review it and decide.[^53] Among US firms using AI, 66% use it only to help staff; 2% saw AI-related employment fall.[^54]"
+  }
  ],
  "resources": [
   {
@@ -576,6 +621,36 @@
    "name": "InterpretML, project home page",
    "url": "https://interpret.ml/",
    "what": "Community-driven open-source toolkit for explainable models, including Explainable Boosting Machines."
+  },
+  {
+   "name": "FDIC, RMS Manual of Examination Policies, Section 3.2 Loans: Credit Scoring (Nov 2026)",
+   "url": "https://www.fdic.gov/resources/supervision-and-examinations/examination-policies-manual/section3-2.pdf",
+   "what": "Few institutions let the credit score decide alone; files between a decline cutoff and an approve cutoff are reviewed by hand. Monthly override reports identify the approving officer and the reason; policies name the officials who review overrides."
+  },
+  {
+   "name": "FDIC, Fair Lending Implications of Credit Scoring Systems",
+   "url": "https://www.fdic.gov/bank-examinations/fair-lending-implications-credit-scoring-systems",
+   "what": "The more staff with override authority, the greater the risk of discrimination. Low-side overrides (approvals below the cutoff) and high-side overrides (declines above it) should be analyzed separately for disparate treatment."
+  },
+  {
+   "name": "OCC, Comptroller's Handbook: Fair Lending (version 1.0, Jan 2023)",
+   "url": "https://www.occ.treas.gov/publications-and-resources/publications/comptrollers-handbook/files/fair-lending/pub-ch-fair-lending.pdf",
+   "what": "Examiners request the process, criteria and authority for overrides, and every scorecard cutoff with the reasons for it. \"Highly complex scoring systems, such as those based on machine learning... generally have the highest inherent fair lending risk.\""
+  },
+  {
+   "name": "EU AI Act, Article 14, Human oversight",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-14",
+   "what": "High-risk AI must let the people overseeing it decide not to use it, or to \"disregard, override or reverse\" its output, and stay aware of over-reliance on it (automation bias)."
+  },
+  {
+   "name": "US Bureau of Labor Statistics, Occupational Outlook Handbook: Loan Officers (Aug 2026)",
+   "url": "https://www.bls.gov/ooh/business-and-financial/loan-officers.htm",
+   "what": "Most firms use underwriting software that produces a loan recommendation; loan officers review its output to make a final decision. Employment projected to grow 1% from 2025 to 2035, with about 17,100 openings a year."
+  },
+  {
+   "name": "US Census Bureau, CES-WP-26-25, The Microstructure of AI Diffusion (Apr 2026)",
+   "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
+   "what": "\"Most users (66%) rely on AI solely to augment tasks, while AI-related employment decreases are rare, occurring in only 2% of firms.\""
   }
  ],
  "related": [
@@ -591,8 +666,30 @@
  },
  "offer": {
   "heading": "Not sure how to bring AI into credit decisions? Get a free diagnostic",
-  "body": "Tell us your loan products and how you score today. In 30 minutes you get our read on what to change first, and what your examiner will ask."
+  "body": "Tell us your loan products and how you score today. In 30 minutes you leave with the first step, a before-and-after measure and what your examiner will ask. You get it in writing, with no sales pitch."
  },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Couldn't see who decides what until the recipes. On this page now opens with who keeps the decision, follows the page order and links the FAQ. The recipe steps already name the role for each step."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Tripped on high-side and low-side overrides and on the reason-code map. The team-after block now says declines above the cutoff and approvals below it, and the compliance role says the map from model drivers to decline reasons."
+  },
+  {
+   "reader": "GM",
+   "notes": "Asked whether one loan product can pilot first and what it is worth. The first test step now records numbers for one loan product, matching the shadow run in the recipes. The pricing step already turns the lift into dollars at the cutoff."
+  },
+  {
+   "reader": "Division head",
+   "notes": "The head of lending checked each role against the exam manuals. The chief credit officer now owns the cutoffs and override authority, and each override names the approving officer. The validator role now says a small lender can use an outside reviewer but still owns the result."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Found the legal and jobs questions where he'd look. The offer now promises the first step and a before-and-after measure in writing, with no sales pitch."
+  }
+ ],
  "updated": "2026-11-26",
  "headings": {
   "what-it-is": "What is AI credit scoring, and what data does it use?",
@@ -600,7 +697,11 @@
   "rules": "Which rules apply to AI credit decisions?",
   "what-goes-wrong": "Where does AI credit scoring go wrong?",
   "buy-or-build": "Should you buy an AI credit platform or build your own model?",
-  "something-else": "When should a lender pick something else?"
+  "something-else": "When should a lender pick something else?",
+  "human-role": "Who on your lending team keeps the decision?",
+  "team-after": "What does your lending team do once AI scores the file?",
+  "recipes": "Which way to build an AI credit model fits your lender?",
+  "benchmark": "How do you benchmark an AI credit model before you trust it?"
  },
  "recipesTitle": "Which way to build an AI credit model fits your lender?",
  "testTitle": "How do you benchmark an AI credit model before you trust it?"
