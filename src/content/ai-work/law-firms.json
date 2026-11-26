@@ -401,27 +401,27 @@
  "faq": [
   {
    "q": "Can our lawyers paste client documents into ChatGPT?",
-   "a": "Not into a consumer account. Use a business or enterprise tier whose terms bar training and restrict access.[^10][^11][^12] Get informed consent before self-learning tools see client data.[^10]"
+   "a": "Not into a consumer ChatGPT account; use a business or enterprise tier whose terms bar training and restrict access.[^10][^11][^12] Get informed consent before self-learning tools see client data.[^10]"
   },
   {
    "q": "Do we have to tell clients we use AI?",
-   "a": "Not always. ABA 512 says yes when the client asks, the engagement requires it, consent is needed, or it affects the fee or a significant decision.[^10] California courts will require disclosure on filings from 1 Jan 2027.[^11]"
+   "a": "Not always: ABA 512 says tell clients when they ask, the engagement requires it, consent is needed, or AI affects the fee or a significant decision.[^10] California courts will require disclosure on filings from 1 Jan 2027.[^11]"
   },
   {
    "q": "Can we still bill hourly for work AI sped up?",
-   "a": "Bill the time actually spent, including review, not the time saved.[^46][^50] Don't bill time spent learning the tool.[^46]"
+   "a": "Yes, but bill the time actually spent, including review, not the time AI saved.[^46][^50] Don't bill time spent learning the tool.[^46]"
   },
   {
    "q": "Is legal-specific AI more accurate than ChatGPT?",
-   "a": "About the same on accuracy in Vals' 2025 benchmark, near 80% each; legal tools cited better sources.[^42][^43] Paid legal tools still invented answers 17% to 33% of the time in Stanford's study.[^18]"
+   "a": "Not on accuracy: legal tools and ChatGPT both scored near 80% in Vals' 2025 benchmark, though legal tools cited better sources.[^42][^43] Paid legal tools still invented answers 17% to 33% of the time in Stanford's study.[^18]"
   },
   {
    "q": "How much does legal AI cost?",
-   "a": "General business AI runs $20 to $25 a seat a month.[^14][^31] Legal tools that publish a price run about $100 to $499 per user a month; many quote only.[^16][^15][^35] For 50 lawyers billed yearly, that is $12,000 a year on Claude or ChatGPT, or $78,000 on MyCase Advanced.[^14][^31][^16]"
+   "a": "Legal AI costs $20 to $25 a seat a month for general business tools, and about $100 to $499 a seat a month for legal tools that publish a price.[^14][^31][^16][^15] Many legal tools quote only.[^35][^36] For 50 lawyers billed yearly, that is $12,000 a year on Claude or ChatGPT, or $78,000 on MyCase Advanced.[^14][^31][^16]"
   },
   {
    "q": "Will AI replace lawyers?",
-   "a": "No. From 2027, California bars delegating the practice of law to AI, and a lawyer must sign every filing.[^11][^20]"
+   "a": "No: from 2027, California bars delegating the practice of law to AI, and a lawyer must sign every filing.[^11][^20]"
   }
  ],
  "buyVsBuild": {
@@ -806,7 +806,7 @@
  ],
  "offer": {
   "heading": "Which matters should AI touch first at your firm?",
-  "body": "Bring one practice area. In 30 minutes you leave with the first workflow to try, the rules your states add, and the hours to measure before you buy. It is free, and you talk to the person who does the work."
+  "body": "Litigation matters with large discovery should touch AI first, starting with document review, then summaries of depositions and records. In 30 minutes, bring one practice area and leave with the first workflow to try, the rules your states add, and the hours to measure before you buy. It is free, and you talk to the person who does the work."
  },
  "keyword": {
   "phrase": "ai for lawyers",
@@ -836,5 +836,18 @@
    "notes": "Steve wants the bill for a firm his size, not per-seat maths. Added the 50-lawyer yearly cost ($12,000 on Claude or ChatGPT, $78,000 on MyCase Advanced) to the cost FAQ. Offer body rewritten in his words: bring one practice area, leave with the first workflow, the state rules and the hours to measure; free, with the person who does the work. Price clarity is in the own-data table, so no other change."
   }
  ],
- "updated": "2026-11-26"
+ "updated": "2026-11-26",
+ "answers": {
+  "human-role": "Lawyers keep the judgment and the signature: the signing lawyer checks every citation and owns the filing, and managing partners set the AI policy.[^19][^20][^10] The e-discovery lead samples AI document review, and the risk partner vets vendor terms before client data goes in.[^6][^23][^10]",
+  "ranked": "AI pays first in document review for discovery, which was about 73% of e-discovery production cost, and courts have accepted it since 2012.[^5][^6] Next come summaries of depositions and records, first-pass research with a cite-check, and drafting.[^3][^18]",
+  "own-data": "An AI seat costs 3 to 4 billable minutes a month on Claude or ChatGPT, and at most about 83 minutes for any legal tool with a published price.[^13][^14][^31][^15] Those figures assume $362 an hour, Clio's average lawyer rate.[^13]",
+  "table-1": "Law firms use general assistants (Claude, ChatGPT, Microsoft 365 Copilot), legal research tools (Lexis+ with Protégé, Westlaw, Harvey), and e-discovery and practice-management platforms.[^14][^31][^32][^36][^18][^35] ChatGPT is the tool lawyers use or consider most, at 52.1% in the ABA's 2024 survey.[^45]",
+  "table-2": "Independent studies find AI beats lawyers on legal research accuracy, about 80% against 71%, yet paid legal research tools still invent answers 17% to 33% of the time.[^43][^42][^18] Document review, where AI review helps, was about 73% of e-discovery cost in RAND's study.[^5]",
+  "table-3": "Most firms with 20 or more lawyers use AI: 87% of Texas firms with 25+ attorneys, and 64% of firms with 20+ lawyers in a 5,800-firm survey.[^2][^1] Smaller firms lag: 64% of smaller Texas firms use it.[^2]",
+  "rules": "ABA Formal Opinion 512 sets the baseline duties and Rule 11 makes every signer check the law; California, New York, Florida, Texas and D.C. add their own.[^10][^20][^11][^49][^30][^51][^52] Some judges also require you to disclose AI use, so check each court's rules before you file.[^53]",
+  "what-goes-wrong": "AI goes wrong for law firms through fake citations in filings, client data in consumer accounts, unchecked co-counsel, and billing hours AI saved.[^7][^12][^9][^50] Courts have flagged AI-invented citations in hundreds of decisions involving lawyers.[^7]",
+  "faq": "Lawyers ask about client data, telling clients, billing, accuracy, cost and jobs. The short answers: use business tiers only, disclose when ABA 512 calls for it, bill actual time, and check every citation.[^10][^46][^18]",
+  "buy-or-build": "Buy for standard work like case law research and e-discovery, and build only a light layer on your own precedents, playbooks and clause bank.[^36][^24][^42] Bought tools succeeded about twice as often as internal builds in MIT's study.[^59][^60]",
+  "something-else": "Pick keyword search for small discovery sets, the AI already in your Westlaw, Lexis, Clio or MyCase plan, or a specialist like EvenUp for injury demand letters.[^6][^38][^36][^16][^25]"
+ }
 }

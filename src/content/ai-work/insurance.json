@@ -270,31 +270,31 @@
  "faq": [
   {
    "q": "How is AI used in insurance?",
-   "a": "Mostly to read and draft for the people who decide.[^1][^11] In regulators' surveys, claims and fraud lead in auto and home, and underwriting leads in life.[^18] Conning names AI and data-driven underwriting among the drivers of MGA growth.[^6]"
+   "a": "Insurers use AI mostly to read and draft for the people who decide.[^1][^11] In regulators' surveys, claims and fraud lead in auto and home, and underwriting leads in life.[^18] Conning names AI and data-driven underwriting among the drivers of MGA growth.[^6]"
   },
   {
    "q": "Where should a carrier or MGA start with AI?",
-   "a": "With one reading-heavy workflow, such as submission intake or complex claim files.[^3][^17] Pick one with a clear before-and-after number. Add it to your AI inventory from day one, since examiners can ask for it.[^8]"
+   "a": "A carrier or MGA should start with one reading-heavy workflow, such as submission intake or complex claim files.[^3][^17] Pick one with a clear before-and-after number. Add it to your AI inventory from day one, since examiners can ask for it.[^8]"
   },
   {
    "q": "What will the examiner ask about our AI?",
-   "a": "Expect requests for your written AI program, your inventory of models and AI systems, and how you validate and monitor them.[^8] For vendor AI, expect requests for your due diligence, contracts and audits.[^8][^12]"
+   "a": "Examiners ask for your written AI program, your inventory of models and AI systems, and how you validate and monitor them.[^8] For vendor AI, expect requests for your due diligence, contracts and audits.[^8][^12]"
   },
   {
    "q": "Does the NAIC AI bulletin apply to MGAs?",
-   "a": "It is addressed to insurers.[^12] It asks insurers to cover AI they rely on from outside firms, so carrier partners may ask an MGA about its AI.[^8] AM Best describes added scrutiny of MGAs as the market matures.[^21]"
+   "a": "Not directly: the NAIC AI bulletin is addressed to insurers.[^12] Insurers must cover AI they rely on from outside firms, so carrier partners may ask an MGA about its AI.[^8] AM Best describes added scrutiny of MGAs as the market matures.[^21]"
   },
   {
    "q": "Will AI replace insurance underwriters or adjusters?",
-   "a": "Nothing in the data points that way. 75% of claims professionals say AI needs human oversight.[^38] Regulators hold insurers to the same standards whatever tool helped make a decision.[^12][^8]"
+   "a": "No: underwriters and adjusters keep the decisions, and regulators hold insurers to the same standards whatever tool helped make them.[^12][^8] 75% of claims professionals say AI needs human oversight.[^38]"
   },
   {
    "q": "Which AI rules apply to insurers in my state?",
-   "a": "Thirty jurisdictions have issued the NAIC AI bulletin, per its 13 Nov 2026 map.[^7] California, Colorado and New York have their own guidance or rules.[^7] The NAIC says its map doesn't confirm each state kept every element, so read your state's own text.[^7]"
+   "a": "The NAIC AI bulletin applies in 30 jurisdictions, while California, Colorado and New York have their own guidance or rules.[^7] The NAIC says its 13 Nov 2026 map doesn't confirm each state kept every element, so read your state's own text.[^7]"
   },
   {
    "q": "What does an AI platform for a carrier or MGA cost?",
-   "a": "The platforms in our table publish no list price.[^25] Hi Marley, for example, sells by private offer priced per user.[^26] Budget from a scoped quote for one workflow."
+   "a": "No list price is published for the carrier and MGA platforms we checked, so budget from a scoped quote for one workflow.[^25][^26] Hi Marley, for example, sells by private offer priced per user.[^26]"
   }
  ],
  "buyVsBuild": {
@@ -590,7 +590,7 @@
  ],
  "offer": {
   "heading": "Which insurance workflow should you hand to AI first?",
-  "body": "In 30 minutes we map one workflow, such as submissions, claim files or carrier bordereaux. You leave knowing who signs off, the measure to track and what your examiner or carrier partner will ask."
+  "body": "Hand AI one reading-heavy workflow first: submission intake for underwriters, claim file summaries for adjusters, or bordereaux for MGAs. In 30 minutes we map that workflow. You leave knowing who signs off, the measure to track and what your examiner or carrier partner will ask."
  },
  "keyword": {
   "phrase": "ai in insurance",
@@ -620,5 +620,16 @@
    "notes": "Gets the answer in 10 seconds: title is his question and the bottom line is five short bullets. Forum quotes and AI-tool listicles are gone; every claim now rests on a regulator, a court record, a large survey or the vendor's own announcement. No case from a firm his size exists in the research, so none is claimed."
   }
  ],
- "updated": "2026-11-26"
+ "updated": "2026-11-26",
+ "answers": {
+  "human-role": "Your people keep every decision: underwriters accept, decline and price, MGA underwriters bind, and adjusters own every claim denial.[^14][^2][^8] Senior management and the board own the AI program, and a licensed person checks anything a client sees.[^12][^8][^16]",
+  "ranked": "AI pays first in submission intake for underwriters, then claim file summaries for adjusters.[^3][^17][^4] For MGAs the early win is bordereaux and carrier reporting; for large agencies, policy checking.[^5][^23]",
+  "own-data": "Insurers ask for AI skills mostly in modeling jobs: about 1 in 4 actuary ads mention AI, against about 1 in 20 underwriter and claims ads.[^24] Agency sales and account ads mention AI least, about 1 in 40.[^24]",
+  "table-1": "Cytora, Federato, hyperexponential (hx) and Hi Marley are four AI platforms built for carriers and MGAs, all sold by quote or private offer with no published price.[^28][^25][^27][^26] Two now belong to bigger insurance software firms: Applied Systems bought Cytora, and Guidewire agreed to buy hx.[^28][^27]",
+  "table-2": "Auto insurers use or plan AI most for claims (80%), life insurers for underwriting (75%), and home insurers about equally for both (60% and 62%).[^18] Among health insurers, 54% use or plan AI for claim decisions.[^18]",
+  "rules": "The NAIC AI model bulletin applies in 30 jurisdictions, and California, Colorado and New York have their own rules.[^7] The bulletin and New York keep insurers responsible for vendor AI; the NAIC vendor framework is still a draft.[^8][^14][^33]",
+  "what-goes-wrong": "AI in insurance goes wrong when review becomes a rubber stamp, outcomes differ by group, or vendor models go unchecked.[^9][^37][^8] Scattered evidence of controls and pilots that never reach the desk are the other common failures.[^20][^38]",
+  "buy-or-build": "Buy the standard reading step, such as submission intake or claims texting, and build only where your guidelines, appetite and loss history are your edge.[^40][^14][^8] Bought tools reached production about twice as often as internal builds in MIT's study.[^39][^41]",
+  "something-else": "Pick something else when your core systems can't take AI output, your Guidewire or Applied stack already includes AI, or simple claims run fine on rules.[^13][^27][^28][^42] For plain writing and summaries, an enterprise plan of ChatGPT, Claude or Microsoft 365 Copilot will do, inside your AI program.[^8]"
+ }
 }

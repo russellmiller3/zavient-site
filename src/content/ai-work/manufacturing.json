@@ -87,7 +87,7 @@
  ],
  "ownData": {
   "title": "What do plants search for, and what do employers hire for?",
-  "intro": "We set US Google searches for each kind of manufacturing AI work against US job ads that mention it.[^24][^22] Buyers search most for predictive maintenance, while the job ads we counted name process optimization and scheduling most.[^24][^22] The Federal Reserve sees the same pull: about 11% of manufacturing job postings asked for AI skills in 2026, against about 8% overall.[^23]",
+  "intro": "US plants search most for predictive maintenance, while US job ads name process optimization and production scheduling most.[^24][^22] We set US Google searches for each kind of manufacturing AI work against US job ads that mention it.[^24][^22] The Federal Reserve sees the same pull: about 11% of manufacturing job postings asked for AI skills in 2026, against about 8% overall.[^23]",
   "headers": [
    "Kind of AI work",
    "US searches a month",
@@ -336,19 +336,19 @@
  "faq": [
   {
    "q": "Is predictive maintenance worth it, or mostly a sales pitch?",
-   "a": "Often worth it, but only after the basics. NIST found the less reactive half of plants had 52.7% less unplanned downtime.[^19] The Department of Energy puts predictive savings at 8% to 12% over preventive work, but it needs diagnostic gear and training.[^47]"
+   "a": "Predictive maintenance is often worth it, but only once basic preventive work is in place. NIST found the less reactive half of plants had 52.7% less unplanned downtime.[^19] The Department of Energy puts predictive savings at 8% to 12% over preventive work, but it needs diagnostic gear and training.[^47]"
   },
   {
    "q": "What is the difference between predictive and preventive maintenance?",
-   "a": "Preventive maintenance runs on a calendar or cycle count. Predictive maintenance is triggered by measured condition, such as vibration or temperature.[^1][^2] NIST found predictive-heavy plants had 18.5% less unplanned downtime than preventive-heavy ones.[^19]"
+   "a": "Preventive maintenance runs on a calendar or cycle count, while predictive maintenance is triggered by measured condition, such as vibration or temperature.[^1][^2] NIST found predictive-heavy plants had 18.5% less unplanned downtime than preventive-heavy ones.[^19]"
   },
   {
    "q": "Does predictive maintenance only work for big companies?",
-   "a": "No, but start small. The Department of Energy says to fix one troubled system first and leave cheap, unimportant equipment to reactive repair.[^47] Maintenance software runs $20 to $75 per user a month, while sensor systems are quoted per site.[^25][^26][^50][^49]"
+   "a": "No, small plants can use predictive maintenance too, starting with one troubled machine. The Department of Energy says to fix one troubled system first and leave cheap, unimportant equipment to reactive repair.[^47] Maintenance software runs $20 to $75 per user a month, while sensor systems are quoted per site.[^25][^26][^50][^49]"
   },
   {
    "q": "How much does AI visual inspection cost?",
-   "a": "NIST MEP puts industrial AI tools at a few thousand dollars for simple setups and hundreds of thousands for custom ones.[^13] LandingLens has a free tier for trials, but its free model download is for non-commercial use.[^28]"
+   "a": "AI visual inspection runs from $0 on a free trial tier to six figures for a custom system.[^28][^13] NIST MEP puts simple industrial AI setups at a few thousand dollars and custom ones at hundreds of thousands.[^13] The LandingLens free model download is for non-commercial use only.[^28]"
   },
   {
    "q": "How many manufacturers actually use AI?",
@@ -356,7 +356,7 @@
   },
   {
    "q": "Will AI take jobs on the plant floor?",
-   "a": "The data points to help, not cuts. Among US firms using AI, 95.7% reported no AI-driven change in headcount.[^20] Manufacturers also face up to 1.9 million unfilled jobs by 2033.[^42][^43]"
+   "a": "No, not so far: the data points to help, not cuts. Among US firms using AI, 95.7% reported no AI-driven change in headcount.[^20] Manufacturers also face up to 1.9 million unfilled jobs by 2033.[^42][^43]"
   }
  ],
  "buyVsBuild": {
@@ -733,5 +733,16 @@
    "url": "https://www.mckinsey.com/capabilities/operations/our-insights/operations-blog/making-the-leap-with-generative-ai-in-procurement",
    "what": "Language models draft requests for proposal and contracts; one RFP engine drew on 10,000+ past RFPs and bids."
   }
- ]
+ ],
+ "answers": {
+  "human-role": "Operators, maintenance planners, quality managers and technicians keep every decision about machines, repairs and what ships; AI only flags, sorts and answers questions.[^10][^12][^16][^4]",
+  "ranked": "AI pays first as a troubleshooting assistant for maintenance, then as predictive maintenance on the few machines that stop the line, then as camera inspection on one costly defect.[^3][^4][^19][^5]",
+  "table-1": "Maintenance software with AI features runs from free to $75 per user a month; sensor-based systems are quoted per site, not published.[^25][^26][^27][^50][^49]",
+  "table-2": "The studies find that planned maintenance cuts downtime and defects, but most AI vision never leaves pilot and productivity dips before it gains.[^1][^19][^7][^8]",
+  "rules": "Every US plant faces OSHA lockout/tagout and machine guarding rules; FDA, defense (CMMC) and EU machinery rules apply only if you make medical devices, defense parts or EU-sold machines.[^11][^29][^16][^32][^34] Voluntary NIST and CISA guidance covers how to oversee and secure AI on the plant floor.[^12][^10]",
+  "what-goes-wrong": "AI in manufacturing goes wrong when pilots never reach the line, productivity dips during the ramp, false alarms pile up, or vision models drift when parts or lighting change.[^7][^8][^13][^36] Connected machines also draw cyberattacks, and vendors can lock in your data.[^38][^14]",
+  "buy-or-build": "Buy for standard jobs like maintenance software, condition monitoring or one camera station; build or configure only where your own manuals, repair history or routings are the edge.[^44][^45][^4]",
+  "something-else": "Pick something other than AI when preventive work keeps slipping, a check is simple and stable, escapes are rare and cheap, or the problem is plain process variation.[^1][^13][^14][^51] Maintenance software, rule-based machine vision or statistical process control fits those cases better.[^25][^13][^51]",
+  "offer": "Point AI first at the machine whose stops cost you the most downtime, or at the defect that most often reaches customers.[^14][^1]"
+ }
 }

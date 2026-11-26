@@ -21,7 +21,7 @@
   "rules": "What will your auditor expect?",
   "buy-or-build": "Should you buy a close platform or use what you have?"
  },
- "summary": "Account reconciliation compares two sets of records, such as your ledger and a bank statement, and explains each difference[^1]. AI suggests matches with a confidence level and leaves the unsure ones for a person[^3][^4]. Controls make or break it: late reconciliation review already shows up in material weakness reports[^8].",
+ "summary": "In a reconciliation, AI suggests matches between your ledger and records such as a bank statement, with a confidence level, and leaves the unsure ones for a person[^3][^4]. Reconciliation itself compares two sets of records and explains each difference[^1]; AI can also suggest a reason for each exception[^6]. Controls make or break it: late reconciliation review already shows up in material weakness reports[^8].",
  "humanRole": [
   "A staff accountant prepares each reconciliation and a different person reviews it, and both sign every month[^2][^1]. The reviewer checks the support behind it, not just the final balance[^2][^1].",
   "The controller approves reconciliations on time. The SEC has cited late review as a control deficiency, and public companies report it as a material weakness, a serious control gap[^7][^8].",
@@ -196,7 +196,7 @@
  "tables": [
   {
    "title": "What do close studies say about automating reconciliations?",
-   "intro": "Published benchmarks and surveys on close speed and AI in finance[^16][^17][^19]. The sponsored study is marked, so read it as directional.",
+   "intro": "Close studies link automated reconciliations to a faster close, 57% closing within six business days against 27% without, but most teams see only modest AI impact at first[^17][^19]. The median firm takes 6 days to produce monthly statements[^16]. The sponsored study is marked, so read it as directional.",
    "headers": [
     "Study",
     "Who was asked",
@@ -290,11 +290,11 @@
   },
   {
    "q": "Will reconciliation software actually make the work faster?",
-   "a": "Often, if your data and review steps are in order. Ventana found 57% of firms with automated reconciliations closed within six business days, against 27% without[^17]. In Gartner's survey, 91% of finance teams saw only low or moderate AI impact at first, so plan for a ramp[^19]."
+   "a": "Yes, often, if your data and review steps are in order. Ventana found 57% of firms with automated reconciliations closed within six business days, against 27% without[^17]. In Gartner's survey, 91% of finance teams saw only low or moderate AI impact at first, so plan for a ramp[^19]."
   },
   {
    "q": "My company wants our reconciliation rebuilt in AI. Should it be?",
-   "a": "Keep the matching in fixed rules that give the same answer every run, and use AI to draft explanations. Your auditor must be able to rely on the data, and AICPA flags unexplainable AI output as a risk[^12][^9]."
+   "a": "Only partly: keep the matching in fixed rules that give the same answer every run, and use AI to draft explanations. Your auditor must be able to rely on the data, and AICPA flags unexplainable AI output as a risk[^12][^9]."
   },
   {
    "q": "Will our auditor accept AI-matched reconciliations?",
@@ -306,7 +306,7 @@
   },
   {
    "q": "Can AI handle one payment that covers many invoices?",
-   "a": "Some tools can: Trintech says its Adra matcher handles one-to-many and many-to-one matches[^32]. Workday's AI suggests matches for lines its rules left, with a confidence level a person reviews[^3]. Test your own hard cases in the pilot before you buy."
+   "a": "Yes, some tools can: Trintech says its Adra matcher handles one-to-many and many-to-one matches[^32]. Workday's AI suggests matches for lines its rules left, with a confidence level a person reviews[^3]. Test your own hard cases in the pilot before you buy."
   }
  ],
  "buyVsBuild": {
@@ -616,5 +616,16 @@
    "notes": "Steve wanted the small-firm tools named first and a plainer promise for the 30 minutes, with no pitch. The bottom line now leads with QuickBooks and Xero, and the offer says what he leaves with and that there is no sales pitch."
   }
  ],
- "updated": "2026-11-26"
+ "updated": "2026-11-26",
+ "answers": {
+  "human-role": "A staff accountant prepares each reconciliation, a different person reviews it, both sign every month, and the controller approves them on time[^2][^1][^7].",
+  "team-after": "After AI matching, your preparers work the exceptions and check every AI suggestion and drafted explanation before the reviewer sees it[^4][^3][^9].",
+  "example": "In practice, AI takes the bank statement and ledger detail and returns matched pairs with confidence levels, an exception list with suggested reasons, and drafted explanations a reviewer checks[^3][^5][^6][^9].",
+  "recipes": "A small team on QuickBooks or Xero should turn on the ledger's built-in AI reconcile; a mid-size firm with several entities should buy a close platform[^37][^38][^27][^30]. Build a light layer on tools you already own only when matching rules are unusual and volume is low[^12][^9].",
+  "rules": "Your auditor will expect each reconciliation reviewed on time, proof that your electronic data is reliable, with IT controls behind it, and AI output a person has checked[^7][^8][^12][^9].",
+  "benchmark": "Run the tool in parallel with your signed-off manual reconciliations for two or three closes on one entity, then sample its matches and count false matches and missed exceptions[^5][^6].",
+  "what-goes-wrong": "AI account reconciliation goes wrong when amounts tie but transactions don't, when people over-trust suggestions or made-up explanations, and when no audit trail backs the matches[^5][^6][^4][^9][^14].",
+  "buy-or-build": "Buy a close platform when your process is standard and you have no systems team; use what you have when matching rules are unusual and volume is low[^21][^22][^12][^9].",
+  "something-else": "Skip a dedicated AI reconciliation tool when volume is low, bad upstream data is the real problem, you need consolidation instead, or fixed rules can do the matching[^6][^4][^19][^20][^23][^12]. Use your ledger's reconcile screen, fix the data first, look at a suite such as Oracle EPM, or write a Python or Power Query script, respectively[^6][^19][^23][^12]."
+ }
 }

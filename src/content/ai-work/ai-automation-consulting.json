@@ -72,7 +72,7 @@
  ],
  "ownData": {
   "title": "What does the software cost to run one workflow?",
-  "intro": "We read six automation tools' list prices on their own pricing pages on 26 Nov 2026.[^5][^6][^19] Then we priced one workflow: a trigger plus four steps, run 2,000 times a month. On the four general workflow tools, it costs about $10 to $130 a month.[^5][^6][^25][^20]",
+  "intro": "Software to run one typical workflow costs about $10 to $130 a month on the four general workflow tools.[^5][^6][^25][^20] We priced a trigger plus four steps, run 2,000 times a month, from six tools' own pricing pages on 26 Nov 2026.[^5][^6][^19]",
   "headers": [
    "Tool",
    "List price",
@@ -138,7 +138,7 @@
   },
   {
    "q": "What does an AI automation consultant actually do?",
-   "a": "They map a workflow, pick the steps worth automating, then build, test and hand over a measured result. Redesigning the work matters more than the tool.[^2][^1]"
+   "a": "An AI automation consultant maps a workflow, picks the steps worth automating, then builds, tests and hands over a measured result. Redesigning the work matters more than the tool.[^2][^1]"
   },
   {
    "q": "What will the software cost us to run?",
@@ -146,15 +146,15 @@
   },
   {
    "q": "How is AI automation different from RPA?",
-   "a": "RPA (robotic process automation) follows fixed, rule-based steps. AI handles judgment-like steps, such as reading an email or sorting a document.[^8] Gartner warns some vendors rebrand old automation as agents.[^23]"
+   "a": "RPA (robotic process automation) follows fixed, rule-based steps, while AI automation also handles judgment-like steps, such as reading an email or sorting a document.[^8] Gartner warns some vendors rebrand old automation as agents.[^23]"
   },
   {
    "q": "What if our data isn't clean?",
-   "a": "Check it first on 50 real records. Data quality is the top AI barrier for mid-market firms (34%).[^15] Gartner expects firms to drop 60% of AI projects that lack AI-ready data through 2026.[^27]"
+   "a": "Test your data on 50 real records before anything is built, because data quality is the top AI barrier for mid-market firms (34%).[^15] Gartner expects firms to drop 60% of AI projects that lack AI-ready data through 2026.[^27]"
   },
   {
    "q": "Do we need an AI agent?",
-   "a": "Usually not at first. Gartner says many jobs sold as agentic don't need agents, and a fixed workflow is simpler to run and check.[^23][^12]"
+   "a": "No, usually not at first. Gartner says many jobs sold as agentic don't need agents, and a fixed workflow is simpler to run and check.[^23][^12]"
   }
  ],
  "pickElse": [
@@ -392,7 +392,7 @@
  ],
  "offer": {
   "heading": "Not sure which workflow to automate first?",
-  "body": "Free, before any paid work, and no sales pitch: 30 minutes on your first workflow. Bring today's numbers. Leave knowing what to automate, what stays with people, and what the tools would cost."
+  "body": "A free 30-minute call, before any paid work and with no sales pitch, picks your first workflow. Bring today's numbers. Leave knowing what to automate, what stays with people, and what the tools would cost."
  },
  "keyword": {
   "phrase": "ai automation consulting",
@@ -422,5 +422,13 @@
    "notes": "Steve's worries: data, security, skills, return, paying for slides. Security was missing, so the data watch-out now names it (30%) with IT setting access first. Added 'no sales pitch' to the diagnostic offer. Bottom line passes the 10-second test; no Zavient fee is shown, per the lead's instruction."
   }
  ],
- "updated": "2026-11-26"
+ "updated": "2026-11-26",
+ "answers": {
+  "walk-away": "Good AI automation help leaves you with a chosen first workflow, its before-and-after number, a pilot in daily use, a run plan and every login handed over.[^13][^1][^3]",
+  "human-role": "Your team stays in charge at three points: owning the workflow and its number, approving anything that moves money or reaches customers, and overriding or stopping the system.[^8][^9][^10]",
+  "recipes": "AI automation work takes three shapes: a rules-based job in apps a small team already uses, a Microsoft 365 build, or a document-heavy back office.[^12][^20][^11]",
+  "what-goes-wrong": "Most AI pilots stall because nobody plans the move to daily use, the data isn't ready, and the work was never mapped and redesigned first.[^4][^3][^15][^1]",
+  "benchmark": "Judge any AI advisor on 50 of your own past cases, with right answers locked in advance, and compare cost per item against two weeks of today's numbers.[^8][^10]",
+  "something-else": "Skip outside help for a simple job between standard apps, drafting for individuals, a back-office job a product already does, or a process nobody has written down.[^5][^21][^3][^1]"
+ }
 }

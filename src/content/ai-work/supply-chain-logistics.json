@@ -96,7 +96,7 @@
   ],
   "ownData": {
     "title": "Which supply chain jobs now ask for AI skills?",
-    "intro": "We counted US job ads posted in the 30 days to 26 November 2026, by role, using the JobsPipe job-ad index's free count. Then we counted the ads that mention AI terms such as machine learning, Copilot or ChatGPT. Peers are hiring planners and buyers who use AI; floor and dispatch ads rarely mention it.",
+    "intro": "Demand planner and supply chain analyst ads mention AI most, at about 1 in 5; logistics, dispatch, transport and warehouse manager ads stay under 6%. We counted US job ads posted in the 30 days to 26 November 2026, by role, using the JobsPipe job-ad index's free count. Then we counted the ads that mention AI terms such as machine learning, Copilot or ChatGPT.",
     "headers": [
       "Role",
       "US ads, 30 days",
@@ -323,15 +323,15 @@
   "faq": [
     {
       "q": "Is AI actually useful for demand forecasting, or is it mostly hype?",
-      "a": "Useful, if you have clean sales history. Machine learning beat statistical methods by over 14% in the M5 contest.[^8][^9] A 2026 study found data access mattered more than the algorithm.[^10]"
+      "a": "AI demand forecasting is useful, not hype, if your sales history is clean. Machine learning beat statistical methods by over 14% in the M5 contest.[^8][^9] A 2026 study found data access mattered more than the algorithm.[^10]"
     },
     {
       "q": "Are AI purchase order recommendations useful yet for a midsize distributor?",
-      "a": "Often, but benchmark them against a plain reorder point first. Mid-size planning tools start around $900 a month.[^36] Most procurement teams use AI already built into their software.[^32]"
+      "a": "Yes, often, but only once they beat a plain reorder point on your own items. Mid-size planning tools start around $900 a month.[^36] Most procurement teams use AI already built into their software.[^32]"
     },
     {
       "q": "What exactly has AI improved for 3PL providers?",
-      "a": "Transport planning and the paperwork around it. It leads providers' AI use at 64%, and one firm's agents automate 60% of check calls.[^1][^6] Only 13% of providers report measurable value so far.[^1]"
+      "a": "AI has improved transport planning for 3PLs, and the paperwork around it. Transport planning leads providers' AI use at 64%, and one firm's agents automate 60% of check calls.[^1][^6] Only 13% of providers report measurable value so far.[^1]"
     },
     {
       "q": "Is AI for supply chain only for large companies?",
@@ -339,7 +339,7 @@
     },
     {
       "q": "How is AI changing logistics and supply chain jobs?",
-      "a": "It adds skills to jobs more than it removes them. About half of logistics providers expect reskilling, and logistician jobs are projected to grow 18% by 2035.[^1][^35] In our job-ad count above, demand planner ads mention AI most often."
+      "a": "AI adds skills to logistics and supply chain jobs more than it removes jobs. About half of logistics providers expect reskilling, and logistician jobs are projected to grow 18% by 2035.[^1][^35] In our job-ad count above, demand planner ads mention AI most often."
     },
     {
       "q": "Management wants AI in our operations. Where do we start?",
@@ -683,5 +683,16 @@
       "reader": "Owner-CEO",
       "notes": "Steve gets the answer from the title and five bullets, and sees real tool prices (from $900/mo) and a free next step. The studies table was eight rows of survey names he'd skip on a phone. Fixed: cut to six, keeping the ones with the biggest samples or the clearest finding. Speaks to his worries: data (summary, watch-outs), rules, skills (job-ad count), return (payoff measures), and no slides in the offer."
     }
-  ]
+  ],
+  "answers": {
+    "human-role": "Planners, buyers, dispatchers and warehouse managers keep every decision: the plan, the award, the carrier and the quota; AI only drafts.[^12][^11][^26][^15] A person checks every new carrier and any change to a supplier's bank details.[^25][^44]",
+    "ranked": "AI pays first on paperwork: keying emailed orders into your ERP, then demand forecasts and reorder suggestions, then check calls and freight-bill matching.[^5][^8][^6]",
+    "table-1": "Planning tools start around $900 a month, while most others and every freight AI agent are quote only.[^36][^37][^47][^38][^39][^40]",
+    "table-2": "The surveys find most firms trying AI, but few seeing measurable value yet; the M5 contest shows machine learning forecasts beating statistical ones by over 14%.[^2][^1][^8]",
+    "rules": "Warehouse quota laws in California, New York, Washington, Minnesota and Oregon cover pick rates an algorithm sets, and federal hours-of-service limits bind any route AI.[^15][^16][^17][^18][^19][^20] Importers also carry forced-labor proof under UFLPA, and the FTC polices vendors' AI claims.[^21][^24]",
+    "what-goes-wrong": "Supply chain AI goes wrong when lab results fail on a real site, master data is dirty, vendors oversell agents, or fraudsters target email-reading agents.[^28][^29][^27][^25] Pilots also stall when no one owns the data and the decision.[^30]",
+    "buy-or-build": "Buy mature tools for forecasting, routing, visibility and freight audit, and build only the glue, like email-to-ERP order intake and approval steps.[^33][^7][^32]",
+    "something-else": "Pick something simpler for lumpy, slow-moving demand like spare parts, where Croston's method works, and for one depot or a regional fleet, where off-the-shelf routing software fits.[^8][^41]",
+    "offer": "Paperwork like order entry or freight-bill matching usually pays back first, because it is frequent, costly and easy to measure.[^5][^45][^6]"
+  }
 }

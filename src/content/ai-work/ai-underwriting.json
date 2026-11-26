@@ -6,7 +6,7 @@
  "topic": "AI underwriting",
  "job": "underwriting",
  "industry": "lending and insurance",
- "summary": "AI underwriting does the reading: it pulls facts from applications, statements and broker emails[^12][^21]. Underwriters decide faster, and a named person still decides[^4][^2]. It fits small-business lenders, life insurers with a rules engine[^19], and commercial insurers swamped by broker submissions[^7].",
+ "summary": "AI underwriting goes beyond scanning: it pulls facts from applications, statements and broker emails, and drafts a risk score with reasons for the underwriter[^12][^21][^14]. Underwriters decide faster, and a named person still decides[^4][^2]. It fits small-business lenders, life insurers with a rules engine[^19], and commercial insurers swamped by broker submissions[^7].",
  "humanRole": [
   "Underwriter: decides whether to offer, decline or price, after reviewing what the software recommends.[^34] In New York, an adverse decision notice should name the information used and its source.[^37][^2]",
   "Credit officer at a lender: owns each decline and its reasons.[^4] For a scoring model, those reasons must be the factors it actually scored.[^16]",
@@ -91,7 +91,7 @@
  ],
  "ownData": {
   "title": "Which underwriting steps can AI take on today?",
-  "intro": "Our read of each step, built from our own benchmark of AI reading long financial documents[^12] and the published studies below. That benchmark used public private-fund reports, not loan or insurance files[^12].",
+  "intro": "AI can take on intake, fact extraction and a draft risk score today; picking among look-alike tables and the final decision still need a person[^12][^16]. Our read of each step comes from our own benchmark of AI reading long financial documents[^12] and the published studies below. That benchmark used public private-fund reports, not loan or insurance files[^12].",
   "headers": [
    "Step",
    "Can AI do it now?",
@@ -656,5 +656,14 @@
    "reader": "Owner-CEO",
    "notes": "Found the cost answer and the jobs answer where they'd look, but the offer promised only 'our read'. The offer now promises the first step and a before-and-after measure in writing, with no sales pitch."
   }
- ]
+ ],
+ "answers": {
+  "example": "Yes, up to the decision: AI can pull revenue, debts and risks from statements and tax returns, each with its page and quote, and draft a score with reasons[^12][^14]. The underwriter accepts or changes it and makes the call[^4][^16].",
+  "recipes": "AI fits the reading steps: commercial submission intake, copying small-business statements and returns into your credit template, and summarising life-insurance medical evidence for your rules engine[^7][^12][^18]. The underwriter still decides in each one[^4][^2].",
+  "table-1": "Commercial insurers use intake and risk tools such as Sixfold, Cytora, Convr and Kalepa; life insurers use rules engines such as Swiss Re MagnumXP and Munich Re ALLFINANZ[^20][^22][^23][^27][^17][^19]. Named Sixfold users include Zurich North America, Guardian and Generali[^20].",
+  "rules": "Examiners and regulators will ask for specific decline reasons that match the factors scored, tests for unfair discrimination, vendor oversight and a written AI program with governance[^4][^16][^2][^3][^31]. In the EU, they will also ask for logs and human oversight from 2 Dec 2027[^32][^33][^10].",
+  "benchmark": "Lock an underwriter-written answer key on 50 past files, run each tool on the same files, and count wrong facts, cost and time per file[^12]. Time the same files done by hand first, so you have a before number.",
+  "what-goes-wrong": "AI underwriting goes wrong when models carry past bias, report high confidence on wrong answers, take the wrong look-alike table, or arrive with vendor speed claims you never tested[^2][^15][^12][^23]. You also stay responsible for any vendor's model[^2][^31].",
+  "something-else": "Start somewhere else for consumer lending where the score is the product, life and health underwriting, or pricing questions[^29][^17][^24]. Those point to the AI credit scoring guide, a rules engine such as Swiss Re MagnumXP, or a pricing platform such as Akur8[^29][^17][^24]."
+ }
 }

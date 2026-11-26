@@ -6,7 +6,7 @@
  "topic": "accounts payable automation",
  "job": "accounts payable automation",
  "industry": "finance and accounts payable",
- "summary": "Accounts payable (AP) automation with AI reads a supplier invoice, codes it, matches it to the purchase order (PO) and routes it for approval[^27][^21]. Reading costs cents[^10][^11]. Money leaks in two places: exceptions, about 1 invoice in 5[^8], and fake bank-change requests[^12].",
+ "summary": "OCR only turns an invoice into text; AI accounts payable (AP) automation also codes it, matches it to the purchase order (PO) and routes it for approval[^27][^21]. Reading costs cents[^10][^11]. Money leaks in two places: exceptions, about 1 invoice in 5[^8], and fake bank-change requests[^12].",
  "humanRole": [
   "AP specialist: clears the exceptions, about 1 invoice in 5, and makes the call the tool only flags.[^8][^1] Keep three-way match (invoice, PO and receipt agree) on; Washington's state auditor says it \"should not be eliminated in order to save time.\"[^49]",
   "Supplier-list owner, not the paying clerk: adds suppliers and approves any bank-detail change.[^48][^50] Each change gets a call-back on a number already on file, never one from the request.[^50][^12]",
@@ -87,7 +87,7 @@
  ],
  "ownData": {
   "title": "How much does accounts payable (AP) automation cost?",
-  "intro": "Of the 9 full AP suites, only BILL, Ramp and Tipalti publish a price[^5][^6][^7]. Budget for add-ons on top, such as matching and per-invoice or per-payment fees[^6][^16][^17][^7]. We read all 13 pricing pages below (9 suites, 3 capture tools and QuickBooks), and 7 give no list price for a paid plan[^18][^19][^21][^23][^24][^26][^31].",
+  "intro": "Listed AP suite prices start at free (Ramp), $49 per user a month (BILL) and $99 a month (Tipalti); the other 6 of 9 full suites publish no price[^6][^5][^7][^18][^19][^21][^23][^24][^26]. Budget for add-ons on top, such as matching and per-invoice or per-payment fees[^6][^16][^17][^7]. We read all 13 pricing pages below (9 suites, 3 capture tools and QuickBooks), and 7 give no list price for a paid plan[^18][^19][^21][^23][^24][^26][^31].",
   "headers": [
    "Tool",
    "Covers",
@@ -363,11 +363,11 @@
   },
   {
    "q": "How much does AP automation cost?",
-   "a": "Only 3 of the 9 full AP suites we checked publish a price.[^5][^6][^7] Ramp has a free plan, BILL charges $49 to $89 per user a month, and Tipalti starts at $99 a month.[^6][^5][^7] The rest quote after a demo, and add-ons such as matching and payment fees cost extra.[^18][^19][^16][^17]"
+   "a": "Listed AP automation prices start at free (Ramp), $49 per user a month (BILL) and $99 a month (Tipalti).[^6][^5][^7] Those are the only 3 of the 9 full AP suites we checked that publish a price; the rest quote after a demo, and add-ons such as matching and payment fees cost extra.[^18][^19][^16][^17]"
   },
   {
    "q": "Will AI replace accounts payable?",
-   "a": "It changes the job more than it removes it. Among US firms using AI, 66% use it only to help staff, and 2% saw AI-related employment fall.[^57] BLS still projects bookkeeping and accounting clerk jobs to fall 6% by 2035, with about 144,100 openings a year.[^54]"
+   "a": "No, AI changes the accounts payable job more than it removes it. Among US firms using AI, 66% use it only to help staff, and 2% saw AI-related employment fall.[^57] BLS still projects bookkeeping and accounting clerk jobs to fall 6% by 2035, with about 144,100 openings a year.[^54]"
   },
   {
    "q": "How long does AP automation take to set up?",
@@ -748,6 +748,14 @@
  "recipesTitle": "Where do you start automating accounts payable?",
  "testTitle": "How do you benchmark an AP tool on your own invoices?",
  "answers": {
-  "example": "AI reads the emailed invoice, pulls out the supplier, lines and totals, matches them to the purchase order and receipt, codes them, and posts a draft bill to your ERP[^20][^25][^34]. Anything off, like new bank details, waits for a person to call the supplier on a number already on file[^12][^50]."
+  "example": "AI reads the emailed invoice, pulls out the supplier, lines and totals, matches them to the purchase order and receipt, codes them, and posts a draft bill to your ERP[^20][^25][^34]. Anything off, like new bank details, waits for a person to call the supplier on a number already on file[^12][^50].",
+  "human-role": "Your AP team stays in charge at four points: clearing exceptions, approving supplier bank-detail changes, releasing payments and owning fraud checks[^8][^50][^48][^52]. The tool flags; a person makes the call[^8].",
+  "team-after": "After AI takes over reading and coding, your AP team spends its time on exceptions, supplier questions, fraud checks and analysis[^27][^1][^56][^54].",
+  "recipes": "Most small and mid-size companies should start by buying an AP suite and switching on its AI[^5][^6][^7]. Add your own AI check only where exceptions or fraud still get through; use capture alone if your ERP already runs approvals and payment[^8][^10].",
+  "rules": "Germany and France now require B2B e-invoices, and the US has no mandate[^36][^38][^43]. France made large and mid-size firms issue them from 1 Sep 2026; Germany's larger firms must from 1 Jan 2027[^38][^36].",
+  "benchmark": "Run each tool on 50 of your own recent invoices, scored against answers you wrote down first, and count wrong values, missed bank-detail changes and missed duplicates[^9][^61]. Record cost per invoice and exception rate beforehand, so you can measure the saving[^8].",
+  "what-goes-wrong": "Accounts payable automation goes wrong in three places: add-ons that raise the price, fake bank-detail changes riding on invoices, and tools that read the subtotal as the total[^5][^16][^12][^9].",
+  "buy-or-build": "Buy an AP suite for the workflow, and build only the checks it misses, such as fraud holds and duplicate-invoice checks[^5][^6][^7][^22].",
+  "something-else": "An AP suite is the wrong fit when your accounting software's built-in bill capture already handles simple bills, or when you need extracted data rather than a workflow[^33][^34][^29][^10]. Many entities or currencies call for a global suite instead[^7][^21][^24][^23]."
  }
 }

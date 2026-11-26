@@ -98,7 +98,7 @@
   ],
   "ownData": {
     "title": "Are US employers hiring people to build AI, or to decide where it goes?",
-    "intro": "We counted US job ads by job title, posted in the 30 days to 25 Nov 2026.[^31][^32] Builder titles drew about 56 ads for every ad for a head of AI or chief AI officer.[^31] So few firms hire an AI leader, and the call on where AI goes usually falls to the CEO or COO.[^31][^2]",
+    "intro": "US employers are mostly hiring people to build AI: builder job titles drew about 56 ads for every ad for a head of AI or chief AI officer.[^31] We counted US job ads by job title, posted in the 30 days to 25 Nov 2026.[^31][^32] So few firms hire an AI leader, and the call on where AI goes usually falls to the CEO or COO.[^31][^2]",
     "headers": [
       "Job title",
       "Counted as",
@@ -179,7 +179,7 @@
     },
     {
       "q": "How much does AI strategy consulting cost?",
-      "a": "We found no neutral survey of AI strategy fees, so we give no range. Ask for a fixed price and a fixed scope, with any build quoted separately. For a first pass, SBDC advice is free and MEP centers are subsidized.[^9][^8]"
+      "a": "A first pass can cost $0 through a free SBDC advisor, but we found no neutral survey of paid AI strategy fees, so we give no range.[^9] Ask for a fixed price and a fixed scope, with any build quoted separately. If you make things, MEP centers are subsidized.[^8]"
     },
     {
       "q": "Is AI consulting actually worth it for small and mid-sized businesses?",
@@ -191,7 +191,7 @@
     },
     {
       "q": "What is an AI readiness assessment?",
-      "a": "A check of your strategy, data, governance, skills and infrastructure. Free vendor self-checks exist: Microsoft's takes about 45 minutes, and Cisco's covers six areas.[^33][^38] Gartner found 63% of data leaders lack or are unsure of AI-ready data practices.[^25]"
+      "a": "An AI readiness assessment is a check of your strategy, data, governance, skills and infrastructure. Free vendor self-checks exist: Microsoft's takes about 45 minutes, and Cisco's covers six areas.[^33][^38] Gartner found 63% of data leaders lack or are unsure of AI-ready data practices.[^25]"
     },
     {
       "q": "Who should own AI strategy at a mid-size company?",
@@ -499,5 +499,13 @@
       "notes": "Steve wants a price and gets no fee range, since no neutral one exists, plus free SBDC and subsidized MEP routes; Zavient's own price is left out until the site owner approves it. The 'worth it' answer now leans on the pick-one-pain-point finding instead of a general rule. Recipe 1 fits a firm under about 120 staff, and the offer asks for his three costliest jobs, which he can bring cold."
     }
   ],
-  "updated": "2026-11-26"
+  "updated": "2026-11-26",
+  "answers": {
+    "walk-away": "AI strategy help should leave you with a ranked list of workflows, a baseline number, a 90-day plan, an AI use policy and a list of what not to do.[^19][^10][^15][^2]",
+    "human-role": "Your team keeps the calls: the CEO or COO owns AI risk, process owners pick the workflow and check output, and people decide anything about individuals.[^2][^5] A named person also signs off anything AI tells customers.[^7]",
+    "recipes": "AI strategy work takes three shapes: one workflow first for owner-led firms, a ranked portfolio with rules for mid-size firms, or rules first where AI touches decisions about people.[^18][^20][^5]",
+    "what-goes-wrong": "Most AI pilots stall because of people and process, not models: the wrong problem, data that isn't ready, no baseline and no end date.[^16][^11][^21][^27]",
+    "benchmark": "Judge any AI advisor by testing their advice on 50 to 100 real past cases they never saw, against a two-week baseline and the cheapest option.[^35][^10] Also ask for their scoring rubric, and agree a stop date before the pilot.[^27][^22]",
+    "something-else": "Skip strategy help when you already know the workflow, data and owner, when budget is tight, when you only need AI rules, or when staff just need training.[^17][^9][^2][^28]"
+  }
 }

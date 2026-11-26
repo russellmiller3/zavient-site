@@ -6,7 +6,7 @@
  "topic": "AI credit scoring",
  "job": "credit scoring",
  "industry": "lending",
- "summary": "AI credit scoring predicts whether an applicant will repay[^5]. When it says no, it must say why in plain words[^1][^35]. The model is the easy part; decline reasons[^33], bias checks[^31] and examiner paperwork[^7] make or break it.",
+ "summary": "AI credit scoring predicts whether an applicant will repay[^5], using the application, a credit bureau report and sometimes bank-account cash-flow data[^26][^29]. When it says no, it must say why in plain words[^1][^35]. The model is the easy part; decline reasons[^33], bias checks[^31] and examiner paperwork[^7] make or break it.",
  "humanRole": [
   "Chief credit officer: sets the score cutoffs and who may override them.[^49][^51] Examiners ask for every cutoff, the reason for it and each change.[^51]",
   "Underwriter: decides the files between the approve and decline cutoffs, and any override.[^49][^52] Each override records the approving officer and the reason.[^49][^43]",
@@ -86,7 +86,7 @@
  ],
  "ownData": {
   "title": "What are a lender's options for getting an AI credit model?",
-  "intro": "Three ways lenders get a credit model, and what each leaves you owning. The price column comes from our check of six platforms on 26 November 2026[^22]. Whichever you pick, the decline reasons stay your job[^1][^40].",
+  "intro": "A lender can buy a platform, hire a builder for a model it owns, or build in-house with its own modelers[^22][^46]. The price column comes from our check of six platforms on 26 November 2026[^22]. Whichever you pick, the decline reasons stay your job[^1][^40].",
   "headers": [
    "Option",
    "Fits when",
@@ -704,5 +704,13 @@
   "benchmark": "How do you benchmark an AI credit model before you trust it?"
  },
  "recipesTitle": "Which way to build an AI credit model fits your lender?",
- "testTitle": "How do you benchmark an AI credit model before you trust it?"
+ "testTitle": "How do you benchmark an AI credit model before you trust it?",
+ "answers": {
+  "example": "Lenders feed the application and a credit bureau report into a model that returns a score and an approve-or-decline decision, plus plain-word reasons for any decline[^5][^1]. A credit officer sets the cutoff, and one named person sends each decline letter[^1].",
+  "recipes": "Small lenders should start with a points scorecard; mid-size lenders with validators can use a stronger model with plain-English reasons; document-heavy lenders should use AI to read files[^16][^7][^34].",
+  "rules": "In the US, Regulation B and the Fair Credit Reporting Act govern decline notices, and Fed SR 26-2 covers model validation at larger banks[^1][^38][^7]. In the EU, the AI Act treats credit scoring as high-risk from 2 Dec 2027[^4][^10].",
+  "benchmark": "Fit a scorecard, an EBM and LightGBM on the same booked loans, compare them on held-out loans, price the lift at your cutoff, and run a bias check[^43][^37]. Pick the simplest model within a point or two of the best.",
+  "what-goes-wrong": "AI credit scoring goes wrong when lenders use a credit report's key factors or raw SHAP output as decline reasons, carry past bias forward, or trust vendor lift numbers[^1][^33][^31][^17].",
+  "something-else": "A lender should pick something else when it has no data science team, many thin-file applicants, or mostly document-reading work[^17][^32][^34]. Those point to a vendor platform, cash-flow data, or document extraction first[^18][^26][^34]."
+ }
 }
