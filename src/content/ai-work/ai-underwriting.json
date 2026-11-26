@@ -1,31 +1,32 @@
 {
  "title": "AI underwriting: can it help underwriters, and who is using it?",
- "description": "Where AI pays in underwriting: the reading, not the decision. 19 tools checked, the US and EU rules, our benchmark data and three builds.",
+ "description": "AI underwriting for lenders and insurers: credit memos, spreading and intake, not the decision. 19 tools checked, what examiners ask, four builds.",
  "type": "usecase",
  "templateVersion": 1,
  "topic": "AI underwriting",
  "job": "underwriting",
  "industry": "lending and insurance",
- "summary": "AI underwriting goes beyond scanning: it pulls facts from applications, statements and broker emails, and drafts a risk score with reasons for the underwriter[^12][^21][^14]. Underwriters decide faster, and a named person still decides[^4][^2]. It fits small-business lenders, life insurers with a rules engine[^19], and commercial insurers swamped by broker submissions[^7].",
+ "summary": "AI underwriting reads the file and drafts the work: facts from applications, spreads of tax returns, and a first-draft credit memo or risk score[^10][^19][^45]. A named underwriter or credit officer still decides[^3][^1]. It fits community and commercial lenders, life insurers with a rules engine[^17], and commercial insurers swamped by submissions[^6].",
  "humanRole": [
-  "Underwriter: decides whether to offer, decline or price, after reviewing what the software recommends.[^34] In New York, an adverse decision notice should name the information used and its source.[^37][^2]",
-  "Credit officer at a lender: owns each decline and its reasons.[^4] For a scoring model, those reasons must be the factors it actually scored.[^16]",
-  "Head of underwriting: sits on the AI committee with claims, compliance and legal.[^38][^31] Checking AI against expert review is one validation method the bulletin names.[^38]",
-  "Model reviewer at a bank lender: an expert independent of the builder challenges a scoring model before first use.[^40] Bank regulators' 2026 guidance calls this \"effective challenge\" and leaves generative AI out of scope.[^40][^39]"
+  "Underwriter: decides whether to offer, decline or price, after reviewing what the software recommends.[^32] In New York, an adverse decision notice should name the information used and its source.[^35][^1]",
+  "Credit officer at a lender: owns each decline and its reasons.[^3] For a scoring model, those reasons must be the factors it actually scored.[^14]",
+  "Credit analyst at a commercial lender: ties out flagged figures and decides global cash flow add-backs and which entities count.[^51][^50] The analyst writes the risk discussion, recommendation and proposed risk rating; the credit officer or committee approves.[^46][^50]",
+  "Head of underwriting: sits on the AI committee with claims, compliance and legal.[^36][^29] Checking AI against expert review is one validation method the bulletin names.[^36]",
+  "Model reviewer at a bank lender: an expert independent of the builder challenges a scoring model before first use.[^38] Bank regulators' 2026 guidance calls this \"effective challenge\" and leaves generative AI out of scope.[^38][^37]"
  ],
  "teamAfter": [
-  "Referred and complex files become the core job.[^18] BLS already lists reviewing software recommendations among underwriters' duties.[^34]",
-  "Underwriters get back admin hours: 39% to 43% of their time goes to admin today.[^1][^7]",
-  "Flagged gaps go back to people: underwriters contact field representatives, medical staff and others for what the file lacks.[^34][^12]",
-  "Testing for unfair outcomes, before use and on a schedule after, becomes standing work.[^2][^15] Among US firms using AI, 66% use it only to help staff; 2% saw AI-related employment fall.[^36]"
+  "Referred and complex files become the core job.[^16] BLS (the Bureau of Labor Statistics) already lists reviewing software recommendations among underwriters' duties.[^32]",
+  "Underwriters get back admin hours: 41% to 43% of their time goes to admin today, per Capgemini.[^6] Credit analysts move from typing spreads to judging global cash flow and the risk rating.[^51][^46]",
+  "Flagged gaps go back to people: underwriters contact field representatives, medical staff and others for what the file lacks.[^32][^10]",
+  "Testing for unfair outcomes, before use and on a schedule after, becomes standing work.[^1][^13] Among US firms using AI, 66% use it only to help staff; 2% saw AI-related employment fall.[^34]"
  ],
  "index": true,
  "verdict": [
-  "Property and casualty (P&C) underwriters spend about 4 in 10 hours on admin AI can take on[^1][^7].",
-  "Start AI on the reading: statements, tax returns, broker submissions and referred-case evidence[^21][^18].",
-  "AI now reads financial documents well; scans still trip it, so check each fact.[^12][^42]",
-  "A named underwriter keeps the decision, with reasons a regulator can check[^4][^2].",
-  "Test on 50 past files before you buy; vendor speed figures are their customers' claims[^20][^27]."
+  "Underwriting is a common AI use: half of community banks using or planning AI name it, and most still pilot[^42][^43].",
+  "Start AI on the reading and first drafts: spreads, credit memos, broker submissions and referred-case evidence[^45][^19].",
+  "AI now reads financial documents well; scans still trip it, so check each fact.[^10][^40]",
+  "A named underwriter or credit officer keeps the decision, with reasons a regulator can check[^3][^1].",
+  "Test on 50 past files before you buy; vendor speed figures are their customers' claims[^18][^25]."
  ],
  "onPage": [
   {
@@ -34,11 +35,15 @@
   },
   {
    "to": "table-1",
+   "text": "What the credit analyst still owns when AI drafts the memo"
+  },
+  {
+   "to": "table-2",
    "text": "The insurance underwriting tools we checked"
   },
   {
    "to": "recipes",
-   "text": "Three ways to build it: commercial intake, small-business lending, life evidence"
+   "text": "Four ways to build it: commercial intake, small-business lending, credit memos, life evidence"
   },
   {
    "to": "own-data",
@@ -46,7 +51,7 @@
   },
   {
    "to": "rules",
-   "text": "The lending and insurance rules that apply to AI decisions"
+   "text": "What examiners check in a commercial file, and the rules on AI decisions"
   },
   {
    "to": "benchmark",
@@ -58,40 +63,45 @@
   },
   {
    "to": "faq",
-   "text": "Cost, accuracy, jobs and decline reasons: the questions buyers ask"
+   "text": "Credit memos, loan review, cost, accuracy and jobs: the questions buyers ask"
   }
  ],
  "stats": [
   {
    "num": "0 of 19",
-   "label": "products we checked publish a price on their site: 13 insurance tools in our tools table, plus 6 lending platforms[^23][^29]",
+   "label": "products we checked publish a price on their site: 13 insurance tools in our tools table, plus 6 lending platforms[^21][^27]",
    "source": "Zavient review of vendor sites, 26 Nov 2026"
   },
   {
    "num": "0",
-   "label": "mistakes by the two best models reading 30 fund reports, answers locked in advance[^12]",
+   "label": "mistakes by the two best models reading 30 fund reports, answers locked in advance[^10]",
    "source": "FinExtractBench, Zavient, Nov 2026"
   },
   {
-   "num": "39%",
-   "label": "of P&C underwriters' time goes to admin and other non-core work[^1][^8]",
-   "source": "Accenture and The Institutes survey, 434 underwriters; Capgemini found 41% to 43% in 2024[^7]"
+   "num": "50.4%",
+   "label": "of community banks using or planning AI name credit underwriting or risk modeling as a use[^42]",
+   "source": "CSBS 2026 survey, 330 bankers; a vendor survey found 21% using AI in underwriting[^43]"
   },
   {
    "num": "30",
-   "label": "US jurisdictions have adopted the NAIC (state insurance regulators' body) bulletin on insurers' use of AI[^9]",
+   "label": "US jurisdictions have adopted the NAIC (state insurance regulators' body) bulletin on insurers' use of AI[^7]",
    "source": "NAIC adoption map, 13 Nov 2026"
+  },
+  {
+   "num": "Under 30 min",
+   "label": "for a first-draft commercial credit memo at TD, down from up to three working days[^45]",
+   "source": "TD's own figure, a large bank, Oct 2026"
   }
  ],
  "pickElse": [
-  "Consumer lending where the score is the product: start with the AI credit scoring guide[^29]. The decline reasons are the regulated part[^4][^16].",
-  "Life and health insurer: start from a rules engine such as Swiss Re MagnumXP or Munich Re ALLFINANZ[^17][^19]. AI earns its keep summarising the evidence on referred cases so the underwriter decides faster, not making the call[^18][^19].",
-  "Swamped by broker submissions? An off-the-shelf intake tool may beat a build, if it passes a test on 50 past submissions[^22][^21].",
-  "The question is price, not whether to take the risk: look at actuarial pricing platforms such as Akur8, Earnix or hyperexponential[^24][^25][^26]."
+  "Consumer lending where the score is the product: start with the AI credit scoring guide[^27]. The decline reasons are the regulated part[^3][^14].",
+  "Life and health insurer: start from a rules engine such as Swiss Re MagnumXP or Munich Re ALLFINANZ[^15][^17]. AI earns its keep summarising the evidence on referred cases so the underwriter decides faster, not making the call[^16][^17].",
+  "Swamped by broker submissions? An off-the-shelf intake tool may beat a build, if it passes a test on 50 past submissions[^20][^19].",
+  "The question is price, not whether to take the risk: look at actuarial pricing platforms such as Akur8, Earnix or hyperexponential[^22][^23][^24]."
  ],
  "ownData": {
   "title": "Which underwriting steps can AI take on today?",
-  "intro": "AI can take on intake, fact extraction and a draft risk score today; picking among look-alike tables and the final decision still need a person[^12][^16]. Our read of each step comes from our own benchmark of AI reading long financial documents[^12] and the published studies below. That benchmark used public private-fund reports, not loan or insurance files[^12].",
+  "intro": "AI can take on intake, fact extraction and a draft risk score today; picking among look-alike tables and the final decision still need a person[^10][^14]. Our read of each step comes from our own benchmark of AI reading long financial documents[^10] and the published studies below. That benchmark used public private-fund reports, not loan or insurance files[^10].",
   "headers": [
    "Step",
    "Can AI do it now?",
@@ -101,32 +111,32 @@
    [
     "Intake: read applications, broker emails, forms",
     "Yes, with a second model checking",
-    "Two models, 0 mistakes on 30 reports with answers locked in advance (FinExtractBench)[^12]"
+    "Two models, 0 mistakes on 30 reports with answers locked in advance (FinExtractBench)[^10]"
    ],
    [
     "Pull facts from statements, returns and loss runs (claims history)",
     "Yes, if every fact cites its page and quote",
-    "The top nine tools were within 2 facts of each other (FinExtractBench hard round)[^12]"
+    "The top nine tools were within 2 facts of each other (FinExtractBench hard round)[^10]"
    ],
    [
     "Pick the right number among look-alike tables",
     "Not alone; flag these for a person",
-    "7 of 10 tools took the wrong table on one 57-page report (FinExtractBench)[^12]"
+    "7 of 10 tools took the wrong table on one 57-page report (FinExtractBench)[^10]"
    ],
    [
     "Trust the model's own confidence",
     "No",
-    "Chat models rated their wrong answers 70 to 100 (FinExtractBench)[^12]"
+    "Chat models rated their wrong answers 70 to 100 (FinExtractBench)[^10]"
    ],
    [
     "Score the risk",
-    "Yes, if its stated reasons are the factors it scored[^16]; logistic regression stays the most transparent choice[^14]",
-    "A standard machine-learning model beat chat models at predicting loan defaults, and the same method tops a credit-scoring review[^13][^14]. MassMutual's machine-learned life score beat traditional underwriting on claims[^5][^30]."
+    "Yes, if its stated reasons are the factors it scored[^14]; logistic regression stays the most transparent choice[^12]",
+    "A standard machine-learning model beat chat models at predicting loan defaults, and the same method tops a credit-scoring review[^11][^12]. MassMutual's machine-learned life score beat traditional underwriting on claims[^4][^28]."
    ],
    [
     "Decide and explain the decision",
     "A person, using the model's reasons",
-    "Reg B (the US rule on credit decisions) requires specific reasons[^4][^16]. New York's insurance regulator (NYDFS) expects them in Circular Letter 7[^2]."
+    "Reg B (the US rule on credit decisions) requires specific reasons[^3][^14]. New York's insurance regulator (NYDFS) expects them in Circular Letter 7[^1]."
    ]
   ],
   "note": "Your documents will differ, which is why the first step of any build is a benchmark on your own files."
@@ -138,7 +148,7 @@
  "recipes": [
   {
    "name": "1. Commercial insurance: submission intake",
-   "when": "Commercial insurers and MGAs (managing general agents, which underwrite for a carrier) whose underwriters key in broker submissions. Admin takes 41% to 43% of their time.[^7]",
+   "when": "Commercial insurers and MGAs (managing general agents, which underwrite for a carrier) whose underwriters key in broker submissions. Admin takes 41% to 43% of their time.[^6]",
    "flow": [
     "Broker email, forms and loss runs (claims history) land in a queue the ops lead owns",
     "AI extracts each fact with page and quote",
@@ -146,7 +156,7 @@
     "AI adds third-party data",
     "Underwriter works the queue best fit first and decides"
    ],
-   "cost": "Reading: about 12 to 15 cents a long fund report in our test[^12]. Intake products publish no price[^23]; a Zavient build is quoted per job, not listed here."
+   "cost": "Reading: about 12 to 15 cents a long fund report in our test[^10]. Intake products publish no price[^21]; a Zavient build is quoted per job, not listed here."
   },
   {
    "name": "2. Small-business lending: file to decision",
@@ -158,10 +168,22 @@
     "Explainable model drafts a score with its reasons",
     "Underwriter decides; reasons logged"
    ],
-   "cost": "Reading: under 1 cent to about 30 cents a long fund report in our test[^12]. The build, including a scorecard you own, is quoted per job, not listed here."
+   "cost": "Reading: under 1 cent to about 30 cents a long fund report in our test[^10]. The build, including a scorecard you own, is quoted per job, not listed here."
   },
   {
-   "name": "3. Life insurance: evidence summary for the rules engine",
+   "name": "3. Community or commercial bank: credit memo from the borrower package",
+   "when": "Banks and credit unions whose analysts spend days spreading returns and writing memos. A memo takes 8+ hours to weeks, per Moody's (vendor).[^46]",
+   "flow": [
+    "The borrower package lands in a queue the credit administration lead owns",
+    "AI spreads returns and statements, citing a page per figure; the analyst ties out flagged figures",
+    "AI drafts global cash flow; the analyst decides add-backs and which entities count",
+    "AI drafts the memo sections; the analyst writes the risk discussion, recommendation and rating",
+    "Credit officer or loan committee decides; AI then tracks covenants and statement due dates"
+   ],
+   "cost": "TD cut first drafts from up to three days to under 30 minutes, a large bank's own figure.[^45] We found no independent community-bank time study, so time 50 files from one lending team first."
+  },
+  {
+   "name": "4. Life insurance: evidence summary for the rules engine",
    "when": "Life and health carriers with an existing rules engine.",
    "flow": [
     "Application and medical evidence land in a queue the ops lead owns",
@@ -170,13 +192,75 @@
     "Clean cases: offer drafted, an underwriter spot-checks a sample",
     "Others: referred to an underwriter, who decides"
    ],
-   "cost": "Rules engines such as MagnumXP and ALLFINANZ publish no price; you contact the vendor[^17][^19]. The AI reading layer is quoted per job, and you can benchmark and swap it."
+   "cost": "Rules engines such as MagnumXP and ALLFINANZ publish no price; you contact the vendor[^15][^17]. The AI reading layer is quoted per job, and you can benchmark and swap it."
   }
  ],
  "tables": [
   {
+   "title": "Can AI draft a commercial credit memo, and what does the analyst still own?",
+   "intro": "At TD, a large bank, an AI tool drafts six cited memo sections in under 30 minutes, against up to three working days by hand[^45]. That is the bank's own figure, so treat it as a ceiling. We found no independent time study at community-bank scale; vendor figures are labelled[^47][^46].",
+   "headers": [
+    "Step",
+    "What AI drafts",
+    "What the analyst or credit officer owns"
+   ],
+   "rows": [
+    {
+     "name": "Intake",
+     "cells": [
+      "Sorts the borrower package (business returns, K-1s (partners' income shares), guarantor returns, interim statements, rent roll) and lists what is missing[^10].",
+      "The relationship manager chases missing items. Examiners expect credit files kept current[^50]."
+     ]
+    },
+    {
+     "name": "Spreading",
+     "cells": [
+      "Copies each figure from returns and statements into your spreading template, citing its page[^47][^10].",
+      "Ties out flagged figures and every figure feeding debt service coverage (cash flow against loan payments). Models still state wrong figures confidently[^48][^49]."
+     ]
+    },
+    {
+     "name": "Global cash flow",
+     "cells": [
+      "Assembles a draft across the business, related entities and guarantors, tracing K-1s[^51].",
+      "Decides add-backs, which entities count, living expenses and contingent liabilities. The Office of the Comptroller of the Currency (OCC) expects this analysis even when guarantors hold significant liquid assets[^51]."
+     ]
+    },
+    {
+     "name": "Memo draft",
+     "cells": [
+      "Drafts borrower background, financial analysis, collateral and industry sections, each cited to the file[^45][^46].",
+      "Edits the draft, then writes the risk discussion, the recommendation and the proposed risk rating[^46][^50]."
+     ]
+    },
+    {
+     "name": "Decision",
+     "cells": [
+      "None: this step stays with people.",
+      "The credit officer or loan committee approves, declines or restructures. Examiners check the commitment letter matches approved terms[^50]."
+     ]
+    },
+    {
+     "name": "After close: covenant tracking (full guide)",
+     "url": "https://zavient.com/ai-work/private-credit-portfolio-monitoring.html",
+     "cells": [
+      "Tracks statement due dates, recomputes covenant ratios and flags breaches and stale items. Examiners ask for these tracking reports[^52][^50].",
+      "The credit officer decides waivers and risk-rating changes[^50]."
+     ]
+    },
+    {
+     "name": "Loan review (one file)",
+     "cells": [
+      "Pre-reads the file and drafts the review worksheet and exception list, per a loan review vendor[^54].",
+      "An independent reviewer sets the final rating and findings[^53][^54]."
+     ]
+    }
+   ],
+   "note": "The analyst column follows exam procedures from the Federal Deposit Insurance Corporation (FDIC) and the OCC[^50][^52]. Portfolio-level loan review and CECL (current expected credit loss) work are on our community banks page."
+  },
+  {
    "title": "Which AI underwriting tools are insurers using?",
-   "intro": "Checked 26 November 2026. None publishes a price on its site[^23][^24][^25][^26]. Funding and customer claims come from the press releases linked on each name.",
+   "intro": "Checked 26 November 2026. None publishes a price on its site[^21][^22][^23][^24]. Funding and customer claims come from the press releases linked on each name.",
    "headers": [
     "Product",
     "What it does",
@@ -235,7 +319,7 @@
      "cells": [
       "Commercial underwriting and portfolio AI",
       "Specialty and commercial carriers",
-      "$75m Series B, Nov 2026[^28]"
+      "$75m Series B, Nov 2026[^26]"
      ]
     },
     {
@@ -302,39 +386,63 @@
      ]
     }
    ],
-   "note": "Lending platforms (Zest AI, Provenir, Taktile, Scienaptic, FICO, Experian) are covered in the AI credit scoring guide. None of those publishes a price either[^29]."
+   "note": "Lending platforms (Zest AI, Provenir, Taktile, Scienaptic, FICO, Experian) are covered in the AI credit scoring guide. None of those publishes a price either[^27]."
   }
  ],
  "rules": [
   {
+   "name": "FDIC exam procedures: commercial and industrial loans",
+   "url": "https://www.fdic.gov/risk-management-manual-examination-policies/commercial-and-industrial-lending.pdf",
+   "status": "Current (Oct 2025 manual)",
+   "what": "Examiners check that loan write-ups analyze repayment sources, collateral, guarantors, covenants and global cash flow[^50]. They also check that commitment letters match approved terms[^50]. AI can draft these sections, but your analyst must stand behind them."
+  },
+  {
+   "name": "OCC Comptroller's Handbook: Commercial Real Estate Lending",
+   "url": "https://www.occ.gov/publications-and-resources/publications/comptrollers-handbook/files/commercial-real-estate-lending/pub-ch-commercial-real-estate.pdf",
+   "status": "Current (v2.0, Mar 2022)",
+   "what": "Global cash flow may mean combining business statements, tax returns and K-1s[^51]. Examiners expect it even when the guarantor has significant liquid assets[^51]."
+  },
+  {
+   "name": "OCC Comptroller's Handbook: Lending and Loan Portfolio Risk Management",
+   "url": "https://www.occ.treas.gov/publications-and-resources/publications/comptrollers-handbook/files/lending-loan-portfolio-risk-management/pub-ch-lending-loan-portfolio.pdf",
+   "status": "New, Jul 2026",
+   "what": "Examiners request reports on financial statement tracking, covenant tracking and annual review status[^52]. Exceptions include waived covenant breaches and stale statements, tax returns and borrowing base certificates[^52]."
+  },
+  {
+   "name": "Interagency Guidance on Credit Risk Review Systems (SR 20-13)",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2013.htm",
+   "status": "In force since May 2020",
+   "what": "Loan reviewers must be independent of approval, and significant loans are typically reviewed yearly or at renewal[^53]. Small or rural banks may use modified independence[^53]. AI can pre-read files; the reviewer sets ratings and findings[^54]."
+  },
+  {
    "name": "Regulation B, 12 CFR 1002.9",
    "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1002/subpart-A/section-1002.9",
    "status": "In force",
-   "what": "US lenders must give notice of a decline within 30 days, with the specific main reasons or the right to get them[^4]. For a scoring model, the reasons must be the factors it actually scored[^16]."
+   "what": "US lenders must give notice of a decline within 30 days, with the specific main reasons or the right to get them[^3]. For a scoring model, the reasons must be the factors it actually scored[^14]."
   },
   {
    "name": "NYDFS Circular Letter No. 7",
    "url": "https://www.dfs.ny.gov/industry-guidance/circular-letters/cl2024-07",
    "status": "In force since Jul 2024",
-   "what": "New York insurers should test AI and outside data for unfair discrimination and keep board oversight[^2]. They stay responsible for vendor tools and should give specific reasons and data sources for adverse decisions[^2]."
+   "what": "New York insurers should test AI and outside data for unfair discrimination and keep board oversight[^1]. They stay responsible for vendor tools and should give specific reasons and data sources for adverse decisions[^1]."
   },
   {
    "name": "NAIC Model Bulletin on AI",
    "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
    "status": "30 jurisdictions",
-   "what": "The NAIC (the US state insurance regulators' body) asks insurers to keep a written AI program with governance, risk controls, testing and vendor oversight[^31]. 30 US jurisdictions have adopted it[^9]. California, Colorado and New York have their own rules instead[^9]."
+   "what": "The NAIC (the US state insurance regulators' body) asks insurers to keep a written AI program with governance, risk controls, testing and vendor oversight[^29]. 30 US jurisdictions have adopted it[^7]. California, Colorado and New York have their own rules instead[^7]."
   },
   {
    "name": "Colorado SB21-169",
    "url": "https://doi.colorado.gov/for-consumers/sb21-169-protecting-consumers-from-unfair-discrimination-in-insurance-practices",
    "status": "Life; auto and health from 15 Oct 2025",
-   "what": "Insurers must test outside data and models for unfair discrimination, fix harm found and show the Division how they test[^3][^15]."
+   "what": "Insurers must test outside data and models for unfair discrimination, fix harm found and show the Division how they test[^2][^13]."
   },
   {
    "name": "EU AI Act, Annex III",
    "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3",
    "status": "Starts 2 Dec 2027",
-   "what": "Credit scoring of people and life and health insurance risk pricing are high-risk uses[^6]. Those rules apply from 2 December 2027[^10][^11]. High-risk systems need automatic logs and human oversight, so plan both now if you operate in the EU[^32][^33]."
+   "what": "Credit scoring of people and life and health insurance risk pricing are high-risk uses[^5]. Those rules apply from 2 December 2027[^8][^9]. High-risk systems need automatic logs and human oversight, so plan both now if you operate in the EU[^30][^31]."
   }
  ],
  "howToTest": [
@@ -347,40 +455,61 @@
   "Multiply hours saved per file by files per week and your loaded hourly cost. That gives the weekly dollar value of the change."
  ],
  "buyVsBuild": {
-  "buy": "Buy when your line is standard, the vendor already handles your submission formats, and you are happy to run inside its workbench.[^22] Most firms buy: 76% of enterprise AI uses are bought, not built.[^43]",
-  "build": "Build when your own loss history and appetite are your edge, or when you need the reading step to feed systems you already own. The reading layer is swappable: in our benchmark the top nine models were within 2 facts of each other[^12]. The decision logic is yours."
+  "buy": "Buy when your line is standard, the vendor already handles your submission formats, and you are happy to run inside its workbench.[^20] Most firms buy: 76% of enterprise AI uses are bought, not built.[^41]",
+  "build": "Build when your own loss history and appetite are your edge, or when you need the reading step to feed systems you already own. The reading layer is swappable: in our benchmark the top nine models were within 2 facts of each other[^10]. The decision logic is yours."
  },
  "watchOuts": [
-  "You stay responsible for a vendor's model. New York and the NAIC bulletin both expect audit rights in vendor contracts where available[^2][^31].",
-  "Models can carry past bias into new decisions. New York and Colorado expect insurers to test for unfair outcomes across groups before use and on a schedule after[^2][^15].",
-  "A model's confidence score is not a warning sign. In our benchmark, wrong answers came back rated 70 to 100[^12].",
-  "Vendor claims such as faster quotes are the vendor's own figures[^23], often from chosen customers[^20][^27]. Ask for a benchmark on your own files.",
-  "Flagged facts need an owner: in our benchmark, look-alike tables tripped 7 of 10 tools on one report[^12]. Count flags per file, multiply by weekly files and name who clears them."
+  "You stay responsible for a vendor's model. New York and the NAIC bulletin both expect audit rights in vendor contracts where available[^1][^29].",
+  "Models can carry past bias into new decisions. New York and Colorado expect insurers to test for unfair outcomes across groups before use and on a schedule after[^1][^13].",
+  "A model's confidence score is not a warning sign. In our benchmark, wrong answers came back rated 70 to 100[^10].",
+  "Credit memo drafts can carry wrong figures inside a confident, well-written narrative[^48][^49]. Tie out every figure that feeds debt service coverage before the memo goes to committee.",
+  "Vendor claims such as faster quotes are the vendor's own figures[^21], often from chosen customers[^18][^25]. Ask for a benchmark on your own files.",
+  "Flagged facts need an owner: in our benchmark, look-alike tables tripped 7 of 10 tools on one report[^10]. Count flags per file, multiply by weekly files and name who clears them."
  ],
  "faq": [
   {
    "q": "What is AI underwriting?",
-   "a": "AI underwriting is software that reads the file and pulls out each fact with its page and quote.[^12][^21] It can draft a risk score with its reasons for the underwriter to review.[^34] The underwriter still decides.[^34][^2]"
+   "a": "AI underwriting is software that reads the file and pulls out each fact with its page and quote.[^10][^19] It can draft a risk score with its reasons for the underwriter to review.[^32] The underwriter still decides.[^32][^1]"
+  },
+  {
+   "q": "Are banks using AI for underwriting?",
+   "a": "Yes, but mostly in pilots: half of community banks using or planning AI name underwriting or risk modeling as a use.[^42] A vendor survey of community lenders found 21% using AI in underwriting or risk review.[^43] In a San Francisco Fed sample, 84% of banks under $10B had never posted an AI-related job.[^44]"
+  },
+  {
+   "q": "Can AI draft a commercial credit memo for a community bank?",
+   "a": "Yes, a first draft: TD's tool drafts six cited sections in under 30 minutes, and 95% passed expert review.[^45] That is a large bank's figure; we found no independent community-bank study. The analyst still writes the recommendation and risk rating.[^46][^50]"
+  },
+  {
+   "q": "How do you prepare a credit memo with AI?",
+   "a": "Spread the financials, draft global cash flow and the cited sections, then have the analyst tie out figures and write the risk discussion and rating.[^47][^51][^46] After the decision, check the commitment letter against the approved terms.[^50]"
+  },
+  {
+   "q": "Which AI is best for credit analysis?",
+   "a": "The best tool for your lender cites every figure to its page, fits your template and passes a test on 50 of your files.[^10] Language models can state wrong figures in a tidy narrative, and errors rise with calculation depth.[^48][^49] We don't rank vendors; test them side by side."
+  },
+  {
+   "q": "Can AI help with loan review?",
+   "a": "Yes, as a pre-reader: AI can summarise the file and draft the review worksheet and exception list, per one loan review vendor.[^54] The independent reviewer sets final ratings and findings under the 2020 interagency guidance.[^53] Portfolio-level scope and sampling are on our community banks page."
   },
   {
    "q": "Can AI approve or decline an application on its own?",
-   "a": "Only for simple consumer loans, where BLS says underwriting may be fully automated.[^35] Either way, the lender still owes specific reasons for a decline.[^4] Insurers must hold vendor AI to the legal standards they meet themselves.[^38]"
+   "a": "Only for simple consumer loans, where BLS says underwriting may be fully automated.[^33] Either way, the lender still owes specific reasons for a decline.[^3] Insurers must hold vendor AI to the legal standards they meet themselves.[^36]"
   },
   {
-   "q": "Will AI take underwriters' jobs?",
-   "a": "Not most of them: BLS projects insurance underwriter jobs to fall 4% from 2025 to 2035, citing automated underwriting software.[^34] It still expects about 6,800 openings a year.[^34] Among US firms using AI, 66% use it only to help staff; 2% saw AI-related employment fall.[^36]"
+   "q": "Will underwriting get replaced by AI?",
+   "a": "No, not most of it: BLS projects insurance underwriter jobs to fall 4% from 2025 to 2035, with about 6,800 openings a year.[^32] Banks that use AI heavily lean on hard data and do less small-business lending, where a lender's local knowledge counts.[^44] Among US firms using AI, 66% use it only to help staff; 2% saw AI-related employment fall.[^34]"
   },
   {
    "q": "Do you have to explain a loan decline made with AI?",
-   "a": "Yes: Reg B requires specific reasons, and for a scoring model they must be the factors it scored.[^4][^16] The CFPB withdrew its 2022 circular on AI declines in May 2025, but the rule itself still applies.[^41][^4]"
+   "a": "Yes: Reg B requires specific reasons, and for a scoring model they must be the factors it scored.[^3][^14] The CFPB withdrew its 2022 circular on AI declines in May 2025, but the rule itself still applies.[^39][^3]"
   },
   {
    "q": "How accurate is AI at reading underwriting files?",
-   "a": "AI is very accurate at reading clean documents: the best model in a Fraunhofer study got 96.5% of invoice fields right.[^42] Scans are harder: 87.5% on scanned receipts.[^42] In our own test, two models made zero mistakes on 30 long fund reports.[^12]"
+   "a": "AI is very accurate at reading clean documents: the best model in a Fraunhofer study got 96.5% of invoice fields right.[^40] Scans are harder: 87.5% on scanned receipts.[^40] In our own test, two models made zero mistakes on 30 long fund reports.[^10]"
   },
   {
    "q": "What does AI underwriting software cost?",
-   "a": "AI underwriting is sold by quote, with no list price among 19 products we checked; reading a report cost under 1 cent to 30 cents.[^23][^29][^12] The reading cost is from our test on long fund reports.[^12] Budget from a quote scoped to one line of business, after a test on 50 of your files.[^20]"
+   "a": "AI underwriting is sold by quote, with no list price among 19 products we checked; reading a report cost under 1 cent to 30 cents.[^21][^27][^10] The reading cost is from our test on long fund reports.[^10] Budget from a quote scoped to one line of business, after a test on 50 of your files.[^18]"
   }
  ],
  "resources": [
@@ -388,14 +517,14 @@
    "name": "NAIC AI Model Bulletin adoption map",
    "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
    "what": "Which states have adopted the bulletin, updated by NAIC."
+  },
+  {
+   "name": "OCC Comptroller's Handbook: Lending and Loan Portfolio Risk Management (Jul 2026)",
+   "url": "https://www.occ.treas.gov/publications-and-resources/publications/comptrollers-handbook/files/lending-loan-portfolio-risk-management/pub-ch-lending-loan-portfolio.pdf",
+   "what": "The reports examiners will ask for on covenants, stale statements and annual reviews."
   }
  ],
  "sources": [
-  {
-   "name": "Accenture and The Institutes, P&C Underwriter Survey",
-   "url": "https://riskandinsurance.com/wp-content/uploads/2021/12/TI-Accenture_PC_Underwriter_Survey-_vf.pdf",
-   "what": "2021 survey of 434 US P&C underwriters: 39% of their time goes to non-core and administrative work."
-  },
   {
    "name": "NYDFS Circular Letter No. 7 (2024)",
    "url": "https://www.dfs.ny.gov/industry-guidance/circular-letters/cl2024-07",
@@ -425,11 +554,6 @@
    "name": "Capgemini, the evolving role of underwriters (2024)",
    "url": "https://www.capgemini.com/in-en/wp-content/uploads/sites/18/2024/05/Unleashing-growth-the-evolving-role-of-underwriters_Secured.pdf",
    "what": "41% to 43% of commercial and personal lines underwriters' time goes to admin such as data entry and record keeping."
-  },
-  {
-   "name": "Accenture, Transforming claims and underwriting with AI (2022)",
-   "url": "https://www.accenture.com/en/insights/insurance/ai-transforming-claims-underwriting",
-   "what": "Underwriters spend 40% of their time on non-core activities, from a survey of 434 US underwriters."
   },
   {
    "name": "NAIC adoption map, AI Model Bulletin",
@@ -605,12 +729,79 @@
    "name": "Menlo Ventures, 2025 State of Generative AI in the Enterprise",
    "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
    "what": "Survey of 495 US enterprise AI decision-makers: 76% of AI use cases are purchased rather than built, up from 53% in 2024."
+  },
+  {
+   "name": "CSBS, 2026 Annual Survey of Community Banks (6 Oct 2026)",
+   "url": "https://www.csbs.org/sites/default/files/other-files/2026%20CSBS%20Annual%20Survey%20of%20Community%20Banks.pdf",
+   "what": "330 bankers in 35 states, Apr-Jul 2026: 53% piloting AI or in limited use, 9% deployed across functions; among banks using or planning AI, 50.4% name credit underwriting or risk modeling as a use area."
+  },
+  {
+   "name": "MeridianLink, 2026 AI Priorities Benchmark (8 Oct 2026; vendor)",
+   "url": "https://www.meridianlink.com/press-release/2026-ai-priorities-benchmark-survey/",
+   "what": "Vendor survey of 257 lending professionals at community banks and credit unions: 21% use AI in underwriting or risk review; 20% have AI in core lending workflows."
+  },
+  {
+   "name": "Federal Reserve Bank of San Francisco, Economic Letter 2026-25 (21 Sep 2026)",
+   "url": "https://www.frbsf.org/research-and-insights/publications/economic-letter/2026/09/how-ai-adoption-might-affect-bank-lending",
+   "what": "84% of banks under $10B in the sample never posted an AI-related job; AI-intensive banks lean on hard data over soft information and have lower small-business lending shares."
+  },
+  {
+   "name": "TD Stories, TD launches Credit Assist (22 Oct 2026)",
+   "url": "https://stories.td.com/us/en/article/td-launches-credit-assist-turning-days-of-commercial-credit-work-into-minutes",
+   "what": "Bank's own figures: first-draft commercial credit memos from up to three working days to under 30 minutes; six cited sections; 95% of output passed expert review on 220 deals."
+  },
+  {
+   "name": "Moody's, automated credit memo white paper (vendor)",
+   "url": "https://www.moodys.com/web/en/us/insights/resources/whitepaper-acm.pdf",
+   "what": "Vendor view: a credit memo takes 8+ hours to weeks; mid-sized banks produce 10,000-12,000 a year; analysts and approvers stay in control."
+  },
+  {
+   "name": "Aloan, financial spreading software (vendor)",
+   "url": "https://aloan.ai/solutions/financial-spreading-software",
+   "what": "Vendor claim: commercial file time fell from 42 hours to 9 hours."
+  },
+  {
+   "name": "Chahed, FinNLP 2026 (ACL Anthology)",
+   "url": "https://aclanthology.org/2026.finnlp-1.1.pdf",
+   "what": "Language models routinely emit wrong figures while keeping a confident, well-formatted narrative; cites FinanceBench, where a strong retrieval model was wrong or abstained on 81% of filing questions."
+  },
+  {
+   "name": "Zhang et al., FAITH benchmark (ACM ICAIF 2025)",
+   "url": "https://arxiv.org/html/2508.05201",
+   "what": "Hallucination on financial tables rises with the depth of calculation."
+  },
+  {
+   "name": "FDIC Risk Management Manual, Commercial and Industrial Loans examination procedures (Oct 2025)",
+   "url": "https://www.fdic.gov/risk-management-manual-examination-policies/commercial-and-industrial-lending.pdf",
+   "what": "Examiners check that loan presentations analyze purpose, structure, covenants, repayment sources, collateral, guarantors and global cash flow, and that commitment letters match approved terms; monitoring covers covenant tracking, current files, annual reviews and timely risk ratings."
+  },
+  {
+   "name": "OCC Comptroller's Handbook, Commercial Real Estate Lending (v2.0, Mar 2022)",
+   "url": "https://www.occ.gov/publications-and-resources/publications/comptrollers-handbook/files/commercial-real-estate-lending/pub-ch-commercial-real-estate.pdf",
+   "what": "Global cash flow analysis can be complex, may combine business statements, tax returns and K-1s, and should be done despite significant liquid assets."
+  },
+  {
+   "name": "OCC Comptroller's Handbook, Lending and Loan Portfolio Risk Management (v1.0, Jul 2026)",
+   "url": "https://www.occ.treas.gov/publications-and-resources/publications/comptrollers-handbook/files/lending-loan-portfolio-risk-management/pub-ch-lending-loan-portfolio.pdf",
+   "what": "Examiners request financial statement tracking, covenant tracking and annual review status reports; exceptions include covenant breaches even if waived, and stale statements, tax returns and borrowing base certificates."
+  },
+  {
+   "name": "Federal Reserve, SR 20-13, Interagency Guidance on Credit Risk Review Systems (May 2020)",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2013.htm",
+   "what": "Board-approved loan review policy; reviewers independent of approval; significant loans typically reviewed yearly or at renewal; issued with the OCC, FDIC and NCUA."
+  },
+  {
+   "name": "Klerum, What AI should not do in loan review (27 Jul 2026; vendor blog)",
+   "url": "https://klerum.com/blog/what-ai-should-not-do-in-loan-review",
+   "what": "Vendor view: people approve scope, final risk ratings, material findings and the workpaper; AI can prepare file summaries and exception lists."
   }
  ],
  "related": [
   "ai-credit-scoring",
   "ai-document-processing",
-  "ai-consulting-services"
+  "ai-consulting-services",
+  "private-credit-portfolio-monitoring",
+  "community-banks-credit-unions"
  ],
  "keyword": {
   "phrase": "ai underwriting",
@@ -619,8 +810,8 @@
   "difficulty": 9
  },
  "offer": {
-  "heading": "Want your underwriters out of the paperwork? Get a free diagnostic",
-  "body": "Tell us your line of business and where the hours go. In 30 minutes you leave with the first step and a before-and-after measure, in writing, with no sales pitch."
+  "heading": "Want your underwriters and credit analysts out of the paperwork? Get a free diagnostic",
+  "body": "Tell us your line of business or loan type and where the hours go. In 30 minutes you leave with the first step and a before-and-after measure, in writing, with no sales pitch."
  },
  "updated": "2026-11-26",
  "headings": {
@@ -638,35 +829,36 @@
  "reviews": [
   {
    "reader": "COO",
-   "notes": "Couldn't see from the top who decides and who checks the model. On this page now leads with who decides, signs off and checks the model, follows the page order and links the FAQ on cost, accuracy, jobs and decline reasons."
+   "notes": "Read the new commercial lending table and tripped on OCC, FDIC, K-1s and CECL, and on who TD is. Each is now spelled out on first use, and TD is named as a large bank so its 30-minute figure reads as a ceiling."
   },
   {
    "reader": "Head of operations",
-   "notes": "Tripped on MGA in the commercial recipe and wanted the recipes named in the On this page list. MGA is now defined where it first appears, and the recipes item names all three builds."
+   "notes": "Wanted the memo table to read without lending jargon. Debt service coverage is now defined in the spreading row, and the decision row says plainly that the step stays with people instead of 'Nothing'."
   },
   {
    "reader": "GM",
-   "notes": "Asked what a pilot on one line is worth in dollars. The benchmark now ends with a step that turns hours saved per file into a weekly dollar value; the first step already limits the test to one line or one branch."
+   "notes": "Asked whether one unit can pilot the credit memo build. The new recipe now says to time 50 files from one lending team first; the benchmark steps already turn hours saved into a weekly dollar value."
   },
   {
    "reader": "Division head",
-   "notes": "The head of underwriting checked the regulator claims against the insurance page and asked that compliance not cite a withdrawn CFPB circular. The decline-reasons answer now says the circular was withdrawn in May 2025 and that Reg B itself still applies; the model-reviewer role notes the 2026 bank guidance leaves generative AI out of scope."
+   "notes": "Head of lending checked the examiner rows against the FDIC and OCC procedures and the 2020 loan review guidance. Added that small or rural banks may use modified loan review independence. Accenture's 2021 underwriter figure is replaced by CSBS 2026 adoption data, with MeridianLink as a labelled vendor second source."
   },
   {
    "reader": "Owner-CEO",
-   "notes": "Found the cost answer and the jobs answer where they'd look, but the offer promised only 'our read'. The offer now promises the first step and a before-and-after measure in writing, with no sales pitch."
+   "notes": "Steve at a lender saw an offer written only for insurance underwriters. The offer now names credit analysts and asks for loan type. Cost still points to the FAQ, with no Zavient price, per site rules."
   }
  ],
  "answers": {
-  "example": "Yes, up to the decision: AI can pull revenue, debts and risks from statements and tax returns, each with its page and quote, and draft a score with reasons[^12][^14]. The underwriter accepts or changes it and makes the call[^4][^16].",
-  "recipes": "AI fits the reading steps: commercial submission intake, copying small-business statements and returns into your credit template, and summarising life-insurance medical evidence for your rules engine[^7][^12][^18]. The underwriter still decides in each one[^4][^2].",
-  "table-1": "Commercial insurers use intake and risk tools such as Sixfold, Cytora, Convr and Kalepa; life insurers use rules engines such as Swiss Re MagnumXP and Munich Re ALLFINANZ[^20][^22][^23][^27][^17][^19]. Named Sixfold users include Zurich North America, Guardian and Generali[^20].",
-  "rules": "Examiners and regulators will ask for specific decline reasons that match the factors scored, tests for unfair discrimination, vendor oversight and a written AI program with governance[^4][^16][^2][^3][^31]. In the EU, they will also ask for logs and human oversight from 2 Dec 2027[^32][^33][^10].",
-  "benchmark": "Lock an underwriter-written answer key on 50 past files, run each tool on the same files, and count wrong facts, cost and time per file[^12]. Time the same files done by hand first, so you have a before number.",
-  "what-goes-wrong": "AI underwriting goes wrong when models carry past bias, report high confidence on wrong answers, take the wrong look-alike table, or arrive with vendor speed claims you never tested[^2][^15][^12][^23]. You also stay responsible for any vendor's model[^2][^31].",
-  "something-else": "Start somewhere else for consumer lending where the score is the product, life and health underwriting, or pricing questions[^29][^17][^24]. Those point to the AI credit scoring guide, a rules engine such as Swiss Re MagnumXP, or a pricing platform such as Akur8[^29][^17][^24].",
-  "human-role": "Your team keeps every underwriting decision: the underwriter offers, declines or prices, the credit officer owns each decline's reasons, and an independent reviewer challenges the model first[^34][^4][^40]. The head of underwriting sits on the AI committee[^38].",
-  "team-after": "After AI does the reading, your team works the referred and complex files, chases what the file lacks, and tests for unfair outcomes on a schedule[^18][^34][^2][^15]. Underwriters also get back admin time, now 39% to 43% of their week[^1][^7].",
-  "buy-or-build": "Buy when your line is standard and the vendor already reads your submission formats[^22]; build when your own loss history is your edge, because the reading layer is swappable[^12]."
+  "example": "Yes, up to the decision: AI can pull revenue, debts and risks from statements and tax returns, each with its page and quote, and draft a score with reasons[^10][^12]. The underwriter accepts or changes it and makes the call[^3][^14].",
+  "recipes": "AI fits the reading and drafting steps: commercial submission intake, spreading and credit memo drafts, and life-insurance evidence summaries[^6][^10][^45][^16]. The underwriter or credit officer still decides in each one[^3][^1].",
+  "rules": "Examiners will ask whether your analyst checked global cash flow, covenants and the file, and regulators want specific decline reasons, fairness tests and vendor oversight[^50][^51][^3][^1][^29]. The 2026 bank model guidance leaves generative AI out of scope[^37][^38]. In the EU, regulators will also ask for logs and human oversight from 2 Dec 2027[^30][^31][^8].",
+  "benchmark": "Lock an underwriter-written answer key on 50 past files, run each tool on the same files, and count wrong facts, cost and time per file[^10]. Time the same files done by hand first, so you have a before number.",
+  "what-goes-wrong": "AI underwriting goes wrong when models carry past bias, report high confidence on wrong answers, take the wrong look-alike table, or arrive with vendor speed claims you never tested[^1][^13][^10][^21]. You also stay responsible for any vendor's model[^1][^29].",
+  "something-else": "Start somewhere else for consumer lending where the score is the product, life and health underwriting, or pricing questions[^27][^15][^22]. Those point to the AI credit scoring guide, a rules engine such as Swiss Re MagnumXP, or a pricing platform such as Akur8[^27][^15][^22].",
+  "human-role": "Your team keeps every underwriting decision: the underwriter offers, declines or prices, the credit analyst owns the numbers and rating, and the credit officer owns each decline's reasons[^32][^51][^3]. An independent reviewer challenges the model first, and the head of underwriting sits on the AI committee[^38][^36].",
+  "team-after": "After AI does the reading, your team works the referred and complex files, chases what the file lacks, and tests for unfair outcomes on a schedule[^16][^32][^1][^13]. Underwriters also get back admin time, now 41% to 43% of their week[^6].",
+  "buy-or-build": "Buy when your line is standard and the vendor already reads your submission formats[^20]; build when your own loss history is your edge, because the reading layer is swappable[^10].",
+  "table-2": "Commercial insurers use intake and risk tools such as Sixfold, Cytora, Convr and Kalepa; life insurers use rules engines such as Swiss Re MagnumXP and Munich Re ALLFINANZ[^18][^20][^21][^25][^15][^17]. Named Sixfold users include Zurich North America, Guardian and Generali[^18].",
+  "table-1": "Yes, AI can sort the borrower package, spread the figures and draft a cited first memo[^45][^47]. The analyst still owns the tie-out, global cash flow calls, risk discussion and rating, and the credit officer or committee decides[^51][^50]."
  }
 }

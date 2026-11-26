@@ -1,6 +1,6 @@
 {
- "title": "What are insurers and MGAs actually using AI for?",
- "description": "Where AI pays first for carriers, MGAs and large agencies: ranked jobs, platforms, the state AI rules, what examiners ask, and our job-ad count.",
+ "title": "AI in insurance: what are carriers, MGAs and TPAs using it for?",
+ "description": "AI in insurance, ranked by payoff for carriers, MGAs and TPAs. Policy and claims analytics, the state AI rules, and what examiners now ask.",
  "type": "industry",
  "templateVersion": 1,
  "topic": "AI in insurance",
@@ -10,8 +10,8 @@
  "verdict": [
   "AI informs; people decide.[^1] Of 193 auto insurers in 2022, 96 used AI to inform adjusters; none to deny claims.[^2]",
   "Start where reading piles up: submission intake for underwriters and complex claim files for adjusters.[^3][^4]",
-  "For MGAs, clean portfolio data is becoming a condition for access to capacity.[^5] Reported MGA premium grew 12% in 2025.[^6]",
-  "Thirty jurisdictions adopted the regulators' AI bulletin.[^7] It covers vendor AI, and examiners can ask for your inventory.[^8]",
+  "For managing general agents (MGAs), clean portfolio data is becoming a condition for capacity.[^5] MGA premium grew 12% in 2025.[^6]",
+  "Thirty jurisdictions adopted the state regulators' AI bulletin.[^7] A new NAIC supplement lists the AI questions regulators can ask insurers.[^45]",
   "Keep a named person on every claim denial. Lawsuits claiming algorithms, not reviewers, drove health denials have partly survived dismissal.[^9][^10]"
  ],
  "onPage": [
@@ -32,8 +32,12 @@
    "text": "AI platforms carriers and MGAs buy, and how they are sold"
   },
   {
+   "to": "table-3",
+   "text": "What policy and claims models predict, and who decides"
+  },
+  {
    "to": "rules",
-   "text": "The state AI rules: NAIC bulletin, Colorado, New York"
+   "text": "The AI rules: NAIC, Colorado, New York and the EU"
   },
   {
    "to": "what-goes-wrong",
@@ -48,13 +52,14 @@
   "ranked": "Where does AI pay first in insurance?",
   "buy-or-build": "Should you buy AI tools or build your own?"
  },
- "summary": "AI in insurance mostly reads and drafts: it pulls facts from submissions, claim files and policy forms so underwriters and adjusters decide faster.[^3][^1][^11] People keep the decision: state regulators apply the same standards whatever tool you use.[^12][^8] Clean data and a real human check make or break it.[^13][^9]",
+ "summary": "AI in insurance reads and drafts for underwriters and adjusters, and scores prices, renewals and claims.[^3][^11][^57] People keep the decision: state regulators apply the same standards whatever tool you use.[^12][^8] Clean data and a real human check make or break it.[^13][^9]",
  "humanRole": [
   "Underwriters keep accept, decline and price. New York expects each adverse decision to state the information used and its source.[^14][^15]",
-  "Adjusters keep every claim denial. In the regulators' auto survey, 9 of 193 insurers used AI for claim approvals and none for denials.[^2]",
+  "Adjusters keep every claim denial, at carriers and third-party administrators (TPAs) alike. In the regulators' auto survey, 9 of 193 insurers used AI for claim approvals and none for denials.[^2]",
   "MGA underwriters keep the bind decision within their authority. Carriers' AI programs should cover AI from outside firms, so expect their questions.[^8]",
   "At large agencies, a licensed person checks anything a client sees. Verify limits, deductibles, exclusions and endorsements against the policy forms.[^16]",
-  "Senior management and the board own the AI program, with a committee from underwriting, claims, compliance and legal.[^12][^8] The bulletin lists checking AI against expert review as one way to validate it.[^8]"
+  "Senior management and the board own the AI program, with a committee from underwriting, claims, compliance and legal.[^12][^8] The bulletin lists checking AI against expert review as one way to validate it.[^8]",
+  "Reviewers need the authority to reverse, change or escalate AI output, and their overrides should be logged. The NAIC's new AI supplement asks about both.[^46][^44]"
  ],
  "ranked": [
   {
@@ -66,8 +71,20 @@
   {
    "name": "Claim file summaries for adjusters (carriers)",
    "slug": "ai-document-processing",
-   "why": "Claims is the top AI area for auto insurers, and the main use is informing adjusters.[^2][^18] In a McKinsey case study, Aviva runs 80+ claims models and assesses complex liability 23 days faster.[^4]",
+   "why": "Claims is the top AI area for auto insurers, and the main use is informing adjusters.[^2][^18] Aviva, a large UK carrier, reports over £90m of claims savings[^65]; McKinsey says it assesses complex liability 23 days faster.[^4]",
    "payoff": "Adjuster minutes per file review, and days to final payment (40.7 on average for US home claims in 2026).[^19]"
+  },
+  {
+   "name": "Claims analytics: severity, litigation and recovery (carriers and TPAs)",
+   "slug": "ai-claims-processing",
+   "why": "Sedgwick reports litigated general liability claims cost over 5.5 times others, and 47% had an attorney on day one.[^53] Attorney involvement in auto injury claims rose from 40% to nearly 50% by 2022.[^52]",
+   "payoff": "Days from claim report to first adjuster contact on high-risk claims, and dollars recovered from at-fault parties (subrogation)."
+  },
+  {
+   "name": "Pricing, renewal and loss-ratio analytics (carriers and MGAs)",
+   "slug": "data-analytics-consulting",
+   "why": "In WTW's survey of property and casualty (P&C) insurers, analytics leaders spent about 6 cents less per premium dollar on claims and costs.[^64] That's a link, not proof; models can also flag the riskiest submissions for underwriters.[^64][^61]",
+   "payoff": "Loss ratio (claims per premium dollar) by class, territory and agent, and retention of your best renewals."
   },
   {
    "name": "AI inventory and examiner file (carriers)",
@@ -225,6 +242,73 @@
      ]
     }
    ]
+  },
+  {
+   "title": "What do policy and claims models predict, and what does the person decide?",
+   "intro": "Policy and portfolio analytics cover pricing, risk selection, renewals and loss-ratio drivers.[^57][^61] Claims analytics cover severity, litigation, fraud and recovery.[^11][^64] Ireland's central bank found insurers' AI mostly assisted, with none fully autonomous.[^66]",
+   "headers": [
+    "Use",
+    "What the model predicts",
+    "What the person decides"
+   ],
+   "rows": [
+    {
+     "name": "Pricing",
+     "cells": [
+      "Expected claim frequency and severity by rating factor, from a generalized linear model (GLM) or gradient boosting.[^57][^58][^59] No model won on both accuracy and fairness in a 2026 study.[^60]",
+      "The pricing actuary picks the final factors and files them; state rate reviewers check the model.[^57]"
+     ]
+    },
+    {
+     "name": "Risk selection",
+     "cells": [
+      "Predicted loss ratio for each submission, with extreme risks flagged for review.[^61]",
+      "The underwriter accepts, declines, prices or refers the risk.[^61]"
+     ]
+    },
+    {
+     "name": "Renewal and lapse",
+     "cells": [
+      "The chance a policy lapses, or renews at a loss.[^62][^63] Only 15% of underwriting leaders use AI heavily on renewals today.[^17]",
+      "The underwriter or account manager picks the action; a non-renewal stays a person's call.[^11]"
+     ]
+    },
+    {
+     "name": "Loss-ratio drivers",
+     "cells": [
+      "Which classes, territories or agents drive losses.[^61]",
+      "The head of underwriting sets appetite and agent terms.[^61]"
+     ]
+    },
+    {
+     "name": "Claim severity",
+     "cells": [
+      "Likely size of a new claim, from claim data, weather or report text.[^56][^68][^11]",
+      "The claims manager assigns the adjuster; the adjuster sets and owns the reserve.[^11]"
+     ]
+    },
+    {
+     "name": "Litigation risk",
+     "cells": [
+      "The chance an attorney gets involved.[^52][^53]",
+      "The adjuster makes early contact; defense counsel and the claims manager set strategy.[^53]"
+     ]
+    },
+    {
+     "name": "Fraud flags",
+     "cells": [
+      "A suspicion score for each claim.[^55][^22]",
+      "Special investigators decide whether to pursue a flag; in one field test, 51 of 100 held up.[^55] The adjuster decides to pay or deny.[^2]"
+     ]
+    },
+    {
+     "name": "Subrogation",
+     "cells": [
+      "Recovery potential, read from notes and police reports.[^54] Insurers recovered $51.6B through salvage and subrogation in 2021.[^54]",
+      "The recovery specialist decides whether and how to pursue.[^54]"
+     ]
+    }
+   ]
   }
  ],
  "rules": [
@@ -235,10 +319,22 @@
    "what": "You need a written AI program covering governance, risk controls and audit, scaled to the possible harm to consumers.[^12][^8] It covers vendor AI, and examiners can ask for your AI inventory, vendor contracts and testing.[^8] Recent adopters include Texas, South Carolina and North Dakota; check your state's own text.[^7]"
   },
   {
+   "name": "NAIC AI Risk Evaluation Supplement",
+   "url": "https://content.naic.org/sites/default/files/inline-files/ai-risk-evaluation-supplement-v7.0-clean-for-adoption.pdf",
+   "status": "Adopted 17 Nov 2026; voluntary state use from 2027",
+   "what": "Regulators can use it to ask how many AI systems you run, how your AI program works, and about each high-risk model and its data.[^45][^46] It asks whether reviewers can reverse, modify or escalate AI output, and whether overrides are logged.[^46] Adopted after a 12-state pilot and offered to states for voluntary use,[^44][^67][^69] it creates no new legal duties on its own.[^45]"
+  },
+  {
    "name": "Colorado SB21-169 and Regulation 10-1-1",
    "url": "https://doi.colorado.gov/for-consumers/sb21-169-protecting-consumers-from-unfair-discrimination-in-insurance-practices",
    "status": "In force: life since Nov 2023; auto and health since 15 Oct 2025",
    "what": "Life, private auto and health insurers need a board-overseen framework for outside consumer data and the models that use it.[^30][^31] Commercial-only carriers and MGAs writing only commercial lines are outside its scope today.[^30] Bias-testing reports are waived until the Division adopts testing rules for each line.[^32]"
+  },
+  {
+   "name": "Colorado SB26-189, automated decision-making law",
+   "url": "https://leg.colorado.gov/bills/SB26-189",
+   "status": "Signed May 2026; effective 1 Jan 2027",
+   "what": "It re-enacts Colorado's AI Act as rules on automated decisions that affect consumers.[^51] Insurers covered by SB21-169 count as compliant for the practice of insurance.[^51] AI an insurer uses in hiring gets no such exemption.[^51]"
   },
   {
    "name": "New York Department of Financial Services (DFS) Circular Letter No. 7",
@@ -255,8 +351,14 @@
   {
    "name": "NAIC third-party data and model vendor framework",
    "url": "https://content.naic.org/sites/default/files/inline-files/third-party-framework-pc-pricing-uw-110426-exposed.pdf",
-   "status": "Draft (exposed 4 Nov 2026); not in force",
-   "what": "It proposes a multi-state registry and yearly attestation for vendors of property and casualty (P&C) pricing and underwriting data and models.[^33][^34] Insurers would still own their own compliance.[^35]"
+   "status": "Draft re-exposed 16 Nov 2026; comments close end Dec 2026; adoption considered spring 2027",
+   "what": "It proposes a multi-state registry for vendors of property and casualty (P&C) pricing and underwriting data and models; registration is voluntary.[^33][^34][^47] Insurers would still own their own compliance.[^35][^47] Adoption will be considered in spring 2027.[^48]"
+  },
+  {
+   "name": "EU AI Act, Annex III point 5(c)",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3",
+   "status": "High-risk duties apply from 2 Dec 2027",
+   "what": "AI used to assess risk and set prices for individuals in life and health insurance is high-risk.[^49][^50] The Digital Omnibus moved those duties to 2 Dec 2027.[^50] Motor, home, commercial, claims handling and fraud models are not in point 5(c).[^49]"
   }
  ],
  "watchOuts": [
@@ -273,28 +375,40 @@
    "a": "Insurers use AI mostly to read and draft for the people who decide.[^1][^11] In regulators' surveys, claims and fraud lead in auto and home, and underwriting leads in life.[^18] Conning names AI and data-driven underwriting among the drivers of MGA growth.[^6]"
   },
   {
+   "q": "What is a predictive model in insurance?",
+   "a": "A predictive model in insurance is a statistical or machine-learning model that estimates claim frequency, severity, lapse or fraud from past data.[^57][^63] State rate reviewers check both generalized linear models (GLMs) and gradient boosting machines in filings.[^57] Studies find gradient boosting often wins on claim frequency, but not always on severity.[^58][^59]"
+  },
+  {
+   "q": "What is insurance analytics, and how do insurers analyze claims data?",
+   "a": "Insurance analytics means using policy and claims data to find what drives losses, then acting on it.[^61][^11] For claims, models flag likely severity, attorney involvement, fraud and recovery chances so adjusters act early.[^11][^52][^54] Early action matters: represented auto injury claimants waited a median of about 440 days.[^52]"
+  },
+  {
    "q": "Where should a carrier or MGA start with AI?",
    "a": "A carrier or MGA should start with one reading-heavy workflow, such as submission intake or complex claim files.[^3][^17] Pick one with a clear before-and-after number. Add it to your AI inventory from day one, since examiners can ask for it.[^8]"
   },
   {
+   "q": "What is the best AI for insurance?",
+   "a": "No single AI is best for insurance: pick by job, such as submission intake, claim summaries, pricing or fraud.[^28][^25][^64] Check what your core system vendor already owns, then test any tool on your own files against your experts' calls.[^27][^8]"
+  },
+  {
    "q": "What will the examiner ask about our AI?",
-   "a": "Examiners ask for your written AI program, your inventory of models and AI systems, and how you validate and monitor them.[^8] For vendor AI, expect requests for your due diligence, contracts and audits.[^8][^12]"
+   "a": "Examiners ask for your written AI program, your inventory of models and AI systems, and how you validate and monitor them.[^8] The NAIC's new AI Risk Evaluation Supplement, for voluntary state use from 2027, adds four exhibits: AI counts, your program, high-risk models and their data.[^45][^46][^69] For vendor AI, expect requests for your due diligence, contracts and audits.[^8][^12]"
   },
   {
    "q": "Does the NAIC AI bulletin apply to MGAs?",
    "a": "Not directly: the NAIC AI bulletin is addressed to insurers.[^12] Insurers must cover AI they rely on from outside firms, so carrier partners may ask an MGA about its AI.[^8] AM Best describes added scrutiny of MGAs as the market matures.[^21]"
   },
   {
-   "q": "Will AI replace insurance underwriters or adjusters?",
-   "a": "No: underwriters and adjusters keep the decisions, and regulators hold insurers to the same standards whatever tool helped make them.[^12][^8] 75% of claims professionals say AI needs human oversight.[^38]"
+   "q": "Is AI going to replace insurance jobs?",
+   "a": "No: regulators find insurers' AI use mostly assisted, and underwriters and adjusters keep the decisions.[^66][^2] The NAIC says AI is more likely to support human workers than replace them.[^11] Only 16% of P&C insurers use AI to augment underwriters today; 60% plan to by 2028, WTW found.[^64]"
   },
   {
    "q": "Which AI rules apply to insurers in my state?",
-   "a": "The NAIC AI bulletin applies in 30 jurisdictions, while California, Colorado and New York have their own guidance or rules.[^7] The NAIC says its 13 Nov 2026 map doesn't confirm each state kept every element, so read your state's own text.[^7]"
+   "a": "The NAIC AI bulletin applies in 30 jurisdictions (28 states, DC and Puerto Rico), per the NAIC map of 13 Nov 2026.[^7] California, Colorado and New York have their own guidance or rules.[^7] The map doesn't confirm each state kept every element, so read your state's own text.[^7]"
   },
   {
    "q": "What does an AI platform for a carrier or MGA cost?",
-   "a": "Published list prices run from $20,000 a year for a small MGA underwriting tool to $300,000 a year for a 50-user claims platform.[^44][^45] Most carrier platforms, such as Hi Marley and Federato, publish no price, so get a scoped quote for one workflow.[^25][^26]"
+   "a": "One published list price runs from $20,000 a year for a 5-user MGA underwriting tool to $98,000 for its enterprise tier.[^70] Most carrier platforms, such as Hi Marley and Federato, publish no price, so budget from a scoped quote for one workflow.[^25][^26]"
   }
  ],
  "buyVsBuild": {
@@ -362,7 +476,7 @@
   },
   {
    "num": "33.9%",
-   "label": "of US finance and insurance firms used AI in a two-week window, vs 19.8% of all firms.[^43]",
+   "label": "of US finance and insurance firms used AI in the two weeks to 3 May 2026, vs 19.8% of all firms.[^43]",
    "source": "US Census Bureau, May 2026"
   }
  ],
@@ -450,7 +564,7 @@
   {
    "name": "Accenture, Underwriting Rewritten (Aug 2025)",
    "url": "https://www.accenture.com/en/insights/insurance/underwriting-rewritten",
-   "what": "430 underwriting executives: 10% use AI to pre-sort broker email to a large extent today, 75% expect to in three years."
+   "what": "430 underwriting executives: 9% use AI for intelligent ingestion of submission data to a large extent today, 68% expect to in three years. Renewal evaluation: 15% today, 80% expected."
   },
   {
    "name": "NAIC Journal of Insurance Regulation, Vol. 45 No. 3 (2026), Table 1",
@@ -583,18 +697,144 @@
    "what": "33.9% of finance and insurance businesses used AI in the two weeks to 3 May 2026, vs 19.8% of all US businesses."
   },
   {
+   "name": "NAIC, Big Data and Artificial Intelligence (H) Working Group summary, Fall National Meeting (16 Nov 2026)",
+   "url": "https://content.naic.org/sites/default/files/national_meeting/summary-big-data-ai-wg111626-final.pdf",
+   "what": "Working group adopted the AI Risk Evaluation Supplement on 16 Nov 2026, after a 12-state pilot from March to September 2026."
+  },
+  {
+   "name": "NAIC, AI Risk Evaluation Supplement v7.0 (clean for adoption, Nov 2026)",
+   "url": "https://content.naic.org/sites/default/files/inline-files/ai-risk-evaluation-supplement-v7.0-clean-for-adoption.pdf",
+   "what": "Insurers 'must demonstrate to regulators that appropriate risk-based oversight mechanisms are in place'; four exhibits (AI counts, AI program, high-risk models, their data); 'does not independently create substantive legal duties'."
+  },
+  {
+   "name": "McDermott Will & Schulte, NAIC releases version 7.0 of its AI Risk Evaluation Supplement (13 Nov 2026)",
+   "url": "https://www.mcdermottlaw.com/insights/naic-releases-version-7-0-of-its-ai-risk-evaluation-supplement-ahead-of-fall-national-meeting",
+   "what": "Law firm summary: four exhibits; new human-in-the-loop questions on reviewer authority to reverse, modify or escalate, documented overrides and reviewer qualifications."
+  },
+  {
+   "name": "NAIC Third-Party Data and Model Vendors (H) Working Group, Fall 2026 meeting summary",
+   "url": "https://content.naic.org/sites/default/files/national_meeting/111626-summary-tpdmwg-fallnm-final.pdf",
+   "what": "Framework for third-party data and models in rating and underwriting re-exposed 16 Nov 2026 for a 45-day comment period; registration voluntary; insurers stay accountable."
+  },
+  {
+   "name": "NAIC, third-party framework chair slides (4 Nov 2026)",
+   "url": "https://content.naic.org/sites/default/files/national_meeting/3rd-party-framework-rating-underwriting-110426.pdf",
+   "what": "Adoption of the vendor framework to be considered in spring 2027."
+  },
+  {
+   "name": "European Commission AI Act Service Desk, Annex III",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3",
+   "what": "Point 5(c): AI 'intended to be used for risk assessment and pricing in relation to natural persons in the case of life and health insurance' is high-risk."
+  },
+  {
+   "name": "EUR-Lex, consolidated EU AI Act (version of 27 Jul 2026)",
+   "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/2026-07-27/eng/html",
+   "what": "As amended by Regulation (EU) 2026/1744 (Digital Omnibus), Annex III high-risk obligations apply from 2 Dec 2027 (Art. 113)."
+  },
+  {
+   "name": "Colorado General Assembly, SB26-189 session law (2026, Ch. 131)",
+   "url": "https://leg.colorado.gov/laws/session-laws/SB26-189/131/download",
+   "what": "Re-enacts the Colorado AI Act as automated decision-making rules from 1 Jan 2027; insurers subject to C.R.S. 10-3-1104.9 are in compliance for the practice of insurance; employment uses not exempt."
+  },
+  {
+   "name": "Insurance Research Council, auto injury claims study (30 Jul 2026)",
+   "url": "https://insurance-research.org/news/insurance-research-council-study-finds-rising-medical-costs-and-attorney-involvement-are",
+   "what": "9 insurers, 7.4m claims: attorney involvement rose from 40% to nearly 50% (2017-2022); represented injury claimants waited a median of about 440 days."
+  },
+  {
+   "name": "Sedgwick, General Liability State of the Line, mid-year 2025",
+   "url": "https://info.sedgwick.com/hubfs/Carrier/Sedgwick%20State%20of%20the%20Line%202025-Mid-Year_Carrier_General-Liability_vf.pdf",
+   "what": "Sedgwick's own data: litigated general liability claims cost over 5.5 times non-litigated ones; of claims that become litigated, 60% have an attorney within 14 days and 47% the same day."
+  },
+  {
+   "name": "NAIC Journal of Insurance Regulation (2023), salvage and subrogation article",
+   "url": "https://content.naic.org/sites/default/files/cipr-jir-2023-2.pdf",
+   "what": "Insurers recovered $51.6 billion through salvage and subrogation in 2021."
+  },
+  {
+   "name": "Debener et al., Journal of Risk and Insurance (2023)",
+   "url": "https://onlinelibrary.wiley.com/doi/10.1111/jori.12427",
+   "what": "Field experiment: investigators judged 51 of 100 model-flagged claims sent to the special investigations unit highly suspicious."
+  },
+  {
+   "name": "Journal of the American Statistical Association (2024), hail claims triage",
+   "url": "https://www.tandfonline.com/doi/abs/10.1080/01621459.2024.2308314",
+   "what": "A claims triage model using weather data cut operational cost by up to 9% for hail claims."
+  },
+  {
+   "name": "NAIC Casualty Actuarial and Statistical (C) Task Force, Model Review Manual (adopted 4 Nov 2025)",
+   "url": "https://content.naic.org/sites/default/files/inline-files/NAIC%20Model%20Review%20Manual__%20adopted%20by%20CASTF%2011.04.25.pdf",
+   "what": "Guidance state rate reviewers use for predictive models in rate filings, including GLMs and gradient boosting machines."
+  },
+  {
+   "name": "DAV (German Actuarial Association), claim frequency modeling with GLM, deep learning and gradient boosting (2024)",
+   "url": "https://aktuar.de/en/knowledge/specialist-information/detail/claim-frequency-modeling-in-insurance-pricing-using-glm-deep-learning-and-gradient-boosting/",
+   "what": "Gradient boosting beat the GLM on French motor claim frequency; SHAP values used to explain the model."
+  },
+  {
+   "name": "MDPI Risks 11(9):163 (2023)",
+   "url": "https://www.mdpi.com/2227-9091/11/9/163",
+   "what": "On about 18,000 claims, gradient boosting did better for claim frequency and the GLM for severity."
+  },
+  {
+   "name": "British Actuarial Journal (2026), performance and fairness of ML models for non-life pricing",
+   "url": "https://www.cambridge.org/core/journals/british-actuarial-journal/article/dual-evaluation-of-performance-and-fairness-from-machine-learning-models-for-nonlife-insurance-pricing/0F19EB9EAB28A6581368EEFA3D1F69BD",
+   "what": "No single machine-learning model won on both accuracy and fairness."
+  },
+  {
+   "name": "Casualty Actuarial Society, Underwriting applications of predictive analytics",
+   "url": "https://www.casact.org/newsletter-article/underwriting-applications-predictive-analytics",
+   "what": "Models can rank submissions by predicted loss ratio, flag extreme-loss-ratio risks for underwriter review and estimate retention."
+  },
+  {
+   "name": "Expert Systems with Applications (2024), mortgage life insurance lapse",
+   "url": "https://www.sciencedirect.com/science/article/pii/S0957417424016208",
+   "what": "XGBoost with SHAP predicted policy lapse; bank-side data was the top driver."
+  },
+  {
+   "name": "Society of Actuaries, Considerations for Predictive Modeling in Insurance Applications (2019)",
+   "url": "https://www.soa.org/globalassets/assets/files/resources/research-report/2019/considerations-predictive-modeling.pdf",
+   "what": "Modelling considerations for insurance predictive models, with a term lapse model as a worked example."
+  },
+  {
+   "name": "WTW, 2026 Advanced Analytics and AI Survey, press release (19 Mar 2026)",
+   "url": "https://www.wtwco.com/en-us/news/2026/03/insurers-using-advanced-analytics-and-ai-report-strong-returns-on-investment-and-premium-growth",
+   "what": "WTW's survey of 59 North American P&C insurers: advanced analytics adopters ran combined ratios about 6 points lower (correlation); about 80% use advanced rating models; 16% use AI to augment underwriters, 60% plan to by 2028; fraud 33% and severity 29% use claims analytics."
+  },
+  {
+   "name": "Aviva, Annual Report and Accounts 2025 (Mar 2026)",
+   "url": "https://static.aviva.io/content/dam/aviva-corporate/documents/investors/pdfs/reports/2025/annual-report-and-accounts-2025.pdf",
+   "what": "Aviva's own report: more than £90m of claims cost savings; a generative AI summary tool used by 500+ claims handlers halved customer hold time."
+  },
+  {
+   "name": "Central Bank of Ireland, The Insurance Quarterly (Mar 2026)",
+   "url": "https://www.centralbank.ie/docs/default-source/regulation/industry-market-sectors/insurance-reinsurance/solvency-ii/communications/insurance-quarterly-news/the-insurance-quarterly-march-2026.pdf?sfvrsn=ec8721a_4",
+   "what": "Irish regulator: insurers' AI use is mostly 'assisted AI', with none fully autonomous."
+  },
+  {
+   "name": "NAIC Innovation, Cybersecurity and Technology (H) Committee materials (17 Nov 2026)",
+   "url": "https://content.naic.org/sites/default/files/national_meeting/h-committee-1117.pdf",
+   "what": "Committee adopted the AI Risk Evaluation Supplement on 17 Nov 2026."
+  },
+  {
+   "name": "Annals of Actuarial Science (2022), deep neural networks to identify severe claims",
+   "url": "https://www.cambridge.org/core/journals/annals-of-actuarial-science/article/abs/automatic-analysis-of-insurance-reports-through-deep-neural-networks-to-identify-severe-claims/43795136F4AE02237F5F009FE856FF12",
+   "what": "Neural networks reading claim report text can flag severe claims early."
+  },
+  {
+   "name": "NAIC Big Data and Artificial Intelligence (H) Working Group, minutes of 2 Nov 2026",
+   "url": "https://content.naic.org/sites/default/files/national_meeting/minutes-bdaiwg110226_0.pdf",
+   "what": "The AI Risk Evaluation Supplement will be available for voluntary state use next year (2027); adding it to examiners' handbooks will be discussed then."
+  },
+  {
    "name": "AWS Marketplace, InsureAI Underwriting Hub listing (Global Unity Logic; read 26 Nov 2026)",
    "url": "https://aws.amazon.com/marketplace/pp/prodview-w3bii2pphk7p4",
    "what": "Underwriting workbench for MGAs and specialty insurers, list prices for 12 months: $20,000 Starter (5 users, 1,000 submissions), $50,000 Professional, $98,000 Enterprise."
-  },
-  {
-   "name": "AWS Marketplace, Accenture AI-Powered Intelligent Claims listing (read 26 Nov 2026)",
-   "url": "https://aws.amazon.com/marketplace/pp/prodview-uapxkdm457kfi",
-   "what": "Generative AI claims intake and analysis platform: list price $300,000 for 12 months for 50 users."
   }
  ],
  "related": [
   "ai-underwriting",
+  "ai-claims-processing",
   "ai-document-processing",
   "ai-consulting-services"
  ],
@@ -611,35 +851,36 @@
  "reviews": [
   {
    "reader": "COO",
-   "notes": "Retarget, 26 Nov 2026: the page read as a small-agency tool guide. Now ranks carrier, MGA and large-agency jobs, each with one measure. Cut agency tools priced by the month, the AI receptionist and the renewal-CRM tips: none leads a 40-500 person insurer to a decision. Added the examiner file as a job, since governance evidence is what COOs are asked for."
+   "notes": "Retarget, 26 Nov 2026: the page read as a small-agency tool guide. Now ranks carrier, MGA and large-agency jobs, each with one measure. Cut agency tools priced by the month, the AI receptionist and the renewal-CRM tips: none leads a 40-500 person insurer to a decision. Added the examiner file as a job, since governance evidence is what COOs are asked for. Upgrade pass, 26 Nov 2026 (retarget to \"AI in insurance\"): new claims analytics and pricing analytics jobs each carry one measure. Swapped \"first notice\" jargon for plain \"claim report\" in the claims payoff."
   },
   {
    "reader": "Head of operations",
-   "notes": "Defined bordereaux in the ranked list. Pick-something-else now covers what an operations head actually hits: core-system integration, the AI already inside Guidewire or Applied, and simple claims that rules can handle. Tool table cut to four platforms with honest 'not published' prices so it fits a phone."
+   "notes": "Defined bordereaux in the ranked list. Pick-something-else now covers what an operations head actually hits: core-system integration, the AI already inside Guidewire or Applied, and simple claims that rules can handle. Tool table cut to four platforms with honest 'not published' prices so it fits a phone. Upgrade pass: new table of what each policy and claims model predicts and what the person decides, three columns so it fits a phone. Subrogation now explained on first use as recovery from at-fault parties."
   },
   {
    "reader": "GM",
-   "notes": "MGA leaders get their own bottom-line bullet: capacity now follows clean portfolio data, with AM Best and Conning behind it. Added an FAQ on whether the NAIC bulletin reaches MGAs, worded carefully: it is addressed to insurers, who must cover outside AI. Offer now names carrier bordereaux and what a carrier partner will ask."
+   "notes": "MGA leaders get their own bottom-line bullet: capacity now follows clean portfolio data, with AM Best and Conning behind it. Added an FAQ on whether the NAIC bulletin reaches MGAs, worded carefully: it is addressed to insurers, who must cover outside AI. Offer now names carrier bordereaux and what a carrier partner will ask. Upgrade pass: the analytics payoff is put in margin terms, about 6 cents per premium dollar in WTW's survey, labelled as a link, not proof. Loss ratio now defined in the payoff line."
   },
   {
    "reader": "Division head",
-   "notes": "Head of underwriting or claims asks what the examiner will ask. Replaced a vendor's summary of the bulletin with Illinois's own copy of the text, which lists the examiner requests. Replaced a vendor-commissioned underwriter survey with Accenture's 430-executive survey. Claims payoff now has a public baseline: J.D. Power's 40.7 days to final payment."
+   "notes": "Head of underwriting or claims asks what the examiner will ask. Replaced a vendor's summary of the bulletin with Illinois's own copy of the text, which lists the examiner requests. Replaced a vendor-commissioned underwriter survey with Accenture's 430-executive survey. Claims payoff now has a public baseline: J.D. Power's 40.7 days to final payment. Upgrade pass: head of claims and head of underwriting get the NAIC AI Risk Evaluation Supplement, its override and escalation questions in \"who signs off\", the EU life and health listing and Colorado's new law. The examiner answer now says the supplement is voluntary for states from 2027, so it doesn't overstate."
   },
   {
    "reader": "Owner-CEO",
-   "notes": "Gets the answer in 10 seconds: title is his question and the bottom line is five short bullets. Forum quotes and AI-tool listicles are gone; every claim now rests on a regulator, a court record, a large survey or the vendor's own announcement. No case from a firm his size exists in the research, so none is claimed."
+   "notes": "Gets the answer in 10 seconds: title is his question and the bottom line is five short bullets. Forum quotes and AI-tool listicles are gone; every claim now rests on a regulator, a court record, a large survey or the vendor's own announcement. No case from a firm his size exists in the research, so none is claimed. Upgrade pass: title now leads with \"AI in insurance\" and still asks his question. \"Regulators\" in the bottom line now says state regulators. Aviva figures are labelled as a large UK carrier's, so he doesn't read them as his own scale."
   }
  ],
  "updated": "2026-11-26",
  "answers": {
   "human-role": "Your people keep every decision: underwriters accept, decline and price, MGA underwriters bind, and adjusters own every claim denial.[^14][^2][^8] Senior management and the board own the AI program, and a licensed person checks anything a client sees.[^12][^8][^16]",
-  "ranked": "AI pays first in submission intake for underwriters, then claim file summaries for adjusters.[^3][^17][^4] For MGAs the early win is bordereaux and carrier reporting; for large agencies, policy checking.[^5][^23]",
+  "ranked": "AI pays first in submission intake for underwriters, then claim file summaries and claims analytics for adjusters.[^3][^17][^4][^53] For MGAs the early win is bordereaux and carrier reporting; for large agencies, policy checking.[^5][^23]",
   "own-data": "Insurers ask for AI skills mostly in modeling jobs: about 1 in 4 actuary ads mention AI, against about 1 in 20 underwriter and claims ads.[^24] Agency sales and account ads mention AI least, about 1 in 40.[^24]",
   "table-1": "Cytora, Federato, hyperexponential (hx) and Hi Marley are four AI platforms built for carriers and MGAs, all sold by quote or private offer with no published price.[^28][^25][^27][^26] Two now belong to bigger insurance software firms: Applied Systems bought Cytora, and Guidewire agreed to buy hx.[^28][^27]",
   "table-2": "Auto insurers use or plan AI most for claims (80%), life insurers for underwriting (75%), and home insurers about equally for both (60% and 62%).[^18] Among health insurers, 54% use or plan AI for claim decisions.[^18]",
-  "rules": "The NAIC AI model bulletin applies in 30 jurisdictions, and California, Colorado and New York have their own rules.[^7] The bulletin and New York keep insurers responsible for vendor AI; the NAIC vendor framework is still a draft.[^8][^14][^33]",
+  "rules": "The NAIC AI model bulletin applies in 30 jurisdictions, per the NAIC map of 13 Nov 2026; California, Colorado and New York have their own rules.[^7] A new NAIC supplement sets out what regulators can ask, and the EU AI Act covers life and health pricing from Dec 2027.[^45][^49][^50] The NAIC vendor framework is still a draft.[^47]",
   "what-goes-wrong": "AI in insurance goes wrong when review becomes a rubber stamp, outcomes differ by group, or vendor models go unchecked.[^9][^37][^8] Scattered evidence of controls and pilots that never reach the desk are the other common failures.[^20][^38]",
   "buy-or-build": "Buy the standard reading step, such as submission intake or claims texting, and build only where your guidelines, appetite and loss history are your edge.[^40][^14][^8] Bought tools reached production about twice as often as internal builds in MIT's study.[^39][^41]",
-  "something-else": "Pick something else when your core systems can't take AI output, your Guidewire or Applied stack already includes AI, or simple claims run fine on rules.[^13][^27][^28][^42] For plain writing and summaries, an enterprise plan of ChatGPT, Claude or Microsoft 365 Copilot will do, inside your AI program.[^8]"
+  "something-else": "Pick something else when your core systems can't take AI output, your Guidewire or Applied stack already includes AI, or simple claims run fine on rules.[^13][^27][^28][^42] For plain writing and summaries, an enterprise plan of ChatGPT, Claude or Microsoft 365 Copilot will do, inside your AI program.[^8]",
+  "table-3": "Models predict a number, such as a price factor, lapse risk, claim size or fraud score.[^57][^11] A named person still decides: the actuary sets prices, the underwriter selects risks and the adjuster owns each claim.[^57][^61][^11]"
  }
 }
