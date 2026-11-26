@@ -8,6 +8,8 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import ConsultingCta from '../../components/ConsultingCta.astro';
 import Fn from '../../components/Fn.astro';
+// The phone bar list is a <section>, not a <div>: the CSS hides the SVG's wrapper with ".has-bar-list > div" on phones,
+// which would hide a div bar list with it (live check, 26 Nov 2026).
 import { storySvg, fmt } from '../../lib/storyChart.js';
 
 export async function getStaticPaths() {
@@ -35,11 +37,11 @@ const embed = `<a href="https://zavient.com/data/${story.id}.html"><img src="htt
       </div>
     )}
         <figure class={`data-chart${d.chart.kind === 'line' ? '' : ' has-bar-list'}`} style="margin:0 0 8px;max-width:100%;overflow:hidden"><div style="max-width:100%" set:html={svg.replace('width="760"', 'width="100%"').replace(/height="\d+"/, '')} />
-      {d.chart.kind !== 'line' && (<div class="bar-list">
+      {d.chart.kind !== 'line' && (<section class="bar-list" aria-label={d.chart.title}>
         <p class="bar-list-title">{d.chart.title}</p>
         {d.chart.subtitle && <p class="bar-list-sub">{d.chart.subtitle}</p>}
         <ol>{d.chart.bars.map((b) => <li><span class="bar-label">{b.label}</span><span class="bar-row"><span class="bar" style={`width:${Math.max(3, Math.round((b.value / max) * 70))}%`}></span><span class="bar-value">{f(b.value)}{b.note ? <span class="bar-note"> · {b.note}</span> : ''}</span></span></li>)}</ol>
-      </div>)}</figure>
+      </section>)}</figure>
     <details><summary>See the numbers as a table</summary>
       <table class="sources-table"><thead><tr><th>{d.chart.title}</th><th>{d.chart.valueLabel}</th></tr></thead>
         <tbody>{d.chart.bars.map((b) => <tr><td>{b.label}{b.note ? ` (${b.note})` : ''}</td><td>{f(b.value)}</td></tr>)}</tbody></table>
