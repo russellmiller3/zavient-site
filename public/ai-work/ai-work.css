@@ -407,3 +407,7 @@ sup.fn a { padding: 10px 3px; margin: -10px -1px; } /* bigger hit area, same lin
 
 /* "For:" line on hub cards: who the guide is for, set apart from the blurb and pinned to the card's foot. */
 .hub-card p.hub-for { margin-top: auto; padding-top: 12px; font-family: var(--sans); font-size: 15px; font-weight: 600; color: var(--ink); }
+
+/* Answer-first rule (26 Nov 2026): the sentence that answers a question heading sits straight under it, a touch
+   stronger than body text, so a skimmer reads the answer before the example or table. */
+.article-body p.answer { color: var(--ink); font-weight: 500; }

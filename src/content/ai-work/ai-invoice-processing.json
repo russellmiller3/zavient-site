@@ -746,5 +746,8 @@
   "benchmark": "How do you benchmark an AP tool on your own invoices?"
  },
  "recipesTitle": "Where do you start automating accounts payable?",
- "testTitle": "How do you benchmark an AP tool on your own invoices?"
+ "testTitle": "How do you benchmark an AP tool on your own invoices?",
+ "answers": {
+  "example": "AI reads the emailed invoice, pulls out the supplier, lines and totals, matches them to the purchase order and receipt, codes them, and posts a draft bill to your ERP[^20][^25][^34]. Anything off, like new bank details, waits for a person to call the supplier on a number already on file[^12][^50]."
+ }
 }

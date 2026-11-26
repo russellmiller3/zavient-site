@@ -9,6 +9,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { TYPES, COMMON_REQUIRED, REVIEWERS, MIN, BANNED, BLOCKS, DEMAND } from '../src/lib/page-types.mjs';
 import { checkPage as readability } from './check-readability.mjs';
+import { pageAnswerProblems } from '../src/lib/answer-first.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const contentDir = join(root, 'src/content/ai-work');
@@ -82,6 +83,9 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
   // Banned wording
   const text = allText(d);
   for (const b of BANNED) { const m = text.match(b.re); if (m) fail.push(`"${m[0]}": ${b.why}`); }
+
+  // Answer-first rule (Russell, 26 Nov 2026): every question heading answered in the first sentence under it
+  for (const p of pageAnswerProblems(d)) fail.push(`answer first: ${p}`);
 
   // Readability (ADHD rule)
   for (const p of readability({ ...d, verdict: v })) fail.push(`readability: ${p}`);

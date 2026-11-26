@@ -20,6 +20,9 @@ const aiwork = defineCollection({
     templateVersion: z.number().int().optional(),
     topic: z.string().optional(),
     headings: z.record(z.string()).default({}),
+    // Answer-first rule (Russell, 26 Nov 2026): the first sentence under a question heading, keyed by block id
+    // ("example", "buy-or-build", "table-1", "offer"...). Rendered before the block's example, table or list.
+    answers: z.record(z.string().min(15)).default({}),
     example: z.object({ input: z.string(), output: z.string() }).optional(),
     howToTest: z.array(z.string()).default([]),
     buyVsBuild: z.object({ buy: z.string(), build: z.string() }).optional(),
