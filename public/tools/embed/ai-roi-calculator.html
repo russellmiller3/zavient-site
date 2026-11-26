@@ -429,8 +429,10 @@ function roiLever(p) {
   sel.innerHTML = ORDER.map((k) => `<option value="${k}">${P[k].label}</option>`).join('');
   $('paths').innerHTML = PATHS.map((x, i) => `<button class="chip" type="button" data-i="${i}">${x.name}<small>${money(x.B)} once, ${money(x.run)} a month (${x.note})</small></button>`).join('');
 
-  function money(n) { const r = Math.round(Math.abs(n) / 100) * 100; return (n < 0 && r > 0 ? '−' : '') + '$' + r.toLocaleString('en-US'); }
-  function signed(n) { const r = Math.round(Math.abs(n) / 100) * 100; return r === 0 ? '$0' : (n < 0 ? '−$' : '+$') + r.toLocaleString('en-US'); }
+  // A word joiner (U+2060) after the sign keeps "−$30,200" on one line at narrow widths.
+  const WJ = '\u2060';
+  function money(n) { const r = Math.round(Math.abs(n) / 100) * 100; return (n < 0 && r > 0 ? '−' + WJ : '') + '$' + r.toLocaleString('en-US'); }
+  function signed(n) { const r = Math.round(Math.abs(n) / 100) * 100; return r === 0 ? '$0' : (n < 0 ? '−' : '+') + WJ + '$' + r.toLocaleString('en-US'); }
   function fmt(n, d = 0) { return Number(n).toLocaleString('en-US', { maximumFractionDigits: d, minimumFractionDigits: 0 }); }
   function num(v) { const x = parseFloat(String(v).replace(/[$,%\s]/g, '')); return Number.isFinite(x) ? x : null; }
   function show(key, v) { $(key).value = PCT.includes(key) ? fmt(v * 100, 1) : (key === 'C' ? fmt(v, 2) : fmt(v, 1)); }
@@ -474,23 +476,40 @@ function roiLever(p) {
     if (r.payback <= 24) return { text: `Pays back in month ${r.payback}. Next year, not this one.`, cls: 'is-later', short: `Pays back in month ${r.payback}` };
     return { text: `Pays back in month ${r.payback}, in year 3.`, cls: 'is-later', short: `Pays back in month ${r.payback}` };
   }
-  // When the answer is no (or only year 3), name the most likely lever and send the reader to the diagnostic with their numbers.
+  // The one input to name as the lever, computed once and used by both the result bullet and the red box.
+  // When the answer is no (or only year 3), pick the fix that gets it to pay back: a cheaper set-up path, then review
+  // time, then volume. Otherwise (or if none of those works), the input whose 20% change moves the 3-year net most.
+  function pickLever(p, r) {
+    if (r.addsWork) return null;
+    const unit = P[state.wf].unit;
+    if (r.payback === null || r.payback > 24) {
+      const cheap = PATHS[0];
+      if (p.B > cheap.B || p.run > cheap.run) {
+        const rp = roiModel({ ...p, B: Math.min(p.B, cheap.B), run: Math.min(p.run, cheap.run) });
+        if (rp.payback !== null && (r.payback === null || rp.payback <= r.payback - 3))
+          return { key: 'path', name: 'The set-up path', fact: `With AI in a tool you already pay for (about ${money(cheap.B)} once and ${money(cheap.run)} a month), it pays back in month ${rp.payback}.`, close: 'check which cheaper path fits your work' };
+      }
+      if (r.beReview !== null && r.beReview >= p.R * 0.5)
+        return { key: 'R', name: 'Review time', fact: `At ${fmt(r.beReview, 1)} minutes per draft instead of ${fmt(p.R, 1)}, it pays back within a year.`, close: 'look for the slice of the work where drafts need less checking' };
+      if (r.beVolume !== null && Number.isFinite(r.beVolume))
+        return { key: 'V', name: 'Volume', fact: `It needs about ${fmt(Math.ceil(r.beVolume))} ${unit} a month to pay back within a year; you entered ${fmt(p.V)}.`, close: 'check the cheaper paths and the bigger slices of work' };
+    }
+    const lev = roiLever(p);
+    if (!lev) return null;
+    const u = { R: ' min', T: ' min', s: '%', a: '%', e: '%', V: '', C: '', B: '', run: '' }[lev.key];
+    const show2 = (x) => (PCT.includes(lev.key) ? fmt(x * 100) + '%' : ['B', 'run', 'C'].includes(lev.key) ? money(x) : fmt(x, 1) + u);
+    const after = lev.r.payback ? `payback moves to month ${lev.r.payback}` : `the 3-year net moves to ${signed(lev.r.y3)}`;
+    return { key: lev.key, name: lev.name, fact: `At ${show2(lev.to)} instead of ${show2(lev.from)}, ${after}.`, close: 'check the cheaper paths' };
+  }
   const DIAG = 'https://calendly.com/zavient/call';
-  function nextStep(p, r) {
+  function nextStep(p, r, lev) {
     if (r.addsWork) {
       const after = fmt(p.R + p.e * p.T, 1);
       return `<strong>On these inputs AI adds work.</strong> Checking and redoing take ${after} minutes per item against ${fmt(p.T, 1)} by hand. The usual fix is a narrower slice of the work where drafts need less checking, so review time is the lever. Bring these numbers to the free 30-minute diagnostic and we'll find that slice.`;
     }
     const head = r.payback === null ? "<strong>On these inputs it doesn't pay back.</strong>" : `<strong>On these inputs it pays back only in year 3.</strong>`;
-    const cheap = PATHS[0];
-    let lever = '';
-    if (p.B > cheap.B || p.run > cheap.run) {
-      const rp = roiModel({ ...p, B: Math.min(p.B, cheap.B), run: Math.min(p.run, cheap.run) });
-      if (rp.payback !== null && (r.payback === null || rp.payback <= r.payback - 3)) lever = `Most likely lever: the set-up path. With AI in a tool you already pay for (about ${money(cheap.B)} once and ${money(cheap.run)} a month), it pays back in month ${rp.payback}.`;
-    }
-    if (!lever && r.beReview !== null && r.beReview >= p.R * 0.5) lever = `Most likely lever: review time. At ${fmt(r.beReview, 1)} minutes per draft instead of ${fmt(p.R, 1)}, it pays back within a year.`;
-    if (!lever && r.beVolume !== null && Number.isFinite(r.beVolume)) lever = `Most likely lever: volume. It needs about ${fmt(Math.ceil(r.beVolume))} ${P[state.wf].unit} a month to pay back within a year; you entered ${fmt(p.V)}.`;
-    return `${head} The usual fix is a cheaper path or a bigger slice of the work. ${lever} Bring these numbers to the free 30-minute diagnostic and we'll find which.`.replace('  ', ' ');
+    const lever = lev ? ` Most likely lever: ${lev.name.toLowerCase()}. ${lev.fact}` : '';
+    return `${head} The usual fix is a cheaper path or a bigger slice of the work.${lever} Bring these numbers to the free 30-minute diagnostic and we'll ${lev ? lev.close : 'check the cheaper paths'}.`;
   }
   const pb = (r) => (r.addsWork ? 'AI adds work' : r.payback === null ? 'Not in 3 years' : `Month ${r.payback}`);
 
@@ -513,26 +532,22 @@ function roiLever(p) {
     const facts = [];
     const workDays = 21.7;
     if (r.H > 0) facts.push(`That is about ${fmt(r.H / workDays, 1)} hours a working day across the team. People decide where it goes: faster turnaround, fewer errors, or work that waits today.`);
-    const lev = roiLever(p);
-    if (lev && !r.addsWork) {
-      const unit = { R: ' min', T: ' min', s: '%', a: '%', e: '%', V: '', C: '', B: '', run: '' }[lev.key];
-      const show2 = (x) => (PCT.includes(lev.key) ? fmt(x * 100) + '%' : ['B', 'run', 'C'].includes(lev.key) ? money(x) : fmt(x, 1) + unit);
-      const after = lev.r.payback ? `payback moves to month ${lev.r.payback}` : `the 3-year net moves to ${signed(lev.r.y3)}`;
-      facts.push(`<strong>${lev.name} moves your answer most.</strong> At ${show2(lev.to)} instead of ${show2(lev.from)}, ${after}. Check this number first.`);
-    }
-    if (r.beVolume !== null && Number.isFinite(r.beVolume)) facts.push(`<strong>Break-even volume:</strong> about ${fmt(Math.ceil(r.beVolume))} ${P[state.wf].unit} a month to pay back within 12 months.`);
-    if (!r.addsWork) facts.push(r.beReview !== null
+    const lev = pickLever(p, r);
+    if (lev) facts.push(`<strong>${lev.name} moves your answer most.</strong> ${lev.fact} Check this number first.`);
+    if (lev?.key !== 'V' && r.beVolume !== null && Number.isFinite(r.beVolume)) facts.push(`<strong>Break-even volume:</strong> about ${fmt(Math.ceil(r.beVolume))} ${P[state.wf].unit} a month to pay back within 12 months.`);
+    if (!r.addsWork && lev?.key !== 'R') facts.push(r.beReview !== null
       ? `<strong>Break-even review time:</strong> ${fmt(r.beReview, 1)} minutes per draft or less pays back within 12 months.`
       : '<strong>Break-even review time:</strong> even with no review at all, this does not pay back within 12 months. Volume or cost is the issue.');
     $('rFacts').innerHTML = facts.map((x) => `<li>${x}</li>`).join('');
 
     const pct = Math.round(r.implied * 100);
-    $('rReality').innerHTML = r.addsWork ? '' : pct > 40
+    // Research brief: show the reality check only when implied time saved is above 40% (the top of measured results).
+    $('rReality').innerHTML = !r.addsWork && pct > 40
       ? `<p class="note warn"><strong>Reality check:</strong> your inputs imply ${pct}% of the team's time on this work saved. That is above most measured results, which run from about 2% to 40%. Check your AI share and review minutes.</p>`
-      : `<p class="note"><strong>Reality check:</strong> your inputs imply ${pct}% of the team's time on this work saved. Measured studies mostly land between about 2% and 40%.</p>`;
+      : '';
 
     let no = '';
-    if (r.addsWork || r.payback === null || r.payback > 24) no = `<div class="note bad"><p>${nextStep(p, r)}</p><p style="margin-top:10px"><a class="btn btn-primary" href="${DIAG}" target="_top">Book the free 30-minute diagnostic</a></p></div>`;
+    if (r.addsWork || r.payback === null || r.payback > 24) no = `<div class="note bad"><p>${nextStep(p, r, lev)}</p><p style="margin-top:10px"><a class="btn btn-primary" href="${DIAG}" target="_top">Book the free 30-minute diagnostic</a></p></div>`;
     $('rNo').innerHTML = no;
 
     const checks = ['Time 20 real items this week, start to finish. Use that number, not a guess.'];

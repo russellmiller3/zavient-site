@@ -564,9 +564,12 @@ function dayDate(n) {
   const p = (st.S.start || "").split("-").map(Number); if (p.length !== 3 || p.some(isNaN)) return null;
   return new Date(p[0], p[1] - 1, p[2] + n - 1);
 }
+// Dates carry the year whenever it differs from the start date's year or this year, so "Mon, Nov 29" in month 12
+// can't be read as this November.
 function dateOf(n) {
   const d = dayDate(n); if (!d) return "";
-  return d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
+  const y = d.getFullYear(), yr = y !== dayDate(1).getFullYear() || y !== new Date().getFullYear();
+  return d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", ...(yr ? { year: "numeric" } : {}) });
 }
 // Deadlines fall on business days: a task due on a Saturday or Sunday moves to the next Monday. A label that no
 // longer matches its date says "about"; a range keeps its exact end day.
@@ -579,7 +582,22 @@ function onBusinessDay(t) {
   else if (when === "Week 1") when = `By about day ${t.day}`;
   return { ...t, day, when };
 }
-const datedTasks = (tasks) => tasks.map(onBusinessDay).map((t, i) => [t, i]).sort((x, y) => x[0].day - y[0].day || x[1] - y[1]).map((x) => x[0]);
+const isWeekend = (n) => { const d = dayDate(n); return !!d && (d.getDay() === 0 || d.getDay() === 6); };
+// Single-day deadlines a day apart (policy by day 14, approved tool by day 15) can both land on the same Monday after
+// the weekend move. Keep each later one at least one business day after the one before it, labelled "about".
+function keepDistinct(pairs) {
+  const single = /^(By )?[Dd]ay \d+$/;
+  const ds = pairs.filter(([o]) => single.test(o.when)).sort((x, y) => x[0].day - y[0].day);
+  for (let i = 1; i < ds.length; i++) {
+    const prev = ds[i - 1][1], cur = ds[i][1], o = ds[i][0];
+    if (o.day === ds[i - 1][0].day || cur.day > prev.day) continue;
+    let day = prev.day + 1; while (isWeekend(day)) day++;
+    const m = o.when.match(/^(By )?[Dd]ay (\d+)$/);
+    ds[i][1] = { ...cur, day, when: `${m[1] ? "By about" : "About"} day ${m[2]}` };
+  }
+  return pairs.map((x) => x[1]);
+}
+const datedTasks = (tasks) => keepDistinct(tasks.map((t) => [t, onBusinessDay(t)])).map((t, i) => [t, i]).sort((x, y) => x[0].day - y[0].day || x[1] - y[1]).map((x) => x[0]);
 const datedPlan = (P) => ({ ...P, phases: P.phases.map((ph) => ({ ...ph, tasks: datedTasks(ph.tasks) })) });
 // Keep hyphenated phrases ("follow-up", "4-6") whole in the headline.
 const noBreak = (s) => esc(s).replace(/\S+-\S+/g, (w) => `<span class="nw">${w}</span>`);
