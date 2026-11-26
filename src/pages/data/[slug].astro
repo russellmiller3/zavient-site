@@ -9,7 +9,8 @@ import Base from '../../layouts/Base.astro';
 import ConsultingCta from '../../components/ConsultingCta.astro';
 import Fn from '../../components/Fn.astro';
 // The phone bar list is a <section>, not a <div>: the CSS hides the SVG's wrapper with ".has-bar-list > div" on phones,
-// which would hide a div bar list with it (live check, 26 Nov 2026).
+// which would hide a div bar list with it. Each bar's note sits on the label line so the value beside the bar stays
+// short and isn't cut off at phone width (live check, 26 Nov 2026).
 import { storySvg, fmt } from '../../lib/storyChart.js';
 
 export async function getStaticPaths() {
@@ -40,7 +41,7 @@ const embed = `<a href="https://zavient.com/data/${story.id}.html"><img src="htt
       {d.chart.kind !== 'line' && (<section class="bar-list" aria-label={d.chart.title}>
         <p class="bar-list-title">{d.chart.title}</p>
         {d.chart.subtitle && <p class="bar-list-sub">{d.chart.subtitle}</p>}
-        <ol>{d.chart.bars.map((b) => <li><span class="bar-label">{b.label}</span><span class="bar-row"><span class="bar" style={`width:${Math.max(3, Math.round((b.value / max) * 70))}%`}></span><span class="bar-value">{f(b.value)}{b.note ? <span class="bar-note"> · {b.note}</span> : ''}</span></span></li>)}</ol>
+        <ol>{d.chart.bars.map((b) => <li><span class="bar-label">{b.label}{b.note ? <span class="bar-note"> · {b.note}</span> : ''}</span><span class="bar-row"><span class="bar" style={`width:${Math.max(3, Math.round((b.value / max) * 70))}%`}></span><span class="bar-value">{f(b.value)}</span></span></li>)}</ol>
       </section>)}</figure>
     <details><summary>See the numbers as a table</summary>
       <table class="sources-table"><thead><tr><th>{d.chart.title}</th><th>{d.chart.valueLabel}</th></tr></thead>
