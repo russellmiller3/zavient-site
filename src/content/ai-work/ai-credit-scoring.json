@@ -6,6 +6,32 @@
  "summary": "AI credit scoring predicts whether an applicant will repay[^5], then has to say why in plain words when it says no[^1][^43]. The model is the easy part. The decline reasons[^1][^41], the bias checks[^39][^40] and the paperwork your examiner will ask for[^7][^8] are what make or break it.",
  "index": true,
  "verdict": "Start with a scorecard you can explain line by line: a weight-of-evidence scorecard in optbinning[^17], or an Explainable Boosting Machine in interpret[^16]. Both show how much each input added to or took from the score, so decline reasons come straight from the model[^17][^16]. US law requires specific reasons for every decline[^1][^43]. Move to LightGBM or XGBoost with SHAP only when your own benchmark shows the lift[^5] and you have a team to validate it[^7][^41]. Use large language models to read documents, not to score: in published benchmarks they lose to gradient boosting on credit data[^6][^13].",
+ "onPage": [
+  {
+   "to": "own-data",
+   "text": "Which open-source credit scoring libraries are maintained, and which went quiet"
+  },
+  {
+   "to": "table-1",
+   "text": "The scoring platforms and data services, and which show a price"
+  },
+  {
+   "to": "table-2",
+   "text": "Public loan data you can benchmark a model on"
+  },
+  {
+   "to": "table-3",
+   "text": "What published studies found when they compared models on credit data"
+  },
+  {
+   "to": "rules",
+   "text": "The rules that shape a credit model: decline reasons, bias checks, the EU AI Act"
+  },
+  {
+   "to": "benchmark",
+   "text": "How to benchmark a scoring model on your own loans"
+  }
+ ],
  "stats": [
   {
    "num": "166x",

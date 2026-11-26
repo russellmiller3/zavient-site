@@ -6,6 +6,32 @@
  "summary": "AI underwriting reads the application and its documents, pulls out the facts an underwriter needs, and helps score the risk. The reading is where the hours go: underwriters spend about 4 in 10 working hours on admin and other non-core work[^1][^7]. It is also where AI is now reliable enough to help, in our benchmark[^13]. The decision is where the rules bite, so it stays explainable and a person stays accountable[^4][^2].",
  "index": true,
  "verdict": "Point AI at the reading, not the decision. Underwriters spend about 40% of their time on admin and other non-core work[^1][^8][^7], and in our sealed benchmark the two best current models made zero mistakes reading 30 long fund reports, with the facts they disagreed on sent to a person[^13]. Keep the risk decision with an explainable model and a named underwriter: US lenders must give the specific main reasons for a decline[^4][^17], New York expects insurers to give specific reasons for adverse decisions[^2], and 30 US jurisdictions have adopted the NAIC bulletin that asks insurers to govern and test their AI[^9][^10][^34].",
+ "onPage": [
+  {
+   "to": "own-data",
+   "text": "Which underwriting steps AI can take on today, and which stay with a person"
+  },
+  {
+   "to": "table-1",
+   "text": "The insurance underwriting tools we checked"
+  },
+  {
+   "to": "table-2",
+   "text": "Public data you can benchmark on"
+  },
+  {
+   "to": "rules",
+   "text": "The lending and insurance rules that apply to AI decisions"
+  },
+  {
+   "to": "benchmark",
+   "text": "How to benchmark AI on your own applications"
+  },
+  {
+   "to": "what-goes-wrong",
+   "text": "Where AI underwriting projects go wrong"
+  }
+ ],
  "stats": [
   {
    "num": "0 of 19",

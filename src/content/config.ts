@@ -47,6 +47,9 @@ const aiwork = defineCollection({
     // Every other page stays noindex. The optional blocks below are what an indexed page is built from.
     index: z.boolean().default(false),
     verdict: z.string().min(40).optional(),
+    // Top of page (26 Nov 2026, Russell: "the top should be very BLUF and tell the reader what the content is on the
+    // rest of the page"): the verdict leads, then this list of what the page covers, each linking to its section.
+    onPage: z.array(z.object({ to: z.string().regex(/^[a-z0-9-]+$/), text: z.string().min(10) })).default([]),
     pickElse: z.array(z.string()).default([]),
     stats: z.array(z.object({ num: z.string(), label: z.string(), source: z.string() })).default([]),
     ownData: z.object({ title: z.string(), intro: z.string(), headers: z.array(z.string()), rows: z.array(z.array(z.string())), note: z.string() }).optional(),
@@ -61,8 +64,8 @@ const aiwork = defineCollection({
     offer: z.object({ heading: z.string(), body: z.string() }).optional(),
     recipesTitle: z.string().default('Three ways to build it'),
     testTitle: z.string().default('How to benchmark AI on this job before you buy'),
-  }).refine((d) => !d.index || (d.verdict && d.stats.length >= 3 && d.sources.length >= 3), {
-    message: 'an indexed AI-work page needs a verdict, 3+ Zavient numbers and 3+ sources',
+  }).refine((d) => !d.index || (d.verdict && d.onPage.length >= 3 && d.stats.length >= 3 && d.sources.length >= 3), {
+    message: 'an indexed AI-work page needs a verdict, an On this page list of 3+ items, 3+ Zavient numbers and 3+ sources',
   }),
 });
 

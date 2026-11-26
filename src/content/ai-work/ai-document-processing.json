@@ -5,6 +5,32 @@
  "summary": "AI document processing turns PDFs, scans and forms into fields your systems can use. Reading the text is now cheap: basic OCR is $1.50 per 1,000 pages at AWS, Google and Azure[^2][^3][^4]. The hard part is knowing which fields came out wrong, on your files rather than a vendor's demo set[^20]. We built a benchmark to find out[^7].",
  "index": true,
  "verdict": "Have a frontier model read the raw PDF, have a second model read it too, and send only the facts they disagree on to a person. Research finds that checking answers against a second model or a second run catches errors[^15][^16]. In our sealed benchmark of 30 fund reports, the two best models made zero mistakes at $0.12 to $0.15 per report[^7]. Don't trust a model's own confidence score: wrong answers came back rated 70 to 100[^7], and published studies find models overconfident[^14].",
+ "onPage": [
+  {
+   "to": "own-data",
+   "text": "Our benchmark: which AI tools read 30 fund reports without a wrong number"
+  },
+  {
+   "to": "table-1",
+   "text": "The hard round, where every answer had to quote its page"
+  },
+  {
+   "to": "table-2",
+   "text": "What reading 1,000 pages costs, tool by tool"
+  },
+  {
+   "to": "rules",
+   "text": "The rules that apply when documents feed a decision"
+  },
+  {
+   "to": "benchmark",
+   "text": "How to benchmark AI on your own documents"
+  },
+  {
+   "to": "what-goes-wrong",
+   "text": "Where document AI goes wrong, and how to catch it"
+  }
+ ],
  "stats": [
   {
    "num": "0",

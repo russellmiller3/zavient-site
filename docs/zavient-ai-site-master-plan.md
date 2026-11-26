@@ -14,6 +14,8 @@
 8. **Never on the site:** low-end Upwork-style freelancer content, meaning no freelancer rates, listings or price comparisons.
 9. **Words:** say "benchmark", never "test", for Zavient's own measurements.
 10. **Publishing:** nothing goes live on zavient.com without Russell's yes.
+11. **Top of page: bottom line up front,** in his words (26 Nov): "I think the numbers at the top are kind of just clickbaity ... the top should be very BLUF and like tell the reader what the content is on the rest of the page." No headline numbers at the top. Each page opens with the bottom line, then an "On this page" list of what the reader will learn, linked to each section. Key numbers sit lower, as evidence. The build fails if an indexed page lacks either.
+12. **Look,** in his words (26 Nov): "it should follow my other site, Zarlent ... but with a blue instead of a green color scheme ... the same kind of like subtle pattern gradient background and fonts." Light pages, a faint grid with a soft blue gradient behind the top, Figtree headings, Crimson Pro text, IBM Plex Mono labels and numbers.
 
 **Your requests (25 Nov):**
 - 10:15: "think thru a plan to make a cmpoeting sitewith data that includes but supersedes them with more valuable data. research ideas"

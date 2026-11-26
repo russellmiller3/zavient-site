@@ -6,6 +6,32 @@
  "summary": "AI invoice processing reads a supplier invoice, codes it, matches it to the purchase order and gets it approved and paid[^27][^21]. Reading the invoice now costs cents[^10][^11][^9]. The money is in the one invoice in five that hits an exception[^8][^1], and in the fake ones that ask you to pay a new bank account[^12][^13].",
  "index": true,
  "verdict": "Reading invoices is now cheap and largely solved[^9][^10]; the money leaks in the exceptions and the fraud. About one invoice in five hits an exception[^8][^1], and fake requests to change a supplier's bank account arrive as invoices[^12][^13]. Let an accounts payable tool such as BILL, Ramp or Tipalti run the inbox, approvals and payments[^5][^6][^7]. Put your effort, and any custom AI, into what the suites miss: exception triage, a hold on any change to bank details, and the e-invoices Germany and France now require[^36][^37][^38][^39]. Benchmark any custom step on 50 of your own invoices first.",
+ "onPage": [
+  {
+   "to": "own-data",
+   "text": "Which accounts payable suites publish a price"
+  },
+  {
+   "to": "table-1",
+   "text": "The accounts payable tools we checked that don't publish a price"
+  },
+  {
+   "to": "table-2",
+   "text": "Public invoice data you can benchmark on"
+  },
+  {
+   "to": "rules",
+   "text": "The e-invoicing rules in Germany, France, the EU and the US"
+  },
+  {
+   "to": "benchmark",
+   "text": "How to benchmark AI on your own invoices"
+  },
+  {
+   "to": "what-goes-wrong",
+   "text": "Where the money leaks: exceptions, fraud and the wrong total"
+  }
+ ],
  "stats": [
   {
    "num": "3 of 9",

@@ -23,29 +23,40 @@ export async function getStaticPaths() {
 }
 const { page, related, spokes } = Astro.props;
 const d = page.data;
+// The topic before the colon is set in the accent colour, as on Zarlent.
+const [topic, ...restParts] = d.title.split(':');
+const rest = restParts.join(':');
 ---
-<Base title={`${d.title} | Zavient`} description={d.description} noindex={!d.index}>
+<Base title={`${d.title} | Zavient`} description={d.description} noindex={!d.index} theme="blue">
   <header class="article-hero">
     <div class="wrap">
       <div class="label">AI work &middot; {d.job}{d.industry !== 'any industry' ? ` · ${d.industry}` : ''}</div>
-      <h1>{d.title}</h1>
-      <p class="dek"><Fn s={d.summary} /></p>
+      <h1>{rest ? (<><span class="hl">{topic}</span>:{rest}</>) : d.title}</h1>
+      {d.verdict ? (
+        <div class="bluf">
+          <span class="bluf-label">Bottom line</span>
+          <p><Fn s={d.verdict} /></p>
+        </div>
+      ) : <p class="dek"><Fn s={d.summary} /></p>}
+      {d.onPage.length > 0 && (
+        <nav class="on-page" aria-label="On this page">
+          <span class="bluf-label">On this page</span>
+          <ol>{d.onPage.map((o) => <li><a href={`#${o.to}`}>{o.text}</a></li>)}</ol>
+          {d.index && <p class="on-page-cta">And at the end: <a href="#diagnostic">a free 30-minute diagnostic</a> of how to approach this with AI.</p>}
+        </nav>
+      )}
       <p class="byline">By <a href="https://linkedin.com/in/russellmiller" rel="author">Russell Miller</a>, Zavient &middot; updated <time datetime={d.updated}>{d.updated}</time></p>
       {d.index && <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: d.title, description: d.description, dateModified: d.updated, author: { '@type': 'Person', name: 'Russell Miller', url: 'https://linkedin.com/in/russellmiller' }, publisher: { '@type': 'Organization', name: 'Zavient', url: 'https://zavient.com/' }, mainEntityOfPage: `https://zavient.com/ai-work/${page.id}.html` })} />}
     </div>
   </header>
-  {d.stats.length > 0 && (
-    <section class="stats" aria-label="Key numbers">
-      {d.stats.map((s) => <div class="stat"><div class="stat-num">{s.num}</div><div class="stat-label"><Fn s={s.label} /></div><span class="stat-src"><Fn s={s.source} /></span></div>)}
-    </section>
-  )}
   <article class="article-body">
     <div class="wrap">
-      {d.verdict && (
-        <div class="verdict"><span class="ask-label">The verdict</span><p><Fn s={d.verdict} /></p>{d.index && <p class="verdict-cta">Want my read on your version of this? <a href="#diagnostic">Get a free 30-minute diagnostic &rarr;</a></p>}</div>
-      )}
+      {d.verdict && (<>
+        <h2 id="what-it-is">What it is</h2>
+        <p><Fn s={d.summary} /></p>
+      </>)}
       {spokes.length > 0 && (<>
-        <h2>Where AI pays first in finance work</h2>
+        <h2 id="where-ai-pays">Where AI pays first in finance work</h2>
         <div class="hub-grid">
           {spokes.map((s) => <a class="hub-card" href={`/ai-work/${s.slug}.html`}><span class="hub-tag">Guide</span><h3>{s.title}</h3><p><Fn s={s.why} /></p></a>)}
         </div>
@@ -59,14 +70,14 @@ const d = page.data;
         </table></div>
         <p class="table-note"><Fn s={d.ownData.note} /></p>
       </>)}
-      <h2>What it looks like</h2>
+      <h2 id="example">What it looks like</h2>
       <div class="table-scroll"><table class="sources-table">
         <thead><tr><th>Goes in</th><th>Comes out</th></tr></thead>
         <tbody><tr><td>{d.example.input}</td><td>{d.example.output}</td></tr></tbody>
       </table></div>
       <p class="table-note">Illustrative example.</p>
       {d.recipes.length > 0 && (<>
-        <h2>{d.recipesTitle}</h2>
+        <h2 id="recipes">{d.recipesTitle}</h2>
         {d.recipes.map((r) => (
           <div class="recipe">
             <h3>{r.name}</h3>
@@ -78,8 +89,8 @@ const d = page.data;
           </div>
         ))}
       </>)}
-      {d.tables.map((t) => (<>
-        <h2>{t.title}</h2>
+      {d.tables.map((t, ti) => (<>
+        <h2 id={`table-${ti + 1}`}>{t.title}</h2>
         <p><Fn s={t.intro} /></p>
         <div class="table-scroll"><table class="sources-table">
           <thead><tr>{t.headers.map((h) => <th>{h}</th>)}</tr></thead>
@@ -88,28 +99,35 @@ const d = page.data;
         {t.note && <p class="table-note"><Fn s={t.note} /></p>}
       </>))}
       {d.rules.length > 0 && (<>
-        <h2>Rules that apply</h2>
+        <h2 id="rules">Rules that apply</h2>
         <div class="table-scroll"><table class="sources-table">
           <thead><tr><th>Rule</th><th>Status</th><th>What it means for you</th></tr></thead>
           <tbody>{d.rules.map((r) => <tr><td><a href={r.url}>{r.name}</a></td><td><span class="status">{r.status}</span></td><td><Fn s={r.what} /></td></tr>)}</tbody>
         </table></div>
         <p class="table-note">Not legal advice. Check with your counsel.</p>
       </>)}
-      <h2>{d.testTitle}</h2>
+      <h2 id="benchmark">{d.testTitle}</h2>
       <ol>{d.howToTest.map((s) => <li><Fn s={s} /></li>)}</ol>
-      <h2>What goes wrong</h2>
+      <h2 id="what-goes-wrong">What goes wrong</h2>
       <ul>{d.watchOuts.map((s) => <li><Fn s={s} /></li>)}</ul>
-      <h2>Buy or build</h2>
+      <h2 id="buy-or-build">Buy or build</h2>
       <p><strong>Buy:</strong> <Fn s={d.buyVsBuild.buy} /></p>
       <p><strong>Build:</strong> <Fn s={d.buyVsBuild.build} /></p>
       {d.pickElse.length > 0 && (<>
-        <h2>When to pick something else</h2>
+        <h2 id="something-else">When to pick something else</h2>
         <ul>{d.pickElse.map((s) => <li><Fn s={s} /></li>)}</ul>
       </>)}
-      <h2>Useful resources</h2>
+      <h2 id="resources">Useful resources</h2>
       <ul>{d.resources.map((r) => <li><a href={r.url}>{r.name}</a>: {r.what}</li>)}</ul>
+      {d.stats.length > 0 && (<>
+        <h2 id="key-numbers">Key numbers on this page</h2>
+        <div class="table-scroll"><table class="sources-table">
+          <thead><tr><th>Number</th><th>What it measures</th></tr></thead>
+          <tbody>{d.stats.map((st) => <tr><td class="num">{st.num}</td><td><Fn s={st.label} /><span class="stat-src"><Fn s={st.source} /></span></td></tr>)}</tbody>
+        </table></div>
+      </>)}
       <div class="sources">
-        <h2>Sources</h2>
+        <h2 id="sources">Sources</h2>
         <div class="table-scroll"><table class="sources-table">
           <thead><tr><th>#</th><th>Source</th><th>What it says</th></tr></thead>
           <tbody>{d.sources.map((s, i) => <tr id={`fn-${i + 1}`}><td>{i + 1}</td><td><a href={s.url}>{s.name}</a></td><td>{s.what}</td></tr>)}</tbody>

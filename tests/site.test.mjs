@@ -30,7 +30,7 @@ test('every AI-work page is built with the offer and at least one source link', 
       assert.ok(!sitemap.includes(`/ai-work/${s}.html`), `${s}: noindex page listed in sitemap`);
     }
     assert.match(html, /href="\/benchmark-your-documents\.html"/, `${s}: offer link missing`);
-    const sources = html.split('<h2>Sources</h2>')[1] || '';
+    const sources = html.split(/<h2[^>]*>Sources<\/h2>/)[1] || '';
     assert.match(sources, /<a href="https?:\/\//, `${s}: no source link`);
   }
 });
@@ -121,5 +121,20 @@ test('every indexed AI-work page footnotes its claims, and every footnote points
     const html = readFileSync(join(dist, 'ai-work', `${s}.html`), 'utf8');
     assert.match(html, /<sup class="fn"><a href="#fn-1"/, `${s}: footnotes not rendered`);
     assert.match(html, /id="fn-1"/, `${s}: numbered sources missing`);
+  }
+});
+
+test('every indexed AI-work page opens with a bottom line and an On this page list, not headline numbers', () => {
+  // Rule (26 Nov 2026, Russell): "the numbers at the top are kind of just clickbaity ... the top should be very BLUF
+  // and tell the reader what the content is on the rest of the page."
+  for (const s of slugs('ai-work')) {
+    const data = JSON.parse(readFileSync(join(root, 'src/content/ai-work', `${s}.json`), 'utf8'));
+    if (!data.index) continue;
+    const html = readFileSync(join(dist, 'ai-work', `${s}.html`), 'utf8');
+    const hero = html.slice(html.indexOf('<header class="article-hero"'), html.indexOf('</header>'));
+    assert.match(hero, /class="bluf"/, `${s}: no bottom line at the top`);
+    assert.match(hero, /class="on-page"/, `${s}: no On this page list at the top`);
+    assert.doesNotMatch(html, /class="stats"/, `${s}: headline numbers strip is back`);
+    for (const o of data.onPage) assert.match(html, new RegExp(`id="${o.to}"`), `${s}: On this page links to #${o.to}, which is not on the page`);
   }
 });
