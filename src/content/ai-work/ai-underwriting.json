@@ -3,14 +3,14 @@
  "description": "Where AI pays in underwriting: the reading, not the decision. 19 tools checked, the US and EU rules, our benchmark data and three builds.",
  "job": "underwriting",
  "industry": "lending and insurance",
- "summary": "AI underwriting does the reading: it pulls facts from applications, statements and broker emails[^13][^22]. Underwriters decide faster, and a named person still decides[^4][^2]. It fits small-business lenders, life insurers with a rules engine[^20], and commercial insurers swamped by broker submissions[^7].",
+ "summary": "AI underwriting does the reading: it pulls facts from applications, statements and broker emails[^12][^21]. Underwriters decide faster, and a named person still decides[^4][^2]. It fits small-business lenders, life insurers with a rules engine[^19], and commercial insurers swamped by broker submissions[^7].",
  "index": true,
  "verdict": [
   "Property and casualty (P&C) underwriters spend about 4 in 10 hours on admin AI can take on[^1][^7].",
-  "Start AI on the reading: statements, tax returns, broker submissions and referred-case evidence[^22][^19].",
-  "AI reads long financial PDFs well: two models made zero mistakes on 30 fund reports[^13].",
+  "Start AI on the reading: statements, tax returns, broker submissions and referred-case evidence[^21][^18].",
+  "AI reads long financial PDFs well: two models made zero mistakes on 30 fund reports[^12].",
   "A named underwriter keeps the decision, with reasons a regulator can check[^4][^2].",
-  "Test on 50 past files before you buy; vendor speed figures are their customers' claims[^21][^28]."
+  "Test on 50 past files before you buy; vendor speed figures are their customers' claims[^20][^27]."
  ],
  "onPage": [
   {
@@ -45,12 +45,12 @@
  "stats": [
   {
    "num": "0 of 19",
-   "label": "products we checked publish a price on their site: 13 insurance tools in our tools table, plus 6 lending platforms[^24][^30]",
+   "label": "products we checked publish a price on their site: 13 insurance tools in our tools table, plus 6 lending platforms[^23][^29]",
    "source": "Zavient review of vendor sites, 26 Nov 2026"
   },
   {
    "num": "0",
-   "label": "mistakes by the two best models reading 30 fund reports, answers locked in advance[^13]",
+   "label": "mistakes by the two best models reading 30 fund reports, answers locked in advance[^12]",
    "source": "FinExtractBench, Zavient, Nov 2026"
   },
   {
@@ -60,19 +60,19 @@
   },
   {
    "num": "30",
-   "label": "US jurisdictions have adopted the NAIC (state insurance regulators' body) bulletin on insurers' use of AI[^9][^10]",
+   "label": "US jurisdictions have adopted the NAIC (state insurance regulators' body) bulletin on insurers' use of AI[^9]",
    "source": "NAIC adoption map, 13 Nov 2026"
   }
  ],
  "pickElse": [
-  "Consumer lending where the score is the product: start with the AI credit scoring guide[^30]. The decline reasons are the regulated part[^4][^17].",
-  "Life and health insurer: start from a rules engine such as Swiss Re MagnumXP or Munich Re ALLFINANZ[^18][^20]. AI earns its keep summarising the evidence on referred cases so the underwriter decides faster, not making the call[^19][^20].",
-  "Swamped by broker submissions? An off-the-shelf intake tool may beat a build, if it passes a test on 50 past submissions[^23][^22].",
-  "The question is price, not whether to take the risk: look at actuarial pricing platforms such as Akur8, Earnix or hyperexponential[^25][^26][^27]."
+  "Consumer lending where the score is the product: start with the AI credit scoring guide[^29]. The decline reasons are the regulated part[^4][^16].",
+  "Life and health insurer: start from a rules engine such as Swiss Re MagnumXP or Munich Re ALLFINANZ[^17][^19]. AI earns its keep summarising the evidence on referred cases so the underwriter decides faster, not making the call[^18][^19].",
+  "Swamped by broker submissions? An off-the-shelf intake tool may beat a build, if it passes a test on 50 past submissions[^22][^21].",
+  "The question is price, not whether to take the risk: look at actuarial pricing platforms such as Akur8, Earnix or hyperexponential[^24][^25][^26]."
  ],
  "ownData": {
   "title": "Which underwriting steps can AI take on today?",
-  "intro": "Our read of each step, built from our own benchmark of AI reading long financial documents[^13] and the published studies below. That benchmark used public private-fund reports, not loan or insurance files[^13].",
+  "intro": "Our read of each step, built from our own benchmark of AI reading long financial documents[^12] and the published studies below. That benchmark used public private-fund reports, not loan or insurance files[^12].",
   "headers": [
    "Step",
    "Can AI do it now?",
@@ -82,32 +82,32 @@
    [
     "Intake: read applications, broker emails, forms",
     "Yes, with a second model checking",
-    "Two models, 0 mistakes on 30 reports with answers locked in advance (FinExtractBench)[^13]"
+    "Two models, 0 mistakes on 30 reports with answers locked in advance (FinExtractBench)[^12]"
    ],
    [
     "Pull facts from statements, returns and loss runs (claims history)",
     "Yes, if every fact cites its page and quote",
-    "The top nine tools were within 2 facts of each other (FinExtractBench hard round)[^13]"
+    "The top nine tools were within 2 facts of each other (FinExtractBench hard round)[^12]"
    ],
    [
     "Pick the right number among look-alike tables",
     "Not alone; flag these for a person",
-    "7 of 10 tools took the wrong table on one 57-page report (FinExtractBench)[^13]"
+    "7 of 10 tools took the wrong table on one 57-page report (FinExtractBench)[^12]"
    ],
    [
     "Trust the model's own confidence",
     "No",
-    "Chat models rated their wrong answers 70 to 100 (FinExtractBench)[^13]"
+    "Chat models rated their wrong answers 70 to 100 (FinExtractBench)[^12]"
    ],
    [
     "Score the risk",
-    "Yes, if its stated reasons are the factors it scored[^17]; logistic regression stays the most transparent choice[^15]",
-    "A standard machine-learning model beat chat models at predicting loan defaults, and the same method tops a credit-scoring review[^14][^15]. MassMutual's machine-learned life score beat traditional underwriting on claims[^5][^33]."
+    "Yes, if its stated reasons are the factors it scored[^16]; logistic regression stays the most transparent choice[^14]",
+    "A standard machine-learning model beat chat models at predicting loan defaults, and the same method tops a credit-scoring review[^13][^14]. MassMutual's machine-learned life score beat traditional underwriting on claims[^5][^30]."
    ],
    [
     "Decide and explain the decision",
     "A person, using the model's reasons",
-    "Reg B (the US rule on credit decisions) requires specific reasons[^4][^17]. New York's insurance regulator (NYDFS) expects them in Circular Letter 7[^2]."
+    "Reg B (the US rule on credit decisions) requires specific reasons[^4][^16]. New York's insurance regulator (NYDFS) expects them in Circular Letter 7[^2]."
    ]
   ],
   "note": "Your documents will differ, which is why the first step of any build is a benchmark on your own files."
@@ -127,7 +127,7 @@
     "AI adds third-party data",
     "Underwriter works the queue best fit first and decides"
    ],
-   "cost": "Reading: about 12 to 15 cents a long fund report in our test[^13]. Intake products publish no price[^24]; a Zavient build is quoted per job, not listed here."
+   "cost": "Reading: about 12 to 15 cents a long fund report in our test[^12]. Intake products publish no price[^23]; a Zavient build is quoted per job, not listed here."
   },
   {
    "name": "2. Small-business lending: file to decision",
@@ -139,7 +139,7 @@
     "Explainable model drafts a score with its reasons",
     "Underwriter decides; reasons logged"
    ],
-   "cost": "Reading: under 1 cent to about 30 cents a long fund report in our test[^13]. The build, including a scorecard you own, is quoted per job, not listed here."
+   "cost": "Reading: under 1 cent to about 30 cents a long fund report in our test[^12]. The build, including a scorecard you own, is quoted per job, not listed here."
   },
   {
    "name": "3. Life insurance: evidence summary for the rules engine",
@@ -151,13 +151,13 @@
     "Clean cases: offer drafted, an underwriter spot-checks a sample",
     "Others: referred to an underwriter, who decides"
    ],
-   "cost": "Rules engines such as MagnumXP and ALLFINANZ publish no price; you contact the vendor[^18][^20]. The AI reading layer is quoted per job, and you can benchmark and swap it."
+   "cost": "Rules engines such as MagnumXP and ALLFINANZ publish no price; you contact the vendor[^17][^19]. The AI reading layer is quoted per job, and you can benchmark and swap it."
   }
  ],
  "tables": [
   {
    "title": "Which AI underwriting tools are insurers using?",
-   "intro": "Checked 26 November 2026. None publishes a price on its site[^24][^25][^26][^27]. Funding and customer claims come from the press releases linked on each name.",
+   "intro": "Checked 26 November 2026. None publishes a price on its site[^23][^24][^25][^26]. Funding and customer claims come from the press releases linked on each name.",
    "headers": [
     "Product",
     "What it does",
@@ -216,7 +216,7 @@
      "cells": [
       "Commercial underwriting and portfolio AI",
       "Specialty and commercial carriers",
-      "$75m Series B, Nov 2026[^29]"
+      "$75m Series B, Nov 2026[^28]"
      ]
     },
     {
@@ -283,42 +283,7 @@
      ]
     }
    ],
-   "note": "Lending platforms (Zest AI, Provenir, Taktile, Scienaptic, FICO, Experian) are covered in the AI credit scoring guide. None of those publishes a price either[^30]."
-  },
-  {
-   "title": "Public data you can benchmark on",
-   "intro": "For the team that builds it: compare approaches here before you touch your own book. Check each licence before commercial use.",
-   "headers": [
-    "Dataset",
-    "Size",
-    "Use it for"
-   ],
-   "rows": [
-    {
-     "name": "freMTPL2 (French motor liability)",
-     "url": "https://dutangc.github.io/CASdatasets/reference/freMTPL.html",
-     "cells": [
-      "677,991 policies, 26,444 claims",
-      "Claim frequency and severity models"
-     ]
-    },
-    {
-     "name": "Prudential Life Insurance Assessment",
-     "url": "https://link.springer.com/doi/10.1007/s40747-018-0072-1",
-     "cells": [
-      "59,381 applications, 128 fields",
-      "Life risk classification; Kaggle competition rules[^31]"
-     ]
-    },
-    {
-     "name": "UCI Default of Credit Card Clients",
-     "cells": [
-      "30,000 accounts",
-      "Consumer credit default; CC BY 4.0[^32]"
-     ],
-     "url": "https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients"
-    }
-   ]
+   "note": "Lending platforms (Zest AI, Provenir, Taktile, Scienaptic, FICO, Experian) are covered in the AI credit scoring guide. None of those publishes a price either[^29]."
   }
  ],
  "rules": [
@@ -326,7 +291,7 @@
    "name": "Regulation B, 12 CFR 1002.9",
    "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1002/subpart-A/section-1002.9",
    "status": "In force",
-   "what": "US lenders must give notice of a decline within 30 days, with the specific main reasons or the right to get them[^4]. For a scoring model, the reasons must be the factors it actually scored[^17]."
+   "what": "US lenders must give notice of a decline within 30 days, with the specific main reasons or the right to get them[^4]. For a scoring model, the reasons must be the factors it actually scored[^16]."
   },
   {
    "name": "NYDFS Circular Letter No. 7",
@@ -338,19 +303,19 @@
    "name": "NAIC Model Bulletin on AI",
    "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
    "status": "30 jurisdictions",
-   "what": "The NAIC (the US state insurance regulators' body) asks insurers to keep a written AI program with governance, risk controls, testing and vendor oversight[^34]. 30 US jurisdictions have adopted it[^9][^10]. California, Colorado and New York have their own rules instead[^9]."
+   "what": "The NAIC (the US state insurance regulators' body) asks insurers to keep a written AI program with governance, risk controls, testing and vendor oversight[^31]. 30 US jurisdictions have adopted it[^9]. California, Colorado and New York have their own rules instead[^9]."
   },
   {
    "name": "Colorado SB21-169",
    "url": "https://doi.colorado.gov/for-consumers/sb21-169-protecting-consumers-from-unfair-discrimination-in-insurance-practices",
    "status": "Life; auto and health from 15 Oct 2025",
-   "what": "Insurers must test outside data and models for unfair discrimination, fix harm found and show the Division how they test[^3][^16]."
+   "what": "Insurers must test outside data and models for unfair discrimination, fix harm found and show the Division how they test[^3][^15]."
   },
   {
    "name": "EU AI Act, Annex III",
    "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3",
    "status": "Starts 2 Dec 2027",
-   "what": "Credit scoring of people and life and health insurance risk pricing are high-risk uses[^6]. Those rules apply from 2 December 2027[^11][^12]. High-risk systems need automatic logs and human oversight, so plan both now if you operate in the EU[^35][^36]."
+   "what": "Credit scoring of people and life and health insurance risk pricing are high-risk uses[^6]. Those rules apply from 2 December 2027[^10][^11]. High-risk systems need automatic logs and human oversight, so plan both now if you operate in the EU[^32][^33]."
   }
  ],
  "howToTest": [
@@ -363,25 +328,20 @@
  ],
  "buyVsBuild": {
   "buy": "Buy when your line is standard, the vendor already handles your submission formats, and you are happy to run inside its workbench.",
-  "build": "Build when your own loss history and appetite are your edge, or when you need the reading step to feed systems you already own. The reading layer is swappable: in our benchmark the top nine models were within 2 facts of each other[^13]. The decision logic is yours."
+  "build": "Build when your own loss history and appetite are your edge, or when you need the reading step to feed systems you already own. The reading layer is swappable: in our benchmark the top nine models were within 2 facts of each other[^12]. The decision logic is yours."
  },
  "watchOuts": [
-  "You stay responsible for a vendor's model. New York and the NAIC bulletin both expect audit rights in vendor contracts where available[^2][^34].",
-  "Models can carry past bias into new decisions. New York and Colorado expect insurers to test for unfair outcomes across groups before use and on a schedule after[^2][^16].",
-  "A model's confidence score is not a warning sign. In our benchmark, wrong answers came back rated 70 to 100[^13].",
-  "Vendor claims such as faster quotes are the vendor's own figures[^24], often from chosen customers[^21][^28]. Ask for a benchmark on your own files.",
-  "Flagged facts need an owner: in our benchmark, look-alike tables tripped 7 of 10 tools on one report[^13]. Count flags per file, multiply by weekly files and name who clears them."
+  "You stay responsible for a vendor's model. New York and the NAIC bulletin both expect audit rights in vendor contracts where available[^2][^31].",
+  "Models can carry past bias into new decisions. New York and Colorado expect insurers to test for unfair outcomes across groups before use and on a schedule after[^2][^15].",
+  "A model's confidence score is not a warning sign. In our benchmark, wrong answers came back rated 70 to 100[^12].",
+  "Vendor claims such as faster quotes are the vendor's own figures[^23], often from chosen customers[^20][^27]. Ask for a benchmark on your own files.",
+  "Flagged facts need an owner: in our benchmark, look-alike tables tripped 7 of 10 tools on one report[^12]. Count flags per file, multiply by weekly files and name who clears them."
  ],
  "resources": [
   {
    "name": "NAIC AI Model Bulletin adoption map",
    "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
    "what": "Which states have adopted the bulletin, updated by NAIC."
-  },
-  {
-   "name": "FinanceBench",
-   "url": "https://github.com/patronus-ai/financebench",
-   "what": "Open questions on company financial filings; the open sample is for non-commercial use."
   }
  ],
  "sources": [
@@ -429,11 +389,6 @@
    "name": "NAIC adoption map, AI Model Bulletin",
    "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
    "what": "Status as of 13 Nov 2026: 30 jurisdictions listed as adopting; California, Colorado and New York have their own rules."
-  },
-  {
-   "name": "InsureAI Wire, NAIC bulletin adoption",
-   "url": "https://insureaiwire.com/news/naic-model-bulletin-adoption",
-   "what": "Reads the 13 Nov 2026 NAIC map as 28 states, DC and Puerto Rico adopting the bulletin."
   },
   {
    "name": "AI Act Service Desk, Article 113",
@@ -534,16 +489,6 @@
    "name": "Zavient, AI credit scoring guide",
    "url": "https://zavient.com/ai-work/ai-credit-scoring.html",
    "what": "Zavient's review of lending platforms: none publishes a price."
-  },
-  {
-   "name": "Kaggle, Prudential Life Insurance Assessment",
-   "url": "https://www.kaggle.com/c/prudential-life-insurance-assessment",
-   "what": "Competition that released the Prudential life application data, under its competition rules."
-  },
-  {
-   "name": "UCI, Default of Credit Card Clients",
-   "url": "https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients",
-   "what": "30,000 instances, 23 features, licensed CC BY 4.0."
   },
   {
    "name": "MassMutual, AI Magazine 2020",
