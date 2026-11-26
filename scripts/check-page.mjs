@@ -7,7 +7,7 @@
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { TYPES, COMMON_REQUIRED, REVIEWERS, MIN, BANNED, BLOCKS } from '../src/lib/page-types.mjs';
+import { TYPES, COMMON_REQUIRED, REVIEWERS, MIN, BANNED, BLOCKS, DEMAND } from '../src/lib/page-types.mjs';
 import { checkPage as readability } from './check-readability.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -64,8 +64,20 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
     ['buy', d.buyVsBuild?.buy], ['build', d.buyVsBuild?.build]];
   for (const [where, text] of prose) if (text && fns(text).length === 0) fail.push(`${where} has no footnote`);
 
-  // Own data (publish gate: a number only Zavient has), except glossary and tool pages
-  if (!['glossary', 'tool'].includes(d.type) && !d.ownData) fail.push('no own-data block: a page needs a number only Zavient has');
+  // Publish gate from the site architecture doc (26 Nov 2026): measured demand, one fact only Zavient has, one fact
+  // its siblings don't have, a real updated date. A page that fails any check renders noindex and stays out of the
+  // sitemap (src/pages/ai-work/[slug].astro, src/pages/sitemap-ai.xml.js).
+  const k = d.keyword || {};
+  if (!t.skipDemand && !((k.searches || 0) >= DEMAND.searches || ((k.searches || 0) >= DEMAND.nicheSearches && (k.cpc || 0) >= DEMAND.nicheCpc)))
+    fail.push(`no measured demand: "${k.phrase || '?'}" has ${k.searches || 0} searches at $${k.cpc || 0}; need ${DEMAND.searches}+, or ${DEMAND.nicheSearches}+ at $${DEMAND.nicheCpc}+ a click`);
+  if (d.type !== 'tool' && !d.ownData) fail.push('no own-data block: a page needs a fact only Zavient has (benchmark, job-ad count, dated check, worked example)');
+  if (d.ownData) {
+    const mine = JSON.stringify(d.ownData.rows);
+    const twin = siblings.find((s) => s._slug && s._slug !== slug && s.ownData && JSON.stringify(s.ownData.rows) === mine);
+    if (twin) fail.push(`own data is the same as ${twin._slug}'s: a page needs one fact its siblings don't have`);
+  }
+  const today = new Date().toISOString().slice(0, 10);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(d.updated || '') || d.updated > today) fail.push('updated must be a real date, not in the future (never fake freshness)');
 
   // Banned wording
   const text = allText(d);
@@ -96,7 +108,7 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
 const here = fileURLToPath(import.meta.url);
 if (process.argv[1] === here) {
   const args = process.argv.slice(2);
-  const siblings = readdirSync(contentDir).filter((f) => f.endsWith('.json')).map((f) => JSON.parse(readFileSync(join(contentDir, f), 'utf8')));
+  const siblings = readdirSync(contentDir).filter((f) => f.endsWith('.json')).map((f) => ({ ...JSON.parse(readFileSync(join(contentDir, f), 'utf8')), _slug: f.replace(/\.json$/, '') }));
   let bad = 0;
   for (const a of args) {
     const path = a.endsWith('.json') ? a : join(contentDir, `${a}.json`);

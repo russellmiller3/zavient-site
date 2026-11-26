@@ -22,7 +22,10 @@ export const COMMON_REQUIRED = ['verdict', 'summary', 'humanRole', 'faq', 'stats
 export const REVIEWERS = ['COO', 'Head of operations', 'GM', 'Division head', 'Owner-CEO'];
 
 // Minimums for a publishable (index: true) page.
-export const MIN = { verdict: [3, 5], onPage: 3, sources: 10, toolSources: 5, glossarySources: 3, domains: 4, stats: 3, faq: 3, verdictFootnotes: 2 };
+export const MIN = { verdict: [3, 5], onPage: 3, sources: 10, toolSources: 5, domains: 4, stats: 3, faq: 3, verdictFootnotes: 2 };
+
+// Measured demand (architecture doc, "Publish gate"): 100+ US searches a month, or 30+ at $20+ a click.
+export const DEMAND = { searches: 100, nicheSearches: 30, nicheCpc: 20 };
 
 // Words that break the augmentation rule or the no-low-end-market rule. Matched case-insensitively.
 export const BANNED = [
@@ -56,6 +59,22 @@ export const BLOCKS = {
   decisions: {
     field: 'decisions', h: 'Which AI decisions does a {topic} own?',
     brief: '3-6 decisions this role owns (what to fix first, buy or build, who checks output, how to measure). For each, what they need to know to decide, sourced. Use surveys of that role (Vistage, McKinsey, Gartner, trade bodies) with sample sizes.',
+  },
+  'team-after': {
+    field: 'teamAfter', h: 'What does your team do after?',
+    brief: '2-4 bullets: the work people move to once AI takes the first pass (checking exceptions, talking to customers, deeper review). Source each to a study, survey or published case. Census data: where AI changed tasks, 66% of firms only use it to help staff and 2% cut jobs (CES-26-25). Augmentation, never headcount cuts.',
+  },
+  'walk-away': {
+    field: 'walkAway', h: 'What should you walk away with?',
+    brief: '3-5 bullets: what a buyer should hold at the end of good help (a ranked workflow list, a before-and-after measure, a working pilot, a plan their team can run). Source to buyer surveys where possible.',
+  },
+  forward: {
+    field: 'forward', h: 'The one-page brief to hand your CEO',
+    brief: '4-6 short lines a reader can print or forward to the owner-CEO: the top workflow, what it saves, the risk and who checks it, the first step, the cost range. Every number footnoted. This is the role page\'s forward to Steve.',
+  },
+  applies: {
+    field: 'applies', h: 'Does {topic} apply to you?',
+    brief: '3-6 if/then lines a reader can answer yes or no to (size, state, what the AI decides, who is affected), each from the rule\'s own text. Primary sources only. Not legal advice.',
   },
   tool: {
     field: 'tool', h: 'Use the {topic}',
@@ -113,82 +132,99 @@ export const BLOCKS = {
 
 // The order a page's blocks render in, per type. Teach first, then proof, then buy-or-build, then alternatives,
 // then the reference matter, then the free diagnostic (rendered after every page).
+// Page types and names follow the site architecture doc "Zavient site architecture" (26 Nov 2026, "Page types and
+// templates"). Its other types are built elsewhere: data stories in src/content/data-stories (/data/), and the
+// one-off pages (About, Method, benchmark pages, the free diagnostic, home) by hand. It builds no glossary pages.
 export const TYPES = {
   usecase: {
-    label: 'Use-case guide',
-    titleShape: 'AI {job}: {the buyer\'s real question}?',
-    example: 'AI credit scoring: how do lenders keep it fair and explainable?',
-    order: ['what-it-is', 'human-role', 'own-data', 'example', 'recipes', 'tables', 'rules', 'benchmark', 'what-goes-wrong', 'faq', 'buy-or-build', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
-    required: ['ownData', 'example', 'recipes', 'tables', 'howToTest', 'watchOuts', 'buyVsBuild', 'pickElse'],
+    label: 'Work playbook',
+    titleShape: 'Can AI {do the work} {the way the buyer needs it}?',
+    example: 'Can AI score loans fairly and explainably?',
+    order: ['what-it-is', 'human-role', 'team-after', 'example', 'tables', 'recipes', 'own-data', 'rules', 'benchmark', 'what-goes-wrong', 'faq', 'buy-or-build', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
+    required: ['teamAfter', 'ownData', 'example', 'recipes', 'tables', 'howToTest', 'watchOuts', 'buyVsBuild', 'pickElse'],
     division: 'the head of the team that does this work (e.g. head of lending, chief underwriter, controller)',
+    offer: 'Bring us your {job} process. Leave with the first step and a before-and-after measure.',
   },
   crossing: {
-    label: 'Industry use case',
-    titleShape: 'AI {job} for {industry}: {question}?',
-    example: 'AI underwriting for credit unions: what should you automate first?',
-    order: ['what-it-is', 'human-role', 'own-data', 'example', 'recipes', 'tables', 'rules', 'benchmark', 'what-goes-wrong', 'faq', 'buy-or-build', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
-    required: ['ownData', 'example', 'recipes', 'tables', 'rules', 'howToTest', 'watchOuts', 'buyVsBuild', 'pickElse'],
+    label: 'Work for one industry',
+    titleShape: 'Can AI {do the work} for {industry} {the way they need it}?',
+    example: 'Can AI underwrite for insurers without tripping the NAIC bulletin?',
+    // URL order is always work, then industry (architecture doc, "URL scheme").
+    order: ['what-it-is', 'human-role', 'team-after', 'example', 'tables', 'recipes', 'own-data', 'rules', 'benchmark', 'what-goes-wrong', 'faq', 'buy-or-build', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
+    required: ['teamAfter', 'ownData', 'example', 'recipes', 'tables', 'rules', 'howToTest', 'watchOuts', 'buyVsBuild', 'pickElse'],
     division: 'the head of that work in that industry',
-    // Scaled-content guard (research, 26 Nov 2026): build a crossing only when at least 4 of these 6 change from the
-    // parent use-case page. Otherwise it is a section of the parent. The gate checks the page's `differs` list.
     differsFrom: ['problem', 'jobs', 'workflow', 'evidence', 'objections', 'conversion'],
-  },
-  hub: {
-    label: 'Guide hub',
-    titleShape: '{Work type}: {question}?',
-    example: 'AI consulting for finance teams: where does AI pay first?',
-    order: ['what-it-is', 'human-role', 'spokes', 'own-data', 'tables', 'recipes', 'rules', 'faq', 'buy-or-build', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
-    required: ['spokes', 'buyVsBuild', 'pickElse'],
-    division: 'the head of the function the hub covers',
+    headings: { faq: 'What will your examiner or regulator ask?' },
+    offer: 'Bring us your {job} process. Leave with the first step, a before-and-after measure and the questions your examiner will ask.',
   },
   industry: {
-    label: 'Industry guide',
-    titleShape: 'AI in {industry}: {question}?',
-    example: 'AI in credit unions: where does it pay first?',
+    label: 'Industry hub',
+    titleShape: 'What are {industry} actually using AI for?',
+    example: 'What are community banks actually using AI for?',
     order: ['what-it-is', 'human-role', 'ranked', 'own-data', 'tables', 'rules', 'what-goes-wrong', 'faq', 'buy-or-build', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
     required: ['ranked', 'tables', 'rules', 'watchOuts', 'buyVsBuild', 'pickElse'],
     division: 'the division heads of that industry (e.g. head of lending, chief underwriter)',
+    headings: { 'own-data': 'What are your peers hiring for?' },
+    offer: 'Which of these workflows pays back first at your firm?',
   },
   role: {
-    label: 'For your role',
-    titleShape: 'AI for {role}s: {question}?',
-    example: 'AI for COOs: which process do you fix first?',
-    order: ['what-it-is', 'human-role', 'decisions', 'ranked', 'recipes', 'own-data', 'benchmark', 'what-goes-wrong', 'faq', 'buy-or-build', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
-    required: ['decisions', 'ranked', 'recipes', 'howToTest', 'watchOuts', 'buyVsBuild', 'pickElse'],
+    label: 'Role page',
+    titleShape: 'Where should a {role} start with AI?',
+    example: 'Where should a head of lending start with AI?',
+    // A router and a forward, not a traffic bet: it skips the demand check (architecture doc, "Publish gate").
+    order: ['what-it-is', 'human-role', 'decisions', 'ranked', 'faq', 'forward', 'recipes', 'own-data', 'benchmark', 'what-goes-wrong', 'buy-or-build', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
+    required: ['decisions', 'ranked', 'forward', 'recipes', 'howToTest', 'watchOuts', 'buyVsBuild', 'pickElse'],
     division: 'the role itself is the main reader; the division-head review checks it from a peer function',
-    headings: { recipes: 'What does a 90-day start look like?', benchmark: 'How do you show it worked?' },
+    headings: { faq: 'What will your CEO, board or examiner ask?', recipes: 'What does a 90-day start look like?', benchmark: 'How do you show it worked?' },
+    skipDemand: true,
+    offer: 'Your top 2 workflows ranked, and a one-page plan you can hand your CEO.',
   },
-  glossary: {
-    label: 'Term',
-    titleShape: 'What is {term}?',
-    example: 'What is reject inference in credit scoring?',
-    // One term per page; publish only when 5+ site pages link to it (research, 26 Nov 2026). The gate counts links.
-    order: ['what-it-is', 'example', 'human-role', 'something-else', 'faq', 'resources', 'key-numbers', 'sources', 'related'],
-    required: ['example'],
-    minSources: 'glossarySources',
-    minInbound: 5,
-    division: 'the person who would use the term at work',
-    headings: { 'something-else': 'What is {topic} not?' },
+  consulting: {
+    label: 'Consulting',
+    titleShape: '{The kind of help}: what should you walk away with?',
+    example: 'AI automation consulting: what should you walk away with?',
+    // Never named rival or partner firms, or freelancer rates (Site rules). Zavient's own price ranges only on Russell's yes.
+    order: ['what-it-is', 'walk-away', 'human-role', 'recipes', 'own-data', 'what-goes-wrong', 'benchmark', 'faq', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
+    required: ['walkAway', 'recipes', 'watchOuts', 'howToTest', 'pickElse'],
+    division: 'the operator who would hire the help (COO or head of operations)',
+    headings: { recipes: 'What shapes can the work take?', 'what-goes-wrong': 'Why do most AI pilots stall?', benchmark: 'How do you judge any AI advisor?', 'something-else': 'When should you not hire help?' },
+    offer: 'Free, before any paid work: 30 minutes on your first workflow.',
+  },
+  regulation: {
+    label: 'Rules page',
+    titleShape: 'Does {rule} apply to {a firm like yours}?',
+    example: 'Does the Colorado AI Act apply to a 200-person lender?',
+    order: ['what-it-is', 'applies', 'timeline', 'rules', 'human-role', 'spokes', 'benchmark', 'what-goes-wrong', 'faq', 'buy-or-build', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
+    required: ['applies', 'timeline', 'rules', 'howToTest', 'watchOuts'],
+    division: 'the compliance or risk owner for that work',
+    headings: { spokes: 'Which of your work does it touch?', benchmark: 'What is on your checklist?' },
+    offer: 'Does this rule touch the AI you use? We\'ll check in 30 minutes.',
   },
   tool: {
     label: 'Free tool',
     titleShape: '{Tool name}: {question it answers}?',
-    example: 'AI readiness check: is your firm ready to use AI on real work?',
+    example: 'AI ROI calculator: will this workflow pay back this year?',
+    // The tool is the Zavient-only fact (architecture doc: "a benchmark result, a job-ad count, a worked example or a calculator").
     order: ['tool', 'what-it-is', 'human-role', 'own-data', 'faq', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
     required: ['tool'],
     minSources: 'toolSources',
     division: 'the person most likely to run the tool',
+    offer: 'Want the detailed plan behind your result? Book the free 30-minute diagnostic.',
   },
-  regulation: {
-    label: 'Rules guide',
-    titleShape: '{Rule}: {what it means for the buyer}?',
-    example: 'EU AI Act and credit scoring: what do US lenders have to do?',
-    order: ['what-it-is', 'timeline', 'rules', 'human-role', 'benchmark', 'what-goes-wrong', 'faq', 'buy-or-build', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
-    required: ['timeline', 'rules', 'howToTest', 'watchOuts'],
-    division: 'the compliance or risk owner for that work',
-    headings: { benchmark: 'How do you check you comply?' },
+  guide: {
+    label: 'Guide',
+    titleShape: 'How do I {do the thing}?',
+    example: 'How do I pick our first AI project?',
+    order: ['what-it-is', 'human-role', 'benchmark', 'example', 'own-data', 'what-goes-wrong', 'faq', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
+    required: ['howToTest', 'example', 'watchOuts'],
+    division: 'the person who would do the steps',
+    headings: { benchmark: 'What are the steps?' },
+    offer: 'Want a second pair of eyes on your answer? Book the free 30-minute diagnostic.',
   },
 };
+
+// One-off pages in the architecture doc that need no template: they are built once, by hand.
+export const ONE_OFFS = ['About', 'Method', 'One page per benchmark', 'Free diagnostic', 'Home', 'Data story and monthly report (src/content/data-stories)'];
 
 // Pages built before the golden templates (no templateVersion) keep the order they shipped with.
 export const LEGACY_ORDER = ['what-it-is', 'spokes', 'own-data', 'example', 'recipes', 'tables', 'rules', 'benchmark', 'what-goes-wrong', 'buy-or-build', 'something-else', 'resources', 'key-numbers', 'sources', 'related'];

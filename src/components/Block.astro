@@ -16,6 +16,27 @@ const h = headingFor(d, id);
   <h2 id="human-role">{h}</h2>
   <div class="callout"><ul>{d.humanRole.map((s) => <li><Fn s={s} /></li>)}</ul></div>
 </>)}
+{id === 'team-after' && d.teamAfter.length > 0 && (<>
+  <h2 id="team-after">{h}</h2>
+  <ul>{d.teamAfter.map((s) => <li><Fn s={s} /></li>)}</ul>
+</>)}
+{id === 'walk-away' && d.walkAway.length > 0 && (<>
+  <h2 id="walk-away">{h}</h2>
+  <ul>{d.walkAway.map((s) => <li><Fn s={s} /></li>)}</ul>
+</>)}
+{id === 'forward' && d.forward.length > 0 && (<>
+  <h2 id="forward">{h}</h2>
+  <div class="callout forward"><ul>{d.forward.map((s) => <li><Fn s={s} /></li>)}</ul>
+  <p class="table-note"><a href="#" onclick="window.print();return false;">Print this page</a> or forward its link.</p></div>
+</>)}
+{id === 'applies' && d.applies.length > 0 && (<>
+  <h2 id="applies">{h}</h2>
+  <div class="table-scroll"><table class="sources-table">
+    <thead><tr><th>If</th><th>Then</th></tr></thead>
+    <tbody>{d.applies.map((x) => <tr><td>{x.if}</td><td><Fn s={x.then} /></td></tr>)}</tbody>
+  </table></div>
+  <p class="table-note">Not legal advice. Check with your counsel.</p>
+</>)}
 {id === 'spokes' && spokes.length > 0 && (<>
   <h2 id="where-ai-pays">{h}</h2>
   <div class="hub-grid">
@@ -69,7 +90,7 @@ const h = headingFor(d, id);
   <h2 id="example">{h}</h2>
   <div class="table-scroll"><table class="sources-table">
     <thead><tr><th>Goes in</th><th>Comes out</th></tr></thead>
-    <tbody><tr><td>{d.example.input}</td><td>{d.example.output}</td></tr></tbody>
+    <tbody><tr><td><Fn s={d.example.input} /></td><td><Fn s={d.example.output} /></td></tr></tbody>
   </table></div>
   <p class="table-note">Illustrative example.</p>
 </>)}

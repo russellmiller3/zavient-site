@@ -3,13 +3,15 @@
 import { writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { TYPES, BLOCKS, COMMON_REQUIRED, REVIEWERS, MIN } from '../src/lib/page-types.mjs';
+import { TYPES, BLOCKS, COMMON_REQUIRED, REVIEWERS, MIN, DEMAND, ONE_OFFS } from '../src/lib/page-types.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const out = process.argv[2] || join(root, 'docs/golden-templates.md');
 const head = (t, id) => ((t.headings && t.headings[id]) || BLOCKS[id].h || (id === 'tables' ? 'Tables (one heading each)' : 'Related links')).replaceAll('{topic}', '<topic>');
 
 const md = `# Golden page templates
+
+Page types are named as in the site architecture doc (26 Nov 2026). Built once by hand, with no template: ${ONE_OFFS.join(', ')}.
 
 One template per page type. Each fixes the block order, the required blocks, the question headings and a research
 brief for every slot, so a new page is research plus fill-in. Source of truth: \`src/lib/page-types.mjs\`
@@ -25,11 +27,14 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: \
 ## Rules every template enforces
 - Bottom line first: ${MIN.verdict[0]}-${MIN.verdict[1]} bullets, each with ${MIN.verdictFootnotes}+ sources. No number leading the title or a bullet.
 - Title and headings are the buyer's question; the title ends in "?".
-- Every claim footnoted; ${MIN.sources}+ sources from ${MIN.domains}+ sites (tool pages ${MIN.toolSources}, terms ${MIN.glossarySources}).
+- Every claim footnoted; ${MIN.sources}+ sources from ${MIN.domains}+ sites (tool pages ${MIN.toolSources}).
+- Measured demand: ${DEMAND.searches}+ US searches a month, or ${DEMAND.nicheSearches}+ at $${DEMAND.nicheCpc}+ a click (role pages skip it: they are navigation).
+- One fact its siblings don't have, and a real updated date.
+- A page that fails any check renders noindex, follow and stays out of the sitemap, even with \`index: true\`.
 - "Where does your team stay in charge?" on every page. No headcount-cut wording.
 - No Upwork, freelancer marketplaces, hourly rates or rival consulting firms.
 - Teach, then trust, then the lead: alternatives sit after "Buy or build", just above the free diagnostic.
-- A number only Zavient has on every page except tools and terms.
+- A fact only Zavient has on every page except tools (the tool is the fact).
 - ADHD-friendly: 25-word sentences, 2-sentence bullets, 3-sentence paragraphs.
 - Zarlent look in blue (\`public/ai-work/ai-work.css\`).
 - Required on every page: ${COMMON_REQUIRED.join(', ')}.
@@ -37,6 +42,7 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: \
 ${Object.entries(TYPES).map(([name, t]) => `## ${t.label} (\`${name}\`)
 - Title shape: "${t.titleShape}". Example: "${t.example}".
 - Division-head reviewer: ${t.division}.
+- Free diagnostic offer: "${t.offer}"${t.skipDemand ? '\n- Skips the demand check (navigation page).' : ''}
 ${t.differsFrom ? `- Build only if it differs from its parent on 4 of: ${t.differsFrom.join(', ')}. Otherwise add a section to the parent.\n` : ''}${t.minInbound ? `- Publish only when ${t.minInbound}+ site pages link to it.\n` : ''}- Required beyond the common set: ${t.required.join(', ')}.
 
 Block order:

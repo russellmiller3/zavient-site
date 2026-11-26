@@ -29,6 +29,9 @@ const good = () => ({
   verdict: ['Software matches most lines first, and people review the rest [^1][^2].', 'Measure close days before and after on your own accounts [^2][^3].', 'Keep the controller signing off every reconciliation [^3][^4].'],
   summary: 'It compares your books with the bank and explains the differences [^1]. People decide the hard ones [^2].',
   humanRole: ['The controller signs off each reconciliation [^3].'],
+  teamAfter: ['The preparer works the exceptions the software leaves [^4].'],
+  keyword: { phrase: 'account reconciliation software', searches: 590, cpc: 212, difficulty: 21 },
+  updated: '2026-11-26',
   ownData: { title: 'What we checked?', intro: 'We checked pricing pages [^5].', headers: ['Tool'], rows: [['A [^5]']], note: 'Pulled 26 Nov 2026.' },
   example: { input: 'A month of bank lines.', output: 'Matched lines and a short exceptions list.' },
   recipes: [{ name: 'Small team', when: 'Few accounts [^6].', flow: ['Staff accountant: export', 'Controller: approve'], cost: 'Included in many ERPs [^6].' }],
@@ -57,6 +60,16 @@ test('the publish gate passes a complete page and names each broken rule', () =>
   assert.match(fails({ reviews: [...good().reviews].reverse() }), /ICP reviews/);
   assert.match(fails({ summary: 'TODO: write this' }), /TODO/);
   assert.match(fails({ watchOuts: ['No footnote on this one.', 'b [^8]', 'c [^9]'] }), /watchOut 1 has no footnote/);
+});
+
+test('the architecture doc gate: measured demand, a fact siblings lack, a real date', () => {
+  const fails = (patch, opts) => gate({ ...good(), ...patch }, opts).fail.join(' | ');
+  assert.match(fails({ keyword: { phrase: 'x', searches: 40, cpc: 5, difficulty: 0 } }), /no measured demand/);
+  assert.doesNotMatch(fails({ keyword: { phrase: 'x', searches: 40, cpc: 25, difficulty: 0 } }), /no measured demand/);
+  assert.doesNotMatch(fails({ type: 'role', keyword: { phrase: 'x', searches: 0, cpc: 0, difficulty: 0 } }), /no measured demand/);
+  const twin = { ...good(), _slug: 'other-page' };
+  assert.match(fails({}, { slug: 'this-page', siblings: [twin] }), /same as other-page/);
+  assert.match(fails({ updated: '2999-01-01' }), /real date/);
 });
 
 test('a crossing page must differ from its parent on 4 of 6 dimensions', () => {

@@ -7,6 +7,7 @@ import { readFileSync, readdirSync, existsSync, statSync, mkdtempSync, cpSync, s
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { spawnSync } from 'node:child_process';
+import { indexed } from '../src/lib/publish.mjs';
 
 const root = new URL('..', import.meta.url).pathname;
 const dist = join(root, 'dist');
@@ -16,16 +17,19 @@ test('every AI-work page is built with the offer and at least one source link', 
   // Indexed pages (index: true) sell AI consulting and must be in the AI sitemap and not noindexed; the rest keep the
   // benchmark offer and noindex (26 Nov 2026: Russell asked for the offer to sell consulting, not a benchmark booking).
   const sitemap = readFileSync(join(dist, 'sitemap-ai.xml'), 'utf8');
+  // Golden-template pages always carry the free diagnostic, and are indexed only when they also pass the publish gate.
+  const all = slugs('ai-work').map((s) => ({ id: s, data: JSON.parse(readFileSync(join(root, 'src/content/ai-work', `${s}.json`), 'utf8')) }));
   for (const s of slugs('ai-work')) {
-    const data = JSON.parse(readFileSync(join(root, 'src/content/ai-work', `${s}.json`), 'utf8'));
+    const data = all.find((p) => p.id === s).data;
     const html = readFileSync(join(dist, 'ai-work', `${s}.html`), 'utf8');
-    if (data.index) {
+    if (data.templateVersion) assert.match(html, /data-cta="consulting"/, `${s}: free diagnostic missing on a template page`);
+    if (indexed({ id: s, data }, all)) {
       assert.match(html, /data-cta="consulting"/, `${s}: consulting offer missing`);
       assert.match(html, /href="mailto:rmiller@zavient\.com"/, `${s}: offer email missing`);
       assert.doesNotMatch(html, /name="robots" content="noindex/, `${s}: indexed page is marked noindex`);
       assert.ok(sitemap.includes(`/ai-work/${s}.html`), `${s}: indexed page missing from sitemap`);
     } else {
-      assert.match(html, /data-cta="benchmark"/, `${s}: offer block missing`);
+      if (!data.templateVersion) assert.match(html, /data-cta="benchmark"/, `${s}: offer block missing`);
       assert.match(html, /name="robots" content="noindex/, `${s}: unpublished page is not noindex`);
       assert.ok(!sitemap.includes(`/ai-work/${s}.html`), `${s}: noindex page listed in sitemap`);
     }

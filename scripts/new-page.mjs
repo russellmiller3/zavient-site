@@ -9,7 +9,7 @@
 import { writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { TYPES, BLOCKS, COMMON_REQUIRED, REVIEWERS, MIN } from '../src/lib/page-types.mjs';
+import { TYPES, BLOCKS, COMMON_REQUIRED, REVIEWERS, MIN, DEMAND } from '../src/lib/page-types.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const arg = (k, def) => { const i = process.argv.indexOf(`--${k}`); return i > -1 ? process.argv[i + 1] : def; };
@@ -24,6 +24,10 @@ const today = new Date().toISOString().slice(0, 10);
 const SLOT = {
   summary: T('2-3 sentences: what it is, what AI does, what makes or breaks it [^1][^2]'),
   humanRole: [T('decision people keep, and who checks AI output [^n]'), T('who signs off [^n]')],
+  teamAfter: [T('work people move to once AI takes the first pass [^n]'), T('what they check or decide now [^n]')],
+  walkAway: [1, 2, 3].map(() => T('what a buyer should hold at the end [^n]')),
+  forward: [T('top workflow and what it saves [^n]'), T('risk and who checks it [^n]'), T('first step [^n]'), T('cost range [^n]')],
+  applies: [1, 2, 3].map(() => ({ if: T('yes/no condition from the rule text'), then: T('what follows [^n]') })),
   spokes: [{ slug: T('guide-slug'), why: T('why it pays first [^n]') }],
   ranked: Array.from({ length: 4 }, () => ({ name: T('job'), slug: T('guide slug or delete this key'), why: T('cost or time today [^n]'), payoff: T('the number to measure') })),
   decisions: Array.from({ length: 3 }, () => ({ decision: T('decision this role owns'), know: T('what they need to know [^n]') })),
@@ -58,8 +62,8 @@ const page = {
 };
 for (const f of fields) if (SLOT[f] !== undefined) page[f] = SLOT[f];
 Object.assign(page, {
-  offer: { heading: T('free-diagnostic heading in the buyer\'s words'), body: T('what the 30 minutes gets them, 1-2 sentences') },
-  keyword: { phrase: T('main search phrase'), searches: 0, cpc: 0, difficulty: null },
+  offer: { heading: T('free-diagnostic heading in the buyer\'s words'), body: t.offer ? t.offer.replaceAll('{job}', job) : T('what the 30 minutes gets them, 1-2 sentences') },
+  keyword: { phrase: T('main search phrase from docs/ai-work-site/keyword-research'), searches: 0, cpc: 0, difficulty: null },
   reviews: [],
   updated: today,
 });
@@ -86,7 +90,9 @@ Reader: lower-middle-market firm, 40-500 staff. Division head for this page: ${r
 - **Augmentation, not replacement**: the "Where does your team stay in charge?" block is required. No headcount-cut language.
 - **No Upwork, freelancer marketplaces, hourly rates or rival consulting firms.**
 - **Teach, then trust, then the lead**: the block order below is fixed. "When to pick something else" sits after "Buy or build", just above the free diagnostic.
-- **Own data** (except tool and glossary pages): one table only Zavient has (a benchmark, a dated price check, a registry or package count).
+- **Own data** (except tool pages, where the tool is the fact): one table only Zavient has (a benchmark, a job-ad count, a dated price check, a worked example). It must differ from every sibling page's.
+- **Measured demand**${t.skipDemand ? ' (skipped: this type is navigation)' : ''}: \`keyword\` from the keyword pull, with ${DEMAND.searches}+ US searches a month, or ${DEMAND.nicheSearches}+ at $${DEMAND.nicheCpc}+ a click. No demand, no index.
+- **Updated** is the real date of the last real change. Never fake freshness.
 - **ADHD-friendly**: sentences 25 words max, bullets 2 sentences max, paragraphs 3 max.
 ${t.differsFrom ? `- **Crossing guard**: list in \`differs\` how this page differs from its parent on ${t.differsFrom.join(', ')}. Under 4 of 6 → don't build it; add a section to the parent instead.\n` : ''}${t.minInbound ? `- **Inbound links**: publish only when ${t.minInbound}+ site pages link here.\n` : ''}
 ## Block order and what to research for each slot

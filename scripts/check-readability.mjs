@@ -35,6 +35,8 @@ export function checkPage(d) {
   if (d.offer) block('offer.body', d.offer.body, L.paraSentences);
   // Golden-template blocks (26 Nov 2026)
   (d.humanRole || []).forEach((t, i) => block(`humanRole[${i}]`, t, L.bulletSentences));
+  for (const f of ['teamAfter', 'walkAway', 'forward']) (d[f] || []).forEach((t, i) => block(`${f}[${i}]`, t, L.bulletSentences));
+  (d.applies || []).forEach((x, i) => block(`applies[${i}].then`, x.then, L.cellSentences));
   (d.faq || []).forEach((x, i) => block(`faq[${i}].a`, x.a, L.paraSentences));
   (d.ranked || []).forEach((x, i) => { block(`ranked[${i}].why`, x.why, L.bulletSentences); block(`ranked[${i}].payoff`, x.payoff, 1); });
   (d.decisions || []).forEach((x, i) => block(`decisions[${i}].know`, x.know, L.cellSentences));

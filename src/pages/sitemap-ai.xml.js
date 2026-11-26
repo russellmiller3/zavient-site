@@ -4,13 +4,15 @@
 // many AI-written pages that add no value. Since 26 Nov 2026 a page that passes the publish gate (index: true in its
 // JSON: a verdict, Zavient-only numbers, 3+ sources) is listed again. Addresses name the .html file because Vercel serves only exact paths.
 import { getCollection } from 'astro:content';
+import { indexed } from '../lib/publish.mjs';
 
 export async function GET() {
   const site = 'https://zavient.com';
+  const aiwork = await getCollection('aiwork');
   const urls = [
     { loc: `${site}/data.html`, lastmod: null },
     { loc: `${site}/benchmark-your-documents.html`, lastmod: null },
-    ...(await getCollection('aiwork')).filter((p) => p.data.index).map((p) => ({ loc: `${site}/ai-work/${p.id}.html`, lastmod: p.data.updated })),
+    ...aiwork.filter((p) => indexed(p, aiwork)).map((p) => ({ loc: `${site}/ai-work/${p.id}.html`, lastmod: p.data.updated })),
     ...(await getCollection('datastory')).map((p) => ({ loc: `${site}/data/${p.id}.html`, lastmod: p.data.updated })),
   ];
   const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +

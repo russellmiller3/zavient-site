@@ -37,7 +37,7 @@ const aiwork = defineCollection({
     summary: z.string().min(80),
     // Golden templates (26 Nov 2026): a page with templateVersion follows its type's block order and requirements in
     // src/lib/page-types.mjs. Pages without it are the first pages and keep the layout they shipped with.
-    type: z.enum(['usecase', 'crossing', 'hub', 'industry', 'role', 'tool', 'regulation', 'glossary']).default('usecase'),
+    type: z.enum(Object.keys(TYPES) as [string, ...string[]]).default('usecase'),
     templateVersion: z.number().int().optional(),
     topic: z.string().optional(),
     headings: z.record(z.string()).default({}),
@@ -46,6 +46,10 @@ const aiwork = defineCollection({
     buyVsBuild: z.object({ buy: z.string(), build: z.string() }).optional(),
     watchOuts: z.array(z.string()).default([]),
     humanRole: z.array(z.string().min(15)).default([]),
+    teamAfter: z.array(z.string().min(15)).default([]),
+    walkAway: z.array(z.string().min(15)).default([]),
+    forward: z.array(z.string().min(10)).default([]),
+    applies: z.array(z.object({ if: z.string(), then: z.string() })).default([]),
     faq: z.array(z.object({ q: z.string().min(10), a: z.string().min(20) })).default([]),
     ranked: z.array(z.object({ name: z.string(), slug: z.string().optional(), why: z.string(), payoff: z.string() })).default([]),
     decisions: z.array(z.object({ decision: z.string(), know: z.string() })).default([]),

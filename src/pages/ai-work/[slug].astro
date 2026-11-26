@@ -10,6 +10,7 @@ import ConsultingCta from '../../components/ConsultingCta.astro';
 import Fn from '../../components/Fn.astro';
 import Block from '../../components/Block.astro';
 import { TYPES, orderFor, headingFor, hasBlock } from '../../lib/page-types.mjs';
+import { indexed } from '../../lib/publish.mjs';
 
 export async function getStaticPaths() {
   const pages = await getCollection('aiwork');
@@ -18,12 +19,13 @@ export async function getStaticPaths() {
     params: { slug: page.id },
     props: {
       page,
+      isIndexed: indexed(page, pages),
       related: page.data.related.filter((r) => byId[r]).map((r) => ({ id: r, title: byId[r].title })),
       spokes: page.data.spokes.filter((s) => byId[s.slug]).map((s) => ({ ...s, title: byId[s.slug].title })),
     },
   }));
 }
-const { page, related, spokes } = Astro.props;
+const { page, related, spokes, isIndexed } = Astro.props;
 const d = page.data;
 // The topic before the colon is set in the accent colour, as on Zarlent.
 const [topic, ...restParts] = d.title.split(':');
@@ -35,7 +37,7 @@ const onPage = d.onPage.length > 0 || !d.templateVersion ? d.onPage
       .slice(0, 6).map((id) => ({ to: id === 'spokes' ? 'where-ai-pays' : id, text: headingFor(d, id) }));
 const kind = d.templateVersion ? (TYPES[d.type]?.label || 'Guide') : 'AI work';
 ---
-<Base title={`${d.title} | Zavient`} description={d.description} noindex={!d.index} theme="blue">
+<Base title={`${d.title} | Zavient`} description={d.description} noindex={!isIndexed} theme="blue">
   <header class="article-hero">
     <div class="wrap">
       <div class="label">{kind} &middot; {d.job}{d.industry !== 'any industry' ? ` · ${d.industry}` : ''}</div>
@@ -50,11 +52,11 @@ const kind = d.templateVersion ? (TYPES[d.type]?.label || 'Guide') : 'AI work';
         <nav class="on-page" aria-label="On this page">
           <span class="bluf-label">On this page</span>
           <ol>{onPage.map((o) => <li><a href={`#${o.to}`}>{o.text}</a></li>)}</ol>
-          {d.index && <p class="on-page-cta">And at the end: <a href="#diagnostic">a free 30-minute diagnostic</a> of how to approach this with AI.</p>}
+          {(d.index || d.templateVersion) && <p class="on-page-cta">And at the end: <a href="#diagnostic">a free 30-minute diagnostic</a> of how to approach this with AI.</p>}
         </nav>
       )}
       <p class="byline">By <a href="https://linkedin.com/in/russellmiller" rel="author">Russell Miller</a>, Zavient &middot; updated <time datetime={d.updated}>{d.updated}</time></p>
-      {d.index && <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: d.title, description: d.description, dateModified: d.updated, author: { '@type': 'Person', name: 'Russell Miller', url: 'https://linkedin.com/in/russellmiller' }, publisher: { '@type': 'Organization', name: 'Zavient', url: 'https://zavient.com/' }, mainEntityOfPage: `https://zavient.com/ai-work/${page.id}.html` })} />}
+      {isIndexed && <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: d.title, description: d.description, dateModified: d.updated, author: { '@type': 'Person', name: 'Russell Miller', url: 'https://linkedin.com/in/russellmiller' }, publisher: { '@type': 'Organization', name: 'Zavient', url: 'https://zavient.com/' }, mainEntityOfPage: `https://zavient.com/ai-work/${page.id}.html` })} />}
     </div>
   </header>
   <article class="article-body">
@@ -62,5 +64,5 @@ const kind = d.templateVersion ? (TYPES[d.type]?.label || 'Guide') : 'AI work';
       {order.map((id) => <Block id={id} d={d} page={page} related={related} spokes={spokes} />)}
     </div>
   </article>
-  {d.index ? <ConsultingCta job={d.job} heading={d.offer?.heading} ask={d.offer?.body} /> : <BenchmarkCta job={d.job} />}
+  {(d.index || d.templateVersion) ? <ConsultingCta job={d.job} heading={d.offer?.heading} ask={d.offer?.body} /> : <BenchmarkCta job={d.job} />}
 </Base>
