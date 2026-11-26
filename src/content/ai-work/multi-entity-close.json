@@ -56,7 +56,7 @@
   "faq": "Questions buyers ask about consolidated financial reporting",
   "buy-or-build": "Should you buy consolidation software or build the work around it?"
  },
- "summary": "After several add-ons, the hard part sits upstream: different ledgers, different charts of accounts and intercompany that won't tie[^34][^35]. Most lender agreements we counted want monthly statements in 30 days[^2]. The approved mapping table and the review steps make or break it[^16][^8].",
+ "summary": "After several add-ons, the hard part sits upstream: different ledgers, different charts of accounts and intercompany that won't tie[^34]. Most lender agreements we counted want monthly statements in 30 days[^2]. The approved mapping table and the review steps make or break it[^16][^8].",
  "humanRole": [
   "Controller: approves the mapping from each add-on's accounts to the group chart, then every new account[^12][^13]. AI only suggests; nothing posts without that approval.",
   "Controller: approves each intercompany match the AI suggests, and every low-confidence or unmatched pair[^6][^5]. Breaks go back to the add-on's bookkeeper with context[^5].",
@@ -76,7 +76,7 @@
  "tables": [
   {
    "title": "Which close steps can AI take on today?",
-   "intro": "Close and consolidation software now ships AI features, which Gartner tracks as their own category[^37]. Claims below are each vendor's own unless marked.",
+   "intro": "Close and consolidation software now ships AI features, which Gartner tracks as their own category[^35]. Claims below are each vendor's own unless marked.",
    "headers": [
     "Close step",
     "What AI does today",
@@ -174,8 +174,8 @@
     {
      "name": "Biggest intercompany challenges",
      "cells": [
-      "Nearly 60% name data quality, reconciliation and transfer-pricing records[^38]",
-      "Deloitte poll, 4,114 people[^38]"
+      "Nearly 60% name data quality, reconciliation and transfer-pricing records[^36]",
+      "Deloitte poll, 4,114 people[^36]"
      ]
     }
    ]
@@ -394,7 +394,7 @@
  ],
  "buyVsBuild": {
   "buy": "Buy the consolidation software: most firms buy their AI tools, and bought tools succeed more often[^28][^29]. Pick by entity count and ledger mix, from Fathom to an EPM suite[^30][^31].",
-  "build": "Build the work no tool ships: the group chart, the mapping table, counterparty codes and the review log. Buyers with consolidation tools still review intercompany by hand[^36]. Auditors will ask how each AI suggestion was reviewed[^8]."
+  "build": "Build the work no tool ships: the group chart, the mapping table, counterparty codes and the review log. Auditors will ask how each AI suggestion was reviewed[^8]."
  },
  "pickElse": [
   "A few add-ons, all on QuickBooks Online or Xero, with little intercompany: a reporting tool such as Fathom may be enough. It lists $450 a month for 25 companies[^30].",
@@ -628,16 +628,6 @@
    "what": "3,800+ participants: disparate systems is the top intercompany challenge (21.4%); only 9.2% have a leading intercompany framework."
   },
   {
-   "name": "Reddit r/Accounting, Consolidation accounting thread",
-   "url": "https://www.reddit.com/r/Accounting/comments/1lkfo1m/consolidation_accounting/",
-   "what": "Buyer voice: about 50 entities, broken intercompany, a chart-of-accounts free-for-all after an acquisition, FX breaks, trial balances stitched in Excel."
-  },
-  {
-   "name": "Reddit r/Accounting, Consolidation tools thread (Sep 2025)",
-   "url": "https://www.reddit.com/r/Accounting/comments/1nd1a5m/consolidation_tools",
-   "what": "Buyer voice: several ERPs feed a consolidation tool, and intercompany activity is still reviewed manually."
-  },
-  {
    "name": "Gartner, Innovation Insight: AI in Financial Close and Consolidation Solutions (2 Jun 2026)",
    "url": "https://www.gartner.com/en/documents/7944773",
    "what": "Research note on AI features inside close and consolidation software; abstract only, report paywalled."
@@ -662,16 +652,16 @@
   "what-it-is": "Consolidated financial reporting turns each company's books into one set of statements for the group, with sales and balances between them eliminated[^19][^18]. AI can suggest account mappings and intercompany matches, while the controller approves each one[^6][^12].",
   "human-role": "The controller stays in charge: AI suggests account mappings and intercompany matches, and the controller approves each one and signs off eliminations and statements[^6][^5][^8].",
   "team-after": "Your finance team moves from keying mappings and chasing matches to reviewing AI suggestions, fixing routed breaks and running the close checklist[^7][^5][^16].",
-  "example": "Trial balances from each add-on go in; approved mappings, suggested intercompany matches, reviewed eliminations and a lender-ready consolidating workbook come out[^3][^19].",
+  "example": "Trial balances from each add-on go in, and a lender-ready consolidating workbook comes out[^3][^19]. Between them sit approved mappings, suggested intercompany matches and reviewed eliminations[^19].",
   "table-1": "AI can suggest account mappings and intercompany matches, flag anomalies and draft eliminations, while your controller approves each one and signs the statements[^6][^5][^17].",
-  "table-2": "Six calendar days is the median from first trial balance to monthly consolidated statements; top performers take 5 and bottom performers 10[^1].",
+  "table-2": "Six calendar days is the median from first trial balance to monthly consolidated statements[^1]. Top performers take 5 and bottom performers 10[^1].",
   "table-3": "AI mapping is accurate enough to suggest, not to post: about 80% right within known companies, 65% on a new one, and 17% unaided on the full US-GAAP taxonomy[^12][^13].",
-  "recipes": "Few add-ons on QuickBooks or Xero fit a reporting tool; mixed ledgers need a mapping layer with reviewed AI matching; a large group fits an EPM suite[^30][^31][^5].",
+  "recipes": "Few add-ons on QuickBooks or Xero fit a reporting tool[^30]. Mixed ledgers need a mapping layer with reviewed AI matching, and a large group fits an enterprise performance management (EPM) suite[^31][^5].",
   "own-data": "Most want them within 30 days of month end: 479 of 599 SEC-filed credit documents we counted, about 80%, set that deadline[^2][^3].",
   "rules": "ASC 810 sets what a consolidation must show, while auditing standards and AICPA and COSO guidance set how auditors judge the close, AI steps included[^19][^20][^8][^22].",
   "benchmark": "Run one closed month through AI mapping and matching on two add-ons, compare it with the signed manual close, and trace every elimination to an approver[^1][^20].",
   "what-goes-wrong": "A multi-entity close goes wrong when AI mappings post unreviewed, intercompany breaks age without owners, eliminations get missed, or top-level entries skip a second approver[^12][^23][^24][^26].",
-  "buy-or-build": "Buy the consolidation software, and build the mapping, intercompany rules and review steps around it, because buyers still review intercompany by hand after buying[^28][^36].",
+  "buy-or-build": "Buy the consolidation software, and build the mapping, intercompany rules and review steps around it[^28].",
   "something-else": "Pick something else when your add-ons share one simple ledger, one ERP already holds every entity, a large group needs an EPM suite, or only reconciliations hurt[^30][^31]."
  },
  "offer": {
