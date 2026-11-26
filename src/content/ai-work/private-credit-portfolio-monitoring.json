@@ -1,0 +1,766 @@
+{
+ "title": "Can AI do covenant monitoring a private credit fund can trust?",
+ "description": "Covenant monitoring with AI for private credit funds: who signs what, three builds, a test plan and our check of eight BDC filings.",
+ "type": "usecase",
+ "templateVersion": 1,
+ "topic": "AI covenant monitoring",
+ "job": "portfolio and covenant monitoring",
+ "industry": "private credit funds",
+ "index": false,
+ "verdict": [
+  "AI can read borrower packages, spread the numbers and recompute covenants; an analyst still checks every flagged figure[^33][^36].",
+  "Private credit defaults hit a record in 2026, and the Fed reads heavy pay-in-kind (PIK) interest as a strain signal[^24][^21].",
+  "Our check of eight listed lenders' filings: loans on non-accrual are marked at roughly 19% to 61% of cost[^7][^5].",
+  "Filings report PIK so differently that five of eight needed our own arithmetic or a second document to compare[^1][^4].",
+  "The SEC says gaps in borrower reporting don't excuse fair value duties; your board or designee still owns each mark[^13][^11]."
+ ],
+ "onPage": [
+  {
+   "to": "human-role",
+   "text": "Who on your credit team keeps each decision: flags, watchlist, waivers and marks"
+  },
+  {
+   "to": "table-1",
+   "text": "Each monitoring step, what AI takes on and who still signs"
+  },
+  {
+   "to": "recipes",
+   "text": "Three builds sized to your fund, with real unit prices"
+  },
+  {
+   "to": "own-data",
+   "text": "Our check of eight public BDC filings: non-accruals, mark depth and PIK"
+  },
+  {
+   "to": "benchmark",
+   "text": "How to test AI on last quarter's borrower packages"
+  },
+  {
+   "to": "faq",
+   "text": "Analysts, data security, ChatGPT and software cost: the questions funds ask"
+  }
+ ],
+ "headings": {
+  "what-it-is": "What is covenant monitoring, and what does AI change?",
+  "human-role": "Who on your credit team keeps each decision?",
+  "team-after": "What do your analysts do once AI takes the first pass?",
+  "example": "What does an AI-assisted quarter look like?",
+  "recipes": "Which way to build AI covenant monitoring fits your fund?",
+  "rules": "Which SEC rules shape AI portfolio monitoring?",
+  "benchmark": "How do you test AI covenant monitoring on last quarter's packages?",
+  "what-goes-wrong": "Where does AI covenant monitoring go wrong?",
+  "faq": "Questions funds ask about AI covenant monitoring",
+  "buy-or-build": "Should you buy a monitoring platform or build your own layer?",
+  "something-else": "When should a fund pick something else?"
+ },
+ "summary": "Covenant monitoring means checking each borrower's quarterly numbers against its loan terms, to spot trouble early[^28][^29]. AI reads the reporting package, spreads the figures, recomputes the covenants and flags drift[^33][^34]. What makes or breaks it: an analyst checks every flagged number, and nobody takes the borrower's own math on trust[^29][^36].",
+ "humanRole": [
+  "Credit analyst: checks every number the AI flags and reconciles its covenant math with the borrower's certificate[^29][^36]. Add-backs, costs the borrower adds back to EBITDA (earnings before interest, tax, depreciation and amortization), stay the analyst's call[^32].",
+  "Head of portfolio management: decides watchlist moves and what to raise with the borrower[^33]. Waivers and amendments need written consent from the Required Lenders, the lender majority the credit agreement names[^20].",
+  "Board or valuation designee: owns each fair value mark, and must test and oversee the methods behind it[^11][^12]. AI drafts the inputs and a change memo; it does not set the mark[^13].",
+  "Operations analyst: confirms each package arrived complete and on time[^28]. A late or resubmitted certificate is a signal in itself[^31]."
+ ],
+ "teamAfter": [
+  "Analysts watch more loans, more often. One vendor reports monitoring time per loan fell from nine hours to one, and analysts covered 12 loans each instead of 4 (vendor claim)[^50].",
+  "Analysts spend the time on early-warning work. It matters more now: covenant-lite loans, with no quarterly tests, rose from 4% to 21% of deals, 2023 to 2025[^38][^30].",
+  "Portfolio heads edit a memo draft instead of writing from a blank page, and spend the time with borrowers whose numbers drift[^33][^34].",
+  "Among US firms where AI changed tasks, 66% use it only to help staff; 2% saw AI-related employment fall[^37]."
+ ],
+ "example": {
+  "input": "Illustrative: a $1.5B direct lender with 60 borrowers and three analysts gets third-quarter packages in November, as PDFs and Excel files[^28]. Each holds financial statements and a compliance certificate with the borrower's own covenant math[^29].",
+  "output": "The AI maps each line to the fund's chart and recomputes debt-to-EBITDA and interest coverage from the agreement's own definitions. Flags: a ratio 0.3x off the certificate from an add-back, a second PIK quarter, and revenue down 18% despite reported headroom. The analyst checks each flag; the portfolio head moves one name to the watchlist; the valuation team cites it in the mark memo."
+ },
+ "tables": [
+  {
+   "title": "Which monitoring steps can AI take, and who signs?",
+   "intro": "One quarter of monitoring, step by step: what happens today, what AI can take on, and the person who still signs[^28][^33].",
+   "headers": [
+    "Step",
+    "Today",
+    "AI's part",
+    "Who signs"
+   ],
+   "rows": [
+    {
+     "name": "Intake",
+     "cells": [
+      "Packages arrive by email and portal, 45 to 60 days after quarter end[^28]",
+      "Sorts and files each package; flags missing or late items",
+      "Operations analyst confirms it is complete"
+     ]
+    },
+    {
+     "name": "Spreading",
+     "cells": [
+      "An analyst keys statements into the fund's standard template, called the spread",
+      "Pulls and maps line items, with a confidence score per cell (vendor feature)[^48]",
+      "Analyst reviews every low-confidence cell[^36]"
+     ]
+    },
+    {
+     "name": "Covenant test",
+     "cells": [
+      "Read off the borrower's own certificate[^29]",
+      "Recomputes each ratio from the agreement's definitions",
+      "Analyst reconciles any gap with the borrower"
+     ]
+    },
+    {
+     "name": "Early warning",
+     "cells": [
+      "A quarterly look at each name",
+      "Flags trends: PIK, maturity extensions, revenue, liquidity, late delivery[^21][^24]",
+      "Head of portfolio management decides the watchlist"
+     ]
+    },
+    {
+     "name": "Valuation support",
+     "cells": [
+      "Discounted cash flow or yield model calibrated at origination[^23]",
+      "Drafts updated inputs and a change memo",
+      "Board or valuation designee signs the mark[^11]"
+     ]
+    },
+    {
+     "name": "Credit memo",
+     "cells": [
+      "Written from scratch each quarter",
+      "Drafts from the spread and the flags",
+      "Analyst edits and signs"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "How stressed is private credit, and why do the numbers disagree?",
+   "intro": "Published stress measures for 2026. They disagree because each counts \"default\" differently[^27][^23].",
+   "headers": [
+    "Measure",
+    "Figure",
+    "Worth knowing"
+   ],
+   "rows": [
+    {
+     "name": "Fitch US private credit default rate",
+     "url": "https://www.fitchratings.com/research/corporate-finance/us-private-credit-default-rate-reaches-new-high-in-2q26-30-07-2026",
+     "cells": [
+      "6.0%, trailing 12 months to 2Q26, a record[^24]",
+      "Maturity extensions overtook PIK as the leading driver[^24]"
+     ]
+    },
+    {
+     "name": "Other default measures",
+     "url": "https://www.valuationresearch.com/insights/private-credit-trends-q3-2026",
+     "cells": [
+      "KBRA 2.5%; Proskauer 1.9% to 3.4%[^27]",
+      "VRC's own shadow default rate is above 10%[^27]"
+     ]
+    },
+    {
+     "name": "Financial Stability Board",
+     "url": "https://www.fsb.org/2026/05/report-on-vulnerabilities-in-private-credit",
+     "cells": [
+      "About 1% outright; about 5% with selective defaults[^23]",
+      "Flags valuation opacity and borrower data gaps[^23]"
+     ]
+    },
+    {
+     "name": "Lincoln International, Q3 2026",
+     "url": "https://www.lincolninternational.com/news/lincoln-private-market-index-rises-in-q3-2026/",
+     "cells": [
+      "Covenant defaults 2.5%; PIK on 10% of loans[^25]",
+      "\"Bad PIK\", added after the loan was made, on 6% of loans; their loan-to-value rose from about 45% to about 75%[^25]"
+     ]
+    },
+    {
+     "name": "Kroll, Q2 2026",
+     "url": "https://www.kroll.com/en/publications/valuation/private-credits-pik-pullback-data-and-discipline",
+     "cells": [
+      "PIK was 4.7% of interest income on first-lien loans[^26]",
+      "A loan-level view, not a fund-level one[^26]"
+     ]
+    }
+   ],
+   "note": "No single definition of default exists. Pick yours, write it down and keep it from quarter to quarter[^27]."
+  }
+ ],
+ "recipes": [
+  {
+   "name": "1. Small team: package intake and spreading with a review queue",
+   "when": "Funds with a few analysts who re-key borrower PDFs into Excel each quarter[^28]. Builds 2 and 3 run on its spreads, so most funds start here.",
+   "flow": [
+    "Operations analyst: set one folder and naming rule for every borrower package",
+    "Builder, in-house or hired: connect a document extraction service to that folder",
+    "Analyst: map each borrower's lines to the fund's chart of accounts, once",
+    "Analyst: run the AI fill; each cell gets a confidence score",
+    "Analyst: review every low-confidence or changed cell",
+    "Head of portfolio management: sign off the quarter's spreads"
+   ],
+   "cost": "Extraction lists at $10 per 1,000 pages on Azure, or $0.015 a page for Amazon Textract tables (read 26 Nov 2026)[^43][^44]. Sixty borrowers, four quarters, 80 pages each: 19,200 pages, about $192 a year at Azure's rate."
+  },
+  {
+   "name": "2. Mid-size team: covenant recompute and headroom tracker",
+   "when": "Funds whose agreements carry their own definitions, add-back caps and cure limits[^20][^28]. The borrower's certificate shows its math, not yours[^29].",
+   "flow": [
+    "Credit analyst or counsel: encode each agreement's definitions, add-back caps and cure limits",
+    "Analyst: run the recompute on each quarter's spread",
+    "Analyst: reconcile every gap against the borrower's certificate",
+    "Analyst: log each equity cure used against the agreement's limit",
+    "Head of portfolio management: track headroom, the room left before each covenant breaks, and decide next steps",
+    "Required Lenders: approve any waiver or amendment in writing"
+   ],
+   "cost": "Model fees are small: Claude Sonnet 5.5 lists $2 per million tokens (word pieces) read and $10 written (read 26 Nov 2026)[^45]. Encoding each agreement's definitions is the real cost, in analyst and counsel time."
+  },
+  {
+   "name": "3. Larger book: early-warning flags and a memo draft",
+   "when": "Funds with many names, where covenant-lite deals leave fewer tripwires[^38]. Early signals matter most when there is no covenant to trip.",
+   "flow": [
+    "Head of portfolio management: pick the signals, such as PIK toggles, maturity extensions, amendments, late delivery, revenue drop and liquidity",
+    "Builder, in-house or hired: score each name on those signals every quarter",
+    "Analyst: edit the AI's one-page memo draft for each flagged name",
+    "Head of portfolio management: decide watchlist moves",
+    "Valuation designee: use the memo as an input, never as the mark"
+   ],
+   "cost": "The same small extraction and model fees as builds 1 and 2[^43][^45]. No monitoring platform we checked publishes a price, so a bought version means a quote[^46][^47]."
+  }
+ ],
+ "ownData": {
+  "title": "What do eight public BDC filings show about non-accruals and PIK?",
+  "intro": "On 26 Nov 2026 we read the latest SEC filing of eight listed business development companies (BDCs), for the quarter ended 30 Sep 2026. We took loans on non-accrual (no longer booking interest) at cost and at fair value, and PIK as a share of investment income. One calculation: Blue Owl's non-accrual loans cost $448.7M and are marked at $127.6M, so they are carried at 28% of cost[^2].",
+  "headers": [
+   "BDC (ticker)",
+   "Filing (filed)",
+   "Non-accrual at cost",
+   "Non-accrual at fair value",
+   "Carried at % of cost",
+   "PIK share of investment income",
+   "How the filing states PIK"
+  ],
+  "rows": [
+   [
+    "Ares Capital (ARCC)",
+    "10-Q, 27 Oct 2026",
+    "2.4%[^1]",
+    "1.4%[^1]",
+    "~58%[^1]",
+    "16.4%: PIK interest 7.6% plus PIK dividends[^1]",
+    "Not stated; our sum of $58M and $67M of $763M[^1]"
+   ],
+   [
+    "Blue Owl Capital Corp (OBDC)",
+    "10-Q, 4 Nov 2026",
+    "2.9%[^2]",
+    "0.8%[^2]",
+    "28%[^2]",
+    "9.9%: interest 7.3%, dividends 2.5%[^2]",
+    "Stated as % of investment income[^2]"
+   ],
+   [
+    "FS KKR (FSK)",
+    "10-Q and 8-K, 5 Nov 2026",
+    "6.4%, from the 8-K only[^4]",
+    "3.4%[^3]",
+    "~48%[^3][^4]",
+    "15.6%, PIK interest only: $46M of $294M[^4]",
+    "10-Q gives fair value only; cost rate and PIK from the 8-K[^3][^4]"
+   ],
+   [
+    "Sixth Street Specialty Lending (TSLX)",
+    "10-Q, 3 Nov 2026",
+    "1.8%[^5]",
+    "1.1%[^5]",
+    "61%[^5]",
+    "6.4%, PIK interest[^5]",
+    "Stated as % of total investment income[^5]"
+   ],
+   [
+    "Main Street Capital (MAIN)",
+    "10-Q, 6 Nov 2026",
+    "3.5%[^6]",
+    "0.9%[^6]",
+    "31%[^6]",
+    "4.5%: PIK interest 3.7% plus unpaid dividends 0.8%[^6]",
+    "Stated, split over two lines[^6]"
+   ],
+   [
+    "BlackRock TCP Capital (TCPC)",
+    "10-Q, 5 Nov 2026",
+    "14.2%[^7]",
+    "3.4%[^7]",
+    "~19%[^7]",
+    "8.2%, nine months, from the cash-flow statement[^7]",
+    "Not stated as %; quarterly split incomplete[^7]"
+   ],
+   [
+    "Carlyle Secured Lending (CGBD)",
+    "10-Q, 5 Nov 2026",
+    "2.2%[^8]",
+    "1.1%[^8]",
+    "~49%[^8]",
+    "About 9%: $5.8M of $63.2M[^8]",
+    "Dollar line only; our division[^8]"
+   ],
+   [
+    "Golub Capital BDC (GBDC)",
+    "10-K, fiscal year to 30 Sep 2026, filed 17 Nov 2026",
+    "3.3%[^9]",
+    "1.6%[^9]",
+    "48%[^9]",
+    "8.2%, fiscal year and Q4, excluding purchase premium amortization[^10]",
+    "Stated in the 8-K earnings presentation[^10]"
+   ]
+  ],
+  "note": "Limits: denominators, PIK definitions, periods and non-accrual policies differ by filer, and ~ marks a ratio built from rounded percentages. TCPC's PIK covers nine months and FSK's counts PIK interest only[^7][^4]. Eight large public BDCs are a sample, not your book; this shows direction, not investment advice, and ranks no BDC."
+ },
+ "rules": [
+  {
+   "name": "SEC Rule 2a-5, good faith determinations of fair value",
+   "url": "https://www.ecfr.gov/current/title-17/chapter-II/part-270/section-270.2a-5",
+   "status": "In force since 8 Mar 2021",
+   "what": "Applies to registered funds and BDCs[^12]. The board or its valuation designee must assess valuation risks, select and test methods, oversee pricing services and report to the board[^11]. AI output feeds that process; the designee still decides."
+  },
+  {
+   "name": "SEC staff statement on fair value of private assets",
+   "url": "https://www.sec.gov/newsroom/speeches-statements/hohl-daley-statement-fair-value-measurement-disclosure-considerations-private-assets-092806",
+   "status": "Issued 28 Sep 2026 (staff view, not a rule)",
+   "what": "Gaps in borrower reporting don't excuse the fair value duty[^13][^14]. Staff expect calibration to the transaction price, reassessed over time[^13]. Record which borrower data was missing and how each mark handled it."
+  },
+  {
+   "name": "SEC fiscal year 2027 examination priorities",
+   "url": "https://www.sec.gov/newsroom/press-releases/2026-109-sec-announces-fiscal-year-2027-examination-priorities",
+   "status": "Published 23 Oct 2026",
+   "what": "Private credit valuation is an exam focus[^15][^16]. Expect examiners to ask how each mark used the latest borrower data."
+  },
+  {
+   "name": "Federal Reserve SR 26-2, model risk management",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+   "status": "Issued 17 Apr 2026; applies to banks",
+   "what": "It replaced SR 11-7 and leaves generative and agentic AI out of scope, while saying firms' own governance should still cover them[^22]. Funds aren't bound by it. It is a useful checklist for bank-affiliated lenders and for vetting vendor models."
+  }
+ ],
+ "howToTest": [
+  "Pilot on one fund or strategy, not the whole book. Pick last quarter's packages for 10 of its borrowers, including two messy ones such as scans.",
+  "Record today's numbers first: analyst hours per borrower, days from package to finished spread, and errors found later.",
+  "Use the spreads already on file, or a fresh hand spread, as the answer key.",
+  "Run the extraction and score every line item exact, close or wrong, with its confidence score. Older models failed most questions on public filings, so score every line, not a sample[^36].",
+  "Recompute the covenants from the agreement's definitions. Compare with both the hand spread and the borrower's certificate[^29].",
+  "List every flag the tool raised. Then list every known issue it missed, such as a late package, a PIK toggle or an add-back over its cap.",
+  "Check where borrower data is stored and whether it trains any model. Data security was lenders' most-raised question in one vendor's 90 conversations[^52].",
+  "Price the lift in dollars: analyst hours saved each quarter times their loaded cost. Add the value of each issue caught a quarter earlier.",
+  "Run the next quarter beside today's process, then decide go or no-go with the head of portfolio management."
+ ],
+ "watchOuts": [
+  "Extraction errors flow straight into covenant tests[^51][^36]. Review every low-confidence cell before the recompute runs.",
+  "The certificate is the borrower's own math[^29]. Recompute from the agreement's definitions and log every gap.",
+  "Stale model inputs led to an SEC case: Fifth Street's marks used August 2013 projections, and it paid a $1.65M penalty[^17]. Refresh inputs every quarter and record the date.",
+  "Measures of default for the same market run from about 1% to over 10%[^23][^27]. Pick your definition, write it down and keep it.",
+  "Messy data sinks AI projects: Gartner expects 60% of AI projects without AI-ready data to be abandoned through 2026[^41]. In a vendor-sponsored survey, only 8% of managers rated their data maturity high[^35].",
+  "Fraud is not a spreadsheet problem: the SEC alleges Tricolor pledged the same collateral twice[^18][^19]. Pair AI flags with lien searches and field checks."
+ ],
+ "faq": [
+  {
+   "q": "What is covenant monitoring?",
+   "a": "Checking each borrower's reported numbers against its loan covenants every quarter[^28]. Maintenance covenants, such as debt-to-EBITDA and interest coverage, are tested through a compliance certificate[^28]. It shows the borrower's own calculation, not the lender's[^29]."
+  },
+  {
+   "q": "Does AI covenant monitoring take the analyst out of the loop?",
+   "a": "No. PwC finds assistive uses such as extraction and covenant analysis are the mature ones, and people stay in credit decisions[^33]. Even a vendor selling it answers no to the same question[^53]."
+  },
+  {
+   "q": "Why not just put the PDFs into ChatGPT?",
+   "a": "General models make number errors: in FinanceBench, GPT-4-Turbo with retrieval failed or refused 81% of questions on public filings[^36]. That was 2023, but the lesson holds: check every number against the source. Lenders asked this 20 times in one vendor's 90 conversations[^52]."
+  },
+  {
+   "q": "Is our borrower data safe with AI?",
+   "a": "It depends on the setup: where data is stored, who can see it and whether it trains a model. Data security was the top question in one vendor's talks with 90 lenders[^52]. The NIST AI Risk Management Framework gives a checklist to put to any vendor[^42]."
+  },
+  {
+   "q": "Can AI write the credit memo?",
+   "a": "It can draft one from the spread and the flags; the analyst edits and signs it[^33]. Credit analysts ask this on Reddit, looking for exactly that first draft[^54]."
+  },
+  {
+   "q": "What does portfolio monitoring software cost?",
+   "a": "None of the platforms we checked publishes a price, so expect a quote[^46][^47][^48]. The AI underneath is cheap: document extraction lists at $10 per 1,000 pages (read 26 Nov 2026)[^43]."
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Buy a monitoring platform when you have no build team and your process looks like most managers'. Bought AI tools succeed about 67% of the time; internal builds about a third as often[^40]. Menlo finds 76% of enterprise AI use cases are bought[^39].",
+  "build": "Build the thin layer no platform knows: each agreement's definitions, your flag rules and your memo template. Extraction and model fees are small[^43][^45]. The risk is messy data: Gartner expects 60% of AI projects without AI-ready data to be abandoned[^41]."
+ },
+ "pickElse": [
+  "One system for the whole credit book: look at Allvue, which says six of the top ten private debt managers use it[^46]. It publishes no price.",
+  "Portfolio data already sits with S&P: iLEVEL says 700+ managers use it, with AI-assisted data intake[^47]. It publishes no price.",
+  "Extraction and monitoring as a service: 73 Strings claims 99% accuracy with confidence scores and human review[^48]. Ask how it measured that, and on whose files.",
+  "Asset-based finance or a multi-strategy shop: a third-party comparison lists Chronograph, Cardo AI and Arcesium[^49]. We have not checked their own pages."
+ ],
+ "resources": [
+  {
+   "name": "SEC staff statement on fair value of private assets, 28 Sep 2026",
+   "url": "https://www.sec.gov/newsroom/speeches-statements/hohl-daley-statement-fair-value-measurement-disclosure-considerations-private-assets-092806",
+   "what": "What SEC staff expect when borrower data is late or missing."
+  },
+  {
+   "name": "SEC Rule 2a-5 page and compliance guide",
+   "url": "https://www.sec.gov/rules-regulations/2020/12/good-faith-determinations-fair-value",
+   "what": "The fair value rule for BDCs, with the small entity compliance guide linked."
+  },
+  {
+   "name": "Federal Reserve Financial Stability Report, Nov 2026",
+   "url": "https://www.federalreserve.gov/publications/files/financial-stability-report-20261113.pdf",
+   "what": "The Fed's latest read on private credit size, defaults and PIK."
+  },
+  {
+   "name": "FSB Report on Vulnerabilities in Private Credit, May 2026",
+   "url": "https://www.fsb.org/2026/05/report-on-vulnerabilities-in-private-credit",
+   "what": "How regulators see valuation methods and data gaps in private credit."
+  },
+  {
+   "name": "NIST AI Risk Management Framework",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+   "what": "A free checklist for governing AI, useful for vendor questions."
+  }
+ ],
+ "stats": [
+  {
+   "num": "6.0%",
+   "label": "US private credit default rate, trailing 12 months to 2Q26, a record[^24]",
+   "source": "Fitch Ratings, 30 Jul 2026"
+  },
+  {
+   "num": "$2.6T+",
+   "label": "Financial assets of private credit vehicles in 2025, up from about $350B in 2012[^21]",
+   "source": "Federal Reserve Financial Stability Report, Nov 2026"
+  },
+  {
+   "num": "45 to 60 days",
+   "label": "After quarter end that compliance certificates typically arrive[^28]",
+   "source": "Sidley Austin, Mar 2026"
+  },
+  {
+   "num": "19% to 61%",
+   "label": "Of cost: where eight public BDCs carry their non-accrual loans, quarter ended 30 Sep 2026[^7][^5]",
+   "source": "Zavient check of SEC filings, 26 Nov 2026"
+  },
+  {
+   "num": "5 of 8",
+   "label": "Public BDC filings where one comparable PIK figure took our own arithmetic or a second document[^1][^4]",
+   "source": "Zavient check of SEC filings, 26 Nov 2026"
+  },
+  {
+   "num": "6%",
+   "label": "Of private loans with \"bad PIK\", added after the loan was made, in Q3 2026[^25]",
+   "source": "Lincoln International, Q3 2026"
+  }
+ ],
+ "related": [
+  "ai-credit-scoring",
+  "ai-underwriting",
+  "ai-document-processing",
+  "data-analytics-consulting"
+ ],
+ "offer": {
+  "heading": "Want a second pair of eyes on your covenant monitoring? Get a free diagnostic",
+  "body": "Bring us your portfolio and covenant monitoring process. In 30 minutes you leave with the first step and a before-and-after measure. You get it in writing, with no sales pitch."
+ },
+ "keyword": {
+  "phrase": "covenant monitoring",
+  "searches": 40,
+  "cpc": 52.7,
+  "difficulty": 0
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Read as Dana, the COO. Could not tell which build to start with: recipe 1 now says builds 2 and 3 run on its spreads, so most funds start there. 'Builder' read as a hire nobody budgeted; now 'in-house or hired'. Before-and-after measure is in test step 2 (analyst hours, days to spread, errors found later). No neutral source gives a build time, so none is stated."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Tripped on spread, add-back, headroom, Required Lenders, covenant-lite and tokens. Each is now defined where it first appears: spread in table 1, add-backs and Required Lenders in the roles, covenant-lite in team-after (new Paul Weiss source), headroom in build 2, tokens as word pieces in the build 2 cost."
+  },
+  {
+   "reader": "GM",
+   "notes": "Asked whether one fund or strategy can pilot first and what it does to the margin. Test step 1 now pilots on one fund's 10 borrowers; the last step runs a quarter beside today's process before go or no-go. The pricing step now turns saved analyst hours into dollars at loaded cost. Build 1 shows a sourced extraction fee (about $192 a year for 60 borrowers)."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Read as the head of portfolio management at a private credit fund. Missing: maturity extensions, which Fitch says now drive defaults more than PIK; added to the early-warning row and build 3's signals. Build 2 now logs each equity cure against the agreement's limit, sourced to Sidley and the Monroe amendment. Checked that the board or designee owns the mark (Rule 2a-5) and Required Lenders own waivers; own-data note says it ranks no BDC and is not investment advice."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Read as Steve. The PIK bullet read as filing trivia; it now says why it matters (filings report PIK so differently that most need extra work to compare). His worries are covered: data (watch-out on AI-ready data), security (FAQ plus NIST checklist), skills (builder in-house or hired), return (dollar pricing step), cost (unit prices dated; platforms publish none, said plainly). No Zavient fee shown, since prices are not set; offer is in writing with no sales pitch."
+  }
+ ],
+ "updated": "2026-11-26",
+ "sources": [
+  {
+   "name": "SEC EDGAR, Ares Capital (ARCC) 10-Q, quarter ended 30 Sep 2026",
+   "url": "https://www.sec.gov/Archives/edgar/data/1287750/000162828026067383/arcc-20260930.htm",
+   "what": "Filed 27 Oct 2026, read 26 Nov 2026. Non-accruals 2.4% of cost and 1.4% of fair value; PIK interest $58M and PIK dividends $67M of $763M total investment income for the quarter."
+  },
+  {
+   "name": "SEC EDGAR, Blue Owl Capital Corp (OBDC) 10-Q, quarter ended 30 Sep 2026",
+   "url": "https://www.sec.gov/Archives/edgar/data/1655888/000165588826000069/obdc-20260930.htm",
+   "what": "Filed 4 Nov 2026, read 26 Nov 2026. Non-accruals $448.7M at cost and $127.6M at fair value (2.9% and 0.8%); PIK 9.9% of investment income, stated by the company."
+  },
+  {
+   "name": "SEC EDGAR, FS KKR Capital (FSK) 10-Q, quarter ended 30 Sep 2026",
+   "url": "https://www.sec.gov/Archives/edgar/data/1422183/000162828026070499/fsk-20260930.htm",
+   "what": "Filed 5 Nov 2026, read 26 Nov 2026. Gives non-accruals at fair value (3.4%) only."
+  },
+  {
+   "name": "SEC EDGAR, FS KKR Capital 8-K Exhibit 99.1, Q3 2026 results",
+   "url": "https://www.sec.gov/Archives/edgar/data/1422183/000110465926123011/tm2628917d1_ex99-1.htm",
+   "what": "Filed 5 Nov 2026, read 26 Nov 2026. Non-accruals 6.4% of cost; PIK interest $46M of $294M investment income; PIK dividends not broken out."
+  },
+  {
+   "name": "SEC EDGAR, Sixth Street Specialty Lending (TSLX) 10-Q, quarter ended 30 Sep 2026",
+   "url": "https://www.sec.gov/Archives/edgar/data/1508655/000119312526445299/tslx-20260930.htm",
+   "what": "Filed 3 Nov 2026, read 26 Nov 2026. Non-accruals $62.4M at cost and $38.1M at fair value (1.8% and 1.1%); PIK interest 6.4% of total investment income."
+  },
+  {
+   "name": "SEC EDGAR, Main Street Capital (MAIN) 10-Q, quarter ended 30 Sep 2026",
+   "url": "https://www.sec.gov/Archives/edgar/data/1396440/000139644026000159/main-20260930.htm",
+   "what": "Filed 6 Nov 2026, read 26 Nov 2026. Non-accruals $175.1M at cost and $54.7M at fair value (3.5% and 0.9%); PIK interest 3.7% plus unpaid cumulative dividends 0.8% of income."
+  },
+  {
+   "name": "SEC EDGAR, BlackRock TCP Capital (TCPC) 10-Q, quarter ended 30 Sep 2026",
+   "url": "https://www.sec.gov/Archives/edgar/data/1370755/000119312526448640/tcpc-20260930.htm",
+   "what": "Filed 5 Nov 2026, read 26 Nov 2026. Non-accruals 14.2% of cost and 3.4% of fair value; PIK about 8.2% of income over nine months, from the cash-flow statement."
+  },
+  {
+   "name": "SEC EDGAR, Carlyle Secured Lending (CGBD) 10-Q, quarter ended 30 Sep 2026",
+   "url": "https://www.sec.gov/Archives/edgar/data/1544206/000154420626000068/csl-20260930.htm",
+   "what": "Filed 5 Nov 2026, read 26 Nov 2026. Non-accruals 2.2% of cost and 1.1% of fair value; PIK income $5.8M of $63.2M total investment income, as a dollar line."
+  },
+  {
+   "name": "SEC EDGAR, Golub Capital BDC (GBDC) 10-K, fiscal year ended 30 Sep 2026",
+   "url": "https://www.sec.gov/Archives/edgar/data/1476765/000147676526000085/gbdc-20260930.htm",
+   "what": "Filed 17 Nov 2026, read 26 Nov 2026. Non-accruals $263.9M at cost and $126.8M at fair value (3.3% and 1.6%)."
+  },
+  {
+   "name": "SEC EDGAR, Golub Capital BDC 8-K earnings presentation, fiscal Q4 2026",
+   "url": "https://www.sec.gov/Archives/edgar/data/1476765/000147676526000084/gbdcfy2026q4epfinal.htm",
+   "what": "Read 26 Nov 2026. PIK 8.2% of investment income for the fiscal year and Q4, excluding purchase premium amortization."
+  },
+  {
+   "name": "eCFR, 17 CFR 270.2a-5, fair value determination",
+   "url": "https://www.ecfr.gov/current/title-17/chapter-II/part-270/section-270.2a-5",
+   "what": "The board or its valuation designee must assess valuation risks, select, apply and test methods, oversee pricing services and report to the board."
+  },
+  {
+   "name": "SEC, Good Faith Determinations of Fair Value, release IC-34128",
+   "url": "https://www.sec.gov/rules-regulations/2020/12/good-faith-determinations-fair-value",
+   "what": "Final rule adopted 3 Dec 2020, effective 8 Mar 2021; applies to registered funds and business development companies."
+  },
+  {
+   "name": "SEC staff statement on fair value of private assets, 28 Sep 2026",
+   "url": "https://www.sec.gov/newsroom/speeches-statements/hohl-daley-statement-fair-value-measurement-disclosure-considerations-private-assets-092806",
+   "what": "Gaps in borrower reporting do not excuse the fair value obligation; calibration to the transaction price expected, with periodic reassessment; registered-fund private credit grew from $170B (2020) to $270B (2025)."
+  },
+  {
+   "name": "Debevoise & Plimpton, SEC staff reiterates focus on private asset valuation, Sep 2026",
+   "url": "https://www.debevoise.com/insights/publications/2026/09/sec-staff-reiterates-focus-on-private-asset-valuat",
+   "what": "Law-firm summary of the 28 Sep 2026 SEC staff statement."
+  },
+  {
+   "name": "SEC, fiscal year 2027 examination priorities, 23 Oct 2026",
+   "url": "https://www.sec.gov/newsroom/press-releases/2026-109-sec-announces-fiscal-year-2027-examination-priorities",
+   "what": "Private credit valuation named as an examination focus."
+  },
+  {
+   "name": "Simpson Thacher, SEC 2027 examination priorities analysis, 9 Nov 2026",
+   "url": "https://www.stblaw.com/sec-s-2027-examination-priorities-notable-developments-emerging-themes-and-recent-examination-insights",
+   "what": "Law-firm analysis of the FY2027 priorities, including private credit valuation."
+  },
+  {
+   "name": "SEC order, Fifth Street Management, 2018",
+   "url": "https://www.sec.gov/files/litigation/admin/2018/33-10581.pdf",
+   "what": "Valuation models used stale August 2013 projections and the quality-control review failed; $1.65M penalty."
+  },
+  {
+   "name": "SEC charges against former Tricolor executives, 18 Aug 2026",
+   "url": "https://www.sec.gov/newsroom/press-releases/2026-77-sec-charges-former-executives-fraud-connection-19-billion-collapse-subprime-auto-lender-tricolor",
+   "what": "SEC alleges fraud including collateral pledged twice to lenders."
+  },
+  {
+   "name": "ABA Business Law Today, Seeing red flags in Tricolor collateral interests",
+   "url": "https://www.americanbar.org/groups/business_law/resources/business-law-today/2025-october/seeing-red-flags-in-tricolor-collateral-interests",
+   "what": "Lessons for lenders on double-pledged collateral and lien checks."
+  },
+  {
+   "name": "SEC EDGAR, Monroe Capital credit agreement amendment, 2026",
+   "url": "https://www.sec.gov/Archives/edgar/data/1442236/000119380526000248/ex10-1.pdf",
+   "what": "A default continues unless waived in writing by the Required Lenders; cure rights are limited in number."
+  },
+  {
+   "name": "Federal Reserve, Financial Stability Report, 13 Nov 2026",
+   "url": "https://www.federalreserve.gov/publications/files/financial-stability-report-20261113.pdf",
+   "what": "Private credit vehicles' financial assets grew from about $350B (2012) to over $2.6T (2025); default rate at the upper end of its range; elevated PIK use signals repayment difficulty."
+  },
+  {
+   "name": "Federal Reserve SR 26-2, model risk management, 17 Apr 2026",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+   "what": "Replaced SR 11-7 for banks; generative and agentic AI models are out of scope, but firms' own governance should cover them."
+  },
+  {
+   "name": "Financial Stability Board, Report on Vulnerabilities in Private Credit, 6 May 2026",
+   "url": "https://www.fsb.org/2026/05/report-on-vulnerabilities-in-private-credit",
+   "what": "Defaults about 1% outright and about 5% with selective defaults; valuations often use discounted cash flow or yield analysis calibrated at origination; data gaps."
+  },
+  {
+   "name": "Fitch Ratings, US private credit default rate reaches new high in 2Q26, 30 Jul 2026",
+   "url": "https://www.fitchratings.com/research/corporate-finance/us-private-credit-default-rate-reaches-new-high-in-2q26-30-07-2026",
+   "what": "Trailing 12-month default rate 6.0% at 2Q26, a record; maturity extensions overtook PIK as the leading driver."
+  },
+  {
+   "name": "Lincoln International, Private Market Index Q3 2026",
+   "url": "https://www.lincolninternational.com/news/lincoln-private-market-index-rises-in-q3-2026/",
+   "what": "Covenant default rate 2.5%; PIK on 10% of loans; bad PIK, added after origination, on 6%, with loan-to-value up from about 45% to about 75%."
+  },
+  {
+   "name": "Kroll, Private credit's PIK pullback, Oct 2026",
+   "url": "https://www.kroll.com/en/publications/valuation/private-credits-pik-pullback-data-and-discipline",
+   "what": "PIK was 4.7% of interest income on outstanding first-lien loans at Q2 2026."
+  },
+  {
+   "name": "Valuation Research Corporation, Private credit trends Q3 2026",
+   "url": "https://www.valuationresearch.com/insights/private-credit-trends-q3-2026",
+   "what": "Default measures vary by definition: KBRA 2.5%, Proskauer 1.9% to 3.4%, Fitch 6.3% (Aug 2026), VRC shadow default rate above 10%."
+  },
+  {
+   "name": "Sidley Austin, Financial covenants in private credit transactions, 24 Mar 2026",
+   "url": "https://www.sidley.com/en/insights/newsupdates/2026/03/financial-covenants-in-private-credit-transactions",
+   "what": "Maintenance covenants are tested quarterly through compliance certificates, typically delivered 45 to 60 days after quarter end; equity cures are common."
+  },
+  {
+   "name": "Davis Polk, Compliance certificates: what lenders actually learn and what they don't",
+   "url": "https://www.davispolk.com/financial-calculations-and-covenants-series/compliance-certificates-what-lenders-actually-learn-and-what-they-don-t",
+   "what": "The certificate comes with, or about five business days after, the financial statements and shows the borrower's own calculation, not the lender's."
+  },
+  {
+   "name": "Paul, Weiss, Covenant-lite loans overview",
+   "url": "https://www.paulweiss.com/media/mjanpfpm/covenant_lite_loans_overview.pdf",
+   "what": "Explains covenant-lite loans, which drop the maintenance tests that traditional loans check each quarter."
+  },
+  {
+   "name": "Proskauer, Private credit deep dives: dodgy accounting",
+   "url": "https://www.proskauer.com/alert/private-credit-deep-dives-dodgy-accounting-europe",
+   "what": "Resubmitted compliance certificates and waivers can hide borrower problems."
+  },
+  {
+   "name": "Golub Capital, A matter of control: covenants, lender vigilance and managing for outcomes",
+   "url": "https://education.golubcapital.com/resource/a-matter-of-control-covenants-lender-vigilance-and-managing-for-outcomes-in-direct-lending",
+   "what": "Practitioner paper from a lender: EBITDA add-backs and covenant terms need lender judgment."
+  },
+  {
+   "name": "PwC, Private Credit Survey 2026",
+   "url": "https://www.pwc.com/gx/en/industries/private-equity/private-credit-survey.html",
+   "what": "Assistive AI uses (data extraction, covenant analysis, monitoring) are the most mature; autonomous pricing and covenant negotiation are early; people stay in credit decisions."
+  },
+  {
+   "name": "Apex Group, Private credit in the age of AI",
+   "url": "https://www.apexgroup.com/private-credit-in-the-age-of-ai",
+   "what": "Survey of 105 private credit leaders by a fund administrator: 85% say AI is embedded somewhere; 63% name risk management and monitoring as an area of AI value."
+  },
+  {
+   "name": "Allvue Systems and Coalition Greenwich, 2026 GP Outlook (vendor-sponsored)",
+   "url": "https://www.allvuesystems.com/news/allvue-gp-outlook-survey-finds-ai-ambition-outpacing-data-skills-and-data-readiness",
+   "what": "Vendor-sponsored survey of 102 managers: only 8% rate their data maturity high; accuracy is the top AI concern."
+  },
+  {
+   "name": "Patronus AI, FinanceBench, 2023",
+   "url": "https://www.patronus.ai/research/financebench",
+   "what": "GPT-4-Turbo with retrieval failed or refused 81% of questions on public company filings; long-context setups failed about 21% to 24%."
+  },
+  {
+   "name": "US Census Bureau, CES-WP-26-25, The Microstructure of AI Diffusion, Apr 2026",
+   "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
+   "what": "Most AI users (66%) rely on it solely to augment tasks; AI-related employment fell at only 2% of firms."
+  },
+  {
+   "name": "SSRN working paper on AI in private credit monitoring",
+   "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6898658",
+   "what": "Cites PwC: 54% apply AI in underwriting against 16% in monitoring; covenant-lite rose from 4% to 21% of private credit deals, 2023 to 2025."
+  },
+  {
+   "name": "Menlo Ventures, 2025 State of Generative AI in the Enterprise",
+   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+   "what": "76% of AI use cases are bought rather than built (n=495)."
+  },
+  {
+   "name": "Fortune on MIT NANDA's GenAI Divide report, 18 Aug 2025",
+   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
+   "what": "Bought AI tools succeed about 67% of the time; internal builds about a third as often."
+  },
+  {
+   "name": "Gartner, Lack of AI-ready data puts AI projects at risk, 26 Feb 2025",
+   "url": "https://www.gartner.com/en/newsroom/press-releases/2025-02-26-lack-of-ai-ready-data-puts-ai-projects-at-risk",
+   "what": "Through 2026, organizations will abandon 60% of AI projects unsupported by AI-ready data."
+  },
+  {
+   "name": "NIST AI Risk Management Framework (AI RMF 1.0)",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+   "what": "Voluntary framework for governing, mapping, measuring and managing AI risk."
+  },
+  {
+   "name": "Microsoft, Azure AI Document Intelligence pricing",
+   "url": "https://azure.microsoft.com/en-us/pricing/details/ai-document-intelligence",
+   "what": "Read 26 Nov 2026: layout and prebuilt models $10 per 1,000 pages; read (OCR) $1.50 per 1,000; custom extraction $30 per 1,000; 500 free pages a month."
+  },
+  {
+   "name": "Amazon Textract pricing",
+   "url": "https://aws.amazon.com/textract/pricing/",
+   "what": "Read 26 Nov 2026: Analyze Document Tables $0.015 a page for the first 1M pages a month, US West (Oregon) example."
+  },
+  {
+   "name": "Anthropic, Claude Sonnet API pricing",
+   "url": "https://www.anthropic.com/claude/sonnet",
+   "what": "Read 26 Nov 2026: Claude Sonnet 5.5 at $2 per million input tokens and $10 per million output tokens; batch processing halves it."
+  },
+  {
+   "name": "Allvue Systems, software for credit and asset managers (vendor page)",
+   "url": "https://www.allvuesystems.com/industries/credit-asset-managers",
+   "what": "Vendor claims: document extraction with human controls, covenant tracking, used by 6 of 10 top private debt managers. No public price, checked 26 Nov 2026."
+  },
+  {
+   "name": "S&P Global Market Intelligence, iLEVEL monitoring (vendor page)",
+   "url": "https://www.spglobal.com/market-intelligence/en/solutions/products/ilevel/ilevel-monitoring",
+   "what": "Vendor claims 700+ managers and AI-assisted data ingestion. No public price, checked 26 Nov 2026."
+  },
+  {
+   "name": "73 Strings, private credit (vendor page)",
+   "url": "https://www.73strings.com/who-we-serve/private-credit/",
+   "what": "Vendor claims 99% extraction accuracy and 90% less data collection time, with confidence scores and human review. No public price, checked 26 Nov 2026."
+  },
+  {
+   "name": "Saphenia, Portfolio monitoring software and AI (third-party comparison)",
+   "url": "https://saphenia.com/articles/portfolio-monitoring-software-and-ai",
+   "what": "Third-party comparison that lists Chronograph, Cardo AI and Arcesium among portfolio monitoring options."
+  },
+  {
+   "name": "Levercon, How AI portfolio monitoring works for private lenders (vendor blog)",
+   "url": "https://levercon.ai/for-ai/how-ai-portfolio-monitoring-works-private-lenders",
+   "what": "Vendor claim: monitoring time fell from 9 hours to 1 per loan, and analysts went from 4 to 12 loans each."
+  },
+  {
+   "name": "Assetgence, Private credit portfolio monitoring best practices (vendor blog)",
+   "url": "https://assetgence.com/posts/private-credit-portfolio-monitoring-best-practices",
+   "what": "Vendor view: spreading errors cascade into covenant tests."
+  },
+  {
+   "name": "LenderBox, What 90 lenders told us about AI (vendor blog)",
+   "url": "https://lenderbox.ai/blog-posts/what-90-lenders-told-us-about-ai",
+   "what": "Vendor write-up of 90 lender conversations: data security raised 21 times, why not use a general model 20, hallucination 18."
+  },
+  {
+   "name": "Ryz Labs, AI covenant monitoring for private credit (vendor guide)",
+   "url": "https://www.ryzlabs.com/guides/ai-covenant-monitoring-private-credit",
+   "what": "Vendor FAQ answers no to whether AI covenant monitoring replaces analysts."
+  },
+  {
+   "name": "Reddit r/CreditAnalysis, AI tools that can write credit memos",
+   "url": "https://www.reddit.com/r/CreditAnalysis/comments/1ghdgcn/has_anyone_come_across_ai_tools_that_can_write",
+   "what": "Credit analysts asking whether AI tools can write a credit memo."
+  }
+ ]
+}
