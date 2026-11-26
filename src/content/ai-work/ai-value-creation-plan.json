@@ -55,15 +55,15 @@
  },
  "summary": "AI speeds the analysis behind each move in a value creation plan, from pricing to collections[^8][^15]. The plan lists the moves that grow operating profit during a private equity hold, each with an owner[^23][^3]. Finishing makes or breaks it: plans that complete more of their actions earn higher returns[^3].",
  "humanRole": [
-  "Owner-CEO: owns the plan's targets and reports them to the board[^6]. Operating partners rate CEO ownership the top success factor, 4.6 out of 5[^6].",
+  "Owner-CEO: owns the plan's targets and reports them to the board[^6]. One operating partner told EY the company itself must own and execute the value creation plan[^6].",
   "Commercial lead: sets price guardrails and approves quotes outside them[^8]. In a field study, AI price advice worked best when people priced the complex or unusual quotes[^8].",
   "Sales leader: owns territories and account calls, while AI ranks accounts and drafts call plans[^12]. AI plus a human coach beat either one alone[^12].",
-  "Controller: owns credit holds, disputes and every number in the board pack[^22]. AI gets worse on tasks outside its strengths, so a named person checks it[^17]."
+  "Controller: owns credit holds, disputes and every number in the board pack, and tracks AI risks as NIST's framework asks[^22]. AI gets worse on tasks outside its strengths, so a named person checks it[^17]."
  ],
  "teamAfter": [
   "Finance staff spend less time drafting: in one experiment, writing tasks took 37% less time[^14]. In one sponsored survey, 38% of sponsors put AI savings into strategic finance roles[^7].",
   "Newer staff close the gap fastest: support agents with AI solved 15% more issues an hour, and the least experienced gained most[^13]. In sales coaching, middle-ranked reps gained most[^12].",
-  "Jobs change shape more than size: of US firms where AI changed tasks, 66% use it only to help staff[^18]. A national study found earnings and hours moved under 2%[^19]."
+  "Jobs change shape more than size: of US firms using AI, 66% use it only to help staff[^18]. A national study in Denmark ruled out earnings or hours effects above 2%[^19]."
  ],
  "example": {
   "input": "Illustrative: a $50M-revenue distributor with 200 staff, in its first 100 days after a buyout. The inputs are 24 months of quotes and invoices, the open receivables ledger and 12 months of supplier invoices.",
@@ -148,7 +148,7 @@
      "url": "https://discovery.ucl.ac.uk/id/eprint/10204321/1/Yoo_IJAA_Submission%20Paper.pdf",
      "cells": [
       "University College London",
-      "0.43% to 1.28% extra savings a year[^16]",
+      "0.43% to 1.28% extra savings in the first year[^16]",
       "Weak: simulated, not live"
      ]
     }
@@ -156,7 +156,7 @@
   },
   {
    "title": "Where do operating partners say delivery falls short?",
-   "intro": "EY, a consultancy, surveyed 120 operating partners in August and September 2026[^6]. Scores are out of 5.",
+   "intro": "EY, a consultancy, surveyed 120 operating partners and deal professionals in August and September 2026[^6]. Scores are out of 5.",
    "headers": [
     "Lever",
     "Priority",
@@ -245,7 +245,7 @@
   },
   {
    "name": "3. Back office: month-end close and board pack",
-   "when": "Finance teams whose close takes weeks. In one sponsored survey, 53% of companies with live AI agents use them to escalate variances[^7].",
+   "when": "Finance teams whose close takes weeks. In one sponsored survey, 53% of operating partners report AI agents that detect and escalate budget variances[^7].",
    "flow": [
     "Controller: list the close steps and who signs each one",
     "AI: draft variance commentary and the first draft of the board pack",
@@ -321,11 +321,11 @@
    "name": "NIST AI Risk Management Framework",
    "url": "https://airc.nist.gov/airmf-resources/playbook/measure/",
    "status": "Voluntary guidance",
-   "what": "It asks for clear human roles for oversight, written limits on acceptable performance and documented checks[^22]. Use it as the template for the owner map in your plan."
+   "what": "It asks that AI performance be measured against set criteria, that the system's limits be documented and that named personnel track its risks in use[^22]. Use it as the template for the owner map in your plan."
   }
  ],
  "howToTest": [
-  "Record a do-nothing baseline before day 1: 12 to 24 months of margin, DSO and spend, each with its source and date[^23].",
+  "Record a do-nothing baseline before day 1: where margin, DSO and spend are heading with no new action[^23].",
   "Split the value bridge, which shows how much of the target comes from price, volume, cost and cash[^23].",
   "Pick a holdout group: one site, product line, region or set of reps keeps working without the tool.",
   "Write down the limits the AI must stay within, such as the lowest price it may suggest[^22].",
@@ -353,7 +353,7 @@
   },
   {
    "q": "What does an operating partner do?",
-   "a": "An operating partner helps portfolio companies deliver the value creation plan, working beside the CEO[^6]. When operating partners help shape the deal's core bet early, 68% of initiatives land, against 37% otherwise[^6]."
+   "a": "An operating partner helps portfolio companies deliver the value creation plan, driving growth and margin work and spotting risks that can derail a deal[^6]."
   },
   {
    "q": "Where does AI fit in a value creation plan?",
@@ -361,7 +361,7 @@
   },
   {
    "q": "Will AI shrink the team at a portfolio company?",
-   "a": "No, on current evidence: 66% of US firms where AI changed tasks use it only to help staff[^18]. Only 2% saw AI-related job losses[^18], and a national study found earnings and hours moved under 2%[^19]."
+   "a": "No, on current evidence: 66% of US firms using AI use it only to help staff[^18]. Only 2% saw AI-related job losses[^18], and a Danish national study ruled out earnings or hours effects above 2%[^19]."
   },
   {
    "q": "How do you measure AI impact in a portfolio company?",
@@ -376,7 +376,7 @@
   "One lever only, such as supplier spend: start with the AI procurement guide or a spend analysis tool, not a full plan. Expect modest gains there[^16].",
   "Just closed an add-on: start with the AI post-merger integration guide. Missing or messy data is a top reason AI projects fail[^20].",
   "Month-end across several entities is the bottleneck: start with the multi-entity close guide. Weak data foundations sink AI projects before any lever pays[^20].",
-  "Sales coverage is the only gap: the lead scoring built into your customer relationship management (CRM) system may be enough[^25]. See the sales analytics guide."
+  "Sales coverage is the only gap: most enterprise AI is now bought, so lead scoring in your customer relationship management (CRM) system may be enough[^25]. See the sales analytics guide."
  ],
  "resources": [
   {
@@ -459,14 +459,14 @@
    "what": "Survey of 79 private equity investors: growth is a bigger focus than cost cutting. Read 26 Nov 2026."
   },
   {
-   "name": "EY (consultancy), Global PE Operating Partner and Value Creation Study 2026, 120 operating partners",
+   "name": "EY (consultancy), Global PE Operating Partner and Value Creation Study 2026, 120 operating partners and deal professionals",
    "url": "https://www.ey.com/content/dam/ey-unified-site/ey-com/en-gl/insights/private-equity/documents/ey-gl-pe-value-creation-priorities-11-2026.pdf",
-   "what": "CEO ownership rated 4.6 for importance; 68% of initiatives land when operating partners shape the thesis early vs 37%; AI rated 3.8 priority vs 3.1 delivered; firms that measure well deliver about 75% of the time vs 36%. Read 26 Nov 2026."
+   "what": "Priority vs delivered value, out of 5: AI 3.8 vs 3.1, the widest gap; sales 4.0 vs 3.7; cost 3.8 vs 3.7; pricing 3.7 vs 3.6; working capital 3.6 vs 3.5. Survey run August to September 2026. Read 26 Nov 2026."
   },
   {
    "name": "Accordion (consulting firm), PE AI Adoption Benchmark 2026, sponsored survey of 150 operating partners",
    "url": "https://www.accordion.com/the-pe-ai-adoption-benchmark",
-   "what": "41% scale AI without a playbook; 38% measure revenue or margin impact vs 67% time saved; 6% of companies data-ready at close; 9% of sponsors have an AI center of excellence; 38% redeploy savings to strategic finance roles. Read 26 Nov 2026."
+   "what": "41% of firms scale AI without a playbook; 38% measure revenue or margin impact vs 67% time saved; 6% of companies data-ready at close; 9% of sponsors have an AI center of excellence; 53% report agents escalating budget variances; 38% redeploy savings to strategic finance roles. Read 26 Nov 2026."
   },
   {
    "name": "Marketing Science (2024), field study of a B2B price recommendation model",
@@ -511,7 +511,7 @@
   {
    "name": "University College London, simulation of AI spend analysis at a food manufacturer",
    "url": "https://discovery.ucl.ac.uk/id/eprint/10204321/1/Yoo_IJAA_Submission%20Paper.pdf",
-   "what": "Simulated 0.43% to 1.28% extra yearly savings against manual spend analysis. A simulation, not a live result. Read 26 Nov 2026."
+   "what": "Simulated 0.43% to 1.28% extra first-year savings against manual spend analysis. A simulation, not a live result. Read 26 Nov 2026."
   },
   {
    "name": "Organization Science (Mar 2026), consultants using AI inside and outside its frontier",
@@ -521,12 +521,12 @@
   {
    "name": "US Census Bureau, working paper CES-WP-26-25 (2026)",
    "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
-   "what": "Of firms reporting AI task effects, 66% use AI only to help staff; 2% saw AI-related job losses. Top AI functions: sales and marketing 52%. Read 26 Nov 2026."
+   "what": "Of firms using AI, 66% use it only to augment staff tasks; 2% saw AI-related job losses. Top AI functions: sales and marketing 52%. Read 26 Nov 2026."
   },
   {
    "name": "National Bureau of Economic Research, working paper w33777 (rev. Mar 2026)",
    "url": "https://www.nber.org/system/files/working_papers/w33777/w33777.pdf",
-   "what": "Precise null on earnings and hours (effects under 2%); work is reorganised, with new tasks in AI oversight. Read 26 Nov 2026."
+   "what": "Danish data: precise null on earnings and hours, ruling out effects above 2%; work is reorganised, with new tasks in AI oversight. Read 26 Nov 2026."
   },
   {
    "name": "RAND Corporation, RRA2680-1 (Aug 2024), root causes of AI project failure",
@@ -539,9 +539,9 @@
    "what": "The company was liable for its chatbot's wrong answer; the tribunal rejected the idea that the bot was a separate entity. Read 26 Nov 2026."
   },
   {
-   "name": "NIST AI Risk Management Framework Playbook, Measure and Govern",
+   "name": "NIST AI Risk Management Framework Playbook, Measure function",
    "url": "https://airc.nist.gov/airmf-resources/playbook/measure/",
-   "what": "Calls for clear human roles for oversight, defined limits on acceptable performance and documented human oversight. Read 26 Nov 2026."
+   "what": "Asks that performance criteria be measured and documented, limits of the system be documented, residual risk stay within tolerance, and personnel track AI risks in use. Read 26 Nov 2026."
   },
   {
    "name": "CVC (private equity firm), Ten tests of a world-class private equity value creation plan (Jan 2026)",
@@ -585,10 +585,10 @@
   "human-role": "The owner-CEO owns the targets, and a named manager owns each lever: commercial lead for price, sales leader for coverage, controller for cash[^6][^8].",
   "team-after": "Your team moves from building numbers to acting on them: checking exceptions, coaching reps and explaining results[^7][^13].",
   "example": "A 100-day AI plan spends 30 days on a baseline and data, 30 on two tested pilots, and the last 40 scaling what worked[^23][^3].",
-  "table-1": "Pricing and selling have the strongest evidence[^8][^15]. Working capital and procurement rest on one case study and one simulation[^16].",
+  "table-1": "Pricing and selling have the strongest evidence[^8][^11]. Working capital and procurement rest on one case study and one simulation[^15][^16].",
   "table-2": "AI shows the widest gap: operating partners score it 3.8 out of 5 as a priority but 3.1 for delivery[^6].",
   "recipes": "Pick by your biggest gap: revenue first if prices vary, cash and cost if cash is tight, back office if the close drags[^9][^7].",
-  "rules": "No law governs the plan itself, but AI that talks to customers stays under consumer-protection law, and the US standards body NIST offers voluntary oversight guidance[^27][^22].",
+  "rules": "No law governs the plan itself, but AI that talks to customers stays under consumer-protection law, and NIST offers a voluntary framework for tracking AI risk[^27][^22].",
   "benchmark": "Set a do-nothing baseline, run each pilot beside a holdout group, and count the gap in dollars, not hours[^23][^7].",
   "what-goes-wrong": "AI in the plan goes wrong when teams start with the tool, skip the data work, or trust output no one checks[^20][^7].",
   "buy-or-build": "Buy for standard work like collections and spend sorting[^25]. Build only where your own data, such as quote history, is the edge[^8].",
@@ -626,5 +626,26 @@
    "notes": "Steve gets the answer fast: start with price, people own the calls, prove each lever against a holdout. His worries are covered: messy data (watch-outs), no proof (sizer plus holdout test), staff fears (FAQ, Census and NBER). No Zavient price is shown, by design. No change needed."
   }
  ],
- "updated": "2026-11-26"
+ "updated": "2026-11-26",
+ "sourceCheck": {
+  "date": "2026-11-26",
+  "by": "source-check agent (separate from writer)",
+  "checked": 28,
+  "fixed": [
+   "EY [6]: cut 'CEO ownership rated 4.6' (not in source); replaced with EY's quoted operating partner",
+   "EY [6]: cut '68% vs 37% of initiatives land' (not in source)",
+   "EY [6]: sample is operating partners and deal professionals, not operating partners only",
+   "EY [6]: source note cut CEO 4.6, 68/37 and 75/36 figures the report does not contain",
+   "Accordion [7]: 53% is of operating partners surveyed, not of companies with live agents",
+   "Census [18]: 66% is of AI-using firms; NBER [19]: study is Danish and rules out effects above 2%",
+   "FAQ: same Census and NBER wording fixes",
+   "UCL [16]: 0.43-1.28% is first-year extra savings, not every year",
+   "NIST [22]: Measure page says measured criteria, documented limits and personnel tracking risk, not 'human oversight roles'",
+   "NIST [22]: controller line now cites what the framework actually asks",
+   "NIST [22]: answer reworded to match the Measure page",
+   "CVC [23]: cut '12 to 24 months' detail the source does not give",
+   "Menlo [25]: CRM line now cites the buy-vs-build figure the source holds",
+   "Answer table-1: pricing/selling cited the collections case [15]; now [8][11], and case study gets [15]"
+  ]
+ }
 }

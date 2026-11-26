@@ -10,7 +10,7 @@
  "verdict": [
   "Revenue synergies are the ones deals miss: fewer than 20% hit cross-sell goals, in consulting surveys[^22][^20].",
   "AI's best job here is matching customers, products and vendors across both systems, then flagging overlap and cross-sell[^34][^33].",
-  "Even vendor cases send 10% to 25% of matches to a person, so your team keeps every merge decision[^41][^43].",
+  "Even vendor cases send 10% to 20% of matches to a person, so your team keeps every merge decision[^41][^42].",
   "Don't pull a target's customer file before close without counsel and a clean team; one gun-jumping fine hit $5.6M[^2][^1].",
   "Test matching on your own lists first: published AI accuracy runs from poor to near-perfect[^13][^17]."
  ],
@@ -54,16 +54,16 @@
  },
  "summary": "AI for post-merger integration matches customers, products, vendors and accounts across the platform and each add-on, then flags overlap, cross-sell and price gaps[^34][^33]. It changes where the team's hours go: less data mapping, more customer and pricing work[^26][^36]. Agreed definitions, and a person checking unsure matches, make or break it[^43][^41].",
  "humanRole": [
-  "Controller and sales operations lead: approve every customer and product merge below the confidence cut, the score under which a person checks the match. Vendor cases still send 10% to 25% of matches to a person[^41][^42][^43].",
-  "Head of sales and the COO: decide every price change for acquired customers. In one consultancy case, price harmonisation was held to just 6 SKUs (stock-keeping units)[^33].",
-  "Account owners: write and send what acquired customers hear. A 2009 study found switching intent two to three times higher after mergers; in banking, one integration designed around customers lost none[^38][^28].",
+  "Controller and sales operations lead: approve every customer and product merge below the confidence cut, the score under which a person checks the match. Vendor cases still send 10% to 20% of matches to a person[^41][^42].",
+  "Head of sales and the COO: decide every price change for acquired customers. In one consultancy case, price harmonisation covered just 6 select SKUs (stock-keeping units)[^33].",
+  "Account owners: write and send what acquired customers hear. Acquired bank customers were two to three times likelier to say they would switch, and one customer-first bank integration lost none[^38][^28].",
   "COO: owns people decisions and picks the integration lead. Leaders with experience in the target's industry capture more synergies, and culture is a top reason deals fail[^12][^27]."
  ],
  "teamAfter": [
   "Integration lead: edits an AI-drafted 100-day plan instead of writing it from scratch. In a bank case a consulting firm published, drafting tools cut integration prep time by 25%[^26].",
   "Controller: checks the unsure matches and the money totals, instead of mapping accounts by hand. One technology leader says AI does about 80% of their data mapping; a vendor reports 5 days cut to 3 hours[^36][^42].",
   "Sales lead: calls acquired customers about the cross-sell list. Revenue synergies take about five years against two for cost, so this work outlasts day 100[^21][^24].",
-  "COO: runs the next add-on on the same playbook, since close to half of add-ons are a platform's fourth deal or later[^25]. Among US firms where AI changed tasks, 66% used it only to help staff[^11]."
+  "COO: runs the next add-on on the same playbook, since close to half of add-ons are a platform's fourth deal or later[^25]. Among US firms whose workers use AI, 66% used it only to augment tasks[^11]."
  ],
  "example": {
   "input": "Illustrative, based on a published consultancy case: a $316M distributor buys a $68M competitor[^33]. The inputs are both firms' customer lists, product lists with SKUs, vendor lists and invoice history.",
@@ -115,7 +115,7 @@
      "name": "PwC 2019, cited by TriVista",
      "url": "https://trivista.com/wp-content/uploads/2025/12/Post-Merger-Integration-Mid-Market-Survey.pdf",
      "cells": [
-      "Value realised against plan: 70% for cost, 53% for working capital, 45% for revenue[^31]",
+      "Share of deals that realised the expected value lift: 70% for cost, 53% for working capital, 45% for revenue[^31]",
       "Consulting survey of 100 PE executives"
      ]
     },
@@ -231,8 +231,8 @@
    ]
   },
   {
-   "title": "What do integration and synergy-tracking tools cost?",
-   "intro": "Prices from each vendor's own pricing page, read 26 Nov 2026. Both run checklists and trackers; neither is a matching engine for your records.",
+   "title": "What does a bought integration tool cover?",
+   "intro": "DealRoom's own pricing page, checked 26 Nov 2026. It runs plans and tracking, not matching for your records. Midaxo's pricing page would not load, so we list no price for it.",
    "headers": [
     "Tool",
     "What it covers",
@@ -244,18 +244,9 @@
      "name": "DealRoom",
      "url": "https://dealroom.net/products/pricing",
      "cells": [
-      "Integration worklists and a synergy tracker[^45]",
-      "$12,000 a year[^45]",
-      "Billed annually at $1,000 a month[^45]"
-     ]
-    },
-    {
-     "name": "Midaxo",
-     "url": "https://midaxo.com/pricing",
-     "cells": [
-      "Value and synergy-tracking dashboards[^46]",
-      "From $25,000 a year[^46]",
-      "A starting price; read 26 Nov 2026[^46]"
+      "Integration planning, project management and automated progress tracking[^45]",
+      "None published: priced by deal volume[^45]",
+      "Annual commitment, unlimited users[^45]"
      ]
     }
    ]
@@ -286,18 +277,18 @@
     "Finance lead: feed the synergy tracker from ERP and CRM data each month",
     "Integration lead: have AI redraft the 100-day checklist from the deal's facts, then mark each item keep, edit or drop"
    ],
-   "cost": "Mostly controller review time: vendors report 10% to 20% of rows still checked by hand[^41][^42]. Practitioners say the master-data map is where consolidations fail, so budget time there[^47]."
+   "cost": "Mostly controller review time: vendors report 10% to 20% of rows still checked by hand[^41][^42]. Practitioners say the master-data map is where consolidations fail, so budget time there[^46]."
   },
   {
    "name": "3. Bought tracker plus your own matching",
-   "when": "You want checklists, owners and a synergy tracker now, plus revenue analysis on your own data[^45][^46].",
+   "when": "You want checklists, owners and progress tracking now, plus revenue analysis on your own data[^45].",
    "flow": [
-    "Integration lead: run the plan and owners in a tool such as DealRoom or Midaxo",
+    "Integration lead: run the plan and owners in a tool such as DealRoom",
     "Analyst: run the matching from build 1 or 2 on your own records",
     "Sales lead: load the cross-sell and price-gap lists into the tracker as revenue lines",
     "COO: review the tracker each month against the deal model"
    ],
-   "cost": "DealRoom's integration plan is $12,000 a year and Midaxo starts at $25,000 a year, both read 26 Nov 2026[^45][^46]. Matching costs the same as build 1[^17]."
+   "cost": "DealRoom prices by deal volume and publishes no figure, and Midaxo's pricing page would not load for us[^45]. Matching costs the same as build 1[^17]."
   }
  ],
  "ownData": {
@@ -375,19 +366,19 @@
    "name": "Sherman Act and FTC pre-merger guidance",
    "url": "https://www.ftc.gov/enforcement/competition-matters/2018/03/avoiding-antitrust-pitfalls-during-pre-merger-negotiations-due-diligence",
    "status": "In force; FTC guidance of 20 Mar 2018",
-   "what": "Until closing, buyer and target must act as separate firms, even when no filing is needed[^1]. Share the least information needed, and keep customer pricing inside a clean team[^1]. A buyer that took control early paid a record $5.6M[^2][^3]."
+   "what": "Until closing, buyer and target must act as separate firms[^1]. Share the least information needed, and keep customer pricing inside a clean team[^1]. A buyer group that took control of the target early paid a record $5.6M[^2][^3]."
   },
   {
    "name": "Hart-Scott-Rodino (HSR) thresholds, 2026",
    "url": "https://www.ftc.gov/enforcement/premerger-notification-program/current-thresholds",
    "status": "In force from 17 Feb 2026",
-   "what": "Deals above $133.9M generally need an HSR filing and a waiting period, subject to size-of-person tests[^4][^5]. The lowest filing fee is $35,000, for deals below $189.6M[^5]. Civil penalties for HSR violations reach $53,088 a day[^6]."
+   "what": "Deals above $133.9M generally need an HSR filing and a waiting period, subject to size-of-person tests[^4][^5][^2]. Civil penalties for HSR violations reach $53,088 a day[^6]."
   },
   {
    "name": "2023 Merger Guidelines, Guideline 8, and the Welsh Carson order",
    "url": "https://www.justice.gov/atr/merger-guidelines/applying-merger-guidelines/guideline-8",
    "status": "Agency guidance (2023); Welsh Carson order final 20 May 2025",
-   "what": "Regulators may review a series of small acquisitions together, which is how roll-ups get examined[^7]. The FTC's Welsh Carson order came out of an anesthesia roll-up[^8]. Small add-ons in one local market can draw review even below HSR thresholds[^7]."
+   "what": "Regulators may review a series of small acquisitions together, which is how roll-ups get examined[^7]. The FTC's Welsh Carson order came out of an anesthesia roll-up[^8]."
   },
   {
    "name": "California Consumer Privacy Act (CCPA), merger provisions",
@@ -399,7 +390,7 @@
    "name": "FTC position on privacy promises in acquisitions",
    "url": "https://www.ftc.gov/news-events/news/press-releases/2014/04/ftc-notifies-facebook-whatsapp-privacy-obligations-light-proposed-acquisition",
    "status": "FTC position since 10 Apr 2014",
-   "what": "Privacy promises made to the target's customers survive the acquisition[^9]. Using data already collected in a materially different way needs customers' affirmative consent[^9]."
+   "what": "In the WhatsApp deal, the FTC said the target's privacy promises survive the acquisition[^9]. It said materially changing how already-collected data is used needs customers' affirmative consent[^9]."
   }
  ],
  "howToTest": [
@@ -414,7 +405,7 @@
   "Price the lift in dollars: cross-sell revenue won from the list, plus team hours saved against your baseline. Pilot on one add-on before using the playbook on the next."
  ],
  "watchOuts": [
-  "Gun-jumping means acting as one company before the deal closes; XCL Resources paid a record $5.6M for it[^2][^3]. Run any pre-close cross-sell model only through a clean team, a walled-off group, with counsel[^1].",
+  "Gun-jumping means acting as one company before the deal closes; XCL Resources and two other oil companies paid a record $5.6M for it[^2][^3]. Run any pre-close cross-sell model only through a clean team, a walled-off group, with counsel[^1].",
   "Marketing to acquired customers on new terms can break the target's privacy promises[^9][^10]. Honour its opt-outs, and upload customer files only to AI tools under a data agreement; data security is deal teams' top AI worry[^30].",
   "Two customers merged into one misstate revenue, credit limits and commissions. Set the cut for few false merges and log each approval, because even strong models fall short of perfect[^15][^13].",
   "Matched data can mislead until definitions line up: in one vendor case, a 3.5-point margin gap was just two costing methods[^43]. Agree definitions with the controller before comparing numbers.",
@@ -424,11 +415,11 @@
  "faq": [
   {
    "q": "How long does post-merger integration take?",
-   "a": "Plan on 18 months to three years for synergies, with the add-on's current state mapped by day 30 and process decisions made by day 90[^49][^50]. Revenue synergies take longest, about five years in one consulting survey[^21]."
+   "a": "Plan on a year and a half or more for synergies[^48]. Map the add-on's current state by day 30 and make process decisions by day 90[^49]. Revenue synergies take longest, about five years in one consulting survey[^21]."
   },
   {
    "q": "What goes in a 100-day integration plan?",
-   "a": "A 100-day plan sets what must happen by when: map the add-on's current state by day 30 and make process decisions by day 90[^50]. Decide the ERP question within the first 100 days, then replace systems on a plan[^48]."
+   "a": "A 100-day plan sets what must happen by when: map the add-on's current state by day 30 and make process decisions by day 90[^49]. Decide the ERP question within the first 100 days, then replace systems on a plan[^47]."
   },
   {
    "q": "How can AI be used in mergers and acquisitions?",
@@ -436,26 +427,26 @@
   },
   {
    "q": "Can we look at the target's customer list before closing?",
-   "a": "Only with safeguards: share the least information needed and keep sensitive data, such as customer pricing, inside a clean team[^1]. Buyers that took control early have paid record fines[^2]. Ask antitrust counsel first; this is not legal advice."
+   "a": "Only with safeguards: share the least information needed and keep sensitive data, such as customer pricing, inside a clean team[^1]. One buyer group that took control early paid a record $5.6M fine[^2]. Ask antitrust counsel first; this is not legal advice."
   },
   {
    "q": "Do we need customer consent to market to acquired customers?",
-   "a": "Not always, but you must keep the target's privacy promises[^9]. Using collected data in a materially different way needs affirmative consent, and the CCPA requires notice and honouring opt-outs[^9][^10]. This is not legal advice."
+   "a": "Not always, but you must keep the target's privacy promises[^9]. The FTC has said materially changing how collected data is used needs affirmative consent, and the CCPA requires notice and honouring opt-outs[^9][^10]. This is not legal advice."
   },
   {
    "q": "How do we track synergies after close?",
-   "a": "Give each synergy an owner, a target and a monthly actual pulled from ERP and CRM data, run by the integration management office (IMO)[^35][^46]. Tools such as DealRoom and Midaxo include synergy trackers[^45][^46]."
+   "a": "Give each synergy an owner, a target and a monthly actual pulled from ERP and CRM data, run by the integration management office (IMO)[^35]. Bought tools such as DealRoom track integration progress[^45]."
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy a post-merger integration tool when the need is checklists, owners and a synergy tracker. DealRoom's integration plan is $12,000 a year and Midaxo starts at $25,000 a year[^45][^46].",
+  "buy": "Buy a post-merger integration tool when the need is checklists, owners and progress tracking. DealRoom prices by deal volume and publishes no figure[^45].",
   "build": "Build the matching and the revenue analysis, because they run on your own ERP and CRM fields. Small fine-tuned models match about as well as large ones at far lower cost[^16][^14]. Using AI only on unsure pairs kept costs to $1.30 to $3.95 per 1,000 pairs[^17]."
  },
  "pickElse": [
-  "The add-on is folded in and the pain is the month-end close: start with the chart of accounts[^47] and see the multi-entity close guide.",
+  "The add-on is folded in and the pain is the month-end close: start with the chart of accounts[^46] and see the multi-entity close guide.",
   "AI should help every company you own, not one deal: close to half of add-ons are a platform's fourth or later[^25]. See the AI value creation plan.",
   "You want cross-sell with no deal in play: fewer than 20% of deals hit cross-sell goals[^22], so start with the sales analytics guide.",
-  "You only need a checklist and a tracker: a bought tool such as DealRoom or Midaxo is enough[^45][^46]."
+  "You only need a checklist and a tracker: a bought tool such as DealRoom is enough[^45]."
  ],
  "resources": [
   {
@@ -466,7 +457,7 @@
   {
    "name": "FTC, Current HSR thresholds",
    "url": "https://www.ftc.gov/enforcement/premerger-notification-program/current-thresholds",
-   "what": "Check whether an add-on needs a filing, and what the fee is."
+   "what": "Check whether an add-on needs a filing under this year's thresholds."
   },
   {
    "name": "DOJ and FTC, Merger Guidelines, Guideline 8",
@@ -512,7 +503,7 @@
   },
   {
    "num": "66%",
-   "label": "of US firms where AI changed tasks used it only to help staff[^11]",
+   "label": "of US firms whose workers use AI used it only to augment tasks[^11]",
    "source": "US Census Bureau, CES-WP-26-25"
   }
  ],
@@ -525,7 +516,7 @@
   {
    "name": "FTC, Oil companies pay record gun-jumping fine (Jan 2025)",
    "url": "https://www.ftc.gov/news-events/news/press-releases/2025/01/oil-companies-pay-record-ftc-gun-jumping-fine-antitrust-law-violation",
-   "what": "XCL Resources, Verdun and EP Energy agree to a record $5.6M ($5,684,377) penalty for 94 days of gun-jumping, including control of contracts and pricing and receipt of customer pricing data."
+   "what": "XCL Resources, Verdun and EP Energy agree to a record $5.6M civil penalty for 94 days of gun-jumping, including control of customer contracts and coordination on customer prices."
   },
   {
    "name": "FTC, US v. XCL Resources Holdings case page",
@@ -535,12 +526,12 @@
   {
    "name": "FTC, 2026 update of HSR jurisdictional and fee thresholds (Jan 2026)",
    "url": "https://www.ftc.gov/news-events/news/press-releases/2026/01/ftc-announces-2026-update-jurisdictional-fee-thresholds-premerger-notification-filings",
-   "what": "From 17 Feb 2026 the HSR size-of-transaction threshold is $133.9M; size-of-person tests are $267.8M and $26.8M, with none above $535.5M."
+   "what": "For 2026 the HSR size-of-transaction threshold rises from $126.4M to $133.9M, with a revised filing fee schedule."
   },
   {
    "name": "FTC, Current HSR thresholds",
    "url": "https://www.ftc.gov/enforcement/premerger-notification-program/current-thresholds",
-   "what": "Current HSR thresholds and filing fees; the lowest fee, $35,000, applies to deals below $189.6M."
+   "what": "From 17 Feb 2026 the size-of-transaction threshold is $133.9M; size-of-person tests are $267.8M and $26.8M, with none above $535.5M."
   },
   {
    "name": "FTC and DOJ, HSR annual report, fiscal year 2025",
@@ -560,7 +551,7 @@
   {
    "name": "FTC, letter on Facebook and WhatsApp privacy obligations (10 Apr 2014)",
    "url": "https://www.ftc.gov/news-events/news/press-releases/2014/04/ftc-notifies-facebook-whatsapp-privacy-obligations-light-proposed-acquisition",
-   "what": "Privacy promises made to customers survive an acquisition; using already-collected data in a materially different way needs affirmative consent."
+   "what": "FTC told Facebook and WhatsApp that WhatsApp's privacy promises survive the acquisition, and that material changes to how already-collected data is used need affirmative consent."
   },
   {
    "name": "California Privacy Protection Agency, CCPA statute text (1 Jan 2026)",
@@ -570,7 +561,7 @@
   {
    "name": "US Census Bureau, working paper CES-WP-26-25 (Apr 2026, revised Oct 2026)",
    "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
-   "what": "Of firms where AI changed tasks, 66% used it only to augment tasks; 2% reported AI-related employment decreases."
+   "what": "Of firms whose workers use AI in tasks, 66% use it solely to augment tasks; AI-related employment decreases occurred in only 2% of firms."
   },
   {
    "name": "Do Business Unit Leaders Matter for M&A? (working paper, Dec 2025)",
@@ -670,7 +661,7 @@
   {
    "name": "TriVista, Post-Merger Integration Mid-Market Survey (2021), citing PwC 2019",
    "url": "https://trivista.com/wp-content/uploads/2025/12/Post-Merger-Integration-Mid-Market-Survey.pdf",
-   "what": "Cites PwC 2019 survey of 100 PE executives: realised value against plan was 70% for cost, 53% for working capital and 45% for revenue."
+   "what": "Cites PwC 2019 PE report (2018 survey of 100 PE executives): share of deals that realised the expected value lift was 70% for cost synergies, 53% for working capital and 45% for revenue."
   },
   {
    "name": "AlixPartners, growth-oriented mergers (Jul 2018), consulting view",
@@ -740,12 +731,7 @@
   {
    "name": "DealRoom, pricing page",
    "url": "https://dealroom.net/products/pricing",
-   "what": "Read 26 Nov 2026: Diligence and Integration plan at $1,000 a month billed annually ($12,000 a year), with integration worklists and a synergy tracker."
-  },
-  {
-   "name": "Midaxo, pricing page",
-   "url": "https://midaxo.com/pricing",
-   "what": "Read 26 Nov 2026: plans from $25,000 a year, with value and synergy-tracking dashboards."
+   "what": "Read 26 Nov 2026: no published price; priced by deal volume with an annual commitment and unlimited users; integration planning, project management and automated progress tracking."
   },
   {
    "name": "Bramvia, Two ERP systems after an acquisition (12 Sep 2026)",
@@ -760,7 +746,7 @@
   {
    "name": "DealDen, post-merger integration (10 Nov 2026)",
    "url": "https://dealden.ai/terms/post-merger-integration",
-   "what": "Buyers set synergy deadlines of 18 months to three years."
+   "what": "Synergies take a year and a half or more; buyers in its sample that reported hitting their target took a median 17.7 months."
   },
   {
    "name": "ClearWork, buy-and-build integration playbook (12 Nov 2026)",
@@ -780,14 +766,14 @@
   "team-after": "The same small team covers more add-ons: AI drafts maps and plans, and people spend the time on customer calls, pricing and keeping staff[^26][^11].",
   "example": "In an illustrative case, a distributor matches its customer and product lists against an add-on's, and the team picks a short list of cross-sell and price moves[^33][^34].",
   "table-1": "Cost synergies usually land and revenue synergies often don't: about 60% of deals delivered cost synergies, but almost 70% missed revenue ones[^20][^22].",
-  "table-2": "AI has drafted plans, mapped data and matched records in published cases, yet vendor cases still send 10% to 25% of items to a person[^26][^41][^43].",
-  "table-3": "Published prices start at $12,000 a year for DealRoom's integration plan and $25,000 a year for Midaxo[^45][^46].",
+  "table-2": "AI has drafted plans, mapped data and matched records in published cases, yet vendor cases still send 10% to 20% of items to a person[^26][^41][^42][^43].",
+  "table-3": "DealRoom covers integration planning, project management and progress tracking, and it prices by deal volume with no published figure[^45].",
   "recipes": "A first add-on fits a spreadsheet plus an AI pass, a platform doing three or more deals a year fits a standing mapping layer, and a bought tracker fits either[^17][^25][^45].",
   "own-data": "Accuracy varies widely: untrained AI scored as low as 29 out of 100 on a public product test, while trained or escalation setups reached 84 to 96[^13][^17].",
   "rules": "Four sets of rules apply: antitrust limits on sharing before close, Hart-Scott-Rodino (HSR) filing thresholds, roll-up review, and privacy promises to the target's customers[^1][^4][^7][^10]. Not legal advice.",
   "benchmark": "Test on 200 hand-labelled pairs from your own lists, set a confidence cut, reconcile the money and have sales reps check the cross-sell list before anyone acts.",
   "what-goes-wrong": "AI-assisted integration goes wrong through gun-jumping, broken privacy promises, false merges, mismatched definitions, customer churn and lost staff[^2][^9][^43][^20].",
-  "buy-or-build": "Buy the workflow and synergy tracker, and build the matching layer that finds overlap, cross-sell and price gaps in your own data[^45][^16].",
+  "buy-or-build": "Buy the workflow and progress tracking, and build the matching layer that finds overlap, cross-sell and price gaps in your own data[^45][^16].",
   "something-else": "Pick something else when the pain is month-end close, a portfolio-wide plan, cross-sell without a deal, or only a checklist."
  },
  "offer": {
@@ -822,5 +808,28 @@
    "notes": "Read as Steve. His worries are covered: data security (privacy watch-out cites the 67% concern), cost (dated tool prices and per-pair AI cost), return (price-the-lift step), legal risk (plain-words gun-jumping and privacy, not legal advice). Offer now promises the result in writing. No Zavient price shown, as decided; consulting figures are labelled as surveys or cases."
   }
  ],
- "updated": "2026-11-26"
+ "updated": "2026-11-26",
+ "sourceCheck": {
+  "date": "2026-11-26",
+  "by": "source-check agent (separate from writer)",
+  "checked": 50,
+  "fixed": [
+   "src 45 DealRoom pricing page shows no price or plan name: cut $12,000 a year / $1,000 a month everywhere; now 'priced by deal volume, none published'",
+   "src 45 DealRoom page lists no synergy tracker or worklists: reworded to integration planning and automated progress tracking",
+   "src 5 FTC thresholds page shows no fees: cut the $35,000 lowest-fee / $189.6M claim",
+   "src 7 Guideline 8 says nothing about local add-ons below HSR thresholds: cut that sentence",
+   "src 1 FTC guide does not say 'even when no filing is needed': cut the phrase",
+   "src 41-43 review share was 10% to 25%: sources show 10-15% and ~20%, now 10% to 20% (verdict, humanRole, table-2 answer)",
+   "src 31 TriVista/PwC figures are share of deals realising expected value lift, not value realised vs plan: reworded",
+   "src 11 Census 66% is firms whose workers use AI, not firms where AI changed tasks: reworded stat and teamAfter",
+   "src 48 DealDen gives a year and a half or more (median 17.7 months), not 18 months to 3 years: reworded FAQ",
+   "src 9 FTC WhatsApp letter scoped to that deal: attributed consent rule to the FTC in rules and FAQ",
+   "src 2 $5.6M was paid by three companies jointly: reworded 'a buyer paid' and 'XCL paid'; added src 2 for the HSR waiting period",
+   "src 33 FTI says 6 select SKUs, not 'held to': reworded humanRole",
+   "src 38 J.D. Power study was banking-only, vs a year earlier: reworded humanRole",
+   "Updated source 'what' notes for 2, 4, 5, 9, 11, 31, 45, 48 (DealDen) to match what each source says",
+   "Midaxo pricing page would not load live on two tries: cut the $25k price and synergy-dashboard claims, dropped the Midaxo table row and source, renumbered sources 47-50 to 46-49",
+   "Cost table retitled 'What does a bought integration tool cover?' since no confirmed tool price remains"
+  ]
+ }
 }
