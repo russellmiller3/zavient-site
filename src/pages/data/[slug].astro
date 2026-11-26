@@ -17,7 +17,7 @@ const svg = storySvg(story.id, d.chart);
 const f = fmt(d.chart.unit);
 const embed = `<a href="https://zavient.com/data/${story.id}.html"><img src="https://zavient.com/data/${story.id}.svg" alt="${d.chart.title}" width="760"></a>`;
 ---
-<Base title={`${d.title} | Zavient`} description={d.description}>
+<Base title={`${d.title} | Zavient`} description={d.description} updated={d.updated}>
   <header class="article-hero"><div class="wrap">
     <div class="label">Data &middot; AI job market</div>
     <h1>{d.title}</h1>

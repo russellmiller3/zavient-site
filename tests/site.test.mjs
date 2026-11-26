@@ -17,9 +17,9 @@ const dist = join(root, 'dist');
 const slugs = (dir) => readdirSync(join(root, 'src/content', dir)).filter((f) => f.endsWith('.json')).map((f) => f.replace(/\.json$/, ''));
 
 test('every AI-work page is built with the offer and at least one source link', () => {
-  // Indexed pages (index: true) sell AI consulting and must be in the AI sitemap and not noindexed; the rest keep the
+  // Indexed pages (index: true) sell AI consulting and must be in the sitemap and not noindexed; the rest keep the
   // benchmark offer and noindex (26 Nov 2026: Russell asked for the offer to sell consulting, not a benchmark booking).
-  const sitemap = readFileSync(join(dist, 'sitemap-ai.xml'), 'utf8');
+  const sitemap = readFileSync(join(dist, 'sitemap.xml'), 'utf8');
   // Golden-template pages always carry the free diagnostic, and are indexed only when they also pass the publish gate.
   const all = slugs('ai-work').map((s) => ({ id: s, data: JSON.parse(readFileSync(join(root, 'src/content/ai-work', `${s}.json`), 'utf8')) }));
   for (const s of slugs('ai-work')) {
@@ -172,4 +172,20 @@ test('every golden-template page offers the free diagnostic in four spots', () =
     const spots = [...html.matchAll(/data-diag="([a-z-]+)"/g)].map((m) => m[1]);
     assert.deepEqual(spots, ['bottom-line', 'beside-proof', 'sticky', 'end'], `${s}: diagnostic spots are ${spots.join(', ')}`);
   }
+});
+
+// The sitemap builds itself from the pages in each build (src/integrations/sitemap.mjs): every indexable page is in
+// it with a lastmod, and no noindex page is. A new page needs no hand edit.
+test('sitemap lists every indexable page and no noindex page', () => {
+  const dist = join(process.cwd(), 'dist');
+  const map = readFileSync(join(dist, 'sitemap.xml'), 'utf8');
+  const walk = (d) => readdirSync(d, { withFileTypes: true }).flatMap((e) => e.isDirectory() ? walk(join(d, e.name)) : e.name.endsWith('.html') ? [join(d, e.name)] : []);
+  for (const f of walk(dist)) {
+    const rel = f.slice(dist.length + 1).split('\\').join('/');
+    const url = rel === 'index.html' ? 'https://zavient.com/' : `https://zavient.com/${rel}`;
+    const html = readFileSync(f, 'utf8');
+    if (/name="robots" content="noindex/.test(html)) assert.ok(!map.includes(`<loc>${url}</loc>`), `${rel}: noindex page in sitemap`);
+    else assert.match(map, new RegExp(`<loc>${url.replace(/[.?]/g, '\\$&')}</loc><lastmod>\\d{4}-\\d{2}-\\d{2}</lastmod>`), `${rel}: missing from sitemap or no lastmod`);
+  }
+  assert.match(readFileSync(join(dist, 'robots.txt'), 'utf8'), /^Sitemap: https:\/\/zavient\.com\/sitemap\.xml$/m);
 });

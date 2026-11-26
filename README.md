@@ -9,7 +9,20 @@ The public site for Zavient LLC. Pushing to `master` on GitHub publishes it thro
   `node scripts/check-links.mjs` after adding sources.
 - The brand line "Moneyball for revenue systems" is frozen. Do not change it.
 
+## Sitemap and IndexNow (automatic)
+
+- `dist/sitemap.xml` is built on every build by `src/integrations/sitemap.mjs` from the pages that shipped. Indexable
+  pages are in it; noindex pages and pages whose canonical points elsewhere are not. `lastmod` comes from the page's
+  `updated` date (pass `updated="YYYY-MM-DD"` to `Base.astro`). Never hand-edit a sitemap. A new page is listed as
+  soon as it builds, and `npm test` fails if any indexable page is missing.
+- On every push to `master`, `.github/workflows/indexnow.yml` sends IndexNow (Bing and others) the URLs that are new
+  or changed, after Vercel serves the new sitemap. Google reads the sitemap from `robots.txt` and Search Console.
+
 ## Change log
+
+- 2026-11-26: Sitemap now builds itself from each build, with lastmod per page; the hand-made sitemap.xml and
+  sitemap-ai.xml are gone (/sitemap-ai.xml redirects). Added IndexNow on deploy. Why: Russell asked for the sitemap to
+  update itself when a page is published. Proof: `npm test` 16 of 16; removing a page from the sitemap fails the test.
 
 - 2026-11-26 (branch feature/finance-pages, not live): Rebuilt 5 AI-work pages (AI consulting services hub,
   document processing, invoice processing, underwriting, credit scoring) to a publish gate: a verdict, Zavient-only

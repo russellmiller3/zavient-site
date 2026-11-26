@@ -66,7 +66,7 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
 
   // Publish gate from the site architecture doc (26 Nov 2026): measured demand, one fact only Zavient has, one fact
   // its siblings don't have, a real updated date. A page that fails any check renders noindex and stays out of the
-  // sitemap (src/pages/ai-work/[slug].astro, src/pages/sitemap-ai.xml.js).
+  // sitemap (src/pages/ai-work/[slug].astro, src/integrations/sitemap.mjs).
   const k = d.keyword || {};
   if (!t.skipDemand && !((k.searches || 0) >= DEMAND.searches || ((k.searches || 0) >= DEMAND.nicheSearches && (k.cpc || 0) >= DEMAND.nicheCpc)))
     fail.push(`no measured demand: "${k.phrase || '?'}" has ${k.searches || 0} searches at $${k.cpc || 0}; need ${DEMAND.searches}+, or ${DEMAND.nicheSearches}+ at $${DEMAND.nicheCpc}+ a click`);

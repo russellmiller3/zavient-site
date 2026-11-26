@@ -1,0 +1,33 @@
+# After each push to master (each publish), build this version and the one before it, and send IndexNow the URLs
+# whose pages are new or changed. It waits until Vercel serves the new sitemap first. See scripts/indexnow.mjs.
+name: IndexNow
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+    inputs:
+      all:
+        description: Submit every URL in the sitemap
+        type: boolean
+        default: false
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - name: Build the previous version
+        if: ${{ !inputs.all }}
+        run: |
+          if git rev-parse HEAD^ >/dev/null 2>&1; then
+            git worktree add ../prev HEAD^
+            ln -s "$PWD/node_modules" ../prev/node_modules
+            (cd ../prev && npx astro build) && mv ../prev/dist ../dist-old || echo "Previous version did not build; sending every URL."
+          fi
+      - run: npx astro build
+      - run: node scripts/indexnow.mjs --new dist --old ../dist-old --wait ${{ inputs.all && '--all' || '' }}
