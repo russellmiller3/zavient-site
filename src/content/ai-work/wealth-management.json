@@ -1,0 +1,765 @@
+{
+ "title": "AI for wealth management: what are RIAs actually using it for?",
+ "description": "AI for wealth management at RIAs: where it pays first, what AI notetakers cost and keep, the SEC rules that apply, and who signs off.",
+ "type": "industry",
+ "templateVersion": 1,
+ "topic": "AI for wealth management",
+ "job": "AI for wealth management",
+ "industry": "wealth management and registered investment advisers",
+ "index": true,
+ "verdict": [
+  "Most advisers now use AI, mainly for meeting notes, follow-up and drafting client emails.[^1][^2]",
+  "No AI-specific Securities and Exchange Commission (SEC) rule exists; examiners apply existing duties on marketing, records and privacy.[^3][^4]",
+  "AI meeting notes can be required records, so check each tool's retention against the five-year rule.[^5][^6]",
+  "Advisors keep the client and the sign-off; most registered investment advisers (RIAs) plan to add advisors as AI frees time.[^7][^8]",
+  "Deepfake voice and video requests to move money are now a named SEC exam focus.[^9][^3]"
+ ],
+ "onPage": [
+  {
+   "to": "human-role",
+   "text": "Who signs off on notes, emails, advice and money movement"
+  },
+  {
+   "to": "ranked",
+   "text": "Six AI jobs at an RIA, ranked by payoff then effort"
+  },
+  {
+   "to": "own-data",
+   "text": "Our check of what advisor AI notetakers cost and what they keep"
+  },
+  {
+   "to": "table-1",
+   "text": "Adoption surveys, with who was actually asked"
+  },
+  {
+   "to": "table-2",
+   "text": "Where an advisor's week goes today"
+  },
+  {
+   "to": "rules",
+   "text": "The SEC, FINRA, CFP Board and state rules that apply"
+  },
+  {
+   "to": "what-goes-wrong",
+   "text": "Where it goes wrong, and the fix for each"
+  }
+ ],
+ "headings": {
+  "ranked": "Where does AI pay first at an RIA or wealth firm?",
+  "rules": "Which rules apply to AI at an RIA?",
+  "what-goes-wrong": "Where does AI go wrong at RIAs and wealth firms?",
+  "faq": "Questions RIA leaders ask about AI",
+  "buy-or-build": "Should an RIA buy AI tools or build its own?"
+ },
+ "summary": "AI for wealth management drafts and summarizes advisor work: meeting notes, follow-up emails and review prep.[^2][^10] Advisors still own the advice and the final work product.[^7] The record makes or breaks it, because AI notes can be required books and records.[^5][^6]",
+ "humanRole": [
+  "Your team stays in charge of anything a client sees: the advisor edits AI notes and approves each follow-up before it goes.[^7] Vendors such as Jump build that approval step in (vendor claim).[^11]",
+  "The advisor makes every recommendation; AI gathers data and drafts options, and the fiduciary duty stays with the adviser.[^12] Planners check each figure, since tested models slip on multi-step financial math.[^13][^14]",
+  "The chief compliance officer (CCO) sets retention, reviews AI vendors and keeps the AI inventory.[^5][^15] Most firms already keep that inventory: 86% in the Investment Adviser Association (IAA) survey.[^16]",
+  "Operations releases money or changes an address only after calling the client back on a number already on file.[^17][^18] Deepfake voice and video requests are a named SEC exam focus.[^9]"
+ ],
+ "ranked": [
+  {
+   "name": "Meeting prep, notes and follow-up",
+   "why": "AI pays first in the hours around each meeting: Kitces found 5.3 hours of prep and 6 of follow-through a week.[^19] Notetakers are the top AI tool, used by 42.86% of advisors in T3's survey.[^2]",
+   "payoff": "Advisor hours a week on prep and follow-up, before and after."
+  },
+  {
+   "name": "Customer relationship management (CRM) entry, forms and account opening",
+   "slug": "ai-document-processing",
+   "why": "Vendors say 20-40% of paper account forms come back not in good order (NIGO).[^20][^21] One firm reports its NIGO rate fell from 35% to 11.5% after moving to digital forms.[^22]",
+   "payoff": "NIGO rate on your own forms, and days from signed paperwork to a funded account."
+  },
+  {
+   "name": "Drafting client emails and letters",
+   "why": "Among RIAs, 49% already use AI to draft client communications, per AssetMark's survey of 400 advisors.[^10] It is the top use worldwide too, at 51% in the Financial Planning Standards Board (FPSB) survey.[^23]",
+   "payoff": "Minutes per client email, and compliance edits per draft."
+  },
+  {
+   "name": "Tax return and plan document review",
+   "why": "A new financial plan takes about 18 hours, per the Kitces Report.[^24] Tools now read returns into checklists; Hazel lists a tax agent at $160 a month (vendor price).[^25]",
+   "payoff": "Planner hours per new plan, and errors the planner catches."
+  },
+  {
+   "name": "Compliance surveillance and archive review",
+   "why": "In the IAA survey, 60% of CCOs hold more than one role, and 72% of firms stepped up testing of AI use.[^16][^26] The SEC lists compliance monitoring and surveillance among the AI uses it is studying.[^3]",
+   "payoff": "Share of captured messages reviewed each month, and hours per review."
+  },
+  {
+   "name": "Fraud checks on money movement",
+   "why": "The SEC's 2027 exam priorities ask how firms prepare for AI phishing and deepfake voice and video.[^9][^3] Global regulators (IOSCO) and state regulators (NASAA) both warned about AI-enabled scams in 2026.[^27][^28]",
+   "payoff": "Share of wire and address-change requests verified by callback."
+  }
+ ],
+ "ownData": {
+  "title": "What do advisor AI notetakers cost, and what do they keep?",
+  "intro": "List prices run $39 to $184 per advisor a month, and kept transcripts range from 6 months to whatever the firm sets.[^29][^30][^31] We read each vendor's public pricing, security and FAQ pages on 26 Nov 2026; every cell is the vendor's own statement. For a 40-advisor firm, that is about $19,000 to $88,000 a year before add-ons (our arithmetic on list prices).",
+  "headers": [
+   "Tool",
+   "List price per advisor a month",
+   "Keeps audio?",
+   "Retention setting",
+   "Archive named",
+   "Says no training on your data?",
+   "SOC 2 security audit"
+  ],
+  "rows": [
+   [
+    "Zocks",
+    "$67, $117 or $184 billed annually; $25 admin seat[^30]",
+    "No; vendor says no meeting recordings[^30]",
+    "Customizable[^30]",
+    "Proofpoint, Global Relay; FAQ also names Smarsh[^30]",
+    "Not stated on the pricing page",
+    "Type II[^30]"
+   ],
+   [
+    "Jump",
+    "$100 (Meet); add-ons $50 each[^32]",
+    "Optional; the firm chooses[^33][^34]",
+    "Configurable, from purge to years[^34]",
+    "Global Relay, Smarsh, Proofpoint[^32]",
+    "Yes; zero-retention terms with model providers[^11]",
+    "Type II[^34]"
+   ],
+   [
+    "Wealthbox AI Notetaker",
+    "$49 add-on, on top of a $65, $85 or $119 CRM plan[^35]",
+    "Records and transcribes[^36]",
+    "Not stated on the notetaker page",
+    "Pricing page lists compliant note archiving; connector not named[^35]",
+    "Not stated",
+    "Type II, per pricing page[^35]"
+   ],
+   [
+    "FinMate AI",
+    "$39 billed annually; Enterprise on request[^29]",
+    "Yes, kept 1 month[^31]",
+    "Transcripts and notes kept 6 months[^31]",
+    "Not stated",
+    "Yes[^31]",
+    "Type 2, plus ISO 27001[^31]"
+   ],
+   [
+    "Hazel (Altruist)",
+    "$60 platform; tax agent $160, planning agent $300[^25]",
+    "The firm chooses[^37]",
+    "The firm chooses[^37]",
+    "Not stated",
+    "Yes; zero retention with AI providers[^37]",
+    "Type II; penetration test Aug 2026[^37]"
+   ],
+   [
+    "Zeplyn",
+    "Not published",
+    "No[^38]",
+    "Custom, with an off-the-record mode[^38]",
+    "Not stated",
+    "Yes[^38]",
+    "Type II[^38]"
+   ],
+   [
+    "Microsoft 365 Copilot (general tool, for contrast)",
+    "$21 a user add-on[^39]",
+    "Set by your Teams settings",
+    "Set in Microsoft Purview",
+    "Through Purview or third-party capture",
+    "Yes; Microsoft says business data is not used to train its models[^39]",
+    "Covered by Microsoft's compliance reports"
+   ]
+  ],
+  "note": "Zavient check of vendor pages on 26 Nov 2026, list prices only; discounts, annual terms and add-ons differ. A cell marked not stated means we did not find it on public pages, not that it is missing. These are vendor claims we did not test, and vendors change pages often."
+ },
+ "tables": [
+  {
+   "title": "How many advisers use AI, and who was asked?",
+   "intro": "Between half and nine in ten advisers use AI, depending on who was asked.[^2][^10] Each survey asked a different group, so compare them with care.",
+   "headers": [
+    "Survey",
+    "Who answered",
+    "What it found"
+   ],
+   "rows": [
+    {
+     "name": "IAA, ACA and YCC compliance testing survey, 2026",
+     "url": "https://www.investmentadviser.org/wp-content/uploads/2026/07/2026-Investment-Management-Compliance-Testing-Survey-Results.pdf",
+     "cells": [
+      "411 compliance staff[^26]",
+      "80% formally adopted AI tools; 86% have an AI use policy and 59% an AI committee[^26][^16]"
+     ]
+    },
+    {
+     "name": "Schwab Advisor AI in Action, 2026",
+     "url": "https://www.aboutschwab.com/advisor-ai-in-action-2026",
+     "cells": [
+      "533 advisors[^1]",
+      "63% use AI; about 1 in 10 use AI agents[^1]"
+     ]
+    },
+    {
+     "name": "T3 and Inside Information software survey, 2026",
+     "url": "https://www.fiduciaryvoices.com/uploads/1/0/6/6/10668420/2026_t3_ii_survey_nr_final.pdf",
+     "cells": [
+      "2,906 respondents[^2]",
+      "52% use AI; notetakers lead at 42.86%[^2]"
+     ]
+    },
+    {
+     "name": "AssetMark Advisor Insights, Sep 2026",
+     "url": "https://www.assetmark.com/resources/blog/press-release/advisor-insights-report-ai/",
+     "cells": [
+      "400 advisors[^10]",
+      "85% have adopted AI, 91% at RIAs[^10]"
+     ]
+    },
+    {
+     "name": "FPSB global report, 2026",
+     "url": "https://fpsb.org/wp-content/uploads/2026/10/261007_ppt_2026-Report_Final.pdf",
+     "cells": [
+      "8,095 planners worldwide[^23]",
+      "Client communication is the top AI use, at 51%[^23]"
+     ]
+    },
+    {
+     "name": "Cerulli Associates",
+     "url": "https://www.cerulli.com/press-releases/advisor-headcount-set-to-grow-as-ai-expands-capacity",
+     "cells": [
+      "68 RIAs[^8]",
+      "64% say AI already cut admin work; 73% plan to add junior advisors[^8]"
+     ]
+    }
+   ],
+   "note": "Sample sizes are from each publisher's own release. The surveys use different questions, so their rates are not directly comparable."
+  },
+  {
+   "title": "Where does an advisor's time go today?",
+   "intro": "Most advisor time goes outside the client meeting itself.[^19][^24] These Kitces studies are the time base that AI tools work against.",
+   "headers": [
+    "Measure",
+    "Finding",
+    "Study"
+   ],
+   "rows": [
+    {
+     "name": "Senior advisor time in client meetings",
+     "cells": [
+      "16-17%, against a 30-35% target[^24]",
+      "Kitces Report, 2024"
+     ]
+    },
+    {
+     "name": "Time on tasks that could be delegated",
+     "cells": [
+      "About 43%[^40]",
+      "Kitces Report, 2020"
+     ]
+    },
+    {
+     "name": "Hours to build a new plan",
+     "cells": [
+      "About 18[^24]",
+      "Kitces Report, 2024"
+     ]
+    },
+    {
+     "name": "A week's meeting work",
+     "cells": [
+      "8.8 hours in meetings; 5.3 prep, 6.6 analysis, 6 follow-through[^19]",
+      "Kitces time study, 2018"
+     ]
+    }
+   ],
+   "note": "Kitces surveys planners who answer its studies, so smaller firms may differ. The 2018 figures predate today's notetakers."
+  }
+ ],
+ "rules": [
+  {
+   "name": "Existing Advisers Act duties (no AI-specific SEC rule)",
+   "url": "https://www.sec.gov/newsroom/press-releases/2026-109-sec-announces-fiscal-year-2027-examination-priorities",
+   "status": "In force; no AI rule as of 26 Nov 2026",
+   "what": "Your existing rules apply to AI; the SEC calls them technology-neutral obligations.[^3] It withdrew its 2023 predictive data analytics proposal on 12 Jun 2025.[^41][^42] A congressional report notes the SEC has issued no AI-specific rules.[^4]"
+  },
+  {
+   "name": "SEC Fiscal Year 2027 Examination Priorities",
+   "url": "https://www.sec.gov/files/2027-exam-priorities.pdf",
+   "status": "Published 23 Oct 2026",
+   "what": "Examiners will study AI use in research, drafting, client communications, portfolio management and surveillance.[^3] They will check readiness for AI phishing and deepfake voice and video.[^9] Law firms report requests for AI policies, training, disclosures and data security.[^43]"
+  },
+  {
+   "name": "Marketing Rule 206(4)-1, and Form ADV disclosures",
+   "url": "https://www.sec.gov/rules-regulations/staff-guidance/division-investment-management-frequently-asked-questions/marketing-compliance-frequently-asked-questions",
+   "status": "In force",
+   "what": "AI claims in your advertising must be true and backed by evidence; the SEC settled with three advisers over false AI claims in 2024.[^44][^45] Delphia's false claims also appeared in its Form ADV brochure, so check that too.[^46]"
+  },
+  {
+   "name": "Books and records Rule 204-2",
+   "url": "https://e-cfr.ecfr.gov/current/title-17/chapter-II/part-275/section-275.204-2",
+   "status": "In force",
+   "what": "Written communications about advice are required records, kept 5 years, and the rule covers transcribed information of any type.[^5] Cooley suggests sorting AI notes into required and not required by category.[^6] Deleting a required record can itself be the violation.[^6]"
+  },
+  {
+   "name": "Regulation S-P amendments",
+   "url": "https://www.federalregister.gov/documents/2024/06/03/2024-11116/regulation-s-p-privacy-of-consumer-financial-information-and-safeguarding-customer-information",
+   "status": "Larger firms from 3 Dec 2025; smaller from 3 Jun 2026",
+   "what": "You need an incident response program and oversight of service providers that handle customer data, AI vendors included.[^15][^47] Providers must tell you of a breach within 72 hours; affected customers get notice within 30 days.[^48]"
+  },
+  {
+   "name": "FINRA rules (dual registrants)",
+   "url": "https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/gen-ai",
+   "status": "In force; 2026 oversight report",
+   "what": "The Financial Industry Regulatory Authority (FINRA) says its rules are technology-neutral and apply to generative AI.[^49] Its 2026 report describes human review, logs of prompts and outputs, and model version tracking.[^50]"
+  },
+  {
+   "name": "CFP Board Standards and Generative AI Ethics Guide",
+   "url": "https://www.cfp.net/ethics/compliance-resources/2025/02/generative-ai-ethics-guide",
+   "status": "In force; guide issued Feb 2025",
+   "what": "AI cannot replace a Certified Financial Planner (CFP) professional's care, skill, prudence and diligence, says the guide.[^7] Duties of care and confidentiality apply to each AI tool you use.[^51]"
+  },
+  {
+   "name": "NASAA and state regulators",
+   "url": "https://www.nasaa.org/wp-content/uploads/2026/10/IA-Section-2026-Report-FINAL.pdf",
+   "status": "Guidance in draft (Oct 2026)",
+   "what": "NASAA's adviser section is drafting guidance on AI disclosure, information safeguards, bias and conflicts.[^52] Its 2025 compliance note calls for strict human oversight of AI.[^53] State-registered advisers should watch for it."
+  }
+ ],
+ "watchOuts": [
+  "AI goes wrong at RIAs in claims, records, fraud, unapproved tools and math, and false claims drew fines first.[^44][^45] The SEC fined Delphia $225,000 and Global Predictions $175,000; say only what your tools really do.[^46][^54]",
+  "Notes that never reach your archive: FinMate's page says it keeps transcripts 6 months, and required records are kept 5 years.[^31][^5] Check each tool's retention against Rule 204-2, and set exports to your archive before go-live.[^6]",
+  "Deepfake requests to move money or change an address, a named SEC exam focus.[^9][^27] Call the client back on a number already on file before acting, as the SEC warns of impersonators.[^17][^18]",
+  "Shadow AI: 82% of advisors who use AI experiment on their own, per Schwab.[^1] NASAA warns about client data in public tools; an acceptable use policy and an AI inventory are the fix.[^53][^16]",
+  "Wrong numbers in plans: in one benchmark, accuracy fell from over 90% on basic tasks to about 40% on complex ones.[^13] Leading models scored about 70% on personal finance questions, so a planner checks every figure.[^55]",
+  "Agents with too much reach: FINRA names autonomy, scope and auditability as agent risks.[^56][^50] Limit what an agent can touch, and log its prompts and outputs.[^50]"
+ ],
+ "faq": [
+  {
+   "q": "Can advisors use ChatGPT with client data?",
+   "a": "Not on personal accounts; use a business plan whose terms bar training on your data and that your vendor review covers.[^15][^53] One r/CFP advisor said archiving needed an enterprise plan's compliance tools.[^57]"
+  },
+  {
+   "q": "Do AI meeting notes have to be archived?",
+   "a": "Often, yes: notes that record advice or client communications can be required records under Rule 204-2, kept 5 years.[^5] Cooley suggests deciding by category, with counsel.[^6]"
+  },
+  {
+   "q": "Do we have to record client meetings to use an AI notetaker?",
+   "a": "Not in one vendor's reading: Jump says neither Rule 204-2 nor FINRA Rule 4511(b) requires a recording.[^33] Advisors on r/CFP say some compliance teams approved tools because no audio is kept.[^57]"
+  },
+  {
+   "q": "Will AI replace financial advisors?",
+   "a": "No sign of it yet: 73% of RIAs in a Cerulli study plan to add junior advisors as AI expands capacity.[^8] McKinsey projects a shortfall of about 100,000 advisors by 2034.[^58]"
+  },
+  {
+   "q": "Where should an RIA start with AI?",
+   "a": "Start with meeting notes for one team of advisors, since notetakers are the most-used AI tool.[^2] Set retention and archive exports first, then compare prep and follow-up hours before and after.[^6][^19]"
+  },
+  {
+   "q": "How much time does AI save financial advisors?",
+   "a": "Over half of AI adopters in AssetMark's survey of 400 advisors save 4 or more hours a week.[^10] McKinsey estimates generative AI could save 6-12% of advisor time.[^58]"
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Buy first: tools for notes, CRM entry and drafting already list $39 to $184 per advisor a month.[^29][^30] Jump and Zocks name archive connections to Global Relay, Smarsh or Proofpoint.[^30][^32] Zavient's view: check the AI already in your CRM or custodian first.[^35][^25]",
+  "build": "Zavient's view: build only where your data and workflow are the edge, such as onboarding across CRM, custodian and planning tools. Few firms have the data base for it: T3 found 3.27% use a data warehouse.[^2] Governance is the build every firm needs, and 86% of surveyed firms already have an AI policy.[^16]"
+ },
+ "pickElse": [
+  "Pick something else when your CRM already sells the job: Wealthbox's AI Notetaker is a $49 add-on that keeps notes in the CRM (vendor claim).[^35][^36]",
+  "Your custodian already has AI: Hazel runs on Altruist, from $60 a month (vendor price).[^25]",
+  "Staff only need internal drafting and summaries: Microsoft 365 Copilot is a $21 a user add-on (standard price, read 26 Nov 2026).[^39]",
+  "Advisors are buried in admin and have no support staff: Kitces found support staff cut admin time more than technology did.[^59]"
+ ],
+ "resources": [
+  {
+   "name": "SEC, Fiscal Year 2027 Examination Priorities",
+   "url": "https://www.sec.gov/files/2027-exam-priorities.pdf",
+   "what": "What examiners will ask about AI, fraud and records this year."
+  },
+  {
+   "name": "CFP Board, Generative AI Ethics Guide",
+   "url": "https://www.cfp.net/ethics/compliance-resources/2025/02/generative-ai-ethics-guide",
+   "what": "Short guide to the duties that apply when planners use AI."
+  },
+  {
+   "name": "FINRA, 2026 Oversight Report: generative AI",
+   "url": "https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/gen-ai",
+   "what": "Controls other firms use: human review, prompt logs and model tracking."
+  },
+  {
+   "name": "SEC, Regulation S-P small entity compliance guide",
+   "url": "https://www.sec.gov/files/rules/final/2024/regulation-s-p-small-entity-compliance-guide.pdf",
+   "what": "Plain-language checklist for vendor oversight and breach notice."
+  },
+  {
+   "name": "IAA, 2026 compliance testing survey results",
+   "url": "https://www.investmentadviser.org/wp-content/uploads/2026/07/2026-Investment-Management-Compliance-Testing-Survey-Results.pdf",
+   "what": "Benchmark your AI policy, inventory and testing against 411 firms."
+  }
+ ],
+ "stats": [
+  {
+   "num": "80%",
+   "label": "of surveyed compliance staff say their firm formally adopted AI tools.[^26]",
+   "source": "IAA, ACA and YCC 2026 survey, 411 compliance staff"
+  },
+  {
+   "num": "42.86%",
+   "label": "of surveyed advisors use AI notetakers, the top AI category.[^2]",
+   "source": "T3 and Inside Information 2026, 2,906 respondents"
+  },
+  {
+   "num": "16-17%",
+   "label": "of senior advisor time goes to client meetings, against a 30-35% target.[^24]",
+   "source": "Kitces Report, 2024"
+  },
+  {
+   "num": "$39 to $184",
+   "label": "per advisor a month: list prices of five advisor notetakers with public prices.[^29][^30]",
+   "source": "Zavient check of vendor pages, 26 Nov 2026"
+  },
+  {
+   "num": "5 years",
+   "label": "is how long required adviser records are kept under Rule 204-2.[^5]",
+   "source": "17 CFR 275.204-2 (eCFR)"
+  },
+  {
+   "num": "72 hours",
+   "label": "is the window for a service provider to report a breach under amended Reg S-P.[^48]",
+   "source": "SEC Reg S-P small entity compliance guide"
+  }
+ ],
+ "sources": [
+  {
+   "name": "Charles Schwab, Advisor AI in Action 2026",
+   "url": "https://www.aboutschwab.com/advisor-ai-in-action-2026",
+   "what": "Survey of 533 advisors: 63% use AI; about 1 in 10 use agents; 82% of users experiment on their own."
+  },
+  {
+   "name": "T3 and Inside Information, 2026 Advisor Software Survey (press release)",
+   "url": "https://www.fiduciaryvoices.com/uploads/1/0/6/6/10668420/2026_t3_ii_survey_nr_final.pdf",
+   "what": "2,906 respondents: 52% use AI; AI notetakers are the top AI category at 42.86%; 3.27% use a data warehouse."
+  },
+  {
+   "name": "SEC, press release 2026-109: FY2027 examination priorities (23 Oct 2026)",
+   "url": "https://www.sec.gov/newsroom/press-releases/2026-109-sec-announces-fiscal-year-2027-examination-priorities",
+   "what": "Examiners are studying how AI influences outcomes and whether firms still meet existing, technology-neutral obligations."
+  },
+  {
+   "name": "Congressional Research Service, In Focus IF13103 (19 Nov 2026)",
+   "url": "https://www.congress.gov/crs_external_products/IF/HTML/IF13103.html",
+   "what": "Notes that the SEC has issued no AI-specific rules."
+  },
+  {
+   "name": "eCFR, 17 CFR 275.204-2, books and records to be maintained by investment advisers",
+   "url": "https://e-cfr.ecfr.gov/current/title-17/chapter-II/part-275/section-275.204-2",
+   "what": "Rule text: written communications relating to advice are required records; records include transcribed information of any type; kept 5 years."
+  },
+  {
+   "name": "Cooley, AI notetakers and the books and records rule",
+   "url": "https://thefundlawyer.cooley.com/ai-notetakers-and-the-books-and-records-rule-what-registered-advisers-actually-need-to-think-about",
+   "what": "Law-firm view: decide which AI notes are required records by category; deleting a required record may itself be the violation."
+  },
+  {
+   "name": "CFP Board, Generative AI Ethics Guide (Feb 2025)",
+   "url": "https://www.cfp.net/ethics/compliance-resources/2025/02/generative-ai-ethics-guide",
+   "what": "AI cannot replace a CFP professional's care, skill, prudence and diligence; the professional is responsible for the final work product."
+  },
+  {
+   "name": "Cerulli Associates, Advisor headcount set to grow as AI expands capacity",
+   "url": "https://www.cerulli.com/press-releases/advisor-headcount-set-to-grow-as-ai-expands-capacity",
+   "what": "68 RIAs: 64% say AI already cut admin work; 73% plan to add junior advisors, 67% client service associates, 56% senior advisors."
+  },
+  {
+   "name": "SEC, Fiscal Year 2027 Examination Priorities (Oct 2026)",
+   "url": "https://www.sec.gov/files/2027-exam-priorities.pdf",
+   "what": "Exam priorities: AI used in research, drafting, client communications, portfolio management and surveillance; new focus on AI phishing and deepfake voice and video used for social engineering."
+  },
+  {
+   "name": "AssetMark, Advisor Insights report on AI (press release, Sep 2026)",
+   "url": "https://www.assetmark.com/resources/blog/press-release/advisor-insights-report-ai/",
+   "what": "Survey of 400 advisors: 85% have adopted AI, 91% at RIAs; over half of adopters save 4+ hours a week; 49% of RIAs use AI to draft client communications."
+  },
+  {
+   "name": "Jump, security FAQ (vendor)",
+   "url": "https://security.jump.ai/faq",
+   "what": "Vendor: a person approves output before it reaches a client; zero-retention terms with model providers; no training on customer data."
+  },
+  {
+   "name": "Proskauer, Five considerations for advisers implementing AI in investment decisions",
+   "url": "https://www.proskauer.com/blog/risk-3-five-considerations-for-advisers-implementing-ai-in-investment-decisions",
+   "what": "Law-firm view: the SEC will likely review AI-driven advice under the adviser's fiduciary duty of care."
+  },
+  {
+   "name": "FinMaster benchmark, ACL Findings 2026",
+   "url": "http://aclanthology.org/2026.findings-acl.385",
+   "what": "Model accuracy fell from over 90% on basic financial tasks to about 40% on complex multi-step ones."
+  },
+  {
+   "name": "Hofmann et al., Can AI generate suitable financial advice in the Swiss context? (SSRN, Jan 2026)",
+   "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6126148",
+   "what": "The best models still missed about a quarter of Swiss financial planning exam questions."
+  },
+  {
+   "name": "Federal Register, Regulation S-P amendments (3 Jun 2024)",
+   "url": "https://www.federalregister.gov/documents/2024/06/03/2024-11116/regulation-s-p-privacy-of-consumer-financial-information-and-safeguarding-customer-information",
+   "what": "Final rule: incident response program, service provider oversight, and customer notice of breaches."
+  },
+  {
+   "name": "IAA, ACA and YCC, 2026 Investment Management Compliance Testing Survey results (Jul 2026)",
+   "url": "https://www.investmentadviser.org/wp-content/uploads/2026/07/2026-Investment-Management-Compliance-Testing-Survey-Results.pdf",
+   "what": "86% have an AI acceptable use policy; 86% keep an AI inventory; 59% have an AI committee; 60% of CCOs hold multiple roles; 72% increased testing of AI use."
+  },
+  {
+   "name": "Investor.gov (SEC), Beware fraudsters impersonating investment professionals and firms",
+   "url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/beware-fraudsters-impersonating-investment-professionals-and-firms-investor-alert",
+   "what": "Investor alert on fraudsters posing as investment professionals and firms."
+  },
+  {
+   "name": "FINRA, 2026 Annual Regulatory Oversight Report: cybersecurity",
+   "url": "https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/cybersecurity",
+   "what": "Impersonation and account takeover risks, and controls such as verifying requests."
+  },
+  {
+   "name": "Kitces, How do financial advisors spend their time? (2018 study)",
+   "url": "https://www.kitces.com/blog/how-do-financial-advisors-spend-time-research-study-productivity-capacity-efficiency/",
+   "what": "Average week: 8.8 hours in client meetings, 5.3 hours of prep, 6.6 hours of analysis and 6 hours of follow-through."
+  },
+  {
+   "name": "Jiffy.ai, What is NIGO? (Aug 2026; vendor)",
+   "url": "https://jiffy.ai/what-is-nigo-a-complete-guide-to-not-in-good-order-rates-in-wealth-management",
+   "what": "Vendor guide citing 20-40% not-in-good-order rates in paper processes."
+  },
+  {
+   "name": "Jump, blog on real-time account opening (14 Sep 2026; vendor)",
+   "url": "https://jump.ai/blog/open-accounts-in-minutes-with-real-time-account-opening",
+   "what": "Vendor blog citing 25-45% not-in-good-order rates on account paperwork."
+  },
+  {
+   "name": "The Pacific Financial Group, business case study (firm's own claim)",
+   "url": "https://www.tpfg.com/hubfs/Business%20Case%20Study%20GPS-1%20(1).pdf?hsLang=en",
+   "what": "The firm reports its not-in-good-order rate fell from 35% to 11.5% after moving to digital forms."
+  },
+  {
+   "name": "FPSB, 2026 global financial planning report (Oct 2026)",
+   "url": "https://fpsb.org/wp-content/uploads/2026/10/261007_ppt_2026-Report_Final.pdf",
+   "what": "8,095 planners worldwide: client communication is the top AI use at 51%; market research 42%."
+  },
+  {
+   "name": "Kitces Report Vol 2 2024, How financial planners actually do financial planning",
+   "url": "https://www.kitces.com/wp-content/uploads/2025/03/The-Kitces-Report-How-Financial-Planners-Actually-Do-Financial-Planning-Vol-2-2024-2.pdf",
+   "what": "Senior advisors spend 16-17% of their time in client meetings, against a 30-35% target; a new plan takes about 18 hours."
+  },
+  {
+   "name": "Hazel (Altruist), pricing (vendor; prices read 26 Nov 2026)",
+   "url": "https://hazel.ai/pricing",
+   "what": "Vendor: $60 platform; tax agent $160 and planning agent $300 a month. read 26 Nov 2026."
+  },
+  {
+   "name": "Investment Adviser Association, press release on the 2026 Investment Management Compliance Testing survey",
+   "url": "https://www.investmentadviser.org/iaatoday/press-release/survey-ai-dominates-compliance-priorities-at-historic-margin-as-firms-move-from-awareness-to-action",
+   "what": "IAA, ACA and YCC survey of 411 compliance staff: AI is the top compliance topic; 80% say their firm formally adopted AI tools."
+  },
+  {
+   "name": "IOSCO, report on AI-enabled fraud (Nov 2026)",
+   "url": "https://www.iosco.org/library/pubdocs/pdf/IOSCOPD831.pdf",
+   "what": "Global securities regulators' report on scams that use AI, including impersonation."
+  },
+  {
+   "name": "NASAA, Informed Investor Advisory: AI investment scams (Sep 2026)",
+   "url": "https://www.nasaa.org/82332/informed-investor-advisory-ai-investment-scams",
+   "what": "State regulators warn investors about AI-enabled scams."
+  },
+  {
+   "name": "FinMate AI, pricing (vendor; prices read 26 Nov 2026)",
+   "url": "https://finmate.ai/pricing",
+   "what": "Vendor: $39 an advisor a month billed annually; Enterprise priced on request. read 26 Nov 2026."
+  },
+  {
+   "name": "Zocks, pricing and FAQ (vendor; prices read 26 Nov 2026)",
+   "url": "https://zocks.io/pricing",
+   "what": "Vendor: $67, $117 or $184 a user a month billed annually ($80, $140, $220 monthly); $25 admin seat; no meeting recordings; customizable retention; Proofpoint, Global Relay and Smarsh named; SOC 2 Type II. read 26 Nov 2026."
+  },
+  {
+   "name": "FinMate AI, security page (vendor)",
+   "url": "https://finmate.ai/security",
+   "what": "Vendor: transcripts and notes kept 6 months; audio and video 1 month; no training on client data; SOC 2 Type 2 and ISO 27001."
+  },
+  {
+   "name": "Jump, pricing (vendor; prices read 26 Nov 2026)",
+   "url": "https://jump.ai/pricing",
+   "what": "Vendor: Meet at $100 an advisor a month; add-ons $50 each; archive connections to Global Relay, Smarsh and Proofpoint. read 26 Nov 2026."
+  },
+  {
+   "name": "Jump, compliance page (vendor)",
+   "url": "https://jump.ai/compliance",
+   "what": "Vendor's reading: neither Rule 204-2 nor FINRA Rule 4511(b) requires you to create a recording; audio optional."
+  },
+  {
+   "name": "Jump, security page (vendor)",
+   "url": "https://jump.ai/security",
+   "what": "Vendor: configurable retention from purge to years; optional audio; SOC 2 Type II."
+  },
+  {
+   "name": "Wealthbox, pricing (vendor; prices read 26 Nov 2026)",
+   "url": "https://wealthbox.com/pricing",
+   "what": "Vendor: CRM plans $65, $85 or $119 a user a month; AI Notetaker add-on $49; lists compliant note archiving and SOC 2 Type II. read 26 Nov 2026."
+  },
+  {
+   "name": "Wealthbox, AI Notetaker product page (vendor)",
+   "url": "https://wealthbox.com/products/ai-notetaker",
+   "what": "Vendor: records and transcribes meetings into notes kept in the CRM."
+  },
+  {
+   "name": "Hazel, security and trust center (vendor)",
+   "url": "https://hazel.ai/security",
+   "what": "Vendor: firm-controlled recording and retention; zero retention with AI providers; SOC 2 Type II; penetration test Aug 2026."
+  },
+  {
+   "name": "Zeplyn, security page (vendor)",
+   "url": "https://zeplyn.ai/security",
+   "what": "Vendor: no audio kept; custom retention with an off-the-record mode; no training on client data; SOC 2 Type II. No public price."
+  },
+  {
+   "name": "Microsoft 365 Copilot business pricing (vendor; prices read 26 Nov 2026)",
+   "url": "https://www.microsoft.com/en-us/copilot/pricing/business",
+   "what": "Vendor: Copilot add-on $21 a user a month (standard price); Microsoft says business data is not used to train its models. read 26 Nov 2026."
+  },
+  {
+   "name": "Kitces Report Vol 1 2020, How financial planners do financial planning",
+   "url": "https://www.kitces.com/wp-content/uploads/2020/08/Kitces-Report-Volume-1-2020-How-Financial-Planners-Do-Financial-Planning-UPDATED.pdf",
+   "what": "Advisors spend about 43% of their time on tasks that could be delegated."
+  },
+  {
+   "name": "SEC, withdrawal of proposal S7-12-23 on predictive data analytics (12 Jun 2025)",
+   "url": "https://www.sec.gov/rules-regulations/2025/06/s7-12-23",
+   "what": "The SEC withdrew its 2023 proposal on conflicts of interest from predictive data analytics."
+  },
+  {
+   "name": "Federal Register, Withdrawal of Proposed Regulatory Actions (17 Jun 2025, 90 FR 25531)",
+   "url": "https://www.federalregister.gov/documents/2025/06/17/2025-11110/withdrawal-of-proposed-regulatory-actions",
+   "what": "Formal notice withdrawing the predictive data analytics proposal, among others."
+  },
+  {
+   "name": "Simpson Thacher, SEC's 2027 examination priorities (9 Nov 2026)",
+   "url": "https://www.stblaw.com/about-us/publications/view/2026/11/09/sec-s-2027-examination-priorities-notable-developments-emerging-themes-and-recent-examination-insights",
+   "what": "Law-firm summary: exam requests cover AI policies and training, AI disclosures in marketing, data sources and providers, AI data security and governance."
+  },
+  {
+   "name": "SEC, press release 2024-36: Delphia and Global Predictions (18 Mar 2024)",
+   "url": "https://www.sec.gov/newsroom/press-releases/2024-36",
+   "what": "Two advisers settled charges of false and misleading statements about their use of AI; $225,000 and $175,000 in penalties."
+  },
+  {
+   "name": "SEC, press release 2024-167: Rimar Capital",
+   "url": "https://www.sec.gov/newsroom/press-releases/2024-167",
+   "what": "An adviser and its owners settled charges of misleading claims about AI-driven trading; $310,000 in total."
+  },
+  {
+   "name": "SEC, order In the Matter of Delphia (USA) Inc., IA-6573",
+   "url": "https://www.sec.gov/files/litigation/admin/2024/ia-6573.pdf",
+   "what": "Delphia's AI claims appeared in its Form ADV brochure, among other places; $225,000 civil penalty."
+  },
+  {
+   "name": "Davis Wright Tremaine, Reg S-P deadline for smaller entities (May 2026)",
+   "url": "https://www.dwt.com/blogs/privacy--security-law-blog/2026/05/reg-sp-smaller-entities-june-2026-deadline",
+   "what": "Law-firm summary: larger entities complied by 3 Dec 2025, smaller ones by 3 Jun 2026."
+  },
+  {
+   "name": "SEC, Regulation S-P small entity compliance guide",
+   "url": "https://www.sec.gov/files/rules/final/2024/regulation-s-p-small-entity-compliance-guide.pdf",
+   "what": "Service providers notify the firm within 72 hours; affected customers get notice within 30 days; smaller entities comply from 3 Jun 2026."
+  },
+  {
+   "name": "FINRA, Regulatory Notice 24-09",
+   "url": "https://www.finra.org/rules-guidance/notices/24-09",
+   "what": "FINRA's rules are technology-neutral and apply when member firms use generative AI."
+  },
+  {
+   "name": "FINRA, 2026 Annual Regulatory Oversight Report: generative AI",
+   "url": "https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/gen-ai",
+   "what": "Practices seen: human-in-the-loop review, logs of prompts and outputs, model version tracking; agent risks."
+  },
+  {
+   "name": "CFP Board, Code of Ethics and Standards of Conduct",
+   "url": "https://www.cfp.net/ethics/code-of-ethics-and-standards-of-conduct",
+   "what": "Duties of care and confidentiality, and the technology standard, apply to tools a CFP professional uses."
+  },
+  {
+   "name": "NASAA, Investment Adviser Section 2026 Annual Report (Oct 2026)",
+   "url": "https://www.nasaa.org/wp-content/uploads/2026/10/IA-Section-2026-Report-FINAL.pdf",
+   "what": "Page 14: the section is preparing draft guidance on adviser use of AI, covering disclosure, information safeguards, bias and conflicts."
+  },
+  {
+   "name": "NASAA, Compliance Matters: Using AI, risks and compliance considerations (29 Oct 2025)",
+   "url": "https://www.nasaa.org/industry-resources/investment-advisers/resources/compliance-matters-using-ai-risks-compliance-considerations",
+   "what": "Warns on reliability, fake AI claims and client data privacy; calls for strict human oversight."
+  },
+  {
+   "name": "SEC, order In the Matter of Global Predictions Inc., IA-6574",
+   "url": "https://www.sec.gov/files/litigation/admin/2024/ia-6574.pdf",
+   "what": "False AI claims on the adviser's website and social media; $175,000 civil penalty."
+  },
+  {
+   "name": "Applied Economics 57(60), Can AI help with your personal finances? (2025)",
+   "url": "https://www.tandfonline.com/doi/abs/10.1080/00036846.2025.2450384",
+   "what": "Leading large language models scored about 70% on personal finance questions."
+  },
+  {
+   "name": "FINRA, Observations on AI agents (blog, 27 Jan 2026)",
+   "url": "https://www.finra.org/media-center/blog/observations-on-ai-agents",
+   "what": "Names agent autonomy, scope and auditability as risks."
+  },
+  {
+   "name": "Reddit r/CFP, Anyone use note taking AI (practitioner thread)",
+   "url": "https://www.reddit.com/r/CFP/comments/1itkjdr/anyone_use_note_taking_ai",
+   "what": "Advisors report compliance approving notetakers that keep no audio; one says archiving needed an enterprise plan's compliance tools."
+  },
+  {
+   "name": "McKinsey, The looming advisor shortage in US wealth management",
+   "url": "https://www.mckinsey.com/industries/financial-services/our-insights/the-looming-advisor-shortage-in-us-wealth-management",
+   "what": "Projects a shortfall of about 100,000 advisors by 2034; generative AI could save 6-12% of advisor time."
+  },
+  {
+   "name": "Kitces, research on advisor technology, wellbeing and hiring",
+   "url": "https://www.kitces.com/blog/financial-advisor-technology-wellbeing-research-hiring-efficiency-automation",
+   "what": "Support staff did more than technology to cut advisors' admin hours."
+  }
+ ],
+ "related": [
+  "community-banks-credit-unions",
+  "ai-governance-consulting",
+  "ai-document-processing",
+  "ai-agent-development-services",
+  "ai-strategy-consulting"
+ ],
+ "offer": {
+  "heading": "Which two AI jobs will your advisors actually keep using?",
+  "body": "In a free 30-minute call we map where advisor hours go, from meeting prep to forms and client emails. You leave knowing which tools fit the CRM and custodian you already use. You also get the retention, archive and vendor checks your CCO will ask for."
+ },
+ "keyword": {
+  "phrase": "ai for wealth management",
+  "searches": 880,
+  "cpc": 21.36,
+  "difficulty": 5
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "COO of a 40-500 person RIA: the ranked list gives one job per line with a payoff to measure, and the human-role block names who signs off. Problem: SEC, RIA, CRM, IAA, FPSB, IOSCO, NASAA, FINRA and CFP were used before being spelled out, and SOC 2 was unexplained. Fixed: each spelled out on first use; the SOC 2 column now says it is a security audit. Also made the first line under each question heading answer it directly (summary, buy or build)."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Head of operations: owns account opening and money movement. The callback control covered wires only; it now covers address changes too, in both the human-role and watch-out lines, matching FINRA's impersonation guidance. The NIGO payoff now says to measure on your own forms, because the 20-40% figures are vendor claims and the 35% to 11.5% drop is one firm's own case study, both labelled. Wanted archive connections spelled out per tool: the own-data table already has that column."
+  },
+  {
+   "reader": "GM",
+   "notes": "GM: wants to know if one team can pilot this and what it costs. Cost is answered by the dated notetaker price check and the 40-advisor yearly range. Swapped the 'what does the SEC look for' FAQ (already covered in the rules table) for 'Where should an RIA start with AI?': one advisor team on meeting notes, retention and archive exports set first, before-and-after hours. No Zavient price, per site rules."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Chief compliance officer / head of advisor operations: checks the exam angle. The Marketing Rule row mixed ads and Form ADV; it now says AI ad claims must be backed by evidence and flags Form ADV separately, as in the Delphia order. A human-role line cited the SEC press release for 'fiduciary duty stays with the firm'; now cited to the law-firm source that says it. Retention is stated neutrally: each vendor's own page against the rule text, with 'check it against Rule 204-2'; no vendor is called non-compliant. SEC naming: the page just says AI."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Owner-CEO: title and five bottom-line bullets answer the question in 10 seconds. Worries covered: client data (ChatGPT FAQ, Reg S-P), security (SOC 2 column, shadow AI), rules (rules table), cost (dated price check). His question after the vendor table was 'which one do I pick?'; the offer now promises tools that fit the CRM and custodian he already uses. Gap he will notice: no case from a firm his size beyond one firm's own NIGO case study, labelled; none is claimed. No price flagged, per Russell's 26 Nov decision."
+  }
+ ],
+ "updated": "2026-11-26"
+}

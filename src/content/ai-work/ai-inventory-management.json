@@ -56,13 +56,13 @@
  },
  "summary": "AI inventory management resets each item's safety stock and reorder point from real demand and supplier lead times[^25][^13]. It also flags slow stock and suggests branch transfers, while buyers approve every order[^21][^8]. Clean stock records and honest lead times make or break it[^17][^15].",
  "humanRole": [
-  "Buyer: approves every suggested purchase order and transfer before it goes out[^11][^8]. Logs a reason for each override, since overrides of one parts retailer's stocking tool cut profit 5.77%[^8][^9].",
+  "The buyer keeps it: they approve every suggested purchase order and transfer before it goes out[^11][^8]. They log a reason for each override, since overrides of one parts retailer's stocking tool cut profit 5.77%[^8][^9].",
   "Planner or inventory analyst: sets the service level (the share of orders filled from stock) for each segment, and owns lead-time and demand inputs[^25][^23]. Adjusting the tool's inputs, not its outputs, raised profit 4.92% in a later field test[^10].",
   "Branch or warehouse manager: accepts or rejects each transfer suggestion, and recounts the items the system flags[^21][^17].",
   "Controller: decides markdown, return or scrap for flagged dead stock before year end[^35][^36]. A flag alone creates no tax write-down; the goods must be scrapped or offered at a lower price[^35][^37]."
  ],
  "teamAfter": [
-  "Buyers work a ranked list of exceptions (stockout risk, excess, late orders) instead of scanning every item[^11]. In one store-chain study, ordering time fell 36.5% while service rose 2.9%[^11].",
+  "Buyers work a ranked list of exceptions (stockout risk, excess, late orders) instead of scanning every item, and planners tune the inputs[^11][^10]. In one store-chain study, ordering time fell 36.5% while service rose 2.9%[^11].",
   "Buyers spend more time chasing suppliers: at one machinery maker, about 14% of orders arrived late[^14]. Lead-time models flag those orders early, but only roughly[^15].",
   "Planners review the override log each month against results, and adjust inputs where a supplier or item has changed[^10][^8].",
   "Among US firms where AI changed tasks, 66% use it only to help staff; 2% report AI-related falls in employment[^12]."
@@ -74,7 +74,7 @@
  "tables": [
   {
    "title": "What does AI change in each stock decision?",
-   "intro": "Each row compares a typical ERP setting with what an AI planning tool does instead[^24][^27]. Features vary by vendor, so ask which rows a tool really recalculates[^16].",
+   "intro": "It recalculates safety stock, reorder points, segments, dead-stock flags and branch transfers from your own demand and lead times, instead of fixed ERP settings[^24][^13]. Each row compares a typical ERP setting with what an AI planning tool does instead[^27]. Features vary by vendor, so ask which rows a tool really recalculates[^16].",
    "headers": [
     "Decision",
     "Typical ERP today",
@@ -120,7 +120,7 @@
   },
   {
    "title": "What does your ERP or an add-on already do?",
-   "intro": "Check these before you buy anything new. Claims are each vendor's own; prices read 26 Nov 2026[^33][^34].",
+   "intro": "Most ERPs already run reorder rules; NetSuite now sets safety stock by segment, while Business Central and Acumatica need it typed in[^24][^25][^27][^31]. Check these before you buy anything new. Claims are each vendor's own; prices read 26 Nov 2026[^33][^34].",
    "headers": [
     "Name",
     "What it sets",
@@ -228,7 +228,7 @@
  ],
  "ownData": {
   "title": "How much cash sits in stock in your sector?",
-  "intro": "We turned Census inventories-to-sales ratios for September 2026 into cash; a 10% cut frees a tenth of the stock[^1][^2]. The ratio is months of sales in stock; times 30.4 gives days, and times $10M/12 gives stock per $10M of yearly sales. Carrying cost is that stock times 10-30% a year, from APQC's median to textbook rates; use your own rate[^5][^4][^6].",
+  "intro": "From about $0.6M per $10M of yearly sales at grocery distributors to $2.2M at machinery distributors, as of September 2026[^1][^2]. We turned Census inventories-to-sales ratios (months of sales in stock) into cash; times 30.4 gives days, and a 10% cut frees a tenth. Carrying cost is that stock times 10-30% a year, from APQC's median to textbook rates; use your own rate[^5][^4][^6].",
   "headers": [
    "Sector",
    "Months in stock, Sep 2026 (2025)",
@@ -348,7 +348,7 @@
   }
  ],
  "howToTest": [
-  "Cycle-count a random sample of about 200 item-locations first. If many records are wrong, fix counting before you test any tool[^17].",
+  "Check your counts, replay last year on the tool, then pilot one branch: start by cycle-counting a random sample of about 200 item-locations[^17]. If many records are wrong, fix counting before you test any tool.",
   "Pull 24 months of demand by item and location, plus each purchase order's order, promised and receipt dates. Add today's ERP safety stock, reorder point and lead time.",
   "Measure each supplier's real lead time against the ERP field, and count late order lines[^14][^24].",
   "Sort items into ABC by value and XYZ by demand swings: X under 50% variation, Y 50-100%, Z over 100%[^23].",
@@ -358,6 +358,7 @@
   "Ask each vendor to run the replay on your data before you sign anything."
  ],
  "watchOuts": [
+  "It goes wrong on bad stock records, lumpy parts, rough lead-time guesses, costly overrides and branch averages that hide problems[^17][^26]. Each fix is below.",
   "Wrong stock records feed wrong orders: one study found 65% of 370,000 store records inaccurate[^17]. Undetected losses can freeze automatic reordering, so recount flagged items first[^18][^19].",
   "Lumpy parts break the maths. NetSuite warns its results are approximate for intermittent, promotional or seasonal demand, so review those items by hand[^26].",
   "Lead-time predictions are useful, not precise: one model explained only 30-55% of the variation[^15]. Keep a buyer's judgment on top and refresh lead times often[^15][^3].",
@@ -392,11 +393,11 @@
   }
  ],
  "buyVsBuild": {
-  "buy": "Switch on what your ERP already has, then buy a planning add-on for several branches, lumpy parts or many suppliers[^25][^33]. Most firms now buy: 76% of enterprise AI use cases were bought in 2025, up from 53%[^39].",
+  "buy": "Mostly buy, starting with what your ERP already has, then a planning add-on for several branches, lumpy parts or many suppliers[^25][^33]. Most firms now buy: 76% of enterprise AI use cases were bought in 2025, up from 53%[^39].",
   "build": "Build only the narrow pieces your own data does best, such as late-order prediction from your purchase history[^14][^13]. As reported in a copy of MIT NANDA's 2025 report, internal builds reached deployment about 33% of the time, against 67% for partnerships[^40]."
  },
  "pickElse": [
-  "A few hundred steady items in one warehouse: ERP reorder rules by ABC class, reviewed each quarter, may be enough[^28].",
+  "When you have a few hundred steady items in one warehouse: ERP reorder rules by ABC class, reviewed each quarter, may be enough[^28].",
   "New items, promotions or strong seasons: fix the demand forecast first; see our AI demand forecasting guide[^26].",
   "Counts you can't trust: fix cycle counting before you buy any planning tool[^17][^18]."
  ],

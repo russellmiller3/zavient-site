@@ -26,6 +26,7 @@
   "something-else": "Skip outside help when your software already ships a built-in agent, when the steps never change, or when your data is not yet reachable.[^40][^29][^23]"
  },
  "walkAway": [
+  "You should leave with a working agent on one workflow, written autonomy levels, named approvers, a monthly run cost and a full action log.[^32][^22]",
   "A working agent on one workflow, plus a test set of 20 to 50 real past cases with a pass score agreed before the build.[^32][^33]",
   "A written autonomy level for every action: draft only, ask first, or act alone. Gartner expects 40% of enterprises to pull back agents over governance gaps by 2027.[^22][^2]",
   "A named approver for every step that commits money or reaches a customer, and a named person who can switch the agent off.[^4][^5]",
@@ -33,6 +34,7 @@
   "A full log of every action the agent took, kept in your systems, with the logins in your firm's name. In one security vendor's ledger of 59 agent incidents, recording every action might have helped in 90%.[^27][^6]"
  ],
  "humanRole": [
+  "Your people decide what the agent may do, approve every step that commits money or reaches a customer, and can switch it off.[^4][^2]",
   "The process owner, such as the customer service lead, sets which actions are draft-only, need approval or run alone. Government security agencies say people decide this, never the agent.[^4][^22]",
   "The approver, such as an inside-sales rep, buyer or payables clerk, signs off every quote, order, payment or customer email. The agent drafts; your people decide.[^2][^6]",
   "The systems owner, usually the IT or ops lead, gives the agent the narrowest access and reviews its action log. Too much access is a top-10 risk for AI applications.[^7][^5]",
@@ -76,7 +78,7 @@
  ],
  "ownData": {
   "title": "How often do AI agents finish realistic business tasks?",
-  "intro": "We read the published scores of eight agent benchmarks on 26 Nov 2026, from the papers and official leaderboards.[^9][^11][^14] Each tests realistic office, sales or support tasks in a made-up company. Scores are high on one try at short tasks, and fall on repeats, long chats and long jobs.[^12][^19]",
+  "intro": "Often on one short try, far less on repeats and long jobs: one agent passed 61% of retail tasks once, under 25% across eight tries.[^9][^10] We read the published scores of eight agent benchmarks on 26 Nov 2026, from the papers and official leaderboards.[^11][^14] Each tests realistic office, sales or support tasks in a made-up company.[^12][^19]",
   "headers": [
    "Benchmark",
    "What the tasks are",
@@ -136,6 +138,7 @@
   "note": "Method: published primary scores only, read 26 Nov 2026; Zavient re-ran none. Boards use different models and test rigs, so rows don't compare directly, and older rows use older models. All use made-up firms and data, not yours, and scores move fast, so re-check before you rely on one.[^26]"
  },
  "watchOuts": [
+  "Most stall because agents invent answers, hold too much access, fail on repeats or guess, and nobody pins down cost or value.[^8][^20] Each fix is below.",
   "The agent invents a policy or price: a tribunal held Air Canada liable for its chatbot's made-up fare rule.[^8] Let the agent draft only from approved policy text, and a rep send.[^10]",
   "Too much access: a coding agent with an over-broad token deleted a firm's live database and backups in April 2026.[^28] Give agents no delete rights and a separate test copy.[^7][^5]",
   "Works in the demo, fails on repeats: one agent passed about 61% of retail tasks once, but under 25% across eight tries.[^9][^10] Run each test case several times and count only all-pass.[^32]",
@@ -144,6 +147,7 @@
   "Cost and value never pinned down: Gartner names both among the top reasons agent projects get cancelled.[^20][^21] Agree a cost per task and a pass score before the build."
  ],
  "howToTest": [
+  "Judge them by whether they test on your own past cases, run each case several times, and price the result before anything goes live.[^32][^33]",
   "Pick one workflow and write what \"done right\" means before anything is built.[^36]",
   "Record today's numbers for two weeks: volume, minutes per item, error rate and cost per item.",
   "Pull 20 to 50 real past cases, messy ones included.[^32]",
@@ -165,7 +169,7 @@
   },
   {
    "q": "When does a custom agent make sense versus tools we already have?",
-   "a": "Check your software's built-in agent first; Business Central, Dynamics 365, NetSuite, Salesforce, HubSpot and ServiceNow now ship them.[^38][^46][^47] Build custom when no built-in agent fits the job, or the job crosses several systems.[^54]"
+   "a": "When no built-in agent fits the job, or the job crosses several systems.[^54] Check your software's built-in agent first; Business Central, Dynamics 365, NetSuite, Salesforce, HubSpot and ServiceNow now ship them.[^38][^46][^47]"
   },
   {
    "q": "Are AI agents for business practical at a firm our size?",
@@ -173,7 +177,7 @@
   },
   {
    "q": "Will an AI agent take jobs from our team?",
-   "a": "No, the agent is built to draft and check, while your people approve and handle exceptions.[^2][^4] Firms using agents mostly report productivity gains (66%) and faster decisions (55%), per PwC.[^25]"
+   "a": "No, that is not the design: the agent drafts and checks, and your people approve and handle exceptions.[^2][^4] Firms using agents mostly report productivity gains (66%) and faster decisions (55%), per PwC.[^25]"
   },
   {
    "q": "How long does a first agent take to build?",
@@ -181,7 +185,7 @@
   }
  ],
  "pickElse": [
-  "You run Business Central, Dynamics 365, NetSuite, Salesforce, HubSpot or ServiceNow: trial the built-in agent first.[^40][^47] HubSpot charges $0.50 per resolved conversation; Agentforce about $0.10 per action (vendor prices).[^45][^44]",
+  "When you run Business Central, Dynamics 365, NetSuite, Salesforce, HubSpot or ServiceNow: trial the built-in agent first.[^40][^47] HubSpot charges $0.50 per resolved conversation; Agentforce about $0.10 per action (vendor prices).[^45][^44]",
   "The steps never change: a fixed workflow in a tool like Power Automate, Zapier or Make is simpler and steadier. Agents finish fewer tasks than fixed workflows.[^29][^31]",
   "Your data is scattered or locked away: fix access first. Data readiness is the top barrier leaders name for agents (58%).[^23]"
  ],
@@ -525,11 +529,11 @@
    "url": "https://www.reddit.com/r/smallbusiness/comments/1r6r9fg/",
    "what": "Buyer question on whether agents work for smaller firms. Forum post, used only as a source for the question."
   },
-   {
-     "name": "Cekura, tau-bench explainer (Nov 2026)",
-     "url": "https://www.cekura.ai/blogs/tau-bench",
-     "what": "Reads Claude Opus 5's tau3-Banking submission as 48.7% at pass^1 and 32.0% at pass^4."
-   }
+  {
+   "name": "Cekura, tau-bench explainer (Nov 2026)",
+   "url": "https://www.cekura.ai/blogs/tau-bench",
+   "what": "Reads Claude Opus 5's tau3-Banking submission as 48.7% at pass^1 and 32.0% at pass^4."
+  }
  ],
  "related": [
   "ai-integration-services",

@@ -64,7 +64,7 @@
     "something-else": "Pick something else when your claims are mostly simple auto damage, your real problem is talking to claimants, or your core claims system is the bottleneck.[^7][^24]"
   },
   "humanRole": [
-    "Adjuster: decides coverage, sets the reserve, signs any denial and talks to the customer.[^1][^3] Texas expects a person to review and agree with any consequential AI decision before action.[^4]",
+    "The adjuster keeps it: they decide coverage, set the reserve, sign any denial and talk to the customer.[^1][^3] Texas expects a person to review and agree with any consequential AI decision before action.[^4]",
     "Claims supervisor or examiner: approves payments within their authority and spot-checks AI-filled files.[^1] The insurer answers for every AI-supported decision, vendor tools included.[^11][^14]",
     "Special investigations unit (SIU) investigator: works each fraud flag as a lead to investigate, not a finding.[^3] A homeowners' lawsuit alleges an insurer's claim-screening algorithms scrutinised Black policyholders more; that claim survived dismissal.[^15][^16]",
     "Head of claims with the compliance lead: own the written AI program and the list of AI tools in use.[^11][^14] Both report to senior management, which answers to the board.[^11]"
@@ -82,7 +82,7 @@
   "tables": [
     {
       "title": "Which kind of claims AI tool does which job?",
-      "intro": "Tool types and example products, read 26 November 2026.[^7][^8] Figures marked as vendor claims are the seller's own. None of the vendors list a price, so budget from a quote on your claim volume.[^7][^24]",
+      "intro": "Six kinds of tool split the work: a core system holds the file, and intake, photo, fraud, triage and document tools each take one job.[^7][^8] Figures marked as vendor claims are the seller's own, read 26 Nov 2026. None list a price, so budget from a quote on your claim volume.[^7][^24]",
       "headers": [
         "Tool type and examples",
         "What it does",
@@ -142,7 +142,7 @@
     },
     {
       "title": "What do claims take today, before any AI?",
-      "intro": "Public baselines to set beside your own numbers.[^6][^29] Use them to see whether your cycle times and adjusting cost sit high or low.",
+      "intro": "Today a home claim takes about 41 days from report to payment, an auto repair 15, and adjusting about 9 cents per premium dollar.[^31][^29][^6] Set these public baselines beside your own numbers to see whether you sit high or low.",
       "headers": [
         "Measure",
         "Figure",
@@ -188,7 +188,7 @@
     },
     {
       "title": "What do published results show, and who measured them?",
-      "intro": "Most published claims AI results come from vendors.[^27][^28] The regulator survey is the only independent count here, so read the rest as upper bounds.[^2]",
+      "intro": "Published results show real gains, such as complaints down 65% at Aviva, but vendors and the insurers themselves measured most of them.[^33][^27][^28] The regulator survey is the only independent count here, so read the rest as upper bounds.[^2]",
       "headers": [
         "Study or case",
         "Result",
@@ -413,7 +413,7 @@
     }
   ],
   "howToTest": [
-    "Pick one line or office and pull 200 to 500 of its closed claims from the last 12 months, split by state and outcome. Examiners sample closed files the same way; California's 2026 exam sampled 220.[^54]",
+    "Test it on 200 to 500 of your own closed claims from one line or office, and compare its output with what your adjusters did.[^54] Pull the last 12 months, split by state and outcome, as examiners do; California's 2026 exam sampled 220.[^54]",
     "Record today's numbers on those files: days to acknowledge, decide and pay, the share inside each state's deadline, reopens and complaints.[^23][^37]",
     "Run the tool in shadow mode on the same files. It fills fields, scores triage and fraud and suggests reserves, but changes nothing.",
     "Score document reading field by field against what the adjuster recorded, counting wrong fields as well as missing ones. Published rates run from 70% read correctly to 87% handled with no manual touch.[^32][^28]",
@@ -424,6 +424,7 @@
     "Write the decision rule before go-live: which outputs a person confirms, who signs off and what the file shows. Texas expects that sign-off, and examiners will ask for the record.[^4][^55]"
   ],
   "watchOuts": [
+    "It goes wrong in biased scores, bad rules repeated on every claim, missed state deadlines, adjuster rework, vendor black boxes and a thinner junior pipeline.[^15][^54] Each has a fix below.",
     "Biased fraud and routing scores. A homeowners' lawsuit alleges an insurer's tools gave Black policyholders' claims more scrutiny; test flag rates by area before go-live and each quarter.[^15][^60]",
     "One bad rule, repeated on every claim, can become a general business practice under unfair-claims law.[^3][^52] Have compliance review each automated rule before it runs.",
     "Missed state deadlines. California's 2026 wildfire-claims exam cited missed 15-, 40- and 30-day clocks; have the tool open a deadline task on day one.[^54][^37]",
@@ -458,11 +459,11 @@
     }
   ],
   "buyVsBuild": {
-    "buy": "Buy when you have no data team, run a common core claims system and the job is standard: first reports, photos, documents.[^63] Purchased AI tools succeed about 67% of the time; internal builds about a third as often.[^64][^65]",
+    "buy": "Most claims teams should buy if they have no data team, a common core claims system and standard work like reports and photos.[^63] Purchased AI tools succeed about 67% of the time; internal builds about a third as often.[^64][^65]",
     "build": "Build, or configure heavily, when your own claims history is the edge or you must show a regulator every rule.[^11] Either way, 45% of insurers name data quality as a barrier, so clean the claim data first.[^34] Only 24% of insurance leaders are very confident they'd pass an AI governance review in 90 days.[^66]"
   },
   "pickElse": [
-    "Mostly simple auto physical damage: a photo-estimating network such as CCC, Tractable or Snapsheet already does this job.[^7][^26]",
+    "When your claims are mostly simple auto physical damage: a photo-estimating network such as CCC, Tractable or Snapsheet already does this job.[^7][^26]",
     "The problem is talking to claimants, not reading files: a texting platform such as Hi Marley may fix more.[^24][^7]",
     "Your core claims system is the bottleneck: upgrade or replace it first, such as Guidewire, Duck Creek or Five Sigma.[^7] AI on a system nobody trusts adds rework.",
     "Low volume across varied lines: rules in your current system plus a weekly report on state deadlines may cost less than AI.[^13][^23]"

@@ -16,7 +16,7 @@
  ],
  "onPage": [],
  "headings": {},
- "summary": "AI integration services connect AI to the systems you already run, like your ERP (finance system) and CRM (customer database).[^1][^5] Answers come from those records, under each user's own login.[^18][^30] Vendors now ship ready-made MCP servers (Model Context Protocol, a standard AI plug), so permissions and testing decide success.[^25][^33]",
+ "summary": "AI integration services connect AI to your ERP (finance system) and CRM (customer database), so staff get answers and drafts from real records.[^1][^5] Each answer runs under the user's own login.[^18][^30] Vendors now ship ready-made MCP servers (Model Context Protocol, a standard AI plug), so permissions and testing decide success.[^25][^33]",
  "answers": {
   "walk-away": "You should leave with a map of what the AI may read and change, cleaned-up permissions, a tested read-only assistant on one system, and audit logs.[^18][^12][^19][^23]",
   "human-role": "Your staff approve every create, update or send, while the process owner decides which records the AI may touch and IT owns its logins.[^1][^4][^42]",
@@ -26,6 +26,7 @@
   "something-else": "Skip outside help when your questions stay inside one system with built-in AI, a ready-made connector covers a small team, or your data needs fixing first.[^17][^25][^32]"
  },
  "walkAway": [
+  "You should leave with a map of what AI may read and change, cleaned-up permissions, a tested read-only assistant, approval steps and audit logs.[^18][^12]",
   "A map of which systems the AI may read and which it may change, each through its own named role. Vendors run every AI call under that user's permissions.[^18][^30]",
   "Permissions cleaned up before go-live: roles narrowed and overshared files fixed. Microsoft warns its AI can surface content that is already overshared.[^12][^13]",
   "A read-only assistant working on one system, checked against a locked set of real questions. Four of the six systems we checked start read-only or switched off.[^19][^24]",
@@ -33,6 +34,7 @@
   "Audit logs that tie each AI action to a named user and time, plus the test set to re-run after every vendor update.[^23][^18]"
  ],
  "humanRole": [
+  "Your people decide what the AI may touch and approve every change it proposes; IT owns its logins and logs.[^4][^1]",
   "The process owner, such as the controller or sales ops lead, decides which records and actions the AI may touch. They sign off before any write is switched on.[^4][^36]",
   "Staff approve every create, update or send: the AI proposes, the person applies. The MCP standard says the app must get consent before it runs a tool.[^1][^43]",
   "IT owns the AI's roles, logins and log reviews. Add those roles to the access reviews you already run.[^42][^6]",
@@ -78,7 +80,7 @@
  ],
  "ownData": {
   "title": "Which ERP and CRM systems can AI connect to today?",
-  "intro": "We read six vendors' own developer docs, release notes and changelogs on 26 Nov 2026.[^18][^25] All six offer an official MCP connection, and four start read-only or switched off.[^19][^21][^24][^29] Each one we could confirm runs AI calls under the user's own permissions, so today's oversharing becomes tomorrow's AI answer.[^14][^30]",
+  "intro": "NetSuite, Business Central, Sage Intacct, Acumatica, HubSpot and Salesforce all offer an official MCP connection today.[^15][^18][^21][^24][^25][^28] We read their developer docs, release notes and changelogs on 26 Nov 2026; four start read-only or switched off.[^19][^29] Each one we could confirm runs AI calls under the user's own permissions, so today's oversharing becomes tomorrow's AI answer.[^14][^30]",
   "headers": [
    "System",
    "Official AI connection (MCP)",
@@ -133,6 +135,7 @@
   "note": "Method: vendor docs only, read 26 Nov 2026; we connected no live accounts. \"Not stated in docs read\" means we found no answer, not that the feature is missing. Features change monthly and prices vary by contract; QuickBooks, Xero, SAP Business One and core banking systems are out of scope."
  },
  "watchOuts": [
+  "Most stall on access and data: old oversharing, too much write power, hidden instructions, leaky connectors, bad data and expiring logins.[^12][^4][^32] Each fix is below.",
   "Old oversharing shows up at once, because the AI sees what each user can see. Fix: run a sharing report and close the worst gaps before launch.[^12][^13][^3]",
   "Too much write power: API permissions can be broader than what a role sees on screen. Fix: test what the AI login can actually change, and start read-only.[^4][^2]",
   "Hidden instructions in emails, tickets or documents can steer the AI, as in the EchoLeak Copilot flaw. Fix: plant test instructions in a sandbox and confirm the AI ignores them.[^8][^9][^10]",
@@ -141,6 +144,7 @@
   "Usage limits and expiring logins quietly break integrations: users report CRM throttling and a QuickBooks login that rotates about every 100 days. Fix: set alerts before go-live.[^45][^44][^26]"
  ],
  "howToTest": [
+  "Judge them by whether they test on a sandbox with your real roles and questions, and prove the AI can't change what it shouldn't.[^11][^30]",
   "Pick one workflow and record today's numbers: hours spent pulling reports or re-keying between systems, and how often figures disagree.",
   "Run every test on a sandbox, a safe test copy of your data, never on live records.[^11]",
   "Permission test: sign in as three real roles and ask the same 10 questions. Each should see only what that role sees on screen.[^30][^18]",
@@ -179,7 +183,7 @@
   }
  ],
  "pickElse": [
-  "Your questions stay inside one system: try its built-in AI first, such as Ask Oracle, Business Central Copilot, HubSpot Breeze or Salesforce Agentforce.[^17][^20][^27][^31]",
+  "When your questions stay inside one system: try its built-in AI first, such as Ask Oracle, Business Central Copilot, HubSpot Breeze or Salesforce Agentforce.[^17][^20][^27][^31]",
   "A small team asking read-only questions: switch on the vendor's ready-made connector in your AI app and skip a project.[^25][^15]",
   "A simple trigger-and-action flow between cloud apps: build it yourself in Zapier or Power Automate, with a person approving the output.[^39][^41]",
   "Messy data or tangled permissions: wait, and fix those first.[^32][^13]"

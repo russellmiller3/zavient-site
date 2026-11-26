@@ -53,8 +53,9 @@
   "buy-or-build": "Should you buy a monitoring platform or build your own layer?",
   "something-else": "When should a fund pick something else?"
  },
- "summary": "Covenant monitoring means checking each borrower's quarterly numbers against its loan terms, to spot trouble early[^28][^29]. AI reads the reporting package, spreads the figures, recomputes the covenants and flags drift[^33][^34]. What makes or breaks it: an analyst checks every flagged number, and nobody takes the borrower's own math on trust[^29][^36].",
+ "summary": "Covenant monitoring checks each borrower's quarterly numbers against its loan terms; AI reads the package, spreads the figures, recomputes covenants and flags drift[^28][^33]. The aim is to spot trouble early[^29][^34]. What makes or breaks it: an analyst checks every flagged number, and nobody takes the borrower's own math on trust[^29][^36].",
  "humanRole": [
+  "Your people keep every decision: analysts own the numbers, portfolio heads the watchlist, and the board or valuation designee each fair value mark[^29][^33][^11].",
   "Credit analyst: checks every number the AI flags and reconciles its covenant math with the borrower's certificate[^29][^36]. Add-backs, costs the borrower adds back to EBITDA (earnings before interest, tax, depreciation and amortization), stay the analyst's call[^32].",
   "Head of portfolio management: decides watchlist moves and what to raise with the borrower[^33]. Waivers and amendments need written consent from the Required Lenders, the lender majority the credit agreement names[^20].",
   "Board or valuation designee: owns each fair value mark, and must test and oversee the methods behind it[^11][^12]. AI drafts the inputs and a change memo; it does not set the mark[^13].",
@@ -73,7 +74,7 @@
  "tables": [
   {
    "title": "Which monitoring steps can AI take, and who signs?",
-   "intro": "One quarter of monitoring, step by step: what happens today, what AI can take on, and the person who still signs[^28][^33].",
+   "intro": "AI can take intake, spreading, covenant recompute, early-warning flags, valuation inputs and memo drafts, while analysts, portfolio heads and the board still sign[^28][^33]. Each row shows what happens today, what AI takes on and who signs.",
    "headers": [
     "Step",
     "Today",
@@ -133,7 +134,7 @@
   },
   {
    "title": "How stressed is private credit, and why do the numbers disagree?",
-   "intro": "Published stress measures for 2026. They disagree because each counts \"default\" differently[^27][^23].",
+   "intro": "Defaults run from about 1% to a record 6.0%, or over 10% on one shadow measure, because each source counts default differently[^23][^24][^27].",
    "headers": [
     "Measure",
     "Figure",
@@ -226,7 +227,7 @@
  ],
  "ownData": {
   "title": "What do eight public BDC filings show about non-accruals and PIK?",
-  "intro": "On 26 Nov 2026 we read the latest SEC filing of eight listed business development companies (BDCs), for the quarter ended 30 Sep 2026. We took loans on non-accrual (no longer booking interest) at cost and at fair value, and PIK as a share of investment income. One calculation: Blue Owl's non-accrual loans cost $448.7M and are marked at $127.6M, so they are carried at 28% of cost[^2].",
+  "intro": "Non-accruals, loans no longer booking interest, run 1.8% to 14.2% of cost and are carried at 19% to 61% of cost[^5][^7]. PIK makes up about 4.5% to 16.4% of investment income[^6][^1]. We read the latest SEC filings of eight listed business development companies (BDCs) on 26 Nov 2026, for periods ended 30 Sep 2026[^2][^9].",
   "headers": [
    "BDC (ticker)",
    "Filing (filed)",
@@ -339,7 +340,7 @@
   }
  ],
  "howToTest": [
-  "Pilot on one fund or strategy, not the whole book. Pick last quarter's packages for 10 of its borrowers, including two messy ones such as scans.",
+  "Run the tool on last quarter's packages for 10 borrowers in one fund, including two messy scans, and score it against your own spreads. Pilot on one fund or strategy, not the whole book.",
   "Record today's numbers first: analyst hours per borrower, days from package to finished spread, and errors found later.",
   "Use the spreads already on file, or a fresh hand spread, as the answer key.",
   "Run the extraction and score every line item exact, close or wrong, with its confidence score. Older models failed most questions on public filings, so score every line, not a sample[^36].",
@@ -350,6 +351,7 @@
   "Run the next quarter beside today's process, then decide go or no-go with the head of portfolio management."
  ],
  "watchOuts": [
+  "It goes wrong on extraction errors, trusting the borrower's math, stale inputs, shifting default definitions, messy data and fraud no spreadsheet shows[^51][^29][^17]. Each fix is below.",
   "Extraction errors flow straight into covenant tests[^51][^36]. Review every low-confidence cell before the recompute runs.",
   "The certificate is the borrower's own math[^29]. Recompute from the agreement's definitions and log every gap.",
   "Stale model inputs led to an SEC case: Fifth Street's marks used August 2013 projections, and it paid a $1.65M penalty[^17]. Refresh inputs every quarter and record the date.",
@@ -368,7 +370,7 @@
   },
   {
    "q": "Why not just put the PDFs into ChatGPT?",
-   "a": "General models make number errors: in FinanceBench, GPT-4-Turbo with retrieval failed or refused 81% of questions on public filings[^36]. That was 2023, but the lesson holds: check every number against the source. Lenders asked this 20 times in one vendor's 90 conversations[^52]."
+   "a": "Because general models make number errors: in FinanceBench, GPT-4-Turbo with retrieval failed or refused 81% of questions on public filings[^36]. That was 2023, but the lesson holds: check every number against the source. Lenders asked this 20 times in one vendor's 90 conversations[^52]."
   },
   {
    "q": "Is our borrower data safe with AI?",
@@ -384,11 +386,11 @@
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy a monitoring platform when you have no build team and your process looks like most managers'. Bought AI tools succeed about 67% of the time; internal builds about a third as often[^40]. Menlo finds 76% of enterprise AI use cases are bought[^39].",
+  "buy": "Most funds should buy a platform and build a thin layer on top; buy outright when you have no build team and a typical process. Bought AI tools succeed about 67% of the time; internal builds about a third as often[^40]. Menlo finds 76% of enterprise AI use cases are bought[^39].",
   "build": "Build the thin layer no platform knows: each agreement's definitions, your flag rules and your memo template. Extraction and model fees are small[^43][^45]. The risk is messy data: Gartner expects 60% of AI projects without AI-ready data to be abandoned[^41]."
  },
  "pickElse": [
-  "One system for the whole credit book: look at Allvue, which says six of the top ten private debt managers use it[^46]. It publishes no price.",
+  "When you want one system for the whole credit book: look at Allvue, which says six of the top ten private debt managers use it[^46]. It publishes no price.",
   "Portfolio data already sits with S&P: iLEVEL says 700+ managers use it, with AI-assisted data intake[^47]. It publishes no price.",
   "Extraction and monitoring as a service: 73 Strings claims 99% accuracy with confidence scores and human review[^48]. Ask how it measured that, and on whose files.",
   "Asset-based finance or a multi-strategy shop: a third-party comparison lists Chronograph, Cardo AI and Arcesium[^49]. We have not checked their own pages."
