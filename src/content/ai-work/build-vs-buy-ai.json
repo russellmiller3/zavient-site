@@ -1,0 +1,633 @@
+{
+ "title": "Build vs buy AI: which should your firm do for each workflow?",
+ "description": "For each workflow at a 40-500 person firm: when to buy AI, configure a platform, build your own or wait, with dated prices and sign-offs.",
+ "type": "compare",
+ "templateVersion": 1,
+ "topic": "Build vs buy AI: which should your firm do?",
+ "job": "decide whether to build an AI tool, buy one, or buy and adapt",
+ "industry": "any industry",
+ "index": false,
+ "verdict": [
+  "Buy if the job is common, like drafting or meeting notes: check the AI in tools you already pay for[^21][^24].",
+  "Buy a platform and configure it if the job is common but the steps are yours, like staff policy questions[^1][^23].",
+  "Build if your own data or process is the edge, no product fits, and someone owns the upkeep[^6][^25].",
+  "Do neither yet if you can't name one measure, one owner and data that's ready[^7][^8].",
+  "Whichever you pick, a named person signs off anything the tool tells customers or posts to the books[^31][^35]."
+ ],
+ "onPage": [
+  {
+   "to": "table-1",
+   "text": "The three options side by side, with prices read 26 Nov 2026"
+  },
+  {
+   "to": "recipes",
+   "text": "Three builds sized to a 40-500 person firm, step by step"
+  },
+  {
+   "to": "human-role",
+   "text": "Who checks the output and who signs off"
+  },
+  {
+   "to": "own-data",
+   "text": "How much notice vendors give before a model goes away"
+  },
+  {
+   "to": "what-goes-wrong",
+   "text": "Mistakes teams make when they choose, and the fix for each"
+  },
+  {
+   "to": "faq",
+   "text": "Straight answers to the questions buyers ask"
+  }
+ ],
+ "headings": {},
+ "summary": "You can buy a ready product, configure a platform with your own steps, or build on a model you rent[^6][^23]. Most firms now buy: 76% of enterprise AI use cases in 2025, per investor Menlo Ventures[^3][^4]. Either way, people and process work decide the result more than the model[^13][^12].",
+ "tables": [
+  {
+   "title": "How do buying, configuring and building compare?",
+   "intro": "Prices are US list prices from vendor pages, read 26 Nov 2026[^19][^21][^23]. 'Configure' means building your own steps inside a tool you license. Time ranges are our framing from the surveys in the third table, not a measured figure[^1][^9].",
+   "headers": [
+    "Question",
+    "Buy a product",
+    "Configure a platform",
+    "Build your own"
+   ],
+   "rows": [
+    {
+     "name": "What you get",
+     "cells": [
+      "A finished tool, such as ChatGPT Business or Microsoft 365 Copilot[^19][^21]",
+      "Your own agent or workflow, built in a tool you license, such as Copilot Studio[^23]",
+      "Your own software calling a model you rent by use, from OpenAI or Anthropic[^16][^17]"
+     ]
+    },
+    {
+     "name": "Price, read 26 Nov 2026",
+     "cells": [
+      "$20-31.50 a user a month for business AI seats[^19][^18][^22]. Google Workspace plans from $7 include Gemini[^24]",
+      "$200 a month per 25,000 Copilot Studio credits; each action uses a different amount[^23]",
+      "About $2 in and $10 out per million tokens (word pieces) on mid-tier models[^16][^17]. Building and upkeep cost far more than tokens[^25]"
+     ]
+    },
+    {
+     "name": "Time to first value",
+     "cells": [
+      "Days to weeks: switch it on and train staff. Our estimate, not a measured figure",
+      "Weeks to a few months. MIT saw mid-market leaders roll out in about 90 days[^1]",
+      "Months: Gartner's survey averaged 8 months from prototype to production[^9]"
+     ]
+    },
+    {
+     "name": "Fits best",
+     "cells": [
+      "Jobs every firm does: drafting, summaries, meeting notes, search across files[^21][^24]",
+      "Common jobs done your way: staff questions, intake, routing[^1][^23]",
+      "Narrow jobs where your own data is the edge and no product fits[^6][^1]"
+     ]
+    },
+    {
+     "name": "Who you depend on",
+     "cells": [
+      "The vendor's terms and roadmap. 81% of executives worry about lock-in, in a vendor-run Zapier survey[^29]",
+      "The platform vendor. OpenAI has set its own Agent Builder for retirement on 30 Nov 2026[^27]",
+      "The model vendor's retirement dates: 2 weeks to 6 months' notice at OpenAI[^27]"
+     ]
+    },
+    {
+     "name": "Biggest risk",
+     "cells": [
+      "Shadow AI: workers at 90%+ of firms in MIT's study used personal AI tools anyway[^1]",
+      "Access rights: 97% of firms with an AI breach lacked AI access controls[^30]",
+      "Upkeep: model code may be 5% of a mature system; the rest is plumbing[^26][^25]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Why don't firms your size train their own model?",
+   "intro": "Gartner's 2024 figures, as reported by CACM, price each approach for large enterprises[^6][^5]. No study prices these options for 40-500 person firms. Read the table for its shape: buying is cheapest, and training your own model is out of reach.",
+   "headers": [
+    "Gartner approach",
+    "What it means",
+    "Upfront",
+    "Per user a year"
+   ],
+   "rows": [
+    {
+     "name": "Consume",
+     "cells": [
+      "Buy a ready tool, such as a coding assistant[^6]",
+      "$100K-200K[^6]",
+      "$280-550[^6]"
+     ]
+    },
+    {
+     "name": "Extend",
+     "cells": [
+      "Ground a rented model in your own documents[^6]",
+      "$750K-1M[^6]",
+      "$1.3K-11K[^6]"
+     ]
+    },
+    {
+     "name": "Build",
+     "cells": [
+      "Train a model from scratch[^6]",
+      "$8M-20M[^6]",
+      "$11K-21K[^6]"
+     ]
+    }
+   ],
+   "note": "Enterprise figures from 2024. We left out Gartner's embed and fine-tune rows, which we found only in vendor blogs. Gartner itself says GenAI costs are less predictable than other technologies[^5]."
+  },
+  {
+   "title": "What do the studies say about buying vs building?",
+   "intro": "Each study defines success differently, so don't add these numbers up[^1][^11]. No study covers 40-500 person firms directly. MIT's mid-market line is $100M revenue[^1].",
+   "headers": [
+    "Study",
+    "What it found",
+    "How to read it"
+   ],
+   "rows": [
+    {
+     "name": "MIT NANDA, 2025",
+     "cells": [
+      "Bought or partnered tools reached deployment about 67% of the time; internal builds about 33%[^1][^2]",
+      "Based on interviews, as the report itself says. The only direct buy-vs-build comparison we found[^1]"
+     ]
+    },
+    {
+     "name": "Menlo Ventures, 2025",
+     "cells": [
+      "76% of enterprise AI use cases were bought, up from 53% in 2024[^3][^4]",
+      "Shows what firms do, not what works. Menlo invests in AI companies[^3]"
+     ]
+    },
+    {
+     "name": "Gartner survey, 2024",
+     "cells": [
+      "48% of AI projects reach production, after 8 months on average[^9]",
+      "644 respondents, surveyed in late 2023. Enterprise-scale[^9]"
+     ]
+    },
+    {
+     "name": "S&P Global, 2025",
+     "cells": [
+      "42% of companies dropped most AI initiatives before production, up from 17%[^11]",
+      "Firms that weighed risk and data up front failed less[^11]"
+     ]
+    },
+    {
+     "name": "McKinsey, 2025",
+     "cells": [
+      "Top performers were nearly 3x as likely to have redesigned workflows: 55% vs 20%[^12]",
+      "Workflow change, not the tool, marks the leaders[^12]"
+     ]
+    },
+    {
+     "name": "Wharton and GBK, 2025",
+     "cells": [
+      "Firms under $250M revenue report quicker returns than firms over $2B[^14]",
+      "Self-reported by 801 leaders. Its smallest tier mixes firms your size with bigger ones[^14]"
+     ]
+    },
+    {
+     "name": "Google Cloud, 2025",
+     "cells": [
+      "51% of firms took an idea to production in 3-6 months[^15]",
+      "Vendor-run, and only firms with GenAI already live[^15]"
+     ]
+    }
+   ]
+  }
+ ],
+ "recipes": [
+  {
+   "name": "1. Buy for a common job: drafting and summaries for 100 staff",
+   "when": "Pick it when the job is the same at every firm and a plan you can buy already does it[^21][^24]. Most firms start here[^3].",
+   "flow": [
+    "Ops lead: pick one workflow and one measure, such as time to first draft[^8][^12]",
+    "IT lead: turn on the business AI plan your firm already fits[^19][^21][^24]",
+    "Security lead: check the no-training and data-retention terms in writing[^19][^20][^24]",
+    "Team leads: run a 30-day trial and record the measure",
+    "Business owner: keep it, change it or drop it"
+   ],
+   "cost": "100 seats: $24,000 a year on ChatGPT Business billed yearly, or $25,200 for the Microsoft 365 Copilot Business add-on at list[^19][^21]. Prices read 26 Nov 2026; Google Workspace plans already include Gemini[^24]."
+  },
+  {
+   "name": "2. Configure a platform: an agent for staff policy questions",
+   "when": "Pick it when the job is common but the steps, documents or rules are yours. MIT found successful buyers demanded tools fitted to their process[^1].",
+   "flow": [
+    "Process owner: write down the steps and where the answers live[^7][^12]",
+    "Data owner: fix access rights so each person sees only what they may see[^30]",
+    "IT lead: build the agent in a platform you already license, such as Copilot Studio, and launch it to one team first[^23]",
+    "Named reviewer: check a sample of answers weekly and own the corrections[^31][^34]",
+    "Ops lead: track the measure for 90 days, the pace MIT saw from mid-market leaders[^1]"
+   ],
+   "cost": "Copilot Studio is $200 a month per 25,000 credits, or pay-as-you-go, read 26 Nov 2026[^23]. Credits used vary per action, so pilot on real traffic before you commit[^23]."
+  },
+  {
+   "name": "3. Build a narrow tool: supplier documents into your ERP",
+   "when": "Pick it when your own data or process is the edge and no product does the job[^6][^1]. Get the data ready first: Gartner expects 60% of projects without AI-ready data to be dropped[^7].",
+   "flow": [
+    "Business owner: confirm no product fits and your data is the edge[^1][^6]",
+    "Build team, in-house or outside: call a rented model from your own tool[^16][^17]",
+    "Build team: add tests, monitoring and a tested fallback model[^25][^26]",
+    "AP lead: approve anything the tool posts to the ERP above a set value[^35]",
+    "IT lead: track the model's retirement date and re-test before the cut-off[^27][^28]"
+   ],
+   "cost": "Model use for 2,000 documents a month: about $60 on a $2/$10 model, or $3 on a $0.10/$0.50 model (our arithmetic)[^16][^17]. Integration, testing and upkeep cost far more than tokens[^25][^26]."
+  }
+ ],
+ "humanRole": [
+  "Ops lead or process owner: defines the human checks and signs them off before launch. NIST's AI framework asks that human oversight be defined, assessed and documented[^34].",
+  "A named approver signs off any high-impact action the tool proposes, such as an ERP posting or a refund. OWASP lists unchecked AI actions as a top risk[^35].",
+  "AI drafts, people decide: support agents with AI resolved 15% more issues an hour, and newer agents gained most[^36]. In a P&G study, human judgment kept its value in picking the best option[^37].",
+  "A named person owns what any chatbot tells customers. A tribunal held Air Canada liable for its chatbot's wrong answer[^31][^32]."
+ ],
+ "ownData": {
+  "title": "How much notice do vendors give before a model or tool goes away?",
+  "intro": "On 26 Nov 2026 we read OpenAI's and Anthropic's deprecation pages and logged each notice rule and dated retirement[^27][^28]. We counted the days from notice to shut-off ourselves. Anything you build or configure must be moved and re-tested inside that window.",
+  "headers": [
+   "Vendor and item",
+   "Notice",
+   "Shut-off date",
+   "What it means for you"
+  ],
+  "rows": [
+   [
+    "OpenAI, generally available models (policy)",
+    "At least 6 months[^27]",
+    "Set per model",
+    "A build on a stable model gets about half a year to move"
+   ],
+   [
+    "OpenAI, specialized variants (policy)",
+    "At least 3 months[^27]",
+    "Set per model",
+    "Niche models give you half the time"
+   ],
+   [
+    "OpenAI, preview models (policy)",
+    "As little as 2 weeks[^27]",
+    "Set per model",
+    "Don't run real work on a preview model"
+   ],
+   [
+    "OpenAI gpt-5, gpt-5-mini and o3",
+    "Told 11 Jun 2026: 183 days[^27]",
+    "11 Dec 2026",
+    "Tools built on these must move to a newer model by then"
+   ],
+   [
+    "OpenAI Agent Builder (no-code agent tool)",
+    "Listed on OpenAI's deprecations page[^27]",
+    "Deprecated (set for retirement) 30 Nov 2026",
+    "A platform you configure can be retired too, not just a model"
+   ],
+   [
+    "Anthropic Claude Sonnet 4.5",
+    "Told 30 Sep 2026: 61 days[^28]",
+    "30 Nov 2026",
+    "About two months to move and re-test"
+   ],
+   [
+    "Anthropic, stated minimum notice",
+    "Not found on the page we read[^28]",
+    "Set per model",
+    "Ask for a notice period in writing before you build"
+   ]
+  ],
+  "note": "Zavient check of two vendors' public pages, read 26 Nov 2026; Microsoft and Google were not part of this check. Days are our arithmetic from the dated notices. Policies change, so re-check before you build."
+ },
+ "example": {
+  "input": "Illustrative: a 150-person firm weighs three workflows. Staff want help drafting client emails. HR wants an agent for policy questions, and AP wants supplier documents read into the ERP.",
+  "output": "Emails: buy, using the AI in the suite the firm already pays for[^21][^24]. Policy questions: configure an agent on a licensed platform, after fixing access rights[^23][^30]. Supplier documents: build only if no product fits, at about $60 a month in model use plus upkeep[^16][^25]."
+ },
+ "watchOuts": [
+  "Starting a pilot with no business measure: Gartner names unclear value as a top reason GenAI projects are dropped[^5][^8]. Set one measure and one owner before day one.",
+  "Building for a common job: drafting and search are already inside suites firms pay for[^21][^24]. Check what you license first; in MIT's interviews, bought tools reached deployment about twice as often[^1][^2].",
+  "Data that isn't ready: Gartner expects 60% of projects without AI-ready data to be dropped through 2026[^7]. Test on your real documents before you sign or build[^10].",
+  "Forgetting the model will be retired: OpenAI gives as little as 2 weeks' notice on previews and 6 months on stable models[^27]. Track the dates and keep a tested fallback model[^28].",
+  "No access controls: 97% of firms with an AI breach lacked them, in an IBM-sponsored study[^30]. Give staff an approved tool, since workers at 90%+ of firms use personal AI anyway[^1].",
+  "Lenders citing old model rules: SR 26-2 replaced SR 11-7 on 17 Apr 2026, and it is aimed at banks over $30B in assets[^33]. Smaller lenders should still keep a list of every model, bought or built, and check each one."
+ ],
+ "faq": [
+  {
+   "q": "Do most companies buy AI tools or build their own?",
+   "a": "Most buy. Menlo Ventures, an AI investor, found 76% of enterprise AI use cases were bought in 2025, up from 53% in 2024[^3][^4]. Wharton found about a third of GenAI tech budgets still go to internal R&D[^14]."
+  },
+  {
+   "q": "Should we build or buy AI agents?",
+   "a": "Buy or configure first, unless your data or process is the edge[^1][^6]. MIT found bought or partnered tools reached deployment about twice as often as internal builds. The split comes from interviews, as the report itself says[^1][^2]."
+  },
+  {
+   "q": "Should I learn to build it, pay someone, or buy?",
+   "a": "For most owner-run firms, buy first and spend your time on the workflow. If you pay someone to build, budget for upkeep: Google engineers found maintaining ML systems is the hard, costly part[^25][^26]."
+  },
+  {
+   "q": "Is enterprise knowledge search worth building?",
+   "a": "Usually not from scratch: search across your files now comes in Microsoft 365 Copilot and Google Workspace plans[^21][^24]. The hard part either way is access rights, so each person sees only what they may see[^30]."
+  },
+  {
+   "q": "How long until we see value?",
+   "a": "Weeks for a bought tool, months for a build. Gartner's survey averaged 8 months from prototype to production[^9]. MIT saw mid-market leaders go from pilot to full rollout in about 90 days[^1]."
+  },
+  {
+   "q": "Should companies build AI, buy AI or assemble AI?",
+   "a": "Assembling, meaning configuring a platform you license, is often the middle path. Gartner found embedding AI in apps you already use was the most common approach[^9][^23]."
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Buy when the job is common, you have no build team, and the vendor's data terms meet your rules[^6][^20]. Most firms do: 76% of enterprise AI use cases were bought in 2025, per Menlo Ventures, an AI investor[^3]. MIT found bought tools reached deployment about twice as often, from interviews rather than market data[^1][^2].",
+  "build": "Build when your own data or process is the edge and you need control of the rules[^6][^1]. Gartner's 2024 enterprise guide puts training a model from scratch at $8M-20M upfront[^6]. A firm your size builds a narrow tool on a rented model instead, and budgets for upkeep and model retirements[^16][^27]."
+ },
+ "pickElse": [
+  "The AI in your current suite already does the job: Microsoft 365 and Google Workspace plans include it[^21][^24]. Turn it on for one team before you buy anything new.",
+  "The process itself is broken: fix the steps or the data first. RAND found misunderstood problems and missing data among the root causes of failed AI projects[^10].",
+  "The job is a score or forecast from your own records: use a predictive model, not a chatbot. Gartner advises defining where generative AI should not be used[^8].",
+  "No one can check the output and an error would be costly: keep the decision with people for now. Most failed projects lacked risk controls or clear value, per Gartner[^5]."
+ ],
+ "resources": [
+  {
+   "name": "NIST AI Risk Management Framework Core",
+   "url": "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/",
+   "what": "Free checklist for human oversight and third-party AI risk, whether you buy or build."
+  },
+  {
+   "name": "OpenAI deprecations page",
+   "url": "https://developers.openai.com/api/docs/deprecations",
+   "what": "Every dated model retirement; check it before you build on a model."
+  },
+  {
+   "name": "Anthropic model deprecations page",
+   "url": "https://docs.anthropic.com/en/about-claude/model-deprecations",
+   "what": "Retirement dates for Claude models; check it before you build on one."
+  },
+  {
+   "name": "OWASP LLM06: Excessive Agency",
+   "url": "https://genai.owasp.org/llmrisk/llm06:2025-excessive-agency/",
+   "what": "Shows which AI actions need a human approval step."
+  },
+  {
+   "name": "EU AI Act Article 25",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-25",
+   "what": "When a firm that reworks an AI system becomes its provider under EU law."
+  }
+ ],
+ "stats": [
+  {
+   "num": "About 67% vs 33%",
+   "label": "Share of bought vs internally built AI tools that reached deployment, from interviews[^1].",
+   "source": "MIT NANDA, 2025"
+  },
+  {
+   "num": "76%",
+   "label": "Share of enterprise AI use cases bought rather than built in 2025, up from 53%[^3][^4].",
+   "source": "Menlo Ventures (AI investor), 2025"
+  },
+  {
+   "num": "60%",
+   "label": "AI projects without AI-ready data that Gartner expects to be abandoned through 2026[^7].",
+   "source": "Gartner, 2025"
+  },
+  {
+   "num": "183 days",
+   "label": "Notice OpenAI gave before shutting off gpt-5, gpt-5-mini and o3[^27].",
+   "source": "Zavient check of OpenAI's deprecations page, 26 Nov 2026"
+  },
+  {
+   "num": "97%",
+   "label": "Share of firms with an AI breach that lacked AI access controls[^30].",
+   "source": "IBM and Ponemon, 2025 (IBM-sponsored)"
+  }
+ ],
+ "sources": [
+  {
+   "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025, hosted copy)",
+   "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+   "what": "Bought or partnered tools reached deployment about 67% of the time vs about 33% for internal builds; the report says the split rests on interviews, not market data. Method: 52 interviews, 153 surveys, 300+ public initiatives. Mid-market leaders went pilot to rollout in about 90 days; workers at 90%+ of firms use personal AI tools."
+  },
+  {
+   "name": "Fortune, MIT report: 95% of generative AI pilots at companies are failing (18 Aug 2025)",
+   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
+   "what": "Press report confirming MIT NANDA's finding that bought tools succeed about twice as often as internal builds."
+  },
+  {
+   "name": "Menlo Ventures, 2025: The State of Generative AI in the Enterprise (9 Dec 2025)",
+   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+   "what": "Investor survey of 495 US enterprise AI decision-makers: 76% of AI use cases bought in 2025. Menlo invests in AI companies."
+  },
+  {
+   "name": "Menlo Ventures, 2024: The State of Generative AI in the Enterprise",
+   "url": "https://menlovc.com/2024-the-state-of-generative-ai-in-the-enterprise/",
+   "what": "Investor survey of 600 US IT decision-makers at firms of 50+ staff: 53% of AI solutions bought, 47% built in 2024."
+  },
+  {
+   "name": "Gartner press release, 30% of generative AI projects will be abandoned after proof of concept by end of 2025 (29 Jul 2024)",
+   "url": "https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025",
+   "what": "Reasons: poor data quality, weak risk controls, rising costs or unclear business value. Says GenAI costs aren't as predictable as other technologies."
+  },
+  {
+   "name": "Communications of the ACM, GenAI: The Buy vs. Build Solution (20 Oct 2025)",
+   "url": "https://cacm.acm.org/news/genai-the-buy-vs-build-solution",
+   "what": "Reports Gartner's 2024 enterprise cost figures by approach (buy a tool, ground a model in your documents, build from scratch). Four deciding factors: cost, time, data and expertise."
+  },
+  {
+   "name": "Gartner press release, Lack of AI-Ready Data Puts AI Projects at Risk (26 Feb 2025)",
+   "url": "https://www.gartner.com/en/newsroom/press-releases/2025-02-26-lack-of-ai-ready-data-puts-ai-projects-at-risk",
+   "what": "Through 2026, firms will abandon 60% of AI projects not backed by AI-ready data; 63% lack or don't know if they have the right data practices."
+  },
+  {
+   "name": "Gartner, Why 50% of GenAI Projects Fail (undated article; page cache 21 Nov 2026)",
+   "url": "https://www.gartner.com/en/articles/genai-project-failure",
+   "what": "At least 50% of GenAI projects abandoned after proof of concept; failure points include no business value and data not ready; advises defining where GenAI should not be used; token costs can consume budgets as usage scales."
+  },
+  {
+   "name": "Gartner press release, Generative AI is now the most frequently deployed AI solution (7 May 2024)",
+   "url": "https://www.gartner.com/en/newsroom/press-releases/2024-05-07-gartner-survey-finds-generative-ai-is-now-the-most-frequently-deployed-ai-solution-in-organizations",
+   "what": "Survey of 644 (Q4 2023): 48% of AI projects reach production, 8 months on average from prototype; embedding GenAI in existing apps was the most common approach (34%)."
+  },
+  {
+   "name": "RAND, The Root Causes of Failure for Artificial Intelligence Projects (RR-A2680-1, 13 Aug 2024)",
+   "url": "https://www.rand.org/pubs/research_reports/RRA2680-1.html",
+   "what": "65 interviews with data scientists and engineers. Root causes include a misunderstood problem, not enough data, and problems too hard for AI."
+  },
+  {
+   "name": "S&P Global Market Intelligence 451 Research, Generative AI shows rapid growth but yields mixed results (2025)",
+   "url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/2025/10/generative-ai-shows-rapid-growth-but-yields-mixed-results",
+   "what": "1,006 respondents: 42% of companies abandoned most AI initiatives before production in 2025, up from 17%. Firms that weighed compliance, risk and data up front failed less."
+  },
+  {
+   "name": "McKinsey, The state of AI in 2025 (5 Nov 2025)",
+   "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
+   "what": "Survey of 1,993 participants: high performers are nearly 3x as likely to have redesigned workflows (55% vs 20%). Cited as a survey only."
+  },
+  {
+   "name": "BCG, The Widening AI Value Gap (Sep 2025)",
+   "url": "https://www.bcg.com/publications/2025/are-you-generating-value-from-ai-the-widening-gap",
+   "what": "Survey of 1,250+ firms. Rule of thumb: 10% algorithms, 20% technology, 70% people and processes. Cited as a survey only."
+  },
+  {
+   "name": "Wharton Human-AI Research and GBK Collective, Accountable Acceleration (Oct 2025)",
+   "url": "https://ai.wharton.upenn.edu/wp-content/uploads/2025/10/2025-Wharton-GBK-AI-Adoption-Report_Full-Report.pdf",
+   "what": "801 enterprise decision-makers. Firms under $250M revenue report quicker ROI than firms over $2B; about a third of GenAI tech budgets go to internal R&D."
+  },
+  {
+   "name": "Google Cloud and National Research Group, The ROI of AI 2025 (4 Sep 2025)",
+   "url": "https://services.google.com/fh/files/misc/google_cloud_roi_of_ai_2025.pdf",
+   "what": "Vendor-run survey of 3,466 leaders at firms with GenAI in production: 51% took an idea to production in 3-6 months."
+  },
+  {
+   "name": "OpenAI, API pricing (page cache 23 Oct 2026)",
+   "url": "https://openai.com/api/pricing/",
+   "what": "Vendor page, read 26 Nov 2026: GPT-6.1 Sol $2 in / $10 out per million tokens; GPT-6 Luna $0.10 / $0.50; batch 50% off."
+  },
+  {
+   "name": "Anthropic, Pricing (Claude API docs)",
+   "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+   "what": "Vendor page, read 26 Nov 2026: Sonnet 5.5 $2 in / $10 out per million tokens; Haiku 5.5 $0.10 / $0.50; batch 50% off."
+  },
+  {
+   "name": "Anthropic, Claude plans and pricing",
+   "url": "https://claude.com/pricing",
+   "what": "Vendor page, read 26 Nov 2026: Claude Enterprise $20 a seat a month plus usage at API rates, billed yearly."
+  },
+  {
+   "name": "OpenAI Help Center, ChatGPT Business overview",
+   "url": "https://help.openai.com/en/articles/8792828-chatgpt-business-overview",
+   "what": "Vendor page, read 26 Nov 2026: $20 a user a month billed yearly, $25 monthly; OpenAI says it won't train on workspace data."
+  },
+  {
+   "name": "OpenAI, Enterprise privacy",
+   "url": "https://openai.com/enterprise-privacy/",
+   "what": "Vendor claim: business customers own their inputs and outputs; no training on business data by default; data processing agreement available."
+  },
+  {
+   "name": "Microsoft, Microsoft 365 Copilot for business",
+   "url": "https://www.microsoft.com/en-us/microsoft-365/copilot/business",
+   "what": "Vendor page, read 26 Nov 2026: Copilot Business add-on $21 a user a month list; $18 promotion 1 Jul-31 Dec 2026, yearly commitment."
+  },
+  {
+   "name": "Microsoft, Microsoft 365 Copilot for enterprise (page cache 10 Nov 2026)",
+   "url": "https://www.microsoft.com/en-us/microsoft-365-copilot/enterprise",
+   "what": "Vendor page, read 26 Nov 2026: $30 a user a month paid yearly, $31.50 paid monthly."
+  },
+  {
+   "name": "Microsoft, Copilot Studio plans and pricing (page cache 24 Nov 2026)",
+   "url": "https://www.microsoft.com/en-us/microsoft-365-copilot/pricing/copilot-studio",
+   "what": "Vendor page, read 26 Nov 2026: $200 a month per pack of 25,000 Copilot Credits, or pay-as-you-go; credits used vary per action."
+  },
+  {
+   "name": "Google, Google Workspace pricing",
+   "url": "https://workspace.google.com/pricing",
+   "what": "Vendor page, read 26 Nov 2026: Gemini included in Starter $7, Standard $14 and Plus $22 a user a month, yearly; Google says company data is not used to train models."
+  },
+  {
+   "name": "Sculley et al. (Google), Hidden Technical Debt in Machine Learning Systems, NeurIPS 2015",
+   "url": "https://papers.neurips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf",
+   "what": "Developing ML systems is fast and cheap; maintaining them over time is difficult and expensive."
+  },
+  {
+   "name": "Sculley et al. (Google), Machine Learning: The High-Interest Credit Card of Technical Debt (2014)",
+   "url": "https://research.google.com/pubs/archive/43146.pdf",
+   "what": "In a mature ML system, the model code may be 5% or less of the code; the rest is glue and plumbing."
+  },
+  {
+   "name": "OpenAI, Deprecations",
+   "url": "https://developers.openai.com/api/docs/deprecations",
+   "what": "Vendor page, read 26 Nov 2026: at least 6 months' notice for generally available models, 3 months for specialized variants, as little as 2 weeks for previews; gpt-5, gpt-5-mini and o3 shut down 11 Dec 2026 after notice on 11 Jun 2026; Agent Builder deprecated 30 Nov 2026."
+  },
+  {
+   "name": "Anthropic, Model deprecations",
+   "url": "https://docs.anthropic.com/en/about-claude/model-deprecations",
+   "what": "Vendor page, read 26 Nov 2026: Claude Sonnet 4.5 notice 30 Sep 2026, retired 30 Nov 2026."
+  },
+  {
+   "name": "Zapier, AI vendor lock-in survey",
+   "url": "https://zapier.com/blog/ai-vendor-lock-in-survey",
+   "what": "Vendor-run survey of 500 US enterprise executives: 81% worry about AI vendor lock-in; data migration is a top worry."
+  },
+  {
+   "name": "IBM newsroom, Cost of a Data Breach 2025 (30 Jul 2025)",
+   "url": "https://newsroom.ibm.com/2025-07-30-ibm-report-13-of-organizations-reported-breaches-of-ai-models-or-applications,-97-of-which-reported-lacking-proper-ai-access-controls",
+   "what": "IBM-sponsored study by Ponemon: 13% of breached firms had breaches of AI models or apps, and 97% of those lacked AI access controls."
+  },
+  {
+   "name": "BC Civil Resolution Tribunal, Moffatt v. Air Canada, 2024 BCCRT 149 (14 Feb 2024)",
+   "url": "https://decisions.civilresolutionbc.ca/crt/crtd/en/525448/1/document.do?format=pdf",
+   "what": "The airline was held responsible for all information on its website, its chatbot included."
+  },
+  {
+   "name": "American Bar Association, BC tribunal confirms companies remain liable for information provided by AI chatbot (Feb 2024)",
+   "url": "https://www.americanbar.org/groups/business_law/resources/business-law-today/2024-february/bc-tribunal-confirms-companies-remain-liable-information-provided-ai-chatbot",
+   "what": "Plain-language summary of the Air Canada chatbot ruling."
+  },
+  {
+   "name": "Federal Reserve, SR 26-2: revised guidance on model risk management (17 Apr 2026)",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+   "what": "Replaces SR 11-7; tailored to size and most relevant to banking organizations with over $30 billion in assets."
+  },
+  {
+   "name": "NIST, AI Risk Management Framework Core",
+   "url": "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/",
+   "what": "MAP 3.5: processes for human oversight are defined, assessed and documented; GOVERN 6: policies for third-party AI risk and contingency plans."
+  },
+  {
+   "name": "OWASP GenAI Security Project, LLM06:2025 Excessive Agency",
+   "url": "https://genai.owasp.org/llmrisk/llm06:2025-excessive-agency/",
+   "what": "Names unchecked AI actions as a top risk; advises human approval for high-impact actions."
+  },
+  {
+   "name": "Brynjolfsson, Li and Raymond, Generative AI at Work, Quarterly Journal of Economics (2025)",
+   "url": "https://academic.oup.com/qje/article/140/2/889/7917915",
+   "what": "5,172 support agents: AI help raised issues resolved per hour by 15%, with the biggest gains for less experienced agents."
+  },
+  {
+   "name": "Dell'Acqua et al., The Cybernetic Teammate, Organization Science (12 Jun 2026)",
+   "url": "https://pubsonline.informs.org/doi/10.1287/orsc.2025.20702",
+   "what": "Field experiment with 776 P&G professionals: AI raised quality, and human judgment kept its value in picking the best option."
+  }
+ ],
+ "related": [
+  "generative-ai-vs-predictive-ai",
+  "chatgpt-plus-vs-business-vs-enterprise",
+  "ai-document-processing",
+  "ai-invoice-processing",
+  "ai-consulting-services"
+ ],
+ "offer": {
+  "heading": "Not sure whether to build or buy for your top workflow?",
+  "body": "Bring the one workflow you most want fixed. In 30 minutes we tell you whether to buy, configure, build or wait. You leave with a first step and the measure to track."
+ },
+ "keyword": {
+  "phrase": "build vs buy",
+  "searches": 590,
+  "cpc": 27,
+  "difficulty": null,
+  "note": "'build vs buy ai' itself is 30 searches a month at $18 a click, just under the $20 niche gate, so the broader phrase carries the demand."
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Wants to know, per workflow, whether to buy, configure or build, how long each takes and who does what. The three recipes name a role on every step, and the bottom line gives four 'if' rules plus a sign-off rule. Fix: the buy column's 'days to weeks' was footnoted to a Google Cloud survey that measures idea-to-production, not seat roll-outs; it now says plainly it is our estimate. FAQ questions were seen at: r/AI_Agents (build or buy agents; learn, pay someone or buy), r/ArtificialInteligence (build, buy or assemble), r/vectordatabase (knowledge search), Quora (do most companies buy). Forum threads are not used as evidence."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Reads on a phone. 'Tokens' is now glossed as word pieces in the side-by-side table. 'Deprecated' was unclear and, for Agent Builder, read as past tense four days early; the table now says OpenAI has set it for retirement on 30 Nov 2026, and the own-data row says 'set for retirement'. Shadow AI is explained in the same cell as personal AI tools staff use anyway."
+  },
+  {
+   "reader": "GM",
+   "notes": "Asks whether one team can try it first and what it costs the unit. Recipe 1 already had a 30-day trial; recipe 2 now launches the agent to one team first. Cash costs are dated vendor prices with our arithmetic labelled. The research has no sourced figure for staff time on a build, so none is given; the cost lines say integration and upkeep outweigh tokens."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Read as the AP lead or controller for recipe 3, and as a head of lending. AP lead approves ERP postings above a set value. A lender would ask what the examiner expects: the EU AI Act watch-out was swapped for SR 26-2, which replaced SR 11-7 on 17 Apr 2026 and targets banks over $30B, so smaller lenders don't over-read it. The EU rule stays in Useful resources."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Steve gets the answer from the title and five 'if' bullets. The Gartner cost table looked like a quote for his firm; it is retitled 'Why don't firms your size train their own model?' and says it is 2024 enterprise data. The 'pay someone' FAQ now uses the forum's real wording and answers it without naming any firm. The MIT split is labelled interview-based everywhere it appears, and the page says no study covers 40-500 person firms. Example marked illustrative."
+  }
+ ],
+ "updated": "2026-11-26"
+}
