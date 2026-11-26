@@ -5,8 +5,10 @@
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 export function barChartSvg({ title, subtitle = '', bars, format = (v) => v.toLocaleString('en-US'), credit, showNotes = false }) {
-  // With showNotes, each bar's note (e.g. "28 ads") follows its value, so the bars leave more room on the right.
-  const W = 760, left = 250, right = showNotes ? 150 : 90, top = subtitle ? 78 : 56, barH = 26, gap = 10, foot = 44;
+  // With showNotes, each bar's note (e.g. "28 ads, small sample") follows its value, so the bars leave room on the
+  // right for the longest value and note (about 9px a value character at 15px bold, 6.6px a note character at 13px).
+  const textW = (b) => format(b.value).length * 9 + (showNotes && b.note ? (b.note.length + 3) * 6.6 : 0);
+  const W = 760, left = 250, right = Math.max(showNotes ? 150 : 90, Math.ceil(16 + Math.max(...bars.map(textW)))), top = subtitle ? 78 : 56, barH = 26, gap = 10, foot = 44;
   const H = top + bars.length * (barH + gap) + foot;
   const max = Math.max(...bars.map((b) => b.value));
   const plotW = W - left - right;
