@@ -1,0 +1,147 @@
+---
+// api-docs-read: static block renderer — no external API surface.
+// Renders one block of an AI-work page by its id. Which blocks a page shows, in what order, and their default
+// headings come from src/lib/page-types.mjs (the golden templates); this file only knows how each block looks.
+import Fn from './Fn.astro';
+import { headingFor } from '../lib/page-types.mjs';
+
+const { id, d, page, related = [], spokes = [] } = Astro.props;
+const h = headingFor(d, id);
+---
+{id === 'what-it-is' && (d.verdict || d.templateVersion) && (<>
+  <h2 id="what-it-is">{h}</h2>
+  <p><Fn s={d.summary} /></p>
+</>)}
+{id === 'human-role' && d.humanRole.length > 0 && (<>
+  <h2 id="human-role">{h}</h2>
+  <div class="callout"><ul>{d.humanRole.map((s) => <li><Fn s={s} /></li>)}</ul></div>
+</>)}
+{id === 'spokes' && spokes.length > 0 && (<>
+  <h2 id="where-ai-pays">{h}</h2>
+  <div class="hub-grid">
+    {spokes.map((s) => <a class="hub-card" href={`/ai-work/${s.slug}.html`}><span class="hub-tag">Guide</span><h3>{s.title}</h3><p><Fn s={s.why} /></p></a>)}
+  </div>
+</>)}
+{id === 'ranked' && d.ranked.length > 0 && (<>
+  <h2 id="ranked">{h}</h2>
+  <ol class="ranked">
+    {d.ranked.map((r) => (
+      <li>
+        <h3>{r.slug ? <a href={`/ai-work/${r.slug}.html`}>{r.name}</a> : r.name}</h3>
+        <p><Fn s={r.why} /></p>
+        <p class="payoff"><strong>Payoff to measure:</strong>{' '}<Fn s={r.payoff} /></p>
+      </li>
+    ))}
+  </ol>
+</>)}
+{id === 'decisions' && d.decisions.length > 0 && (<>
+  <h2 id="decisions">{h}</h2>
+  <div class="table-scroll"><table class="sources-table">
+    <thead><tr><th>Decision</th><th>What you need to know</th></tr></thead>
+    <tbody>{d.decisions.map((x) => <tr><td>{x.decision}</td><td><Fn s={x.know} /></td></tr>)}</tbody>
+  </table></div>
+</>)}
+{id === 'tool' && d.tool && (<>
+  <h2 id="tool">{h}</h2>
+  <div class="tool-frame"><iframe src={d.tool.embed} title={d.title} loading="lazy"></iframe></div>
+  <p class="table-note"><a href={d.tool.embed}>Open the tool full screen</a></p>
+  <ol>{d.tool.steps.map((s) => <li><Fn s={s} /></li>)}</ol>
+  <h3>How it works</h3>
+  <ul>{d.tool.method.map((s) => <li><Fn s={s} /></li>)}</ul>
+</>)}
+{id === 'timeline' && d.timeline.length > 0 && (<>
+  <h2 id="timeline">{h}</h2>
+  <div class="table-scroll"><table class="sources-table">
+    <thead><tr><th>Date</th><th>What happens</th></tr></thead>
+    <tbody>{d.timeline.map((x) => <tr><td class="num">{x.date}</td><td><Fn s={x.what} /></td></tr>)}</tbody>
+  </table></div>
+</>)}
+{id === 'own-data' && d.ownData && (<>
+  <h2 id="own-data">{h}</h2>
+  <p><Fn s={d.ownData.intro} /></p>
+  <div class="table-scroll"><table class="sources-table">
+    <thead><tr>{d.ownData.headers.map((x) => <th>{x}</th>)}</tr></thead>
+    <tbody>{d.ownData.rows.map((r) => <tr>{r.map((c) => <td><Fn s={c} /></td>)}</tr>)}</tbody>
+  </table></div>
+  <p class="table-note"><Fn s={d.ownData.note} /></p>
+</>)}
+{id === 'example' && d.example && (<>
+  <h2 id="example">{h}</h2>
+  <div class="table-scroll"><table class="sources-table">
+    <thead><tr><th>Goes in</th><th>Comes out</th></tr></thead>
+    <tbody><tr><td>{d.example.input}</td><td>{d.example.output}</td></tr></tbody>
+  </table></div>
+  <p class="table-note">Illustrative example.</p>
+</>)}
+{id === 'recipes' && d.recipes.length > 0 && (<>
+  <h2 id="recipes">{h}</h2>
+  {d.recipes.map((r) => (
+    <div class="recipe">
+      <h3>{r.name}</h3>
+      <p class="when"><Fn s={r.when} /></p>
+      <div class="flow" role="img" aria-label={r.flow.join(', then ')}>
+        {r.flow.map((f, i) => <>{i > 0 && <span class="arr" aria-hidden="true">&rarr;</span>}<span class="step">{f}</span></>)}
+      </div>
+      <p class="cost"><strong>Cost:</strong>{' '}<Fn s={r.cost} /></p>
+    </div>
+  ))}
+</>)}
+{id === 'tables' && d.tables.map((t, ti) => (<>
+  <h2 id={`table-${ti + 1}`}>{t.title}</h2>
+  <p><Fn s={t.intro} /></p>
+  <div class="table-scroll"><table class="sources-table">
+    <thead><tr>{t.headers.map((x) => <th>{x}</th>)}</tr></thead>
+    <tbody>{t.rows.map((r) => <tr><td>{r.url ? <a href={r.url}>{r.name}</a> : r.name}</td>{r.cells.map((c) => <td><Fn s={c} /></td>)}</tr>)}</tbody>
+  </table></div>
+  {t.note && <p class="table-note"><Fn s={t.note} /></p>}
+</>))}
+{id === 'rules' && d.rules.length > 0 && (<>
+  <h2 id="rules">{h}</h2>
+  <div class="table-scroll"><table class="sources-table">
+    <thead><tr><th>Rule</th><th>Status</th><th>What it means for you</th></tr></thead>
+    <tbody>{d.rules.map((r) => <tr><td><a href={r.url}>{r.name}</a></td><td><span class="status">{r.status}</span></td><td><Fn s={r.what} /></td></tr>)}</tbody>
+  </table></div>
+  <p class="table-note">Not legal advice. Check with your counsel.</p>
+</>)}
+{id === 'benchmark' && d.howToTest.length > 0 && (<>
+  <h2 id="benchmark">{h}</h2>
+  <ol>{d.howToTest.map((s) => <li><Fn s={s} /></li>)}</ol>
+</>)}
+{id === 'what-goes-wrong' && d.watchOuts.length > 0 && (<>
+  <h2 id="what-goes-wrong">{h}</h2>
+  <ul>{d.watchOuts.map((s) => <li><Fn s={s} /></li>)}</ul>
+</>)}
+{id === 'faq' && d.faq.length > 0 && (<>
+  <h2 id="faq">{h}</h2>
+  <div class="faq">{d.faq.map((x) => <div class="faq-item"><h3>{x.q}</h3><p><Fn s={x.a} /></p></div>)}</div>
+</>)}
+{id === 'buy-or-build' && d.buyVsBuild && (<>
+  <h2 id="buy-or-build">{h}</h2>
+  <p><strong>Buy:</strong>{' '}<Fn s={d.buyVsBuild.buy} /></p>
+  <p><strong>Build:</strong>{' '}<Fn s={d.buyVsBuild.build} /></p>
+</>)}
+{id === 'something-else' && d.pickElse.length > 0 && (<>
+  <h2 id="something-else">{h}</h2>
+  <ul>{d.pickElse.map((s) => <li><Fn s={s} /></li>)}</ul>
+</>)}
+{id === 'resources' && d.resources.length > 0 && (<>
+  <h2 id="resources">{h}</h2>
+  <ul>{d.resources.map((r) => <li><a href={r.url}>{r.name}</a>: {r.what}</li>)}</ul>
+</>)}
+{id === 'key-numbers' && d.stats.length > 0 && (<>
+  <h2 id="key-numbers">{h}</h2>
+  <div class="table-scroll"><table class="sources-table">
+    <thead><tr><th>Number</th><th>What it measures</th></tr></thead>
+    <tbody>{d.stats.map((st) => <tr><td class="num">{st.num}</td><td><Fn s={st.label} /><span class="stat-src"><Fn s={st.source} /></span></td></tr>)}</tbody>
+  </table></div>
+</>)}
+{id === 'sources' && (
+  <div class="sources">
+    <h2 id="sources">{h}</h2>
+    <div class="table-scroll"><table class="sources-table">
+      <thead><tr><th>#</th><th>Source</th><th>What it says</th></tr></thead>
+      <tbody>{d.sources.map((s, i) => <tr id={`fn-${i + 1}`}><td>{i + 1}</td><td><a href={s.url}>{s.name}</a></td><td>{s.what}</td></tr>)}</tbody>
+    </table></div>
+  </div>
+)}
+{id === 'related' && related.length > 0 && (<p>Related: {related.map((r, i) => <>{i > 0 && ' · '}<a href={`/ai-work/${r.id}.html`}>{r.title}</a></>)}</p>)}

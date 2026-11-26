@@ -8,6 +8,8 @@ import Base from '../../layouts/Base.astro';
 import BenchmarkCta from '../../components/BenchmarkCta.astro';
 import ConsultingCta from '../../components/ConsultingCta.astro';
 import Fn from '../../components/Fn.astro';
+import Block from '../../components/Block.astro';
+import { TYPES, orderFor, headingFor, hasBlock } from '../../lib/page-types.mjs';
 
 export async function getStaticPaths() {
   const pages = await getCollection('aiwork');
@@ -26,11 +28,17 @@ const d = page.data;
 // The topic before the colon is set in the accent colour, as on Zarlent.
 const [topic, ...restParts] = d.title.split(':');
 const rest = restParts.join(':');
+const order = orderFor(d);
+// Golden-template pages that leave onPage empty get it built from their own section headings.
+const onPage = d.onPage.length > 0 || !d.templateVersion ? d.onPage
+  : order.filter((id) => !['what-it-is', 'resources', 'key-numbers', 'sources', 'related', 'tables'].includes(id) && hasBlock(d, id))
+      .slice(0, 6).map((id) => ({ to: id === 'spokes' ? 'where-ai-pays' : id, text: headingFor(d, id) }));
+const kind = d.templateVersion ? (TYPES[d.type]?.label || 'Guide') : 'AI work';
 ---
 <Base title={`${d.title} | Zavient`} description={d.description} noindex={!d.index} theme="blue">
   <header class="article-hero">
     <div class="wrap">
-      <div class="label">AI work &middot; {d.job}{d.industry !== 'any industry' ? ` · ${d.industry}` : ''}</div>
+      <div class="label">{kind} &middot; {d.job}{d.industry !== 'any industry' ? ` · ${d.industry}` : ''}</div>
       <h1>{rest ? (<><span class="hl">{topic}</span>:{rest}</>) : d.title}</h1>
       {d.verdict ? (
         <div class="bluf">
@@ -38,10 +46,10 @@ const rest = restParts.join(':');
           <ul>{d.verdict.map((b) => <li><Fn s={b} /></li>)}</ul>
         </div>
       ) : <p class="dek"><Fn s={d.summary} /></p>}
-      {d.onPage.length > 0 && (
+      {onPage.length > 0 && (
         <nav class="on-page" aria-label="On this page">
           <span class="bluf-label">On this page</span>
-          <ol>{d.onPage.map((o) => <li><a href={`#${o.to}`}>{o.text}</a></li>)}</ol>
+          <ol>{onPage.map((o) => <li><a href={`#${o.to}`}>{o.text}</a></li>)}</ol>
           {d.index && <p class="on-page-cta">And at the end: <a href="#diagnostic">a free 30-minute diagnostic</a> of how to approach this with AI.</p>}
         </nav>
       )}
@@ -51,89 +59,7 @@ const rest = restParts.join(':');
   </header>
   <article class="article-body">
     <div class="wrap">
-      {d.verdict && (<>
-        <h2 id="what-it-is">What it is</h2>
-        <p><Fn s={d.summary} /></p>
-      </>)}
-      {spokes.length > 0 && (<>
-        <h2 id="where-ai-pays">Where AI pays first in finance work</h2>
-        <div class="hub-grid">
-          {spokes.map((s) => <a class="hub-card" href={`/ai-work/${s.slug}.html`}><span class="hub-tag">Guide</span><h3>{s.title}</h3><p><Fn s={s.why} /></p></a>)}
-        </div>
-      </>)}
-      {d.ownData && (<>
-        <h2 id="own-data">{d.ownData.title}</h2>
-        <p><Fn s={d.ownData.intro} /></p>
-        <div class="table-scroll"><table class="sources-table">
-          <thead><tr>{d.ownData.headers.map((h) => <th>{h}</th>)}</tr></thead>
-          <tbody>{d.ownData.rows.map((r) => <tr>{r.map((c) => <td><Fn s={c} /></td>)}</tr>)}</tbody>
-        </table></div>
-        <p class="table-note"><Fn s={d.ownData.note} /></p>
-      </>)}
-      <h2 id="example">What it looks like</h2>
-      <div class="table-scroll"><table class="sources-table">
-        <thead><tr><th>Goes in</th><th>Comes out</th></tr></thead>
-        <tbody><tr><td>{d.example.input}</td><td>{d.example.output}</td></tr></tbody>
-      </table></div>
-      <p class="table-note">Illustrative example.</p>
-      {d.recipes.length > 0 && (<>
-        <h2 id="recipes">{d.recipesTitle}</h2>
-        {d.recipes.map((r) => (
-          <div class="recipe">
-            <h3>{r.name}</h3>
-            <p class="when"><Fn s={r.when} /></p>
-            <div class="flow" role="img" aria-label={r.flow.join(', then ')}>
-              {r.flow.map((f, i) => <>{i > 0 && <span class="arr" aria-hidden="true">&rarr;</span>}<span class="step">{f}</span></>)}
-            </div>
-            <p class="cost"><strong>Cost:</strong> <Fn s={r.cost} /></p>
-          </div>
-        ))}
-      </>)}
-      {d.tables.map((t, ti) => (<>
-        <h2 id={`table-${ti + 1}`}>{t.title}</h2>
-        <p><Fn s={t.intro} /></p>
-        <div class="table-scroll"><table class="sources-table">
-          <thead><tr>{t.headers.map((h) => <th>{h}</th>)}</tr></thead>
-          <tbody>{t.rows.map((r) => <tr><td>{r.url ? <a href={r.url}>{r.name}</a> : r.name}</td>{r.cells.map((c) => <td><Fn s={c} /></td>)}</tr>)}</tbody>
-        </table></div>
-        {t.note && <p class="table-note"><Fn s={t.note} /></p>}
-      </>))}
-      {d.rules.length > 0 && (<>
-        <h2 id="rules">Rules that apply</h2>
-        <div class="table-scroll"><table class="sources-table">
-          <thead><tr><th>Rule</th><th>Status</th><th>What it means for you</th></tr></thead>
-          <tbody>{d.rules.map((r) => <tr><td><a href={r.url}>{r.name}</a></td><td><span class="status">{r.status}</span></td><td><Fn s={r.what} /></td></tr>)}</tbody>
-        </table></div>
-        <p class="table-note">Not legal advice. Check with your counsel.</p>
-      </>)}
-      <h2 id="benchmark">{d.testTitle}</h2>
-      <ol>{d.howToTest.map((s) => <li><Fn s={s} /></li>)}</ol>
-      <h2 id="what-goes-wrong">What goes wrong</h2>
-      <ul>{d.watchOuts.map((s) => <li><Fn s={s} /></li>)}</ul>
-      <h2 id="buy-or-build">Buy or build</h2>
-      <p><strong>Buy:</strong> <Fn s={d.buyVsBuild.buy} /></p>
-      <p><strong>Build:</strong> <Fn s={d.buyVsBuild.build} /></p>
-      {d.pickElse.length > 0 && (<>
-        <h2 id="something-else">When to pick something else</h2>
-        <ul>{d.pickElse.map((s) => <li><Fn s={s} /></li>)}</ul>
-      </>)}
-      <h2 id="resources">Useful resources</h2>
-      <ul>{d.resources.map((r) => <li><a href={r.url}>{r.name}</a>: {r.what}</li>)}</ul>
-      {d.stats.length > 0 && (<>
-        <h2 id="key-numbers">Key numbers on this page</h2>
-        <div class="table-scroll"><table class="sources-table">
-          <thead><tr><th>Number</th><th>What it measures</th></tr></thead>
-          <tbody>{d.stats.map((st) => <tr><td class="num">{st.num}</td><td><Fn s={st.label} /><span class="stat-src"><Fn s={st.source} /></span></td></tr>)}</tbody>
-        </table></div>
-      </>)}
-      <div class="sources">
-        <h2 id="sources">Sources</h2>
-        <div class="table-scroll"><table class="sources-table">
-          <thead><tr><th>#</th><th>Source</th><th>What it says</th></tr></thead>
-          <tbody>{d.sources.map((s, i) => <tr id={`fn-${i + 1}`}><td>{i + 1}</td><td><a href={s.url}>{s.name}</a></td><td>{s.what}</td></tr>)}</tbody>
-        </table></div>
-      </div>
-      {related.length > 0 && (<p>Related: {related.map((r, i) => <>{i > 0 && ' · '}<a href={`/ai-work/${r.id}.html`}>{r.title}</a></>)}</p>)}
+      {order.map((id) => <Block id={id} d={d} page={page} related={related} spokes={spokes} />)}
     </div>
   </article>
   {d.index ? <ConsultingCta job={d.job} heading={d.offer?.heading} ask={d.offer?.body} /> : <BenchmarkCta job={d.job} />}

@@ -33,6 +33,13 @@ export function checkPage(d) {
   if (d.ownData) { block('ownData.intro', d.ownData.intro, L.paraSentences); block('ownData.note', d.ownData.note, L.paraSentences); d.ownData.rows.forEach((r, i) => r.forEach((c, j) => block(`ownData.rows[${i}][${j}]`, c, L.cellSentences))); }
   (d.tables || []).forEach((t, k) => { block(`tables[${k}].intro`, t.intro, L.paraSentences); if (t.note) block(`tables[${k}].note`, t.note, L.paraSentences); t.rows.forEach((r, i) => r.cells.forEach((c, j) => block(`tables[${k}].rows[${i}][${j}]`, c, L.cellSentences))); });
   if (d.offer) block('offer.body', d.offer.body, L.paraSentences);
+  // Golden-template blocks (26 Nov 2026)
+  (d.humanRole || []).forEach((t, i) => block(`humanRole[${i}]`, t, L.bulletSentences));
+  (d.faq || []).forEach((x, i) => block(`faq[${i}].a`, x.a, L.paraSentences));
+  (d.ranked || []).forEach((x, i) => { block(`ranked[${i}].why`, x.why, L.bulletSentences); block(`ranked[${i}].payoff`, x.payoff, 1); });
+  (d.decisions || []).forEach((x, i) => block(`decisions[${i}].know`, x.know, L.cellSentences));
+  (d.timeline || []).forEach((x, i) => block(`timeline[${i}].what`, x.what, L.cellSentences));
+  if (d.tool) { d.tool.steps.forEach((t, i) => block(`tool.steps[${i}]`, t, L.bulletSentences)); d.tool.method.forEach((t, i) => block(`tool.method[${i}]`, t, L.bulletSentences)); }
   if (d.example) { block('example.input', d.example.input, L.paraSentences); block('example.output', d.example.output, L.paraSentences); }
   return out;
 }

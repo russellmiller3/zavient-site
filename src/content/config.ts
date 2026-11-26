@@ -1,5 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { TYPES, COMMON_REQUIRED, MIN } from '../lib/page-types.mjs';
 
 // One Insights article = this shape. Decap CMS edits these same fields.
 // Prose (sections, "Ask your CEO" blockquotes, the "What kills these" list)
@@ -34,10 +35,25 @@ const aiwork = defineCollection({
     job: z.string(),
     industry: z.string().default('any industry'),
     summary: z.string().min(80),
-    example: z.object({ input: z.string(), output: z.string() }),
-    howToTest: z.array(z.string()).min(3),
-    buyVsBuild: z.object({ buy: z.string(), build: z.string() }),
-    watchOuts: z.array(z.string()).min(2),
+    // Golden templates (26 Nov 2026): a page with templateVersion follows its type's block order and requirements in
+    // src/lib/page-types.mjs. Pages without it are the first pages and keep the layout they shipped with.
+    type: z.enum(['usecase', 'crossing', 'hub', 'industry', 'role', 'tool', 'regulation', 'glossary']).default('usecase'),
+    templateVersion: z.number().int().optional(),
+    topic: z.string().optional(),
+    headings: z.record(z.string()).default({}),
+    example: z.object({ input: z.string(), output: z.string() }).optional(),
+    howToTest: z.array(z.string()).default([]),
+    buyVsBuild: z.object({ buy: z.string(), build: z.string() }).optional(),
+    watchOuts: z.array(z.string()).default([]),
+    humanRole: z.array(z.string().min(15)).default([]),
+    faq: z.array(z.object({ q: z.string().min(10), a: z.string().min(20) })).default([]),
+    ranked: z.array(z.object({ name: z.string(), slug: z.string().optional(), why: z.string(), payoff: z.string() })).default([]),
+    decisions: z.array(z.object({ decision: z.string(), know: z.string() })).default([]),
+    tool: z.object({ embed: z.string().regex(/^\/tools\/[a-z0-9-]+\.html$/), steps: z.array(z.string()).min(3), method: z.array(z.string()).min(3) }).optional(),
+    timeline: z.array(z.object({ date: z.string(), what: z.string() })).default([]),
+    differs: z.array(z.object({ what: z.string(), how: z.string() })).default([]),
+    // ICP review log, in order (Russell, 26 Nov 2026). Never rendered; the publish gate checks it.
+    reviews: z.array(z.object({ reader: z.string(), notes: z.string() })).default([]),
     resources: z.array(link).min(1),
     sources: z.array(link).min(1),
     related: z.array(z.string()).default([]),
@@ -66,8 +82,20 @@ const aiwork = defineCollection({
     offer: z.object({ heading: z.string(), body: z.string() }).optional(),
     recipesTitle: z.string().default('Three ways to build it'),
     testTitle: z.string().default('How to benchmark AI on this job before you buy'),
-  }).refine((d) => !d.index || (d.verdict && d.onPage.length >= 3 && d.stats.length >= 3 && d.sources.length >= 3), {
-    message: 'an indexed AI-work page needs a verdict, an On this page list of 3+ items, 3+ Zavient numbers and 3+ sources',
+  }).superRefine((d, ctx) => {
+    const need = (ok, message) => { if (!ok) ctx.addIssue({ code: z.ZodIssueCode.custom, message }); };
+    if (!d.templateVersion) {
+      need(d.example && d.buyVsBuild && d.howToTest.length >= 3 && d.watchOuts.length >= 2, 'a page without templateVersion needs example, buyVsBuild, 3+ howToTest and 2+ watchOuts');
+      need(!d.index || (d.verdict && d.onPage.length >= 3 && d.stats.length >= 3 && d.sources.length >= 3), 'an indexed AI-work page needs a verdict, an On this page list of 3+ items, 3+ Zavient numbers and 3+ sources');
+      return;
+    }
+    if (!d.index) return; // drafts may build half-filled; they stay noindex
+    const t = TYPES[d.type];
+    for (const f of [...COMMON_REQUIRED, ...t.required]) {
+      const v = d[f];
+      need(v !== undefined && v !== null && (!Array.isArray(v) || v.length > 0), `an indexed ${d.type} page needs ${f}`);
+    }
+    need(d.sources.length >= MIN[t.minSources || 'sources'], `an indexed ${d.type} page needs ${MIN[t.minSources || 'sources']}+ sources`);
   }),
 });
 
