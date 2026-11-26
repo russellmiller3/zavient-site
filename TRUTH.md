@@ -2,7 +2,7 @@
 
 The agent's reference for zavient.com: what the site is for, where the work stands, how it is built, what
 breaks, and what to do next. The master plan (strategy, numbers, page lists) is `docs/zavient-ai-site-master-plan.md`.
-Last reconciled 25 Nov 2026, on branch `feature/ai-work-pages`.
+Last reconciled 26 Nov 2026, on branch `feature/finance-pages` (not merged, not live).
 
 <!-- truth:generated:toc START -->
 **Contents** — generated from the `##` headings by `repo-truth-doc`. The core stays on top; everything else goes below it.
@@ -60,6 +60,15 @@ Last reconciled 25 Nov 2026, on branch `feature/ai-work-pages`.
   be penalized by google". All 21 (pages and hub) carry `noindex` and are out of `sitemap-ai.xml`; they stay
   reachable by link. Google's own guidance: many AI-written pages that add no value can break its
   scaled-content spam policy. A new approach is with Russell for a decision; the master plan changes after it.
+- **Five finance pages rebuilt to a publish gate (26 Nov 2026, branch `feature/finance-pages`, not live):**
+  ai-consulting-services (hub), ai-document-processing, ai-invoice-processing, ai-underwriting and
+  ai-credit-scoring. Each has `index: true`: a verdict, 4 numbers (most only Zavient has: FinExtractBench,
+  job-ad pay, our own counts of tools and prices), 3+ sources, tool tables, three build recipes, rules, and an
+  offer that sells AI consulting (Russell, 26 Nov: "it's more about AI consulting services", not booking a
+  benchmark). The schema refuses `index: true` without a verdict, 3 stats and 3 sources. Only these pages are
+  indexed and in `sitemap-ai.xml`; the other 16 stay noindex with the benchmark offer. Publishing = merging to
+  `master`, which needs Russell's yes. The credit benchmark (scorecard vs EBM vs LightGBM on UCI data) is not
+  run: the data hosts are blocked from the cloud session, so it runs on Russell's Mac.
 - **Trend story:** the share of US job postings that mention AI, monthly from January 2019 to October 2026,
   from Indeed Hiring Lab's free data (CC BY 4.0): 2.74% in January 2025, 7.60% in October 2026.
   Evidence: `docs/ai-work-site/job-data/indeed/monthly.json`.
@@ -149,11 +158,12 @@ every page -> src/components/BenchmarkCta.astro -> /benchmark-your-documents.htm
 
 ## How results are judged
 
-- `npm test` builds the site and runs 4 tests: offer block and a source link on every AI-work page; every
+- `npm test` builds the site and runs 5 tests: the right offer block (consulting on indexed pages, benchmark on
+  the rest), noindex and sitemap agree with `index`, and a source link, on every AI-work page; every
   data story's SVG and CSV match its JSON; every internal link on every page names a real file (Vercel
   serves only exact file paths, so /data is a 404 and /data.html works; this test failed on 3 menu links
   before the fix); the schema refuses a story with no sources (checked on a throwaway
-  copy). Proven 25 Nov 2026: renaming the offer block's marker made tests 1 and 2 fail; restoring it passed.
+  copy); the schema refuses an indexed AI-work page with no verdict (same method). Proven 25 Nov 2026: renaming the offer block's marker made tests 1 and 2 fail; restoring it passed.
 - Tests run through Runner (Russell's rule). From `~/Desktop/code/runner`:
   `node ~/.claude/scripts/quiet-py.mjs -m runner.bounded_shell test --app-root ~/Desktop/code/zavient-site-live --app-entrypoint src/lib/lineChart.js -- npm test`
   and the same with `--app-entrypoint docs/ai-work-site/job-data/mentions.py -- python3 -m pytest docs/ai-work-site/job-data/test_mentions.py -q`.

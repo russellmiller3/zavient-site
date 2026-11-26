@@ -1,30 +1,396 @@
 {
- "title": "AI underwriting for lenders and insurers",
- "description": "How AI reads applications and supporting documents for underwriting, how to test it on your own files, and the rules on explaining decisions.",
+ "title": "AI underwriting for lenders and insurers: what to automate first",
+ "description": "Where AI pays in underwriting: the reading, not the decision. 19 tools checked, the US and EU rules, our benchmark data and three builds.",
  "job": "underwriting",
  "industry": "lending and insurance",
- "summary": "AI underwriting reads the application and supporting documents, pulls out the facts an underwriter needs, and scores the risk. The underwriter still makes the decision, and the reasons must be explainable to the applicant.",
- "example": {"input": "A small-business loan application, 12 months of bank statements and two years of tax returns.", "output": "Average monthly revenue, existing debt payments, two flagged risks with page references, and a draft risk score with its main reasons."},
- "howToTest": [
-  "Take 50 past files where the outcome is known, with the facts your underwriters extracted.",
-  "Run each AI model on the same files and count the facts it gets exactly right.",
-  "Check whether each model can state the reasons behind a score in plain words.",
-  "Measure cost per file, including retries on files the model reads badly."
+ "summary": "AI underwriting reads the application and its documents, pulls out the facts an underwriter needs, and helps score the risk. The reading is where the hours go and where AI is now reliable. The decision is where the rules bite, so it stays explainable and a person stays accountable.",
+ "index": true,
+ "verdict": "Point AI at the reading, not the decision. Underwriters spend about 39% of their time on admin and other non-core work, and current models read long financial documents with zero mistakes in our sealed benchmark when two models check each other. Keep the risk decision with an explainable model and a named underwriter: US lenders and New York insurers must give specific reasons for a decline, and 30 US jurisdictions now expect insurers to govern and test their AI.",
+ "stats": [
+  {
+   "num": "0 of 19",
+   "label": "underwriting products we checked publish a price; every one sells by demo",
+   "source": "Zavient review of vendor sites, 26 Nov 2026"
+  },
+  {
+   "num": "0",
+   "label": "mistakes by the two best models reading 30 sealed fund reports",
+   "source": "FinExtractBench, Zavient, Nov 2026"
+  },
+  {
+   "num": "39%",
+   "label": "of P&C underwriters' time goes to admin and other non-core work",
+   "source": "Accenture and The Institutes survey, 434 underwriters"
+  },
+  {
+   "num": "30",
+   "label": "US jurisdictions have adopted the NAIC bulletin on insurers' use of AI",
+   "source": "NAIC adoption map, 13 Nov 2026"
+  }
  ],
- "buyVsBuild": {"buy": "Buy underwriting software when your products are standard and the vendor's data covers your market.", "build": "Build on a model when your own loss history is your edge and you need the score to use it."},
+ "pickElse": [
+  "Consumer lending where the score is the product: start with the AI credit scoring guide. The decline reasons are the regulated part.",
+  "Life and health insurer: start from a rules engine such as Swiss Re Magnum or Munich Re ALLFINANZ. AI earns its keep summarising medical evidence, not making the call.",
+  "Commercial P&C carrier or MGA buried in broker submissions: an intake product (Cytora, Convr, FurtherAI, Sixfold) may beat a build. Benchmark it on 50 of your own submissions first.",
+  "The question is price, not whether to take the risk: look at actuarial pricing platforms such as Akur8, Earnix or hyperexponential."
+ ],
+ "ownData": {
+  "title": "Which underwriting steps AI can take on today",
+  "intro": "Our read of each step, built from our own benchmark of AI reading long financial documents and the published studies below.",
+  "headers": [
+   "Step",
+   "Can AI do it now?",
+   "Evidence"
+  ],
+  "rows": [
+   [
+    "Intake: read applications, broker emails, forms",
+    "Yes, with a second model checking",
+    "Two models, 0 mistakes on 30 sealed reports (FinExtractBench)"
+   ],
+   [
+    "Pull facts from statements, returns, loss runs",
+    "Yes, if every fact cites its page and quote",
+    "The top 9 of 12 tools were within 2 facts of each other (FinExtractBench hard round)"
+   ],
+   [
+    "Pick the right number among look-alike tables",
+    "Not alone; flag these for a person",
+    "7 of 10 tools took the wrong table on one 57-page report (FinExtractBench)"
+   ],
+   [
+    "Trust the model's own confidence",
+    "No",
+    "Chat models rated their wrong answers 70 to 100 (FinExtractBench)"
+   ],
+   [
+    "Score the risk",
+    "Yes, with an explainable model, not a chatbot",
+    "Gradient boosting beat language models on credit default (arXiv 2510.25701)"
+   ],
+   [
+    "Decide and explain the decision",
+    "A person, using the model's reasons",
+    "Reg B and NYDFS Circular Letter 7 require specific reasons"
+   ]
+  ],
+  "note": "FinExtractBench is Zavient's benchmark on public private-fund reports, not loan or insurance files. Your documents will differ, which is why the first step of any build is a benchmark on your own files."
+ },
+ "example": {
+  "input": "A small-business loan application, 12 months of bank statements and two years of tax returns.",
+  "output": "Average monthly revenue, existing debt payments and two flagged risks, each with its page and quote, plus a draft risk score with its main reasons for the underwriter to accept or change."
+ },
+ "recipes": [
+  {
+   "name": "1. Commercial insurance: submission intake",
+   "when": "Carriers and MGAs where submissions pile up and some fit-appetite risks go unquoted.",
+   "flow": [
+    "Broker email, forms, loss runs",
+    "AI extracts each fact with page and quote",
+    "Appetite and clearance check",
+    "Enrich with third-party data",
+    "Underwriter queue, best fit first"
+   ],
+   "cost": "Model reading costs cents a submission. Intake products are sold by contract; none we checked publish a price."
+  },
+  {
+   "name": "2. Small-business lending: file to decision",
+   "when": "Lenders whose underwriters spend the day reading statements and returns.",
+   "flow": [
+    "Bank statements and tax returns",
+    "AI extracts cash-flow facts",
+    "People check flagged facts",
+    "Explainable score",
+    "Underwriter decides, reasons logged"
+   ],
+   "cost": "About $0.01 to $0.30 per long document to read with current models in our benchmark, plus a scorecard you own."
+  },
+  {
+   "name": "3. Life insurance: evidence summary for the rules engine",
+   "when": "Life and health carriers with an existing rules engine.",
+   "flow": [
+    "Application and medical evidence",
+    "AI summarises with page citations",
+    "Rules engine applies your manual",
+    "Clean cases: automated offer",
+    "Others: referred to an underwriter"
+   ],
+   "cost": "Rules engines such as Magnum and ALLFINANZ are sold by contract. The AI layer is a reading step you can benchmark and swap."
+  }
+ ],
+ "tables": [
+  {
+   "title": "Insurance underwriting tools",
+   "intro": "Checked 26 November 2026. None publishes a price. Funding and customer claims come from press releases.",
+   "headers": [
+    "Product",
+    "What it does",
+    "Who uses it",
+    "Worth knowing"
+   ],
+   "rows": [
+    {
+     "name": "Sixfold",
+     "url": "https://fintech.global/2026/01/30/insurtech-firm-sixfold-secures-30m-to-advance-ai-underwriting/",
+     "cells": [
+      "AI risk assessment for P&C underwriters",
+      "Zurich North America, Guardian, Generali",
+      "$30m Series B, Jan 2026"
+     ]
+    },
+    {
+     "name": "FurtherAI",
+     "url": "https://www.globenewswire.com/news-release/2025/10/07/3162540/0/en/FurtherAI-announces-25M-Series-A.html",
+     "cells": [
+      "Submission intake, policy comparison, underwriting audits",
+      "Carriers, MGAs, brokers",
+      "$25m Series A led by a16z, Oct 2025"
+     ]
+    },
+    {
+     "name": "Cytora",
+     "url": "https://www.globenewswire.com/news-release/2025/09/09/3147130/27604/en/Applied-Systems-Acquires-Cytora.html",
+     "cells": [
+      "Turns forms, emails and spreadsheets into ready submissions",
+      "Commercial carriers, MGAs, brokers",
+      "Bought by Applied Systems, Sep 2025"
+     ]
+    },
+    {
+     "name": "Federato",
+     "url": "https://www.businesswire.com/news/home/20251118957886/en/Federato-Raises-%24100-Million-Series-D-Led-by-Growth-Equity-at-Goldman-Sachs-Alternatives",
+     "cells": [
+      "Underwriting and portfolio platform",
+      "Carriers and MGAs",
+      "$100m Series D, Nov 2025"
+     ]
+    },
+    {
+     "name": "Convr",
+     "url": "https://www.reinsurancene.ws/zurich-north-america-enhances-underwriting-efficiency-with-convr-ai/",
+     "cells": [
+      "Workbench that reads forms and loss runs",
+      "Commercial carriers",
+      "Zurich North America expanded use, Dec 2025"
+     ]
+    },
+    {
+     "name": "Kalepa",
+     "url": "https://dealroom.co/news/169972-kalepa-raises-75m-series-b-to-automate-insurance-underwriting/",
+     "cells": [
+      "Commercial underwriting and portfolio AI",
+      "Specialty and commercial carriers",
+      "Reported $75m Series B, Nov 2026 (one source)"
+     ]
+    },
+    {
+     "name": "Gradient AI",
+     "url": "https://coverager.com/gradient-ai-raises-56-million/",
+     "cells": [
+      "Risk predictions from policy and claims data",
+      "Group health, P&C, workers' comp",
+      "$56.1m Series C"
+     ]
+    },
+    {
+     "name": "Verisk GenAI Underwriting Assistant",
+     "url": "https://www.verisk.com/company/newsroom/verisk-launches-generative-ai-commercial-underwriting-assistant-to-revolutionize-risk-assessment-and-underwriting-efficiency/",
+     "cells": [
+      "Commercial property intake and summaries",
+      "Property underwriters",
+      "Launched Sep 2025; a person stays in the loop"
+     ]
+    },
+    {
+     "name": "Swiss Re Magnum",
+     "url": "https://www.swissre.com/reinsurance/life-and-health/solutions/magnum.html",
+     "cells": [
+      "Life and health rules engine",
+      "Life insurers",
+      "2,322 risk factors, 30,000+ rules"
+     ]
+    },
+    {
+     "name": "Munich Re ALLFINANZ",
+     "url": "https://www.munichre.com/automation-solutions/en/allfinanz.html",
+     "cells": [
+      "Life and health underwriting software",
+      "Life and health insurers",
+      "Data capture through referral to an underwriter"
+     ]
+    },
+    {
+     "name": "hyperexponential",
+     "url": "https://www.fintechfutures.com/press-releases/hyperexponential-raises-73m-series-b-to-expand-its-mission-critical-insurance-pricing-platform",
+     "cells": [
+      "Pricing models and rating tools",
+      "P&C insurers and reinsurers",
+      "$73m Series B, Jan 2024"
+     ]
+    },
+    {
+     "name": "Earnix",
+     "url": "https://www.businesswire.com/news/home/20250429126257/en/Earnix-the-Category-Leader-in-Dynamic-AI-for-the-Insurance-Industry-Acquires-Zelros-to-Transform-Insurers-Business-Performance",
+     "cells": [
+      "Pricing, rating and underwriting decisions",
+      "Insurers and banks",
+      "Bought Zelros, Apr 2025"
+     ]
+    },
+    {
+     "name": "Akur8",
+     "url": "https://tech.eu/2024/09/16/parisian-akur8-secures-120m-series-c-round-for-actuarial-platform/",
+     "cells": [
+      "Machine-learning pricing and reserving",
+      "Non-life insurers",
+      "$120m Series C, Sep 2024"
+     ]
+    }
+   ],
+   "note": "Lending platforms (Zest AI, Provenir, Taktile, Scienaptic, FICO, Experian) are covered in the AI credit scoring guide. None of those publishes a price either."
+  },
+  {
+   "title": "Public data you can benchmark on",
+   "intro": "Use these to compare approaches before you touch your own book. Check each licence before commercial use.",
+   "headers": [
+    "Dataset",
+    "Size",
+    "Use it for"
+   ],
+   "rows": [
+    {
+     "name": "freMTPL2 (French motor liability)",
+     "url": "https://dutangc.github.io/CASdatasets/reference/freMTPL.html",
+     "cells": [
+      "677,991 policies, 26,444 claims",
+      "Claim frequency and severity models"
+     ]
+    },
+    {
+     "name": "Prudential Life Insurance Assessment",
+     "url": "https://link.springer.com/doi/10.1007/s40747-018-0072-1",
+     "cells": [
+      "59,381 applications, 128 fields",
+      "Life risk classification; Kaggle competition rules"
+     ]
+    },
+    {
+     "name": "UCI Default of Credit Card Clients",
+     "cells": [
+      "30,000 accounts",
+      "Consumer credit default; CC BY 4.0"
+     ]
+    }
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "name": "Regulation B, 12 CFR 1002.9",
+   "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1002/subpart-A/section-1002.9",
+   "status": "In force",
+   "what": "US lenders must give the specific main reasons for a decline within 30 days, whatever model made it."
+  },
+  {
+   "name": "NYDFS Circular Letter No. 7",
+   "url": "https://www.dfs.ny.gov/industry-guidance/circular-letters/cl2024-07",
+   "status": "In force since Jul 2024",
+   "what": "New York insurers must test AI and outside data for unfair discrimination, keep board oversight, stay responsible for vendor tools and give specific reasons and data sources for adverse decisions."
+  },
+  {
+   "name": "NAIC Model Bulletin on AI",
+   "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
+   "status": "30 jurisdictions",
+   "what": "Insurers need a written AI program with governance, risk controls and vendor oversight. California, Colorado and New York have their own rules instead."
+  },
+  {
+   "name": "Colorado SB21-169",
+   "url": "https://doi.colorado.gov/for-consumers/sb21-169-protecting-consumers-from-unfair-discrimination-in-insurance-practices",
+   "status": "Life; auto and health from 15 Oct 2025",
+   "what": "Insurers must test outside data and models for unfair discrimination, fix harm found and report to the Division."
+  },
+  {
+   "name": "EU AI Act, Annex III",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3",
+   "status": "Starts 2 Dec 2027",
+   "what": "Credit scoring of people and life and health insurance risk pricing are high-risk uses. Plan logging, human oversight and documentation now if you operate in the EU."
+  }
+ ],
+ "howToTest": [
+  "Take 50 past files with known outcomes, including your messiest scans and longest packets.",
+  "Have your underwriters write the right value for every fact before any AI reads the files, and lock that answer key.",
+  "Run each tool on the same files. Count wrong facts apart from blanks, and require a page and quote for every fact.",
+  "For scoring, compare an explainable model with your current method on the same past files, and check that the decline reasons make sense to an underwriter.",
+  "Measure cost and time per file, and how many files still need a person."
+ ],
+ "buyVsBuild": {
+  "buy": "Buy when your line is standard, the vendor already handles your submission formats, and you are happy to run inside its workbench.",
+  "build": "Build when your own loss history and appetite are your edge, or when you need the reading step to feed systems you already own. The reading layer is small and swappable; the decision logic is yours."
+ },
  "watchOuts": [
-  "US lenders must give specific reasons when they deny credit, even when a complex model made the decision.",
-  "Models trained on past approvals can repeat past bias; test results across applicant groups.",
-  "Handwritten or scanned documents lower accuracy; test on your worst files, not your best."
+  "You stay responsible for a vendor's model. New York requires audit rights in the contract.",
+  "Models trained on past approvals repeat past bias. Test approval gaps across applicant groups before launch and on a schedule after.",
+  "A model's confidence score is not a warning sign. In our benchmark, wrong answers came back rated 70 to 100.",
+  "Vendor claims such as faster quotes are measured on the vendor's chosen customers. Ask for a benchmark on your own files."
  ],
  "resources": [
-  {"name": "FinanceBench", "url": "https://github.com/patronus-ai/financebench", "what": "Open questions on company financial filings; the open sample is for non-commercial use."}
+  {
+   "name": "NAIC AI Model Bulletin adoption map",
+   "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
+   "what": "Which states have adopted the bulletin, updated by NAIC."
+  },
+  {
+   "name": "FinanceBench",
+   "url": "https://github.com/patronus-ai/financebench",
+   "what": "Open questions on company financial filings; the open sample is for non-commercial use."
+  }
  ],
  "sources": [
-  {"name": "CFPB Circular 2022-03", "url": "https://www.consumerfinance.gov/compliance/circulars/circular-2022-03-adverse-action-notification-requirements-in-connection-with-credit-decisions-based-on-complex-algorithms/", "what": "Lenders must give specific reasons for credit denials, including when they use complex algorithms."},
-  {"name": "AI//COST, cost per task", "url": "https://aicost.tools/blog/llm-cost-per-task/", "what": "Same listed price, very different cost per finished task; the cheapest model failed 10 of 82 tasks."}
+  {
+   "name": "Accenture and The Institutes, P&C Underwriter Survey",
+   "url": "https://riskandinsurance.com/wp-content/uploads/2021/12/TI-Accenture_PC_Underwriter_Survey-_vf.pdf",
+   "what": "434 underwriters, 2021: 39% of time on non-core and admin work."
+  },
+  {
+   "name": "NYDFS Circular Letter No. 7 (2024)",
+   "url": "https://www.dfs.ny.gov/industry-guidance/circular-letters/cl2024-07",
+   "what": "Rules for insurers using AI and external consumer data in underwriting and pricing."
+  },
+  {
+   "name": "Colorado Division of Insurance, SB21-169",
+   "url": "https://doi.colorado.gov/for-consumers/sb21-169-protecting-consumers-from-unfair-discrimination-in-insurance-practices",
+   "what": "Testing and governance duties for insurers' data and models."
+  },
+  {
+   "name": "eCFR, 12 CFR 1002.9",
+   "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1002/subpart-A/section-1002.9",
+   "what": "Specific reasons for adverse credit action within 30 days."
+  },
+  {
+   "name": "MassMutual, AAAI 2019",
+   "url": "https://ojs.aaai.org/index.php/AAAI/article/view/4985",
+   "what": "A machine-learned life score, written up by MassMutual staff, beat traditional underwriting by 6% on claims."
+  },
+  {
+   "name": "EU AI Act, Annex III",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3",
+   "what": "Lists creditworthiness scoring and life and health insurance pricing as high-risk."
+  }
  ],
- "related": ["ai-document-processing", "ai-consulting-services"],
- "keyword": {"phrase": "ai underwriting", "searches": 390, "cpc": 65.21, "difficulty": 9},
- "updated": "2026-11-25"
+ "related": [
+  "ai-credit-scoring",
+  "ai-document-processing",
+  "ai-consulting-services"
+ ],
+ "keyword": {
+  "phrase": "ai underwriting",
+  "searches": 390,
+  "cpc": 65.21,
+  "difficulty": 9
+ },
+ "offer": {
+  "heading": "Want your underwriters out of the paperwork? Get a quick diagnostic",
+  "body": "Tell me your line of business and where the hours go. In 30 minutes you get my read on what AI should take over first."
+ },
+ "updated": "2026-11-26"
 }

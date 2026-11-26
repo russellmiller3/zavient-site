@@ -13,9 +13,22 @@ const dist = join(root, 'dist');
 const slugs = (dir) => readdirSync(join(root, 'src/content', dir)).filter((f) => f.endsWith('.json')).map((f) => f.replace(/\.json$/, ''));
 
 test('every AI-work page is built with the offer and at least one source link', () => {
+  // Indexed pages (index: true) sell AI consulting and must be in the AI sitemap and not noindexed; the rest keep the
+  // benchmark offer and noindex (26 Nov 2026: Russell asked for the offer to sell consulting, not a benchmark booking).
+  const sitemap = readFileSync(join(dist, 'sitemap-ai.xml'), 'utf8');
   for (const s of slugs('ai-work')) {
+    const data = JSON.parse(readFileSync(join(root, 'src/content/ai-work', `${s}.json`), 'utf8'));
     const html = readFileSync(join(dist, 'ai-work', `${s}.html`), 'utf8');
-    assert.match(html, /data-cta="benchmark"/, `${s}: offer block missing`);
+    if (data.index) {
+      assert.match(html, /data-cta="consulting"/, `${s}: consulting offer missing`);
+      assert.match(html, /href="mailto:rmiller@zavient\.com"/, `${s}: offer email missing`);
+      assert.doesNotMatch(html, /name="robots" content="noindex/, `${s}: indexed page is marked noindex`);
+      assert.ok(sitemap.includes(`/ai-work/${s}.html`), `${s}: indexed page missing from sitemap`);
+    } else {
+      assert.match(html, /data-cta="benchmark"/, `${s}: offer block missing`);
+      assert.match(html, /name="robots" content="noindex/, `${s}: unpublished page is not noindex`);
+      assert.ok(!sitemap.includes(`/ai-work/${s}.html`), `${s}: noindex page listed in sitemap`);
+    }
     assert.match(html, /href="\/benchmark-your-documents\.html"/, `${s}: offer link missing`);
     const sources = html.split('<h2>Sources</h2>')[1] || '';
     assert.match(sources, /<a href="https?:\/\//, `${s}: no source link`);
@@ -68,6 +81,23 @@ test('the schema refuses a data story with no sources', () => {
     const r = spawnSync('npx', ['astro', 'sync'], { cwd: tmp, encoding: 'utf8' });
     assert.notEqual(r.status, 0, 'astro sync accepted a story with no sources');
     assert.match(r.stdout + r.stderr, /sources/i);
+  } finally {
+    rmSync(tmp, { recursive: true, force: true });
+  }
+});
+
+test('the schema refuses an indexed AI-work page with no verdict', () => {
+  // Protects the publish gate (26 Nov 2026): a page may drop noindex only with a verdict, 3+ Zavient numbers and
+  // 3+ sources. Fails if someone flips index to true on a thin page.
+  const tmp = mkdtempSync(join(tmpdir(), 'zavient-gate-'));
+  try {
+    for (const p of ['src', 'public', 'astro.config.mjs', 'package.json']) cpSync(join(root, p), join(tmp, p), { recursive: true });
+    symlinkSync(join(root, 'node_modules'), join(tmp, 'node_modules'));
+    const thin = JSON.parse(readFileSync(join(root, 'src/content/ai-work/rag-chatbot.json'), 'utf8'));
+    writeFileSync(join(tmp, 'src/content/ai-work/zz-thin.json'), JSON.stringify({ ...thin, index: true }));
+    const r = spawnSync('npx', ['astro', 'sync'], { cwd: tmp, encoding: 'utf8' });
+    assert.notEqual(r.status, 0, 'astro sync accepted an indexed page with no verdict');
+    assert.match(r.stdout + r.stderr, /verdict/i);
   } finally {
     rmSync(tmp, { recursive: true, force: true });
   }

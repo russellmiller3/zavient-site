@@ -1,0 +1,21 @@
+---
+// api-docs-read: static offer block — no external API/protocol surface, only mailto and a booking link.
+// The offer on indexed AI-work pages (26 Nov 2026): an easy intro, a quick diagnostic of how to approach this work
+// with AI, which leads to an AI consulting engagement. data-cta="consulting" is what tests/site.test.mjs looks for.
+const { job = 'this work', heading = '', ask = '' } = Astro.props;
+---
+<section class="article-cta" data-cta="consulting">
+  <div class="wrap">
+    <div class="label">Quick diagnostic</div>
+    <h2>{heading || `Not sure how to approach ${job}? Get a quick diagnostic`}</h2>
+    <p>{ask || 'Tell me the work and what it costs you today. In 30 minutes you get my read on how to approach it with AI.'}</p>
+    <ul class="cta-steps">
+      <li><strong>Buy or build:</strong> whether a product already does this well enough, or it is worth building.</li>
+      <li><strong>What to benchmark:</strong> the two or three tools and models worth testing on your own files.</li>
+      <li><strong>Rules:</strong> the regulations that shape the build, and what they mean for you.</li>
+      <li><strong>Rough cost:</strong> what it would take to run, and to get built.</li>
+    </ul>
+    <p><a class="btn-gold" href="https://calendly.com/zavient/call">Book a 30-minute diagnostic &rarr;</a></p>
+    <p class="cta-secondary">Or email <a href="mailto:rmiller@zavient.com">rmiller@zavient.com</a> with two sentences on the work. If it fits, the next step is a <a href="/benchmark-your-documents.html">benchmark on your own files</a>, then the build. See <a href="/ai-offer.html">engagements and prices</a>.</p>
+  </div>
+</section>

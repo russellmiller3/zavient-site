@@ -209,3 +209,25 @@ footer a:hover { color: var(--gold); text-decoration: none; }
   opacity: .78;
 }
 .cta-secondary a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- indexed AI-work pages (26 Nov 2026): verdict, tables, recipe flows, consulting offer ---------- */
+.verdict { background: rgba(196,148,58,0.06); border: 1px solid var(--gold-border); border-left-width: 3px; padding: 22px 26px; margin: 0 0 28px; }
+.verdict .ask-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 8px; }
+.verdict p { margin: 0; color: var(--cream); font-size: 18px; }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 8px 0 10px; }
+.table-scroll .sources-table { min-width: 560px; margin-top: 0; }
+.table-note { font-size: 14px; color: var(--text-dim); margin-top: 6px; }
+.stat-src { display: block; margin-top: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--text-dim); letter-spacing: 0.04em; }
+.recipe { border: 1px solid rgba(255,255,255,0.08); padding: 20px 22px; margin: 18px 0; }
+.recipe h3 { margin-top: 0; }
+.recipe .when { color: var(--text-soft); margin-bottom: 14px; }
+.flow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 14px; }
+.flow .step { font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 1.4; color: var(--cream); background: var(--navy-light); border: 1px solid var(--gold-border); padding: 8px 12px; }
+.flow .arr { color: var(--gold); font-size: 16px; }
+.recipe .cost { font-size: 15px; margin: 0; }
+.status { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--gold); white-space: nowrap; }
+.cta-steps { text-align: left; max-width: 560px; margin: 0 auto 30px; padding-left: 22px; color: var(--text-soft); }
+.cta-steps li { margin-bottom: 10px; }
+.article-cta .cta-secondary a { color: var(--gold); }
+.article-body ol { margin: 0 0 22px 22px; }
+.article-body ol li { margin-bottom: 10px; color: var(--text-soft); }

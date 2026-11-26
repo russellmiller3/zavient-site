@@ -1,0 +1,376 @@
+{
+ "title": "AI invoice processing: buy an AP tool, then fix what it misses",
+ "description": "15 AP and invoice-capture tools checked, with prices where they exist. Why reading invoices is solved and exceptions and fraud are not.",
+ "job": "invoice processing",
+ "industry": "finance and accounts payable",
+ "summary": "AI invoice processing reads a supplier invoice, codes it, matches it to the purchase order and gets it approved and paid. Reading the invoice now costs cents. The money is in the 18% of invoices that hit an exception, and in the fake ones that ask you to pay a new bank account.",
+ "index": true,
+ "verdict": "Buy an accounts payable tool before you build anything: BILL, Ramp and Tipalti publish prices and already read invoices well. Then spend your effort where the suites fall short: the exceptions that stall approval, a check on any change to a supplier's bank details, and invoices from suppliers in countries that now require e-invoices. Build a custom AI step only for those gaps, and benchmark it on 50 of your own invoices first.",
+ "stats": [
+  {
+   "num": "3 of 9",
+   "label": "accounts payable suites we checked publish a price",
+   "source": "Zavient review of vendor pricing pages, 26 Nov 2026"
+  },
+  {
+   "num": "<$0.02",
+   "label": "for a small model to read a long financial report (47 to 57 pages) in our benchmark",
+   "source": "FinExtractBench, Zavient, Nov 2026"
+  },
+  {
+   "num": "18.4%",
+   "label": "of invoices hit an exception, on average",
+   "source": "Ardent Partners, State of ePayables 2025"
+  },
+  {
+   "num": "$3.0B",
+   "label": "lost to business email compromise in the US in 2025",
+   "source": "FBI IC3 2025 report"
+  }
+ ],
+ "pickElse": [
+  "Under a few hundred invoices a month and already on QuickBooks or Xero: use the bill capture built into your accounting software first.",
+  "Many entities, countries or currencies: look at the global suites (Tipalti, Coupa, Basware, Medius). Expect a contract and no list price.",
+  "You only need the data out of the invoice, not the workflow: a capture tool (Rossum, Nanonets, Docsumo) or a cloud invoice parser feeds your ERP directly.",
+  "You run Microsoft Power Platform: AI Builder has a prebuilt invoice model, limited to 360 calls a minute and 20 MB per file."
+ ],
+ "ownData": {
+  "title": "Who publishes a price, checked 26 November 2026",
+  "intro": "We read the pricing page of every accounts payable and invoice-capture tool below. Most sell by demo only. Where a price exists, the catch is usually in the add-ons.",
+  "headers": [
+   "Tool",
+   "Covers",
+   "Published price",
+   "Catch"
+  ],
+  "rows": [
+   [
+    "BILL",
+    "Full AP",
+    "$49, $65 or $89 per user a month; Enterprise by quote",
+    "QuickBooks and Xero sync from Team; NetSuite and Intacct only on Enterprise"
+   ],
+   [
+    "Ramp Bill Pay",
+    "Full AP",
+    "Free; Plus $15 per user a month plus a platform fee",
+    "3-way match needs a paid add-on with no list price; US suppliers only"
+   ],
+   [
+    "Tipalti",
+    "Full AP",
+    "From $99 a month",
+    "Per-invoice and per-payment fees on top, amounts not published"
+   ],
+   [
+    "Stampli",
+    "Full AP",
+    "Quote only",
+    "PO matching is semi-automated unless you add its AI agent"
+   ],
+   [
+    "AvidXchange",
+    "Full AP",
+    "Demo only",
+    "PO matching not described"
+   ],
+   [
+    "Coupa AP",
+    "Full AP",
+    "Not published",
+    "Sold inside the wider Coupa suite"
+   ],
+   [
+    "Medius",
+    "Full AP",
+    "Not published",
+    "Payments are a paid add-on"
+   ],
+   [
+    "Basware",
+    "Full AP",
+    "Not published",
+    "Modular subscription"
+   ],
+   [
+    "Vic.ai",
+    "Full AP",
+    "Demo only",
+    "Coding not described on the pricing page"
+   ],
+   [
+    "Rossum",
+    "Capture",
+    "From $18,000 a year",
+    "One-year minimum contract"
+   ],
+   [
+    "Nanonets",
+    "Capture",
+    "$100 a month for 100 credits after a free start",
+    "Site estimates under $2 an invoice; Starter capped at 3 users"
+   ],
+   [
+    "Docsumo",
+    "Capture",
+    "Free up to 1,000 pages; then by quote",
+    "Setup fees extra; unused credits expire"
+   ],
+   [
+    "QuickBooks Online",
+    "Bills for small business",
+    "$38 to $340 a month",
+    "Approval workflows only on Advanced"
+   ]
+  ],
+  "note": "Source: each vendor's pricing page, read 26 November 2026. 'Full AP' means capture, approvals and payment in one product. Prices are US list prices before discounts."
+ },
+ "example": {
+  "input": "A two-page PDF invoice emailed by a supplier, with a purchase order number and a note that the bank account has changed.",
+  "output": "Supplier, invoice number, date, lines, tax and total, matched to the purchase order and receipt, coded to the right accounts, and held for a person because the bank details differ from the supplier record."
+ },
+ "recipes": [
+  {
+   "name": "1. Buy the suite and switch on its AI",
+   "when": "Most small and mid-size companies.",
+   "flow": [
+    "Invoices to an AP inbox",
+    "Suite reads and codes them",
+    "Match to PO and receipt",
+    "Approval rules",
+    "Payment",
+    "Sync to your ERP"
+   ],
+   "cost": "BILL $49 to $89 per user a month; Ramp free or $15 per user a month plus a platform fee; Tipalti from $99 a month plus fees."
+  },
+  {
+   "name": "2. Add an AI check where your suite falls short",
+   "when": "You already have AP software but exceptions and fraud attempts still get through.",
+   "flow": [
+    "New invoice",
+    "AI reads it with page and quote",
+    "Compare with PO, receipt and supplier record",
+    "Bank details changed?",
+    "Hold and call the supplier on a known number",
+    "Release to approval"
+   ],
+   "cost": "Cents per invoice to run a current model. The cost is building and owning the rules for what gets held."
+  },
+  {
+   "name": "3. Capture only, into your own ERP",
+   "when": "High volume of standard invoices and an ERP that already handles approvals and payment.",
+   "flow": [
+    "Scan or PDF",
+    "Capture tool or cloud invoice parser",
+    "Low confidence: AI re-reads",
+    "Person checks what is still unsure",
+    "Post to ERP"
+   ],
+   "cost": "Cloud invoice parsers run about $10 per 1,000 pages at AWS and Google; Rossum starts at $18,000 a year."
+  }
+ ],
+ "tables": [
+  {
+   "title": "Tools we checked without a public price",
+   "intro": "These sell by demo or quote. Ask each for a benchmark on your own invoices before you sign.",
+   "headers": [
+    "Tool",
+    "What it covers",
+    "Who it is for"
+   ],
+   "rows": [
+    {
+     "name": "Stampli",
+     "url": "https://stampli.com/pricing",
+     "cells": [
+      "Capture, 2- and 3-way PO match, payments, supplier management",
+      "Not stated"
+     ]
+    },
+    {
+     "name": "AvidXchange",
+     "url": "https://www.avidxchange.com/",
+     "cells": [
+      "Capture and coding, AI approvals, payments",
+      "Mid-market"
+     ]
+    },
+    {
+     "name": "Coupa AP Automation",
+     "url": "https://www.coupa.com/products/ap-automation/",
+     "cells": [
+      "Matching, approvals, e-invoicing in 50+ countries, fraud checks",
+      "Large companies"
+     ]
+    },
+    {
+     "name": "Medius",
+     "url": "https://www.medius.com/pricing/",
+     "cells": [
+      "Capture, matching, approvals; fraud checks on its top plan",
+      "Not stated"
+     ]
+    },
+    {
+     "name": "Basware",
+     "url": "https://www.basware.com/en/pricing",
+     "cells": [
+      "Matching, AI coding, e-invoicing network, fraud checks",
+      "Mid-market to global"
+     ]
+    },
+    {
+     "name": "Vic.ai",
+     "url": "https://vic.ai/pricing",
+     "cells": [
+      "Capture, approvals, PO matching, payments",
+      "Not stated"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Public data you can benchmark on",
+   "intro": "Receipts and synthetic invoices. Useful to compare tools; your own invoices are the real test.",
+   "headers": [
+    "Dataset",
+    "Size",
+    "Licence"
+   ],
+   "rows": [
+    {
+     "name": "CORD (Clova AI)",
+     "url": "https://github.com/clovaai/cord",
+     "cells": [
+      "1,000 receipts with labels",
+      "CC BY 4.0"
+     ]
+    },
+    {
+     "name": "FATURA",
+     "url": "https://zenodo.org/record/8261508",
+     "cells": [
+      "10,000 synthetic invoice images, 24 field types",
+      "CC BY 4.0"
+     ]
+    },
+    {
+     "name": "SROIE (ICDAR 2019)",
+     "url": "https://github.com/zzzDavid/ICDAR-2019-SROIE",
+     "cells": [
+      "1,000 scanned receipts",
+      "Data licence not stated"
+     ]
+    }
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "name": "Germany: B2B e-invoicing",
+   "url": "https://ec.europa.eu/digital-building-blocks/sites/display/DIGITAL/eInvoicing%2Bin%2BGermany",
+   "status": "Issuing from 1 Jan 2027 (over €800,000 turnover)",
+   "what": "All businesses must be able to receive EN 16931 e-invoices since 1 Jan 2025. Larger firms must issue them from 2027 and nearly all from 2028."
+  },
+  {
+   "name": "France: B2B e-invoicing",
+   "url": "https://www.impots.gouv.fr/actualite/facturation-electronique",
+   "status": "Started 1 Sep 2026",
+   "what": "Every business must be able to receive e-invoices; large and mid-size firms must issue them. Small firms issue from 1 Sep 2027."
+  },
+  {
+   "name": "EU VAT in the Digital Age (ViDA)",
+   "url": "https://taxation-customs.ec.europa.eu/news/adoption-vat-digital-age-package-2025-03-11_en",
+   "status": "Adopted Mar 2025",
+   "what": "Member states can require e-invoicing; digital reporting for cross-border B2B starts 1 Jul 2030."
+  },
+  {
+   "name": "United States",
+   "url": "https://www.avalara.com/us/en/blog/2025/07/us-e-invoicing-fragmentation-and-future-solutions",
+   "status": "No mandate",
+   "what": "No federal or state B2B e-invoicing mandate. A voluntary network exists. Source is a vendor that helped found it."
+  }
+ ],
+ "howToTest": [
+  "Pull 50 recent invoices, including credit notes, multi-page invoices, foreign ones and the worst scans.",
+  "Write down the right supplier, number, date, total, tax and PO for each before any tool reads them.",
+  "Run each tool on the same set. Count wrong values apart from blanks: a wrong total is worse than a missing one.",
+  "Add three test invoices that change a supplier's bank details, and check each tool holds them.",
+  "Measure how many invoices go straight through with no person, and the cost per invoice including add-ons."
+ ],
+ "buyVsBuild": {
+  "buy": "Buy for the workflow: inbox, approvals, payments, ERP sync and an audit trail. Suites have solved this, and you do not want to own payments.",
+  "build": "Build only the checks your suite misses: exception triage, fraud holds, odd document types, or coding rules specific to your business. These sit beside the suite, not instead of it."
+ },
+ "watchOuts": [
+  "The price you see is rarely the price you pay. Matching, payments, more entities and ERP sync are often add-ons.",
+  "Payment fraud rides on invoices. The AFP found 74% of US organizations were hit by business email compromise in 2025. Any change to bank details needs a call-back on a known number.",
+  "A tool that reads the subtotal as the total looks right at a glance. In our benchmark, 7 of 10 tools picked the wrong one of two look-alike tables.",
+  "E-invoices in Germany and France arrive as structured data. A tool that only reads PDFs will miss the point and the deadlines."
+ ],
+ "resources": [
+  {
+   "name": "Ardent Partners, State of ePayables 2025",
+   "url": "https://payablesplace.ardentpartners.com/2026/01/state-of-epayables-part-nine-ap-benchmarks-and-best-in-class-performance/",
+   "what": "Benchmarks for cost per invoice, cycle time and exception rates."
+  },
+  {
+   "name": "CORD receipt dataset",
+   "url": "https://github.com/clovaai/cord",
+   "what": "Labelled receipts under CC BY 4.0 for comparing extraction tools."
+  }
+ ],
+ "sources": [
+  {
+   "name": "Ardent Partners, State of ePayables 2025",
+   "url": "https://payablesplace.ardentpartners.com/2026/01/state-of-epayables-part-nine-ap-benchmarks-and-best-in-class-performance/",
+   "what": "Average exception rate 18.4%; average cost $9.84 per invoice; average cycle time 8.2 days."
+  },
+  {
+   "name": "APQC, cost to process an invoice",
+   "url": "https://www.apqc.org/What-Is-the-Average-Cost-to-Process-an-Invoice",
+   "what": "Median cost to process one accounts payable invoice is $6.00, across 5,846 organizations."
+  },
+  {
+   "name": "FBI IC3 2025 Internet Crime Report",
+   "url": "https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf",
+   "what": "Business email compromise: 24,768 complaints and about $3.05 billion in losses."
+  },
+  {
+   "name": "AFP 2026 Payments Fraud and Control Survey",
+   "url": "https://www.financialprofessionals.org/about/learn-more/press-releases/Details/over-75-percent-of-us-firms-experienced-payments-fraud-in-2025-while-ai-adoption-for-fraud-mitigation-lags",
+   "what": "76% of US organizations faced payments fraud in 2025; 74% were hit by business email compromise."
+  },
+  {
+   "name": "BILL pricing",
+   "url": "https://www.bill.com/product/pricing",
+   "what": "Essentials $49, Team $65, Corporate $89 per user a month."
+  },
+  {
+   "name": "Ramp pricing",
+   "url": "https://ramp.com/pricing",
+   "what": "Free plan, and Plus at $15 per user a month plus a platform fee."
+  },
+  {
+   "name": "Tipalti pricing",
+   "url": "https://tipalti.com/pricing/",
+   "what": "Accounts payable plan from $99 a month, with per-invoice and per-payment fees."
+  }
+ ],
+ "related": [
+  "ai-document-processing",
+  "ai-consulting-services",
+  "ai-underwriting"
+ ],
+ "keyword": {
+  "phrase": "ai invoice processing",
+  "searches": 0,
+  "cpc": 0,
+  "difficulty": null
+ },
+ "offer": {
+  "heading": "Invoices still stuck in exceptions? Get a quick diagnostic",
+  "body": "Tell me your AP tool, your volume and where invoices get stuck. In 30 minutes you get my read on what to fix and whether to buy or build."
+ },
+ "updated": "2026-11-26"
+}

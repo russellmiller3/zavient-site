@@ -1,22 +1,29 @@
 ---
 // api-docs-read: static page generator — no external API/protocol surface.
-// One page per JSON file in src/content/ai-work: what the job is, how to test AI on it, buy vs build, resources, sources.
+// One page per JSON file in src/content/ai-work. Pages with index:true (26 Nov 2026 publish gate: a verdict,
+// Zavient-only numbers, 3+ sources) get the full layout and the consulting offer and are indexed; the rest keep the
+// short layout, the benchmark offer and noindex.
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import BenchmarkCta from '../../components/BenchmarkCta.astro';
+import ConsultingCta from '../../components/ConsultingCta.astro';
 
 export async function getStaticPaths() {
   const pages = await getCollection('aiwork');
-  const byId = Object.fromEntries(pages.map((p) => [p.id, p.data.title]));
+  const byId = Object.fromEntries(pages.map((p) => [p.id, p.data]));
   return pages.map((page) => ({
     params: { slug: page.id },
-    props: { page, related: page.data.related.filter((r) => byId[r]).map((r) => ({ id: r, title: byId[r] })) },
+    props: {
+      page,
+      related: page.data.related.filter((r) => byId[r]).map((r) => ({ id: r, title: byId[r].title })),
+      spokes: page.data.spokes.filter((s) => byId[s.slug]).map((s) => ({ ...s, title: byId[s.slug].title })),
+    },
   }));
 }
-const { page, related } = Astro.props;
+const { page, related, spokes } = Astro.props;
 const d = page.data;
 ---
-<Base title={`${d.title} | Zavient`} description={d.description} noindex>
+<Base title={`${d.title} | Zavient`} description={d.description} noindex={!d.index}>
   <header class="article-hero">
     <div class="wrap">
       <div class="label">AI work &middot; {d.job}{d.industry !== 'any industry' ? ` · ${d.industry}` : ''}</div>
@@ -25,15 +32,72 @@ const d = page.data;
       <p class="byline">Zavient &middot; updated {d.updated}</p>
     </div>
   </header>
+  {d.stats.length > 0 && (
+    <section class="stats" aria-label="Key numbers">
+      {d.stats.map((s) => <div class="stat"><div class="stat-num">{s.num}</div><div class="stat-label">{s.label}</div><span class="stat-src">{s.source}</span></div>)}
+    </section>
+  )}
   <article class="article-body">
     <div class="wrap">
+      {d.verdict && (
+        <div class="verdict"><span class="ask-label">The verdict</span><p>{d.verdict}</p></div>
+      )}
+      {d.pickElse.length > 0 && (<>
+        <h2>When to pick something else</h2>
+        <ul>{d.pickElse.map((s) => <li>{s}</li>)}</ul>
+      </>)}
+      {spokes.length > 0 && (<>
+        <h2>Where AI pays first in finance work</h2>
+        <div class="hub-grid">
+          {spokes.map((s) => <a class="hub-card" href={`/ai-work/${s.slug}.html`}><span class="hub-tag">Guide</span><h3>{s.title}</h3><p>{s.why}</p></a>)}
+        </div>
+      </>)}
+      {d.ownData && (<>
+        <h2>{d.ownData.title}</h2>
+        <p>{d.ownData.intro}</p>
+        <div class="table-scroll"><table class="sources-table">
+          <thead><tr>{d.ownData.headers.map((h) => <th>{h}</th>)}</tr></thead>
+          <tbody>{d.ownData.rows.map((r) => <tr>{r.map((c) => <td>{c}</td>)}</tr>)}</tbody>
+        </table></div>
+        <p class="table-note">{d.ownData.note}</p>
+      </>)}
       <h2>What it looks like</h2>
-      <table class="sources-table">
+      <div class="table-scroll"><table class="sources-table">
         <thead><tr><th>Goes in</th><th>Comes out</th></tr></thead>
         <tbody><tr><td>{d.example.input}</td><td>{d.example.output}</td></tr></tbody>
-      </table>
-      <p><em>Illustrative example.</em></p>
-      <h2>How to test AI on this job before you buy</h2>
+      </table></div>
+      <p class="table-note">Illustrative example.</p>
+      {d.recipes.length > 0 && (<>
+        <h2>{d.recipesTitle}</h2>
+        {d.recipes.map((r) => (
+          <div class="recipe">
+            <h3>{r.name}</h3>
+            <p class="when">{r.when}</p>
+            <div class="flow" role="img" aria-label={r.flow.join(', then ')}>
+              {r.flow.map((f, i) => <>{i > 0 && <span class="arr" aria-hidden="true">&rarr;</span>}<span class="step">{f}</span></>)}
+            </div>
+            <p class="cost"><strong>Cost:</strong> {r.cost}</p>
+          </div>
+        ))}
+      </>)}
+      {d.tables.map((t) => (<>
+        <h2>{t.title}</h2>
+        <p>{t.intro}</p>
+        <div class="table-scroll"><table class="sources-table">
+          <thead><tr>{t.headers.map((h) => <th>{h}</th>)}</tr></thead>
+          <tbody>{t.rows.map((r) => <tr><td>{r.url ? <a href={r.url}>{r.name}</a> : r.name}</td>{r.cells.map((c) => <td>{c}</td>)}</tr>)}</tbody>
+        </table></div>
+        {t.note && <p class="table-note">{t.note}</p>}
+      </>))}
+      {d.rules.length > 0 && (<>
+        <h2>Rules that apply</h2>
+        <div class="table-scroll"><table class="sources-table">
+          <thead><tr><th>Rule</th><th>Status</th><th>What it means for you</th></tr></thead>
+          <tbody>{d.rules.map((r) => <tr><td><a href={r.url}>{r.name}</a></td><td><span class="status">{r.status}</span></td><td>{r.what}</td></tr>)}</tbody>
+        </table></div>
+        <p class="table-note">Not legal advice. Check with your counsel.</p>
+      </>)}
+      <h2>{d.testTitle}</h2>
       <ol>{d.howToTest.map((s) => <li>{s}</li>)}</ol>
       <h2>Buy or build</h2>
       <p><strong>Buy:</strong> {d.buyVsBuild.buy}</p>
@@ -44,13 +108,13 @@ const d = page.data;
       <ul>{d.resources.map((r) => <li><a href={r.url}>{r.name}</a>: {r.what}</li>)}</ul>
       <div class="sources">
         <h2>Sources</h2>
-        <table class="sources-table">
+        <div class="table-scroll"><table class="sources-table">
           <thead><tr><th>Source</th><th>What it says</th></tr></thead>
           <tbody>{d.sources.map((s) => <tr><td><a href={s.url}>{s.name}</a></td><td>{s.what}</td></tr>)}</tbody>
-        </table>
+        </table></div>
       </div>
       {related.length > 0 && (<p>Related: {related.map((r, i) => <>{i > 0 && ' · '}<a href={`/ai-work/${r.id}.html`}>{r.title}</a></>)}</p>)}
     </div>
   </article>
-  <BenchmarkCta job={d.job} />
+  {d.index ? <ConsultingCta job={d.job} heading={d.offer?.heading} ask={d.offer?.body} /> : <BenchmarkCta job={d.job} />}
 </Base>

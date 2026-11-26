@@ -43,6 +43,26 @@ const aiwork = defineCollection({
     related: z.array(z.string()).default([]),
     keyword: z.object({ phrase: z.string(), searches: z.number(), cpc: z.number(), difficulty: z.number().nullable() }),
     updated: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+    // Publish gate (26 Nov 2026): a page is indexed only when it carries a verdict, Zavient-only numbers and 3+ sources.
+    // Every other page stays noindex. The optional blocks below are what an indexed page is built from.
+    index: z.boolean().default(false),
+    verdict: z.string().min(40).optional(),
+    pickElse: z.array(z.string()).default([]),
+    stats: z.array(z.object({ num: z.string(), label: z.string(), source: z.string() })).default([]),
+    ownData: z.object({ title: z.string(), intro: z.string(), headers: z.array(z.string()), rows: z.array(z.array(z.string())), note: z.string() }).optional(),
+    tables: z.array(z.object({
+      title: z.string(), intro: z.string(), headers: z.array(z.string()),
+      rows: z.array(z.object({ name: z.string(), url: z.string().url().optional(), cells: z.array(z.string()) })),
+      note: z.string().optional(),
+    })).default([]),
+    recipes: z.array(z.object({ name: z.string(), when: z.string(), flow: z.array(z.string()).min(2), cost: z.string() })).default([]),
+    rules: z.array(z.object({ name: z.string(), url: z.string().url(), status: z.string(), what: z.string() })).default([]),
+    spokes: z.array(z.object({ slug: z.string(), why: z.string() })).default([]),
+    offer: z.object({ heading: z.string(), body: z.string() }).optional(),
+    recipesTitle: z.string().default('Three ways to build it'),
+    testTitle: z.string().default('How to benchmark AI on this job before you buy'),
+  }).refine((d) => !d.index || (d.verdict && d.stats.length >= 3 && d.sources.length >= 3), {
+    message: 'an indexed AI-work page needs a verdict, 3+ Zavient numbers and 3+ sources',
   }),
 });
 

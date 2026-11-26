@@ -11,6 +11,12 @@ The public site for Zavient LLC. Pushing to `master` on GitHub publishes it thro
 
 ## Change log
 
+- 2026-11-26 (branch feature/finance-pages, not live): Rebuilt 5 AI-work pages (AI consulting services hub,
+  document processing, invoice processing, underwriting, credit scoring) to a publish gate: a verdict, Zavient-only
+  numbers, 3+ sources, tool and price tables, build recipes and rules. They are indexed and in the AI sitemap; the
+  other 16 stay noindex. Their offer now sells AI consulting with the benchmark as step one. The schema refuses an
+  indexed page without a verdict. Why: Russell asked for the top pages to be "really really good and useful" and for
+  the offer to sell AI consulting services. Proof: `npm test` 5 of 5 pass. Not checked: live, until merged.
 - 2026-11-25, after going live: Fixed the menu's Insights, AI work and Data links, which returned 404 on
   zavient.com because Vercel serves only exact file paths (/data.html, never /data). The Insights link had been
   broken before this work too. Added a site test that every internal link names a real file; it failed on the 3

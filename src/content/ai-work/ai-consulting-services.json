@@ -1,29 +1,331 @@
 {
- "title": "AI consulting services: what you should get",
- "description": "What AI consulting should deliver, how to test a firm's claims on your own documents, and when to hire help versus build an in-house team.",
+ "title": "AI consulting services: what to buy, what it costs, where it pays",
+ "description": "What AI consulting should deliver, what it costs against freelancers and hiring, and the finance work where AI pays first. With our own data.",
  "job": "AI consulting",
- "summary": "Good AI consulting turns one business problem into a tested, working system. Before anything is built, the right AI model is chosen by testing it on your own documents, not on a demo or a public leaderboard.",
- "example": {"input": "A mid-sized insurer wants AI to read incoming claim files and route them.", "output": "A test of several AI models on 50 of the insurer's own claim files, the cost per file for each, a working pilot with the winner, and a plan to keep it accurate as models change."},
- "howToTest": [
-  "Ask the firm to test its approach on 20 to 50 of your own documents before you sign for a full build.",
-  "Agree the right answers first with your own team, so the result is graded against your standard, not theirs.",
-  "Ask for cost per correct answer, not price per token: the cheapest-looking model is not always the cheapest to run.",
-  "Ask for a client reference where the system has run for at least six months."
+ "summary": "AI consulting should turn one business problem into a working system that you can prove works. Most pilots never show up in the P&L. The ones that do start with a number to move, a benchmark on the company's own files, and a plan for keeping the system right after launch.",
+ "index": true,
+ "verdict": "Hire AI consulting for one problem with a number attached, not for a strategy deck. A good engagement benchmarks the options on your own files first, builds the winner into your workflow, and keeps checking it as models change. Model choice alone can decide whether a project pays: in our document benchmark, tools that found nearly the same facts differed 48 times in cost.",
+ "stats": [
+  {
+   "num": "48x",
+   "label": "cost gap between AI tools that found nearly the same facts in our benchmark",
+   "source": "FinExtractBench, Zavient, Nov 2026"
+  },
+  {
+   "num": "17%",
+   "label": "of employers hiring for AI mention evaluation; 49% mention AI agents",
+   "source": "Zavient sample of 2,046 US AI job ads, 21 to 25 Nov 2026"
+  },
+  {
+   "num": "$155,300",
+   "label": "median posted minimum pay for a US AI engineer, before benefits",
+   "source": "Zavient sample of 2,046 US AI job ads, 21 to 25 Nov 2026"
+  },
+  {
+   "num": "~95%",
+   "label": "of generative AI pilots show little or no P&L impact",
+   "source": "MIT NANDA 2025, via Fortune"
+  }
  ],
- "buyVsBuild": {"buy": "Hire a firm when you need one system working this quarter and have no AI engineers. Pay for a fixed scope with a test you can check.", "build": "Hire in-house when AI is core to what you sell and you will run many systems. Expect months to hire and a higher fixed cost."},
+ "pickElse": [
+  "AI is your product and you will run many systems: hire in-house. Budget for months of hiring and the salaries in the table below.",
+  "A small, well-specified task with a clear owner: a freelance engineer. Upwork's guide puts the median at $35 to $60 an hour.",
+  "A standard job that software already does, such as accounts payable: buy the product and benchmark it on your own files. 76% of enterprise AI is now bought, not built (Menlo Ventures)."
+ ],
+ "spokes": [
+  {
+   "slug": "ai-document-processing",
+   "why": "Reading PDFs, scans and forms. Our sealed benchmark found two models with zero mistakes on 30 fund reports."
+  },
+  {
+   "slug": "ai-invoice-processing",
+   "why": "Accounts payable. Reading invoices is solved; exceptions and payment fraud are where the money is."
+  },
+  {
+   "slug": "ai-underwriting",
+   "why": "Lending and insurance. Automate the reading, keep the decision explainable."
+  },
+  {
+   "slug": "ai-credit-scoring",
+   "why": "Loan decisions. Start with a scorecard you can explain; add boosting only when your benchmark shows the lift."
+  }
+ ],
+ "ownData": {
+  "title": "What it costs to hire the team yourself",
+  "intro": "Posted pay from our own sample of US AI job ads. This is the floor of what you would pay to build an AI team in-house, before benefits, recruiting and the months it takes to hire.",
+  "headers": [
+   "Role",
+   "Ads",
+   "Employers",
+   "Ads with pay",
+   "Median posted minimum pay"
+  ],
+  "rows": [
+   [
+    "Head or director of AI",
+    "34",
+    "24",
+    "28",
+    "$220,600"
+   ],
+   [
+    "Machine learning engineer",
+    "306",
+    "210",
+    "195",
+    "$170,600"
+   ],
+   [
+    "AI architect or consultant",
+    "78",
+    "62",
+    "34",
+    "$166,400"
+   ],
+   [
+    "Forward deployed engineer",
+    "304",
+    "213",
+    "174",
+    "$161,359"
+   ],
+   [
+    "AI engineer",
+    "435",
+    "326",
+    "247",
+    "$155,300"
+   ],
+   [
+    "Data scientist",
+    "479",
+    "353",
+    "287",
+    "$130,000"
+   ]
+  ],
+  "note": "Source: Zavient sample of 2,046 US AI job ads at 1,172 employers, posted 21 to 25 November 2026, reposts removed. Pay is the posted minimum of the range, where an ad gives one."
+ },
+ "example": {
+  "input": "A mid-sized lender wants AI to read small-business loan files so underwriters stop retyping bank statements.",
+  "output": "A benchmark of the leading models on 50 of the lender's own files with the cost per file for each, the winner built into the loan system with a review queue, and a monthly re-check as new models ship."
+ },
+ "recipesTitle": "How a good engagement runs",
+ "recipes": [
+  {
+   "name": "1. Benchmark first",
+   "when": "Before anyone writes production code. Settles which approach wins on your files and what it costs.",
+   "flow": [
+    "Pick one job with a number to move",
+    "50 of your real files",
+    "Answers your team checked, locked first",
+    "Run the leading options",
+    "Accuracy and cost per file"
+   ],
+   "cost": "A short fixed-scope project. You keep the files, the answer key and the code, so you can re-run it."
+  },
+  {
+   "name": "2. Build the winner into the work",
+   "when": "Once the benchmark shows a clear winner that pays back.",
+   "flow": [
+    "Winning model",
+    "Your systems and workflow",
+    "Review queue for unsure cases",
+    "Every decision logged",
+    "Go live on a share of volume",
+    "Full volume"
+   ],
+   "cost": "Depends on the systems it touches. Gartner warns that production can cost far more than the pilot, so scope it from the benchmark, not the demo."
+  },
+  {
+   "name": "3. Keep it right",
+   "when": "Always. Models, prices and your documents change.",
+   "flow": [
+    "New model or price change",
+    "Re-run the benchmark",
+    "Cheaper or better?",
+    "Switch, or keep"
+   ],
+   "cost": "Small, because the benchmark already exists. This is where most of the long-run savings come from."
+  }
+ ],
+ "tables": [
+  {
+   "title": "What getting AI built costs",
+   "intro": "Public benchmarks for each way to get the work done, checked 26 November 2026. Zavient's own prices are listed for comparison.",
+   "headers": [
+    "Option",
+    "Typical price",
+    "Good for",
+    "Watch for"
+   ],
+   "rows": [
+    {
+     "name": "Freelance AI engineer (Upwork guide)",
+     "url": "https://www.upwork.com/hire/artificial-intelligence-engineers/cost/",
+     "cells": [
+      "Median $35 to $60 an hour; experts $75 to $100+",
+      "Small, well-specified tasks",
+      "You manage the scope and the testing"
+     ]
+    },
+    {
+     "name": "AI development firm (Clutch pricing guide)",
+     "url": "https://clutch.co/developers/artificial-intelligence/pricing",
+     "cells": [
+      "Most common $25 to $49 an hour; average project about $120,600",
+      "Full builds by a team",
+      "Typical timeline 10 months; rates skew offshore"
+     ]
+    },
+    {
+     "name": "In-house data scientist (BLS)",
+     "url": "https://www.bls.gov/ooh/math/data-scientists.htm",
+     "cells": [
+      "Median $120,230 a year, May 2025",
+      "Many systems over years",
+      "Salary only; months to hire"
+     ]
+    },
+    {
+     "name": "Generative AI project on an API (Gartner, 2024)",
+     "url": "https://www.techrepublic.com/article/30-generative-ai-projects-fail-amid-high-costs-and-risks/",
+     "cells": [
+      "Up to $200,000 upfront plus $550 per user a year",
+      "Company-wide assistants",
+      "Gartner's estimate, reported by TechRepublic"
+     ]
+    },
+    {
+     "name": "Zavient AI Leverage Sprint",
+     "url": "https://zavient.com/ai-offer.html",
+     "cells": [
+      "$10,000 for 30 days",
+      "Finding and specifying the 2 or 3 bets that pay",
+      "Fixed scope; you leave with a plan and specs"
+     ]
+    },
+    {
+     "name": "Zavient ongoing advisory",
+     "url": "https://zavient.com/ai-offer.html",
+     "cells": [
+      "$5,000 to $10,000 a month",
+      "Guiding a build through to launch",
+      "Quarterly commitment"
+     ]
+    }
+   ]
+  }
+ ],
+ "testTitle": "How to benchmark a consultant's claims before you sign",
+ "howToTest": [
+  "Ask for a benchmark on 20 to 50 of your own files before you sign for a full build.",
+  "Agree the right answers with your own team first, and lock them, so the result is graded against your standard.",
+  "Ask for cost per correct answer, not price per token. The cheapest-looking model is not always the cheapest to run.",
+  "Ask what happens when a better model ships next month. If the answer is a new project, the system will go stale.",
+  "Ask for a client where the system has run in production for at least six months."
+ ],
+ "buyVsBuild": {
+  "buy": "Hire a consultant when you need one system working this quarter, have no AI engineers, and want someone accountable for the result. Pay for a fixed scope with a benchmark you can check.",
+  "build": "Hire in-house when AI is core to what you sell and you will run many systems. Expect months to hire and the salaries above."
+ },
  "watchOuts": [
   "Firms that resell one software vendor's product and call it a recommendation.",
-  "Demos on clean sample data that never meet your real documents.",
-  "No answer key: without agreed right answers, nobody can show the system works."
+  "Demos on clean sample data that never meet your real files.",
+  "No answer key: without agreed right answers, nobody can show the system works.",
+  "Budgets that stop at the pilot. Gartner expects at least half of generative AI projects to overrun through 2028, and running the model is most of the lifetime cost."
  ],
  "resources": [
-  {"name": "a16z: how enterprise CIOs build and buy AI (2025)", "url": "https://a16z.com/ai-enterprise-2025/", "what": "How large companies choose models: internal benchmarks first, public leaderboards only as a first filter."}
+  {
+   "name": "a16z: how 100 enterprise CIOs build and buy AI (2025)",
+   "url": "https://a16z.com/ai-enterprise-2025/",
+   "what": "Enterprises use public leaderboards as a first filter, then their own benchmarks and test sets."
+  },
+  {
+   "name": "Menlo Ventures, State of Generative AI in the Enterprise (2025)",
+   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-AI-in-the-enterprise/",
+   "what": "Survey of 495 US decision-makers on spend and buy-versus-build."
+  }
  ],
  "sources": [
-  {"name": "a16z, enterprise CIO survey (2025)", "url": "https://a16z.com/ai-enterprise-2025/", "what": "Enterprises compare models against their own internal benchmark sets."},
-  {"name": "AI//COST, cost per task", "url": "https://aicost.tools/blog/llm-cost-per-task/", "what": "Three models with the same listed price billed $0.079, $0.111 and $0.303 for the same 82 tasks; the cheapest failed 10."}
+  {
+   "name": "Fortune on MIT NANDA, 18 Aug 2025",
+   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
+   "what": "About 95% of generative AI pilots show little or no measurable P&L impact; bought or partnered projects succeed about 67% of the time."
+  },
+  {
+   "name": "Menlo Ventures, 2025",
+   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-AI-in-the-enterprise/",
+   "what": "76% of enterprise AI solutions were bought in 2025, up from 53% in 2024."
+  },
+  {
+   "name": "Campus Technology on Gartner, 22 Jun 2026",
+   "url": "https://campustechnology.com/articles/2026/06/22/gartner-half-of-gen-ai-projects-could-exceed-budget-by-2028.aspx",
+   "what": "At least half of generative AI projects will overrun budgets through 2028; inference is at least 70% of lifetime cost."
+  },
+  {
+   "name": "Upwork, cost to hire AI engineers",
+   "url": "https://www.upwork.com/hire/artificial-intelligence-engineers/cost/",
+   "what": "Median freelance rate $35 to $60 an hour."
+  },
+  {
+   "name": "Clutch, AI development pricing",
+   "url": "https://clutch.co/developers/artificial-intelligence/pricing",
+   "what": "Average project about $120,600; typical timeline 10 months."
+  },
+  {
+   "name": "BLS, data scientists",
+   "url": "https://www.bls.gov/ooh/math/data-scientists.htm",
+   "what": "Median pay $120,230 a year in May 2025."
+  },
+  {
+   "name": "a16z, enterprise CIO survey (2025)",
+   "url": "https://a16z.com/ai-enterprise-2025/",
+   "what": "Enterprises compare models against their own internal benchmark sets."
+  }
  ],
- "related": ["ai-consulting-companies", "ai-document-processing", "ai-agents-for-business"],
- "keyword": {"phrase": "ai consulting services", "searches": 1600, "cpc": 94.77, "difficulty": 8},
- "updated": "2026-11-25"
+ "related": [],
+ "keyword": {
+  "phrase": "ai consulting services",
+  "searches": 1600,
+  "cpc": 94.77,
+  "difficulty": 8
+ },
+ "offer": {
+  "heading": "Not sure where AI pays in your business? Get a quick diagnostic",
+  "body": "Bring one job with a number attached. In 30 minutes you get my read on how to approach it with AI. You get me, not a team of juniors."
+ },
+ "updated": "2026-11-26",
+ "rules": [
+  {
+   "name": "EU AI Act, Annex III",
+   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3",
+   "status": "Starts 2 Dec 2027",
+   "what": "Credit scoring of people and life and health insurance pricing are high-risk uses. Any consultant building them for EU operations should plan logging, oversight and documentation from day one."
+  },
+  {
+   "name": "Regulation B, 12 CFR 1002.9",
+   "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1002/subpart-A/section-1002.9",
+   "status": "In force",
+   "what": "US lenders must give the specific main reasons for a decline within 30 days, whatever model made it."
+  },
+  {
+   "name": "NYDFS Circular Letter No. 7",
+   "url": "https://www.dfs.ny.gov/industry-guidance/circular-letters/cl2024-07",
+   "status": "In force since Jul 2024",
+   "what": "New York insurers must test AI and outside data for unfair discrimination, keep board oversight, stay responsible for vendor tools and give specific reasons and data sources for adverse decisions."
+  },
+  {
+   "name": "NAIC Model Bulletin on AI",
+   "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
+   "status": "30 jurisdictions",
+   "what": "Insurers need a written AI program with governance, risk controls and vendor oversight. California, Colorado and New York have their own rules instead."
+  },
+  {
+   "name": "Colorado SB21-169",
+   "url": "https://doi.colorado.gov/for-consumers/sb21-169-protecting-consumers-from-unfair-discrimination-in-insurance-practices",
+   "status": "Life; auto and health from 15 Oct 2025",
+   "what": "Insurers must test outside data and models for unfair discrimination, fix harm found and report to the Division."
+  }
+ ]
 }
