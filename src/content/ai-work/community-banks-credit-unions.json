@@ -11,7 +11,7 @@
   "Generative AI is spreading fast at banks and credit unions, but few run AI across the whole institution.[^1][^2]",
   "Fraud detection leads AI use at community banks; credit unions also use AI to help contact-center staff.[^2][^3]",
   "Your core provider is the gate: three in four banks need it to reach their own data.[^4][^5]",
-  "For CECL, put AI on the paperwork, not the math: documentation and Q-factor support are where exams and costs bite.[^66][^67]",
+  "For CECL, put AI on the paperwork, not the math: documentation and Q-factor support are where exams and costs bite.[^65][^66]",
   "Fair lending still applies: you owe specific denial reasons, and some states kept disparate impact.[^8][^9]"
  ],
  "onPage": [
@@ -67,7 +67,7 @@
  "humanRole": [
   "Your people keep every credit decision, every BSA filing and the member conversation, and management owns oversight of every AI vendor.[^11][^12]",
   "Credit officers keep each credit decision and sign every memo AI drafts; TD sends its AI drafts to expert review.[^10] The Office of the Comptroller of the Currency (OCC) rates AI risk partly by whether a person approves each output.[^12][^13]",
-  "Your CFO and chief credit officer set each Q-factor (qualitative adjustment to the loss estimate) and sign its reason.[^66] Management must document the allowance method before use.[^73]",
+  "Your CFO and chief credit officer set each Q-factor (qualitative adjustment to the loss estimate) and sign its reason.[^65] Management must document the allowance method before use.[^72]",
   "Your Bank Secrecy Act (BSA) officer decides what gets filed; AI only sorts alerts first, as Fiserv's triage agent does (vendor).[^14] Most alerts are false positives, so that sorting is where analyst time goes.[^15]",
   "Member-service staff keep the conversation; AI suggests answers from your own procedures.[^3] In a 5,172-agent study, AI help raised issues resolved per hour about 15%, most for newer staff.[^16]",
   "Management owns vendor oversight: using a vendor does not reduce your responsibility.[^11][^17] Census data shows 66% of firms where AI changed tasks use it only to help staff; 2% report employment decreases.[^18]"
@@ -97,13 +97,13 @@
   },
   {
    "name": "CECL (current expected credit loss) paperwork: Q-factor support, documentation and validation prep",
-   "why": "Fed exams of nearly 200 banks found the weak spots were documentation and Q-factor support, not the math.[^66] One American Bankers Association (ABA) example: a 28-page Q-factor update and a 125-question audit checklist.[^67]",
+   "why": "Fed exams of nearly 200 banks found the weak spots were documentation and Q-factor support, not the math.[^65] One American Bankers Association (ABA) example: a 28-page Q-factor update and a 125-question audit checklist.[^66]",
    "payoff": "Hours per quarter on the Q-factor packet and on audit or validation prep."
   },
   {
    "name": "Loan portfolio monitoring and loan review scope",
    "slug": "ai-underwriting",
-   "why": "Examiners ask for covenant, stale-statement and annual review tracking reports, which portfolio analytics can produce.[^84] The 2020 interagency guidance lets risk indicators set loan review scope and frequency.[^83]",
+   "why": "Examiners ask for covenant, stale-statement and annual review tracking reports, which portfolio analytics can produce.[^83] The 2020 interagency guidance lets risk indicators set loan review scope and frequency.[^82]",
    "payoff": "Days to answer the exam request list, and stale items caught before the examiner finds them."
   },
   {
@@ -326,7 +326,7 @@
   },
   {
    "title": "Where does AI fit in the quarterly CECL close, and who signs?",
-   "intro": "Your method still runs as usual: the Fed's SCALE spreadsheet, NCUA's WARM (weighted-average remaining maturity) tool or a vendor model.[^27][^77] Most community banks use a vendor: 70% in an ABA count.[^68] We found no independent figure for AI time saved on CECL work.",
+   "intro": "Your method still runs as usual: the Fed's SCALE spreadsheet, NCUA's WARM (weighted-average remaining maturity) tool or a vendor model.[^27][^76] Most community banks use a vendor: 70% in an ABA count.[^67] We found no independent figure for AI time saved on CECL work.",
    "headers": [
     "Step",
     "What AI does",
@@ -337,35 +337,35 @@
      "name": "Data check",
      "cells": [
       "Reconciles the loan trial balance to the general ledger and Call Report segments, and flags breaks and missing risk ratings.",
-      "The accounting lead clears each break and documents segment choices, a weak spot in Fed exams.[^66]"
+      "The accounting lead clears each break and documents segment choices, a weak spot in Fed exams.[^65]"
      ]
     },
     {
      "name": "Run the method",
      "cells": [
-      "Nothing new: SCALE, WARM or the vendor model runs as before.[^27][^77]",
+      "Nothing new: SCALE, WARM or the vendor model runs as before.[^27][^76]",
       "The CFO confirms the inputs and the forecast choice."
      ]
     },
     {
      "name": "Q-factor packet",
      "cells": [
-      "Gathers local unemployment, commercial real estate vacancy, concentration and policy-exception trends, then drafts the narrative with each figure cited.[^67]",
-      "The CFO and chief credit officer set each Q-factor and sign the reason. Peer data is context only; targeting a peer median is inappropriate.[^73]"
+      "Gathers local unemployment, commercial real estate vacancy, concentration and policy-exception trends, then drafts the narrative with each figure cited.[^66]",
+      "The CFO and chief credit officer set each Q-factor and sign the reason. Peer data is context only; targeting a peer median is inappropriate.[^72]"
      ]
     },
     {
      "name": "Back-test",
      "cells": [
       "Compares last year's estimate with actual losses and drafts the variance note.",
-      "The reviewer accepts or revises it. A Q-factor may adjust for that variance.[^73]"
+      "The reviewer accepts or revises it. A Q-factor may adjust for that variance.[^72]"
      ]
     },
     {
      "name": "Validation and audit prep",
      "cells": [
-      "Builds the document index against the validator's or auditor's checklist.[^67]",
-      "An independent validator or auditor concludes. Auditors may still expect full validation.[^69]"
+      "Builds the document index against the validator's or auditor's checklist.[^66]",
+      "An independent validator or auditor concludes. Auditors may still expect full validation.[^68]"
      ]
     },
     {
@@ -376,7 +376,7 @@
      ]
     }
    ],
-   "note": "Illustrative steps, built from Fed exam findings and ABA cost reports.[^66][^67] Start with one quarter's Q-factor packet before changing anything else. Not accounting advice."
+   "note": "Illustrative steps, built from Fed exam findings and ABA cost reports.[^65][^66] Start with one quarter's Q-factor packet before changing anything else. Not accounting advice."
   }
  ],
  "rules": [
@@ -432,25 +432,25 @@
    "name": "Interagency policy statement on allowances for credit losses",
    "url": "https://www.federalregister.gov/documents/2023/04/27/2023-08876/interagency-policy-statement-on-allowances-for-credit-losses-revised-april-2023",
    "status": "In force; revised Apr 2023",
-   "what": "Applies to banks and NCUA-insured credit unions alike.[^73] Management must evaluate and document models before use, and setting the allowance to a peer median is inappropriate.[^73]"
+   "what": "Applies to banks and NCUA-insured credit unions alike.[^72] Management must evaluate and document models before use, and setting the allowance to a peer median is inappropriate.[^72]"
   },
   {
    "name": "OCC Bulletin 2025-26: model risk management for community banks",
    "url": "https://www.occ.gov/news-issuances/bulletins/2025/bulletin-2025-26.html",
    "status": "Issued 6 Oct 2025 (OCC-supervised banks)",
-   "what": "Community banks are not required to validate models every year.[^72] Examiners give no negative feedback solely for validation frequency or scope.[^72] Auditors may still ask for full validation.[^69]"
+   "what": "Community banks are not required to validate models every year.[^71] Examiners give no negative feedback solely for validation frequency or scope.[^71] Auditors may still ask for full validation.[^68]"
   },
   {
    "name": "FASB (Financial Accounting Standards Board) review of CECL",
    "url": "https://storage.fasb.org/BMHO20261028.pdf",
    "status": "Final report expected by end of 2026",
-   "what": "The review has not changed CECL so far.[^74][^75] Fed Vice Chair Bowman urged repeal or a community bank exemption, in a letter giving her own view.[^70] Experts expect little change.[^71]"
+   "what": "The review has not changed CECL so far.[^73][^74] Fed Vice Chair Bowman urged repeal or a community bank exemption, in a letter giving her own view.[^69] Experts expect little change.[^70]"
   },
   {
    "name": "Interagency Guidance on Credit Risk Review Systems (SR 20-13)",
    "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2013.htm",
    "status": "In force since May 2020; NCUA joined",
-   "what": "The board approves a written loan review policy, typically yearly, and reviewers stay independent of approval.[^83] Small or rural institutions may use modified independence.[^83]"
+   "what": "The board approves a written loan review policy, typically yearly, and reviewers stay independent of approval.[^82] Small or rural institutions may use modified independence.[^82]"
   }
  ],
  "watchOuts": [
@@ -461,8 +461,8 @@
   "Treating the April 2026 Reg B rule as the end of fair lending risk.[^22] State law can still reach disparate impact, so keep testing outcomes by group.[^9][^56]",
   "Core contracts that block integration or charge for your own data.[^5][^41] Read the contract before you pick an AI vendor, and cite the 2026 joint statement at renewal.",
   "Deepfake video and voice used to open accounts or fool call centers, per Treasury's Financial Crimes Enforcement Network.[^59] Add a callback or second check before changing account details or moving money.",
-  "Buying a complex machine-learning loss model before FASB's review lands.[^74] Its final report is due by the end of 2026 and experts expect little change, so keep your current method for now.[^71]",
-  "Setting Q-factors to land on a peer median, which the 2023 policy statement calls inappropriate.[^73] Use peer data as context only, and write down why each factor moved.[^66]"
+  "Buying a complex machine-learning loss model before FASB's review lands.[^73] Its final report is due by the end of 2026 and experts expect little change, so keep your current method for now.[^70]",
+  "Setting Q-factors to land on a peer median, which the 2023 policy statement calls inappropriate.[^72] Use peer data as context only, and write down why each factor moved.[^65]"
  ],
  "faq": [
   {
@@ -483,7 +483,7 @@
   },
   {
    "q": "What does AI cost a community bank or credit union?",
-   "a": "Drafting tools run about $20 to $21 per user a month, prices read 26 Nov 2026.[^60][^61] Alkami lists data and marketing tiers from $23K a year (vendor).[^62] Core providers' AI, such as Fiserv's credit pricing, isn't published, so get a scoped quote.[^14]"
+   "a": "Drafting tools run about $20 to $21 per user a month, prices read 26 Nov 2026.[^60][^61] Core providers' AI, such as Fiserv's credit pricing, isn't published, so get a scoped quote.[^14]"
   },
   {
    "q": "Will examiners criticize us for using AI?",
@@ -491,38 +491,38 @@
   },
   {
    "q": "Who is required to comply with CECL?",
-   "a": "Every bank and federally insured credit union follows CECL under the 2023 interagency policy statement, except credit unions under $10M, which are exempt by statute.[^73][^76] Small banks need no sophisticated model, per the OCC.[^80]"
+   "a": "Every bank and federally insured credit union follows CECL under the 2023 interagency policy statement, except credit unions under $10M, which are exempt by statute.[^72][^75] Small banks need no sophisticated model, per the OCC.[^79]"
   },
   {
    "q": "Can machine learning improve our CECL estimate?",
-   "a": "Not at most community banks yet: we found no independent evidence that machine learning beats SCALE or WARM at small banks.[^80] Across a full cycle, logistic regression held up better in a Boston Fed study, and small portfolios are often too thin for statistics.[^78][^79] Use AI on the documentation and Q-factor evidence instead.[^66][^67]"
+   "a": "Not at most community banks yet: we found no independent evidence that machine learning beats SCALE or WARM at small banks.[^79] Across a full cycle, logistic regression held up better in a Boston Fed study, and small portfolios are often too thin for statistics.[^77][^78] Use AI on the documentation and Q-factor evidence instead.[^65][^66]"
   },
   {
    "q": "What does CECL cost a community bank?",
-   "a": "One bank spent $475K to implement CECL and $260K+ a year to run it, a figure Fed Vice Chair Bowman cited in her own op-ed.[^71][^70] Of community banks, 70% pay vendors for CECL, per the ABA; the Risk Management Association (RMA) found 4 in 5 in 2022.[^68][^81] In 2021, RMA found banks typically pay $75K or more to fully validate one vendor model.[^82]"
+   "a": "One bank spent $475K to implement CECL and $260K+ a year to run it, a figure Fed Vice Chair Bowman cited in her own op-ed.[^70][^69] Of community banks, 70% pay vendors for CECL, per the ABA; the Risk Management Association (RMA) found 4 in 5 in 2022.[^67][^80] In 2021, RMA found banks typically pay $75K or more to fully validate one vendor model.[^81]"
   },
   {
    "q": "Do we need an annual CECL model validation?",
-   "a": "No, not if the OCC supervises you: its Bulletin 2025-26 says community banks need not validate models every year.[^72] A SCALE or WARM spreadsheet may fall outside the 2026 guidance's definition of a model, which excludes simple spreadsheet arithmetic.[^6][^7] Your auditor may still expect full validation, per the ABA.[^69]"
+   "a": "No, not if the OCC supervises you: its Bulletin 2025-26 says community banks need not validate models every year.[^71] A SCALE or WARM spreadsheet may fall outside the 2026 guidance's definition of a model, which excludes simple spreadsheet arithmetic.[^6][^7] Your auditor may still expect full validation, per the ABA.[^68]"
   },
   {
    "q": "Is CECL being repealed?",
-   "a": "Not as of 26 Nov 2026: FASB's review has not changed CECL, and its final report is due by year-end.[^74][^75] Fed Vice Chair Bowman urged repeal or a community bank exemption, in a letter giving her own view.[^70] Experts expect little change.[^71]"
+   "a": "Not as of 26 Nov 2026: FASB's review has not changed CECL, and its final report is due by year-end.[^73][^74] Fed Vice Chair Bowman urged repeal or a community bank exemption, in a letter giving her own view.[^69] Experts expect little change.[^70]"
   },
   {
    "q": "How should a community bank analyze its loan portfolio?",
-   "a": "Track concentrations, risk-rating migration, past-dues, stale financials and covenant exceptions, then let those trends pick your loan review sample.[^84][^83] Examiners ask for financial statement, covenant and annual review tracking reports.[^84] AI can build those reports; the chief credit officer approves the review scope.[^83][^85]"
+   "a": "Track concentrations, risk-rating migration, past-dues, stale financials and covenant exceptions, then let those trends pick your loan review sample.[^83][^82] Examiners ask for financial statement, covenant and annual review tracking reports.[^83] AI can build those reports; the chief credit officer approves the review scope.[^82][^84]"
   }
  ],
  "buyVsBuild": {
-  "buy": "Mostly buy, when your core or an established vendor already sells the job, such as fraud triage or memo drafting.[^14][^44] ICBA told the OCC that partnering with a core provider is often the only practical path for community banks.[^46] Most enterprise AI at US firms is now bought: 76% of use cases, up from 53% in 2024.[^63]",
-  "build": "Build only thin layers where your own procedures are the edge, such as a staff knowledge base. MIT research found bought tools succeed about 67% of the time; internal builds about a third as often.[^64][^63] For credit models, buy and validate; you still owe specific denial reasons.[^8]"
+  "buy": "Mostly buy, when your core or an established vendor already sells the job, such as fraud triage or memo drafting.[^14][^44] ICBA told the OCC that partnering with a core provider is often the only practical path for community banks.[^46] Most enterprise AI at US firms is now bought: 76% of use cases, up from 53% in 2024.[^62]",
+  "build": "Build only thin layers where your own procedures are the edge, such as a staff knowledge base. MIT research found bought tools succeed about 67% of the time; internal builds about a third as often.[^63][^62] For credit models, buy and validate; you still owe specific denial reasons.[^8]"
  },
  "pickElse": [
   "When your core already sells the AI job: check Fiserv agentOS, Jack Henry's Google Cloud tools or FIS before adding a separate vendor.[^14][^44][^46]",
   "Staff only need drafting and summaries: Microsoft 365 Copilot ($21 per user a month) or ChatGPT Business ($20), prices read 26 Nov 2026.[^60][^61] Copilot is what 95% of AI-using banks report.[^4]",
-  "You need a CECL estimate: the Fed's free SCALE tool serves banks under $1B, and NCUA's free WARM-based tool serves credit unions under $100M.[^27][^77]",
-  "Consumer credit decisions: buy from a specialist such as Zest AI, which claims 25% higher approvals, then validate it yourself.[^65][^8]"
+  "You need a CECL estimate: the Fed's free SCALE tool serves banks under $1B, and NCUA's free WARM-based tool serves credit unions under $100M.[^27][^76]",
+  "Consumer credit decisions: buy from a specialist such as Zest AI, which claims 25% higher approvals, then validate it yourself.[^64][^8]"
  ],
  "resources": [
   {
@@ -589,7 +589,7 @@
   },
   {
    "num": "70%",
-   "label": "of community banks use outside vendors for CECL; 57% buy third-party economic forecasts.[^68]",
+   "label": "of community banks use outside vendors for CECL; 57% buy third-party economic forecasts.[^67]",
    "source": "ABA Banking Journal, Apr 2026"
   }
  ],
@@ -900,11 +900,6 @@
    "what": "ChatGPT Business $20 per user a month billed annually; read 26 Nov 2026."
   },
   {
-   "name": "Alkami, Data and Marketing solutions (vendor; prices read 26 Nov 2026)",
-   "url": "https://www.alkami.com/data-marketing-solutions?m-search",
-   "what": "Vendor prices: from $23K (Data Insights), $47K (Predictive AI) or $77K (Full Funnel) a year; read 26 Nov 2026."
-  },
-  {
    "name": "Menlo Ventures, 2025 State of Generative AI in the Enterprise",
    "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
    "what": "Survey of 495 US decision-makers: 76% of enterprise AI use cases were bought, up from 53% in 2024."
@@ -1065,9 +1060,9 @@
  "answers": {
   "human-role": "People keep every decision: credit officers sign each memo, your BSA officer decides what gets filed, and staff keep the member conversation.[^10][^14][^3] Management still owns vendor oversight.[^11][^17]",
   "ranked": "Fraud and anti-money-laundering alert triage pays first, then commercial credit memo drafts and staff knowledge search.[^2][^15][^10][^3]",
-  "rules": "Fair lending law and vendor oversight duties apply to every charter. The April 2026 model risk guidance mostly targets banks over $30B.[^8][^11][^30][^6] OCC-supervised banks also face the OCC's AI framework.[^12] For CECL, the 2023 interagency allowance policy statement applies to every charter.[^73]",
+  "rules": "Fair lending law and vendor oversight duties apply to every charter. The April 2026 model risk guidance mostly targets banks over $30B.[^8][^11][^30][^6] OCC-supervised banks also face the OCC's AI framework.[^12] For CECL, the 2023 interagency allowance policy statement applies to every charter.[^72]",
   "what-goes-wrong": "AI goes wrong when staff paste member data into personal accounts, chatbots give wrong answers, or a vendor's credit model can't give the specific reasons a denial needs.[^39][^24][^8]",
-  "something-else": "Pick something else when your core already sells the job, staff only need drafting, a bank under $1B needs a CECL estimate, or credit decisions need a specialist vendor.[^14][^60][^27][^65]",
-  "table-4": "AI fits the paperwork around your allowance method: data checks, the Q-factor packet, variance notes and the audit index.[^66][^67] People sign: the CFO and chief credit officer set each Q-factor, and the audit committee and board approve the allowance.[^73]"
+  "something-else": "Pick something else when your core already sells the job, staff only need drafting, a bank under $1B needs a CECL estimate, or credit decisions need a specialist vendor.[^14][^60][^27][^64]",
+  "table-4": "AI fits the paperwork around your allowance method: data checks, the Q-factor packet, variance notes and the audit index.[^65][^66] People sign: the CFO and chief credit officer set each Q-factor, and the audit committee and board approve the allowance.[^72]"
  }
 }
