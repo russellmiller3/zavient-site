@@ -114,7 +114,7 @@ p { max-width: 68ch; }
 .status { font-family: var(--mono); font-size: 14px; color: var(--green); min-height: 20px; }
 
 /* The policy document itself */
-.policy { font-family: var(--serif); font-size: 18px; line-height: 1.55; color: var(--ink); border: 1px solid var(--line-strong); padding: clamp(16px, 4vw, 34px); background: #fff; outline: none; overflow-wrap: anywhere; }
+.policy { font-family: var(--serif); font-size: 18px; line-height: 1.55; color: var(--ink); border: 1px solid var(--line-strong); padding: clamp(16px, 4vw, 34px); background: #fff; outline: none; overflow-wrap: break-word; }
 .policy h1 { font-family: var(--sans); font-size: 26px; line-height: 1.2; margin-bottom: 6px; }
 .policy h2 { font-size: 20px; margin: 22px 0 6px; }
 .policy h3 { font-size: 17px; margin: 14px 0 4px; }
@@ -125,11 +125,21 @@ p { max-width: 68ch; }
 .policy mark.ph { background: #FFF4C2; color: var(--ink); padding: 0 2px; }
 .policy sup { font-family: var(--mono); font-size: 12px; color: var(--blue); }
 .policy table { border-collapse: collapse; width: 100%; margin: 6px 0 12px; font-size: 16px; }
-.policy th, .policy td { border: 1px solid var(--line-strong); padding: 6px 8px; text-align: left; vertical-align: top; }
+.policy th, .policy td { border: 1px solid var(--line-strong); padding: 6px 8px; text-align: left; vertical-align: top; overflow-wrap: normal; word-break: normal; hyphens: manual; }
 .policy th { background: var(--paper-alt); font-family: var(--sans); font-size: 15px; }
 .policy .notes li { font-size: 15px; color: var(--ink-soft); }
 .policy .disclaimer { font-size: 16px; color: var(--ink-soft); border: 1px solid var(--line); background: var(--paper-alt); padding: 10px 12px; }
 .table-scroll { overflow-x: auto; }
+/* Phones: each table row becomes a labelled card, so no column is squeezed into breaking words mid-word (26 Nov 2026).
+   The labels come from data-label, which labelTables() copies from the header row. */
+@media (max-width: 600px) {
+  .policy table, .policy tbody, .policy tr, .policy td { display: block; width: 100%; }
+  .policy thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .policy tr { border: 1px solid var(--line-strong); padding: 8px 12px; margin-bottom: 10px; }
+  .policy td { border: 0; padding: 4px 0; }
+  .policy td + td { border-top: 1px solid var(--line); }
+  .policy td[data-label]::before { content: attr(data-label); display: block; font-family: var(--sans); font-weight: 700; font-size: 14px; color: var(--muted); }
+}
 
 /* Step 2: the risk check */
 .yn { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center; padding: 10px 0; border-top: 1px solid var(--line); }
@@ -165,6 +175,7 @@ details > summary { cursor: pointer; min-height: 44px; display: flex; align-item
 .method li::before { content: ''; position: absolute; left: 4px; top: 12px; width: 7px; height: 7px; background: var(--blue); }
 sup.fn { font-size: 0.62em; line-height: 0; margin-left: 1px; font-family: var(--mono); }
 sup.fn a { color: var(--blue); text-decoration: none; font-weight: 600; }
+sup.fn .fn-sep { color: var(--muted); margin-right: 2px; }
 .sources ol { margin: 8px 0 0 26px; display: flex; flex-direction: column; gap: 8px; font-size: 16px; line-height: 1.5; color: var(--ink-soft); }
 .sources li { overflow-wrap: anywhere; scroll-margin-top: 20px; }
 .sources li:target { background: var(--blue-wash); }
@@ -514,7 +525,7 @@ function noteOrder(p) {
 function policyText(p) {
   const order = noteOrder(p);
   const t = (s) => s.replace(/\*\*(.+?)\*\*/g, "$1").replace(/\[\[(.+?)\]\]/g, "[$1]");
-  const marks = (b) => (b.fn || []).map((id) => `[${order.indexOf(id) + 1}]`).join("");
+  const marks = (b) => b.fn && b.fn.length ? `[${b.fn.map((id) => order.indexOf(id) + 1).join(", ")}]` : "";
   const out = [`${t(p.company)} AI use policy`, ""];
   p.sections.forEach((s, i) => {
     out.push(`${i + 1}. ${s.title}`);
@@ -615,7 +626,11 @@ const today = () => new Date().toLocaleDateString("en-GB", { day: "numeric", mon
 // Page footnotes: numbered in order of first use, listed in the Sources box.
 const fnOrder = [];
 const fnNum = (id) => { let k = fnOrder.indexOf(id); if (k < 0) { fnOrder.push(id); k = fnOrder.length - 1; } return k + 1; };
-const rich = (s) => esc(s).replace(/\[\^(\w+)\]/g, (m, id) => SRC[id] ? `<sup class="fn"><a href="#fn-${fnNum(id)}" aria-label="Source ${fnNum(id)}">${fnNum(id)}</a></sup>` : "");
+// Back-to-back markers ("[^a][^b]") share one superscript, written "3,7" like the page's own footnotes.
+const rich = (s) => esc(s).replace(/(?:\[\^\w+\]\s*)*\[\^\w+\]/g, (run) => {
+  const ns = [...run.matchAll(/\[\^(\w+)\]/g)].map((m) => m[1]).filter((id) => SRC[id]).map(fnNum);
+  return ns.length ? `<sup class="fn">${ns.map((n) => `<a href="#fn-${n}" aria-label="Source ${n}">${n}</a>`).join('<span class="fn-sep">,</span>')}</sup>` : "";
+});
 function renderFootnotes() {
   const all = document.getElementById("method-list").textContent + JSON.stringify(Q);
   all.replace(/\[\^(\w+)\]/g, (m, id) => { if (SRC[id]) fnNum(id); return m; });
@@ -710,7 +725,7 @@ document.addEventListener("keydown", (e) => {
 const fmt = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\[\[(.+?)\]\]/g, '<mark class="ph">[$1]</mark>');
 function policyHTML(p) {
   const order = noteOrder(p);
-  const sup = (b) => (b.fn || []).map((id) => `<sup>[${order.indexOf(id) + 1}]</sup>`).join("");
+  const sup = (b) => b.fn && b.fn.length ? `<sup>[${b.fn.map((id) => order.indexOf(id) + 1).join(", ")}]</sup>` : "";
   const disc = `This is a starting draft, not legal advice. Laws on AI change often and differ by state, country and industry. Have your legal or compliance adviser review it before you adopt it. Generated ${esc(p.today)}; law checked as of ${LAW_DATE}.`;
   let h = `<h1>${fmt(p.company)} AI use policy</h1><p class="meta">Version 1 · Owner: ${fmt(p.flags.group ? "AI working group" : (ROLE[state.a.approver] || ROLE.undecided).replace(/^the /, ""))} · Approved: <mark class="ph">[date]</mark> · Next review: <mark class="ph">[date]</mark></p><p class="disclaimer">${disc}</p>`;
   p.sections.forEach((s, i) => {
@@ -723,16 +738,24 @@ function policyHTML(p) {
     }
   });
   const A = p.appendixA;
-  h += `<h2>${esc(A.title)}</h2><div class="table-scroll"><table><thead><tr>${A.head.map((x) => `<th>${esc(x)}</th>`).join("")}</tr></thead><tbody>${A.rows.map((r) => `<tr>${r.map((c) => `<td>${fmt(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+  h += `<h2>${esc(A.title)}</h2><div class="table-scroll"><table><thead><tr>${A.head.map((x) => `<th>${esc(x)}</th>`).join("")}</tr></thead><tbody>${A.rows.map((r) => `<tr>${r.map((c, k) => `<td data-label="${esc(A.head[k])}">${fmt(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
   h += `<div id="appendix-b">${appendixB()}</div>`;
   h += `<h2>Notes</h2><ol class="notes">${order.map((id) => `<li>${esc(SRC[id].name)}. ${esc(SRC[id].url)}</li>`).join("")}</ol>`;
   h += `<p class="disclaimer">${disc}</p>`;
   return h;
 }
+// Gives every table cell its column name, so phones can show rows as labelled cards. Also fixes policies saved
+// with edits before cells carried labels.
+function labelTables(root) {
+  root.querySelectorAll("table").forEach((tb) => {
+    const head = [...tb.querySelectorAll("thead th")].map((th) => th.textContent.trim());
+    tb.querySelectorAll("tbody tr").forEach((tr) => [...tr.children].forEach((td, k) => { if (head[k] && !td.dataset.label) td.dataset.label = head[k]; }));
+  });
+}
 function appendixB() {
   const head = `<h2>Appendix B: AI use risk check</h2>`;
   if (!state.uses.length) return `${head}<p>Low risk: use an approved tool and check your own work. Medium risk: listed in Appendix A, with a named reviewer before anything leaves. High risk: sign-off before use, a short written check, and a person makes the final call. <mark class="ph">[Run the risk check on the tool page to list your uses here.]</mark></p>`;
-  return `${head}<div class="table-scroll"><table><thead><tr><th>AI use</th><th>Risk</th><th>Why</th><th>Review it needs</th></tr></thead><tbody>${state.uses.map((u) => { const r = riskTier(u); const t = TIERS[r.tier]; return `<tr><td>${esc(u.name)}</td><td>${t.name}</td><td>${esc(r.reasons.join("; "))}</td><td>${esc(t.steps.join(" "))}</td></tr>`; }).join("")}</tbody></table></div>`;
+  return `${head}<div class="table-scroll"><table><thead><tr><th>AI use</th><th>Risk</th><th>Why</th><th>Review it needs</th></tr></thead><tbody>${state.uses.map((u) => { const r = riskTier(u); const t = TIERS[r.tier]; return `<tr><td data-label="AI use">${esc(u.name)}</td><td data-label="Risk">${t.name}</td><td data-label="Why">${esc(r.reasons.join("; "))}</td><td data-label="Review it needs">${esc(t.steps.join(" "))}</td></tr>`; }).join("")}</tbody></table></div>`;
 }
 
 // Export from the live document, so the user's edits go out with it.
@@ -844,12 +867,13 @@ function result() {
     </section>`;
   document.getElementById("risk-help").innerHTML = rich("Name one way your team uses AI, answer six yes-or-no questions, and get its risk level and the review it needs.[^eu_act][^nist_rmf]");
   const el = document.getElementById("policy");
+  labelTables(el);
   let t; el.addEventListener("input", () => { clearTimeout(t); t = setTimeout(() => { state.edited = el.innerHTML; save(); }, 400); });
   document.getElementById("b-copy").onclick = () => copyPolicy(el);
   document.getElementById("b-doc").onclick = () => { download(fileBase() + ".doc", "application/msword", docHtml(el.innerHTML)); flash("Downloaded. It opens in Word."); };
   document.getElementById("b-md").onclick = () => { download(fileBase() + ".md", "text/markdown;charset=utf-8", toMd(el)); flash("Downloaded as Markdown."); };
   document.getElementById("b-print").onclick = () => window.print();
-  document.getElementById("b-reset").onclick = () => { if (!state.edited || confirm("Undo all your edits to the policy?")) { state.edited = null; save(); el.innerHTML = policyHTML(p); } };
+  document.getElementById("b-reset").onclick = () => { if (!state.edited || confirm("Undo all your edits to the policy?")) { state.edited = null; save(); el.innerHTML = policyHTML(p); labelTables(el); } };
   document.getElementById("redo").onclick = () => { if (!state.edited || confirm("Changing your answers rebuilds the policy and replaces your edits. Go on?")) { state.step = "q"; state.i = 0; state.edited = null; save(); render(); } };
   riskForm(el);
 }

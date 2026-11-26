@@ -121,7 +121,7 @@ details.card[open] > summary h3::after { content: " \2212"; }
 .method li::before { content: ''; position: absolute; left: 3px; top: 11px; width: 7px; height: 7px; background: var(--blue); }
 sup.fn { font-size: 0.62em; line-height: 0; margin-left: 1px; font-family: var(--mono); }
 sup.fn a { color: var(--blue); text-decoration: none; font-weight: 600; }
-sup.fn + sup.fn { margin-left: 3px; }
+sup.fn .fn-sep { color: var(--muted); margin-right: 2px; }
 .srcs ol { margin-left: 24px; display: flex; flex-direction: column; gap: 6px; font-size: 16px; line-height: 1.45; color: var(--ink-soft); }
 .srcs li { overflow-wrap: anywhere; scroll-margin-top: 16px; }
 .srcs li:target { background: var(--blue-wash); }
@@ -422,7 +422,8 @@ function toHash() { return "#e=" + ["wf", "items", "people", "minutes", "systems
 
 // Footnotes: fixed numbers in Sources-list order.
 const fnNum = (id) => M.SRC_ORDER.indexOf(id) + 1;
-const fns = (ids) => (ids || []).map(id => `<sup class="fn"><a href="#fn-${fnNum(id)}" aria-label="Source ${fnNum(id)}">${fnNum(id)}</a></sup>`).join("");
+// Back-to-back sources share one superscript, written "3,7" like the page's own footnotes.
+const fns = (ids) => (ids && ids.length) ? `<sup class="fn">${ids.map(id => `<a href="#fn-${fnNum(id)}" aria-label="Source ${fnNum(id)}">${fnNum(id)}</a>`).join('<span class="fn-sep">,</span>')}</sup>` : "";
 document.addEventListener("click", (e) => {
   const l = e.target.closest && e.target.closest('a[href^="#fn-"]');
   if (l) { const d = document.getElementById("footnotes"); if (d) d.open = true; }

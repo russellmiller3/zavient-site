@@ -71,27 +71,33 @@ select:focus { border-color: var(--blue); }
 .tag { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; padding: 1px 6px; border: 1px solid var(--mid); color: var(--mid); white-space: nowrap; }
 
 .ucs { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-.uc { border: 1px solid var(--line); border-left: 4px solid var(--blue); padding: 14px 14px 12px; display: flex; flex-direction: column; gap: 10px; background: var(--paper); }
+/* Each card fits in about half a phone screen: name and fit label, one line on what AI does, the gain with its proof
+   label, effort and risk chips, one Details tap, then two real buttons (26 Nov 2026). */
+.uc { border: 1px solid var(--line); border-left: 4px solid var(--blue); padding: 12px 12px 12px; display: flex; flex-direction: column; gap: 8px; background: var(--paper); }
 .uc.is-high { border-left-color: var(--low); }
-.uc-head { display: flex; gap: 12px; align-items: flex-start; }
-.rank { flex: none; width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; background: var(--blue); color: #fff; font: 800 18px var(--sans); }
+.uc-head { display: flex; gap: 10px; align-items: flex-start; }
+.uc h3 { font-size: 18px; }
+.rank { flex: none; width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; background: var(--blue); color: #fff; font: 800 18px var(--sans); }
 .uc.is-high .rank { background: var(--low); }
-.fit { height: 6px; background: var(--paper-alt); border: 1px solid var(--line); margin-top: 6px; max-width: 220px; }
-.fit i { display: block; height: 100%; background: var(--blue); }
+.fitlab { display: block; margin-top: 4px; font-family: var(--mono); font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.fitlab.f-best { color: var(--good); }
+.fitlab.f-strong { color: var(--blue-dark); }
 .badges { display: flex; flex-wrap: wrap; gap: 6px; }
-.b { font-family: var(--sans); font-weight: 600; font-size: 14px; line-height: 1.2; padding: 4px 8px; border: 1px solid var(--line-strong); color: var(--ink-soft); background: var(--paper-alt); }
+.b { font-family: var(--sans); font-weight: 600; font-size: 13px; line-height: 1.2; padding: 3px 7px; border: 1px solid var(--line-strong); color: var(--ink-soft); background: var(--paper-alt); }
 .b.r-low { border-color: var(--good); color: var(--good); background: var(--good-wash); }
 .b.r-medium { border-color: var(--mid); color: var(--mid); background: var(--mid-wash); }
 .b.r-high { border-color: var(--low); color: var(--low); background: var(--low-wash); }
 .b.ev { border-color: var(--blue); color: var(--blue-dark); background: var(--blue-wash); }
-.uc p { font-size: 17px; line-height: 1.45; }
+.uc p { font-size: 16px; line-height: 1.4; }
+.uc .gain .b { margin-right: 4px; vertical-align: 1px; }
 .uc p b { font-family: var(--sans); font-weight: 700; font-size: 15px; }
 .peer { font-size: 15px; color: var(--ink-soft); }
-.uc details { border-top: 1px solid var(--line); padding-top: 4px; }
+.uc details { border-top: 1px solid var(--line); padding-top: 0; }
+.uc details > summary { min-height: 44px; }
 .uc .more { display: flex; flex-direction: column; gap: 8px; padding: 4px 0 6px; }
 .uc .more ul { margin-left: 18px; font-size: 16px; }
-.next { display: flex; flex-wrap: wrap; gap: 6px 14px; font-family: var(--sans); font-weight: 600; font-size: 15px; border-top: 1px solid var(--line); padding-top: 8px; }
-.next a { display: inline-flex; align-items: center; min-height: 44px; }
+.uc-act { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.uc-act .btn { padding: 10px 12px; font-size: 15px; }
 
 .facts { list-style: none; display: flex; flex-direction: column; }
 .facts li { position: relative; padding: 8px 0 8px 20px; font-size: 17px; line-height: 1.45; }
@@ -117,12 +123,13 @@ summary { cursor: pointer; min-height: 44px; display: flex; align-items: center;
 .method li { margin: 0 0 8px 18px; }
 sup.fn { font-family: var(--mono); font-size: 11px; line-height: 0; margin-left: 1px; }
 sup.fn a { text-decoration: none; padding: 0 1px; }
+sup.fn .fn-sep { color: var(--muted); margin-right: 1px; }
 #fn-list { font-size: 15px; line-height: 1.45; color: var(--ink-soft); margin-left: 22px; }
 #fn-list li { margin-bottom: 6px; overflow-wrap: anywhere; }
 #fn-list li:target { background: var(--mid-wash); }
 footer { border-top: 1px solid var(--line); padding: 16px 0 24px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
 footer a { color: var(--muted); }
-@media print { #pickers, .row, .next, .offer .btn { display: none !important; } details { display: block; } .uc { break-inside: avoid; } }
+@media print { #pickers, .row, .uc-act, .offer .btn { display: none !important; } details { display: block; } .uc { break-inside: avoid; } }
 </style>
 </head>
 <body>
@@ -200,7 +207,16 @@ function rank(D, ind, team, size) {
   }
   return { cell: cell || null, general: !cell, list: list.slice(0, 5) };
 }
-if (typeof module !== "undefined") module.exports = { W, peerTier, sizeFit, score, rank };
+// Plain fit label shown on each card instead of a raw score, set against the best score in this cell, since a
+// COO reads "45/100" as a failing grade even when it is the best first move (26 Nov 2026).
+function fitLabel(x, k, top) {
+  if (k === 0) return { key: "best", text: "Best first pick" };
+  const r = top > 0 ? x.s / top : 0;
+  if (r >= 0.75) return { key: "strong", text: "Strong option" };
+  if (r >= 0.5) return { key: "good", text: "Good option" };
+  return { key: "later", text: "Later" };
+}
+if (typeof module !== "undefined") module.exports = { W, peerTier, sizeFit, score, rank, fitLabel };
 </script>
 
 <script>
@@ -225,12 +241,14 @@ const st = { ind: "professional-services", team: "core", size: "100-249", exampl
 
 // Footnotes are numbered in the order this result cites them.
 let cited = [];
+// Back-to-back sources share one superscript, written "3,7" like the page's own footnotes.
 function fn(ids) {
-  return (ids || []).filter((id) => DATA.sources[id]).map((id) => {
+  const links = (ids || []).filter((id) => DATA.sources[id]).map((id) => {
     let n = cited.indexOf(id) + 1;
     if (!n) { cited.push(id); n = cited.length; }
-    return `<sup class="fn"><a href="#fn-${n}" data-fn="${n}" aria-label="Source ${n}">${n}</a></sup>`;
-  }).join("");
+    return `<a href="#fn-${n}" data-fn="${n}" aria-label="Source ${n}">${n}</a>`;
+  });
+  return links.length ? `<sup class="fn">${links.join('<span class="fn-sep">,</span>')}</sup>` : "";
 }
 function rough(n) {
   const r = n >= 1000 ? Math.round(n / 100) * 100 : Math.round(n / 10) * 10;
@@ -250,27 +268,24 @@ function regLine(x) {
   return "";
 }
 function card(x, k, top) {
-  const u = x.u, high = u.risk === "high", reg = regLine(x);
-  const pct = Math.max(8, Math.round(100 * x.s / top));
-  const links = [];
-  if (u.link) links.push(`<a href="${u.link.u}" target="_top">Read the guide</a>`);
-  links.push(`<a href="${COST}" target="_top">Price it</a>`, `<a href="${ROI}" target="_top">Check payback</a>`);
+  const u = x.u, high = u.risk === "high", reg = regLine(x), fit = fitLabel(x, k, top);
   return `<li class="uc${high ? " is-high" : ""}">
     <div class="uc-head"><span class="rank" aria-label="Rank ${k + 1}">${k + 1}</span>
-      <div><h3>${esc(u.n)}</h3><div class="fit" role="img" aria-label="Zavient fit score ${Math.round(x.s)} out of 100"><i style="width:${pct}%"></i></div></div></div>
-    <div class="badges"><span class="b ev">${EV_LABEL[u.ev]}</span><span class="b">${EFF_LABEL[u.eff]}</span><span class="b r-${u.risk}">${RISK_LABEL[u.risk]}</span></div>
+      <div><h3>${esc(u.n)}</h3><span class="fitlab f-${fit.key}">${fit.text}</span></div></div>
     <p><b>AI does:</b> ${esc(u.does)}</p>
-    <p><b>Your people keep:</b> ${esc(u.keep)}</p>
-    <p><b>Gain:</b> ${esc(u.gain)}${fn(u.gsrc)}</p>
-    <p><b>Data you need:</b> ${u.data.map((t, i) => esc(i ? lc(t) : t)).join("; ")}.</p>
-    ${reg}${peerLine(u)}
-    <details><summary>Risk, effort and what to measure</summary><div class="more">
-      ${reg ? "" : `<p><b>${RISK_LABEL[u.risk]}:</b> ${esc(u.rwhy)}${fn(u.rsrc)}</p>`}
+    <p class="gain"><b>Gain:</b> <span class="b ev">${EV_LABEL[u.ev]}</span>${esc(u.gain)}${fn(u.gsrc)}</p>
+    <div class="badges"><span class="b">${EFF_LABEL[u.eff]}</span><span class="b r-${u.risk}">${RISK_LABEL[u.risk]}</span></div>
+    <details><summary>Details</summary><div class="more">
+      <p><b>Your people keep:</b> ${esc(u.keep)}</p>
+      <p><b>Data you need:</b> ${u.data.map((t, i) => esc(i ? lc(t) : t)).join("; ")}.</p>
+      ${reg || `<p><b>${RISK_LABEL[u.risk]}:</b> ${esc(u.rwhy)}${fn(u.rsrc)}</p>`}
       <p><b>Effort:</b> ${esc(u.effNote)}</p>
       ${u.cav ? `<p><b>Read the gain with care:</b> ${esc(u.cav)}</p>` : ""}
       <p><b>First 30-day measure:</b> ${esc(u.measure)} <span class="tag">Zavient suggestion</span></p>
+      ${peerLine(u)}
+      ${u.link ? `<p><a href="${u.link.u}" target="_top">Read the guide</a></p>` : ""}
     </div></details>
-    <div class="next">${links.join("")}</div>
+    <div class="uc-act"><a class="btn btn-line" href="${COST}" target="_top">Price it</a><a class="btn btn-line" href="${ROI}" target="_top">Check payback</a></div>
   </li>`;
 }
 
@@ -292,12 +307,12 @@ function render() {
     <ol class="ucs">${r.list.map((x, k) => card(x, k, top)).join("")}</ol>
     <p class="small">Peers: ${esc(ind.sector)} said they use AI in their work (Census business survey, 2026).${fn(ind.ssrc)} Use rises with size: ${sizeNote} do.${fn(["S30", "S33"])}</p>
     <details><summary>How we rank (Zavient method)</summary><ol class="method">
-      <li>Score = peer interest &times; strength of proof &times; size of gain &times; ease &times; risk, scaled to 100. The weights are a Zavient estimate.${fn(["Z5"])}</li>
+      <li>Score = peer interest &times; strength of proof &times; size of gain &times; ease &times; risk. The weights are a Zavient estimate.${fn(["Z5"])}</li>
       <li>Proof: a randomized trial counts most and a vendor claim least. Trial gains often shrink in day-to-day work.${fn(["S26", "S29"])}</li>
       <li>Ease: a bought tool counts most. Bought tools reached daily use about twice as often as internal builds.${fn(["S39"])}</li>
       <li>Peer interest: US job ads and searches for the work, counted ${DATA.asOf}.${fn(["Z1", "Z2"])}</li>
       <li>Size: under 100 people, builds count less. At 250 or more, set-up and build work counts a little more.${fn(["Z5"])}</li>
-      <li>The bar on each card shows its score against the top pick. Scores below about half the top pick are weak first choices.</li>
+      <li>Each card&rsquo;s label compares it with the top pick for your picks, not with a fixed pass mark. Strong option: within a quarter of the top score. Good option: within half. Later: below half, a weak first choice.</li>
       <li>Risk: a use that affects jobs, credit, insurance, health or legal rights is high risk. It is never ranked first.${fn(["S84", "S82"])}</li>
     </ol></details>`;
 

@@ -150,7 +150,7 @@ pre.rec { font: 14px/1.5 var(--mono); background: var(--paper-alt); border: 1px 
 /* Method + sources */
 sup.fn { font-size: .62em; line-height: 0; margin-left: 1px; font-family: var(--mono); }
 sup.fn a { color: var(--blue); text-decoration: none; font-weight: 600; padding: 0 1px; }
-sup.fn + sup.fn::before { content: ','; color: var(--muted); }
+sup.fn .fn-sep { color: var(--muted); margin-right: 2px; }
 .sources ol { margin: 0 0 0 26px; display: flex; flex-direction: column; gap: 8px; font-size: 16px; line-height: 1.45; color: var(--ink-soft); }
 .sources li { overflow-wrap: anywhere; scroll-margin-top: 16px; }
 .sources li:target { background: var(--blue-wash); }
@@ -349,14 +349,25 @@ const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const fnOrder = [];
 const fnNum = id => { let k = fnOrder.indexOf(id); if (k < 0) { fnOrder.push(id); k = fnOrder.length - 1; } return k + 1; };
-const rich = s => esc(s).replace(/\[\^(\w+)\]/g, (m, id) => SOURCES[id] ? `<sup class="fn"><a href="#fn-${fnNum(id)}" aria-label="Source ${fnNum(id)}">${fnNum(id)}</a></sup>` : "").replace(/\[V\]/g, '<span class="vtag">[V]</span>');
+// Back-to-back markers ("[^a][^b]") share one superscript, written "3,7" like the page's own footnotes. The comma is
+// real text: the old CSS "sup + sup" rule also fired on markers with words between them.
+const fnRun = s => s.replace(/(?:\[\^\w+\]\s*)*\[\^\w+\]/g, run => {
+  const ns = [...run.matchAll(/\[\^(\w+)\]/g)].map(m => m[1]).filter(id => SOURCES[id]).map(fnNum);
+  return ns.length ? `<sup class="fn">${ns.map(n => `<a href="#fn-${n}" aria-label="Source ${n}">${n}</a>`).join('<span class="fn-sep">,</span>')}</sup>` : "";
+});
+const rich = s => fnRun(esc(s)).replace(/\[V\]/g, '<span class="vtag">[V]</span>');
 const num = (x, d = 1) => { const r = Math.round(x * 10 ** d) / 10 ** d; return r.toLocaleString("en-US", { maximumFractionDigits: d }); };
 const hrs = x => num(x, 2).replace(/\.?0+$/, "") ;
 const about = x => x >= 200 ? Math.round(x / 10) * 10 : Math.round(x);
 const usd = x => "$" + Math.round(x).toLocaleString("en-US");
 const usd100 = x => "$" + (Math.round(x / 100) * 100).toLocaleString("en-US");
 const mins = h => Math.round(h * 60 / 5) * 5;
-const list = arr => arr.length <= 1 ? arr.join("") : arr.slice(0, -1).join(", ") + " and " + arr[arr.length - 1];
+// Team names hold "and" themselves ("Finance and accounting"). When one of the last two does, the list ends in
+// ", plus" to stay clear: "finance and accounting, plus HR", not "finance and accounting and hr" (26 Nov 2026).
+const list = arr => arr.length <= 1 ? arr.join("") : arr.slice(0, -1).join(", ") + (arr.slice(-2).some(x => / and /.test(x)) ? ", plus " : " and ") + arr[arr.length - 1];
+// Lower-case a team name for use mid-sentence, but keep acronyms (HR, IT, AP) in capitals.
+const lc = t => /^[A-Z][a-z]/.test(t) ? t.charAt(0).toLowerCase() + t.slice(1) : t;
+const cap = t => t.replace(/^./, c => c.toUpperCase());
 const rateOf = r => (S.rates[r.id] > 0 ? +S.rates[r.id] : defRate(r));
 
 /* =====================================================================
@@ -418,7 +429,7 @@ function gaps(p) {
    RENDER
    ===================================================================== */
 const $ = id => document.getElementById(id);
-const activeNames = (p, wave) => p.teams.filter(t => t.wave === wave).map(t => t.name.toLowerCase());
+const activeNames = (p, wave) => p.teams.filter(t => t.wave === wave).map(t => lc(t.name));
 
 function renderSummary(p, G) {
   const top = G[0];
@@ -472,7 +483,7 @@ function renderAssume() {
   $("assume-body").innerHTML = `
     <p class="muted" style="margin:8px 0">Hours and ratios are our judgment, checked against the studies linked. Wages are US averages; put in your own.</p>
     ${Object.entries(ASSUME).map(([k, x]) => `<div class="field"><label for="a-${k}">${esc(x.label)}</label><input id="a-${k}" type="number" inputmode="decimal" min="0" step="${k.startsWith("per") ? 1 : 0.25}" value="${S.a[k]}" data-a="${k}"><div class="src">${tagE}${rich(x.why)}</div></div>`).join("")}
-    ${[...ROLES, MGR].map(r => `<div class="field"><label for="r-${r.id}">${esc(r.name)}: cost of an hour ($)</label><input id="r-${r.id}" type="number" inputmode="decimal" min="1" step="0.01" value="${rateOf(r).toFixed(2)}" data-rate="${r.id}"><div class="src">${tagB}${esc(r.occ)}: $${r.wage.toFixed(2)} mean wage (May 2025)[^oews] x ${load(ECEC[r.grp]).toFixed(2)} loading for ${ECEC[r.grp].name} jobs (June 2026, paid leave left out).[^ecec4]`.replace(/\[\^(\w+)\]/g, m => m) + `</div></div>`).join("").replace(/\[\^(\w+)\]/g, (m, id) => `<sup class="fn"><a href="#fn-${fnNum(id)}">${fnNum(id)}</a></sup>`)}`;
+    ${fnRun([...ROLES, MGR].map(r => `<div class="field"><label for="r-${r.id}">${esc(r.name)}: cost of an hour ($)</label><input id="r-${r.id}" type="number" inputmode="decimal" min="1" step="0.01" value="${rateOf(r).toFixed(2)}" data-rate="${r.id}"><div class="src">${tagB}${esc(r.occ)}: $${r.wage.toFixed(2)} mean wage (May 2025)[^oews] x ${load(ECEC[r.grp]).toFixed(2)} loading for ${ECEC[r.grp].name} jobs (June 2026, paid leave left out).[^ecec4]` + `</div></div>`).join(""))}`;
 }
 
 function renderDetail(p, G) {
@@ -493,8 +504,8 @@ function renderDetail(p, G) {
       <li>All staff do the basics, ${hrs(p.basicsH)} hours${firstUse}: how AI works and where it fails, your rules, and checking AI output on real examples.</li>
     </ul></div>
     <div class="phase"><h3>Days 31 to 60 <span>workflows on real work</span></h3><ul class="pts">
-      ${w1.length ? `<li>${esc(list(w1)).replace(/^./, s => s.toUpperCase())} go first. Their work is high-volume and easy to check. ${rich("Newer support agents gained 34% with AI help.[^nber]")}</li>` : ""}
-      ${w2.length ? `<li>${esc(list(w2)).replace(/^./, s => s.toUpperCase())} follow ${needRule ? "once the data rule is signed" : "next"}${S.regulated === 0 ? ", with a champion on hand" : ""}.</li>` : ""}
+      ${w1.length ? `<li>${esc(cap(list(w1)))} go first. Their work is high-volume and easy to check. ${rich("Newer support agents gained 34% with AI help.[^nber]")}</li>` : ""}
+      ${w2.length ? `<li>Next come ${esc(list(w2))}${needRule ? ", once the data rule is signed" : ""}${S.regulated === 0 ? ", with a champion on hand" : ""}.</li>` : ""}
       <li>Each person spends ${hrs(S.a.workflow)} hours: prompting on their own work, two workflows done end to end with a person signing off, and a show-and-tell run by their champion.</li>
     </ul></div>
     <div class="phase"><h3>Days 61 to 90 <span>make it normal</span></h3><ul class="pts">
@@ -587,14 +598,14 @@ function renderOffer(p, G) {
   if (!p.H) return;
   const r = riskiest(p);
   const why = r && r.id === "hr" ? "AI must stay out of hiring and performance calls" : r && r.id === "fin" ? "every number needs a check" : "it is your biggest team";
-  const label = r ? (r.id === "hr" ? "HR" : r.name.toLowerCase()) : "your first team";
+  const label = r ? lc(r.name) : "your first team";
   const toolName = (OPTS.tool.find(o => o[0] === S.tool) || [, ""])[1];
   const toolLine = (S.tool === "none" || S.tool === "personal") ? "which one tool to approve and train on" : `which tasks to train on in ${toolName}`;
   const items = [
     `The rollout order, and how to bring ${esc(label)} in safely: ${why}.`,
     `${toolLine.replace(/^./, c => c.toUpperCase())}, and the person who checks each workflow.`,
     `Who your ${p.champs} champion${p.champs === 1 ? "" : "s"} should be, and what they cover each week.`,
-    S.eu === 0 ? "What goes in your Article 4 training record." : (G[0] ? `How to close your top gap: ${esc(G[0].t.replace(/\.$/, "").replace(/^./, c => c.toLowerCase()))}.` : "Where the saved hours should go, team by team.")
+    S.eu === 0 ? "What goes in your Article 4 training record." : (G[0] ? `How to close your top gap: ${esc(lc(G[0].t.replace(/\.$/, "")))}.` : "Where the saved hours should go, team by team.")
   ];
   $("offer-body").innerHTML = `<p>Your plan: ${p.H.toLocaleString("en-US")} people, ${p.champs} champion${p.champs === 1 ? "" : "s"} and about ${about(p.totalH).toLocaleString("en-US")} hours this quarter. In 30 minutes we settle:</p><ul class="pts">${items.map(x => `<li>${x}</li>`).join("")}</ul>`;
 }
@@ -608,7 +619,7 @@ function planText(p, G) {
   L.push(`Champions: ${p.champs} (${p.teams.filter(t => t.ch).map(t => `${t.name} ${t.ch}`).join(", ")}).`);
   if (G.length) { L.push(""); L.push("Fix first:"); G.forEach(g => L.push(`- ${g.t}`)); }
   L.push(""); L.push("Days 1-30: managers and champions first; everyone does the basics (" + hrs(p.basicsH) + " h).");
-  L.push("Days 31-60: " + list(activeNames(p, 1)) + (activeNames(p, 2).length ? ", then " + list(activeNames(p, 2)) : "") + ": two live workflows each, a person signs off.");
+  L.push("Days 31-60: two live workflows per team, a person signs off. First " + list(activeNames(p, 1)) + (activeNames(p, 2).length ? "; then " + list(activeNames(p, 2)) : "") + ".");
   L.push("Days 61-90: workflows by default, refresh around day 75, managers name where saved hours went.");
   L.push(""); L.push("Cost by team:");
   p.teams.forEach(t => L.push(`- ${t.name}: ${hrs(t.hours)} h x $${t.rate.toFixed(2)} = ${usd(t.cost)}`));

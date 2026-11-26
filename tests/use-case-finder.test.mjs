@@ -10,7 +10,7 @@ const html = readFileSync(new URL('../public/tools/embed/ai-use-case-finder.html
 const block = (id) => html.match(new RegExp(`<script id="${id}">([\\s\\S]*?)</script>`))[1];
 const ctx = { module: { exports: {} } };
 vm.runInNewContext(`${block('data')}\n${block('engine')}\nmodule.exports.DATA = DATA;`, ctx);
-const { DATA, rank, score, peerTier } = ctx.module.exports;
+const { DATA, rank, score, peerTier, fitLabel } = ctx.module.exports;
 const r1 = (n) => Math.round(n * 10) / 10;
 // JSON round trip: arrays made inside the vm context fail deepEqual against arrays made here.
 const top = (ind, team, size) => JSON.parse(JSON.stringify(rank(DATA, ind, team, size).list.map((x) => [x.id, r1(x.s)])));
@@ -43,6 +43,21 @@ test('every pick gives 3 to 5 uses and never puts a high-risk use first', () => 
   const r = rank(D, 'x', 'y', '100-249');
   assert.deepEqual(JSON.parse(JSON.stringify(r.list.map((x) => x.id))), ['claim-letters', 'credit-scoring']);
   assert.ok(r.list[1].held);
+});
+
+test('cards show a plain fit label set against the top pick, never a score out of 100', () => {
+  // Insurance core at 100-249: 44.8 top, 43.5 close behind, two at 20 (under half the top).
+  const r = rank(DATA, 'insurance', 'core', '100-249');
+  const top = r.list[0].s;
+  assert.deepEqual(JSON.parse(JSON.stringify(r.list.map((x, k) => fitLabel(x, k, top).text))),
+    ['Best first pick', 'Strong option', 'Later', 'Later']);
+  assert.equal(fitLabel({ s: 30 }, 2, 50).text, 'Good option');
+  // Every pick's first card is the best first pick, whatever its raw score.
+  for (const ind of DATA.industries) for (const t of DATA.teams) for (const s of SIZES) {
+    const q = rank(DATA, ind.id, t.id, s);
+    assert.equal(fitLabel(q.list[0], 0, q.list[0].s).text, 'Best first pick');
+  }
+  assert.ok(!/out of 100/.test(html), 'a raw score out of 100 is shown');
 });
 
 test('peer tiers follow the cut points', () => {
