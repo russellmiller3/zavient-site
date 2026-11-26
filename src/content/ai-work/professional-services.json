@@ -1,0 +1,775 @@
+{
+  "title": "What are professional services firms actually using AI for?",
+  "description": "Where AI pays first at engineering, architecture, consulting, agency and IT firms of 40-500 staff. What a saved hour is worth, and who signs off.",
+  "type": "industry",
+  "templateVersion": 1,
+  "topic": "AI for professional services firms",
+  "job": "AI for professional services firms",
+  "industry": "professional services",
+  "index": true,
+  "verdict": [
+    "Professional services firms are among the heaviest AI users: 39.1% in mid-2026, against 21.5% of all businesses.[^1][^2]",
+    "The main uses are research, summaries, meeting notes and proposals: drafting work a professional reviews before it goes out.[^3][^4]",
+    "Saving time is common, turning it into revenue is not: in a vendor survey 84.8% save time, 29.9% earn more.[^5][^3]",
+    "On hourly contracts a saved hour shrinks the bill unless resold; on fixed fees it becomes margin or capacity.[^6][^7]",
+    "Licensed engineers keep the seal: boards say they must check, document and be able to reproduce AI output.[^8][^9]"
+  ],
+  "onPage": [
+    {
+      "to": "human-role",
+      "text": "Who checks and signs: engineers, architects, engagement leads, recruiters"
+    },
+    {
+      "to": "ranked",
+      "text": "Seven jobs where AI pays first, ranked by payoff then effort"
+    },
+    {
+      "to": "own-data",
+      "text": "Our Census math: what one hour a week is worth at a 100-person firm"
+    },
+    {
+      "to": "table-1",
+      "text": "How many firms use AI, by kind of firm and who was asked"
+    },
+    {
+      "to": "table-2",
+      "text": "Where a saved hour goes under hourly, fixed-fee and retainer contracts"
+    },
+    {
+      "to": "table-3",
+      "text": "What the general AI plans cost per person, with dates read"
+    },
+    {
+      "to": "rules",
+      "text": "Engineering board, architecture, hiring, review and copyright rules"
+    },
+    {
+      "to": "what-goes-wrong",
+      "text": "Where it goes wrong, and the fix for each"
+    }
+  ],
+  "headings": {
+    "ranked": "Where does AI pay first at a professional services firm?",
+    "rules": "Which rules apply to AI at a professional services firm?",
+    "what-goes-wrong": "Where does AI go wrong at professional services firms?",
+    "faq": "Questions firm leaders ask about AI",
+    "buy-or-build": "Should a professional services firm buy AI or build it?",
+    "something-else": "When should a firm pick something else?"
+  },
+  "answers": {
+    "human-role": "Your professionals stay in charge of every judgment and signature: AI drafts, and the licensee, engagement lead or recruiter decides.[^8][^10]",
+    "ranked": "AI pays first on the unbilled writing around client work: proposals, notes and status reports, then research summaries and time capture.[^11][^4]",
+    "rules": "Professional licensing rules bind engineers and architects, hiring-AI laws bind anyone screening candidates, and federal rules cover fake reviews and copyright.[^8][^12]",
+    "what-goes-wrong": "AI goes wrong when unchecked output reaches a client: invented citations, wrong answers on hard tasks, and sloppy drafts colleagues must fix.[^13][^14]",
+    "something-else": "Pick something else when software you already own does the job, or when the contract, not the tool, is the problem.[^15][^16]"
+  },
+  "summary": "AI for professional services firms means tools that draft, summarize and search the written work that fills a professional's week.[^3][^4] It makes people faster and better on tasks it handles well, and worse on others.[^14][^17] Whether saved hours become revenue decides the payoff.[^5]",
+  "humanRole": [
+    "Licensed engineers keep responsible charge: the engineering licensing council (NCEES) says they validate AI output and document methods.[^8][^9] American Institute of Architects (AIA) Rule 4.102 bars sealing documents not prepared under your responsible control.[^10]",
+    "The engagement lead, partner or principal reviews every client-facing output before it leaves.[^14] AI-invented citations reached government clients in published cases in Australia and Canada.[^13][^18]",
+    "Your COO or managing partner decides where saved hours go: resold, moved to fixed fee or passed on.[^16][^7] Only 29.9% of firms say AI raises revenue so far (vendor-sponsored survey).[^5]",
+    "Recruiters keep the shortlist and the hiring call.[^19] Illinois requires notice when AI is used in employment decisions, and NYC requires a bias audit first.[^12][^20]"
+  ],
+  "ranked": [
+    {
+      "name": "Proposals and request for proposal (RFP) responses",
+      "why": "Proposals eat unbilled senior time, and Bentley found proposal-style work in AI production at 86.4% of 103 design and engineering firms.[^11][^21] A Loopio vendor survey puts one RFP at 25 hours, down from 30.[^22]",
+      "payoff": "Senior hours per proposal, and win rate, before and after."
+    },
+    {
+      "name": "Meeting notes, status reports and client updates",
+      "why": "In a vendor-sponsored study, 28% of client-facing staff spend 30% or more of their week on admin.[^23] Among US agencies, 74% already use AI to summarize documents.[^4]",
+      "payoff": "Minutes per status report, and the edits the engagement lead makes before sending."
+    },
+    {
+      "name": "Research and document summaries",
+      "why": "In a field study of 758 consultants, AI users finished 12.2% more tasks, 25.1% faster, on tasks AI handles well.[^14][^24] Professionals took 40% less time on writing tasks in a Science study.[^17]",
+      "payoff": "Hours from question to checked summary, with every source verified by a person."
+    },
+    {
+      "name": "Time capture, timesheets and invoicing",
+      "why": "Missed time is lost revenue on hourly work, and 44% of professionals in a vendor survey lose 4+ hours a week to admin.[^25][^23] Productive fills timesheets from calendar events, and BigTime sells an AI assistant (vendor features).[^26][^15]",
+      "payoff": "Hours logged per person each week, and time written off at billing."
+    },
+    {
+      "name": "Searching firm knowledge: past proposals, specs and deliverables",
+      "why": "Every firm holds years of past work that is hard to find, and engineering firms name data quality as the first barrier to AI.[^27][^11] We found no sound payoff figure, so measure your own.",
+      "payoff": "Minutes to find a past proposal or spec, sampled before and after."
+    },
+    {
+      "name": "First drafts of routine reports, specs, briefs and code",
+      "slug": "generative-ai-consulting",
+      "why": "At Procter & Gamble, one professional with AI matched a two-person team without it.[^28] Developers with AI completed 26.08% more tasks; a 2025 trial found experienced developers slower, but its authors now think they are likely faster.[^29][^30]",
+      "payoff": "Reviewer edit time per draft, and defects found after delivery."
+    },
+    {
+      "name": "Staffing and search: screening and interview scheduling",
+      "slug": "ai-governance-consulting",
+      "why": "In Bullhorn's vendor survey, 46% of recruitment firms say AI halved screening time, but only 10% use it across the workflow.[^19] Hiring-AI laws apply, so read the rules below first.[^12][^20]",
+      "payoff": "Days from job order to shortlist, with each adverse-impact check logged."
+    }
+  ],
+  "ownData": {
+    "title": "What is one hour a week worth at a 100-person firm?",
+    "intro": "One hour a week per person at a 100-person firm is worth $573,000-$700,000 in revenue on hourly work, or $219,000-$272,000 in payroll on fixed fees.[^6] This is our own calculation from the Census Bureau's 2022 Economic Census, for firms with 50-499 staff, pulled 26 Nov 2026.[^6][^31] Method: receipts and payroll per employee, divided by a 2,000-hour year, times 5,000 hours (100 people, one hour, 50 weeks).[^32]",
+    "headers": [
+      "Kind of firm (Census code)",
+      "Firms and staff (50-499 staff firms)",
+      "Revenue per staff hour",
+      "Payroll per staff hour",
+      "Hourly work: revenue at stake a year",
+      "Fixed fee: payroll freed a year"
+    ],
+    "rows": [
+      [
+        "Architecture and engineering (5413)",
+        "3,784 firms; 484,420 staff[^6]",
+        "$120[^6]",
+        "$48[^6]",
+        "About $599,000[^6]",
+        "About $238,000[^6]"
+      ],
+      [
+        "Management and technical consulting (5416)",
+        "3,825 firms; 487,214 staff[^6]",
+        "$115[^6]",
+        "$44[^6]",
+        "About $573,000[^6]",
+        "About $219,000[^6]"
+      ],
+      [
+        "Advertising, public relations and agencies (5418)",
+        "1,087 firms; 141,216 staff[^6]",
+        "$140[^6]",
+        "$44[^6]",
+        "About $700,000[^6]",
+        "About $219,000[^6]"
+      ],
+      [
+        "IT services and computer systems design (5415)",
+        "4,501 firms; 600,911 staff[^6]",
+        "$137[^6]",
+        "$54[^6]",
+        "About $683,000[^6]",
+        "About $272,000[^6]"
+      ]
+    ],
+    "note": "Limits: 2022 figures, not inflation-adjusted, counting all staff, so revenue per billable hour runs higher; payroll excludes benefits and payroll taxes.[^6] Agency receipts can include pass-through media billings, and averages hide a wide spread between firms. Staffing firms are left out because placed workers on their payroll distort these figures."
+  },
+  "tables": [
+    {
+      "title": "How many professional services firms use AI?",
+      "intro": "Between about a third and three-quarters, depending on the kind of firm and who was asked.[^1][^33] Federal surveys sample all firms; trade and vendor surveys count those who chose to answer.[^2]",
+      "headers": [
+        "Survey",
+        "Who answered",
+        "What it found"
+      ],
+      "rows": [
+        {
+          "name": "Bureau of Economic Analysis (BEA) paper, from the Census Business Trends and Outlook Survey (BTOS)",
+          "url": "https://www.bea.gov/sites/default/files/papers/bea-wp2026-16.pdf",
+          "cells": [
+            "Random sample of US businesses; professional, scientific and technical services sector[^1]",
+            "39.1% used AI in 2026 Q2, up from 35.3% in 2025 Q4; all businesses 21.5%[^1]"
+          ]
+        },
+        {
+          "name": "Census BTOS AI supplement, 2026",
+          "url": "https://www.census.gov/hfp/btos/data_downloads?tab=historical",
+          "cells": [
+            "Same federal sample with a longer AI questionnaire, Nov 2025 to Feb 2026[^2]",
+            "34.2% of professional, scientific and technical services firms used AI[^2]"
+          ]
+        },
+        {
+          "name": "AIA Business of Architecture 2026",
+          "cells": [
+            "Nearly 900 US architecture firms[^33]",
+            "74% use AI in day-to-day operations[^33]"
+          ]
+        },
+        {
+          "name": "Deltek Clarity A&E study, 2026 (vendor)",
+          "cells": [
+            "Architecture and engineering firms in a software vendor's yearly survey[^34]",
+            "70% use AI or machine learning, up from 53%[^34]"
+          ]
+        },
+        {
+          "name": "Forrester and the 4A's, 2026",
+          "cells": [
+            "US marketing agencies[^4]",
+            "Nine in 10 use generative AI; half use agentic AI[^4]"
+          ]
+        },
+        {
+          "name": "Bullhorn GRID 2026 (vendor)",
+          "cells": [
+            "About 2,300 staffing and recruitment respondents[^19]",
+            "30% use agentic AI; 10% use it across the workflow[^19]"
+          ]
+        }
+      ],
+      "note": "BTOS asks about use in the past two weeks, and its AI question changed in late 2025, so older figures don't compare.[^1]"
+    },
+    {
+      "title": "Where does a saved hour go under each kind of contract?",
+      "intro": "A saved hour goes to the client on hourly work and to the firm on fixed-fee work, unless you change the contract.[^7][^16] Hourly billing is sticky: 78% of tax firms still bill by the hour.[^16]",
+      "headers": [
+        "Contract type",
+        "Where the saved hour goes",
+        "What to decide"
+      ],
+      "rows": [
+        {
+          "name": "Time and materials (hourly)",
+          "cells": [
+            "To the client, as a smaller bill, unless the hour is resold[^6]",
+            "Resell freed hours, or move suitable scopes to fixed fee[^7]"
+          ]
+        },
+        {
+          "name": "Fixed fee or lump sum",
+          "cells": [
+            "To the firm, as margin or capacity[^6]",
+            "Keep the review time inside the fee"
+          ]
+        },
+        {
+          "name": "Retainer",
+          "cells": [
+            "To the firm until renewal, when the client may ask for a share[^35]",
+            "Show the added value at renewal"
+          ]
+        },
+        {
+          "name": "Value or outcome-based",
+          "cells": [
+            "Mostly to the firm[^7]",
+            "Needs an outcome you can measure"
+          ]
+        }
+      ],
+      "note": "Our judgment from the surveys cited, not a measured result. Clients already push: 42% of leaders at large firms say clients question pricing.[^35]"
+    },
+    {
+      "title": "What do general AI plans cost per person?",
+      "intro": "General business AI plans list at $20-$25 a user a month before add-ons, read 26 Nov 2026.[^36][^37] Microsoft's Copilot add-on lists at $21.[^38]",
+      "headers": [
+        "Plan",
+        "List price per user a month",
+        "Worth knowing"
+      ],
+      "rows": [
+        {
+          "name": "ChatGPT Business",
+          "url": "https://help.openai.com/en/articles/8792828-chatgpt-business-overview",
+          "cells": [
+            "$20 billed yearly or $25 monthly (Standard); read 26 Nov 2026[^36]",
+            "Premium seats $100 yearly or $125 monthly[^36]"
+          ]
+        },
+        {
+          "name": "Microsoft 365 Copilot Business",
+          "url": "https://www.microsoft.com/en-us/copilot/pricing/business",
+          "cells": [
+            "$21 add-on; read 26 Nov 2026[^38]",
+            "An $18 offer runs to 31 Dec 2026; Business Premium with Copilot lists at $32[^38]"
+          ]
+        },
+        {
+          "name": "Claude Team",
+          "url": "https://support.claude.com/en/articles/9266767-what-is-the-team-plan",
+          "cells": [
+            "$20 billed yearly or $25 monthly (Standard); read 26 Nov 2026[^37]",
+            "2 to 150 seats; Premium seats $100 yearly or $125 monthly[^37]"
+          ]
+        }
+      ],
+      "note": "Vendor list prices in US dollars before tax. Which plans keep staff prompts out of model training is on our generative AI page."
+    }
+  ],
+  "rules": [
+    {
+      "name": "NCEES Position Statement 6.10 on artificial intelligence",
+      "url": "https://ncees.org/wp-content/uploads/2026/09/Policy-manual_2026_web.pdf",
+      "status": "Model policy, adopted 2025",
+      "what": "Licensees keep responsible charge of AI-assisted work, validate the output and document their methods.[^8] Your state board decides what binds you.[^9]"
+    },
+    {
+      "name": "State engineering board AI guidance (North Carolina, Texas, North Dakota)",
+      "url": "https://www.ncbels.org/wp-content/uploads/2025/07/Guidelines-on-the-Use-of-Artificial-Intelligence-in-Engineering-and-Surveying-Services-FINAL.pdf",
+      "status": "Guidance; NC 16 Jul 2025, ND page dated 9 Nov 2026",
+      "what": "North Carolina says keep records and be able to reproduce AI output independently before you seal.[^9] Texas and North Dakota stress review, competence and client confidentiality.[^39][^40]"
+    },
+    {
+      "name": "National Society of Professional Engineers (NSPE), ethics case 24-2",
+      "url": "https://www.nspe.org/sites/default/files/24-2-Artificial-Intelligence-in-Engineering-Practice.pdf",
+      "status": "Ethics opinion, 2024",
+      "what": "Putting client data into AI without permission, and leaving out citations, was found partly unethical.[^41] Get client consent before client data goes into an AI tool."
+    },
+    {
+      "name": "AIA Code of Ethics, Rule 4.102",
+      "url": "https://www.aia.org/code-ethics-professional-conduct",
+      "status": "In force",
+      "what": "Architects may sign and seal only documents prepared under their responsible control.[^10] Treat AI-made drawings and specs as work you must direct and check."
+    },
+    {
+      "name": "Illinois Public Act 103-0804 (HB 3773)",
+      "url": "https://www.ilga.gov/Legislation/publicacts/view/103-0804",
+      "status": "In force from 1 Jan 2026",
+      "what": "Employers must give notice when AI is used in hiring and other employment decisions, and may not use zip codes as a proxy.[^12] Staffing firms and any firm screening applicants are covered. Not legal advice."
+    },
+    {
+      "name": "NYC Local Law 144, automated employment decision tools",
+      "url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page",
+      "status": "Enforced since 5 Jul 2023",
+      "what": "Before using an automated hiring tool for NYC jobs, get a bias audit within the past year and publish its summary.[^20] Candidates get notice 10 business days before use.[^20]"
+    },
+    {
+      "name": "California Privacy Protection Agency (CPPA) rules on automated decision tools",
+      "url": "https://cppa.ca.gov/regulations/ccpa_updates.html",
+      "status": "Effective 1 Jan 2026; decision-tool duties from 1 Jan 2027",
+      "what": "Covered businesses using automated tools for significant decisions, including employment, owe pre-use notice, opt-out or appeal, and risk assessments.[^42] Not legal advice."
+    },
+    {
+      "name": "Colorado SB 26-189",
+      "url": "https://leg.colorado.gov/bills/sb26-189",
+      "status": "Signed 14 May 2026; duties from 1 Jan 2027",
+      "what": "Replaces the 2024 Colorado AI Act and covers automated tools used in consequential decisions, including hiring.[^43] Attorney General rules are still being written.[^43]"
+    },
+    {
+      "name": "Executive Order 14365",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy",
+      "status": "Signed 11 Dec 2025",
+      "what": "Directs the Justice Department to challenge state AI laws.[^44] Until a court blocks one, plan to follow the state laws above."
+    },
+    {
+      "name": "Federal Trade Commission (FTC) rule on reviews and testimonials, 16 CFR 465",
+      "url": "https://www.federalregister.gov/documents/2024/08/22/2024-18519/trade-regulation-rule-on-the-use-of-consumer-reviews-and-testimonials",
+      "status": "In force since 21 Oct 2024",
+      "what": "Bans fake reviews and testimonials, including AI-written ones, with penalties up to $51,744 per violation (2024 figure).[^45] The FTC says there is no AI exemption from deception law.[^46]"
+    },
+    {
+      "name": "U.S. Copyright Office report on AI copyrightability",
+      "url": "https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf",
+      "status": "Published Jan 2025",
+      "what": "Purely AI-generated material gets no copyright, but human selection, arrangement or changes to AI output can be protected.[^47] Agency and design deliverables need real human authorship to be owned."
+    }
+  ],
+  "watchOuts": [
+    "Invented citations reached clients: an Australian government report was partly refunded, and Newfoundland and Labrador now requires AI-use disclosure in bids.[^13][^48][^18] Have a person check every source before delivery.",
+    "On a task outside AI's range, consultants using it were 19 points less likely to be right.[^14][^24] Test AI on your own past work before trusting it on a new kind of task.",
+    "Sloppy AI drafts pass the work to colleagues: 40% of US desk workers got one in a month, at about two hours each to fix.[^49][^50] Make the sender check the draft, not the receiver.",
+    "Client data in the wrong tool: an engineering ethics board found putting client data into AI without permission partly unethical.[^41][^39] Get client consent, and use a business plan with training switched off.",
+    "Saving time without capturing it: only 18% of professionals say their organization tracks AI return.[^3][^5] Set the pricing rule for saved hours before rollout, not after."
+  ],
+  "faq": [
+    {
+      "q": "Will AI cut our billable hours and revenue?",
+      "a": "Only on hourly work where saved hours aren't resold: one hour a week per person at a 100-person firm puts $573,000-$700,000 of revenue at stake.[^6] Professionals expect AI to free about five hours a week, which multiplies that.[^51] Fixed fees turn the same hours into margin.[^7]"
+    },
+    {
+      "q": "Are clients asking for AI discounts?",
+      "a": "Yes, some are: 42% of leaders at large firms say clients now question pricing.[^35] In a self-selected poll of 218 agency owners, 53% had a client ask for a lower price because of AI.[^52]"
+    },
+    {
+      "q": "Do we have to tell clients we use AI?",
+      "a": "Not under any general US law we found, but contracts, engineering ethics and public bids can require it.[^41][^18] An engineering ethics board says get permission before client data goes into AI.[^41]"
+    },
+    {
+      "q": "Can an engineer seal AI-generated work?",
+      "a": "Only if the engineer kept responsible charge, checked the output and documented the method.[^8] North Carolina adds that the engineer must be able to reproduce it independently.[^9]"
+    },
+    {
+      "q": "Will AI replace junior staff?",
+      "a": "No study we found shows that; the evidence so far shows tasks changing, as one professional with AI matched a two-person team.[^28][^27] Keep juniors drafting some work themselves, so they still learn it."
+    },
+    {
+      "q": "Which AI tools do mid-sized firms actually use?",
+      "a": "Mostly one general assistant plus the AI features inside tools they already own.[^15][^26] General plans list at $20-$25 a user a month, read 26 Nov 2026.[^36][^37]"
+    }
+  ],
+  "buyVsBuild": {
+    "buy": "Buy first: switch on the AI in your timesheet and proposal tools for one practice, then add one general assistant.[^36][^15][^53] Most companies buy: 76% of enterprise AI use cases are bought, not built.[^54]",
+    "build": "Build or connect only where a job crosses your systems, such as proposal library to customer database to billing.[^55][^27] MIT found partnered tools reached deployment about twice as often as internal builds, in a small sample.[^55]"
+  },
+  "pickElse": [
+    "Your timesheet or project tool already has AI: turn on BigTime's AI Assistant or Productive's AI time tracking first (vendor features).[^15][^26]",
+    "Proposals are the bottleneck: dedicated RFP software such as Loopio ships generative AI in its base tier, priced by quote.[^53][^22]",
+    "Hourly contracts eat your savings: change the contract before the tool, moving suitable scopes to fixed fee.[^7][^16]",
+    "You only need a chat assistant with admin controls: a business plan such as ChatGPT Business, Copilot or Claude Team fits.[^36][^37]"
+  ],
+  "resources": [
+    {
+      "name": "Census Bureau, Business Trends and Outlook Survey data",
+      "url": "https://www.census.gov/hfp/btos/data",
+      "what": "Federal AI-use figures by sector, updated every two weeks."
+    },
+    {
+      "name": "NCEES Policy Manual 2026 (Position Statement 6.10)",
+      "url": "https://ncees.org/wp-content/uploads/2026/09/Policy-manual_2026_web.pdf",
+      "what": "The model policy on AI and responsible charge that state boards draw on."
+    },
+    {
+      "name": "ACEC Research Institute, The Role of AI in the Engineering Industry",
+      "url": "https://www.acec.org/resource/the-role-of-ai-in-the-engineering-industry",
+      "what": "How engineering firms use AI and what holds them back."
+    },
+    {
+      "name": "Harvard Business School Working Knowledge on the jagged frontier",
+      "url": "https://www.library.hbs.edu/working-knowledge/humans-vs-machines-untangling-the-tasks-ai-can-and-cant-handle",
+      "what": "Plain-language guide to which tasks AI helps with and which it hurts."
+    }
+  ],
+  "stats": [
+    {
+      "num": "39.1%",
+      "label": "of professional, scientific and technical services businesses used AI in 2026 Q2, against 21.5% of all businesses.[^1]",
+      "source": "BEA Working Paper WP2026-16, from Census BTOS"
+    },
+    {
+      "num": "66.4%",
+      "label": "billable utilization at professional services firms in fiscal 2025, a record low.[^32]",
+      "source": "SPI Research 2026 Professional Services Maturity Benchmark, 509 firms"
+    },
+    {
+      "num": "29.9%",
+      "label": "of firms say AI generates revenue, while 84.8% say it saves time.[^5]",
+      "source": "SPI Research and Teamwork.com 2026 (vendor-sponsored)"
+    },
+    {
+      "num": "25.1%",
+      "label": "faster work by consultants using AI on tasks inside its range.[^14]",
+      "source": "Dell'Acqua et al., Organization Science 2026, 758 consultants"
+    },
+    {
+      "num": "74%",
+      "label": "of US architecture firms use AI in day-to-day operations.[^33]",
+      "source": "AIA Business of Architecture 2026, nearly 900 firms"
+    },
+    {
+      "num": "$599,000",
+      "label": "of revenue a year rides on one hour a week per person at a 100-person architecture and engineering firm billing hourly.[^6]",
+      "source": "Zavient calculation from the 2022 Economic Census"
+    }
+  ],
+  "sources": [
+    {
+      "name": "U.S. Bureau of Economic Analysis, Working Paper WP2026-16, \"AI Expectations and Outcomes\" (July 2026)",
+      "url": "https://www.bea.gov/sites/default/files/papers/bea-wp2026-16.pdf",
+      "what": "From Census BTOS data: professional, scientific and technical services (NAICS 54) used AI at 35.3% in 2025 Q4 and 39.1% in 2026 Q2, against 21.5% of all businesses in 2026 Q2. Read 26 Nov 2026."
+    },
+    {
+      "name": "U.S. Census Bureau, BTOS AI Supplement Table 2026",
+      "url": "https://www.census.gov/hfp/btos/data_downloads?tab=historical",
+      "what": "Combined estimates for data collected 17 Nov 2025 to 8 Feb 2026: 34.2% of NAICS 54 firms used AI. Read 26 Nov 2026."
+    },
+    {
+      "name": "Thomson Reuters, 2026 AI in Professional Services Report",
+      "url": "https://www.thomsonreuters.com/en/institute/articles/ai-in-professional-services-report-2026",
+      "what": "1,514 respondents: top uses are research, summarization and document review; 40% report organization-wide generative AI use, up from 22%; 18% say their organization tracks AI return on investment. Read 26 Nov 2026."
+    },
+    {
+      "name": "Forrester and the 4A's, US agency AI study (24 Jun 2026)",
+      "url": "https://www.forrester.com/press-newsroom/forrester-nine-in-10-us-marketing-agencies-use-ai-to-cut-costs-at-the-expense-of-creativity/",
+      "what": "Nine in 10 US marketing agencies use generative AI and half use agentic AI; 74% use AI to summarize documents and 70% for research; top barriers accuracy 63%, legal 62%, privacy 55%. Read 26 Nov 2026."
+    },
+    {
+      "name": "SPI Research and Teamwork.com, 2026 Impact of AI on Professional Services (vendor-sponsored)",
+      "url": "https://a.storyblok.com/f/99519/x/3306fe496b/teamwork-spi-report.pdf",
+      "what": "AI used on 43.6% of projects, up from 23.1%; 84.8% of firms say AI saves time, 29.9% say it generates revenue. Read 26 Nov 2026."
+    },
+    {
+      "name": "U.S. Census Bureau, 2022 Economic Census, table EC2200SIZEEMPFIRM (employer firms by employment size)",
+      "url": "https://data.census.gov/api/access/data/table?id=ECNSIZE2022.EC2200SIZEEMPFIRM&g=010XX00US&codeset=naics~5413",
+      "what": "Receipts, annual payroll, employees and firm counts for firms with 50-99, 100-249 and 250-499 staff in NAICS 5413, 5415, 5416 and 5418 (same table with each code). Pulled 26 Nov 2026."
+    },
+    {
+      "name": "Thomson Reuters, 2025 Generative AI in Professional Services",
+      "url": "https://www.thomsonreuters.com/content/dam/ewp-m/documents/thomsonreuters/en/pdf/reports/2025-generative-ai-in-professional-services-report-tr5433489-rgb.pdf",
+      "what": "40% of law respondents expect alternative fee arrangements to rise; 46% expect no rate impact. Read 26 Nov 2026."
+    },
+    {
+      "name": "NCEES Policy Manual 2026, Position Statement 6.10 on artificial intelligence",
+      "url": "https://ncees.org/wp-content/uploads/2026/09/Policy-manual_2026_web.pdf",
+      "what": "Licensees keep responsible charge, validate AI outputs and document methods. Model policy, not law. Read 26 Nov 2026."
+    },
+    {
+      "name": "North Carolina Board of Examiners for Engineers and Surveyors, AI guidelines (16 Jul 2025)",
+      "url": "https://www.ncbels.org/wp-content/uploads/2025/07/Guidelines-on-the-Use-of-Artificial-Intelligence-in-Engineering-and-Surveying-Services-FINAL.pdf",
+      "what": "Keep records; the licensee must be able to reproduce AI output independently before sealing. Read 26 Nov 2026."
+    },
+    {
+      "name": "AIA Code of Ethics and Professional Conduct, Rule 4.102",
+      "url": "https://www.aia.org/code-ethics-professional-conduct",
+      "what": "Members shall not sign or seal documents not prepared under their responsible control. Read 26 Nov 2026."
+    },
+    {
+      "name": "Bentley Systems, 2026 AI Pulse survey (vendor, 103 AEC firms)",
+      "url": "http://www.bentley.com/globalassets/content/2026-bentley-ai-pulse-survey-results.pdf",
+      "what": "Client-facing work such as proposal writing is in AI production at 86.4% of firms; business operations at 89.3%. Read 26 Nov 2026."
+    },
+    {
+      "name": "Illinois Public Act 103-0804 (HB 3773), Human Rights Act amendment",
+      "url": "https://www.ilga.gov/Legislation/publicacts/view/103-0804",
+      "what": "In force 1 Jan 2026: notice when AI is used in employment decisions; zip codes may not be used as a proxy. Read 26 Nov 2026."
+    },
+    {
+      "name": "Australian Department of Finance, FOI 25-26-084, document 1",
+      "url": "https://www.finance.gov.au/sites/default/files/foi-25-26-084-document-1.pdf",
+      "what": "Records on a AU$439,000 government report with AI-generated citation errors, partly refunded (about AU$97,000). Read 26 Nov 2026."
+    },
+    {
+      "name": "Dell'Acqua et al., Organization Science 2026 (field experiment, 758 consultants)",
+      "url": "https://pubsonline.informs.org/doi/10.1287/orsc.2025.21838",
+      "what": "On tasks inside AI's frontier: 12.2% more tasks, 25.1% faster, about 40% higher quality. Outside it: 19 percentage points less likely to be correct. Read 26 Nov 2026."
+    },
+    {
+      "name": "BigTime pricing (vendor)",
+      "url": "https://www.bigtime.net/pricing/",
+      "what": "Essentials from $20 per user a month; AI Assistant; Time and Expense Agents listed as coming soon. Read 26 Nov 2026."
+    },
+    {
+      "name": "Thomson Reuters Institute, \"What are you actually charging for?\" (2 Oct 2026)",
+      "url": "https://www.thomsonreuters.com/en/institute/articles/what-are-you-actually-charging-for",
+      "what": "78% of tax firms still bill hourly. Read 26 Nov 2026."
+    },
+    {
+      "name": "Noy and Zhang, Science, 2023",
+      "url": "https://www.science.org/doi/10.1126/science.adh2586",
+      "what": "453 college-educated professionals on writing tasks: 40% less time and 18% higher quality with ChatGPT. Read 26 Nov 2026."
+    },
+    {
+      "name": "CBC News, Newfoundland and Labrador procurement AI disclosure",
+      "url": "https://www.cbc.ca/news/canada/newfoundland-labrador/nl-procurement-ai-9.7123532",
+      "what": "After fabricated citations in a CA$1.6M health report, the province requires AI-use disclosure in procurement. Read 26 Nov 2026."
+    },
+    {
+      "name": "Bullhorn GRID 2026 report (vendor, about 2,300 respondents)",
+      "url": "https://www.bullhorn.com/news-and-press/press-releases/bullhorn-grid-report-staffing-firms-using-ai-see-stronger-growth-faster-placements",
+      "what": "30% of recruitment firms use agentic AI, 10% across the workflow; 46% say AI halved screening time. Vendor claim. Read 26 Nov 2026."
+    },
+    {
+      "name": "NYC Department of Consumer and Worker Protection, Automated Employment Decision Tools (Local Law 144)",
+      "url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page",
+      "what": "Employers and employment agencies need a bias audit within one year, a public audit summary and notices; notice 10 business days before use; enforced from 5 Jul 2023. Read 26 Nov 2026."
+    },
+    {
+      "name": "AIA Architect, \"Architects are excited about potential of AI, but concerns abound\" (2025)",
+      "url": "https://www.aia.org/aia-architect/article/architects-are-excited-about-potential-ai-concerns-abound",
+      "what": "Early AI use is notes, proposals and communications; 94% name inaccuracy as a concern. Read 26 Nov 2026."
+    },
+    {
+      "name": "Loopio, RFP trends and win rates 2025 (vendor, 1,544 participants)",
+      "url": "https://loopio.com/blog/rfp-statistics-win-rates",
+      "what": "25 hours per RFP, down from 30; 45% average win rate; 68% use AI. Vendor claim. Read 26 Nov 2026."
+    },
+    {
+      "name": "Unit4, \"Winning back time\" study of 500 professional services organizations, 2026 (vendor-sponsored)",
+      "url": "https://www.unit4.com/blog/winning-back-time-how-professional-services-firms-can-beat-administration-drain",
+      "what": "Organizations with 250-5,000 staff: 28% of client-facing staff spend 30%+ of the week on admin; 34% in IT services. Vendor claim. Read 26 Nov 2026."
+    },
+    {
+      "name": "Harvard Business School Working Knowledge, \"Humans vs. machines: untangling the tasks AI can and can't handle\"",
+      "url": "https://www.library.hbs.edu/working-knowledge/humans-vs-machines-untangling-the-tasks-ai-can-and-cant-handle",
+      "what": "Plain-language account of the jagged-frontier field experiment. Read 26 Nov 2026."
+    },
+    {
+      "name": "8am, 2026 Admin Misery Index (vendor, 1,200 US professionals)",
+      "url": "https://www.8am.com/blog/cost-of-busywork",
+      "what": "44% lose 4+ productive or billable hours a week to admin. Vendor claim. Read 26 Nov 2026."
+    },
+    {
+      "name": "Productive pricing (vendor)",
+      "url": "https://productive.io/pricing",
+      "what": "Essential $10 and Professional $25 per user a month billed yearly, 3-seat minimum; Essential includes AI time tracking that fills timesheets from calendar events. Read 26 Nov 2026."
+    },
+    {
+      "name": "ACEC Research Institute, \"The Role of AI in the Engineering Industry\" (May 2025)",
+      "url": "https://www.acec.org/resource/the-role-of-ai-in-the-engineering-industry",
+      "what": "Frames AI as augmenting licensed engineers; data quality is the first barrier firms name. Read 26 Nov 2026."
+    },
+    {
+      "name": "Dell'Acqua et al., \"The Cybernetic Teammate\", Organization Science 2026",
+      "url": "https://pubsonline.informs.org/doi/10.1287/orsc.2025.20702",
+      "what": "791 Procter & Gamble professionals: an individual with AI matched a two-person team without AI. Read 26 Nov 2026."
+    },
+    {
+      "name": "Demirer et al., Management Science 2026",
+      "url": "http://pubsonline.informs.org/doi/10.1287/mnsc.2025.00535",
+      "what": "Field experiments with 4,867 developers: 26.08% more completed tasks with an AI coding assistant. Read 26 Nov 2026."
+    },
+    {
+      "name": "METR, randomized trial of experienced open-source developers (2025)",
+      "url": "https://arxiv.org/html/2507.09089",
+      "what": "Experienced developers were 19% slower with early-2025 AI tools; METR's Feb 2026 update says they are likely faster now. Read 26 Nov 2026."
+    },
+    {
+      "name": "U.S. Census Bureau, 2022 Economic Census, Sector 54 tables",
+      "url": "https://www.census.gov/data/tables/2022/econ/economic-census/naics-sector-54.html",
+      "what": "Index of Economic Census tables for professional, scientific and technical services. Read 26 Nov 2026."
+    },
+    {
+      "name": "SPI Research, 2026 Professional Services Maturity Benchmark",
+      "url": "https://spiresearch.com/professional-services-benchmarks",
+      "what": "509 firms, fiscal 2025: billable utilization at a record low of 66.4% (from 68.9%); EBITDA 9.9%; benchmark uses a 2,000-hour work year. Read 26 Nov 2026."
+    },
+    {
+      "name": "American Institute of Architects, Business of Architecture 2026 (9 Nov 2026)",
+      "url": "http://www.aia.org/about-aia/press/new-aia-firm-survey-report-reveals-trends-shaping-business-architecture",
+      "what": "Nearly 900 firms: 74% use AI in day-to-day operations. Read 26 Nov 2026."
+    },
+    {
+      "name": "Deltek Clarity Architecture and Engineering Industry Study, 47th edition, 2026 (vendor)",
+      "url": "https://www.stambaughness.com/wp-content/uploads/2026/05/47th_annual_deltek_clarity_ae_industry_study.pdf",
+      "what": "70% of architecture and engineering firms use AI or machine learning, up from 53%. Read 26 Nov 2026."
+    },
+    {
+      "name": "Accounting Today, \"AI driving firms, clients to revisit pricing models\" (24 Mar 2026)",
+      "url": "https://www.accountingtoday.com/news/ai-driving-firms-clients-to-revisit-pricing-models",
+      "what": "Survey of 258 leaders at firms with 1,000+ staff: 79% say AI is changing pricing conversations; 42% say clients question pricing. Read 26 Nov 2026."
+    },
+    {
+      "name": "OpenAI Help Center, ChatGPT Business overview",
+      "url": "https://help.openai.com/en/articles/8792828-chatgpt-business-overview",
+      "what": "Standard $20 per user a month billed yearly or $25 monthly; Premium $100 or $125. Read 26 Nov 2026."
+    },
+    {
+      "name": "Claude Help Center, \"What is the Team plan?\"",
+      "url": "https://support.claude.com/en/articles/9266767-what-is-the-team-plan",
+      "what": "Standard seats $25 per member a month billed monthly or $20 billed annually; Premium $125 or $100; minimum 2, up to 150 seats; US prices before tax. Read 26 Nov 2026."
+    },
+    {
+      "name": "Microsoft 365 Copilot Business pricing",
+      "url": "https://www.microsoft.com/en-us/copilot/pricing/business",
+      "what": "Copilot Business add-on lists at $21 per user a month; an $18 offer runs to 31 Dec 2026; Business Premium with Copilot $32. Read 26 Nov 2026."
+    },
+    {
+      "name": "Texas Board of Professional Engineers and Land Surveyors, PAO 71 (2024)",
+      "url": "https://pels.texas.gov/nm/2024/pao-71-response.pdf",
+      "what": "Review AI outputs, stay within competence and protect client confidentiality. Read 26 Nov 2026."
+    },
+    {
+      "name": "North Dakota State Board of Registration for Professional Engineers and Land Surveyors, AI guidelines",
+      "url": "https://ndpelsboard.org/guidelines-for-ai-usage",
+      "what": "Responsible-charge guidance for AI use; page dated 9 Nov 2026. Read 26 Nov 2026."
+    },
+    {
+      "name": "NSPE Board of Ethical Review, Case 24-2, AI in engineering practice",
+      "url": "https://www.nspe.org/sites/default/files/24-2-Artificial-Intelligence-in-Engineering-Practice.pdf",
+      "what": "Found AI use partly unethical: client data went into AI without permission and citations were missing. Read 26 Nov 2026."
+    },
+    {
+      "name": "California Privacy Protection Agency, CCPA regulations updates",
+      "url": "https://cppa.ca.gov/regulations/ccpa_updates.html",
+      "what": "Regulations effective 1 Jan 2026; automated decisionmaking technology duties from 1 Jan 2027 for significant decisions, including employment. Read 26 Nov 2026."
+    },
+    {
+      "name": "Colorado General Assembly, SB 26-189",
+      "url": "https://leg.colorado.gov/bills/sb26-189",
+      "what": "Signed 14 May 2026; repeals the 2024 Colorado AI Act; duties for automated decision tools in consequential decisions from 1 Jan 2027. Read 26 Nov 2026."
+    },
+    {
+      "name": "The White House, Executive Order 14365 (11 Dec 2025)",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy",
+      "what": "Directs the Justice Department to challenge state AI laws. Read 26 Nov 2026."
+    },
+    {
+      "name": "Federal Register, FTC Trade Regulation Rule on the Use of Consumer Reviews and Testimonials, 16 CFR 465",
+      "url": "https://www.federalregister.gov/documents/2024/08/22/2024-18519/trade-regulation-rule-on-the-use-of-consumer-reviews-and-testimonials",
+      "what": "Effective 21 Oct 2024; bans fake reviews and testimonials, including AI-generated ones; civil penalties up to $51,744 per violation (2024 figure). Read 26 Nov 2026."
+    },
+    {
+      "name": "Federal Trade Commission, Operation AI Comply (25 Sep 2024)",
+      "url": "https://www.ftc.gov/news-events/news/press-releases/2024/09/ftc-announces-crackdown-deceptive-ai-claims-schemes",
+      "what": "No AI exemption from deception law; includes a case against an AI review-writing tool. Read 26 Nov 2026."
+    },
+    {
+      "name": "U.S. Copyright Office, Copyright and Artificial Intelligence, Part 2: Copyrightability (Jan 2025)",
+      "url": "https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf",
+      "what": "Copyright does not extend to purely AI-generated material; human selection, arrangement or modification of AI output can be protected; prompts alone are unlikely to be enough. Read 26 Nov 2026."
+    },
+    {
+      "name": "EMARKETER, AI hallucinations and consulting reports (2025)",
+      "url": "https://www.emarketer.com/content/ai-hallucinations-spark-trust-crisis-consulting-firms",
+      "what": "Reports the Australian government report refund over AI-generated citation errors. Read 26 Nov 2026."
+    },
+    {
+      "name": "BetterUp Labs and Stanford Social Media Lab, Workslop (Sep 2025)",
+      "url": "https://www.betterup.com/workslop",
+      "what": "40% of 1,150 US desk workers received AI \"workslop\" in the past month; about 2 hours to fix each case. Read 26 Nov 2026."
+    },
+    {
+      "name": "Harvard Business Review, \"AI-generated workslop is destroying productivity\" (Sep 2025)",
+      "url": "https://hbr.org/2025/09/ai-generated-workslop-is-destroying-productivity",
+      "what": "Same study: about $186 per employee per month in lost time. Read 26 Nov 2026."
+    },
+    {
+      "name": "Thomson Reuters, Future of Professionals 2025",
+      "url": "https://www.thomsonreuters.com/content/dam/ewp-m/documents/thomsonreuters/en/pdf/reports/future-of-professionals-report-2025.pdf",
+      "what": "2,275 responses: professionals expect AI to free about 5 hours a week. An expectation, not a measured saving. Read 26 Nov 2026."
+    },
+    {
+      "name": "Reddit r/marketingagency, poll on AI and client pricing (self-selected, n=218)",
+      "url": "https://www.reddit.com/r/marketingagency/comments/1x7f8pk/agencies_using_ai_are_clients_asking_for_lower/",
+      "what": "53% had a client ask for a lower price because of AI; 76% bill hourly or by full-time equivalent. Self-selected, not a sample. Read 26 Nov 2026."
+    },
+    {
+      "name": "Loopio pricing (vendor)",
+      "url": "https://loopio.com/pricing/",
+      "what": "Quote only; Foundations tier includes 10 seats and generative AI; connector to Claude and ChatGPT. Read 26 Nov 2026."
+    },
+    {
+      "name": "Menlo Ventures, 2025: The State of Generative AI in the Enterprise",
+      "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise",
+      "what": "76% of enterprise AI use cases are bought, not built (n=495). Read 26 Nov 2026."
+    },
+    {
+      "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025",
+      "url": "https://cdn.publicsectornetwork.com/insight/pdfs/MIT_The_GenAI_Divide_-_The_State_of_AI_in_Business_2025_bb97ee.pdf",
+      "what": "External partnerships reached deployment about 67% of the time, internal builds about 33% (52 organizations interviewed). Read 26 Nov 2026."
+    }
+  ],
+  "related": [
+    "law-firms",
+    "accounting-firms",
+    "construction",
+    "generative-ai-consulting",
+    "ai-governance-consulting"
+  ],
+  "offer": {
+    "heading": "Which unbilled hours should your firm hand AI first?",
+    "body": "Usually proposals or status reports; a free 30-minute call finds which one at your firm, from where your people's week goes. You leave with two or three jobs to start, which saved hours become margin under your contracts, and who reviews each output."
+  },
+  "keyword": {
+    "phrase": "ai for professional services",
+    "searches": 260,
+    "cpc": 35.39,
+    "difficulty": 6
+  },
+  "reviews": [
+    {
+      "reader": "COO",
+      "notes": "Dana (COO): the title and bottom line answer 'what are firms like mine using AI for' in five lines, and every ranked job ends in a before-and-after measure. The human-role block names who checks and who owns the pricing call for saved hours, which is the decision a COO actually makes. Problem: NCEES, AIA, NSPE, FTC, CPPA and BEA appeared before being spelled out. Fixed: each is spelled out on first use. Every question heading opens with a direct answer sentence (answer gate: all answered first)."
+    },
+    {
+      "reader": "Head of operations",
+      "notes": "Ops head: wants to know what to switch on Monday and what changes for staff. The time-capture job only named one tool; fixed so it names Productive's calendar timesheets and BigTime's assistant, both labelled vendor features. The offer's first sentence read awkwardly; rewritten so it answers the heading plainly. Watch-outs each end in a control (source check, own-work test, sender checks the draft, client consent, pricing rule before rollout)."
+    },
+    {
+      "reader": "GM",
+      "notes": "GM: wants cost and a way to trial it in one unit. Costs on the page are external and dated: ChatGPT Business, Copilot ($21 list, $18 offer to 31 Dec 2026) and Claude Team, read 26 Nov 2026; no Zavient price, per site rules. The own-data table turns a saved hour into dollars for his kind of firm, hourly versus fixed fee. Fixed: buy-or-build now says start with one practice before adding a general assistant."
+    },
+    {
+      "reader": "Division head",
+      "notes": "Head of delivery / practice lead: wants evidence the quality holds and a clear review step. The jagged-frontier result (25.1% faster inside AI's range, 19 points worse outside it) and the Science writing study give peer-reviewed proof both ways. Problem: the code-drafting item cited the 2025 trial showing experienced developers slower without its authors' 2026 update. Fixed: the item now says the authors think developers are likely faster now. Knowledge search carries no payoff number, only what to measure, since none was sound."
+    },
+    {
+      "reader": "Owner-CEO",
+      "notes": "Steve (managing partner, 40-500 staff): gets the answer in ten seconds from the bottom line, and the own-data number makes the billable-hour risk concrete for his firm type. 'Responsible charge' in the bottom line was jargon to him; fixed to 'keep the seal', with responsible charge explained lower down. His worries are covered: client data and consent, invented citations, clients asking for discounts, hiring-AI laws for his recruiters. Gap he will notice: no named case from a firm his size, because none had a citable page; none is claimed."
+    }
+  ],
+  "updated": "2026-11-26"
+}
