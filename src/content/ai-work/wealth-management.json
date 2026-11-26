@@ -52,8 +52,15 @@
   "buy-or-build": "Should an RIA buy AI tools or build its own?"
  },
  "summary": "AI for wealth management drafts and summarizes advisor work: meeting notes, follow-up emails and review prep.[^2][^10] Advisors still own the advice and the final work product.[^7] The record makes or breaks it, because AI notes can be required books and records.[^5][^6]",
+ "answers": {
+  "human-role": "Your team stays in charge of every recommendation and anything a client sees: AI drafts, and the advisor edits and approves.[^7][^12]",
+  "ranked": "AI pays first in the hours around each client meeting: prep, notes and follow-up. Forms and client emails come next.",
+  "rules": "Your existing rules apply to AI, since the SEC has issued no AI-specific rule: Advisers Act duties, marketing, records and privacy.[^3][^4]",
+  "what-goes-wrong": "AI goes wrong at RIAs in false claims, missing records, deepfake fraud, unapproved tools, wrong math and agents with too much reach.",
+  "something-else": "Pick something else when your CRM or custodian already sells the job, staff only need drafting, or advisors need support staff more than software.[^59]"
+ },
  "humanRole": [
-  "Your team stays in charge of anything a client sees: the advisor edits AI notes and approves each follow-up before it goes.[^7] Vendors such as Jump build that approval step in (vendor claim).[^11]",
+  "The advisor edits AI notes and approves each follow-up before it goes.[^7] Vendors such as Jump build that approval step in (vendor claim).[^11]",
   "The advisor makes every recommendation; AI gathers data and drafts options, and the fiduciary duty stays with the adviser.[^12] Planners check each figure, since tested models slip on multi-step financial math.[^13][^14]",
   "The chief compliance officer (CCO) sets retention, reviews AI vendors and keeps the AI inventory.[^5][^15] Most firms already keep that inventory: 86% in the Investment Adviser Association (IAA) survey.[^16]",
   "Operations releases money or changes an address only after calling the client back on a number already on file.[^17][^18] Deepfake voice and video requests are a named SEC exam focus.[^9]"
@@ -61,7 +68,7 @@
  "ranked": [
   {
    "name": "Meeting prep, notes and follow-up",
-   "why": "AI pays first in the hours around each meeting: Kitces found 5.3 hours of prep and 6 of follow-through a week.[^19] Notetakers are the top AI tool, used by 42.86% of advisors in T3's survey.[^2]",
+   "why": "Kitces found 5.3 hours of prep and 6 of follow-through a week.[^19] Notetakers are the top AI tool, used by 42.86% of advisors in T3's survey.[^2]",
    "payoff": "Advisor hours a week on prep and follow-up, before and after."
   },
   {
@@ -277,7 +284,7 @@
    "name": "Existing Advisers Act duties (no AI-specific SEC rule)",
    "url": "https://www.sec.gov/newsroom/press-releases/2026-109-sec-announces-fiscal-year-2027-examination-priorities",
    "status": "In force; no AI rule as of 26 Nov 2026",
-   "what": "Your existing rules apply to AI; the SEC calls them technology-neutral obligations.[^3] It withdrew its 2023 predictive data analytics proposal on 12 Jun 2025.[^41][^42] A congressional report notes the SEC has issued no AI-specific rules.[^4]"
+   "what": "The SEC calls existing duties technology-neutral obligations.[^3] It withdrew its 2023 predictive data analytics proposal on 12 Jun 2025.[^41][^42] A congressional report notes the SEC has issued no AI-specific rules.[^4]"
   },
   {
    "name": "SEC Fiscal Year 2027 Examination Priorities",
@@ -323,7 +330,7 @@
   }
  ],
  "watchOuts": [
-  "AI goes wrong at RIAs in claims, records, fraud, unapproved tools and math, and false claims drew fines first.[^44][^45] The SEC fined Delphia $225,000 and Global Predictions $175,000; say only what your tools really do.[^46][^54]",
+  "False AI claims drew fines first.[^44][^45] The SEC fined Delphia $225,000 and Global Predictions $175,000; say only what your tools really do.[^46][^54]",
   "Notes that never reach your archive: FinMate's page says it keeps transcripts 6 months, and required records are kept 5 years.[^31][^5] Check each tool's retention against Rule 204-2, and set exports to your archive before go-live.[^6]",
   "Deepfake requests to move money or change an address, a named SEC exam focus.[^9][^27] Call the client back on a number already on file before acting, as the SEC warns of impersonators.[^17][^18]",
   "Shadow AI: 82% of advisors who use AI experiment on their own, per Schwab.[^1] NASAA warns about client data in public tools; an acceptable use policy and an AI inventory are the fix.[^53][^16]",
@@ -337,7 +344,7 @@
   },
   {
    "q": "Do AI meeting notes have to be archived?",
-   "a": "Often, yes: notes that record advice or client communications can be required records under Rule 204-2, kept 5 years.[^5] Cooley suggests deciding by category, with counsel.[^6]"
+   "a": "Yes, often: notes that record advice or client communications can be required records under Rule 204-2, kept 5 years.[^5] Cooley suggests deciding by category, with counsel.[^6]"
   },
   {
    "q": "Do we have to record client meetings to use an AI notetaker?",
@@ -361,7 +368,7 @@
   "build": "Zavient's view: build only where your data and workflow are the edge, such as onboarding across CRM, custodian and planning tools. Few firms have the data base for it: T3 found 3.27% use a data warehouse.[^2] Governance is the build every firm needs, and 86% of surveyed firms already have an AI policy.[^16]"
  },
  "pickElse": [
-  "Pick something else when your CRM already sells the job: Wealthbox's AI Notetaker is a $49 add-on that keeps notes in the CRM (vendor claim).[^35][^36]",
+  "Your CRM already sells the job: Wealthbox's AI Notetaker is a $49 add-on that keeps notes in the CRM (vendor claim).[^35][^36]",
   "Your custodian already has AI: Hazel runs on Altruist, from $60 a month (vendor price).[^25]",
   "Staff only need internal drafting and summaries: Microsoft 365 Copilot is a $21 a user add-on (standard price, read 26 Nov 2026).[^39]",
   "Advisors are buried in admin and have no support staff: Kitces found support staff cut admin time more than technology did.[^59]"

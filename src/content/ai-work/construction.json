@@ -57,16 +57,23 @@
   "something-else": "When should a contractor pick something else?"
  },
  "summary": "AI for construction companies means software that reads and drafts the paperwork around the job: RFIs, submittals, logs, minutes and spec searches.[^1][^11] People with the license or authority still decide and sign.[^5][^6] Whether it fits how crews already work makes or breaks it.[^12]",
+ "answers": {
+  "human-role": "Your team keeps every sign-off: AI drafts, and the project manager, superintendent, engineer or estimator approves.[^13][^11] The competent person still stops unsafe work, and the engineer keeps the seal.[^6][^5]",
+  "ranked": "Project search pays first, then drafting RFIs and first-pass submittal checks. Safety camera flags come last, and every one needs checking.[^8]",
+  "rules": "Mostly rules you already follow apply: safety, licensing, insurance, contracts and worker data.[^6][^5] New AI-specific rules so far target hiring tools in New York City and Colorado.[^48][^49]",
+  "what-goes-wrong": "AI goes wrong at contractors when nobody checks a confident answer, and when pilots add steps crews skip.[^7][^12] Fake bank-change emails, ransomware and uploads that breach drawing licenses are the other risks.[^53][^54][^23]",
+  "something-else": "Pick something else when your platform already has the feature, or the job is quantity takeoff, sealed design or vendor invoices."
+ },
  "humanRole": [
-  "Your team stays in charge of every sign-off: AI drafts, and the project manager, superintendent, engineer or estimator approves.[^13][^11] Procore builds its agents to draft for a person to approve (vendor).[^13]",
+  "Procore builds its agents to draft for a person to approve (vendor).[^13]",
   "Licensed engineers keep judgement and the seal on delegated design; ASCE says AI cannot stand in for a professional engineer's (PE) judgement.[^5][^14] North Carolina's board says the licensee must be able to reproduce AI output independently.[^15]",
   "Your competent person still stops the work: the Occupational Safety and Health Administration (OSHA) defines that role as someone with authority to correct hazards promptly.[^6] A camera can flag a missing harness; only that person can act on it.",
   "Estimators keep the bid number they sign; one asked who pays \"when an AI misses scope and real money is lost\".[^16] The Bureau of Labor Statistics (BLS) still projects about 17,600 estimator openings a year.[^17]"
  ],
  "ranked": [
   {
-   "name": "Project search pays first: answers from drawings, specs and files",
-   "why": "AI pays first in project search, because staff lose about 5.5 hours a week looking for project data.[^18] Procore, Autodesk and Fieldwire now ship this search inside their platforms (vendor claims).[^19][^20][^21]",
+   "name": "Project search: answers from drawings, specs and files",
+   "why": "Staff lose about 5.5 hours a week looking for project data.[^18] Procore, Autodesk and Fieldwire now ship this search inside their platforms (vendor claims).[^19][^20][^21]",
    "payoff": "Minutes to answer a field question from the drawings and specs, sampled before and after."
   },
   {
@@ -215,7 +222,7 @@
   },
   {
    "title": "What do RFIs, searching and rework cost a contractor today?",
-   "intro": "They cost more than most owners see: one RFI took about 8 hours and $1,080 to process in a 1,362-project study.[^22] These are older figures, so use them as a yardstick for your own before-and-after count.[^18]",
+   "intro": "RFIs, searching and rework cost more than most owners see: one RFI took about 8 hours and $1,080 to process in a 1,362-project study.[^22] These are older figures, so use them as a yardstick for your own before-and-after count.[^18]",
    "headers": [
     "Measure",
     "Figure",
@@ -304,7 +311,7 @@
    "name": "OSHA competent person, 29 CFR 1926.32(f)",
    "url": "https://www.ecfr.gov/current/title-29/section-1926.32",
    "status": "In force",
-   "what": "The rules that apply are mostly ones you already follow: safety, licensing, insurance, contracts and worker data.[^6][^5] We found no OSHA standard written for AI. The competent person must still be someone with authority to correct hazards promptly.[^6]"
+   "what": "We found no OSHA standard written for AI. The competent person must still be someone with authority to correct hazards promptly.[^6]"
   },
   {
    "name": "Engineering board guidance on AI (NCEES 6.10, North Carolina, North Dakota)",
@@ -344,7 +351,7 @@
   }
  ],
  "watchOuts": [
-  "AI goes wrong most when nobody checks a confident answer: general chatbots misread contract clauses and miss coordination problems.[^7][^51] Have the project manager check every flag against the document itself.",
+  "General chatbots misread contract clauses and miss coordination problems.[^7][^51] Have the project manager check every flag against the document itself.",
   "Pilots fade when the tool adds steps; one manager saw use drop within six months in three rollouts.[^12] Pilot one job on one live project, count hours before and after, and drop any step crews skip.[^52]",
   "Fake change-of-bank emails hit subs and suppliers; the FBI logged $3.05B in business email compromise losses in 2025.[^53] Never change bank details without a call-back to a known number.",
   "Ransomware hit 131 construction firms in early 2026, up 44% on a year earlier.[^54] Each connected AI tool is one more login to lock down.",
@@ -362,7 +369,7 @@
   },
   {
    "q": "Has any AI construction software survived a pilot?",
-   "a": "Rarely, by managers' own accounts: one saw use fade within six months in three rollouts.[^12] MIT research found most generative AI pilots show no profit-and-loss impact.[^52]"
+   "a": "Not often, by managers' own accounts: one saw use fade within six months in three rollouts.[^12] MIT research found most generative AI pilots show no profit-and-loss impact.[^52]"
   },
   {
    "q": "Can AI review submittals?",
@@ -382,7 +389,7 @@
   "build": "Build only the glue that is your edge, such as your RFI template, spec library and approval step.[^11] MIT found bought or partnered tools succeed about 67% of the time; internal builds about a third as often.[^52]"
  },
  "pickElse": [
-  "Pick something else when your platform already has the feature: turn on Procore's agents, Autodesk Assistant or Fieldwire Field Intelligence first.[^3][^20][^21]",
+  "Your platform already has the feature: turn on Procore's agents, Autodesk Assistant or Fieldwire Field Intelligence first.[^3][^20][^21]",
   "The job is quantity takeoff: use a dedicated takeoff tool from our estimating guide. Estimators say general tools fall short there.[^16]",
   "The work is sealed design: the engineer or architect of record owns it, not the contractor's AI.[^5][^15]",
   "The job is vendor invoices: an accounts-payable capture tool, such as Buildertrend Bill Capture, fits better; see our invoice guide.[^24]"

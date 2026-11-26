@@ -21,8 +21,17 @@
     "benchmark": "How do you judge any AI trainer?"
   },
   "summary": "AI training for employees teaches staff to use AI on their own recurring tasks, then checks that the work got faster and better.[^4][^13] AI drafts, summarizes and analyzes; people direct it and judge the output.[^4][^21] Manager support and practice on real work make or break it.[^9][^18]",
+  "answers": {
+    "walk-away": "You should walk away with staff using AI on their own weekly tasks, a data rule, a where-it-fails list, briefed managers and a 60-day measure.",
+    "spokes": "Most firms need training plus a rollout, with business seats, data rules and use measured together. Pick the work first, and set the rules before training.",
+    "human-role": "Your team keeps every decision on what AI does: people pick the tasks, check the output and sign what goes out.[^4]",
+    "recipes": "Firms under 100 staff fit one team first, with three real tasks. Larger Microsoft 365 firms fit a champion network, and EU-exposed firms add a literacy record.",
+    "what-goes-wrong": "AI training fails to stick when it is a one-off event without tools, time or a manager's follow-up.[^18][^9]",
+    "benchmark": "Judge a trainer by your own numbers at 60 days: active use and time on real tasks, not attendance or quiz scores.[^30][^29]",
+    "something-else": "Don't hire help when your team is keen, someone can run practice sessions, and free courses or vendor guides cover what you need."
+  },
   "walkAway": [
-    "You should walk away with each person doing two or three of their own weekly tasks with AI, each with a written check.[^4][^13]",
+    "Each person doing two or three of their own weekly tasks with AI, each with a written check.[^4][^13]",
     "A one-page data rule: what may go into which tool. In a 47-country survey, 48% of workers had put company information into public AI tools.[^22]",
     "A where-it-fails list for each task. On a task outside AI's strengths, consultants using it were 19 percentage points less likely to be right.[^12]",
     "Managers briefed first, and a named champion (a peer who coaches others) in each team with time set aside. Frequent use was 78% with active manager support, against 44% without.[^9][^32]",
@@ -31,7 +40,7 @@
   "spokes": [
     {
       "slug": "ai-implementation-services",
-      "why": "Most firms need training plus a rollout: business seats, data rules and use measured together. Use reached 93% where employers combined encouragement, tools and training, against 41% with no policy.[^18]"
+      "why": "Use reached 93% where employers combined encouragement, tools and training, against 41% with no policy.[^18]"
     },
     {
       "slug": "ai-strategy-consulting",
@@ -47,7 +56,7 @@
     }
   ],
   "humanRole": [
-    "Your team keeps every decision on what AI does: the ops lead picks the tasks and owns the before-and-after measure.[^10][^30]",
+    "The ops lead picks the tasks and owns the before-and-after measure.[^10][^30]",
     "Each employee owns what they send out, AI-drafted or not.[^4] In 2026 a US appeals court fined a lawyer $2,500 for an AI-drafted brief she never checked.[^31]",
     "Managers set expectations, give time to practice and talk openly about job security. Employees whose manager backs AI use were engaged at 48%, against 30% without.[^10]",
     "A named reviewer in each team checks output on higher-risk tasks. EU rules require people overseeing high-risk AI to have the competence, training and authority to do it.[^38][^3]"
@@ -55,7 +64,7 @@
   "recipes": [
     {
       "name": "1. One team first (about 40 to 100 staff)",
-      "when": "Most firms under 100 staff fit this shape: one team, three real tasks, peer champions and AI seats you already pay for. Hands-on practice on real work is what sticks.[^13][^15]",
+      "when": "Pick this when you have under 100 staff, peer champions and AI seats you already pay for. Hands-on practice on real work is what sticks.[^13][^15]",
       "flow": [
         "Ops lead: pick one team and three recurring tasks, and time them now",
         "Division head: approve the three tasks and the quality check for each",
@@ -164,7 +173,7 @@
     "note": "Method: each study's abstract and results, read on the publisher's or authors' page on 26 Nov 2026; two journal dates rechecked there. Limits: different tasks, tools and years, and some rely on self-reports, which can overstate gains.[^16] None tests a training program directly, so each lesson is our inference."
   },
   "watchOuts": [
-    "Training fails to stick when it is a one-off event without tools, time or a manager's follow-up. Use reached 93% only where encouragement, tools and training came together.[^18][^9]",
+    "One-off events: use reached 93% only where encouragement, tools and training came together.[^18][^9]",
     "Staff trust output they never checked. In a 47-country survey, 66% relied on AI output without evaluating it, and 56% made mistakes at work because of AI.[^22]",
     "Company data leaks into free tools. Most workers bring their own AI to work (78%), so teach the data rule in the first session.[^37][^22]",
     "Workslop: polished output that makes work for others. In 2025, 40% of US desk workers received some in a month, costing an estimated $186 per employee monthly.[^23]",
@@ -172,7 +181,6 @@
     "Core skills fade without practice. Doctors' detection rate without AI fell from 28.4% to 22.4% after AI arrived, so keep some manual practice.[^20]"
   ],
   "howToTest": [
-    "Judge a trainer by your own numbers at 60 days: active use and time on real tasks, not attendance or quiz scores.[^30][^29]",
     "Before training, time three real tasks per role and note the error rate. Re-time them at 30 and 60 days.[^30]",
     "Track seats paid for against weekly active users, and messages per active user. ChatGPT and Copilot admin dashboards both report use.[^25][^24]",
     "Sample ten outputs per person a month for errors, so speed doesn't hide a drop in quality.[^12][^23]",
@@ -207,7 +215,7 @@
     }
   ],
   "pickElse": [
-    "Skip outside help if your team is keen and someone can run practice sessions: use free courses. OpenAI Academy's AI Foundations takes 60 to 75 minutes; Anthropic's AI Fluency about four hours.[^33][^34]",
+    "Free courses cover the basics: OpenAI Academy's AI Foundations takes 60 to 75 minutes; Anthropic's AI Fluency about four hours.[^33][^34]",
     "Someone wants a certificate for their own learning: Google AI Essentials costs $49 a month in the US after a seven-day trial.[^35]",
     "You want a light-touch start: the US Labor Department's free AI-Ready course takes 10 minutes a day for a week.[^5]",
     "You already run Microsoft 365 and want to train champions yourself: start from Microsoft's free champion charter and adoption guides (vendor guidance).[^32]"

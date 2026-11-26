@@ -19,8 +19,17 @@
     "what-it-is": "What is generative AI consulting, and what does it change?"
   },
   "summary": "Generative AI consulting helps you pick a few writing, document and search tasks, choose safe tools and measure the result.[^1][^2] The AI drafts and summarizes; your people check it, because it can state false things confidently.[^3] Redesigning the work, not the model, makes or breaks it.[^4][^5]",
+  "answers": {
+    "walk-away": "You should walk away with two or three ranked tasks, a test set, approved tools, trained staff and a plan your team can run alone.",
+    "spokes": "Most firms of 40 to 500 staff need document help first, then rules and approved tools. Custom builds come last, only after a test shows a gap.",
+    "human-role": "Your team keeps every sign-off: whoever signs the work checks the AI's draft, like the controller for numbers. AI drafts and searches; people decide.",
+    "recipes": "The work takes one of three shapes: one writing task for a small team, document-heavy work at a mid-size firm, or fixing shadow AI first.",
+    "what-goes-wrong": "Most AI pilots stall because they solve the wrong problem, then never reach daily use.[^6][^25]",
+    "benchmark": "Judge any advisor by a test on your own past work: hidden items with known right answers, scored against today's numbers.[^31][^3]",
+    "something-else": "Don't hire help when a tool and a rule will do, when you need general business advice, or when staff only need practice."
+  },
   "walkAway": [
-    "You should walk away with a ranked list of two or three tasks, each with an owner and a metric. Most AI-using firms limit use to three or fewer tasks.[^1][^6]",
+    "A ranked list of two or three tasks, each with an owner and a metric. Most AI-using firms limit use to three or fewer tasks.[^1][^6]",
     "Today's numbers, plus a test set of past work with known right answers. NIST says to check AI output against known right answers, not impressions.[^3][^7]",
     "Approved business-tier tools and a one-page rule staff can follow. Most AI users bring their own tools to work, and two-thirds of mid-market firms set rules before pilots.[^8][^9]",
     "Trained staff with a review habit. In BCG's survey, five or more hours of training raised regular use from 67% to 79%.[^10][^11]",
@@ -29,7 +38,7 @@
   "spokes": [
     {
       "slug": "ai-document-processing",
-      "why": "Most firms of 40 to 500 staff need document help first. Document analysis is one of the top generative AI tasks at US firms.[^1]"
+      "why": "Document analysis is one of the top generative AI tasks at US firms.[^1]"
     },
     {
       "slug": "ai-governance-consulting",
@@ -57,7 +66,7 @@
     }
   ],
   "humanRole": [
-    "Your team stays in charge of every sign-off: the person who signs the work checks it, like the controller for numbers. A US court fined lawyers $5,000 for filing AI-invented cases, citing their gatekeeping role.[^14][^3]",
+    "A US court fined lawyers $5,000 for filing AI-invented cases, citing their gatekeeping role.[^14][^3]",
     "The customer service lead signs off anything AI says to customers. A Canadian tribunal held an airline responsible for its website chatbot's wrong answer.[^16][^3]",
     "Experts keep the judgement calls AI handles badly. In a study of 758 consultants, AI users were 19 points less likely to be right on such a task.[^17][^3]",
     "AI takes first drafts and search; your people keep the job and add oversight work. In Census data, 66% of AI-using firms only use AI to assist staff on tasks, and 2% report AI-related job decreases.[^1][^5]"
@@ -65,7 +74,7 @@
   "recipes": [
     {
       "name": "1. Small team, one writing task (about 40 to 100 staff)",
-      "when": "The work takes one of three shapes; start with this one when a team drafts the same kind of document every week. Writing is the leading generative AI task at US firms.[^1][^22]",
+      "when": "Pick this when a team drafts the same kind of document every week. Writing is the leading generative AI task at US firms.[^1][^22]",
       "flow": [
         "Ops lead: pick one writing task and record today's time per item and error rate",
         "IT lead: switch on one business-tier tool for a pilot group",
@@ -162,7 +171,7 @@
     "note": "Method: each vendor's own pages, read 26 Nov 2026; US list prices before tax and promotions, billed yearly unless stated. Limits: these are vendor statements, not audits, terms change, and quote-only Enterprise tiers are left out. This is not legal advice; firms in regulated sectors need their own review."
   },
   "watchOuts": [
-    "Most AI pilots stall because they solve the wrong problem. Misreading the problem or the metric was the top cause in RAND's study, so agree one measured task first.[^6][^26]",
+    "Wrong problem: misreading the problem or the metric was the top cause in RAND's study, so agree one measured task first.[^6][^26]",
     "Pilots never reach daily use: S&P Global found firms scrapped 46% of trial projects (proofs of concept) on average. Set a go or no-go date and a production owner before the pilot starts.[^25][^26]",
     "Confident wrong answers: courts have logged over 2,000 decisions on AI-invented content.[^15][^3] A consulting report to a national government drew a partial refund over fake references, so a named reviewer checks every fact.[^28]",
     "Staff leak data through personal tools: in PagerDuty's survey, 34% had put customer data into public AI.[^30][^29] Give them a business-tier plan and a short rule.[^38][^49]",
@@ -170,7 +179,7 @@
     "Leaders keener than staff: in RSM's survey, 85% say leaders are more enthusiastic than employees.[^9] Only 36% of staff feel trained, so fund five or more hours of hands-on practice.[^10]"
   ],
   "howToTest": [
-    "Judge any advisor by a test on your own past work, starting with today's numbers for one task: time per item, error rate and rework.[^31]",
+    "Record today's numbers for one task: time per item, error rate and rework.[^31]",
     "Pull 50 to 100 past items with known right answers, and keep them hidden from the advisor.[^3][^33]",
     "Write pass and fail criteria before any demo, not after.[^32][^7]",
     "Have the advisor run their approach on your items, in the tool you will actually use.[^31]",
@@ -187,19 +196,19 @@
     },
     {
       "q": "How much does it cost to hire an AI consultant?",
-      "a": "It depends on scope, but business-tier AI seats list at $14 to $25 a user a month (read 26 Nov 2026).[^50][^39] Staff time is the other cost: five hours of training is about $270 a person at BLS employer cost.[^19][^10] Small Business Development Centers also give free one-on-one advising.[^34][^35]"
+      "a": "Consulting fees depend on scope, but business-tier AI seats list at $14 to $25 a user a month (read 26 Nov 2026).[^50][^39] Staff time is the other cost: five hours of training is about $270 a person at BLS employer cost.[^19][^10] Small Business Development Centers also give free one-on-one advising.[^34][^35]"
     },
     {
       "q": "Is generative AI consulting worth it for a mid-sized firm?",
-      "a": "It is worth it only if you leave with a measured result on your own work.[^6][^3] In RSM's 2025 survey, 70% of mid-market firms said they need outside help.[^12] MIT's directional study found partnerships reached use about twice as often as internal builds.[^27]"
+      "a": "Only if you leave with a measured result on your own work.[^6][^3] In RSM's 2025 survey, 70% of mid-market firms said they need outside help.[^12] MIT's directional study found partnerships reached use about twice as often as internal builds.[^27]"
     },
     {
       "q": "Will generative AI take my staff's jobs?",
-      "a": "Unlikely, on current evidence: 66% of AI-using US firms only use AI to assist staff, and 2% report AI-related job decreases.[^1] In a study of 5,172 support agents, the least experienced gained most, resolving 30% more issues an hour.[^18]"
+      "a": "Not for most firms, on current evidence: 66% of AI-using US firms only use AI to assist staff, and 2% report AI-related job decreases.[^1] In a study of 5,172 support agents, the least experienced gained most, resolving 30% more issues an hour.[^18]"
     },
     {
       "q": "Is it safe to let staff use ChatGPT with company data?",
-      "a": "It is safe enough on a business-tier plan, not a personal one. Personal ChatGPT may train on chats unless the user opts out; ChatGPT Business does not by default.[^37][^38] Our table above compares four vendors."
+      "a": "Only on a business-tier plan, not a personal one. Personal ChatGPT may train on chats unless the user opts out; ChatGPT Business does not by default.[^37][^38] Our table above compares four vendors."
     },
     {
       "q": "Should we build a custom AI tool or use what we already have?",
@@ -207,7 +216,7 @@
     }
   ],
   "pickElse": [
-    "Don't hire help when your team just needs a tool and a rule. Buy ChatGPT Business, Claude Team, Microsoft 365 Copilot Business or Gemini in Google Workspace, and use the vendor's admin setup.[^39][^44]",
+    "Your team just needs a tool and a rule. Buy ChatGPT Business, Claude Team, Microsoft 365 Copilot Business or Gemini in Google Workspace, and use the vendor's admin setup.[^39][^44]",
     "You need general business advice, not AI work: a local Small Business Development Center gives free one-on-one advising.[^34][^35]",
     "Your staff need skills, not a project: run five or more hours of hands-on practice in the tool you already pay for. BCG's survey ties that much training to more regular use.[^10]",
     "The task is high stakes and outside what AI does well: keep it with your experts.[^17][^14]"

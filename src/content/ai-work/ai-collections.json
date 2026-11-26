@@ -51,26 +51,35 @@
     "something-else": "When should a collections team pick something else?"
   },
   "summary": "AI for collections is software that ranks overdue loans, picks when and how to reach each borrower, and drafts the message.[^10][^2] Collectors keep the conversations that need judgment.[^1] It works only when contact limits, consent and hand-offs to people are built in.[^11][^12]",
+  "answers": {
+    "human-role": "Your people keep every decision that changes what a borrower owes or whether contact must stop. AI only ranks, times and drafts.[^12][^13]",
+    "team-after": "Collectors work the accounts that need a person: hardship, high balances, escalations and borrowers AI could not reach.[^1][^2]",
+    "example": "AI ranks the loan, picks the channel and hour, drafts the message, and holds anything a person must decide.",
+    "recipes": "Most firms with 1-4 collectors should turn on the AI in the collections system they already run.[^27][^29] Lenders with many small early-stage accounts add usage-priced reminders; firms with a data team build.",
+    "rules": "For a lender collecting its own loans, unfair-practice law (UDAAP), the TCPA and state collection laws apply; Regulation F mainly binds third-party collectors.[^5][^48][^4] Bankruptcy, military, fair-lending and credit-dispute rules apply either way.[^14][^15]",
+    "benchmark": "Test AI side by side: AI works a random share of accounts, today's strategy works the rest, and you compare results after 90 days.[^10][^42]",
+    "what-goes-wrong": "AI for collections goes wrong where it deals with borrowers alone: AI-only calls, missing consent, stacked contacts, threatening drafts and missed refusals.[^1][^17]",
+    "something-else": "Pick something else when your system already has AI built in, the debt belongs with an agency, or a plain reminder will do.[^27][^8]"
+  },
   "humanRole": [
-    "Your people keep every decision that changes what a borrower owes or whether contact must stop. AI only ranks, times and drafts.[^12][^13]",
     "Collections manager: confirms every bankruptcy or military-service match before anyone makes contact. A bankruptcy filing stops collection, and the Servicemembers Civil Relief Act (SCRA) caps debt taken on before service at 6% interest.[^14][^15]",
     "Senior collector or loan officer: decides hardship plans, loan modifications and disputes. A modification counts as new credit under fair-lending rules, and credit-report disputes need an investigation.[^13][^16]",
     "Compliance lead: approves every template and the house contact cap, your own limit per account, and samples AI calls and texts weekly. Consumer Financial Protection Bureau (CFPB) examiners found over 100 calls made after people asked a collector to stop.[^17][^18]"
   ],
   "teamAfter": [
-    "Collectors spend the day on accounts that need a person: hardship, high balances and borrowers AI could not reach. When a person took over on day 6, AI's shortfall fell to 0.8 points.[^1][^3]",
+    "Hand-offs help: when a person took over on day 6, AI's shortfall fell to 0.8 points.[^1][^3]",
     "Collectors work escalations instead of dialling cold. One credit union reported 4% of AI conversations went to a person, mostly members who asked for one (vendor webinar).[^2]",
     "New collectors get up to speed faster: AI help raised support agents' output 14%, and 34% for novices.[^19][^20] The Bureau of Labor Statistics expects about 11,200 collector openings a year to 2035.[^21]",
     "Among US firms where AI changed tasks, 66% use it only to help staff and 2% report employment decreases.[^22][^23]"
   ],
   "example": {
-    "input": "AI ranks the loan, picks the channel and hour, drafts the message, and holds anything a person must decide. Illustrative: an auto loan 34 days late at a 200-staff credit union. AI reads the balance, payment history, past promises, consent flags, opt-outs, time zone and bankruptcy and military checks.",
+    "input": "Illustrative: an auto loan 34 days late at a 200-staff credit union. AI reads the balance, payment history, past promises, consent flags, opt-outs, time zone and bankruptcy and military checks.",
     "output": "The loan lands in the morning queue as \"likely to cure: text at 6:30pm local with a payment link\", inside the 8am-9pm window.[^24] The drafted text waits for a collector's approval, and a counter shows contacts used against the house cap.[^11] Had the bankruptcy check matched, the loan would sit on hold for the collections manager instead.[^14]"
   },
   "tables": [
     {
       "title": "Which AI collections tools are there, and what do they cost?",
-      "intro": "Most AI collections tools do not publish a price; the few that do charge per minute, per month or a share of what they recover.[^25][^26] Prices were read on 26 November 2026, and results marked as vendor claims are the seller's own.",
+      "intro": "Most AI collections tools publish no price; the rest charge per minute from $0.07, per month up to $4,999, or 1.5% of recoveries.[^25][^26][^7][^6] Prices were read on 26 November 2026, and results marked as vendor claims are the seller's own.",
       "headers": [
         "Product",
         "What it does",
@@ -286,7 +295,7 @@
   ],
   "recipes": [
     {
-      "name": "1. Fits most firms (1-4 collectors): turn on the AI in the collections system you run",
+      "name": "1. Small team (1-4 collectors): turn on the AI in the collections system you run",
       "when": "For a credit union or bank already on AKUVO, Temenos, C&R Software or a core collections module.[^27][^29] You get ranking and drafting without a new system to vet.[^43]",
       "flow": [
         "Collections manager: list today's queues, cure rates and roll rates",
@@ -370,12 +379,6 @@
     "note": "Zavient check of homepage, product and pricing pages, 26 Nov 2026; a check passed only if a page said it in words. The rest were C&R Software, Prodigal and TrueAccord; all 11 came from search results and credit-union vendor lists, not at random.[^31][^46][^47] A vendor may cover a rule on a page we did not read."
   },
   "rules": [
-    {
-      "name": "In short, for a lender collecting its own loans",
-      "url": "https://www.consumerfinance.gov/rules-policy/regulations/1006/2/",
-      "status": "Summary; not legal advice",
-      "what": "Unfair-practice law (UDAAP), the Telephone Consumer Protection Act (TCPA) and state collection laws apply to you.[^5][^48] Regulation F and the Fair Debt Collection Practices Act (FDCPA) mainly bind third-party collectors.[^4] Bankruptcy, military, fair-lending and credit-dispute rules apply either way.[^14][^15]"
-    },
     {
       "name": "Regulation F, 12 CFR 1006.2: who is a debt collector",
       "url": "https://www.consumerfinance.gov/rules-policy/regulations/1006/2/",
@@ -462,7 +465,6 @@
     }
   ],
   "howToTest": [
-    "Test it side by side: AI on a random share of accounts, today's strategy on the rest, compared after 90 days.[^10][^42]",
     "Pull your last 90 days of numbers from your system, so there is no wait. Track roll rate (share moving from 30 to 60 days late), cures, promises kept, complaints and opt-outs.[^36][^37]",
     "Pilot one product, such as auto loans, in its first 30 days late. AI's shortfall in the 22-million-case study peaked about a month in.[^1]",
     "Write the hand-off rule before launch: any account not cured by day 6 to 10 goes to a collector.[^1]",
@@ -473,7 +475,6 @@
     "Treat rising complaints or opt-outs as a stop signal, even if recoveries rise.[^66][^17]"
   ],
   "watchOuts": [
-    "It goes wrong where AI deals with borrowers alone: AI-only calls, missing consent, stacked contacts, threatening drafts and missed refusals.[^1][^17]",
     "AI-only calling collects less: 9% less at 30 days and 21% fewer promises to pay. Hand off to people early.[^1][^3]",
     "AI voices without consent: the Federal Communications Commission (FCC) treats them as artificial voices, at $500 a call, tripled if willful. Check consent per number and the reassigned-numbers database first.[^48][^56][^67]",
     "Contacts stacking across channels: Massachusetts allows creditors 2 calls or texts a week per debt. Run one counter across calls, texts and emails, set to your strictest state.[^60][^11]",
@@ -511,7 +512,6 @@
     "build": "Build the ranking and rules layer when your payment history is the edge or you collect across states with different caps.[^60][^62] Bought tools from specialist vendors succeed more often than internal builds, so build only with a named owner.[^69]"
   },
   "pickElse": [
-    "Pick something else when your system already has AI built in, the debt belongs with an agency, or a plain reminder will do.[^27][^8]",
     "Already on AKUVO, Temenos or C&R Software: try that platform's own AI module before adding a new vendor.[^27][^29][^31]",
     "Charged-off debt past your own recovery stage: a licensed collection agency such as TrueAccord, which must follow Regulation F.[^4][^47]",
     "Early, low-balance accounts: autopay enrolment and plain text or email reminders, which cut late payment without AI.[^8][^9]"
