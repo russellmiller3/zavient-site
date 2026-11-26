@@ -1,451 +1,446 @@
 {
- "title": "AI consulting services: is it worth it, and what does it cost?",
- "description": "What AI consulting should deliver, what it costs against hiring a team or buying software, and the work where AI pays first. With our own data.",
- "job": "AI consulting",
- "summary": "AI consulting should take one costly job off your team, such as invoice exceptions, which hit about 1 invoice in 5[^31]. Most generative AI never shows up in profit[^1][^13]. Winners benchmark on their own files[^5] and budget for after launch, where most of the cost sits[^3][^9].",
- "index": true,
- "verdict": [
-  "Hire AI help for one problem with a number attached, not a strategy deck[^1][^12].",
-  "Buy or partner before you build: bought projects succeed about 3 times as often[^1], and most are now bought[^2].",
-  "Benchmark the options on your own files before anyone builds[^5][^20].",
-  "Our AI Sprint costs $10,000 for 30 days, about a month of one data scientist's median pay[^18][^4].",
-  "Re-check the model each year: AI keeps getting cheaper[^19], and running it is most of the cost[^3]."
- ],
- "onPage": [
-  {
-   "to": "where-ai-pays",
-   "text": "Four finance jobs where AI pays first"
-  },
-  {
-   "to": "own-data",
-   "text": "What it costs to hire an AI team yourself, from US government pay data"
-  },
-  {
-   "to": "recipes",
-   "text": "How a good AI consulting engagement runs, step by step"
-  },
-  {
-   "to": "table-1",
-   "text": "What getting AI built costs, by type of engagement"
-  },
-  {
-   "to": "rules",
-   "text": "The AI rules that may apply if you lend or insure"
-  },
-  {
-   "to": "benchmark",
-   "text": "How to check a consultant's claims before you sign"
-  }
- ],
- "stats": [
-  {
-   "num": "76%",
-   "label": "of US organizations faced attempted or actual payments fraud in 2025[^32]",
-   "source": "AFP 2026 Payments Fraud and Control Survey[^32]"
-  },
-  {
-   "num": "19.9%",
-   "label": "average share of invoices that hit an exception, a mismatch a person must sort out[^31]",
-   "source": "Ardent Partners, State of ePayables[^31]; average cost $9.90 per invoice[^31]"
-  },
-  {
-   "num": "~$630,000",
-   "label": "rough yearly cost of a lean in-house AI team of three, with benefits[^4][^16]",
-   "source": "BLS median pay, May 2025: tech manager $175,140, software developer $135,980, data scientist $120,230[^34][^14][^4]; benefits added from BLS pay cost data[^16]"
-  },
-  {
-   "num": "~95%",
-   "label": "of organizations in MIT NANDA's 2025 study got little or no measurable P&L return from generative AI[^1][^13]",
-   "source": "MIT NANDA 2025, via Fortune and The Register[^1][^13]"
-  }
- ],
- "pickElse": [
-  "AI is your product and you will run many systems: hire in-house. Technical roles take a median 75 days to fill[^17], so budget for that and the pay in the table above[^4][^14].",
-  "A standard job that software already does, such as accounts payable: buy the product and benchmark it on your own files. 76% of enterprise AI use cases are now bought[^2], and bought projects succeed about 3 times as often as internal builds[^1]."
- ],
- "spokes": [
-  {
-   "slug": "ai-invoice-processing",
-   "why": "Accounts payable: reading invoices is the easy part, but about 1 in 5 (19.9%) hit an exception, a mismatch someone must fix[^31]. The money is in those exceptions and in payments fraud, which 76% of US firms faced in 2025[^32]."
-  },
-  {
-   "slug": "ai-document-processing",
-   "why": "Reading PDFs, scans and forms. Our sealed benchmark found two models with zero mistakes on 30 fund reports[^6]."
-  },
-  {
-   "slug": "ai-underwriting",
-   "why": "If you lend or insure: AI does the reading so underwriters spend their time on the decision, which must stay explainable[^21][^26]."
-  },
-  {
-   "slug": "ai-credit-scoring",
-   "why": "If you lend: score loans with a model you can explain, and add a stronger, harder-to-explain one only if your benchmark shows lift[^33]. Stronger models usually score higher, but the gap narrows on small data[^33], and every decline needs specific reasons[^21][^22]."
-  }
- ],
- "ownData": {
-  "title": "What does it cost to hire an AI team yourself?",
-  "intro": "These are US median pay figures from the Bureau of Labor Statistics for May 2025[^4][^14]. AI job titles have no BLS group of their own, so each row uses the nearest one. A lean team of one manager, one data scientist and one developer costs about $630,000 a year with benefits[^16].",
-  "headers": [
-   "Role (nearest BLS group)",
-   "Median pay, May 2025",
-   "Rough cost with benefits"
+  "title": "AI consulting services: is it worth it, and what does it cost?",
+  "description": "When outside AI help pays, what you should walk away with, and what it costs against hiring your own AI team. For COOs and heads of operations.",
+  "type": "consulting",
+  "templateVersion": 1,
+  "topic": "AI consulting",
+  "job": "deciding whether to hire outside AI help",
+  "industry": "any industry",
+  "index": true,
+  "verdict": [
+    "Hire help for one workflow with a business number attached, not a strategy deck.[^5][^4]",
+    "In MIT's sample, partnered AI projects reached deployment about twice as often as internal builds.[^1][^2]",
+    "Walk away with a before number, a pilot in daily use and a plan your team runs.[^7][^1]",
+    "Your people keep the decisions: most firms using AI use it only to help staff.[^10][^6]",
+    "Our fixed 30-day sprint costs $10,000, about one month of a data scientist's median pay.[^18][^19]"
   ],
-  "rows": [
-   [
-    "Computer and information systems manager, nearest to a head of AI",
-    "$175,140[^34]",
-    "About $256,000[^16]"
-   ],
-   [
-    "Computer and information research scientist, nearest to a machine learning engineer",
-    "$140,300[^15]",
-    "About $205,000[^16]"
-   ],
-   [
-    "Software developer, nearest to an AI engineer",
-    "$135,980[^14]",
-    "About $199,000[^16]"
-   ],
-   [
-    "Data scientist",
-    "$120,230[^4]",
-    "About $176,000[^16]"
-   ]
-  ],
-  "note": "Source: BLS Occupational Outlook Handbook, May 2025 median pay, checked 26 November 2026[^4][^14][^15][^34]. Cost with benefits divides median pay by 68.5%, the wage share of pay costs for full-time private workers in June 2026[^16]. Medians cover all employers and experience levels, not one specific hire."
- },
- "example": {
-  "input": "A mid-sized lender wants AI to read small-business loan files so underwriters stop spreading bank statements and tax returns by hand. Spreading means retyping their numbers into the lender's standard analysis sheet.",
-  "output": "A benchmark of the leading models on 50 of the lender's own files, with the cost per file for each. Today's time and error rate per file sit next to the winner's. The winner goes into the loan system with a review queue for unsure cases, and is re-checked monthly as new models ship."
- },
- "recipesTitle": "How should a good AI consulting engagement run?",
- "recipes": [
-  {
-   "name": "1. Benchmark first",
-   "when": "Before anyone builds, to settle which approach wins on your files and what it costs; public leaderboards are only a first filter[^5]. Pick a high-volume, repetitive job with a known cost of errors, and price it today: an invoice costs $9.90 on average to process[^31].",
-   "flow": [
-    "Process lead: measure today's time and error rate per file",
-    "Process lead: pick 50 real files",
-    "Your team: agree the right answers, then lock them",
-    "Consultant: run the leading options",
-    "Consultant: report accuracy and cost per file"
-   ],
-   "cost": "Quoted per job, with a fixed scope. Make sure you keep the files, the answer key and the code, so you can re-run it."
-  },
-  {
-   "name": "2. Build the winner into the work",
-   "when": "Once the benchmark shows a clear winner that pays back.",
-   "flow": [
-    "Consultant: set up the winning model",
-    "IT: connect it to your systems and workflow",
-    "Named reviewer: clear the queue of unsure cases",
-    "IT: log every decision",
-    "Process lead: go live at one site or team first",
-    "Process lead: move to full volume"
-   ],
-   "cost": "Depends on the systems it touches. Gartner warns that a production system can cost many times the pilot[^3][^9], so scope it from the benchmark, not the demo."
-  },
-  {
-   "name": "3. Keep it right",
-   "when": "Always, because models, prices and your documents change. The same AI performance gets 9 to 900 times cheaper each year[^19].",
-   "flow": [
-    "Consultant: flag a new model or price change",
-    "Consultant: re-run the benchmark",
-    "Process lead: check if it's cheaper or better",
-    "You: decide to switch, or keep"
-   ],
-   "cost": "Small, because the benchmark already exists. Running the model is at least 70% of its lifetime cost[^3][^9], so a cheaper model that passes the benchmark saves on every file."
-  }
- ],
- "tables": [
-  {
-   "title": "How much does an AI consultant cost?",
-   "intro": "Public prices for each way to get the work done, checked 26 November 2026. Zavient's own prices are listed for comparison[^18].",
-   "headers": [
-    "Option",
-    "Typical price",
-    "Good for",
-    "Watch for"
-   ],
-   "rows": [
+  "onPage": [
     {
-     "name": "In-house data scientist (BLS)",
-     "url": "https://www.bls.gov/ooh/math/data-scientists.htm",
-     "cells": [
-      "BLS median pay: $120,230 a year, May 2025[^4]. About $176,000 with benefits[^16].",
-      "Many systems over years",
-      "Salary only; technical roles take a median 75 days to fill[^17]"
-     ]
+      "to": "walk-away",
+      "text": "The five things good AI help should leave you holding"
     },
     {
-     "name": "Generative AI project on an API (Gartner, 2024)",
-     "url": "https://www.techrepublic.com/article/30-generative-ai-projects-fail-amid-high-costs-and-risks/",
-     "cells": [
-      "Up to $200,000 upfront plus $550 per user a year[^11]",
-      "Apps built on a vendor's model",
-      "Gartner's estimate, reported by TechRepublic[^11]"
-     ]
+      "to": "human-role",
+      "text": "Who on your team keeps each decision"
     },
     {
-     "name": "Zavient 30-day AI Sprint",
-     "url": "https://zavient.com/about.html#engagements",
-     "cells": [
-      "$10,000 for 30 days[^18]",
-      "Finding and specifying the 2 or 3 bets that pay",
-      "Fixed scope; you leave with a plan and specs[^18]"
-     ]
+      "to": "recipes",
+      "text": "Three shapes the work can take, and what each costs"
     },
     {
-     "name": "Zavient ongoing advisory",
-     "url": "https://zavient.com/about.html#engagements",
-     "cells": [
-      "$5,000 to $10,000 a month[^18]",
-      "Guiding a build through to launch",
-      "Quarterly commitment[^18]"
-     ]
+      "to": "own-data",
+      "text": "What it costs to hire an AI team yourself, from US pay data"
+    },
+    {
+      "to": "what-goes-wrong",
+      "text": "Why most AI pilots stall, and the fix for each"
+    },
+    {
+      "to": "benchmark",
+      "text": "Twelve checks to judge any AI advisor before you sign"
     }
-   ]
-  }
- ],
- "testTitle": "How do you benchmark whether a consultant can deliver?",
- "howToTest": [
-  "Measure today first, so the after has a before.",
-  "Ask for a benchmark on 20 to 50 of your own files before you sign for a full build.",
-  "Agree the right answers with your own team first, and lock them, so the result is graded against your standard.",
-  "Ask for cost per correct answer, not price per token. In our benchmark the cheapest tool made 16 wrong answers; the two best made none[^7].",
-  "Ask why they picked their model. In our benchmark, two tools found nearly the same facts at prices 48 times apart[^7]; Claude's own list prices span about 40 times[^8].",
-  "Ask what happens when a better model ships next month. If the answer is a new project, the system will go stale.",
-  "Ask for a client where the system has run in production for at least six months.",
-  "Ask where your files are stored, who can see them, and whether anyone trains AI models on them.",
-  "If you lend or insure, ask what model documentation and validation you get for your examiner, and who keeps it current.",
-  "Ask who clears unsure cases, how fast, and who covers when they're out."
- ],
- "buyVsBuild": {
-  "buy": "Hire a consultant when you need one system working this quarter, have no AI engineers, and want someone accountable for the result. Pay for a fixed scope with a benchmark you can check. Bought or partnered projects succeed about 3 times as often as internal builds[^1].",
-  "build": "Hire in-house when AI is core to what you sell and you will run many systems. Expect about two and a half months to fill each technical role[^17] and the pay in the table above[^4][^14]."
- },
- "watchOuts": [
-  "Firms that resell one software vendor's product and call it a recommendation. 37% of enterprise CIOs surveyed by a16z run five or more models, picked by use case[^5].",
-  "Demos on clean sample data that never meet your real files. Gartner lists poor data quality among the main reasons generative AI projects are dropped after the proof of concept[^10].",
-  "No answer key: without agreed right answers, nobody can show the system works. Anthropic's own guide says to set measurable success criteria and benchmark on cases that mirror the real task[^20].",
-  "Budgets that stop at the pilot. Gartner expects at least half of generative AI projects to overrun through 2028, and running the model is most of the lifetime cost[^3][^9]."
- ],
- "resources": [
-  {
-   "name": "a16z: how 100 enterprise CIOs build and buy AI (2025)",
-   "url": "https://a16z.com/ai-enterprise-2025/",
-   "what": "Enterprises use public leaderboards as a first filter, then their own benchmarks and test sets."
+  ],
+  "headings": {},
+  "summary": "AI consulting is outside help to pick one workflow, prove AI on your own work and get it into daily use.[^5][^1] Good help leaves your team running it, with a before-and-after number.[^7][^18] Most pilots stall on the wrong problem or missing data, not on the model.[^4]",
+  "walkAway": [
+    "One workflow, picked from a ranked list, with a named owner and the business number it should move.[^5] RAND's most common cause of AI failure is a misunderstood problem or the wrong metric.[^4]",
+    "A before number, measured before any tool is bought: volume, hours, errors or cost per item.[^7] High performers are twice as likely to measure AI's impact.[^8]",
+    "A pilot running in daily work, not a demo. In MIT's sample, only 5% of custom enterprise AI tools reached production.[^1]",
+    "A plan your own team can run, with named owners and training.[^6] Most small-business owners, 73%, say more training would help them put AI to work.[^14]",
+    "Everything handed over as files you keep: test cases, answer key, specs and code.[^18][^30] Then you can re-run the test when a cheaper model ships.[^29]"
+  ],
+  "humanRole": [
+    "COO or head of operations: owns the go, change or stop call, and the AI risk that comes with it. NIST, the US standards agency, puts AI risk decisions with executive leadership.[^6]",
+    "Process owner (ops lead, plant manager, claims or service lead): picks the workflow, agrees the right answers and checks AI output.[^6][^5] MIT found the strongest projects were sourced from frontline managers.[^1]",
+    "A named reviewer approves anything that moves money or reaches customers, such as refunds or payments, until the system earns trust.[^13] Your firm stays liable for what its AI tells customers.[^12]",
+    "The advisor builds, tests and coaches; your staff run the work.[^18] Among US firms using AI, 66% use it only to help staff with tasks, and AI-related employment fell at 2%.[^10]"
+  ],
+  "recipes": [
+    {
+      "name": "1. Free first pass: one workflow, no fee",
+      "when": "Pick this when you have one idea, no data team and no budget yet. Small Business Development Centers (SBDCs) give no-cost advice; Manufacturing Extension Partnership (MEP) centers serve manufacturers.[^16][^17]",
+      "flow": [
+        "COO: name the three jobs that cost the most time or errors",
+        "Ops lead: time one of them for two weeks to get a before number",
+        "Advisor: in a 30-minute call, say buy, build or skip, and what to test first",
+        "COO: pick one job and set a go-or-stop date"
+      ],
+      "cost": "Free. Our diagnostic is 30 minutes, and SBDC advice is no-cost.[^18][^16]"
+    },
+    {
+      "name": "2. Fixed-scope sprint: rank and spec the first bets",
+      "when": "Pick this when several teams want AI and you need a ranked list your board or lender will back. Ask any advisor for a fixed price and a fixed scope.[^18]",
+      "flow": [
+        "COO: sponsor it and name an owner for each candidate workflow",
+        "Division heads: bring their two costliest jobs and today's numbers",
+        "Advisor: score each job on value, data, risk and owner",
+        "Your team: agree the right answers on 50 real cases, then lock them",
+        "Advisor: test the leading options on those cases",
+        "COO: approve the 90-day plan, with owners and what not to do"
+      ],
+      "cost": "$10,000 for 30 days, fixed.[^18] You get 2 or 3 ranked bets, specs your team or a vendor can build from, and a 90-day plan.[^18]"
+    },
+    {
+      "name": "3. Advisory while your team or a vendor builds",
+      "when": "Pick this when the first workflow is chosen and a build is under way. Running the model is at least 70% of its lifetime cost, so someone must keep checking it.[^27][^28]",
+      "flow": [
+        "Process owner: run the build with your own team or a vendor",
+        "Named reviewer: clear the queue of cases the AI is unsure about",
+        "IT lead: log every AI decision and who checked it",
+        "Process owner: go live at one site or team first, then scale",
+        "Advisor: review progress twice a month and flag new models or prices",
+        "Advisor: re-run the locked test when a cheaper model ships",
+        "COO: go, change or stop at each quarter"
+      ],
+      "cost": "$5,000 to $10,000 a month, with a quarterly commitment.[^18] The build itself is quoted per job, or done by your team or a vendor from the specs.[^18]"
+    }
+  ],
+  "ownData": {
+    "title": "What does it cost to hire an AI team yourself?",
+    "intro": "These are US median pay figures from the Bureau of Labor Statistics for May 2025.[^19][^20] AI job titles have no BLS group of their own, so each row uses the nearest one. A lean team of one manager, one data scientist and one developer costs about $630,000 a year with benefits.[^23]",
+    "headers": [
+      "Role (nearest BLS group)",
+      "Median pay, May 2025",
+      "Rough cost with benefits"
+    ],
+    "rows": [
+      [
+        "Computer and information systems manager, nearest to a head of AI",
+        "$175,140[^22]",
+        "About $256,000[^23]"
+      ],
+      [
+        "Computer and information research scientist, nearest to a machine learning engineer",
+        "$140,300[^21]",
+        "About $205,000[^23]"
+      ],
+      [
+        "Software developer, nearest to an AI engineer",
+        "$135,980[^20]",
+        "About $199,000[^23]"
+      ],
+      [
+        "Data scientist",
+        "$120,230[^19]",
+        "About $176,000[^23]"
+      ]
+    ],
+    "note": "Source: BLS Occupational Outlook Handbook, May 2025 median pay, checked 26 November 2026.[^19][^20][^21][^22] Cost with benefits divides median pay by 68.5%, the wage share of pay costs for full-time private workers in June 2026.[^23] Medians cover all employers and experience levels, and filling each role takes time too.[^24]"
   },
-  {
-   "name": "Menlo Ventures, State of Generative AI in the Enterprise (2025)",
-   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-AI-in-the-enterprise/",
-   "what": "Survey of 495 US decision-makers on spend and buy-versus-build."
-  }
- ],
- "sources": [
-  {
-   "name": "Fortune on MIT NANDA, 18 Aug 2025",
-   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
-   "what": "About 95% of companies studied see little or no measurable P&L impact from generative AI; bought or partnered projects succeed about 67% of the time, internal builds a third as often; winners pick one pain point."
+  "watchOuts": [
+    "Wrong problem or wrong metric: RAND's most common cause of AI project failure.[^4] Fix: write down the business number and its owner before anyone picks a tool.[^5]",
+    "Tools that don't fit the work: MIT found most pilots stall because tools don't learn from feedback or fit existing workflows.[^1] Fix: test on real cases, inside the real workflow.[^30]",
+    "Clean demo data that never meets your files: Gartner names poor data quality as a main reason AI trials get dropped.[^26][^4] Fix: run 50 real records in week one.",
+    "Trials with no end date: the average firm scrapped 46% of its AI trial projects before production.[^9] Fix: set a go-or-stop date before the pilot starts.[^6]",
+    "Budgets that stop at the pilot: Gartner expects at least half of generative AI projects to overrun through 2028.[^27][^28] Fix: price the running costs, not just the build, before you say go.",
+    "Advice tied to one vendor: in an a16z survey, 37% of enterprise CIOs ran five or more models, picked by use case.[^25] Fix: see two or three options tested on your own cases."
+  ],
+  "howToTest": [
+    "Measure today first, so the after has a before.[^7]",
+    "Ask for a test on 20 to 50 of your own cases before you sign for a full build.[^30][^25]",
+    "Agree the right answers with your own team first, and lock them, so the result is graded against your standard.[^30]",
+    "Ask for cost per correct answer, not the model's price per token (a chunk of text). In our document benchmark the cheapest tool made 16 wrong answers; the two best made none.[^33][^32]",
+    "Price the lift: hours saved times loaded hourly cost, minus the cost to run it. Loaded cost is about pay divided by 0.685 for a full-time US private worker.[^23]",
+    "Ask why they picked their model. In our benchmark, two tools found nearly the same facts at prices 48 times apart; one model maker's own list prices span about 40 times.[^33][^31]",
+    "Ask what happens when a better model ships next month. The price of the same AI performance falls 9 to 900 times a year, so a fixed system goes stale.[^29]",
+    "Ask for a client whose system has run in daily work for at least six months. MIT judged success six months after the pilot.[^1]",
+    "Ask where your files are stored, who can see them, and whether anyone trains AI models on them. Data privacy and security top firms' AI worries, at 38% each.[^9]",
+    "If AI touches decisions about people, such as hiring, lending or insurance, ask what documentation you get and who keeps it current.[^6]",
+    "Ask who clears unsure cases, how fast, and who covers when they're out.[^13]",
+    "Ask what they would tell you not to build. Google's first rule of machine learning: don't be afraid to launch without it.[^7]"
+  ],
+  "faq": [
+    {
+      "q": "Is AI consulting worth it for a mid-sized company?",
+      "a": "Yes, if you bring one workflow with a number attached.[^5] In MIT's sample, partnered AI projects reached deployment about twice as often as internal builds.[^1] About a third of US firms with 100 to 249 staff already use AI.[^11]"
+    },
+    {
+      "q": "How much does AI consulting cost?",
+      "a": "We found no neutral survey of AI consulting fees, so we show only our own prices. Our diagnostic is free, the 30-day sprint is $10,000 fixed, and advisory is $5,000 to $10,000 a month.[^18] A lean in-house AI team costs about $630,000 a year.[^19][^23]"
+    },
+    {
+      "q": "Should we hire a consultant or build an in-house AI team?",
+      "a": "Build in-house when AI is core to what you sell and you will run many systems. Technical roles take a median 75 days to fill, against 60 for business roles.[^24] Otherwise buy or partner first: 76% of enterprise AI use cases are now bought.[^3]"
+    },
+    {
+      "q": "How long until we see results?",
+      "a": "Weeks for a first decision, about a quarter for daily use. Our sprint runs a fixed 30 days.[^18] Mid-market top performers in MIT's sample went from pilot to full use in about 90 days.[^1]"
+    },
+    {
+      "q": "Will hiring AI help lead to job losses?",
+      "a": "Rarely. Among US firms using AI, 66% use it only to help staff, and AI-related employment fell at 2%.[^10] Of small-business owners, 87% say AI augments their workforce.[^14]"
+    }
+  ],
+  "pickElse": [
+    "AI is your product and you will run many systems: hire in-house. Technical roles take a median 75 days to fill, so budget for that and the pay above.[^24][^19]",
+    "A standard job that software already does, such as scheduling, ticket routing or invoice capture: buy the product and test it on your own files.[^30] Most enterprise AI use cases, 76%, are now bought.[^3]",
+    "Under about 50 staff or no budget yet: start with a free SBDC advisor, or an MEP center if you make things.[^16][^17]",
+    "Staff only need everyday help with writing and search: buy an approved tool and train people.[^14] Of AI users, 78% already bring their own tools to work.[^15]"
+  ],
+  "resources": [
+    {
+      "name": "NIST AI RMF Playbook",
+      "url": "https://airc.nist.gov/airmf-resources/playbook/",
+      "what": "Free US government guide to AI roles, oversight and go or no-go decisions. Pick the parts that fit."
+    },
+    {
+      "name": "America's SBDC: find your local center",
+      "url": "https://americassbdc.org/",
+      "what": "No-cost business advice, including from AI-certified advisors."
+    },
+    {
+      "name": "RAND: Root Causes of Failure for AI Projects",
+      "url": "https://www.rand.org/pubs/research_reports/RRA2680-1.html",
+      "what": "Five reasons AI projects fail, from 65 interviews, with a fix for each."
+    },
+    {
+      "name": "Google Rules of Machine Learning",
+      "url": "https://developers.google.com/machine-learning/guides/rules-of-ml",
+      "what": "Rules 1 and 2 in two lines: launch without AI if you can, and measure first."
+    },
+    {
+      "name": "a16z: how 100 enterprise CIOs build and buy AI (2025)",
+      "url": "https://a16z.com/ai-enterprise-2025/",
+      "what": "How large buyers test models on their own data after public leaderboards."
+    }
+  ],
+  "stats": [
+    {
+      "num": "About 2 to 1",
+      "label": "partnered AI projects that reached deployment, per internal build, in MIT's sample (about 67% vs 33%)[^1]",
+      "source": "MIT NANDA 2025, self-reported[^1]"
+    },
+    {
+      "num": "66%",
+      "label": "of US firms using AI use it only to help staff with tasks; AI-related employment fell at 2%[^10]",
+      "source": "U.S. Census Bureau, BTOS AI supplement, Apr 2026[^10]"
+    },
+    {
+      "num": "46%",
+      "label": "of AI trial projects the average firm scrapped before production[^9]",
+      "source": "S&P Global Market Intelligence, 451 Research, Oct 2025[^9]"
+    },
+    {
+      "num": "~$630,000",
+      "label": "rough yearly cost of a lean in-house AI team of three, with benefits[^19][^23]",
+      "source": "BLS median pay, May 2025: tech manager $175,140, software developer $135,980, data scientist $120,230[^22][^20][^19]; benefits added from BLS pay cost data[^23]"
+    },
+    {
+      "num": "75 days",
+      "label": "median time to fill a technical role, against 60 for business roles[^24]",
+      "source": "Ashby, 93,000 jobs[^24]"
+    },
+    {
+      "num": "32%",
+      "label": "of US firms with 100 to 249 staff used AI in May 2026; 37% at 250 or more[^11]",
+      "source": "U.S. Census Bureau, Business Trends and Outlook Survey[^11]"
+    }
+  ],
+  "related": [
+    "ai-strategy-consulting",
+    "ai-automation-consulting",
+    "ai-document-processing",
+    "manufacturing",
+    "law-firms"
+  ],
+  "offer": {
+    "heading": "Not sure you need AI help? Get a free 30-minute diagnostic",
+    "body": "Free, before any paid work: 30 minutes on your first workflow. Bring one job and what it costs you today. You leave knowing whether to hire help, buy a tool or skip it."
   },
-  {
-   "name": "Menlo Ventures, 2025",
-   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-AI-in-the-enterprise/",
-   "what": "Survey of 495 US enterprise AI decision-makers: 76% of AI use cases were bought in 2025, up from 53% in 2024."
+  "keyword": {
+    "phrase": "ai consulting services",
+    "searches": 1600,
+    "cpc": 94.77,
+    "difficulty": 8
   },
-  {
-   "name": "Campus Technology on Gartner, 22 Jun 2026",
-   "url": "https://campustechnology.com/articles/2026/06/22/gartner-half-of-gen-ai-projects-could-exceed-budget-by-2028.aspx",
-   "what": "Gartner: at least half of generative AI projects will overrun budgets through 2028; inference is at least 70% of lifetime cost; production can cost orders of magnitude more than a pilot."
-  },
-  {
-   "name": "BLS, data scientists",
-   "url": "https://www.bls.gov/ooh/math/data-scientists.htm",
-   "what": "Median pay $120,230 a year in May 2025."
-  },
-  {
-   "name": "a16z, enterprise CIO survey (2025)",
-   "url": "https://a16z.com/ai-enterprise-2025/",
-   "what": "Survey of 100 CIOs: public leaderboards are a first filter, internal benchmarks and golden datasets stay critical; 37% use five or more models."
-  },
-  {
-   "name": "Zavient, FinExtractBench results",
-   "url": "https://zavient.com/ai-work/ai-document-processing.html#own-data",
-   "what": "Zavient's sealed benchmark: the two best models made zero mistakes on 30 fund reports (781 pages), at $0.12 to $0.15 per report."
-  },
-  {
-   "name": "Zavient, FinExtractBench hard round",
-   "url": "https://zavient.com/ai-work/ai-document-processing.html",
-   "what": "Hard round: GPT-6 Luna and Claude Opus 5.5 each proved 21 of 22 long-report facts, at $0.0063 and $0.3032 per report (48 times apart); the cheapest tool made 16 wrong answers."
-  },
-  {
-   "name": "Anthropic, Claude API pricing",
-   "url": "https://platform.claude.com/docs/en/about-claude/pricing",
-   "what": "List prices per million tokens: Claude Opus 5.5 $4 in, $20 out; Claude Haiku 5.5 $0.10 in, $0.50 out for prompts up to 100,000 tokens."
-  },
-  {
-   "name": "The Journal on Gartner, 22 Jun 2026",
-   "url": "https://thejournal.com/articles/2026/06/22/report-half-of-gen-ai-projects-could-exceed-budget-by-2028.aspx",
-   "what": "Gartner: through 2028 at least 50% of generative AI projects will overrun budgets; inference at least 70% of lifetime cost; production can cost orders of magnitude more than a pilot."
-  },
-  {
-   "name": "Gartner press release, 29 Jul 2024",
-   "url": "https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025",
-   "what": "At least 30% of generative AI projects abandoned after proof of concept by end of 2025, due to poor data quality, weak risk controls, rising costs or unclear value."
-  },
-  {
-   "name": "TechRepublic on Gartner, 2024",
-   "url": "https://www.techrepublic.com/article/30-generative-ai-projects-fail-amid-high-costs-and-risks/",
-   "what": "Gartner estimate for a generative AI project on an API: up to $200,000 upfront plus $550 per user a year."
-  },
-  {
-   "name": "McKinsey, The state of AI in 2026",
-   "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
-   "what": "Survey of 1,719 people, May to Jun 2026: 37% attribute any EBIT impact to AI; high performers redesign workflows and are twice as likely to measure AI's impact."
-  },
-  {
-   "name": "The Register on MIT NANDA, 18 Aug 2025",
-   "url": "https://www.theregister.com/2025/08/18/generative_ai_zero_return_95_percent",
-   "what": "MIT NANDA: 95% of enterprise organizations got zero return from generative AI; based on 52 interviews, 300+ public projects and a 153-person survey."
-  },
-  {
-   "name": "BLS, software developers",
-   "url": "https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm",
-   "what": "Median pay $135,980 a year in May 2025."
-  },
-  {
-   "name": "BLS, computer and information research scientists",
-   "url": "https://www.bls.gov/ooh/computer-and-information-technology/computer-and-information-research-scientists.htm",
-   "what": "Median pay $140,300 a year in May 2025; the work often uses machine learning."
-  },
-  {
-   "name": "BLS, employer costs for employee compensation, Jun 2026",
-   "url": "https://www.bls.gov/opub/ted/2026/compensation-costs-for-private-industry-workers-averaged-46-89-per-hour-worked-in-june-2026.htm",
-   "what": "In private industry, wages are 70.0% of total compensation costs and benefits 30.0%; for full-time workers, wages are 68.5% and benefits 31.5%."
-  },
-  {
-   "name": "Ashby, recruiting benchmarks 2026",
-   "url": "https://www.ashbyhq.com/talent-trends-report/reports/recruiting-operations-benchmarks-talent-trends",
-   "what": "From 93,000 jobs at Ashby customers: technical roles take a median 75 days to fill, against 60 for business roles."
-  },
-  {
-   "name": "Zavient, how we work and what it costs",
-   "url": "https://zavient.com/about.html#engagements",
-   "what": "30-day AI Sprint $10,000 for 30 days, fixed scope, 2 to 3 AI bets with specs; ongoing advisory $5,000 to $10,000 a month, quarterly commitment."
-  },
-  {
-   "name": "Epoch AI, LLM inference price trends (2025)",
-   "url": "https://epoch.ai/data-insights/ai-inference-price-trends",
-   "what": "The price of a given level of model performance fell 9 to 900 times a year, depending on the task."
-  },
-  {
-   "name": "Anthropic, define success criteria and build evaluations",
-   "url": "https://platform.claude.com/docs/en/test-and-evaluate/develop-tests",
-   "what": "Set specific, measurable success criteria and build benchmarks that mirror the real task, edge cases included."
-  },
-  {
-   "name": "Cornell LII, 12 CFR 1002.9",
-   "url": "https://www.law.cornell.edu/cfr/text/12/1002.9",
-   "what": "Creditors must notify within 30 days of a completed application; the notice gives specific reasons for adverse action or tells the applicant how to request them."
-  },
-  {
-   "name": "CFPB, Regulation B official interpretation of 1002.9",
-   "url": "https://www.consumerfinance.gov/rules-policy/regulations/1002/Interp-9/",
-   "what": "When a credit scoring system decides, the reasons given must be the factors actually scored."
-  },
-  {
-   "name": "EU AI Act Service Desk, Annex III",
-   "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3",
-   "what": "Credit scoring of people and life and health insurance risk pricing are high-risk AI uses."
-  },
-  {
-   "name": "Lewis Silkin, Digital Omnibus on AI, 27 Jul 2026",
-   "url": "https://www.lewissilkin.com/insights/2026/07/27/the-digital-omnibus-on-ai-enters-into-force-today-102nedo",
-   "what": "The omnibus took effect 27 Jul 2026 and moved Annex III high-risk rules from 2 Aug 2026 to 2 Dec 2027."
-  },
-  {
-   "name": "Orrick, Digital Omnibus changes, Jul 2026",
-   "url": "https://www.orrick.com/en/Insights/2026/07/EU-AI-Act-Update-Digital-Omnibus-Finalizes-8-Compliance-Changes",
-   "what": "Annex III high-risk obligations now take effect on 2 Dec 2027 instead of 2 Aug 2026."
-  },
-  {
-   "name": "NYDFS Circular Letter No. 7 (2024)",
-   "url": "https://www.dfs.ny.gov/industry-guidance/circular-letters/cl2024-07",
-   "what": "Issued 11 Jul 2024: insurers test AI and outside data for unfair discrimination, keep board oversight, stay responsible for vendors and give specific reasons for adverse decisions."
-  },
-  {
-   "name": "NAIC, AI Model Bulletin adoption map",
-   "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
-   "what": "30 jurisdictions had adopted the bulletin by 13 Nov 2026; California, Colorado and New York have their own rules."
-  },
-  {
-   "name": "NAIC Model Bulletin on AI (2023)",
-   "url": "https://content.naic.org/sites/default/files/2023-12-4%252520Model%252520Bulletin_Adopted_0.pdf",
-   "what": "Insurers are expected to keep a written AI program with governance, risk controls and vendor due diligence."
-  },
-  {
-   "name": "Colorado Division of Insurance, SB21-169",
-   "url": "https://doi.colorado.gov/for-consumers/sb21-169-protecting-consumers-from-unfair-discrimination-in-insurance-practices",
-   "what": "Insurers must test external data and models for unfair discrimination, fix harm found and show the Division how they test."
-  },
-  {
-   "name": "Colorado DOI, amended Regulation 10-1-1",
-   "url": "https://doi.colorado.gov/announcements/notice-of-adoption-amended-regulation-10-1-1-governance-and-risk-management-framework",
-   "what": "Effective 15 Oct 2025, the governance rule covers life, private auto and health benefit plan insurers."
-  },
-  {
-   "name": "Ardent Partners, AP Metrics That Matter in 2026 (Oct 2026)",
-   "url": "https://payablesplace.ardentpartners.com/2026/10/this-webinar-reveals-the-numbers-behind-smarter-faster-ap/",
-   "what": "Nearly 1 in 5 invoices (19.9%) needs manual exception handling; average cost $9.90 and 11.6 days per invoice."
-  },
-  {
-   "name": "AFP 2026 Payments Fraud and Control Survey",
-   "url": "https://www.financialprofessionals.org/about/learn-more/press-releases/Details/over-75-percent-of-us-firms-experienced-payments-fraud-in-2025-while-ai-adoption-for-fraud-mitigation-lags",
-   "what": "76% of US organizations faced attempted or actual payments fraud in 2025; 74% were hit by business email compromise."
-  },
-  {
-   "name": "MDPI, credit-scoring review (2026)",
-   "url": "https://www.mdpi.com/1911-8074/19/7/526",
-   "what": "Gradient boosting leads on accuracy; logistic regression stays competitive on small data and wins where auditability binds."
-  },
-  {
-   "name": "BLS, computer and information systems managers",
-   "url": "https://www.bls.gov/ooh/management/computer-and-information-systems-managers.htm",
-   "what": "Median pay $175,140 a year in May 2025; they plan, coordinate and direct an organization's computer-related work."
-  }
- ],
- "related": [],
- "keyword": {
-  "phrase": "ai consulting services",
-  "searches": 1600,
-  "cpc": 94.77,
-  "difficulty": 8
- },
- "offer": {
-  "heading": "Not sure where AI pays in your business? Get a free diagnostic",
-  "body": "Bring one job with a number attached. In 30 minutes you leave knowing which job to start with, whether to buy or build, and what to benchmark first. You talk to the person who does the work, not a sales team."
- },
- "updated": "2026-11-26",
- "rules": [
-  {
-   "name": "AI credit scoring: the lending rules",
-   "url": "https://zavient.com/ai-work/ai-credit-scoring.html",
-   "status": "US in force; EU from 2 Dec 2027",
-   "what": "If you lend, US rules require a decline notice within 30 days, giving the specific reasons or how to ask for them[^21]. Those reasons must be the factors the model actually scored[^22]. In the EU, credit scoring of people becomes a high-risk AI use from 2 December 2027[^23][^24][^25]."
-  },
-  {
-   "name": "AI underwriting: the insurance rules",
-   "url": "https://zavient.com/ai-work/ai-underwriting.html",
-   "status": "US in force; EU from 2 Dec 2027",
-   "what": "If you insure, New York expects and Colorado requires testing AI and outside data for unfair discrimination[^26][^29][^30]. 30 jurisdictions expect a written AI program with vendor oversight[^27][^28]. In the EU, life and health insurance pricing becomes a high-risk AI use from 2 December 2027[^23][^24][^25]."
-  }
- ],
- "headings": {
-  "what-it-is": "What should an AI consultant actually deliver?",
-  "where-ai-pays": "Which finance job should you automate with AI first?",
-  "example": "What does a good AI consulting project look like?",
-  "rules": "Which AI rules apply to finance work?",
-  "what-goes-wrong": "Why do most AI projects never pay off?",
-  "buy-or-build": "Should you hire a consultant, buy software or build in-house?",
-  "something-else": "When is an AI consultant the wrong call?"
- }
+  "reviews": [
+    {
+      "reader": "COO",
+      "notes": "Got the three answers wanted up top: is it worth it, what you get, what it costs. The 'twice as often' bullet read as settled fact; it now says 'in MIT's sample', and the key-numbers row marks it self-reported. Owner of the go, change or stop call is named first in who stays in charge. No neutral fee survey exists, so only Zavient's own published prices are shown."
+    },
+    {
+      "reader": "Head of operations",
+      "notes": "Tripped on SBDC, MEP and 'price per token'; all three are now spelled out on first use. Recipe step flows name a role on every line and read fine on a phone. The before-number bullet lists what to measure (volume, hours, errors, cost per item), which is the two-week job they would own."
+    },
+    {
+      "reader": "GM",
+      "notes": "Asked whether one site or team can go first; recipe 3 now goes live at one site or team before scaling, as NIST's MEP guidance advises. Wanted the margin view: added a check to price the lift as hours saved times loaded hourly cost, minus running costs, with the BLS loading factor."
+    },
+    {
+      "reader": "Division head",
+      "notes": "Read as a plant manager. The process-owner bullet named only a finance-side role; now ops lead, plant manager, claims or service lead, so it reads for any function. Clear on what their team gives: two costliest jobs, today's numbers and agreed answers on 50 real cases. The augmentation line (66% of AI users only help staff) answers the team's first worry."
+    },
+    {
+      "reader": "Owner-CEO",
+      "notes": "Wants the price and a reason to trust it: the sprint price sits in the bottom line next to a month of a data scientist's median pay, and the FAQ sets it against a roughly $630,000 in-house team. Free routes (diagnostic, SBDC, MEP) are offered before any paid work. The offer promises an honest answer, including 'skip it'. No founder name, no rival firms."
+    }
+  ],
+  "updated": "2026-11-26",
+  "sources": [
+    {
+      "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025)",
+      "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+      "what": "52 interviews, 300+ public AI projects and a 153-leader survey; self-reported. 5% of custom enterprise AI tools reached production; partnered builds reached deployment about 67% of the time, internal builds about 33%; most pilots stall because tools don't learn or fit workflows; mid-market top performers took about 90 days from pilot to full use; ROI judged 6 months after the pilot."
+    },
+    {
+      "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025)",
+      "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+      "what": "Reports the MIT NANDA study: about 95% of generative AI pilots show little or no measurable P&L impact; purchased or partnered tools succeed about 67% of the time, internal builds a third as often."
+    },
+    {
+      "name": "Fortune on MIT NANDA, 18 Aug 2025",
+      "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
+      "what": "Reports the MIT NANDA study: about 95% of generative AI pilots show little or no measurable P&L impact; purchased or partnered tools succeed about 67% of the time, internal builds a third as often."
+    },
+    {
+      "name": "RAND, The Root Causes of Failure for AI Projects (Aug 2024)",
+      "url": "https://www.rand.org/pubs/research_reports/RRA2680-1.html",
+      "what": "From 65 interviews. Most common root cause: leaders misunderstand or miscommunicate the problem, or optimize the wrong metric; then missing data, chasing new technology, weak infrastructure and problems too hard for AI. Advises committing to a problem for at least a year."
+    },
+    {
+      "name": "NIST AI RMF Playbook, Map",
+      "url": "https://airc.nist.gov/AI_RMF_Knowledge_Base/Playbook/Map",
+      "what": "US standards agency guidance. MAP 1.4: the business value or context of business use is clearly defined. MAP 3.5: processes for human oversight are defined and documented."
+    },
+    {
+      "name": "NIST AI RMF Playbook, Govern",
+      "url": "https://airc.nist.gov/airmf-resources/playbook/govern",
+      "what": "GOVERN 1.4: keep AI documentation current. 2.1: document roles. 2.2: train staff and partners. 2.3: executive leadership takes responsibility for AI risk decisions. 3.2: define human oversight roles. 4.2: impact assessments help go/no-go decisions."
+    },
+    {
+      "name": "Google for Developers, Rules of Machine Learning",
+      "url": "https://developers.google.com/machine-learning/guides/rules-of-ml",
+      "what": "Rule #1: don't be afraid to launch a product without machine learning. Rule #2: first, design and implement metrics, tracking as much as possible in the current system."
+    },
+    {
+      "name": "U.S. Census Bureau, Large firms are the biggest AI users (22 May 2026)",
+      "url": "https://www.census.gov/library/stories/2026/05/ai-use-businesses.html",
+      "what": "Business Trends and Outlook Survey, period ending 3 May 2026: 32% of firms with 100 to 249 employees and 37% with 250 or more used AI; 19.8% nationally."
+    },
+    {
+      "name": "S&P Global Market Intelligence, 451 Research (27 Oct 2025)",
+      "url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/2025/10/generative-ai-shows-rapid-growth-but-yields-mixed-results",
+      "what": "Firms abandoning most AI initiatives before production rose from 17% to 42%; the average firm scrapped 46% of proofs of concept; data privacy and security risks are the top generative AI challenges, at 38% each."
+    },
+    {
+      "name": "U.S. Census Bureau, The Microstructure of AI Diffusion, CES-WP-26-25 (Apr 2026)",
+      "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
+      "what": "From the 2026 AI supplement to the Business Trends and Outlook Survey: 66% of AI-using firms use AI solely to augment tasks; AI-related employment decreases occurred in only 2% of firms."
+    },
+    {
+      "name": "U.S. Census Bureau, Large firms are the biggest AI users (22 May 2026)",
+      "url": "https://www.census.gov/library/stories/2026/05/ai-use-businesses.html",
+      "what": "Business Trends and Outlook Survey, period ending 3 May 2026: 32% of firms with 100 to 249 employees and 37% with 250 or more used AI; 19.8% nationally."
+    },
+    {
+      "name": "ABA Business Law Today, Moffatt v. Air Canada (Feb 2024)",
+      "url": "https://www.americanbar.org/groups/business_law/resources/business-law-today/2024-february/bc-tribunal-confirms-companies-remain-liable-information-provided-ai-chatbot",
+      "what": "A British Columbia tribunal held the airline liable for its chatbot's wrong fare information and rejected the argument that the chatbot was a separate entity."
+    },
+    {
+      "name": "OpenAI, A practical guide to building agents",
+      "url": "https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents",
+      "what": "Model maker's guide: plan for human intervention; sensitive, irreversible or high-stakes actions such as large refunds or payments should trigger human oversight until confidence grows."
+    },
+    {
+      "name": "Goldman Sachs 10,000 Small Businesses Voices, AI survey (17 Mar 2026)",
+      "url": "https://www.goldmansachs.com/pressroom/press-releases/2026/small-businesses-embrace-ai-but-need-training-and-support-to-fully-harness-it",
+      "what": "1,256 small-business owners, surveyed by Babson College and David Binder Research, Jan to Feb 2026. 73% say more training and implementation resources would help; 87% say AI augments rather than replaces employees; 14% have AI fully in core operations."
+    },
+    {
+      "name": "Microsoft and LinkedIn, Work Trend Index 2024",
+      "url": "https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part",
+      "what": "Vendor-commissioned survey: 78% of AI users bring their own AI tools to work, 80% at small and medium-sized companies."
+    },
+    {
+      "name": "America's SBDC",
+      "url": "https://americassbdc.org/",
+      "what": "Nearly 1,000 Small Business Development Centers give no-cost business consulting; 400+ AI-certified advisors have given 8,000+ small businesses AI guidance."
+    },
+    {
+      "name": "NIST MEP blog, AI in manufacturing",
+      "url": "https://www.nist.gov/blogs/manufacturing-innovation-blog/artificial-intelligence-manufacturing-real-world-success-stories",
+      "what": "Manufacturing Extension Partnership centers in every state, about 1,400 advisors; centers vet outside AI experts; advises piloting AI at one site and one line first."
+    },
+    {
+      "name": "NIST MEP blog, AI in manufacturing",
+      "url": "https://www.nist.gov/blogs/manufacturing-innovation-blog/artificial-intelligence-manufacturing-real-world-success-stories",
+      "what": "Free 30-minute diagnostic; 30-day AI Sprint $10,000, fixed scope, with 2 or 3 ranked AI bets, specs and a 90-day plan with owners; ongoing advisory $5,000 to $10,000 a month, quarterly commitment; the client owns the specs, code and results."
+    },
+    {
+      "name": "Menlo Ventures, 2025",
+      "url": "https://menlovc.com/perspective/2025-the-state-of-generative-AI-in-the-enterprise/",
+      "what": "Survey of 495 US enterprise AI decision-makers: 76% of AI use cases were bought in 2025, up from 53% in 2024."
+    },
+    {
+      "name": "OpenAI, A practical guide to building agents",
+      "url": "https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents",
+      "what": "Model maker's guide: plan for human intervention; sensitive, irreversible or high-stakes actions such as large refunds or payments should trigger human oversight until confidence grows."
+    },
+    {
+      "name": "Goldman Sachs 10,000 Small Businesses Voices, AI survey (17 Mar 2026)",
+      "url": "https://www.goldmansachs.com/pressroom/press-releases/2026/small-businesses-embrace-ai-but-need-training-and-support-to-fully-harness-it",
+      "what": "1,256 small-business owners, surveyed by Babson College and David Binder Research, Jan to Feb 2026. 73% say more training and implementation resources would help; 87% say AI augments rather than replaces employees; 14% have AI fully in core operations."
+    },
+    {
+      "name": "Zavient, FinExtractBench hard round",
+      "url": "https://zavient.com/ai-work/ai-document-processing.html",
+      "what": "Hard round: GPT-6 Luna and Claude Opus 5.5 each proved 21 of 22 long-report facts, at $0.0063 and $0.3032 per report (48 times apart); the cheapest tool made 16 wrong answers."
+    },
+    {
+      "name": "Microsoft and LinkedIn, Work Trend Index 2024",
+      "url": "https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part",
+      "what": "Vendor-commissioned survey: 78% of AI users bring their own AI tools to work, 80% at small and medium-sized companies."
+    },
+    {
+      "name": "America's SBDC",
+      "url": "https://americassbdc.org/",
+      "what": "Nearly 1,000 Small Business Development Centers give no-cost business consulting; 400+ AI-certified advisors have given 8,000+ small businesses AI guidance."
+    },
+    {
+      "name": "RAND, The Root Causes of Failure for AI Projects (Aug 2024)",
+      "url": "https://www.rand.org/pubs/research_reports/RRA2680-1.html",
+      "what": "From 65 interviews. Most common root cause: leaders misunderstand or miscommunicate the problem, or optimize the wrong metric; then missing data, chasing new technology, weak infrastructure and problems too hard for AI. Advises committing to a problem for at least a year."
+    },
+    {
+      "name": "S&P Global Market Intelligence, 451 Research (27 Oct 2025)",
+      "url": "https://www.spglobal.com/market-intelligence/en/news-insights/research/2025/10/generative-ai-shows-rapid-growth-but-yields-mixed-results",
+      "what": "Firms abandoning most AI initiatives before production rose from 17% to 42%; the average firm scrapped 46% of proofs of concept; data privacy and security risks are the top generative AI challenges, at 38% each."
+    },
+    {
+      "name": "The Register on MIT NANDA, 18 Aug 2025",
+      "url": "https://www.theregister.com/2025/08/18/generative_ai_zero_return_95_percent",
+      "what": "MIT NANDA: 95% of enterprise organizations got zero return from generative AI; based on 52 interviews, 300+ public projects and a 153-person survey."
+    },
+    {
+      "name": "McKinsey, The state of AI in 2026",
+      "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
+      "what": "Survey of 1,719 people, May to Jun 2026: 37% attribute any EBIT impact to AI; high performers redesign workflows and are twice as likely to measure AI's impact."
+    },
+    {
+      "name": "Zavient, how we work and what it costs",
+      "url": "https://zavient.com/about.html#engagements",
+      "what": "Free 30-minute diagnostic; 30-day AI Sprint $10,000, fixed scope, with 2 or 3 ranked AI bets, specs and a 90-day plan with owners; ongoing advisory $5,000 to $10,000 a month, quarterly commitment; the client owns the specs, code and results."
+    },
+    {
+      "name": "BLS, data scientists",
+      "url": "https://www.bls.gov/ooh/math/data-scientists.htm",
+      "what": "Median pay $120,230 a year in May 2025."
+    },
+    {
+      "name": "Google for Developers, Rules of Machine Learning",
+      "url": "https://developers.google.com/machine-learning/guides/rules-of-ml",
+      "what": "Rule #1: don't be afraid to launch a product without machine learning. Rule #2: first, design and implement metrics, tracking as much as possible in the current system."
+    },
+    {
+      "name": "NIST AI RMF Playbook, Map",
+      "url": "https://airc.nist.gov/AI_RMF_Knowledge_Base/Playbook/Map",
+      "what": "US standards agency guidance. MAP 1.4: the business value or context of business use is clearly defined. MAP 3.5: processes for human oversight are defined and documented."
+    },
+    {
+      "name": "NIST AI RMF Playbook, Govern",
+      "url": "https://airc.nist.gov/airmf-resources/playbook/govern",
+      "what": "GOVERN 1.4: keep AI documentation current. 2.1: document roles. 2.2: train staff and partners. 2.3: executive leadership takes responsibility for AI risk decisions. 3.2: define human oversight roles. 4.2: impact assessments help go/no-go decisions."
+    }
+  ]
 }
