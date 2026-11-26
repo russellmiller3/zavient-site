@@ -42,10 +42,6 @@ const d = page.data;
       {d.verdict && (
         <div class="verdict"><span class="ask-label">The verdict</span><p>{d.verdict}</p></div>
       )}
-      {d.pickElse.length > 0 && (<>
-        <h2>When to pick something else</h2>
-        <ul>{d.pickElse.map((s) => <li>{s}</li>)}</ul>
-      </>)}
       {spokes.length > 0 && (<>
         <h2>Where AI pays first in finance work</h2>
         <div class="hub-grid">
@@ -102,6 +98,10 @@ const d = page.data;
       <h2>Buy or build</h2>
       <p><strong>Buy:</strong> {d.buyVsBuild.buy}</p>
       <p><strong>Build:</strong> {d.buyVsBuild.build}</p>
+      {d.pickElse.length > 0 && (<>
+        <h2>When to pick something else</h2>
+        <ul>{d.pickElse.map((s) => <li>{s}</li>)}</ul>
+      </>)}
       <h2>What goes wrong</h2>
       <ul>{d.watchOuts.map((s) => <li>{s}</li>)}</ul>
       <h2>Useful resources</h2>
