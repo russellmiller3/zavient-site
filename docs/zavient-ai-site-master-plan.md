@@ -11,6 +11,24 @@
 
 **Decided on 25 Nov:** the site is zavient.com, not a new brand; it never rates rival consulting firms; Zarlent stays separate; the business model is EDS-style (benchmark, then build and run); no $20-a-month product; the engine is the site's existing Astro build on Vercel.
 
+## Update 26 Nov 2026
+
+**Your requests (26 Nov):**
+- "I don't think booking a benchmark is necessarily the thing. I think it's more about AI consulting services."
+- The vision, in your words from a voice note: "the most comprehensive site I can, to help me get work". Types of work crossed with industries. Mine every AI job ad for trends: which models and tools are gaining, the top 3 open-source models in use, the most common finance AI work. Not SEO bait but "really, really useful". A search like "AI for lending scoring" should get a condensed how-to, the tools, the models and the rules.
+- The offer: "get a quick diagnostic of how to approach this, contact me, a really easy intro offer". It is free.
+
+**Decided on 26 Nov:**
+- **The offer:** every indexed page ends with a free 30-minute diagnostic that leads into consulting. Benchmarks stay on the page as proof, not as the ask.
+- **No pages for other consulting firms.** Ranking or listing rival or partner firms sends searchers to them.
+- **First cluster:** the 10 pages below did not hang together, so the first batch is 5 finance pages: the ai consulting services hub plus ai credit scoring, ai underwriting, ai document processing and ai invoice processing.
+- **Every page covers four things:** how to do the work, the tools, the models and the regulations.
+- **Publish gate:** a page is indexed only with a verdict, 3 or more Zavient numbers and 3 or more sources. The site build refuses an indexed page without them. Everything else stays noindexed.
+
+**Proposed, yours to decide:** three data engines feed the pages: demand (job ads), supply (a catalog of tools and models) and proof (benchmarks and rules). On top of them sit playbooks, trend charts, a monthly State of AI Work report and industry leaderboards. A self-serve diagnostic tool could later stand in for the call.
+
+**Status:** the 5 finance pages are built on the `feature/finance-pages` branch with a preview. They are not live until you say publish.
+
 ## Boss summary
 
 **The goal:** One site that shows what BenchLM, Artificial Analysis, Arena, OpenRouter and Hugging Face show, adds data they lack, and turns readers into Zavient clients.
@@ -119,6 +137,8 @@ These are US Google searches a month, checked 25 Nov 2026, with junk and duplica
 4. **"ai consulting services" is the best single phrase for Zavient.** It gets 1,600 searches at $94.77 a click, with a difficulty of 8 out of 100. That is unusually easy for that price.
 
 ## The first 10 pages, ranked by expected value
+
+Superseded on 26 Nov: the first batch is the 5-page finance cluster in the update above.
 
 Expected value = searches × price per click × the chance of ranking, plus how well the page fits work you sell.
 
@@ -239,7 +259,7 @@ A harness is a packaged AI setup: skills, connectors to the firm's data, and das
 **In plain words:** Check who ranks today, then write 10 pages that answer "how do I get this AI job done, and with what."
 
 - Page-one check: keyword-research skill step 8 (`browser_serp_batch.py` in Chrome), for the 10 phrases. Drop a page if all of the top 5 are brands with site strength above 70.
-- Each page: what the work is, a sample input and output, the best models (from our benchmarks where we have them, otherwise cited public scores), tools (named, never linked if they buy data from Zarlent), open data sets and benchmarks with licenses, build vs buy, a typical price band, and the "benchmark it on your documents" offer.
+- Each page: what the work is, a sample input and output, the best models (from our benchmarks where we have them, otherwise cited public scores), tools (named, never linked if they buy data from Zarlent), open data sets and benchmarks with licenses, build vs buy, a typical price band, and the offer. Since 26 Nov that is a free 30-minute diagnostic, with the benchmark as proof on the page.
 - Follow docs/writing-for-ai-search-guidelines.md and the agentify-website skill so AI answer engines can cite each section.
 
 ## Phase 2: finance document benchmark
