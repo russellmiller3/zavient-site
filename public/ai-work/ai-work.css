@@ -288,8 +288,8 @@ footer a:hover { color: var(--blue); }
   .sticky-toc .toc-toggle { flex: 1 1 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 6px; row-gap: 0; padding: 4px 0; }
   .sticky-toc .toc-label { grid-column: 1; grid-row: 1; }
   .sticky-toc .toc-now { grid-column: 1; grid-row: 2; }
-  .sticky-toc .toc-toggle::after { content: '\25B4'; grid-column: 2; grid-row: 1 / span 2; align-self: center; color: var(--blue); font-size: 14px; }
-  .sticky-toc.is-open .toc-toggle::after { content: '\25BE'; }
+  .sticky-toc .toc-toggle::after { content: '\25B4'; content: '\25B4' / ''; grid-column: 2; grid-row: 1 / span 2; align-self: center; color: var(--blue); font-size: 14px; }
+  .sticky-toc.is-open .toc-toggle::after { content: '\25BE'; content: '\25BE' / ''; }
   .sticky-toc .toc-panel { display: none; order: -1; flex: 1 0 100%; padding: 8px 0 10px; border-bottom: 1px solid var(--line); }
   .sticky-toc.is-open .toc-panel { display: block; }
   .sticky-toc .toc-list { max-height: min(60vh, 520px); }
