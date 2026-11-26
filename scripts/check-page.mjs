@@ -58,7 +58,7 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
   const used = new Set(fns(allText(d)));
   for (const k of used) if (k < 1 || k > n) fail.push(`footnote [^${k}] points at no source`);
   const unused = (d.sources || []).map((_, i) => i + 1).filter((k) => !used.has(k));
-  if (unused.length) warn.push(`sources never cited: ${unused.join(', ')}`);
+  if (unused.length) fail.push(`sources never cited: ${unused.join(', ')}; cite each source on the page or drop it from the list`);
   // Every sentence-bearing prose field should carry a footnote
   const prose = [['summary', d.summary], ...(d.humanRole || []).map((x, i) => [`humanRole ${i + 1}`, x]),
     ...(d.watchOuts || []).map((x, i) => [`watchOut ${i + 1}`, x]), ...(d.faq || []).map((x, i) => [`faq ${i + 1}`, x.a]),

@@ -8,24 +8,24 @@
  "industry": "finance and accounts payable",
  "summary": "OCR only turns an invoice into text; AI AP automation also codes it, matches it to the purchase order (PO) and routes it for approval[^27][^21]. Reading costs cents[^10][^11]. Money leaks in two places: exceptions, about 1 invoice in 5[^8], and fake bank-change requests[^12].",
  "humanRole": [
-  "AP specialist: clears the exceptions, about 1 invoice in 5, and makes the call the tool only flags.[^8][^1] Keep three-way match (invoice, PO and receipt agree) on; Washington's state auditor says it \"should not be eliminated in order to save time.\"[^49]",
-  "Supplier-list owner, not the paying clerk: adds suppliers and approves any bank-detail change.[^48][^50] Each change gets a call-back on a number already on file, never one from the request.[^50][^12]",
-  "AP manager or treasury: releases payment, and is never the person who entered the invoice.[^48][^49] Federal standards split approving, recording and paying so no one person controls a payment; small teams can use other checks instead.[^51][^48]",
-  "Controller: owns fraud monitoring on ACH (US bank-transfer) payments. Since June 2026, Nacha, which runs ACH, requires every business that sends ACH payments to have risk-based fraud checks, covering vendor impersonation.[^52][^53]"
+  "AP specialist: clears the exceptions, about 1 invoice in 5, and makes the call the tool only flags.[^8][^1] Keep three-way match (invoice, PO and receipt agree) on; Washington's state auditor says it \"should not be eliminated in order to save time.\"[^48]",
+  "Supplier-list owner, not the paying clerk: adds suppliers and approves any bank-detail change.[^47][^49] Each change gets a call-back on a number already on file, never one from the request.[^49][^12]",
+  "AP manager or treasury: releases payment, and is never the person who entered the invoice.[^47][^48] Federal standards split approving, recording and paying so no one person controls a payment; small teams can use other checks instead.[^50][^47]",
+  "Controller: owns fraud monitoring on ACH (US bank-transfer) payments. Since June 2026, Nacha, which runs ACH, requires every business that sends ACH payments to have risk-based fraud checks, covering vendor impersonation.[^51][^52]"
  ],
  "teamAfter": [
   "Exceptions become the main job. Ardent calls them the biggest single reason AP costs are not lower, and they hit about 1 invoice in 5.[^1][^8]",
-  "Fewer \"where's my payment?\" calls: AP staff spend 21.9% to 29.4% of their time on supplier questions.[^1][^56] Ardent's top-performing teams spend about half as much, and exceptions cause much of it.[^1]",
-  "Fraud checks: most AP teams already help prevent fraud, 72% heavily and 79% at least moderately.[^56][^55] Ardent calls AP \"often the last line of defense against fraud.\"[^55]",
-  "Analysis: BLS expects clerks to take on \"a more analytical and advisory role\" as software automates routine tasks.[^54] Among US firms using AI, 66% use it only to help staff; 2% saw AI-related employment fall.[^57]"
+  "Fewer \"where's my payment?\" calls: AP staff spend 21.9% to 29.4% of their time on supplier questions.[^1][^55] Ardent's top-performing teams spend about half as much, and exceptions cause much of it.[^1]",
+  "Fraud checks: most AP teams already help prevent fraud, 72% heavily and 79% at least moderately.[^55][^54] Ardent calls AP \"often the last line of defense against fraud.\"[^54]",
+  "Analysis: BLS expects clerks to take on \"a more analytical and advisory role\" as software automates routine tasks.[^53] Among US firms using AI, 66% use it only to help staff; 2% saw AI-related employment fall.[^56]"
  ],
  "index": true,
  "verdict": [
   "The money leaks in exceptions: about 1 invoice in 5 needs a person.[^8][^1]",
   "Buy an AP suite such as BILL, Ramp or Tipalti to run approvals and payments[^5][^6].",
   "Build AI only for the gaps, such as exception triage and holds on bank-detail changes[^8][^12].",
-  "Benchmark any tool on 50 of your own invoices: look-alike tables fooled 7 of 10 tools in our test.[^9][^61]",
-  "Treat any \"new bank account\" request as fraud until you call the supplier back on a number already on file.[^50][^12]"
+  "Benchmark any tool on 50 of your own invoices: look-alike tables fooled 7 of 10 tools in our test.[^9][^60]",
+  "Treat any \"new bank account\" request as fraud until you call the supplier back on a number already on file.[^49][^12]"
  ],
  "onPage": [
   {
@@ -202,7 +202,7 @@
     "AI reads it and shows where on the page each value came from",
     "AI compares it with the PO, the receipt that Receiving logged and the supplier record",
     "AI flags any bank-detail change and holds the payment",
-    "The person who owns the supplier list, not the paying clerk, calls the supplier back on a number already on file.[^50][^12]",
+    "The person who owns the supplier list, not the paying clerk, calls the supplier back on a number already on file.[^49][^12]",
     "AP clerk releases it to approval; Controller approves over limit"
    ],
    "cost": "Reading an invoice costs cents with a cloud invoice reader[^10][^11], against a median $6.00 to an average $9.90 to process one invoice today[^2][^8]. The real cost is building and owning the hold rules; we quote that per job and don't publish a price here."
@@ -282,7 +282,7 @@
   },
   {
    "title": "Public data you can benchmark on",
-   "intro": "CORD and SROIE are receipts, not invoices; FATURA is synthetic invoices[^45][^46][^47]. Useful to compare tools; your own invoices are the real test.",
+   "intro": "CORD and SROIE are receipts, not invoices; FATURA is synthetic invoices[^44][^45][^46]. Useful to compare tools; your own invoices are the real test.",
    "headers": [
     "Dataset",
     "Size",
@@ -293,24 +293,24 @@
      "name": "CORD (Clova AI)",
      "url": "https://github.com/clovaai/cord",
      "cells": [
-      "1,000 receipts with labels[^45]",
-      "CC BY 4.0[^45]"
+      "1,000 receipts with labels[^44]",
+      "CC BY 4.0[^44]"
      ]
     },
     {
      "name": "FATURA",
      "url": "https://zenodo.org/record/8261508",
      "cells": [
-      "10,000 synthetic invoice images, 24 field types[^46]",
-      "CC BY 4.0[^46]"
+      "10,000 synthetic invoice images, 24 field types[^45]",
+      "CC BY 4.0[^45]"
      ]
     },
     {
      "name": "SROIE (ICDAR 2019)",
      "url": "https://github.com/zzzDavid/ICDAR-2019-SROIE",
      "cells": [
-      "1,000 scanned receipts[^47]",
-      "Data licence not stated[^47]"
+      "1,000 scanned receipts[^46]",
+      "Data licence not stated[^46]"
      ]
     }
    ]
@@ -321,7 +321,7 @@
    "name": "Germany: B2B e-invoicing",
    "url": "https://ec.europa.eu/digital-building-blocks/sites/display/DIGITAL/eInvoicing%2Bin%2BGermany",
    "status": "Issuing from 1 Jan 2027 (over €800,000 turnover)",
-   "what": "All businesses must be able to receive EN 16931 e-invoices since 1 Jan 2025. Larger firms must issue them from 2027 and nearly all from 2028[^36][^37][^42]."
+   "what": "All businesses must be able to receive EN 16931 e-invoices since 1 Jan 2025. Larger firms must issue them from 2027 and nearly all from 2028[^36][^37][^41]."
   },
   {
    "name": "France: B2B e-invoicing",
@@ -333,7 +333,7 @@
    "name": "United States",
    "url": "https://fedpaymentsimprovement.org/strategic-initiatives/payments-efficiency/electronic-invoices",
    "status": "No mandate",
-   "what": "No federal or state B2B e-invoicing mandate[^43]. A voluntary network, DBNAlliance, grew out of an industry pilot the Federal Reserve supported[^44][^43]."
+   "what": "No federal or state B2B e-invoicing mandate[^42]. A voluntary network, DBNAlliance, grew out of an industry pilot the Federal Reserve supported[^43][^42]."
   }
  ],
  "howToTest": [
@@ -353,13 +353,13 @@
  },
  "watchOuts": [
   "The price you see is rarely the price you pay. Matching, payments, more entities and ERP sync are often add-ons[^5][^16][^7][^23].",
-  "Payment fraud rides on invoices[^12][^13]: 74% of US organizations experienced business email compromise in 2025, the AFP found[^4][^15]. Check any change to bank details by calling the supplier on a number already on file.[^50][^12]",
+  "Payment fraud rides on invoices[^12][^13]: 74% of US organizations experienced business email compromise in 2025, the AFP found[^4][^15]. Check any change to bank details by calling the supplier on a number already on file.[^49][^12]",
   "A tool that reads the subtotal as the total looks right at a glance. In our benchmark, 7 of 10 tools picked the wrong one of two look-alike tables[^9]."
  ],
  "faq": [
   {
    "q": "What is accounts payable automation?",
-   "a": "Software that reads supplier invoices, codes them, matches them to the purchase order and routes them for approval and payment.[^19][^27] AI does the reading and suggests the coding; your AP team still clears exceptions and approves payments.[^8][^48]"
+   "a": "Software that reads supplier invoices, codes them, matches them to the purchase order and routes them for approval and payment.[^19][^27] AI does the reading and suggests the coding; your AP team still clears exceptions and approves payments.[^8][^47]"
   },
   {
    "q": "How much does AP automation cost?",
@@ -367,15 +367,15 @@
   },
   {
    "q": "Will AI replace accounts payable?",
-   "a": "No, AI changes the accounts payable job more than it removes it. Among US firms using AI, 66% use it only to help staff, and 2% saw AI-related employment fall.[^57] BLS still projects bookkeeping and accounting clerk jobs to fall 6% by 2035, with about 144,100 openings a year.[^54]"
+   "a": "No, AI changes the accounts payable job more than it removes it. Among US firms using AI, 66% use it only to help staff, and 2% saw AI-related employment fall.[^56] BLS still projects bookkeeping and accounting clerk jobs to fall 6% by 2035, with about 144,100 openings a year.[^53]"
   },
   {
    "q": "How long does AP automation take to set up?",
-   "a": "Vendors say weeks, not months: AvidXchange says many customers are live in as little as six weeks; Ramp says 2 to 12.[^19][^58] Ramp says most of that time goes to cleaning supplier data and settling who approves what.[^58] Tipalti says technical setup takes days, but company checks and account setup can take several weeks.[^59]"
+   "a": "Vendors say weeks, not months: AvidXchange says many customers are live in as little as six weeks; Ramp says 2 to 12.[^19][^57] Ramp says most of that time goes to cleaning supplier data and settling who approves what.[^57] Tipalti says technical setup takes days, but company checks and account setup can take several weeks.[^58]"
   },
   {
    "q": "Can I trust AP automation accuracy claims?",
-   "a": "Only after a test on your own invoices.[^61] In a Fraunhofer study, the best model got 96.5% of fields right on clean invoices but 87.5% on scanned receipts.[^60] In our own test, two look-alike tables fooled 7 of 10 tools.[^9]"
+   "a": "Only after a test on your own invoices.[^60] In a Fraunhofer study, the best model got 96.5% of fields right on clean invoices but 87.5% on scanned receipts.[^59] In our own test, two look-alike tables fooled 7 of 10 tools.[^9]"
   }
  ],
  "resources": [
@@ -592,11 +592,6 @@
    "what": "An e-invoice must follow a standard structured format; scanned paper or an ordinary PDF sent by email no longer complies."
   },
   {
-   "name": "European Commission, ViDA adoption",
-   "url": "https://taxation-customs.ec.europa.eu/news/adoption-vat-digital-age-package-2025-03-11_en",
-   "what": "ViDA adopted 11 March 2025; member states can introduce mandatory e-invoicing; digital reporting for cross-border B2B from 1 July 2030."
-  },
-  {
    "name": "PwC Germany on the third BMF e-invoice letter",
    "url": "https://blogs.pwc.de/en/steuern-und-recht/article/257709/drittes-schreiben-des-bundesfinanzministeriums-zur-elektronischen-rechnung",
    "what": "Germany: issuing required from 2027 above €800,000 and from 2028 for all; EU-wide e-invoicing for cross-border deals expected from 1 July 2030."
@@ -748,12 +743,12 @@
  "recipesTitle": "Where do you start automating accounts payable?",
  "testTitle": "How do you benchmark an AP tool on your own invoices?",
  "answers": {
-  "example": "AI reads the emailed invoice, pulls out the supplier, lines and totals, matches them to the purchase order and receipt, codes them, and posts a draft bill to your ERP[^20][^25][^34]. Anything off, like new bank details, waits for a person to call the supplier on a number already on file[^12][^50].",
-  "human-role": "Your AP team stays in charge at four points: clearing exceptions, approving supplier bank-detail changes, releasing payments and owning fraud checks[^8][^50][^48][^52]. The tool flags; a person makes the call[^8].",
-  "team-after": "After AI takes over reading and coding, your AP team spends its time on exceptions, supplier questions, fraud checks and analysis[^27][^1][^56][^54].",
+  "example": "AI reads the emailed invoice, pulls out the supplier, lines and totals, matches them to the purchase order and receipt, codes them, and posts a draft bill to your ERP[^20][^25][^34]. Anything off, like new bank details, waits for a person to call the supplier on a number already on file[^12][^49].",
+  "human-role": "Your AP team stays in charge at four points: clearing exceptions, approving supplier bank-detail changes, releasing payments and owning fraud checks[^8][^49][^47][^51]. The tool flags; a person makes the call[^8].",
+  "team-after": "After AI takes over reading and coding, your AP team spends its time on exceptions, supplier questions, fraud checks and analysis[^27][^1][^55][^53].",
   "recipes": "Most small and mid-size companies should start by buying an AP suite and switching on its AI[^5][^6][^7]. Add your own AI check only where exceptions or fraud still get through; use capture alone if your ERP already runs approvals and payment[^8][^10].",
-  "rules": "Germany and France now require B2B e-invoices, and the US has no mandate[^36][^38][^43]. France made large and mid-size firms issue them from 1 Sep 2026; Germany's larger firms must from 1 Jan 2027[^38][^36].",
-  "benchmark": "Run each tool on 50 of your own recent invoices, scored against answers you wrote down first, and count wrong values, missed bank-detail changes and missed duplicates[^9][^61]. Record cost per invoice and exception rate beforehand, so you can measure the saving[^8].",
+  "rules": "Germany and France now require B2B e-invoices, and the US has no mandate[^36][^38][^42]. France made large and mid-size firms issue them from 1 Sep 2026; Germany's larger firms must from 1 Jan 2027[^38][^36].",
+  "benchmark": "Run each tool on 50 of your own recent invoices, scored against answers you wrote down first, and count wrong values, missed bank-detail changes and missed duplicates[^9][^60]. Record cost per invoice and exception rate beforehand, so you can measure the saving[^8].",
   "what-goes-wrong": "Accounts payable automation goes wrong in three places: add-ons that raise the price, fake bank-detail changes riding on invoices, and tools that read the subtotal as the total[^5][^16][^12][^9].",
   "buy-or-build": "Buy an AP suite for the workflow, and build only the checks it misses, such as fraud holds and duplicate-invoice checks[^5][^6][^7][^22].",
   "something-else": "An AP suite is the wrong fit when your accounting software's built-in bill capture already handles simple bills, or when you need extracted data rather than a workflow[^33][^34][^29][^10]. Many entities or currencies call for a global suite instead[^7][^21][^24][^23]."

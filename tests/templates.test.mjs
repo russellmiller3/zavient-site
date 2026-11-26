@@ -69,6 +69,8 @@ test('the publish gate passes a complete page and names each broken rule', () =>
   assert.match(fails({ reviews: [...good().reviews].reverse() }), /ICP reviews/);
   assert.match(fails({ summary: 'TODO: write this' }), /TODO/);
   assert.match(fails({ watchOuts: ['No footnote on this one.', 'b [^8]', 'c [^9]'] }), /watchOut 1 has no footnote/);
+  // Every listed source must be cited somewhere on the page (26 Nov 2026).
+  assert.match(fails({ sources: [...good().sources, { name: 'Extra', url: 'https://extra.example/', what: 'never cited' }] }), /sources never cited: 11/);
   // Answer-first rule (Russell, 26 Nov 2026): a question heading followed by an example, not an answer, fails.
   assert.match(fails({ answers: { ...good().answers, example: undefined } }), /answer first: example .*no answer/);
   assert.match(fails({ faq: [{ q: 'Can AI reconcile accounts?', a: 'Matching is mostly solved [^1].' }, ...good().faq.slice(1)] }), /Yes or No/);

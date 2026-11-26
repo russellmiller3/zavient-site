@@ -8,15 +8,15 @@
  "industry": "lending",
  "summary": "AI credit scoring predicts whether an applicant will repay[^5], using the application, a credit bureau report and sometimes bank-account cash-flow data[^26][^29]. When it says no, it must say why in plain words[^1][^35]. The model is the easy part; decline reasons[^33], bias checks[^31] and examiner paperwork[^7] make or break it.",
  "humanRole": [
-  "Chief credit officer: sets the score cutoffs and who may override them.[^49][^51] Examiners ask for every cutoff, the reason for it and each change.[^51]",
-  "Underwriter: decides the files between the approve and decline cutoffs, and any override.[^49][^52] Each override records the approving officer and the reason.[^49][^43]",
+  "Chief credit officer: sets the score cutoffs and who may override them.[^48][^50] Examiners ask for every cutoff, the reason for it and each change.[^50]",
+  "Underwriter: decides the files between the approve and decline cutoffs, and any override.[^48][^51] Each override records the approving officer and the reason.[^48][^43]",
   "Compliance officer: signs off the map from model drivers to decline reasons.[^33] Owns each decline letter: specific reasons that match what the model scored, within 30 days.[^1]",
   "Model validator, independent of whoever built the model: checks it before first use.[^7] A small lender can hire an outside reviewer, but still owns the result.[^7][^40]"
  ],
  "teamAfter": [
-  "Underwriters work the hard files: the gray zone between cutoffs and the overrides.[^49] For simple consumer loans, BLS notes, underwriting may be fully automated.[^53]",
-  "Credit officers read a monthly override report: how many, why, who approved them and how those loans perform.[^49][^43]",
-  "Compliance checks overrides for fair lending. Examiners test declines above the cutoff and approvals below it separately for unequal treatment.[^50][^51]",
+  "Underwriters work the hard files: the gray zone between cutoffs and the overrides.[^48] For simple consumer loans, BLS notes, underwriting may be fully automated.[^52]",
+  "Credit officers read a monthly override report: how many, why, who approved them and how those loans perform.[^48][^43]",
+  "Compliance checks overrides for fair lending. Examiners test declines above the cutoff and approvals below it separately for unequal treatment.[^49][^50]",
   "Modelers watch whether the model still performs as products and borrowers change.[^7] When it drifts, they adjust or rebuild it.[^7]"
  ],
  "index": true,
@@ -25,7 +25,7 @@
   "Start with a scorecard: it gives the decline reasons US law requires[^1][^16].",
   "Move to a complex model only if it beats the scorecard and your validators can check it[^7][^33].",
   "Use AI to read loan documents, not to predict defaults; standard models predict better[^6][^13].",
-  "The software is free; the real cost is your team's time on data and decline reasons[^48][^33]."
+  "The software is free; the real cost is your team's time on data and decline reasons[^47][^33]."
  ],
  "onPage": [
   {
@@ -86,7 +86,7 @@
  ],
  "ownData": {
   "title": "What are a lender's options for getting an AI credit model?",
-  "intro": "A lender can buy a platform, hire a builder for a model it owns, or build in-house with its own modelers[^22][^46]. The price column comes from our check of six platforms on 26 November 2026[^22]. Whichever you pick, the decline reasons stay your job[^1][^40].",
+  "intro": "A lender can buy a platform, hire a builder for a model it owns, or build in-house with its own modelers[^22][^45]. The price column comes from our check of six platforms on 26 November 2026[^22]. Whichever you pick, the decline reasons stay your job[^1][^40].",
   "headers": [
    "Option",
    "Fits when",
@@ -103,13 +103,13 @@
    [
     "Hire a builder for a model you own",
     "Your loan history is your edge, but you have no modelers",
-    "Quoted per job; the core software is free[^46][^48]",
+    "Quoted per job; the core software is free[^45][^47]",
     "The model and its documentation, which examiners judge[^7]"
    ],
    [
     "Build in-house",
     "You already have modelers and someone to validate their work",
-    "Your team's time; the software is free[^46][^47]",
+    "Your team's time; the software is free[^45][^46]",
     "Everything, including bias checks before launch and after[^31]"
    ]
   ],
@@ -122,7 +122,7 @@
  "recipes": [
   {
    "name": "1. Small lender: explainable scorecard",
-   "when": "Credit unions and community banks with a small analytics team, or an outside builder. The software is free[^46][^47], and the points table shows each decline reason directly[^16].",
+   "when": "Credit unions and community banks with a small analytics team, or an outside builder. The software is free[^45][^46], and the points table shows each decline reason directly[^16].",
    "flow": [
     "IT: pull the application and credit bureau report",
     "Modeler: group each input into ranges and give each range points (optbinning)",
@@ -133,7 +133,7 @@
     "Compliance: one named person sends each decline letter",
     "Modeler: check each quarter for accuracy drift and bias (fairlearn)"
    ],
-   "cost": "Free open-source software[^46][^47]; the build is quoted per job, and after launch the cost is your team's review time."
+   "cost": "Free open-source software[^45][^46]; the build is quoted per job, and after launch the cost is your team's review time."
   },
   {
    "name": "2. Mid-size lender: stronger model with plain-English reasons",
@@ -150,7 +150,7 @@
     "Compliance: one named person sends each decline letter",
     "Modeler: check monthly against a simpler model that shows each input's effect (EBM)"
    ],
-   "cost": "The model software can be open source, such as InterpretML's EBM[^48]. Cash-flow data and most decision platforms are quoted per contract[^25][^29][^18][^19]; of the platforms we checked, only Experian shows a public price[^22]."
+   "cost": "The model software can be open source, such as InterpretML's EBM[^47]. Cash-flow data and most decision platforms are quoted per contract[^25][^29][^18][^19]; of the platforms we checked, only Experian shows a public price[^22]."
   },
   {
    "name": "3. Document-heavy files: AI reads, a normal model scores",
@@ -334,18 +334,18 @@
  ],
  "buyVsBuild": {
   "buy": "Buy a platform when you have no modelling team, need a decision engine anyway, and are happy to use the vendor's models and data partners. Expect a quote, not a price list[^17][^18][^19].",
-  "build": "Build when your own loan history is your edge. The main scorecard, explainable-model and bias-check software is free and open source[^46][^48][^47], and examiners judge any model by its validation and documentation[^7]. The work is data, validation and reason codes[^33]."
+  "build": "Build when your own loan history is your edge. The main scorecard, explainable-model and bias-check software is free and open source[^45][^47][^46], and examiners judge any model by its validation and documentation[^7]. The work is data, validation and reason codes[^33]."
  },
  "watchOuts": [
   "A credit report's \"key factors\" list does not count as your decline reasons[^1]. Your model must produce its own[^1][^35].",
   "SHAP shows which inputs drove a score, but it does not write Regulation B reasons, and some versions miss the true ones[^33][^5]. Group related inputs into a reason-code map that compliance signs off[^33].",
-  "Models trained on past lending data can carry past bias forward[^31][^32]. Check approval gaps before launch and every quarter, with BISG estimates where you can't ask race[^36][^37] and a tool such as fairlearn[^47].",
+  "Models trained on past lending data can carry past bias forward[^31][^32]. Check approval gaps before launch and every quarter, with BISG estimates where you can't ask race[^36][^37] and a tool such as fairlearn[^46].",
   "Vendor lift numbers such as more approvals are measured on the vendor's chosen data[^17][^27][^28]. Ask for a benchmark on your own loans."
  ],
  "faq": [
   {
    "q": "Is it legal to use AI for credit decisions?",
-   "a": "Yes, under the same rules as any scoring model.[^1][^51] Each declined applicant gets specific reasons that match what the model scored.[^1] The OCC rates machine-learning scoring as the highest fair-lending risk.[^51]"
+   "a": "Yes, under the same rules as any scoring model.[^1][^50] Each declined applicant gets specific reasons that match what the model scored.[^1] The OCC rates machine-learning scoring as the highest fair-lending risk.[^50]"
   },
   {
    "q": "Is AI credit scoring more accurate than a scorecard?",
@@ -353,15 +353,15 @@
   },
   {
    "q": "Can AI credit scoring be biased?",
-   "a": "Yes: models trained on past lending can carry past bias forward.[^31] Credit scores are already 5 to 10% less accurate for minority and low-income borrowers.[^32] Test approval gaps before launch and every quarter.[^47][^37]"
+   "a": "Yes: models trained on past lending can carry past bias forward.[^31] Credit scores are already 5 to 10% less accurate for minority and low-income borrowers.[^32] Test approval gaps before launch and every quarter.[^46][^37]"
   },
   {
    "q": "Do people still make the final call on a loan?",
-   "a": "Yes, for most loans: few lenders let the score decide alone, and files between two cutoffs get a manual review.[^49] In the EU, the people overseeing credit-scoring AI must be able to override it.[^52][^11]"
+   "a": "Yes, for most loans: few lenders let the score decide alone, and files between two cutoffs get a manual review.[^48] In the EU, the people overseeing credit-scoring AI must be able to override it.[^51][^11]"
   },
   {
    "q": "Will AI replace loan officers?",
-   "a": "Not on current evidence: BLS expects loan officer jobs to grow 1% from 2025 to 2035, with about 17,100 openings a year.[^53] Most lenders' software already recommends; loan officers review it and decide.[^53] Among US firms using AI, 66% use it only to help staff; 2% saw AI-related employment fall.[^54]"
+   "a": "Not on current evidence: BLS expects loan officer jobs to grow 1% from 2025 to 2035, with about 17,100 openings a year.[^52] Most lenders' software already recommends; loan officers review it and decide.[^52] Among US firms using AI, 66% use it only to help staff; 2% saw AI-related employment fall.[^53]"
   }
  ],
  "resources": [
@@ -603,11 +603,6 @@
    "what": "Reject inference makes assumptions about how rejected applicants would have performed had they been accepted; a held-out sample can be scored to test a new model."
   },
   {
-   "name": "Zavient, how we work",
-   "url": "https://zavient.com/about.html#engagements",
-   "what": "How a Zavient engagement runs: a fixed-scope first sprint, then optional ongoing advisory."
-  },
-  {
    "name": "OptBinning, project repository",
    "url": "https://github.com/guillermo-navas-palencia/optbinning",
    "what": "Open-source scorecard library, released under the Apache 2.0 licence."
@@ -712,8 +707,8 @@
   "benchmark": "Fit a scorecard, an EBM and LightGBM on the same booked loans, compare them on held-out loans, price the lift at your cutoff, and run a bias check[^43][^37]. Pick the simplest model within a point or two of the best.",
   "what-goes-wrong": "AI credit scoring goes wrong when lenders use a credit report's key factors or raw SHAP output as decline reasons, carry past bias forward, or trust vendor lift numbers[^1][^33][^31][^17].",
   "something-else": "A lender should pick something else when it has no data science team, many thin-file applicants, or mostly document-reading work[^17][^32][^34]. Those point to a vendor platform, cash-flow data, or document extraction first[^18][^26][^34].",
-  "human-role": "The underwriter keeps each loan decision between the approve and decline cutoffs, and any override, inside rules the chief credit officer sets[^49][^52]. Compliance owns each decline letter, and an independent validator checks the model before first use[^1][^7].",
-  "team-after": "After AI scores the file, underwriters work the gray zone and overrides, credit officers review a monthly override report, compliance tests overrides for fair lending, and modelers watch for drift[^49][^43][^50][^7].",
-  "buy-or-build": "Buy a platform when you have no modelling team and need a decision engine anyway; build your own model when your loan history is your edge[^17][^18][^7]. The scorecard, explainable-model and bias-check software for building is free and open source[^46][^48][^47]."
+  "human-role": "The underwriter keeps each loan decision between the approve and decline cutoffs, and any override, inside rules the chief credit officer sets[^48][^51]. Compliance owns each decline letter, and an independent validator checks the model before first use[^1][^7].",
+  "team-after": "After AI scores the file, underwriters work the gray zone and overrides, credit officers review a monthly override report, compliance tests overrides for fair lending, and modelers watch for drift[^48][^43][^49][^7].",
+  "buy-or-build": "Buy a platform when you have no modelling team and need a decision engine anyway; build your own model when your loan history is your edge[^17][^18][^7]. The scorecard, explainable-model and bias-check software for building is free and open source[^45][^47][^46]."
  }
 }
