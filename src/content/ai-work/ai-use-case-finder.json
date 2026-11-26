@@ -1,0 +1,320 @@
+{
+  "title": "AI use case finder: where should your team start with AI?",
+  "description": "Pick your industry, team and company size. Get the 3 to 5 best first AI uses, ranked, with proof, effort, data and risk. No email needed.",
+  "type": "tool",
+  "templateVersion": 1,
+  "topic": "AI use case finder",
+  "job": "AI use case finder",
+  "industry": "any industry",
+  "index": false,
+  "verdict": [
+    "Start with frequent work a person checks, like drafting, document answers or support replies, where trials measured gains[^1][^2].",
+    "Buy or set up a tool before you build; bought tools reached daily use about twice as often[^6][^7].",
+    "Plan gains task by task: single tasks gain most, while US workers overall saved about 1.6% of hours[^2][^4].",
+    "Never start with hiring, credit or insurance pricing; regulators name these uses as high risk[^10][^12].",
+    "Saved time mostly moves to other work: most users put it into other tasks, and hours held steady[^5][^16]."
+  ],
+  "onPage": [],
+  "headings": {},
+  "tool": {
+    "embed": "/tools/embed/ai-use-case-finder.html",
+    "steps": [
+      "Pick your industry. If yours is not listed, pick the closest one.",
+      "Pick the team you run, or your industry's core work.",
+      "Pick your company size. Under 100 people, builds score lower.",
+      "Read the ranked uses, best first. Open a card for its risk, effort and a 30-day measure.",
+      "Copy the link to share with your team, or bring your top pick to the free diagnostic."
+    ],
+    "method": [
+      "Score = peer interest × strength of proof × size of gain × ease × risk, scaled to 100. The weights are a Zavient estimate, shown in full below.",
+      "Proof: a randomized trial counts 1.0, a field study 0.9, a survey 0.75, a vendor claim 0.55 and no published measure 0.4. Trial gains often shrink in day-to-day work[^4][^5].",
+      "Ease: buy 1.0, set up 0.8, build 0.55. Bought tools reached daily use about twice as often as internal builds[^6][^7].",
+      "Peer interest: US job ads plus a tenth of monthly searches for the work, from our 25 Nov 2026 count. The count is rough and includes AI vendors hiring.",
+      "Size: under 100 people, builds count 0.8; at 250 or more, set-up and builds count 1.05. AI use rises with firm size, from 33% at 50-99 staff to 44% at 250 or more[^8][^9].",
+      "Risk: low 1.0, medium 0.8, high 0.6. A use regulators name as high risk is never ranked first[^10][^12]."
+    ]
+  },
+  "summary": "An AI use case finder ranks where AI can help a team first. AI drafts, reads and sorts, while people check, decide and sign off[^1][^2]. What makes or breaks it is picking frequent, well-defined work, then measuring one number for 30 days[^3][^7].",
+  "humanRole": [
+    "The team lead, such as the controller, claims manager or ops lead, owns each AI output that leaves the team. AI drafts; a person checks and sends[^2][^14].",
+    "Decisions about people's jobs, credit or insurance stay with people. Regulators name these uses as high risk and expect human oversight[^10][^13].",
+    "Newer staff gain the most from AI help, so experienced people move to coaching, exceptions and judgment calls[^1][^5].",
+    "The COO or division head signs off the pilot and the one number it must move. Many AI projects stop after the proof of concept for lack of that proof[^7][^6]."
+  ],
+  "ownData": {
+    "title": "Which AI work are US employers hiring for right now?",
+    "intro": "We counted US job ads posted in the 7 days to 25 Nov 2026 that mention each type of AI work. The finder uses these counts as one part of peer interest. Below are the largest counts that map to uses in the finder.",
+    "headers": [
+      "AI work",
+      "US job ads, 7 days",
+      "Where it shows in the finder"
+    ],
+    "rows": [
+      [
+        "Legal research",
+        "7,468",
+        "Law firms, matter work"
+      ],
+      [
+        "Contract review",
+        "6,429",
+        "Law firms; compliance, risk and legal"
+      ],
+      [
+        "Tax document processing",
+        "5,134",
+        "Professional services, client delivery"
+      ],
+      [
+        "E-discovery",
+        "4,393",
+        "Law firms, matter work"
+      ],
+      [
+        "AI customer service agents",
+        "4,097",
+        "Customer service, every industry"
+      ],
+      [
+        "Credit risk modeling",
+        "3,298",
+        "Banks and lenders, flagged high risk"
+      ],
+      [
+        "Search over company documents",
+        "2,601",
+        "Operations, IT and core work"
+      ],
+      [
+        "Route optimization",
+        "2,228",
+        "Logistics and distribution"
+      ],
+      [
+        "Production scheduling",
+        "1,607",
+        "Manufacturing"
+      ],
+      [
+        "Account reconciliation",
+        "1,509",
+        "Finance and accounting"
+      ]
+    ],
+    "note": "Zavient count, 25 Nov 2026, one 7-day window. The match is all words in any order, so some ads match loosely. Ads include AI vendors and model-training firms hiring experts, which likely inflates the legal counts."
+  },
+  "faq": [
+    {
+      "q": "Where should a company our size start with AI?",
+      "a": "Start with frequent, well-defined work that a person checks, like drafting, document answers or support replies[^1][^2]. Buy or set up a tool before you build. Bought tools reached daily use about twice as often as internal builds[^6]."
+    },
+    {
+      "q": "How much time does AI really save?",
+      "a": "On single tasks, trials show 15% to 40%: support agents resolved 15% more issues per hour, and writing took 40% less time[^1][^2]. Across all US work hours, the saving was about 1.6% in 2025, so plan task by task[^4]."
+    },
+    {
+      "q": "What happens to the time AI saves our people?",
+      "a": "It mostly goes to other work. In a large Danish study, 85% of users moved saved time to other tasks, and hours and earnings held steady[^5]. Newer staff gained the most from AI help[^1]."
+    },
+    {
+      "q": "Should we buy, set up or build an AI tool?",
+      "a": "At 40 to 500 staff, buy or set up a tool in most cases. Internal builds reached daily use about half as often as bought tools[^6]. At least 30% of gen AI projects were expected to be dropped after proof of concept[^7]."
+    },
+    {
+      "q": "Which AI uses carry legal risk?",
+      "a": "Screening job applicants, scoring credit and pricing life or health insurance are high risk under the EU AI Act, with duties from 2 Dec 2027[^10][^11]. New York City requires a yearly bias audit for hiring tools[^12]. About 30 US states expect insurers to keep a written AI program[^13]."
+    },
+    {
+      "q": "What data do we need to start?",
+      "a": "Usually examples of work you already do: past invoices, tickets, contracts or estimates. Each card in the finder lists the data that use needs. Poor data quality is a top reason gen AI projects stop after a pilot[^7]."
+    },
+    {
+      "q": "How does the finder decide which use comes first?",
+      "a": "Each use gets a score from peer interest, strength of proof, size of gain, ease and risk. Proof from a randomized trial counts most, because trial gains often shrink in daily work[^4][^5]. A use regulators name as high risk is never ranked first[^10]."
+    }
+  ],
+  "pickElse": [
+    "You already know the use you want: price it with the AI project cost estimator, then check payback with the AI ROI calculator[^6].",
+    "Your data sits in paper files or many spreadsheets: take the AI readiness check first, since poor data stops many pilots[^7].",
+    "The work decides on people's jobs, credit or insurance: get legal review before any tool, since regulators name these uses as high risk[^10][^12]."
+  ],
+  "resources": [
+    {
+      "name": "US Census Bureau, Business Trends and Outlook Survey",
+      "url": "https://www.census.gov/hfp/btos",
+      "what": "Every two weeks, the share of US businesses using AI, by sector and size."
+    },
+    {
+      "name": "EU AI Act Service Desk, Annex III high-risk uses",
+      "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3",
+      "what": "The official list of AI uses the EU treats as high risk, including hiring and credit."
+    },
+    {
+      "name": "NYC Department of Consumer and Worker Protection, automated employment decision tools",
+      "url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page",
+      "what": "What a yearly bias audit of a hiring tool must cover."
+    },
+    {
+      "name": "NAIC, adoption map of the model bulletin on insurers' use of AI",
+      "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
+      "what": "Which US states expect insurers to keep a written AI program."
+    }
+  ],
+  "stats": [
+    {
+      "num": "15%",
+      "label": "more support issues resolved per hour with AI help, most for newer agents[^1]",
+      "source": "Brynjolfsson, Li and Raymond, QJE, 2025"
+    },
+    {
+      "num": "40%",
+      "label": "less time on writing tasks, with 18% higher quality, in a randomized trial[^2]",
+      "source": "Noy and Zhang, Science, 2023"
+    },
+    {
+      "num": "1.6%",
+      "label": "of all US work hours saved by gen AI in 2025, counting nonusers[^4]",
+      "source": "Federal Reserve Bank of St. Louis, 2025"
+    },
+    {
+      "num": "85%",
+      "label": "of users moved time saved by AI to other tasks[^5]",
+      "source": "Humlum and Vestergaard, NBER, 2026"
+    },
+    {
+      "num": "7.5 days",
+      "label": "faster month-end close for accountants using AI, with time moved from data entry to review[^14]",
+      "source": "Choi and Xie, Journal of Accounting Research, 2026"
+    },
+    {
+      "num": "30%",
+      "label": "less time on legal document review with AI highlighting, with no loss of quality[^15]",
+      "source": "Nielsen et al., Journal of Empirical Legal Studies, 2024"
+    }
+  ],
+  "sources": [
+    {
+      "name": "Brynjolfsson, Li and Raymond, Generative AI at Work, Quarterly Journal of Economics, 2025",
+      "url": "https://academic.oup.com/qje/article/140/2/889/7990658",
+      "what": "AI help raised support issues resolved per hour by 15%, with the largest gains for newer agents."
+    },
+    {
+      "name": "Noy and Zhang, Experimental evidence on the productivity effects of generative AI, Science, 2023",
+      "url": "https://www.science.org/doi/10.1126/science.adh2586",
+      "what": "On writing tasks, AI cut time taken by 40% and raised quality by 18%."
+    },
+    {
+      "name": "Dell'Acqua et al., Navigating the jagged technological frontier, Organization Science, 2026",
+      "url": "https://pubsonline.informs.org/doi/10.1287/orsc.2025.21838",
+      "what": "Inside what AI does well, consultants were 25% faster with over 40% higher quality; outside it, 19 points less likely to be right."
+    },
+    {
+      "name": "Federal Reserve Bank of St. Louis, The state of generative AI adoption in 2025, Nov 2025",
+      "url": "https://www.stlouisfed.org/on-the-economy/2025/nov/state-generative-ai-adoption-2025",
+      "what": "Counting all workers, gen AI time savings equaled 1.6% of all work hours in 2025."
+    },
+    {
+      "name": "Humlum and Vestergaard, Still waters, rapid currents, NBER working paper 33777, revised 2026",
+      "url": "https://www.nber.org/system/files/working_papers/w33777/w33777.pdf",
+      "what": "85% of Danish chatbot users moved saved time to other tasks; no measurable change in earnings or hours."
+    },
+    {
+      "name": "MIT Project NANDA, The GenAI Divide: State of AI in Business 2025 (report copy)",
+      "url": "https://www.ictworks.org/wp-content/uploads/2025/09/AI_Business_2025.pdf",
+      "what": "Tools bought from specialist vendors succeeded about 67% of the time; internal builds about a third as often."
+    },
+    {
+      "name": "Gartner, 30% of generative AI projects will be abandoned after proof of concept, July 2024",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025",
+      "what": "At least 30% of gen AI projects expected to be dropped after proof of concept, citing poor data quality and unclear value."
+    },
+    {
+      "name": "US Census Bureau, Business Trends and Outlook Survey",
+      "url": "https://www.census.gov/hfp/btos",
+      "what": "Biweekly survey of US businesses, including the share that use AI to produce goods or services."
+    },
+    {
+      "name": "Lirium, summary of Census survey AI use by sector and size (vendor)",
+      "url": "https://lirium.ai/blog/census-ai-use-benchmark-small-business",
+      "what": "AI use by firm size: 33.2% at 50-99 staff, 40.0% at 100-249, 44.1% at 250 or more."
+    },
+    {
+      "name": "EU AI Act, Annex III high-risk uses (AI Act Service Desk)",
+      "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3",
+      "what": "Lists hiring and worker management, creditworthiness, and life and health insurance pricing as high-risk uses."
+    },
+    {
+      "name": "European Commission, AI Act overview and timeline",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+      "what": "Obligations for Annex III high-risk uses apply from 2 Dec 2027."
+    },
+    {
+      "name": "NYC Department of Consumer and Worker Protection, automated employment decision tools (Local Law 144)",
+      "url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page",
+      "what": "Employers using automated hiring tools in New York City need a yearly bias audit and must notify candidates."
+    },
+    {
+      "name": "NAIC, adoption map of the Model Bulletin on the Use of AI Systems by Insurers",
+      "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
+      "what": "About 30 states have adopted the bulletin, which expects a written AI program, governance and vendor checks."
+    },
+    {
+      "name": "Choi and Xie, Human + AI in accounting: early evidence from the field, Journal of Accounting Research, 2026",
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1111/1475-679X.70052",
+      "what": "Accountants using AI closed the monthly books 7.5 days faster and moved time from data entry to review."
+    },
+    {
+      "name": "Nielsen et al., Building a better lawyer: AI highlighting in legal document review, Journal of Empirical Legal Studies, 2024",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/jels.12396",
+      "what": "AI highlighting cut legal document review time by about 30% with no loss of quality."
+    },
+    {
+      "name": "OECD, Generative AI and the SME workforce, 2025",
+      "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/11/generative-ai-and-the-sme-workforce_83bafdfb/2d08b99d-en.pdf",
+      "what": "Most small and mid-sized firms using gen AI reported no change in how many staff they need."
+    }
+  ],
+  "related": [
+    "ai-roi-calculator",
+    "ai-project-cost-estimator",
+    "ai-invoice-processing",
+    "account-reconciliation-automation",
+    "ai-document-processing",
+    "ai-underwriting",
+    "ai-credit-scoring",
+    "ai-consulting-services"
+  ],
+  "offer": {
+    "heading": "Not sure which AI use your team should start with? Get a free diagnostic",
+    "body": "Want the detailed plan behind your result? Book the free 30-minute diagnostic."
+  },
+  "keyword": {
+    "phrase": "ai use cases",
+    "searches": 1000,
+    "cpc": 17.13,
+    "difficulty": 32
+  },
+  "reviews": [
+    {
+      "reader": "COO",
+      "notes": "Wanted one answer and a pilot, not a catalog. The result now opens with one line naming the first use, then 3 to 5 ranked cards. Each card has a 30-day measure, and the page ends in a diagnostic note that names the pick."
+    },
+    {
+      "reader": "Head of operations",
+      "notes": "Asked what the team must supply. Each card now lists the data needed and the effort path (buy, set up or build). Fixed: data lists read as one sentence, and the fallback note says plainly when no industry evidence exists."
+    },
+    {
+      "reader": "GM",
+      "notes": "Reads on a phone. Three pickers with 44px-plus taps, and the result redraws on each pick. Risk, effort detail and caveats sit behind a tap, so the card face stays short."
+    },
+    {
+      "reader": "Division head",
+      "notes": "As head of lending: AML triage was labelled as a use regulators named, which overstated it. High-risk cards now say regulators named the use only when a regulator source does. The bank note no longer contradicts the top pick."
+    },
+    {
+      "reader": "Owner-CEO",
+      "notes": "Asked what it costs and what Zavient does next. Each card links to pricing and payback, and the diagnostic note lists the three things the 30 minutes settle. Added a line explaining the score bar."
+    }
+  ],
+  "updated": "2026-11-26"
+}

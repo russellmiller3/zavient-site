@@ -47,7 +47,7 @@ const pages = [...all.filter((p) => keys.includes(p.id)).sort((a, b) => keys.ind
     <h2>Guides</h2>
     <div class="hub-grid">{pages.map((p) => {
       const g = guideOrder[p.id];
-      return <a class="hub-card" href={urlFor(p.data, p.id)}><span class="hub-tag">{p.data.type === 'compare' ? TYPES.compare.label : 'Guide'}</span><h3>{p.data.title}</h3><p>{g ? g.blurb : p.data.description}</p>{g && <p class="hub-for">For: {g.for}</p>}</a>;
+      return <a class="hub-card" href={urlFor(p.data, p.id)}><span class="hub-tag">{p.data.type === 'compare' ? TYPES.compare.label : p.data.type === 'tool' ? 'Tool' : 'Guide'}</span><h3>{p.data.title}</h3><p>{g ? g.blurb : p.data.description}</p>{g && <p class="hub-for">For: {g.for}</p>}</a>;
     })}</div>
   </div></article>
   <ConsultingCta job="AI in your work" />

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI ROI calculator: will this workflow pay back this year? | Zavient</title>
+<meta name="description" content="Pick one workflow. See the payback month, the hours your team moves to better work, and the low-to-high range. No email needed.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://zavient.com/tools/ai-roi-calculator.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@600;700;800&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Zavient AI ROI calculator (26 Nov 2026). Same light blue tokens as /ai-readiness-assessment.html, inlined so the
+   file stands alone in an iframe or full screen. Result first, then inputs. One button font (Figtree 600). */
+:root {
+  --ink: #15202E; --ink-soft: #3C4A5C; --muted: #5F6B7A;
+  --line: #D8E0EA; --line-strong: #B9C6D6;
+  --paper: #FFFFFF; --paper-alt: #F3F6FA;
+  --blue: #1F5FBF; --blue-dark: #174A96; --blue-wash: #EAF1FB; --blue-grid: rgba(31, 95, 191, 0.075);
+  --low: #B5452F; --low-wash: #F8E9E5; --mid: #A86A10; --mid-wash: #FBF1DC; --good: #1F5FBF; --good-wash: #EAF1FB;
+  --sans: 'Figtree', 'Helvetica Neue', Arial, sans-serif;
+  --serif: 'Crimson Pro', Georgia, serif;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 19px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+a { color: var(--blue); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--blue-dark); }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+
+/* Header: faint grid over a blue wash, as on the readiness check */
+.hero { position: relative; padding: 22px 0 18px; background: linear-gradient(180deg, var(--blue-wash) 0%, rgba(234,241,251,.45) 60%, var(--paper) 100%); border-bottom: 1px solid var(--line); }
+.hero::before { content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(var(--blue-grid) 1px, transparent 1px), linear-gradient(90deg, var(--blue-grid) 1px, transparent 1px);
+  background-size: 28px 28px; -webkit-mask-image: linear-gradient(180deg, #000, transparent); mask-image: linear-gradient(180deg, #000, transparent); }
+.hero .wrap { position: relative; }
+.label, .eyebrow { font-family: var(--mono); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); }
+h1 { font-family: var(--sans); font-weight: 800; font-size: clamp(26px, 5vw, 36px); line-height: 1.12; letter-spacing: -.02em; margin: 6px 0 8px; text-wrap: balance; }
+.dek { color: var(--ink-soft); font-size: 18px; max-width: 60ch; }
+h2, h3 { font-family: var(--sans); color: var(--ink); text-wrap: balance; }
+h2 { font-weight: 700; font-size: 22px; line-height: 1.25; }
+h3 { font-weight: 700; font-size: 17px; line-height: 1.3; }
+main { padding: 18px 0 40px; display: flex; flex-direction: column; gap: 18px; }
+
+.card { border: 1px solid var(--line); background: var(--paper); padding: 18px 16px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+@media (min-width: 560px) { .card { padding: 24px 26px; } }
+
+/* Result */
+.result { border-top: 4px solid var(--blue); }
+.result.is-no { border-top-color: var(--low); }
+.result.is-later { border-top-color: var(--mid); }
+.verdict { font-family: var(--sans); font-weight: 800; font-size: clamp(24px, 5.4vw, 32px); line-height: 1.15; letter-spacing: -.015em; }
+.verdict-sub { font-size: 18px; color: var(--ink-soft); }
+.nums { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.num { background: var(--paper-alt); border: 1px solid var(--line); padding: 10px 12px; min-width: 0; }
+.num b { display: block; font-family: var(--sans); font-weight: 800; font-size: 24px; line-height: 1.15; color: var(--ink); overflow-wrap: anywhere; }
+.num span { display: block; font-size: 15px; line-height: 1.3; color: var(--ink-soft); }
+.neg { color: var(--low) !important; }
+.range { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.case { border: 1px solid var(--line); padding: 8px 10px; min-width: 0; }
+.case.exp { border-color: var(--blue); background: var(--blue-wash); }
+.case .k { font-family: var(--mono); font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+.case b { display: block; font-family: var(--sans); font-weight: 700; font-size: 17px; line-height: 1.2; }
+.case span { display: block; font-size: 14px; color: var(--ink-soft); line-height: 1.3; }
+.facts { list-style: none; display: flex; flex-direction: column; }
+.facts li { position: relative; padding: 8px 0 8px 20px; font-size: 18px; line-height: 1.4; }
+.facts li + li { border-top: 1px solid var(--line); }
+.facts li::before { content: ""; position: absolute; left: 2px; top: 17px; width: 8px; height: 8px; background: var(--blue); }
+.note { font-size: 17px; color: var(--ink-soft); border-left: 3px solid var(--blue); background: var(--blue-wash); padding: 10px 14px; }
+.note.warn { border-left-color: var(--mid); background: var(--mid-wash); color: var(--ink); }
+.note.bad { border-left-color: var(--low); background: var(--low-wash); color: var(--ink); }
+.small { font-size: 15px; color: var(--muted); line-height: 1.4; }
+
+/* Buttons: one font for every button */
+.btn { appearance: none; border: 0; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px; font-family: var(--sans); font-weight: 600; font-size: 16px; padding: 11px 18px; border-radius: 2px; text-decoration: none; }
+.btn-primary { background: var(--blue); color: #fff; }
+.btn-primary:hover { background: var(--blue-dark); color: #fff; }
+.btn-line { background: var(--paper); color: var(--blue); border: 1.5px solid var(--blue); }
+.btn-line:hover { background: var(--blue-wash); }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+:focus-visible { outline: 3px solid rgba(31,95,191,.45); outline-offset: 2px; }
+
+/* CTA */
+.cta { background: var(--blue-wash); border: 1px solid var(--line); border-left: 4px solid var(--blue); padding: 18px 16px; display: flex; flex-direction: column; gap: 10px; }
+.cta p { font-size: 18px; }
+.cta .lead { font-family: var(--sans); font-weight: 700; font-size: 19px; line-height: 1.3; }
+
+/* Inputs */
+.field { display: flex; flex-direction: column; gap: 4px; padding: 12px 0; border-top: 1px solid var(--line); }
+.field:first-of-type { border-top: 0; padding-top: 0; }
+.field label, .field .lab { font-family: var(--sans); font-weight: 700; font-size: 16px; line-height: 1.3; }
+.field .help { font-size: 15px; color: var(--ink-soft); line-height: 1.35; }
+.inbox { display: flex; align-items: stretch; border: 1.5px solid var(--line-strong); border-radius: 2px; background: #fff; max-width: 260px; }
+.inbox:focus-within { border-color: var(--blue); }
+.inbox .pre, .inbox .post { display: flex; align-items: center; padding: 0 10px; font-family: var(--mono); font-size: 15px; color: var(--muted); background: var(--paper-alt); }
+.inbox input { flex: 1; min-width: 0; border: 0; padding: 10px 12px; min-height: 44px; font: 500 18px var(--mono); color: var(--ink); background: transparent; }
+.inbox input:focus { outline: none; }
+select { appearance: none; width: 100%; min-height: 48px; border: 1.5px solid var(--line-strong); border-radius: 2px; padding: 10px 40px 10px 12px;
+  font: 600 16px var(--sans); color: var(--ink); background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%231F5FBF' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 14px center; }
+.src { font-size: 14px; color: var(--muted); line-height: 1.4; }
+.src .tag { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; padding: 1px 6px; margin-right: 6px; border: 1px solid var(--line-strong); color: var(--ink-soft); white-space: nowrap; }
+.src .tag.est { border-color: var(--mid); color: var(--mid); }
+.src .tag.you { border-color: var(--blue); color: var(--blue); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { appearance: none; cursor: pointer; min-height: 44px; padding: 8px 12px; border: 1.5px solid var(--line-strong); border-radius: 2px; background: #fff;
+  font-family: var(--sans); font-weight: 600; font-size: 15px; color: var(--ink); text-align: left; line-height: 1.25; }
+.chip:hover { border-color: var(--blue); }
+.chip small { display: block; font-weight: 600; font-size: 13px; color: var(--muted); }
+details { border-top: 1px solid var(--line); padding-top: 10px; }
+summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; font-family: var(--sans); font-weight: 600; font-size: 16px; color: var(--blue); }
+.method { font-size: 16px; line-height: 1.45; }
+.method li { margin: 0 0 8px 18px; }
+.method code { font-family: var(--mono); font-size: 14px; background: var(--paper-alt); padding: 1px 4px; }
+
+/* Sticky verdict bar, shown when the result card is off screen */
+.bar { position: fixed; left: 0; right: 0; top: 0; z-index: 20; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); box-shadow: 0 2px 10px rgba(21,32,46,.06);
+  transform: translateY(-110%); transition: transform .18s ease; }
+.bar.show { transform: none; }
+.bar .wrap { display: flex; gap: 10px; align-items: center; justify-content: space-between; padding-top: 6px; padding-bottom: 6px; }
+.bar p { font-family: var(--sans); font-weight: 700; font-size: 15px; line-height: 1.25; }
+.bar .btn { min-height: 44px; padding: 8px 12px; font-size: 15px; white-space: nowrap; }
+footer { border-top: 1px solid var(--line); padding: 16px 0 24px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
+footer a { color: var(--muted); }
+@media print { .bar, .cta .btn, #inputs, .row { display: none !important; } }
+</style>
+</head>
+<body>
+<div class="bar" id="bar" aria-hidden="true">
+  <div class="wrap"><p id="barText">Working it out</p><a class="btn btn-primary" href="#result" tabindex="-1">See result</a></div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="label">Free tool &middot; AI ROI calculator</div>
+    <h1>Will this workflow pay back this year?</h1>
+    <p class="dek">Pick one workflow and check the numbers below it. You get the payback month, the hours your team moves to better work, and an honest range. No email needed.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <noscript><section class="card"><p>This calculator needs JavaScript. Turn it on and reload, or email <a href="mailto:hello@zavient.com">hello@zavient.com</a> with your workflow and monthly volume.</p></section></noscript>
+
+  <section class="card result" id="result" aria-live="polite">
+    <div class="eyebrow" id="rWorkflow">Your result</div>
+    <p class="verdict" id="rVerdict">Working it out</p>
+    <p class="verdict-sub" id="rNets"></p>
+    <div class="nums">
+      <div class="num"><b id="rHours">0</b><span>hours a month moved to better work, once it runs at full speed</span></div>
+      <div class="num"><b id="rHoursY1">0</b><span>hours moved in the first 12 months, counting the ramp-up</span></div>
+    </div>
+    <div>
+      <h3>How sure is that? Low, expected and high</h3>
+      <div class="range" id="rRange"></div>
+      <p class="small" style="margin-top:6px">Low and high change only the three weakest inputs: AI share, review minutes and how many items staff route through AI.</p>
+    </div>
+    <ul class="facts" id="rFacts"></ul>
+    <div id="rReality"></div>
+    <div id="rNo"></div>
+    <div>
+      <h3>Three checks before you spend</h3>
+      <ul class="facts" id="rChecks"></ul>
+    </div>
+    <div class="row">
+      <button class="btn btn-line" type="button" id="copyLink">Copy a link to this result</button>
+      <button class="btn btn-line" type="button" onclick="window.print()">Print or save as PDF</button>
+    </div>
+    <p class="small" id="copyMsg" role="status"></p>
+  </section>
+
+  <section class="cta" aria-label="Free diagnostic">
+    <p class="lead">Want the detailed plan behind your result? Book the free 30-minute diagnostic.</p>
+    <p>Bring this result. We check your volume and review step, and whether to buy, configure or build.</p>
+    <p><a class="btn btn-primary" href="https://calendly.com/zavient/call" target="_top">Book the free 30-minute diagnostic</a></p>
+    <p class="small">Or email <a href="mailto:hello@zavient.com">hello@zavient.com</a> with your workflow and volume.</p>
+  </section>
+
+  <section class="card" id="inputs" aria-label="Your numbers">
+    <h2>Your numbers</h2>
+    <p class="small">Every default has a source or is marked as our estimate. Replace any of them with your own. The result updates as you type.</p>
+
+    <div class="field">
+      <label for="workflow">Which workflow?</label>
+      <select id="workflow"></select>
+      <p class="src" id="wfNote"></p>
+    </div>
+
+    <div class="field">
+      <label for="V" id="VLabel">Items a month</label>
+      <p class="help">Count 4 weeks of real data if you can. A guess here moves the answer more than anything else.</p>
+      <div class="inbox"><input id="V" inputmode="decimal" autocomplete="off"><span class="post" id="VUnit">a month</span></div>
+      <p class="src" id="srcV"></p>
+    </div>
+
+    <div class="field">
+      <label for="T">Hands-on minutes per item today</label>
+      <p class="help">Time someone actually works on one item. Leave out waiting time.</p>
+      <div class="inbox"><input id="T" inputmode="decimal" autocomplete="off"><span class="post">min</span></div>
+      <p class="src" id="srcT"></p>
+    </div>
+
+    <div class="field">
+      <label for="C">Loaded cost per hour of the people doing it</label>
+      <p class="help">Pay plus benefits such as health cover and pension. Use your own payroll number if you know it.</p>
+      <div class="inbox"><span class="pre">$</span><input id="C" inputmode="decimal" autocomplete="off"><span class="post">/ hour</span></div>
+      <p class="src" id="srcC"></p>
+    </div>
+
+    <div class="field">
+      <label for="s">Share of items AI drafts first</label>
+      <p class="help">The items AI can take a first pass on. Exceptions and odd cases stay with people.</p>
+      <div class="inbox"><input id="s" inputmode="decimal" autocomplete="off"><span class="post">%</span></div>
+      <p class="src" id="srcs"></p>
+    </div>
+
+    <div class="field">
+      <label for="R">Minutes a person spends checking each AI draft</label>
+      <p class="help">The check, fix and approve step. This is the input most calculators leave out.</p>
+      <div class="inbox"><input id="R" inputmode="decimal" autocomplete="off"><span class="post">min</span></div>
+      <p class="src" id="srcR"></p>
+    </div>
+
+    <div class="field">
+      <label for="B">One-time cost to set it up</label>
+      <p class="help">Setup, connecting your systems, data clean-up, training and your own staff time.</p>
+      <div class="inbox"><span class="pre">$</span><input id="B" inputmode="decimal" autocomplete="off"></div>
+      <p class="src" id="srcB"></p>
+    </div>
+
+    <div class="field">
+      <label for="run">Monthly cost to run it</label>
+      <p class="help">Licences or per-use fees, hosting, monitoring and upkeep.</p>
+      <div class="inbox"><span class="pre">$</span><input id="run" inputmode="decimal" autocomplete="off"><span class="post">a month</span></div>
+      <p class="src" id="srcRun"></p>
+    </div>
+
+    <div class="field">
+      <span class="lab">Not sure of the cost? Start from a typical range</span>
+      <div class="chips" id="paths"></div>
+      <p class="src"><span class="tag est">Zavient estimate</span>Middles of ranges from <a href="https://clutch.co/developers/artificial-intelligence/pricing" target="_blank" rel="noopener">Clutch project reviews</a> and seat prices. Upkeep often runs 15 to 40% of the build each year.</p>
+    </div>
+
+    <details>
+      <summary>More settings: redo rate, adoption, ramp-up</summary>
+      <div class="field">
+        <label for="e">Share of AI drafts redone from scratch</label>
+        <div class="inbox"><input id="e" inputmode="decimal" autocomplete="off"><span class="post">%</span></div>
+        <p class="src" id="srce"></p>
+      </div>
+      <div class="field">
+        <label for="a">Share of eligible items staff actually route through AI</label>
+        <div class="inbox"><input id="a" inputmode="decimal" autocomplete="off"><span class="post">%</span></div>
+        <p class="src" id="srca"></p>
+      </div>
+      <div class="field">
+        <label for="M">Months until it runs at full speed</label>
+        <div class="inbox"><input id="M" inputmode="decimal" autocomplete="off"><span class="post">months</span></div>
+        <p class="src" id="srcM"></p>
+      </div>
+      <div class="field">
+        <label for="k">Share of freed hours counted as money</label>
+        <div class="inbox"><input id="k" inputmode="decimal" autocomplete="off"><span class="post">%</span></div>
+        <p class="src" id="srck"></p>
+      </div>
+      <div class="field">
+        <label for="buf">Buffer on the setup cost</label>
+        <div class="inbox"><input id="buf" inputmode="decimal" autocomplete="off"><span class="post">%</span></div>
+        <p class="src" id="srcbuf"></p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How the math works</summary>
+      <ol class="method">
+        <li>Items AI handles a month = volume &times; AI share &times; share routed through AI.</li>
+        <li>Minutes moved per item = minutes today &minus; review minutes &minus; (redo rate &times; minutes today).</li>
+        <li>Money per month = hours moved &times; loaded cost &times; 56%. Freed minutes scattered across a day do not all become output. The 56% is Gartner's worked example: a 20% leak, then a 70% harvesting ratio (<a href="https://s3.amazonaws.com/bizzabo.file.upload/hCwbN4NTlKPzuyLET6Aw_Aug29NSudaCChristensenBSeesel.pdf" target="_blank" rel="noopener">Gartner panel, 2024</a>).</li>
+        <li>Loaded cost per hour = BLS mean hourly pay (<a href="https://www.bls.gov/news.release/ocwage.t01.htm" target="_blank" rel="noopener">OEWS May 2025</a>) &times; 1 + (benefits &minus; paid leave) &divide; (wages + paid leave), from <a href="https://www.bls.gov/news.release/ecec.t04.htm" target="_blank" rel="noopener">ECEC June 2026</a>: 1.28 to 1.31. Pay already includes paid leave, so we leave it out of the benefits. Where no single job fits, we use ECEC total pay and benefits per hour.</li>
+        <li>Value ramps up in a straight line over the first months, while run cost starts in month 1. New technology tends to dip before it pays (<a href="https://www.census.gov/library/working-papers/2025/adrm/CES-WP-25-27.html" target="_blank" rel="noopener">US Census Bureau, 2025</a>).</li>
+        <li>Payback month = the first month the running total, minus the setup cost, reaches zero. Not discounted.</li>
+      </ol>
+      <p class="small">A planning estimate, not a forecast. Self-reported time savings often run high, so time a sample of real items (<a href="https://arxiv.org/abs/2507.09089" target="_blank" rel="noopener">METR, 2025</a>).</p>
+    </details>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Zavient &middot; <a href="https://zavient.com/" target="_top">zavient.com</a> &middot; <a href="mailto:hello@zavient.com">hello@zavient.com</a> &middot; Updated 26 Nov 2026</div>
+</footer>
+
+<script id="calc">
+// Pure model, also loaded by the self-test (scripts are kept free of DOM calls in this block).
+// Formula from the research brief (tools/research/ai-roi-calculator.research.md, section 2).
+function roiModel(p) {
+  const B = p.B * (1 + (p.buf || 0));
+  const N = p.V * p.s * p.a;                 // items AI handles a month, steady state
+  const m = p.T - p.R - p.e * p.T;           // minutes moved per AI item
+  const H = N * m / 60;                      // hours moved a month, steady state
+  const Vm = H * p.C * p.k;                  // money value a month, steady state
+  const ramp = (i) => (p.M > 0 ? Math.min(1, i / p.M) : 1);
+  let cum = -B, payback = null, hoursY1 = 0, y1 = 0, y3 = 0;
+  for (let i = 1; i <= 36; i++) {
+    cum += ramp(i) * Vm - p.run;
+    if (payback === null && cum >= 0) payback = i;
+    if (i <= 12) hoursY1 += ramp(i) * H;
+    if (i === 12) y1 = cum;
+    if (i === 36) y3 = cum;
+  }
+  let f12 = 0; for (let i = 1; i <= 12; i++) f12 += ramp(i);
+  const need = (B + 12 * p.run) / f12;       // steady value a month needed to break even by month 12
+  const perItem = p.s * p.a * p.C * p.k / 60;
+  const beVolume = m > 0 && perItem > 0 ? need / (perItem * m) : null;
+  const mNeed = p.V > 0 && perItem > 0 ? need / (p.V * perItem) : Infinity;
+  const beReview = p.T - p.e * p.T - mNeed;  // review minutes at which month-12 net is zero
+  return { N, m, H, Vm, B, payback, hoursY1, y1, y3, beVolume, beReview: beReview >= 0 ? beReview : null,
+    implied: p.T > 0 ? (p.s * p.a * m) / p.T : 0, addsWork: m <= 0 };
+}
+// Low / expected / high: vary only the three weakest inputs (research, "Sensitivity").
+function roiCases(p) {
+  const cap = (x) => Math.min(1, x);
+  return {
+    low: roiModel({ ...p, s: p.s * 0.7, R: p.R * 1.5, a: p.a * 0.75 }),
+    exp: roiModel(p),
+    high: roiModel({ ...p, s: cap(p.s * 1.2), R: p.R * 0.7, a: cap(p.a * 1.125) }),
+  };
+}
+// The input that moves the answer most: each input 20% in its helpful direction, ranked by the change in 3-year net.
+const LEVERS = [
+  { key: 'R', name: 'Review minutes', f: 0.8 }, { key: 's', name: 'AI share', f: 1.2, cap: 1 },
+  { key: 'V', name: 'Volume', f: 1.2 }, { key: 'T', name: 'Minutes per item today', f: 1.2 },
+  { key: 'a', name: 'Share routed through AI', f: 1.2, cap: 1 }, { key: 'C', name: 'Loaded cost per hour', f: 1.2 },
+  { key: 'e', name: 'Redo rate', f: 0.8 }, { key: 'B', name: 'Setup cost', f: 0.8 }, { key: 'run', name: 'Monthly run cost', f: 0.8 },
+];
+function roiLever(p) {
+  const base = roiModel(p);
+  let best = null;
+  for (const L of LEVERS) {
+    const v = L.cap ? Math.min(L.cap, p[L.key] * L.f) : p[L.key] * L.f;
+    if (v === p[L.key]) continue;
+    const r = roiModel({ ...p, [L.key]: v });
+    const gain = r.y3 - base.y3;
+    if (!best || gain > best.gain) best = { ...L, from: p[L.key], to: v, gain, r };
+  }
+  return best;
+}
+</script>
+
+<script>
+(function () {
+  const OEWS = 'https://www.bls.gov/news.release/ocwage.t01.htm';
+  const ECEC = 'https://www.bls.gov/news.release/ecec.t04.htm';
+  const L = (t, u) => `<a href="${u}" target="_blank" rel="noopener">${t}</a>`;
+  const SRC = (txt) => `<span class="tag">Source</span>${txt}`;
+  const EST = (txt) => `<span class="tag est">Zavient estimate</span>${txt}`;
+  const SR_EST = EST('No neutral benchmark exists. Our starting assumption: replace it with a timed sample of yours.');
+  const RE_EST = EST('No neutral benchmark exists. Each redo costs the full minutes again.');
+
+  // Workflow presets: research section 3, re-based 26 Nov 2026 on a typical 40-500 person firm. Each preset starts on the
+  // path such a firm usually takes for that work at that volume, so no default lands on "does not pay back".
+  // IT service desk, reconciliation and document intake were dropped: at a typical size they move too few hours (see page FAQ).
+  const SEATS = `${L('Microsoft 365 Copilot Business', 'https://www.microsoft.com/en-us/copilot/pricing/business')} or ${L('ChatGPT Business', 'https://help.openai.com/en/articles/8542115-chatgpt-business-general-faq')}, monthly billing`;
+  const TRAIN = `8 hours of training per user (${L('Forrester for Microsoft', 'https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/TEI-of-Microsoft-365-Copilot-for-SMB-Oct-2024.pdf')}, vendor-commissioned)`;
+  const P = {
+    support: { label: 'Customer email and chat replies', unit: 'tickets', V: 2000, T: 13.7, C: 29.34, s: 0.6, R: 4, e: 0.1, B: 20000, run: 500,
+      srcV: EST(`A typical support team at a firm of 40 to 500 staff: about 5 agents. One agent clears about 250 to 450 tickets a month (${L('Jitbit, 1,000 help desks', 'https://www.jitbit.com/news/2266-average-customer-support-metrics-from-1000-companies')}: 21 a day; ${L('Gorgias data via Fin', 'https://fin.ai/learn/how-many-support-tickets-justify-a-helpdesk')}: 254 a month).`),
+      srcT: SRC(`MetricNet 2023: 13.7 minutes per email or web ticket, 13.4 per chat (${L('benchmark summary', 'https://www.brighttalk.com/resource/core/447335/benchmarking-roundup---summary-of-2023-service-and-support-benchmarks-v3_954461.pdf')}).`),
+      srcC: SRC(`BLS: customer service rep $22.40 an hour (${L('OEWS May 2025', OEWS)}) &times; 1.31, office staff benefits other than paid leave (${L('ECEC June 2026', ECEC)}).`),
+      srcB: EST(`Configure the AI drafting in the help desk you already pay for. Forrester's small-firm example spent $14,000 on implementation (${L('Forrester for Microsoft', 'https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/TEI-of-Microsoft-365-Copilot-for-SMB-Oct-2024.pdf')}, vendor-commissioned). We add help-article clean-up and 10 hours of training per agent.`),
+      srcRun: EST(`5 agent seats of an AI copilot: $50 each on ${L('Zendesk', 'https://www.zendesk.com/pricing/')}, $29 on ${L('Freshdesk', 'https://www.freshworks.com/freshdesk/pricing')} or ${L('Intercom', 'https://www.intercom.com/pricing')}. Plus about 8 hours a month keeping help articles current.`),
+      note: `In a study of 5,172 support agents, AI help raised issues resolved per hour by 14%, and 34% for newer staff (${L('NBER', 'https://www.nber.org/papers/w31161')}).` },
+    ap: { label: 'Accounts payable: invoice capture and coding', unit: 'invoices', V: 1000, T: 10, C: 33.73, s: 0.65, R: 3, e: 0.1, B: 5000, run: 200,
+      srcV: SRC(`A firm of about 150 staff: one AP person at the APQC median of 12,000 invoices a year (${L('APQC', 'https://apqc.org/How-Do-You-Benchmark-Employee-Productivity')}). Most firms under $100 million in sales process under 2,500 a month (${L('IOFM survey', 'https://cloud.esker.com/fm/others/IOFM%20White%20Paper_Esker_9-4-13.pdf')}).`),
+      srcT: SRC(`APQC median: 12,000 invoices a year per AP person, about 10 minutes each (${L('APQC', 'https://apqc.org/How-Do-You-Benchmark-Employee-Productivity')}).`),
+      srcC: SRC(`BLS: bookkeeping clerk $25.75 an hour (${L('OEWS May 2025', OEWS)}) &times; 1.31, office staff benefits other than paid leave (${L('ECEC June 2026', ECEC)}).`),
+      srcB: EST('A ready-made AP tool with AI capture: vendor import, approval rules, the link to your accounting system and training for 3 people.'),
+      srcRun: EST(`3 users at $65 a month, the ${L('BILL', 'https://www.bill.com/product/pricing')} plan with AI bill coding. ${L('Ramp', 'https://ramp.com/pricing')} includes AI invoice capture on its free plan.`),
+      note: 'At this volume, an AP tool with AI capture built in usually beats a custom build.' },
+    rfp: { label: 'RFP and security questionnaire answers', unit: 'questions', V: 750, T: 12, C: 73.69, s: 0.6, R: 4, e: 0.1, B: 6000, run: 500,
+      srcV: SRC(`Smaller firms in Loopio's survey answer 79 RFPs a year (${L('Loopio 2026', 'https://loopio.com/trends-report')}). At 115 questions each, that is about 750 a month. Vendor survey.`),
+      srcT: SRC(`Loopio: the average RFP has 115 questions at about 12 minutes each (${L('Loopio', 'https://loopio.com/resources/rfp-metrics-guide')}). Vendor survey.`),
+      srcC: SRC(`BLS: total pay and benefits for professional staff, $73.69 an hour (${L('ECEC June 2026', ECEC)}).`),
+      srcB: EST('Use AI you already pay for, with a library of approved answers. About 80 hours of a proposal lead\'s time to build it.'),
+      srcRun: EST(`3 seats at $25 (${SEATS}), plus about 6 hours a month keeping the answer library current.`),
+      note: 'Count questions, not RFPs. Six RFPs a month at about 115 questions each is about 700.' },
+    docs: { label: 'Internal documents and email drafts', unit: 'documents', V: 200, T: 30, C: 73.69, s: 0.7, R: 18, e: 0.1, B: 6000, run: 250,
+      srcV: EST('A team of 10 who each write about one longer document or email a working day.'),
+      srcT: EST('Varies widely: time a week of your own drafts.'),
+      srcC: SRC(`BLS: total pay and benefits for professional staff, $73.69 an hour (${L('ECEC June 2026', ECEC)}).`),
+      srcR: EST(`Set at 60% of today's time. In a writing experiment, ChatGPT cut time by 40% (${L('Science, 2023', 'https://doi.org/10.1126/science.adh2586')}).`),
+      srcB: EST(`Turn on AI in a tool you already pay for: ${TRAIN} for 10 people.`),
+      srcRun: EST(`10 seats at $25 (${SEATS}). Skip it if you already pay for them.`),
+      note: `On tasks outside what AI does well, consultants using it were 19 points less likely to be right (${L('Organization Science', 'https://doi.org/10.1287/orsc.2025.21838')}).` },
+    meetings: { label: 'Meeting notes and follow-ups', unit: 'meetings', V: 150, T: 43, C: 73.69, s: 0.7, R: 11, e: 0.05, B: 9000, run: 375,
+      srcV: EST('A firm of about 150 staff: 15 managers who each write up about 10 meetings a month.'),
+      srcT: SRC(`Microsoft lab test: summarizing a missed meeting took 42.6 minutes by hand (${L('Microsoft WorkLab', 'https://www.microsoft.com/en-us/worklab/work-trend-index/copilots-earliest-users-teach-us-about-generative-ai-at-work')}). Vendor study.`),
+      srcC: SRC(`BLS: total pay and benefits for professional staff, $73.69 an hour (${L('ECEC June 2026', ECEC)}).`),
+      srcR: SRC(`Same Microsoft test: 11.2 minutes with AI. Vendor study.`),
+      srcB: EST(`Turn on AI in a tool you already pay for: ${TRAIN} for 15 people.`),
+      srcRun: EST(`15 seats at $25 (${SEATS}). Skip it if you already pay for them.`),
+      note: 'Count only meetings someone writes up today.' },
+    custom: { label: 'Another workflow (start from scratch)', unit: 'items', V: 1000, T: 10, C: 46.89, s: 0.5, R: 3, e: 0.1, B: 6000, run: 500,
+      srcV: EST('Placeholder.'),
+      srcT: EST('Placeholder. Time 20 real items and enter the average.'),
+      srcC: SRC(`BLS: average private-sector pay and benefits, $46.89 an hour (${L('ECEC June 2026', ECEC)}).`),
+      srcB: EST(`Placeholder: turning on AI in a tool you already pay for. Most AI projects reviewed on Clutch cost $10,000 to $49,999 (${L('Clutch, 2026', 'https://clutch.co/developers/artificial-intelligence/pricing')}).`),
+      srcRun: EST('Placeholder: seats or usage fees plus upkeep. Model usage is rarely the big line; upkeep and people time are.'),
+      note: 'Pick work that is high volume, repetitive and easy to check.' },
+  };
+  const ORDER = ['support', 'ap', 'rfp', 'docs', 'meetings', 'custom'];
+  // Old links to dropped presets (it, recon, intake) open the blank workflow.
+  const ALIAS = { tickets: 'support', 'customer-support': 'support', email: 'support', invoices: 'ap', 'invoice-processing': 'ap', helpdesk: 'custom', 'it-tickets': 'custom', it: 'custom',
+    reconciliation: 'custom', 'account-reconciliation': 'custom', recon: 'custom', documents: 'custom', 'document-processing': 'custom', intake: 'custom', drafting: 'docs', notes: 'meetings', other: 'custom' };
+  const PATHS = [
+    { name: 'Turn on AI in a tool you already pay for', B: 6000, run: 500, note: 'seats and setup time' },
+    { name: 'Configure an AI feature in your software', B: 30000, run: 1500, note: 'setup plus usage fees' },
+    { name: 'Custom build on your own data', B: 80000, run: 2000, note: 'build plus upkeep' },
+  ];
+  const DEF = { a: 0.8, M: 3, k: 0.56, buf: 0 };
+  const PCT = ['s', 'e', 'a', 'k', 'buf'];
+  const FIELDS = ['V', 'T', 'C', 's', 'R', 'B', 'run', 'e', 'a', 'M', 'k', 'buf'];
+  const $ = (id) => document.getElementById(id);
+  const state = { wf: 'support', mine: new Set() };
+
+  const sel = $('workflow');
+  sel.innerHTML = ORDER.map((k) => `<option value="${k}">${P[k].label}</option>`).join('');
+  $('paths').innerHTML = PATHS.map((x, i) => `<button class="chip" type="button" data-i="${i}">${x.name}<small>${money(x.B)} once, ${money(x.run)} a month (${x.note})</small></button>`).join('');
+
+  // A word joiner (U+2060) after the sign keeps "−$30,200" on one line at narrow widths.
+  const WJ = '\u2060';
+  function money(n) { const r = Math.round(Math.abs(n) / 100) * 100; return (n < 0 && r > 0 ? '−' + WJ : '') + '$' + r.toLocaleString('en-US'); }
+  function signed(n) { const r = Math.round(Math.abs(n) / 100) * 100; return r === 0 ? '$0' : (n < 0 ? '−' : '+') + WJ + '$' + r.toLocaleString('en-US'); }
+  function fmt(n, d = 0) { return Number(n).toLocaleString('en-US', { maximumFractionDigits: d, minimumFractionDigits: 0 }); }
+  function num(v) { const x = parseFloat(String(v).replace(/[$,%\s]/g, '')); return Number.isFinite(x) ? x : null; }
+  function show(key, v) { $(key).value = PCT.includes(key) ? fmt(v * 100, 1) : (key === 'C' ? fmt(v, 2) : fmt(v, 1)); }
+
+  function srcLines() {
+    const p = P[state.wf];
+    const you = '<span class="tag you">Your number</span>Changed by you.';
+    const set = (id, key, html) => { $(id).innerHTML = state.mine.has(key) ? you : html; };
+    set('srcV', 'V', p.srcV + ` Replace it with your own count of ${p.unit}.`);
+    set('srcT', 'T', p.srcT);
+    set('srcC', 'C', p.srcC);
+    set('srcs', 's', SR_EST);
+    set('srcR', 'R', p.srcR || SR_EST);
+    set('srce', 'e', RE_EST);
+    set('srca', 'a', SRC(`About 80% of staff kept using Copilot in a 20,000-person UK government trial; 17% saw no time saving (${L('GOV.UK, 2025', 'https://www.gov.uk/government/publications/microsoft-365-copilot-experiment-cross-government-findings-report/microsoft-365-copilot-experiment-cross-government-findings-report-html')}).`));
+    set('srcM', 'M', EST(`Value ramps up over 3 months while you pay to run it. New technology tends to dip before it pays (${L('AEJ: Macro, 2021', 'https://www.aeaweb.org/articles?id=10.1257/mac.20180386')}).`));
+    set('srck', 'k', SRC(`Gartner's example keeps 56%: a 20% productivity leak, then a 70% harvesting ratio (${L('Gartner panel, 2024', 'https://s3.amazonaws.com/bizzabo.file.upload/hCwbN4NTlKPzuyLET6Aw_Aug29NSudaCChristensenBSeesel.pdf')}). One public calculator uses 50% (${L('DoAny', 'https://doany.ai/tools/automation-roi-calculator')}).`));
+    set('srcbuf', 'buf', EST('Off by default, so a cost carried over from our cost estimator is not padded twice. First AI projects often run over: 30% is a sensible buffer.'));
+    set('srcB', 'B', p.srcB);
+    set('srcRun', 'run', p.srcRun);
+    $('wfNote').innerHTML = p.note;
+    $('VLabel').textContent = p.unit.charAt(0).toUpperCase() + p.unit.slice(1) + ' a month';
+    $('VUnit').textContent = 'a month';
+  }
+
+  function loadPreset(key) {
+    state.wf = key; sel.value = key;
+    const p = P[key];
+    for (const f of ['V', 'T', 'C', 's', 'R', 'e', 'B', 'run']) if (!state.mine.has(f)) show(f, p[f]);
+  }
+  function read() {
+    const o = {};
+    for (const f of FIELDS) { let v = num($(f).value); if (v === null || v < 0) v = 0; o[f] = PCT.includes(f) ? Math.min(v / 100, f === 'buf' ? 5 : 1) : v; }
+    return o;
+  }
+
+  function verdictFor(r) {
+    if (r.addsWork) return { text: 'AI adds work here: checking and redoing take longer than doing it by hand.', cls: 'is-no', short: 'AI adds work here' };
+    if (r.payback === null) return { text: "On these inputs it doesn't pay back within 3 years.", cls: 'is-no', short: 'No payback in 3 years' };
+    if (r.payback <= 12) return { text: `Pays back in month ${r.payback}. This year.`, cls: '', short: `Pays back in month ${r.payback}` };
+    if (r.payback <= 24) return { text: `Pays back in month ${r.payback}. Next year, not this one.`, cls: 'is-later', short: `Pays back in month ${r.payback}` };
+    return { text: `Pays back in month ${r.payback}, in year 3.`, cls: 'is-later', short: `Pays back in month ${r.payback}` };
+  }
+  // The one input to name as the lever, computed once and used by both the result bullet and the red box.
+  // When the answer is no (or only year 3), pick the fix that gets it to pay back: a cheaper set-up path, then review
+  // time, then volume. Otherwise (or if none of those works), the input whose 20% change moves the 3-year net most.
+  function pickLever(p, r) {
+    if (r.addsWork) return null;
+    const unit = P[state.wf].unit;
+    if (r.payback === null || r.payback > 24) {
+      const cheap = PATHS[0];
+      if (p.B > cheap.B || p.run > cheap.run) {
+        const rp = roiModel({ ...p, B: Math.min(p.B, cheap.B), run: Math.min(p.run, cheap.run) });
+        if (rp.payback !== null && (r.payback === null || rp.payback <= r.payback - 3))
+          return { key: 'path', name: 'The set-up path', fact: `With AI in a tool you already pay for (about ${money(cheap.B)} once and ${money(cheap.run)} a month), it pays back in month ${rp.payback}.`, close: 'check which cheaper path fits your work' };
+      }
+      if (r.beReview !== null && r.beReview >= p.R * 0.5)
+        return { key: 'R', name: 'Review time', fact: `At ${fmt(r.beReview, 1)} minutes per draft instead of ${fmt(p.R, 1)}, it pays back within a year.`, close: 'look for the slice of the work where drafts need less checking' };
+      if (r.beVolume !== null && Number.isFinite(r.beVolume))
+        return { key: 'V', name: 'Volume', fact: `It needs about ${fmt(Math.ceil(r.beVolume))} ${unit} a month to pay back within a year; you entered ${fmt(p.V)}.`, close: 'check the cheaper paths and the bigger slices of work' };
+    }
+    const lev = roiLever(p);
+    if (!lev) return null;
+    const u = { R: ' min', T: ' min', s: '%', a: '%', e: '%', V: '', C: '', B: '', run: '' }[lev.key];
+    const show2 = (x) => (PCT.includes(lev.key) ? fmt(x * 100) + '%' : ['B', 'run', 'C'].includes(lev.key) ? money(x) : fmt(x, 1) + u);
+    const after = lev.r.payback ? `payback moves to month ${lev.r.payback}` : `the 3-year net moves to ${signed(lev.r.y3)}`;
+    return { key: lev.key, name: lev.name, fact: `At ${show2(lev.to)} instead of ${show2(lev.from)}, ${after}.`, close: 'check the cheaper paths' };
+  }
+  const DIAG = 'https://calendly.com/zavient/call';
+  function nextStep(p, r, lev) {
+    if (r.addsWork) {
+      const after = fmt(p.R + p.e * p.T, 1);
+      return `<strong>On these inputs AI adds work.</strong> Checking and redoing take ${after} minutes per item against ${fmt(p.T, 1)} by hand. The usual fix is a narrower slice of the work where drafts need less checking, so review time is the lever. Bring these numbers to the free 30-minute diagnostic and we'll find that slice.`;
+    }
+    const head = r.payback === null ? "<strong>On these inputs it doesn't pay back.</strong>" : `<strong>On these inputs it pays back only in year 3.</strong>`;
+    const lever = lev ? ` Most likely lever: ${lev.name.toLowerCase()}. ${lev.fact}` : '';
+    return `${head} The usual fix is a cheaper path or a bigger slice of the work.${lever} Bring these numbers to the free 30-minute diagnostic and we'll ${lev ? lev.close : 'check the cheaper paths'}.`;
+  }
+  const pb = (r) => (r.addsWork ? 'AI adds work' : r.payback === null ? 'Not in 3 years' : `Month ${r.payback}`);
+
+  function render() {
+    const p = read();
+    const c = roiCases(p), r = c.exp;
+    const v = verdictFor(r);
+    const card = $('result');
+    card.classList.remove('is-no', 'is-later'); if (v.cls) card.classList.add(v.cls);
+    $('rWorkflow').textContent = P[state.wf].label;
+    $('rVerdict').textContent = v.text;
+    $('rNets').innerHTML = `First-year net: <strong class="${r.y1 < 0 ? 'neg' : ''}">${signed(r.y1)}</strong>. Three-year net: <strong class="${r.y3 < 0 ? 'neg' : ''}">${signed(r.y3)}</strong>.`;
+    $('rHours').textContent = fmt(Math.max(0, r.H));
+    $('rHoursY1').textContent = fmt(Math.max(0, r.hoursY1));
+    $('barText').textContent = `${v.short} · 3-year net ${signed(r.y3)}`;
+
+    $('rRange').innerHTML = [['Low', c.low, ''], ['Expected', c.exp, ' exp'], ['High', c.high, '']]
+      .map(([k, x, cls]) => `<div class="case${cls}"><div class="k">${k}</div><b>${pb(x)}</b><span>${signed(x.y3)} over 3 years</span><span>${fmt(Math.max(0, x.H))} h a month</span></div>`).join('');
+
+    const facts = [];
+    const workDays = 21.7;
+    if (r.H > 0) facts.push(`That is about ${fmt(r.H / workDays, 1)} hours a working day across the team. People decide where it goes: faster turnaround, fewer errors, or work that waits today.`);
+    const lev = pickLever(p, r);
+    if (lev) facts.push(`<strong>${lev.name} moves your answer most.</strong> ${lev.fact} Check this number first.`);
+    if (lev?.key !== 'V' && r.beVolume !== null && Number.isFinite(r.beVolume)) facts.push(`<strong>Break-even volume:</strong> about ${fmt(Math.ceil(r.beVolume))} ${P[state.wf].unit} a month to pay back within 12 months.`);
+    if (!r.addsWork && lev?.key !== 'R') facts.push(r.beReview !== null
+      ? `<strong>Break-even review time:</strong> ${fmt(r.beReview, 1)} minutes per draft or less pays back within 12 months.`
+      : '<strong>Break-even review time:</strong> even with no review at all, this does not pay back within 12 months. Volume or cost is the issue.');
+    $('rFacts').innerHTML = facts.map((x) => `<li>${x}</li>`).join('');
+
+    const pct = Math.round(r.implied * 100);
+    // Research brief: show the reality check only when implied time saved is above 40% (the top of measured results).
+    $('rReality').innerHTML = !r.addsWork && pct > 40
+      ? `<p class="note warn"><strong>Reality check:</strong> your inputs imply ${pct}% of the team's time on this work saved. That is above most measured results, which run from about 2% to 40%. Check your AI share and review minutes.</p>`
+      : '';
+
+    let no = '';
+    if (r.addsWork || r.payback === null || r.payback > 24) no = `<div class="note bad"><p>${nextStep(p, r, lev)}</p><p style="margin-top:10px"><a class="btn btn-primary" href="${DIAG}" target="_top">Book the free 30-minute diagnostic</a></p></div>`;
+    $('rNo').innerHTML = no;
+
+    const checks = ['Time 20 real items this week, start to finish. Use that number, not a guess.'];
+    checks.push(p.B >= 20000 ? 'Ask whether software you already pay for has this AI feature before you fund a build.' : 'Confirm who on the team owns the setup and training time.');
+    checks.push(p.R <= 1 ? 'Decide who checks the exceptions, and how they spot a wrong draft fast.' : 'Decide who reviews AI drafts, and what they sign off before anything goes out.');
+    $('rChecks').innerHTML = checks.map((x) => `<li>${x}</li>`).join('');
+  }
+
+  function shareUrl() {
+    const p = read(); const q = new URLSearchParams({ workflow: state.wf });
+    const map = { V: 'volume', T: 'minutes', C: 'rate', s: 'share', R: 'review', B: 'build', run: 'run', e: 'rework', a: 'adoption', M: 'ramp', k: 'keep', buf: 'buffer' };
+    for (const [f, n] of Object.entries(map)) q.set(n, PCT.includes(f) ? +(p[f] * 100).toFixed(1) : +p[f].toFixed(2));
+    return location.origin + location.pathname + '?' + q.toString();
+  }
+
+  // Prefill from the address, so the cost estimator and other tools can hand off: ?workflow=ap&volume=1500&build=40000&run=800
+  function fromUrl() {
+    const q = new URLSearchParams(location.search);
+    let wf = (q.get('workflow') || '').toLowerCase();
+    wf = P[wf] ? wf : ALIAS[wf] || 'support';
+    loadPreset(wf);
+    for (const f of ['a', 'M', 'k', 'buf']) show(f, DEF[f]);
+    const map = { volume: 'V', minutes: 'T', rate: 'C', cost: 'C', share: 's', review: 'R', build: 'B', run: 'run', rework: 'e', adoption: 'a', ramp: 'M', keep: 'k', buffer: 'buf' };
+    for (const [n, f] of Object.entries(map)) {
+      if (!q.has(n)) continue;
+      let v = num(q.get(n)); if (v === null || v < 0) continue;
+      if (PCT.includes(f) && v <= 1) v *= 100; // accept 0.6 or 60
+      if (PCT.includes(f)) v /= 100;
+      show(f, v); state.mine.add(f);
+    }
+  }
+
+  sel.addEventListener('change', () => { for (const f of ['V', 'T', 'C', 's', 'R', 'e']) state.mine.delete(f); loadPreset(sel.value); srcLines(); render(); });
+  for (const f of FIELDS) $(f).addEventListener('input', () => { state.mine.add(f); srcLines(); render(); });
+  $('paths').addEventListener('click', (ev) => {
+    const b = ev.target.closest('.chip'); if (!b) return;
+    const x = PATHS[+b.dataset.i]; show('B', x.B); show('run', x.run); state.mine.add('B'); state.mine.add('run'); srcLines(); render();
+  });
+  $('copyLink').addEventListener('click', async () => {
+    const url = shareUrl();
+    try { await navigator.clipboard.writeText(url); $('copyMsg').textContent = 'Link copied. It holds your inputs only, no personal data.'; }
+    catch (e) { $('copyMsg').textContent = url; }
+  });
+
+  // Sticky verdict bar once the result card leaves the screen
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([en]) => { const on = !en.isIntersecting && en.boundingClientRect.top < 0; $('bar').classList.toggle('show', on); $('bar').setAttribute('aria-hidden', on ? 'false' : 'true'); }, { threshold: 0 }).observe($('result'));
+  }
+
+  fromUrl(); srcLines(); render();
+})();
+</script>
+</body>
+</html>
