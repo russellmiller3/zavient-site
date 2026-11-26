@@ -9,7 +9,7 @@
 import { writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { TYPES, BLOCKS, COMMON_REQUIRED, REVIEWERS, MIN, DEMAND } from '../src/lib/page-types.mjs';
+import { TYPES, BLOCKS, COMMON_REQUIRED, REVIEWERS, MIN, DEMAND, ANSWER_FIRST_BRIEF } from '../src/lib/page-types.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const arg = (k, def) => { const i = process.argv.indexOf(`--${k}`); return i > -1 ? process.argv[i + 1] : def; };
@@ -61,6 +61,9 @@ const page = {
   ...(type === 'crossing' ? { parent: T('work playbook slug'), industrySlug: T('industry slug, e.g. insurers'), differs: t.differsFrom.map((k) => ({ what: k, how: T(`how ${k} differs from the parent page, or delete this row`) })) } : {}),
 };
 for (const f of fields) if (SLOT[f] !== undefined) page[f] = SLOT[f];
+// Answer-first rule (26 Nov 2026): one answer slot per question-heading block, rendered straight under the heading.
+page.answers = Object.fromEntries(t.order.filter((id) => !['sources', 'related', 'tables', 'resources', 'key-numbers'].includes(id))
+  .map((id) => [id, T('one sentence, 30 words max, that answers the heading outright [^n]')]));
 Object.assign(page, {
   offer: { heading: T('free-diagnostic heading in the buyer\'s words'), body: t.offer ? t.offer.replaceAll('{job}', job) : T('what the 30 minutes gets them, 1-2 sentences') },
   keyword: { phrase: T('main search phrase from docs/ai-work-site/keyword-research'), searches: 0, cpc: 0, difficulty: null },
@@ -85,6 +88,7 @@ Reader: lower-middle-market firm, 40-500 staff. Division head for this page: ${r
 
 ## Rules baked into this template
 - **Title** is the buyer's real question (People Also Ask, Reddit, Quora, vendor FAQs). Shape: "${t.titleShape}". Example: "${t.example}".
+- **Answer every question heading first** (Russell, 26 Nov 2026): ${ANSWER_FIRST_BRIEF} Check with \`node scripts/check-answers.mjs drafts/... --show\` after moving the page in, and read every line: the machine checks shape, you check that it truly answers.
 - **Bottom line first**: ${MIN.verdict[0]}-${MIN.verdict[1]} bullets, one idea each, each with ${MIN.verdictFootnotes}+ different sources. No number at the start of the title or a bullet.
 - **Sources**: ${MIN[t.minSources || 'sources']}+ sources from ${MIN.domains}+ different sites; every claim footnoted; several sources per claim where they exist. Vendor claims are labelled as the vendor's.
 - **Augmentation, not replacement**: the "Where does your team stay in charge?" block is required. No headcount-cut language.

@@ -27,7 +27,16 @@ test('the ICP review order is operator first, owner-CEO last, no CFO', () => {
 const good = () => ({
   title: 'AI account reconciliation: what can it match on its own?', type: 'usecase', templateVersion: 1,
   verdict: ['Software matches most lines first, and people review the rest [^1][^2].', 'Measure close days before and after on your own accounts [^2][^3].', 'Keep the controller signing off every reconciliation [^3][^4].'],
-  summary: 'It compares your books with the bank and explains the differences [^1]. People decide the hard ones [^2].',
+  summary: 'AI account reconciliation compares your books with the bank and explains the differences [^1]. People decide the hard ones [^2].',
+  answers: {
+    'human-role': 'The controller keeps the sign-off, and preparers decide every unmatched line [^3].',
+    'team-after': 'Your team works the exceptions instead of ticking matches [^4].',
+    example: 'AI matches a month of bank lines to the ledger and lists what it could not match [^1].',
+    recipes: 'Most small teams should turn on their ERP\'s matching first [^6].',
+    benchmark: 'Run last month through the tool and compare its matches with what your team booked [^2].',
+    'what-goes-wrong': 'Wrong auto-matches and missing audit trails are the two common failures [^8][^9].',
+    'something-else': 'Pick something else when you have only a few accounts [^6].',
+  },
   humanRole: ['The controller signs off each reconciliation [^3].'],
   teamAfter: ['The preparer works the exceptions the software leaves [^4].'],
   keyword: { phrase: 'account reconciliation software', searches: 590, cpc: 212, difficulty: 21 },
@@ -38,7 +47,7 @@ const good = () => ({
   tables: [{ title: 'Tools', intro: 'Vendors [^7].', headers: ['Name', 'Price'], rows: [{ name: 'X', cells: ['Not published [^7]'] }] }],
   howToTest: ['Record today\'s close days.', 'Hold out a month.', 'Compare match rates.'],
   watchOuts: ['Wrong auto-matches slip through [^8].', 'Audit trail gaps [^9].', 'Made-up explanations [^10].'],
-  faq: [{ q: 'Can AI reconcile accounts?', a: 'It can match most lines [^1].' }, { q: 'Is it allowed by auditors?', a: 'Yes, with controls [^4].' }, { q: 'What does it cost?', a: 'Most vendors quote [^7].' }],
+  faq: [{ q: 'Can AI reconcile accounts?', a: 'Yes, AI can match most lines [^1].' }, { q: 'Is it allowed by auditors?', a: 'Yes, with controls [^4].' }, { q: 'What does it cost?', a: 'Tools start around $50 a month [^7].' }],
   buyVsBuild: { buy: 'Buy when your ERP lacks it [^6].', build: 'Build rarely [^9].' },
   pickElse: ['Few accounts: use your ERP\'s built-in matching [^6].'],
   stats: [{ num: '1', label: 'a [^1]', source: 'x' }, { num: '2', label: 'b [^2]', source: 'y' }, { num: '3', label: 'c [^3]', source: 'z' }],
@@ -60,6 +69,10 @@ test('the publish gate passes a complete page and names each broken rule', () =>
   assert.match(fails({ reviews: [...good().reviews].reverse() }), /ICP reviews/);
   assert.match(fails({ summary: 'TODO: write this' }), /TODO/);
   assert.match(fails({ watchOuts: ['No footnote on this one.', 'b [^8]', 'c [^9]'] }), /watchOut 1 has no footnote/);
+  // Answer-first rule (Russell, 26 Nov 2026): a question heading followed by an example, not an answer, fails.
+  assert.match(fails({ answers: { ...good().answers, example: undefined } }), /answer first: example .*no answer/);
+  assert.match(fails({ faq: [{ q: 'Can AI reconcile accounts?', a: 'Matching is mostly solved [^1].' }, ...good().faq.slice(1)] }), /Yes or No/);
+  assert.match(fails({ faq: [...good().faq.slice(0, 2), { q: 'What does it cost?', a: 'Most vendors quote [^7].' }] }), /cost question/);
 });
 
 test('the architecture doc gate: measured demand, a fact siblings lack, a real date', () => {

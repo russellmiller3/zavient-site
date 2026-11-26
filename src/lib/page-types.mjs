@@ -7,6 +7,9 @@
 // Site rules baked in (Drive master plan, "Site rules"; Russell, 26 Nov 2026):
 // - BLUF top: bottom line as 3-5 bullets, then "On this page". No headline numbers at the top.
 // - Titles and section headings are the buyer's real question.
+// - Answer first (Russell, 26 Nov 2026, "MAKE SURE TO ANSWER THE QUESTIONS"): every question heading is answered in
+//   the first sentence under it, 30 words or fewer, before any example, table or list (answers[blockId]).
+//   Checked by src/lib/answer-first.mjs in the publish gate and on the built site.
 // - Every claim footnoted [^n], with several sources where possible.
 // - Augmentation, not replacement: every page says where the team stays in charge.
 // - No Upwork, freelancer or low-end rate content anywhere.
@@ -36,6 +39,9 @@ export const BANNED = [
   { re: /\blay ?offs?\b|\bfewer (?:people|staff|employees)\b|\bwithout (?:hiring|humans)\b/i, why: 'augmentation, not replacement' },
   { re: /\bdelve\b|\bleverage\b|\bunlock\b|\bseamless\b|\btransformative\b|\bgame[- ]chang/i, why: 'banned filler word' },
 ];
+
+// Every brief below is filled answer-first: whatever the block holds, its first sentence answers its heading.
+export const ANSWER_FIRST_BRIEF = 'First, put in answers[blockId] one plain sentence (30 words or fewer, footnoted) that answers the heading outright: yes/no questions start Yes or No, cost questions give a number, how questions give the steps, what questions give a definition. The detail below is the proof.';
 
 // Every block the renderer knows. `h` is the default heading; {topic} is the page's topic (title text before the
 // colon, lower-cased where it reads better). `brief` is what the writer agent researches to fill it.
