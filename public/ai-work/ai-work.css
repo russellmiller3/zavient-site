@@ -368,3 +368,15 @@ sup.fn a { padding: 10px 3px; margin: -10px -1px; } /* bigger hit area, same lin
   .sticky-toc .toc-list a { padding-top: 12px; padding-bottom: 12px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
+
+/* Phones: 2-column prose tables become labelled cards, so nothing scrolls sideways (NN/g mobile tables; Smashing) */
+@media (max-width: 599.98px) {
+  .table-scroll .sources-table.stack-2 { min-width: 0; }
+  .sources-table.stack-2 thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .sources-table.stack-2, .sources-table.stack-2 tbody, .sources-table.stack-2 tr, .sources-table.stack-2 td { display: block; width: 100%; }
+  .sources-table.stack-2 tr { border-bottom: 1px solid var(--line); padding: 12px 0; }
+  .sources-table.stack-2 td { border: 0; padding: 2px 0; position: static; }
+  .sources-table.stack-2 td::before { content: attr(data-label); display: block; font-family: var(--mono); font-size: 14px; color: var(--muted); margin-bottom: 2px; }
+  .sources-table.stack-2 td:first-child { font-weight: 600; }
+  .sources-table.stack-2 td.num { font-size: 18px; }
+}

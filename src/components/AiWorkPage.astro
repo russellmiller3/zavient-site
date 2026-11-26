@@ -23,7 +23,9 @@ const order = orderFor(d);
 const onPage = d.onPage.length > 0 || !tpl ? d.onPage
   : order.filter((id) => !['what-it-is', 'resources', 'key-numbers', 'sources', 'related', 'tables'].includes(id) && hasBlock(d, id))
       .slice(0, 6).map((id) => ({ to: id === 'spokes' ? 'where-ai-pays' : id, text: headingFor(d, id) }));
-const kind = tpl ? (t.label || 'Guide') : 'AI work';
+// Reader-facing eyebrow (26 Nov 2026): the site is AI for all work, so pages say "AI work", not the internal type name.
+// Only the free tools say what they are, because that changes what the reader does next.
+const kind = tpl && d.type === 'tool' ? 'Free tool' : 'AI work';
 // The page type's offer, in its reader's words (architecture doc, "The offer, by page type").
 const offerLine = (t.offer || 'Get a free 30-minute diagnostic of how to approach this with AI.').replaceAll('{job}', d.job);
 // Spot two sits right after the tool, or else after Zavient's own data, or else after the opening answer.

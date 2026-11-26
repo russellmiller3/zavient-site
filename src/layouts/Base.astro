@@ -48,6 +48,16 @@ const css = theme === 'blue' ? '/ai-work/ai-work.css' : '/insights/article.css';
     // 1. Wide tables: keyboard-scrollable, with a "scroll for more" cue only while there is more to see (NN/g mobile tables).
     // 2. Footnotes: a source marker opens the collapsed source list before jumping to the source.
     (() => {
+      // 2-column prose tables (If/Then, Date/What happens) read as labelled cards on phones instead of scrolling.
+      // Roles keep the table meaning when CSS changes how the cells display (Safari drops it otherwise).
+      document.querySelectorAll('.table-scroll table').forEach((t) => {
+        const heads = [...t.querySelectorAll('thead th')];
+        if (heads.length !== 2) return;
+        t.classList.add('stack-2'); t.setAttribute('role', 'table');
+        t.querySelectorAll('tr').forEach((r) => r.setAttribute('role', 'row'));
+        t.querySelectorAll('th').forEach((c) => c.setAttribute('role', 'columnheader'));
+        t.querySelectorAll('tbody td').forEach((c, i) => { c.setAttribute('role', 'cell'); c.dataset.label = heads[c.cellIndex] ? heads[c.cellIndex].textContent : ''; });
+      });
       document.querySelectorAll('.table-scroll').forEach((box) => {
         const t = box.querySelector('table');
         box.setAttribute('tabindex', '0'); box.setAttribute('role', 'region');
