@@ -16,8 +16,9 @@
  ],
  "onPage": [],
  "headings": {},
- "summary": "Custom AI solutions fit AI to your own data, rules and software, usually by connecting a bought model to your documents.[^5][^6] AI drafts, finds and extracts; your staff check and decide.[^10] Testing on your own cases and planning upkeep make or break it.[^23][^30]",
+ "summary": "Custom AI solutions connect a bought model to your own data, rules and software, so AI drafts, finds and extracts from your documents.[^5][^6] Your staff check and decide.[^10] Testing on your own cases and planning upkeep make or break it.[^23][^30]",
  "walkAway": [
+  "You should leave with a build-or-buy call, a 3-year cost sheet, a test set from your files, an ownership contract and a named owner.[^3][^9]",
   "A written build, buy or leave-it call for each use, with the off-the-shelf option tested first. Most AI uses at large firms are now bought, not built.[^3][^4]",
   "A 3-year cost sheet: build, AI usage at dated list prices, upkeep and model changes. Gartner warns AI cost estimates can be off by 500% to 1,000%.[^9][^25]",
   "A test set of 20 to 50 real cases from your files, with today's results and a pass mark agreed before any demo.[^23][^12]",
@@ -25,6 +26,7 @@
   "A named owner who reruns the tests every month and whenever the vendor changes or retires a model.[^10][^12]"
  ],
  "humanRole": [
+  "Your people make the go or no-go call, set the right answers, settle ownership and approve customer-facing answers.[^10][^14]",
   "The COO or process owner owns the result and makes the go or no-go call. NIST asks for checks by people who did not build the system.[^10]",
   "A domain reviewer, such as the controller or an ops lead, sets the right answers and spot-checks output. Model makers say human judgment should calibrate any automated scoring.[^12][^23]",
   "Your legal or contracts lead settles who owns data, outputs and any model tuned on your data before signing.[^13][^37] If the use is high-risk under EU rules, like hiring or credit, heavy changes can make your firm the legal provider.[^11]",
@@ -68,7 +70,7 @@
  ],
  "ownData": {
   "title": "What does a custom AI workload cost to run each month?",
-  "intro": "We priced two typical workloads on 9 models from 4 providers, using list prices read on 26 Nov 2026.[^15][^16][^17][^18] A token, the unit AI usage is billed in, is about three-quarters of a word, so a 5-page document is about 3,500 tokens.[^20] Worked example: 50,000 questions make 250 million tokens in, $500 at $2 per million, plus 20 million out, $200 at $10: $700 a month.",
+  "intro": "About $35 to $1,400 a month for 50,000 questions, depending on the model, at list prices read 26 Nov 2026.[^15][^16][^17] We priced two typical workloads on 9 models from 4 providers; a token, the unit AI is billed in, is about three-quarters of a word.[^18][^20] Worked example: 50,000 questions make 250 million tokens in, $500 at $2 per million, plus 20 million out, $200 at $10: $700 a month.",
   "headers": [
    "Model (list price per million tokens, in / out)",
    "10,000 documents a month (3,500 tokens in, 500 out each)",
@@ -134,6 +136,7 @@
   "note": "Standard US list prices before tax, discounts and caching; token counts are our estimates, and the 3-year column assumes flat prices, which Google already breaks.[^20][^17] Excludes reasoning tokens, hosting, the search index, engineering and review time, and tests no quality: a cheap model may fail your test. Mistral's two official pages disagree on Large 4, so we used the higher; Google rows are the Gemini Developer API paid tier.[^18][^19]"
  },
  "watchOuts": [
+  "Most stall from building what could be bought, messy documents, model changes, unnoticed quality slips, weak contracts and cost surprises at volume.[^1][^8] Each fix is below.",
   "Building what you could buy. Internal builds reached daily use about half as often as partnered ones, so test the off-the-shelf option on the same cases first.[^1][^4]",
   "Messy or scattered documents. Most firms (63%) lack or are unsure of AI-ready data practices, so test on 50 real records before you build.[^8][^6]",
   "Model retirements and price changes break the build. Two Google prices we checked double within about 5 weeks; vendors retire models on 2 to 6 months' notice.[^17][^25][^26][^27]",
@@ -142,6 +145,7 @@
   "Cost surprises at full volume. Gartner warns cost estimates can be off by 500% to 1,000%, so price the pilot at real volume, not demo volume.[^9]"
  ],
  "howToTest": [
+  "Judge them by a test on your own cases: a pass mark set before the demo, run against an off-the-shelf tool and today's process.[^12][^23]",
   "Write the pass mark before any demo, such as 95% of fields right and every answer citing its source.[^38][^12]",
   "Pull 20 to 50 real cases from your files, messy ones included, and keep them from the vendor until test day.[^23][^12]",
   "Have two staff mark the right answers on their own, and drop cases they disagree on.[^23]",
@@ -155,7 +159,7 @@
  "faq": [
   {
    "q": "How much does custom AI development cost?",
-   "a": "The AI usage is often the small part: $35 to $1,400 a month for 50,000 questions in our check.[^15][^17] Building, data preparation, testing and upkeep cost more.[^30][^9] We found no neutral price range for mid-size builds, so ask for each part priced separately."
+   "a": "Building, data preparation, testing and upkeep cost the most; the AI usage itself ran $35 to $1,400 a month for 50,000 questions in our check.[^30][^9][^15][^17] We found no neutral price range for mid-size builds, so ask for each part priced separately."
   },
   {
    "q": "Can I create my own custom AI?",
@@ -175,7 +179,7 @@
   }
  ],
  "pickElse": [
-  "The job follows clear rules: use a rule or a no-code tool such as Zapier or Power Automate. Google says a simple rule often gets you about half the way.[^7]",
+  "When the job follows clear rules: use a rule or a no-code tool such as Zapier or Power Automate. Google says a simple rule often gets you about half the way.[^7]",
   "Staff need drafting, summaries and search across email and files: buy seats of ChatGPT Enterprise, Claude for Work, Microsoft 365 Copilot or Gemini for Workspace.[^3][^1]",
   "Your ERP (finance system) or CRM (customer database) already has AI built in: try it before building.[^4] Our AI integration guide shows what each system connects to."
  ],

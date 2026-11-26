@@ -56,14 +56,15 @@
     "buy-or-build": "Should you buy sales analytics or build it?",
     "something-else": "When should you pick something else?"
   },
-  "summary": "Sales analytics turns sales data into decisions about where to spend effort[^11]. At a bank, credit union or insurer, AI ranks who to call, what to offer and why[^1]. Clean customer data and a holdout test make or break it[^12][^6].",
+  "summary": "Sales analytics turns sales data into decisions; at a bank, credit union or insurer, AI ranks who to call, what to offer and why[^11][^1]. Reps still choose who to call[^2][^13]. Clean customer data and a holdout test make or break it[^12][^6].",
   "humanRole": [
-    "Rep, relationship manager or licensed agent: picks who to call from the top of the list, and can skip anyone[^2][^13]. Their logged outcomes train the next version[^4].",
+    "The rep, relationship manager or licensed agent keeps it: they pick who to call from the top of the list, and can skip anyone[^2][^13]. Their logged outcomes train the next version[^4].",
     "Compliance officer: approves the offer list, targeting fields and exclusions before launch, and keeps the sign-off on file. Examiners review the criteria used to pick who gets prescreened offers[^8].",
     "Head of retail banking or sales: sets goals on conversations and fit, not product counts[^14]. Pays no incentive tied to products per customer without risk controls[^10].",
     "Analyst or marketing lead: owns the list, the uncalled holdout group and the monthly lift report[^6][^15]."
   ],
   "teamAfter": [
+    "Reps call from the top of the list and spend less time on desk research, so more of their day goes to conversations[^1].",
     "Same people, better calls: commercial banking relationship managers with an analytics workbench grew portfolios 9%, against 5% for a control group[^1].",
     "Less desk time: those managers spent 90% less time on account planning and got 5 times more cross-sell ideas[^1].",
     "Most firms use AI to help staff: of firms reporting AI task effects, 66% only augment and 2% saw AI-related employment fall[^16][^17].",
@@ -76,7 +77,7 @@
   "tables": [
     {
       "title": "What are the six sales analytics methods, in plain words?",
-      "intro": "Each method answers one question about a customer[^11][^1]. The model ranks; the rep decides.",
+      "intro": "They are share of wallet, white space, propensity, next best action, churn prediction and lookalike models, each answering one question about a customer[^11][^1]. The model ranks; the rep decides.",
       "headers": [
         "Method",
         "Plain words",
@@ -136,7 +137,7 @@
     },
     {
       "title": "What do sales analytics tools cost?",
-      "intro": "List prices read on 26 Nov 2026[^37][^29]. Vendor claims are marked as the vendor's. Seat prices leave out setup and data work.",
+      "intro": "CRM seats run $65 to $700 a user a month, with AI scoring from about $90, and Alkami's bank module starts at $23,000 a year[^29][^37][^38][^39]. List prices read on 26 Nov 2026; vendor claims are marked as the vendor's. Seat prices leave out setup and data work.",
       "headers": [
         "Name",
         "What it does",
@@ -201,7 +202,7 @@
     },
     {
       "title": "What did published studies find?",
-      "intro": "Other teams' results. Your book of business can differ, which is why you test.",
+      "intro": "They found real gains: relationship managers with analytics grew portfolios 9% against 5%, and a bank offer opened 82% more accounts than a control[^1][^42]. These are other teams' results; yours can differ, which is why you test.",
       "headers": [
         "Study",
         "Finding"
@@ -294,7 +295,7 @@
   ],
   "ownData": {
     "title": "What do sales analytics vendors show on their own pages?",
-    "intro": "We read the product or pricing pages of 9 sales analytics vendors on 26 Nov 2026[^39][^46][^13][^47][^28][^48][^2][^26][^49]. Eight sell to banks, credit unions or insurance agencies; one sells to distributors. For each we recorded yes, no or in part.",
+    "intro": "Most show little you need to check: 2 of 9 publish a price, 1 names fair lending and 4 show a reason for each pick[^39][^28][^13]. We read the product or pricing pages of 9 sales analytics vendors on 26 Nov 2026[^46][^47][^48][^2][^26][^49]. Eight sell to banks, credit unions or insurance agencies; one sells to distributors.",
     "headers": [
       "What the page shows",
       "Vendors",
@@ -386,7 +387,7 @@
     }
   ],
   "howToTest": [
-    "Pilot one product in one branch or region. Record today's numbers there first: contacts made, offers taken, balances opened and rep time per conversation.",
+    "Pilot it on one product in one branch, keep part of the list uncalled, and compare take-up before you roll it out[^6]. Record today's numbers there first: contacts made, offers taken, balances opened and rep time per conversation.",
     "Back-test: score last quarter's customers using data as of its first day. Check whether the top tenth really opened more products than the rest.",
     "Keep a random 10% of the top of the list uncalled. Lift is the called group's take-up minus the uncalled group's[^6].",
     "Also call a small random group below the cut-off. That tests the ranking itself, not just the calls[^15].",
@@ -396,6 +397,7 @@
     "Rescore monthly or quarterly. Propensity models need a periodic refresh[^60]."
   ],
   "watchOuts": [
+    "It goes wrong through quota abuse, lookalike and proxy bias, bad household data, chasing people who would buy anyway, and lists with no reasons[^9][^8]. Each fix is below.",
     "Quotas built on model lists invite abuse: Wells Fargo staff opened about 1.5 million unauthorized deposit accounts[^9]. Reward conversations and fit, not product counts[^10][^14].",
     "Lookalike seeds copy the seed list's makeup. Meta bars lookalikes for financial product ads, and HUD flags them for housing[^35][^36].",
     "Targeting fields can stand in for a protected trait. Disparate treatment is still illegal, so compliance reviews each field before launch[^7][^8].",
@@ -430,11 +432,11 @@
     }
   ],
   "buyVsBuild": {
-    "buy": "Buy the scoring and workflow inside the CRM or digital banking platform you already run[^29][^39]. In one survey of enterprise buyers, 76% of AI use cases were bought rather than built[^64].",
+    "buy": "Mostly buy the scoring and workflow inside the CRM or digital banking platform you already run[^29][^39]. In one survey of enterprise buyers, 76% of AI use cases were bought rather than built[^64].",
     "build": "Build the parts that are yours: the household data join, the holdout test and the fair lending review[^12][^8]. Few vendor pages we checked show these[^28]. In MIT's study, outside partners reached deployment about twice as often as internal builds[^65]."
   },
   "pickElse": [
-    "Few products or a small customer base: a spreadsheet white-space grid is enough to start[^24][^25].",
+    "When you have few products or a small customer base: a spreadsheet white-space grid is enough to start[^24][^25].",
     "Already on Salesforce Financial Services Cloud, Dynamics 365 Sales Premium or HubSpot Sales Hub Pro: turn on the built-in scoring first[^29][^38].",
     "Insurance agency: try a rounding tool such as AgencyKPI before a custom model[^26].",
     "Need to forecast the pipeline, not pick accounts: revenue intelligence tools such as Gong or Clari fit better[^40][^41]."

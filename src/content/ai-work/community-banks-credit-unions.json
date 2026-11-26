@@ -57,6 +57,7 @@
  },
  "summary": "AI in banking, at a community bank or credit union, mostly sorts, drafts and answers: fraud alerts, credit memos and staff questions.[^2][^3][^10] People still decide, and you stay responsible for AI you buy from vendors.[^11][^12] Getting your data out of the core makes or breaks it.[^4][^5]",
  "humanRole": [
+  "Your people keep every credit decision, every BSA filing and the member conversation, and management owns oversight of every AI vendor.[^11][^12]",
   "Credit officers keep each credit decision and sign every memo AI drafts; TD sends its AI drafts to expert review.[^10] The Office of the Comptroller of the Currency (OCC) rates AI risk partly by whether a person approves each output.[^12][^13]",
   "Your Bank Secrecy Act (BSA) officer decides what gets filed; AI only sorts alerts first, as Fiserv's triage agent does (vendor).[^14] Most alerts are false positives, so that sorting is where analyst time goes.[^15]",
   "Member-service staff keep the conversation; AI suggests answers from your own procedures.[^3] In a 5,172-agent study, AI help raised issues resolved per hour about 15%, most for newer staff.[^16]",
@@ -110,7 +111,7 @@
  ],
  "ownData": {
   "title": "Who examines you, and which AI guidance applies?",
-  "intro": "On 26 Nov 2026 we counted active banks holding $250M to $5B, by primary federal regulator, in Federal Deposit Insurance Corporation (FDIC) data.[^28] Assets are as of 30 Sep 2026; credit union counts come from the National Credit Union Administration (NCUA), Q2 2026.[^29] Then we mapped the AI-related guidance each examiner has issued or joined.[^6][^12][^30]",
+  "intro": "Your charter decides: the OCC, Fed or FDIC examines banks and NCUA credit unions, each pointing to its own AI-related guidance.[^31][^6][^7][^30] On 26 Nov 2026 we counted banks holding $250M to $5B by federal regulator in FDIC data, assets as of 30 Sep 2026.[^28] Credit union counts come from NCUA data for Q2 2026.[^29]",
   "headers": [
    "Charter (federal examiner)",
    "Active, all sizes",
@@ -166,7 +167,7 @@
  "tables": [
   {
    "title": "How many banks and credit unions use AI, and who was asked?",
-   "intro": "Each survey asked a different group, so compare them with care.[^2][^37] The second column is who answered, from each publisher's own report.",
+   "intro": "About half or more: Cornerstone found generative AI at 49% of banks and 59% of credit unions, asking 416 executives at $250M to $50B institutions.[^1] Each survey asked a different group, so compare them with care.[^2][^37] The second column is who answered, from each publisher's own report.",
    "headers": [
     "Survey",
     "Who answered",
@@ -218,7 +219,7 @@
   },
   {
    "title": "What changes between a bank and a credit union?",
-   "intro": "Our read of which agency issued or joined each item, as of 26 Nov 2026.[^40][^41] Not legal advice.",
+   "intro": "Mainly vendor oversight: bank regulators can examine your AI vendors, but NCUA can't, so credit unions carry that check themselves.[^33] Our read of which agency issued or joined each item, as of 26 Nov 2026.[^40][^41] Not legal advice.",
    "headers": [
     "Item",
     "Banks (OCC, Fed, FDIC)",
@@ -271,7 +272,7 @@
   },
   {
    "title": "What AI is your core provider selling?",
-   "intro": "The big three cores serve over 70% of banks and nearly half of credit unions.[^43] The American Bankers Association (ABA) says some cores charge extra for data connections (APIs), and extraction can take 12 to 18 months.[^5]",
+   "intro": "Fiserv sells agentOS agents for loan onboarding and AML triage, Jack Henry builds on Google Cloud, and FIS works with Anthropic.[^14][^44][^46] These big three cores serve over 70% of banks and nearly half of credit unions.[^43] The American Bankers Association (ABA) says some cores charge extra for data connections (APIs), and extraction can take 12 to 18 months.[^5]",
    "headers": [
     "Core provider",
     "Share of banks / credit unions",
@@ -360,6 +361,7 @@
   }
  ],
  "watchOuts": [
+  "It goes wrong through member data pasted into personal AI, wrong chatbot answers, vendor models without denial reasons and core contracts that block your data.[^39][^24][^8][^5] Each fix is below.",
   "Staff paste member data into personal ChatGPT or Gemini accounts, as ICBA warns.[^39] Approve one business tool and write down that member data stays out of anything else, as CU*Answers does.[^57]",
   "Chatbots give wrong answers or trap members in loops, which the CFPB flagged.[^24] Keep a fast path to a person, and test fees and rates, which the OCC names as hallucination risks.[^12]",
   "A vendor's credit model can't give the specific reasons a denial needs.[^8][^58] Before you sign, have the vendor show the reasons its model gives on a sample of your own denials.",
@@ -390,15 +392,15 @@
   },
   {
    "q": "Will examiners criticize us for using AI?",
-   "a": "The OCC says its AI framework sets no new expectations and can be tailored to community banks.[^12][^49] The FDIC says not following its model guidance does not, by itself, bring criticism.[^7]"
+   "a": "Not for using AI by itself: the OCC says its AI framework sets no new expectations and can be tailored to community banks.[^12][^49] The FDIC says not following its model guidance does not, by itself, bring criticism.[^7]"
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy when your core or an established vendor already sells the job, such as fraud triage or memo drafting.[^14][^44] ICBA told the OCC that partnering with a core provider is often the only practical path for community banks.[^46] Most enterprise AI is now bought: 76% of use cases, up from 53% in 2024.[^63]",
+  "buy": "Mostly buy, when your core or an established vendor already sells the job, such as fraud triage or memo drafting.[^14][^44] ICBA told the OCC that partnering with a core provider is often the only practical path for community banks.[^46] Most enterprise AI is now bought: 76% of use cases, up from 53% in 2024.[^63]",
   "build": "Build only thin layers where your own procedures are the edge, such as a staff knowledge base. MIT research found bought tools succeed about 67% of the time; internal builds about a third as often.[^64][^63] For credit models, buy and validate; you still owe specific denial reasons.[^8]"
  },
  "pickElse": [
-  "Your core already sells the AI job: check Fiserv agentOS, Jack Henry's Google Cloud tools or FIS before adding a separate vendor.[^14][^44][^46]",
+  "When your core already sells the AI job: check Fiserv agentOS, Jack Henry's Google Cloud tools or FIS before adding a separate vendor.[^14][^44][^46]",
   "Staff only need drafting and summaries: Microsoft 365 Copilot ($21 per user a month) or ChatGPT Business ($20), prices read 26 Nov 2026.[^60][^61] Copilot is what 95% of AI-using banks report.[^4]",
   "You are under $1B and need a CECL estimate: the Fed's free SCALE tool runs in a spreadsheet.[^27]",
   "Consumer credit decisions: buy from a specialist such as Zest AI, which claims 25% higher approvals, then validate it yourself.[^65][^8]"

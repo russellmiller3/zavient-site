@@ -20,8 +20,9 @@
     "benchmark": "How do you judge any analytics advisor?",
     "spokes": "Which kind of analytics do you need?"
   },
-  "summary": "Data analytics consulting gets your numbers straight, then builds the dashboards, forecasts and models managers use to decide.[^10][^11] AI adds the forecasts and scores, on top of clean records.[^12] Trusted data and daily use make or break it.[^4][^5]",
+  "summary": "Data analytics consulting gets your numbers straight, then builds the dashboards, forecasts and models so managers decide from facts, not guesses.[^10][^11] AI adds the forecasts and scores, on top of clean records.[^12] Trusted data and daily use make or break it.[^4][^5]",
   "walkAway": [
+    "You should leave with one named weekly decision, a data-quality score, agreed metric definitions, one dashboard used weekly and a handover your team can run.[^1][^5]",
     "One named weekly decision, with an owner and today's number to beat. Firms that scale analytics start from the decision and work back to the data.[^1][^13]",
     "A data-quality score on 100 of your own recent records. Most firms never measure it, and in one study 47% of new records had a critical error.[^3][^14]",
     "One agreed definition per metric, signed off by the controller. Inconsistent definitions are a top barrier to quality data (45%).[^4][^3]",
@@ -76,7 +77,7 @@
   ],
   "ownData": {
     "title": "What does a year of BI software cost a 100-person firm?",
-    "intro": "We read 11 BI vendors' own pricing pages on 26 Nov 2026, then priced two seat mixes for a 100-person firm.[^7][^23] At 45 users, the eight plans with usable prices cost about $3,700 to $14,100 a year. That is often less than one build: typical BI projects run $10,000 to $49,999.[^8]",
+    "intro": "About $3,700 to $14,100 a year at 45 users, across the eight plans with usable prices.[^7][^23] We read 11 BI vendors' own pricing pages on 26 Nov 2026 and priced two seat mixes for a 100-person firm. That is often less than one build: typical BI projects run $10,000 to $49,999.[^8]",
     "headers": [
       "Tool and plan (list price)",
       "45 users, a year",
@@ -148,6 +149,7 @@
     "note": "Method: US list prices billed yearly, read on each vendor's own page on 26 Nov 2026. Our seat mixes: 3 builders, 12 explorers who filter and edit, 30 viewers (BARC's 44% small-firm use); or 5, 15 and 80.[^5] Excludes discounts, tax, data and AI add-ons and warehouse costs; Microsoft 365 E5 already includes Power BI Pro.[^7]"
   },
   "watchOuts": [
+    "Most stall because nobody uses the dashboard, the data is wrong, teams fight over definitions, or the budget goes to tools instead of daily use.[^5][^3][^1]",
     "Nobody uses the dashboard. BI use has sat near a quarter of staff for years, so start from one decision, train people and track weekly users.[^5][^6]",
     "The data is wrong, and nobody checks. Score 100 recent records before building; in one study, only 3% of department scores met a basic standard.[^14][^3]",
     "Teams argue about whose number is right. Write one list of agreed metric definitions and have the controller sign it; inconsistent definitions are a top barrier (45%).[^4][^3]",
@@ -156,6 +158,7 @@
     "People ignore what they can't see into. A call-center recommendation engine went unused until it explained its reasons, so show why, not just what.[^35]"
   ],
   "howToTest": [
+    "Judge them on your own numbers: today's figure for one decision, a data-quality score, and weekly use after launch.[^1][^5]",
     "Write down the one decision and today's number before work starts: cycle time, forecast error or hours spent building reports.[^1]",
     "Score 100 recent records for critical errors, then score them again after cleanup.[^14]",
     "Time how long it takes to answer the decision's question today, then after. In BARC's survey, 97% of users reported faster reporting or planning.[^5]",
@@ -186,7 +189,7 @@
     },
     {
       "q": "Which analytics consulting firms are the best?",
-      "a": "Judge any firm on your own work, not on a list. Ask for today's number, a fixed first release and a weekly-use target, then check use against BARC's adoption figures.[^5][^1]"
+      "a": "No list can tell you; the best firm is the one that moves your own number, with a fixed first release and a weekly-use target.[^1] Check use against BARC's adoption figures.[^5]"
     },
     {
       "q": "Which kind of analytics do we need?",
@@ -194,7 +197,7 @@
     }
   ],
   "pickElse": [
-    "You run Microsoft 365 and need a few reports: start with free Power BI Desktop. Pro is $14 a user a month, and Microsoft 365 E5 already includes it.[^7]",
+    "When you run Microsoft 365 and need a few reports: start with free Power BI Desktop. Pro is $14 a user a month, and Microsoft 365 E5 already includes it.[^7]",
     "Your data lives in Google tools: try Google Data Studio (Looker Studio), which has a free tier.[^24]",
     "You have one database and a technical person: self-host Metabase's free open-source version.[^23]",
     "The work fills a full-time role for years: hire an analyst. Median pay for the role was $120,230 in May 2025.[^38][^39]"
@@ -261,7 +264,7 @@
   "spokes": [
     {
       "slug": "sales-analytics",
-      "why": "Which accounts to call and what to offer next, from your CRM and sales history."
+      "why": "Yes: it ranks which accounts to call and what to offer next, from your CRM and sales history, and the rep decides."
     },
     {
       "slug": "ai-demand-forecasting",
@@ -273,11 +276,11 @@
     },
     {
       "slug": "ai-credit-scoring",
-      "why": "Predicts whether an applicant will repay, with plain-language decline reasons and bias checks."
+      "why": "With plain-language decline reasons and bias checks on a model that predicts whether an applicant will repay."
     },
     {
       "slug": "ai-claims-processing",
-      "why": "Reads and routes insurance claims faster, while the adjuster still decides."
+      "why": "Yes: AI reads and routes claims faster, while the adjuster still decides and the file shows who decided."
     }
   ],
   "sources": [

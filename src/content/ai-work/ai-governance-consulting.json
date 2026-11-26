@@ -16,8 +16,9 @@
  ],
  "onPage": [],
  "headings": {},
- "summary": "AI governance consulting builds your AI governance framework: who owns AI, which tools staff may use, with what data, and who checks output.[^2][^1] Done well, it speeds adoption: staff know what's allowed.[^6][^7] It succeeds on a fast approval route and evidence an auditor can read, not a long policy.[^6][^8]",
+ "summary": "AI governance consulting builds your AI governance framework, so staff know who owns AI, which tools and data are allowed and who checks output.[^2][^1] Done well, it speeds adoption.[^6][^7] It succeeds on a fast approval route and evidence an auditor can read, not a long policy.[^6][^8]",
  "walkAway": [
+  "You should leave with five things: a named owner, a register of AI tools, approved tools with data rules, risk tiers and an evidence file.[^2][^9]",
   "A named owner, usually the COO (chief operating officer), with sign-off from the owner or board. Firms where the C-suite owns AI report a return far more often (62% vs 18%).[^2][^6]",
   "A register: one list of every AI tool and use, including AI built into vendor software. NIST (the US standards agency) starts governance with this inventory.[^2][^31]",
   "An approved-tools list, data rules for what may go into each tool, and a request route that answers in days. Only 27% of smaller firms have data rules today.[^3][^6]",
@@ -25,6 +26,7 @@
   "An evidence file an examiner or auditor can read: training records, reviews and incidents, refreshed each quarter. Most insurers say controls exist but evidence is scattered (68%).[^9][^20]"
  ],
  "humanRole": [
+  "Your people keep ownership, risk calls, customer and HR decisions, and the final check on every output; AI decides none of them.[^2][^25]",
   "The COO owns the register and the quarterly review. The head of compliance or risk sets risk tiers and keeps the evidence file.[^2][^17]",
   "A lending, underwriting or claims lead signs off any AI that touches a customer decision. California's rules define real review: the reviewer understands the output and can change it.[^25][^12]",
   "The HR lead owns AI in hiring, discipline and firing. California's SB 947 bars relying on software alone to discipline or fire a worker.[^26][^24]",
@@ -73,7 +75,7 @@
  ],
  "ownData": {
   "title": "Which AI rules apply to your firm? Status as of 26 Nov 2026",
-  "intro": "We read 11 laws, rules and frameworks at their source on 26 Nov 2026.[^1][^12][^16] Then we marked whether each applies to four kinds of firm. The manufacturer and professional-services columns assume no lending, insurance or health-care business.",
+  "intro": "Banks face model-risk guidance, insurers the NAIC bulletin, and any firm using AI to hire in NYC, Illinois or California faces hiring rules.[^18][^16][^23][^24] We read 11 laws, rules and frameworks at their source on 26 Nov 2026 and marked which apply to four kinds of firm.[^1][^12] The manufacturer and professional-services columns assume no lending, insurance or health-care business.",
   "headers": [
    "Rule (status)",
    "Bank or credit union",
@@ -163,6 +165,7 @@
   "note": "Not legal advice; rules change, so check the source before acting. Colorado enforcement is on hold under a court order, and its final rules are adopted but not yet in effect.[^15] Federal override of state laws (preemption) is unsettled: a 2025 order targets state AI laws but voids none.[^32][^33]"
  },
  "watchOuts": [
+  "Most stall because the rules don't fit real work: bans push AI underground, policies go unenforced, and vendor AI goes unchecked.[^10][^4] Each fix is below.",
   "A ban drives AI use underground. Misuse ran at 67% where AI was banned, against 33% with no policy, so approve safe tools instead.[^10]",
   "A policy nobody enforces. Only 34% of firms with a policy audit for unapproved AI, so check the register against real use each quarter.[^4]",
   "A policy so strict people ignore it. Of firms with an AI policy, 54% of HR leaders call it too restrictive; give low-risk uses a fast approval.[^38][^6]",
@@ -171,6 +174,7 @@
   "AI agents acting with no sign-off. In one survey, 47% skipped governance for urgent agent rollouts; require a named approver before any agent acts alone.[^40][^41]"
  ],
  "howToTest": [
+  "Judge them on what they leave you, not the policy they write: a register, an evidence file, named owners and a fast approval route.[^8][^2]",
   "Ask for a register and an evidence file, not just a policy. Evidence is what most firms lack.[^8][^9]",
   "Ask which rules apply to you, by state and regulator, as of this month. Compare the answer with our table above.[^16][^15]",
   "Ask how fast staff can get a new tool approved under their design. Days beat months on returns.[^6]",
@@ -208,7 +212,7 @@
   }
  ],
  "pickElse": [
-  "You have a compliance lead with time: do it in-house with the free NIST AI RMF Playbook.[^2]",
+  "When you have a compliance lead with time: do it in-house with the free NIST AI RMF Playbook.[^2]",
   "You already track a security standard (ISO 27001 or SOC 2) in compliance software: add AI governance there, in tools such as Compyl or Scytale.[^36][^37]",
   "The question is purely legal, like a Colorado notice or a New York City bias audit: ask your law firm.[^12][^23]",
   "You only need the ISO 42001 certificate: go straight to an accredited certification body.[^34]"
