@@ -5,7 +5,13 @@
  "industry": "lending",
  "summary": "AI credit scoring predicts whether an applicant will repay[^5], then has to say why in plain words when it says no[^1][^43]. The model is the easy part. The decline reasons[^1][^41], the bias checks[^39][^40] and the paperwork your examiner will ask for[^7][^8] are what make or break it.",
  "index": true,
- "verdict": "Start with a scorecard you can explain line by line: a weight-of-evidence scorecard in optbinning[^17], or an Explainable Boosting Machine in interpret[^16]. Both show how much each input added to or took from the score, so decline reasons come straight from the model[^17][^16]. US law requires specific reasons for every decline[^1][^43]. Move to LightGBM or XGBoost with SHAP only when your own benchmark shows the lift[^5] and you have a team to validate it[^7][^41]. Use large language models to read documents, not to score: in published benchmarks they lose to gradient boosting on credit data[^6][^13].",
+ "verdict": [
+  "Start with a scorecard you can explain line by line: it shows how much each input added to or took from the score[^17][^16].",
+  "US law requires specific reasons for every decline, and a simple scorecard gives them straight from the model[^1][^43][^17].",
+  "Move to a more complex model only when your own benchmark shows it predicts better and your validators can check it[^5][^7][^41].",
+  "Use AI to read loan documents, not to decide: in published studies, language models predicted defaults worse than standard models[^6][^13].",
+  "The main software is free; the real cost is your team's time on data, validation and decline reasons[^50][^52][^7][^41]."
+ ],
  "onPage": [
   {
    "to": "own-data",
@@ -34,9 +40,9 @@
  ],
  "stats": [
   {
-   "num": "166x",
-   "label": "monthly downloads of XGBoost against optbinning, the top scorecard library[^58][^63][^68][^69][^70]",
-   "source": "Zavient count from pypistats, 26 Nov 2026"
+   "num": "30 days",
+   "label": "to give a declined applicant the specific main reasons, under US Regulation B[^1]",
+   "source": "Regulation B, 12 CFR 1002.9"
   },
   {
    "num": "3 of 13",
@@ -56,13 +62,13 @@
  ],
  "pickElse": [
   "No data science team: look at a platform such as Zest AI, Provenir, Taktile or Scienaptic. None publish prices; expect a contract[^18][^19][^20][^21].",
-  "Many thin-file applicants with little credit history: their scores are less accurate[^40], so add bank-account cash-flow data from Plaid Check, Prism Data or Nova Credit before you change the model[^27][^28][^30].",
+  "Many thin-file applicants, with little credit history: their scores are less accurate[^40]. Add bank-account cash-flow data from Plaid Check, Prism Data or Nova Credit before you change the model[^27][^28][^30].",
   "Most of the work is reading documents: spend on extraction first (recipe 3 below). In our own benchmark, AI read each long report for under $0.30[^42].",
-  "A small loan book: benchmark TabPFN against the scorecard. It did best on small, unbalanced default data in one 2026 study[^15], but its newest weights need a commercial licence for production[^49]."
+  "A small loan book: benchmark TabPFN, a ready-trained AI model for tables, against the scorecard. It did best on small, unbalanced default data in one 2026 study[^15], but its newest weights need a commercial licence for production[^49]."
  ],
  "ownData": {
   "title": "The open-source credit stack, checked 26 November 2026",
-  "intro": "We pulled the latest release date, licence and monthly downloads for every open-source library a lender would use[^45][^58]. Downloads show what teams actually run. Release dates show what is still maintained.",
+  "intro": "We pulled the latest release date, licence and monthly downloads for every open-source library a lender would use[^45][^58]. Downloads show what teams actually run; release dates show what is still maintained. Hand this table to your modeler.",
   "headers": [
    "Library",
    "What it is for",
@@ -108,7 +114,7 @@
    ],
    [
     "optbinning",
-    "Scorecards (binning and WoE)",
+    "Scorecards (binning and weight of evidence)",
     "Apache-2.0[^50]",
     "22 Nov 2026[^50]",
     "196,070[^63]"
@@ -167,7 +173,7 @@
  },
  "example": {
   "input": "An application with income, debts and time at address, plus a credit bureau report pulled with consent.",
-  "output": "A score, approve or decline, and for a decline the top reasons in plain words, such as \"debt is high compared with income\", ready for the adverse action notice."
+  "output": "A score and an approve or decline. For a decline, the top reasons in plain words, such as \"debt is high compared with income\", ready for the decline letter (adverse action notice)."
  },
  "recipes": [
   {
@@ -179,9 +185,9 @@
     "Scorecard points",
     "Cutoff and policy rules",
     "Decision with top reasons",
-    "Quarterly drift and bias check (fairlearn)"
+    "Quarterly check for accuracy drift and bias (fairlearn)"
    ],
-   "cost": "Open-source software[^50][^52]. The cost is your team's time to model your past loans, then a regular review."
+   "cost": "Free open-source software[^50][^52]; building it on your past loans is quoted per job, with no price published here. After that, the cost is your team's time for regular reviews."
   },
   {
    "name": "2. Mid-size lender: gradient boosting with reason codes",
@@ -207,7 +213,7 @@
     "Scorecard or boosted model scores",
     "Decision with reasons"
    ],
-   "cost": "In our own benchmark, AI read fund reports of up to 57 pages for about $0.006 to $0.27 each, depending on the models[^42]; see the AI document processing guide."
+   "cost": "In our own benchmark, AI read fund reports of up to 57 pages for about $0.006 to $0.27 each[^42]. The cost depends on the models; see the AI document processing guide."
   }
  ],
  "tables": [
@@ -274,7 +280,7 @@
      "cells": [
       "Cash-flow score[^28]",
       "Not published[^28]",
-      "Vendor claims a 30% average lift in KS[^28]"
+      "Vendor claims a 30% average lift in KS, a measure of how well a score separates good and bad loans[^28]"
      ]
     },
     {
@@ -346,7 +352,7 @@
   },
   {
    "title": "What published studies found",
-   "intro": "Other teams' results on public data. Your loan book can differ, which is why you benchmark.",
+   "intro": "Other teams' results on public data. AUC measures how well a model ranks repayers above defaulters: 0.5 is a coin flip, 1.0 is perfect. Your loan book can differ, which is why you benchmark.",
    "headers": [
     "Study",
     "Finding"
@@ -356,7 +362,7 @@
      "name": "arXiv 2510.25701",
      "url": "https://arxiv.org/html/2510.25701",
      "cells": [
-      "On LendingClub loans, LightGBM scored an AUC of 0.73; the best zero-shot language model scored 0.67[^6]."
+      "On LendingClub loans, LightGBM scored an AUC of 0.73; the best language model used with no extra training scored 0.67[^6]."
      ]
     },
     {
@@ -370,7 +376,7 @@
      "name": "arXiv 2401.16458",
      "url": "https://arxiv.org/html/2401.16458v3",
      "cells": [
-      "A BERT risk score built from loan descriptions, added to XGBoost, raised AUC slightly, from 0.658 to 0.664[^14]."
+      "A risk score from BERT, an older language model, built from loan descriptions, added to XGBoost, raised AUC slightly, from 0.658 to 0.664[^14]."
      ]
     },
     {
@@ -424,8 +430,10 @@
  ],
  "howToTest": [
   "Take two to three years of your booked loans with known outcomes, and hold out the most recent months as the test.",
-  "Fit a scorecard, an EBM and LightGBM on the same data, with the same inputs and the same split.",
-  "Compare AUC and KS on the held-out months, then turn each model's output into decline reasons and check they stay the same when you refit on a new sample.",
+  "Fit a scorecard, an EBM (Explainable Boosting Machine, a model that shows each input's effect) and LightGBM on the same data, inputs and split.",
+  "Compare AUC and KS on the held-out months. Both measure how well a model separates repayers from defaulters; AUC runs from 0.5, a coin flip, to 1.0, perfect.",
+  "Turn each model's output into decline reasons, and check they stay the same when you refit on a new sample.",
+  "Price the lift in dollars at your cutoff: the extra approvals you gain and the losses you avoid. That tells you what a better model is worth.",
   "Run a bias check across the groups fair-lending exams look at, using fairlearn or your own approval-gap analysis.",
   "Pick the simplest model within a point or two of the best. Extra accuracy that you cannot explain costs more than it earns."
  ],
@@ -435,7 +443,7 @@
  },
  "watchOuts": [
   "A credit report's \"key factors\" list does not count as your decline reasons[^1]. Your model must produce its own[^1][^43].",
-  "SHAP explains a model; it does not write Regulation B reasons. Not every SHAP tool finds the true reasons reliably[^41][^5]. Group related inputs into a reason-code map that compliance signs off[^41].",
+  "SHAP shows which inputs drove a score, but it does not write Regulation B reasons, and some versions miss the true ones[^41][^5]. Group related inputs into a reason-code map that compliance signs off[^41].",
   "Models trained on past lending data can carry past bias forward[^39][^40]. Check approval gaps before launch and every quarter after, with a tool such as fairlearn[^52].",
   "TabPFN's newest weights are non-commercial[^49]. Check the licence before production use.",
   "Vendor lift numbers such as more approvals are measured on the vendor's chosen data[^18][^28][^29]. Ask for a benchmark on your own loans."

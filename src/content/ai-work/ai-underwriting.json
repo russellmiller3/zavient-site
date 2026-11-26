@@ -3,9 +3,15 @@
  "description": "Where AI pays in underwriting: the reading, not the decision. 19 tools checked, the US and EU rules, our benchmark data and three builds.",
  "job": "underwriting",
  "industry": "lending and insurance",
- "summary": "AI underwriting reads the application and its documents, pulls out the facts an underwriter needs, and helps score the risk. The reading is where the hours go: underwriters spend about 4 in 10 working hours on admin and other non-core work[^1][^7]. It is also where AI is now reliable enough to help, in our benchmark[^13]. The decision is where the rules bite, so it stays explainable and a person stays accountable[^4][^2].",
+ "summary": "AI underwriting does the reading: it pulls the facts from applications, statements and broker emails so your underwriters decide faster[^13][^22]. It fits small-business lenders, commercial insurers, MGAs and life insurers that already run a rules engine[^23][^20]. Underwriters spend about 4 in 10 hours on admin, and the decision stays explainable with a person accountable[^1][^7][^4][^2].",
  "index": true,
- "verdict": "Point AI at the reading, not the decision. Underwriters spend about 40% of their time on admin and other non-core work[^1][^8][^7], and in our sealed benchmark the two best current models made zero mistakes reading 30 long fund reports, with the facts they disagreed on sent to a person[^13]. Keep the risk decision with an explainable model and a named underwriter: US lenders must give the specific main reasons for a decline[^4][^17], New York expects insurers to give specific reasons for adverse decisions[^2], and 30 US jurisdictions have adopted the NAIC bulletin that asks insurers to govern and test their AI[^9][^10][^34].",
+ "verdict": [
+  "Point AI at the reading, not the decision; people decide. It fits small-business lenders, commercial insurers, MGAs (managing general agents) and life insurers with a rules engine[^23][^20].",
+  "Underwriters spend about 39% of their time on admin and other non-core work, so the paperwork is where AI pays first[^1][^8][^7].",
+  "In our sealed benchmark on 30 fund reports, not loan files, the two best models made zero mistakes[^13]. About 2 facts per report still went to a person[^13].",
+  "Keep the decision with an explainable model and a named underwriter. US lenders must give specific reasons for a decline; New York expects the same from insurers[^4][^17][^2].",
+  "30 US jurisdictions have adopted the NAIC (US state insurance regulators' body) bulletin asking insurers to govern and test their AI[^9][^10][^34]."
+ ],
  "onPage": [
   {
    "to": "own-data",
@@ -57,12 +63,12 @@
  "pickElse": [
   "Consumer lending where the score is the product: start with the AI credit scoring guide[^30]. The decline reasons are the regulated part[^4][^17].",
   "Life and health insurer: start from a rules engine such as Swiss Re MagnumXP or Munich Re ALLFINANZ[^18][^20]. AI earns its keep summarising the evidence on referred cases so the underwriter decides faster, not making the call[^19][^20].",
-  "Commercial P&C carrier or MGA buried in broker submissions: an intake product (Cytora, Convr, FurtherAI, Sixfold) may beat a build[^23][^24][^22][^21]. Benchmark it on 50 of your own submissions first.",
+  "Commercial insurer or MGA swamped by broker submissions: an off-the-shelf intake product (Cytora, Convr, FurtherAI, Sixfold) may beat a build[^23][^24][^22][^21]. Benchmark one on 50 of your own past submissions before you sign.",
   "The question is price, not whether to take the risk: look at actuarial pricing platforms such as Akur8, Earnix or hyperexponential[^25][^26][^27]."
  ],
  "ownData": {
   "title": "Which underwriting steps AI can take on today",
-  "intro": "Our read of each step, built from our own benchmark of AI reading long financial documents[^13] and the published studies below.",
+  "intro": "Our read of each step, built from our own benchmark of AI reading long financial documents[^13] and the published studies below. That benchmark used public private-fund reports, not loan or insurance files[^13].",
   "headers": [
    "Step",
    "Can AI do it now?",
@@ -75,7 +81,7 @@
     "Two models, 0 mistakes on 30 sealed reports (FinExtractBench)[^13]"
    ],
    [
-    "Pull facts from statements, returns, loss runs",
+    "Pull facts from statements, returns and loss runs (claims history)",
     "Yes, if every fact cites its page and quote",
     "The top nine tools were within 2 facts of each other (FinExtractBench hard round)[^13]"
    ],
@@ -92,32 +98,32 @@
    [
     "Score the risk",
     "Yes, with an explainable model, not a chatbot",
-    "Gradient boosting beat language models on loan default[^14] and leads a 117-study review[^15]; MassMutual's machine-learned life score beat traditional underwriting on claims[^5][^33]"
+    "Gradient boosting, a common machine-learning method, beat language models on loan default[^14] and leads a 117-study review[^15]. MassMutual's machine-learned life score beat traditional underwriting on claims[^5][^33]."
    ],
    [
     "Decide and explain the decision",
     "A person, using the model's reasons",
-    "Reg B requires specific reasons[^4][^17]; NYDFS Circular Letter 7 expects them[^2]"
+    "Reg B (the US rule on credit decisions) requires specific reasons[^4][^17]. New York's insurance regulator (NYDFS) expects them in Circular Letter 7[^2]."
    ]
   ],
-  "note": "FinExtractBench is Zavient's benchmark on public private-fund reports, not loan or insurance files[^13]. Your documents will differ, which is why the first step of any build is a benchmark on your own files."
+  "note": "Your documents will differ, which is why the first step of any build is a benchmark on your own files."
  },
  "example": {
   "input": "A small-business loan application, 12 months of bank statements and two years of tax returns.",
-  "output": "Average monthly revenue, existing debt payments and two flagged risks, each with its page and quote, plus a draft risk score with its main reasons for the underwriter to accept or change."
+  "output": "Average monthly revenue, existing debt payments and two flagged risks, each with its page and quote. Plus a draft risk score with its main reasons, for the underwriter to accept or change."
  },
  "recipes": [
   {
    "name": "1. Commercial insurance: submission intake",
-   "when": "Carriers and MGAs where submissions pile up and some fit-appetite risks go unquoted[^23].",
+   "when": "Commercial insurers and MGAs where broker submissions pile up and some risks inside your appetite (the risks you want to write) never get a quote[^23].",
    "flow": [
-    "Broker email, forms, loss runs",
+    "Broker email, forms, claims history (loss runs)",
     "AI extracts each fact with page and quote",
-    "Appetite and clearance check",
+    "Appetite and duplicate check",
     "Enrich with third-party data",
     "Underwriter queue, best fit first"
    ],
-   "cost": "The two best models cost $0.12 to $0.15 to read a long report in our benchmark[^13]. Intake products are sold by demo and contract; none we checked publish a price[^24]."
+   "cost": "Reading cost $0.12 to $0.15 per long report with the two best models in our benchmark[^13]. Intake products publish no price[^24]; a Zavient build is quoted per job, not listed here."
   },
   {
    "name": "2. Small-business lending: file to decision",
@@ -129,7 +135,7 @@
     "Explainable score",
     "Underwriter decides, reasons logged"
    ],
-   "cost": "Under $0.01 to about $0.30 per long document to read with current models in our benchmark[^13], plus a scorecard you own."
+   "cost": "Under $0.01 to about $0.30 per long document to read with current models in our benchmark[^13]. The build, including a scorecard you own, is quoted per job, not listed here."
   },
   {
    "name": "3. Life insurance: evidence summary for the rules engine",
@@ -138,10 +144,10 @@
     "Application and medical evidence",
     "AI summarises with page citations",
     "Rules engine applies your manual",
-    "Clean cases: automated offer",
+    "Clean cases: offer drafted, an underwriter spot-checks a sample",
     "Others: referred to an underwriter"
    ],
-   "cost": "Rules engines such as MagnumXP and ALLFINANZ publish no price; you contact the vendor[^18][^20]. The AI layer is a reading step you can benchmark and swap."
+   "cost": "Rules engines such as MagnumXP and ALLFINANZ publish no price; you contact the vendor[^18][^20]. The AI reading layer is quoted per job, and you can benchmark and swap it."
   }
  ],
  "tables": [
@@ -159,7 +165,7 @@
      "name": "Sixfold",
      "url": "https://fintech.global/2026/01/30/insurtech-firm-sixfold-secures-30m-to-advance-ai-underwriting/",
      "cells": [
-      "AI risk assessment for P&C underwriters",
+      "AI risk assessment for P&C (property and casualty) underwriters",
       "Zurich North America, Guardian, Generali",
       "$30m Series B, Jan 2026"
      ]
@@ -322,7 +328,7 @@
    "name": "NYDFS Circular Letter No. 7",
    "url": "https://www.dfs.ny.gov/industry-guidance/circular-letters/cl2024-07",
    "status": "In force since Jul 2024",
-   "what": "New York insurers should test AI and outside data for unfair discrimination, keep board oversight, stay responsible for vendor tools and give specific reasons and data sources for adverse decisions[^2]."
+   "what": "New York insurers should test AI and outside data for unfair discrimination and keep board oversight[^2]. They stay responsible for vendor tools and should give specific reasons and data sources for adverse decisions[^2]."
   },
   {
    "name": "NAIC Model Bulletin on AI",
@@ -347,7 +353,7 @@
   "Take 50 past files with known outcomes, including your messiest scans and longest packets.",
   "Have your underwriters write the right value for every fact before any AI reads the files, and lock that answer key.",
   "Run each tool on the same files. Count wrong facts apart from blanks, and require a page and quote for every fact.",
-  "For scoring, compare an explainable model with your current method on the same past files, and check that the decline reasons make sense to an underwriter.",
+  "For scoring, compare an explainable model with your current method on the same past files. Check that the decline reasons make sense to an underwriter.",
   "Measure cost and time per file, and how many files still need a person."
  ],
  "buyVsBuild": {

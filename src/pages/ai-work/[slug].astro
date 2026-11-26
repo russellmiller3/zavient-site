@@ -35,7 +35,7 @@ const rest = restParts.join(':');
       {d.verdict ? (
         <div class="bluf">
           <span class="bluf-label">Bottom line</span>
-          <p><Fn s={d.verdict} /></p>
+          <ul>{d.verdict.map((b) => <li><Fn s={b} /></li>)}</ul>
         </div>
       ) : <p class="dek"><Fn s={d.summary} /></p>}
       {d.onPage.length > 0 && (

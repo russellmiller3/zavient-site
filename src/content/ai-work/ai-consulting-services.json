@@ -2,13 +2,19 @@
  "title": "AI consulting services: what to buy, what it costs, where it pays",
  "description": "What AI consulting should deliver, what it costs against hiring a team or buying software, and the finance work where AI pays first. With our own data.",
  "job": "AI consulting",
- "summary": "AI consulting should turn one business problem into a working system that you can prove works. Most generative AI efforts never show up in the P&L[^1][^16][^15]. The companies that get results measure AI's impact and redesign the work around it[^15]. They benchmark on their own files[^5][^23] and plan for life after launch, where most of the cost sits[^3][^12].",
+ "summary": "AI consulting should turn one business problem into a working system you can prove works; most generative AI efforts never show up in the P&L[^1][^16][^15]. The companies that get results measure AI's impact and redesign the work around it[^15]. They benchmark on their own files[^5][^23] and plan for life after launch, where most of the cost sits[^3][^12].",
  "index": true,
- "verdict": "Hire AI consulting for one problem with a number attached, not for a strategy deck. The projects that pay pick one pain point, and bought or partnered projects succeed about twice as often as internal builds[^1]. A good engagement benchmarks the options on your own files first[^5][^23], builds the winner into your team's workflow, and keeps checking it as models and prices change[^22]. Model choice alone can decide whether a project pays: in our document benchmark, tools that found nearly the same facts differed 48 times in cost[^7]. List prices differ about 40 times even across one vendor's models[^11].",
+ "verdict": [
+  "Hire AI consulting for one problem with a number attached, not a strategy deck. The projects that pay pick one pain point[^1].",
+  "Bought or partnered AI projects succeed about 67% of the time; internal builds about a third as often[^1].",
+  "Benchmark the options on your own files before anyone builds. Public leaderboards are only a first filter[^5][^23].",
+  "Our AI Leverage Sprint costs $10,000 for 30 days, fixed scope. You leave with 2 or 3 AI bets and their specs[^21].",
+  "Re-check the choice as models and prices change. The price of a given level of AI performance has fallen 9 to 900 times a year[^22]."
+ ],
  "onPage": [
   {
    "to": "where-ai-pays",
-   "text": "The four finance jobs where AI pays back first"
+   "text": "Four finance jobs we've benchmarked"
   },
   {
    "to": "own-data",
@@ -24,7 +30,7 @@
   },
   {
    "to": "rules",
-   "text": "The AI rules that may apply to your project"
+   "text": "The AI rules that may apply if you lend or insure"
   },
   {
    "to": "benchmark",
@@ -38,9 +44,9 @@
    "source": "FinExtractBench, Zavient, Nov 2026[^7]; Claude list prices span about 40x[^11]"
   },
   {
-   "num": "304",
-   "label": "US AI job ads for forward deployed engineers, who build AI with customers on their own data. That ties machine learning engineers, at 306[^9]",
-   "source": "Zavient sample of 2,046 US AI job ads, 21 to 25 Nov 2026[^9]; Lightcast via Fortune: postings up more than 1,000% in 2026[^10]"
+   "num": "18.4%",
+   "label": "average share of invoices that hit an exception, a mismatch a person must sort out[^34]",
+   "source": "Ardent Partners, State of ePayables[^34]; average cost $9.84 per invoice[^34]"
   },
   {
    "num": "$155,300",
@@ -54,30 +60,30 @@
   }
  ],
  "pickElse": [
-  "AI is your product and you will run many systems: hire in-house. Technical roles take a median 75 days to fill[^20]. Budget for that and the salaries in the table below[^8].",
-  "A standard job that software already does, such as accounts payable: buy the product and benchmark it on your own files. 76% of enterprise AI use cases are now bought, not built, up from 53% in 2024[^2]. Bought or partnered projects succeed about twice as often as internal builds[^1]."
+  "AI is your product and you will run many systems: hire in-house. Technical roles take a median 75 days to fill[^20], so budget for that and the salaries in the table below[^8].",
+  "A standard job that software already does, such as accounts payable: buy the product and benchmark it on your own files. 76% of enterprise AI use cases are now bought[^2], and bought projects succeed about 3 times as often as internal builds[^1]."
  ],
  "spokes": [
+  {
+   "slug": "ai-invoice-processing",
+   "why": "Accounts payable: reading invoices is the easy part, but about 18% hit an exception, a mismatch someone must fix[^34]. The money is in those exceptions and in payments fraud, which 76% of US firms faced in 2025[^35]."
+  },
   {
    "slug": "ai-document-processing",
    "why": "Reading PDFs, scans and forms. Our sealed benchmark found two models with zero mistakes on 30 fund reports[^6]."
   },
   {
-   "slug": "ai-invoice-processing",
-   "why": "Accounts payable. Reading invoices is the easy part. About 18% of invoices hit an exception[^34], and 76% of US firms faced payments fraud in 2025[^35]. That is where the money is."
-  },
-  {
    "slug": "ai-underwriting",
-   "why": "Lending and insurance. AI does the reading so underwriters spend their time on the decision, which must stay explainable[^24][^29]."
+   "why": "If you lend or insure: AI does the reading so underwriters spend their time on the decision, which must stay explainable[^24][^29]."
   },
   {
    "slug": "ai-credit-scoring",
-   "why": "Loan decisions. Start with a scorecard you can explain; add boosting only when your benchmark shows the lift. Boosting usually scores higher, but the gap narrows on small data[^36], and every decline needs specific reasons[^24][^25]."
+   "why": "If you lend or insure: score loans with a model you can explain; add boosting (stronger, harder to explain)[^36] only if your benchmark shows lift. Boosting usually scores higher, but the gap narrows on small data[^36], and every decline needs specific reasons[^24][^25]."
   }
  ],
  "ownData": {
   "title": "What it costs to hire the team yourself",
-  "intro": "Posted pay from our own sample of US AI job ads[^8]. This is the floor of what you would pay to build an AI team in-house. Benefits are about 30% of what US private employers spend on pay[^19], and technical roles take a median 75 days to fill[^20].",
+  "intro": "These are posted minimum salaries from our sample of US AI job ads, the floor for building an AI team in-house[^8]. Benefits are 30% of US private employers' total pay costs[^19], and technical roles take a median 75 days to fill[^20]. Before benefits, one AI engineer's median posted minimum of $155,300 a year[^8] would pay for 15 Zavient Sprints at $10,000 each[^21].",
   "headers": [
    "Role",
    "Ads",
@@ -133,13 +139,13 @@
  },
  "example": {
   "input": "A mid-sized lender wants AI to read small-business loan files so underwriters stop retyping bank statements.",
-  "output": "A benchmark of the leading models on 50 of the lender's own files with the cost per file for each, the winner built into the loan system with a review queue, and a monthly re-check as new models ship."
+  "output": "A benchmark of the leading models on 50 of the lender's own files, with the cost per file for each. The winner, built into the loan system with a review queue for unsure cases. A monthly re-check as new models ship."
  },
  "recipesTitle": "How a good engagement runs",
  "recipes": [
   {
    "name": "1. Benchmark first",
-   "when": "Before anyone writes production code. Settles which approach wins on your files and what it costs. Enterprises treat public leaderboards as a first filter only[^5].",
+   "when": "Before anyone writes production code, to settle which approach wins on your files and what it costs. Enterprises treat public leaderboards as a first filter only[^5].",
    "flow": [
     "Pick one job with a number to move",
     "50 of your real files",
@@ -147,7 +153,7 @@
     "Run the leading options",
     "Accuracy and cost per file"
    ],
-   "cost": "Keep it short and fixed in scope. Make sure you keep the files, the answer key and the code, so you can re-run it."
+   "cost": "Quoted per job, with a fixed scope. Make sure you keep the files, the answer key and the code, so you can re-run it."
   },
   {
    "name": "2. Build the winner into the work",
@@ -164,7 +170,7 @@
   },
   {
    "name": "3. Keep it right",
-   "when": "Always. Models, prices and your documents change. The price of a given level of AI performance has fallen 9 to 900 times a year[^22].",
+   "when": "Always, because models, prices and your documents change. The price of a given level of AI performance has fallen 9 to 900 times a year[^22].",
    "flow": [
     "New model or price change",
     "Re-run the benchmark",
@@ -230,10 +236,11 @@
   "Agree the right answers with your own team first, and lock them, so the result is graded against your standard.",
   "Ask for cost per correct answer, not price per token. In our benchmark the cheapest tool made 16 wrong answers; the two best made none[^7].",
   "Ask what happens when a better model ships next month. If the answer is a new project, the system will go stale.",
-  "Ask for a client where the system has run in production for at least six months."
+  "Ask for a client where the system has run in production for at least six months.",
+  "Ask where your files are stored, who can see them, and whether anyone trains AI models on them."
  ],
  "buyVsBuild": {
-  "buy": "Hire a consultant when you need one system working this quarter, have no AI engineers, and want someone accountable for the result. Pay for a fixed scope with a benchmark you can check. Bought or partnered projects succeed about twice as often as internal builds[^1].",
+  "buy": "Hire a consultant when you need one system working this quarter, have no AI engineers, and want someone accountable for the result. Pay for a fixed scope with a benchmark you can check. Bought or partnered projects succeed about 3 times as often as internal builds[^1].",
   "build": "Hire in-house when AI is core to what you sell and you will run many systems. Expect about two and a half months to fill each technical role[^20] and the salaries above[^8]."
  },
  "watchOuts": [
@@ -458,7 +465,7 @@
    "name": "EU AI Act, Annex III",
    "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3",
    "status": "Starts 2 Dec 2027",
-   "what": "Credit scoring of people and life and health insurance pricing are high-risk uses[^26]. The EU's Digital Omnibus moved their start to 2 December 2027[^27][^28]. Any consultant building them for EU operations should plan logging, oversight and documentation from day one."
+   "what": "If you lend or insure in the EU, credit scoring of people and life and health insurance pricing are high-risk uses[^26]. The EU's Digital Omnibus moved their start to 2 December 2027[^27][^28]. Any consultant building them for EU operations should plan logging, oversight and documentation from day one."
   },
   {
    "name": "Regulation B, 12 CFR 1002.9",
@@ -470,7 +477,7 @@
    "name": "NYDFS Circular Letter No. 7",
    "url": "https://www.dfs.ny.gov/industry-guidance/circular-letters/cl2024-07",
    "status": "In force since Jul 2024",
-   "what": "New York insurers are expected to test AI and outside data for unfair discrimination, keep board oversight, stay responsible for vendor tools and give specific reasons and data sources for adverse decisions[^29]."
+   "what": "New York insurers are expected to test AI and outside data for unfair discrimination and keep board oversight[^29]. They also stay responsible for vendor tools and owe specific reasons and data sources for adverse decisions, such as denials[^29]."
   },
   {
    "name": "NAIC Model Bulletin on AI",

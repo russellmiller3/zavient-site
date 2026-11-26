@@ -1,41 +1,47 @@
 {
  "title": "AI invoice processing: where AP tools stop and the money leaks",
- "description": "15 AP and invoice-capture tools checked, with prices where they exist. Why reading invoices is solved and exceptions and fraud are not.",
+ "description": "13 AP and invoice-capture tools checked, with prices where they exist. Why reading invoices is solved and exceptions and fraud are not.",
  "job": "invoice processing",
  "industry": "finance and accounts payable",
- "summary": "AI invoice processing reads a supplier invoice, codes it, matches it to the purchase order and gets it approved and paid[^27][^21]. Reading the invoice now costs cents[^10][^11][^9]. The money is in the one invoice in five that hits an exception[^8][^1], and in the fake ones that ask you to pay a new bank account[^12][^13].",
+ "summary": "AI invoice processing reads a supplier invoice, codes it, matches it to the purchase order and gets it approved and paid[^27][^21]. Reading the invoice now costs cents[^10][^11][^9]. The money leaks in exceptions, the one invoice in five that needs a person to sort out[^8][^1], and in fake bank-change requests[^12][^13].",
  "index": true,
- "verdict": "Reading invoices is now cheap and largely solved[^9][^10]; the money leaks in the exceptions and the fraud. About one invoice in five hits an exception[^8][^1], and fake requests to change a supplier's bank account arrive as invoices[^12][^13]. Let an accounts payable tool such as BILL, Ramp or Tipalti run the inbox, approvals and payments[^5][^6][^7]. Put your effort, and any custom AI, into what the suites miss: exception triage, a hold on any change to bank details, and the e-invoices Germany and France now require[^36][^37][^38][^39]. Benchmark any custom step on 50 of your own invoices first.",
+ "verdict": [
+  "Reading invoices is now cheap and largely solved: cloud invoice readers cost cents per invoice[^10][^11][^9].",
+  "The money leaks in exceptions: about one invoice in five needs a person to sort it out[^8][^1].",
+  "Fraud arrives as invoices: a request to pay a supplier's \"new\" bank account is a known email scam the FBI warns about[^12][^13].",
+  "Let an accounts payable suite such as BILL, Ramp or Tipalti run the inbox, approvals and payments[^5][^6][^7].",
+  "Build AI only for the gaps, such as exception triage and a hold on bank-detail changes[^8][^12]. Benchmark it on 50 of your own invoices first."
+ ],
  "onPage": [
+  {
+   "to": "what-goes-wrong",
+   "text": "Where the money leaks: exceptions, fraud and the wrong total"
+  },
   {
    "to": "own-data",
    "text": "Which accounts payable suites publish a price"
   },
   {
    "to": "table-1",
-   "text": "The accounts payable tools we checked that don't publish a price"
+   "text": "The six AP suites that sell only by demo or quote"
   },
   {
    "to": "table-2",
-   "text": "Public invoice data you can benchmark on"
+   "text": "Public receipt and invoice data you can benchmark on"
   },
   {
    "to": "rules",
-   "text": "The e-invoicing rules in Germany, France, the EU and the US"
+   "text": "E-invoicing rules if you operate in Germany or France (the US has none)"
   },
   {
    "to": "benchmark",
    "text": "How to benchmark AI on your own invoices"
-  },
-  {
-   "to": "what-goes-wrong",
-   "text": "Where the money leaks: exceptions, fraud and the wrong total"
   }
  ],
  "stats": [
   {
    "num": "3 of 9",
-   "label": "accounts payable suites we checked publish a price[^5][^6][^7][^18][^19][^21][^23][^24][^26]",
+   "label": "full accounts payable suites we checked publish a price[^5][^6][^7][^18][^19][^21][^23][^24][^26]",
    "source": "Zavient review of vendor pricing pages, 26 Nov 2026"
   },
   {
@@ -50,19 +56,19 @@
   },
   {
    "num": "$3.0B",
-   "label": "reported lost to business email compromise in the US in 2025[^3][^14]",
+   "label": "reported lost in the US in 2025 to business email compromise, meaning email scams that pose as a supplier or boss[^3][^14]",
    "source": "FBI IC3 2025 report"
   }
  ],
  "pickElse": [
   "Under a few hundred invoices a month and already on QuickBooks or Xero: use the bill capture built into your accounting software first[^33][^34].",
   "Many entities, countries or currencies: look at the global suites (Tipalti, Coupa, Basware, Medius). Expect a contract and no list price[^7][^21][^24][^23].",
-  "You only need the data out of the invoice, not the workflow: a capture tool (Rossum, Nanonets, Docsumo) or a cloud invoice parser feeds your ERP directly[^29][^30][^31][^10][^11].",
+  "You only need the data, not the workflow: a capture tool (Rossum, Nanonets, Docsumo) or cloud invoice parser feeds your ERP directly[^29][^30][^31][^10][^11].",
   "You run Microsoft Power Platform: AI Builder has a prebuilt invoice model, limited to 360 calls a minute and 20 MB per file[^35]."
  ],
  "ownData": {
   "title": "Who publishes a price, checked 26 November 2026",
-  "intro": "We read the pricing page of every accounts payable and invoice-capture tool below. Seven of the 13 give no list price for a paid plan[^18][^19][^21][^23][^24][^26][^31]. Where a price exists, the catch is usually in the add-ons[^5][^16][^7].",
+  "intro": "We read the pricing page of all 13 tools below: 9 full AP suites, 3 capture tools and QuickBooks. Seven of the 13 give no list price for a paid plan[^18][^19][^21][^23][^24][^26][^31]. Where a price exists, the catch is usually in the add-ons[^5][^16][^7].",
   "headers": [
    "Tool",
    "Covers",
@@ -153,7 +159,7 @@
  },
  "example": {
   "input": "A two-page PDF invoice emailed by a supplier, with a purchase order number and a note that the bank account has changed.",
-  "output": "Supplier, invoice number, date, lines, tax and total, matched to the purchase order and receipt, coded to the right accounts, and held for a person because the bank details differ from the supplier record."
+  "output": "Supplier, invoice number, date, lines, tax and total, matched to the purchase order and receipt and coded to the right accounts. Held for a person to check, because the bank details differ from the supplier record."
  },
  "recipes": [
   {
@@ -167,7 +173,7 @@
     "Payment",
     "Sync to your ERP"
    ],
-   "cost": "BILL $49 to $89 per user a month[^5]; Ramp free or $15 per user a month plus a platform fee[^6]; Tipalti from $99 a month plus fees[^7]."
+   "cost": "BILL costs $49 to $89 per user a month[^5]. Ramp is free, or $15 per user a month plus a platform fee[^6]; Tipalti starts at $99 a month plus fees[^7]."
   },
   {
    "name": "2. Add an AI check where your suite falls short",
@@ -180,7 +186,7 @@
     "Hold and call the supplier on a known number",
     "Release to approval"
    ],
-   "cost": "Cents per invoice to run a current model[^9][^10], against a median $6.00 to an average $9.90 to process one invoice today[^2][^8]. The cost is building and owning the rules for what gets held."
+   "cost": "Cents per invoice to run a current model[^9][^10], against a median $6.00 to an average $9.90 to process one invoice today[^2][^8]. The real cost is building and owning the hold rules; we quote that per job and don't publish a price here."
   },
   {
    "name": "3. Capture only, into your own ERP",
@@ -198,7 +204,7 @@
  "tables": [
   {
    "title": "Tools we checked without a public price",
-   "intro": "These sell by demo or quote[^18][^19][^21][^23][^24][^26]. Ask each for a benchmark on your own invoices before you sign.",
+   "intro": "These six full AP suites sell by demo or quote[^18][^19][^21][^23][^24][^26]. Ask each for a benchmark on your own invoices before you sign.",
    "headers": [
     "Tool",
     "What it covers",
@@ -257,7 +263,7 @@
   },
   {
    "title": "Public data you can benchmark on",
-   "intro": "Receipts and synthetic invoices[^45][^46][^47]. Useful to compare tools; your own invoices are the real test.",
+   "intro": "CORD and SROIE are receipts, not invoices; FATURA is synthetic invoices[^45][^46][^47]. Useful to compare tools; your own invoices are the real test.",
    "headers": [
     "Dataset",
     "Size",
@@ -330,9 +336,9 @@
  },
  "watchOuts": [
   "The price you see is rarely the price you pay. Matching, payments, more entities and ERP sync are often add-ons[^5][^16][^7][^23].",
-  "Payment fraud rides on invoices[^12][^13]. The AFP found 74% of US organizations were hit by business email compromise in 2025[^4][^15]. Check any change to bank details with a call to a number you look up yourself[^12].",
+  "Payment fraud rides on invoices[^12][^13]: 74% of US organizations were hit by business email compromise in 2025, the AFP found[^4][^15]. Check any change to bank details by calling a number you look up yourself[^12].",
   "A tool that reads the subtotal as the total looks right at a glance. In our benchmark, 7 of 10 tools picked the wrong one of two look-alike tables[^9].",
-  "E-invoices in Germany and France arrive as structured data, and an ordinary PDF no longer counts[^36][^40]. A tool that only reads PDFs will miss the point and the deadlines[^37][^39]."
+  "If you operate in Germany or France, e-invoices arrive as structured data, and an ordinary PDF no longer counts[^36][^40]. A tool that only reads PDFs will miss the point and the deadlines[^37][^39]."
  ],
  "resources": [
   {

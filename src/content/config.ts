@@ -46,7 +46,9 @@ const aiwork = defineCollection({
     // Publish gate (26 Nov 2026): a page is indexed only when it carries a verdict, Zavient-only numbers and 3+ sources.
     // Every other page stays noindex. The optional blocks below are what an indexed page is built from.
     index: z.boolean().default(false),
-    verdict: z.string().min(40).optional(),
+    // Bottom line as 3-5 short bullets (26 Nov 2026, Russell): "In the bottom line, you have to make it bullets that are
+    // easy to scan." Each bullet is one idea with a footnote; scripts/check-readability.mjs caps its length.
+    verdict: z.array(z.string().min(15)).min(3).max(5).optional(),
     // Top of page (26 Nov 2026, Russell: "the top should be very BLUF and tell the reader what the content is on the
     // rest of the page"): the verdict leads, then this list of what the page covers, each linking to its section.
     onPage: z.array(z.object({ to: z.string().regex(/^[a-z0-9-]+$/), text: z.string().min(10) })).default([]),

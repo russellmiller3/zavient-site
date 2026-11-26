@@ -114,7 +114,7 @@ test('every indexed AI-work page footnotes its claims, and every footnote points
     const n = data.sources.length;
     for (const m of marks(JSON.stringify(data))) assert.ok(m >= 1 && m <= n, `${s}: footnote [^${m}] has no source (sources: ${n})`);
     assert.equal(marks(data.title + data.description).length, 0, `${s}: footnote in title or description`);
-    assert.ok(marks(data.verdict).length > 0, `${s}: verdict has no footnote`);
+    for (const b of data.verdict) assert.ok(marks(b).length > 0, `${s}: bottom-line bullet has no footnote: "${b.slice(0, 60)}"`);
     assert.ok(marks(data.summary).length > 0, `${s}: summary has no footnote`);
     for (const st of data.stats) assert.ok(marks(st.label + st.source).length > 0, `${s}: stat ${st.num} has no footnote`);
     for (const w of [...data.watchOuts, ...data.pickElse]) assert.ok(marks(w).length > 0, `${s}: no footnote on "${w.slice(0, 60)}"`);
@@ -133,8 +133,22 @@ test('every indexed AI-work page opens with a bottom line and an On this page li
     const html = readFileSync(join(dist, 'ai-work', `${s}.html`), 'utf8');
     const hero = html.slice(html.indexOf('<header class="article-hero"'), html.indexOf('</header>'));
     assert.match(hero, /class="bluf"/, `${s}: no bottom line at the top`);
+    const bullets = (hero.match(/<div class="bluf"[\s\S]*?<\/ul>/) || [''])[0].match(/<li/g) || [];
+    assert.ok(bullets.length >= 3 && bullets.length <= 5, `${s}: bottom line should be 3 to 5 bullets, found ${bullets.length}`);
     assert.match(hero, /class="on-page"/, `${s}: no On this page list at the top`);
     assert.doesNotMatch(html, /class="stats"/, `${s}: headline numbers strip is back`);
     for (const o of data.onPage) assert.match(html, new RegExp(`id="${o.to}"`), `${s}: On this page links to #${o.to}, which is not on the page`);
+  }
+});
+
+test('every indexed AI-work page passes the ADHD-friendly readability check', async () => {
+  // Rule (26 Nov 2026, Russell): "You have to make everything ADHD friendly, and those need to be rules."
+  // Short sentences, one idea per bullet, no dense blocks. Limits live in scripts/check-readability.mjs.
+  const { checkPage } = await import('../scripts/check-readability.mjs');
+  for (const s of slugs('ai-work')) {
+    const data = JSON.parse(readFileSync(join(root, 'src/content/ai-work', `${s}.json`), 'utf8'));
+    if (!data.index) continue;
+    const problems = checkPage(data);
+    assert.equal(problems.length, 0, `${s}: hard to scan:\n  ${problems.join('\n  ')}`);
   }
 });

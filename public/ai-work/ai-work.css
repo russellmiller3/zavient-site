@@ -86,6 +86,10 @@ nav:not(.on-page) {
 }
 .bluf { background: var(--paper); border: 1px solid var(--line); border-left: 3px solid var(--blue); padding: 20px 24px; }
 .bluf p { font-size: 21px; line-height: 1.55; color: var(--ink); }
+.bluf ul { list-style: none; margin: 0; padding: 0; }
+.bluf li { position: relative; padding: 6px 0 6px 22px; font-size: 19px; line-height: 1.45; color: var(--ink); }
+.bluf li + li { border-top: 1px solid var(--line); }
+.bluf li::before { content: ""; position: absolute; left: 2px; top: 16px; width: 8px; height: 8px; background: var(--blue); }
 .on-page { margin-top: 22px; padding: 4px 0 0; }
 .on-page ol { list-style: none; counter-reset: op; columns: 2; column-gap: 28px; }
 .on-page li { counter-increment: op; break-inside: avoid; position: relative; padding: 7px 0 7px 34px; border-top: 1px solid var(--line); font-size: 18px; line-height: 1.35; }
@@ -204,4 +208,5 @@ footer a:hover { color: var(--blue); }
   .hub-grid { grid-template-columns: 1fr; }
   .bluf { padding: 16px 18px; }
   .bluf p { font-size: 19px; }
+  .bluf li { font-size: 17px; }
 }
