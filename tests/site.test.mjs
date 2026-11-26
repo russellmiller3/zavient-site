@@ -229,3 +229,19 @@ test('Cloudflare config keeps .html addresses, serves the home page and carries 
   assert.deepEqual(cf, vercel.map((r) => [r.source.replace('/:path*', '/*'), r.destination, r.permanent ? '301' : '302']));
   for (const [, to] of cf) assert.ok(to === '/' || existsSync(join(root, 'dist', to.split('#')[0])), `redirect target missing: ${to}`);
 });
+
+test('every long page has the sticky contents with a jump link to each section', () => {
+  // Russell, 26 Nov 2026: long pages need a TOC "that stays sticky and jumplinks you". The list is built in the
+  // browser from the page's section headings, so check its parts and that each long page has 5+ linkable sections.
+  for (const s of slugs('ai-work')) {
+    const html = readFileSync(aiWorkFile(s), 'utf8');
+    const ids = [...html.matchAll(/<h2 id="([^"]+)"/g)].map((m) => m[1]);
+    if (ids.length < 5) continue;
+    assert.match(html, /<div class="sticky-toc[^"]*" role="navigation" aria-label="Contents"/, `${s}: no sticky contents`);
+    assert.match(html, /class="toc-toggle"[^>]*aria-expanded="false"/, `${s}: contents toggle missing`);
+    assert.match(html, /querySelectorAll\('\.article-body h2\[id\]'\)/, `${s}: contents not built from the section headings`);
+    assert.equal(new Set(ids).size, ids.length, `${s}: two sections share an id, so a jump link would land wrong`);
+  }
+  // A <nav> would pick up the site header's sticky styles (nav:not(.on-page)).
+  assert.ok(!/<nav class="sticky-toc/.test(readFileSync(join(root, 'src/components/AiWorkPage.astro'), 'utf8')));
+});

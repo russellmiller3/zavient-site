@@ -60,38 +60,97 @@ const proofAfter = tpl ? (['tool', 'own-data'].find((id) => order.includes(id) &
       </>))}
     </div>
   </article>
-  {tpl && (
-    <div class="sticky-toc" data-diag="sticky">
-      {onPage.length > 0 && (
-        <details>
-          <summary>On this page</summary>
-          <ol>{onPage.map((o) => <li><a href={`#${o.to}`}>{o.text}</a></li>)}</ol>
-        </details>
-      )}
-      <a class="btn-gold" href="#diagnostic">Free 30-minute diagnostic</a>
+  {/* Sticky contents on every long page (Russell, 26 Nov 2026: a TOC "that stays sticky and jumplinks you on
+      long pages"). The list is built in the browser from the page's own section headings, so every section is
+      listed and every page type gets it with no extra data; the hero's "On this page" list is the no-script
+      fallback. Rail at 1300px and wider; below that a bottom bar that names the section you're in and opens
+      into the full list. */}
+  <div class="sticky-toc is-hidden" role="navigation" aria-label="Contents" data-diag={tpl ? 'sticky' : undefined} hidden>
+    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
+      <span class="toc-label">Contents <span class="toc-count"></span></span>
+      <span class="toc-now"></span>
+    </button>
+    <div class="toc-panel" id="toc-panel">
+      <ol class="toc-list"></ol>
+      <a class="toc-top" href="#top">Back to top</a>
     </div>
-  )}
-  {tpl && (
-    <script is:inline>
-      // Sticky box: hidden while the top of the page or the end offer is on screen, so the offer never shows
-      // twice at once; contents list kept open where it sits in the side rail (1300px and wider).
-      (() => {
-        const box = document.querySelector('.sticky-toc');
-        if (!box) return;
-        const det = box.querySelector('details');
-        const wide = matchMedia('(min-width: 1300px)');
-        const sync = () => { if (det && wide.matches) det.open = true; };
-        sync(); wide.addEventListener('change', sync);
-        const seen = new Set();
-        const watch = [document.querySelector('.article-hero'), document.querySelector('#diagnostic')].filter(Boolean);
-        if (!('IntersectionObserver' in window) || !watch.length) return;
-        const io = new IntersectionObserver((es) => {
-          es.forEach((e) => (e.isIntersecting ? seen.add(e.target) : seen.delete(e.target)));
-          box.classList.toggle('is-hidden', seen.size > 0);
-        });
-        watch.forEach((el) => io.observe(el));
-      })();
-    </script>
-  )}
+    <a class="btn-gold" href="#diagnostic"><span class="long">Free 30-minute diagnostic</span><span class="short">Free diagnostic</span></a>
+  </div>
+  <script is:inline>
+    (() => {
+      const box = document.querySelector('.sticky-toc');
+      const heads = [...document.querySelectorAll('.article-body h2[id]')];
+      // Long pages only: five or more sections. Short pages keep just the hero list.
+      if (!box || heads.length < 5) return;
+      const list = box.querySelector('.toc-list');
+      const now = box.querySelector('.toc-now');
+      const label = box.querySelector('.toc-count');
+      const toggle = box.querySelector('.toc-toggle');
+      const wide = matchMedia('(min-width: 1300px)');
+      const links = heads.map((h) => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent.trim();
+        li.appendChild(a);
+        list.appendChild(li);
+        return a;
+      });
+      box.hidden = false;
+      document.documentElement.classList.add('has-toc');
+      // On phones and tablets the list opens from the bar, and closes after a jump, on Escape or a tap elsewhere.
+      const setOpen = (open) => { box.classList.toggle('is-open', open); toggle.setAttribute('aria-expanded', String(open)); };
+      toggle.addEventListener('click', () => setOpen(!box.classList.contains('is-open')));
+      // A tap on a section marks it at once and holds the highlight still until the jump ends (no flicker), then
+      // closes the phone list and moves focus to that heading so Tab carries on from there.
+      let hold = 0;
+      box.addEventListener('click', (e) => {
+        const a = e.target.closest('.toc-list a');
+        if (!a) { if (e.target.closest('.toc-top') && !wide.matches) setOpen(false); return; }
+        const k = links.indexOf(a);
+        current = -2; show(k); hold = Date.now() + 1500;
+        const h = heads[k];
+        if (!wide.matches) setOpen(false);
+        if (h) { h.setAttribute('tabindex', '-1'); setTimeout(() => h.focus({ preventScroll: true }), 0); }
+      });
+      addEventListener('scrollend', () => { hold = 0; mark(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && box.classList.contains('is-open')) { setOpen(false); toggle.focus(); } });
+      document.addEventListener('click', (e) => { if (!box.contains(e.target)) setOpen(false); });
+      // Current section: the last heading scrolled above the reading line; at the very bottom, the last one.
+      let current = -2;
+      const mark = () => {
+        if (Date.now() < hold) return;
+        let i = -1;
+        heads.forEach((h, k) => { if (h.getBoundingClientRect().top <= 140) i = k; });
+        if (innerHeight + scrollY >= document.documentElement.scrollHeight - 4) i = heads.length - 1;
+        show(i);
+      };
+      function show(i) {
+        if (i === current) return;
+        current = i;
+        links.forEach((a, k) => (k === i ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current')));
+        label.textContent = i >= 0 ? `${i + 1} of ${heads.length}` : `${heads.length} sections`;
+        now.textContent = i >= 0 ? links[i].textContent : 'Jump to a section';
+        if (i >= 0) {
+          const li = links[i].parentElement, r = list.getBoundingClientRect(), b = li.getBoundingClientRect();
+          if (r.height && (b.top < r.top || b.bottom > r.bottom)) list.scrollTop += b.top - r.top - r.height / 3;
+        }
+      }
+      let ticking = false;
+      addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { ticking = false; mark(); }); } }, { passive: true });
+      addEventListener('resize', mark);
+      mark();
+      // Hidden while the top of the page or the end offer is on screen, so the offer never shows twice at once.
+      const seen = new Set();
+      const watch = [document.querySelector('.article-hero'), document.querySelector('#diagnostic')].filter(Boolean);
+      if (!('IntersectionObserver' in window) || !watch.length) { box.classList.remove('is-hidden'); return; }
+      const io = new IntersectionObserver((es) => {
+        es.forEach((e) => (e.isIntersecting ? seen.add(e.target) : seen.delete(e.target)));
+        box.classList.toggle('is-hidden', seen.size > 0);
+        if (seen.size > 0) setOpen(false);
+      });
+      watch.forEach((el) => io.observe(el));
+    })();
+  </script>
   <ConsultingCta job={d.job} heading={d.offer?.heading} ask={d.offer?.body} spot={tpl ? 'end' : ''} />
 </Base>

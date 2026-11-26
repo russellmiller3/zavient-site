@@ -250,37 +250,64 @@ footer a:hover { color: var(--blue); }
 .diag-box { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; border: 1px solid var(--line); border-left: 3px solid var(--blue); background: var(--blue-wash); padding: 14px 20px; margin: 4px 0 26px; }
 .diag-box p { margin: 0; font-size: 18px; flex: 1 1 280px; }
 .diag-box .btn-gold { white-space: nowrap; }
-/* Sticky contents + free diagnostic. It must never sit on top of the text.
-   - 1300px and wider: a rail in the empty margin right of the 780px column (NN/g: sticky TOC in a side rail).
-   - Narrower: a slim bar along the bottom; the page gets matching bottom padding so nothing ends up hidden
-     under it (WCAG 2.2 technique C43, scroll-padding).
-   - Short screens (under 520px tall): not fixed at all (GOV.UK sticky-elements testing).
-   - Hidden once the end offer is on screen, so the offer never shows twice (script in AiWorkPage.astro). */
-.sticky-toc { position: fixed; z-index: 90; background: var(--paper); border: 1px solid var(--line-strong); display: flex; gap: 10px; transition: opacity .2s; }
+/* Sticky contents + free diagnostic, on every long page (five or more sections). It never sits on the text.
+   - 1300px and wider: a rail in the empty margin right of the 780px column, listing every section, with the
+     section you're reading marked (NN/g: sticky TOC in a side rail; GOV.UK contents list).
+   - Narrower: a slim bar along the bottom, in thumb reach, that names the section you're in ("4/14 · ...") and
+     opens into the full list. The page gets matching bottom padding so nothing ends up hidden under it (WCAG 2.2
+     technique C43, scroll-padding).
+   - Hidden while the top of the page or the end offer is on screen (script in AiWorkPage.astro).
+   - Rail breakpoint is 1300px, not Wikipedia's 1000px, because our 780px column stays centred and only has a free
+     margin that wide; below it the bar takes over (research brief, 26 Nov 2026). */
+.sticky-toc { position: fixed; z-index: 90; background: var(--paper); border: 1px solid var(--line-strong); display: flex; transition: opacity .2s; }
+.sticky-toc[hidden] { display: none; }
 .sticky-toc.is-hidden { opacity: 0; pointer-events: none; }
-.sticky-toc summary { cursor: pointer; font-family: var(--sans); font-weight: 600; font-size: 15px; color: var(--ink); list-style: none; white-space: nowrap; }
-.sticky-toc summary::-webkit-details-marker { display: none; }
-.sticky-toc summary::after { content: ' \25BE'; color: var(--muted); }
-.sticky-toc details[open] summary::after { content: ' \25B4'; }
-.sticky-toc ol { margin: 8px 0 0; padding-left: 20px; max-height: 50vh; overflow-y: auto; }
-.sticky-toc li { font-size: 15px; line-height: 1.35; padding: 4px 0; }
-.sticky-toc li a { color: var(--ink); text-decoration: none; }
-.sticky-toc li a:hover { color: var(--blue); }
+.sticky-toc .toc-toggle { font: inherit; background: none; border: 0; padding: 0; color: var(--ink); text-align: left; cursor: pointer; display: flex; align-items: center; gap: 8px; min-width: 0; min-height: 44px; }
+.sticky-toc .toc-label { font-family: var(--sans); font-weight: 700; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.sticky-toc .toc-count { font-weight: 600; letter-spacing: 0; text-transform: none; margin-left: 4px; }
+.sticky-toc .toc-now { font-family: var(--sans); font-weight: 600; font-size: 15px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.sticky-toc .toc-list { list-style: none; margin: 0; padding: 0; overflow-y: auto; overscroll-behavior: contain; }
+.sticky-toc .toc-list li { margin: 0; padding: 0; }
+.sticky-toc .toc-list a { display: block; padding: 6px 10px 6px 12px; border-left: 2px solid var(--line); font-family: var(--sans); font-size: 14px; line-height: 1.35; color: var(--ink-soft); text-decoration: none; }
+.sticky-toc .toc-list a:hover { color: var(--blue); border-left-color: var(--line-strong); }
+.sticky-toc .toc-list a[aria-current] { color: var(--blue); font-weight: 700; border-left: 3px solid var(--blue); padding-left: 11px; background: var(--blue-wash); }
+.sticky-toc .toc-top { display: inline-block; margin-top: 8px; font-family: var(--sans); font-size: 14px; color: var(--muted); }
 .sticky-toc .btn-gold { text-align: center; font-size: 15px; padding: 9px 14px; white-space: nowrap; }
+.sticky-toc .btn-gold .short { display: none; }
+@media (prefers-reduced-motion: no-preference) { html.has-toc { scroll-behavior: smooth; } }
 @media (min-width: 1300px) {
-  .sticky-toc { top: 110px; left: calc(50% + 390px + 28px); width: 230px; flex-direction: column; padding: 14px; box-shadow: none; }
-  .sticky-toc details { order: 2; }
-  .sticky-toc details > summary { pointer-events: none; }
-  .sticky-toc details > summary::after { content: ''; }
+  .sticky-toc { top: 92px; bottom: 24px; left: calc(50% + 390px + 32px); width: min(300px, calc(50vw - 390px - 56px)); flex-direction: column; gap: 12px; padding: 16px 14px; border-width: 0 0 0 1px; background: transparent; }
+  .sticky-toc .toc-toggle { pointer-events: none; min-height: 0; }
+  .sticky-toc .toc-now, .sticky-toc .toc-count { display: none; }
+  .sticky-toc .toc-panel { display: flex; flex-direction: column; min-height: 0; flex: 0 1 auto; }
+  .sticky-toc .toc-list { min-height: 0; }
+  .sticky-toc .btn-gold { align-self: flex-start; }
 }
 @media (max-width: 1299.98px) {
-  .sticky-toc { left: 0; right: 0; bottom: 0; flex-direction: row; align-items: center; justify-content: space-between; padding: 8px max(16px, calc(50% - 390px)); border-width: 1px 0 0; box-shadow: 0 -4px 16px rgba(21, 32, 46, 0.08); }
-  .sticky-toc:has(details[open]) { flex-direction: column; align-items: stretch; }
-  html { scroll-padding-bottom: 72px; }
-  body { padding-bottom: 64px; }
+  .sticky-toc { left: 0; right: 0; bottom: 0; flex-wrap: wrap; align-items: center; gap: 4px 12px; padding: 6px max(16px, calc(50% - 390px)); border-width: 1px 0 0; box-shadow: 0 -4px 16px rgba(21, 32, 46, 0.08); }
+  .sticky-toc .toc-toggle { flex: 1 1 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 6px; row-gap: 0; padding: 4px 0; }
+  .sticky-toc .toc-label { grid-column: 1; grid-row: 1; }
+  .sticky-toc .toc-now { grid-column: 1; grid-row: 2; }
+  .sticky-toc .toc-toggle::after { content: '\25B4'; grid-column: 2; grid-row: 1 / span 2; align-self: center; color: var(--blue); font-size: 14px; }
+  .sticky-toc.is-open .toc-toggle::after { content: '\25BE'; }
+  .sticky-toc .toc-panel { display: none; order: -1; flex: 1 0 100%; padding: 8px 0 10px; border-bottom: 1px solid var(--line); }
+  .sticky-toc.is-open .toc-panel { display: block; }
+  .sticky-toc .toc-list { max-height: min(60vh, 520px); }
+  .sticky-toc .toc-list a { padding-top: 9px; padding-bottom: 9px; font-size: 15px; }
+  html.has-toc { scroll-padding-bottom: 72px; }
+  html.has-toc body { padding-bottom: 64px; }
 }
+/* Short or zoomed-in screens: no fixed bar at all, the hero's contents list does the job (GOV.UK sticky-elements
+   testing: a fixed bar covered focused links and broke at high zoom; WCAG 2.4.11). */
 @media (max-height: 519.98px) {
-  .sticky-toc { position: static; box-shadow: none; border-width: 1px 0; margin: 0; }
-  html { scroll-padding-bottom: 0; }
-  body { padding-bottom: 0; }
+  .sticky-toc { display: none; }
+  html.has-toc { scroll-padding-bottom: 0; }
+  html.has-toc body { padding-bottom: 0; }
 }
+.article-body h2[tabindex="-1"]:focus { outline: none; }
+@media (max-width: 559.98px) {
+  .sticky-toc .btn-gold { font-size: 14px; padding: 8px 12px; }
+  .sticky-toc .btn-gold .long { display: none; }
+  .sticky-toc .btn-gold .short { display: inline; }
+}
+

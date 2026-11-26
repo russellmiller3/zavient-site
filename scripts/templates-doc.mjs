@@ -36,6 +36,7 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: \
 - No Upwork, freelancer marketplaces, hourly rates or rival consulting firms.
 - Teach, then trust, then the lead: alternatives sit after "Buy or build", just above the free diagnostic.
 - The free diagnostic shows in four spots, worded for the page type: under the bottom line, beside the tool or own data, in a sticky contents box, and at the end.
+- Every long page (5+ sections) gets the sticky contents automatically: a side rail at 1300px and wider, a bottom bar below that naming the section you're in, a jump link to every section, the current one marked. Nothing to fill in; it reads the page's own headings (Russell, 26 Nov 2026).
 - One folder per page type; pages built before the templates stay at \`/ai-work/<slug>.html\`.
 - A fact only Zavient has on every page except tools (the tool is the fact).
 - ADHD-friendly: 25-word sentences, 2-sentence bullets, 3-sentence paragraphs.
