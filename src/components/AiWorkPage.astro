@@ -34,7 +34,7 @@ const proofAfter = tpl ? (['tool', 'own-data'].find((id) => order.includes(id) &
 <Base title={`${d.title} | Zavient`} description={d.description} noindex={!isIndexed} theme="blue" updated={d.updated}>
   <header class="article-hero">
     <div class="wrap">
-      <div class="label">{kind} &middot; {d.job}{d.industry !== 'any industry' ? ` · ${d.industry}` : ''}</div>
+      <div class="label">{kind} &middot; {d.job}{d.industry !== 'any industry' && !d.job.toLowerCase().includes(d.industry.toLowerCase()) ? ` · ${d.industry}` : ''}</div>
       <h1>{rest ? (<><span class="hl">{topic}</span>:{rest}</>) : d.title}</h1>
       {d.verdict ? (
         <div class="bluf">
