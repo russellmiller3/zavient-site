@@ -121,6 +121,7 @@ nav:not(.on-page) {
 .article-body ol { margin: 0 0 22px 24px; }
 .article-body ol li { margin-bottom: 10px; padding-left: 4px; }
 .article-body ol li::marker { font-family: var(--mono); font-size: 15px; color: var(--muted); }
+.article-body ol li ul > li { padding-left: 24px; } /* a bullet list inside a numbered item keeps room for its square */
 
 /* Tables: mono headers, hairlines, numbers in mono */
 .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 10px 0 8px; }
@@ -236,6 +237,9 @@ footer a:hover { color: var(--blue); }
   nav:not(.on-page) .nav-links a.nav-cta { order: 1; margin-left: auto; }
   nav:not(.on-page)::after { content: ''; order: 2; flex-basis: 100%; height: 0; }
   nav:not(.on-page) .nav-links a:not(.nav-cta) { order: 3; margin-right: 18px; font-size: 14px; }
+  /* The menu slides away on scroll down and back on scroll up (script in Base.astro), and stays while focused. */
+  nav:not(.on-page) { transition: transform .3s ease; }
+  nav:not(.on-page).nav-away:not(:focus-within) { transform: translateY(-100%); }
   .article-hero { padding: 40px 0 32px; }
   .on-page ol { columns: 1; }
   .hub-grid { grid-template-columns: 1fr; }
@@ -246,9 +250,9 @@ footer a:hover { color: var(--blue); }
 
 /* Golden-template blocks (26 Nov 2026): where people stay in charge, ranked jobs, FAQ, tool frame */
 .callout { border: 1px solid var(--line); border-left: 3px solid var(--blue); background: var(--blue-wash); padding: 16px 22px 4px; margin: 6px 0 22px; }
-.ranked { list-style: none; counter-reset: rk; margin: 8px 0 22px; padding: 0; }
-.ranked > li { counter-increment: rk; position: relative; padding: 14px 0 6px 46px; border-top: 1px solid var(--line); }
-.ranked > li::before { content: counter(rk, decimal-leading-zero); position: absolute; left: 0; top: 18px; font-family: var(--mono); font-size: 15px; color: var(--blue); }
+.article-body ol.ranked, .ranked { list-style: none; counter-reset: rk; margin: 8px 0 22px; padding: 0; }
+.article-body ol.ranked > li, .ranked > li { counter-increment: rk; position: relative; padding: 14px 0 6px 46px; border-top: 1px solid var(--line); }
+.article-body ol.ranked > li::before, .ranked > li::before { content: counter(rk, decimal-leading-zero); position: absolute; left: 0; top: 18px; font-family: var(--mono); font-size: 15px; color: var(--blue); }
 .ranked h3 { margin: 0 0 6px; }
 .ranked .payoff { font-size: 18px; color: var(--ink-soft); }
 .faq-item { border-top: 1px solid var(--line); padding-top: 4px; }
@@ -266,9 +270,8 @@ footer a:hover { color: var(--blue); }
 /* Sticky contents + free diagnostic, on every long page (five or more sections). It never sits on the text.
    - 1300px and wider: a rail in the empty margin right of the 780px column, listing every section, with the
      section you're reading marked (NN/g: sticky TOC in a side rail; GOV.UK contents list).
-   - Narrower: a slim bar along the bottom, in thumb reach, that names the section you're in ("4/14 · ...") and
-     opens into the full list. The page gets matching bottom padding so nothing ends up hidden under it (WCAG 2.2
-     technique C43, scroll-padding).
+   - Narrower: a one-row bar along the bottom, in thumb reach, that names the section you're in ("4 of 14 ...") and
+     opens into the full list. Scroll padding keeps a focused link from ending up under it (WCAG 2.2 technique C43).
    - Hidden while the top of the page or the end offer is on screen (script in AiWorkPage.astro).
    - Rail breakpoint is 1300px, not Wikipedia's 1000px, because our 780px column stays centred and only has a free
      margin that wide; below it the bar takes over (research brief, 26 Nov 2026). */
@@ -278,6 +281,7 @@ footer a:hover { color: var(--blue); }
 .sticky-toc .toc-toggle { font: inherit; background: none; border: 0; padding: 0; color: var(--ink); text-align: left; cursor: pointer; display: flex; align-items: center; gap: 8px; min-width: 0; min-height: 44px; }
 .sticky-toc .toc-label { font-family: var(--sans); font-weight: 700; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
 .sticky-toc .toc-count { font-weight: 600; letter-spacing: 0; text-transform: none; margin-left: 4px; }
+.sticky-toc .toc-count:empty { display: none; }
 .sticky-toc .toc-now { font-family: var(--sans); font-weight: 600; font-size: 15px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 .sticky-toc .toc-list { list-style: none; margin: 0; padding: 0; overflow-y: auto; overscroll-behavior: contain; }
 .sticky-toc .toc-list li { margin: 0; padding: 0; }
@@ -297,25 +301,28 @@ footer a:hover { color: var(--blue); }
   .sticky-toc .btn-gold { align-self: flex-start; }
 }
 @media (max-width: 1299.98px) {
-  .sticky-toc { left: 0; right: 0; bottom: 0; flex-wrap: wrap; align-items: center; gap: 4px 12px; padding: 6px max(16px, calc(50% - 390px)); border-width: 1px 0 0; box-shadow: 0 -4px 16px rgba(21, 32, 46, 0.08); }
-  .sticky-toc .toc-toggle { flex: 1 1 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 6px; row-gap: 0; padding: 4px 0; }
-  .sticky-toc .toc-label { grid-column: 1; grid-row: 1; }
-  .sticky-toc .toc-now { grid-column: 1; grid-row: 2; }
-  .sticky-toc .toc-toggle::after { content: '\25B4'; content: '\25B4' / ''; grid-column: 2; grid-row: 1 / span 2; align-self: center; color: var(--blue); font-size: 14px; }
+  /* One row, 44px tall plus the phone's home-bar inset: "3 of 9 · section name ▴ · Free diagnostic". It is sticky
+     inside the article, so it rides the bottom of the screen while you read and stops where the article ends, above
+     the end offer and the footer (Chrome sticky-UI guidance: under 12% of the screen, one row; fix of 26 Nov 2026). */
+  .sticky-toc { position: sticky; bottom: 0; left: auto; right: auto; flex-wrap: nowrap; align-items: center; gap: 12px; min-height: 44px; padding: 0 max(16px, calc(50% - 390px)) env(safe-area-inset-bottom, 0px); border-width: 1px 0 0; box-shadow: 0 -4px 16px rgba(21, 32, 46, 0.08); }
+  .sticky-toc .toc-toggle { flex: 1 1 0; gap: 10px; }
+  .sticky-toc .toc-word { display: none; }
+  .sticky-toc .toc-count { margin-left: 0; color: var(--blue); }
+  .sticky-toc .toc-now { flex: 1 1 0; }
+  .sticky-toc .toc-toggle::after { content: '\25B4'; content: '\25B4' / ''; color: var(--blue); font-size: 14px; flex: none; }
   .sticky-toc.is-open .toc-toggle::after { content: '\25BE'; content: '\25BE' / ''; }
-  .sticky-toc .toc-panel { display: none; order: -1; flex: 1 0 100%; padding: 8px 0 10px; border-bottom: 1px solid var(--line); }
+  .sticky-toc .toc-panel { display: none; position: absolute; left: 0; right: 0; bottom: 100%; padding: 8px max(16px, calc(50% - 390px)) 10px; background: var(--paper); border-top: 1px solid var(--line-strong); box-shadow: 0 -8px 24px rgba(21, 32, 46, 0.12); }
   .sticky-toc.is-open .toc-panel { display: block; }
   .sticky-toc .toc-list { max-height: min(60vh, 520px); }
   .sticky-toc .toc-list a { padding-top: 9px; padding-bottom: 9px; font-size: 15px; }
-  html.has-toc { scroll-padding-bottom: 72px; }
-  html.has-toc body { padding-bottom: 64px; }
+  .sticky-toc .btn-gold { padding: 7px 12px; }
+  html.has-toc { scroll-padding-bottom: 56px; }
 }
 /* Short or zoomed-in screens: no fixed bar at all, the hero's contents list does the job (GOV.UK sticky-elements
    testing: a fixed bar covered focused links and broke at high zoom; WCAG 2.4.11). */
 @media (max-height: 519.98px) {
   .sticky-toc { display: none; }
   html.has-toc { scroll-padding-bottom: 0; }
-  html.has-toc body { padding-bottom: 0; }
 }
 .article-body h2[tabindex="-1"]:focus { outline: none; }
 @media (max-width: 559.98px) {
