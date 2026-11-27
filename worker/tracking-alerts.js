@@ -1,7 +1,21 @@
 // Recipient details stay in private KV, not in the public site or repository.
+// Filters out known automated email-delivery scanners on open events so rmiller@zavient.com
+// only receives alerts for likely human opens (documented Gmail doubled Mozilla/5.0 scanner UA
+// and common security-gateway bots).
+export function isScannerOpen(event) {
+  if (event.event !== 'open') return false;
+  const ua = String(event.user_agent || '');
+  if ((ua.match(/Mozilla\/5\.0/g) || []).length >= 2) return true;
+  return /Edge\/12\.246|Proofpoint|Mimecast|Barracuda|SafeLinks|Outlook-iOS-Scanner/i.test(ua);
+}
+
 export async function notifyTrackingEvent(env, event) {
   if (!env.TRACKING_EMAIL || !env.TRACKING_ALERTS) return;
   if (!['open', 'click'].includes(event.event)) return;
+  if (isScannerOpen(event)) {
+    console.log(JSON.stringify({ type: 'zavient_tracking_alert_skipped_bot', track_id: event.track_id }));
+    return;
+  }
   const recipients = await env.TRACKING_ALERTS.get('campaign:2026-12-01', 'json');
   if (!recipients || !Object.hasOwn(recipients, event.track_id)) return;
   const person = recipients[event.track_id];

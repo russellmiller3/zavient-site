@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import worker from '../worker/index.js';
-import { notifyTrackingEvent } from '../worker/tracking-alerts.js';
+import { notifyTrackingEvent, isScannerOpen } from '../worker/tracking-alerts.js';
 
 function fixture(fail = false) {
   const values = new Map([['campaign:2026-12-01', { campaign1: { name: 'Dana', firm: 'Example', subject: 'One workflow' } }]]);
@@ -15,14 +15,28 @@ function fixture(fail = false) {
 
 test('alerts identify the person, use the fixed inbox, and suppress repeat opens independently of clicks', async () => {
   const { env, messages } = fixture();
-  await notifyTrackingEvent(env, { event: 'open', track_id: 'campaign1' });
-  await notifyTrackingEvent(env, { event: 'open', track_id: 'campaign1' });
+  await notifyTrackingEvent(env, { event: 'open', track_id: 'campaign1', user_agent: 'Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)' });
+  await notifyTrackingEvent(env, { event: 'open', track_id: 'campaign1', user_agent: 'Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)' });
   await notifyTrackingEvent(env, { event: 'click', track_id: 'campaign1', target: 'https://zavient.com/' });
   assert.equal(messages.length, 2);
   assert.equal(messages[0].to, 'rmiller@zavient.com');
   assert.match(messages[0].subject, /Open recorded: Dana/);
   assert.match(messages[0].text, /not proof/);
-  assert.match(messages[1].text, /Destination: https:\/\/zavient.com\//);
+  assert.match(messages[1].text, /Destination: https:\/\/zavient\.com\//);
+});
+
+test('scanner User-Agents on opens are suppressed without consuming the dedup receipt', async () => {
+  const { env, values, messages } = fixture();
+  const scannerUa = 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 Mozilla/5.0 Chrome/120.0';
+  assert.equal(isScannerOpen({ event: 'open', user_agent: scannerUa }), true);
+  assert.equal(isScannerOpen({ event: 'open', user_agent: 'Proofpoint URL Defense' }), true);
+  assert.equal(isScannerOpen({ event: 'open', user_agent: 'Mozilla/5.0 (via ggpht.com GoogleImageProxy)' }), false);
+  await notifyTrackingEvent(env, { event: 'open', track_id: 'campaign1', user_agent: scannerUa });
+  assert.equal(messages.length, 0);
+  assert.equal(values.has('notified:campaign1:open'), false);
+  // Real human open afterwards still fires cleanly.
+  await notifyTrackingEvent(env, { event: 'open', track_id: 'campaign1', user_agent: 'Mozilla/5.0 (via ggpht.com GoogleImageProxy)' });
+  assert.equal(messages.length, 1);
 });
 
 test('unknown IDs and preflight requests never trigger emails', async () => {
