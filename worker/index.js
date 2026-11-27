@@ -12,6 +12,7 @@ const PIXEL_GIF = Uint8Array.from([
 const ALLOWED_REDIRECT_HOSTS = new Set(['zavient.com', 'www.zavient.com', 'calendar.app.google']);
 
 function logTrackEvent(env, ctx, payload) {
+  console.log(JSON.stringify({ type: 'zavient_email_track', ts: new Date().toISOString(), ...payload }));
   if (!env.LEAD_SHEET_URL) return;
   const req = fetch(env.LEAD_SHEET_URL, {
     method: 'POST',
