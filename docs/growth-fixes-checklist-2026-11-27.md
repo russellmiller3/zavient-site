@@ -58,9 +58,9 @@ Run `npm test` before every commit (`node scripts/check-page.mjs --indexed && as
 - [x] **A8. Full Verification (`npm test`)**
   - All 61 indexed page checks, readability checks, price checks, Worker `/api/lead` tests, link checks, sitemap/llms.txt checks, and layout guards pass (`104/104`).
 
-### B. Manual Actions Only Russell Can Do (5–15 Minutes Total)
-- [ ] **B1. Verify/Fix Calendly URL (`https://calendly.com/zavient/call`)**
-  - Open `https://calendly.com/zavient/call` in your browser. If invalid/paused, either re-enable `/zavient/call` in Calendly OR replace that URL in `src/components/ConsultingCta.astro`, `src/pages/index.astro`, `src/pages/about.astro`, `public/ai-readiness-assessment.html`, and `public/tools/embed/*.html`.
+### B. Manual Actions Only Russell Can Do (5–10 Minutes Total)
+- [x] **B1. Verify/Fix Booking Link** — Completed 27 Nov 2026: replaced all 14 broken `https://calendly.com/zavient/call` links across pages, components, readiness check, all 6 embedded tools, and tests with `https://calendar.app.google/2xXiMLiamRFtfFKH9`.
+- [x] **B5a. Add Founder Headshot** — Completed 27 Nov 2026: optimized `/Users/russellmiller/Desktop/Personal/Zavient/resumes/profile_image.jpg` -> `public/russell-miller.jpg` (480×480) and added responsive founder card to `src/pages/about.astro`.
 - [ ] **B2. Verify `hello@zavient.com` Delivery**
   - Send a test email to `hello@zavient.com` and verify it reaches your inbox (archived site used `rmiller@zavient.com`).
 - [ ] **B3. Finish Cloudflare DNS Cutover + Secrets + Analytics**
@@ -69,8 +69,6 @@ Run `npm test` before every commit (`node scripts/check-page.mjs --indexed && as
   - Turn on Cloudflare Web Analytics for `zavient.com` (either auto-injected via Cloudflare dashboard or by setting `PUBLIC_CF_BEACON_TOKEN`).
 - [ ] **B4. Submit Sitemap in Google Search Console & Bing Webmaster Tools**
   - Submit `https://zavient.com/sitemap.xml` and request indexing for `/` and `/ai-work.html` to break out of the `zaviant.com` spelling-correction shadow.
-- [ ] **B5. Add Founder Headshot + Launch 20-Target Outbound Sprint**
-  - Add `public/russell-miller.jpg` to `/about.html` (and homepage `#who` block if desired).
-  - Send 20 personalized LinkedIn/email notes to PE operating partners & mid-market COOs linking directly to `/tools/ai-roi-calculator.html`, `/tools/ai-policy-generator.html`, or `/industries/private-equity.html`.
+- [ ] **B5b. Launch Outbound Sprint** — Ready-to-send 20-target kit + clickable launchpad created 27 Nov 2026 (plus 27 existing unsent Gmail drafts in `rmiller@zavient.com`).
 - [ ] **B6. Sync Local Checkout (`~/Desktop/code/zavient-site-live`)**
   - Run `git pull` in your local `zavient-site` checkout after verifying GitHub `master`.

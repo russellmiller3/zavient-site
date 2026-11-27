@@ -125,5 +125,5 @@ test('every footnote key and tool link resolves', () => {
   for (const slug of ['ai-policy-generator', 'ai-training-plan', 'ai-use-case-finder', 'ai-project-cost-estimator', 'ai-roi-calculator'])
     assert.ok(html.includes(`/tools/${slug}.html`) || html.includes(`/tools/embed/${slug}.html`), `no link to ${slug}`);
   assert.ok(html.includes('/ai-readiness-assessment.html'));
-  assert.ok(html.includes('https://calendly.com/zavient/call') && html.includes('mailto:hello@zavient.com'));
+  assert.ok(html.includes('https://calendar.app.google/2xXiMLiamRFtfFKH9') && html.includes('mailto:hello@zavient.com'));
 });
