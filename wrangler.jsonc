@@ -7,6 +7,8 @@
   "main": "./worker/index.js",
   "workers_dev": true,
   "preview_urls": true,
+  "send_email": [{ "name": "TRACKING_EMAIL", "destination_address": "rmiller@zavient.com" }],
+  "kv_namespaces": [{ "binding": "TRACKING_ALERTS", "id": "2b322a33d8b8400a86c7469b466ffad5" }],
   "observability": {
     "logs": {
       "enabled": true,

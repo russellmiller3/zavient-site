@@ -2,9 +2,8 @@
 
 The public site for Zavient LLC. Pushing to `master` on GitHub publishes it through Cloudflare (Workers Builds); other branches get a preview URL. Vercel stays connected only as the rollback until zavient.com's DNS points at Cloudflare.
 
-- The home page is one file: `public/index.html`, styled by `public/styles.css`.
-- Articles live in `src/content/insights/` and are built by Astro.
-- AI-work pages live in `src/content/ai-work/` and data stories in `src/content/data-stories/`, one JSON file each.
+- The home page is `src/pages/index.astro` and About is `src/pages/about.astro`, styled by `public/ai-work/ai-work.css`.
+- AI-work pages live in `src/content/ai-work/` (one JSON file each), and interactive tool embeds live in `public/tools/embed/`.
   The schema in `src/content/config.ts` refuses a page without sources. Run `npm test` before every commit and
   `node scripts/check-links.mjs` after adding sources.
 - The brand line "Moneyball for revenue systems" is frozen. Do not change it.
@@ -29,12 +28,14 @@ The public site for Zavient LLC. Pushing to `master` on GitHub publishes it thro
   - Deploy command: `npx wrangler deploy`.
   - Production branch: `master` (the repo default).
   - Preview builds on, preview command `npx wrangler preview`: every other branch gets its own preview address.
-  - zavient.com is not on Cloudflare yet; until its DNS moves, Vercel still serves the live site.
+  - `zavient.com` is live on Cloudflare Worker `zavient-site` (cut over 27 Nov 2026); `worker/index.js` also handles `/api/lead` and `/api/t/*` open/click tracking with KV-deduplicated email alerts (`worker/tracking-alerts.js`).
 - Rollback:
   - Roll back to the previous deployment in the Worker's Deployments tab.
   - Or reset `master` to the `archive-site-2026-11-26` tag.
 
 ## Change log
+
+- 2026-11-27: Cut `zavient.com` over to Cloudflare Worker `zavient-site`; added first-party email open/click tracking (`/api/t/*`) with KV-deduplicated email alerts (`worker/tracking-alerts.js`) to `rmiller@zavient.com`; swapped all 14 booking links to Google Calendar; added founder headshot to `/about.html`; surfaced all 6 interactive tools on home/nav; added inline diagnostic form (`/api/lead`), OG card, `llms.txt`, `404.html`, `privacy.html`; submitted all 66 sitemap URLs to IndexNow (HTTP 200). Why: unblock leads, enable tracked Dec 1 PE outreach, and keep Codex's open alerts in Git so future deploys preserve them. Proof: `npm test` passes (108/108 including `tests/tracking-alerts.test.mjs`) and live `https://zavient.com/api/t/o/preflight.gif` returns HTTP 200 `image/gif`. Next step: submit sitemap in Google Search Console and follow up on Dec 1 opens/clicks.
 
 - 2026-11-26: Sitemap now builds itself from each build, with lastmod per page; the hand-made sitemap.xml and
   sitemap-ai.xml are gone (/sitemap-ai.xml redirects). Added IndexNow on deploy. Why: Russell asked for the sitemap to

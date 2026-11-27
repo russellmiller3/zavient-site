@@ -4,6 +4,8 @@
 //   - "/api/lead" -> forwards diagnostic requests to LEAD_SHEET_URL
 //   - "/api/t/o/<id>.gif" -> 1x1 transparent open-tracking pixel (logs to LEAD_SHEET_URL if set)
 //   - "/api/t/c/<id>?u=<url>" -> safe click-tracking redirect (only zavient.com and calendar.app.google)
+import { notifyTrackingEvent } from './tracking-alerts.js';
+
 const LEAD_FIELDS = ['name', 'email', 'company', 'workflow', 'page', 'job'];
 const PIXEL_GIF = Uint8Array.from([
   71, 73, 70, 56, 57, 97, 1, 0, 1, 0, 128, 0, 0, 0, 0, 0, 255, 255, 255,
@@ -13,6 +15,11 @@ const ALLOWED_REDIRECT_HOSTS = new Set(['zavient.com', 'www.zavient.com', 'calen
 
 function logTrackEvent(env, ctx, payload) {
   console.log(JSON.stringify({ type: 'zavient_email_track', ts: new Date().toISOString(), ...payload }));
+  if (ctx && typeof ctx.waitUntil === 'function') {
+    ctx.waitUntil(notifyTrackingEvent(env, payload).catch((error) => {
+      console.error(JSON.stringify({ type: 'zavient_tracking_alert_failed', track_id: payload.track_id, error: error.message }));
+    }));
+  }
   if (!env.LEAD_SHEET_URL) return;
   const req = fetch(env.LEAD_SHEET_URL, {
     method: 'POST',
@@ -55,7 +62,7 @@ async function handleLead(request, env) {
 
 function handleOpenPixel(url, request, env, ctx) {
   const id = url.pathname.replace(/^\/api\/t\/o\//, '').replace(/\.gif$/i, '').slice(0, 120);
-  logTrackEvent(env, ctx, {
+  if (request.method === 'GET') logTrackEvent(env, ctx, {
     event: 'open',
     track_id: id,
     user_agent: (request.headers.get('user-agent') || '').slice(0, 200),
@@ -81,7 +88,7 @@ function handleClickRedirect(url, request, env, ctx) {
   if (target.protocol !== 'https:' || !ALLOWED_REDIRECT_HOSTS.has(target.hostname)) {
     return new Response('redirect host not allowed', { status: 400 });
   }
-  logTrackEvent(env, ctx, {
+  if (request.method === 'GET') logTrackEvent(env, ctx, {
     event: 'click',
     track_id: id,
     target: target.toString().slice(0, 500),
