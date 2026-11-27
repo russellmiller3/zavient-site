@@ -191,11 +191,12 @@ test('who-does-what flows are numbered lists, not rows of arrows', () => {
 
 // Hosting on Cloudflare (26 Nov 2026): addresses keep .html, "/" serves the home page, and the old-page redirects
 // match the Vercel list (kept while Vercel is the rollback).
-test('Cloudflare config keeps .html addresses, serves the home page and carries every redirect', async () => {
+test('Cloudflare config keeps .html addresses, serves the home page, handles /api/lead and carries every redirect', async () => {
   const cfg = JSON.parse(readFileSync(join(root, 'wrangler.jsonc'), 'utf8').replace(/^\s*\/\/.*$/gm, ''));
   assert.equal(cfg.assets.directory, './dist');
   assert.equal(cfg.assets.html_handling, 'none', 'any other mode redirects /about.html to /about');
-  assert.deepEqual(cfg.assets.run_worker_first, ['/']);
+  assert.equal(cfg.assets.not_found_handling, '404-page');
+  assert.deepEqual(cfg.assets.run_worker_first, ['/', '/api/lead']);
   assert.ok(cfg.previews && typeof cfg.previews === 'object', 'branch previews need a previews block');
   const { default: worker } = await import('../worker/index.js');
   const seen = [];
@@ -203,10 +204,30 @@ test('Cloudflare config keeps .html addresses, serves the home page and carries 
   await worker.fetch(new Request('https://zavient.com/'), env);
   await worker.fetch(new Request('https://zavient.com/about.html'), env);
   assert.deepEqual(seen, ['/index.html', '/about.html']);
+  // /api/lead checks: GET rejected, missing fields 400, honeypot 200 ok, unconfigured sheet 503.
+  const badMethod = await worker.fetch(new Request('https://zavient.com/api/lead'), env);
+  assert.equal(badMethod.status, 405);
+  const emptyForm = new FormData();
+  const badForm = await worker.fetch(new Request('https://zavient.com/api/lead', { method: 'POST', body: emptyForm }), env);
+  assert.equal(badForm.status, 400);
+  const botForm = new FormData();
+  botForm.set('company_fax', '555-1234');
+  const botRes = await worker.fetch(new Request('https://zavient.com/api/lead', { method: 'POST', body: botForm }), env);
+  assert.equal(botRes.status, 200);
+  assert.equal(await botRes.text(), 'ok');
+  const validForm = new FormData();
+  validForm.set('name', 'Dana Smith');
+  validForm.set('email', 'dana@example.com');
+  validForm.set('workflow', 'Invoice approvals for 150-person manufacturer');
+  const noSecret = await worker.fetch(new Request('https://zavient.com/api/lead', { method: 'POST', body: validForm }), env);
+  assert.equal(noSecret.status, 503);
   const cf = readFileSync(join(root, 'dist/_redirects'), 'utf8').split('\n').filter((l) => l && !l.startsWith('#')).map((l) => l.split(/\s+/));
   const vercel = JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8')).redirects;
   assert.deepEqual(cf, vercel.map((r) => [r.source.replace('/:path*', '/*'), r.destination, r.permanent ? '301' : '302']));
   for (const [, to] of cf) assert.ok(to === '/' || existsSync(join(root, 'dist', to.split('#')[0])), `redirect target missing: ${to}`);
+  assert.ok(existsSync(join(dist, 'llms.txt')), 'llms.txt missing from dist');
+  assert.ok(existsSync(join(dist, 'og-card.png')), 'og-card.png missing from dist');
+  assert.ok(existsSync(join(dist, '404.html')), '404.html missing from dist');
 });
 
 test('every long page has the sticky contents with a jump link to each section', () => {

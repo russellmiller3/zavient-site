@@ -1,0 +1,37 @@
+---
+// api-docs-read: static 404 recovery page — no external API surface.
+import Base from '../layouts/Base.astro';
+import ConsultingCta from '../components/ConsultingCta.astro';
+---
+<Base title="Page not found | Zavient" description="That page could not be found on zavient.com. Browse our AI guides, free tools, or request a free 30-minute diagnostic." noindex>
+  <header class="article-hero"><div class="wrap">
+    <div class="label">404 &middot; Page not found</div>
+    <h1>That page is not here.</h1>
+    <div class="bluf">
+      <span class="bluf-label">Where to go next</span>
+      <ul>
+        <li>Start on the <a href="/">Zavient home page</a> to pick your role, industry or workflow.</li>
+        <li>Search all 61 researched guides and tools in the <a href="/ai-work.html">AI work directory</a>.</li>
+        <li>Run the <a href="/ai-readiness-assessment.html">3-minute AI readiness check</a> in your browser.</li>
+      </ul>
+    </div>
+  </div></header>
+
+  <article class="article-body"><div class="wrap">
+    <h2>Popular starting points</h2>
+    <div class="hub-grid">
+      <a class="hub-card" href="/ai-work.html#tools">
+        <span class="hub-tag">Free tools</span>
+        <h3>6 interactive AI tools</h3>
+        <p>ROI calculator, policy generator, cost estimator, roadmap builder and more.</p>
+      </a>
+      <a class="hub-card" href="/ai-consulting/ai-consulting-services.html">
+        <span class="hub-tag">Start here</span>
+        <h3>AI consulting services</h3>
+        <p>What pays back first, what help costs and what you should walk away with.</p>
+      </a>
+    </div>
+  </div></article>
+
+  <ConsultingCta job="AI in your business" heading="Looking for help with a specific workflow?" />
+</Base>

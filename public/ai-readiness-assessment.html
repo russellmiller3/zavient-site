@@ -575,7 +575,16 @@ function result() {
     </div>`).join("");
 
   const o = offer(r, size, timeline);
-  const mailto = `mailto:${C.email}?subject=${encodeURIComponent("AI readiness score: " + r.overall)}`;
+  const briefLines = [
+    `Zavient AI Readiness Summary`,
+    `Score: ${r.overall}/100 (${r.stage.name})`,
+    `Top gap to fix first: ${gapTitle} ${gapText}`,
+    `First project: ${project}`,
+    r.dataFirst ? '' : `Estimated time back: ${fmtN(tb.wkLow)}–${fmtN(tb.wkHigh)} hrs/week (${fmt$(tb.$Low)}–${fmt$(tb.$High)}/year at $${fmtN(tb.rate)}/hr)`,
+    `Area scores: ${r.areas.map(d => `${d.name} ${d.score}/100`).join(' | ')}`,
+    `Source: https://zavient.com/ai-readiness-assessment.html`,
+  ].filter(Boolean).join('\n');
+  const mailto = `mailto:${C.email}?subject=${encodeURIComponent("AI readiness score: " + r.overall)}&body=${encodeURIComponent(briefLines + "\n\nWorkflow details:\n")}`;
 
   app.innerHTML = `
     <section class="card">
@@ -621,13 +630,21 @@ function result() {
       <div class="eyebrow">Next step</div>
       <h2>${esc(o.h)}</h2>
       <p>${esc(o.p)}</p>
-      <a class="btn btn-primary" href="${C.booking}" target="_blank" rel="noopener"><i data-lucide="calendar-check"></i>Book the free 30-minute diagnostic</a>
-      <p class="cta-secondary">Or email <a href="${esc(mailto)}">${C.email}</a> with your score and two sentences on the work.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+        <a class="btn btn-primary" href="${C.booking}" target="_blank" rel="noopener"><i data-lucide="calendar-check"></i>Book the free 30-minute diagnostic</a>
+        <button class="btn btn-ghost" type="button" id="copy-brief"><i data-lucide="copy"></i>Copy 1-page CEO summary</button>
+      </div>
+      <p class="cta-secondary">Or email <a href="${esc(mailto)}">${C.email}</a> with your pre-filled score and two sentences on the work.</p>
     </section>
     <button class="btn btn-ghost restart" id="restart"><i data-lucide="rotate-ccw"></i>Retake the assessment</button>`;
 
   const rateEl = document.getElementById("rate");
   if (rateEl) rateEl.addEventListener("change", () => { const v = +rateEl.value; if (v > 0) { state.rate = v; save(); render(false); } });
+  const copyBtn = document.getElementById("copy-brief");
+  if (copyBtn) copyBtn.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(briefLines); copyBtn.textContent = "Copied summary to clipboard"; }
+    catch { window.prompt("Copy your 1-page summary:", briefLines); }
+  });
   document.getElementById("restart").onclick = () => { Object.assign(state, fresh()); state.a = {}; save(); render(); };
 }
 

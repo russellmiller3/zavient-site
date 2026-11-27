@@ -1,10 +1,7 @@
-// Self-updating sitemap (Russell, 26 Nov 2026: "make sitemap auto updateing when new page publishd").
-// After every build, this walks the built HTML and writes dist/sitemap.xml from what actually shipped:
-//   - every .html page is listed unless it carries <meta name="robots" content="noindex"> or a canonical that
-//     points to another address (so noindex hubs and drafts stay out by themselves);
-//   - lastmod comes from <meta property="article:modified_time">, which Base.astro writes from a page's `updated` prop.
-// A new page needs nothing extra: build it, and it is in the sitemap. The IndexNow workflow
-// (.github/workflows/indexnow.yml) then tells Bing and other engines which URLs are new or changed.
+// Self-updating sitemap and llms.txt generator (26-27 Nov 2026).
+// After every build, this walks the built HTML and writes:
+//   1. dist/sitemap.xml from every indexable .html page (with lastmod from article:modified_time);
+//   2. dist/llms.txt so AI assistants (ChatGPT, Claude, Perplexity) get a clean directory of all tools and guides.
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { join, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -19,12 +16,65 @@ async function htmlFiles(dir) {
   return out;
 }
 
+const decode = (s) => s.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').trim();
+
 export function pageEntry(html, url) {
   if (/<meta[^>]+name=["']robots["'][^>]+content=["'][^"']*noindex/i.test(html)) return null;
   const canon = html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i)?.[1];
   if (canon && canon !== url) return null;
   const lastmod = html.match(/<meta[^>]+property=["']article:modified_time["'][^>]+content=["'](\d{4}-\d{2}-\d{2})/i)?.[1];
-  return { loc: url, lastmod };
+  const title = decode(html.match(/<title>([^<]+)<\/title>/i)?.[1] || url).replace(/\s*\|\s*Zavient\s*$/, '');
+  const description = decode(
+    html.match(/<meta[^>]+name=["']description["'][^>]+content=(?:"([^"]*)"|'([^']*)')/i)?.slice(1).find((v) => v !== undefined) || ''
+  );
+  return { loc: url, lastmod, title, description };
+}
+
+function groupFor(loc, site) {
+  const path = loc.slice(site.length);
+  if (path === '/' || path === '/about.html' || path === '/ai-work.html' || path === '/privacy.html') return 'Core pages';
+  if (path.startsWith('/tools/') || path === '/ai-readiness-assessment.html') return 'Free interactive tools';
+  if (path.startsWith('/industries/')) return 'Industry hubs';
+  if (path.startsWith('/ai-work/')) return 'Workflow playbooks';
+  if (path.startsWith('/ai-consulting/')) return 'AI consulting guides';
+  if (path.startsWith('/compare/')) return 'Software and approach comparisons';
+  if (path.startsWith('/for/')) return 'Role guides';
+  return 'Other guides';
+}
+
+export async function buildLlmsTxt(distDir, site, entries) {
+  const order = [
+    'Core pages',
+    'Free interactive tools',
+    'Industry hubs',
+    'Workflow playbooks',
+    'AI consulting guides',
+    'Software and approach comparisons',
+    'Role guides',
+    'Other guides',
+  ];
+  const groups = Object.fromEntries(order.map((k) => [k, []]));
+  for (const e of entries) {
+    if (e.loc.includes('/tools/embed/')) continue;
+    groups[groupFor(e.loc, site)].push(e);
+  }
+  const lines = [
+    '# Zavient',
+    '',
+    '> Independent AI consulting for companies of 40 to 500 people, across every kind of work and industry. Focus: AI that augments teams rather than replacing staff. Every market claim is sourced and footnoted.',
+    '',
+    'Contact: hello@zavient.com | Free 30-minute diagnostic: https://zavient.com/#diagnostic',
+    '',
+  ];
+  for (const name of order) {
+    if (!groups[name].length) continue;
+    lines.push(`## ${name}`, '');
+    for (const e of groups[name]) {
+      lines.push(`- [${e.title}](${e.loc})${e.description ? `: ${e.description}` : ''}`);
+    }
+    lines.push('');
+  }
+  await writeFile(join(distDir, 'llms.txt'), lines.join('\n'));
 }
 
 export async function buildSitemap(distDir, site) {
@@ -41,6 +91,7 @@ export async function buildSitemap(distDir, site) {
     entries.map((e) => `  <url><loc>${e.loc}</loc>${e.lastmod ? `<lastmod>${e.lastmod}</lastmod>` : ''}</url>`).join('\n') +
     `\n</urlset>\n`;
   await writeFile(join(distDir, 'sitemap.xml'), body);
+  await buildLlmsTxt(distDir, site, entries);
   return entries;
 }
 
@@ -50,7 +101,7 @@ export default function sitemap({ site }) {
     hooks: {
       'astro:build:done': async ({ dir, logger }) => {
         const entries = await buildSitemap(fileURLToPath(dir), site.replace(/\/$/, ''));
-        logger.info(`sitemap.xml: ${entries.length} indexable pages`);
+        logger.info(`sitemap.xml + llms.txt: ${entries.length} indexable pages`);
       },
     },
   };

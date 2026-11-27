@@ -1,0 +1,38 @@
+---
+// api-docs-read: static privacy policy page — no external API surface.
+import Base from '../layouts/Base.astro';
+import ConsultingCta from '../components/ConsultingCta.astro';
+const updated = '27 November 2026';
+---
+<Base title="Privacy policy | Zavient" description="How Zavient LLC handles information on zavient.com. Interactive tools run in your browser with no signup and no ad tracking." canonical="https://zavient.com/privacy.html" updated="2026-11-27">
+  <header class="article-hero"><div class="wrap">
+    <div class="label">Privacy</div>
+    <h1>Privacy policy</h1>
+    <span class="bluf-label">Bottom line</span>
+    <div class="bluf">
+      <ul>
+        <li>Our interactive calculators and readiness check run in your browser.</li>
+        <li>We do not sell your data or run third-party advertising trackers.</li>
+        <li>Information you submit to request a diagnostic is used only to reply to you.</li>
+      </ul>
+    </div>
+    <p class="byline">Zavient LLC &middot; updated {updated}</p>
+  </div></header>
+
+  <article class="article-body"><div class="wrap">
+    <h2 id="tools">Interactive tools and assessments</h2>
+    <p>Every calculator, generator and readiness check on zavient.com runs locally in your browser. Your answers stay on your device unless you choose to copy or email them to us.</p>
+
+    <h2 id="contact-data">When you contact us</h2>
+    <p>When you submit the diagnostic request form, book a call or email <a href="mailto:hello@zavient.com">hello@zavient.com</a>, we receive the details you share. We use them only to prepare for and respond to your inquiry.</p>
+    <p>We never sell, rent or trade your contact details to third parties.</p>
+
+    <h2 id="analytics">Site traffic and hosting</h2>
+    <p>Our hosting providers (Cloudflare and Vercel) keep standard server logs for security and reliability. Any site traffic measurement we enable uses privacy-first aggregate counts without cross-site ad cookies.</p>
+
+    <h2 id="rights">Deleting your information</h2>
+    <p>Email <a href="mailto:hello@zavient.com">hello@zavient.com</a> at any time to ask what contact information we hold or to have it deleted.</p>
+  </div></article>
+
+  <ConsultingCta job="AI in your business" heading="Questions about privacy or a workflow?" />
+</Base>

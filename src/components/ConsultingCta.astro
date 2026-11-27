@@ -1,7 +1,7 @@
 ---
-// api-docs-read: static offer block — no external API/protocol surface, only mailto and a booking link.
-// The offer on indexed AI-work pages (26 Nov 2026): an easy intro, a free diagnostic of how to approach this work
-// with AI, which leads to an AI consulting engagement. data-cta="consulting" is what tests/site.test.mjs looks for.
+// api-docs-read: static offer block with optional POST /api/lead diagnostic form + mailto/copy fallback.
+// The offer on indexed AI-work pages: an easy intro, a free 30-minute diagnostic leading to an AI consulting engagement.
+// data-cta="consulting" and mailto:hello@zavient.com are enforced by tests/site.test.mjs.
 const { job = 'this work', heading = '', ask = '', spot = '' } = Astro.props;
 ---
 <section class="article-cta" id="diagnostic" data-cta="consulting" data-diag={spot || undefined}>
@@ -15,7 +15,95 @@ const { job = 'this work', heading = '', ask = '', spot = '' } = Astro.props;
       <li><strong>Rules:</strong> the regulations that shape the build, and what they mean for you.</li>
       <li><strong>Rough cost:</strong> what it would take to run, and to get built.</li>
     </ul>
-    <p><a class="btn-gold" href="https://calendly.com/zavient/call">Book a free 30-minute diagnostic &rarr;</a></p>
-    <p class="cta-secondary">Or email <a href="mailto:hello@zavient.com">hello@zavient.com</a> with two sentences on the work. Not ready to talk? Take the <a href="/ai-readiness-assessment.html">AI readiness check</a> first. See <a href="/about.html#engagements">how paid work runs</a>.</p>
+
+    <form class="diag-form" method="post" action="/api/lead" data-diag-form data-job={job}>
+      <div class="diag-grid">
+        <label class="diag-field">
+          <span>Your name</span>
+          <input type="text" name="name" required maxlength="120" autocomplete="name" placeholder="Dana Smith" />
+        </label>
+        <label class="diag-field">
+          <span>Work email</span>
+          <input type="email" name="email" required maxlength="160" autocomplete="email" placeholder="dana@company.com" />
+        </label>
+      </div>
+      <label class="diag-field">
+        <span>Company and role (optional)</span>
+        <input type="text" name="company" maxlength="160" autocomplete="organization" placeholder="Acme Manufacturing · COO" />
+      </label>
+      <label class="diag-field">
+        <span>What workflow are you looking at?</span>
+        <textarea name="workflow" rows="2" required maxlength="1000" placeholder="Two sentences on the process and what it costs your team today."></textarea>
+      </label>
+      <input type="text" name="company_fax" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <div class="diag-actions">
+        <button class="btn-gold" type="submit">Request free 30-minute diagnostic &rarr;</button>
+        <a class="btn-outline" href="https://calendly.com/zavient/call" target="_blank" rel="noopener">Or pick a calendar time</a>
+      </div>
+      <p class="diag-status" role="status" aria-live="polite" hidden></p>
+    </form>
+
+    <p class="cta-secondary">Prefer email? Write <a href="mailto:hello@zavient.com">hello@zavient.com</a> with two sentences on the work. Not ready to talk? Take the <a href="/ai-readiness-assessment.html">AI readiness check</a> first. See <a href="/about.html#engagements">how paid work runs</a>.</p>
   </div>
 </section>
+<script is:inline>
+  (() => {
+    document.querySelectorAll('form[data-diag-form]').forEach((form) => {
+      if (form.dataset.bound) return;
+      form.dataset.bound = '1';
+      const status = form.querySelector('.diag-status');
+      const btn = form.querySelector('button[type="submit"]');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const fd = new FormData(form);
+        fd.append('page', location.pathname);
+        fd.append('job', form.dataset.job || '');
+        const name = String(fd.get('name') || '').trim();
+        const email = String(fd.get('email') || '').trim();
+        const company = String(fd.get('company') || '').trim();
+        const workflow = String(fd.get('workflow') || '').trim();
+        const brief = [
+          `Name: ${name}`,
+          `Email: ${email}`,
+          company ? `Company/Role: ${company}` : '',
+          `Page: ${location.href}`,
+          `Workflow: ${workflow}`,
+        ].filter(Boolean).join('\n');
+        btn.disabled = true;
+        status.hidden = false;
+        status.className = 'diag-status';
+        status.textContent = 'Sending request...';
+        try {
+          const res = await fetch('/api/lead', { method: 'POST', body: fd });
+          const text = (await res.text()).trim();
+          if (res.ok && text === 'ok') {
+            status.className = 'diag-status is-ok';
+            status.textContent = 'Request received. A person reads every message and replies within one business day.';
+            form.reset();
+            return;
+          }
+        } catch {}
+        // Graceful fallback if the edge form receiver is not wired yet: never lose a lead.
+        const mailto = `mailto:hello@zavient.com?subject=${encodeURIComponent('Free 30-minute diagnostic request')}&body=${encodeURIComponent(brief)}`;
+        status.className = 'diag-status is-fallback';
+        status.innerHTML = '';
+        const msg = document.createElement('span');
+        msg.textContent = 'Direct form delivery is offline right now. Send your brief in one click: ';
+        const a = document.createElement('a');
+        a.href = mailto;
+        a.textContent = 'Open pre-filled email';
+        const sep = document.createTextNode(' · ');
+        const cp = document.createElement('button');
+        cp.type = 'button';
+        cp.className = 'link-btn';
+        cp.textContent = 'Copy brief';
+        cp.addEventListener('click', async () => {
+          try { await navigator.clipboard.writeText(brief); cp.textContent = 'Copied'; }
+          catch { window.prompt('Copy your request:', brief); }
+        });
+        status.append(msg, a, sep, cp);
+        btn.disabled = false;
+      });
+    });
+  })();
+</script>

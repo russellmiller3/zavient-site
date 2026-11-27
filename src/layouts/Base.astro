@@ -1,5 +1,5 @@
 ---
-// api-docs-read: static layout — no external API/protocol surface, only a font stylesheet link + mailto.
+// api-docs-read: static layout — font stylesheet link, OG/Twitter tags, optional Cloudflare Web Analytics beacon, mailto.
 // Shared shell for every page: head, fonts, nav, footer.
 // theme="blue" (26 Nov 2026) is the Zarlent-style light look used by the AI-work pages; other pages keep navy and gold.
 // `updated` (YYYY-MM-DD) becomes article:modified_time, which the self-updating sitemap reads as lastmod.
@@ -8,6 +8,9 @@ const fonts = theme === 'blue'
   ? 'https://fonts.googleapis.com/css2?family=Figtree:wght@600;700;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap'
   : 'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=IBM+Plex+Mono:wght@400;500;600&display=swap';
 const css = theme === 'blue' ? '/ai-work/ai-work.css' : '/insights/article.css';
+const pageUrl = canonical || (Astro.url ? `https://zavient.com${Astro.url.pathname}` : 'https://zavient.com/');
+const ogImage = 'https://zavient.com/og-card.png';
+const cfBeacon = import.meta.env.PUBLIC_CF_BEACON_TOKEN || '';
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +22,16 @@ const css = theme === 'blue' ? '/ai-work/ai-work.css' : '/insights/article.css';
   {noindex && <meta name="robots" content="noindex, follow" />}
   {canonical && <link rel="canonical" href={canonical} />}
   {updated && <meta property="article:modified_time" content={updated} />}
+  <meta property="og:site_name" content="Zavient" />
+  <meta property="og:type" content={pageUrl === 'https://zavient.com/' ? 'website' : 'article'} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={pageUrl} />
+  <meta property="og:image" content={ogImage} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,9 +43,10 @@ const css = theme === 'blue' ? '/ai-work/ai-work.css' : '/insights/article.css';
     <a href="/" class="logo">Zavient<em>.</em></a>
     <div class="nav-links">
       <a href="/ai-work.html">AI work</a>
+      <a href="/ai-work.html#tools">Free tools</a>
       <a href="/ai-readiness-assessment.html">Readiness check</a>
       <a href="/about.html">About</a>
-      <a href="https://calendly.com/zavient/call" class="nav-cta">Free diagnostic</a>
+      <a href="#diagnostic" class="nav-cta">Free diagnostic</a>
     </div>
   </nav>
 
@@ -41,7 +55,7 @@ const css = theme === 'blue' ? '/ai-work/ai-work.css' : '/insights/article.css';
   <footer>
     <a href="/" class="logo" style="font-size:18px;">Zavient<em>.</em></a>
     <span>&copy; 2026 Zavient LLC &middot; AI that helps your team do more</span>
-    <span><a href="/about.html">About</a> &middot; <a href="mailto:hello@zavient.com">Email us</a></span>
+    <span><a href="/ai-work.html#tools">Free tools</a> &middot; <a href="/about.html">About</a> &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="https://www.linkedin.com/in/russellmiller" rel="me">LinkedIn</a> &middot; <a href="mailto:hello@zavient.com">Email us</a></span>
   </footer>
   <script is:inline>
     // Mobile reading helpers (26 Nov 2026), on every page:
@@ -106,5 +120,6 @@ const css = theme === 'blue' ? '/ai-work/ai-work.css' : '/insights/article.css';
       phone.addEventListener('change', update);
     })();
   </script>
+  {cfBeacon && <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: cfBeacon })}></script>}
 </body>
 </html>

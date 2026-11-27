@@ -42,6 +42,7 @@ const proofAfter = tpl ? (['tool', 'own-data'].find((id) => order.includes(id) &
           <ul>{d.verdict.map((b) => <li><Fn s={b} /></li>)}</ul>
         </div>
       ) : <p class="dek"><Fn s={d.summary} /></p>}
+      {tpl && d.type === 'tool' && <p style="margin-top:18px;"><a class="btn-gold" href="#tool">Jump straight to the interactive tool &darr;</a></p>}
       {tpl && <p class="diag-nudge" data-diag="bottom-line">{offerLine}{' '}<a href="#diagnostic">Get the free 30-minute diagnostic</a></p>}
       {onPage.length > 0 && (
         <nav class="on-page" aria-label="On this page">

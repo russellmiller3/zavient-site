@@ -412,3 +412,60 @@ sup.fn a { padding: 10px 3px; margin: -10px -1px; } /* bigger hit area, same lin
 /* Answer-first rule (26 Nov 2026): the sentence that answers a question heading sits straight under it, a touch
    stronger than body text, so a skimmer reads the answer before the example or table. */
 .article-body p.answer { color: var(--ink); font-weight: 500; }
+
+
+/* Accessibility helper */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+/* Directory search & category filters (/ai-work.html) */
+.hub-controls { margin: 14px 0 18px; display: flex; flex-direction: column; gap: 12px; }
+.hub-search {
+  width: 100%; padding: 12px 14px; font-family: var(--sans); font-size: 16px; color: var(--ink);
+  background: var(--paper); border: 1px solid var(--line-strong); border-radius: 2px;
+}
+.hub-search:focus { outline: 2px solid var(--blue); outline-offset: 1px; border-color: var(--blue); }
+.hub-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.hub-pill {
+  font-family: var(--mono); font-size: 13px; padding: 8px 12px; min-height: 38px; cursor: pointer;
+  background: var(--paper); color: var(--ink-soft); border: 1px solid var(--line-strong); border-radius: 2px;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.hub-pill:hover { border-color: var(--blue); color: var(--blue); }
+.hub-pill.is-active { background: var(--blue); border-color: var(--blue); color: #fff; }
+.hub-status { font-family: var(--mono); font-size: 13px; color: var(--muted); margin: 0; }
+.hub-empty { padding: 18px; border: 1px solid var(--line); background: var(--paper-alt); font-size: 18px; }
+.hub-card[hidden] { display: none; }
+
+/* Inline diagnostic request form (ConsultingCta.astro) */
+.diag-form {
+  background: var(--paper); border: 1px solid var(--line-strong); border-left: 3px solid var(--blue);
+  padding: 22px 24px; margin: 22px 0 20px; display: flex; flex-direction: column; gap: 14px;
+}
+.diag-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.diag-field { display: flex; flex-direction: column; gap: 6px; }
+.diag-field span { font-family: var(--mono); font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-soft); }
+.diag-field input, .diag-field textarea {
+  width: 100%; padding: 11px 12px; font-family: var(--sans); font-size: 16px; color: var(--ink);
+  background: var(--paper); border: 1px solid var(--line-strong); border-radius: 2px;
+}
+.diag-field textarea { resize: vertical; min-height: 68px; line-height: 1.45; }
+.diag-field input:focus, .diag-field textarea:focus { outline: 2px solid var(--blue); outline-offset: 1px; border-color: var(--blue); }
+.diag-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 4px; }
+.diag-form button.btn-gold { border: 0; cursor: pointer; }
+.diag-form button.btn-gold:disabled { opacity: 0.65; cursor: wait; }
+.btn-outline {
+  display: inline-block; background: var(--paper); color: var(--blue); text-decoration: none;
+  border: 1px solid var(--blue); font-family: var(--sans); font-weight: 600; font-size: 15px; padding: 13px 20px; border-radius: 2px;
+}
+.btn-outline:hover { background: var(--blue-wash); color: var(--blue-dark); }
+.diag-status { margin: 4px 0 0; font-family: var(--sans); font-size: 15px; line-height: 1.45; color: var(--ink); }
+.diag-status.is-ok { color: #166534; font-weight: 600; }
+.diag-status.is-fallback { color: var(--ink-soft); }
+.link-btn {
+  background: none; border: 0; padding: 0; font: inherit; color: var(--blue);
+  text-decoration: underline; cursor: pointer;
+}
+@media (max-width: 640px) {
+  .diag-grid { grid-template-columns: 1fr; }
+  .diag-form { padding: 16px 18px; }
+}
