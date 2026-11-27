@@ -13,8 +13,8 @@
     // Keep /about.html as the address; any other mode redirects it to /about.
     "html_handling": "none",
     "not_found_handling": "404-page",
-    // Home page maps "/" -> "/index.html"; /api/lead forwards diagnostic requests to LEAD_SHEET_URL.
-    "run_worker_first": ["/", "/api/lead"]
+    // Home page maps "/" -> "/index.html"; /api/lead and /api/t/* handle diagnostic leads and email tracking.
+    "run_worker_first": ["/", "/api/lead", "/api/t/*"]
   },
   // Branch previews (`npx wrangler preview`) need this block; empty means previews use the settings above.
   "previews": {}

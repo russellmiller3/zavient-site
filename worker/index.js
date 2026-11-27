@@ -1,13 +1,35 @@
 // Cloudflare Worker in front of the static site (dist/). Static files are served by Cloudflare directly; this
-// script runs for "/" (mapping "/" -> "/index.html" while html_handling is "none") and "/api/lead" (forwarding
-// diagnostic requests to the Google Sheet webhook stored in the LEAD_SHEET_URL secret).
+// script runs for:
+//   - "/" -> serves "/index.html" while html_handling is "none"
+//   - "/api/lead" -> forwards diagnostic requests to LEAD_SHEET_URL
+//   - "/api/t/o/<id>.gif" -> 1x1 transparent open-tracking pixel (logs to LEAD_SHEET_URL if set)
+//   - "/api/t/c/<id>?u=<url>" -> safe click-tracking redirect (only zavient.com and calendar.app.google)
 const LEAD_FIELDS = ['name', 'email', 'company', 'workflow', 'page', 'job'];
+const PIXEL_GIF = Uint8Array.from([
+  71, 73, 70, 56, 57, 97, 1, 0, 1, 0, 128, 0, 0, 0, 0, 0, 255, 255, 255,
+  33, 249, 4, 1, 0, 0, 0, 0, 44, 0, 0, 0, 0, 1, 0, 1, 0, 0, 2, 2, 68, 1, 0, 59,
+]);
+const ALLOWED_REDIRECT_HOSTS = new Set(['zavient.com', 'www.zavient.com', 'calendar.app.google']);
+
+function logTrackEvent(env, ctx, payload) {
+  if (!env.LEAD_SHEET_URL) return;
+  const req = fetch(env.LEAD_SHEET_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      form_name: 'zavient-email-track',
+      id: crypto.randomUUID(),
+      created_at: new Date().toISOString(),
+      data: payload,
+    }),
+  }).catch(() => {});
+  if (ctx && typeof ctx.waitUntil === 'function') ctx.waitUntil(req);
+}
 
 async function handleLead(request, env) {
   if (request.method !== 'POST') return new Response('method not allowed', { status: 405 });
   let form;
   try { form = await request.formData(); } catch { return new Response('bad form', { status: 400 }); }
-  // Honeypot field: real users never see it; spam bots fill it. Return ok and save nothing.
   if (form.get('company_fax')) return new Response('ok');
   const data = {};
   for (const field of LEAD_FIELDS) data[field] = String(form.get(field) ?? '').trim().slice(0, 2000);
@@ -30,10 +52,49 @@ async function handleLead(request, env) {
   }
 }
 
+function handleOpenPixel(url, request, env, ctx) {
+  const id = url.pathname.replace(/^\/api\/t\/o\//, '').replace(/\.gif$/i, '').slice(0, 120);
+  logTrackEvent(env, ctx, {
+    event: 'open',
+    track_id: id,
+    user_agent: (request.headers.get('user-agent') || '').slice(0, 200),
+  });
+  return new Response(PIXEL_GIF, {
+    status: 200,
+    headers: {
+      'Content-Type': 'image/gif',
+      'Cache-Control': 'no-store, no-cache, must-revalidate, max-age=0',
+    },
+  });
+}
+
+function handleClickRedirect(url, request, env, ctx) {
+  const id = url.pathname.replace(/^\/api\/t\/c\//, '').slice(0, 120);
+  const rawTarget = url.searchParams.get('u') || 'https://zavient.com/';
+  let target;
+  try {
+    target = new URL(rawTarget);
+  } catch {
+    return new Response('invalid url', { status: 400 });
+  }
+  if (target.protocol !== 'https:' || !ALLOWED_REDIRECT_HOSTS.has(target.hostname)) {
+    return new Response('redirect host not allowed', { status: 400 });
+  }
+  logTrackEvent(env, ctx, {
+    event: 'click',
+    track_id: id,
+    target: target.toString().slice(0, 500),
+    user_agent: (request.headers.get('user-agent') || '').slice(0, 200),
+  });
+  return Response.redirect(target.toString(), 302);
+}
+
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (url.pathname === '/api/lead') return handleLead(request, env);
+    if (url.pathname.startsWith('/api/t/o/')) return handleOpenPixel(url, request, env, ctx);
+    if (url.pathname.startsWith('/api/t/c/')) return handleClickRedirect(url, request, env, ctx);
     if (url.pathname === '/') {
       url.pathname = '/index.html';
       return env.ASSETS.fetch(new Request(url, request));

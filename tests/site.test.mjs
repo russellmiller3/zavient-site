@@ -196,7 +196,7 @@ test('Cloudflare config keeps .html addresses, serves the home page, handles /ap
   assert.equal(cfg.assets.directory, './dist');
   assert.equal(cfg.assets.html_handling, 'none', 'any other mode redirects /about.html to /about');
   assert.equal(cfg.assets.not_found_handling, '404-page');
-  assert.deepEqual(cfg.assets.run_worker_first, ['/', '/api/lead']);
+  assert.deepEqual(cfg.assets.run_worker_first, ['/', '/api/lead', '/api/t/*']);
   assert.ok(cfg.previews && typeof cfg.previews === 'object', 'branch previews need a previews block');
   const { default: worker } = await import('../worker/index.js');
   const seen = [];
@@ -204,6 +204,15 @@ test('Cloudflare config keeps .html addresses, serves the home page, handles /ap
   await worker.fetch(new Request('https://zavient.com/'), env);
   await worker.fetch(new Request('https://zavient.com/about.html'), env);
   assert.deepEqual(seen, ['/index.html', '/about.html']);
+  // /api/t/o/* open pixel and /api/t/c/* safe click redirect checks.
+  const pix = await worker.fetch(new Request('https://zavient.com/api/t/o/test-open.gif'), env);
+  assert.equal(pix.status, 200);
+  assert.equal(pix.headers.get('content-type'), 'image/gif');
+  const okRedir = await worker.fetch(new Request('https://zavient.com/api/t/c/test-click?u=https%3A%2F%2Fzavient.com%2Ftools%2Fai-roi-calculator.html'), env);
+  assert.equal(okRedir.status, 302);
+  assert.equal(okRedir.headers.get('location'), 'https://zavient.com/tools/ai-roi-calculator.html');
+  const badRedir = await worker.fetch(new Request('https://zavient.com/api/t/c/test-click?u=https%3A%2F%2Fevil.example%2Fphish'), env);
+  assert.equal(badRedir.status, 400);
   // /api/lead checks: GET rejected, missing fields 400, honeypot 200 ok, unconfigured sheet 503.
   const badMethod = await worker.fetch(new Request('https://zavient.com/api/lead'), env);
   assert.equal(badMethod.status, 405);
