@@ -7,6 +7,14 @@
   "main": "./worker/index.js",
   "workers_dev": true,
   "preview_urls": true,
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true,
+      "persist": true,
+      "head_sampling_rate": 1
+    }
+  },
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
