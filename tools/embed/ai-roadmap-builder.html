@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI roadmap builder: what should our company do with AI, and in what order?</title>
+<meta name="description" content="A dated company AI plan for a 40 to 500 person firm: 30 days of groundwork, up to 3 projects in year one with owners, review steps and pass/fail checkpoints.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://zavient.com/tools/ai-roadmap-builder.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@600;700;800&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Zavient AI roadmap builder (embed). Same light blue tokens as /ai-readiness-assessment.html and the other tool embeds,
+   inlined so the file stands alone in an iframe or full screen. One question per screen, then the plan, answer first. */
+:root {
+  --ink: #15202E; --ink-soft: #3C4A5C; --muted: #5F6B7A;
+  --line: #D8E0EA; --line-strong: #B9C6D6;
+  --paper: #FFFFFF; --paper-alt: #F3F6FA;
+  --blue: #1F5FBF; --blue-dark: #174A96; --blue-wash: #EAF1FB; --blue-grid: rgba(31, 95, 191, 0.075);
+  --amber: #A86A10; --amber-wash: #FBF1DC;
+  --green: #2E7D4F; --green-wash: #E6F3EB; --red: #A33A2E; --red-wash: #F8E7E4;
+  --sans: 'Figtree', 'Helvetica Neue', Arial, sans-serif;
+  --serif: 'Crimson Pro', Georgia, serif;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 19px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+a { color: var(--blue); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--blue-dark); }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+
+.top { position: relative; padding: 22px 0 18px; border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--blue-wash) 0%, rgba(234, 241, 251, 0.45) 60%, var(--paper) 100%); }
+.top::before { content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(var(--blue-grid) 1px, transparent 1px), linear-gradient(90deg, var(--blue-grid) 1px, transparent 1px);
+  background-size: 28px 28px; -webkit-mask-image: linear-gradient(180deg, #000, transparent); mask-image: linear-gradient(180deg, #000, transparent); }
+.top .wrap { position: relative; }
+.label, .eyebrow { font-family: var(--mono); font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); }
+h1 { font-family: var(--sans); font-weight: 800; font-size: clamp(26px, 5vw, 36px); line-height: 1.1; letter-spacing: -0.02em; margin: 6px 0 8px; text-wrap: balance; }
+.dek { color: var(--ink-soft); font-size: 18px; max-width: 60ch; }
+body.in-quiz .dek { display: none; }
+
+main { padding: 18px 0 40px; }
+#app { display: flex; flex-direction: column; gap: 16px; }
+h2, h3 { font-family: var(--sans); color: var(--ink); text-wrap: balance; }
+h2 { font-weight: 700; font-size: clamp(21px, 3.6vw, 26px); line-height: 1.2; letter-spacing: -0.01em; }
+h3 { font-weight: 700; font-size: 18px; line-height: 1.3; }
+p { max-width: 66ch; }
+.card { background: var(--paper); border: 1px solid var(--line); padding: clamp(16px, 4vw, 26px); display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.muted { color: var(--muted); }
+.small { font-family: var(--mono); font-size: 14px; color: var(--muted); }
+
+/* One button font: Figtree 600 16px everywhere */
+.btn { appearance: none; border: 0; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--sans); font-weight: 600; font-size: 16px; min-height: 44px; padding: 10px 20px; border-radius: 2px; text-decoration: none; }
+.btn-primary { background: var(--blue); color: #fff; }
+.btn-primary:hover { background: var(--blue-dark); color: #fff; }
+.btn-primary:disabled { background: var(--line-strong); cursor: not-allowed; }
+.btn-ghost { background: transparent; color: var(--blue); border: 1.5px solid var(--line-strong); }
+.btn-ghost:hover { border-color: var(--blue); }
+.btn-plain { background: transparent; color: var(--muted); padding: 10px 6px; }
+.btn-plain:hover { color: var(--blue); }
+.btn:focus-visible, .opt:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid rgba(31, 95, 191, 0.45); outline-offset: 2px; }
+.row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+
+.progress { height: 6px; background: var(--blue-wash); overflow: hidden; }
+.progress > div { height: 100%; background: var(--blue); transition: width .3s ease; }
+.qnum { font-family: var(--mono); font-size: 14px; color: var(--muted); }
+.qtext { font-family: var(--sans); font-weight: 700; font-size: clamp(21px, 4vw, 26px); line-height: 1.25; letter-spacing: -0.01em; text-wrap: balance; }
+.qhelp { color: var(--ink-soft); font-size: 17px; }
+.opts { display: flex; flex-direction: column; gap: 8px; }
+.opt { text-align: left; width: 100%; min-height: 48px; background: var(--paper); color: var(--ink); border: 1.5px solid var(--line); border-radius: 2px;
+  padding: 10px 14px; font: 400 18px/1.35 var(--serif); cursor: pointer; }
+.opt:hover { border-color: var(--blue); }
+.opt.sel { border-color: var(--blue); background: var(--blue-wash); }
+.opt small { display: block; font-size: 15px; color: var(--muted); }
+.opt[aria-pressed="true"]::after { content: "Selected"; float: right; font: 500 13px var(--mono); color: var(--blue-dark); margin-left: 8px; }
+.field { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; font-size: 17px; color: var(--ink-soft); }
+.field input { min-height: 44px; font: 500 16px var(--mono); padding: 8px 10px; border-radius: 2px; border: 1.5px solid var(--line-strong); background: var(--paper); color: var(--ink); }
+.field input[type=number] { width: 110px; }
+.field .iu { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
+.nw { white-space: nowrap; }
+.field input[type=text] { width: min(100%, 320px); font-family: var(--sans); font-weight: 600; }
+
+/* Result */
+.bluf { border: 1px solid var(--blue); background: var(--blue-wash); }
+.bluf .lead { font-family: var(--sans); font-weight: 800; font-size: clamp(22px, 4.6vw, 30px); line-height: 1.2; letter-spacing: -0.015em; }
+.facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.fact { border: 1px solid var(--line); background: var(--paper); padding: 10px 12px; min-width: 0; }
+.fact .k { font-family: var(--mono); font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.fact .v { font-family: var(--sans); font-weight: 700; font-size: 17px; line-height: 1.3; }
+@media (max-width: 460px) { .facts { grid-template-columns: 1fr; } }
+.glance { list-style: none; display: flex; flex-direction: column; }
+.glance li { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 10px; padding: 8px 0; border-top: 1px solid var(--line); font-size: 17px; line-height: 1.4; }
+.glance li:first-child { border-top: 0; }
+.glance .when { font-family: var(--mono); font-size: 14px; color: var(--blue-dark); padding-top: 2px; }
+@media (max-width: 420px) { .glance li { grid-template-columns: 1fr; gap: 0; } }
+.tag { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--amber); background: var(--amber-wash); padding: 1px 6px; white-space: nowrap; }
+.tag.blue { color: var(--blue-dark); background: var(--blue-wash); }
+.flag { border-left: 3px solid var(--amber); background: var(--amber-wash); padding: 10px 14px; font-size: 17px; }
+.proj { border: 1px solid var(--line); padding: clamp(14px, 3.5vw, 22px); display: flex; flex-direction: column; gap: 10px; }
+.proj.p1 { border-color: var(--blue); }
+.proj .num { font-family: var(--mono); font-size: 14px; color: var(--blue); letter-spacing: .05em; text-transform: uppercase; }
+.proj h3 { font-size: 20px; }
+.kv { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 6px 12px; font-size: 17px; line-height: 1.45; }
+.kv dt { font-family: var(--sans); font-weight: 700; font-size: 15px; color: var(--ink-soft); padding-top: 2px; }
+.kv dd { min-width: 0; }
+@media (max-width: 460px) { .kv { grid-template-columns: 1fr; gap: 0 0; } .kv dd { margin-bottom: 8px; } }
+.links { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 16px; }
+.links a { display: inline-flex; align-items: center; min-height: 44px; }
+.phase { border-top: 1px solid var(--line); padding-top: 12px; display: flex; flex-direction: column; gap: 6px; }
+.phase:first-of-type { border-top: 0; padding-top: 0; }
+.tasks { list-style: none; display: flex; flex-direction: column; }
+.tasks li { display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 4px 12px; padding: 9px 0; border-top: 1px dashed var(--line); font-size: 17px; line-height: 1.45; }
+.tasks li:first-child { border-top: 0; }
+.tasks .when { font-family: var(--mono); font-size: 14px; color: var(--blue-dark); padding-top: 2px; }
+.tasks .when span { display: block; color: var(--muted); }
+.tasks .who { display: block; font-family: var(--sans); font-weight: 600; font-size: 14px; color: var(--muted); }
+.tasks .gate { font-weight: 600; }
+@media (max-width: 460px) { .tasks li { grid-template-columns: 1fr; gap: 2px; } .tasks .when span { display: inline; margin-left: 6px; } }
+.check { font-family: var(--mono); font-size: 14px; color: var(--green); background: var(--green-wash); padding: 6px 10px; }
+.gates { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 600px) { .gates { grid-template-columns: 1fr; } }
+.gatebox { border: 1px solid var(--line); border-top: 4px solid var(--green); padding: 12px 14px; font-size: 17px; line-height: 1.45; }
+.gatebox.fix { border-top-color: var(--amber); }
+.gatebox.stop { border-top-color: var(--red); }
+.gatebox b { font-family: var(--sans); display: block; font-size: 16px; }
+.pts { list-style: none; display: flex; flex-direction: column; }
+.pts li { position: relative; padding: 8px 0 8px 22px; font-size: 18px; line-height: 1.45; }
+.pts li + li { border-top: 1px solid var(--line); }
+.pts li::before { content: ""; position: absolute; left: 2px; top: 18px; width: 8px; height: 8px; background: var(--blue); }
+.offer { position: relative; border: 1px solid var(--line); padding: clamp(18px, 5vw, 32px) clamp(16px, 4vw, 26px); background: linear-gradient(0deg, var(--blue-wash) 0%, var(--paper) 100%); display: flex; flex-direction: column; gap: 12px; }
+.offer h2 { font-weight: 800; font-size: clamp(22px, 4.4vw, 30px); line-height: 1.15; }
+.offer p { color: var(--ink-soft); }
+.settings { display: flex; flex-direction: column; gap: 12px; }
+.settings .why { font-size: 15px; color: var(--muted); margin-top: -6px; }
+details.card > summary { cursor: pointer; list-style: none; min-height: 44px; display: flex; align-items: center; }
+details.card > summary::-webkit-details-marker { display: none; }
+details.card > summary h3::after { content: " +"; color: var(--blue); }
+details.card[open] > summary h3::after { content: " \2212"; }
+.method ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.method li { position: relative; padding-left: 20px; font-size: 17px; color: var(--ink-soft); }
+.method li::before { content: ''; position: absolute; left: 3px; top: 11px; width: 7px; height: 7px; background: var(--blue); }
+sup.fn { font-size: 0.62em; line-height: 0; margin-left: 1px; font-family: var(--mono); }
+sup.fn a { color: var(--blue); text-decoration: none; font-weight: 600; }
+sup.fn + sup.fn { margin-left: 3px; }
+sup.fn .fn-sep { font-family: var(--sans); color: var(--muted); margin: 0 2px 0 0; }
+.srcs ol { margin-left: 24px; display: flex; flex-direction: column; gap: 6px; font-size: 16px; line-height: 1.45; color: var(--ink-soft); }
+.srcs li { overflow-wrap: anywhere; scroll-margin-top: 16px; }
+.srcs li:target { background: var(--blue-wash); }
+.print-only { display: none; }
+footer { border-top: 1px solid var(--line); background: var(--paper-alt); padding: 14px 0; font-family: var(--mono); font-size: 14px; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media print {
+  body { font-size: 12pt; } .no-print, .offer, footer, details.card { display: none !important; }
+  .top { background: none; padding: 0 0 8pt; } .top::before { display: none; } .dek { display: none; }
+  .card, .proj, .phase { break-inside: avoid; border-color: #999; } .print-only { display: block; }
+  .field input { border: 0; padding: 0; min-height: 0; } a { color: inherit; text-decoration: none; } sup.fn { display: none; }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="label">AI roadmap builder &middot; free, no sign-up</div>
+    <h1>Your company AI plan, in the right order</h1>
+    <p class="dek">For COOs, heads of operations, GMs and division heads at 40 to 500 person firms. Nine taps, about 2 minutes. You get a dated plan: 30 days of groundwork, up to 3 projects for year one with owners, the review step your people keep, and pass or fail checkpoints.</p>
+  </div>
+</header>
+<main class="wrap">
+  <div id="app" aria-live="polite">
+    <noscript><section class="card"><p>This plan builder needs JavaScript. Turn it on and reload, or email <a href="mailto:hello@zavient.com">hello@zavient.com</a> with two sentences on your firm.</p></section></noscript>
+  </div>
+  <details class="card method" id="method" style="margin-top:16px">
+    <summary><h3>How the plan is built</h3></summary>
+    <ul id="method-list"></ul>
+  </details>
+  <details class="card srcs" id="footnotes" style="margin-top:16px">
+    <summary><h3>Sources</h3></summary>
+    <p class="small">Every link checked 26 Nov 2026. Use cases and their scores come from the Zavient use case finder.</p>
+    <ol id="fn-list"></ol>
+  </details>
+</main>
+<footer><div class="wrap">Zavient &middot; AI that helps your team do more &middot; <a href="mailto:hello@zavient.com">hello@zavient.com</a></div></footer>
+<script id="data">
+// Slim copy of DATA from /tools/embed/ai-use-case-finder.html (names, effort, risk, score inputs, cells). Generated from
+// the finder, not hand-edited; tests/ai-roadmap-builder.test.mjs fails if the two drift apart.
+const FINDER = {"asOf":"25 Nov 2026","industries":[{"id":"professional-services","name":"Accounting, consulting and other professional services firms","core":"Client delivery (tax, audit, advisory)","short":"professional services firm"},{"id":"legal","name":"Law firms and in-house legal teams","core":"Matter work (research, review, drafting)","short":"law firm or legal team"},{"id":"healthcare","name":"Healthcare providers and clinics","core":"Clinical documentation and revenue cycle","short":"healthcare provider"},{"id":"insurance","name":"Insurance carriers, MGAs and agencies","core":"Underwriting and claims","short":"insurance firm"},{"id":"banking-lending","name":"Banks, credit unions and lenders","core":"Lending, credit and financial crime","short":"bank or lender"},{"id":"manufacturing","name":"Manufacturing","core":"Production, quality and maintenance","short":"manufacturer"},{"id":"construction","name":"Construction and trades","core":"Estimating, preconstruction and project admin","short":"construction firm"},{"id":"logistics-distribution","name":"Logistics, transport and wholesale distribution","core":"Routing, dispatch and warehouse","short":"logistics or distribution firm"},{"id":"retail-ecommerce","name":"Retail and e-commerce","core":"Merchandising and online selling","short":"retailer"},{"id":"real-estate","name":"Real estate and property management","core":"Leasing and property management","short":"real estate firm"},{"id":"software-it-services","name":"Software and IT services firms","core":"Product engineering and customer onboarding","short":"software or IT services firm"}],"teams":[{"id":"operations","name":"Operations"},{"id":"finance","name":"Finance and accounting"},{"id":"customer-service","name":"Customer service"},{"id":"sales-marketing","name":"Sales and marketing"},{"id":"hr","name":"HR and people"},{"id":"it","name":"IT"},{"id":"compliance-risk","name":"Compliance, risk and legal"},{"id":"procurement-supply-chain","name":"Procurement and supply chain"},{"id":"core","name":"Your industry's core work (label changes by industry)"}],"uc":{"ap-invoice-capture":{"n":"Invoice capture and matching","does":"Reads invoices from email or PDF and matches them to purchase orders and receipts. It flags exceptions with a reason.","keep":"Approve payments, clear exceptions, confirm any change to a supplier's bank details by phone, own supplier relationships.","eff":"buy","risk":"medium","ev":"vendor","sz":"large","ads":192,"srch":1950,"measure":"Minutes per invoice and the share sent back as exceptions."},"close-reconciliation":{"n":"Account reconciliation and month-end close","does":"Suggests matches between bank, subledger and ledger lines, drafts journal entries for review, and explains variances in plain words.","keep":"Approve entries, judge unusual items, sign off the close, answer auditors.","eff":"configure","risk":"medium","ev":"field","sz":"large","ads":1509,"srch":760,"measure":"Working days to close, and hours spent matching versus reviewing."},"cash-forecasting":{"n":"Cash and revenue forecasting","does":"Builds a rolling weekly forecast from receivables, payables, orders and history, shows the drivers, and flags when actuals drift.","keep":"Set assumptions, decide on funding and spending, explain the forecast to leadership.","eff":"configure","risk":"low","ev":"consult","sz":"large","ads":805,"srch":250,"measure":"Forecast error: weekly forecast against actual cash, before and after."},"ar-followup":{"n":"Collections follow-up and dispute sorting","does":"Drafts reminder emails by customer and age of debt, sorts disputes by reason, and summarizes the account before a call.","keep":"Agree payment plans, credit holds and write-offs. Handle sensitive customers.","eff":"buy","risk":"low","ev":"similar","sz":"medium","ads":0,"srch":520,"measure":"Days sales outstanding, and minutes per reminder drafted."},"tax-document-prep":{"n":"Tax document intake and workpaper preparation","does":"Reads client tax documents, fills workpapers, flags missing items, and drafts the client request list.","keep":"Tax positions, review and sign-off, client advice.","eff":"buy","risk":"medium","ev":"field","sz":"large","ads":5134,"srch":990,"measure":"Hours per return from documents in to workpapers ready for review."},"audit-analytics":{"n":"Full-ledger testing and audit anomaly flags","does":"Tests every journal entry for unusual patterns, matches support to entries, and drafts workpaper notes.","keep":"Audit judgment, materiality, the opinion, client conversations.","eff":"buy","risk":"medium","ev":"none","sz":"unknown","ads":565,"srch":2020,"measure":"Share of entries tested, and hours per engagement on testing."},"drafting-routine-docs":{"n":"First drafts of routine letters, emails and reports","does":"Writes a first draft from your notes, template or past examples, in your house style.","keep":"Decide what to say, check facts, edit and send.","eff":"buy","risk":"low","ev":"rct","sz":"large","ads":0,"srch":0,"measure":"Minutes per draft, and edits needed before it goes out."},"internal-doc-search":{"n":"Answers from your own documents","does":"Searches policies, manuals, past work and tickets, and answers with a link to the source passage.","keep":"Own the content, decide what is in scope, check answers before acting on anything that matters.","eff":"configure","risk":"medium","ev":"rct","sz":"large","ads":2601,"srch":4510,"measure":"Minutes to find an answer, and share of answers a reviewer marks correct."},"client-deliverables":{"n":"Research, analysis and first drafts of client deliverables","does":"Summarizes sources, structures analysis and drafts slides or memos from your notes and past work.","keep":"Frame the question, judge the answer, own the advice and the client relationship.","eff":"buy","risk":"medium","ev":"rct","sz":"large","ads":0,"srch":0,"measure":"Hours per deliverable, and partner edits on the first draft."},"support-agent-assist":{"n":"Suggested replies and answers for support staff","does":"Suggests replies and help articles while the agent works, and summarizes the case history.","keep":"Send or edit every reply, handle upset customers, decide refunds and exceptions.","eff":"buy","risk":"low","ev":"rct","sz":"medium","ads":4097,"srch":5490,"measure":"Issues resolved per agent hour, and customer satisfaction."},"customer-self-serve":{"n":"Customer chat for common questions, with handoff to a person","does":"Answers routine questions at any hour from approved content, collects details, and hands to a person when unsure or asked.","keep":"Approve the content it may use, take every handoff, own refunds, promises and complaints.","eff":"configure","risk":"medium","ev":"rct","sz":"medium","ads":4097,"srch":5490,"measure":"Share of chats resolved without a person, and complaints about the bot."},"phone-answering":{"n":"Phone answering and appointment booking","does":"Answers calls after hours or at peaks, books or moves appointments, and routes urgent calls to a person.","keep":"Complex or emotional calls, reviewing call logs, anything contractual, clinical or about money.","eff":"buy","risk":"medium","ev":"none","sz":"unknown","ads":911,"srch":164000,"measure":"Calls answered after hours, and bookings that stick."},"meeting-notes-crm":{"n":"Call notes, follow-ups and CRM updates","does":"Records calls with consent, summarizes them, drafts the follow-up email and fills CRM fields.","keep":"Run the conversation, correct the summary, own commitments to the customer.","eff":"buy","risk":"low","ev":"consult","sz":"medium","ads":1592,"srch":730,"measure":"Minutes of admin per call, and CRM fields filled."},"rfp-proposals":{"n":"RFP, proposal and questionnaire first drafts","does":"Pulls approved answers from past proposals, drafts responses, and flags questions with no approved answer.","keep":"Bid or no-bid, pricing, commitments, final review and sign-off.","eff":"buy","risk":"medium","ev":"vendor","sz":"large","ads":463,"srch":480,"measure":"Hours per RFP, and answers changed in final review."},"account-research-outreach":{"n":"Account research and first-draft outreach","does":"Reads company sites, filings and news, and drafts a short account brief and a first email.","keep":"Choose accounts, edit and send every message, run every conversation.","eff":"buy","risk":"medium","ev":"consult","sz":"medium","ads":651,"srch":3620,"measure":"Minutes per account brief, and reply rate on first emails."},"lead-scoring":{"n":"Lead and opportunity scoring","does":"Scores leads and deals on fit and intent from CRM history and explains the top reasons.","keep":"Decide who to call, set territory rules, override scores.","eff":"configure","risk":"low","ev":"survey","sz":"small","ads":710,"srch":370,"measure":"Win rate on top-scored leads against the rest."},"quote-drafting":{"n":"Quote and estimate first drafts","does":"Reads the request (email, drawing or spec), finds similar past jobs and drafts a quote with line items for review.","keep":"Price, margin, scope and terms. The final quote.","eff":"configure","risk":"medium","ev":"small","sz":"large","ads":1550,"srch":3770,"measure":"Hours from request to quote sent, and win rate."},"product-content":{"n":"Product descriptions and listing content","does":"Writes and updates product titles, descriptions and attributes from your catalog data.","keep":"Brand voice, claims checking, final approval.","eff":"buy","risk":"low","ev":"rct","sz":"small","ads":0,"srch":0,"measure":"Minutes per listing, and conversion on updated pages."},"site-search-recs":{"n":"Site search and product recommendations","does":"Rewrites shopper search queries and suggests related products from browsing and order data.","keep":"Merchandising rules, which products to push, margin decisions.","eff":"configure","risk":"low","ev":"rct","sz":"small","ads":193,"srch":1990,"measure":"Search-to-order conversion, tested against the old search."},"job-ads-interview-guides":{"n":"Job ads, job descriptions and interview guides","does":"Drafts job ads and structured interview questions from the role profile, and checks wording for clarity.","keep":"Define the role, pay and must-haves. Run interviews. Make every hiring decision.","eff":"buy","risk":"low","ev":"similar","sz":"large","ads":0,"srch":0,"measure":"Hours per job ad and guide, and qualified applicants per opening."},"resume-screening":{"n":"Resume screening support","does":"Summarizes each application against the must-haves you set and suggests a shortlist for a recruiter.","keep":"Set criteria, review every applicant the tool would drop, decide who moves forward, arrange the bias audit.","eff":"buy","risk":"high","ev":"none","sz":"unknown","ads":920,"srch":1050,"measure":"Recruiter hours per opening, and pass rates by group for the bias check."},"hr-policy-answers":{"n":"Employee questions on policy, benefits and leave","does":"Answers routine employee questions from the handbook and benefits documents with the source, and routes personal cases to HR.","keep":"Anything personal, medical, disciplinary or legal. Keeping policies current.","eff":"configure","risk":"medium","ev":"similar","sz":"medium","ads":0,"srch":0,"measure":"Routine HR questions answered without a ticket, and wrong answers found."},"shift-scheduling":{"n":"Shift and staff scheduling suggestions","does":"Drafts schedules from forecast demand, skills and availability, and flags gaps.","keep":"Final schedules, fairness, swaps and exceptions, labor rules.","eff":"buy","risk":"medium","ev":"none","sz":"unknown","ads":92,"srch":420,"measure":"Planner hours per schedule, and last-minute gaps."},"it-service-desk":{"n":"IT help desk triage and answer drafting","does":"Sorts and routes tickets, suggests fixes from past tickets and the knowledge base, drafts incident summaries, and answers common requests in chat.","keep":"Non-routine fixes, approving access changes, keeping the knowledge base right.","eff":"buy","risk":"low","ev":"vendor","sz":"medium","ads":513,"srch":3230,"measure":"Average resolution time, and tickets solved at first contact."},"coding-assistant":{"n":"Coding assistant for in-house developers","does":"Suggests code, tests and documentation inside the developer's editor.","keep":"Design, code review, security sign-off, deciding what ships.","eff":"buy","risk":"medium","ev":"rct","sz":"medium","ads":0,"srch":0,"measure":"Tasks finished per sprint, and defects found in review."},"security-alert-triage":{"n":"Security alert triage","does":"Groups and ranks security alerts, gathers context, and drafts the incident summary.","keep":"Decide what is an incident, contain it, talk to affected parties.","eff":"buy","risk":"medium","ev":"none","sz":"unknown","ads":640,"srch":680,"measure":"Minutes per alert, and real incidents missed in a sample check."},"regulatory-monitoring":{"n":"Regulatory change monitoring and policy mapping","does":"Watches regulator updates, summarizes what changed, maps it to your policies and controls, and drafts a gap list.","keep":"Decide what applies, own the compliance position, sign off policy changes.","eff":"buy","risk":"medium","ev":"similar","sz":"medium","ads":1681,"srch":560,"measure":"Hours per rule change from notice to gap list."},"contract-review":{"n":"First-pass contract review against your playbook","does":"Compares incoming contracts to your standard positions, highlights deviations and missing clauses, and suggests fallback language.","keep":"Negotiate, accept risk, sign. Final legal judgment.","eff":"buy","risk":"medium","ev":"rct","sz":"large","ads":6429,"srch":1130,"measure":"Minutes per contract to first-pass mark-up, and issues missed in a sample."},"legal-research":{"n":"Legal research with citation checks","does":"Finds and summarizes authorities and drafts research memos with citations.","keep":"Read every cited source, form the legal opinion, advise the client.","eff":"buy","risk":"high","ev":"rct","sz":"medium","ads":7468,"srch":1660,"measure":"Hours per memo, and citations that fail the check."},"document-review-ediscovery":{"n":"Document review and e-discovery first pass","does":"Ranks and highlights documents likely to be relevant or privileged for reviewers.","keep":"Privilege calls, production decisions, strategy.","eff":"buy","risk":"medium","ev":"rct","sz":"large","ads":4393,"srch":400,"measure":"Documents reviewed per hour, and errors found in a sample."},"legal-drafting":{"n":"First drafts of routine legal documents","does":"Drafts routine agreements, letters and filings from your templates and the matter facts.","keep":"Legal judgment, negotiation, final review and signature.","eff":"buy","risk":"medium","ev":"rct","sz":"large","ads":0,"srch":0,"measure":"Hours per first draft, and partner edits."},"client-intake":{"n":"Client and matter intake triage","does":"Reads intake forms and emails, sorts by matter type and urgency, gathers missing facts, and preps the conflict check.","keep":"Accept or decline matters, run the conflict decision, first client conversation.","eff":"configure","risk":"medium","ev":"none","sz":"unknown","ads":0,"srch":130,"measure":"Hours from enquiry to conflict check done."},"spend-analysis":{"n":"Spend classification and savings leads","does":"Classifies spend lines by category and supplier, merges duplicate suppliers, and flags off-contract buying and price changes.","keep":"Negotiate, choose suppliers, set category plans.","eff":"configure","risk":"low","ev":"consult","sz":"medium","ads":200,"srch":470,"measure":"Share of spend classified, and savings leads acted on."},"demand-forecasting":{"n":"Demand forecasting","does":"Forecasts demand by product and location from sales history, promotions and seasonality, and explains big changes.","keep":"Final plan, promotions, buying decisions.","eff":"configure","risk":"low","ev":"consult","sz":"large","ads":348,"srch":590,"measure":"Forecast error by item, before and after."},"inventory-optimization":{"n":"Inventory levels and reorder points","does":"Suggests safety stock and reorder points per item from demand and lead-time variation.","keep":"Service-level targets, buying decisions, supplier talks.","eff":"configure","risk":"low","ev":"consult","sz":"large","ads":241,"srch":1530,"measure":"Stock-outs and inventory value, before and after."},"route-planning":{"n":"Route planning and dispatch","does":"Builds daily routes and stop order from orders, time windows and vehicle limits, and re-plans when things change.","keep":"Driver assignments, customer promises, exceptions on the road.","eff":"buy","risk":"low","ev":"consult","sz":"medium","ads":2228,"srch":2490,"measure":"Miles or hours per stop, and on-time deliveries."},"freight-docs":{"n":"Shipping and freight document capture","does":"Reads bills of lading, delivery proofs and carrier invoices, and matches them to shipments and rates.","keep":"Dispute carrier charges, approve payments, handle exceptions.","eff":"buy","risk":"medium","ev":"vendor","sz":"large","ads":453,"srch":5900,"measure":"Minutes per document, and overcharges caught."},"predictive-maintenance":{"n":"Predictive maintenance on critical equipment","does":"Watches sensor and maintenance data, predicts likely failures, and suggests when to service.","keep":"When to take equipment down, the repair itself, safety calls.","eff":"build","risk":"low","ev":"survey","sz":"large","ads":0,"srch":2590,"measure":"Unplanned downtime hours on the pilot machines."},"visual-inspection":{"n":"Camera-based quality inspection","does":"Checks parts or products on camera and flags likely defects for an inspector.","keep":"Accept or reject, root-cause work, quality standards.","eff":"build","risk":"low","ev":"none","sz":"unknown","ads":213,"srch":100,"measure":"Defects caught before shipping, and false alarms per shift."},"production-scheduling":{"n":"Production scheduling suggestions","does":"Drafts schedules from orders, capacity and changeover times, and shows the trade-offs.","keep":"Final schedule, customer priorities, shop-floor changes.","eff":"configure","risk":"low","ev":"none","sz":"unknown","ads":1607,"srch":1110,"measure":"Planner hours per schedule, and on-time orders."},"work-instructions":{"n":"Work instructions and shop-floor answers","does":"Answers operator questions from manuals, procedures and past fixes, with the source page.","keep":"Safety rules, procedure approval, judgment on the line.","eff":"configure","risk":"medium","ev":"similar","sz":"medium","ads":2601,"srch":4510,"measure":"Minutes to find an answer on the floor, and wrong answers found."},"ambient-scribe":{"n":"Ambient clinical documentation","does":"Listens to the visit with the patient's consent and drafts the clinical note for the clinician.","keep":"Review, correct and sign every note. All clinical decisions. The patient conversation.","eff":"buy","risk":"medium","ev":"rct","sz":"medium","ads":180,"srch":4590,"measure":"Minutes in notes per visit, and after-hours charting time."},"prior-authorization":{"n":"Prior authorization packet preparation","does":"Pulls the needed clinical facts from the chart into the payer's form, checks payer rules, tracks status and drafts appeal letters.","keep":"Clinical judgment, signing submissions, peer-to-peer calls, deciding whether to appeal.","eff":"buy","risk":"medium","ev":"none","sz":"unknown","ads":1295,"srch":390,"measure":"Staff minutes per request, and days to approval."},"medical-coding-assist":{"n":"Coding suggestions for certified coders","does":"Suggests diagnosis and procedure codes with the supporting note text for a coder to accept or change.","keep":"Final code selection, queries to clinicians, audit responses.","eff":"buy","risk":"high","ev":"survey","sz":"unknown","ads":952,"srch":200,"measure":"Coder minutes per chart, and audit error rate."},"claims-intake":{"n":"Claims intake and document triage","does":"Reads the first notice of loss, photos and documents, and pulls key facts. It routes simple claims to a fast track and flags complex or suspect ones.","keep":"Coverage decisions, payments, fraud referrals, every conversation with a claimant.","eff":"configure","risk":"medium","ev":"consult","sz":"unknown","ads":200,"srch":130,"measure":"Hours from first notice to assigned adjuster, and files sent back for missing facts."},"underwriting-intake":{"n":"Underwriting submission intake","does":"Extracts loss runs, schedules and applications into your rating sheet, summarizes the risk, and flags gaps for the underwriter.","keep":"Risk selection, pricing, referrals, the broker relationship.","eff":"configure","risk":"medium","ev":"consult","sz":"unknown","ads":295,"srch":1310,"measure":"Hours from submission to quote-ready file."},"insurer-ai-governance":{"n":"AI inventory and governance file","does":"Drafts and keeps the inventory of AI systems in use, vendor questionnaires and testing records.","keep":"Approve the AI program, own accountability, answer regulators.","eff":"buy","risk":"low","ev":"none","sz":"unknown","ads":0,"srch":7080,"measure":"AI tools listed with an owner and test record."},"loan-doc-spreading":{"n":"Loan document intake and financial spreading","does":"Reads tax returns, bank statements and financial statements, spreads them into your credit template and flags inconsistencies.","keep":"The credit decision, policy exceptions, the borrower relationship.","eff":"buy","risk":"medium","ev":"similar","sz":"small","ads":181,"srch":120,"measure":"Hours per spread, and errors caught by the analyst."},"aml-alert-triage":{"n":"Anti-money-laundering alert triage","does":"Scores and groups alerts, gathers transaction context, and drafts the case narrative for an investigator.","keep":"Whether activity is suspicious, filing reports, answering examiners.","eff":"buy","risk":"high","ev":"vendor","sz":"large","ads":194,"srch":340,"measure":"Investigator hours per alert, and alerts that become cases."},"credit-scoring":{"n":"Credit scoring models","does":"Scores applicants from application and financial data and explains the main factors.","keep":"Credit policy, decisions and adverse-action reasons, fair-lending testing.","eff":"build","risk":"high","ev":"none","sz":"unknown","ads":3298,"srch":530,"measure":"Default rate and approval rate by group, against the current model."},"claim-letters":{"n":"Claim acknowledgement, status and information-request letters","does":"Drafts acknowledgement, status and request-for-information letters from the claim file, in plain words.","keep":"Coverage positions, any denial or reservation-of-rights letter, the final wording and send.","eff":"buy","risk":"medium","ev":"similar","sz":"large","ads":0,"srch":0,"measure":"Minutes per letter, and letters an adjuster rewrites."},"guideline-answers":{"n":"Underwriting and claims guideline answers","does":"Answers staff questions from underwriting guidelines, claims manuals and coverage forms, with the source passage.","keep":"Judgment on the risk or claim, exceptions, authority limits.","eff":"configure","risk":"medium","ev":"similar","sz":"medium","ads":2601,"srch":4510,"measure":"Minutes to find a guideline answer, and answers a senior marks wrong."},"denial-appeals":{"n":"Payer denial appeal letters","does":"Drafts appeal letters from the chart, the denial reason and the payer's policy, and tracks deadlines.","keep":"Clinical argument, signing appeals, deciding which denials to fight.","eff":"buy","risk":"medium","ev":"similar","sz":"large","ads":952,"srch":200,"measure":"Minutes per appeal letter, and appeals filed and won."},"credit-memo-drafts":{"n":"Credit memo first drafts","does":"Writes the credit memo narrative from the spreads, the borrower file and your policy, and lists policy exceptions.","keep":"The credit decision, risk rating, exceptions and approvals.","eff":"buy","risk":"medium","ev":"similar","sz":"large","ads":0,"srch":0,"measure":"Hours per credit memo, and credit officer edits."},"takeoff-estimating":{"n":"Quantity takeoff and estimate first pass","does":"Measures areas, lengths and counts from drawings, matches quantities to cost items, and flags gaps for the estimator.","keep":"Scope judgment, pricing, risk and contingency, the bid decision.","eff":"buy","risk":"medium","ev":"small","sz":"large","ads":1550,"srch":3770,"measure":"Hours per takeoff, and variance against your manual count."},"submittal-review":{"n":"Submittal register and specification review","does":"Reads the specification, builds the submittal register, and checks submittals against spec requirements.","keep":"Approve or reject submittals, coordinate with design team.","eff":"configure","risk":"medium","ev":"small","sz":"unknown","ads":0,"srch":210,"measure":"Hours to build the submittal register, and items missed."},"project-reports-rfis":{"n":"RFI, daily report and meeting-minute drafts","does":"Drafts RFIs, daily reports and minutes from field notes, photos and voice memos.","keep":"Facts on site, commitments, final sign-off.","eff":"buy","risk":"low","ev":"similar","sz":"large","ads":0,"srch":0,"measure":"Minutes per daily report or RFI, and corrections needed."},"lease-abstraction":{"n":"Lease abstraction","does":"Pulls key dates, rents, options and clauses from leases into your system, with page references.","keep":"Interpret unusual clauses, approve the abstract, act on critical dates.","eff":"buy","risk":"medium","ev":"similar","sz":"medium","ads":13,"srch":790,"measure":"Minutes per lease abstract, and dates or clauses missed in a sample."},"listing-content":{"n":"Listing descriptions and marketing drafts","does":"Drafts listing descriptions, emails and social posts from property facts and photos.","keep":"Accuracy of claims, fair-housing review, final approval.","eff":"buy","risk":"medium","ev":"similar","sz":"large","ads":0,"srch":880,"measure":"Minutes per listing, and corrections before publishing."},"tenant-requests":{"n":"Tenant and resident request handling","does":"Answers routine resident questions, logs maintenance requests with details and photos, and routes urgent issues.","keep":"Emergencies, disputes, lease decisions, vendor dispatch approval.","eff":"configure","risk":"medium","ev":"similar","sz":"medium","ads":0,"srch":880,"measure":"Requests logged without a call, and response time on urgent ones."}},"cells":{"professional-services|finance":["close-reconciliation","ar-followup","cash-forecasting","ap-invoice-capture"],"professional-services|customer-service":["support-agent-assist","drafting-routine-docs","internal-doc-search","phone-answering"],"professional-services|sales-marketing":["client-deliverables","meeting-notes-crm","account-research-outreach","rfp-proposals"],"professional-services|core":["tax-document-prep","client-deliverables","close-reconciliation","audit-analytics"],"legal|finance":["close-reconciliation","ar-followup","cash-forecasting","ap-invoice-capture"],"legal|customer-service":["drafting-routine-docs","internal-doc-search","phone-answering","client-intake"],"legal|compliance-risk":["internal-doc-search","regulatory-monitoring","client-intake"],"legal|core":["document-review-ediscovery","contract-review","legal-drafting","legal-research"],"healthcare|finance":["close-reconciliation","ar-followup","cash-forecasting","ap-invoice-capture"],"healthcare|customer-service":["support-agent-assist","internal-doc-search","customer-self-serve","phone-answering"],"healthcare|compliance-risk":["internal-doc-search","regulatory-monitoring","medical-coding-assist"],"healthcare|core":["ambient-scribe","denial-appeals","medical-coding-assist","prior-authorization"],"insurance|finance":["close-reconciliation","ar-followup","cash-forecasting","ap-invoice-capture"],"insurance|customer-service":["support-agent-assist","customer-self-serve","claim-letters","phone-answering"],"insurance|compliance-risk":["internal-doc-search","regulatory-monitoring","insurer-ai-governance"],"insurance|core":["claim-letters","guideline-answers","claims-intake","underwriting-intake"],"banking-lending|finance":["close-reconciliation","cash-forecasting","ap-invoice-capture"],"banking-lending|customer-service":["support-agent-assist","internal-doc-search","customer-self-serve","phone-answering"],"banking-lending|compliance-risk":["internal-doc-search","regulatory-monitoring","aml-alert-triage"],"banking-lending|core":["credit-memo-drafts","loan-doc-spreading","aml-alert-triage","credit-scoring"],"manufacturing|operations":["internal-doc-search","work-instructions","predictive-maintenance","production-scheduling"],"manufacturing|finance":["close-reconciliation","ar-followup","cash-forecasting","ap-invoice-capture"],"manufacturing|customer-service":["support-agent-assist","internal-doc-search","customer-self-serve"],"manufacturing|sales-marketing":["meeting-notes-crm","quote-drafting","rfp-proposals"],"manufacturing|procurement-supply-chain":["demand-forecasting","inventory-optimization","spend-analysis","ap-invoice-capture"],"manufacturing|core":["work-instructions","predictive-maintenance","production-scheduling","visual-inspection"],"construction|finance":["close-reconciliation","ar-followup","cash-forecasting","ap-invoice-capture"],"construction|customer-service":["support-agent-assist","drafting-routine-docs","phone-answering"],"construction|sales-marketing":["drafting-routine-docs","quote-drafting","rfp-proposals"],"construction|core":["project-reports-rfis","takeoff-estimating","quote-drafting","submittal-review"],"logistics-distribution|operations":["internal-doc-search","route-planning","demand-forecasting","shift-scheduling"],"logistics-distribution|finance":["close-reconciliation","ar-followup","freight-docs","ap-invoice-capture"],"logistics-distribution|customer-service":["support-agent-assist","customer-self-serve","phone-answering"],"logistics-distribution|procurement-supply-chain":["inventory-optimization","demand-forecasting","freight-docs","spend-analysis"],"logistics-distribution|core":["route-planning","customer-self-serve","demand-forecasting","freight-docs"],"retail-ecommerce|finance":["close-reconciliation","cash-forecasting","ap-invoice-capture"],"retail-ecommerce|customer-service":["support-agent-assist","customer-self-serve","phone-answering"],"retail-ecommerce|sales-marketing":["customer-self-serve","product-content","site-search-recs","lead-scoring"],"retail-ecommerce|procurement-supply-chain":["demand-forecasting","inventory-optimization","spend-analysis"],"retail-ecommerce|core":["product-content","site-search-recs","demand-forecasting","inventory-optimization"],"real-estate|finance":["close-reconciliation","ar-followup","cash-forecasting","ap-invoice-capture"],"real-estate|customer-service":["support-agent-assist","tenant-requests","phone-answering"],"real-estate|sales-marketing":["customer-self-serve","meeting-notes-crm","listing-content"],"real-estate|core":["listing-content","lease-abstraction","tenant-requests"],"software-it-services|finance":["close-reconciliation","ar-followup","cash-forecasting","ap-invoice-capture"],"software-it-services|customer-service":["support-agent-assist","internal-doc-search","customer-self-serve"],"software-it-services|sales-marketing":["meeting-notes-crm","account-research-outreach","rfp-proposals","lead-scoring"],"software-it-services|it":["coding-assistant","it-service-desk","security-alert-triage"],"software-it-services|core":["support-agent-assist","internal-doc-search","coding-assistant"]},"general":{"operations":["drafting-routine-docs","internal-doc-search","work-instructions","shift-scheduling"],"finance":["close-reconciliation","ar-followup","cash-forecasting","ap-invoice-capture"],"customer-service":["support-agent-assist","internal-doc-search","customer-self-serve","phone-answering"],"sales-marketing":["meeting-notes-crm","quote-drafting","account-research-outreach","rfp-proposals","lead-scoring"],"hr":["job-ads-interview-guides","hr-policy-answers","shift-scheduling","resume-screening"],"it":["internal-doc-search","coding-assistant","it-service-desk","security-alert-triage"],"compliance-risk":["contract-review","internal-doc-search","regulatory-monitoring"],"procurement-supply-chain":["demand-forecasting","inventory-optimization","spend-analysis","ap-invoice-capture"]}};
+</script>
+<script id="engine">
+// Zavient AI roadmap builder engine. Pure data and rules, no DOM, so tests/ai-roadmap-builder.test.mjs can run it.
+// Projects come from the use case finder (FINDER, copied from /tools/embed/ai-use-case-finder.html; the test checks
+// the copy still matches). This file adds sequencing, owners, review steps, training, budget and gates.
+const RM = (() => {
+  // Sources shown as footnotes, in list order. Every URL was fetched and checked on 26 Nov 2026.
+  const SRC = {
+    mit: ["MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025). Small sample: 52 interviews, 153 survey responses and 300+ public projects, self-reported. Bought or partner-built tools reached deployment about 67% of the time, internal builds about 33%; top mid-market firms went from pilot to full use in about 90 days; workers at 90%+ of firms use personal AI tools while 40% of firms bought a subscription.", "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf"],
+    fortune: ["Fortune on the MIT NANDA report (18 Aug 2025): buying from specialist vendors and partners succeeds about 67% of the time; internal builds a third as often.", "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/"],
+    g48: ["Gartner survey (7 May 2024): on average 48% of AI projects make it into production, and it takes 8 months from prototype to production.", "https://www.gartner.com/en/newsroom/press-releases/2024-05-07-gartner-survey-finds-generative-ai-is-now-the-most-frequently-deployed-ai-solution-in-organizations"],
+    gdata: ["Gartner, Lack of AI-ready data puts AI projects at risk (26 Feb 2025): through 2026, firms will abandon 60% of AI projects not supported by AI-ready data (a forecast).", "https://www.gartner.com/en/newsroom/press-releases/2025-02-26-lack-of-ai-ready-data-puts-ai-projects-at-risk"],
+    sp: ["S&P Global Market Intelligence, 451 Research (27 Oct 2025): the average firm scrapped 46% of AI proofs of concept before production.", "https://www.spglobal.com/market-intelligence/en/news-insights/research/2025/10/generative-ai-shows-rapid-growth-but-yields-mixed-results"],
+    mck25: ["McKinsey, The state of AI (12 Mar 2025): of 25 factors, redesigning workflows had the biggest effect on profit from gen AI; tracking clear KPIs had the most impact of 12 practices, yet fewer than 1 in 5 firms track them.", "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-how-organizations-are-rewiring-to-capture-value"],
+    mck25n: ["McKinsey, The state of AI in 2025 (5 Nov 2025, n=1,993): high performers are nearly 3 times as likely to have redesigned workflows (55% vs 20%) and far more likely to have defined when a person must check AI output.", "https://www.mckinsey.com/~/media/mckinsey/business%20functions/quantumblack/our%20insights/the%20state%20of%20ai/november%202025/the-state-of-ai-2025-agents-innovation_cmyk-v1.pdf"],
+    bcg24: ["BCG, Where's the value in AI? press release (24 Oct 2024, n=1,000): leaders pursue about half as many AI opportunities and scale more than twice as many; about 70% of the challenge is people and process.", "https://www.bcg.com/press/24october2024-ai-adoption-in-2024-74-of-companies-struggle-to-achieve-and-scale-value"],
+    bcg26: ["BCG, AI transformation is a workforce transformation (30 Jan 2026): leaders should align on three to four priorities, not dozens; executive engagement is one of the strongest predictors of AI maturity.", "https://www.bcg.com/publications/2026/ai-transformation-is-a-workforce-transformation"],
+    bcgwork: ["BCG, AI at Work 2025 (Jun 2025, 10,600+ workers): regular use is sharply higher with at least 5 hours of training plus in-person coaching; 51% of frontline staff use gen AI regularly; leader support lifts positive views from 15% to 55%.", "https://www.bcg.com/publications/2025/ai-at-work-momentum-builds-but-gaps-remain"],
+    kpmg: ["KPMG and University of Melbourne, global study of 48,000+ people (Apr 2025): only 47% of employees have had AI training and 40% say their workplace has a policy or guidance on gen AI.", "https://kpmg.com/xx/en/media/press-releases/2025/04/trust-of-ai-remains-a-critical-challenge.html"],
+    dellacqua: ["Dell'Acqua et al., Navigating the jagged technological frontier, Organization Science (Mar 2026, 758 consultants): on tasks AI does well, 12.2% more tasks and 25.1% faster; on a task outside it, 19 points less likely to be right.", "https://pubsonline.informs.org/doi/10.1287/orsc.2025.21838"],
+    bry: ["Brynjolfsson, Li and Raymond, Generative AI at Work, Quarterly Journal of Economics (2025): support agents resolved 15% more issues per hour, newer agents gained most; the agent keeps final say on every reply.", "https://academic.oup.com/qje/article/140/2/889/7990658"],
+    deloitte: ["Deloitte, AI ROI: the paradox of rising investment and elusive returns (22 Oct 2025; 1,854 executives in Europe and the Middle East): most report satisfactory return on a typical AI use case in 2 to 4 years; 6% in under a year.", "https://www.deloitte.com/global/en/what-we-do/capabilities/ai/research/ai-roi-the-paradox-of-rising-investment-and-elusive-returns.html"],
+    censusj: ["McElheran, Yang, Kroff and Brynjolfsson, Census working paper CES-25-27 (Apr 2025): in US manufacturers, short-run productivity losses came before longer-run gains from AI.", "https://www.census.gov/library/working-papers/2025/adrm/CES-WP-25-27.html"],
+    aea: ["Brynjolfsson, Rock and Syverson, The Productivity J-Curve, American Economic Journal: Macroeconomics (2021): new general-purpose technologies need hidden investment before gains show.", "https://www.aeaweb.org/articles?id=10.1257%2Fmac.20180386"],
+    bis: ["Aldasoro et al., BIS Working Paper 1325 (Jan 2026, 12,000+ firms): AI raised labour productivity about 4% with no drop in jobs; training and data investment support the gains.", "https://www.bis.org/publ/work1325.pdf"],
+    rsm: ["RSM US middle market AI survey (21 Jul 2026, n=1,030; run by a firm that sells AI consulting): data quality and availability is the top barrier to AI deployment (34%).", "https://www.rsmus.com/newsroom/2026/rsm-survey-middle-market-embraced-ai-now-comes-hard-part"]
+  };
+  const SRC_ORDER = Object.keys(SRC);
+
+  // The finder's score, so a use ranks the same here as in the finder.
+  const W = {
+    ev: { rct: 1, field: 0.9, similar: 0.8, survey: 0.75, small: 0.7, consult: 0.65, vendor: 0.55, none: 0.4 },
+    gain: { large: 1, medium: 0.85, small: 0.7, unknown: 0.6 },
+    eff: { buy: 1, configure: 0.8, build: 0.55 },
+    risk: { low: 1, medium: 0.8, high: 0.6 }
+  };
+  const peerTier = (u) => { const v = (u.ads || 0) + (u.srch || 0) / 10; return v >= 2000 ? 1 : v >= 500 ? 0.9 : v >= 100 ? 0.8 : 0.7; };
+  const sizeFit = (u, size) => (size === "40-99" && u.eff === "build") ? 0.8 : (size === "250-500" && u.eff !== "buy") ? 1.05 : 1;
+  const finderScore = (u, size) => 100 * peerTier(u) * W.ev[u.ev] * W.gain[u.sz] * W.eff[u.eff] * W.risk[u.risk] * sizeFit(u, size);
+
+  // Zavient method factors (research R1). 0 = left out.
+  const DATA_F = { clean: { buy: 1, configure: 1, build: 1 }, messy: { buy: 1, configure: 0.85, build: 0.5 }, scattered: { buy: 1, configure: 0.6, build: 0 } };
+  const BUDGET_F = { lt25: { buy: 1, configure: 0.8, build: 0 }, "25-100": { buy: 1, configure: 1, build: 0 }, "100-250": { buy: 1, configure: 1, build: 1 }, "250plus": { buy: 1, configure: 1, build: 1 } };
+  const ORD = { risk: { low: 0, medium: 1, high: 2 }, eff: { buy: 0, configure: 1, build: 2 } };
+  const TIE_BAND = 5;
+  const DEFAULTS = { useTh: 60, errTh: 2, errWeeks: 4, sample: 20, pilotN: 12 };
+
+  const Q = {
+    size: [["40-99", "40-99 people", 70], ["100-249", "100-249 people", 175], ["250-500", "250-500 people", 375]],
+    current: [["none", "Not at all, or it's blocked"], ["personal", "People use personal accounts"], ["company_tool", "We have a company tool some people use", "For example Copilot, ChatGPT, Gemini or Claude"], ["project_live", "At least one AI project is in daily use"]],
+    policy: [["none", "No"], ["informal", "Informal, or a draft"], ["written", "Written and shared with staff"]],
+    data: [["scattered", "Mostly email, paper and spreadsheets"], ["messy", "In our systems, but messy"], ["clean", "Clean, in one or two core systems"]],
+    risk: [["low", "Internal drafts only"], ["medium", "Output reaches customers, money or records"], ["high", "Decisions about people's credit, insurance, health, jobs or legal rights"]],
+    budget: [["lt25", "Under $25K"], ["25-100", "$25K to $100K"], ["100-250", "$100K to $250K"], ["250plus", "$250K or more"]],
+    owner: [["yes", "Yes"], ["no", "Not yet"]],
+    stage: [["runway", "Clear the runway"], ["first_win", "Ready for a first win"], ["scale", "Ready to scale"], ["", "I haven't taken it"]]
+  };
+  const label = (k, v) => (Q[k].find((x) => x[0] === v) || [])[1] || "";
+
+  // Short names for the plan's sentences: [short name, plural?, one item of output, output reaches customers?]
+  const X = {
+    "ap-invoice-capture": ["invoice capture and matching", 0, "invoice"], "close-reconciliation": ["month-end close support", 0, "reconciliation"],
+    "cash-forecasting": ["cash forecasting", 0, "forecast"], "ar-followup": ["collections follow-up", 0, "collections email", 1],
+    "tax-document-prep": ["tax document prep", 0, "workpaper"], "audit-analytics": ["full-ledger audit testing", 0, "flagged entry"],
+    "drafting-routine-docs": ["first drafts of routine letters and reports", 1, "draft", 1], "internal-doc-search": ["answers from your own documents", 1, "answer"],
+    "client-deliverables": ["first drafts of client deliverables", 1, "deliverable"], "support-agent-assist": ["suggested replies", 1, "reply", 1],
+    "customer-self-serve": ["customer chat for common questions", 0, "chat answer"], "phone-answering": ["phone answering and booking", 0, "call"],
+    "meeting-notes-crm": ["call notes and CRM updates", 1, "call note"], "rfp-proposals": ["RFP and proposal first drafts", 1, "proposal"],
+    "account-research-outreach": ["account research and outreach drafts", 1, "outreach email"], "lead-scoring": ["lead scoring", 0, "lead score"],
+    "quote-drafting": ["quote first drafts", 1, "quote"], "product-content": ["product listing content", 0, "listing", 1],
+    "site-search-recs": ["site search and recommendations", 1, "recommendation"], "job-ads-interview-guides": ["job ads and interview guides", 1, "job ad", 1],
+    "resume-screening": ["resume screening support", 0, "screening note"], "hr-policy-answers": ["answers to staff policy questions", 1, "answer"],
+    "shift-scheduling": ["shift scheduling suggestions", 1, "schedule"], "it-service-desk": ["IT help desk triage", 0, "ticket reply"],
+    "coding-assistant": ["a coding assistant", 0, "code change"], "security-alert-triage": ["security alert triage", 0, "alert decision"],
+    "regulatory-monitoring": ["regulatory change monitoring", 0, "gap list"], "contract-review": ["first-pass contract review", 0, "contract mark-up"],
+    "legal-research": ["legal research with citation checks", 0, "memo"], "document-review-ediscovery": ["first-pass document review", 0, "review call"],
+    "legal-drafting": ["first drafts of routine legal documents", 1, "draft"], "client-intake": ["client intake triage", 0, "intake decision"],
+    "spend-analysis": ["spend classification", 0, "classification"], "demand-forecasting": ["demand forecasting", 0, "forecast"],
+    "inventory-optimization": ["reorder point suggestions", 1, "reorder"], "route-planning": ["route planning", 0, "route"],
+    "freight-docs": ["freight document capture", 0, "document"], "predictive-maintenance": ["predictive maintenance", 0, "maintenance alert"],
+    "visual-inspection": ["camera quality inspection", 0, "inspection call"], "production-scheduling": ["production scheduling suggestions", 1, "schedule"],
+    "work-instructions": ["shop-floor answers", 1, "answer"], "ambient-scribe": ["ambient clinical notes", 1, "visit note"],
+    "prior-authorization": ["prior authorization packets", 1, "packet"], "medical-coding-assist": ["coding suggestions for certified coders", 1, "coded chart"],
+    "claims-intake": ["claims intake triage", 0, "claim file"], "underwriting-intake": ["underwriting submission intake", 0, "submission file"],
+    "insurer-ai-governance": ["an AI inventory and governance file", 0, "entry"], "loan-doc-spreading": ["loan document spreading", 0, "spread"],
+    "aml-alert-triage": ["AML alert triage", 0, "alert decision"], "credit-scoring": ["credit scoring models", 1, "credit decision"],
+    "claim-letters": ["claim letters", 1, "letter"], "guideline-answers": ["guideline answers", 1, "answer"],
+    "denial-appeals": ["denial appeal letters", 1, "appeal letter"], "credit-memo-drafts": ["credit memo first drafts", 1, "credit memo"],
+    "takeoff-estimating": ["takeoff and estimate first passes", 1, "takeoff"], "submittal-review": ["submittal register review", 0, "submittal log"],
+    "project-reports-rfis": ["RFI and daily report drafts", 1, "report", 1], "lease-abstraction": ["lease abstraction", 0, "lease abstract"],
+    "listing-content": ["listing description drafts", 1, "listing"], "tenant-requests": ["tenant request handling", 0, "request reply"]
+  };
+  const TEAM_OWNER = { operations: "Head of operations", finance: "Controller or finance manager", "customer-service": "Head of customer service",
+    "sales-marketing": "Head of sales or marketing", hr: "HR manager", it: "IT lead", "compliance-risk": "Compliance lead",
+    "procurement-supply-chain": "Procurement or supply chain manager" };
+  const TEAM_SHORT = { operations: "operations team", finance: "finance team", "customer-service": "service team", "sales-marketing": "sales team",
+    hr: "HR team", it: "IT team", "compliance-risk": "compliance team", "procurement-supply-chain": "procurement team" };
+  const CORE = { // [team short name, default owner of the core team]
+    "professional-services": ["client delivery team", "Head of client delivery"], legal: ["practice teams", "Practice group leader"],
+    healthcare: ["clinical and revenue cycle teams", "Revenue cycle manager"], insurance: ["claims and underwriting team", "Head of claims or underwriting"],
+    "banking-lending": ["lending team", "Head of lending"], manufacturing: ["production team", "Plant or operations manager"],
+    construction: ["estimating and project teams", "Head of preconstruction"], "logistics-distribution": ["dispatch and warehouse team", "Logistics operations manager"],
+    "retail-ecommerce": ["merchandising team", "Head of e-commerce"], "real-estate": ["leasing and property team", "Head of property management"],
+    "software-it-services": ["product and onboarding team", "Head of product or onboarding"] };
+  const CORE_OWNER = { // core-team uses whose work belongs to a narrower head
+    "claim-letters": "Claims manager", "claims-intake": "Claims manager", "underwriting-intake": "Head of underwriting", "guideline-answers": "Head of underwriting",
+    "tax-document-prep": "Tax practice lead", "audit-analytics": "Audit partner or manager", "ambient-scribe": "Medical director",
+    "medical-coding-assist": "Coding manager", "credit-memo-drafts": "Chief credit officer", "loan-doc-spreading": "Chief credit officer",
+    "credit-scoring": "Chief credit officer", "aml-alert-triage": "BSA/AML officer", "visual-inspection": "Quality manager",
+    "takeoff-estimating": "Chief estimator", "project-reports-rfis": "Head of project management", "submittal-review": "Head of project management",
+    "route-planning": "Dispatch or transport manager", "lease-abstraction": "Lease administration manager", "listing-content": "Head of leasing",
+    "coding-assistant": "Head of engineering", "support-agent-assist": "Head of customer onboarding and support" };
+  const REGULATED = ["healthcare", "insurance", "banking-lending", "legal"];
+  const EFFORT = {
+    buy: ["Buy", "about 90 days from pilot to full team use"],
+    configure: ["Set up", "3 to 6 months from pilot to full team use"],
+    build: ["Build", "6 to 9 months or more before daily use"]
+  };
+
+  const industry = (id) => FINDER.industries.find((i) => i.id === id) || null;
+  const teamName = (ind, t) => t === "core" ? (industry(ind) ? `Core work: ${industry(ind).core}` : "Core work") : (FINDER.teams.find((x) => x.id === t) || {}).name || t;
+  const teamShort = (ind, t) => t === "core" ? (CORE[ind] ? CORE[ind][0] : "core team") : TEAM_SHORT[t];
+  const ownerFor = (ind, c) => c.team === "core" ? (CORE_OWNER[c.id] || (CORE[ind] ? CORE[ind][1] : "Head of the core team")) : TEAM_OWNER[c.team];
+  const teamsFor = (ind) => FINDER.teams.filter((t) => t.id !== "core" || (ind && ind !== "other"));
+  const headcount = (a) => a.headcount || (Q.size.find((s) => s[0] === a.size) || [0, 0, 175])[2];
+
+  // R1: every use in the chosen teams' finder lists, scored and filtered by data and budget.
+  function candidates(a) {
+    const out = [];
+    for (const t of a.teams) {
+      const ids = (a.industry !== "other" && FINDER.cells[a.industry + "|" + t]) || FINDER.general[t] || [];
+      for (const id of ids) {
+        const u = FINDER.uc[id];
+        const df = DATA_F[a.data][u.eff], bf = BUDGET_F[a.budget][u.eff];
+        if (!df || !bf) continue;
+        const base = finderScore(u, a.size);
+        out.push({ id, u, team: t, base, df, bf, s: base * df * bf });
+      }
+    }
+    return out.sort((x, y) => y.s - x.s);
+  }
+  const r1 = (n) => Math.round(n * 10) / 10;
+
+  // R2: choose up to 3 projects and the one on deck.
+  function pick(a, cands, two) {
+    const early = (c, buyOnly) => (c.u.eff === "buy" || (c.u.eff === "configure" && !buyOnly)) && c.u.risk !== "high";
+    const scattered = a.data === "scattered";
+    let l1 = cands.filter((c) => early(c, scattered)), setupOnly = false;
+    if (!l1.length && scattered) { l1 = cands.filter((c) => early(c, false)); setupOnly = l1.length > 0; }
+    if (!l1.length) return { p: [], rest: cands, setupOnly };
+    const band = l1.filter((c) => l1[0].s - c.s <= TIE_BAND)
+      .sort((x, y) => (ORD.risk[x.u.risk] - ORD.risk[y.u.risk]) || (ORD.eff[x.u.eff] - ORD.eff[y.u.eff]) || (y.s - x.s));
+    const p1 = band[0];
+    let rest = cands.filter((c) => c.id !== p1.id);
+    const l2 = rest.filter((c) => early(c, scattered && two));
+    const p2 = (a.teams.length > 1 && l2.find((c) => c.team !== p1.team)) || l2[0] || null;
+    if (p2) rest = rest.filter((c) => c.id !== p2.id);
+    const ok3 = (c) => c.u.risk !== "high" || a.risk === "high";
+    const covered = new Set([p1.team, p2 && p2.team]);
+    const p3 = rest.find((c) => ok3(c) && !covered.has(c.team)) || rest.find(ok3) || null;
+    if (p3) rest = rest.filter((c) => c.id !== p3.id);
+    return { p: [p1, p2, p3].filter(Boolean), rest, setupOnly };
+  }
+
+  // R5: the review step people keep.
+  function review(a, c, owner, S) {
+    const x = X[c.id] || [c.u.n, 0, "output"], item = x[2], items = plural(item);
+    const tier = c.u.risk === "high" ? "high" : c.u.risk;
+    if (tier === "high") return { tier, text: `A person makes every decision and approves every ${item}, always. Keep a log of what AI suggested and what the person decided. A second person checks a 10% sample each month.` };
+    if (tier === "medium") return { tier, text: `A person approves every ${item} before it is sent, posted or acted on, for at least the first 60 days. After that, check a ${S.sample}% sample if review errors stay under ${S.errTh}% for ${S.errWeeks} weeks in a row. Otherwise keep checking every one.` };
+    if (x[3] && a.risk !== "low") return { tier, text: `People send every ${item} themselves. Because it reaches customers, ${owner} reviews 10 sent ${items} and the edits made to them each week for the first 60 days.` };
+    return { tier, text: `The person who uses each ${item} owns it. ${cap(owner)} spot-checks 10 a week for the first 60 days, then monthly.` };
+  }
+
+  function build(a, settings) {
+    const S = Object.assign({}, DEFAULTS, settings || {});
+    const ind = industry(a.industry);
+    const H = headcount(a);
+    const two = a.size !== "40-99" && a.budget !== "lt25" && a.owner === "yes";
+    const o = a.stage === "runway" ? 15 : 0;           // Zavient method: groundwork stretches to 45 days
+    const cands = candidates(a);
+    const { p, rest, setupOnly } = pick(a, cands, two);
+    const reg = a.risk === "high" || REGULATED.includes(a.industry);
+    const ITL = a.size === "40-99" ? "IT lead or outside IT provider" : "IT lead";
+    const champs = Math.max(a.teams.length, Math.ceil(H / (reg ? 25 : 40)));
+    const sponsor = { "40-99": "Owner-CEO or COO", "100-249": "COO or head of operations", "250-500": "COO, with a program lead who gives 4 to 8 hours a week" }[a.size];
+    const names = S.names || {};
+    const projects = p.map((c, i) => {
+      const x = X[c.id] || [c.u.n.toLowerCase(), 0, "output"];
+      const role = ownerFor(a.industry, c);
+      const named = (names["p" + (i + 1)] || "").trim();
+      const owner = named || role, ownerIn = named || "the " + lc(role);
+      let start, gate, startDay, gateDay;
+      if (i === 0) { startDay = 36 + o; gateDay = 90 + o; start = `Pilot from about day ${startDay}`; gate = `Day ${gateDay}`; }
+      else if (i === 1) {
+        if (two) { startDay = 46 + o; gateDay = 105 + o; start = `Pilot from about day ${startDay}`; gate = `About day ${gateDay}`; }
+        else { startDay = 106 + o; gateDay = 165 + o; start = "Pilot in month 4, after Project 1's gate"; gate = "About month 6"; }
+      } else if (c.u.eff === "build") { startDay = 106 + o; gateDay = 300; start = "Build starts in month 4, after Project 1's gate"; gate = "Months 10 to 12"; }
+      else if (two) { startDay = 120 + o; gateDay = 210 + o; start = "Pilot in months 4 to 6, after Project 1's gate"; gate = "Months 7 to 9"; }
+      else { startDay = 150 + o; gateDay = 240; start = "Pilot in months 5 to 6, once Project 2 is running"; gate = "Months 8 to 9"; }
+      return { n: i + 1, id: c.id, u: c.u, team: c.team, teamName: teamName(a.industry, c.team), teamShort: teamShort(a.industry, c.team),
+        role, owner, sn: x[0], pl: !!x[1], item: x[2], score: r1(c.s), base: r1(c.base), df: c.df, bf: c.bf,
+        effort: EFFORT[c.u.eff], start, gate, startDay, gateDay, ownerIn, review: review(a, c, ownerIn, S), measure: c.u.measure };
+    });
+    const [P1, P2, P3] = projects;
+    const onDeck = rest[0] ? { id: rest[0].id, u: rest[0].u, team: rest[0].team, teamName: teamName(a.industry, rest[0].team), teamShort: teamShort(a.industry, rest[0].team), score: r1(rest[0].s), sn: (X[rest[0].id] || [rest[0].u.n])[0] } : null;
+    const nextUp = rest[1] ? { id: rest[1].id, u: rest[1].u, team: rest[1].team, score: r1(rest[1].s) } : null;
+
+    // BLUF line
+    const who = `${H}-person ${ind ? ind.short : "firm"}`;
+    let header = "";
+    if (P1) {
+      header = `For a ${who}, start with ${P1.sn} for your ${P1.teamShort}`;
+      header += P2 ? `, then ${P2.sn}${two ? "" : " in month 4"}.` : ".";
+      if (P3) header += ` ${cap(P3.sn)} ${P3.pl ? "follow" : "follows"} ${P3.u.eff === "build" ? "as a build from month 4" : two ? "in months 4-6" : "in months 5-6"}, after your first gate.`;
+    } else header = `For a ${who}, none of the uses for these teams fits your data and budget yet. Start with groundwork and the readiness check.`;
+
+    // Flags (R8)
+    const flags = [];
+    if (a.owner === "no") flags.push({ t: "Name one executive owner this week. Until someone owns it, the plan runs one pilot in the first 90 days, not two.", src: ["mck25", "bcg26"] });
+    if (a.current === "personal") flags.push({ t: "Your people are likely already using AI on personal accounts. Approve a tool and a policy first.", src: ["mit", "kpmg"] });
+    if (a.policy !== "written" && a.risk !== "low") flags.push({ t: "No real customer data goes into any AI tool until the policy is signed.", src: ["kpmg"] });
+    if (a.data === "scattered") flags.push({ t: "Your data sits mostly in email, paper and spreadsheets. The first 90 days use bought tools only, and one cleanup task starts in month 1.", src: ["gdata", "rsm"] });
+    if (setupOnly) flags.push({ t: "None of the uses for these teams can be bought ready-made, so Project 1 is a tool you set up. Clean up the data it needs in days 1-30, before the pilot.", src: ["gdata"] });
+    if (a.budget === "lt25") flags.push({ t: "Most of your year-one cost is staff time for training and review, not licences.", src: ["bcg24"] });
+    if (a.risk === "high") flags.push({ t: "Uses that decide on people's credit, insurance, health, jobs or legal rights wait until month 4 or later, and a person makes every decision.", src: ["mck25n", "dellacqua"] });
+    if (a.stage === "runway") flags.push({ t: "Your readiness result was Clear the runway, so the groundwork gets 45 days, not 30. Every later date moves about two weeks.", zm: true });
+    if (a.size === "250-500" && a.teams.length === 3) flags.push({ t: "Three teams at 250-500 people is a lot for one sponsor. Name a program lead who gives 4 to 8 hours a week.", zm: true });
+    if (a.current === "project_live") flags.push({ t: "Measure the AI project you already run against a baseline before you add new ones.", src: ["mck25"] });
+
+    // Timeline (R4)
+    const needPolicy = a.policy !== "written", needTool = a.current === "none" || a.current === "personal";
+    const messy = a.data !== "clean";
+    const L = o ? ["Days 1-45", "Days 46-75", "Days 76-105", "Months 4-7", "Months 7-12"] : ["Days 1-30", "Days 31-60", "Days 61-90", "Months 4-6", "Months 7-12"];
+    const P = (x) => x ? `Project ${x.n} (${x.sn})` : "";
+    const ph1 = [];
+    ph1.push({ t: a.owner === "no" ? "Name one executive owner, then an owner for each project" : "Confirm the sponsor and name an owner for each project", who: a.owner === "no" ? "CEO" : "Sponsor", when: "Week 1", day: 7, src: ["mck25", "bcg26"] });
+    if (needPolicy) ph1.push({ t: a.policy === "informal" ? "Finish and sign a one-page AI use policy" : "Write and sign a one-page AI use policy", who: "Sponsor, with IT and compliance", when: "By day 14", day: 14, link: "policy", src: ["kpmg", "mit"] });
+    if (needTool) ph1.push({ t: "Approve one AI tool for company data and close off personal accounts for work data", who: ITL, when: "By day 15", day: 15, src: ["mit", "kpmg"] });
+    if (a.current === "project_live") ph1.push({ t: "Measure your live AI project against its own baseline", who: "Its owner", when: `Days 1-${30 + o}`, day: 30 + o, src: ["mck25"] });
+    if (P1) ph1.push({ t: `Take a 4-week baseline for ${two && P2 ? "Projects 1 and 2" : "Project 1"}: time a sample of 20 tasks, and record ${lc(strip(P1.measure))}${two && P2 ? `. For Project 2: ${lc(strip(P2.measure))}` : ""}`, who: two && P2 ? `${P1.owner}; ${P2.owner}` : P1.owner, when: `Days 1-${28 + o}`, day: 28 + o, link: "roi", src: ["mck25"] });
+    if (P1) ph1.push({ t: `Map the steps of ${P(P1)} before and after, and write the review step into them`, who: P1.owner, when: `Days 10-${25 + o}`, day: 25 + o, src: ["mck25", "mck25n"] });
+    ph1.push({ t: `Train managers and the ${champs} champions first (staff who learn it first and coach their team)`, who: "Sponsor and champions", when: `Days 15-${30 + o}`, day: 30 + o, link: "training", src: ["bcgwork", "bis"] });
+    if (messy && P1) ph1.push({ t: `List the data ${P(P1)} needs and where it lives. Start one cleanup task in the system a later project needs`, who: `${ITL} and ${P1.owner}`, when: `Days 15-${30 + o}`, day: 30 + o, src: ["gdata", "rsm"] });
+    const ph2 = [];
+    if (P1) {
+      ph2.push({ t: `Train the ${P1.teamShort} pilot group (about ${S.pilotN} people, or the whole team if smaller) for at least 5 hours on their own work`, who: "Champions", when: `Days ${31 + o}-${35 + o}`, day: 35 + o, link: "training", src: ["bcgwork"] });
+      ph2.push({ t: `Go live with ${P(P1)} for the pilot group`, who: P1.owner, when: `About day ${P1.startDay}`, day: P1.startDay, zm: "A pilot of 10 to 15 people or one team" });
+      ph2.push({ t: "Check the share of the group using it, minutes per task, and errors caught in review", who: P1.owner, when: "Every week", every: true, day: P1.startDay + 7, src: ["mck25"] });
+      if (two && P2) ph2.push({ t: `Start the ${P(P2)} pilot, after its group's training`, who: P2.owner, when: `About day ${P2.startDay}`, day: P2.startDay, link: "training" });
+    }
+    const ph3 = [];
+    if (P1) {
+      ph3.push({ t: "Refresher session for the pilot group", who: "Champions", when: `About day ${75 + o}`, day: 75 + o, link: "training" });
+      ph3.push({ t: `Gate on ${P(P1)}: scale, fix or stop`, who: `Sponsor and ${P1.owner}`, when: `Day ${P1.gateDay}`, day: P1.gateDay, gate: true, src: ["sp", "g48"] });
+      if (P2 && !two) ph3.push({ t: `Take a 4-week baseline for ${P(P2)}: ${lc(strip(P2.measure))}`, who: P2.owner, when: `Days ${61 + o}-${90 + o}`, day: 90 + o, src: ["mck25"] });
+    }
+    const ph4 = [];
+    if (P1) ph4.push({ t: `If it passes: roll ${P(P1)} out to the whole ${P1.teamShort}, review step kept`, who: P1.owner, when: "Month 4", day: 100 + o });
+    if (P2) ph4.push(two ? { t: `Gate on ${P(P2)}: scale, fix or stop`, who: `Sponsor and ${P2.owner}`, when: `About day ${P2.gateDay}`, day: P2.gateDay, gate: true }
+      : { t: `Train the group, then start the ${P(P2)} pilot`, who: P2.owner, when: "Month 4", day: P2.startDay, link: "training" });
+    if (P3) ph4.push({ t: P3.u.eff === "build" ? `Start ${P(P3)} as a build, with its baseline taken first` : `Take a baseline, then start the ${P(P3)} pilot`, who: P3.owner, when: two ? "Months 4-6" : "Months 5-6", day: P3.startDay, src: ["mck25"] });
+    if (messy && onDeck) ph4.push({ t: `Start the data cleanup that year-two work needs, beginning with the ${onDeck.teamShort}'s systems`, who: ITL, when: "Months 4-6", day: 150, src: ["gdata"] });
+    ph4.push({ t: "All staff finish basic AI training", who: "Champions", when: "By month 6", day: 180, link: "training", src: ["bcgwork"] });
+    ph4.push({ t: "Review the AI use policy with what the pilots taught you", who: "Sponsor", when: "Month 6", day: 180, link: "policy" });
+    const ph5 = [];
+    if (P3) ph5.push({ t: `Gate on ${P(P3)}: scale, fix or stop`, who: `Sponsor and ${P3.owner}`, when: P3.gate, day: P3.gateDay, gate: true });
+    if (projects.some((x) => x.review.tier === "medium")) ph5.push({ t: `Cut checking to a ${S.sample}% sample only where review errors stayed under ${S.errTh}% for ${S.errWeeks} weeks in a row`, who: "Each project owner", when: "From month 7", day: 200, zm: "Error threshold" });
+    ph5.push({ t: `Year review: measures against baseline, where saved hours went, budget against plan, and the year-two list${onDeck ? `, starting with ${onDeck.sn}` : ""}`, who: "Sponsor and project owners", when: "Month 12", day: 365, src: ["mck25"] });
+    for (const ph of [ph1, ph2, ph3, ph4, ph5]) ph.sort((x, y) => x.day - y.day);
+    const phases = [
+      { label: `${L[0]}: Set the ground`, tasks: ph1, check: `Day ${30 + o}: owner named${needPolicy ? ", policy signed" : ""}${needTool ? ", tool approved" : ""}, baselines in hand.` },
+      { label: `${L[1]}: Pilot Project 1`, tasks: ph2, check: `Day ${60 + o}: pilot readout against the baseline.` },
+      { label: `${L[2]}: Decide`, tasks: ph3, check: `Day ${90 + o}: gate decision written down.` },
+      { label: `${L[3]}: Scale the first win, start the next`, tasks: ph4, check: "Month 6: second gate and policy review." },
+      { label: `${L[4]}: Make it normal`, tasks: ph5, check: "Month 12: year review." }
+    ];
+
+    // Day-15 step for the diagnostic line
+    const day15 = needTool ? "approve one AI tool for company data" : needPolicy ? "sign the AI use policy" : P1 ? `map the steps of ${P1.sn} and write in the review step` : "name the owners";
+
+    // Gate rule (R7) with the reader's pilot size
+    const need = Math.ceil(S.pilotN * S.useTh / 100);
+    const gates = {
+      scale: `Scale if all three hold: at least ${S.useTh}% of the pilot group use it every week (${need} of ${S.pilotN} people); time per task or cycle time beats the baseline; review errors are flat or falling.`,
+      fix: `Fix if fewer than ${S.useTh}% use it weekly, or errors are rising: one more 30-day cycle with role training, a narrower task or better source documents.`,
+      stop: `Stop if, after the fix cycle, the measure still doesn't beat the baseline. Stopping is a valid result. Move the budget to the next project${onDeck ? ` (${onDeck.sn})` : ""}.`
+    };
+    const budget = {
+      head: "Most of year-one cost is people and process: training time, review time and redesigning the work. Then tools, then any build.",
+      band: { lt25: "Under $25K: seats for the pilot groups and training time. No build.",
+        "25-100": "$25K to $100K: seats, set-up and connections for 2 to 3 bought or set-up projects. No custom build in year one.",
+        "100-250": "$100K to $250K: as above, plus one build or data project from month 4.",
+        "250plus": "$250K or more: as above, plus up to two builds, or one build and a data project." }[a.budget]
+    };
+
+    // Diagnostic offer, tied to the plan (research section 7)
+    const settle = [];
+    const hi = projects.find((x) => x.u.risk === "high");
+    if (a.owner === "no") settle.push("who owns this plan, and the two decisions they make in week one");
+    if (a.current === "personal" && a.policy === "none") settle.push("the one-page policy and the tool choice you need by day 15");
+    if (a.risk === "high") settle.push(`the review and sign-off design for ${hi ? hi.sn : "work that decides on people"} before anything goes live`);
+    if ((a.budget === "100-250" || a.budget === "250plus") && P3) settle.push(`buy or build for ${P3.sn}, tested against your data`);
+    if (P1) settle.push(`the baseline number and the review step for ${P1.sn}`);
+    if (P2) settle.push(`whether your data supports ${P2.sn}`);
+    const offer = {
+      lead: P1 ? `Your plan starts with ${P1.sn} in your ${P1.teamShort}, owned by ${P1.ownerIn}. By day ${!needTool && needPolicy ? 14 : 15} you ${day15}.` : "Your plan starts with groundwork: an owner, a policy and an approved tool.",
+      settle: settle.slice(0, 3),
+      leave: P1 ? `You leave with a go or no-go on ${P1.sn} and your first two weeks of tasks.` : "You leave with the first project worth piloting and your first two weeks of tasks."
+    };
+    return { a, S, ind, H, two, o, reg, champs, sponsor: (names.sponsor || "").trim() || sponsor, sponsorRole: sponsor, header, projects, onDeck, nextUp,
+      flags, phases, gates, budget, offer, day15, cands };
+  }
+  function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+  function strip(s) { return s.replace(/\.$/, ""); }
+  function lc(s) { return /^.[A-Z]/.test(s) ? s : s.charAt(0).toLowerCase() + s.slice(1); }
+  function plural(w) { return /[^aeiou]y$/.test(w) ? w.slice(0, -1) + "ies" : /(s|x|ch|sh)$/.test(w) ? w + "es" : w + "s"; }
+
+  // Plain-text plan for "Copy plan".
+  function text(plan, dateOf) {
+    const d = (t) => dateOf ? ` (${t.every ? "from " : ""}${dateOf(t.day)})` : "";
+    const L = [];
+    L.push("COMPANY AI PLAN (built with the Zavient AI roadmap builder)");
+    L.push(plan.header);
+    L.push(`Sponsor: ${plan.sponsor}. Pilots in the first 90 days: ${plan.two ? 2 : 1}. Champions (staff who learn it first and coach their team): ${plan.champs}.`);
+    if (plan.flags.length) { L.push(""); L.push("Watch out:"); plan.flags.forEach((f) => L.push(`- ${f.t}`)); }
+    L.push(""); L.push("Projects:");
+    plan.projects.forEach((x) => {
+      L.push(`${x.n}. ${x.u.n} (${x.teamName}). Owner: ${x.owner}. ${x.effort[0]}. ${x.start}. Gate: ${lc(x.gate)}.`);
+      L.push(`   AI does: ${x.u.does}`);
+      L.push(`   People keep: ${x.u.keep}`);
+      L.push(`   Review step: ${x.review.text}`);
+      L.push(`   Measure: ${x.measure}`);
+    });
+    if (plan.onDeck) L.push(`On deck for year two: ${plan.onDeck.u.n}.`);
+    plan.phases.forEach((p) => {
+      L.push(""); L.push(p.label.toUpperCase());
+      p.tasks.forEach((t) => L.push(`- ${t.when}${d(t)}: ${t.t}. Owner: ${t.who}.`));
+      L.push(`Checkpoint: ${p.check}`);
+    });
+    L.push(""); L.push("Gate rule:"); L.push(`- ${plan.gates.scale}`); L.push(`- ${plan.gates.fix}`); L.push(`- ${plan.gates.stop}`);
+    L.push(""); L.push(`Budget: ${plan.budget.head} ${plan.budget.band}`);
+    L.push("People send, approve, sign and decide. AI drafts, sorts, finds and suggests.");
+    L.push(""); L.push("Thresholds, pilot sizes and timings are Zavient method judgments built on the sources at zavient.com/tools/ai-roadmap-builder.html");
+    L.push("Free 30-minute diagnostic on this plan: https://calendar.app.google/2xXiMLiamRFtfFKH9 or hello@zavient.com");
+    return L.join("\n");
+  }
+
+  return { SRC, SRC_ORDER, Q, label, X, EFFORT, DEFAULTS, DATA_F, BUDGET_F, finderScore, candidates, pick, build, text, teamsFor, teamName, industry, headcount, TIE_BAND };
+})();
+if (typeof module !== "undefined") module.exports = RM;
+</script>
+<script>
+/* UI */
+const BOOK = "https://calendar.app.google/2xXiMLiamRFtfFKH9";
+const LINK = {
+  policy: ["/tools/ai-policy-generator.html", "Draft it with the AI policy generator"],
+  training: ["/tools/ai-training-plan.html", "Plan it with the AI training plan"],
+  roi: ["/tools/ai-roi-calculator.html", "Turn the baseline into a payback check"],
+  readiness: ["/ai-readiness-assessment.html", "Not sure about your data? Take the readiness check"],
+  cost: "/tools/ai-project-cost-estimator.html",
+  finder: "/tools/embed/ai-use-case-finder.html"
+};
+const app = document.getElementById("app");
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const fns = (keys) => { const links = (keys || []).map((k) => { const i = RM.SRC_ORDER.indexOf(k) + 1; return i ? `<a href="#fn-${i}" data-fn="${i}" aria-label="Source ${i}">${i}</a>` : ""; }).filter(Boolean); return links.length ? `<sup class="fn">${links.join("<span class=\"fn-sep\">,</span>")}</sup>` : ""; };
+const ZM = (why) => ` <span class="tag" title="${esc(why || "Zavient judgment built on the cited sources")}">Zavient method</span>`;
+
+function nextMonday() { const d = new Date(); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() + ((8 - d.getDay()) % 7 || 7)); return d; }
+const iso = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+function dayDate(n) {
+  const p = (st.S.start || "").split("-").map(Number); if (p.length !== 3 || p.some(isNaN)) return null;
+  return new Date(p[0], p[1] - 1, p[2] + n - 1);
+}
+// Dates carry the year whenever it differs from the start date's year or this year, so "Mon, Nov 29" in month 12
+// can't be read as this November.
+function dateOf(n) {
+  const d = dayDate(n); if (!d) return "";
+  const y = d.getFullYear(), yr = y !== dayDate(1).getFullYear() || y !== new Date().getFullYear();
+  return d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", ...(yr ? { year: "numeric" } : {}) });
+}
+// Deadlines fall on business days: a task due on a Saturday or Sunday moves to the next Monday. A label that no
+// longer matches its date says "about"; a range keeps its exact end day.
+function onBusinessDay(t) {
+  const d = dayDate(t.day); if (!d) return t;
+  const shift = d.getDay() === 6 ? 2 : d.getDay() === 0 ? 1 : 0; if (!shift) return t;
+  const day = t.day + shift; let when = t.when, m;
+  if ((m = when.match(/^Days (\d+)-\d+$/))) when = `Days ${m[1]}-${day}`;
+  else if ((m = when.match(/^(By )?[Dd]ay (\d+)$/))) when = `${m[1] ? "By about" : "About"} day ${m[2]}`;
+  else if (when === "Week 1") when = `By about day ${t.day}`;
+  return { ...t, day, when };
+}
+const isWeekend = (n) => { const d = dayDate(n); return !!d && (d.getDay() === 0 || d.getDay() === 6); };
+// Single-day deadlines a day apart (policy by day 14, approved tool by day 15) can both land on the same Monday after
+// the weekend move. Keep each later one at least one business day after the one before it, labelled "about".
+function keepDistinct(pairs) {
+  const single = /^(By )?[Dd]ay \d+$/;
+  const ds = pairs.filter(([o]) => single.test(o.when)).sort((x, y) => x[0].day - y[0].day);
+  for (let i = 1; i < ds.length; i++) {
+    const prev = ds[i - 1][1], cur = ds[i][1], o = ds[i][0];
+    if (o.day === ds[i - 1][0].day || cur.day > prev.day) continue;
+    let day = prev.day + 1; while (isWeekend(day)) day++;
+    const m = o.when.match(/^(By )?[Dd]ay (\d+)$/);
+    ds[i][1] = { ...cur, day, when: `${m[1] ? "By about" : "About"} day ${m[2]}` };
+  }
+  return pairs.map((x) => x[1]);
+}
+const datedTasks = (tasks) => keepDistinct(tasks.map((t) => [t, onBusinessDay(t)])).map((t, i) => [t, i]).sort((x, y) => x[0].day - y[0].day || x[1] - y[1]).map((x) => x[0]);
+const datedPlan = (P) => ({ ...P, phases: P.phases.map((ph) => ({ ...ph, tasks: datedTasks(ph.tasks) })) });
+// Keep hyphenated phrases ("follow-up", "4-6") whole in the headline.
+const noBreak = (s) => esc(s).replace(/\S+-\S+/g, (w) => `<span class="nw">${w}</span>`);
+
+const blankA = () => ({ industry: null, size: null, headcount: null, teams: [], current: null, policy: null, data: null, risk: null, budget: null, owner: null, stage: null });
+let st = { step: "intro", i: 0, a: blankA(), S: { start: iso(nextMonday()), useTh: 60, errTh: 2, pilotN: 12, names: {} } };
+
+const STEPS = [
+  { key: "industry", text: "What industry is your firm in?", help: "Pick the closest. Your projects come from the evidence for that industry.",
+    opts: () => [...FINDER.industries.map((i) => [i.id, i.name]), ["other", "Other", "You get the general list for each team"]] },
+  { key: "size", text: "How many people work at your firm?", help: "This sets who sponsors the plan, how many pilots run at once, and how many champions you need.", opts: () => RM.Q.size.map((s) => [s[0], s[1]]), exact: true },
+  { key: "teams", text: "Which teams should go first?", help: "Pick 1 to 3. Each team's head will own its project.", multi: 3,
+    opts: () => RM.teamsFor(st.a.industry).map((t) => [t.id, t.id === "core" ? `Your core work: ${(RM.industry(st.a.industry) || {}).core}` : t.name]) },
+  { key: "current", text: "How does your company use AI today?", opts: () => RM.Q.current },
+  { key: "policy", text: "Do you have a written AI use policy?", help: "One page that says which tools are approved and what data may go into them.", opts: () => RM.Q.policy },
+  { key: "data", text: "Where does the data for these teams live?", help: `<a href="${LINK.readiness[0]}" target="_top">${LINK.readiness[1]}</a>.`, opts: () => RM.Q.data },
+  { key: "risk", text: "What's the highest-stakes work in scope?", help: "This sets how much your people check before anything leaves the building.", opts: () => RM.Q.risk },
+  { key: "budget", text: "What's your year-one cash budget for AI work?", help: "Tools, set-up and outside help. Not staff time.", opts: () => RM.Q.budget },
+  { key: "owner", text: "Is one named executive accountable for this?", help: "Usually the COO or the owner-CEO at a firm your size.", opts: () => RM.Q.owner },
+  { key: "stage", text: "Did you take the Zavient AI readiness check?", help: `Optional. If you did, pick your result. <a href="${LINK.readiness[0]}" target="_top">Take the readiness check</a>.`, opts: () => RM.Q.stage }
+];
+
+// A shared link carries the answers (never the names) after #
+function toHash() {
+  const a = st.a, p = new URLSearchParams();
+  [["i", a.industry], ["s", a.size], ["h", a.headcount || ""], ["t", a.teams.join(".")], ["u", a.current], ["p", a.policy], ["d", a.data], ["k", a.risk], ["b", a.budget], ["o", a.owner], ["r", a.stage || ""]].forEach(([k, v]) => p.set(k, v));
+  return "#" + p.toString();
+}
+function fromHash() {
+  const h = new URLSearchParams(location.hash.slice(1));
+  if (!h.get("i")) return false;
+  const ok = (k, v) => RM.Q[k].some((x) => x[0] === v);
+  const a = { industry: h.get("i"), size: h.get("s"), headcount: parseInt(h.get("h"), 10) || null, teams: (h.get("t") || "").split(".").filter(Boolean),
+    current: h.get("u"), policy: h.get("p"), data: h.get("d"), risk: h.get("k"), budget: h.get("b"), owner: h.get("o"), stage: h.get("r") || "" };
+  if (!(a.industry === "other" || RM.industry(a.industry))) return false;
+  const teamIds = RM.teamsFor(a.industry).map((t) => t.id);
+  if (!a.teams.length || a.teams.length > 3 || a.teams.some((t) => !teamIds.includes(t))) return false;
+  if (!["size", "current", "policy", "data", "risk", "budget", "owner", "stage"].every((k) => ok(k, a[k === "current" ? "current" : k]))) return false;
+  if (a.headcount && (a.headcount < 1 || a.headcount > 100000)) a.headcount = null;
+  st.a = a; st.step = "result"; return true;
+}
+
+function render() {
+  document.body.classList.toggle("in-quiz", st.step === "q");
+  if (st.step === "intro") return renderIntro();
+  if (st.step === "q") return renderQ();
+  return renderResult();
+}
+
+function renderIntro() {
+  app.innerHTML = `<section class="card">
+    <h2>What you get</h2>
+    <ul class="pts">
+      <li>Days 1 to 30: who owns it, a policy by day 14, an approved tool by day 15, a baseline, and managers trained first.</li>
+      <li>Up to 3 projects for year one, picked from the evidence for your industry and teams, each with a start window and an owner.</li>
+      <li>The review step your people keep on each project. People decide; AI drafts.</li>
+      <li>Pass or fail checkpoints: scale, fix or stop, with the numbers.</li>
+    </ul>
+    <div class="row"><button class="btn btn-primary" id="go">Build my plan</button></div>
+    <p class="small">Nothing you enter leaves your browser. No email needed.</p>
+  </section>`;
+  $("go").onclick = () => { st.step = "q"; st.i = 0; render(); };
+}
+
+function renderQ() {
+  const s = STEPS[st.i], a = st.a, opts = s.opts();
+  const sel = (v) => s.multi ? a.teams.includes(v) : a[s.key] === v;
+  app.innerHTML = `<section class="card">
+    <div class="progress" aria-hidden="true"><div style="width:${Math.round(st.i / STEPS.length * 100)}%"></div></div>
+    <div class="qnum">Question ${st.i + 1} of ${STEPS.length}${s.key === "stage" ? " (optional)" : ""}</div>
+    <h2 class="qtext" id="qt" tabindex="-1">${s.text}</h2>
+    ${s.help ? `<p class="qhelp">${s.help}</p>` : ""}
+    <div class="opts" role="${s.multi ? "group" : "radiogroup"}" aria-labelledby="qt">
+      ${opts.map((o) => `<button class="opt${sel(o[0]) ? " sel" : ""}" data-v="${esc(o[0])}" ${s.multi ? `aria-pressed="${sel(o[0])}"` : `role="radio" aria-checked="${sel(o[0])}"`}>${esc(o[1])}${o[2] ? `<small>${esc(o[2])}</small>` : ""}</button>`).join("")}
+    </div>
+    ${s.exact ? `<label class="field">Exact headcount (optional) <input type="number" id="hc" min="1" max="100000" inputmode="numeric" value="${a.headcount || ""}" placeholder="e.g. 150"></label>` : ""}
+    ${s.multi ? `<p class="small" id="mcount">${a.teams.length} of up to ${s.multi} picked</p>` : ""}
+    <div class="row">
+      ${st.i > 0 ? `<button class="btn btn-ghost" id="back">Back</button>` : ""}
+      ${s.multi || s.exact ? `<button class="btn btn-primary" id="next" ${s.multi ? (a.teams.length ? "" : "disabled") : (a.size ? "" : "disabled")}>Next</button>` : ""}
+    </div>
+  </section>`;
+  const next = () => { if (st.i < STEPS.length - 1) { st.i++; render(); } else { st.step = "result"; render(); } };
+  app.querySelectorAll(".opt").forEach((b) => b.onclick = () => {
+    const v = b.dataset.v;
+    if (s.multi) {
+      const t = a.teams; const k = t.indexOf(v);
+      if (k >= 0) t.splice(k, 1); else if (t.length < s.multi) t.push(v); else { t.shift(); t.push(v); }
+      render(); return;
+    }
+    if (s.key === "industry" && a.industry !== v) a.teams = [];
+    a[s.key] = v;
+    if (s.exact) { render(); return; }
+    next();
+  });
+  if ($("hc")) $("hc").oninput = (e) => { const n = parseInt(e.target.value, 10); a.headcount = n > 0 && n <= 100000 ? n : null; };
+  if ($("back")) $("back").onclick = () => { st.i--; render(); };
+  if ($("next")) $("next").onclick = next;
+  $("qt").focus({ preventScroll: true });
+}
+
+function taskLink(t) {
+  const out = [];
+  if (t.link && LINK[t.link]) out.push(`<a href="${LINK[t.link][0]}" target="_top">${LINK[t.link][1]}</a>`);
+  if (/^List the data/.test(t.t)) out.push(`<a href="${LINK.readiness[0]}" target="_top">${LINK.readiness[1]}</a>`);
+  return out.length ? `<span class="links">${out.join("")}</span>` : "";
+}
+
+function renderResult() {
+  const P = RM.build(st.a, st.S);
+  const a = st.a, pr = P.projects;
+  const glance = [
+    [P.phases[0].label.split(":")[0], `${a.owner === "no" ? "Name an owner. " : ""}${a.policy !== "written" ? "Policy by day 14. " : ""}${a.current === "none" || a.current === "personal" ? "Approved tool by day 15. " : ""}Baseline. Managers and ${P.champs} champions trained first.`],
+    [P.phases[1].label.split(":")[0], pr[0] ? `Pilot ${pr[0].sn} with about ${st.S.pilotN} people.${P.two && pr[1] ? ` ${cap(pr[1].sn)} pilot from about day ${pr[1].startDay}.` : ""}` : "Pick a first project."],
+    [P.phases[2].label.split(":")[0], pr[0] ? `Gate on ${pr[0].sn}: scale, fix or stop.` : "Gate."],
+    [P.phases[3].label.split(":")[0], `${pr[0] ? `Roll out ${pr[0].sn} if it passed. ` : ""}${pr[1] && !P.two ? `Pilot ${pr[1].sn}. ` : ""}${pr[2] ? `Start ${pr[2].sn}.` : ""}`],
+    [P.phases[4].label.split(":")[0], `${pr[2] ? `Gate on ${pr[2].sn}. ` : ""}Year review and the year-two list.`]
+  ];
+  const nm = st.S.names;
+  app.innerHTML = `
+  <section class="card bluf" id="result-top" tabindex="-1">
+    <div class="eyebrow">Your plan</div>
+    <p class="lead">${noBreak(P.header)}</p>
+    ${a.owner === "no" ? `<p><strong>First: name one executive owner this week.</strong></p>` : ""}
+    <div class="facts">
+      <div class="fact"><div class="k">Sponsor</div><div class="v">${esc(P.sponsor)}</div></div>
+      <div class="fact"><div class="k">Pilots in the first 90 days</div><div class="v">${P.two ? "Two" : "One"}${ZM("Two only at 100+ people, $25K+ and a named owner")}</div></div>
+      <div class="fact"><div class="k">AI champions</div><div class="v">${P.champs}, about 1 per ${P.reg ? 25 : 40} people${P.reg ? " (regulated data)" : ""}. Staff who learn it first and coach their team.</div></div>
+      <div class="fact"><div class="k">Year-one projects</div><div class="v">${pr.length} of at most 3${fns(["bcg24", "bcg26"])}</div></div>
+    </div>
+    <ul class="glance">${glance.map((g) => `<li><span class="when">${esc(g[0])}</span><span>${esc(g[1])}</span></li>`).join("")}</ul>
+    <p class="print-only small">Built ${new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })} with the Zavient AI roadmap builder, zavient.com/tools/ai-roadmap-builder.html</p>
+  </section>
+
+  <div class="row no-print">
+    <button class="btn btn-primary" id="copy">Copy plan</button>
+    <button class="btn btn-ghost" id="print">Print</button>
+    <button class="btn btn-ghost" id="link">Copy link</button>
+  </div>
+  <p class="small no-print" id="copied" aria-live="polite"></p>
+
+  ${P.flags.length ? `<section class="card"><h2>Fix these first</h2>${P.flags.map((f) => `<p class="flag">${esc(f.t)}${f.src ? fns(f.src) : ""}${f.zm ? ZM() : ""}</p>`).join("")}</section>` : ""}
+
+  <section class="card">
+    <h2>Your ${pr.length === 1 ? "project" : `${pr.length} projects`} for year one</h2>
+    <p class="muted">Picked from the evidence for your industry and teams, then fitted to your data and budget. People keep judgment and sign-off on every one.</p>
+    ${pr.map((x) => projCard(x, nm)).join("")}
+    ${P.onDeck ? `<p><strong>On deck for year two:</strong> ${esc(P.onDeck.u.n)} (${esc(P.onDeck.teamName)}, score ${P.onDeck.score}).${P.nextUp ? ` Then ${esc(P.nextUp.u.n.toLowerCase())} (${P.nextUp.score}).` : ""}</p>` : ""}
+    <label class="field no-print">Sponsor's name (optional) <input type="text" data-name="sponsor" value="${esc(nm.sponsor || "")}" placeholder="${esc(P.sponsorRole)}"></label>
+  </section>
+
+  <section class="card">
+    <h2>Your dated plan</h2>
+    <label class="field no-print">Start date <input type="date" id="start" value="${esc(st.S.start)}"></label>
+    ${datedPlan(P).phases.map((ph) => `<div class="phase"><h3>${esc(ph.label)}</h3>
+      <ul class="tasks">${ph.tasks.map((t) => `<li><span class="when">${esc(t.when)}<span>${t.every ? "from " : ""}${esc(dateOf(t.day))}</span></span>
+        <span><span class="${t.gate ? "gate" : ""}">${esc(t.t)}.</span>${t.src ? fns(t.src) : ""}${t.zm ? ZM(t.zm) : ""} <span class="who">Owner: ${esc(t.who)}</span>${taskLink(t)}</span></li>`).join("")}</ul>
+      <p class="check">Checkpoint: ${esc(ph.check)}</p></div>`).join("")}
+    <p class="muted">A typical AI use case pays back over 2 to 4 years, in a survey of firms in Europe and the Middle East.${fns(["deloitte"])} Productivity often dips before it rises.${fns(["censusj", "aea"])} So judge year one on use, time per task, errors and cycle time.</p>
+  </section>
+
+  <section class="card">
+    <h2>The gate at each checkpoint: scale, fix or stop</h2>
+    <div class="gates">
+      <div class="gatebox"><b>Scale</b>${esc(P.gates.scale.replace(/^Scale if/, "If"))}</div>
+      <div class="gatebox fix"><b>Fix</b>${esc(P.gates.fix.replace(/^Fix if/, "If"))}</div>
+      <div class="gatebox stop"><b>Stop</b>${esc(P.gates.stop.replace(/^Stop if/, "If"))}</div>
+    </div>
+    <p class="muted">About half of AI projects reach daily use, and firms drop 46% of proofs of concept.${fns(["g48", "sp"])} A clear stop rule saves the budget for the next project.${ZM("Thresholds are Zavient judgment; set your own below")}</p>
+  </section>
+
+  <section class="card">
+    <h2>Budget: where year-one money goes</h2>
+    <p>${esc(P.budget.head)}${fns(["bcg24", "bcg26"])}</p>
+    <p class="flag">${esc(P.budget.band)}${ZM("Matched to the cost estimator's project shapes")}</p>
+    <p>Price each project with the <a href="${LINK.cost}" target="_top">AI project cost estimator</a>. Check payback with the <a href="${LINK.roi[0]}" target="_top">AI ROI calculator</a>.</p>
+  </section>
+
+  <section class="card settings no-print">
+    <h2>Adjust the plan to your firm</h2>
+    <p class="muted">These are Zavient method defaults. Change any of them and the plan updates.</p>
+    <label class="field">Pilot group size <span class="iu"><input type="number" id="s-pilot" min="3" max="60" value="${st.S.pilotN}"> people</span></label>
+    <p class="why">Default 12: one team, or 10 to 15 people, big enough to see a pattern in 4 weeks.</p>
+    <label class="field">Weekly use needed to scale <span class="iu"><input type="number" id="s-use" min="10" max="100" value="${st.S.useTh}"> %</span></label>
+    <p class="why">Default 60%: above the 51% of frontline staff who use gen AI regularly today.${fns(["bcgwork"])}</p>
+    <label class="field">Review error rate before you sample <span class="iu"><input type="number" id="s-err" min="0" max="20" step="0.5" value="${st.S.errTh}"> %</span></label>
+    <p class="why">Default 2% for 4 weeks in a row before checking drops to a 20% sample. Work that decides on people is always checked.${fns(["mck25n", "dellacqua"])}</p>
+  </section>
+
+  <section class="offer">
+    <div class="eyebrow">Free diagnostic</div>
+    <h2>Want the detailed plan behind your result? Book the free 30-minute diagnostic.</h2>
+    <p>${esc(P.offer.lead)}</p>
+    <p>In 30 minutes we settle:</p>
+    <ul class="pts">${P.offer.settle.map((t) => `<li>${esc(cap(t))}.</li>`).join("")}</ul>
+    <p>${esc(P.offer.leave)}</p>
+    <div class="row"><a class="btn btn-primary" href="${BOOK}" target="_blank" rel="noopener">Book the free diagnostic</a></div>
+    <p class="small">Or email <a href="mailto:hello@zavient.com">hello@zavient.com</a> with your first project's name and your start date.</p>
+  </section>
+
+  <div class="row no-print">
+    <button class="btn btn-ghost" id="edit">Change my answers</button>
+    <button class="btn btn-plain" id="restart">Start over</button>
+  </div>`;
+
+  const fresh = () => RM.build(st.a, st.S);
+  $("copy").onclick = () => copyText(RM.text(datedPlan(fresh()), dateOf), "Plan copied. Paste it into an email or doc for your team.");
+  $("print").onclick = () => window.print();
+  const link = location.href.split("#")[0] + toHash();
+  try { history.replaceState(null, "", toHash()); } catch (e) {}
+  $("link").onclick = () => copyText(link, "Link copied. It holds your answers, not the names you typed.");
+  $("edit").onclick = () => { st.step = "q"; st.i = 0; render(); };
+  $("restart").onclick = () => { st = { step: "intro", i: 0, a: blankA(), S: st.S }; st.S.names = {}; try { history.replaceState(null, "", location.pathname); } catch (e) {} render(); };
+  $("start").onchange = (e) => { st.S.start = e.target.value; rerender(); };
+  const num = (id, k, lo, hi) => { $(id).onchange = (e) => { const v = parseFloat(e.target.value); if (isFinite(v)) st.S[k] = Math.min(hi, Math.max(lo, v)); rerender(); }; };
+  num("s-pilot", "pilotN", 3, 60); num("s-use", "useTh", 10, 100); num("s-err", "errTh", 0, 20);
+  app.querySelectorAll("[data-name]").forEach((inp) => inp.onchange = () => { st.S.names[inp.dataset.name] = inp.value.slice(0, 80); rerender(); });
+}
+function rerender() { const y = window.scrollY; render(); window.scrollTo(0, y); }
+const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+
+function projCard(x, nm) {
+  const fh = `${LINK.finder}#i=${encodeURIComponent(st.a.industry === "other" ? "" : st.a.industry)}&t=${encodeURIComponent(x.team)}&s=${encodeURIComponent(st.a.size)}`;
+  const finderLink = st.a.industry === "other" ? "/tools/ai-use-case-finder.html" : fh;
+  return `<article class="proj${x.n === 1 ? " p1" : ""}">
+    <div class="num">Project ${x.n} &middot; ${esc(x.teamName)}</div>
+    <h3>${esc(x.u.n)}</h3>
+    <dl class="kv">
+      <dt>Owner</dt><dd><label class="field"><input type="text" data-name="p${x.n}" value="${esc(nm["p" + x.n] || "")}" placeholder="${esc(x.role)}" aria-label="Owner of project ${x.n}"></label></dd>
+      <dt>When</dt><dd>${esc(x.start)}. Gate: ${esc(x.gate.toLowerCase())}.</dd>
+      <dt>How</dt><dd>${esc(x.effort[0])}: ${esc(x.effort[1])}.${x.u.eff === "build" ? "" : fns(["mit", "g48"])}${ZM("Ranges sit between the best mid-market firms (about 90 days) and the 8-month average")}</dd>
+      <dt>AI does</dt><dd>${esc(x.u.does)}</dd>
+      <dt>People keep</dt><dd>${esc(x.u.keep)}</dd>
+      <dt>Review step</dt><dd>${esc(x.review.text)}${fns(["mck25n", "dellacqua"])}${ZM("Review levels set by risk")}</dd>
+      <dt>Measure</dt><dd>${esc(x.measure)} Plus weekly use, minutes per task and errors caught in review.${fns(["mck25"])}</dd>
+      <dt>Why this one</dt><dd>Score ${x.score}: the use case finder's ${x.base}${x.df !== 1 ? ` × ${x.df} for your data` : ""}${x.bf !== 1 ? ` × ${x.bf} for your budget` : ""}. ${x.n === 1 ? "The best bought or set-up tool with low or medium risk." : x.n === 2 ? "The best next pick from a different team, so early wins spread across owners." : "The best remaining pick, started only after the first gate."}${ZM("Score = finder score × data fit × budget fit")}</dd>
+    </dl>
+    <div class="links no-print">
+      <a href="${finderLink}" target="_top">See the evidence in the use case finder</a>
+      <a href="${LINK.cost}" target="_top">What would this cost?</a>
+      <a href="${LINK.roi[0]}" target="_top">Will it pay back?</a>
+    </div>
+  </article>`;
+}
+
+function copyText(t, msg) {
+  const out = $("copied"); const ok = () => { out.textContent = msg; };
+  const fallback = () => { const ta = document.createElement("textarea"); ta.value = t; document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); ok(); } catch (e) { out.textContent = "Copy didn't work here. Select the text and copy it by hand."; } ta.remove(); };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(ok, fallback); else fallback();
+}
+
+function renderSources() {
+  $("fn-list").innerHTML = RM.SRC_ORDER.map((id, k) => {
+    const [t, u] = RM.SRC[id];
+    const host = u.replace(/^https?:\/\//, "").split("/")[0].replace(/^www\./, "");
+    return `<li id="fn-${k + 1}">${esc(t)} <a href="${esc(u)}" target="_blank" rel="noopener">${esc(host)}</a></li>`;
+  }).join("");
+  const items = [
+    `Projects come from the <a href="/tools/ai-use-case-finder.html" target="_top">AI use case finder</a>: every use it lists for your industry and teams, with its score. Roadmap score = finder score × data fit × budget fit.${ZM()}`,
+    `Data fit: messy data counts set-up tools 0.85 and builds 0.5; data in email, paper and spreadsheets counts set-up tools 0.6 and leaves builds out. Most AI projects without AI-ready data are expected to be dropped.${fns(["gdata", "rsm"])}${ZM()}`,
+    `Budget fit: under $25K, set-up tools count 0.8 and builds are left out. Builds only enter at $100K or more, from month 4.${ZM()}`,
+    `Project 1 is a bought or set-up tool with low or medium risk. Within 5 points, lower risk wins. Bought or partner-built tools reached daily use about twice as often as internal builds (a small, self-reported sample).${fns(["mit", "fortune"])}`,
+    `Few projects: two in the first 90 days, at most three in year one. AI leaders pursue about half as many opportunities and align on three to four priorities; we scale that down for a 40-500 person firm.${fns(["bcg24", "bcg26"])}${ZM()}`,
+    `Two pilots in the first 90 days only at 100 or more people, $25K or more and a named owner. Otherwise one, and Project 2 moves to month 4.${ZM()}`,
+    `Policy by day 14 and an approved tool by day 15: only 40% of employees say their workplace has AI guidance, and workers at over 90% of firms use personal AI tools.${fns(["kpmg", "mit"])}`,
+    `Train before go-live: at least 5 hours plus coaching sharply raises regular use. Champions follow the <a href="${LINK.training[0]}" target="_top">training plan</a>: one per 40 people, or one per 25 with regulated data.${fns(["bcgwork", "bis"])}${ZM()}`,
+    `Baseline first, then measure: tracking clear KPIs and redesigning the work had the biggest effect on profit from gen AI.${fns(["mck25", "mck25n"])}`,
+    `Review step by risk: people send, approve, sign and decide; AI drafts, sorts, finds and suggests. Outside what AI does well, people using it were 19 points less likely to be right.${fns(["mck25n", "dellacqua", "bry"])}${ZM()}`,
+    `Gates: scale at 60% weekly use with time or cycle time beating the baseline; fix for one more 30-day cycle; stop if the fix doesn't work.${fns(["bcgwork", "sp", "g48"])}${ZM()}`,
+    `A readiness result of Clear the runway stretches the groundwork to 45 days.${ZM()} Lines marked Zavient method are our judgment around the cited sources. The diagnostic replaces them with your own numbers.`
+  ];
+  $("method-list").innerHTML = items.map((t) => `<li>${t}</li>`).join("");
+}
+document.addEventListener("click", (e) => {
+  const a = e.target.closest && e.target.closest("a[data-fn]");
+  if (!a) return;
+  e.preventDefault();
+  $("footnotes").open = true;
+  const li = $("fn-" + a.dataset.fn); if (li) li.scrollIntoView({ block: "center" });
+});
+
+renderSources();
+fromHash();
+render();
+</script>
+</body>
+</html>
