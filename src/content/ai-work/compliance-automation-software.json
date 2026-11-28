@@ -1,0 +1,747 @@
+{
+ "title": "Compliance automation software: which kind fixes which problem?",
+ "description": "What compliance automation software does for a SOC 2, ISO 27001 or HIPAA audit, what it costs small firms, and what your team still owns.",
+ "type": "compare",
+ "templateVersion": 1,
+ "topic": "compliance automation software",
+ "job": "choose compliance automation software for a first or second SOC 2, ISO 27001 or HIPAA audit at a 40-500 person firm",
+ "industry": "any industry",
+ "index": true,
+ "verdict": [
+  "Buy an audit-readiness platform for SOC 2 evidence, but an independent CPA firm still performs the audit.[^8][^1]",
+  "Treat list prices as floors: no Amazon listing we read prices a firm above 100 employees, by our count.[^10][^12]",
+  "By our count, 13 of SOC 2's 33 common criteria need a named person's judgment.[^2][^1]",
+  "Automation proves controls ran, not that they work:[^1] access control drew exceptions in 51% of 75 audits.[^7]",
+  "Hire the auditor yourself: AICPA says business ties between auditors and tool vendors can threaten independence.[^3][^5]"
+ ],
+ "onPage": [
+  {
+   "to": "table-1",
+   "text": "Each compliance problem mapped to the kind of tool that fixes it"
+  },
+  {
+   "to": "table-2",
+   "text": "Platform list prices for small firms, read 28 Nov 2026"
+  },
+  {
+   "to": "recipes",
+   "text": "Which setup fits a firm under 100, 100 to 500, or a bank"
+  },
+  {
+   "to": "human-role",
+   "text": "Who owns the risks, the controls and the sign-off"
+  },
+  {
+   "to": "own-data",
+   "text": "All 33 SOC 2 common criteria sorted by what a platform can do"
+  },
+  {
+   "to": "what-goes-wrong",
+   "text": "Mistakes teams make when they choose, and the fix for each"
+  }
+ ],
+ "headings": {},
+ "summary": "Audit-readiness platforms gather security evidence, while regulatory-change and anti-money laundering (AML) tools serve banks and insurers.[^8][^23] A platform tests your systems against System and Organization Controls (SOC) 2 or another framework and flags gaps.[^9] An independent certified public accountant (CPA) firm still issues the report.[^1]",
+ "tables": [
+  {
+   "title": "Which kind of tool fixes which problem?",
+   "intro": "Each problem has its own tool: platforms for SOC 2 proof, questionnaire add-ons for security reviews, and specialist tools for banks' rules and alerts.[^8][^23] Product claims in the third column are each vendor's own, read 28 Nov 2026.[^9]",
+   "headers": [
+    "Problem",
+    "Kind of tool",
+    "Products named (vendor claims)",
+    "Who still signs off"
+   ],
+   "rows": [
+    {
+     "name": "A customer or auditor wants SOC 2, ISO 27001 or HIPAA proof",
+     "cells": [
+      "Audit-readiness, or governance, risk and compliance (GRC), platform",
+      "Vanta, Drata, Secureframe, Sprinto, Scrut[^8][^9][^10][^11][^12]",
+      "Control owners run the controls, and an independent CPA firm issues the SOC 2 report[^1]"
+     ]
+    },
+    {
+     "name": "Security questionnaires pile up in every sale",
+     "cells": [
+      "Questionnaire automation, often a platform add-on",
+      "Vanta Questionnaire Automation, Drata AI Questionnaire Assistance[^8][^15]",
+      "A control owner approves each answer before it goes out[^15]"
+     ]
+    },
+    {
+     "name": "New rules keep landing on a bank, credit union or insurer",
+     "cells": [
+      "Regulatory change management",
+      "Compared on our page for bank and insurer compliance teams[^23]",
+      "The compliance officer decides which rules apply[^23]"
+     ]
+    },
+    {
+     "name": "Customer screening and transaction alerts",
+     "cells": [
+      "Know your customer (KYC) and AML monitoring",
+      "Compared on our page for bank and insurer compliance teams[^23]",
+      "The Bank Secrecy Act (BSA) officer decides on alerts and filings[^23]"
+     ]
+    },
+    {
+     "name": "Staff need policies and security training",
+     "cells": [
+      "Policy acceptance and training, often inside the platform",
+      "Scrut lists employee security training in its platform[^12]",
+      "Leadership approves the policies, and managers act on missed training[^2]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "What does each platform list for a small firm?",
+   "intro": "Amazon Web Services (AWS) Marketplace 12-month list prices run from $9,500 to $32,500 with one framework, by our math.[^11][^9] Every band stops at 100 employees or fewer, so a 40-500 person firm should get a written quote at its own headcount.[^10][^12]",
+   "headers": [
+    "Product",
+    "Listed 12-month price, read 28 Nov 2026",
+    "Employee band in the listing",
+    "Worth knowing (vendor's claims)"
+   ],
+   "rows": [
+    {
+     "name": "Vanta",
+     "url": "https://aws.amazon.com/marketplace/pp/prodview-5ophamrbfxt44",
+     "cells": [
+      "Essentials $14,000, Plus $21,500, Professional $23,000[^8]",
+      "Starting cost for 1-20 employees[^8]",
+      "Questionnaire Automation adds $10,000 for 144 questionnaires a year[^8]"
+     ]
+    },
+    {
+     "name": "Drata",
+     "url": "https://aws.amazon.com/marketplace/pp/prodview-3ubrmmqkovucy",
+     "cells": [
+      "$25,000 platform plus $7,500 per framework, so $32,500 with SOC 2 alone by our math[^9]",
+      "Capacity for 100 full-time staff[^9]",
+      "Prices 13 frameworks one by one and claims 200+ integrations[^9]"
+     ]
+    },
+    {
+     "name": "Secureframe",
+     "url": "https://aws.amazon.com/marketplace/pp/prodview-7cpg4l6nufwgq",
+     "cells": [
+      "$7,500 platform plus $7,500 for the first framework[^10]",
+      "Up to 100 employees[^10]",
+      "Discounts for firms under 10 employees and for several frameworks[^10]"
+     ]
+    },
+    {
+     "name": "Sprinto",
+     "url": "https://aws.amazon.com/marketplace/pp/prodview-ixyb464cbjkam",
+     "cells": [
+      "$7,500 platform plus a first framework from $2,000[^11]",
+      "Up to 100 employees[^11]",
+      "Claims 20+ frameworks and 200+ integrations[^11]"
+     ]
+    },
+    {
+     "name": "Scrut",
+     "url": "https://aws.amazon.com/marketplace/pp/prodview-fz4mb7o7dzj4i",
+     "cells": [
+      "$15,000 for the platform[^12]",
+      "Up to 20 employees[^12]",
+      "Audit fees are separate; claims 50+ frameworks[^12]"
+     ]
+    }
+   ]
+  }
+ ],
+ "recipes": [
+  {
+   "name": "1. Under 100 staff, first SOC 2 for one big customer",
+   "when": "Pick one audit-readiness platform and one framework, and choose the CPA firm yourself.[^10][^4] Secureframe and Sprinto both list bands up to 100 employees.[^10][^11]",
+   "flow": [
+    "Head of IT: list the systems that hold customer data, as the audit scope",
+    "Head of IT: connect cloud, identity, HR and code systems to the platform",
+    "COO: give every control the platform lists a named owner",
+    "Security lead: adapt the template policies, and leadership approves them",
+    "Head of IT: fix flagged gaps before the observation window starts",
+    "COO: engage an independent CPA firm after checking its peer review",
+    "Control owners: answer the auditor's extra evidence requests"
+   ],
+   "cost": "Secureframe lists $15,000 a year with one framework and Sprinto $9,500, by our math.[^10][^11] Drata puts a small firm's Type 2 audit fee at $12,000 to $20,000 on top (vendor figure).[^13]"
+  },
+  {
+   "name": "2. 100 to 500 staff, several frameworks",
+   "when": "Price per framework and per employee band, because every published band stops at 100 staff.[^9][^10] GRC staff at firms of 250 to 1,500 people manage 8 frameworks on average, per a survey of 300 IT and security professionals.[^21]",
+   "flow": [
+    "COO: list every framework customers ask for, with the deal that asked",
+    "Head of IT: map shared controls once, so one piece of evidence serves several frameworks",
+    "Head of compliance: get a written quote at your real headcount and framework count",
+    "Control owners: clear the exceptions the platform flags each week",
+    "Head of IT: give the platform read-only, least-privilege access"
+   ],
+   "cost": "Drata lists $25,000 for a 100-person platform plus $7,500 per framework.[^9] Drata's own example puts a 100-employee firm's first year at about $75,000 (vendor figure).[^13]"
+  },
+  {
+   "name": "3. Bank, credit union or insurer",
+   "when": "Start with regulatory change and anti-money laundering work, which our page for bank and insurer compliance teams covers.[^23] Add a SOC 2 platform when customers start asking for the report.[^22]",
+   "flow": [
+    "Chief compliance officer: rank the obligations that cost the most hours",
+    "Chief compliance officer: pick regulatory-change and AML tools for those first",
+    "Head of IT: add an audit-readiness platform when customers ask for SOC 2",
+    "Vendor manager: review the platform like any critical vendor"
+   ],
+   "cost": "The same listings apply if customers also want SOC 2: Sprinto's comes to $9,500 with one framework, by our math.[^11] Regulatory-change and AML tool costs sit on our compliance-teams page.[^23]"
+  }
+ ],
+ "humanRole": [
+  "The head of IT or security owns the risk assessment and control design. AICPA warns that a tool's template control list can miss risks unique to your firm.[^1][^2]",
+  "A named control owner approves every security-questionnaire answer before it goes out under your name.[^15] Generative AI can state false content confidently.[^24]",
+  "Under the Health Insurance Portability and Accountability Act (HIPAA), you must name a security official and run a risk analysis.[^18] One health plan paid $245,000 over a failed risk analysis in April 2026.[^19]",
+  "An independent CPA firm you choose tests the evidence and issues the SOC 2 opinion. It may not merely sign a report a tool generated.[^1][^3]"
+ ],
+ "ownData": {
+  "title": "How much of SOC 2 can a platform actually do?",
+  "intro": "By our count, a platform can pull system evidence for 10 of SOC 2's 33 common criteria, while 13 need a named person's judgment.[^2][^1] The other 10 need a document a person writes or approves, which the platform stores and tracks.[^2] On 28 Nov 2026 we sorted each criterion in AICPA's Trust Services Criteria (TSC) by its main burden.[^2]",
+  "headers": [
+   "Criteria series (count)",
+   "System evidence a platform pulls",
+   "Documents a person writes or approves",
+   "Judgments a named person owns"
+  ],
+  "rows": [
+   [
+    "CC1 Control environment (5)",
+    "None",
+    "CC1.1 ethics, CC1.3 structure, CC1.4 competence, CC1.5 accountability",
+    "CC1.2 board oversight"
+   ],
+   [
+    "CC2 Information and communication (3)",
+    "None",
+    "CC2.1 quality information, CC2.2 internal, CC2.3 external",
+    "None"
+   ],
+   [
+    "CC3 Risk assessment (4)",
+    "None",
+    "None",
+    "CC3.1 objectives, CC3.2 risks, CC3.3 fraud, CC3.4 changes"
+   ],
+   [
+    "CC4 Monitoring (2)",
+    "CC4.1 ongoing control tests",
+    "None",
+    "CC4.2 deficiency calls"
+   ],
+   [
+    "CC5 Control activities (3)",
+    "None",
+    "CC5.3 policies and procedures",
+    "CC5.1 and CC5.2 control design"
+   ],
+   [
+    "CC6 Logical and physical access (8)",
+    "CC6.1, CC6.2, CC6.3 access; CC6.6 boundary; CC6.7 transmission; CC6.8 malware",
+    "CC6.4 physical access, CC6.5 disposal",
+    "None"
+   ],
+   [
+    "CC7 System operations (5)",
+    "CC7.1 vulnerabilities, CC7.2 anomaly monitoring",
+    "None",
+    "CC7.3 event triage, CC7.4 response, CC7.5 recovery"
+   ],
+   [
+    "CC8 Change management (1)",
+    "CC8.1 change approvals",
+    "None",
+    "None"
+   ],
+   [
+    "CC9 Risk mitigation (2)",
+    "None",
+    "None",
+    "CC9.1 disruption risk, CC9.2 vendor risk"
+   ]
+  ],
+  "note": "Limits: this is our sort, not AICPA's; each criterion sits under its main burden, and your auditor decides what evidence is enough.[^2][^1] Cross-check: in one CPA firm's 75 examinations, access control (51%), change management (41%) and logging (37%), all first-column areas, drew the most exceptions.[^7] AICPA's 2027 TSC drafts are open for comment until 15 Jan 2027.[^6]"
+ },
+ "example": {
+  "input": "Illustrative: a 120-person software firm stalls on a deal because the buyer's security team wants a SOC 2 Type 2 report. The head of IT keeps evidence as screenshots in folders, and nobody owns the quarterly access reviews.",
+  "output": "After: a platform pulls access, device and change-ticket evidence and flags missed reviews, while named owners approve the policies and the risk assessment.[^9][^1] Drata's listing covers 100 full-time staff, so its $32,500 for SOC 2 is a floor at 120, by our math.[^9] An independent CPA firm the COO chose tests it all after a 3 to 12 month observation window.[^7]"
+ },
+ "watchOuts": [
+  "Buying the tool as if it were the audit: some vendors promise compliance in weeks or hours, a term SOC 2 never uses.[^4] Fix: plan for 3 to 9 months end to end, as one CPA firm's 75 examinations show.[^7]",
+  "Template controls nobody owns: AICPA says relying only on a tool's predefined controls can miss your risks and lead to a modified opinion.[^1] Fix: give each control a named owner who adapts it.[^2]",
+  "An auditor tied to the tool vendor: AICPA ethics staff say such arrangements can raise significant threats to independence.[^3] Fix: choose the CPA firm yourself, and check its peer review.[^4][^5]",
+  "Trusting AI-drafted answers unchecked: Vanta claims a 95% acceptance rate (vendor claim),[^14] but NIST says generative AI can confidently state false content.[^24] Fix: a control owner approves every questionnaire answer.[^15]",
+  "Broad platform access without a vendor review: a May 2025 Vanta bug exposed integration metadata from under 20% of its integrations to other customers.[^16] Fix: grant read-only, least-privilege access, as the Financial Industry Regulatory Authority (FINRA) advises member firms.[^17]"
+ ],
+ "faq": [
+  {
+   "q": "How much does compliance automation software cost?",
+   "a": "Published AWS list prices run from $9,500 to $32,500 a year with one framework, by our math, for firms of 100 staff or fewer.[^11][^9] The audit is extra: Drata puts a small firm's Type 2 audit fee at $12,000 to $20,000 (vendor figure).[^13]"
+  },
+  {
+   "q": "Does the software do the SOC 2 audit for us?",
+   "a": "No, because only an independent CPA firm can examine your controls and issue a SOC 2 report.[^1][^4] AICPA says using a tool doesn't change the auditor's responsibilities.[^1]"
+  },
+  {
+   "q": "Will our auditor accept evidence the platform collects?",
+   "a": "Yes, once the auditor has tested that the tool's output is reliable, since AICPA treats it as information management must stand behind.[^1] Expect follow-ups: 88% of one CPA firm's 75 examinations needed extra evidence.[^7]"
+  },
+  {
+   "q": "Can AI fill in security questionnaires for us?",
+   "a": "Yes, as a first draft that a control owner checks before it goes out.[^15] Vanta claims a 95% acceptance rate for its suggested answers (vendor claim).[^14]"
+  },
+  {
+   "q": "Is it safe to connect a compliance platform to our systems?",
+   "a": "Yes, with read-only, least-privilege access and the review you would give any critical vendor.[^17] Vanta's own report describes a May 2025 bug that showed some integration metadata to other customers.[^16]"
+  },
+  {
+   "q": "Can we use the auditor the platform recommends?",
+   "a": "Yes, if you confirm the firm is independent of the platform and check its peer review results.[^4][^3] AICPA told peer reviewers in 2026 to flag identical reports and risk assessments across clients.[^5]"
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Buy for SOC 2, ISO 27001 and HIPAA readiness, because evidence connectors and framework mappings are standard work.[^9] In MIT's study of 52 organizations, external partnerships reached deployment about 67% of the time, against about 33% for internal builds.[^20]",
+  "build": "Build only the glue: an export from a system the platform can't reach, or a spreadsheet if you hold one framework and few systems.[^1] AICPA expects management to check the accuracy and completeness of whatever the tool produces.[^1]"
+ },
+ "pickElse": [
+  "Only one customer asked, and a short questionnaire will do: answer it from a reviewed answer library.[^15] Nearly 70% of 255 security, compliance and IT professionals surveyed say their firms prove security that way.[^22]",
+  "You're a bank, credit union or insurer buried in new rules and alerts: start with the regulatory-change and AML tools on our compliance-teams page.[^23]",
+  "You handle health data but no customer has asked for SOC 2: start with the HIPAA risk analysis the rule requires.[^18] Regulators enforce it, as April 2026's settlements show.[^19]"
+ ],
+ "resources": [
+  {
+   "name": "AICPA: SOC suite of services",
+   "url": "https://www.aicpa-cima.com/topic/audit-assurance/audit-and-assurance-greater-than-soc-2",
+   "what": "AICPA's own SOC pages, including guidance for service organizations and the software-tools FAQs."
+  },
+  {
+   "name": "AICPA: 2017 Trust Services Criteria",
+   "url": "https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022",
+   "what": "The criteria your SOC 2 report is tested against, to check any platform's control list."
+  },
+  {
+   "name": "HHS: guidance on HIPAA risk analysis",
+   "url": "https://www.hhs.gov/hipaa/for-professionals/security/guidance/guidance-risk-analysis/index.html",
+   "what": "The regulator's own guide to the risk analysis no tool can do for you."
+  },
+  {
+   "name": "Zavient: AI for bank and insurer compliance teams",
+   "url": "/for/ai-for-compliance-teams.html",
+   "what": "Where a regulated compliance team should start: regulatory change, complaints and AML."
+  },
+  {
+   "name": "Zavient: build vs buy AI",
+   "url": "/compare/build-vs-buy-ai.html",
+   "what": "How to decide, workflow by workflow, whether to buy a tool or build on your own data."
+  }
+ ],
+ "stats": [
+  {
+   "num": "13 of 33",
+   "label": "SOC 2 common criteria need a named person's judgment, by our count.[^2]",
+   "source": "Zavient sort, 28 Nov 2026"
+  },
+  {
+   "num": "71%",
+   "label": "of one CPA firm's 75 SOC 2 examinations had at least one exception.[^7]",
+   "source": "Lazarus Alliance, 75 examinations"
+  },
+  {
+   "num": "88%",
+   "label": "of those 75 examinations needed at least one round of extra evidence.[^7]",
+   "source": "Lazarus Alliance, 75 examinations"
+  },
+  {
+   "num": "100",
+   "label": "employees is the largest band any AWS listing we read prices, by our count.[^10]",
+   "source": "Zavient check of 5 listings, 28 Nov 2026"
+  },
+  {
+   "num": "8",
+   "label": "compliance frameworks on average, per a survey of 300 US IT and security professionals.[^21]",
+   "source": "Drata and Wakefield Research, firms of 250 to 1,500 staff"
+  },
+  {
+   "num": "$245,000",
+   "label": "paid by one health plan over a failed HIPAA risk analysis, April 2026.[^19]",
+   "source": "HHS Office for Civil Rights"
+  }
+ ],
+ "sources": [
+  {
+   "name": "AICPA staff, FAQs: Effect of the use of software tools on SOC 2 examinations (nonauthoritative, as of 30 Jun 2021), PDF via AICPA's asset host",
+   "url": "https://assets.ctfassets.net/rb9cdnjh59cm/3BzDYlkG8XjV7VaI1KF7zU/ced35d74e3097f5a4b7048ce30be7c38/92317096-2107-36202-soc2-faq-f.pdf",
+   "what": "A service organization's use of a SOC 2 tool \"does not change the responsibilities of the service auditor\". Information a tool generates is information provided by the entity (IPE): management evaluates its accuracy and completeness, and the auditor evaluates its reliability (AT-C 205.35). Management is responsible for identifying and assessing risks and for designing, implementing, operating and monitoring controls; it \"may not be able to rely solely on predefined or standardized control listings embedded in a SOC 2 tool\", and overreliance could lead to a modified opinion. A tool's risk-assessment function alone can miss unique technologies. The auditor should be independent of a tool provider that is a responsible party, and it would not be appropriate for an auditor to merely sign a report a tool generated. AICPA republished these FAQs on 31 Mar 2026 behind a free account; we read the AICPA-hosted 2021 PDF. Read 28 Nov 2026."
+  },
+  {
+   "name": "AICPA, 2017 Trust Services Criteria (With Revised Points of Focus, 2022)",
+   "url": "https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022",
+   "what": "The criteria a SOC 2 examination reports against, set by AICPA's Assurance Services Executive Committee. The common criteria for Security run CC1.1 to CC9.2: control environment (CC1), information and communication (CC2), risk assessment (CC3, including CC3.2 risk identification and CC3.3 fraud), monitoring (CC4), control activities (CC5), logical and physical access (CC6), system operations (CC7), change management (CC8) and risk mitigation (CC9, including CC9.2 vendor and business partner risk). Read 28 Nov 2026."
+  },
+  {
+   "name": "AICPA Professional Ethics Division, Ethics Staff Insights: Business arrangements with SOC tool providers (Apr 2026)",
+   "url": "https://www.aicpa-cima.com/resources/article/esi-soc",
+   "what": "AICPA members increasingly enter business arrangements with SOC 2 tool providers, and \"these relationships can raise significant threats to compliance with the Code of Professional Conduct\", including independence and objectivity. Read 28 Nov 2026."
+  },
+  {
+   "name": "Journal of Accountancy, Promises of 'fast and easy' threaten SOC credibility (1 Feb 2026)",
+   "url": "https://www.journalofaccountancy.com/issues/2026/feb/promises-of-fast-and-easy-threaten-soc-credibility",
+   "what": "SOC tool vendors, \"now numbering in the dozens\", may promise compliance (\"a term never used in SOC 2 examinations\") \"in mere weeks — or even just hours\". Most tool providers are not CPA firms and cannot attest that controls are effective. Advice to clients: vet the CPA firm, including its peer review results; ask about scope, sampling and how the firm maintains its independence; and ask whether the offer is unrealistically fast, easy or cheap. Read 28 Nov 2026."
+  },
+  {
+   "name": "Journal of Accountancy, AICPA guides peer reviewers to address SOC 2 risks (14 May 2026)",
+   "url": "https://www.journalofaccountancy.com/issues/2026/may/aicpa-guides-peer-reviewers-to-address-soc-2-risks/",
+   "what": "AICPA's vice president for ethics and firm quality: \"Some firms are leaning too heavily on third-party SOC platforms without applying the professional judgment required by our standards.\" Engagements with identical reports, risk assessments, sample sizes and testing procedures are not performed under the standards and are \"nonconforming\" in peer review. Reviewers look at a firm's use of external SOC platforms, the reasonableness of timelines and whether work is tailored to each client. Read 28 Nov 2026."
+  },
+  {
+   "name": "Journal of Accountancy, AICPA publishes proposed updates to SOC 2 description criteria (17 Nov 2026)",
+   "url": "https://www.journalofaccountancy.com/news/2026/nov/aicpa-publishes-proposed-updates-to-soc-2-description-criteria/",
+   "what": "AICPA published exposure drafts of the 2027 SOC 2 description criteria and SOC 2 Trust Services Criteria; comments on both are accepted through 15 Jan 2027. Read 28 Nov 2026."
+  },
+  {
+   "name": "Lazarus Alliance, 2026 SOC 2 Audit Benchmark Report (Aug 2026)",
+   "url": "https://lazarusalliance.com/2026-soc-2-audit-benchmark-report/",
+   "what": "A CPA firm's own data on N = 75 completed SOC 2 examinations, Jan 2025 to Jun 2026: 55 Type 2 and 20 Type 1; 32 first-time and 43 renewals. Formal fieldwork typically 6-10 weeks; end to end 3 to 9 months; a Type 2 observation period of 3-12 months comes on top. 71% (53 of 75) had at least one exception: 84% of first-time examinations vs 60% of renewals. 88% (66 of 75) needed at least one round of additional evidence (93% of Type 2). Average about 1,450 evidence artifacts (Type 2 about 1,650). Exception areas: access control and user provisioning 51%, change management 41%, logging, monitoring and alerting 37%, risk assessment and vendor management 32%, system description accuracy 28%, security configuration and vulnerability management 24%, incident response and continuity testing 19%. Read 28 Nov 2026."
+  },
+  {
+   "name": "Vanta on AWS Marketplace, 12-month contract prices",
+   "url": "https://aws.amazon.com/marketplace/pp/prodview-5ophamrbfxt44",
+   "what": "Essentials Package $14,000, Plus Package $21,500 and Professional Package $23,000 per 12 months, each a \"Starting cost for 1-20 employees\". Add-ons: Trust Center $6,000; Third Party Risk Management $13,600 for up to 50 vendors; Questionnaire Automation $10,000 for 144 questionnaires a year, or $16,000 for 288. Vendor claims: automated evidence collection across 35+ frameworks including SOC 2, ISO 27001, HIPAA, PCI DSS and GDPR. Read 28 Nov 2026."
+  },
+  {
+   "name": "Drata Security & Compliance Automation Platform on AWS Marketplace, 12-month contract prices",
+   "url": "https://aws.amazon.com/marketplace/pp/prodview-3ubrmmqkovucy",
+   "what": "Drata Platform Fee $25,000 per 12 months, \"with capacity for a 100 FTE org\"; each framework $7,500 (SOC 2, GDPR, ISO 27001, HIPAA, PCI DSS, CCPA, CMMC, Microsoft SSPA, NIST CSF and more, 13 in all). SOC 2 alone with the platform is $32,500 by our math. Vendor claims: integrates with over 200 applications and systems and continuously monitors security controls across 20+ frameworks. Read 28 Nov 2026."
+  },
+  {
+   "name": "Secureframe on AWS Marketplace, 12-month contract prices",
+   "url": "https://aws.amazon.com/marketplace/pp/prodview-7cpg4l6nufwgq",
+   "what": "Platform $7,500 and First Framework $7,500 per 12 months; \"Below pricing is valid for up to 100 employees.\" Discounts for firms under 10 employees and for several frameworks. Read 28 Nov 2026."
+  },
+  {
+   "name": "Sprinto on AWS Marketplace, 12-month contract prices",
+   "url": "https://aws.amazon.com/marketplace/pp/prodview-ixyb464cbjkam",
+   "what": "Sprinto Starter Platform $7,500 per 12 months, up to 100 employees, with built-in evidence-collection automation; First Compliance Framework $2,000 (SOC 2, ISO 27001, HIPAA, CPRA or GDPR, \"starting at $2000 each\"). With one framework, $9,500 by our math. Vendor claims: 20+ frameworks and 200+ integrations. Read 28 Nov 2026."
+  },
+  {
+   "name": "Scrut Automation on AWS Marketplace, 12-month contract price",
+   "url": "https://aws.amazon.com/marketplace/pp/prodview-fz4mb7o7dzj4i",
+   "what": "Compliance Automation $15,000 per 12 months, for organizations of up to 20 employees. Vendor claims: 50+ frameworks, with policy management, employee security training, risk and vendor management. The listing's summary says audit fees are separate. Read 28 Nov 2026."
+  },
+  {
+   "name": "Drata, How Much Does a SOC 2 Audit Cost? (25 Mar 2026)",
+   "url": "https://drata.com/learn/soc-2/cost",
+   "what": "Vendor figures. Audit fee alone: Type 1 $7,500 to $15,000 for small to midsize companies; Type 2 $12,000 to $20,000 for small to midsize companies and $30,000 to $100,000+ for large organizations. Total first year $25,000 for a small startup to over $200,000; a 100-employee mid-size company's first-year Type 2 scenario comes to about $75,000. Read 28 Nov 2026."
+  },
+  {
+   "name": "Vanta, Vanta AI product page",
+   "url": "https://www.vanta.com/products/ai",
+   "what": "Vendor claim: Vanta suggests security questionnaire answers from your knowledge base and previous responses \"with a 95% acceptance rate. Just review and submit!\" Read 28 Nov 2026."
+  },
+  {
+   "name": "Drata, Security Questionnaire Automation (13 Feb 2026)",
+   "url": "https://drata.com/learn/assurance/security-questionnaire-automation",
+   "what": "Human reviewers are prompted to confirm or adjust matches below a set confidence threshold. \"Control owners should still validate low-confidence matches, clarify ambiguous questions, and approve sensitive evidence before sharing.\" Read 28 Nov 2026."
+  },
+  {
+   "name": "Vanta, Root Cause Analysis of Product Bug (Inc-868) (13 Jun 2025)",
+   "url": "https://www.vanta.com/resources/rca-inc-868",
+   "what": "Vanta's own disclosure: a code change deployed on 22 May 2025 caused a subset of data from less than 20% of its third-party integrations to be written into other customers' tenants. Fewer than 4% of Vanta customers were affected. The data could include metadata about employee security training, tool access, devices and vulnerabilities; no passwords, MFA credentials or API keys. Full remediation was completed on 3 Jun 2025. Read 28 Nov 2026."
+  },
+  {
+   "name": "FINRA, 2026 Annual Regulatory Oversight Report: Third-Party Risk Landscape",
+   "url": "https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/third-party-risk",
+   "what": "Effective practices for member firms: assess a vendor's use of GenAI; add contract language that keeps firm or customer sensitive information out of a vendor's open-source GenAI tool; keep an inventory of firm data types vendors access; enforce least-privilege identity access controls; revoke vendor access when the relationship ends. Read 28 Nov 2026."
+  },
+  {
+   "name": "eCFR, 45 CFR 164.308, HIPAA Security Rule administrative safeguards",
+   "url": "https://www.ecfr.gov/current/title-45/section-164.308",
+   "what": "Risk analysis (Required): \"Conduct an accurate and thorough assessment of the potential risks and vulnerabilities\" to electronic protected health information. Assigned security responsibility: \"Identify the security official who is responsible for the development and implementation of the policies and procedures.\" Read 28 Nov 2026."
+  },
+  {
+   "name": "HHS, Office for Civil Rights settles four HIPAA Security Rule ransomware investigations (23 Apr 2026)",
+   "url": "https://www.hhs.gov/press-room/ocr-settles-four-ransomware-investigations.html",
+   "what": "Four settlements paid a total of $1,165,000; 13 completed investigations in OCR's Risk Analysis Initiative. SG Health Plan failed to conduct an accurate and thorough risk analysis and paid $245,000; RWHG paid $320,000. Read 28 Nov 2026."
+  },
+  {
+   "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025)",
+   "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+   "what": "MIT no longer hosts the report (its link now opens the NANDA project page, checked 26 Nov 2026); copy hosted by MLQ.ai. Sample: 52 organizations interviewed, survey of 153 leaders, and 300+ public AI initiatives reviewed. $30-40 billion of enterprise GenAI investment; 95% of organizations are getting zero return; just 5% of integrated AI pilots extract millions in value. Task-specific tools: 60% of organizations evaluated them, 20% piloted, 5% reached production. Over 80% of organizations explored or piloted ChatGPT or Copilot, and nearly 40% report deployment. External partnerships with customized tools reached deployment about 67% of the time vs about 33% for internal builds: 2x as likely, twice the success rate. Only 40% of companies purchased an official LLM subscription; workers at over 90% of companies surveyed use personal AI tools for work. For mission-critical work, 90% of users prefer humans. Enterprises, defined as firms with over $100 million in annual revenue, lead in pilot count but report the lowest pilot-to-scale conversion. Read 26 Nov 2026."
+  },
+  {
+   "name": "Drata, The State of GRC 2025 (Wakefield Research survey)",
+   "url": "https://learn.drata.com/hubfs/The_State_of_GRC_2025.pdf",
+   "what": "Survey of 300 US IT and security professionals at companies with 250 to 1,500 employees, conducted by Wakefield Research for Drata, Nov-Dec 2024. GRC staff manage an average of 8 compliance frameworks, and 60% manage at least five. Manual work takes 14 hours a week on average. Read 28 Nov 2026."
+  },
+  {
+   "name": "Secureframe, 2026 Cybersecurity & Compliance Benchmark report release",
+   "url": "https://secureframe.com/newsroom/2026-cybersecurity-and-compliance-benchmark-report",
+   "what": "Survey of 255 security, compliance and IT professionals, Oct 2025 (vendor survey). Teams spend 8 hours a week on compliance tasks; 68% of organizations have one or fewer full-time cybersecurity staff; 61% say compliance was required to win or renew contracts; 47% say lacking certification delayed sales. Nearly 70% rely on security questionnaires and requests for proposal to prove security posture. Read 28 Nov 2026."
+  },
+  {
+   "name": "Zavient, Where should a bank or insurer compliance team start with AI?",
+   "url": "/for/ai-for-compliance-teams.html",
+   "what": "Our page for bank and insurer compliance teams: regulatory change management, complaints, Bank Secrecy Act and anti-money laundering (BSA/AML) work, model risk and what examiners accept, with the compliance officer and BSA officer as the decision owners. Read 28 Nov 2026."
+  },
+  {
+   "name": "NIST AI 600-1, Generative Artificial Intelligence Profile (Jul 2024)",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+   "what": "Confabulation: \"The production of confidently stated but erroneous or false content\", by which users may be misled. Automation bias, excessive deference to automated systems, can make it worse. Read 28 Nov 2026."
+  }
+ ],
+ "related": [
+  "ai-for-compliance-teams",
+  "ai-governance-consulting",
+  "build-vs-buy-ai",
+  "operational-due-diligence",
+  "professional-services"
+ ],
+ "answers": {
+  "recipes": "Firms under 100 staff fit one platform and one framework, while larger firms should price per framework and banks should start with regulatory change.[^10][^9][^23]",
+  "human-role": "Management owns the risk assessment, control design, policy approval and deficiency calls, and an independent CPA firm issues the opinion.[^1][^4]",
+  "example": "A first SOC 2 Type 2 takes 3 to 9 months end to end, with 6 to 10 weeks of auditor fieldwork, across one CPA firm's 75 examinations.[^7]",
+  "what-goes-wrong": "Teams go wrong by treating the tool as the audit, keeping template controls nobody owns, and letting the vendor steer the choice of auditor.[^1][^5]",
+  "something-else": "Pick neither when one customer wants a short questionnaire, or when your real burden is bank or insurer regulation rather than a security audit.[^22][^23]"
+ },
+ "offer": {
+  "heading": "Not sure which kind of tool your audit needs?",
+  "body": "Often one platform plus named control owners is enough, and sometimes a reviewed questionnaire library is. Bring the customer's security request, and in a free 30-minute diagnostic we sort what a platform can pull from what your team owns. You leave with a pick and a first step."
+ },
+ "keyword": {
+  "phrase": "compliance automation software",
+  "searches": 320,
+  "cpc": 113.49,
+  "difficulty": 17,
+  "supporting": [
+   {
+    "phrase": "compliance automation",
+    "searches": 320,
+    "cpc": 48.16
+   },
+   {
+    "phrase": "compliance automation tools",
+    "searches": 140,
+    "cpc": 81.1
+   }
+  ]
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Read as the COO of a 150-person software firm whose biggest prospect wants a SOC 2 Type 2. The bottom line answers in order: buy a platform, treat prices as floors, people keep the judgment, automation is not the audit, pick the auditor yourself. Recipe 2 names my size band and says to get a written quote, since no listing prices it. FAQ questions come from the People Also Ask box and vendor FAQs (cost, does it do the audit, will the auditor accept it, AI questionnaires, safety, platform-recommended auditor); no forums cited. Demand: 'compliance automation software' 320 a month at $113.49, KD 17; 'compliance automation' 320; 'compliance automation tools' 140. Reframe pass: the problem-to-tool table answers what I would ask first."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Reads on a phone. SOC, CPA, AICPA, TSC, GRC, AWS, AML, KYC, BSA, HIPAA, FINRA and NIST checked: each is spelled out or a named body. ISO 27001 is named as a standard, not spelled out; PCI DSS is not used in body text. Recipe flows name the role on every step. Cut the regulatory-change and AML rows to a pointer at the sibling page so the two pages don't compete. Reframe pass: every row says who signs off."
+  },
+  {
+   "reader": "GM",
+   "notes": "Wants the year-one bill. Table 2 gives five dated AWS list prices with their employee bands, and recipe costs add Drata's vendor audit-fee range and its 100-employee first-year example, both labelled vendor figures. No Zavient price. Reframe pass: the 'floors' line keeps me from budgeting off a 1-20 employee price."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Read as the head of IT and security who will run the platform. Own-data table matches how the work splits in practice: access, change and monitoring evidence pulls; risk, deficiency, incident and vendor calls don't. Moved CC7.5 (recovery) from documents to judgments after rereading the criterion: root cause and restore decisions are the burden, not the test record. Added read-only, least-privilege access as a recipe step, with Vanta's own incident report and FINRA's practice as the reason. Reframe pass: the cross-check (51% access-control exceptions) is the line I'd forward."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Steve decides from the title and bottom line. Five bullets of 20 words or fewer, two sources each. He'd distrust a vendor ranking; the page ranks no vendor and labels every claim. No audit or consulting firm is listed as a provider; Lazarus Alliance appears only as a data source. The vendor-misconduct allegation story was cut (see sourceCheck). The offer says what he leaves with: a pick and a first step. Reframe pass: no price added."
+  }
+ ],
+ "updated": "2026-11-28",
+ "figureCheck": {
+  "date": "2026-11-28",
+  "checked": 31,
+  "notFound": [],
+  "padded": [],
+  "byHand": [
+   {
+    "where": "verdict[3]",
+    "figure": "51%",
+    "url": "https://lazarusalliance.com/2026-soc-2-audit-benchmark-report/",
+    "footnote": 7,
+    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "quote": "| 1 | Access Control & User Provisioning | 38 | 51% |"
+   },
+   {
+    "where": "tables[1].rows[0].cells[0]",
+    "figure": "$14,000, / $21,500, / $23,000",
+    "url": "https://aws.amazon.com/marketplace/pp/prodview-5ophamrbfxt44",
+    "footnote": 8,
+    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "quote": "| Essentials Package | Starting cost for 1-20 employees | $14,000.00 |"
+   },
+   {
+    "where": "tables[1].rows[0].cells[2]",
+    "figure": "$10,000",
+    "url": "https://aws.amazon.com/marketplace/pp/prodview-5ophamrbfxt44",
+    "footnote": 8,
+    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "quote": "| Questionnaire Automation | Questionnaire Automation module with 144 questionnaires a year | $10,000.00 |"
+   },
+   {
+    "where": "tables[1].rows[2].cells[0]",
+    "figure": "$7,500 / $7,500",
+    "url": "https://aws.amazon.com/marketplace/pp/prodview-7cpg4l6nufwgq",
+    "footnote": 10,
+    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "quote": "| Platform | Access the Secureframe Platform up to 100 Employees | $7,500.00 | | First Framework | Choice of any Framework | $7,500.00 |"
+   },
+   {
+    "where": "tables[1].rows[3].cells[0]",
+    "figure": "$7,500 / $2,000",
+    "url": "https://aws.amazon.com/marketplace/pp/prodview-ixyb464cbjkam",
+    "footnote": 11,
+    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "quote": "| Sprinto Starter Platform | Includes all core platform features up to 100 employees, with in built automation for evidence collection. | $7,500.00 | | First Compliance Framework | ... starting at $2000 each. | $2,000.00 |"
+   },
+   {
+    "where": "tables[1].rows[4].cells[0]",
+    "figure": "$15,000",
+    "url": "https://aws.amazon.com/marketplace/pp/prodview-fz4mb7o7dzj4i",
+    "footnote": 12,
+    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "quote": "| Compliance Automation | Access to compliance automation platform for organizations upto 20 emp | $15,000.00 |"
+   },
+   {
+    "where": "recipes[0].cost",
+    "figure": "$12,000 / $20,000",
+    "url": "https://drata.com/learn/soc-2/cost",
+    "footnote": 13,
+    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "quote": "The audit fee for a Type 2 report generally costs: $12,000 to $20,000 for small to midsize companies."
+   },
+   {
+    "where": "recipes[1].cost",
+    "figure": "$25,000 / $7,500",
+    "url": "https://aws.amazon.com/marketplace/pp/prodview-3ubrmmqkovucy",
+    "footnote": 9,
+    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "quote": "| Drata Platform Fee | Access to the Drata SaaS platform with capacity for a 100 FTE org | $25,000.00 | | SOC 2 Framework | SOC 2 2017 control set | $7,500.00 |"
+   },
+   {
+    "where": "recipes[1].cost",
+    "figure": "$75,000",
+    "url": "https://drata.com/learn/soc-2/cost",
+    "footnote": 13,
+    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "quote": "Scenario 2: Mid-Size Company (100 Employees) Total Cost: ~$75,000"
+   },
+   {
+    "where": "humanRole[2]",
+    "figure": "$245,000",
+    "url": "https://www.hhs.gov/press-room/ocr-settles-four-ransomware-investigations.html",
+    "footnote": 19,
+    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "quote": "In addition to committing to corrective actions, SG Health Plan paid $245,000 to OCR."
+   },
+   {
+    "where": "ownData.note",
+    "figure": "51% / 41% / 37%",
+    "url": "https://lazarusalliance.com/2026-soc-2-audit-benchmark-report/",
+    "footnote": 7,
+    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "quote": "| 1 | Access Control & User Provisioning | 38 | 51% |"
+   },
+   {
+    "where": "watchOuts[3]",
+    "figure": "95%",
+    "url": "https://www.vanta.com/products/ai",
+    "footnote": 14,
+    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "quote": "Vanta automatically suggests answers for you based on your knowledge base and previous responses—with a 95% acceptance rate."
+   },
+   {
+    "where": "watchOuts[4]",
+    "figure": "20%",
+    "url": "https://www.vanta.com/resources/rca-inc-868",
+    "footnote": 16,
+    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "quote": "On May 26, we became aware of a product code change that resulted in a subset of data from less than 20% of our third-party integrations being exposed to other Vanta customers."
+   },
+   {
+    "where": "faq[0].a",
+    "figure": "$12,000 / $20,000",
+    "url": "https://drata.com/learn/soc-2/cost",
+    "footnote": 13,
+    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "quote": "The audit fee for a Type 2 report generally costs: $12,000 to $20,000 for small to midsize companies."
+   },
+   {
+    "where": "faq[2].a",
+    "figure": "88%",
+    "url": "https://lazarusalliance.com/2026-soc-2-audit-benchmark-report/",
+    "footnote": 7,
+    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "quote": "88% (66 of 75) of examinations required at least one round of additional evidence."
+   },
+   {
+    "where": "faq[3].a",
+    "figure": "95%",
+    "url": "https://www.vanta.com/products/ai",
+    "footnote": 14,
+    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "quote": "Vanta automatically suggests answers for you based on your knowledge base and previous responses—with a 95% acceptance rate."
+   },
+   {
+    "where": "buyVsBuild.buy",
+    "figure": "67% / 33%",
+    "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+    "footnote": 20,
+    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "quote": "In our sample, external partnerships with learning-capable, customized tools reached deployment ~67% of the time, compared to ~33% for internally built tools."
+   },
+   {
+    "where": "pickElse[0]",
+    "figure": "70%",
+    "url": "https://secureframe.com/newsroom/2026-cybersecurity-and-compliance-benchmark-report",
+    "footnote": 22,
+    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "quote": "However, most organizations remain stuck in reactive mode: nearly 70% rely on time-consuming security questionnaires and RFPs to prove their security posture"
+   },
+   {
+    "where": "stats[1]",
+    "figure": "71%",
+    "url": "https://lazarusalliance.com/2026-soc-2-audit-benchmark-report/",
+    "footnote": 7,
+    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "quote": "Across N = 75 examinations, 71% (53 of 75) had at least one exception."
+   },
+   {
+    "where": "stats[2]",
+    "figure": "88%",
+    "url": "https://lazarusalliance.com/2026-soc-2-audit-benchmark-report/",
+    "footnote": 7,
+    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "quote": "88% (66 of 75) of examinations required at least one round of additional evidence."
+   },
+   {
+    "where": "stats[5]",
+    "figure": "$245,000",
+    "url": "https://www.hhs.gov/press-room/ocr-settles-four-ransomware-investigations.html",
+    "footnote": 19,
+    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "quote": "In addition to committing to corrective actions, SG Health Plan paid $245,000 to OCR."
+   }
+  ],
+  "redirects": []
+ },
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "writer agent, live reads of every cited source via a web fetch tool on 28 Nov 2026 (the repo's fetcher was refused by the proxy for 14 hosts)",
+  "checked": 24,
+  "fixed": [
+   "AWS Marketplace prices re-read from the live listings (Vanta, Drata, Secureframe, Sprinto, Scrut); research's cached copies not cited. Drata Foundation, Scytale, Strike Graph, Thoropass and Hyperproof rows dropped: not re-read live.",
+   "Own data re-sorted against the TSC text: CC7.5 (recovery) moved from documents to judgments; counts now 10 system evidence, 10 documents, 13 judgments (research draft had 10/11/12). CSV at next-batch-5/soc2-criteria-sort.csv.",
+   "Verdict 'stops at 100 employees' reworded: Vanta's listing prices only 1-20 employees and says larger headcounts move to higher bands, so 'no listing prices a firm above 100 employees'.",
+   "Drata State of GRC: the 8-framework average is for GRC staff at 250 to 1,500 person firms; wording fixed from 'firms run'.",
+   "AICPA software-tools FAQ: AICPA republished it on 31 Mar 2026 behind a free account; we cite and quote the AICPA-hosted 2021 PDF and say so in the note.",
+   "Vendor-misconduct allegation story (an anonymous Mar 2026 post about one platform startup, reported by TechCrunch, denied by the company on 20 Mar 2026) cut: both sides were sourced, but the company's name is on the page check's banned-word list, so it could not be named and an unnamed allegation can't be attributed.",
+   "Vanta 95% acceptance labelled a vendor claim; Drata audit-fee ranges and the $75,000 scenario labelled vendor figures; Vanta's data bug cited to Vanta's own RCA.",
+   "Lazarus Alliance cited as data only (75 of its own examinations), never as a provider.",
+   "No superseded model-risk guidance or withdrawn consumer-bureau circulars cited; the 2027 TSC exposure drafts noted as open for comment to 15 Jan 2027."
+  ]
+ }
+}
