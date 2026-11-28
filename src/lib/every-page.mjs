@@ -8,6 +8,7 @@ import { rivalProblems } from './rival-firms.mjs';
 import { acronymProblems } from './acronyms.mjs';
 import { structureProblems } from './structure-rules.mjs';
 import { searchResultProblems } from './source-rules.mjs';
+import { paddingProblems } from './source-numbers.mjs';
 
 export function everyPageProblems(d, slugs = null) {
   return [
@@ -17,5 +18,8 @@ export function everyPageProblems(d, slugs = null) {
     ...acronymProblems(d).map((p) => `acronym: ${p}`),
     ...structureProblems(d, slugs).map((p) => `structure: ${p}`),
     ...searchResultProblems(d.sources),
+    // Padding (28 Nov 2026): every footnote on a figure states it. A warning until the 150 padded footnotes on 58
+    // pages were moved, dropped or given their own clause; now a failure on every page, so it can't come back.
+    ...paddingProblems(d).map((p) => `footnote: ${p}`),
   ];
 }

@@ -15,7 +15,7 @@ import { pageAnswerProblems } from '../src/lib/answer-first.mjs';
 import { ownPriceProblems, strings } from '../src/lib/no-own-price.mjs';
 import { sourceProblems } from '../src/lib/source-rules.mjs';
 import { eyebrowProblems, handoffProblems } from '../src/lib/structure-rules.mjs';
-import { claimProblems, paddingProblems } from '../src/lib/source-numbers.mjs';
+import { claimProblems } from '../src/lib/source-numbers.mjs';
 import { figureCheckProblems } from '../src/lib/figure-check.mjs';
 import { edgarProblems } from '../src/lib/edgar-hits.mjs';
 import { schemaProblems } from '../src/lib/page-schema.mjs';
@@ -144,14 +144,15 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
   if (readers.join('|') !== REVIEWERS.join('|')) fail.push(`ICP reviews must be ${REVIEWERS.join(' → ')}; log has ${readers.join(' → ') || 'none'}`);
   // Source-claim check (26 Nov 2026): a reviewer opens each cited source and confirms it says what the footnote claims.
   // A warning, not a fail, until the pages built before the rule have a log.
-  if (!d.sourceCheck) warn.push('no source-claim check logged: open each cited source, confirm it states the claim it backs, and log sourceCheck {date, by, checked, fixed}');
+  // A log from the padding cleanup (28 Nov 2026) covers only the footnotes it flagged, so the page still needs its full check.
+  if (!d.sourceCheck || /flagged footnotes only/.test(d.sourceCheck.by)) warn.push('no source-claim check logged: open each cited source, confirm it states the claim it backs, and log sourceCheck {date, by, checked, fixed}');
   // Every footnoted figure in its source's note, survey figures with their group, one figure per claim, dated prices
   // (src/lib/source-numbers.mjs, 26 Nov 2026). Round 6 (26 Nov 2026): every page was fixed to zero, so the baseline
   // that let older pages keep their count is gone. Any claim problem fails, on every page.
   for (const p of claimProblems(d)) fail.push(`claim: ${p}`);
-  // A footnote on a figure whose source note holds other figures but not this one (28 Nov 2026): likely padding to
-  // reach "several sources". A warning from the notes; the live check (check-source-figures) fails it on the source.
-  for (const p of paddingProblems(d)) warn.push(`footnote: ${p}`);
+  // A footnote on a figure whose source note holds other figures but not this one (28 Nov 2026): padding to reach
+  // "several sources". It fails on every page through everyPageProblems above; the live check (check-source-figures)
+  // fails it on the source itself.
   // Round 5 (26 Nov 2026): the live figure check's record (src/lib/figure-check.mjs) and EDGAR hit lists
   // (src/lib/edgar-hits.mjs). Pages built before each rule are listed there, and those lists only shrink.
   for (const p of figureCheckProblems(d, slug)) fail.push(`figure check: ${p}`);
