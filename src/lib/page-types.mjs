@@ -42,7 +42,10 @@ export const BANNED = [
   { re: /\b(?:cut|reduce|slash|eliminate)\w*\s+(?:head ?count|jobs|staff|fte)/i, why: 'augmentation, not replacement' },
   { re: /\blay ?offs?\b|\bfewer (?:people|staff|employees)\b|\bwithout (?:hiring|humans)\b/i, why: 'augmentation, not replacement' },
   { re: /\breddit\b|\bquora\b|(?:^|[\s("])r\/[A-Za-z]{2,}|\bforum (?:posts?|threads?|repl(?:y|ies)|posters)\b/i, why: 'no forum threads as evidence: cite a regulator, study, analyst or the vendor\'s own page (26 Nov 2026)' },
-  { re: /\bdelve\b|\bleverage\b|\bunlock\b|\bseamless\b|\btransformative\b|\bgame[- ]chang/i, why: 'banned filler word' },
+  { re: /\bleverage\b|\bunlock\b|\bseamless\b|\btransformative\b|\bgame[- ]chang/i, why: 'banned filler word' },
+  // "delve" is filler, but Delve is also a company (28 Nov 2026). Capitalised mid-sentence it reads as the name and
+  // passes; lowercase, all caps or opening a sentence or string ("Delve into ...") it is still banned. Case-sensitive.
+  { re: /\bdelve\b|\bDELVE\b|(?:^|["'(\u201c]|[.!?:;]\s+)Delve\b/, why: 'banned filler word ("Delve" capitalised mid-sentence, the company, is fine)' },
 ];
 
 // Every brief below is filled answer-first: whatever the block holds, its first sentence answers its heading.

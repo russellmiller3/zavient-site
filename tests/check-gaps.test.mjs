@@ -116,7 +116,8 @@ test('a second footnote whose note lacks the figure is flagged as padding', () =
 test('the live check judges every footnote on a figure, not just the first', () => {
   const figs = figureGroups('70% of investors have teams.[^1][^2]')[0].figs;
   const words = claimWords('70% of investors have teams');
-  const both = judgeGroup({ where: 'x', figs, words, sources: [{ c: 1, u: 'https://a.com', body: 'among investors, 70% have teams' }, { c: 2, u: 'https://b.com', body: 'a guide on investors and teams, nothing else' }] });
+  // b.com is a real page of text (an essentially empty page goes to byHand instead: tests/check-gaps-2.test.mjs).
+  const both = judgeGroup({ where: 'x', figs, words, sources: [{ c: 1, u: 'https://a.com', body: 'among investors, 70% have teams' }, { c: 2, u: 'https://b.com', body: 'a guide on investors and teams, nothing else. '.repeat(10) }] });
   assert.deepEqual(both.notFound, []);
   assert.match(both.padded[0], /footnote \[\^2\] \(https:\/\/b\.com\) doesn't state 70%: move or drop it/);
   const unread = judgeGroup({ where: 'x', figs, words, sources: [{ c: 1, u: 'https://a.com', body: 'investors: 70% have teams' }, { c: 2, u: 'https://b.com', body: null, err: 'refused' }] });

@@ -2,6 +2,8 @@
 // thread fixed them by hand. Russell: "Make it so every fix is structual to templates so it doesnt reoccur". So the page
 // check now fails any mention of a superseded document unless the same item (sentence, table row, source, FAQ) also
 // names its replacement or says it was withdrawn. Add a line here whenever a cited rule is replaced or withdrawn.
+import { renderedFields } from './rendered-fields.mjs';
+
 export const STALE = [
   {
     name: 'SR 11-7 and the 2011 model risk guidance',
@@ -60,10 +62,11 @@ function* items(x, path = '') {
   }
 }
 
+// Only what renders is read (src/lib/rendered-fields.mjs): the sourceCheck log saying "replaced SR 11-7 with SR 26-2"
+// is never on the page, so it can't cite SR 11-7 as current.
 export function staleProblems(d) {
   const out = [];
-  const { reviews, keyword, ...page } = d;
-  for (const [where, text] of items(page)) {
+  for (const [where, text] of items(renderedFields(d))) {
     for (const s of STALE) {
       const m = text.match(s.re);
       if (m && !s.ok.test(text)) out.push(`${where} cites ${m[0]} as current: ${s.name} was ${s.why}; ${s.fix || 'name the replacement or say it was withdrawn'}`);

@@ -249,16 +249,32 @@ export function twoFigureProblems(d) {
 // 28 Nov 2026: a due diligence questionnaire (DDQ) is a form a manager fills in, not a survey, so a note citing the
 // ILPA or AIMA DDQ template was asked for "Survey of N". "Questionnaire" still means a survey ("questionnaire sent to
 // 300 CFOs"), except where the words say it is a DDQ or a template, and "not a survey" never reads as one.
+// 28 Nov 2026, round 2: "security questionnaires" still read as a survey. The list only knew the one word right before
+// "questionnaire", so "cybersecurity questionnaires", "security and compliance questionnaires", "security assessment
+// questionnaires", "security-questionnaire automation" and a tool that "answers questionnaires" all tripped it. A
+// questionnaire is a form a vendor or manager fills in whenever a form word sits up to three words before it (or the
+// sentence says the form is answered, automated or drafted), unless the text says it went to a counted group of people
+// ("questionnaire sent to 300 CFOs"), which is a study whatever the form words say.
 const SURVEY_WORDS = /\b(?:survey(?:ed)?|poll(?:ed)?|respondents?|questionnaires?)\b/i;
+const FORM_KIND = String.raw`(?:due[ -]diligence|diligence|DDQ|ODD|ILPA|AIMA|SIG|CAIQ|HECVAT|vendor|supplier|third[ -]party|[a-z]*security|cyber[a-z]*|infosec|privacy|compliance|risk|assessment|audit|RFP|RFI|procurement|onboarding|KYC|AML|standard|standardi[sz]ed|illustrative|model|sample|blank|free|operational)`;
+// Up to three words between the form word and "questionnaire" ("security and compliance", "security assessment"),
+// none of them a study word ("risk survey questionnaire" keeps its survey) or a word that ends a modifier and starts a
+// clause ("300 risk managers completed the questionnaire" is still a study).
+const FORM_GAP = String.raw`(?:[\s/,&-]+(?!(?:survey|poll|research|study|studies|online|web|mail|postal|questionnaires?|the|a|an|this|that|these|their|our|its|to|by|of|from|in|at|completed|answered|filled|returned|received|took|said|say|says|were|was|is|are)\b)[A-Za-z0-9]+){0,3}?`;
 const NOT_SURVEY = new RegExp([
   /\b(?:is|are|was|it's|isn't|not)\s+(?:a\s+|an\s+)?(?:template|form),?\s+not\s+an?\s+(?:survey|poll)\b/.source,
   /\bnot\s+an?\s+(?:survey|poll)\b/.source,
-  /\b(?:due[ -]diligence|diligence|DDQ|ODD|ILPA|AIMA|SIG|CAIQ|vendor|security|standard|standardi[sz]ed|illustrative|model|sample|blank|free|operational)\s+questionnaires?\b/.source,
+  String.raw`\b${FORM_KIND}${FORM_GAP}[\s-]+questionnaires?\b`,
   /\bquestionnaires?\s*\(\s*DDQs?\s*\)/.source,
   /\bquestionnaires?\s+(?:templates?|forms?|such as|like)\b/.source,
-  /\bquestionnaires?\s+(?:for|on)\s+(?:the\s+)?(?:\w+\s+){0,2}?(?:due\s+diligence|investment\s+managers?|managers?|vendors?)\b/.source,
+  /\bquestionnaires?[\s-]+(?:automation|software|tools?|platforms?|assistan(?:t|ce)|modules?)\b/.source,
+  /\bquestionnaires?\s+(?:for|on)\s+(?:the\s+)?(?:\w+\s+){0,2}?(?:due\s+diligence|investment\s+managers?|managers?|vendors?|suppliers?)\b/.source,
+  /\bquestionnaires?\s+(?:on|about|covering)\s+(?:\w+\s+){0,2}?(?:[a-z]*security|cyber[a-z]*|infosec|privacy|compliance)\b/.source,
+  /\b(?:answer(?:s|ing)|fill(?:s|ing)\s+(?:in|out)|complet(?:es|ing)|automat(?:es|ing)|draft(?:s|ing)|respond(?:s|ing)\s+to|handl(?:es|ing)|tackl(?:es|ing))\s+(?:\w+\s+){0,2}?questionnaires?\b/.source,
 ].join('|'), 'gi');
-export const isSurvey = (text) => SURVEY_WORDS.test(String(text).replace(NOT_SURVEY, ' '));
+// A questionnaire that went to, or came back from, a counted group of people is a study, form words or not.
+const STUDY = /\bquestionnaires?\b[^.;|]{0,40}?\b(?:(?:sent|mailed|e-?mailed|distributed|administered|fielded|given)\s+to|(?:completed|answered|returned|filled\s+(?:in|out))\s+by)\s+(?:(?:more than|over|nearly|almost|about|around|some|roughly)\s+)?\d/i;
+export const isSurvey = (text) => STUDY.test(String(text)) || SURVEY_WORDS.test(String(text).replace(NOT_SURVEY, ' '));
 // SURVEY.test(text) keeps the old call shape for every caller.
 export const SURVEY = { test: isSurvey };
 // Round 5: a survey that prints no sample size says so in these words, and the page then says it was a survey.

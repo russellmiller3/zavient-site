@@ -29,7 +29,13 @@ export function figureCheckProblems(d, slug) {
   if (!fc) return FIGURE_CHECK_PENDING.has(slug) ? [] : ['no live figure check: run node scripts/check-source-figures.mjs <page> --write'];
   const out = [];
   if (!/^\d{4}-\d{2}-\d{2}$/.test(fc.date || '') || (d.updated && fc.date < d.updated)) out.push(`live figure check (${fc.date}) is older than the page (${d.updated}): run it again with --write`);
-  for (const n of fc.notFound || []) out.push(`figure not on its source's page: ${n}: fix the figure or the source`);
+  // A figure the script couldn't find is cleared by a hand-copied quote logged for the same figure and one of the URLs
+  // it searched (28 Nov 2026: script-rendered pages); the quote is then held to the figure below, like any byHand entry.
+  for (const n of fc.notFound || []) {
+    const m = String(n).match(/^(.*?): (.+?) not found in (.+)$/);
+    if (m && m[3].split(', ').some((u) => quoteByUrl(fc.byHand, m[2], u))) continue;
+    out.push(`figure not on its source's page: ${n}: fix the figure or the source, or open it and log the source's sentence in figureCheck.byHand (figure, url, quote)`);
+  }
   for (const p of fc.padded || []) out.push(`footnote doesn't state this figure: ${p}`);
   for (const r of fc.redirects || []) out.push(`source URL redirects (${r}): cite the page it lands on`);
   for (const b of fc.byHand || []) {
@@ -65,6 +71,13 @@ export function findQuote(byHand, { where, figure, url, urls = [] }) {
   return pick?.quote;
 }
 
+// A hand-copied quote keyed by figure and source URL only (no position fallback): what may clear a figure the script
+// read the page without finding. One entry may log several figures together ("54% / 23%").
+export function quoteByUrl(byHand, figure, url) {
+  const b = (byHand || []).find((x) => x.quote && sameUrl(x.url, url) && String(x.figure).split(' / ').some((y) => sameFig(y, figure)));
+  return b?.quote;
+}
+
 // Moved here from scripts/check-source-figures.mjs (28 Nov 2026) so the per-footnote judgement below can be tested.
 // The ways a source might print one figure: 51%, 51 percent, $1,200, $1.2K, 3x, three times.
 const WORD = { 2: ['twice', 'double', 'two times'], 3: ['three times', 'triple', 'threefold'], 4: ['four times', 'fourfold'], 5: ['five times', 'fivefold'], 10: ['ten times', 'tenfold'] };
@@ -97,21 +110,48 @@ export const near = (body, v, words) => {
 // - each cited source that was read must state one of the group's figures, else it is padded: "move or drop it";
 // - each cited source that couldn't be read gets its own byHand entry, so a person copies that source's sentence.
 // sources: [{ c, u, body }] where body is the page text, or null when it couldn't be read (err says why).
-export function judgeGroup({ where, figs, sources, words }) {
+// Script-rendered source pages (28 Nov 2026, round 2). Some vendor pages fill in their prices with scripts, so the
+// fetched text is empty or holds only the menu and footer. The check called the figure "not found", a hard failure
+// that no hand-copied quote could clear. Now, for a figure no source page states:
+// - if every page that was read is essentially empty (under THIN_WORDS words) or holds none of the claim's words (the
+//   part that would hold the figure didn't render), each goes to byHand ("needs byHand"), not notFound;
+// - if a person found it and logged the source's sentence (figureCheck.byHand with a quote, keyed by figure and URL:
+//   quote(figure, url)), it goes to byHand with that quote, and the page check holds the quote to the figure;
+// - otherwise, on a page with real text on the claim, it still fails as not found.
+// An essentially empty page that doesn't state a figure another source states is sent to byHand, never called padding.
+export const THIN_WORDS = 60;
+const wordCount = (body) => (String(body).match(/[a-z]{2,}/gi) || []).length;
+export const thinPage = (body) => body != null && wordCount(body) < THIN_WORDS;
+const onTopic = (body, words) => words.filter((w) => body.includes(w)).length >= Math.min(2, words.length);
+export function judgeGroup({ where, figs, sources, words, quote = () => undefined }) {
   const out = { checked: 0, byHand: [], notFound: [], padded: [] };
   const read = sources.filter((s) => s.body != null);
+  const blank = (s) => thinPage(s.body) || !onTopic(s.body, words);
   const states = (s, f) => variants(f).some((v) => s.body.includes(v));
+  const seen = new Set();
+  const hand = (b) => { const k = `${b.figure}|${b.url}`; if (!seen.has(k)) { seen.add(k); out.byHand.push(b); } };
   for (const f of figs) {
     out.checked++;
     const hits = read.filter((s) => states(s, f));
     if (hits.some((s) => variants(f).some((v) => near(s.body, v, words)))) continue;
-    if (hits.length) { out.byHand.push({ where, figure: f.raw, url: hits[0].u, why: 'found on the page, but not near the claim\'s words: confirm it backs this claim' }); continue; }
-    if (read.length) out.notFound.push(`${where}: ${f.raw} not found in ${read.map((s) => s.u).join(', ')}`);
+    if (hits.length) { hand({ where, figure: f.raw, url: hits[0].u, why: 'found on the page, but not near the claim\'s words: confirm it backs this claim' }); continue; }
+    if (!read.length) continue; // no page was read: each source gets its own byHand entry below
+    const quoted = read.find((s) => quote(f.raw, s.u));
+    if (quoted) { hand({ where, figure: f.raw, url: quoted.u, footnote: quoted.c, why: 'not in the page text the script read: checked by hand, with the source\'s own sentence quoted' }); continue; }
+    if (read.every(blank)) {
+      for (const s of read) hand({ where, figure: f.raw, url: s.u, footnote: s.c, why: thinPage(s.body)
+        ? `needs byHand: the page reads as empty (${wordCount(s.body)} words; likely filled in by script): open it and copy the sentence that states the figure`
+        : 'needs byHand: the page text read holds none of the claim\'s words (likely filled in by script): open it and copy the sentence that states the figure' });
+      continue;
+    }
+    out.notFound.push(`${where}: ${f.raw} not found in ${read.map((s) => s.u).join(', ')}`);
   }
   const figList = figs.map((f) => f.raw).join(' / ');
   for (const s of sources) {
-    if (s.body == null) { out.byHand.push({ where, figure: figList, url: s.u, footnote: s.c, why: `couldn't read the source (${s.err || 'unreadable'}): open it and copy the sentence that states the figure` }); continue; }
-    if (!figs.some((f) => states(s, f)) && figs.some((f) => read.some((o) => o !== s && states(o, f)))) out.padded.push(`${where}: footnote [^${s.c}] (${s.u}) doesn't state ${figList}: move or drop it`);
+    if (s.body == null) { hand({ where, figure: figList, url: s.u, footnote: s.c, why: `couldn't read the source (${s.err || 'unreadable'}): open it and copy the sentence that states the figure` }); continue; }
+    if (figs.some((f) => states(s, f)) || !figs.some((f) => read.some((o) => o !== s && states(o, f)))) continue;
+    if (thinPage(s.body)) hand({ where, figure: figList, url: s.u, footnote: s.c, why: `needs byHand: the page reads as empty (${wordCount(s.body)} words; likely filled in by script): open it and copy the sentence that states the figure` });
+    else out.padded.push(`${where}: footnote [^${s.c}] (${s.u}) doesn't state ${figList}: move or drop it`);
   }
   return out;
 }
