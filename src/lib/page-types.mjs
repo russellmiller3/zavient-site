@@ -213,7 +213,7 @@ export const TYPES = {
     path: 'ai-rules/{slug}',
     titleShape: 'Does {rule} apply to {a firm like yours}?',
     example: 'Does the Colorado AI Act apply to a 200-person lender?',
-    order: ['what-it-is', 'applies', 'timeline', 'rules', 'human-role', 'spokes', 'benchmark', 'what-goes-wrong', 'faq', 'buy-or-build', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
+    order: ['what-it-is', 'applies', 'timeline', 'rules', 'own-data', 'human-role', 'spokes', 'benchmark', 'what-goes-wrong', 'faq', 'buy-or-build', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
     required: ['applies', 'timeline', 'rules', 'howToTest', 'watchOuts'],
     division: 'the compliance or risk owner for that work',
     headings: { spokes: 'Which of your work does it touch?', benchmark: 'What is on your checklist?' },

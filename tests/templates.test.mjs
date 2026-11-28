@@ -19,6 +19,21 @@ test('every page type keeps the rule order: teach first, alternatives after buy-
   }
 });
 
+// 28 Nov 2026: the regulation type required an own-data block (publish gate) but left it out of its order, so the
+// table never rendered. Every block the gate or the type requires must have a place in that type's order.
+test('every block a page type requires is in its render order', () => {
+  const fieldToBlock = Object.fromEntries(Object.entries(BLOCKS).map(([id, b]) => [b.field, id]));
+  for (const [name, t] of Object.entries(TYPES)) {
+    const needs = [...(t.required || [])];
+    if (name !== 'tool') needs.push('ownData'); // check-page: every type but tool needs own data
+    for (const f of needs) {
+      const id = fieldToBlock[f];
+      if (!id) continue; // fields without a block of their own (e.g. howToTest lives inside benchmark)
+      assert.ok(t.order.includes(id), `${name}: requires ${f} but block ${id} is not in its order, so it never renders`);
+    }
+  }
+});
+
 test('the ICP review order is operator first, owner-CEO last, no CFO', () => {
   assert.deepEqual(REVIEWERS, ['COO', 'Head of operations', 'GM', 'Division head', 'Owner-CEO']);
   assert.ok(!REVIEWERS.some((r) => /cfo/i.test(r)));

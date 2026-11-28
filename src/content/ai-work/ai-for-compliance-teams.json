@@ -1,0 +1,779 @@
+{
+ "title": "Where should a bank or insurer compliance team start with AI?",
+ "description": "Where AI helps a small bank, lender or insurer compliance team first, who signs off, and what examiners expect. Built on regulator manuals.",
+ "type": "role",
+ "templateVersion": 1,
+ "topic": "AI for compliance teams",
+ "job": "AI for compliance teams",
+ "industry": "community banks, lenders and insurers",
+ "index": true,
+ "verdict": [
+  "Start with rule-change tracking: by our count, six federal regulators posted 152 rules or proposed rules in 2026.[^15][^2]",
+  "Complaint review pays next: examiners expect every channel captured, not just the few complaints reaching the federal portal.[^12][^29]",
+  "People keep every filing and sign-off: AI sorts and drafts, a named officer decides, and controls scale with stakes.[^5][^23]",
+  "Triage alerts last: an untuned auto-close tool drew a regulator's order, and false positives run around 90% to 95%.[^31][^21]",
+  "Peers are piloting, not finished: most community banks surveyed are testing AI, and few call their strategy well resourced.[^3][^26]"
+ ],
+ "onPage": [
+  {
+   "to": "human-role",
+   "text": "Which calls your BSA officer, analysts and reviewers keep"
+  },
+  {
+   "to": "ranked",
+   "text": "Four compliance jobs where AI pays first, in order"
+  },
+  {
+   "to": "faq",
+   "text": "Straight answers to what your CEO, board or examiner will ask"
+  },
+  {
+   "to": "forward",
+   "text": "A one-page brief you can forward to your CEO"
+  },
+  {
+   "to": "recipes",
+   "text": "Three 90-day starts: bank, insurer and BSA team"
+  },
+  {
+   "to": "own-data",
+   "text": "Our count of CFPB complaints by company size"
+  }
+ ],
+ "headings": {
+  "what-it-is": "What is AI for compliance work, and what does it change?",
+  "decisions": "Which AI decisions does a chief compliance officer own?",
+  "ranked": "Where does AI pay first in compliance?",
+  "what-goes-wrong": "Where does AI in compliance go wrong?",
+  "buy-or-build": "Should you buy compliance AI or build it?"
+ },
+ "answers": {
+  "human-role": "Your officers keep every filing, sign-off and escalation call, while AI reads, sorts and drafts for them to check.[^5][^23]",
+  "decisions": "A chief compliance officer owns six AI calls: where to start, model validation, who checks output, what to record, the insurer AI program, and buy or build.[^5][^10]",
+  "ranked": "AI pays first on regulatory change tracking, then complaint capture, then marketing pre-checks, with Bank Secrecy Act alert triage last.[^15][^12]",
+  "faq": "Your CEO, board or examiner will ask about examiner acceptance, BSA alerts, model validation, failed pilots, cost and what peers are doing.[^5][^3]",
+  "recipes": "A 90-day start runs a rule-change log in days 1 to 30, complaint capture in days 31 to 60 and a marketing pre-check in days 61 to 90.[^15][^12]",
+  "benchmark": "Show it worked by timing rules, complaints and ads for four weeks before and six weeks after, with a hold-out group, then pricing the hours.[^22][^27]",
+  "what-goes-wrong": "AI in compliance goes wrong when triage auto-closes alerts, monitoring goes untuned, AI citations go unchecked or staff stop sampling what AI clears.[^31][^32]",
+  "buy-or-build": "Buy first for rule feeds, screening and seat tools, and build only the link to your own complaint, policy and exam data.[^28][^6]",
+  "something-else": "Pick something else when you mean AI governance, when fraud is the real problem, when volumes are tiny, or when a BSA rewrite awaits a final rule.[^3][^29]"
+ },
+ "summary": "AI for compliance teams means tools that read, sort and draft compliance paperwork while officers decide.[^1][^4] It pays where examiners already test: rule changes, complaints and ads, each signed off by a person.[^2][^12] Making your own AI obey AI laws is AI governance: see our governance consulting page under Related.",
+ "humanRole": [
+  "Chief compliance officer: owns the list of AI uses and the human check on each. Under the Office of the Comptroller of the Currency (OCC) 2026 examiner framework, controls can rise with the consequences of an AI failure.[^5]",
+  "Bank Secrecy Act (BSA) officer: makes every call to file a suspicious activity report (SAR), with AI only preparing the case. FinCEN's 2026 proposal keeps a US-based anti-money laundering (AML) officer and a written program approved by the board or senior management.[^23]",
+  "Compliance analyst or legal reviewer: signs off every ad and disclosure that AI pre-checks. The OCC flags marketing that compliance, legal or audit staff have not reviewed for clarity and accuracy.[^7]",
+  "Complaint lead: decides which complaints raise unfair, deceptive or abusive practice (UDAAP) risk, and routes each to an owner. FDIC examiners ask whether complaints are cross-referenced to the rest of the program.[^16][^12]"
+ ],
+ "decisions": [
+  {
+   "decision": "Where to start",
+   "know": "Which tasks examiners already test and your team still does by hand.[^1] The OCC lists change management and complaint response as parts of every compliance management system.[^2]"
+  },
+  {
+   "decision": "Whether a vendor tool needs model validation",
+   "know": "SR 26-2 replaced SR 11-7 on 17 Apr 2026 and is aimed mainly at banks with over $30B in assets.[^10] The OCC version leaves generative and agentic AI out of scope and plans an AI request for information.[^11]"
+  },
+  {
+   "decision": "Who checks AI output, and how often",
+   "know": "Under the OCC's 2026 examiner framework, a bank may classify each AI use by consequences, transfer of agency and human oversight.[^5] In a vendor survey of 230 US bankers, 34% named automation bias as the greatest risk.[^9]"
+  },
+  {
+   "decision": "What to record for each AI-assisted alert",
+   "know": "FinCEN does not require you to document a decision not to file a SAR, or a separate 90-day continuing-activity review.[^13] Your team sets the record above that floor, before an examiner asks."
+  },
+  {
+   "decision": "The written AI program, for insurers",
+   "know": "The National Association of Insurance Commissioners (NAIC) model bulletin on AI is adopted in 30 jurisdictions, by our count of its map.[^14] The bulletin expects a written program for the insurer's AI systems.[^37]"
+  },
+  {
+   "decision": "Buy or build",
+   "know": "Across organizations interviewed by MIT NANDA, partnered tools reached deployment about 67% of the time, against about 33% for internal builds.[^28] Credit unions carry more vendor diligence, since the NCUA cannot examine technology providers.[^6]"
+  }
+ ],
+ "ranked": [
+  {
+   "name": "Regulatory change tracking",
+   "why": "By our count, six federal financial regulators posted 554 Federal Register documents from 1 Jan to 27 Nov 2026.[^15] Only 152 were rules or proposed rules, so AI sorts out the notices and a person assigns each rule.[^15][^2]",
+   "payoff": "Days from publication to an assigned owner, and rules missed at exam."
+  },
+  {
+   "name": "All-channel complaint capture and trending",
+   "why": "The FDIC expects complaints captured from phone, mail, email, branch, regulator, text and chat, then trended for UDAAP risk.[^12][^16] Insurers must keep a complete complaint record under NAIC Model 880.[^17]",
+   "payoff": "Share of complaints logged, days to close, and issues linked to a root cause."
+  },
+  {
+   "name": "Marketing and disclosure pre-check",
+   "why": "Regulation Z lists trigger terms that require added disclosures in credit ads, a narrow and testable check.[^18] Credit unions follow the NCUA advertising rules, and the FDIC digital signage rule applies from 1 Apr 2027.[^19][^20]",
+   "payoff": "Hours per ad reviewed, and findings caught before launch."
+  },
+  {
+   "name": "BSA alert triage, after a pilot elsewhere",
+   "why": "Industry false positives run around 90% to 95%, in one interview study.[^21] A survey of 15 big banks put 21.41 hours on each SAR, against FinCEN's 1.98-hour estimate.[^22]",
+   "payoff": "Alerts worked per analyst hour, with the escalation rate held steady."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Will examiners accept AI-assisted compliance work?",
+   "a": "Yes, if a person signs off and controls match the stakes: the OCC's 2026 examiner framework for AI sets no supervisory expectations for banks.[^5] Regulators oversee AI under existing laws, and most use AI output to inform decisions, not make them.[^6]"
+  },
+  {
+   "q": "Can a community bank use AI on BSA alerts?",
+   "a": "Yes, but tune and test it first: the OCC found one bank's triage system auto-closed a very high share of alerts that needed escalation.[^31] FinCEN's 2026 proposal says its Director would consider whether a bank uses innovative tools such as AI.[^23]"
+  },
+  {
+   "q": "Do we need model validation for a chatbot or Copilot?",
+   "a": "Not under the OCC's new model risk guidance: Bulletin 2026-13 puts generative and agentic AI out of its scope.[^11] SR 26-2, which replaced SR 11-7 in April 2026, is aimed mainly at banks over $30B.[^10] Still record each tool's use and who checks it.[^5]"
+  },
+  {
+   "q": "What happens if our AI pilot fails?",
+   "a": "A failed pilot alone should not draw supervisory criticism, under a 2018 statement from FinCEN and the banking agencies.[^24] Pilots that expose gaps in a BSA program will not necessarily draw supervisory action either.[^24]"
+  },
+  {
+   "q": "What does an AI compliance tool cost?",
+   "a": "Microsoft 365 Copilot Business lists at $21 a user a month paid yearly, or $18 in a first-year promotion, read 28 Nov 2026.[^34] ComplyAdvantage screening starts from $99 a month, and Compliance.ai publishes no price and quotes each deal.[^35][^36]"
+  },
+  {
+   "q": "Are banks our size using AI yet?",
+   "a": "Yes: 53.0% of 330 community banks surveyed are piloting AI or using it in a limited way, and 8.8% use it across several functions.[^3] In a vendor survey of 148 institutions, 12.2% called their AI and machine learning (ML) strategy well-defined and resourced.[^26]"
+  }
+ ],
+ "forward": [
+  "Top workflow: regulatory change tracking. By our count, six regulators posted 152 rules or proposed rules in 2026 to 27 Nov, among 554 documents.[^15]",
+  "Next: capture complaints from every channel, as FDIC examiners expect, then trend them.[^12][^16]",
+  "Risk and who checks: AI sorts and drafts, and a named compliance officer signs off. OCC examiners scale controls to the consequences of failure.[^5]",
+  "First step: a 30-day rule-change log, then complaints, then a marketing pre-check. A failed pilot alone should not draw criticism.[^24][^15]",
+  "Cost: Copilot Business lists at $21 a user a month on a yearly plan, so by our math 8 users cost $2,016 a year.[^34] Specialist tools quote each deal.[^36]",
+  "How we'll know: hours per rule, complaint and ad, against a four-week baseline. Real SAR effort ran 21.41 hours against an official 1.98 at big banks.[^22]"
+ ],
+ "recipes": [
+  {
+   "name": "1. Three to five person team at a community bank or credit union",
+   "when": "Microsoft 365 is in place and there is no data team. Most community banks surveyed are still piloting or testing AI.[^3]",
+   "flow": [
+    "Chief compliance officer: name an owner per workflow and post the allowed-tools list (days 1 to 5)",
+    "Compliance analyst: pull the six regulators' Federal Register feed, let AI sort rules from notices, and assign each rule (days 1 to 30)",
+    "Branch and call-center leads: log every complaint taken by phone, in person or by chat into one shared log (from day 31)",
+    "Complaint lead: let AI tag product and issue, then check each tag and route UDAAP risks to an owner (days 31 to 60)",
+    "Marketing reviewer: AI flags Regulation Z trigger terms, and the reviewer signs off each ad (days 61 to 90)",
+    "Chief compliance officer: keep, change or stop each workflow at day 90"
+   ],
+   "cost": "Copilot Business lists at $21 a user a month, paid yearly, read 28 Nov 2026.[^34] The plan is yearly, so by our math five users cost $1,260 a year at list."
+  },
+  {
+   "name": "2. Insurer compliance team: complaint register and AI program",
+   "when": "Your state is one of the 30 jurisdictions that adopted the NAIC AI bulletin, by our count.[^14]",
+   "flow": [
+    "Chief compliance officer: write the AI program the NAIC bulletin expects and list each AI use",
+    "Complaint lead: AI drafts the register fields Model 880 requires (line, nature, disposition, time to process), and the lead checks each",
+    "Market conduct lead: test register entries against NAIC exam standards for response times",
+    "Advertising reviewer: AI pre-checks each ad, and the reviewer signs it off",
+    "Chief compliance officer: report results to the board at day 90"
+   ],
+   "cost": "Seat prices as in recipe 1.[^34] Complaint and policy tools quote each deal, so ask for a written list price.[^36]"
+  },
+  {
+   "name": "3. Lender with a BSA team: alert triage pilot after day 90",
+   "when": "Alert volume swamps the team. Industry false positives run around 90% to 95%.[^21]",
+   "flow": [
+    "BSA officer: record four weeks of alerts, close rates and hours per case",
+    "BSA analyst: run the AI on last quarter's closed alerts as a test set before live use",
+    "Model owner: tune and document thresholds, with no auto-close in the pilot",
+    "BSA officer: decide every SAR, with AI drafting the narrative",
+    "Internal audit: test a sample of AI-cleared alerts at day 90"
+   ],
+   "cost": "ComplyAdvantage Starter lists from $99 a month, read 28 Nov 2026.[^35] Its claim that AI resolves up to 85% of routine alerts is the vendor's.[^35]"
+  }
+ ],
+ "ownData": {
+  "title": "How many CFPB complaints does a company get in a year?",
+  "intro": "Most companies got fewer than 10 Consumer Financial Protection Bureau (CFPB) complaints in 2025, by our count, while 20 got 10,000 or more each.[^29] We pulled every 2025 complaint from the CFPB's public database on 28 Nov 2026 and banded companies by count.[^29][^30] By our count, 83% of companies got fewer than 50, so the portal load is small and other channels matter more.[^29][^12]",
+  "headers": [
+   "Complaints a company got in 2025",
+   "Companies, by our count",
+   "Share of companies, by our count",
+   "Complaints, by our count"
+  ],
+  "rows": [
+   [
+    "1 to 9",
+    "2,478",
+    "62.5%",
+    "6,906"
+   ],
+   [
+    "10 to 49",
+    "830",
+    "20.9%",
+    "18,632"
+   ],
+   [
+    "50 to 99",
+    "216",
+    "5.4%",
+    "15,250"
+   ],
+   [
+    "100 to 499",
+    "264",
+    "6.7%",
+    "56,045"
+   ],
+   [
+    "500 to 999",
+    "62",
+    "1.6%",
+    "44,704"
+   ],
+   [
+    "1,000 to 9,999",
+    "95",
+    "2.4%",
+    "266,512"
+   ],
+   [
+    "10,000 or more",
+    "20",
+    "0.5%",
+    "5,044,017"
+   ]
+  ],
+  "note": "Method: on 28 Nov 2026 we queried the CFPB complaint application programming interface (API) for 2025: 5,452,066 complaints about 3,965 companies, each banded by count. Limits: the company is whoever the consumer named, and credit bureaus hold most complaints. It is not a sample, and branch or phone complaints never reach it."
+ },
+ "howToTest": [
+  "Pick one unit: a rule, a complaint, an ad or an alert. Record four weeks of volume, hours per unit and findings.",
+  "Compare real effort with official estimates. A survey of 15 big banks found 21.41 hours per SAR, against FinCEN's 1.98-hour estimate.[^22]",
+  "Use measures examiners already read: complaints cross-referenced to the program, and response times on the complaint register.[^16][^25]",
+  "Run the AI on last quarter's closed items first, and compare its calls with your officers' calls before live use.",
+  "Keep a hold-out: for six weeks, half the ads or complaints go through the old process.",
+  "Track misses, not just speed. An untuned triage tool auto-closed alerts that should have been escalated.[^31]",
+  "Price the lift as hours saved times pay. By our math, 5% of a compliance officer's year at the BLS median of $80,730 is about $4,040.[^27]",
+  "Decide at day 90: keep, change or stop, and record why for the next exam."
+ ],
+ "watchOuts": [
+  "Auto-close without tuning: an OCC order found a bank's triage system auto-closed a very high percentage of alerts that needed escalation.[^31] Fix: no auto-close in a pilot, and tune thresholds on your own data.",
+  "Monitoring left untuned: not an AI case, but the OCC fined Bank of America $750 million in Oct 2026 for deficient BSA and AML compliance.[^32] Fix: review scenarios and coverage at least once a year.",
+  "Unchecked AI drafts: a federal appeals court imposed a $2,500 sanction for an AI-drafted brief nobody verified.[^33] Fix: a person checks every citation in an AI-drafted policy or memo.",
+  "Automation bias: in a vendor survey of 230 US banks, 34% of respondents named it a risk.[^9] Fix: sample what AI clears every week and track overrides.",
+  "No off switch: in the same vendor survey of 230 US banks, 34% of respondents said kill-switch protocols are not in place.[^9] Fix: write down who can turn each tool off, and how."
+ ],
+ "buyVsBuild": {
+  "buy": "Most compliance teams should buy first, since rule feeds, screening and seat tools are standard work.[^28][^36] Across organizations interviewed by MIT NANDA, partnered tools reached deployment about 67% of the time, against about 33% for internal builds.[^28] Credit unions should plan more vendor diligence, because the NCUA cannot examine technology providers.[^6]",
+  "build": "Build only the link to your own complaint log, policy library and exam findings, where your data is the edge. If a build becomes a model, SR 26-2 sets the model risk expectations.[^10] OCC examiners will also ask how much human oversight each use has.[^5]"
+ },
+ "pickElse": [
+  "You mean making your own AI obey AI laws: that is AI governance, covered on our AI governance consulting page. Insurers in 30 jurisdictions face the NAIC AI bulletin, by our count.[^14][^37]",
+  "Fraud losses or bank-wide AML alert volume is the real problem: see our community banks page. In the CSBS survey, 77% of AI-using banks use it for fraud detection and security.[^3]",
+  "Complaints are a few a month and ads a handful a quarter: a checklist and a shared log beat a tool. By our count, the median company in the CFPB database got 5 complaints in 2025.[^29]",
+  "Your BSA program redesign hangs on FinCEN's 2026 rule: wait, since it is still a proposal and the OCC plans an AI request for information.[^8][^11]"
+ ],
+ "resources": [
+  {
+   "name": "FDIC Consumer Compliance Examination Manual",
+   "url": "https://www.fdic.gov/consumer-compliance-examination-manual/ii-3-compliance-management-system",
+   "what": "What examiners test in your compliance program, complaints and UDAAP review."
+  },
+  {
+   "name": "OCC Bulletin 2026-54, Super Intelligence supervisory framework",
+   "url": "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-54.html",
+   "what": "How examiners scope your AI use; the OCC now calls AI super intelligence."
+  },
+  {
+   "name": "Federal Reserve SR 26-2",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+   "what": "Current model risk guidance; it replaced SR 11-7 in April 2026."
+  },
+  {
+   "name": "NAIC AI model bulletin adoption map",
+   "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
+   "what": "Which states have adopted the insurer AI bulletin."
+  },
+  {
+   "name": "CFPB withdrawal of 67 guidance documents, 12 May 2025",
+   "url": "https://www.federalregister.gov/documents/2025/05/12/2025-08286/interpretive-rules-policy-statements-and-advisory-opinions-withdrawal",
+   "what": "Check here before citing any older CFPB circular; many were withdrawn."
+  }
+ ],
+ "stats": [
+  {
+   "num": "152",
+   "label": "rules or proposed rules from six federal financial regulators, 1 Jan to 27 Nov 2026, by our count.[^15]",
+   "source": "Zavient count of Federal Register data, 28 Nov 2026"
+  },
+  {
+   "num": "5,452,066",
+   "label": "CFPB complaints received in 2025, by our count; the median company got 5.[^29]",
+   "source": "Zavient count of the CFPB complaint database, 28 Nov 2026"
+  },
+  {
+   "num": "53.0%",
+   "label": "of 330 community banks surveyed are piloting AI or using it in a limited way.[^3]",
+   "source": "Conference of State Bank Supervisors (CSBS) survey, 2026"
+  },
+  {
+   "num": "90% to 95%",
+   "label": "of AML alerts are false positives, around this range in one interview study.[^21]",
+   "source": "Future Generation Computer Systems, 2024"
+  },
+  {
+   "num": "21.41 hours",
+   "label": "per SAR at 15 banks with $100 billion or more, against FinCEN's 1.98-hour estimate.[^22]",
+   "source": "Bank Policy Institute (BPI), 2024"
+  },
+  {
+   "num": "30",
+   "label": "jurisdictions have adopted the NAIC AI model bulletin, by our count of its map.[^14]",
+   "source": "NAIC adoption map, 13 Nov 2026"
+  }
+ ],
+ "sources": [
+  {
+   "name": "FDIC Consumer Compliance Examination Manual, II-3 Compliance Management System",
+   "url": "https://www.fdic.gov/consumer-compliance-examination-manual/ii-3-compliance-management-system",
+   "what": "Federal Deposit Insurance Corporation (FDIC). A compliance management system is board and management oversight plus a compliance program: policies and procedures, training, monitoring and/or audit, and consumer complaint response. The program must be dynamic and constantly amended as rules, products and staff change. Read 28 Nov 2026."
+  },
+  {
+   "name": "OCC Comptroller's Handbook, Compliance Management Systems",
+   "url": "https://www.occ.gov/publications-and-resources/publications/comptrollers-handbook/files/compliance-mgmt-systems/pub-ch-compliance-management-systems.pdf",
+   "what": "Office of the Comptroller of the Currency (OCC). Lists change management and consumer complaint response among compliance management system components; examiners review the system every supervisory cycle. Read 28 Nov 2026."
+  },
+  {
+   "name": "CSBS, 2026 Annual Survey of Community Banks",
+   "url": "https://www.csbs.org/2026-csbs-annual-survey",
+   "what": "Conference of State Bank Supervisors. Survey of 330 community banks in 35 states. 53.0% are piloting AI or in limited use; 8.8% have deployed it across multiple functions; regulatory compliance and BSA/AML monitoring are among top uses; 77% of AI users use it for fraud detection and security. Read 28 Nov 2026."
+  },
+  {
+   "name": "NAIC, Artificial Intelligence topic page",
+   "url": "https://content.naic.org/insurance-topics/artificial-intelligence",
+   "what": "National Association of Insurance Commissioners (NAIC): AI is more likely to support insurance workers than replace them, and human oversight stays important. Read 28 Nov 2026."
+  },
+  {
+   "name": "OCC Bulletin 2026-54, Super Intelligence: Supervisory Framework (4 Nov 2026)",
+   "url": "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-54.html",
+   "what": "Office of the Comptroller of the Currency (OCC). An examiner resource on banks' use of super intelligence (SI), the OCC's new term for what was called artificial intelligence. It sets no supervisory expectations for banks. A bank may classify each use by potential consequences, transfer of agency and degree of human oversight; control intensity could increase with the consequences of an SI agent's failure; examinations are tailored for community banks. Read 28 Nov 2026."
+  },
+  {
+   "name": "GAO-25-107197, Artificial Intelligence: Use and Oversight in Financial Services (May 2025)",
+   "url": "https://www.gao.gov/products/gao-25-107197",
+   "what": "Regulators oversee AI under existing laws; most regulators use AI outputs to inform decisions, not as the sole source. NCUA lacks detailed model risk guidance and the authority to examine technology service providers. Read 28 Nov 2026."
+  },
+  {
+   "name": "OCC Comptroller's Handbook, Unfair or Deceptive Acts or Practices and UDAAP, v1.1 (Dec 2024)",
+   "url": "https://www.occ.gov/publications-and-resources/publications/comptrollers-handbook/files/unfair-deceptive-act/pub-ch-udap-udaap.pdf",
+   "what": "Sound marketing processes include review by qualified staff (compliance, legal or audit) for clarity, compliance and accuracy; marketing not reviewed that way is a red flag. Testing should check consistency across disclosures, marketing and systems. Read 28 Nov 2026."
+  },
+  {
+   "name": "FinCEN news release, proposed rule to reform financial institution AML/CFT programs (7 Apr 2026)",
+   "url": "https://www.fincen.gov/news/news-releases/fincen-proposes-rule-fundamentally-reform-financial-institution-programs",
+   "what": "Financial Crimes Enforcement Network (FinCEN). Proposed rule to reform anti-money laundering and countering the financing of terrorism (AML/CFT) programs, issued 7 Apr 2026; comments were due 9 Jun 2026. It refocuses programs on effectiveness and supersedes the 2024 proposal. Read 28 Nov 2026."
+  },
+  {
+   "name": "Wolters Kluwer, US Banking AI Risk and Governance Index (28 May 2026; vendor survey)",
+   "url": "https://www.wolterskluwer.com/en/news/wolters-kluwer-survey-highlights-ai-governance-and-other-ongoing-needs-for-banking-institutions",
+   "what": "Survey of 230 US banking professionals by Wolters Kluwer, a compliance software vendor. 34.21% of respondents named automation bias as posing the greatest risk to their AI safety framework; 72% say they are least prepared for reporting or shutting down an AI incident; 34.35% say model kill-switch protocols are not in place. Read 28 Nov 2026."
+  },
+  {
+   "name": "Federal Reserve, SR 26-2 (17 Apr 2026)",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+   "what": "Model risk management guidance dated 17 Apr 2026. Supersedes SR 11-7 and SR 21-8 (the 2021 BSA/AML model statement); most relevant to banks with over $30 billion in assets. Read 28 Nov 2026."
+  },
+  {
+   "name": "OCC Bulletin 2026-13, model risk management",
+   "url": "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-13.html",
+   "what": "The OCC version of SR 26-2. Generative AI and agentic AI models are not within the scope of this guidance; points to OCC Bulletin 2025-26, under which community banks need not do annual model validation; an AI request for information is planned. Read 28 Nov 2026."
+  },
+  {
+   "name": "FDIC Consumer Compliance Examination Manual, VII-1 FTC Act Section 5 and Dodd-Frank UDAAP (Aug 2025)",
+   "url": "https://www.fdic.gov/consumer-compliance-examination-manual/vii-1-federal-trade-commission-act-section-5-and-dodd-frank",
+   "what": "Institutions should centralize consumer complaint handling and ensure all complaints are captured: telephone, mail, email, in person, through the regulator, text and live chat. They should monitor complaints for UDAP and UDAAP trends. Read 28 Nov 2026."
+  },
+  {
+   "name": "FinCEN, Suspicious Activity Report FAQs (Oct 2025)",
+   "url": "https://www.fincen.gov/system/files/2025-10/SAR-FAQs-October-2025.pdf",
+   "what": "No requirement for a separate 90-day continuing-activity review, and no requirement to document a decision not to file a SAR. Read 28 Nov 2026."
+  },
+  {
+   "name": "NAIC, AI Model Bulletin adoption map (status 13 Nov 2026)",
+   "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
+   "what": "Zavient count of the map, status 13 Nov 2026: adopted in 30 jurisdictions (28 states, DC and Puerto Rico). California, Colorado and New York have their own insurance-specific rules. Read 28 Nov 2026."
+  },
+  {
+   "name": "Federal Register API, documents by agency (Zavient count)",
+   "url": "https://www.federalregister.gov/api/v1/documents.json",
+   "what": "Zavient count, 28 Nov 2026, of documents from the CFPB, OCC, FDIC, Federal Reserve, NCUA and FinCEN: 583 in 2025 (113 rules or proposed rules); 554 from 1 Jan to 27 Nov 2026 (152 rules or proposed rules)."
+  },
+  {
+   "name": "FDIC Consumer Compliance Examination Manual, II-5 Review and Analysis (Oct 2025)",
+   "url": "https://www.fdic.gov/consumer-compliance-examination-manual/ii-5-review-and-analysis",
+   "what": "Examiners review all complaint files, including the FDIC's own tracking system, and ask whether complaints are cross-referenced to other areas of the compliance management system. Read 28 Nov 2026."
+  },
+  {
+   "name": "NAIC Model Law 880, Unfair Trade Practices Act",
+   "url": "https://content.naic.org/sites/default/files/model-law-880.pdf",
+   "what": "Insurers must keep a complete record of complaints: number, line of insurance, nature, disposition and time to process. A complaint is any written grievance. Read 28 Nov 2026."
+  },
+  {
+   "name": "eCFR, 12 CFR 1026.24 (Regulation Z advertising)",
+   "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1026/subpart-C/section-1026.24",
+   "what": "Lists triggering terms in credit advertising that require added disclosures. Read 28 Nov 2026."
+  },
+  {
+   "name": "eCFR, 12 CFR Part 740 (NCUA advertising and insurance signs)",
+   "url": "https://www.ecfr.gov/current/title-12/part-740",
+   "what": "National Credit Union Administration (NCUA) rules on accuracy of advertising and the official insurance sign. Read 28 Nov 2026."
+  },
+  {
+   "name": "FDIC, questions and answers on the Part 328 final rule",
+   "url": "https://www.fdic.gov/deposit-insurance/questions-and-answers-related-fdics-part-328-final-rule",
+   "what": "Digital signage rule amended 29 Jan 2026 (FIL-3-2026); compliance date 1 Apr 2027. Read 28 Nov 2026."
+  },
+  {
+   "name": "Future Generation Computer Systems (2024), interview study on AML transaction monitoring",
+   "url": "https://www.sciencedirect.com/science/article/pii/S0167739X24002607",
+   "what": "Interview study of 8 AML specialists: the industry average for false positives in AML alerts was put at around 90%-95%. Read 28 Nov 2026."
+  },
+  {
+   "name": "Bank Policy Institute, comment letter to FinCEN on SAR burden (12 Apr 2024)",
+   "url": "https://bpi.com/wp-content/uploads/2024/04/BPI-Comment-Letter-FinCEN-SAR-PRA-Notice-4.12.24.pdf",
+   "what": "Survey of 15 banks with $100 billion or more in assets: 21.41 hours per SAR, against FinCEN's estimate of 1.98 hours (simple average 23.15, median 21.15). Read 28 Nov 2026."
+  },
+  {
+   "name": "FinCEN, program proposed rule fact sheet (Apr 2026)",
+   "url": "https://www.fincen.gov/system/files/2026-04/Program-NPRM-FactSheet.pdf",
+   "what": "FinCEN's Director would consider whether the bank is employing innovative tools such as artificial intelligence. The proposal requires a US-based AML/CFT officer and a written program approved by the board, an equivalent body or senior management; comments were due 9 Jun 2026. Read 28 Nov 2026."
+  },
+  {
+   "name": "FinCEN and federal banking agencies, joint statement on innovative efforts (Dec 2018)",
+   "url": "https://fincen.gov/news/news-releases/treasurys-fincen-and-federal-banking-agencies-issue-joint-statement-encouraging",
+   "what": "Innovative pilot programs should not, in and of themselves, subject banks to supervisory criticism, even if they prove unsuccessful. Pilots that expose gaps will not necessarily result in supervisory action. Read 28 Nov 2026."
+  },
+  {
+   "name": "NAIC, Market Regulation Handbook examination standards summary (2026)",
+   "url": "https://content.naic.org/sites/default/files/publication-mes-hb-market-handbook-examination.pdf",
+   "what": "Standards: all complaints recorded on a complaint register; adequate complaint procedures; responses within the time the statute sets; all advertising complies. Read 28 Nov 2026."
+  },
+  {
+   "name": "Wolters Kluwer, Q1 2026 AI trend report (vendor survey)",
+   "url": "https://www.wolterskluwer.com/en/news/survey-indicates-financial-institutions-that-align-with-regulators-are-able-to-adopt-ai-successfully",
+   "what": "Survey of 148 financial institutions by Wolters Kluwer, a compliance software vendor: 58.8% want regulatory guidance; 26.4% are confident on regulatory requirements; 46.6% name operational efficiency as the primary AI goal; 31.8% have AI or machine learning in production; 12.2% say their strategy is well-defined and resourced. Read 28 Nov 2026."
+  },
+  {
+   "name": "US Bureau of Labor Statistics, Occupational Outlook Handbook: Compliance Officers",
+   "url": "https://www.bls.gov/ooh/business-and-financial/compliance-officers.htm",
+   "what": "Median pay $80,730 (May 2025); finance and insurance median $82,310; 436,400 jobs; projected growth 4%, 2025-35. Read 28 Nov 2026."
+  },
+  {
+   "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025)",
+   "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+   "what": "MIT no longer hosts the report (its link now opens the NANDA project page, checked 26 Nov 2026); copy hosted by MLQ.ai. Sample: 52 organizations interviewed, survey of 153 leaders, and 300+ public AI initiatives reviewed. $30-40 billion of enterprise GenAI investment; 95% of organizations are getting zero return; just 5% of integrated AI pilots extract millions in value. Task-specific tools: 60% of organizations evaluated them, 20% piloted, 5% reached production. Over 80% of organizations explored or piloted ChatGPT or Copilot, and nearly 40% report deployment. External partnerships with customized tools reached deployment about 67% of the time vs about 33% for internal builds: 2x as likely, twice the success rate. Only 40% of companies purchased an official LLM subscription; workers at over 90% of companies surveyed use personal AI tools for work. For mission-critical work, 90% of users prefer humans. Enterprises, defined as firms with over $100 million in annual revenue, lead in pilot count but report the lowest pilot-to-scale conversion. Read 26 Nov 2026."
+  },
+  {
+   "name": "CFPB Consumer Complaint Database API, complaints received in 2025 (Zavient count)",
+   "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/?size=0&date_received_min=2025-01-01&date_received_max=2026-01-01",
+   "what": "Consumer Financial Protection Bureau (CFPB). Zavient count, pulled 28 Nov 2026: 5,452,066 complaints about 3,965 companies in 2025; median company 5; 83.4% of companies got fewer than 50. Credit reporting 4,818,203 of the total."
+  },
+  {
+   "name": "CFPB, How we share complaint data",
+   "url": "https://www.consumerfinance.gov/complaint/data-use/",
+   "what": "Complaints are published after the company responds or after 15 days, whichever comes first; the company field is what the consumer named; the data is not a statistical sample; narratives appear only with consent. Read 28 Nov 2026."
+  },
+  {
+   "name": "OCC consent order AA-ENF-2025-21, Community Federal Savings Bank",
+   "url": "https://www.occ.gov/static/enforcement-actions/eaAA-ENF-2025-21.pdf",
+   "what": "An automated alert triage system with flawed logic, data and method auto-closed a very high percentage of all ingested alerts that should have been escalated; thresholds were not tuned. Read 28 Nov 2026."
+  },
+  {
+   "name": "OCC news release 2026-89 (13 Oct 2026)",
+   "url": "https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-89.html",
+   "what": "OCC civil money penalty of $750 million against Bank of America for deficient Bank Secrecy Act and AML compliance, the largest in OCC history; FinCEN assessed a $1.2 billion fine. Read 28 Nov 2026."
+  },
+  {
+   "name": "Fletcher v. Experian, US Court of Appeals for the Fifth Circuit (Feb 2026)",
+   "url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-20086-CV0.pdf",
+   "what": "Counsel used AI to draft a substantial portion of a reply brief and failed to verify it; the court imposed a $2,500 sanction. Read 28 Nov 2026."
+  },
+  {
+   "name": "Microsoft 365 Copilot Business pricing",
+   "url": "https://www.microsoft.com/en-us/copilot/pricing/business",
+   "what": "Copilot Business add-on: $21 a user a month, paid yearly, on an annual subscription; $18 in a promotion from 1 Jul to 31 Dec 2026 (annual commitment, first year only). List price, read 28 Nov 2026."
+  },
+  {
+   "name": "ComplyAdvantage pricing",
+   "url": "https://complyadvantage.com/pricing",
+   "what": "Starter plan from $99 a month, with tiers from 100 to 2,000 monitored entities. Vendor's claim: agentic workflows resolve up to 85% of routine alerts autonomously. Read 28 Nov 2026."
+  },
+  {
+   "name": "Compliance.ai, part of Archer Evolv Compliance",
+   "url": "https://www.compliance.ai/",
+   "what": "Vendor's claim: monitors 8,000+ sources across 3,000+ agencies and 230+ jurisdictions. No public price; demo on request. Read 28 Nov 2026."
+  },
+  {
+   "name": "NAIC Model Bulletin, Use of Artificial Intelligence Systems by Insurers (adopted 4 Dec 2023)",
+   "url": "https://content.naic.org/sites/default/files/inline-files/2023-12-4%20Model%20Bulletin_Adopted_0.pdf",
+   "what": "National Association of Insurance Commissioners (NAIC). Insurers are expected to develop, implement and maintain a written program (an AIS Program) for the responsible use of AI systems that make or support decisions on regulated insurance practices. Read 28 Nov 2026."
+  }
+ ],
+ "related": [
+  "community-banks-credit-unions",
+  "insurance",
+  "ai-governance-consulting",
+  "ai-loan-review",
+  "ai-document-processing",
+  "ai-for-operations-leaders"
+ ],
+ "offer": {
+  "heading": "Find the one compliance workflow where AI pays first",
+  "body": "Your top 2 workflows ranked, and a one-page plan you can hand your CEO. Bring one job your team runs every week, such as rule tracking or complaints. We will show where AI helps, who signs off and what examiners will ask."
+ },
+ "keyword": {
+  "phrase": "ai for compliance",
+  "searches": 590,
+  "cpc": 36.59,
+  "difficulty": 19
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Stopped at the bottom line: CFPB and OCC appeared before either was spelled out. Bullets now say the federal portal and a regulator's order; both are spelled out in the body. Asked where branch and call-center staff fit, since complaint capture lands on ops; recipe 1 now gives branch and call-center leads their own logging step."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Every recipe step names a role and fits a phone. Checked that no step asks ops to run a tool unsupervised: auto-close is barred in the BSA pilot and every AI tag is checked by the complaint lead. No changes."
+  },
+  {
+   "reader": "GM",
+   "notes": "Reads in P&L terms: the price-the-lift step ties hours saved to the BLS median pay, and the brief gives a 90-day seat total. Wanted the CFPB table to say why a small bank should care; the intro already says the portal load is small and other channels matter more. No changes."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Read as a chief compliance officer and a BSA officer. Flagged the model validation answer: SR 26-2 itself does not exclude generative AI, only the OCC bulletin does, so the answer now starts Not under the OCC guidance. Confirmed SR 11-7 is named only as replaced, withdrawn CFPB circulars are flagged in resources, and FinCEN's 2026 rule is called a proposal."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Bottom line reads in a minute and the brief has a total cost. Found the line for readers who mean AI law too vague; it now names the AI governance consulting page. No Zavient price requested or added, per Russell's 26 Nov rule."
+  }
+ ],
+ "updated": "2026-11-28",
+ "figureCheck": {
+  "date": "2026-11-28",
+  "checked": 31,
+  "notFound": [],
+  "byHand": [
+   {
+    "where": "verdict[3]",
+    "figure": "90%",
+    "url": "https://www.occ.gov/static/enforcement-actions/eaAA-ENF-2025-21.pdf",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "The industry average for false positives, which has been improving in recent years, was mentioned to be around 90%–95%, in line with the current literature."
+   },
+   {
+    "where": "verdict[3]",
+    "figure": "95%",
+    "url": "https://www.occ.gov/static/enforcement-actions/eaAA-ENF-2025-21.pdf",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "The industry average for false positives, which has been improving in recent years, was mentioned to be around 90%–95%, in line with the current literature."
+   },
+   {
+    "where": "decisions[1].know",
+    "figure": "$30B",
+    "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Applicability: This letter is expected to be most relevant to banking organizations with over $30 billion in total assets regulated by the Federal Reserve."
+   },
+   {
+    "where": "decisions[2].know",
+    "figure": "34%",
+    "url": "https://www.wolterskluwer.com/en/news/wolters-kluwer-survey-highlights-ai-governance-and-other-ongoing-needs-for-banking-institutions",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "With 34.21% of respondents noting automation bias and then 27.19% stating misalignment of incentives as posing the greatest risk to their AI safety framework."
+   },
+   {
+    "where": "decisions[5].know",
+    "figure": "67%",
+    "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "In our sample, external partnerships with learning-capable, customized tools reached deployment ~67% of the time, compared to ~33% for internally built tools."
+   },
+   {
+    "where": "decisions[5].know",
+    "figure": "33%",
+    "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "In our sample, external partnerships with learning-capable, customized tools reached deployment ~67% of the time, compared to ~33% for internally built tools."
+   },
+   {
+    "where": "ranked[3].why",
+    "figure": "90%",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0167739X24002607",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "The industry average for false positives, which has been improving in recent years, was mentioned to be around 90%–95%, in line with the current literature."
+   },
+   {
+    "where": "ranked[3].why",
+    "figure": "95%",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0167739X24002607",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "The industry average for false positives, which has been improving in recent years, was mentioned to be around 90%–95%, in line with the current literature."
+   },
+   {
+    "where": "faq[2].a",
+    "figure": "$30B",
+    "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Applicability: This letter is expected to be most relevant to banking organizations with over $30 billion in total assets regulated by the Federal Reserve."
+   },
+   {
+    "where": "faq[4].a",
+    "figure": "$99",
+    "url": "https://complyadvantage.com/pricing",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "Starter: From $99 per month for 100, 250, 500, 750, 1,000, 1,500 or 2,000 monitored entities."
+   },
+   {
+    "where": "faq[5].a",
+    "figure": "53.0%",
+    "url": "https://www.csbs.org/2026-csbs-annual-survey",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "FIGURE 34 Which best describes your bank’s current use of artificial intelligence (AI), including vendor-provided AI solutions? Pilot testing or limited use in specific functions 53.0"
+   },
+   {
+    "where": "faq[5].a",
+    "figure": "8.8%",
+    "url": "https://www.csbs.org/2026-csbs-annual-survey",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "FIGURE 34: Deployed in multiple functions or integrated into core operations 8.8"
+   },
+   {
+    "where": "faq[5].a",
+    "figure": "12.2%",
+    "url": "https://www.wolterskluwer.com/en/news/survey-indicates-financial-institutions-that-align-with-regulators-are-able-to-adopt-ai-successfully",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "while approximately 31.8% of institutions surveyed have deployed AI/ML technologies into production, only 12.2% describe their AI/ML strategy as “well-defined and resourced.”"
+   },
+   {
+    "where": "recipes[2].when",
+    "figure": "90%",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0167739X24002607",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "The industry average for false positives, which has been improving in recent years, was mentioned to be around 90%–95%, in line with the current literature."
+   },
+   {
+    "where": "recipes[2].when",
+    "figure": "95%",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0167739X24002607",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "The industry average for false positives, which has been improving in recent years, was mentioned to be around 90%–95%, in line with the current literature."
+   },
+   {
+    "where": "recipes[2].cost",
+    "figure": "$99",
+    "url": "https://complyadvantage.com/pricing",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Starter: From $99 per month for 100, 250, 500, 750, 1,000, 1,500 or 2,000 monitored entities."
+   },
+   {
+    "where": "recipes[2].cost",
+    "figure": "85%",
+    "url": "https://complyadvantage.com/pricing",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Agentic workflows: resolve up to 85% of routine alerts autonomously."
+   },
+   {
+    "where": "watchOuts[1]",
+    "figure": "$750 million",
+    "url": "https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-89.html",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "The Office of the Comptroller of the Currency (OCC) today announced a $750 million civil money penalty against Bank of America, N.A. (bank), for violations of the Bank Secrecy Act and its implementing regulations."
+   },
+   {
+    "where": "watchOuts[2]",
+    "figure": "$2,500",
+    "url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-20086-CV0.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "we have determined that counsel used artificial intelligence to draft a substantial portion, if not all, of her reply brief and then failed to verify the accuracy of the content generated. ... IT IS ORDERED that Heather Hersh pay to the clerk of court within 30 days a sanction of $2,500."
+   },
+   {
+    "where": "watchOuts[3]",
+    "figure": "34%",
+    "url": "https://www.wolterskluwer.com/en/news/wolters-kluwer-survey-highlights-ai-governance-and-other-ongoing-needs-for-banking-institutions",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "With 34.21% of respondents noting automation bias and then 27.19% stating misalignment of incentives as posing the greatest risk to their AI safety framework."
+   },
+   {
+    "where": "watchOuts[4]",
+    "figure": "34%",
+    "url": "https://www.wolterskluwer.com/en/news/wolters-kluwer-survey-highlights-ai-governance-and-other-ongoing-needs-for-banking-institutions",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "with 37.83% saying regulatory reporting of an AI failure is what they are least prepared for, along with another 34.35% saying model kill-switch protocols aren’t in place."
+   },
+   {
+    "where": "buyVsBuild.buy",
+    "figure": "67%",
+    "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "In our sample, external partnerships with learning-capable, customized tools reached deployment ~67% of the time, compared to ~33% for internally built tools."
+   },
+   {
+    "where": "buyVsBuild.buy",
+    "figure": "33%",
+    "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "In our sample, external partnerships with learning-capable, customized tools reached deployment ~67% of the time, compared to ~33% for internally built tools."
+   },
+   {
+    "where": "pickElse[1]",
+    "figure": "77%",
+    "url": "https://www.csbs.org/2026-csbs-annual-survey",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "For those community bankers already engaged with AI, 77% said they are using it to assist with fraud detection and security."
+   },
+   {
+    "where": "stats[2]",
+    "figure": "53.0%",
+    "url": "https://www.csbs.org/2026-csbs-annual-survey",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "FIGURE 34 Which best describes your bank’s current use of artificial intelligence (AI), including vendor-provided AI solutions? Pilot testing or limited use in specific functions 53.0"
+   },
+   {
+    "where": "stats[3]",
+    "figure": "90%",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0167739X24002607",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "The industry average for false positives, which has been improving in recent years, was mentioned to be around 90%–95%, in line with the current literature."
+   },
+   {
+    "where": "stats[3]",
+    "figure": "95%",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0167739X24002607",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "The industry average for false positives, which has been improving in recent years, was mentioned to be around 90%–95%, in line with the current literature."
+   },
+   {
+    "where": "stats[4]",
+    "figure": "$100 billion",
+    "url": "https://bpi.com/wp-content/uploads/2024/04/BPI-Comment-Letter-FinCEN-SAR-PRA-Notice-4.12.24.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "In formulating BPI’s burden estimate of 21.41 hours per SAR filed, BPI conducted a survey of its members. The 15 survey respondents included banks with at least $100 billion in assets."
+   }
+  ],
+  "redirects": []
+ },
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "source-check agent (separate from writer)",
+  "checked": 37,
+  "fixed": [
+   "OCC 2026-54 is the 'Super Intelligence' examiner framework, not an AI-agents rule; reworded faq[0], humanRole[0], decisions[2], resource and source name",
+   "decisions[2]: risk classification is the bank's, not examiners'; Wolters Kluwer sample is 230 banking professionals",
+   "FinCEN news release (src 8) does not state US-based officer, board approval or innovative-tools claim; moved to fact sheet [^23], approval reworded to board or senior management",
+   "faq[3]: cut unsupported 'innovative tools add no extra risk' claim; replaced with 2018 joint statement on pilots exposing gaps [^24]",
+   "NAIC map does not state the written-program expectation; added NAIC Model Bulletin as source 37 (decisions[4], pickElse[0], which also dropped irrelevant GAO cite)",
+   "OCC UDAAP handbook is v1.1 Dec 2024, not Nov; humanRole[2] reworded to the handbook's red flag",
+   "Copilot Business is an annual subscription: 90-day costs ($315, $504) replaced with yearly math ($1,260, $2,016); unconfirmed $25.20 monthly price cut",
+   "Bank-named CFPB median of 23.5 could not be reproduced; cut from ownData intro and pickElse[2], replaced with reproducible figures (83% under 50; median company 5)",
+   "Interview study sample (8 AML specialists) added to source 21",
+   "Re-verified live: SR 26-2 (17 Apr 2026, supersedes SR 11-7 and SR 21-8), OCC 2026-13, Federal Register counts 554/152 and 583/113, CFPB total 5,452,066, NAIC count 30, FinCEN rule still a proposal, AI RFI still unissued, ComplyAdvantage $99, Copilot $21/$18"
+  ]
+ }
+}

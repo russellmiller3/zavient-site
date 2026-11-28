@@ -1,0 +1,923 @@
+{
+ "title": "Where should a family office COO start with AI?",
+ "description": "Where a family office COO should point AI first, who signs off, and our count of 159 filing deadlines a model 30-filer office faces.",
+ "type": "role",
+ "templateVersion": 1,
+ "topic": "AI for family office COOs",
+ "job": "Family office COO",
+ "industry": "family offices",
+ "index": true,
+ "verdict": [
+  "Start with reporting and the filing calendar, where office hours go, not with investment calls.[^5][^6]",
+  "AI drafts, extracts and flags, while a named person approves every payment, filing and family report.[^1][^8]",
+  "By our count, a model 30-filer office faces 159 federal, SEC and Delaware deadlines a year, peaking in autumn.[^16][^17]",
+  "Expect thin early results: only 18% of single-family offices in the Americas saw AI cut costs, so baseline first.[^4][^12]",
+  "Buy before you build: most family offices prefer ready-made tools, and lean teams lack in-house AI skills.[^1][^2]"
+ ],
+ "onPage": [
+  {
+   "to": "human-role",
+   "text": "Which calls your controller, payment approvers and principal keep"
+  },
+  {
+   "to": "ranked",
+   "text": "Six office jobs where AI pays first, with the number to measure"
+  },
+  {
+   "to": "faq",
+   "text": "Straight answers to what the principal or family will ask"
+  },
+  {
+   "to": "forward",
+   "text": "A one-page brief you can hand your principal"
+  },
+  {
+   "to": "recipes",
+   "text": "Three 90-day starts, sized to your office"
+  },
+  {
+   "to": "own-data",
+   "text": "Our count of the filing deadlines a 30-filer office carries"
+  }
+ ],
+ "headings": {
+  "what-it-is": "What does AI change for a family office COO?",
+  "decisions": "Which AI decisions does a family office COO own?",
+  "ranked": "Where does AI pay first in a family office?",
+  "faq": "What will the principal or family ask?",
+  "forward": "The one-page brief to hand your principal",
+  "what-goes-wrong": "Where does AI in a family office go wrong?",
+  "buy-or-build": "Should a family office buy AI or build it?"
+ },
+ "answers": {
+  "human-role": "Your people keep every payment, filing, investment call and family report, while AI drafts, extracts and flags work for them to check.[^1][^8]",
+  "decisions": "A family office COO owns six AI calls: what to fix first, what data goes in, who checks output, vendor features, buy or build, and how to measure.[^1][^9]",
+  "ranked": "AI pays first in consolidated reporting and document intake, and 73% of family offices in the Americas call investment reporting too manual.[^5][^1]",
+  "faq": "The principal or family will ask about data safety, savings so far, fraud, the SEC, what peers do and whether to hire.[^1][^3]",
+  "recipes": "A 90-day start is one job, four weeks of baseline hours, a six-week pilot on tools you already license, then a keep, change or stop call.[^6][^1]",
+  "own-data": "Our count found 159 federal, SEC and Delaware filing deadlines a year for a model 30-filer office, or about 3 every working week.[^16][^24]",
+  "benchmark": "Show it worked by timing two jobs for four weeks, piloting against a hold-out group, and pricing the hours saved in dollars.[^28][^12]",
+  "what-goes-wrong": "AI in a family office goes wrong through spoofed payment requests, missing incident plans, stalled pilots, wrong facts sent to the family and single points of failure.[^8][^7]",
+  "buy-or-build": "Buy first, because most family offices prefer ready-made tools and 57% cite lack of internal expertise as the biggest barrier.[^1][^2]",
+  "something-else": "Pick something else when providers do most of the work, an operating business dominates, you are a registered adviser, or the pain is a multi-entity close.[^3][^15]"
+ },
+ "summary": "AI changes how fast a family office COO's team clears paperwork: statements, notices, deadlines and drafts get a first pass.[^1][^3] The COO runs the office as an operating business: reporting, technology, compliance, vendors and controls.[^10] AI pays only with privacy controls and a named reviewer.[^1]",
+ "humanRole": [
+  "COO: owns the list of approved AI tools, what family data may go in, and which outputs need a human check.[^1][^9]",
+  "Controller: reviews every AI-extracted capital call, K-1 figure or journal entry before it posts. Citi found careful offices treat AI output as drafts needing human checks.[^1]",
+  "Payment approver: a named person approves every wire and bank-detail change, with a call-back. FinCEN warns criminals use deepfakes of executives to order transfers.[^8]",
+  "Principal or chief investment officer: keeps every investment decision and signs off what the family sees. Citi found final decisions stay with experienced people.[^1]"
+ ],
+ "decisions": [
+  {
+   "decision": "What to fix first",
+   "know": "Where staff hours go today. Family office executives spend 19% of their time on administration and compliance, 27% in North America.[^6]"
+  },
+  {
+   "decision": "What family data may go into AI",
+   "know": "Citi calls privacy non-negotiable for family offices.[^1] In its survey, 28% of family offices cite cybersecurity or privacy as a barrier to new technology.[^1]"
+  },
+  {
+   "decision": "Who checks output, and how closely",
+   "know": "Careful offices fully review AI summaries first, then move to spot-checks as confidence builds.[^1] NIST, the US standards agency, asks for written human oversight roles.[^9]"
+  },
+  {
+   "decision": "Which vendor AI features to switch on",
+   "know": "Some offices already get AI through the back door, via software providers and devices they use.[^1] Read each provider's AI terms before a feature goes live."
+  },
+  {
+   "decision": "Buy or build",
+   "know": "Most family offices prefer to buy, and some build only for 80%+ efficiency gains.[^1] Lack of internal expertise is the top barrier, cited by 57% of family offices.[^1]"
+  },
+  {
+   "decision": "How to measure",
+   "know": "Only 18% of single-family offices in the Americas report AI cut operating costs, and 43% see no measurable impact.[^4] So time each job before the pilot starts."
+  }
+ ],
+ "ranked": [
+  {
+   "name": "Consolidated reporting",
+   "slug": "family-office-reporting",
+   "why": "73% of family offices in the Americas say investment reporting is too manual, a top concern three years running.[^5] Citi found monthly adviser reports still merged into Excel by hand.[^1]",
+   "payoff": "Days from month-end to the family's report, and breaks per cycle."
+  },
+  {
+   "name": "Capital calls, K-1s and statements",
+   "slug": "family-office-accounting",
+   "why": "Citi found family office tax work highly manual and voluminous.[^1] In our model office, by our count, 15 trust and personal returns wait on 13 partnership K-1s.[^16][^17]",
+   "payoff": "Minutes per document, and fields the controller corrects."
+  },
+  {
+   "name": "Bookkeeping, bill pay and entity accounting",
+   "slug": "family-office-accounting",
+   "why": "Bill pay is the task family offices most often keep fully in-house, at 69%, with accounting or tax at 51%.[^3]",
+   "payoff": "Days to close each entity, and invoices handled per person."
+  },
+  {
+   "name": "The filing and compliance calendar",
+   "why": "By our count, a model 30-filer office faces 159 federal, SEC and Delaware deadlines a year.[^16][^24] Family office executives spend 19% of their time on administration and compliance.[^6]",
+   "payoff": "Deadlines met without a scramble, and hours spent chasing documents."
+  },
+  {
+   "name": "Email, meeting notes and memos",
+   "why": "Copilot users spent about 2 fewer hours a week on email in a field study of 7,137 workers.[^28] Writing tasks took 40% less time with ChatGPT in a controlled study.[^29]",
+   "payoff": "Hours a week on email, notes and memos."
+  },
+  {
+   "name": "Software, vendors and security",
+   "slug": "family-office-software",
+   "why": "Choosing new software can take 8 to 12 weeks and implementing it 3 to 6 months, per Deloitte.[^6] So a 90-day start runs on tools you already license.",
+   "payoff": "Vendor AI terms read, and features switched on with sign-off."
+  }
+ ],
+ "faq": [
+  {
+   "q": "Is the family's data safe in these tools?",
+   "a": "Only on business plans with admin controls and a written rule on what data goes in.[^31][^1] Citi calls privacy non-negotiable, and 28% of family offices cite cybersecurity or privacy as a barrier.[^1]"
+  },
+  {
+   "q": "What has AI saved other family offices so far?",
+   "a": "Little measured cost so far: only 18% of single-family offices in the Americas report AI cut operating costs.[^4] Another 29% of those offices say it is too early, so set a baseline before day one.[^4]"
+  },
+  {
+   "q": "Are we exposed to AI-driven fraud?",
+   "a": "Yes: 72% of family offices in a Bank of America survey say the office or a family member has faced fraud.[^3] FinCEN warns deepfakes of executives are used to order transfers.[^8] Keep a call-back rule on every payment request."
+  },
+  {
+   "q": "Does the Securities and Exchange Commission (SEC) examine our AI use?",
+   "a": "No, not by default, because an office that meets the SEC's family office rule is not an investment adviser.[^15] A multi-family office or registered adviser arm is different."
+  },
+  {
+   "q": "Are other family offices using AI yet?",
+   "a": "Yes: 42% of US family offices say employees use AI today, and 37% more are interested, in Bank of America's survey.[^3] Citi puts AI use for operations or investment analysis at 22% of family offices, up from 13%.[^1][^2]"
+  },
+  {
+   "q": "Do we need to hire someone to run AI?",
+   "a": "No, not to start, because live job postings write AI into the existing operations seat.[^11][^12] A Chicago multi-family office COO role names AI initiatives, and a family enterprise operations director must measure time saved.[^11][^12]"
+  }
+ ],
+ "forward": [
+  "Top workflow: consolidated reporting, which 73% of family offices in the Americas call too manual.[^5]",
+  "What it saves: time on statements, notices and drafts. Writing tasks took 40% less time in a controlled study.[^29][^1]",
+  "Risk and who checks: the controller signs off extracted figures, and a named person approves every payment by call-back.[^1][^8]",
+  "First step: four weeks of baseline hours on two jobs, then a pilot on tools you already license.[^6][^12]",
+  "Cost: AI seats list at $20 to $21 a user a month on annual plans.[^30][^31] By our math, 10 users for 90 days cost at most $630.",
+  "Decision at day 90: keep, change or stop each pilot against its baseline. Offices that build their own tools demand 80%+ efficiency gains.[^1]"
+ ],
+ "recipes": [
+  {
+   "name": "1. Lean office, 10 staff or fewer: seat tools plus one job",
+   "when": "No in-house IT, and Microsoft 365 already in place. By our math from Bank of America's survey, 42% of family offices have no more than 10 employees.[^3]",
+   "flow": [
+    "COO: pick one job, such as the monthly family report or meeting notes, and name its owner (days 1 to 10)",
+    "Controller: record four weeks of baseline hours, errors and turnaround (days 1 to 30)",
+    "IT provider: turn on phishing-resistant multifactor sign-in for email and bank portals",
+    "COO: turn on business-plan seats and post the rule on what family data may go in",
+    "Staff: run the pilot for six weeks while a hold-out group keeps the old way (days 31 to 75)",
+    "Controller: check every AI draft before it leaves the office",
+    "COO: keep, change or stop at day 90"
+   ],
+   "cost": "Copilot Business lists at $21 a user a month on an annual plan, and ChatGPT Business at $20 (read 28 Nov 2026).[^30][^31] Ten users for three months at $21 is $630 in seats, by our math."
+  },
+  {
+   "name": "2. Document-heavy office: capital calls, K-1s and statements",
+   "when": "Many entities and private funds, with notices arriving by email. Citi found family office tax work manual and voluminous.[^1]",
+   "flow": [
+    "Controller: count documents, minutes each and errors for four weeks",
+    "COO: test one extraction tool, or your platform's own feature, on your own documents",
+    "Staff accountant: review every low-confidence field before it posts",
+    "Controller: sign off the posting rules and the exception log",
+    "COO: compare minutes per document with the baseline at day 90"
+   ],
+   "cost": "We give no list price for extraction tools here; our family office accounting guide covers K-1 and capital call intake. Seats for staff who review drafts cost as in recipe 1.[^30][^31]"
+  },
+  {
+   "name": "3. Office with a deadline crunch: the filing calendar",
+   "when": "Many partnerships and trusts, and returns that wait on K-1s. By our count, a model 30-filer office faces 159 deadlines a year.[^16][^24]",
+   "flow": [
+    "COO: list every entity, filer and form, with the person who owns each",
+    "Controller: load due dates from IRS Publication 509 into one shared calendar",
+    "Outside tax accountant: confirm extension and estimate dates for each return",
+    "Operations associate: have AI draft document requests to advisers, then edit and send them",
+    "COO: review late and chased items each month"
+   ],
+   "cost": "Seats cost as in recipe 1, and the calendar needs no new software.[^30][^16]"
+  }
+ ],
+ "ownData": {
+  "title": "How many filing deadlines does a 30-filer family office face?",
+  "intro": "By our count, a model office of 30 filers faces 159 federal, SEC and Delaware filing deadlines a year, about 3 a working week.[^16][^24] The office is a model we built, not a real one, and we counted on 28 Nov 2026.[^17][^26] Work bunches in September and October, when 15 trust and personal returns wait on 13 partnership K-1s.[^16][^17]",
+  "headers": [
+   "Filer in the model",
+   "How many",
+   "Deadlines each",
+   "Deadlines, by our count",
+   "What is due"
+  ],
+  "rows": [
+   [
+    "Delaware limited liability companies (LLCs) taxed as partnerships",
+    "13",
+    "3",
+    "39",
+    "Form 7004 extension, Form 1065 and K-1s by 15 Sep, Delaware annual tax by 1 June[^16][^26]"
+   ],
+   [
+    "Payroll at the management company",
+    "1 of the 13 LLCs",
+    "7",
+    "7",
+    "Form 941 four times, Form 940, W-2s, Form 1099-NEC[^16][^23]"
+   ],
+   [
+    "Non-grantor trusts",
+    "10",
+    "6",
+    "60",
+    "Form 7004, Form 1041 and K-1s by 30 Sep, four Form 1041-ES estimates[^17][^18][^19]"
+   ],
+   [
+    "Family members",
+    "5",
+    "8",
+    "40",
+    "Form 4868, Form 1040 by 15 Oct, four estimates, foreign bank account report and gift return[^16][^22][^20]"
+   ],
+   [
+    "Private foundation",
+    "1",
+    "2",
+    "2",
+    "Form 8868 extension, Form 990-PF by 15 Nov[^21]"
+   ],
+   [
+    "Delaware C corporation",
+    "1",
+    "7",
+    "7",
+    "Annual report and franchise tax by 1 March, Form 7004, Form 1120, four estimates[^27][^16]"
+   ],
+   [
+    "Form 13F filer (the management company)",
+    "1 of the 13 LLCs",
+    "4",
+    "4",
+    "Form 13F within 45 days of each quarter end[^24]"
+   ],
+   [
+    "Beneficial ownership reports",
+    "0",
+    "0",
+    "0",
+    "FinCEN removed the rule for US companies[^25]"
+   ],
+   [
+    "Total",
+    "30 filers",
+    "about 5.3",
+    "159",
+    "About 3 a working week over 50 weeks"
+   ]
+  ],
+  "note": "Method: a model office of 13 Delaware partnership LLCs, 10 trusts, 5 family members, 1 foundation and 1 Delaware corporation, all calendar-year and all extended. We counted each form's due dates from the cited IRS, SEC, FinCEN and Delaware pages on 28 Nov 2026. Limits: a model, not real offices; state, local, payroll-deposit and foundation-estimate dates are left out, so the true count runs higher."
+ },
+ "howToTest": [
+  "Pick two jobs and one unit each, such as a capital call notice or a month-end report. Record four weeks of volume, minutes per unit and errors.",
+  "Time the filing calendar too: deadlines due, met and chased. Our model office carries 159 a year, by our count.[^16]",
+  "Pilot with a few staff and keep similar work without AI as a hold-out group. The large email field study compared AI users with non-users.[^28]",
+  "Check quality as well as speed. Citi found careful offices fully review AI summaries before moving to spot-checks.[^1]",
+  "Measure time saved per job, as one family enterprise's operations director role requires.[^12]",
+  "Expect modest numbers: only 18% of single-family offices in the Americas report AI cut operating costs.[^4]",
+  "Use your own payroll for pay: we found no posted single-family-office COO range. A multi-family office COO posting shows $400,000+, and a wealth adviser's family office COO $190,000 to $250,000.[^11][^13]",
+  "Price the lift: hours saved times pay plus benefits, minus seats. Example: by our math, 5% of a $150,000 salary is $7,500 a year.[^14]",
+  "Decide at day 90: keep, change or stop each pilot against its baseline. Offices that build their own tools wait for 80%+ efficiency gains.[^1]"
+ ],
+ "watchOuts": [
+  "Payments on a spoofed request: FinCEN warns deepfakes of executives are used to order transfers.[^8] Fix: keep AI out of payment approval, and call back on every bank-detail change.",
+  "No incident plan: 31% of family offices have no cyber incident response plan, in Deloitte's survey.[^7] Fix: write one, and turn on phishing-resistant multifactor sign-in first.[^32]",
+  "Pilots that never ship: MIT NANDA found 95% of organizations getting zero return from generative AI.[^34] Fix: one job, one owner, a baseline and a day-90 decision.",
+  "Wrong facts sent to the family: a tribunal held Air Canada liable for its chatbot's advice.[^35] Fix: a person reads every AI draft before it reaches the family.",
+  "One person holds the workflow together: a recruiter's guide tells new COOs to find single points of failure in their first 90 days.[^10] Fix: write each AI workflow down and train a backup.",
+  "Falling behind: failure to upgrade technology tops family offices' long-term risk list, at 51%, in RBC and Campden Wealth's survey.[^5] Fix: start small now, on tools you already own."
+ ],
+ "buyVsBuild": {
+  "buy": "Most family offices should buy first, because most prefer ready-made tools and 57% cite lack of internal expertise.[^1] Enterprise buyers now buy 76% of AI use cases, say decision-makers polled by Menlo Ventures, an AI investor.[^33]",
+  "build": "Build only where privacy or customization demands it: some family offices run open-source models on site for security.[^1] Even then, those family offices build only for 80%+ efficiency gains.[^1]"
+ },
+ "pickElse": [
+  "Providers do most of the work: start with their AI terms, not new tools. Bank of America found 24% of family offices fully outsource cybersecurity.[^3]",
+  "The office runs beside an operating business: a holding company playbook may fit better. One new office's first hire splits time 50/50 with the family business.[^14]",
+  "You are a registered adviser or multi-family office: SEC rules apply, so start from wealth management controls.[^15]",
+  "The pain is closing many entities' books: a multi-entity close method beats a chat assistant. In our count, entity count drives the deadline calendar.[^16]"
+ ],
+ "resources": [
+  {
+   "name": "Citi Institute, AI in the Family Office",
+   "url": "https://www.citigroup.com/global/insights/ai-in-the-family-office",
+   "what": "Interviews with family office principals on privacy, buy or build and change management."
+  },
+  {
+   "name": "IRS Publication 509, Tax Calendars",
+   "url": "https://www.irs.gov/publications/p509",
+   "what": "Federal due dates for individuals, partnerships, corporations and employers."
+  },
+  {
+   "name": "CISA, require multifactor authentication",
+   "url": "https://www.cisa.gov/audiences/small-and-medium-businesses/secure-your-business/require-multifactor-authentication",
+   "what": "Plain steps to lock down email and bank sign-ins before AI touches them."
+  },
+  {
+   "name": "NIST AI Risk Management Framework 1.0",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf",
+   "what": "Free US framework for AI roles, risks and human checks."
+  },
+  {
+   "name": "FinCEN alert on deepfake fraud schemes",
+   "url": "https://www.fincen.gov/system/files/shared/FinCEN-Alert-DeepFakes-Alert508FINAL.pdf",
+   "what": "Red flags for deepfake payment requests, to brief anyone who approves wires."
+  }
+ ],
+ "stats": [
+  {
+   "num": "159",
+   "label": "filing deadlines a year for a model 30-filer family office, by our count.[^16]",
+   "source": "Zavient count from IRS, SEC, FinCEN and Delaware rules, 28 Nov 2026"
+  },
+  {
+   "num": "73%",
+   "label": "of family offices in the Americas say investment reporting is too manual.[^5]",
+   "source": "RBC and Campden Wealth, survey of 155 family offices in the Americas, 2026"
+  },
+  {
+   "num": "22%",
+   "label": "of family offices use AI for operational tasks or investment analysis, up from 13%.[^1][^2]",
+   "source": "Citi Institute, from Citi Wealth's 2025 family office survey"
+  },
+  {
+   "num": "18%",
+   "label": "of single-family offices in the Americas report AI cut operating costs.[^4]",
+   "source": "BlackRock with Preqin, survey of 206 single-family offices, 2026"
+  },
+  {
+   "num": "57%",
+   "label": "of family offices cite lack of internal expertise as the biggest barrier.[^1]",
+   "source": "Citi Institute, 2026"
+  },
+  {
+   "num": "19%",
+   "label": "of family office executives' time goes to administration and compliance.[^6]",
+   "source": "Deloitte, survey of 354 single family offices, 2024"
+  }
+ ],
+ "sources": [
+  {
+   "name": "Citi Institute, AI in the Family Office: Privacy, Efficiency and Institutional Rigor (May 2026)",
+   "url": "https://www.citigroup.com/rcs/citigpa/storage/public/ai_in_the_family_office.pdf",
+   "what": "Interviews with single-family office principals and chief investment officers. Survey figures come from Citi Wealth's 2025 Global Family Office Report: Survey of 346 family offices (N from that report). Only 22% of family offices use AI for operational tasks or investment analysis, up from 13% in 2024. Barriers: 57% lack of internal expertise, 34% lack of awareness of options, 28% cybersecurity or privacy concerns. Privacy comes first; humans stay in charge, and final decisions remain with experienced humans. Careful users view AI outputs as drafts requiring human validation: full review first, then spot-checks. Monthly adviser reports are consolidated into Excel by hand; tax work is highly manual and voluminous. Some offices get AI through the back door via software providers or devices. Most family offices prefer to buy; some build with open-source models with a threshold of 80%+ efficiency gains. Read 28 Nov 2026."
+  },
+  {
+   "name": "Citi Wealth, 2025 Global Family Office Report",
+   "url": "https://www.privatebank.citibank.com/doc/family-office/2025-global-family-office-report.pdf",
+   "what": "Survey of 346 family offices, 3 June to 14 July 2025. 22% had automated some operational tasks or used AI for investment analysis, up from around 13% in 2024; AI in performance reporting 16%. Read 28 Nov 2026."
+  },
+  {
+   "name": "Bank of America, 2026 Family Office Study: Building for Generations",
+   "url": "https://ustrustaem.fs.ml.com/content/dam/ust/articles/pdf/261064-ADA_2026BofA_FOSReport_FINAL_Unsecured_100626_0836.pdf",
+   "what": "Survey of 355 family office decision makers in the U.S. Office size: 14% have 1 to 5 employees and 28% have 6 to 10. 42% say employees use AI today and another 37% are interested; AI is used most for data analysis and meeting summaries. Fully in-house tasks: bill pay 69%, accounting/tax services 51%. Fully outsourced: general legal 30%, infrastructure/technology systems 25%, cybersecurity 24%. 72% have experienced at least one type of fraud, the office or a family member. Read 28 Nov 2026."
+  },
+  {
+   "name": "BlackRock, The changing face of family offices (Americas, 2026)",
+   "url": "https://www.blackrock.com/gls-download/literature/whitepaper/americas-family-office-report.pdf",
+   "what": "Survey of 206 single-family offices across the Americas, with Preqin, 13 Jul to 24 Aug 2026. 56% say AI is core (13%) or increasingly important (43%). Only 18% reported operating-cost reductions from AI; 43% no measurable impact; 29% too early to assess. Use cases: research 70%, reporting 47%. Read 28 Nov 2026."
+  },
+  {
+   "name": "Campden Wealth, 2026 RBC and Campden Wealth North America Family Office Report release",
+   "url": "https://www.campdenwealth.com/press/2026-rbc-and-campden-wealth-report-north-american-family-offices-shift-caution-optimism-amid",
+   "what": "Survey of 155 single-family offices and private multi-family offices across the Americas, 123 of them in the U.S. 73% believe investment reporting is too manual, a top concern three years running. Cybersecurity is the top near-term operational concern for 59% of respondents, up from 16%. Failure to upgrade technology tops the long-term risk list at 51%. Read 28 Nov 2026."
+  },
+  {
+   "name": "Deloitte, Digital Transformation of Family Office Operations 2024",
+   "url": "https://www.deloitte.com/content/dam/assets-zone2/at/de/docs/services/private/digital-transformation-of-family-office-operations-2024-report.pdf",
+   "what": "Survey of 354 single family offices worldwide, Sep to Dec 2023. Citing Deloitte's 2024 Defining the Family Office Landscape: 19% of family office executives' time goes to administration and compliance, 27% in North America. A technology selection may take eight to 12 weeks, and implementation three to six months. 12% use AI. Read 28 Nov 2026."
+  },
+  {
+   "name": "Deloitte, The Family Office Cybersecurity Report 2024",
+   "url": "https://www.deloitte.com/global/en/services/deloitte-private/research/family-office-cybersecurity-report.html",
+   "what": "Survey, sample size not stated on this page. 43% of family offices experienced a cyberattack in the last 12 to 24 months, 57% in North America. 31% of family offices have no cyber incident response plan; 26% have a robust plan. Read 28 Nov 2026."
+  },
+  {
+   "name": "FinCEN, Alert on Fraud Schemes Involving Deepfake Media (FIN-2024-Alert004, Nov 2024)",
+   "url": "https://www.fincen.gov/system/files/shared/FinCEN-Alert-DeepFakes-Alert508FINAL.pdf",
+   "what": "Criminals use generative AI to impersonate an executive or trusted employee and instruct victims to transfer large sums. Recommends multifactor authentication, including phishing-resistant MFA."
+  },
+  {
+   "name": "NIST AI RMF Playbook, Govern",
+   "url": "https://airc.nist.gov/airmf-resources/playbook/govern",
+   "what": "GOVERN 3.2: policies that define and separate human roles for oversight of AI."
+  },
+  {
+   "name": "Exec Capital, Family Office COO Recruitment (recruiter's role guide)",
+   "url": "https://www.execcapital.co.uk/family-office-coo-recruitment",
+   "what": "A family office COO runs the office as an operating business: consolidated reporting, technology and cyber security, compliance, oversight of custodians, administrators and advisers, HR and governance. The CFO owns the numbers; the COO owns the machinery; smaller offices often combine the two. First 90 days: map every entity, account, custodian and adviser and the single points of failure; review payment authorisation and banking access. Read 28 Nov 2026."
+  },
+  {
+   "name": "Leah Yosef International, Chief Operating Officer posting (multi-family office, Chicago)",
+   "url": "https://leahyosef.com/job/chief-operating-officer-2154",
+   "what": "Recruiter posting. Duties: 'Identify and implement technology, data, automation, and AI initiatives.' $400,000+ first-year compensation. Read 28 Nov 2026."
+  },
+  {
+   "name": "The Sobrato Organization, Director of Operations posting",
+   "url": "https://www.sobrato.com/career/director-of-operations/",
+   "what": "Multigenerational family enterprise. Duties: 'Partner with IT and the AI function to identify repetitive work, prioritize automation and AI pilots, lead rollout change management, and measure time saved.' Pay range $164,000 to $205,000 plus bonus. Read 28 Nov 2026."
+  },
+  {
+   "name": "IEQ Capital, COO, Family Office posting",
+   "url": "https://job-boards.greenhouse.io/ieqcapital/jobs/6628695003",
+   "what": "Family office COO role at a wealth adviser. Total compensation range $190,000-$250,000 including bonus; coordinates privacy and security projects. Read 28 Nov 2026."
+  },
+  {
+   "name": "Tax & Operations Manager, single family office, Bozeman (posting on Simple's job board)",
+   "url": "https://andsimple.co/jobs/tax-operations-manager-single-family-office-bozeman",
+   "what": "First hire for a new single family office beside a founder-owned business, time split about 50/50. Duties include 'Track annual entity filings, franchise taxes and registered-agent renewals' and quarterly estimated taxes. Compensation $130,000–$170,000. Read 28 Nov 2026."
+  },
+  {
+   "name": "eCFR, 17 CFR 275.202(a)(11)(G)-1, Family offices",
+   "url": "https://www.ecfr.gov/current/title-17/chapter-II/part-275/section-275.202(a)(11)(G)-1",
+   "what": "A family office as defined in the rule is not an investment adviser under the Investment Advisers Act."
+  },
+  {
+   "name": "IRS, Publication 509 (2026), Tax Calendars",
+   "url": "https://www.irs.gov/publications/p509",
+   "what": "Form 1065 and Schedules K-1 are due the 15th day of the 3rd month; Form 7004 gives an automatic 6-month extension. Form 1040 is due the 15th day of the 4th month, Form 4868 gives 6 months, and estimates fall in the 4th, 6th and 9th months and the 1st month after year end. Form 1120 is due the 15th day of the 4th month; corporate estimates fall in the 4th, 6th, 9th and 12th months. Form 941 is quarterly, Form 940 yearly, and W-2s were due 2 Feb 2026."
+  },
+  {
+   "name": "IRS, Instructions for Form 1041 (2025)",
+   "url": "https://www.irs.gov/instructions/i1041",
+   "what": "Calendar-year trusts file Form 1041 and Schedules K-1 by 15 Apr 2026. The extension for a trust return is 5½ months. A trust must pay estimated tax if it expects to owe at least $1,000."
+  },
+  {
+   "name": "IRS, 2026 Form 1041-ES",
+   "url": "https://www.irs.gov/pub/irs-pdf/f1041es.pdf",
+   "what": "A trust may pay estimated tax in four installments, due 15 Apr, 15 Jun and 15 Sep 2026 and 15 Jan 2027."
+  },
+  {
+   "name": "IRS, Instructions for Form 7004 (12/2025)",
+   "url": "https://www.irs.gov/instructions/i7004",
+   "what": "The automatic extension is generally 6 months; a trust filing Form 1041 gets 5½ months."
+  },
+  {
+   "name": "IRS, Filing estate and gift tax returns",
+   "url": "https://www.irs.gov/businesses/small-businesses-self-employed/filing-estate-and-gift-tax-returns",
+   "what": "The gift tax return is due on April 15 following the year of the gift."
+  },
+  {
+   "name": "IRS, Annual exempt organization return: due date",
+   "url": "https://www.irs.gov/charities-non-profits/annual-exempt-organization-return-due-date",
+   "what": "Form 990-PF is due the 15th day of the 5th month; Form 8868 gives an automatic 6-month extension."
+  },
+  {
+   "name": "IRS, Report of Foreign Bank and Financial Accounts (FBAR)",
+   "url": "https://www.irs.gov/businesses/small-businesses-self-employed/report-of-foreign-bank-and-financial-accounts-fbar",
+   "what": "The foreign bank account report is due April 15, with an automatic extension to October 15."
+  },
+  {
+   "name": "IRS, A Guide to Information Returns",
+   "url": "https://www.irs.gov/pub/irs-sbse/a-guide-to-information-returns.pdf",
+   "what": "Form 1099-NEC is due January 31 to the IRS and to recipients, for payments of $2,000 or more made in 2026."
+  },
+  {
+   "name": "SEC, Frequently Asked Questions About Form 13F (updated 28 Sep 2026)",
+   "url": "https://www.sec.gov/divisions/investment/13ffaq",
+   "what": "A manager at the $100 million filing threshold makes four Form 13F filings, each due within 45 days of quarter end (2026: 15 May, 14 Aug, 16 Nov; 16 Feb 2027)."
+  },
+  {
+   "name": "FinCEN, Removes Beneficial Ownership Reporting Requirements for U.S. Companies (Mar 2025)",
+   "url": "https://www.fincen.gov/news/news-releases/fincen-removes-beneficial-ownership-reporting-requirements-us-companies-and-us",
+   "what": "Interim final rule removing the requirement for U.S. companies and U.S. persons to report beneficial ownership information."
+  },
+  {
+   "name": "Delaware Division of Corporations, LLC/LP/GP Franchise Tax Instructions",
+   "url": "https://corp.delaware.gov/alt-entitytaxinstructions/",
+   "what": "Delaware LLCs, LPs and GPs pay an annual tax on or before June 1 for the prior year; no annual report is required. Read 28 Nov 2026."
+  },
+  {
+   "name": "Delaware Division of Corporations, Annual Report and Tax Instructions",
+   "url": "https://corp.delaware.gov/paytaxes/",
+   "what": "Domestic corporation annual reports and franchise taxes for the prior year are due on or before March 1. Read 28 Nov 2026."
+  },
+  {
+   "name": "NBER working paper w33795, Shifting Work Patterns with Generative AI (Dillon, Jaffe, Immorlica, Stanton)",
+   "url": "https://www.nber.org/papers/w33795",
+   "what": "66 firms, 7,137 workers: Copilot users spent about 2 fewer hours a week on email; the mix of tasks did not change."
+  },
+  {
+   "name": "Science 381, Experimental evidence on the productivity effects of generative AI (Noy, Zhang, 2023)",
+   "url": "https://www.science.org/doi/10.1126/science.adh2586",
+   "what": "453 professionals: ChatGPT cut time on writing tasks by 40% and raised quality by 18%."
+  },
+  {
+   "name": "Microsoft 365 Copilot Business pricing",
+   "url": "https://www.microsoft.com/en-us/copilot/pricing/business",
+   "what": "Copilot Business add-on $21 a user a month, paid yearly ($18 promotion to 31 Dec 2026). List price, read 28 Nov 2026."
+  },
+  {
+   "name": "OpenAI, ChatGPT Business general FAQ",
+   "url": "https://help.openai.com/en/articles/8542115-chatgpt-business-general-faq",
+   "what": "ChatGPT Business Standard seats $20 a user a month billed annually, $25 monthly. List price, read 28 Nov 2026."
+  },
+  {
+   "name": "CISA, Implementing Phishing-Resistant MFA (Oct 2022)",
+   "url": "https://www.cisa.gov/sites/default/files/publications/fact-sheet-implementing-phishing-resistant-mfa-508c.pdf",
+   "what": "Phishing-resistant MFA is the gold standard for MFA, and migrating to it should be a high priority; email is a frequent target."
+  },
+  {
+   "name": "Menlo Ventures, 2025: The State of Generative AI in the Enterprise (n=495; AI investor)",
+   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+   "what": "Survey of 495 US enterprise AI decision-makers, Nov 2025: 76% of AI use cases purchased rather than built, up from 53% in 2024."
+  },
+  {
+   "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025)",
+   "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+   "what": "MIT no longer hosts the report (its link now opens the NANDA project page, checked 26 Nov 2026); copy hosted by MLQ.ai. Sample: 52 organizations interviewed, survey of 153 leaders, and 300+ public AI initiatives reviewed. $30-40 billion of enterprise GenAI investment; 95% of organizations are getting zero return; just 5% of integrated AI pilots extract millions in value. Task-specific tools: 60% of organizations evaluated them, 20% piloted, 5% reached production. Over 80% of organizations explored or piloted ChatGPT or Copilot, and nearly 40% report deployment. External partnerships with customized tools reached deployment about 67% of the time vs about 33% for internal builds: 2x as likely, twice the success rate. Only 40% of companies purchased an official LLM subscription; workers at over 90% of companies surveyed use personal AI tools for work. For mission-critical work, 90% of users prefer humans. Enterprises, defined as firms with over $100 million in annual revenue, lead in pilot count but report the lowest pilot-to-scale conversion. Read 26 Nov 2026."
+  },
+  {
+   "name": "Moffatt v. Air Canada, 2024 BCCRT 149",
+   "url": "https://www.canlii.org/en/bc/bccrt/doc/2024/2024bccrt149/2024bccrt149.html",
+   "what": "Tribunal held the airline liable for wrong advice its website chatbot gave a customer."
+  }
+ ],
+ "related": [
+  "family-offices",
+  "family-office-software",
+  "family-office-accounting",
+  "family-office-reporting",
+  "multi-entity-close",
+  "wealth-management",
+  "holding-companies-roll-ups"
+ ],
+ "offer": {
+  "heading": "Find the one office job where AI pays first",
+  "body": "Your top 2 workflows ranked, and a one-page plan you can hand your principal. Bring one job your office runs every month, such as the family report or capital calls. We'll show where AI helps, who checks it and what to measure in 90 days."
+ },
+ "keyword": {
+  "phrase": "family office coo",
+  "searches": 10,
+  "cpc": 8.94,
+  "difficulty": null
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Would forward the one-page brief as is, and the filing-deadline table is the load I actually carry. Tripped on 'Americas single-family offices'; it now reads 'single-family offices in the Americas' everywhere. Liked that payments and investment calls stay with named people."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Every flow step names a role and fits a phone. Recipe 1 had no pilot step between seats and the day-90 call; added a six-week pilot with a hold-out group, and day ranges on the baseline and pilot so the 90 days add up."
+  },
+  {
+   "reader": "GM",
+   "notes": "Read as the GM of the family's operating business. The pick-something-else line sends an office tied to an operating business to the holding company playbook, which is right. The cost line gives a total, not just a seat price. No changes."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Read as the controller. The sign-off bullets match how a controller would run extraction and posting, and K-1 and capital call intake now route to the accounting guide. 'Loaded pay' in the price-the-lift step was jargon; it now says pay plus benefits."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Read as the principal. Five short bottom-line bullets, privacy answered first in the questions, and money never moves on an AI draft. No Zavient price requested or added. No changes."
+  }
+ ],
+ "updated": "2026-11-28",
+ "figureCheck": {
+  "date": "2026-11-28",
+  "checked": 48,
+  "notFound": [],
+  "byHand": [
+   {
+    "where": "verdict[3]",
+    "figure": "18%",
+    "url": "https://www.blackrock.com/gls-download/literature/whitepaper/americas-family-office-report.pdf",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "Yet only 18% reported operating-cost reductions from AI, while 43% reported no measurable impact."
+   },
+   {
+    "where": "answers.ranked",
+    "figure": "73%",
+    "url": "https://www.campdenwealth.com/press/2026-rbc-and-campden-wealth-report-north-american-family-offices-shift-caution-optimism-amid",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "At the same time, 73% still believe investment reporting is too manual, a top concern for three years running."
+   },
+   {
+    "where": "answers.buy-or-build",
+    "figure": "57%",
+    "url": "https://www.citigroup.com/rcs/citigpa/storage/public/ai_in_the_family_office.pdf",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "57% of family offices cite lack of internal expertise as the biggest barrier to AI adoption."
+   },
+   {
+    "where": "decisions[0].know",
+    "figure": "19%",
+    "url": "https://www.deloitte.com/content/dam/assets-zone2/at/de/docs/services/private/digital-transformation-of-family-office-operations-2024-report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "we found that nearly one-fifth (19%) of family office executives’ time is being spent on administration and compliance duties, moving up to over one-quarter (27%) for those in North America."
+   },
+   {
+    "where": "decisions[0].know",
+    "figure": "27%",
+    "url": "https://www.deloitte.com/content/dam/assets-zone2/at/de/docs/services/private/digital-transformation-of-family-office-operations-2024-report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "we found that nearly one-fifth (19%) of family office executives’ time is being spent on administration and compliance duties, moving up to over one-quarter (27%) for those in North America."
+   },
+   {
+    "where": "decisions[1].know",
+    "figure": "28%",
+    "url": "https://www.citigroup.com/rcs/citigpa/storage/public/ai_in_the_family_office.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Figure 1. Barriers to technology adoption in the family office: Lack of internal expertise 57%, Lack of awareness of available options 34%, Cybersecurity or privacy concerns 28%."
+   },
+   {
+    "where": "decisions[4].know",
+    "figure": "80%",
+    "url": "https://www.citigroup.com/rcs/citigpa/storage/public/ai_in_the_family_office.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "While most family offices prefer to buy readily available solutions, some opt for building their own AI tools using open-source models but with a high acceptance threshold, e.g. 80%+ efficiency gains."
+   },
+   {
+    "where": "decisions[4].know",
+    "figure": "57%",
+    "url": "https://www.citigroup.com/rcs/citigpa/storage/public/ai_in_the_family_office.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "57% of family offices cite lack of internal expertise as the biggest barrier to AI adoption."
+   },
+   {
+    "where": "decisions[5].know",
+    "figure": "18%",
+    "url": "https://www.blackrock.com/gls-download/literature/whitepaper/americas-family-office-report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Yet only 18% reported operating-cost reductions from AI, while 43% reported no measurable impact."
+   },
+   {
+    "where": "decisions[5].know",
+    "figure": "43%",
+    "url": "https://www.blackrock.com/gls-download/literature/whitepaper/americas-family-office-report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Yet only 18% reported operating-cost reductions from AI, while 43% reported no measurable impact."
+   },
+   {
+    "where": "ranked[0].why",
+    "figure": "73%",
+    "url": "https://www.campdenwealth.com/press/2026-rbc-and-campden-wealth-report-north-american-family-offices-shift-caution-optimism-amid",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "At the same time, 73% still believe investment reporting is too manual, a top concern for three years running."
+   },
+   {
+    "where": "ranked[2].why",
+    "figure": "69%",
+    "url": "https://ustrustaem.fs.ml.com/content/dam/ust/articles/pdf/261064-ADA_2026BofA_FOSReport_FINAL_Unsecured_100626_0836.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "FULLY IN-HOUSE TASKS: Bill pay 69%, Financial planning for family 65%, Next-generation education 53%, Household/property management 51%, Accounting/tax services 51%."
+   },
+   {
+    "where": "ranked[2].why",
+    "figure": "51%",
+    "url": "https://ustrustaem.fs.ml.com/content/dam/ust/articles/pdf/261064-ADA_2026BofA_FOSReport_FINAL_Unsecured_100626_0836.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "FULLY IN-HOUSE TASKS: Bill pay 69%, Financial planning for family 65%, Next-generation education 53%, Household/property management 51%, Accounting/tax services 51%."
+   },
+   {
+    "where": "ranked[3].why",
+    "figure": "19%",
+    "url": "https://www.deloitte.com/content/dam/assets-zone2/at/de/docs/services/private/digital-transformation-of-family-office-operations-2024-report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "we found that nearly one-fifth (19%) of family office executives’ time is being spent on administration and compliance duties, moving up to over one-quarter (27%) for those in North America."
+   },
+   {
+    "where": "ranked[4].why",
+    "figure": "40%",
+    "url": "https://www.science.org/doi/10.1126/science.adh2586",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Our results show that ChatGPT substantially raised productivity: The average time taken decreased by 40% and output quality rose by 18%."
+   },
+   {
+    "where": "faq[0].a",
+    "figure": "28%",
+    "url": "https://www.citigroup.com/rcs/citigpa/storage/public/ai_in_the_family_office.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Figure 1. Barriers to technology adoption in the family office: Lack of internal expertise 57%, Lack of awareness of available options 34%, Cybersecurity or privacy concerns 28%."
+   },
+   {
+    "where": "faq[1].a",
+    "figure": "18%",
+    "url": "https://www.blackrock.com/gls-download/literature/whitepaper/americas-family-office-report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Yet only 18% reported operating-cost reductions from AI, while 43% reported no measurable impact."
+   },
+   {
+    "where": "faq[1].a",
+    "figure": "29%",
+    "url": "https://www.blackrock.com/gls-download/literature/whitepaper/americas-family-office-report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "More than two-fifths (43%) of respondents report no measurable operating-cost savings to date, nearly one-third (29%) say it is too early to assess and only 18% report operating-cost reductions."
+   },
+   {
+    "where": "faq[2].a",
+    "figure": "72%",
+    "url": "https://ustrustaem.fs.ml.com/content/dam/ust/articles/pdf/261064-ADA_2026BofA_FOSReport_FINAL_Unsecured_100626_0836.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "72% have experienced at least one type of fraud. Fraud incidents are extremely common, with nearly three-quarters of family offices reporting that they or an affiliated family member have experienced fraud."
+   },
+   {
+    "where": "faq[4].a",
+    "figure": "42%",
+    "url": "https://ustrustaem.fs.ml.com/content/dam/ust/articles/pdf/261064-ADA_2026BofA_FOSReport_FINAL_Unsecured_100626_0836.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Family offices have been ready adopters of artificial intelligence (AI), with 42% saying they use the technology today and another 37% interested in implementing it."
+   },
+   {
+    "where": "faq[4].a",
+    "figure": "37%",
+    "url": "https://ustrustaem.fs.ml.com/content/dam/ust/articles/pdf/261064-ADA_2026BofA_FOSReport_FINAL_Unsecured_100626_0836.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Family offices have been ready adopters of artificial intelligence (AI), with 42% saying they use the technology today and another 37% interested in implementing it."
+   },
+   {
+    "where": "faq[4].a",
+    "figure": "22%",
+    "url": "https://www.citigroup.com/rcs/citigpa/storage/public/ai_in_the_family_office.pdf",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "Only 22% of family offices currently use AI for operational tasks or investment analysis, up from 13% in 2024."
+   },
+   {
+    "where": "faq[4].a",
+    "figure": "13%",
+    "url": "https://www.citigroup.com/rcs/citigpa/storage/public/ai_in_the_family_office.pdf",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "Only 22% of family offices currently use AI for operational tasks or investment analysis, up from 13% in 2024."
+   },
+   {
+    "where": "forward[0]",
+    "figure": "73%",
+    "url": "https://www.campdenwealth.com/press/2026-rbc-and-campden-wealth-report-north-american-family-offices-shift-caution-optimism-amid",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "At the same time, 73% still believe investment reporting is too manual, a top concern for three years running."
+   },
+   {
+    "where": "forward[1]",
+    "figure": "40%",
+    "url": "https://www.science.org/doi/10.1126/science.adh2586",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "Our results show that ChatGPT substantially raised productivity: The average time taken decreased by 40% and output quality rose by 18%."
+   },
+   {
+    "where": "forward[5]",
+    "figure": "80%",
+    "url": "https://www.citigroup.com/rcs/citigpa/storage/public/ai_in_the_family_office.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "While most family offices prefer to buy readily available solutions, some opt for building their own AI tools using open-source models but with a high acceptance threshold, e.g. 80%+ efficiency gains."
+   },
+   {
+    "where": "howToTest[5]",
+    "figure": "18%",
+    "url": "https://www.blackrock.com/gls-download/literature/whitepaper/americas-family-office-report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Yet only 18% reported operating-cost reductions from AI, while 43% reported no measurable impact."
+   },
+   {
+    "where": "howToTest[6]",
+    "figure": "$400,000",
+    "url": "https://leahyosef.com/job/chief-operating-officer-2154",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "$400,000+ first-year compensation, including a significant base salary, competitive profit and performance-based bonuses, and top tier benefits."
+   },
+   {
+    "where": "howToTest[6]",
+    "figure": "$190,000",
+    "url": "https://leahyosef.com/job/chief-operating-officer-2154",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "The total compensation range for this role, inclusive of base salary and bonus, is $190,000-$250,000, depending on skills and experience."
+   },
+   {
+    "where": "howToTest[6]",
+    "figure": "$250,000",
+    "url": "https://job-boards.greenhouse.io/ieqcapital/jobs/6628695003",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "The total compensation range for this role, inclusive of base salary and bonus, is $190,000-$250,000, depending on skills and experience."
+   },
+   {
+    "where": "howToTest[8]",
+    "figure": "80%",
+    "url": "https://www.citigroup.com/rcs/citigpa/storage/public/ai_in_the_family_office.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "While most family offices prefer to buy readily available solutions, some opt for building their own AI tools using open-source models but with a high acceptance threshold, e.g. 80%+ efficiency gains."
+   },
+   {
+    "where": "watchOuts[1]",
+    "figure": "31%",
+    "url": "https://www.deloitte.com/global/en/services/deloitte-private/research/family-office-cybersecurity-report.html",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Despite the high prevalence of attacks, nearly one-third (31%) of family offices do not have a cyber incident response plan in place."
+   },
+   {
+    "where": "watchOuts[2]",
+    "figure": "95%",
+    "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Despite $30–40 billion in enterprise investment into GenAI, this report uncovers a surprising result in that 95% of organizations are getting zero return."
+   },
+   {
+    "where": "watchOuts[5]",
+    "figure": "51%",
+    "url": "https://www.campdenwealth.com/press/2026-rbc-and-campden-wealth-report-north-american-family-offices-shift-caution-optimism-amid",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Failure to upgrade technology tops the long-term risk list at 51%."
+   },
+   {
+    "where": "buyVsBuild.buy",
+    "figure": "57%",
+    "url": "https://www.citigroup.com/rcs/citigpa/storage/public/ai_in_the_family_office.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "57% of family offices cite lack of internal expertise as the biggest barrier to AI adoption."
+   },
+   {
+    "where": "buyVsBuild.buy",
+    "figure": "76%",
+    "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Today, 76% of AI use cases are purchased rather than built internally."
+   },
+   {
+    "where": "buyVsBuild.build",
+    "figure": "80%",
+    "url": "https://www.citigroup.com/rcs/citigpa/storage/public/ai_in_the_family_office.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "While most family offices prefer to buy readily available solutions, some opt for building their own AI tools using open-source models but with a high acceptance threshold, e.g. 80%+ efficiency gains."
+   },
+   {
+    "where": "pickElse[0]",
+    "figure": "24%",
+    "url": "https://ustrustaem.fs.ml.com/content/dam/ust/articles/pdf/261064-ADA_2026BofA_FOSReport_FINAL_Unsecured_100626_0836.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "FULLY OUTSOURCED TASKS: General legal services 30%, Infrastructure/technology systems 25%, Cybersecurity 24%."
+   },
+   {
+    "where": "stats[1]",
+    "figure": "73%",
+    "url": "https://www.campdenwealth.com/press/2026-rbc-and-campden-wealth-report-north-american-family-offices-shift-caution-optimism-amid",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "At the same time, 73% still believe investment reporting is too manual, a top concern for three years running."
+   },
+   {
+    "where": "stats[2]",
+    "figure": "22%",
+    "url": "https://www.citigroup.com/rcs/citigpa/storage/public/ai_in_the_family_office.pdf",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "Only 22% of family offices currently use AI for operational tasks or investment analysis, up from 13% in 2024."
+   },
+   {
+    "where": "stats[2]",
+    "figure": "13%",
+    "url": "https://www.citigroup.com/rcs/citigpa/storage/public/ai_in_the_family_office.pdf",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "Only 22% of family offices currently use AI for operational tasks or investment analysis, up from 13% in 2024."
+   },
+   {
+    "where": "stats[3]",
+    "figure": "18%",
+    "url": "https://www.blackrock.com/gls-download/literature/whitepaper/americas-family-office-report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Yet only 18% reported operating-cost reductions from AI, while 43% reported no measurable impact."
+   },
+   {
+    "where": "stats[4]",
+    "figure": "57%",
+    "url": "https://www.citigroup.com/rcs/citigpa/storage/public/ai_in_the_family_office.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "57% of family offices cite lack of internal expertise as the biggest barrier to AI adoption."
+   },
+   {
+    "where": "stats[5]",
+    "figure": "19%",
+    "url": "https://www.deloitte.com/content/dam/assets-zone2/at/de/docs/services/private/digital-transformation-of-family-office-operations-2024-report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "we found that nearly one-fifth (19%) of family office executives’ time is being spent on administration and compliance duties, moving up to over one-quarter (27%) for those in North America."
+   }
+  ],
+  "redirects": []
+ },
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "source-check agent (separate from writer)",
+  "checked": 35,
+  "fixed": [
+   "Campden 73%/51%: sample spans the Americas, not North America only; 'three years running' tied to the concern, not the 73%",
+   "BofA 72% fraud covers the office or a family member",
+   "Deloitte software timelines: 'can take', as the source hedges",
+   "Science study: 40% less time, not 40% faster",
+   "Citi 80%+ bar applies to building own tools, not to keeping pilots",
+   "Build reason now matches Citi (security, customization), not 'own data is the edge'",
+   "IEQ posting is a wealth adviser's family office team, not labelled multi-family office",
+   "Source notes: Citi Wealth dates, SEC 13F update date, Simple posting date, CISA wording matched to live pages",
+   "Seat cost now says annual plans (ChatGPT monthly billing is $25)"
+  ]
+ }
+}

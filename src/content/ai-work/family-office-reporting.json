@@ -1,0 +1,1133 @@
+{
+ "title": "Can AI give a family office one true balance sheet across entities?",
+ "description": "How a family office COO can use AI to match custodian feeds, label lagged fund values and draft the quarterly report, with people signing off.",
+ "type": "usecase",
+ "templateVersion": 1,
+ "topic": "AI for family office reporting",
+ "job": "family office consolidated reporting",
+ "industry": "family offices",
+ "index": true,
+ "verdict": [
+  "Reporting is still too manual for 73% of North American family offices, which named spreadsheets a top risk in 2025.[^1][^2]",
+  "Platforms already match most custodian positions, by vendor figures, so AI earns its keep sorting the breaks staff still research.[^3][^4]",
+  "Private-fund values arrive one to four months late, so print the lag on the report.[^5][^6]",
+  "Let AI draft the commentary, never sign it: drafts can get every number right and invent causes.[^7][^8]",
+  "Buy the aggregation platform, then build your own checks and views on top.[^9][^10]"
+ ],
+ "onPage": [
+  {
+   "to": "human-role",
+   "text": "Who clears each break and who signs off before the family reads the report"
+  },
+  {
+   "to": "table-2",
+   "text": "When private-fund numbers arrive, by fund type"
+  },
+  {
+   "to": "own-data",
+   "text": "How 11 public pension plans word the lag on private values, so you can copy it"
+  },
+  {
+   "to": "benchmark",
+   "text": "How to test AI on one quarter of your own data before you trust it"
+  },
+  {
+   "to": "faq",
+   "text": "Late reports, stale values, breaks and sign-off: the questions offices ask"
+  }
+ ],
+ "headings": {
+  "what-it-is": "What does AI change in family office reporting?",
+  "human-role": "Who in the office signs off before the family sees it?",
+  "team-after": "What does your team do once AI takes the first pass?",
+  "example": "What does an AI-built quarterly report look like?",
+  "recipes": "Which reporting setup fits your office?",
+  "rules": "Which rules apply to a family office report?",
+  "benchmark": "How do you test AI on your own quarter before you trust it?",
+  "what-goes-wrong": "Where does AI family office reporting go wrong?",
+  "buy-or-build": "Should you buy a reporting platform or build your own?",
+  "something-else": "When should an office pick something else?"
+ },
+ "summary": "AI for family office reporting pulls custodian, bank and fund data into one view across the family's entities, then matches it to the books.[^11][^3] It also drafts the quarterly commentary, which people still check.[^12][^7] Private-fund data makes or breaks it: values arrive months late and are often keyed by hand.[^5][^13]",
+ "answers": {
+  "human-role": "The controller clears every break and the COO signs off the report, because AI drafts can state every number right and still add causes nobody supplied.[^7][^3]",
+  "team-after": "Your team moves from keying and matching to clearing breaks, checking private-fund values and building the views the family asks for.[^3][^9]",
+  "example": "An illustrative six-person office feeds in custodian files, bank data and fund statements, and gets back a draft look-through balance sheet, a break list and labelled fund values.[^11][^14]",
+  "table-1": "Published prices run from $250 a year for Kubera Essentials to $35,899 a year for FundCount's single family office plan, before fees.[^15][^16] Masttro publishes no price and quotes each deal.[^17]",
+  "table-2": "Private-fund reports are due within 60 days after quarter end under Institutional Limited Partners Association (ILPA) guidance, and later for funds of funds.[^6]",
+  "table-3": "Surveys agree reporting is the office's sorest spot: 73% of North American family offices call it too manual, while 47% of offices use third-party reporting software.[^1][^10]",
+  "recipes": "Small offices should run reporting on one platform, and offices with many private funds should add an AI check layer that reads statements and sorts breaks.[^18][^9]",
+  "own-data": "Public pensions write the lag down: 8 of 11 plans we read state a private-value lag, and 4 say how values are brought current, by our count.[^19][^20]",
+  "rules": "Few rules govern a single family office's own report: an office serving only family is not an investment adviser, though Form 13F filing can still apply.[^21][^22]",
+  "benchmark": "Run AI beside today's process for two quarter ends on one custodian and five private funds, then count breaks caught, causes invented and days saved.[^23][^7]",
+  "what-goes-wrong": "AI family office reporting goes wrong when stale fund values go unlabelled, drafts invent causes, retrieval misses the source page, or ownership is mapped wrong.[^24][^7][^25][^11]",
+  "buy-or-build": "Buy the aggregation platform, because custodian feeds number in the hundreds, and build only the checks and views your family needs.[^17][^9]",
+  "something-else": "Pick something else when the books are simple, keying fund statements is the bottleneck, security comes first, or the ledger is not reconciled yet.[^15][^26]"
+ },
+ "humanRole": [
+  "Controller: clears each break the platform or AI flags.[^3][^14] Black Diamond says 99.5% of accounts complete automatically, yet its brief says exceptions are still researched and adjusted by hand.[^3]",
+  "Investment operations analyst: checks each private-fund value against the general partner (GP) statement, with the document attached.[^14][^27]",
+  "COO: sets the AI policy, the approved tools and who sees which data.[^9] Two-factor sign-in among offices fell from 92% to 83%, so check it before any tool reads custodian data.[^1]",
+  "Controller and COO: read every AI-written sentence before the principal sees it.[^7][^8] BNY finds judgment and oversight in family offices remain largely human-led.[^12]"
+ ],
+ "teamAfter": [
+  "Controllers move from keying statements to clearing the breaks the match leaves.[^3][^13]",
+  "Analysts check the private-fund line: the statement date, the roll-forward for cash flows and the label.[^5][^27]",
+  "Some offices rely on one or two platform power users; they build the views the family asks for.[^9] Meeting family members' needs is the top challenge for 54% of offices.[^18]",
+  "Where AI changed tasks, 66% of US firms use it only to help staff, and AI-related employment fell at only 2% of AI-using firms.[^28]"
+ ],
+ "example": {
+  "input": "Illustrative: a six-person office with 30 entities (trusts, LLCs and a foundation), four custodians, two banks and 45 private funds. It is mid-May, and the March quarter report is due. Custodian files, bank feeds and 45 general partner statements, most still dated 31 December.",
+  "output": "A draft balance sheet by entity, plus a look-through of the principal's share with no holding counted twice. A break list that flags a share-class code change as a closed and a new position. Fund lines labelled \"31 Dec value, rolled forward for first-quarter cash flows\", and draft commentary with each stated cause flagged for the controller."
+ },
+ "tables": [
+  {
+   "title": "What do reporting platforms cost, and what do they connect?",
+   "intro": "Vendor prices read on 28 Nov 2026; claims in the last column are each vendor's own.[^16][^29]",
+   "headers": [
+    "Name",
+    "What it does",
+    "Price",
+    "Worth knowing"
+   ],
+   "rows": [
+    {
+     "name": "FundCount",
+     "url": "https://fundcount.com/pricing",
+     "cells": [
+      "Accounting and reporting across every family entity",
+      "Single family office from $35,899 a year, plus digital transformation and hosting fees[^16]",
+      "Multi-family office plan from $26,950 a year, plus fees[^16]"
+     ]
+    },
+    {
+     "name": "Asora",
+     "url": "https://www.asora.com/pricing",
+     "cells": [
+      "Aggregation and reporting, priced by net worth tier",
+      "Quote shown: $15,600 a year, plus $3,900 onboarding[^29]",
+      "Alternative fund ingestion costs $3,600 a year per 20 holdings; vendor says most offices go live within four weeks[^29]"
+     ]
+    },
+    {
+     "name": "Masttro",
+     "url": "https://masttro.com/platform/data-aggregation",
+     "cells": [
+      "Aggregation and reporting",
+      "Not published[^17]",
+      "Vendor claims 750+ direct custodian feeds in 40+ countries[^17]"
+     ]
+    },
+    {
+     "name": "SS&C Black Diamond",
+     "url": "https://www.sscblackdiamond.com/media/sn1prnlg/reconcilitation-accounting-process-brief.pdf",
+     "cells": [
+      "Daily reconciliation and reporting",
+      "Not in the brief we read[^3]",
+      "Vendor says 99.5% of accounts complete automatically, across 900+ custodians[^3]"
+     ]
+    },
+    {
+     "name": "Kubera",
+     "url": "https://help.kubera.com/article/129-what-is-kubera-black",
+     "cells": [
+      "Net worth tracking across people, trusts and entities",
+      "Essentials $250 a year; Black $2,500 a year[^15]",
+      "Black includes help setting up AI agents for syncing, reporting and monitoring[^15]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "When do private-fund numbers arrive?",
+   "intro": "Fund managers report after the quarter closes, so a report dated today carries last quarter's private values.[^6][^5]",
+   "headers": [
+    "Source",
+    "Fund type",
+    "Quarter-end report",
+    "Year-end report"
+   ],
+   "rows": [
+    {
+     "name": "ILPA guidance",
+     "url": "https://ilpa.org/wp-content/uploads/2025/04/ILPA-Template-FAQs-v1.1.pdf",
+     "cells": [
+      "Direct fund",
+      "Within 60 days[^6]",
+      "Within 120 days[^6]"
+     ]
+    },
+    {
+     "name": "ILPA guidance",
+     "url": "https://ilpa.org/wp-content/uploads/2025/04/ILPA-Template-FAQs-v1.1.pdf",
+     "cells": [
+      "Fund of funds",
+      "Within 120 days[^6]",
+      "Within 180 days[^6]"
+     ]
+    },
+    {
+     "name": "ILPA guidance",
+     "url": "https://ilpa.org/wp-content/uploads/2025/04/ILPA-Template-FAQs-v1.1.pdf",
+     "cells": [
+      "Fund of funds of funds",
+      "Within 180 days[^6]",
+      "Within 260 days[^6]"
+     ]
+    },
+    {
+     "name": "Neuberger Berman",
+     "url": "https://www.nb.com/handlers/documents.ashx?id=d72a6d24-0994-4a90-acb9-145601940a3b",
+     "cells": [
+      "Private equity, typical",
+      "45 to 75 days[^24]",
+      "Many institutions add another quarter of lag[^24]"
+     ]
+    },
+    {
+     "name": "PGIM",
+     "url": "https://www.pgim.com/content/dam/pgim/us/en/pgim-multi-asset-solutions/active/documents/research/ias-pma-rebrand-papers/2023/PMA-To-Roll-or-not-to-Roll-Forward-1123.pdf",
+     "cells": [
+      "Private funds, general",
+      "One to four months[^5]",
+      "Rolling the prior-quarter value forward is an accepted practical expedient[^5]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "What do family office surveys say about reporting?",
+   "intro": "Each row names its survey and sample, because the groups differ.[^1][^18]",
+   "headers": [
+    "Survey",
+    "Finding"
+   ],
+   "rows": [
+    {
+     "name": "RBC and Campden Wealth, 2026",
+     "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
+     "cells": [
+      "73% of 155 North American offices call investment reporting too manual, a top concern three years running.[^1]"
+     ]
+    },
+    {
+     "name": "Campden Wealth, 2025",
+     "url": "https://www.campdenwealth.com/press/2025-rbc-and-campden-wealth-report-north-american-family-offices-adapt-uncertainty-and",
+     "cells": [
+      "29% of 141 North American family offices use generative AI to aid investment reporting; 63% express interest.[^2]"
+     ]
+    },
+    {
+     "name": "Citi Private Bank, 2025",
+     "url": "https://www.privatebank.citibank.com/doc/family-office/2025-global-family-office-report.pdf",
+     "cells": [
+      "16% of 346 family offices use AI in investment performance reporting.[^18]"
+     ]
+    },
+    {
+     "name": "Citi Private Bank, 2026",
+     "url": "https://www.privatebank.citibank.com/doc/family-office/2026-global-family-office-report.pdf",
+     "cells": [
+      "47% of 351 family offices use third-party reporting and consolidation software.[^10]"
+     ]
+    },
+    {
+     "name": "BNY Wealth, 2026",
+     "url": "https://www.bny.com/wealth/global/en/insights/are-family-offices-really-using-ai.html",
+     "cells": [
+      "In a survey of single family offices, reporting automation ties for first among tech-enabled processes, at 72%; sample size not published.[^12]"
+     ]
+    },
+    {
+     "name": "Campden Wealth, 2024",
+     "url": "http://campdenwealth.com/sites/default/files/FO_Op_Exc_report_2024.pdf",
+     "cells": [
+      "About 40% of 98 family offices still worry about spreadsheets and manual aggregation.[^30]"
+     ]
+    }
+   ]
+  }
+ ],
+ "recipes": [
+  {
+   "name": "1. Small office: one platform, people check",
+   "when": "Offices with six people or fewer, which are 63% of offices in Citi's survey.[^18] Lean on the platform's feeds, since offices average fewer than one IT professional.[^31]",
+   "flow": [
+    "COO: pick one platform and map every entity and ownership percentage into it",
+    "Controller: connect custodian and bank feeds",
+    "Analyst: enter each GP statement with the document attached",
+    "Platform AI: match positions and draft the commentary",
+    "Controller: clear each break and strike any cause the inputs don't support",
+    "COO: label each private value with its statement date, then sign off"
+   ],
+   "cost": "Published prices run from $250 a year for Kubera Essentials to $35,899 a year for FundCount's single family office plan, before fees.[^15][^16]"
+  },
+  {
+   "name": "2. Office with many private funds: platform plus an AI check layer",
+   "when": "Offices with several custodians and dozens of private funds, where statements are keyed by hand.[^13] The platform does the plumbing; you build the checks and the view.[^9]",
+   "flow": [
+    "Controller: keep the platform as the book of record",
+    "AI: read each GP statement into fields, linked to its page",
+    "Analyst: approve each extracted value and roll it forward for cash flows",
+    "AI: sort breaks by cause, such as timing, data mismatch or a changed security code",
+    "Controller: clear the breaks and sign the reconciliation",
+    "AI: draft commentary from approved numbers only",
+    "COO: read every sentence, strike unsupported causes and release the report"
+   ],
+   "cost": "Asora quotes $15,600 a year at one net worth tier, plus $3,900 onboarding and $3,600 a year per 20 alternative holdings.[^29] Median IT spend among offices is U.S. $100,000.[^1]"
+  }
+ ],
+ "ownData": {
+  "title": "How do public pension plans label the private-markets lag?",
+  "intro": "On 28 Nov 2026 we read how 11 US public pension plans word the lag on private-market values in their own reports.[^19][^32] We copied each plan's wording and marked whether it says how values are brought current.[^33][^34]",
+  "headers": [
+   "Plan",
+   "Document read",
+   "How it words the lag",
+   "Says how values are brought current?"
+  ],
+  "rows": [
+   [
+    "New York State Common Retirement Fund",
+    "Annual report, year to 31 Mar 2026",
+    "Private equity, real estate and real assets \"reported on a three-month lag\"[^19]",
+    "Yes: \"adjusted by cash flows\"[^19]"
+   ],
+   [
+    "CalSTRS (California teachers)",
+    "Annual report, 2024-25",
+    "Private asset performance \"reported with a quarter lag\"[^32]",
+    "Yes: \"adjusted for cash flows\"[^32]"
+   ],
+   [
+    "STRS Ohio (Ohio teachers)",
+    "Annual report, 2025",
+    "Private fund values \"reported on a quarter lag\"[^33]",
+    "Yes: adjusted \"to bring the lagged valuations current\"[^33]"
+   ],
+   [
+    "Virginia Retirement System",
+    "State oversight review, Dec 2025",
+    "June valuations used for the quarter to September[^34]",
+    "Yes: \"adjusted for cash flows\"[^34]"
+   ],
+   [
+    "Massachusetts PRIT Fund",
+    "Annual report, fiscal 2025",
+    "\"a one quarter lag inherent in private equity valuations\"[^35]",
+    "Not stated[^35]"
+   ],
+   [
+    "Washington State Investment Board",
+    "State annual report, 2026",
+    "Private equity and its benchmark \"lagged one calendar quarter\"[^36]",
+    "Not stated[^36]"
+   ],
+   [
+    "CalPERS (California public employees)",
+    "Private equity program review, 2025-26",
+    "Returns reported \"with a one-quarter lag for PE\"[^37]",
+    "Not stated[^37]"
+   ],
+   [
+    "Oregon PERS",
+    "Legislative Fiscal Office paper, Feb 2026",
+    "Private equity \"reported on a three-month lag\"[^38]",
+    "Not stated[^38]"
+   ],
+   [
+    "Teacher Retirement System of Texas",
+    "Annual report, 2026",
+    "Benchmarks \"lagged one quarter\"; no valuation lag stated[^39]",
+    "Not stated[^39]"
+   ],
+   [
+    "New Jersey State Investment Council",
+    "Annual report, fiscal 2025",
+    "\"Benchmark returns are reported on a one-quarter lag\"[^40]",
+    "Not stated[^40]"
+   ],
+   [
+    "Florida State Board of Administration",
+    "Monthly trustee report, Apr 2026",
+    "\"subject to reporting lags\"; no length given[^20]",
+    "Not stated[^20]"
+   ]
+  ],
+  "note": "Method: we read each plan's annual report, program review or a state oversight paper on 28 Nov 2026 and copied the wording. By our count, 8 state a valuation lag, 2 state only a benchmark lag, and Florida gives no length. Limits: 11 plans, not every plan; Oregon and Virginia come from state papers; we compared wording, not returns."
+ },
+ "rules": [
+  {
+   "name": "Family office rule, 17 CFR 275.202(a)(11)(G)-1",
+   "url": "https://www.ecfr.gov/current/title-17/chapter-II/part-275/section-275.202(a)(11)(G)-1",
+   "status": "In force",
+   "what": "An office is not an investment adviser under the Securities and Exchange Commission (SEC) rule if it serves only family and is family-owned.[^21] It must also not hold itself out to the public.[^21] Its internal report is then not an adviser's client communication; a registered multi-family office's report is."
+  },
+  {
+   "name": "SEC Form 13F",
+   "url": "https://www.sec.gov/rules-regulations/staff-guidance/frequently-asked-questions-about-form-13f",
+   "status": "In force",
+   "what": "A manager with investment discretion over $100 million or more in 13(f) securities files Form 13F each quarter.[^22] The filing is due within 45 days after quarter end, even for an office exempt from adviser rules.[^22]"
+  },
+  {
+   "name": "NIST AI 600-1, Generative AI Profile",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+   "status": "Voluntary guidance",
+   "what": "NIST names confabulation, confident but false content, as a risk to manage.[^8] Use it as the frame for the office's written AI policy and its review step."
+  }
+ ],
+ "howToTest": [
+  "Record today's numbers for one quarter: days from quarter end to final report, reconciliation hours and open breaks. In a FundCount-sponsored survey of 27 family office professionals, time to produce final reports was the most-used KPI (key performance indicator).[^23]",
+  "Pick one custodian and five private funds as the pilot; keep everything else on today's process.",
+  "Run the AI match beside today's reconciliation for two quarter ends, and count breaks caught, missed and raised in error.",
+  "Sort each break by cause: timing, data mismatch, or a changed security code.[^4][^14]",
+  "Test the retrieval, not just the model: one benchmark's accuracy fell to 0.2% when the model lacked the right pages.[^25]",
+  "Check the words as well as the numbers: mark every cause or judgment the draft adds that no input supports.[^7]",
+  "Price the lift: hours saved times loaded cost, plus days cut from quarter end to the report the family reads."
+ ],
+ "watchOuts": [
+  "Stale private values: private equity values typically arrive 45 to 75 days after quarter end.[^24] Print each fund line's statement date and roll-forward, as pension plans do.[^19][^5]",
+  "Right numbers, wrong story: AI drafts add causes no one supplied, and AI readers took an invented cause as the reason in 99% of texts.[^7] Have the controller strike every unsupported cause.[^7]",
+  "Retrieval misses: GPT-4-Turbo with retrieval answered wrong or refused on 81% of FinanceBench questions.[^41] In another benchmark, retrieval caused 66.5% of failures.[^25]",
+  "Feeds are not the whole picture: about 40% of family offices still worry about spreadsheets and manual aggregation.[^30] In some offices, private-markets data sits outside the platform.[^9]",
+  "Double counting across entities: map each entity's ownership share and multiply down the chain.[^11] A FundCount-sponsored survey of 44 family offices ranked missing look-through reporting among its main system weaknesses.[^42]"
+ ],
+ "faq": [
+  {
+   "q": "Why does our quarterly report take weeks?",
+   "a": "Private-fund statements arrive late by design: ILPA guidance gives direct funds 60 days after quarter end, and funds of funds 120.[^6] Keying them by hand adds the rest.[^13]"
+  },
+  {
+   "q": "Can AI reconcile custodian feeds against our ledger and flag breaks?",
+   "a": "Yes, but platforms already match most accounts, so AI pays on sorting the breaks.[^3] Black Diamond says 99.5% of accounts complete automatically, yet its brief says exceptions are still researched and adjusted by hand.[^3]"
+  },
+  {
+   "q": "Can we say on the report that private values are stale?",
+   "a": "Yes, and large investors already do: New York's pension fund says private equity is reported on a three-month lag, adjusted by cash flows.[^19]"
+  },
+  {
+   "q": "Who signs off before the family sees the report?",
+   "a": "The COO signs off after the controller has read every AI-written sentence, because drafts can state every number right and still add causes.[^7][^9]"
+  },
+  {
+   "q": "What does the family want to see first?",
+   "a": "The principal wants net worth, liquidity and major changes in one view, says Masttro, a reporting vendor.[^43] Meeting family members’ needs is the top challenge for 54% of offices.[^18]"
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Buy the aggregation and accounting platform: Simple’s 2026 report sums the pattern up as buy the plumbing, build the view.[^9] Vendors typically quote 2 to 4 months to implement.[^9] Across US enterprise AI decision-makers, 76% of AI use cases are now bought rather than built.[^44]",
+  "build": "Build the check layer and the views on top, because your entity map, labels and review rules are your own.[^9][^11] For organizations, partnered builds reached deployment about 67% of the time, against about 33% for internal builds.[^45]"
+ },
+ "pickElse": [
+  "Small office with simple books: a household tool such as Kubera Essentials, at $250 a year for 2 portfolios and 2 users, may be enough.[^15]",
+  "Keying fund statements is the bottleneck: start with document capture, as in our AI document processing guide.[^46][^29]",
+  "Security comes first: cybersecurity is now the top near-term concern for 59% of offices, up from 16%.[^26] Fix sign-in and payment controls before adding tools.[^1]",
+  "The ledger isn't reconciled yet: fix the close first, with our multi-entity close and reconciliation guides.[^47][^48]"
+ ],
+ "resources": [
+  {
+   "name": "ILPA Reporting Template and Performance Template overview",
+   "url": "https://ilpa.org/wp-content/uploads/2025/04/Combined-Overview-ILPA-Reporting-Template-and-Performance-Template.pdf",
+   "what": "The standard layout for the fund reports your analysts key in, so you know which fields to expect."
+  },
+  {
+   "name": "Simple, Family Office Software & Technology Report 2026",
+   "url": "https://media.andsimple.co/family-office-software-technology-report-2026.pdf",
+   "what": "A free report on how offices pick and run reporting platforms, and the AI controls they use."
+  },
+  {
+   "name": "Citi Private Bank, Consolidated reporting in family offices",
+   "url": "https://www.privatebank.citibank.com/ivc/docs/Consolidated-reporting-in-family-Offices.pdf",
+   "what": "Which documents need pulling together, and where consolidation time goes."
+  },
+  {
+   "name": "NIST AI 600-1, Generative AI Profile",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+   "what": "A free frame for the office's written AI policy and review step."
+  }
+ ],
+ "stats": [
+  {
+   "num": "73%",
+   "label": "of North American family offices say investment reporting is too manual (survey of 155 offices)[^1]",
+   "source": "RBC and Campden Wealth, 2026"
+  },
+  {
+   "num": "60 days",
+   "label": "after quarter end: ILPA's delivery target for a direct fund's quarterly report[^6]",
+   "source": "ILPA Template FAQs, 2025"
+  },
+  {
+   "num": "8 of 11",
+   "label": "US public pension plans we read state a lag on private values, by our count[^19][^20]",
+   "source": "Zavient read of plan reports, 28 Nov 2026"
+  },
+  {
+   "num": "99%",
+   "label": "of texts where AI readers took an invented cause in an AI-drafted report as the reason[^7]",
+   "source": "LG AI Research, 2026"
+  },
+  {
+   "num": "47%",
+   "label": "of family offices use third-party reporting and consolidation software (survey of 351 offices)[^10]",
+   "source": "Citi Private Bank, 2026"
+  }
+ ],
+ "sources": [
+  {
+   "name": "RBC Wealth Management and Campden Wealth, The North America Family Office Report 2026",
+   "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
+   "what": "Survey of 155 single and private multi-family offices (123 US, 21 Canada, 11 elsewhere in the Americas). 73% of offices \"still believe investment reporting is too manual, making it a top concern for three years running.\" Roughly a third use AI in investment reporting. Two-factor authentication among offices fell from 92% to 83%; dual payment authorization from 84% to 73%. Median IT spend among offices is \"U.S. $100,000\". Read 28 Nov 2026."
+  },
+  {
+   "name": "Campden Wealth, press release on the 2025 RBC and Campden Wealth North America report",
+   "url": "https://www.campdenwealth.com/press/2025-rbc-and-campden-wealth-report-north-american-family-offices-adapt-uncertainty-and",
+   "what": "Survey of 141 North American family offices (N from the participant table in the 2026 RBC and Campden Wealth report). \"29% use generative AI to aid investment reporting (63% express interest)\"; the operational risks offices cited most were manual processes and over-reliance on spreadsheets. Read 28 Nov 2026."
+  },
+  {
+   "name": "SS&C Black Diamond, reconciliation and accounting process brief (vendor)",
+   "url": "https://www.sscblackdiamond.com/media/sn1prnlg/reconcilitation-accounting-process-brief.pdf",
+   "what": "Vendor claims: \"99.5% of accounts complete automatically\"; 3 million+ accounts processed daily; 900+ custodians. \"Exceptions created by audits are manually researched and adjusted.\" Read 28 Nov 2026."
+  },
+  {
+   "name": "SmartStream (vendor), buy-side reconciliation research, Apr 2026",
+   "url": "https://smart.stream/press/smartstream-research-reveals-five-realities-redefining-buy-side-reconciliations",
+   "what": "Survey of buy-side firms, sample size not published. Timing differences and data mismatches cited by 53% as the leading causes of breaks; over 70% rely on end-of-day reconciliation; only 18% run near real-time or intraday controls. Read 28 Nov 2026."
+  },
+  {
+   "name": "PGIM Multi-Asset Solutions, To Roll or Not to Roll (Forward), Nov 2023",
+   "url": "https://www.pgim.com/content/dam/pgim/us/en/pgim-multi-asset-solutions/active/documents/research/ias-pma-rebrand-papers/2023/PMA-To-Roll-or-not-to-Roll-Forward-1123.pdf",
+   "what": "The GP-supplied net asset value (NAV) \"is received by LPs with a 1-4m lag after quarter end.\" \"Accounting standards allow the roll forward method as a practical expedient in lieu of the LP’s own full revaluation of the investment\": adjust the prior NAV for cash flows, then for market moves if significant. Read 28 Nov 2026 on PGIM’s own copy (the old cdn.pficdn.com link now redirects to a PGIM landing page)."
+  },
+  {
+   "name": "ILPA (Institutional Limited Partners Association), Template FAQs v1.1, Apr 2025",
+   "url": "https://ilpa.org/wp-content/uploads/2025/04/ILPA-Template-FAQs-v1.1.pdf",
+   "what": "Delivery guidance for fund reports: direct funds within 60 days after quarter end (120 days after fiscal year end); funds of funds 120 and 180 days; fund-of-fund-of-funds 180 and 260 days. Read 28 Nov 2026."
+  },
+  {
+   "name": "LG AI Research, Right Numbers, Wrong Story (arXiv 2611.26968, 20 Nov 2026)",
+   "url": "https://arxiv.org/html/2611.26968v1",
+   "what": "\"A financial report drafted by an LLM can state every number correctly but still go beyond its input, adding judgments and causes that no one supplied.\" Across 17 LLMs, plain drafts judged a change in 2.0% to 35.1% of texts, against 1.5% for 10-K writers; LLM readers took an invented cause as the reason in 99% of texts. Word-use guidance in the prompt made such judgments more frequent. The authors place their check between the LLM and human review. Read 28 Nov 2026."
+  },
+  {
+   "name": "NIST AI 600-1, Generative AI Profile (Jul 2024)",
+   "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+   "what": "Names confabulation, confidently stated but false content, as a generative AI risk to manage. Voluntary guidance for an AI policy. Read 28 Nov 2026."
+  },
+  {
+   "name": "Simple, Family Office Software & Technology Report 2026",
+   "url": "https://media.andsimple.co/family-office-software-technology-report-2026.pdf",
+   "what": "Qualitative input from 57 family offices and 44 vendors. Controls offices name for AI: policy first, approved tools, data segmentation, traceability, human review, local models. Some offices rely on one or two power users who know the systems well. \"Buy the plumbing, build the view\": offices buy aggregation and accounting, then build their own views; vendors typically quote two to four months to implement. Some offices still assemble reports by hand on top of platforms, and in some offices private-markets data sits outside the main platform. Office quote: \"by the time we've finished updating the report, it's out of date\". Read 28 Nov 2026."
+  },
+  {
+   "name": "Citi Private Bank, 2026 Global Family Office Report",
+   "url": "https://www.privatebank.citibank.com/doc/family-office/2026-global-family-office-report.pdf",
+   "what": "Survey of 351 family offices. 47% of offices use third-party reporting and consolidation software. Read 28 Nov 2026."
+  },
+  {
+   "name": "MYFO, how to map family office ownership structure (vendor)",
+   "url": "https://www.myfotech.com/insights/how-to-map-family-office-ownership-structure",
+   "what": "Vendor explainer on look-through: map each entity's ownership percentage and multiply down the chain so the principal sees their share, without double counting holdings held between entities. Read 28 Nov 2026."
+  },
+  {
+   "name": "BNY Wealth, Are Family Offices Really Using AI? (5 Nov 2026)",
+   "url": "https://www.bny.com/wealth/global/en/insights/are-family-offices-really-using-ai.html",
+   "what": "Survey of single family offices, sample size not published. Top tech-enabled processes: \"Reporting Automation — 72%\", tied with Investment Research at 72%; many offices are piloting or testing AI for reporting automation. \"Judgment-intensive tasks and oversight remain largely human-led.\" Read 28 Nov 2026."
+  },
+  {
+   "name": "RBC Wealth Management and Campden Wealth, The North America Family Office Report 2025",
+   "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2025.pdf",
+   "what": "Survey of 141 North American family offices (N from the participant table in the 2026 report). Adoption of automated investment reporting and wealth aggregation platforms is 69 percent, up from 46 percent. Office quote: \"A day doesn't go by without receiving a capital account or general partner statement... Taking that data and getting it into our record-keeping systems is manual.\" Read 28 Nov 2026."
+  },
+  {
+   "name": "Asora glossary, data aggregation (vendor)",
+   "url": "https://www.asora.com/glossary/data-aggregation",
+   "what": "Vendor explainer: staff enter private fund values with the source document attached, so each number traces to a general partner statement. Example break: a custodian changes a share-class code, and reconciliation flags the position as one new and one closed. Read 28 Nov 2026."
+  },
+  {
+   "name": "Kubera Help Center, What is Kubera Black? (vendor)",
+   "url": "https://help.kubera.com/article/129-what-is-kubera-black",
+   "what": "Read 28 Nov 2026 on the live page: Essentials $250/year for 2 portfolios and 2 users; Black $2500/year ($2,500), with ownership tags across people, trusts and entities, nested portfolios, and help setting up AI agents for account syncing, reporting and monitoring."
+  },
+  {
+   "name": "FundCount pricing (vendor)",
+   "url": "https://fundcount.com/pricing",
+   "what": "Read 28 Nov 2026 on the live page: Single Family Office \"Starting from $35,899 / year + digital transformation & hosting fees\"; Multi-Family Office from $26,950 / year. Vendor describes the single family office plan as a platform to \"aggregate, track, and report investment detail across every family entity\"."
+  },
+  {
+   "name": "Masttro, data aggregation (vendor)",
+   "url": "https://masttro.com/platform/data-aggregation",
+   "what": "Vendor claim: 750+ direct custodian feeds in 40+ countries. No public price on the page read 28 Nov 2026; quote only."
+  },
+  {
+   "name": "Citi Private Bank, 2025 Global Family Office Report",
+   "url": "https://www.privatebank.citibank.com/doc/family-office/2025-global-family-office-report.pdf",
+   "what": "Survey of 346 family offices. 16% of offices use AI in investment performance reporting, more than double the year before. 63% of offices have six or fewer employees; lack of internal expertise is the top technology barrier, at 57%. Meeting family members' needs and expectations is the top challenge, at 54% of offices. Read 28 Nov 2026."
+  },
+  {
+   "name": "New York State and Local Retirement System, Annual Comprehensive Financial Report, fiscal year ended 31 Mar 2026",
+   "url": "https://www.osc.ny.gov/files/retirement/resources/pdf/annual-comprehensive-financial-report-2026.pdf",
+   "what": "\"Private Equity, Real Estate and Real Assets are reported on a three-month lag (adjusted by cash flows); Credit and O/ARS are reported on a one-month lag (adjusted by cash flows).\" Read 28 Nov 2026."
+  },
+  {
+   "name": "Florida State Board of Administration, April 2026 monthly trustee report",
+   "url": "https://www.sbafla.com/media/jpmb4mdx/cs-april-2026-monthly-trustee-report.pdf",
+   "what": "\"Private-market valuations are subject to reporting lags relative to the period shown.\" No length stated. Read 28 Nov 2026."
+  },
+  {
+   "name": "eCFR, 17 CFR 275.202(a)(11)(G)-1, family offices",
+   "url": "https://www.ecfr.gov/current/title-17/chapter-II/part-275/section-275.202(a)(11)(G)-1",
+   "what": "A family office \"shall not be considered to be an investment adviser\" if it has no clients other than family clients, is wholly owned and controlled by family, and does not hold itself out to the public. Read 28 Nov 2026."
+  },
+  {
+   "name": "SEC, Frequently Asked Questions About Form 13F (updated 6 Mar 2026)",
+   "url": "https://www.sec.gov/rules-regulations/staff-guidance/frequently-asked-questions-about-form-13f",
+   "what": "Managers with investment discretion over $100 million or more in 13(f) securities file Form 13F each quarter, within 45 days after quarter end. Read 28 Nov 2026."
+  },
+  {
+   "name": "Family Wealth Report and FundCount, 2022 Family Office Focus (FundCount-sponsored)",
+   "url": "https://fundcount.com/wp-content/uploads/2022/10/2022-Family-Office-Focus-Efficiency-and-Accounting-in-Investment_Analysis.pdf",
+   "what": "Survey of 27 senior family office professionals. \"the most commonly used key performance indicator (KPI) is time to produce final reports after period-end (53%)\"; data reconciliation time 47%. Read 28 Nov 2026."
+  },
+  {
+   "name": "Neuberger Berman, on lagged private equity valuations",
+   "url": "https://www.nb.com/handlers/documents.ashx?id=d72a6d24-0994-4a90-acb9-145601940a3b",
+   "what": "\"PE NAVs typically reported 45 to 75 days after quarter-end, many institutional investors have an additional one-quarter lag.\" Read 28 Nov 2026."
+  },
+  {
+   "name": "Financial Touchstone benchmark, ACM ICAIF 2025",
+   "url": "https://dl.acm.org/doi/full/10.1145/3768292.3770417",
+   "what": "2,878 question triplets across 480 annual reports. The best model reached 91.6% accuracy with hallucination as low as 3.2%, but accuracy fell to 0.2% with insufficient context; of failures, retrieval caused 66.5% and hallucination 19.2%. Read 28 Nov 2026."
+  },
+  {
+   "name": "RBC Wealth Management newsroom, 2026 RBC and Campden Wealth report (1 Oct 2026)",
+   "url": "https://www.rbcwealthmanagement.com/en-us/newsroom/2026-10-01/2026-rbc-and-campden-wealth-report-north-american-family-offices-shift-from-caution-to-optimism-amid-great-wealth-transfer-ai-acceleration",
+   "what": "Survey of 155 North American family offices (N from the full 2026 report). Cybersecurity is now the top near-term operational concern for offices, at 59%, up from 16%. Read 28 Nov 2026."
+  },
+  {
+   "name": "Cordia Resources, job posting: Analyst, Investment Operations (family office, Palm Beach)",
+   "url": "https://careers.catsone.com/careers/50183-Cordia-Resources/jobs/16710287-Analyst-Investment-Operations",
+   "what": "Lead analyst role: produces monthly and quarterly reports, manages alternative-investment data feeds and validates performance metrics and internal rates of return (IRRs). Read 28 Nov 2026."
+  },
+  {
+   "name": "Bonney et al., CES-WP-26-25R, U.S. Census Bureau Center for Economic Studies (Oct 2026)",
+   "url": "https://www2.census.gov/library/working-papers/2026/adrm/ces/CES-WP-26-25R.pdf",
+   "what": "Survey of 117,000 or more US firms (Business Trends and Outlook Survey AI supplement, more than 117,000 distinct firms pooled, Nov 2025 to Jan 2026). Among firms reporting AI-driven task effects, 66% of firms only augment tasks; AI-related employment decreases occur at only 2% of AI-using firms. Read 28 Nov 2026."
+  },
+  {
+   "name": "Asora pricing (vendor)",
+   "url": "https://www.asora.com/pricing",
+   "what": "Read 28 Nov 2026 on the live page: quote shown $15,600 / year ($1,300/month billed annually) plus a one-time onboarding fee of $3,900; alternative fund holdings $3,600/yr per pack of 20; priced by net worth tier, not users. Vendor claim: \"Most family offices are live within four weeks\"."
+  },
+  {
+   "name": "Campden Wealth, Family Office Operational Excellence Report 2024",
+   "url": "http://campdenwealth.com/sites/default/files/FO_Op_Exc_report_2024.pdf",
+   "what": "Survey of 98 family offices. \"Over 80 percent of family offices express satisfaction with their ability to access data... yet approximately 40 percent of them are still concerned with their reliance on spreadsheets and manual aggregation.\" Read 28 Nov 2026."
+  },
+  {
+   "name": "Wharton Global Family Alliance, 2026 survey report, executive summary",
+   "url": "https://wgfa.wharton.upenn.edu/wp-content/uploads/2026/07/The-Wharton-Global-Family-Alliance-2026-Survey-Report-Executive-Summary-as-of-July-8-2026.pdf",
+   "what": "Survey of family offices, sample size not given in the executive summary. Family offices employ on average fewer than one IT professional. Read 28 Nov 2026."
+  },
+  {
+   "name": "CalSTRS, Annual Comprehensive Financial Report 2024-25",
+   "url": "http://www.calstrs.com/files/66e3865e9/ACFR2024-25.pdf",
+   "what": "\"private asset performance is reported with a quarter lag; for financial reporting purposes, adjustments are made to bring results current\"; \"Private asset valuations are as of March 31, 2025, and adjusted for cash flows through June 30, 2025.\" Read 28 Nov 2026."
+  },
+  {
+   "name": "STRS Ohio, Annual Comprehensive Financial Report 2025",
+   "url": "https://www.strsoh.org/_pdfs/2025-50-143.pdf",
+   "what": "\"private fund investment values and performance are reported on a quarter lag. For financial reporting purposes, adjustments are made to bring the lagged valuations current.\" Read 28 Nov 2026."
+  },
+  {
+   "name": "JLARC, Virginia Retirement System oversight report, Dec 2025",
+   "url": "https://jlarc.virginia.gov/pdfs/reports/Rpt616.pdf",
+   "what": "Private-market performance is \"based on valuations as of June 30, 2025, adjusted for cash flows during the quarter that ended September 30, 2025\". Read 28 Nov 2026."
+  },
+  {
+   "name": "Massachusetts PRIT Fund, Annual Comprehensive Financial Report, fiscal 2025",
+   "url": "https://www.mapension.com/wp-content/uploads/2025/12/PRIT-Annual-Comprehensive-Financial-Report-06302025.pdf",
+   "what": "\"there is a one quarter lag inherent in private equity valuations.\" Read 28 Nov 2026."
+  },
+  {
+   "name": "Washington Department of Retirement Systems, 2026 Annual Comprehensive Financial Report, investment section (Washington State Investment Board)",
+   "url": "https://www.drs.wa.gov/wp-content/uploads/2026/10/2026-ACFR-Document-102226.pdf",
+   "what": "\"Both the valuation of the private equity portfolio and its benchmark are lagged one calendar quarter\"; real estate valuation \"lagged one calendar quarter\". Read 28 Nov 2026."
+  },
+  {
+   "name": "CalPERS, 2025-26 Private Equity Annual Program Review",
+   "url": "https://www.calpers.ca.gov/documents/2025-26-pe-annual-program-review/download?inline",
+   "what": "\"Time-weighted net returns reported by CalPERS with a one-quarter lag for PE\". Read 28 Nov 2026."
+  },
+  {
+   "name": "Oregon Legislative Fiscal Office, committee document on Oregon PERS, Feb 2026",
+   "url": "https://olis.oregonlegislature.gov/liz/2026R1/Downloads/CommitteeMeetingDocument/312473",
+   "what": "Private equity, \"over 26% of OPERF assets, are reported on a three-month lag\", so crediting for 2025 uses private equity returns through 30 Sep 2025. Read 28 Nov 2026."
+  },
+  {
+   "name": "Teacher Retirement System of Texas, Annual Comprehensive Financial Report 2026",
+   "url": "https://trs.texas.gov/files/documents/annual-comprehensive-financial-report-2026.pdf",
+   "what": "Policy benchmarks: \"Customized State Street Private Equity Index lagged one quarter\" and \"NCREIF ODCE lagged one quarter\". A benchmark lag; no valuation lag stated. Read 28 Nov 2026."
+  },
+  {
+   "name": "New Jersey State Investment Council, Annual Report for Fiscal Year 2025",
+   "url": "https://www.nj.gov/treasury/doinvest/pdf/AnnualReport/AnnualReportforFiscalYear2025.pdf",
+   "what": "\"Benchmark returns are reported on a one-quarter lag.\" Read 28 Nov 2026."
+  },
+  {
+   "name": "Islam et al., FinanceBench (arXiv 2311.11944)",
+   "url": "https://arxiv.org/abs/2311.11944",
+   "what": "GPT-4-Turbo \"used with a retrieval system incorrectly answered or refused to answer 81% of questions\" on a 150-case sample. Read 28 Nov 2026."
+  },
+  {
+   "name": "Family Wealth Report and FundCount, Family Office Focus 2019 (FundCount-sponsored)",
+   "url": "https://www.fundcount.com/wp-content/uploads/2021/02/Family-Office-Focus-Efficiency-in-Accounting-and-Investment-Analysis.pdf",
+   "what": "Survey of 44 family offices plus 20 interviews. A lack of consolidated or look-through reporting across entities and investments was among the main system weaknesses; look-through reporting is \"one of the main challenges family offices face\". Read 28 Nov 2026."
+  },
+  {
+   "name": "Masttro, family office reporting (vendor)",
+   "url": "https://masttro.com/insights/family-office-reporting",
+   "what": "Vendor explainer: \"A principal wants to see net worth, liquidity and major changes without going through a training session.\" Its list of seven core reports starts with consolidated net worth. Read 28 Nov 2026."
+  },
+  {
+   "name": "Menlo Ventures, 2025 State of Generative AI in the Enterprise",
+   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+   "what": "Survey of 495 US enterprise AI decision-makers: 76% of AI use cases are purchased rather than built, up from 53% in 2024. Read 28 Nov 2026."
+  },
+  {
+   "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025)",
+   "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+   "what": "MIT no longer hosts the report (its link now opens the NANDA project page, checked 26 Nov 2026); copy hosted by MLQ.ai. Sample: 52 organizations interviewed, survey of 153 leaders, and 300+ public AI initiatives reviewed. $30-40 billion of enterprise GenAI investment; 95% of organizations are getting zero return; just 5% of integrated AI pilots extract millions in value. Task-specific tools: 60% of organizations evaluated them, 20% piloted, 5% reached production. Over 80% of organizations explored or piloted ChatGPT or Copilot, and nearly 40% report deployment. External partnerships with customized tools reached deployment about 67% of the time vs about 33% for internal builds: 2x as likely, twice the success rate. Only 40% of companies purchased an official LLM subscription; workers at over 90% of companies surveyed use personal AI tools for work. For mission-critical work, 90% of users prefer humans. Enterprises, defined as firms with over $100 million in annual revenue, lead in pilot count but report the lowest pilot-to-scale conversion. Read 26 Nov 2026."
+  },
+  {
+   "name": "Zavient, AI document processing: how accurate is it on financial documents?",
+   "url": "/ai-work/ai-document-processing.html",
+   "what": "Zavient guide to AI that reads financial documents, with our own extraction benchmark."
+  },
+  {
+   "name": "Zavient, Can AI speed up consolidated financial reporting across add-ons?",
+   "url": "/ai-work/multi-entity-close.html",
+   "what": "Zavient guide to closing and consolidating the books across many entities."
+  },
+  {
+   "name": "Zavient, AI account reconciliation: will it speed our close and pass audit?",
+   "url": "/ai-work/account-reconciliation-automation.html",
+   "what": "Zavient guide to reconciliation automation and audit evidence."
+  }
+ ],
+ "related": [
+  "family-offices",
+  "family-office-software",
+  "family-office-accounting",
+  "family-office-coo"
+ ],
+ "offer": {
+  "heading": "Want one quarterly report the family can trust? Get a free diagnostic",
+  "body": "Bring your entity map, your custodians and last quarter's report. In 30 minutes you leave with the first step, a before-and-after measure and where the lag label goes. You get it in writing, with no sales pitch."
+ },
+ "keyword": {
+  "phrase": "family office reporting",
+  "searches": 70,
+  "cpc": 33.86,
+  "difficulty": 0
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Clear on who clears breaks and who signs off, and the lag label is copyable. Bottom-line bullet on reconciliation read vaguely (\"AI pays on the breaks\"); reworded to say AI earns its keep sorting the breaks staff still research."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Test plan is runnable on one quarter. The benchmark answer said \"a few funds\" while the steps say five; aligned both to one custodian and five private funds."
+  },
+  {
+   "reader": "GM",
+   "notes": "Bottom line answers the question in five bullets; prices and survey samples are labelled. Confabulation is explained in plain words. No change."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Read as the controller and investment operations lead. Fund-timing table and roll-forward wording match how the office works; the share-class break example is realistic. Dropped the document-processing sibling link, which will not publish; fund statement capture points to the live document processing guide. No other change."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Answers whether the family can trust one report and what it costs in outside software, with labelled vendor prices. Offer is concrete. No change; no Zavient price, by decision."
+  }
+ ],
+ "figureCheck": {
+  "date": "2026-11-28",
+  "checked": 50,
+  "notFound": [],
+  "byHand": [
+   {
+    "where": "verdict[0]",
+    "figure": "73%",
+    "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "Seventy-three percent still believe investment reporting is too manual, making it a top concern for three years running. (Seventy-three percent = 73%)"
+   },
+   {
+    "where": "answers.table-1",
+    "figure": "$250",
+    "url": "https://help.kubera.com/article/129-what-is-kubera-black",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "Kubera Essentials・$250/year Everything you need to manage your household wealth. 2 portfolios; 2 users, including your spouse"
+   },
+   {
+    "where": "answers.table-1",
+    "figure": "$35,899",
+    "url": "https://help.kubera.com/article/129-what-is-kubera-black",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "Single Family Office / Asset Owner Starting from $35,899 / year + digital transformation & hosting fees"
+   },
+   {
+    "where": "answers.table-3",
+    "figure": "73%",
+    "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "Seventy-three percent still believe investment reporting is too manual, making it a top concern for three years running. (Seventy-three percent = 73%)"
+   },
+   {
+    "where": "answers.table-3",
+    "figure": "47%",
+    "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "Roughly 49% have a formal risk management framework, and 47% use third-party reporting and consolidation software."
+   },
+   {
+    "where": "humanRole[0]",
+    "figure": "99.5%",
+    "url": "https://www.sscblackdiamond.com/media/sn1prnlg/reconcilitation-accounting-process-brief.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "3 million+ accounts processed daily • 99.5% of accounts complete automatically"
+   },
+   {
+    "where": "humanRole[2]",
+    "figure": "92%",
+    "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "two-factor authentication fell from 92 to 83 percent and dual payment authorization from 84 to 73 percent."
+   },
+   {
+    "where": "humanRole[2]",
+    "figure": "83%",
+    "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "two-factor authentication fell from 92 to 83 percent and dual payment authorization from 84 to 73 percent."
+   },
+   {
+    "where": "teamAfter[2]",
+    "figure": "54%",
+    "url": "https://www.privatebank.citibank.com/doc/family-office/2025-global-family-office-report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Like last year, meeting family members’ needs and expectations was the top challenge cited by family offices (54%)."
+   },
+   {
+    "where": "teamAfter[3]",
+    "figure": "66%",
+    "url": "https://www2.census.gov/library/working-papers/2026/adrm/ces/CES-WP-26-25R.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Most users (66%) rely on AI solely to augment tasks, while AI-related employment decreases are rare, occurring in only 2% of firms."
+   },
+   {
+    "where": "teamAfter[3]",
+    "figure": "2%",
+    "url": "https://www2.census.gov/library/working-papers/2026/adrm/ces/CES-WP-26-25R.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Most users (66%) rely on AI solely to augment tasks, while AI-related employment decreases are rare, occurring in only 2% of firms."
+   },
+   {
+    "where": "tables[0].rows[0].cells[1]",
+    "figure": "$35,899",
+    "url": "https://fundcount.com/pricing",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Single Family Office / Asset Owner Starting from $35,899 / year + digital transformation & hosting fees"
+   },
+   {
+    "where": "tables[0].rows[0].cells[2]",
+    "figure": "$26,950",
+    "url": "https://fundcount.com/pricing",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Multi-Family Office Starting from $26,950 / year + digital transformation & hosting fees"
+   },
+   {
+    "where": "tables[0].rows[1].cells[1]",
+    "figure": "$15,600",
+    "url": "https://www.asora.com/pricing",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Your quote 🇺🇸 USD $15,600 /year Equivalent to $1,300/month · billed annually"
+   },
+   {
+    "where": "tables[0].rows[1].cells[1]",
+    "figure": "$3,900",
+    "url": "https://www.asora.com/pricing",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Onboarding fee · one-time, Year 1 only Separate from your annual fee +$3,900"
+   },
+   {
+    "where": "tables[0].rows[1].cells[2]",
+    "figure": "$3,600",
+    "url": "https://www.asora.com/pricing",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Alternative fund holdings $3,600/yr per pack of 20"
+   },
+   {
+    "where": "tables[0].rows[3].cells[2]",
+    "figure": "99.5%",
+    "url": "https://www.sscblackdiamond.com/media/sn1prnlg/reconcilitation-accounting-process-brief.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "3 million+ accounts processed daily • 99.5% of accounts complete automatically"
+   },
+   {
+    "where": "tables[0].rows[4].cells[1]",
+    "figure": "$250",
+    "url": "https://help.kubera.com/article/129-what-is-kubera-black",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Kubera Essentials・$250/year Everything you need to manage your household wealth. 2 portfolios; 2 users, including your spouse"
+   },
+   {
+    "where": "tables[0].rows[4].cells[1]",
+    "figure": "$2,500",
+    "url": "https://help.kubera.com/article/129-what-is-kubera-black",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Kubera Black・$2500/year The flagship. Fully loaded features with no limits."
+   },
+   {
+    "where": "tables[2].rows[0].cells[0]",
+    "figure": "73%",
+    "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Seventy-three percent still believe investment reporting is too manual, making it a top concern for three years running. (Seventy-three percent = 73%)"
+   },
+   {
+    "where": "tables[2].rows[1].cells[0]",
+    "figure": "29%",
+    "url": "https://www.campdenwealth.com/press/2025-rbc-and-campden-wealth-report-north-american-family-offices-adapt-uncertainty-and",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "This year, 29% use generative AI to aid investment reporting (63% express interest) and 30% to conduct research (39% express interest)."
+   },
+   {
+    "where": "tables[2].rows[1].cells[0]",
+    "figure": "63%",
+    "url": "https://www.campdenwealth.com/press/2025-rbc-and-campden-wealth-report-north-american-family-offices-adapt-uncertainty-and",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Most respondents (63%) reported having six or fewer employees."
+   },
+   {
+    "where": "tables[2].rows[2].cells[0]",
+    "figure": "16%",
+    "url": "https://www.privatebank.citibank.com/doc/family-office/2025-global-family-office-report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "AI use in investment performance reporting (16%) and portfolio construction (13%) more than doubled since last year."
+   },
+   {
+    "where": "tables[2].rows[3].cells[0]",
+    "figure": "47%",
+    "url": "https://www.privatebank.citibank.com/doc/family-office/2026-global-family-office-report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Roughly 49% have a formal risk management framework, and 47% use third-party reporting and consolidation software."
+   },
+   {
+    "where": "tables[2].rows[4].cells[0]",
+    "figure": "72%",
+    "url": "https://www.bny.com/wealth/global/en/insights/are-family-offices-really-using-ai.html",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "The Top Tech-Enabled Processes: Reporting Automation — 72%"
+   },
+   {
+    "where": "tables[2].rows[5].cells[0]",
+    "figure": "40%",
+    "url": "http://campdenwealth.com/sites/default/files/FO_Op_Exc_report_2024.pdf",
+    "why": "couldn't read the source (ENOTFOUND): open it and copy its sentence",
+    "quote": "Over 80 percent of family offices express satisfaction with their ability to access data for making timely decisions, yet approximately 40 percent of them are still concerned with their reliance on spreadsheets and manual aggregation of financial data."
+   },
+   {
+    "where": "recipes[0].when",
+    "figure": "63%",
+    "url": "https://www.privatebank.citibank.com/doc/family-office/2025-global-family-office-report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Most respondents (63%) reported having six or fewer employees."
+   },
+   {
+    "where": "recipes[0].cost",
+    "figure": "$250",
+    "url": "https://help.kubera.com/article/129-what-is-kubera-black",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "Kubera Essentials・$250/year Everything you need to manage your household wealth. 2 portfolios; 2 users, including your spouse"
+   },
+   {
+    "where": "recipes[0].cost",
+    "figure": "$35,899",
+    "url": "https://help.kubera.com/article/129-what-is-kubera-black",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "Single Family Office / Asset Owner Starting from $35,899 / year + digital transformation & hosting fees"
+   },
+   {
+    "where": "recipes[1].cost",
+    "figure": "$15,600",
+    "url": "https://www.asora.com/pricing",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Your quote 🇺🇸 USD $15,600 /year Equivalent to $1,300/month · billed annually"
+   },
+   {
+    "where": "recipes[1].cost",
+    "figure": "$3,900",
+    "url": "https://www.asora.com/pricing",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Onboarding fee · one-time, Year 1 only Separate from your annual fee +$3,900"
+   },
+   {
+    "where": "recipes[1].cost",
+    "figure": "$3,600",
+    "url": "https://www.asora.com/pricing",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Alternative fund holdings $3,600/yr per pack of 20"
+   },
+   {
+    "where": "recipes[1].cost",
+    "figure": "$100,000",
+    "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "The median IT spend of U.S. $100,000 goes some way to explaining why"
+   },
+   {
+    "where": "rules[1].what",
+    "figure": "$100 million",
+    "url": "https://www.sec.gov/rules-regulations/staff-guidance/frequently-asked-questions-about-form-13f",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Such person must file Form 13F if that person exercises investment discretion over $100 million or more in Section 13(f) securities."
+   },
+   {
+    "where": "howToTest[4]",
+    "figure": "0.2%",
+    "url": "https://dl.acm.org/doi/full/10.1145/3768292.3770417",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Model accuracy plummets to 0.2% when the provided context is insufficient."
+   },
+   {
+    "where": "watchOuts[1]",
+    "figure": "99%",
+    "url": "https://arxiv.org/html/2611.26968v1",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "readers take an invented cause as the reason for 99% of the texts, and FrameCheck removes almost all of the shift."
+   },
+   {
+    "where": "watchOuts[2]",
+    "figure": "81%",
+    "url": "https://arxiv.org/abs/2311.11944",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Notably, GPT-4-Turbo used with a retrieval system incorrectly answered or refused to answer 81% of questions."
+   },
+   {
+    "where": "watchOuts[2]",
+    "figure": "66.5%",
+    "url": "https://dl.acm.org/doi/full/10.1145/3768292.3770417",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Our analysis of 11,859 failures reveals that retrieval issues dominate (66.5%), followed by hallucination (19.2%) and model comprehension errors (3%)."
+   },
+   {
+    "where": "watchOuts[3]",
+    "figure": "40%",
+    "url": "http://campdenwealth.com/sites/default/files/FO_Op_Exc_report_2024.pdf",
+    "why": "couldn't read the source (ENOTFOUND): open it and copy its sentence",
+    "quote": "Over 80 percent of family offices express satisfaction with their ability to access data for making timely decisions, yet approximately 40 percent of them are still concerned with their reliance on spreadsheets and manual aggregation of financial data."
+   },
+   {
+    "where": "faq[1].a",
+    "figure": "99.5%",
+    "url": "https://www.sscblackdiamond.com/media/sn1prnlg/reconcilitation-accounting-process-brief.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "3 million+ accounts processed daily • 99.5% of accounts complete automatically"
+   },
+   {
+    "where": "faq[4].a",
+    "figure": "54%",
+    "url": "https://www.privatebank.citibank.com/doc/family-office/2025-global-family-office-report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Like last year, meeting family members’ needs and expectations was the top challenge cited by family offices (54%)."
+   },
+   {
+    "where": "buyVsBuild.buy",
+    "figure": "76%",
+    "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Today, 76% of AI use cases are purchased rather than built internally."
+   },
+   {
+    "where": "buyVsBuild.build",
+    "figure": "67%",
+    "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "In our sample, external partnerships with learning-capable, customized tools reached deployment ~67% of the time, compared to ~33% for internally built tools."
+   },
+   {
+    "where": "buyVsBuild.build",
+    "figure": "33%",
+    "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "In our sample, external partnerships with learning-capable, customized tools reached deployment ~67% of the time, compared to ~33% for internally built tools."
+   },
+   {
+    "where": "pickElse[0]",
+    "figure": "$250",
+    "url": "https://help.kubera.com/article/129-what-is-kubera-black",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Kubera Essentials・$250/year Everything you need to manage your household wealth. 2 portfolios; 2 users, including your spouse"
+   },
+   {
+    "where": "pickElse[2]",
+    "figure": "59%",
+    "url": "https://www.rbcwealthmanagement.com/en-us/newsroom/2026-10-01/2026-rbc-and-campden-wealth-report-north-american-family-offices-shift-from-caution-to-optimism-amid-great-wealth-transfer-ai-acceleration",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "cybersecurity and data breaches are now the top near-term operational concern, cited by 59 percent of respondents, up from 16 percent last year."
+   },
+   {
+    "where": "pickElse[2]",
+    "figure": "16%",
+    "url": "https://www.rbcwealthmanagement.com/en-us/newsroom/2026-10-01/2026-rbc-and-campden-wealth-report-north-american-family-offices-shift-from-caution-to-optimism-amid-great-wealth-transfer-ai-acceleration",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "cybersecurity and data breaches are now the top near-term operational concern, cited by 59 percent of respondents, up from 16 percent last year."
+   },
+   {
+    "where": "stats[0]",
+    "figure": "73%",
+    "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Seventy-three percent still believe investment reporting is too manual, making it a top concern for three years running. (Seventy-three percent = 73%)"
+   },
+   {
+    "where": "stats[3]",
+    "figure": "99%",
+    "url": "https://arxiv.org/html/2611.26968v1",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "readers take an invented cause as the reason for 99% of the texts, and FrameCheck removes almost all of the shift."
+   },
+   {
+    "where": "stats[4]",
+    "figure": "47%",
+    "url": "https://www.privatebank.citibank.com/doc/family-office/2026-global-family-office-report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Roughly 49% have a formal risk management framework, and 47% use third-party reporting and consolidation software."
+   }
+  ],
+  "redirects": []
+ },
+ "updated": "2026-11-28",
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "source-check agent (separate from writer)",
+  "checked": 48,
+  "fixed": [
+   "PGIM link redirected to a landing page: swapped to PGIM's own PDF; 1-4 month lag and practical-expedient wording confirmed",
+   "ILPA: 'at least 60 days' corrected to 'within 60 days'",
+   "Own data: 10 of 11 overstated (Texas and New Jersey lag only benchmarks); now 8 of 11, matching the table note",
+   "Census: 2% is of AI-using firms; reference period corrected to Nov 2025-Jan 2026",
+   "Black Diamond: exceptions are researched by the vendor's process, not 'staff'; reworded",
+   "BNY: 72% is tied with investment research, not sole top",
+   "Masttro: net worth, liquidity and changes is what the principal wants, not the first items of its report list; reworded with vendor label",
+   "Simple: 'buy the plumbing, build the view' is the report's framing and 2-4 months is a vendor quote; private-markets data outside the platform is 'some offices', not 'often'; power users are 'some offices'",
+   "Verdict: 'spreadsheets remain a top risk' dated to 2025, since manual processes fell to third in 2026",
+   "KPI claim labelled as a FundCount-sponsored survey of 27",
+   "Cordia posting: role validates IRRs rather than calculating them"
+  ]
+ }
+}

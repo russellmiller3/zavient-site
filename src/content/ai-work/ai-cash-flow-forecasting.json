@@ -1,0 +1,891 @@
+{
+ "title": "Can AI forecast cash better than assuming customers pay on time?",
+ "description": "We backtested pay-date prediction on 2,466 simulated invoices against the due-date rule. See what cut error, what tools cost, and how to test one.",
+ "type": "usecase",
+ "templateVersion": 1,
+ "topic": "AI cash flow forecasting",
+ "job": "AI cash flow forecasting",
+ "industry": "any industry",
+ "index": true,
+ "verdict": [
+  "Predicting customers' pay dates cut receipts error from 32% to 21% against due dates in our backtest of simulated invoices.[^1][^6]",
+  "A cash forecast is only as good as its receivables, payables and bank data. Clean those records first.[^2][^10]",
+  "Your controller keeps the number and every judgment call. Auditors test a forecast's data and assumptions.[^11][^18]",
+  "Make any vendor show error and bias on your own invoices. One claims up to 95% accuracy with no method.[^26][^15]",
+  "Small firms on QuickBooks or Xero should buy a planning tool. Build when customer pay habits are your edge.[^22][^28]"
+ ],
+ "onPage": [
+  {
+   "to": "own-data",
+   "text": "Our backtest: pay-date prediction against the due-date rule on 2,466 invoices"
+  },
+  {
+   "to": "human-role",
+   "text": "Which cash calls stay with your controller and COO"
+  },
+  {
+   "to": "table-1",
+   "text": "What cash forecasting tools cost, from their own price pages"
+  },
+  {
+   "to": "benchmark",
+   "text": "How to test any forecast, bought or built, on your own invoices"
+  },
+  {
+   "to": "what-goes-wrong",
+   "text": "Where cash forecasts go wrong, and the fix for each"
+  }
+ ],
+ "headings": {
+  "what-it-is": "What is AI cash forecasting, and what does it change?",
+  "human-role": "Which cash calls stay with your controller and COO?",
+  "team-after": "What does your finance team do once AI drafts the forecast?",
+  "example": "What does an AI cash forecast look like at a distributor?",
+  "recipes": "Which way to build a cash forecast fits your firm?",
+  "rules": "Which rules apply to a cash forecast?",
+  "benchmark": "How do you test a cash forecast before you trust it?",
+  "what-goes-wrong": "Where does AI cash forecasting go wrong?",
+  "buy-or-build": "Should you buy cash forecasting software or build your own?",
+  "something-else": "When should you pick something else?"
+ },
+ "summary": "Cash forecasting estimates your future cash position, usually week by week for the next 13 weeks.[^2][^8] AI changes the hardest part: predicting when each customer will actually pay, from their payment history.[^6][^7] The forecast is only as good as the receivables, payables and bank data it reads.[^2][^10]",
+ "answers": {
+  "human-role": "Your controller owns the weekly cash number and each override, and the COO or owner decides on draws and signs what goes to the bank.[^11][^6]",
+  "team-after": "After AI drafts the forecast, the controller explains variances, AR staff chase the customers likely to pay late, and sales and finance work on payment terms.[^4][^6][^10]",
+  "example": "At an illustrative 150-person distributor, the model predicts each open invoice's pay date from that customer's history, and the controller reviews flagged invoices and signs the number.[^6][^8]",
+  "table-1": "Published prices run from $215 a month for Float's Growth plan, billed annually, to $24k a year for Trovata's base package.[^22][^23] Agicap, Cube and HighRadius publish no price and quote each deal.[^24][^25][^26]",
+  "table-2": "Yes, in published studies: an IBM model predicted invoice payment delays with up to 81% accuracy, against a 54.51% baseline.[^20] Large companies still struggle with cash forecasts.[^10]",
+  "recipes": "Firm size decides it: small single-entity firms buy a planning tool, mid-size ERP firms test the built-in prediction first, and multi-entity firms build an explainable model.[^22][^6][^11]",
+  "rules": "Going-concern accounting rules apply: management judges whether cash covers the next year's obligations, and auditors test a significant forecast's data and assumptions.[^11]",
+  "benchmark": "Backtest it from past Mondays on your own invoices, score weekly error and bias against the due-date rule, and make every vendor run the same test.[^16][^15][^19]",
+  "what-goes-wrong": "Cash forecasts go wrong on bad input data, errors that cancel in the total, shortcuts like adding average days late, unseen shocks and unverifiable vendor claims.[^2][^10][^1][^26]",
+  "something-else": "Pick something else when you have under 50 paid invoices, run one simple entity, already own an ERP forecast, or need treasury across many banks.[^6][^22][^23]"
+ },
+ "humanRole": [
+  "Controller: owns the weekly forecast and signs the number. NetSuite's own documentation calls its predicted pay dates estimates, not guarantees, to weigh with business judgment.[^6]",
+  "Accounts receivable (AR) lead: flags disputed invoices and promised payments the model can't see. In Accenture's rollout, users changed the key things the AI model couldn't.[^4]",
+  "Controller: writes down every manual override and its reason. Forecasting texts say to adjust sparingly and justify each change, and NIST asks for documented human oversight.[^18][^13]",
+  "COO or owner-CEO: decides on draws, payment timing and spend holds, and signs what goes to the bank. Management owns the going-concern judgment, whether the firm can meet the next year's obligations.[^11]"
+ ],
+ "teamAfter": [
+  "AI automates the routine data work, and the controller interprets the forecast and explains variances to the COO.[^9] In Accenture's case, forecasts came out within minutes of loading the data.[^4]",
+  "AR staff call the customers whose invoices the model expects to pay late, before the due date passes.[^6][^20]",
+  "The controller works with sales on payment terms, because easy terms win deals but delay the cash.[^10]",
+  "Most firms keep their people. Of firms using AI, 66% use it only to help staff, and AI-related employment fell at 2% of firms.[^12]"
+ ],
+ "example": {
+  "input": "Illustrative example, not a client. A 150-person distributor builds its 13-week cash sheet from ERP (enterprise resource planning) exports, assuming every invoice is paid when due.[^8] The model reads open and paid invoices with customer, dates, amount and dispute flag, plus payroll, rent, debt and supplier calendars and bank balances.[^6]",
+  "output": "The model predicts each open invoice's pay date, while payroll, rent and debt stay on their calendars.[^6][^2] The sheet shows receipts for each of 13 weeks, with a low, expected and high case, and lists the invoices most likely to slip. The controller reviews disputed and slipping invoices, adds known one-offs, and signs the number.[^4][^18]"
+ },
+ "tables": [
+  {
+   "title": "What does cash forecasting software cost a 40-500 person firm?",
+   "intro": "Float and Trovata publish prices, read on 28 Nov 2026, and the enterprise tools quote each deal.[^22][^23] Features and accuracy claims are each vendor's own description.[^26]",
+   "headers": [
+    "Tool",
+    "What it does",
+    "Published price (read 28 Nov 2026)",
+    "Worth knowing"
+   ],
+   "rows": [
+    {
+     "name": "Float",
+     "url": "https://floatapp.com/pricing/",
+     "cells": [
+      "13-week and 36-month cash forecasts with scenarios, for QuickBooks and Xero[^22]",
+      "Growth: $215 a month billed annually, or $265 monthly. Scale, for several entities: $315 or $389[^22]",
+      "Each added entity costs $63 or $78 a month. Sage Intacct support is listed as coming soon[^22]"
+     ]
+    },
+    {
+     "name": "Trovata",
+     "url": "https://trovata.io/pricing/",
+     "cells": [
+      "Cash platform built on bank data. Says its forecasts learn from historical bank data (vendor claim)[^23]",
+      "Base Package: $24k a year[^23]",
+      "Treasury management and add-ons are quote only[^23]"
+     ]
+    },
+    {
+     "name": "Agicap",
+     "url": "https://agicap.com/en-us/pricing/",
+     "cells": [
+      "Cash planning and forecasting[^24]",
+      "Not published[^24]",
+      "Minimum 12-month subscription[^24]"
+     ]
+    },
+    {
+     "name": "Cube",
+     "url": "https://www.cubesoftware.com/pricing",
+     "cells": [
+      "Financial planning and analysis software[^25]",
+      "Not published: quoted per company[^25]",
+      "Built for longer-range planning, which differs from week-by-week cash timing[^9]"
+     ]
+    },
+    {
+     "name": "HighRadius Cash Forecasting",
+     "url": "https://www.highradius.com/treasury-management/cash-forecasting-software/",
+     "cells": [
+      "Enterprise cash forecasting with 100+ machine-learning models (vendor claim)[^26]",
+      "Not published[^26]",
+      "Claims up to 95% accuracy, with no metric, horizon or method stated (vendor claim)[^26]"
+     ]
+    },
+    {
+     "name": "NetSuite Payment Date Prediction",
+     "url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/article_0106021633.html",
+     "cells": [
+      "Predicts each invoice's pay date and days overdue from customer payment history[^6]",
+      "Not stated in its documentation[^6]",
+      "Needs 12 weeks of history and 50+ paid invoices, and covers invoices only[^6]"
+     ]
+    },
+    {
+     "name": "Dynamics 365 Finance cash flow forecast",
+     "url": "https://learn.microsoft.com/en-us/dynamics365/finance/finance-insights/cash-flow-forecast-intro",
+     "cells": [
+      "Time-series cash flow forecasts for the long term, inside Finance insights[^7]",
+      "Not stated in its documentation[^7]",
+      "Lets you compare the forecast with actuals. No accuracy figure documented[^7]"
+     ]
+    }
+   ],
+   "note": "List prices on one date, before tax, setup and discounts. ERP features need the ERP licence."
+  },
+  {
+   "title": "Does predicting pay dates beat assuming customers pay on time?",
+   "intro": "Each row is a published study of payment timing or cash forecast accuracy.[^20][^10]",
+   "headers": [
+    "Study",
+    "Data",
+    "Result"
+   ],
+   "rows": [
+    {
+     "name": "Appel et al., IBM Research (2020)",
+     "url": "https://arxiv.org/pdf/2008.07363",
+     "cells": [
+      "91,562 invoices from the US and 6 Latin American countries, with a multinational bank[^20]",
+      "Up to 81% accuracy predicting whether each invoice is paid late or on time, against a 54.51% baseline[^20]"
+     ]
+    },
+    {
+     "name": "Appel et al., IBM Research (2019)",
+     "url": "https://arxiv.org/abs/1912.10828",
+     "cells": [
+      "Prototype built with a multinational bank to help collectors[^21]",
+      "Up to 77% accuracy predicting invoice payment[^21]"
+     ]
+    },
+    {
+     "name": "Accenture treasury, AFP case (2021)",
+     "url": "https://www.financialprofessionals.org/training-resources/resources/articles/Details/implementing-ai-to-automate-cash-forecasting-highlights-challenges-and-benefits",
+     "cells": [
+      "Tested 12 algorithms for each cash type, retrained monthly[^4]",
+      "More accurate than its Excel forecasts. No figure published[^4]"
+     ]
+    },
+    {
+     "name": "EY-Parthenon (2024)",
+     "url": "https://ey.com/en_us/insights/strategy/cash-forecasting-difficult-and-more-urgent-than-ever",
+     "cells": [
+      "2,400 largest companies[^10]",
+      "Only 28% of cash forecasts were within 10% of annual free cash flow targets, against about 80% for revenue guidance[^10]"
+     ]
+    }
+   ]
+  }
+ ],
+ "recipes": [
+  {
+   "name": "1. Small team on QuickBooks or Xero (about 40-80 staff, one entity)",
+   "when": "One entity, standard payment terms, and a controller who builds the forecast in a spreadsheet today. Float connects to QuickBooks and Xero.[^22]",
+   "flow": [
+    "Controller: connect a planning tool such as Float, and set payroll, rent and debt calendars[^22]",
+    "AR lead: log disputed invoices and customer-promised pay dates every week[^6]",
+    "Controller: log forecast against actual each Monday, using WAPE (weighted absolute percentage error) and bias[^19][^17]",
+    "Owner-CEO: review the 13-week low case before any big commitment[^8]"
+   ],
+   "cost": "Float Growth is $215 a month billed annually, or $265 monthly (read 28 Nov 2026).[^22]"
+  },
+  {
+   "name": "2. Mid-size firm on an ERP like NetSuite or Dynamics 365 (about 80-250 staff)",
+   "when": "Hundreds of customers, a year or more of paid invoices, and an ERP. NetSuite's pay-date prediction needs 12 weeks of history and 50+ paid invoices.[^6]",
+   "flow": [
+    "Controller: switch on the ERP's pay-date prediction or cash forecast where it exists[^6][^7]",
+    "Data lead or outside builder: pull paid invoices and bank lines into one table, and fit a per-customer pay-timing model[^20]",
+    "Controller: keep payroll, rent and supplier payment runs on their calendars[^2]",
+    "Controller: backtest against the due-date rule from past Mondays before trusting it[^16][^15]",
+    "COO: use the weekly number for credit-line draws and spend decisions[^8]"
+   ],
+   "cost": "Neither NetSuite's nor Microsoft's documentation states a price for these features.[^6][^7] Trovata's base package is $24k a year, and a data scientist's median pay was $120,230 in May 2025.[^23][^29]"
+  },
+  {
+   "name": "3. Multi-entity or lender-reporting firm (about 150-500 staff)",
+   "when": "Several entities, an asset-based loan or covenants, and an auditor or lender who reads the forecast. Auditors test a significant forecast's data and assumptions.[^11]",
+   "flow": [
+    "Controller: run one forecast per entity and consolidate it weekly[^8]",
+    "Builder: fit an explainable model per cash line, showing the reasons behind each invoice's predicted date[^11][^13]",
+    "Controller: keep a forecast-against-actual log the auditor and lender can read[^11][^7]",
+    "Owner-CEO or COO: sign what goes to the bank[^8]"
+   ],
+   "cost": "Float's Scale plan is $315 a month billed annually, plus $63 a month per added entity.[^22] Enterprise treasury tools quote each deal, and AFP describes one in-house build still about 70% complete after five years.[^24][^26][^5]"
+  }
+ ],
+ "ownData": {
+  "title": "Does learning each customer's pay habit beat the due-date rule?",
+  "intro": "Yes, by our backtest: predicting each customer's pay date cut weekly receipts error from 32.3% to 21.2%, against assuming everyone pays on the due date.[^1] On 28 Nov 2026 we ran it on IBM's simulated sample of 2,466 invoices from, by our count, 100 customers, all on 30-day terms.[^1] From each of 40 Mondays in 2013, we forecast which week each open invoice would be paid, using only earlier payments.[^16]",
+  "headers": [
+   "Method",
+   "Error, weeks 1-4 (WAPE)",
+   "Error, weeks 5-8 (WAPE)",
+   "Bias, weeks 1-4 (plus means too high)",
+   "Mondays it beat the due-date rule (of 40)"
+  ],
+  "rows": [
+   [
+    "Due-date rule: every invoice paid on its due date",
+    "32.3%",
+    "63.6%",
+    "+9.8%",
+    "Baseline"
+   ],
+   [
+    "Due date plus the customer's average days late",
+    "43.7%",
+    "79.8%",
+    "-7.6%",
+    "Worse on average"
+   ],
+   [
+    "Customer's average days to pay",
+    "24.1%",
+    "46.1%",
+    "+2.4%",
+    "31"
+   ],
+   [
+    "Learned model (light linear regression): pay history, dispute flag, paper or electronic bill, size, country",
+    "21.2%",
+    "44.9%",
+    "+2.1%",
+    "33"
+   ],
+   [
+    "Same model without the dispute flag (real books may log disputes late)",
+    "21.4%",
+    "49.6%",
+    "+4.1%",
+    "33"
+   ]
+  ],
+  "note": "WAPE is dollars missed each week divided by dollars received, so lower is better. The data is simulated by IBM, not a real company's books: small invoices, one currency and 30-day terms. Our test covers only receipts from invoices already open, and weeks 5-8 hold only 16% of the cash."
+ },
+ "rules": [
+  {
+   "name": "ASC 205-40, Going concern (management)",
+   "url": "https://www.journalofaccountancy.com/issues/2026/oct/going-concern-what-cpas-in-audit-and-finance-should-know/",
+   "status": "In force",
+   "what": "Management must judge whether conditions raise substantial doubt about meeting obligations within one year after the statements are issued.[^11] Expected cash flows feed that judgment, so your forecast's assumptions must hold up."
+  },
+  {
+   "name": "AU-C 570, the auditor's going-concern work",
+   "url": "https://www.journalofaccountancy.com/issues/2026/oct/going-concern-what-cpas-in-audit-and-finance-should-know/",
+   "status": "In force",
+   "what": "Where a cash flow forecast is significant, the auditor checks the reliability of its data and the support for its assumptions.[^11] Keep inputs, assumptions and overrides written down."
+  },
+  {
+   "name": "NIST AI Risk Management Framework (RMF) 1.0",
+   "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+   "status": "Voluntary, released 26 Jan 2023",
+   "what": "A free framework that asks you to define and document human oversight of AI output, and to measure how it performs.[^13][^14] Use it as a checklist, not a legal duty."
+  }
+ ],
+ "howToTest": [
+  "Record your before numbers: last quarter's weekly forecast against actual cash, and how often you drew on the credit line unexpectedly.",
+  "Pull 12-24 months of paid invoices with paid dates, plus today's open invoices, for one entity or customer group first. NetSuite's own floor is 12 weeks and 50 paid invoices.[^6]",
+  "Set baselines: the due-date rule and your current spreadsheet. A new method must beat simple benchmarks to earn its place.[^15]",
+  "Backtest, meaning replay the past: forecast from each past Monday using only data before it. Never score a model on payments it has already seen.[^16]",
+  "Score weekly totals with WAPE, not MAPE (mean absolute percentage error), which breaks when a week's actual is zero.[^17][^19]",
+  "Score bias, whether you run high or low, separately, because a forecast that runs high leaves you short. In our backtest the due-date rule ran 9.8% high on near-term receipts.[^1]",
+  "Score weeks 1-4 apart from weeks 5-13, because short-term forecasts are the most accurate.[^2]",
+  "Ask each vendor for the same numbers on your data: metric, horizon and baseline. A bare claim of up to 95% accuracy gives none of them.[^26]",
+  "Price the lift in dollars: smaller error means a smaller cash buffer and fewer surprise draws. Multiply the buffer you free by your credit line's interest rate.",
+  "Run the model beside your current sheet on live Mondays before switching, and keep logging forecast against actual after go-live. Dynamics 365 builds this comparison in.[^7]"
+ ],
+ "watchOuts": [
+  "Bad inputs make a bad forecast: missing paid dates or a messy customer list mislead any model.[^2][^4] Clean the customer master and paid-date fields first.",
+  "Errors can cancel out in the total, so big over- and underestimates net to a good-looking number.[^10] Score by cash line and by week, not just the total.",
+  "Adding each customer's average days late to the due date was worse than the plain due-date rule in our backtest, 43.7% against 32.3% error.[^1] The shortcut ignores customers who pay early, so model days to pay from the invoice date.",
+  "Some drivers sit outside the model: in Accenture's rollout, users changed the key things the AI model couldn't.[^4] Adjust only for real extra information, like an acquisition, with a written reason for each.[^18]",
+  "Accuracy claims without a method can't be checked: one vendor advertises up to 95% accuracy with no metric, horizon or baseline.[^26] Ask for a rolling backtest on your own data.[^16]",
+  "Long builds stall: AFP describes one in-house treasury system about 70% complete after five years.[^5] Start with receipts timing only, on bank connections you buy.[^5]"
+ ],
+ "faq": [
+  {
+   "q": "Can AI forecast cash flow?",
+   "a": "Yes, mainly the timing of customer payments, while predictable lines like payroll stay on their calendars.[^6][^2] In our backtest, predicting pay dates cut weekly receipts error by about a third.[^1]"
+  },
+  {
+   "q": "Can I do AI cash flow forecasting in Excel?",
+   "a": "Only in part: Excel can hold the 13-week sheet, but learning each customer's pay habit needs months of invoice history and a model.[^8][^6] In our backtest, each customer's average days to pay, which a spreadsheet can work out, got most of the gain.[^1]"
+  },
+  {
+   "q": "How much payment history do you need?",
+   "a": "NetSuite's built-in prediction needs at least 12 weeks of history and 50 paid invoices.[^6] Your test window should be at least as long as the 13 weeks you forecast.[^17]"
+  },
+  {
+   "q": "How accurate should a cash forecast be?",
+   "a": "Accurate enough to beat your due-date baseline on weekly error and bias, since no universal target exists.[^15] EY found only 28% of large companies' cash forecasts landed within 10% of annual free cash flow targets.[^10]"
+  },
+  {
+   "q": "Should we buy cash forecasting software or build our own?",
+   "a": "Buy if you run one entity on standard terms with no data person, and build when customer pay habits or lender reporting are your edge.[^22][^28]"
+  },
+  {
+   "q": "What is a 13-week cash flow forecast?",
+   "a": "A 13-week cash flow forecast is a weekly view of cash in and out over the next 90 days, rolled forward each week.[^8][^9]"
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Buy when you run one entity on standard terms and have no data person. Buying is the norm: 76% of enterprise AI solutions are bought rather than built.[^27] Float publishes $215 a month billed annually, and a bought platform can include maintenance and upgrades.[^22][^5]",
+  "build": "Build, or build with a partner, when customer pay habits or lender reporting are your edge and you must explain each number to an auditor.[^11] Partnered custom builds reached deployment about twice as often as internal ones.[^28] AFP notes builds are practical again with AI, but control brings ongoing responsibility.[^5]"
+ },
+ "pickElse": [
+  "Under 50 paid invoices or 12 weeks of history: use a plain 13-week spreadsheet. NetSuite won't predict below that floor.[^6][^8]",
+  "One entity on QuickBooks or Xero: try Float before any custom build.[^22]",
+  "Already on NetSuite or Dynamics 365 Finance: switch on the built-in pay-date prediction or cash flow forecast and test it first.[^6][^7]",
+  "Many banks, entities and currencies with a treasury team: buy a treasury system such as Trovata or Agicap.[^23][^24] For 12-month plans, use planning software such as Cube.[^25][^9]"
+ ],
+ "resources": [
+  {
+   "name": "Forecasting: Principles and Practice (3rd ed.)",
+   "url": "https://otexts.com/fpp3/",
+   "what": "Free textbook on rolling backtests, accuracy measures and documented overrides."
+  },
+  {
+   "name": "IBM sample accounts-receivable data (data1135 package)",
+   "url": "https://rdrr.io/github/bcBusinessStats/data1135/man/accts_recv.html",
+   "what": "The simulated invoices behind our backtest, to practise before touching your books."
+  },
+  {
+   "name": "NetSuite, Payment Date Prediction for Invoices",
+   "url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/article_0106021633.html",
+   "what": "Shows the data floor and how predicted pay-date fields work."
+  },
+  {
+   "name": "NIST AI Risk Management Framework",
+   "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+   "what": "A free checklist for documenting oversight and measuring model performance."
+  },
+  {
+   "name": "AFP Treasury Benchmarking Survey",
+   "url": "https://www.financialprofessionals.org/training-resources/resources/survey-research-economic-data/Details/treasury-benchmarking",
+   "what": "Peer benchmarks on how treasury teams forecast and use AI."
+  }
+ ],
+ "stats": [
+  {
+   "num": "32% to 21%",
+   "label": "Weekly receipts error, due-date rule against a learned pay-date model, weeks 1-4, in our backtest.[^1]",
+   "source": "Zavient backtest, 28 Nov 2026"
+  },
+  {
+   "num": "49%",
+   "label": "Share of treasury practitioners who call cash and liquidity forecasting their most challenging task.[^3]",
+   "source": "AFP Treasury Benchmarking Survey, 2026"
+  },
+  {
+   "num": "34%",
+   "label": "Share of treasury practitioners who rate themselves effective in AI knowledge.[^3]",
+   "source": "AFP Treasury Benchmarking Survey, 2026"
+  },
+  {
+   "num": "28%",
+   "label": "Share of large companies' cash forecasts within 10% of their annual free cash flow target.[^10]",
+   "source": "EY-Parthenon, 2024"
+  },
+  {
+   "num": "12 weeks",
+   "label": "History NetSuite needs, with 50 paid invoices, before it predicts pay dates.[^6]",
+   "source": "Oracle NetSuite documentation"
+  },
+  {
+   "num": "66%",
+   "label": "Share of firms using AI that use it only to help staff.[^12]",
+   "source": "US Census Bureau, 2026"
+  }
+ ],
+ "sources": [
+  {
+   "name": "data1135 R package, accts_recv: IBM Watson sample accounts-receivable data",
+   "url": "https://rdrr.io/github/bcBusinessStats/data1135/man/accts_recv.html",
+   "what": "Simulated data from IBM Watson: 2,466 rows and 12 variables, including invoice, due and settled dates, amount, dispute flag and paperless billing; downloaded 28 Nov 2026 for Zavient's backtest."
+  },
+  {
+   "name": "AFP, Cash Forecasting",
+   "url": "https://www.financialprofessionals.org/topics/treasury/cashforecasting",
+   "what": "Cash forecasting estimates a company's future financial position; short-term forecasts are the most likely to be accurate; inaccurate inputs make an inaccurate forecast."
+  },
+  {
+   "name": "AFP press release, 2026 Treasury Benchmarking Survey (15 Sep 2026)",
+   "url": "https://www.financialprofessionals.org/about/learn-more/press-releases/Details/afp-survey-ai-priorities-rise-across-treasury-teams-while-ai-related-challenges-grow",
+   "what": "Survey of 425 treasury practitioners, May 2026: 49% call cash and liquidity forecasting their most challenging task, 63% their top priority, and 34% rate themselves effective in AI knowledge."
+  },
+  {
+   "name": "AFP, Implementing AI to Automate Cash Forecasting: Highlights, Challenges and Benefits (17 Mar 2021)",
+   "url": "https://www.financialprofessionals.org/training-resources/resources/articles/Details/implementing-ai-to-automate-cash-forecasting-highlights-challenges-and-benefits",
+   "what": "Accenture treasury case: tested 12 algorithms for each cash type and kept the best, retrained monthly; users change the key things an AI model might not be able to change; data accuracy and availability become an issue; forecast results within a few minutes; more accurate than its Excel forecasts."
+  },
+  {
+   "name": "AFP, Build vs Buy: why treasury teams are taking custom TMS development seriously again (17 Nov 2026)",
+   "url": "https://www.financialprofessionals.org/training-resources/resources/articles/Details/build-vs-buy-why-treasury-teams-are-taking-custom-tms-development-seriously-again",
+   "what": "AI-assisted development makes custom treasury builds practical again; one in-house treasury system approximately 70% complete after five years; one bought platform included routine maintenance and upgrades; greater control comes with ongoing responsibility."
+  },
+  {
+   "name": "Oracle NetSuite, Payment Date Prediction for Invoices",
+   "url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/article_0106021633.html",
+   "what": "Machine learning predicts when payment for an invoice is likely to be received, from customer payment history; adds predicted payment date and predicted overdue days; needs 12 weeks of history and 50+ paid invoices; runs weekly; predictions are estimates, not guarantees."
+  },
+  {
+   "name": "Microsoft Learn, Cash flow forecast overview (Dynamics 365 Finance insights)",
+   "url": "https://learn.microsoft.com/en-us/dynamics365/finance/finance-insights/cash-flow-forecast-intro",
+   "what": "Intelligent cash flow forecasting for long-term forecasting, using time series forecasting; users can compare and measure forecast performance against actual financials."
+  },
+  {
+   "name": "Intuit Enterprise Suite, What is the 13-week cash flow forecast? (24 Jul 2026)",
+   "url": "https://erp.intuit.com/blog/financials/13-week-cash-flow-forecast/",
+   "what": "A 13-week cash flow forecast gives a 90-day window into weekly liquidity, rolled forward each week; a communication tool with lenders and investors."
+  },
+  {
+   "name": "J.P. Morgan, The ins and outs of cash forecasting (28 Feb 2025)",
+   "url": "https://www.jpmorgan.com/insights/treasury/forecasting-planning/cash-forecasting-tips-for-your-business",
+   "what": "A standard 13-week forecast balances detail and horizon; start from historical cash data; AI handles routine work and people interpret it; cash forecasting covers near-term working capital, while planning covers next year's growth."
+  },
+  {
+   "name": "EY-Parthenon, Cash forecasting: difficult, disappointing and more urgent than ever (21 Aug 2024)",
+   "url": "https://ey.com/en_us/insights/strategy/cash-forecasting-difficult-and-more-urgent-than-ever",
+   "what": "Study of the 2,400 largest companies: only 28% of cash forecasts were within 10% of annual free cash flow targets, against about 80% for revenue guidance; errors can cancel out when aggregated; easy payment terms delay cash; poor data misleads."
+  },
+  {
+   "name": "Journal of Accountancy (AICPA), Going concern: what CPAs in audit and finance should know (1 Oct 2026)",
+   "url": "https://www.journalofaccountancy.com/issues/2026/oct/going-concern-what-cpas-in-audit-and-finance-should-know/",
+   "what": "Under ASC 205-40, management evaluates substantial doubt about meeting obligations within one year after issuance, considering expected cash flows; where a cash flow forecast is significant, the auditor evaluates the reliability of its data and support for its assumptions."
+  },
+  {
+   "name": "US Census Bureau, Bonney et al., CES-WP-26-25 (Apr 2026)",
+   "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
+   "what": "\"Most users (66%) rely on AI solely to augment tasks, while AI-related employment decreases are rare, occurring in only 2% of firms.\""
+  },
+  {
+   "name": "NIST, AI RMF Core",
+   "url": "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/",
+   "what": "MAP 3.5: processes for human oversight are defined, assessed and documented; MEASURE covers testing performance."
+  },
+  {
+   "name": "NIST, AI Risk Management Framework",
+   "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+   "what": "AI RMF 1.0, released 26 Jan 2023, for voluntary use."
+  },
+  {
+   "name": "Hyndman and Athanasopoulos, Forecasting: Principles and Practice (3rd ed.), Some simple forecasting methods",
+   "url": "https://otexts.com/fpp3/simple-methods.html",
+   "what": "Simple methods serve as benchmarks; any new method must beat them to be worth considering."
+  },
+  {
+   "name": "Forecasting: Principles and Practice (3rd ed.), Time series cross-validation",
+   "url": "https://otexts.com/fpp3/tscv.html",
+   "what": "Rolling forecasting origin: no future observations can be used in constructing the forecast."
+  },
+  {
+   "name": "Forecasting: Principles and Practice (3rd ed.), Evaluating point forecast accuracy",
+   "url": "https://otexts.com/fpp3/accuracy.html",
+   "what": "Percentage errors are infinite or undefined when an actual is zero; the test set should ideally be at least as large as the maximum forecast horizon."
+  },
+  {
+   "name": "Forecasting: Principles and Practice (3rd ed.), Judgmental adjustments",
+   "url": "https://otexts.com/fpp3/judgmental-adjustments.html",
+   "what": "Use adjustments sparingly, and document and justify each one."
+  },
+  {
+   "name": "Rob J Hyndman, WAPE (Hyndsight)",
+   "url": "https://robjhyndman.com/hyndsight/wape.html",
+   "what": "WAPE is the sum of absolute errors divided by the sum of actuals; only consistent on stationary data; undefined if all actuals are zero."
+  },
+  {
+   "name": "Appel et al., Predicting Account Receivables with Machine Learning, arXiv 2008.07363 (2020)",
+   "url": "https://arxiv.org/pdf/2008.07363",
+   "what": "IBM Research with a multinational bank: 91,562 invoices from 6 Latin American countries plus the United States; the prototype reached up to 81% prediction accuracy against a 54.51% baseline, the share of late invoices; predicts whether each invoice is paid late or on time; helps collectors act on likely late payers."
+  },
+  {
+   "name": "Appel et al., Optimize Cash Collection: Use Machine Learning to Predicting Invoice Payment, arXiv 1912.10828 (2019)",
+   "url": "https://arxiv.org/abs/1912.10828",
+   "what": "IBM Research prototype, built with a multinational bank to help collectors, reached up to 77% accuracy predicting invoice payment."
+  },
+  {
+   "name": "Float, Pricing",
+   "url": "https://floatapp.com/pricing/",
+   "what": "Growth $215 a month billed annually or $265 monthly; Scale $315 a month billed annually or $389 monthly; each extra entity $63 or $78; 13-week and 36-month forecasts with scenarios; QuickBooks and Xero; Sage Intacct coming soon. Read 28 Nov 2026."
+  },
+  {
+   "name": "Trovata, Pricing",
+   "url": "https://trovata.io/pricing/",
+   "what": "Base Package $24k a year; machine-learning forecast models that learn from historical bank data (vendor claim); treasury management and add-ons quote only. Read 28 Nov 2026."
+  },
+  {
+   "name": "Agicap, Pricing",
+   "url": "https://agicap.com/en-us/pricing/",
+   "what": "No published price; minimum 12-month subscription. Read 28 Nov 2026."
+  },
+  {
+   "name": "Cube, Pricing",
+   "url": "https://www.cubesoftware.com/pricing",
+   "what": "Financial planning and analysis software; no published price, priced by plan and quoted per company. Read 28 Nov 2026."
+  },
+  {
+   "name": "HighRadius, Cash Forecasting Software",
+   "url": "https://www.highradius.com/treasury-management/cash-forecasting-software/",
+   "what": "Vendor claims: up to 95% accurate forecasts, dynamic model selection from 100+ machine-learning models, implementation in under 12 weeks; no price and no method published. Read 28 Nov 2026."
+  },
+  {
+   "name": "Menlo Ventures, 2025: The State of Generative AI in the Enterprise",
+   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+   "what": "76% of enterprise AI solutions are purchased rather than built internally. Menlo invests in AI companies."
+  },
+  {
+   "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025)",
+   "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+   "what": "MIT no longer hosts the report (its link now opens the NANDA project page, checked 26 Nov 2026); copy hosted by MLQ.ai. Sample: 52 organizations interviewed, survey of 153 leaders, and 300+ public AI initiatives reviewed. $30-40 billion of enterprise GenAI investment; 95% of organizations are getting zero return; just 5% of integrated AI pilots extract millions in value. Task-specific tools: 60% of organizations evaluated them, 20% piloted, 5% reached production. Over 80% of organizations explored or piloted ChatGPT or Copilot, and nearly 40% report deployment. External partnerships with customized tools reached deployment about 67% of the time vs about 33% for internal builds: 2x as likely, twice the success rate. Only 40% of companies purchased an official LLM subscription; workers at over 90% of companies surveyed use personal AI tools for work. For mission-critical work, 90% of users prefer humans. Enterprises, defined as firms with over $100 million in annual revenue, lead in pilot count but report the lowest pilot-to-scale conversion. Read 26 Nov 2026."
+  },
+  {
+   "name": "BLS, Occupational Outlook Handbook, Data Scientists",
+   "url": "https://www.bls.gov/ooh/math/data-scientists.htm",
+   "what": "Median annual pay $120,230, May 2025. Read 28 Nov 2026."
+  }
+ ],
+ "related": [
+  "ai-demand-forecasting",
+  "ai-collections",
+  "account-reconciliation-automation",
+  "multi-entity-close",
+  "machine-learning-consulting"
+ ],
+ "offer": {
+  "heading": "Is your cash forecast beating the due-date rule?",
+  "body": "Not if it assumes every customer pays on the due date: in our backtest, that rule ran about 10% high on near-term receipts. Bring a year of paid invoices and your current forecast. In 30 minutes, with no sales pitch, you leave with the first step and a before-and-after measure, in writing."
+ },
+ "keyword": {
+  "phrase": "cash forecasting",
+  "searches": 2900,
+  "cpc": 32.2,
+  "difficulty": 10
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Wanted to know when the model can be trusted with a real decision. The last test step now runs the model beside the current sheet on live Mondays before switching. The first test step already records before numbers, and every recipe step names its role."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Tripped on backtest, bias and going concern. The test steps now say a backtest replays the past and bias means running high or low, and the COO role says what the going-concern judgment covers. WAPE, MAPE, AR and ERP were already spelled out."
+  },
+  {
+   "reader": "GM",
+   "notes": "Asked whether one unit can pilot first and what the gain is worth. The data step now starts with one entity or customer group, and the pricing step turns the freed cash buffer into dollars at the credit line's rate."
+  },
+  {
+   "reader": "Division head",
+   "notes": "The controller checked the backtest against how disputes reach the books. The no-dispute row now says real books may log disputes late, and the own-data note keeps the simulated-data and open-invoice limits. Override logging and the auditor's checks already sit with the controller."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Got the answer from the title and first bullet, and liked that the data is labelled simulated. The jobs question is answered with the Census figure. The offer now says the first step and before-and-after measure come in writing."
+  }
+ ],
+ "updated": "2026-11-28",
+ "figureCheck": {
+  "date": "2026-11-28",
+  "checked": 37,
+  "notFound": [],
+  "byHand": [
+   {
+    "where": "verdict[3]",
+    "figure": "95%",
+    "url": "https://www.highradius.com/treasury-management/cash-forecasting-software/",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "Delivers up to 95% accurate forecasts"
+   },
+   {
+    "where": "answers.table-1",
+    "figure": "$215",
+    "url": "https://floatapp.com/pricing/",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "Growth (Single Entity) $265/mo $215/mo"
+   },
+   {
+    "where": "answers.table-1",
+    "figure": "$24k",
+    "url": "https://floatapp.com/pricing/",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "Base Package: $24k/year"
+   },
+   {
+    "where": "answers.table-2",
+    "figure": "81%",
+    "url": "https://arxiv.org/pdf/2008.07363",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "it has reached up to 81% of prediction accuracy"
+   },
+   {
+    "where": "answers.table-2",
+    "figure": "54.51%",
+    "url": "https://arxiv.org/pdf/2008.07363",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Compared to the baseline score (54.51%), we can see that the models perform significantly better"
+   },
+   {
+    "where": "teamAfter[3]",
+    "figure": "66%",
+    "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Most users (66%) rely on AI solely to augment tasks,"
+   },
+   {
+    "where": "teamAfter[3]",
+    "figure": "2%",
+    "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "AI-related employment decreases are rare, occurring in only 2% of firms."
+   },
+   {
+    "where": "tables[0].rows[0].cells[1]",
+    "figure": "$315",
+    "url": "https://floatapp.com/pricing/",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Scale (Multiple Entities) $389/mo $315/mo"
+   },
+   {
+    "where": "tables[0].rows[0].cells[1]",
+    "figure": "$389",
+    "url": "https://floatapp.com/pricing/",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Scale (Multiple Entities) $389/mo $315/mo"
+   },
+   {
+    "where": "tables[0].rows[1].cells[1]",
+    "figure": "$24k",
+    "url": "https://trovata.io/pricing/",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Base Package: $24k/year"
+   },
+   {
+    "where": "tables[0].rows[4].cells[2]",
+    "figure": "95%",
+    "url": "https://www.highradius.com/treasury-management/cash-forecasting-software/",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Delivers up to 95% accurate forecasts"
+   },
+   {
+    "where": "tables[1].rows[0].cells[1]",
+    "figure": "81%",
+    "url": "https://arxiv.org/pdf/2008.07363",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "it has reached up to 81% of prediction accuracy"
+   },
+   {
+    "where": "tables[1].rows[0].cells[1]",
+    "figure": "54.51%",
+    "url": "https://arxiv.org/pdf/2008.07363",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Compared to the baseline score (54.51%), we can see that the models perform significantly better"
+   },
+   {
+    "where": "tables[1].rows[1].cells[1]",
+    "figure": "77%",
+    "url": "https://arxiv.org/abs/1912.10828",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "77% of accuracy"
+   },
+   {
+    "where": "tables[1].rows[3].cells[1]",
+    "figure": "28%",
+    "url": "https://ey.com/en_us/insights/strategy/cash-forecasting-difficult-and-more-urgent-than-ever",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Only 28% of companies' cash forecasts were within 10% of their annual free cash flow targets (one-year time horizon)."
+   },
+   {
+    "where": "tables[1].rows[3].cells[1]",
+    "figure": "10%",
+    "url": "https://ey.com/en_us/insights/strategy/cash-forecasting-difficult-and-more-urgent-than-ever",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Only 28% of companies' cash forecasts were within 10% of their annual free cash flow targets (one-year time horizon)."
+   },
+   {
+    "where": "tables[1].rows[3].cells[1]",
+    "figure": "80%",
+    "url": "https://ey.com/en_us/insights/strategy/cash-forecasting-difficult-and-more-urgent-than-ever",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "about 80% of revenue guidance reports were within 10% of the stated targets."
+   },
+   {
+    "where": "recipes[0].cost",
+    "figure": "$215",
+    "url": "https://floatapp.com/pricing/",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Growth (Single Entity) $265/mo $215/mo"
+   },
+   {
+    "where": "recipes[0].cost",
+    "figure": "$265",
+    "url": "https://floatapp.com/pricing/",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Growth (Single Entity) $265/mo $215/mo"
+   },
+   {
+    "where": "recipes[1].cost",
+    "figure": "$24k",
+    "url": "https://trovata.io/pricing/",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "Base Package: $24k/year"
+   },
+   {
+    "where": "recipes[1].cost",
+    "figure": "$120,230",
+    "url": "https://trovata.io/pricing/",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "The median annual wage for data scientists was $120,230 in May 2025."
+   },
+   {
+    "where": "recipes[2].cost",
+    "figure": "$315",
+    "url": "https://floatapp.com/pricing/",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Scale (Multiple Entities) $389/mo $315/mo"
+   },
+   {
+    "where": "recipes[2].cost",
+    "figure": "$63",
+    "url": "https://floatapp.com/pricing/",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Up to 5 entities $78/mo $63/mo"
+   },
+   {
+    "where": "recipes[2].cost",
+    "figure": "70%",
+    "url": "https://agicap.com/en-us/pricing/",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "After five years of development, the system is approximately 70% complete."
+   },
+   {
+    "where": "howToTest[7]",
+    "figure": "95%",
+    "url": "https://www.highradius.com/treasury-management/cash-forecasting-software/",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Delivers up to 95% accurate forecasts"
+   },
+   {
+    "where": "watchOuts[4]",
+    "figure": "95%",
+    "url": "https://www.highradius.com/treasury-management/cash-forecasting-software/",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Delivers up to 95% accurate forecasts"
+   },
+   {
+    "where": "watchOuts[5]",
+    "figure": "70%",
+    "url": "https://www.financialprofessionals.org/training-resources/resources/articles/Details/build-vs-buy-why-treasury-teams-are-taking-custom-tms-development-seriously-again",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "After five years of development, the system is approximately 70% complete."
+   },
+   {
+    "where": "faq[3].a",
+    "figure": "28%",
+    "url": "https://ey.com/en_us/insights/strategy/cash-forecasting-difficult-and-more-urgent-than-ever",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Only 28% of companies' cash forecasts were within 10% of their annual free cash flow targets (one-year time horizon)."
+   },
+   {
+    "where": "faq[3].a",
+    "figure": "10%",
+    "url": "https://ey.com/en_us/insights/strategy/cash-forecasting-difficult-and-more-urgent-than-ever",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Only 28% of companies' cash forecasts were within 10% of their annual free cash flow targets (one-year time horizon)."
+   },
+   {
+    "where": "buyVsBuild.buy",
+    "figure": "76%",
+    "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "76% of enterprise AI solutions are purchased rather than built internally"
+   },
+   {
+    "where": "buyVsBuild.buy",
+    "figure": "$215",
+    "url": "https://floatapp.com/pricing/",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "Growth (Single Entity) $265/mo $215/mo"
+   },
+   {
+    "where": "buyVsBuild.build",
+    "figure": "twice",
+    "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Strategic partnerships are twice as likely to succeed as internal builds."
+   },
+   {
+    "where": "stats[1]",
+    "figure": "49%",
+    "url": "https://www.financialprofessionals.org/about/learn-more/press-releases/Details/afp-survey-ai-priorities-rise-across-treasury-teams-while-ai-related-challenges-grow",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "cash and liquidity forecasting remains the most challenging treasury activity (49%)"
+   },
+   {
+    "where": "stats[2]",
+    "figure": "34%",
+    "url": "https://www.financialprofessionals.org/about/learn-more/press-releases/Details/afp-survey-ai-priorities-rise-across-treasury-teams-while-ai-related-challenges-grow",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Only 34% of respondents view themselves as effective in AI knowledge"
+   },
+   {
+    "where": "stats[3]",
+    "figure": "28%",
+    "url": "https://ey.com/en_us/insights/strategy/cash-forecasting-difficult-and-more-urgent-than-ever",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Only 28% of companies' cash forecasts were within 10% of their annual free cash flow targets (one-year time horizon)."
+   },
+   {
+    "where": "stats[3]",
+    "figure": "10%",
+    "url": "https://ey.com/en_us/insights/strategy/cash-forecasting-difficult-and-more-urgent-than-ever",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Only 28% of companies' cash forecasts were within 10% of their annual free cash flow targets (one-year time horizon)."
+   },
+   {
+    "where": "stats[5]",
+    "figure": "66%",
+    "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Most users (66%) rely on AI solely to augment tasks,"
+   }
+  ],
+  "redirects": []
+ },
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "source-check agent (separate from writer)",
+  "checked": 29,
+  "fixed": [
+   "ownData: 100 customers and 30-day terms are our count of the data, not stated by the source; labelled 'by our count'",
+   "AFP/Accenture [^4]: source names no 'one-off deals' or acquisitions as overrides; humanRole[1] and watchOuts[3] reworded to its words",
+   "recipes[0] AR step: [^4] did not support it; now [^6] (NetSuite's customer-promised date field)",
+   "teamAfter[0]: reworded to what J.P. Morgan says (AI automates routine tasks, people interpret)",
+   "IBM 2020 [^20]: model predicts late vs on time, not how late",
+   "IBM 2019 [^21]: 'up to 77%'",
+   "Dynamics 365 [^7]: Microsoft describes it as long-term forecasting; added",
+   "'payroll stays on its calendar' (faq[0], example, recipe 2): [^7]/[^8] did not say it; now [^2] (AFP: payroll is a predictable item)",
+   "source notes for [^4], [^7], [^20], [^21], [^26] corrected to the sources' wording (HighRadius: 'under 12 weeks' is implementation time)"
+  ]
+ }
+}

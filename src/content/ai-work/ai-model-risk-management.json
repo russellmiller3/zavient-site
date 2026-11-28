@@ -1,0 +1,690 @@
+{
+ "title": "SR 11-7 replaced: does the new guidance apply to a bank like yours?",
+ "description": "SR 11-7 was replaced in April 2026. See if SR 26-2 reaches your bank, credit union or insurer, and what changed, clause by clause.",
+ "type": "regulation",
+ "templateVersion": 1,
+ "topic": "AI model risk management after SR 11-7 (SR 26-2)",
+ "job": "model risk management",
+ "industry": "banks, credit unions and insurers",
+ "index": true,
+ "verdict": [
+  "SR 26-2 replaced SR 11-7 in April 2026, and ignoring it \"will not result in supervisory criticism\".[^1][^4]",
+  "Banks under $30 billion, 4,133 of 4,204 insured institutions by our math, are generally outside it.[^5][^9]",
+  "Credit unions and insurers sit outside it: the credit union regulator has no AI rules, and insurers follow state bulletins.[^10][^12]",
+  "The guidance now suggests rather than orders: by our count, \"should\" falls from 178 uses to 1.[^2][^3]",
+  "Generative AI and AI agents are outside its scope, but examiners already ask how you govern them.[^2][^15]"
+ ],
+ "onPage": [],
+ "headings": {
+  "what-it-is": "What replaced SR 11-7, and what does it change?",
+  "applies": "Does SR 26-2 apply to your bank, credit union or insurer?",
+  "timeline": "When does each part of the new guidance apply?",
+  "rules": "Which rules apply to your models now?",
+  "what-goes-wrong": "Where do firms go wrong with the new guidance?",
+  "faq": "Questions risk officers ask about SR 26-2",
+  "buy-or-build": "Should you buy model risk software or do the work in-house?"
+ },
+ "summary": "SR 26-2 replaced SR 11-7 on 17 Apr 2026 as the bank regulators' guidance on model risk.[^1][^4][^5] It keeps validation, monitoring and vendor checks, scaled to how much a model matters, and covers machine-learning models but not generative AI.[^2] Law firms read it as more principles-based.[^26][^27]",
+ "answers": {
+  "applies": "Only if you're a bank over $30 billion in assets, or a smaller bank with significant model risk, because the agencies drew that line.[^1][^5]",
+  "timeline": "All of SR 26-2 took effect when it was issued on 17 Apr 2026, with no phase-in dates.[^1][^5]",
+  "rules": "Banks follow SR 26-2 and the vendor guidance, credit unions follow NCUA's general vendor letters, and insurers follow the NAIC bulletin or their state's rule.[^1][^10][^13]",
+  "own-data": "By our count, SR 26-2 is about a third the length of SR 11-7 and swaps 178 uses of \"should\" for 11 of \"sound practice\".[^3][^2]",
+  "human-role": "Your people keep every call that matters: validators judge models, owners approve use, reviewers can halt AI, and vendor model risk stays with the bank.[^2][^17]",
+  "spokes": "Credit scoring, underwriting, fraud and anti-money laundering (AML) models are in scope, but chat assistants and AI agents are not.[^2][^17]",
+  "benchmark": "Your checklist is an inventory, risk tiers, validation timed by tier, vendor evidence, outcome monitoring, an audit check and an exam folder.[^2][^15]",
+  "what-goes-wrong": "Firms go wrong by over-building, by treating non-binding as optional, and by trusting a vendor's word on bias.[^7][^22]",
+  "buy-or-build": "Buy software for the records once you have many models, and keep the judgment in-house: who validates, which tier, when to pause.[^29][^2]",
+  "something-else": "Pick something else when your AI is generative or agentic, when you're an insurer, or when the real issue is the vendor.[^2][^13]"
+ },
+ "applies": [
+  {
+   "if": "Your banking organization has over $30 billion in assets",
+   "then": "Yes: the Federal Reserve calls it \"most relevant\" above $30 billion.[^1] Federal Deposit Insurance Corporation (FDIC) banks of that size are in scope too.[^5]"
+  },
+  {
+   "if": "You're an FDIC-supervised bank with $30 billion or less in assets",
+   "then": "Mostly no. The FDIC says it \"generally does not apply\" unless you have \"significant exposure to model risk\".[^5]"
+  },
+  {
+   "if": "You're a community bank supervised by the Office of the Comptroller of the Currency (OCC)",
+   "then": "Mostly no: the bulletin covers community banks \"subject to the limitations\", and the OCC says their models are \"generally excluded\".[^4][^6] It won't require them to validate every year either.[^7]"
+  },
+  {
+   "if": "You're a credit union",
+   "then": "No. The National Credit Union Administration (NCUA) says it \"has not issued SI specific rules or regulation\", and its model guidance is thin.[^10][^11]"
+  },
+  {
+   "if": "You're an insurer",
+   "then": "No. The National Association of Insurance Commissioners (NAIC) AI Model Bulletin applies instead, in 30 jurisdictions, or your state's own rule.[^12]"
+  },
+  {
+   "if": "Your bank has a state charter",
+   "then": "Your state examiners now have the Conference of State Bank Supervisors (CSBS) AI framework, published 16 Sep 2026, alongside the federal guidance.[^14]"
+  }
+ ],
+ "timeline": [
+  {
+   "date": "4 Apr 2011",
+   "what": "SR 11-7 issued; replaced on 17 Apr 2026 by SR 26-2.[^3][^1]"
+  },
+  {
+   "date": "7 Jun 2017",
+   "what": "FDIC adopts SR 11-7 for banks of $1 billion and up (FIL-22-2017, rescinded by FIL-15-2026).[^8][^5]"
+  },
+  {
+   "date": "4 Dec 2023",
+   "what": "NAIC adopts its AI Model Bulletin for insurers.[^13]"
+  },
+  {
+   "date": "11 Jul 2024",
+   "what": "New York's insurance regulator issues Circular Letter No. 7 on AI in underwriting and pricing.[^22]"
+  },
+  {
+   "date": "6 Oct 2025",
+   "what": "OCC Bulletin 2025-26 says community banks need not validate models every year. Still in effect.[^7]"
+  },
+  {
+   "date": "17 Apr 2026",
+   "what": "SR 26-2, OCC Bulletin 2026-13 and FDIC FIL-15-2026 issued, in effect on issue.[^1][^4][^5]"
+  },
+  {
+   "date": "11 Sep 2026",
+   "what": "Agencies propose new third-party risk guidance to replace the 2023 version; comments now due 16 Dec 2026.[^18][^19][^21]"
+  },
+  {
+   "date": "16 Sep 2026",
+   "what": "CSBS publishes its AI Supervisory Framework for state examiners.[^14]"
+  },
+  {
+   "date": "4 Nov 2026",
+   "what": "OCC issues its SI framework for examiners (Bulletin 2026-54).[^16] NAIC exposes a draft framework for third-party data and model vendors.[^31]"
+  },
+  {
+   "date": "16 Nov 2026",
+   "what": "NAIC's Big Data and AI Working Group adopts its AI Risk Evaluation Supplement after a 12-state pilot.[^32]"
+  }
+ ],
+ "rules": [
+  {
+   "name": "SR 26-2, OCC Bulletin 2026-13, FDIC FIL-15-2026",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+   "status": "In force since 17 Apr 2026, non-binding",
+   "what": "The one model risk guidance for banks now, aimed at organizations over $30 billion.[^1][^5] It turns duties into \"sound practice\" and drops set duties for the board and the list of audit tasks.[^2][^27]"
+  },
+  {
+   "name": "SR 11-7, OCC Bulletin 2011-12, FDIC FIL-22-2017",
+   "url": "https://www.federalreserve.gov/boarddocs/srletters/2011/sr1107a1.pdf",
+   "status": "Replaced 17 Apr 2026 by SR 26-2",
+   "what": "Retire references to these in your policies.[^4][^5]"
+  },
+  {
+   "name": "OCC Bulletin 2025-26",
+   "url": "https://www.occ.gov/news-issuances/bulletins/2025/bulletin-2025-26.html",
+   "status": "In force",
+   "what": "OCC-supervised community banks need not validate every model every year.[^7] Examiners won't criticize validation frequency or scope alone.[^7]"
+  },
+  {
+   "name": "Interagency third-party guidance (OCC 2023-17, SR 23-4)",
+   "url": "https://www.occ.treas.gov/news-issuances/bulletins/2026/bulletin-2026-46.html",
+   "status": "In force; replacement proposed Sep 2026",
+   "what": "Governs vendor oversight, including vendor models.[^18] Using a vendor \"does not diminish banks' responsibility\".[^20]"
+  },
+  {
+   "name": "OCC SI supervisory framework (Bulletin 2026-54)",
+   "url": "https://www.occ.treas.gov/news-issuances/bulletins/2026/bulletin-2026-54.html",
+   "status": "Examiner framework since 4 Nov 2026",
+   "what": "Tells OCC examiners how to review AI, mainly generative AI and agents.[^16][^17] It \"does not establish supervisory expectations for banks\", but it shows what they will ask.[^16]"
+  },
+  {
+   "name": "CSBS AI Supervisory Framework",
+   "url": "https://www.csbs.org/csbs-artificial-intelligence-supervisory-framework",
+   "status": "Published 16 Sep 2026",
+   "what": "State examiners' scoping questions and document request list for AI.[^14][^15]"
+  },
+  {
+   "name": "NCUA third-party due diligence letters (07-CU-13, 01-CU-20)",
+   "url": "https://ncua.gov/regulation-supervision/regulatory-compliance-resources/super-intelligence-si",
+   "status": "No AI-specific rule issued",
+   "what": "Credit unions get general vendor letters, not model risk guidance.[^10] The Government Accountability Office (GAO) called NCUA's model guidance \"limited in scope and detail\".[^11]"
+  },
+  {
+   "name": "NAIC AI Model Bulletin",
+   "url": "https://content.naic.org/sites/default/files/inline-files/2023-12-4%20Model%20Bulletin_Adopted_0.pdf",
+   "status": "Adopted in 30 jurisdictions",
+   "what": "Insurers need a written AI program, scaled to the potential harm to consumers.[^13][^12] Senior management answers to the board for it.[^13]"
+  },
+  {
+   "name": "New York Department of Financial Services (DFS) Insurance Circular Letter No. 7 (2024)",
+   "url": "https://www.dfs.ny.gov/industry-guidance/circular-letters/cl2024-07",
+   "status": "In force",
+   "what": "New York insurers keep an AI inventory and test outputs, including for drift, at least once a year.[^22] They can't lean on a vendor's word that a model is fair.[^22]"
+  }
+ ],
+ "humanRole": [
+  "Validators judge whether a model works: SR 26-2 rates validation on \"the rigor and effectiveness of the review rather than on organizational structure\".[^2]",
+  "Model owners decide when a model goes live: validation \"generally occurs prior to a model's first use\", with an exception for \"an urgent business need\".[^2]",
+  "Reviewers can stop an AI system: OCC examiners expect authority to \"reject, modify, pause, or halt\" it.[^17] State examiners ask for human checkpoints on AI agents.[^15]",
+  "AI drafts, people sign: the OCC's moderate-risk example is summarizing documents for credit memos, with a mandatory human in the loop.[^17] Vendor model risk stays with the bank.[^17][^20]"
+ ],
+ "spokes": [
+  {
+   "slug": "ai-credit-scoring",
+   "why": "Machine-learning credit models are squarely in scope, and the OCC rescinded its old credit scoring bulletin with the new guidance.[^2][^4]"
+  },
+  {
+   "slug": "ai-underwriting",
+   "why": "The OCC's examiner framework lists AI-assisted underwriting as high risk, Tier 2 of 4.[^17]"
+  },
+  {
+   "slug": "ai-governance-consulting",
+   "why": "Chat assistants and AI agents fall outside SR 26-2, so they need their own governance.[^2][^15]"
+  },
+  {
+   "slug": "community-banks-credit-unions",
+   "why": "Much community bank AI comes through vendors, and one surveyed banker said building your own AI tools would be \"very difficult\".[^23]"
+  },
+  {
+   "slug": "insurance",
+   "why": "Insurers answer to the NAIC bulletin, which covers underwriting, pricing, claims, marketing and fraud.[^13]"
+  }
+ ],
+ "ownData": {
+  "title": "What did SR 26-2 change, clause by clause?",
+  "intro": "SR 26-2 kept the core of SR 11-7 but turned most duties into options, by our count of both texts.[^2][^3] SR 11-7 runs about 9,500 words over 21 pages, SR 26-2 about 3,000 over 12.[^3][^2]",
+  "headers": [
+   "Duty",
+   "SR 11-7 (2011, replaced)",
+   "SR 26-2 (2026)",
+   "Term count, 11-7 to 26-2, by our count"
+  ],
+  "rows": [
+   [
+    "Tone",
+    "Banks \"should\" do each step.[^3]",
+    "\"Sound practice\", and no criticism for not following it.[^2][^4]",
+    "\"should\" 178 to 1; \"sound practice\" 0 to 11"
+   ],
+   [
+    "Who it's for",
+    "No size line at the Fed or OCC; the FDIC didn't expect it to reach most banks under $1 billion.[^8][^28]",
+    "\"Most relevant\" above $30 billion.[^1][^5]",
+    "\"30 billion\" 0 to 3"
+   ],
+   [
+    "What counts as a model",
+    "Includes methods with qualitative or expert-judgment inputs.[^3]",
+    "A \"complex quantitative method\"; simple spreadsheets and fixed rules are out.[^2]",
+    "\"complex*\" 16 to 12"
+   ],
+   [
+    "AI",
+    "Not mentioned.[^3]",
+    "Machine-learning models in; generative and agentic AI out (footnote 3).[^2]",
+    "\"AI\" 0 to 3"
+   ],
+   [
+    "Validation timing",
+    "Review each model \"at least annually\".[^3]",
+    "Timing varies \"based on model purpose\".[^2]",
+    "\"annual*\" 2 to 0; \"validat*\" 96 to 22"
+   ],
+   [
+    "Validator independence",
+    "Validators need \"explicit authority to challenge developers and users\".[^3]",
+    "Judged on \"rigor and effectiveness\", not on structure.[^2]",
+    "\"independen*\" 8 to 1; \"effective challenge\" 8 to 2"
+   ],
+   [
+    "Board and policies",
+    "Board approves policies and reviews them annually.[^3]",
+    "No board role set out.[^2][^27]",
+    "\"board\" 9 to 0; \"senior management\" 10 to 0; \"polic*\" 31 to 6"
+   ],
+   [
+    "Vendor models",
+    "Require vendor developmental evidence and keep contingency plans.[^3]",
+    "Understand the vendor model, monitor it, document your changes.[^2][^28]",
+    "\"vendor\" 23 to 7; \"contingenc*\" 2 to 0"
+   ],
+   [
+    "Inventory",
+    "Models in use, under development and recently retired.[^3]",
+    "Models under development or in use, called \"common industry practice\".[^2]",
+    "\"inventor*\" 8 to 3"
+   ],
+   [
+    "Internal audit",
+    "Audit \"should assess the overall effectiveness\" of the framework.[^3]",
+    "Audit has a role only \"in cases where\" it is part of model risk work, and \"would generally not duplicate\" it.[^2]",
+    "\"internal audit\" 16 to 3; \"document*\" 38 to 6"
+   ]
+  ],
+  "note": "Method: on 28 Nov 2026 we extracted text from the Federal Reserve's two PDFs and counted terms case-insensitively; an asterisk means any ending.[^3][^2] SR 11-7 counts exclude its footnotes (\"should\" is 180 with them), and SR 26-2 counts include its 3. Limits: PDF extraction can split words, and counts measure wording, not legal force."
+ },
+ "howToTest": [
+  "Start one list of every model and AI tool, each with a named owner: use case, provider, permissions, status, monitoring and fail-over.[^17] SR 26-2 calls such a list \"common industry practice\".[^2]",
+  "Tier each model by exposure and purpose. For immaterial ones, the work \"may consist of identifying those models and monitoring model performance\".[^2]",
+  "Set validation timing by tier, not by calendar: SR 26-2 dropped SR 11-7's \"at least annually\" review.[^2][^3]",
+  "For each vendor model, gather enough to understand its \"conceptual soundness, design, development data, and performance\": whether its logic, data and results hold up.[^2] Then monitor its outcomes and log your changes to it.[^2]",
+  "Put liability for model errors, and the vendor's use of your data for training, in the contract.[^17][^15]",
+  "Check outcomes against predictions on a schedule: outcomes analysis and ongoing monitoring remain two of the three parts of validation.[^2]",
+  "Keep generative AI on the list even though SR 26-2 skips it: state examiners ask for generative AI policies and an approved-tools list.[^15]",
+  "Have internal audit judge whether the program is \"rigorous and effective\", not redo validations; SR 26-2 says audit \"would generally not duplicate\" that work.[^2]",
+  "Keep one folder for exams: policies, board reporting, inventory, tiers, vendors with embedded AI, validation and monitoring results, output samples and audit reports.[^15]",
+  "Credit unions: NCUA examiners look at internal controls, ongoing monitoring and vendor due diligence.[^10] Insurers: regulators may ask for inventories, drift records and vendor contracts.[^13]"
+ ],
+ "watchOuts": [
+  "Over-building: the OCC found small banks setting up in-house modeling teams \"without regard to whether it is reasonable\".[^7] A community bank with few, moderately complex models might do significantly less.[^7]",
+  "Reading \"non-binding\" as \"nothing to do\": SR 26-2 still leaves room for action against unsafe or unsound practices.[^2] Keep the inventory and monitoring running.",
+  "Untested AI underwriting: Massachusetts reached a $2.5 million settlement with a student lender whose AI models allegedly lacked disparate impact testing.[^24] Test for bias before launch and after.",
+  "Unwatched algorithms: the Consumer Financial Protection Bureau (CFPB) imposed a $2.7 million penalty after Hello Digit's savings algorithm \"routinely caused consumers' checking accounts to overdraft\".[^25] Watch outcomes, not just inputs.",
+  "Taking a vendor's word: New York says an insurer \"may not rely solely on a third-party's claim of non-discrimination\".[^22] Ask the vendor for its test results.",
+  "Citing a retired document: SR 11-7 and the FDIC's 2017 adoption of it were both replaced on 17 Apr 2026.[^1][^5] Point your policies at SR 26-2."
+ ],
+ "faq": [
+  {
+   "q": "Is SR 11-7 still in effect?",
+   "a": "No, because SR 26-2 superseded it on 17 Apr 2026.[^1] The OCC rescinded its twin, Bulletin 2011-12, the same day.[^4]"
+  },
+  {
+   "q": "Does SR 26-2 still require annual model validation?",
+   "a": "No, because SR 26-2 ties validation timing to model purpose and drops SR 11-7's \"at least annually\" review.[^2][^3] The OCC also says it won't require community banks to validate every year.[^7]"
+  },
+  {
+   "q": "Does SR 26-2 cover generative AI?",
+   "a": "No, because footnote 3 puts generative and agentic AI out of scope.[^2] The agencies plan a request for information on AI, including generative and agentic AI.[^4]"
+  },
+  {
+   "q": "Does SR 26-2 apply to credit unions?",
+   "a": "No, because the NCUA did not issue it and has no AI-specific rules.[^10][^1] GAO found NCUA's model risk guidance \"limited in scope and detail\".[^11]"
+  },
+  {
+   "q": "What if we only use vendor models?",
+   "a": "You still own the risk: sound practice is understanding the vendor model's \"conceptual soundness, design, development data, and performance\", then monitoring it.[^2] Using a vendor \"does not diminish banks' responsibility\".[^20]"
+  },
+  {
+   "q": "Is a spreadsheet a model under SR 26-2?",
+   "a": "Not usually, because SR 26-2 defines a model as a \"complex quantitative method\" and leaves out simple spreadsheets.[^2]"
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Buy model risk software once your inventory outgrows a spreadsheet. ValidMind lists a model tier at $5,000 for 12 months on AWS Marketplace (vendor's listing, read 28 Nov 2026).[^29] Yields publishes no price and quotes each deal.[^30]",
+  "build": "Keep the judgment in-house: who validates, which tier, when to pause a model.[^2] The OCC warns against in-house modeling teams set up \"without regard to whether it is reasonable\".[^7] A surveyed community banker said building your own AI tools would be \"very difficult\".[^23]"
+ },
+ "pickElse": [
+  "If your AI is a chat assistant or an agent, SR 26-2 doesn't reach it.[^2] Use the OCC's SI framework or the CSBS guide to set up AI governance instead.[^17][^15]",
+  "If you're an insurer, work from the NAIC bulletin and your state's rule; California, Colorado and New York have their own.[^12][^13]",
+  "If the worry is the vendor more than the math, start from the interagency third-party guidance, which has a replacement proposed.[^18][^20]"
+ ],
+ "resources": [
+  {
+   "name": "SR 26-2 letter and guidance (Federal Reserve)",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+   "what": "The current text, about 12 pages."
+  },
+  {
+   "name": "OCC SI supervisory framework",
+   "url": "https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-97a.pdf",
+   "what": "How OCC examiners tier and review AI, with examples by risk level."
+  },
+  {
+   "name": "CSBS Core Examiner Guide v1.0",
+   "url": "https://www.csbs.org/sites/default/files/other-files/AI%20Supervisory%20Framework%20-%20Core%20Examiner%20Guide%20V1.0.pdf",
+   "what": "The scoping questions and document request list state examiners use."
+  },
+  {
+   "name": "NAIC AI Model Bulletin",
+   "url": "https://content.naic.org/sites/default/files/inline-files/2023-12-4%20Model%20Bulletin_Adopted_0.pdf",
+   "what": "The insurer's version, with what regulators may request."
+  },
+  {
+   "name": "Proposed third-party risk guidance",
+   "url": "https://www.federalregister.gov/documents/2026/09/15/2026-18859/proposed-third-party-risk-management-guidance",
+   "what": "Comment on vendor oversight rules until 16 Dec 2026."
+  }
+ ],
+ "stats": [
+  {
+   "num": "$30 billion",
+   "label": "Asset line above which SR 26-2 is \"most relevant\"; the FDIC says it generally doesn't apply at or below it.[^1][^5]",
+   "source": "Federal Reserve and FDIC, 2026"
+  },
+  {
+   "num": "4,133 of 4,204",
+   "label": "FDIC-insured institutions under $30 billion in assets, by our math from 30 Sep 2026 data.[^9]",
+   "source": "FDIC BankFind, read 28 Nov 2026"
+  },
+  {
+   "num": "178 to 1",
+   "label": "Uses of \"should\" in SR 11-7 against SR 26-2, footnotes excluded from SR 11-7, by our count.[^3][^2]",
+   "source": "Zavient count, 28 Nov 2026"
+  },
+  {
+   "num": "53%",
+   "label": "Community banks that pilot AI or use it in limited functions, in a survey of 330 community banks.[^23]",
+   "source": "CSBS Annual Survey of Community Banks, 2026"
+  },
+  {
+   "num": "30",
+   "label": "Jurisdictions that have adopted the NAIC AI Model Bulletin for insurers, as of 13 Nov 2026.[^12]",
+   "source": "NAIC adoption map, 2026"
+  },
+  {
+   "num": "$2.5 million",
+   "label": "Massachusetts settlement with a student lender over untested AI underwriting.[^24]",
+   "source": "Massachusetts Attorney General, 2025"
+  }
+ ],
+ "sources": [
+  {
+   "name": "Federal Reserve, SR 26-2 letter (17 Apr 2026)",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+   "what": "Issues the Revised Guidance on Model Risk Management on 17 Apr 2026 and supersedes SR 11-7 and SR 21-8. Expected to be most relevant to banking organizations with over $30 billion in total assets regulated by the Federal Reserve."
+  },
+  {
+   "name": "Federal Reserve, SR 26-2 attachment: Revised Guidance on Model Risk Management",
+   "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602a1.pdf",
+   "what": "Defines a model as a complex quantitative method, excluding simple spreadsheets and deterministic rule-based software. Footnote 3: generative and agentic AI are out of scope. Validation timing varies with model purpose; vendor models need an understanding of conceptual soundness, design, development data and performance; internal audit would generally not duplicate model risk work. About 3,000 words and 12 pages by our count."
+  },
+  {
+   "name": "Federal Reserve, SR 11-7 attachment (2011, replaced by SR 26-2)",
+   "url": "https://www.federalreserve.gov/boarddocs/srletters/2011/sr1107a1.pdf",
+   "what": "The 2011 guidance, superseded on 17 Apr 2026 by SR 26-2. Called for a periodic review of each model at least annually, board approval of policies, explicit authority for validators to challenge, vendor developmental evidence and vendor contingency plans. About 9,500 words and 21 pages by our count."
+  },
+  {
+   "name": "Office of the Comptroller of the Currency, Bulletin 2026-13",
+   "url": "https://www.occ.treas.gov/news-issuances/bulletins/2026/bulletin-2026-13.html",
+   "what": "Issues the same revised guidance and rescinds OCC Bulletin 2011-12, OCC 1997-24 (credit scoring models), OCC 2021-19 and the Model Risk Management handbook booklet. Says non-compliance will not result in supervisory criticism, applies to all community banks subject to the guidance's limits, and promises an AI request for information."
+  },
+  {
+   "name": "FDIC, FIL-15-2026: Agencies revise interagency model risk management guidance",
+   "url": "https://www.fdic.gov/news/financial-institution-letters/2026/agencies-revise-interagency-model-risk-management-guidance",
+   "what": "Adopts the revised guidance and rescinds FIL-22-2017 and FIL-27-2021. Generally does not apply to models used by banking organizations with total assets of $30 billion or less, to the extent they do not have significant exposure to model risk."
+  },
+  {
+   "name": "Office of the Comptroller of the Currency, news release 2026-38 (18 May 2026)",
+   "url": "https://occ.gov/news-issuances/news-releases/2026/nr-occ-2026-38.html",
+   "what": "Says models used by community banks are generally excluded from the revised model risk guidance."
+  },
+  {
+   "name": "Office of the Comptroller of the Currency, Bulletin 2025-26 (6 Oct 2025)",
+   "url": "https://www.occ.gov/news-issuances/bulletins/2025/bulletin-2025-26.html",
+   "what": "Does not require community banks to perform annual model validation; examiners will not give negative feedback solely for validation frequency or scope. Warns against in-house modeling teams set up without regard to whether it is reasonable. Still in effect. A community bank using relatively few models of only moderate complexity might conduct significantly fewer model risk management activities."
+  },
+  {
+   "name": "FDIC, FIL-22-2017: Adoption of Supervisory Guidance on Model Risk Management (rescinded by FIL-15-2026)",
+   "url": "https://www.fdic.gov/news/financial-institution-letters/2017/fil17022.html",
+   "what": "The FDIC's 7 Jun 2017 adoption of SR 11-7, rescinded by FIL-15-2026 in April 2026. Said the guidance was not expected to pertain to institutions under $1 billion in total assets unless model use was significant, complex or posed elevated risk."
+  },
+  {
+   "name": "FDIC BankFind Suite, institutions API (data as of 30 Sep 2026)",
+   "url": "https://api.fdic.gov/banks/institutions?filters=ACTIVE%3A1%20AND%20ASSET%3A%5B30000000%20TO%20*%5D&fields=NAME,ASSET,REPDTE&limit=200&format=json",
+   "what": "Active FDIC-insured institutions by total assets, read 28 Nov 2026: 4,204 active institutions, 71 with $30 billion or more, 980 with $1 billion to under $30 billion. Bank-level, not holding-company level."
+  },
+  {
+   "name": "National Credit Union Administration, Super Intelligence (SI) page",
+   "url": "https://ncua.gov/regulation-supervision/regulatory-compliance-resources/super-intelligence-si",
+   "what": "Modified 18 Nov 2026. Says NCUA has not issued SI specific rules or regulation; points to Letters 07-CU-13 and 01-CU-20 on third-party due diligence; examiners look at safety and soundness, compliance, internal controls, ongoing monitoring and third-party due diligence."
+  },
+  {
+   "name": "Government Accountability Office, GAO-25-107197",
+   "url": "https://www.gao.gov/products/gao-25-107197",
+   "what": "Found NCUA's model risk guidance is limited in scope and detail and that NCUA lacks authority to examine technology service providers; recommendation still open."
+  },
+  {
+   "name": "NAIC, AI Model Bulletin adoption map (13 Nov 2026)",
+   "url": "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf",
+   "what": "30 jurisdictions (28 states, DC and Puerto Rico) have adopted the AI Model Bulletin; California, Colorado and New York have their own rules."
+  },
+  {
+   "name": "NAIC, Model Bulletin: Use of Artificial Intelligence Systems by Insurers (4 Dec 2023)",
+   "url": "https://content.naic.org/sites/default/files/inline-files/2023-12-4%20Model%20Bulletin_Adopted_0.pdf",
+   "what": "Insurers need a written AI systems program, proportionate to the degree of potential harm to consumers, with senior management accountable to the board; covers underwriting, pricing, claims, marketing and fraud; regulators may request inventories, validation and drift records, vendor due diligence and contracts."
+  },
+  {
+   "name": "Conference of State Bank Supervisors, AI Supervisory Framework (16 Sep 2026)",
+   "url": "https://www.csbs.org/csbs-artificial-intelligence-supervisory-framework",
+   "what": "Framework for state bank examiners, published 16 Sep 2026; approved by CSBS committees in August 2026."
+  },
+  {
+   "name": "Conference of State Bank Supervisors, AI Supervisory Framework: Core Examiner Guide v1.0",
+   "url": "https://www.csbs.org/sites/default/files/other-files/AI%20Supervisory%20Framework%20-%20Core%20Examiner%20Guide%20V1.0.pdf",
+   "what": "Scoping questions IS-1 to IS-8 (AI use, inventory, third parties, embedded vendor AI, generative AI, sensitive data). Document requests: policies, committee and board reporting, inventory, risk tiering, vendor products with embedded AI, generative AI policies, approved tools, validation and monitoring, output samples, contract terms on data use and training, internal audit reports. GE-8 on agentic AI asks for human checkpoints and the ability to halt."
+  },
+  {
+   "name": "Office of the Comptroller of the Currency, Bulletin 2026-54 (4 Nov 2026)",
+   "url": "https://www.occ.treas.gov/news-issuances/bulletins/2026/bulletin-2026-54.html",
+   "what": "Issues a Super Intelligence (SI) supervisory framework for examiners that does not establish supervisory expectations for banks."
+  },
+  {
+   "name": "Office of the Comptroller of the Currency, SI supervisory framework (attachment to news release 2026-97)",
+   "url": "https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-97a.pdf",
+   "what": "Model risk principles in Bulletin 2026-13 apply to non-generative, non-agentic SI models. Inventory may capture use case, owner, provider, permissions, deployment status, monitoring and fail-over. Reviewers need authority to reject, modify, pause, or halt. Tier 1 Critical examples: autonomous payment agent, real-time credit decisioning; Tier 2 High: SI-assisted underwriting, AML alert disposition; Tier 3 Moderate: credit memo summarization with mandatory human in the loop. Accountability generally remains with the bank; contracts should assign liability for model errors."
+  },
+  {
+   "name": "Office of the Comptroller of the Currency, Bulletin 2026-46: proposed third-party risk management guidance",
+   "url": "https://www.occ.treas.gov/news-issuances/bulletins/2026/bulletin-2026-46.html",
+   "what": "Proposed third-party risk guidance, 11 Sep 2026, issued with the Federal Reserve, FDIC and NCUA; it would revise and replace existing third-party guidance (OCC 2023-17, SR 23-4), which stays in effect until then."
+  },
+  {
+   "name": "Federal Register, Proposed Third-Party Risk Management Guidance (15 Sep 2026)",
+   "url": "https://www.federalregister.gov/documents/2026/09/15/2026-18859/proposed-third-party-risk-management-guidance",
+   "what": "The proposal as published, 91 FR 58536."
+  },
+  {
+   "name": "FDIC, FIL-58-2026: proposed interagency third-party risk management guidance",
+   "url": "https://www.fdic.gov/news/financial-institution-letters/2026/proposed-interagency-third-party-risk-management-guidance",
+   "what": "Use of third parties does not diminish banks' responsibility; proposal would replace the 2023 interagency guidance."
+  },
+  {
+   "name": "Office of the Comptroller of the Currency, news release 2026-100: comment period extended",
+   "url": "https://www.occ.gov/news-issuances/news-releases/2026/nr-ia-2026-100.html",
+   "what": "Comment deadline on the proposed third-party guidance extended to 16 Dec 2026."
+  },
+  {
+   "name": "New York Department of Financial Services, Insurance Circular Letter No. 7 (2024)",
+   "url": "https://www.dfs.ny.gov/industry-guidance/circular-letters/cl2024-07",
+   "what": "11 Jul 2024. Insurers may not rely solely on a third-party's claim of non-discrimination; responsibility to comply remains with the insurer at all times; keep an inventory of AI systems in use, under development or recently retired; test outputs, including for drift, at least annually."
+  },
+  {
+   "name": "Conference of State Bank Supervisors, 2026 Annual Survey of Community Banks",
+   "url": "https://www.csbs.org/sites/default/files/other-files/2026%20CSBS%20Annual%20Survey%20of%20Community%20Banks.pdf",
+   "what": "Survey of 330 community banks, run April to July 2026: 53% of respondents pilot AI or use it in limited functions; 8.8% have deployed it in multiple functions or core operations; fraud detection and security is the top use. A banker: it would be very difficult for each community bank to develop its own AI tools."
+  },
+  {
+   "name": "Massachusetts Attorney General, $2.5 million settlement with a student loan lender (10 Jul 2025)",
+   "url": "https://www.mass.gov/news/ag-campbell-announces-25-million-settlement-with-student-loan-lender-for-unlawful-practices-through-ai-use-other-consumer-protection-violations",
+   "what": "$2.5 million settlement (10 Jul 2025) with Earnest Operations; alleged the lender failed to test its AI underwriting models for disparate impact; requires a governance structure and written AI policies."
+  },
+  {
+   "name": "Consumer Financial Protection Bureau, enforcement action: Hello Digit (10 Aug 2022)",
+   "url": "https://www.consumerfinance.gov/enforcement/actions/hello-digit-llc/",
+   "what": "Automated savings algorithm routinely caused consumers' checking accounts to overdraft; $2.7 million penalty and at least $68,145 in redress."
+  },
+  {
+   "name": "Davis Polk, visual memo on the revised model risk guidance (27 Apr 2026)",
+   "url": "https://www.davispolk.com/insights/client-update/visual-memo-key-changes-under-federal-banking-agencies-revised-model-risk",
+   "what": "Law firm reading: examiners long treated the 2011 guidance as if it carried the force of law."
+  },
+  {
+   "name": "Orrick, agencies overhaul model risk management guidance (24 Apr 2026)",
+   "url": "https://www.orrick.com/en/Insights/2026/04/Agencies-Overhaul-Model-Risk-Management-Guidance-for-Banks-Heres-What-Changed",
+   "what": "Law firm reading: validation independence de-emphasized; board, annual policy review and audit tasks replaced with higher-level principles."
+  },
+  {
+   "name": "Sullivan & Cromwell, memo on the revised model risk guidance (29 Apr 2026)",
+   "url": "https://www.sullcrom.com/insights/memo/2026/april/occ-fed-fdic-issue-revised-guidance-model-risk-management",
+   "what": "Law firm reading: a lighter touch on vendor models; explicit vendor contingency plans are gone; the OCC and Fed had no asset threshold before."
+  },
+  {
+   "name": "AWS Marketplace, ValidMind listing (vendor's listing)",
+   "url": "https://aws.amazon.com/marketplace/pp/prodview-w5c6ttayjzrew",
+   "what": "Sold by ValidMind: Model tier, $5,000.00 for 12 months. Read 28 Nov 2026."
+  },
+  {
+   "name": "Yields, model risk management software (vendor's page)",
+   "url": "https://www.yields.io/solutions/model-risk-management-software",
+   "what": "Model risk software; publishes no price and offers a demo. Read 28 Nov 2026."
+  },
+  {
+   "name": "NAIC, third-party data and model vendor framework, exposure draft (4 Nov 2026)",
+   "url": "https://content.naic.org/sites/default/files/inline-files/third-party-framework-pc-pricing-uw-110426-exposed.pdf",
+   "what": "Exposed 4 Nov 2026; phase one covers third-party data and models used in property and casualty pricing and underwriting."
+  },
+  {
+   "name": "NAIC, Big Data and AI Working Group summary (16 Nov 2026)",
+   "url": "https://content.naic.org/sites/default/files/national_meeting/summary-big-data-ai-wg111626-final.pdf",
+   "what": "Working Group meeting of 16 Nov 2026 adopted the AI Risk Evaluation Supplement; the pilot ran in 12 states from March through September 2026."
+  }
+ ],
+ "related": [
+  "ai-governance-consulting",
+  "community-banks-credit-unions",
+  "ai-credit-scoring",
+  "ai-underwriting",
+  "insurance"
+ ],
+ "offer": {
+  "heading": "Which of your models does SR 26-2 actually reach?",
+  "body": "SR 26-2 reaches only some models, and we'll mark which of yours in 30 minutes from your model list. You leave with the list marked up and the questions your examiner may still ask."
+ },
+ "keyword": {
+  "phrase": "sr 11-7",
+  "searches": 1600,
+  "cpc": 16.07,
+  "difficulty": 3
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Wanted the first thing to do on Monday and who owns it. The checklist now opens with one list of every model and AI tool, each with a named owner, using the fields OCC examiners name."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Tripped on 'conceptual soundness' in the vendor step. That step now says in plain words what it means: whether the model's logic, data and results hold up."
+  },
+  {
+   "reader": "GM",
+   "notes": "Asked whether a small bank has to staff up for this. The over-building watch-out now adds the OCC's line that a bank with few, moderately complex models might do significantly less."
+  },
+  {
+   "reader": "Division head",
+   "notes": "The chief risk officer checked each applies row against the texts. The OCC row now quotes both the bulletin ('subject to the limitations') and the news release ('generally excluded'), so the two OCC statements aren't blurred."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Read the bottom line and the offer only. Clear that most banks under $30 billion are outside it. The offer now says what he walks away with: his model list marked up and the questions his examiner may still ask, with no pitch."
+  }
+ ],
+ "updated": "2026-11-28",
+ "figureCheck": {
+  "date": "2026-11-28",
+  "checked": 12,
+  "notFound": [],
+  "byHand": [
+   {
+    "where": "answers.applies",
+    "figure": "$30 billion",
+    "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "This letter is expected to be most relevant to banking organizations with over $30 billion in total assets regulated by the Federal Reserve."
+   },
+   {
+    "where": "applies[0].then",
+    "figure": "$30 billion",
+    "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "This letter is expected to be most relevant to banking organizations with over $30 billion in total assets regulated by the Federal Reserve."
+   },
+   {
+    "where": "timeline[1].what",
+    "figure": "$1 billion",
+    "url": "https://www.fdic.gov/news/financial-institution-letters/2017/fil17022.html",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "It is not expected that this guidance will pertain to FDIC-supervised institutions with under $1 billion in total assets unless the institution's model use is significant, complex, or poses elevated risk to the institution."
+   },
+   {
+    "where": "rules[0].what",
+    "figure": "$30 billion",
+    "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "This letter is expected to be most relevant to banking organizations with over $30 billion in total assets regulated by the Federal Reserve."
+   },
+   {
+    "where": "ownData.rows[1][1]",
+    "figure": "$1 billion",
+    "url": "https://www.fdic.gov/news/financial-institution-letters/2017/fil17022.html",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "It is not expected that this guidance will pertain to FDIC-supervised institutions with under $1 billion in total assets unless the institution's model use is significant, complex, or poses elevated risk to the institution."
+   },
+   {
+    "where": "ownData.rows[1][2]",
+    "figure": "$30 billion",
+    "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "This letter is expected to be most relevant to banking organizations with over $30 billion in total assets regulated by the Federal Reserve."
+   },
+   {
+    "where": "watchOuts[2]",
+    "figure": "$2.5 million",
+    "url": "https://www.mass.gov/news/ag-campbell-announces-25-million-settlement-with-student-loan-lender-for-unlawful-practices-through-ai-use-other-consumer-protection-violations",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Attorney General Andrea Joy Campbell today announced that her office has reached a $2.5 million settlement with Earnest Operations LLC (Earnest), a Delaware-based student loan company"
+   },
+   {
+    "where": "watchOuts[3]",
+    "figure": "$2.7 million",
+    "url": "https://www.consumerfinance.gov/enforcement/actions/hello-digit-llc/",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Hello Digit must also pay a $2.7 million penalty."
+   },
+   {
+    "where": "buyVsBuild.buy",
+    "figure": "$5,000",
+    "url": "https://aws.amazon.com/marketplace/pp/prodview-w5c6ttayjzrew",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "12-month contract (1) | Dimension | Cost/12 months | Model | $5,000.00 |"
+   },
+   {
+    "where": "stats[0]",
+    "figure": "$30 billion",
+    "url": "https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "This letter is expected to be most relevant to banking organizations with over $30 billion in total assets regulated by the Federal Reserve."
+   },
+   {
+    "where": "stats[3]",
+    "figure": "53%",
+    "url": "https://www.csbs.org/sites/default/files/other-files/2026%20CSBS%20Annual%20Survey%20of%20Community%20Banks.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "When asked about current AI use, 53% of respondents indicated that they are either piloting the technology or are engaging in limited use across specific functions."
+   },
+   {
+    "where": "stats[5]",
+    "figure": "$2.5 million",
+    "url": "https://www.mass.gov/news/ag-campbell-announces-25-million-settlement-with-student-loan-lender-for-unlawful-practices-through-ai-use-other-consumer-protection-violations",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Attorney General Andrea Joy Campbell today announced that her office has reached a $2.5 million settlement with Earnest Operations LLC (Earnest), a Delaware-based student loan company"
+   }
+  ],
+  "redirects": []
+ },
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "source-check agent (separate from writer)",
+  "checked": 32,
+  "fixed": [
+   "Replaced SR 11-7 source URL (404 since it was replaced by SR 26-2) with the live Fed boarddocs copy",
+   "Rescinded FDIC 2017 adoption letter: its attachment PDF no longer loads, so cited the letter page",
+   "Corrected source notes: CSBS approval month, Massachusetts settlement terms, NAIC adoption details",
+   "Cut the claims that the AI request for information was still not issued: no source says so",
+   "NAIC supplement adopted by its Working Group on 16 Nov; version 7.0 and 17 Nov were unsupported",
+   "Summary: law firms call it more principles-based, not a lighter touch",
+   "Cut unsourced line that examiners and job ads still quote the replaced guidance",
+   "Clause table: '30 billion' is 0 to 3 (a footnote split one hit); complex and annual relabelled as stems; word counts rounded; audit and FDIC rows reworded to match the texts",
+   "Recounted every clause-table term on both live texts: 'should' 178 to 1 (180 with footnotes) confirmed",
+   "Watch-out on the FDIC still hosting its 2017 attachment cut: the file no longer loads"
+  ]
+ }
+}
