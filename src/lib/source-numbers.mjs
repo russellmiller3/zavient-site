@@ -12,7 +12,8 @@ import { canonicalProblems } from './canonical-sources.mjs';
 import { stalePriceProblems } from './stale-prices.mjs';
 
 // 56%, 56 percent, 3x, 3-fold, $1.2M, $205,000, €15,000, £40k, $1.5 billion
-const NUM = /(?:[$€£]\s?\d[\d,]*(?:\.\d+)?(?:\s?(?:[kKmMbB]n?|million|billion|thousand|trillion)\b)?|\b\d[\d,]*(?:\.\d+)?\s?(?:%|x\b|-fold\b|-times\b|\s?per ?cent\b|\s?percent\b))/g;
+// "1.25×" is a multiple too (28 Nov 2026): Zapier's page and our notes write the multiplication sign, not an x.
+const NUM = /(?:[$€£]\s?\d[\d,]*(?:\.\d+)?(?:\s?(?:[kKmMbB]n?|million|billion|thousand|trillion)\b)?|\b\d[\d,]*(?:\.\d+)?\s?(?:%|x\b|×|-fold\b|-times\b|\s?per ?cent\b|\s?percent\b))/g;
 const MULT = { k: 1e3, thousand: 1e3, m: 1e6, million: 1e6, b: 1e9, bn: 1e9, billion: 1e9, trillion: 1e12 };
 
 // Round 5 (26 Nov 2026, the build thread's flagged-figure checkers). Russell: "Make it so every fix is structual to
@@ -21,7 +22,7 @@ const MULT = { k: 1e3, thousand: 1e3, m: 1e6, million: 1e6, b: 1e9, bn: 1e9, bil
 // - Word figures count: "twice as", "doubled", "three times as", "2 to 1", "3:1" are multiples (x:2, x:3).
 // - A hedge word sets the tolerance (see backs()): "about 32%" is backed by a note's 32.6%; a bare "32%" is not,
 //   because 32.6 rounds to 33. "More than", "nearly", "under" and "up to" each say which side the source's figure is on.
-const UNIT = '(%|\\s?percent\\b|\\s?per ?cent\\b|x\\b|-fold\\b|\\s?times\\b)';
+const UNIT = '(%|\\s?percent\\b|\\s?per ?cent\\b|x\\b|×|-fold\\b|\\s?times\\b)';
 const RANGE = new RegExp(`\\b(\\d[\\d,]*(?:\\.\\d+)?)\\s?(?:-|–|—|to)\\s?(\\d[\\d,]*(?:\\.\\d+)?)${UNIT}`, 'gi');
 const BETWEEN = new RegExp(`\\bbetween (\\d[\\d,]*(?:\\.\\d+)?) and (\\d[\\d,]*(?:\\.\\d+)?)${UNIT}`, 'gi');
 // A money range: each end keeps its own unit ("$750K-1M", "$750,000-$1 million"); the high end's unit carries to the
@@ -36,7 +37,7 @@ const HEDGES = { about: 'approx', around: 'approx', roughly: 'approx', approxima
   under: 'under', 'less than': 'under', below: 'under', 'fewer than': 'under', 'up to': 'upto' };
 
 const expand = (text) => String(text).replace(/\[\^\d+\]/g, '')
-  .replace(BETWEEN, (_, a, b, u) => `${a}${u} and ${b}${u}`)
+  .replace(BETWEEN, (_, a, b, u) => `${a}${u} to ${b}${u}`)
   .replace(RANGE, (m, a, b, u) => (/^(?:19|20)\d\d$/.test(a) && /^(?:19|20)?\d\d$/.test(b) ? m : `${a}${u} to ${b}${u}`))
   .replace(MONEY_RANGE, (m, c, a, ua, b, ub) => {
     const u2 = (ub || '').trim(); const u1 = (ua || '').trim() || (!/,/.test(a) && Number(a) < 1000 ? u2 : '');
@@ -53,7 +54,7 @@ function parse(raw) {
   const n = s.match(/\d+(?:\.\d+)?/);
   if (!n) return null;
   if (/%|percent|per cent/.test(s)) return { kind: 'pct', value: +n[0], unit: 10 ** -dec(n[0]) };
-  if (/x$|-fold|times/.test(s)) return { kind: 'x', value: +n[0], unit: 10 ** -dec(n[0]) };
+  if (/x$|×$|-fold|times/.test(s)) return { kind: 'x', value: +n[0], unit: 10 ** -dec(n[0]) };
   return null;
 }
 export function figure(raw) { const f = parse(raw); return f ? `${f.kind}:${f.value}` : null; }
@@ -64,7 +65,16 @@ export const figures = (text) => {
     const f = parse(m[0]);
     if (!f) continue;
     const h = t.slice(Math.max(0, m.index - 14), m.index).match(HEDGE);
-    out.push({ raw: m[0].trim(), key: `${f.kind}:${f.value}`, ...f, hedge: h ? HEDGES[h[1].toLowerCase()] : null });
+    out.push({ raw: m[0].trim(), key: `${f.kind}:${f.value}`, ...f, hedge: h ? HEDGES[h[1].toLowerCase()] : null, at: m.index, end: m.index + m[0].length });
+  }
+  // A price range ("$14 to $21", "$10-50k", once expanded "a to b"): both ends carry the range, so a source whose own
+  // price sits inside it backs the spread (inRange), for the padding check (28 Nov 2026). Money only: a share range
+  // ("10-30%") caught unrelated shares that happened to fall inside it, and a change ("rose from $5 to $9") is no range.
+  for (let i = 0; i + 1 < out.length; i++) {
+    const a = out[i]; const b = out[i + 1];
+    if (!/^[$€£]$/.test(a.kind) || a.kind !== b.kind || a.value >= b.value || !/^\s*(?:to|-|–|—)\s*$/.test(t.slice(a.end, b.at))) continue;
+    if (/\b(?:rose|risen|rising|grew|grown|increased|climbed|jumped|went|fell|fallen|dropped|cut|decreased|up|down)\b[^.;]{0,20}\bfrom\s*$/i.test(t.slice(Math.max(0, a.at - 40), a.at))) continue;
+    a.range = b.range = [a.value, b.value];
   }
   for (const m of t.matchAll(WORD_X)) {
     const w = (m[1] || m[2] || m[3] || m[4]).toLowerCase();
@@ -156,6 +166,9 @@ export function figureGroups(sentence) {
 }
 // The footnotes in a group that state none of the group's figures, given what each source holds.
 export function paddedFootnotes(group, holds) { return group.cites.filter((c) => !group.figs.some((f) => holds(c, f))); }
+// A page range ("$14 to $21 on four plans") is backed by a source that states a figure of the same kind inside it:
+// each plan's own price backs the spread. A point figure still needs the source's own figure (backs()).
+export const inRange = (f, q) => !!f.range && f.kind === q.kind && q.value >= f.range[0] && q.value <= f.range[1];
 export function paddingProblems(d) {
   const notes = (d.sources || []).map(noteFigures);
   const out = [];
@@ -163,7 +176,7 @@ export function paddingProblems(d) {
     if (own) continue;
     for (const g of figureGroups(sentence)) {
       // Only footnotes whose note holds a figure at all are judged here; a note with no figures is the live check's job.
-      for (const c of paddedFootnotes(g, (n, f) => (notes[n - 1] || []).some((q) => backs(f, q)))) if ((notes[c - 1] || []).length && g.cites.length > 1) out.push(`${where}: footnote [^${c}] doesn't state ${g.figs.map((f) => f.raw).join(' or ')}: move or drop it ("${sentence.replace(/\[\^\d+\]/g, '').slice(0, 70)}")`);
+      for (const c of paddedFootnotes(g, (n, f) => (notes[n - 1] || []).some((q) => backs(f, q) || inRange(f, q)))) if ((notes[c - 1] || []).length && g.cites.length > 1) out.push(`${where}: footnote [^${c}] doesn't state ${g.figs.map((f) => f.raw).join(' or ')}: move or drop it ("${sentence.replace(/\[\^\d+\]/g, '').slice(0, 70)}")`);
     }
   }
   return out;
