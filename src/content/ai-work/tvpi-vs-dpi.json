@@ -9,9 +9,9 @@
  "index": true,
  "verdict": [
   "Distributions to paid-in (DPI) counts only cash returned, while total value to paid-in (TVPI) adds unsold holdings[^1][^2].",
-  "Lean on TVPI early and DPI later: quartile ranks take six to eight years to settle[^6][^7].",
+  "Lean on TVPI early, DPI later: quartile ranks settle in six to eight years[^6], so early calls mislead[^7].",
   "Ask for internal rate of return (IRR) without the credit line, which lifted IRR 1.9 points in one study[^3][^4].",
-  "Recent funds are mostly paper: by our count, 69% of Oregon's 2018-2022 fund value is unsold holdings[^21][^9].",
+  "Recent funds are mostly paper: 69% of Oregon's 2018-2022 fund value is unsold, by our count[^21]. Payouts run slow[^9].",
   "Let AI pull and recompute every manager's figures one way, but have people judge the valuations[^15][^17]."
  ],
  "onPage": [
@@ -74,7 +74,7 @@
      "cells": [
       "Remaining net asset value (NAV), divided by capital paid in[^1][^2]",
       "What is still unsold. Invest Europe calls it a measure of unrealised risk[^2]",
-      "NAV is the manager's fair-value estimate. Venture fund NAVs have run aggressive against later cash flows since 2000[^17]"
+      "NAV is the manager's fair-value estimate. In one study of funds from 1988 to 2016, venture NAVs ran aggressive next to later cash flows, more than buyout, especially after 2000[^17]"
      ]
     },
     {
@@ -184,7 +184,7 @@
      ]
     },
     {
-     "name": "Same, after 6% interest on the line",
+     "name": "Same, after 6% interest on the line, paid from fund value",
      "cells": [
       "Not used",
       "11.1% IRR, and TVPI falls to 1.54x"
@@ -286,7 +286,7 @@
      ]
     },
     {
-     "name": "Median venture DPI by vintage, Q2 2026",
+     "name": "Median venture DPI by vintage, Q2 2026 (Carta platform data)",
      "cells": [
       "0.37x for 2017 funds, 0.15x for 2018 and 0.04x for 2019[^11]"
      ]
@@ -336,10 +336,10 @@
   }
  ],
  "humanRole": [
-  "Head of investment operations or COO: owns the cash flow ledger and signs off each recomputed figure. Of North American family offices surveyed, 73% call investment reporting too manual[^13].",
-  "Analyst: challenges the valuation behind RVPI before any re-up. Venture fund NAVs have run aggressive against later cash flows since 2000[^17].",
+  "Head of investment operations or COO: owns the cash flow ledger and signs off each recomputed figure. Of 155 family offices in the Americas surveyed, 73% call investment reporting too manual[^13].",
+  "Analyst: challenges the valuation behind RVPI before any re-up. In one study of funds from 1988 to 2016, venture NAVs ran aggressive next to later cash flows, more than buyout, especially after 2000[^17].",
   "Principal or investment committee: picks the peer group and decides when a fund is too young to judge. Funds take six to eight years to settle[^6].",
-  "Whoever owns the manager relationship: calls the general partner (GP) about each flagged mismatch. Washington's pension board notes its IRR can differ from the GP's[^20]."
+  "Whoever owns the manager relationship: calls the general partner (GP) about each flagged mismatch. The Washington State Investment Board notes its IRR can differ from the GP's[^20]."
  ],
  "ownData": {
   "title": "How much of a pension's fund value is still unsold?",
@@ -430,7 +430,7 @@
     "23%"
    ]
   ],
-  "note": "Limits: Oregon's own share of each fund, net of fees, pooled by dollars, so big funds weigh most. Funds Oregon sold on the secondary market count as cash, and leaving them out lifts the 2018 to 2022 share to 72%, by our count. Oregon calls multiples under three years old not meaningful, so 2023 to 2026 rows are left out."
+  "note": "Limits: Oregon's own share of each fund, net of fees, pooled by dollars, so big funds weigh most. Funds Oregon sold on the secondary market count as cash, and leaving them out lifts the 2018 to 2022 share to 72%, by our count. Oregon calls multiples under three years old not meaningful, so 2023 to 2026 get no row but sit in the all-vintages total."
  },
  "example": {
   "input": "Illustrative: a family office holds 40 funds from 25 managers. Each quarter, statements arrive as PDFs with different layouts, dates and labels. An analyst retypes paid-in, distributions and NAV, then copies each manager's TVPI and IRR.",
@@ -438,7 +438,7 @@
  },
  "watchOuts": [
   "Reading DPI too early: fees and early calls keep a young fund's multiples low, a pattern known as the J-curve[^20]. Hold rankings until year six or later[^7].",
-  "Treating RVPI as cash: NAV is the manager's estimate, and venture estimates have run high against later cash flows[^17]. Ask how each large holding was valued[^2].",
+  "Treating RVPI as cash: NAV is the manager's estimate, and venture NAVs ran higher than buyout ones in a 1988 to 2016 study[^17]. Ask how each large holding was valued[^2].",
   "Letting a credit line flatter IRR: in ILPA's example, a two-year line lifts IRR from 6.62% to 7.98% while TVPI falls[^3]. MSCI puts the median line's lift near 100 basis points for recent buyout and real estate funds[^5].",
   "Mixing gross and net: deal-level MOIC is gross of fees, while fund TVPI should be net of fees and carry[^2]. Keep each comparison on one basis.",
   "Counting recallable money as gone for good: recallable distributions sit in DPI's top line, so the manager can call that cash back[^1]. Track them separately.",
@@ -540,7 +540,7 @@
   },
   {
    "num": "73%",
-   "label": "North American family offices surveyed that call investment reporting too manual[^13].",
+   "label": "Family offices in the Americas surveyed (155) that call investment reporting too manual[^13].",
    "source": "Campden Wealth and RBC, 2026"
   },
   {
@@ -897,7 +897,11 @@
    "Bain row: DPI benchmark named as the average median DPI of 2010-17 vintages",
    "Human-role 73% claim no longer cites the ILPA Performance Template, which does not state it",
    "IRR row now cites Invest Europe too, since ILPA glossary does not mention remaining NAV",
-   "Example: dropped the claim that Canoe links each figure to its page; Canoe does not say so"
+   "Example: dropped the claim that Canoe links each figure to its page; Canoe does not say so",
+   "Independent check 28 Nov: dropped MSCI from the 69% claim and Cambridge 2014 from the six-to-eight-years claim, giving each its own clause",
+   "Independent check 28 Nov: venture NAV bias now says one 1988-2016 study, relative to buyout",
+   "Independent check 28 Nov: Carta row labelled as Carta platform data; credit-line interest stated as paid from fund value",
+   "Independent check 28 Nov: RBC/Campden 73% is 155 family offices in the Americas (incl. 11 outside North America); WSIB named in full"
   ]
  }
 }
