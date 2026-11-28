@@ -3,8 +3,8 @@
 // wins him leads (it never sends buyers to a rival or prices a rival's service) and has no low-end rate content.
 // Made structural (Russell: "Make it so every fix is structual to templates so it doesnt reoccur"): the page check
 // fails a rival firm offered as an option or priced, and a fee range quoted for consultants, agencies or retainers.
-// A firm's survey or study, cited as evidence ("Gartner expects", "in Deloitte's survey"), stays allowed: whether to
-// keep big-firm sources at all is Russell's call (open as of 26 Nov 2026), not this check's.
+// A firm's survey or study, cited as evidence ("Gartner expects", "in Deloitte's survey"), stays allowed. Russell,
+// 28 Nov 2026: "I dont mind citing big firms". Never add McKinsey, Deloitte, KPMG etc. to source bans.
 // 26 Nov 2026 (PE batch): outsourced credit-analysis firms (Anaptyss, Evalueserve) and loan-review service firms added.
 export const FIRMS = /\b(?:Accenture|Deloitte|McKinsey|BCG|Boston Consulting Group|Bain(?: & Company)?|PwC|PricewaterhouseCoopers|EY|Ernst & Young|KPMG|Capgemini|Cognizant|Infosys|Wipro|TCS|Tata Consultancy(?: Services)?|IBM Consulting|Genpact|Slalom|Booz Allen(?: Hamilton)?|Grant Thornton|RSM|BDO|Protiviti|Huron|Oliver Wyman|West Monroe|Thoughtworks|EPAM|Globant|HCLTech|Kearney|Alvarez & Marsal|Guidehouse|Anaptyss|Evalueserve)\b/;
 const MONEY = /[$€£]\s?\d/;
