@@ -33,6 +33,10 @@ The public site for Zavient LLC. Pushing to `master` on GitHub publishes it thro
   - Roll back to the previous deployment in the Worker's Deployments tab.
   - Or reset `master` to the `archive-site-2026-11-26` tag.
 
+## Ask AI widget
+
+Use [the Ask AI handoff](docs/ask-ai-widget.md) to adjust the system instructions, site scope, starter questions, and lead email. It also documents usage reports and the deployment checks.
+
 ## Change log
 
 - 2026-11-27 (evening): Added 301 redirects for `www.zavient.com/*` and `/index.html` to canonical apex URLs in `worker/index.js` (`run_worker_first: true` in `wrangler.jsonc`), and added self-referencing `<link rel="canonical">` tags to all 78 indexable pages via `AiWorkPage.astro` and `Base.astro`. Why: prevent Google from splitting indexing and backlink credit across duplicate `www`, apex, and `/index.html` URLs while crawling the newly submitted 78-page sitemap. Proof: `npx astro build` (78 indexable pages) and `node --test tests/site.test.mjs tests/tracking-alerts.test.mjs` pass 21/21. Next step: monitor Google Search Console indexing over 1-4 weeks.

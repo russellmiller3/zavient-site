@@ -38,6 +38,7 @@ const cfBeacon = import.meta.env.PUBLIC_CF_BEACON_TOKEN || '';
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href={fonts} rel="stylesheet" />
   <link rel="stylesheet" href={css} />
+  <link rel="stylesheet" href="/assets/ask-ai-widget.css" />
 </head>
 <body class={theme === 'blue' ? 'theme-blue' : undefined}>
   <nav>
@@ -121,6 +122,22 @@ const cfBeacon = import.meta.env.PUBLIC_CF_BEACON_TOKEN || '';
       phone.addEventListener('change', update);
     })();
   </script>
+  <script is:inline>
+    window.AskAIWidgetConfig = {
+      siteName: 'Zavient',
+      title: 'Ask Zavient',
+      contentMode: 'index',
+      ctaLabel: 'Have an AI workflow in mind?',
+      ctaText: 'Book a free diagnostic',
+      ctaHref: '/#diagnostic',
+      starterQuestions: [
+        'What can Zavient help my team do with AI?',
+        'What data do I need for an AI project?',
+        'Which free tool should I try first?'
+      ]
+    };
+  </script>
+  <script is:inline src="/assets/ask-ai-widget.js" defer></script>
   {cfBeacon && <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: cfBeacon })}></script>}
 </body>
 </html>

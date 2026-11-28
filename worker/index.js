@@ -5,6 +5,15 @@
 //   - "/api/t/o/<id>.gif" -> 1x1 transparent open-tracking pixel (logs to LEAD_SHEET_URL if set)
 //   - "/api/t/c/<id>?u=<url>" -> safe click-tracking redirect (only zavient.com and calendar.app.google)
 import { notifyTrackingEvent } from './tracking-alerts.js';
+import { ask } from './ask-ai-kit/ask.mjs';
+import { lead as askLead } from './ask-ai-kit/lead.mjs';
+import { usage as askUsage } from './ask-ai-kit/usage.mjs';
+
+const askRoutes = {
+  '/api/ask': { method: 'POST', handler: ask, limit: 'ASK_AI_QUESTION_LIMIT' },
+  '/api/ask-lead': { method: 'POST', handler: askLead },
+  '/api/ask-usage': { method: 'GET', handler: askUsage },
+};
 
 const LEAD_FIELDS = ['name', 'email', 'company', 'workflow', 'page', 'job'];
 const PIXEL_GIF = Uint8Array.from([
@@ -108,6 +117,15 @@ export default {
     if (url.pathname === '/index.html') {
       url.pathname = '/';
       return Response.redirect(url.toString(), 301);
+    }
+    if (Object.hasOwn(askRoutes, url.pathname)) {
+      const { method, handler, limit } = askRoutes[url.pathname];
+      if (request.method !== method) return new Response('method not allowed', { status: 405, headers: { Allow: method } });
+      const ip = request.headers.get('CF-Connecting-IP');
+      if (limit && env[limit] && ip && !(await env[limit].limit({ key: ip })).success) {
+        return Response.json({ error: 'Too many questions. Please try again shortly.' }, { status: 429 });
+      }
+      return handler({ request, env, waitUntil: ctx?.waitUntil?.bind(ctx) });
     }
     if (url.pathname === '/api/lead') return handleLead(request, env);
     if (url.pathname.startsWith('/api/t/o/')) return handleOpenPixel(url, request, env, ctx);

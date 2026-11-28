@@ -2,9 +2,9 @@
 // api-docs-read: static privacy policy page — no external API surface.
 import Base from '../layouts/Base.astro';
 import ConsultingCta from '../components/ConsultingCta.astro';
-const updated = '27 November 2026';
+const updated = '28 November 2026';
 ---
-<Base title="Privacy policy | Zavient" description="How Zavient LLC handles information on zavient.com. Interactive tools run in your browser with no signup and no ad tracking." canonical="https://zavient.com/privacy.html" updated="2026-11-27">
+<Base title="Privacy policy | Zavient" description="How Zavient LLC handles information on zavient.com. Interactive tools run in your browser with no signup and no ad tracking." canonical="https://zavient.com/privacy.html" updated="2026-11-28">
   <header class="article-hero"><div class="wrap">
     <div class="label">Privacy</div>
     <h1>Privacy policy</h1>
@@ -22,6 +22,10 @@ const updated = '27 November 2026';
   <article class="article-body"><div class="wrap">
     <h2 id="tools">Interactive tools and assessments</h2>
     <p>Every calculator, generator and readiness check on zavient.com runs locally in your browser. Your answers stay on your device unless you choose to copy or email them to us.</p>
+
+    <h2 id="ask-ai">Ask AI chat</h2>
+    <p>Ask AI sends your chat questions and any passage you attach to Cloudflare Workers AI to generate a reply. Recent chat history stays in your browser. If you choose to share your email and transcript, Zavient receives them so we can follow up. We count answered messages and active chats in aggregate.</p>
+    <p>Dictation uses your browser’s speech recognition service. Depending on your browser, that service may process audio remotely. You can review the dictated text before sending it to Ask AI.</p>
 
     <h2 id="contact-data">When you contact us</h2>
     <p>When you submit the diagnostic request form, book a call or email <a href="mailto:hello@zavient.com">hello@zavient.com</a>, we receive the details you share. We use them only to prepare for and respond to your inquiry.</p>
