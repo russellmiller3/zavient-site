@@ -70,7 +70,7 @@ const isQuestion = (id) => String((t.headings && t.headings[id]) || BLOCKS[id]?.
 page.answers = Object.fromEntries(t.order.filter((id) => id === 'own-data' || (id !== 'what-it-is' && isQuestion(id)))
   .map((id) => [id, T('one sentence, 6-30 words, that answers the heading outright and gives the reason [^n]')]));
 Object.assign(page, {
-  offer: { heading: T('free-diagnostic heading in the buyer\'s words'), body: t.offer ? t.offer.replaceAll('{job}', job) : T('what the 30 minutes gets them, 1-2 sentences') },
+  offer: { heading: T('free-diagnostic heading in the buyer\'s words'), body: t.offer ? t.offer.replaceAll('{job}', job).replaceAll('{handoffTo}', 'CEO') : T('what the 30 minutes gets them, 1-2 sentences') },
   keyword: { phrase: T('main search phrase from docs/ai-work-site/keyword-research'), searches: 0, cpc: 0, difficulty: null },
   reviews: [],
   updated: today,

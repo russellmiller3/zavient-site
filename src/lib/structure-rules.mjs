@@ -9,8 +9,31 @@
 // 4. no rendered heading repeats a word the template and the topic both bring ("Where does AI pay first for AI in
 //    insurance?"), and no word twice in a row ("AI AI"): set headings[blockId] instead;
 // 5. answers[blockId] renders only where it should: never on what-it-is (the summary is that answer, so it would render
-//    twice), and never under a heading that is not a question (it renders as a stray paragraph).
-import { headingFor, orderFor, BLOCKS, TYPES, relatedRange, DESCRIPTION } from './page-types.mjs';
+//    twice), and never under a heading that is not a question (it renders as a stray paragraph);
+// 6. the eyebrow over the title (28 Nov 2026) is the section name plus a topic of EYEBROW_TOPIC_MAX characters or
+//    fewer that does not just repeat the section name: set shortTopic when the derived one is too long.
+import { headingFor, orderFor, BLOCKS, TYPES, relatedRange, DESCRIPTION, EYEBROW_TOPIC_MAX, eyebrowLabel, eyebrowTopic, handoffFor } from './page-types.mjs';
+
+export function eyebrowProblems(d) {
+  const out = [];
+  const label = eyebrowLabel(d);
+  const topic = eyebrowTopic(d);
+  if (!topic) out.push('eyebrow has no topic: set topic or shortTopic');
+  if (topic.length > EYEBROW_TOPIC_MAX) out.push(`eyebrow topic "${topic}" is ${topic.length} characters (max ${EYEBROW_TOPIC_MAX}, or it wraps on a phone): set shortTopic`);
+  if (topic && label.toLowerCase().includes(topic.toLowerCase())) out.push(`eyebrow "${label} · ${topic}" repeats the section name: set shortTopic`);
+  return out;
+}
+
+// Role pages (28 Nov 2026): the template says "hand your <handoffTo>" (default CEO). A page whose own copy hands the
+// plan to someone else ("hand your principal") but leaves handoffTo unset shows both words: set handoffTo.
+export function handoffProblems(d) {
+  if (d.type !== 'role') return [];
+  const want = handoffFor(d).toLowerCase();
+  const own = [d.offer?.body, d.offer?.heading, ...Object.values(d.headings || {})].filter(Boolean).join(' ');
+  const said = [...own.matchAll(/\bhand (?:it to )?your ([a-z][a-z-]*(?: [a-z][a-z-]*)?)/gi)].map((m) => m[1].toLowerCase());
+  const other = said.find((x) => !x.startsWith(want));
+  return other ? [`the page hands its plan to "your ${other}", but the role template says "your ${handoffFor(d)}": set handoffTo`] : [];
+}
 
 const fns = (t) => (String(t).match(/\[\^\d+\]/g) || []).length;
 const STOP = new Set('a an the and or of to for in on at by with is are be does do what how which who why when where your you our we it this that from as into a'.split(' '));
