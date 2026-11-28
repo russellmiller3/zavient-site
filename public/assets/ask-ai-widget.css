@@ -60,7 +60,15 @@
 
 .ask-ai-fab span{display:grid;gap:1px;text-align:left}
 .ask-ai-fab small{font:500 11px/1.2 var(--ask-body,system-ui,sans-serif)}
-.ask-ai-selection-button{position:fixed;right:20px;bottom:88px;z-index:91;background:var(--ask-panel,#fff);box-shadow:0 3px 12px #0003}
+.ask-ai-selection-button{
+  position:fixed;top:0;left:0;z-index:102;box-sizing:border-box;
+  appearance:none;border:1px solid transparent;border-radius:8px;
+  background:var(--ask-selection-bg,#6336AA);color:var(--ask-selection-ink,#fff);
+  padding:9px 13px;font:600 14px/1.25 var(--ask-body,system-ui,sans-serif);cursor:pointer;
+  box-shadow:0 4px 16px #20123745;overflow-wrap:anywhere;
+}
+.ask-ai-selection-button:hover{filter:brightness(1.13)}
+.ask-ai-selection-button:focus-visible{outline:2px solid var(--ask-selection-bg,#6336AA);outline-offset:3px}
 .ask-ai-selection-button[hidden],.ask-ai-backdrop [hidden]{display:none!important}
 .ask-ai-followups{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .ask-ai-followups .ask-ai-chip,.ask-ai-contact .ask-ai-chip,.ask-ai-quote .ask-ai-chip{font-size:13px;padding:5px 8px}

@@ -345,7 +345,7 @@
     let opener;
     const selectionButton = document.createElement('button');
     selectionButton.type = 'button';
-    selectionButton.className = 'ask-ai-selection-button ask-ai-chip';
+    selectionButton.className = 'ask-ai-selection-button';
     selectionButton.textContent = 'Ask about selection';
     selectionButton.hidden = true;
     document.body.append(selectionButton);
@@ -357,9 +357,58 @@
       const focus = selection?.focusNode?.parentElement;
       const insideWidget = (node) => node?.closest('.ask-ai-backdrop, .ask-ai-fab, .ask-ai-selection-button');
       selectedPassage = !insideWidget(anchor) && !insideWidget(focus) ? selection?.toString().trim().slice(0, 1200) || '' : '';
-      selectionButton.hidden = !selectedPassage || (backdrop && !backdrop.hidden);
+
+      if (!selectedPassage || !selection.rangeCount || (backdrop && !backdrop.hidden)) {
+        selectionButton.hidden = true;
+        return;
+      }
+
+      const viewport = root.visualViewport;
+      const left = viewport?.offsetLeft ?? 0;
+      const top = viewport?.offsetTop ?? 0;
+      const width = viewport?.width ?? root.innerWidth;
+      const height = viewport?.height ?? root.innerHeight;
+      const right = left + width;
+      const bottom = top + height;
+      const range = selection.getRangeAt(0);
+      const visibleLines = Array.from(range.getClientRects()).filter((rect) =>
+        rect.width > 0 && rect.height > 0 &&
+        rect.right > left && rect.left < right && rect.bottom > top && rect.top < bottom
+      );
+      // Anchor to the end the visitor is extending, or to the nearest line still in view.
+      const backward = selection.focusNode === range.startContainer && selection.focusOffset === range.startOffset;
+      const line = backward ? visibleLines[0] : visibleLines[visibleLines.length - 1];
+      if (!line) {
+        selectionButton.hidden = true;
+        return;
+      }
+
+      const gap = 8;
+      const clippedCenter = (Math.max(line.left, left) + Math.min(line.right, right)) / 2;
+      selectionButton.style.maxWidth = Math.max(0, width - 2 * gap) + 'px';
+      selectionButton.hidden = false;
+      const buttonWidth = selectionButton.offsetWidth;
+      const buttonHeight = selectionButton.offsetHeight;
+      const below = line.bottom + gap;
+      const above = line.top - buttonHeight - gap;
+      const y = below + buttonHeight <= bottom - gap ? below : above;
+      selectionButton.style.left = Math.max(left + gap, Math.min(clippedCenter - buttonWidth / 2, right - buttonWidth - gap)) + 'px';
+      selectionButton.style.top = Math.max(top + gap, Math.min(y, bottom - buttonHeight - gap)) + 'px';
     }
-    document.addEventListener('selectionchange', updateSelectionButton);
+
+    let selectionFrame = 0;
+    function scheduleSelectionUpdate() {
+      if (selectionFrame) return;
+      selectionFrame = root.requestAnimationFrame(() => {
+        selectionFrame = 0;
+        updateSelectionButton();
+      });
+    }
+    document.addEventListener('selectionchange', scheduleSelectionUpdate);
+    root.addEventListener('scroll', scheduleSelectionUpdate, { capture: true, passive: true });
+    root.addEventListener('resize', scheduleSelectionUpdate);
+    root.visualViewport?.addEventListener('scroll', scheduleSelectionUpdate);
+    root.visualViewport?.addEventListener('resize', scheduleSelectionUpdate);
     selectionButton.addEventListener('pointerdown', (event) => event.preventDefault());
     selectionButton.addEventListener('click', async () => {
       const passage = selectedPassage;
