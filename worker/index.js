@@ -100,6 +100,15 @@ function handleClickRedirect(url, request, env, ctx) {
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    if (url.hostname === 'www.zavient.com') {
+      url.hostname = 'zavient.com';
+      if (url.pathname === '/index.html') url.pathname = '/';
+      return Response.redirect(url.toString(), 301);
+    }
+    if (url.pathname === '/index.html') {
+      url.pathname = '/';
+      return Response.redirect(url.toString(), 301);
+    }
     if (url.pathname === '/api/lead') return handleLead(request, env);
     if (url.pathname.startsWith('/api/t/o/')) return handleOpenPixel(url, request, env, ctx);
     if (url.pathname.startsWith('/api/t/c/')) return handleClickRedirect(url, request, env, ctx);

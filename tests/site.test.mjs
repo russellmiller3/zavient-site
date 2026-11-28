@@ -164,7 +164,10 @@ test('sitemap lists every indexable page and no noindex page', () => {
     const url = rel === 'index.html' ? 'https://zavient.com/' : `https://zavient.com/${rel}`;
     const html = readFileSync(f, 'utf8');
     if (/name="robots" content="noindex/.test(html)) assert.ok(!map.includes(`<loc>${url}</loc>`), `${rel}: noindex page in sitemap`);
-    else assert.match(map, new RegExp(`<loc>${url.replace(/[.?]/g, '\\$&')}</loc><lastmod>\\d{4}-\\d{2}-\\d{2}</lastmod>`), `${rel}: missing from sitemap or no lastmod`);
+    else {
+      assert.match(map, new RegExp(`<loc>${url.replace(/[.?]/g, '\\$&')}</loc><lastmod>\\d{4}-\\d{2}-\\d{2}</lastmod>`), `${rel}: missing from sitemap or no lastmod`);
+      assert.match(html, new RegExp(`<link[^>]+rel=["']canonical["'][^>]+href=["']${url.replace(/[.?]/g, '\\$&')}["']`, 'i'), `${rel}: missing self-referencing canonical`);
+    }
   }
   assert.match(readFileSync(join(dist, 'robots.txt'), 'utf8'), /^Sitemap: https:\/\/zavient\.com\/sitemap\.xml$/m);
 });
@@ -196,7 +199,7 @@ test('Cloudflare config keeps .html addresses, serves the home page, handles /ap
   assert.equal(cfg.assets.directory, './dist');
   assert.equal(cfg.assets.html_handling, 'none', 'any other mode redirects /about.html to /about');
   assert.equal(cfg.assets.not_found_handling, '404-page');
-  assert.deepEqual(cfg.assets.run_worker_first, ['/', '/api/lead', '/api/t/*']);
+  assert.equal(cfg.assets.run_worker_first, true);
   assert.ok(cfg.previews && typeof cfg.previews === 'object', 'branch previews need a previews block');
   const { default: worker } = await import('../worker/index.js');
   const seen = [];
@@ -204,6 +207,19 @@ test('Cloudflare config keeps .html addresses, serves the home page, handles /ap
   await worker.fetch(new Request('https://zavient.com/'), env);
   await worker.fetch(new Request('https://zavient.com/about.html'), env);
   assert.deepEqual(seen, ['/index.html', '/about.html']);
+  // Canonical host and home redirects: www.zavient.com/* and /index.html 301 to apex.
+  const wwwHome = await worker.fetch(new Request('https://www.zavient.com/'), env);
+  assert.equal(wwwHome.status, 301);
+  assert.equal(wwwHome.headers.get('location'), 'https://zavient.com/');
+  const wwwPage = await worker.fetch(new Request('https://www.zavient.com/about.html?utm_source=test'), env);
+  assert.equal(wwwPage.status, 301);
+  assert.equal(wwwPage.headers.get('location'), 'https://zavient.com/about.html?utm_source=test');
+  const wwwIndex = await worker.fetch(new Request('https://www.zavient.com/index.html'), env);
+  assert.equal(wwwIndex.status, 301);
+  assert.equal(wwwIndex.headers.get('location'), 'https://zavient.com/');
+  const apexIndex = await worker.fetch(new Request('https://zavient.com/index.html?ref=1'), env);
+  assert.equal(apexIndex.status, 301);
+  assert.equal(apexIndex.headers.get('location'), 'https://zavient.com/?ref=1');
   // /api/t/o/* open pixel and /api/t/c/* safe click redirect checks.
   const pix = await worker.fetch(new Request('https://zavient.com/api/t/o/test-open.gif'), env);
   assert.equal(pix.status, 200);

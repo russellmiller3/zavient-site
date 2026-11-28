@@ -32,7 +32,7 @@ const offerLine = offerFor(d);
 // Spot two sits right after the tool, or else after Zavient's own data, or else after the opening answer.
 const proofAfter = tpl ? (['tool', 'own-data'].find((id) => order.includes(id) && hasBlock(d, id)) || 'what-it-is') : null;
 ---
-<Base title={`${d.title} | Zavient`} description={d.description} noindex={!isIndexed} theme="blue" updated={d.updated}>
+<Base title={`${d.title} | Zavient`} description={d.description} noindex={!isIndexed} theme="blue" canonical={`https://zavient.com${url}`} updated={d.updated}>
   <header class="article-hero">
     <div class="wrap">
       <div class="label eyebrow">{eyebrow}</div>

@@ -23,8 +23,8 @@
     // Keep /about.html as the address; any other mode redirects it to /about.
     "html_handling": "none",
     "not_found_handling": "404-page",
-    // Home page maps "/" -> "/index.html"; /api/lead and /api/t/* handle diagnostic leads and email tracking.
-    "run_worker_first": ["/", "/api/lead", "/api/t/*"]
+    // Run worker first on all routes so www.zavient.com/* and /index.html 301-redirect to canonical apex URLs.
+    "run_worker_first": true
   },
   // Branch previews (`npx wrangler preview`) need this block; empty means previews use the settings above.
   "previews": {}

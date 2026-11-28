@@ -20,7 +20,7 @@ The public site for Zavient LLC. Pushing to `master` on GitHub publishes it thro
 ## Hosting (Cloudflare)
 
 - `wrangler.jsonc` serves `dist/` as Workers static assets. `html_handling` is `none`, so `/about.html` stays the address (every other mode redirects it to `/about`).
-- `worker/index.js` runs only for `/` and serves `index.html` there.
+- `worker/index.js` runs first on all routes (`run_worker_first: true`) to 301-redirect `www.zavient.com/*` and `/index.html` to canonical apex URLs, serve `/` from `/index.html`, and handle `/api/lead` and `/api/t/*`.
 - `public/_redirects` holds the old-page redirects. It mirrors `vercel.json`, and a test keeps the two lists equal.
 - Cloudflare setup (connected 26 Nov 2026, Worker `zavient-site`):
   - Workers & Pages, then Create, then Continue with GitHub, then `zavient-site`. The GitHub app sees this repo only.
@@ -34,6 +34,8 @@ The public site for Zavient LLC. Pushing to `master` on GitHub publishes it thro
   - Or reset `master` to the `archive-site-2026-11-26` tag.
 
 ## Change log
+
+- 2026-11-27 (evening): Added 301 redirects for `www.zavient.com/*` and `/index.html` to canonical apex URLs in `worker/index.js` (`run_worker_first: true` in `wrangler.jsonc`), and added self-referencing `<link rel="canonical">` tags to all 78 indexable pages via `AiWorkPage.astro` and `Base.astro`. Why: prevent Google from splitting indexing and backlink credit across duplicate `www`, apex, and `/index.html` URLs while crawling the newly submitted 78-page sitemap. Proof: `npx astro build` (78 indexable pages) and `node --test tests/site.test.mjs tests/tracking-alerts.test.mjs` pass 21/21. Next step: monitor Google Search Console indexing over 1-4 weeks.
 
 - 2026-11-27: Cut `zavient.com` over to Cloudflare Worker `zavient-site`; added first-party email open/click tracking (`/api/t/*`) with KV-deduplicated email alerts (`worker/tracking-alerts.js`) and scanner User-Agent filtering to `rmiller@zavient.com`; swapped all 14 booking links to Google Calendar; added founder headshot to `/about.html`; surfaced all 6 interactive tools on home/nav; added inline diagnostic form (`/api/lead`), OG card, `llms.txt`, `404.html`, `privacy.html`; submitted all 66 sitemap URLs to IndexNow (HTTP 200). Why: unblock leads, enable tracked Dec 1 PE outreach with low-noise alerts, and keep alerts in Git so future deploys preserve them. Proof: targeted Worker + site tests pass (20/20) and live `https://zavient.com/api/t/o/preflight.gif` returns HTTP 200 `image/gif`. Next step: submit sitemap in Google Search Console and follow up on Dec 1 opens/clicks.
 

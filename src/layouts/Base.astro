@@ -9,6 +9,7 @@ const fonts = theme === 'blue'
   : 'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=IBM+Plex+Mono:wght@400;500;600&display=swap';
 const css = theme === 'blue' ? '/ai-work/ai-work.css' : '/insights/article.css';
 const pageUrl = canonical || (Astro.url ? `https://zavient.com${Astro.url.pathname}` : 'https://zavient.com/');
+const canonicalUrl = canonical || (!noindex ? pageUrl : '');
 const ogImage = 'https://zavient.com/og-card.png';
 const cfBeacon = import.meta.env.PUBLIC_CF_BEACON_TOKEN || '';
 ---
@@ -20,7 +21,7 @@ const cfBeacon = import.meta.env.PUBLIC_CF_BEACON_TOKEN || '';
   <title>{title}</title>
   <meta name="description" content={description} />
   {noindex && <meta name="robots" content="noindex, follow" />}
-  {canonical && <link rel="canonical" href={canonical} />}
+  {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
   {updated && <meta property="article:modified_time" content={updated} />}
   <meta property="og:site_name" content="Zavient" />
   <meta property="og:type" content={pageUrl === 'https://zavient.com/' ? 'website' : 'article'} />
