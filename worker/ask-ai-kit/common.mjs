@@ -13,6 +13,8 @@ export function json(data, status = 200) {
 }
 
 export function emailConfigured(env) {
-  return Boolean(env.ASK_AI_DB && env.ASK_AI_EMAIL_FROM &&
-    (env.ASK_AI_EMAIL?.send || env.ASK_AI_RESEND_API_KEY));
+  return Boolean(env.ASK_AI_DB && (
+    env.ASK_AI_EMAIL_SERVICE?.sendCopy ||
+    (env.ASK_AI_EMAIL_FROM && (env.ASK_AI_EMAIL?.send || env.ASK_AI_RESEND_API_KEY))
+  ));
 }

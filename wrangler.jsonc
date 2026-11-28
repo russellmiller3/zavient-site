@@ -4,7 +4,7 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "zavient-site",
   "compatibility_date": "2026-11-13",
-  "main": "./worker/index.js",
+  "main": "./worker/entry.mjs",
   "workers_dev": true,
   "preview_urls": true,
   "send_email": [
@@ -13,7 +13,7 @@
   ],
   "ai": { "binding": "AI" },
   "d1_databases": [
-    { "binding": "ASK_AI_DB", "database_name": "zavient-ask-ai", "migrations_dir": "ask-ai-migrations" }
+    { "binding": "ASK_AI_DB", "database_name": "zavient-ask-ai", "database_id": "c0d3ceed-eaaa-418b-9247-72eaebcb859b", "migrations_dir": "ask-ai-migrations" }
   ],
   "ratelimits": [
     { "name": "ASK_AI_QUESTION_LIMIT", "namespace_id": "2026112801", "simple": { "limit": 20, "period": 60 } },

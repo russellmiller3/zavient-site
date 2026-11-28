@@ -3,7 +3,10 @@ import { answerText } from './transcripts.mjs';
 
 const EMAIL = /^[^\s@<>,;]+@[^\s@<>,;]+\.[^\s@<>,;]+$/;
 
-async function deliver(env, email, transcript, conversationId) {
+async function deliver(env, email, transcript, conversationId, clientIp) {
+  if (env.ASK_AI_EMAIL_SERVICE?.sendCopy) {
+    return env.ASK_AI_EMAIL_SERVICE.sendCopy(email, transcript, clientIp);
+  }
   const message = {
     from: env.ASK_AI_EMAIL_FROM,
     to: email,
@@ -11,7 +14,8 @@ async function deliver(env, email, transcript, conversationId) {
     text: transcript,
   };
   if (env.ASK_AI_EMAIL?.send) {
-    return env.ASK_AI_EMAIL.send(message);
+    await env.ASK_AI_EMAIL.send(message);
+    return true;
   }
   const response = await fetch('https://api.resend.com/emails', {
     method: 'POST',
@@ -23,14 +27,16 @@ async function deliver(env, email, transcript, conversationId) {
     body: JSON.stringify(message),
   });
   if (!response.ok) throw new Error('Email provider did not accept the transcript');
+  return true;
 }
 
 export async function lead({ request, env = {} }) {
   if (!emailConfigured(env)) return json({ error: 'Transcript email is unavailable' }, 503);
   const origin = request.headers.get('origin');
   if (origin && origin !== new URL(request.url).origin) return json({ error: 'Invalid origin' }, 403);
-  if (env.ASK_AI_LEAD_LIMIT && request.headers.has('CF-Connecting-IP')) {
-    const { success } = await env.ASK_AI_LEAD_LIMIT.limit({ key: request.headers.get('CF-Connecting-IP') });
+  const clientIp = request.headers.get('CF-Connecting-IP');
+  if (env.ASK_AI_LEAD_LIMIT && clientIp) {
+    const { success } = await env.ASK_AI_LEAD_LIMIT.limit({ key: clientIp });
     if (!success) return json({ error: 'Too many transcript requests. Please try again later.' }, 429);
   }
 
@@ -65,12 +71,17 @@ export async function lead({ request, env = {} }) {
         : json({ error: 'A request is already processing. Please try again shortly.' }, 409);
     }
 
+    let delivered;
     try {
-      await deliver(env, email, transcript, conversationId);
+      delivered = await deliver(env, email, transcript, conversationId, clientIp);
     } catch {
       await db.prepare("DELETE FROM ask_ai_transcript_emails WHERE conversation_id = ? AND state = 'sending'").bind(conversationId).run();
       console.error(JSON.stringify({ event: 'ask_ai_transcript_send_failed' }));
       return json({ error: 'The transcript could not be sent. Please try again.' }, 502);
+    }
+    if (!delivered) {
+      await db.prepare("DELETE FROM ask_ai_transcript_emails WHERE conversation_id = ? AND state = 'sending'").bind(conversationId).run();
+      return json({ error: 'Too many transcript requests. Please try again later.' }, 429);
     }
     await db.prepare("UPDATE ask_ai_transcript_emails SET state = 'sent' WHERE conversation_id = ?").bind(conversationId).run();
     return json({ sent: true });
