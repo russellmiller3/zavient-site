@@ -234,6 +234,9 @@ test('Cloudflare config keeps .html addresses, serves the home page, handles /ap
   const vercel = JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8')).redirects;
   assert.deepEqual(cf, vercel.map((r) => [r.source.replace('/:path*', '/*'), r.destination, r.permanent ? '301' : '302']));
   for (const [, to] of cf) assert.ok(to === '/' || existsSync(join(root, 'dist', to.split('#')[0])), `redirect target missing: ${to}`);
+  // 28 Nov 2026: a stale 301 for a cut page hid the rebuilt ai-contract-review page live. A redirect source that is
+  // also a built page means the page can never be reached, so fail the build.
+  for (const [from] of cf) assert.ok(from.includes('*') || from === '/' || !existsSync(join(root, 'dist', from)), `redirect hides a live page: ${from}`);
   assert.ok(existsSync(join(dist, 'llms.txt')), 'llms.txt missing from dist');
   assert.ok(existsSync(join(dist, 'og-card.png')), 'og-card.png missing from dist');
   assert.ok(existsSync(join(dist, '404.html')), '404.html missing from dist');
