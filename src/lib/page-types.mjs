@@ -80,7 +80,7 @@ export const BLOCKS = {
     brief: '3-5 bullets: what a buyer should hold at the end of good help (a ranked workflow list, a before-and-after measure, a working pilot, a plan their team can run). Source to buyer surveys where possible.',
   },
   forward: {
-    field: 'forward', h: 'The one-page brief to hand your CEO',
+    field: 'forward', h: 'The one-page brief to hand your {handoffTo}',
     brief: '4-6 short lines a reader can print or forward to the owner-CEO: the top workflow, what it saves, the risk and who checks it, the first step, the cost range. Every number footnoted. This is the role page\'s forward to Steve.',
   },
   applies: {
@@ -148,6 +148,7 @@ export const BLOCKS = {
 // one-off pages (About, Method, benchmark pages, the free diagnostic, home) by hand. It builds no glossary pages.
 export const TYPES = {
   usecase: {
+    eyebrow: 'AI work',
     label: 'Work playbook',
     path: 'ai-work/{slug}',
     titleShape: 'Can AI {do the work} {the way the buyer needs it}?',
@@ -158,6 +159,7 @@ export const TYPES = {
     offer: 'Bring us your {job} process. Leave with the first step and a before-and-after measure.',
   },
   crossing: {
+    eyebrow: 'AI work',
     label: 'Work for one industry',
     path: 'ai-work/{parent}/{industrySlug}',
     titleShape: 'Can AI {do the work} for {industry} {the way they need it}?',
@@ -171,6 +173,7 @@ export const TYPES = {
     offer: 'Bring us your {job} process. Leave with the first step, a before-and-after measure and the questions your examiner will ask.',
   },
   industry: {
+    eyebrow: 'Industries',
     label: 'Industry hub',
     relatedMax: 10,
     path: 'industries/{slug}',
@@ -183,6 +186,7 @@ export const TYPES = {
     offer: 'Which of these workflows pays back first at your firm?',
   },
   role: {
+    eyebrow: 'Roles',
     label: 'Role page',
     relatedMax: 8,
     path: 'for/{slug}',
@@ -192,11 +196,12 @@ export const TYPES = {
     order: ['what-it-is', 'human-role', 'decisions', 'ranked', 'faq', 'forward', 'recipes', 'own-data', 'benchmark', 'what-goes-wrong', 'buy-or-build', 'something-else', 'resources', 'key-numbers', 'sources', 'related'],
     required: ['decisions', 'ranked', 'forward', 'recipes', 'howToTest', 'watchOuts', 'buyVsBuild', 'pickElse'],
     division: 'the role itself is the main reader; the division-head review checks it from a peer function',
-    headings: { faq: 'What will your CEO, board or examiner ask?', recipes: 'What does a 90-day start look like?', benchmark: 'How do you show it worked?' },
+    headings: { faq: 'What will your {handoffTo}, board or examiner ask?', recipes: 'What does a 90-day start look like?', benchmark: 'How do you show it worked?' },
     skipDemand: true,
-    offer: 'Your top 2 workflows ranked, and a one-page plan you can hand your CEO.',
+    offer: 'Your top 2 workflows ranked, and a one-page plan you can hand your {handoffTo}.',
   },
   consulting: {
+    eyebrow: 'AI consulting',
     label: 'Consulting',
     path: 'ai-consulting/{slug}',
     titleShape: '{The kind of help}: what should you walk away with?',
@@ -209,6 +214,7 @@ export const TYPES = {
     offer: 'Free, before any paid work: 30 minutes on your first workflow.',
   },
   regulation: {
+    eyebrow: 'AI rules',
     label: 'Rules page',
     path: 'ai-rules/{slug}',
     titleShape: 'Does {rule} apply to {a firm like yours}?',
@@ -220,6 +226,7 @@ export const TYPES = {
     offer: 'Does this rule touch the AI you use? We\'ll check in 30 minutes.',
   },
   tool: {
+    eyebrow: 'Free tool',
     label: 'Free tool',
     relatedMax: 8,
     path: 'tools/{slug}',
@@ -235,6 +242,7 @@ export const TYPES = {
     headings: { 'what-it-is': 'What does the {topic} do?', faq: 'Questions leaders ask' },
   },
   compare: {
+    eyebrow: 'Compare',
     label: 'Comparison',
     path: 'compare/{slug}',
     titleShape: '{A} vs {B}: which fits {a team like yours}?',
@@ -259,6 +267,7 @@ export const TYPES = {
     offer: 'Not sure which fits your team? Bring us your top workflow. Leave with a pick and a first step.',
   },
   guide: {
+    eyebrow: 'Guides',
     label: 'Guide',
     path: 'guides/{slug}',
     titleShape: 'How do I {do the thing}?',
@@ -291,7 +300,43 @@ export function headingFor(d, id) {
   const topic = (d.topic || d.title.split(':')[0]).trim();
   if (id === 'own-data' && d.ownData?.title) return d.ownData.title;
   const base = (t.headings && t.headings[id]) || BLOCKS[id]?.h;
-  return base ? base.replaceAll('{topic}', topic) : null;
+  return base ? base.replaceAll('{topic}', topic).replaceAll('{handoffTo}', handoffFor(d)) : null;
+}
+
+// The eyebrow over every page's title (28 Nov 2026): the page type's reader-facing section, named after its URL folder
+// (ai-work/, industries/, for/, ai-consulting/, ai-rules/, compare/, tools/, guides/), then a short topic. It used to
+// print the whole job text and the industry, which ran to two lines on a phone on compare pages. The topic is the
+// page's shortTopic if it sets one, else derived from topic: the part before any colon, no parenthetical, no leading
+// "AI for", "AI in" or (when the section name already says AI) "AI", and, if still too long, no trailing "for ..."
+// clause, and no leading "<section word> for". The page check fails a topic over EYEBROW_TOPIC_MAX characters (src/lib/structure-rules.mjs).
+export const EYEBROW_TOPIC_MAX = 40;
+export function eyebrowLabel(d) {
+  const t = TYPES[d.type] || TYPES.usecase;
+  return t.eyebrow || 'AI work';
+}
+export function eyebrowTopic(d) {
+  if (d.shortTopic && d.shortTopic.trim()) return d.shortTopic.trim();
+  let s = String(d.topic || d.title || '').split(':')[0].replace(/\s*\([^)]*\)/g, '').replace(/\s+/g, ' ').trim();
+  s = s.replace(/^AI\s+(?:for|in)\s+(?:the\s+)?/i, '');
+  const label = eyebrowLabel(d);
+  if (/\bAI\b/.test(label)) s = s.replace(/^AI\s+(?=\S)/, '');
+  // "AI consulting · Consulting for small businesses" reads twice: drop the section's own word before "for".
+  const last = label.split(' ').pop();
+  s = s.replace(new RegExp(`^${last}\\s+for\\s+`, 'i'), '');
+  if (s.length > EYEBROW_TOPIC_MAX) s = s.replace(/\s+for\s+.*$/i, '');
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+export const eyebrowFor = (d) => `${eyebrowLabel(d)} · ${eyebrowTopic(d)}`;
+
+// Who a role page's reader hands the plan to (28 Nov 2026). The role template said "hand your CEO" everywhere, but a
+// family office COO answers to a principal. A page sets handoffTo ("principal", "board", "managing partner"); the
+// role template's offer, its forward heading and its FAQ heading all use it. Default: CEO.
+export const HANDOFF_DEFAULT = 'CEO';
+export const handoffFor = (d) => (d.handoffTo && d.handoffTo.trim()) || HANDOFF_DEFAULT;
+// The type's offer line with the page's own job and hand-off audience filled in.
+export function offerFor(d, fallback = 'Get a free 30-minute diagnostic of how to approach this with AI.') {
+  const t = TYPES[d.type] || TYPES.usecase;
+  return (t.offer || fallback).replaceAll('{job}', d.job).replaceAll('{handoffTo}', handoffFor(d));
 }
 
 // Is a block's content present on this page?

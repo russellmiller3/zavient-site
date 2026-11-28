@@ -41,7 +41,7 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: \
 - A page that fails any check renders noindex, follow and stays out of the sitemap, even with \`index: true\`.
 - "Where does your team stay in charge?" on every page. No headcount-cut wording.
 - No Upwork, freelancer marketplaces, hourly rates or rival consulting firms.
-- No forum threads, rival consulting firms or content farms as sources; the page check fails them.
+- No forum threads, rival AI consultancies or agencies, or content farms as sources; the page check fails them. Big-firm surveys and studies (McKinsey, Deloitte, KPMG, Gartner and the like) are fine as evidence (Russell, 28 Nov 2026: "I dont mind citing big firms").
 - Every fix is structural: it goes into the template or a failing page check, so it can't come back on any page.
 - Every lead text says the thing: no meta pointers, no restated heading, no semicolon joining two answers (src/lib/lead-rules.mjs).
 - Superseded rules (SR 11-7, FIL-27-2021, withdrawn CFPB circulars, the OCC's 1998 Loan Portfolio Management booklet) always name their replacement or say withdrawn; the 2023 third-party guidance says a replacement (FIL-58-2026) is proposed (src/lib/stale-rules.mjs).

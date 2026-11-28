@@ -9,7 +9,7 @@ import Base from '../layouts/Base.astro';
 import ConsultingCta from './ConsultingCta.astro';
 import Fn from './Fn.astro';
 import Block from './Block.astro';
-import { TYPES, orderFor, headingFor, hasBlock } from '../lib/page-types.mjs';
+import { TYPES, orderFor, headingFor, hasBlock, eyebrowFor, offerFor } from '../lib/page-types.mjs';
 
 const { page, related, spokes, isIndexed, urls, url } = Astro.props;
 const d = page.data;
@@ -23,18 +23,19 @@ const order = orderFor(d);
 const onPage = d.onPage.length > 0 || !tpl ? d.onPage
   : order.filter((id) => !['what-it-is', 'resources', 'key-numbers', 'sources', 'related', 'tables'].includes(id) && hasBlock(d, id))
       .slice(0, 6).map((id) => ({ to: id === 'spokes' ? 'where-ai-pays' : id, text: headingFor(d, id) }));
-// Reader-facing eyebrow (26 Nov 2026): the site is AI for all work, so pages say "AI work", not the internal type name.
-// Only the free tools say what they are, because that changes what the reader does next.
-const kind = tpl && d.type === 'tool' ? 'Free tool' : 'AI work';
-// The page type's offer, in its reader's words (architecture doc, "The offer, by page type").
-const offerLine = (t.offer || 'Get a free 30-minute diagnostic of how to approach this with AI.').replaceAll('{job}', d.job);
+// Reader-facing eyebrow (28 Nov 2026): the page type's section, named after its URL folder, and a short topic of 40
+// characters or fewer (eyebrowFor in src/lib/page-types.mjs; the page check holds the cap).
+const eyebrow = eyebrowFor(d);
+// The page type's offer, in its reader's words (architecture doc, "The offer, by page type"), with the page's job and
+// hand-off audience filled in.
+const offerLine = offerFor(d);
 // Spot two sits right after the tool, or else after Zavient's own data, or else after the opening answer.
 const proofAfter = tpl ? (['tool', 'own-data'].find((id) => order.includes(id) && hasBlock(d, id)) || 'what-it-is') : null;
 ---
 <Base title={`${d.title} | Zavient`} description={d.description} noindex={!isIndexed} theme="blue" updated={d.updated}>
   <header class="article-hero">
     <div class="wrap">
-      <div class="label">{kind} &middot; {d.job}{d.industry !== 'any industry' && !d.job.toLowerCase().includes(d.industry.toLowerCase()) ? ` · ${d.industry}` : ''}</div>
+      <div class="label eyebrow">{eyebrow}</div>
       <h1>{rest ? (<><span class="hl">{topic}</span>:{rest}</>) : d.title}</h1>
       {d.verdict ? (
         <div class="bluf">

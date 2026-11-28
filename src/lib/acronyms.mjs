@@ -23,14 +23,22 @@ export const JARGON = {
   AMS: 'agency management system', DFS: 'Department of Financial Services', 'E&O': 'errors and omissions',
   FCC: 'Federal Communications Commission', NAIC: 'National Association of Insurance Commissioners',
   SEC: 'Securities and Exchange Commission', TCPA: 'Telephone Consumer Protection Act',
+  // Added 28 Nov 2026: the OCC (Bulletin 2026-54) and NCUA now call AI "super intelligence (SI)". Four bank pages used
+  // SI with its only spelling-out in a source note, which a reader of the page never sees next to the text.
+  SI: 'super intelligence',
 };
 
 const esc = (s) => s.replace(/[&]/g, '\\&');
 // Product names that contain a jargon acronym but are names, not shorthand.
 const PRODUCTS = /\bPower BI\b/g;
-// Page text a reader sees: everything but source entries, reviewer notes, keyword data and URLs.
+// Body text: what a reader sees in the page itself. Not body text (28 Nov 2026, the "SI" miss): the source list and
+// footnotes, the source note under each key number, and the logs and planning data that never render (reviews,
+// keyword, sourceCheck, figureCheck, differs, ownData.method and ownData.hitList). An acronym spelled out only in
+// one of these is still undefined where the reader meets it. URLs are dropped too.
 export function readerText(d) {
-  const { sources, reviews, keyword, ...rest } = d;
+  const { sources, reviews, keyword, sourceCheck, figureCheck, differs, ...rest } = d;
+  if (rest.stats) rest.stats = rest.stats.map(({ source, ...s }) => s);
+  if (rest.ownData) { const { method, hitList, ...o } = rest.ownData; rest.ownData = o; }
   return JSON.stringify(rest).replace(/https?:\/\/[^"\s]+/g, '').replace(/\\"/g, '"').replace(PRODUCTS, '');
 }
 
