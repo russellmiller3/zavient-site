@@ -18,10 +18,10 @@
  "headings": {},
  "summary": "AI automation consulting maps one workflow, decides which steps software, AI or a person should do, then builds and measures it.[^11][^12] What changes: AI reads the routine emails and documents, and your people keep the judgment and oversight.[^11][^8] Support staff with AI help resolved 15% more issues per hour.[^31]",
  "walkAway": [
-  "A ranked list of your workflows, with the first one picked. Finding tools that fit is the top AI challenge firms report (54%).[^13][^14]",
+  "A ranked list of your workflows, with the first one picked. Finding tools that fit is the top AI challenge firms report (54%).[^13]",
   "A before-and-after number for that workflow: volume, minutes per item, errors and cost per item. Only a third of firms report measurable results from even one AI use case.[^1][^15]",
   "A pilot running in daily work, not a demo. In MIT's study of 52 organizations and 153 senior leaders, only 5% of custom enterprise AI tools reached production.[^3]",
-  "A plan your team can run, with named owners and training. Most small-business owners (73%) say more training would help them use AI.[^16][^15]",
+  "A plan your team can run, with named owners and training. Most small-business owners (73%) say more training would help them use AI.[^16]",
   "Everything you paid for, handed over: logins, workflow exports, documents and test cases. Your team should be able to run it without the advisor."
  ],
  "humanRole": [
@@ -114,7 +114,7 @@
  },
  "watchOuts": [
   "Pilots stall before daily use. Gartner expected at least 30% of generative AI projects to be dropped after a small trial; plan the move to daily use on day one.[^4][^3]",
-  "Data isn't ready or safe to share. Data quality (34%) and security (30%) top the AI barriers middle market executives name; test on 50 real records, with IT setting access first.[^15][^27]",
+  "Data isn't ready or safe to share. Data quality (34%) and security (30%) top the AI barriers middle market executives name; test on 50 real records, with IT setting access first.[^15]",
   "Agents sold where rules would do. Gartner expects over 40% of agentic AI projects (software that plans and acts on its own) to be cancelled by 2027.[^23][^12]",
   "Measuring speed instead of quality. Klarna's CEO said cost weighed too heavily in judging its AI service and quality fell, so it hired people back.[^28][^29]",
   "Wrong answers you're liable for. Put a named reviewer on customer-facing and money-moving outputs at launch, and log every output.[^7][^18]",
@@ -127,7 +127,7 @@
   "Ask what they would not automate. A good advisor talks you out of AI where a form or a rule would do.[^12]",
   "Compare like for like: same workflow, same 50 cases, and cost per item including tool fees from the table above.[^5][^6]",
   "Price the lift in dollars: minutes saved x items a month x loaded cost per minute (pay plus benefits). Add errors avoided x cost per error, then subtract tool and upkeep fees.",
-  "Keep expectations real. Workers using generative AI saved about 5.4% of their hours; gains on a single task can run higher.[^30][^31]",
+  "Keep expectations real. Workers using generative AI saved about 5.4% of their hours[^30]; gains on a single task can run higher.[^31]",
   "Check the hand-over: your team owns the code, workflows and logins, and can export and run them.",
   "Run one team or site first. A named person makes the go or no-go call on the numbers.[^10]"
  ],
@@ -436,5 +436,16 @@
   "what-goes-wrong": "Most AI pilots stall because nobody plans the move to daily use, the data isn't ready, and the work was never mapped and redesigned first.[^4][^3][^15][^1]",
   "benchmark": "Judge any AI advisor on 50 of your own past cases, with right answers locked in advance, and compare cost per item against two weeks of today's numbers.[^8][^10]",
   "something-else": "Skip outside help for a simple job between standard apps, drafting for individuals, a back-office job a product already does, or a process nobody has written down.[^5][^21][^3][^1]"
+ },
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+  "checked": 4,
+  "fixed": [
+   "2026-11-28 padding cleanup, walkAway[0]: dropped [^14] (RSM 2025) from 54%: its note doesn't state it",
+   "2026-11-28 padding cleanup, walkAway[3]: dropped [^15] (RSM 2026) from 73%: its note doesn't state it",
+   "2026-11-28 padding cleanup, watchOuts[1]: dropped [^27] (Gartner AI-ready data) from 34%/30%: its note doesn't state either",
+   "2026-11-28 padding cleanup, howToTest[6]: moved [^31] (Brynjolfsson et al.) off 5.4% to the single-task clause it backs (15% more issues per hour)"
+  ]
  }
 }

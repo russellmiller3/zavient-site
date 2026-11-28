@@ -30,7 +30,7 @@
   "summary": "AI adoption and change management makes an AI tool the normal way a team does a task.[^1][^2] AI drafts, sorts or checks; the steps, manager asks and measures change around it.[^2][^8] Managers who back it and a workflow that expects it make or break it.[^3][^11]",
   "walkAway": [
     "A ranked list of three to five workflows where AI becomes the default step, with old and new steps written down. Workers name an unclear use case as the top barrier.[^9][^2]",
-    "A named champion in each pilot team, with time protected and a simple charter. In one consultancy survey, 69% of employees put peer learning in their top three ways to build AI skills.[^5][^6]",
+    "A named champion in each pilot team, with time protected and a simple charter. In one consultancy survey, 69% of employees put peer learning in their top three ways to build AI skills.[^5]",
     "A baseline on each workflow: today's time and error rate, plus the active-user rate (seat holders who used it) from your admin report. Fewer than one in five firms track well-defined AI measures, the practice most linked to profit.[^8][^7]",
     "Written manager expectations and a plain statement on jobs. Only 26% of workers say a clear AI plan was shared, and 52% are worried about AI's impact.[^11][^13]",
     "A 90-day plan your team runs without outside help: review dates, who checks output and what to stop doing. Most firms are still working out how to use the AI they give staff.[^14]"
@@ -189,7 +189,7 @@
     "Ask what changes in the work, not which tool. A good answer names steps and roles.[^2][^1]",
     "Ask where every failure rate comes from. The '70% of change fails' line has no evidence base, and the MIT '95% of pilots fail' figure is disputed.[^33][^34]",
     "Hold out one team doing the same work without the change for 60 to 90 days, and expect an early dip.[^32][^31]",
-    "Price the lift: hours saved a month, times your employer cost per hour (US average $54.00), times staff in scope, minus seat costs.[^19][^15]",
+    "Price the lift: hours saved a month, times your employer cost per hour (US average $54.00)[^19], times staff in scope, minus seat costs.[^15]",
     "Ask what staff will be told about usage reports, and refuse individual leaderboards.[^17][^12]",
     "Check the handover: named champions, written workflows and a review calendar your team runs.[^14]",
     "Ask how they avoid the ban-or-mandate trap. Bans sharply cut use, and controlling messages lower readiness for change.[^35][^18]"
@@ -516,5 +516,14 @@
       "notes": "Steve got the answer in 10 seconds from the title and bottom line: seats alone don't change the work, managers and peers do, measure with what you own. Return (price-the-lift), job fears (sourced FAQ) and free options (when not to hire help) were covered. The OECD resource line read as vague and now says what it shows. He did not ask for a Zavient price, per the lead's rule."
     }
   ],
-  "updated": "2026-11-26"
+  "updated": "2026-11-26",
+  "sourceCheck": {
+    "date": "2026-11-28",
+    "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+    "checked": 2,
+    "fixed": [
+      "2026-11-28 padding cleanup, walkAway[1]: dropped [^6] (NY Fed Liberty Street) from 69%: its note mentions peer learning but not the 69%",
+      "2026-11-28 padding cleanup, howToTest[5]: moved [^15] (ChatGPT Business price) off $54.00 to the seat-cost clause it states"
+    ]
+  }
 }

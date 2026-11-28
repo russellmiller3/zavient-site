@@ -36,13 +36,13 @@
   "humanRole": [
     "Owner-CEO: sets the use rule and signs off any AI that talks to customers or touches hiring. NIST's AI framework puts AI risk decisions on executive leadership.[^2][^17]",
     "Ops lead or GM (general manager): runs the pilot day to day, picks the job, tracks the number and can stop it. At a 200-person chemical maker, the process engineer led the AI test.[^1][^18]",
-    "Controller: checks any AI output that feeds a price, invoice or forecast. Only 25% of owners have steps to verify AI output before decisions.[^3][^12]",
+    "Controller: checks any AI output that feeds a price, invoice or forecast. Only 25% of owners have steps to verify AI output before decisions.[^3]",
     "HR lead: owns any AI used in hiring, reviews or discipline. Colorado's law covers AI in job decisions from 1 Jan 2027, with notice and human review.[^19][^20]"
   ],
   "recipes": [
     {
       "name": "1. About 40 staff: a use rule, then one writing job",
-      "when": "Pick this when the owner still makes most calls and staff use free AI tools. Writing tasks are where small firms use AI most (83% of users).[^12][^21]",
+      "when": "Pick this when the owner still makes most calls and staff use free AI tools. Writing tasks are where small firms use AI most (83% of users)[^12], and AI cut writing time 40% in one trial.[^21]",
       "flow": [
         "Owner-CEO: write a one-page use rule: tools, what data goes in, who checks",
         "Ops lead: pick one writing-heavy job, like quotes or customer replies, and time it for two weeks",
@@ -122,7 +122,7 @@
     "note": "Method: US list prices before tax, read on each vendor's live page on 26 Nov 2026. Promos are left out, and the full-firm columns are a ceiling, not advice; seat price leaves out staff time, training, usage extras and build work."
   },
   "watchOuts": [
-    "Pilots stall when the problem is fuzzy; RAND found a misunderstood problem is the most common root cause.[^8] Name one job and one number first: 42% of firms dropped most AI projects in 2025.[^27][^28]",
+    "Pilots stall when the problem is fuzzy; RAND found a misunderstood problem is the most common root cause.[^8] Name one job and one number first: 42% of firms dropped most AI projects in 2025[^27], and Gartner put abandoned gen AI projects at 50%+.[^28]",
     "Staff paste company data into personal AI accounts; security vendor LayerX says 82% of pastes come from unmanaged accounts.[^29] Approve one business tool and write what data may go in.[^3]",
     "AI gets things wrong: small firms that use AI name accuracy as their top problem (46%).[^12] Your firm owns what its chatbot tells customers, so a person checks anything customer-facing.[^17]",
     "An owner with no time stalls the work; NIST's manufacturing program warns it \"can't be this person's third job\".[^1] Owner-CEO: block real hours on the ops lead's calendar before kickoff.",
@@ -456,5 +456,15 @@
       "notes": "Steve self-selects in from the title (40-150 staff). He wants a consulting price; the page gives none because every range found was a vendor's own, and answers with seat costs and cost drivers instead. The seat table read as 'buy 150 seats', so the intro now says a pilot needs far fewer. His worries are covered: data (one approved tool), rules (Colorado, as of Nov 2026), skills (training), return (price the lift), paying for slides (the mapping question). Missing: a measured AI case at exactly his size; the nearest public one is about 200 staff."
     }
   ],
-  "updated": "2026-11-26"
+  "updated": "2026-11-26",
+  "sourceCheck": {
+    "date": "2026-11-28",
+    "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+    "checked": 3,
+    "fixed": [
+      "2026-11-28 padding cleanup, humanRole[2]: dropped [^12] (Fed SBCS) from 25%: its note doesn't state it",
+      "2026-11-28 padding cleanup, recipes[0].when: [^21] (Noy and Zhang) doesn't state 83%: gave it its own clause with the 40% it states",
+      "2026-11-28 padding cleanup, watchOuts[0]: [^28] (Gartner) doesn't state 42%: gave it its own clause with the 50% it states"
+    ]
+  }
 }

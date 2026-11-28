@@ -9,8 +9,8 @@
   "index": true,
   "verdict": [
     "Start with frequent work a person checks, like drafting, document answers or support replies, where trials measured gains[^1][^2].",
-    "Buy or set up a tool before you build; bought tools reached daily use about twice as often[^6][^7].",
-    "Plan gains task by task: single tasks gain most, while US workers overall saved about 1.6% of hours[^2][^4].",
+    "Buy before you build: bought tools reach deployment twice as often[^6]; Gartner expected 30% of gen AI pilots abandoned[^7].",
+    "Plan gains task by task: single tasks gain most[^2], while US workers overall saved about 1.6% of hours[^4].",
     "Never start with hiring, credit or insurance pricing; regulators name these uses as high risk[^10][^12].",
     "Saved time mostly moves to other work: most users put it into other tasks, and hours held steady[^5][^16]."
   ],
@@ -30,7 +30,7 @@
     "method": [
       "Score = peer interest × strength of proof × size of gain × ease × risk, scaled to 100. The weights are a Zavient estimate, shown in full below.",
       "Proof: a randomized trial counts 1.0, a field study 0.9, a survey 0.75, a vendor claim 0.55 and no published measure 0.4. Trial gains often shrink in day-to-day work[^4][^5].",
-      "Ease: buy 1.0, set up 0.8, build 0.55. Bought tools reached daily use about twice as often as internal builds[^6][^7].",
+      "Ease: buy 1.0, set up 0.8, build 0.55. Bought tools reached daily use about twice as often as internal builds[^6].",
       "Peer interest: US job ads plus a tenth of monthly searches for the work, from our 25 Nov 2026 count. The count is rough and includes AI vendors hiring.",
       "Size: under 100 people, builds count 0.8; at 250 or more, set-up and builds count 1.05. AI use among US employer businesses rises with firm size, from 33.2% at 50-99 staff to 44.1% at 250 or more, in October 2026[^8][^9].",
       "Risk: low 1.0, medium 0.8, high 0.6. A use regulators name as high risk is never ranked first[^10][^12]."
@@ -323,5 +323,15 @@
     "human-role": "The team lead owns every AI output that leaves the team: AI drafts, and a person checks and sends it.[^2][^14] Decisions on jobs, credit or insurance stay with people.[^10][^13]",
     "something-else": "Pick something else if you already know your use, your data sits in paper files or many spreadsheets, or the work decides on jobs, credit or insurance.[^6][^7][^10]",
     "own-data": "Legal research leads with 7,468 US job ads in one week, then contract review at 6,429 and tax document processing at 5,134. AI customer service agents follow at 4,097."
+  },
+  "sourceCheck": {
+    "date": "2026-11-28",
+    "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+    "checked": 3,
+    "fixed": [
+      "2026-11-28 padding cleanup, verdict[1]: [^7] (Gartner 2024) doesn't state \"twice\": gave it its own clause with the 30% it states",
+      "2026-11-28 padding cleanup, verdict[2]: moved [^2] (Noy and Zhang) off 1.6% to the single-task clause it states",
+      "2026-11-28 padding cleanup, tool.method[2]: dropped [^7] (Gartner 2024) from \"twice\": its note doesn't state it"
+    ]
   }
 }

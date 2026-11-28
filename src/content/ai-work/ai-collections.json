@@ -80,7 +80,7 @@
   "tables": [
     {
       "title": "Which AI collections tools are there, and what do they cost?",
-      "intro": "Ten tools range from collections platforms to voice bots, and four publish a price: $0.0083 a text to $4,999 a month, or 1.5% recovered.[^6][^7][^26][^35] Prices were read on 26 November 2026, and results marked as vendor claims are the seller's own.",
+      "intro": "Ten tools range from collections platforms to voice bots, and four publish a price[^26]: $0.0083 a text to $4,999 a month, or 1.5% recovered.[^6][^7][^35] Prices were read on 26 November 2026, and results marked as vendor claims are the seller's own.",
       "headers": [
         "Product",
         "What it does",
@@ -192,7 +192,7 @@
         {
           "name": "Credit union loans past due, Q2 2026",
           "cells": [
-            "0.96%, up 0.06 points in a year[^36][^38]",
+            "0.96%[^36], up 0.06 points in a year[^38]",
             "NCUA (National Credit Union Administration)"
           ]
         },
@@ -234,11 +234,12 @@
         {
           "name": "All US household debt in some stage of delinquency, Q3 2026",
           "cells": [
-            "5.0%, up 0.3 points[^40][^41]",
+            "5.0%, up 0.3 points[^40]",
             "New York Fed"
           ]
         }
-      ]
+      ],
+      "note": "The New York Fed's full report also shows 4.9% of consumers with a third-party collection account.[^41]"
     },
     {
       "title": "Does AI collect more than people, on the evidence?",
@@ -479,7 +480,7 @@
     "Count every call, text and email against one house cap. Regulators judge total contact, not one channel.[^11][^17]",
     "Script 20 or more ways people say stop, bankruptcy, deployed or not my debt. Check each one stops contact or reaches a person.[^17][^65]",
     "Sample AI calls and drafted messages weekly for false or threatening statements.[^18][^53]",
-    "Price the lift: extra cures × average balance × your charge-off rate, minus usage cost. The credit union average charge-off rate is 0.78%.[^36][^26]",
+    "Price the lift: extra cures × average balance × your charge-off rate, minus usage cost. The credit union average charge-off rate is 0.78%.[^36]",
     "Treat rising complaints or opt-outs as a stop signal, even if recoveries rise.[^66][^17]"
   ],
   "watchOuts": [
@@ -509,7 +510,7 @@
     },
     {
       "q": "How are AI collections tools priced?",
-      "a": "AI collections tools charge by monthly voice minutes ($99 to $4,999), by a share of what they recover (1.5%), or per call minute or text.[^7][^6][^26][^35] Voice building blocks run $0.07 to $0.31 a minute, and texts about $0.0083 each.[^26][^35] Nine of the 11 vendors we checked publish no price.[^6][^7]"
+      "a": "AI collections tools charge by monthly voice minutes ($99 to $4,999)[^7], by a share of what they recover (1.5%)[^6], or per call minute or text.[^26][^35] Voice building blocks run $0.07 to $0.31 a minute, and texts about $0.0083 each.[^26][^35] Nine of the 11 vendors we checked publish no price.[^6][^7]"
     },
     {
       "q": "Who handles hardship and disputes when AI is in the loop?",
@@ -971,5 +972,17 @@
       "notes": "Steve gets the answer in the title and bottom line in 10 seconds and sees what vendors charge or that they don't publish. 'Champion-challenger' was jargon at the top; it is now a side-by-side test on your own accounts, in On this page, the test steps and the offer. Security has no collections-specific source in the research, so it is covered as the vendor review in recipes and buy-or-build. All mid-size results are vendor claims and say so; no independent case from a lender his size exists."
     }
   ],
-  "updated": "2026-11-26"
+  "updated": "2026-11-26",
+  "sourceCheck": {
+    "date": "2026-11-28",
+    "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+    "checked": 5,
+    "fixed": [
+      "2026-11-28 padding cleanup, tables[0].intro: moved [^26] (Retell, $0.07-$0.31 a minute) off the $0.0083/$4,999/1.5% figures to the four-publish-a-price clause",
+      "2026-11-28 padding cleanup, tables[1].rows[0].cells[0]: moved [^38] (NCUA release) off 0.96% to the up-6-basis-points clause it states",
+      "2026-11-28 padding cleanup, tables[1].rows[6].cells[0]: dropped [^41] (NY Fed full report) from 5.0%: its note doesn't state it; cited instead in the table note for the 4.9% collection-account figure it states",
+      "2026-11-28 padding cleanup, howToTest[7]: dropped [^26] (Retell pricing) from 0.78%: its note doesn't state it",
+      "2026-11-28 padding cleanup, faq[4].a: moved [^7], [^6], [^26][^35] each to the pricing clause it states"
+    ]
+  }
 }

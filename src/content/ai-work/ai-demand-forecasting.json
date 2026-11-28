@@ -303,7 +303,7 @@
         "S&OP process owner: run two monthly cycles beside the old forecast[^12]",
         "COO or owner: decide at the executive S&OP meeting[^12][^13]"
       ],
-      "cost": "Dynamics 365 Supply Chain Premium is $300 per user a month.[^25] Rand Group's Business Central app is $3,500 a year plus $2,400 for AI forecasting; NetSuite and Cin7 don't publish forecasting prices.[^30][^31][^28]"
+      "cost": "Dynamics 365 Supply Chain Premium is $300 per user a month.[^25] Rand Group's Business Central app is $3,500 a year plus $2,400 for AI forecasting[^30]; NetSuite and Cin7 don't publish forecasting prices.[^31][^28]"
     },
     {
       "name": "3. Data-led build (customer sell-through or EDI data the vendors don't see)",
@@ -795,5 +795,13 @@
       "notes": "Steve could tell in seconds what the page answers, and liked that every tool row shows a price or says none is published. He wanted the hard part named and what the 30 minutes buys. The On this page list now calls testing on your own history the hard part, and the offer promises a test plan and a before-and-after measure, with no pitch. The research had no sourced facts on data security, so the page makes no claims there."
     }
   ],
-  "updated": "2026-11-26"
+  "updated": "2026-11-26",
+  "sourceCheck": {
+    "date": "2026-11-28",
+    "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+    "checked": 1,
+    "fixed": [
+      "2026-11-28 padding cleanup, recipes[1].cost: moved [^31][^28] (NetSuite, Cin7) off $3,500/$2,400 to the no-published-price clause"
+    ]
+  }
 }

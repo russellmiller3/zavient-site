@@ -10,7 +10,7 @@
  "verdict": [
   "AI reads borrower returns, fills your spread template and drafts a cited first memo for analysts to check[^28][^30].",
   "Your credit officer still decides, and loan review stays independent of the people who approve[^1][^9].",
-  "In 2026 reports, TD cut first drafts from days to under 30 minutes and NAB cut memo effort 20%[^17][^18].",
+  "In 2026 reports, TD cut first drafts from days to under 30 minutes[^17] and NAB cut memo effort 20%[^18].",
   "Of the 12 vendors we checked, 5 state an accuracy figure, but none says how many documents it covers[^27][^28].",
   "General AI models failed about two in three table-reading tests, so check every figure against its source page[^22][^13]."
  ],
@@ -440,7 +440,7 @@
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy if your spread template is standard, your loan system sells a module and you have no data team. Most US enterprises buy their AI tools, and vendor-built or partnered tools reach daily use about twice as often as internal builds[^48][^51]. Vendors and cases put go-live at 2-8 weeks[^30][^42].",
+  "buy": "Buy if your spread template is standard, your loan system sells a module and you have no data team. Most US enterprises buy their AI tools[^48], and vendor-built or partnered tools reach daily use about twice as often as internal builds[^51]. Vendors and cases put go-live at 2-8 weeks[^30][^42].",
   "build": "Build if your own template and credit policy are the edge, or your borrowers have many entities. Cloud document reading costs $10 per 1,000 pages, but validation stays with you[^47][^5]."
  },
  "pickElse": [
@@ -842,7 +842,9 @@
    "Moody's: page names Moody's Lending Suite, not CreditLens",
    "Dieterich labelled 2023, 1st Community labelled undated; IACPM 'one bank' to 'one case'",
    "Census and NAB wording matched to source; Uptiq and Kaaj notes corrected",
-   "Sources 32 and 52 dropped, footnotes renumbered"
+   "Sources 32 and 52 dropped, footnotes renumbered",
+   "2026-11-28 padding cleanup, verdict[2]: moved [^17] (TD) off 20% to the TD clause it states",
+   "2026-11-28 padding cleanup, buyVsBuild.buy: moved [^48] (Menlo Ventures) off \"twice\" to the most-buy clause it states"
   ]
  }
 }

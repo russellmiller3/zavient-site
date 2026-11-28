@@ -11,7 +11,7 @@
   "Staff already use AI at work, but only about a third of firms have a formal, written AI policy.[^3][^5]",
   "Governance speeds AI up: UK mid-size firms approving tools in days report better returns than those taking months.[^6][^7]",
   "Rules now reach mid-size firms. Colorado's rewrite has no size exemption, though a court order pauses enforcement during a lawsuit.[^13][^15]",
-  "Ask for evidence, not a policy: 78% of business leaders lack strong confidence they'd pass an audit in 90 days.[^8][^9]",
+  "Ask for evidence, not a policy[^9]: 78% of business leaders lack strong confidence they'd pass an audit in 90 days.[^8]",
   "Keep a person on decisions about customers and staff, someone who understands the output and can change it.[^25][^12]"
  ],
  "onPage": [],
@@ -29,7 +29,7 @@
   "You should leave with five things: a named owner, a register of AI tools, approved tools with data rules, risk tiers and an evidence file.[^2][^9]",
   "A named owner, usually the COO (chief operating officer), with sign-off from the owner or board. Firms where the C-suite owns AI report a return far more often (62% vs 18%).[^2][^6]",
   "A register: one list of every AI tool and use, including AI built into vendor software. NIST (the US standards agency) starts governance with this inventory.[^2][^31]",
-  "An approved-tools list, data rules for what may go into each tool, and a request route that answers in days. Only 27% of smaller firms have data rules today.[^3][^6]",
+  "An approved-tools list, data rules for what may go into each tool, and a request route that answers in days. Only 27% of smaller firms have data rules today.[^3]",
   "Risk tiers: drafting an email is low risk; decisions on credit, claims or hiring are high and get a human checkpoint.[^44][^43]",
   "An evidence file an examiner or auditor can read: training records, reviews and incidents, refreshed each quarter. Most insurers say controls exist but evidence is scattered (68%).[^9][^20]"
  ],
@@ -176,10 +176,10 @@
   "Most stall because the rules don't fit real work: bans push AI underground, policies go unenforced, and vendor AI goes unchecked.[^10][^4] Each fix is below.",
   "A ban drives AI use underground. Among employees, misuse ran at 67% where AI was banned, against 33% with no policy, so approve safe tools instead.[^10]",
   "A policy nobody enforces. Only 34% of firms with a policy audit for unapproved AI, so check the register against real use each quarter.[^4]",
-  "A policy so strict people ignore it. Of firms with an AI policy, 54% of HR leaders call it too restrictive; give low-risk uses a fast approval.[^38][^6]",
+  "A policy so strict people ignore it. Of firms with an AI policy, 54% of HR leaders call it too restrictive[^38]; give low-risk uses a fast approval.[^6]",
   "Shadow AI (tools used without approval) leaks data: one in five breached firms in IBM's study had such a breach. Heavy shadow AI added $670,000 per breach, so give staff an approved tool.[^4]",
   "Vendor AI nobody checked. The FTC banned Rite Aid from facial recognition for five years after undocumented vendor checks, so write down every vendor review.[^39]",
-  "AI agents acting with no sign-off: 47% of senior AI executives in an EY survey said urgent deployments skipped governance.[^40][^41] Require a named approver before any agent acts alone.[^41]"
+  "AI agents acting with no sign-off: 47% of senior AI executives in an EY survey said urgent deployments skipped governance.[^40] Require a named approver before any agent acts alone.[^41]"
  ],
  "howToTest": [
   "Judge them on what they leave you, not the policy they write: a register, an evidence file, named owners and a fast approval route.[^8][^2]",
@@ -550,5 +550,16 @@
    "url": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-state-of-ai-how-organizations-are-rewiring-to-capture-value",
    "what": "CEO oversight of AI governance is among the attributes most linked to profit (EBIT) impact from generative AI."
   }
- ]
+ ],
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+  "checked": 4,
+  "fixed": [
+   "2026-11-28 padding cleanup, verdict[3]: moved [^9] (GT insurance: evidence fragmented) off 78% to the evidence-not-policy clause it backs",
+   "2026-11-28 padding cleanup, walkAway[3]: dropped [^6] (aibl) from 27%: its note doesn't state it",
+   "2026-11-28 padding cleanup, watchOuts[3]: moved [^6] (aibl: approval in days, 62% vs 38% ROI) off 54% to the fast-approval clause it backs",
+   "2026-11-28 padding cleanup, watchOuts[6]: dropped [^41] (Deloitte) from 47%: its note doesn't state it; it stays on the next sentence"
+  ]
+ }
 }

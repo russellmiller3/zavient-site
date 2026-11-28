@@ -109,7 +109,7 @@
     },
     {
       "q": "Why train managers before staff?",
-      "a": "Managers decide which tasks use AI and check the output, yet only 8% of HR leaders think they have the skills.[^6] With strong leadership support, positive views of AI rose from 15% to 55%.[^2][^3]"
+      "a": "Managers decide which tasks use AI and check the output, yet only 8% of HR leaders think they have the skills.[^6] With strong leadership support, positive views of AI rose from 15% to 55%.[^2] Staff won't wait: 54% would use AI tools even without approval.[^3]"
     },
     {
       "q": "How many AI champions do we need?",
@@ -364,5 +364,13 @@
   "answers": {
     "human-role": "Managers pick the tasks and review AI-assisted work, and a named person checks each workflow's output before it is used or sent.[^6][^24] Hiring, promotion and performance decisions stay with people.[^15]",
     "something-else": "Pick something else in three cases: under 40 people with no managers, low use past 10 hours each, or plans to use AI in hiring or reviews.[^10][^2][^15]"
+  },
+  "sourceCheck": {
+    "date": "2026-11-28",
+    "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+    "checked": 1,
+    "fixed": [
+      "2026-11-28 padding cleanup, faq[2].a: [^3] (BCG release) doesn't state 15%/55%: gave it its own sentence with the 54% it states"
+    ]
   }
 }

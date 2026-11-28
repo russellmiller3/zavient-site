@@ -10,7 +10,7 @@
   "index": true,
   "verdict": [
     "Hire help for one workflow with a business number attached, not a strategy deck.[^3][^2]",
-    "Partnered projects reached deployment about twice as often in MIT's sample, and most enterprise AI is now bought.[^1][^15]",
+    "Partnered projects reached deployment about twice as often in MIT's sample[^1], and most enterprise AI is now bought.[^15]",
     "Walk away with a before number, a pilot in daily use and a plan your team runs.[^5][^1]",
     "Your people keep the decisions: most firms using AI use it only to help staff.[^7][^4]",
     "Start with a free 30-minute diagnostic or a no-cost SBDC advisor before you pay anyone.[^17][^13]"
@@ -157,7 +157,7 @@
     },
     {
       "q": "How much does AI consulting cost?",
-      "a": "On the US government's published price list, median hourly ceilings run $183.05 to $193.60 for AI roles and $164.37 to $166.89 for management consultants.[^29][^30][^31][^32] Those are caps, not prices paid; most consultants quote by project (30%) or by the hour (29%).[^32][^33] A lean in-house AI team of three costs about $630,000 a year with benefits, by our math.[^19][^18][^20][^21]"
+      "a": "On the US government's published price list, median hourly ceilings run $183.05 to $193.60 for AI roles and $164.37 to $166.89 for management consultants.[^29][^30][^31][^32] Those are caps, not prices paid[^32]; most consultants quote by project (30%) or by the hour (29%).[^33] A lean in-house AI team of three costs about $630,000 a year with benefits, by our math.[^19][^18][^20][^21]"
     },
     {
       "q": "Should we hire a consultant or build an in-house AI team?",
@@ -451,5 +451,14 @@
     "what-goes-wrong": "Most AI pilots stall because teams pick the wrong problem or metric, and the tools never learn from feedback or fit the real workflow.[^2][^1] Missing data sinks many more, and the average firm scraps 46% of its AI trials before production.[^2][^6]",
     "benchmark": "Judge any AI advisor by making them measure today first, test on 20 to 50 of your own cases, and show cost per correct answer before you sign.[^5][^26][^16] Then ask for a client running six months or more, and who clears unsure cases.[^1][^10]",
     "something-else": "Don't hire outside help when AI is your product, software already does the job, you lack budget, or staff only need everyday writing tools.[^15][^13][^11] Hire in-house, buy the product, use a free SBDC or MEP advisor, or buy an approved tool instead.[^15][^13][^14][^12]"
+  },
+  "sourceCheck": {
+    "date": "2026-11-28",
+    "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+    "checked": 2,
+    "fixed": [
+      "2026-11-28 padding cleanup, verdict[1]: moved [^15] (Menlo Ventures) off \"twice\" to the most-AI-is-bought clause it states (76%)",
+      "2026-11-28 padding cleanup, faq[1].a: moved [^32] (Hyperresearch GSA) off 30%/29% to the caps-not-prices clause it states"
+    ]
   }
 }

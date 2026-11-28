@@ -73,7 +73,7 @@
     "Support lead: approve the reply or credit",
     "Ops lead: keep refunds above a limit, account deletions and contract terms off-limits to the agent"
    ],
-   "cost": "Vendor guides put a single-workflow custom agent with approvals at $25,000 to $80,000 over 6 to 12 weeks.[^52] A vendor-run index of 122 firms found a $20,000 median for a production agent.[^50][^51]"
+   "cost": "Vendor guides put a single-workflow custom agent with approvals at $25,000 to $80,000 over 6 to 12 weeks.[^52] A vendor-run index of 122 firms found a $20,000 median for a production agent[^50]; another guide puts the median build at $14,000 to $45,000.[^51]"
   }
  ],
  "ownData": {
@@ -234,7 +234,7 @@
   },
   {
    "num": "44.3%",
-   "label": "Long computer workflows the best agent fully finishes; 0% of those over 163 minutes.[^19][^18]",
+   "label": "Long computer workflows the best agent fully finishes; 0% of those over 163 minutes.[^19]",
    "source": "OSWorld 2.0 and Snorkel AI, Sep 2026"
   },
   {
@@ -558,5 +558,14 @@
    "notes": "Steve's worries: paying for slides, security, data, return. Walk-away now opens with a working agent on one workflow, not a plan. Security sits in the access and log watch-outs and the systems-owner role; data in the 'fix access first' alternative. Bottom line passes the 10-second test; no Zavient fee is shown."
   }
  ],
- "updated": "2026-11-26"
+ "updated": "2026-11-26",
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+  "checked": 2,
+  "fixed": [
+   "2026-11-28 padding cleanup, recipes[2].cost: [^51] (NerdHeadz) states $14,000 to $45,000, not the $20,000 median: gave it its own clause with its own figures",
+   "2026-11-28 padding cleanup, stats[3]: dropped [^18] (OSWorld 2.0 arXiv) from 44.3%/0%: its note gives 20.6% at release, not these"
+  ]
+ }
 }

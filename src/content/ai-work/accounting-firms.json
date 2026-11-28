@@ -351,7 +351,7 @@
       "name": "Tax code Sections 7216 and 6713",
       "url": "https://uscode.house.gov/us/usc/t26/s7216",
       "status": "In force",
-      "what": "Knowing or reckless disclosure of return information is a misdemeanor; the civil penalty is $250 a disclosure, up to $10,000 a year.[^21][^22] Whether a general AI vendor needs taxpayer consent is unsettled, and the IRS has not said.[^23][^26] Check with your own tax counsel.[^28]"
+      "what": "Knowing or reckless disclosure of return information is a misdemeanor[^21]; the civil penalty is $250 a disclosure, up to $10,000 a year.[^22] Whether a general AI vendor needs taxpayer consent is unsettled, and the IRS has not said.[^23][^26] Check with your own tax counsel.[^28]"
     },
     {
       "name": "Treasury Reg. 301.7216-2 and Rev. Proc. 2013-14 (consent)",
@@ -810,5 +810,13 @@
       "what": "Our count from one job-post index: 2,072 US posts at the 24 firms with posts listed; 1.2% had AI in the title; method and limits in the table note."
     }
   ],
-  "updated": "2026-11-26"
+  "updated": "2026-11-26",
+  "sourceCheck": {
+    "date": "2026-11-28",
+    "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+    "checked": 1,
+    "fixed": [
+      "2026-11-28 padding cleanup, rules[1].what: moved [^21] (26 USC 7216) off $250/$10,000 to the misdemeanor clause it states; $250/$10,000 keep [^22] (26 USC 6713)"
+    ]
+  }
 }

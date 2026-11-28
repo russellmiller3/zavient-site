@@ -8,7 +8,7 @@
  "industry": "any industry",
  "index": true,
  "verdict": [
-  "Revenue synergies are the ones deals miss: fewer than 20% hit cross-sell goals, in consulting surveys[^22][^20].",
+  "Revenue synergies are the ones deals miss[^20]: fewer than 20% hit cross-sell goals, in consulting surveys[^22].",
   "AI's best job here is matching customers, products and vendors across both systems, then flagging overlap and cross-sell[^34][^33].",
   "Even vendor cases send 10% to 20% of mappings to a person, so your team keeps every merge decision[^41][^42].",
   "Don't pull a target's customer file before close without counsel and a clean team; one gun-jumping fine hit $5.6M[^2][^1].",
@@ -61,7 +61,7 @@
  ],
  "teamAfter": [
   "Integration lead: edits an AI-drafted 100-day plan instead of writing it from scratch. In a bank case a consulting firm published, drafting tools cut integration prep time by 25%[^26].",
-  "Controller: checks the unsure matches and the money totals, instead of mapping accounts by hand. One technology leader says AI does about 80% of their data mapping; a vendor reports 5 days cut to 3 hours[^36][^42].",
+  "Controller: checks the unsure matches and the money totals, instead of mapping accounts by hand. One technology leader says AI does about 80% of their data mapping[^36]; a vendor reports 5 days cut to 3 hours[^42].",
   "Sales lead: calls acquired customers about the cross-sell list. Revenue synergies take about five years against two for cost, so this work outlasts day 100[^21][^24].",
   "COO: runs the next add-on on the same playbook, since close to half of add-ons are a platform's fourth deal or later[^25]. Among US firms whose workers use AI, 66% used it only to augment tasks[^11]."
  ],
@@ -372,7 +372,7 @@
    "name": "Hart-Scott-Rodino (HSR) thresholds, 2026",
    "url": "https://www.ftc.gov/enforcement/premerger-notification-program/current-thresholds",
    "status": "In force from 17 Feb 2026",
-   "what": "Deals above $133.9M generally need an HSR filing and a waiting period, subject to size-of-person tests[^4][^5][^2]. Civil penalties for HSR violations reach $53,088 a day[^6]."
+   "what": "Deals above $133.9M[^4] generally need an HSR filing and a waiting period[^2], subject to size-of-person tests[^5]. Civil penalties for HSR violations reach $53,088 a day[^6]."
   },
   {
    "name": "2023 Merger Guidelines, Guideline 8, and the Welsh Carson order",
@@ -765,8 +765,8 @@
   "human-role": "People keep every decision that touches money or trust: which records merge, which prices change, what customers hear and who leads[^29][^33][^38].",
   "team-after": "The same small team covers more add-ons: AI drafts maps and plans, and people spend the time on customer calls, pricing and keeping staff[^26][^11].",
   "example": "In an illustrative case, a distributor matches its customer and product lists against an add-on's, and the team picks a short list of cross-sell and price moves[^33][^34].",
-  "table-1": "Cost synergies usually land and revenue synergies often don't: about 60% of deals delivered cost synergies, but almost 70% missed revenue ones[^20][^22].",
-  "table-2": "AI has drafted plans, mapped data and matched records in published cases, yet vendor cases still send 10% to 20% of mappings to a person[^26][^41][^42][^43].",
+  "table-1": "Cost synergies usually land and revenue synergies often don't[^22]: about 60% of deals delivered cost synergies, but almost 70% missed revenue ones[^20].",
+  "table-2": "AI has drafted plans, mapped data and matched records in published cases[^26][^43], yet vendor cases still send 10% to 20% of mappings to a person[^41][^42].",
   "table-3": "DealRoom covers integration planning, project management and progress tracking, and it prices by deal volume with no published figure[^45].",
   "recipes": "A first add-on fits a spreadsheet plus an AI pass, a platform doing three or more deals a year fits a standing mapping layer, and a bought tracker fits either[^17][^25][^45].",
   "own-data": "Accuracy varies widely: untrained AI scored as low as 29 out of 100 on a public product test, while trained or escalation setups reached 84 to 96[^13][^17].",
@@ -831,7 +831,12 @@
    "Midaxo pricing page would not load live on two tries: cut the $25k price and synergy-dashboard claims, dropped the Midaxo table row and source, renumbered sources 47-50 to 46-49",
    "Cost table retitled 'What does a bought integration tool cover?' since no confirmed tool price remains",
    "src 41 Quinnox note now states its own 10% to 15% low-confidence share; src 42 Turing ~20% of accounts: kept 10% to 20%, now called mappings, not matches, rows or items (verdict, humanRole, recipe 2 cost, table-2 answer)",
-   "src 31 PwC via TriVista is a survey of 100 PE executives: table row now names PE executives"
+   "src 31 PwC via TriVista is a survey of 100 PE executives: table row now names PE executives",
+   "2026-11-28 padding cleanup, verdict[0]: moved [^20] (McKinsey 2004: 70% missed revenue synergies) off 20% to the revenue-synergies clause it states",
+   "2026-11-28 padding cleanup, teamAfter[1]: moved [^42] (Turing) off 80% to the 5-days-to-3-hours clause it states",
+   "2026-11-28 padding cleanup, rules[1].what: moved [^2] (FTC gun-jumping fine) off $133.9M to the waiting-period clause; [^5] to the size-of-person tests it states",
+   "2026-11-28 padding cleanup, answers.table-1: moved [^22] (McKinsey cross-sell: under 20% hit goals) off 60%/70% to the revenue-synergies-often-don't clause",
+   "2026-11-28 padding cleanup, answers.table-2: moved [^26] (Bain) and [^43] (Sphere) off 10%-20% to the published-cases clause"
   ]
  }
 }

@@ -168,7 +168,7 @@
  "tables": [
   {
    "title": "What does reading one document cost, next to staff time?",
-   "intro": "AI reading costs from about 1 cent a page to 27 cents a report, against a $6.00 median total cost to process one supplier invoice[^2][^4][^5][^1]. Staff time is the big cost; the $6.00 median comes from 4,821 companies[^1]. Prices are list prices, checked 26 November 2026.",
+   "intro": "AI reading costs from about 1 cent a page to 27 cents a report[^2][^4][^5], against a $6.00 median total cost to process one supplier invoice[^1]. Staff time is the big cost; the $6.00 median comes from 4,821 companies[^1]. Prices are list prices, checked 26 November 2026.",
    "headers": [
     "Approach",
     "Cost per document",
@@ -581,5 +581,13 @@
   "something-else": "Pick something other than a frontier model when you read thousands of standard invoices a day, when files cannot leave your network, or when searchable text is enough[^2][^4][^5][^3]. Use a prebuilt cloud parser, a local open-source model or plain OCR, respectively[^2][^5][^3].",
   "human-role": "Your team keeps three calls: a reviewer settles facts the models disagree on, a team lead sets the acceptable error rate, and a separate approver releases the facts[^5][^23][^24]. Any reviewer can override any AI value[^17][^23].",
   "team-after": "After AI reads the documents, your team checks instead of typing and settles the facts the two models disagree on, about 1 in 4 in our test[^26][^5]. Staff also get time back for harder cases, about 2.2 hours a week for generative AI users[^28]."
+ },
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+  "checked": 1,
+  "fixed": [
+   "2026-11-28 padding cleanup, tables[0].intro: moved [^2][^4][^5] (Textract, Azure, FinExtractBench) off $6.00 to the AI reading-cost clause"
+  ]
  }
 }

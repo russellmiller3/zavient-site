@@ -196,7 +196,7 @@
  "tables": [
   {
    "title": "What do close studies say about automating reconciliations?",
-   "intro": "Close studies link automated reconciliations to a faster close: 57% close within six business days, against 27% without[^17][^19]. Most teams see only modest AI impact at first[^17][^19], and the median firm takes 6 days to produce monthly statements[^16]. The sponsored study is marked, so read it as directional.",
+   "intro": "Close studies link automated reconciliations to a faster close: 57% close within six business days, against 27% without[^17]. Most teams see only modest AI impact at first[^17][^19], and the median firm takes 6 days to produce monthly statements[^16]. The sponsored study is marked, so read it as directional.",
    "headers": [
     "Study",
     "Who was asked",
@@ -627,5 +627,13 @@
   "what-goes-wrong": "AI account reconciliation goes wrong when amounts tie but transactions don't, when people over-trust suggestions or made-up explanations, and when no audit trail backs the matches[^5][^6][^4][^9][^14].",
   "buy-or-build": "Buy a close platform when your process is standard and you have no systems team. Use what you have when matching rules are unusual and volume is low[^21][^22][^12][^9].",
   "something-else": "Skip a dedicated AI reconciliation tool when volume is low, bad upstream data is the real problem, you need consolidation instead, or fixed rules can do the matching[^6][^4][^19][^20][^23][^12]. Use your ledger's reconcile screen, fix the data first, look at a suite such as Oracle EPM, or write a Python or Power Query script, respectively[^6][^19][^23][^12]."
+ },
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+  "checked": 1,
+  "fixed": [
+   "2026-11-28 padding cleanup, tables[0].intro: dropped [^19] (Gartner finance AI survey) from 57%/27%: its note doesn't state either"
+  ]
  }
 }

@@ -226,7 +226,7 @@
         "Estimator: run a drawing check for missing sheets and tags, e.g. Bluebeam Max[^23]",
         "Chief estimator: sign the bid; project manager reports actuals against the bid each quarter"
       ],
-      "cost": "Kreo Business for 5 users lists at $15,000 a year, and Togal quotes 4+ users.[^18][^17] Add Bluebeam Max at $590 per user a year, and plan a 1-3 month pilot.[^23][^18]"
+      "cost": "Kreo Business for 5 users lists at $15,000 a year[^18], and Togal quotes 4+ users.[^17] Add Bluebeam Max at $590 per user a year[^23], and plan a 1-3 month pilot.[^18]"
     },
     {
       "name": "3. Overloaded team or bid surge: done for you",
@@ -375,7 +375,7 @@
     },
     {
       "q": "Can I just use ChatGPT or Claude for takeoff?",
-      "a": "No for counts, yes for specs and scope. General models read drawing text up to 95% right but counted doors and windows exactly on under half of plans.[^3][^4] Prices still come from your own cost history, a core estimator task.[^6]"
+      "a": "No for counts, yes for specs and scope. General models read drawing text up to 95% right[^3] but counted doors and windows exactly on under half of plans.[^4] Prices still come from your own cost history, a core estimator task.[^6]"
     },
     {
       "q": "What is the best AI for construction estimating?",
@@ -435,8 +435,8 @@
     },
     {
       "num": "19%",
-      "label": "of US contractors have changed their workflows to fit AI[^44][^50]",
-      "source": "Dodge and CMiC (vendor-sponsored), n=235, Dec 2025"
+      "label": "of US contractors have changed their workflows to fit AI[^44]",
+      "source": "Dodge and CMiC (vendor-sponsored), n=235, Dec 2025[^50]"
     },
     {
       "num": "11 of 13",
@@ -762,5 +762,15 @@
     "benchmark": "Run each tool on 5-10 past bids whose quantities your estimator already set, time the whole job with checking included, and compare line by line[^40][^1]. Rank misses by what they would cost, not by how many there are[^40].",
     "what-goes-wrong": "AI takeoff goes wrong on areas of complex shapes like façades, on chatbot symbol counts, and on scope the drawings never show[^1][^3][^40]. Unchecked vendor accuracy claims and leaked drawings are the other two risks[^19][^36].",
     "something-else": "Pick something else when you bid from 3D BIM models, price early designs that aren't drawn yet, have low bid volume, or work on federal or secure sites[^41][^42][^23][^36]."
+  },
+  "sourceCheck": {
+    "date": "2026-11-28",
+    "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+    "checked": 3,
+    "fixed": [
+      "2026-11-28 padding cleanup, recipes[1].cost: moved [^17] (Togal) off $15,000 and [^18] (Kreo) off $590, each to the clause it states",
+      "2026-11-28 padding cleanup, faq[2].a: moved [^4] (AECV-Bench leaderboard) off 95% to the door-and-window counting clause it states",
+      "2026-11-28 padding cleanup, stats[1]: moved [^50] (Construction Dive) off 19% to the stat's source line (Dodge and CMiC, n=235), which its note states"
+    ]
   }
 }

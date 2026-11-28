@@ -223,12 +223,12 @@
     "Branch manager: approve or reject suggested transfers before any new order",
     "Buyer: approve orders; planner reviews overrides monthly"
    ],
-   "cost": "Smart IP&O lists from $695 a month on Capterra; EazyStock quotes only[^33][^34]. Vendors claim 6-12 weeks to go live: Netstock 6-10, StockIQ about 12[^41][^42]."
+   "cost": "Smart IP&O lists from $695 a month on Capterra[^33]; EazyStock quotes only[^34]. Vendors claim 6-12 weeks to go live: Netstock 6-10, StockIQ about 12[^41][^42]."
   }
  ],
  "ownData": {
   "title": "How much cash sits in stock in your sector?",
-  "intro": "These figures are as of September 2026[^1][^2]. We turned Census inventories-to-sales ratios (months of sales in stock) into cash; times 30.4 gives days, and a 10% cut frees a tenth. Carrying cost is that stock times 10-30% a year, from APQC's 10% median to a 30% textbook rate; use your own rate[^5][^4][^6].",
+  "intro": "These figures are as of September 2026[^1][^2]. We turned Census inventories-to-sales ratios (months of sales in stock) into cash; times 30.4 gives days, and a 10% cut frees a tenth. Carrying cost is that stock times 10-30% a year, from APQC's 10% median to a 30% textbook rate[^5][^4]; use your own rate[^6].",
   "headers": [
    "Sector",
    "Months in stock, Sep 2026 (2025)",
@@ -381,7 +381,7 @@
   },
   {
    "q": "What carrying cost rate should we use?",
-   "a": "Start from 10% to 30% a year, but work out your own rate, item by item if you can[^5][^4][^6]. APQC's median across 6,468 organizations is 10%, while textbooks say 20-50%[^5][^4]. One case firm used 19% but measured 37.8%[^7]."
+   "a": "Start from 10% to 30% a year[^5][^4], but work out your own rate, item by item if you can[^6]. APQC's median across 6,468 organizations is 10%, while textbooks say 20-50%[^5][^4]. One case firm used 19% but measured 37.8%[^7]."
   },
   {
    "q": "Can we write off the dead stock the AI flags?",
@@ -719,5 +719,15 @@
   "benchmark": "Recount a sample of stock records, then replay the last 12 months with today's settings and with the tool's, before an 8-12 week live trial on one branch[^17][^13][^8]. Price the result in cash, fill rate and buyer hours[^1].",
   "what-goes-wrong": "AI inventory management goes wrong when stock records are wrong, demand is lumpy, lead times are guessed, or buyers override outputs without logging why[^17][^26][^15][^8].",
   "something-else": "Pick something else when ERP reorder rules will do, when the demand forecast is the real problem, or when you can't trust your stock counts[^28][^26][^17]."
+ },
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+  "checked": 3,
+  "fixed": [
+   "2026-11-28 padding cleanup, recipes[2].cost: moved [^34] (EazyStock) off $695 to the quote-only clause",
+   "2026-11-28 padding cleanup, ownData.intro: moved [^6] (Gurtu) off 10%/30% to the use-your-own-rate clause it states",
+   "2026-11-28 padding cleanup, faq[3].a: moved [^6] (Gurtu) off 10%/30% to the item-by-item clause it states"
+  ]
  }
 }

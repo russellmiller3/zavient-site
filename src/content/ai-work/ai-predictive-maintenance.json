@@ -9,7 +9,7 @@
   "index": true,
   "verdict": [
     "Scheduled overhauls miss most failures. In airline and navy studies, most failures were random, not age-based.[^1][^2]",
-    "Predictive saves 8-12% over preventive, per DOE, but false alarms can wipe that out.[^3][^4]",
+    "Predictive saves 8-12% over preventive, per DOE[^3], but false alarms can wipe that out.[^4]",
     "Clean your work orders first. Entry errors skew maintenance KPIs, and most records skip how a fault was found.[^5][^6]",
     "Self-run sensors for 10 machines list at about $4,200 to $5,550 in hardware, per our 26 Nov check.[^7][^8]",
     "People still make the call. ISO 17359 leaves inspect, slow down or stop to your team.[^9][^10]"
@@ -57,7 +57,7 @@
     "From firefighting to planned work: an alert gives lead time, so the planner books the job before the breakdown does. In MaintainX's vendor survey of maintenance leaders, half of teams spend under 40% of their time on planned work.[^16]",
     "From tribal knowledge to written work orders: 74% of maintenance professionals in Limble's vendor survey say one person alone can repair a critical asset. Better notes feed the model and keep that know-how.[^17][^18]",
     "Technicians make the model better. In McKinsey's offshore case, maintenance teams and data scientists removed false alarms failure by failure.[^19][^20]",
-    "Jobs grow: BLS projects maintenance mechanic jobs up 14% to 2035. Among AI-using firms, 66% only use it to help staff; 2% saw AI-related employment fall.[^21][^22]"
+    "Jobs grow: BLS projects maintenance mechanic jobs up 14% to 2035.[^21] Among AI-using firms, 66% only use it to help staff; 2% saw AI-related employment fall.[^22]"
   ],
   "example": {
     "input": "Illustrative. A wireless vibration and temperature sensor on a critical cooling-water pump with no spare, reading every few minutes for 3 months. Plus 18 months of the pump's free-text work orders (\"brg noisy\", \"greased\", \"replaced coupling insert\") and its run hours.[^18]",
@@ -165,7 +165,7 @@
   "recipes": [
     {
       "name": "1. No sensors yet: start from your work orders",
-      "when": "PM completion is shaky, the CMMS (maintenance software) is half-used, or there's no hardware budget. Deloitte says get the basics in place first; in Limble's vendor survey of maintenance professionals, 39% report consistent CMMS use across the team.[^29][^17]",
+      "when": "PM completion is shaky, the CMMS (maintenance software) is half-used, or there's no hardware budget. Deloitte says get the basics in place first[^29]; in Limble's vendor survey of maintenance professionals, 39% report consistent CMMS use across the team.[^17]",
       "flow": [
         "Maintenance planner: export 2-3 years of work orders to a spreadsheet",
         "Reliability lead: tag them with NIST's free Nestor tool, or an AI chatbot checked by hand, to find repeat failures by asset[^31][^18]",
@@ -185,7 +185,7 @@
         "Technician: for 90 days, confirm every alert by hand and log it as caught, false or unclear",
         "Maintenance manager: review the alert log monthly and adjust thresholds"
       ],
-      "cost": "About $4,200 to $5,550 in list-price hardware for 10-12 points, before installation, per our 26 Nov 2026 check.[^7][^8] Software runs from $70 a year (Monnit Premiere) to bring your own (NCD).[^32][^33]"
+      "cost": "About $4,200 to $5,550 in list-price hardware for 10-12 points, before installation, per our 26 Nov 2026 check.[^7][^8] Software runs from $70 a year (Monnit Premiere)[^32] to bring your own (NCD).[^33]"
     },
     {
       "name": "3. No one reads vibration data: a managed service",
@@ -743,5 +743,16 @@
     "benchmark": "Pick 5-10 critical machines, record a 12-month baseline, fix the alarm rule before day one, log every alert as caught or false, then decide per machine at day 90.[^17][^9][^4][^12]",
     "what-goes-wrong": "Predictive maintenance goes wrong through false alarms, dirty work orders, alerts nobody acts on, sensors without context, vendor exits and over-maintaining.[^4][^5][^40][^1]",
     "something-else": "Pick something else when parts wear on a known life, one failure mode needs only a threshold alarm, your CMMS is barely used, or the gear is electrical distribution.[^1][^12][^17][^14]"
+  },
+  "sourceCheck": {
+    "date": "2026-11-28",
+    "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+    "checked": 4,
+    "fixed": [
+      "2026-11-28 padding cleanup, verdict[1]: moved [^4] (McKinsey false positives) off 8-12% to the false-alarm clause it states",
+      "2026-11-28 padding cleanup, teamAfter[3]: moved [^21] (BLS OOH) off 66%/2% to the 14% jobs sentence it states",
+      "2026-11-28 padding cleanup, recipes[0].when: moved [^29] (Deloitte) off 39% to the basics-first clause it states",
+      "2026-11-28 padding cleanup, recipes[1].cost: moved [^33] (NCD.io) off $70 to the NCD clause"
+    ]
   }
 }

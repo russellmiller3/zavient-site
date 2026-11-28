@@ -188,7 +188,7 @@
     },
     {
       "title": "What do published results show, and who measured them?",
-      "intro": "Published results show real gains, such as complaints down 65% at Aviva, but vendors and the insurers themselves measured most of them.[^33][^27][^28] The regulator survey is the only independent count here, so read the rest as upper bounds.[^2]",
+      "intro": "Published results show real gains, such as complaints down 65% at Aviva[^33], but vendors and the insurers themselves measured most of them.[^27][^28] The regulator survey is the only independent count here, so read the rest as upper bounds.[^2]",
       "headers": [
         "Study or case",
         "Result",
@@ -420,7 +420,7 @@
     "Compare flags with what happened: how many fraud flags SIU would have opened and proved, and how many simple files went to litigation. Late reporting carries about ten times the litigation risk (TPA report).[^17]",
     "Compare reserve suggestions with the adjuster's reserve and with what the claim finally cost, at 30 and 90 days.",
     "Check for unfair discrimination: compare flag rates and days to payment across ZIP codes and other proxies for protected groups.[^11][^60]",
-    "Price the lift in dollars: hours saved times loaded adjuster cost, plus late-payment interest avoided, such as Michigan's 12%.[^47][^1] Set it against your adjusting cost baseline.[^6]",
+    "Price the lift in dollars: hours saved times loaded adjuster cost[^1], plus late-payment interest avoided, such as Michigan's 12%.[^47] Set it against your adjusting cost baseline.[^6]",
     "Write the decision rule before go-live: which outputs a person confirms, who signs off and what the file shows. Texas expects that sign-off, and examiners will ask for the record.[^4][^55]"
   ],
   "watchOuts": [
@@ -430,7 +430,7 @@
     "Missed state deadlines. California's 2026 wildfire-claims exam cited missed 15-, 40- and 30-day clocks; have the tool open a deadline task on day one.[^54][^37]",
     "Adjusters fixing the AI instead of being helped by it: one adjuster describes 15 to 20 minutes correcting AI mistakes.[^21] Show the source page for every fact the tool pulls, and track rework time.",
     "Vendor black boxes: you answer for vendor AI, and in a health case a court ordered an insurer to show how its tool worked.[^11][^61] Put audit and testing rights in the contract.",
-    "A thinner talent pipeline: junior adjuster postings are down about half since early 2024, and 25% of adjusters may retire by 2027 (TPA report).[^21][^17] Keep juniors on AI-checked files so they still learn."
+    "A thinner talent pipeline: junior adjuster postings are down about half since early 2024[^21], and 25% of adjusters may retire by 2027 (TPA report).[^17] Keep juniors on AI-checked files so they still learn."
   ],
   "faq": [
     {
@@ -893,5 +893,15 @@
       "notes": "Steve gets the answer in 10 seconds and sees plainly that no vendor publishes a price; no Zavient price is shown. His data worry was missing, so buy-or-build now cites the 45% of insurers naming data quality as a barrier. Security has no claims-specific source in the research, so it is covered only as contract audit rights. Every mid-size result on the page is a vendor case, labelled as such; no independent case from a firm his size exists."
     }
   ],
-  "updated": "2026-11-26"
+  "updated": "2026-11-26",
+  "sourceCheck": {
+    "date": "2026-11-28",
+    "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+    "checked": 3,
+    "fixed": [
+      "2026-11-28 padding cleanup, tables[2].intro: moved [^27][^28] (vendor cases) off 65% to the vendors-measured clause they illustrate",
+      "2026-11-28 padding cleanup, howToTest[7]: moved [^1] (BLS OOH adjusters) off 12% to the adjuster-cost clause",
+      "2026-11-28 padding cleanup, watchOuts[6]: moved [^21] (Insurance Business) off 25% to the postings-down-half clause it states"
+    ]
+  }
 }

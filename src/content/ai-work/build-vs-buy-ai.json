@@ -41,7 +41,7 @@
   }
  ],
  "headings": {},
- "summary": "Buying gets a product, configuring adapts a platform to your steps, while building on a rented model gives control but leaves upkeep to you[^6][^23][^25]. Most firms now buy: 76% of enterprise AI use cases in 2025, per investor Menlo Ventures[^3][^4]. People and process decide the result more than the model[^13][^12].",
+ "summary": "Buying gets a product, configuring adapts a platform to your steps, while building on a rented model gives control but leaves upkeep to you[^6][^23][^25]. Most firms now buy: 76% of enterprise AI use cases in 2025, per investor Menlo Ventures[^3]. People and process decide the result more than the model[^13][^12].",
  "tables": [
   {
    "title": "How do buying, configuring and building compare?",
@@ -152,7 +152,7 @@
     {
      "name": "MIT NANDA, 2025",
      "cells": [
-      "Bought or partnered tools reached deployment about 67% of the time; internal builds about 33%[^1][^2]",
+      "At organizations MIT studied, bought or partnered tools reached deployment about 67% of the time; internal builds about 33%[^1]",
       "Based on interviews, as the report itself says. The only direct buy-vs-build comparison we found[^1]"
      ]
     },
@@ -637,7 +637,17 @@
   "something-else": "Pick neither when your suite already does it, the process is broken, the job is a score or forecast from your records, or no one can check the output.[^21][^10][^8][^5]",
   "table-1": "Buying is quickest, at $20-31.50 a user a month. Configuring a platform takes weeks to a few months; building your own averages 8 months to production.[^19][^18][^22][^1][^9] Building also costs far more in upkeep than in model fees.[^25][^26]",
   "table-2": "Training your own model costs $8M-20M upfront in Gartner's figures, against $100K-200K for enterprise AI licenses.[^6] For a 40-500 person firm, that puts training your own model out of reach.",
-  "table-3": "Bought or partnered tools reached deployment about 67% of the time in MIT's 2025 study, against about 33% for internal builds.[^1][^2] Most firms now buy: 76% of enterprise AI use cases in Menlo's 2025 survey.[^3]",
+  "table-3": "Bought or partnered tools reached deployment about 67% of the time in MIT's 2025 study of organizations, against about 33% for internal builds.[^1] Most firms now buy: 76% of enterprise AI use cases in Menlo's 2025 survey.[^3]",
   "own-data": "OpenAI promises at least 6 months' notice for stable models, 3 months for specialized ones and as little as 2 weeks for previews.[^27] Anthropic retired Claude Sonnet 4.5 on 61 days' notice.[^28]"
+ },
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+  "checked": 3,
+  "fixed": [
+   "2026-11-28 padding cleanup, summary: dropped [^4] (Menlo 2024: 53%) from 76%: its note doesn't state it",
+   "2026-11-28 padding cleanup, tables[2].rows[0].cells[0]: dropped [^2] (Fortune) from 67%/33%: its note only says \"about twice as often\"",
+   "2026-11-28 padding cleanup, answers.table-3: dropped [^2] (Fortune) from 67%/33%: its note only says \"about twice as often\""
+  ]
  }
 }

@@ -173,9 +173,9 @@
     "note": "Method: each study's abstract and results, read on the publisher's or authors' page on 26 Nov 2026; two journal dates rechecked there. Limits: different tasks, tools and years, and some rely on self-reports, which can overstate gains.[^16] None tests a training program directly, so each lesson is our inference."
   },
   "watchOuts": [
-    "Training fails to stick when it is a one-off event without tools, time or a manager's follow-up. Use reached 93% only where encouragement, tools and training came together.[^18][^9]",
+    "Training fails to stick when it is a one-off event without tools, time or a manager's follow-up. Use reached 93% only where encouragement, tools and training came together.[^18]",
     "Staff trust output they never checked. In a 47-country survey of employees, 66% relied on AI output without evaluating it, and 56% made mistakes at work because of AI.[^22]",
-    "Company data leaks into free tools. Most knowledge workers who use AI bring their own tools to work (78%), so teach the data rule in the first session.[^37][^22]",
+    "Company data leaks into free tools. Most knowledge workers who use AI bring their own tools to work (78%)[^37], so teach the data rule in the first session.[^22]",
     "Workslop: polished output that makes work for others. In 2025, 40% of US desk workers received some in a month, costing an estimated $186 per employee monthly.[^23]",
     "Felt gains stand in for measured ones. Developers in one trial were 19% slower with AI but believed they were 20% faster, so time real tasks.[^16]",
     "Core skills fade without practice. Doctors' detection rate without AI fell from 28.4% to 22.4% after AI arrived, so keep some manual practice.[^20]"
@@ -511,5 +511,14 @@
       "notes": "Steve got the answer in 10 seconds from the title and bottom line. Data security (one-page data rule), return (price-the-lift) and free alternatives (when not to hire help) were covered. The EU bullet read as irrelevant to a US-only firm, so it now opens 'If you operate in the EU'. No Zavient price is shown, per the lead's rule; seat prices and the training-spend benchmark are labelled outside figures."
     }
   ],
-  "updated": "2026-11-26"
+  "updated": "2026-11-26",
+  "sourceCheck": {
+    "date": "2026-11-28",
+    "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+    "checked": 2,
+    "fixed": [
+      "2026-11-28 padding cleanup, watchOuts[0]: dropped [^9] (Gallup) from 93%: its note doesn't state it",
+      "2026-11-28 padding cleanup, watchOuts[2]: moved [^22] (KPMG: 48% uploaded company data) off 78% to the data-rule clause it backs"
+    ]
+  }
 }

@@ -231,7 +231,7 @@
     "Controller: keep a forecast-against-actual log the auditor and lender can read[^11][^7]",
     "Owner-CEO or COO: sign what goes to the bank[^8]"
    ],
-   "cost": "Float's Scale plan is $315 a month billed annually, plus $63 a month per added entity.[^22] Enterprise treasury tools quote each deal, and AFP describes one in-house build still about 70% complete after five years.[^24][^26][^5]"
+   "cost": "Float's Scale plan is $315 a month billed annually, plus $63 a month per added entity.[^22] Enterprise treasury tools quote each deal[^24][^26], and AFP describes one in-house build still about 70% complete after five years.[^5]"
   }
  ],
  "ownData": {
@@ -350,7 +350,7 @@
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy when you run one entity on standard terms and have no data person. Buying is the norm: 76% of enterprise AI solutions are bought rather than built.[^27] Float publishes $215 a month billed annually, and a bought platform can include maintenance and upgrades.[^22][^5]",
+  "buy": "Buy when you run one entity on standard terms and have no data person. Buying is the norm: 76% of enterprise AI solutions are bought rather than built.[^27] Float publishes $215 a month billed annually[^22], and a bought platform can include maintenance and upgrades.[^5]",
   "build": "Build, or build with a partner, when customer pay habits or lender reporting are your edge and you must explain each number to an auditor.[^11] Partnered custom builds reached deployment about twice as often as internal ones.[^28] AFP notes builds are practical again with AI, but control brings ongoing responsibility.[^5]"
  },
  "pickElse": [
@@ -885,7 +885,9 @@
    "IBM 2019 [^21]: 'up to 77%'",
    "Dynamics 365 [^7]: Microsoft describes it as long-term forecasting; added",
    "'payroll stays on its calendar' (faq[0], example, recipe 2): [^7]/[^8] did not say it; now [^2] (AFP: payroll is a predictable item)",
-   "source notes for [^4], [^7], [^20], [^21], [^26] corrected to the sources' wording (HighRadius: 'under 12 weeks' is implementation time)"
+   "source notes for [^4], [^7], [^20], [^21], [^26] corrected to the sources' wording (HighRadius: 'under 12 weeks' is implementation time)",
+   "2026-11-28 padding cleanup, recipes[2].cost: moved [^24][^26] (Agicap, HighRadius: no published price) off 70% to the quote-each-deal clause they state",
+   "2026-11-28 padding cleanup, buyVsBuild.buy: moved [^5] (AFP) off $215 to the maintenance clause it states"
   ]
  }
 }

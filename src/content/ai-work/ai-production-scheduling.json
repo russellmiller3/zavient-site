@@ -399,7 +399,7 @@
     "Planners lose their say: fights over shop-floor control explain failed projects, and unexplained assignments get ignored.[^1][^4] Keep the planner's override and make the tool show why it moved each job.",
     "Schedule churn: re-running on every blip unsettles the floor.[^21][^15] Freeze the near term and patch small events instead of rebuilding the whole plan.[^16]",
     "Calendars that don't match shifts: finite capacity goes wrong when shift changes aren't modeled.[^13] Load real shift calendars, planned maintenance included.",
-    "Vendor numbers without methods: product pages claim gains like +50% on-time delivery and show no method.[^22][^23] Test on your own past weeks before you sign."
+    "Vendor numbers without methods[^23]: product pages claim gains like +50% on-time delivery and show no method.[^22] Test on your own past weeks before you sign."
   ],
   "faq": [
     {
@@ -428,7 +428,7 @@
     }
   ],
   "buyVsBuild": {
-    "buy": "Buy when you run one ERP, a standard job-shop or flow setup, and have no in-house optimization skills. Most firms buy: 76% of enterprise AI use cases are now bought.[^53] Bought tools succeed about twice as often as internal builds.[^44][^43]",
+    "buy": "Buy when you run one ERP, a standard job-shop or flow setup, and have no in-house optimization skills. Most firms buy: 76% of enterprise AI use cases are now bought.[^53] Bought tools succeed about twice as often as internal builds.[^44]",
     "build": "Build when your rules are unusual (tooling, skills, cure times), your data is clean and someone can maintain the model. Free solvers ship job-shop examples: OR-Tools and Timefold.[^41][^42] AI can help write the solver, which proved more repeatable than AI as the scheduler.[^38]"
   },
   "pickElse": [
@@ -817,12 +817,22 @@
     "team-after": "Planners stop building the schedule by hand and work exceptions instead: late orders, material gaps, what-ifs and what to tell customers.[^9][^19]",
     "example": "The software proposes a new sequence, moves the down machine's jobs to other machines, and costs the fixes. The planner picks one and releases it.[^16][^21][^4]",
     "table-1": "Small shops fit ERP schedulers such as Business Central, Odoo or MRPeasy. Plants with many changeovers fit stand-alone schedulers such as SkyPlanner, EDGEBIC or PlanetTogether.[^25][^7][^24][^29][^8][^30] Plants with unusual rules can build on frePPLe or a free solver.[^32][^41]",
-    "table-2": "The one independent case, from NIST MEP, cut lead time from 12-14 weeks to 5 after fixing routings first. Vendor cases claim gains such as 25% fewer changeovers.[^3][^36]",
+    "table-2": "The one independent case, from NIST MEP, cut lead time from 12-14 weeks to 5 after fixing routings first. Vendor cases claim gains such as 25% fewer changeovers.[^36]",
     "recipes": "Small shops fit their ERP's own scheduler, plants with many changeovers fit a stand-alone scheduler, and data-rich plants with unusual rules can build on a free solver.[^41]",
     "own-data": "By our math, year-one list licenses for a 100-person shop ran from about $2,940 (MRPeasy Starter) to a $25,000 one-time license (EDGEBIC).[^24][^8] Five of 12 tools publish no usable price.[^30][^31][^45][^34][^33]",
     "rules": "The EU AI Act makes AI that assigns tasks to workers high-risk from 2 Dec 2027, and Chicago's Fair Workweek Ordinance requires 14 days' shift notice.[^47][^49] Neither covers sequencing machines alone.",
     "benchmark": "Freeze the data from 4-6 past weeks with real disruptions, replay them in the tool, and compare against what happened and a simple earliest-due-date rule.[^39] Count every capacity or calendar violation, then run 4 weeks in shadow with the planner approving.[^5][^4]",
     "what-goes-wrong": "Production scheduling software goes wrong through bad master data, shadow spreadsheets, planners losing their say, schedule churn, wrong shift calendars and untested vendor claims.[^4][^51][^1][^21][^13][^22]",
     "something-else": "Pick something else when one bottleneck drives everything, demand is steady and repeats, material drives lead times, or your routings and run times are wrong.[^54][^55][^56][^57] Drum-Buffer-Rope, kanban, DDMRP or a NIST MEP center may fit better."
+  },
+  "sourceCheck": {
+    "date": "2026-11-28",
+    "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+    "checked": 3,
+    "fixed": [
+      "2026-11-28 padding cleanup, watchOuts[5]: moved [^23] (PlanetTogether, no method shown) off +50% to the no-methods clause",
+      "2026-11-28 padding cleanup, buyVsBuild.buy: dropped [^43] (Fortune) from \"twice\": its note gives 67% and \"one-third as often\", not twice",
+      "2026-11-28 padding cleanup, answers.table-2: dropped [^3] (NIST MEP case) from 25%: its note doesn't state it"
+    ]
   }
 }

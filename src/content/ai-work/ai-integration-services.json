@@ -159,7 +159,7 @@
  "faq": [
   {
    "q": "How much does AI integration cost?",
-   "a": "Entry connector plans run from free to $19.99 a month per user or plan, and most of the spend is setup, permission work and testing.[^14][^41][^39] NetSuite's MCP SuiteApp is free and HubSpot lists no separate MCP charge, while Microsoft plans charges for Business Central.[^14][^25][^18] Power Automate Premium is $15 a user a month, and Zapier Pro is $19.99 a month.[^41][^39]"
+   "a": "Entry connector plans run from free to $19.99 a month per user or plan, and most of the spend is setup, permission work and testing.[^14][^39] NetSuite's MCP SuiteApp is free and HubSpot lists no separate MCP charge, while Microsoft plans charges for Business Central.[^14][^25][^18] Power Automate Premium is $15 a user a month, and Zapier Pro is $19.99 a month.[^41][^39]"
   },
   {
    "q": "What are AI integration services, and how do they work?",
@@ -493,5 +493,13 @@
    "notes": "Read as Steve. Ten-second test passes: the title and bottom line say what you get and what to fix first. His security worry needed a straight answer, so an FAQ now asks whether connecting AI to the accounting system is safe. Licence and tool costs are shown; no build-fee range is given, because the only published ranges are other consulting firms' pages, which site rules keep off the page."
   }
  ],
- "updated": "2026-11-26"
+ "updated": "2026-11-26",
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+  "checked": 1,
+  "fixed": [
+   "2026-11-28 padding cleanup, faq[0].a: dropped [^41] (Power Automate, $15) from the free-to-$19.99 sentence: its note doesn't state $19.99; it stays on the $15 sentence"
+  ]
+ }
 }
