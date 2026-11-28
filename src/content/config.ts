@@ -22,6 +22,11 @@ const aiwork = defineCollection({
     type: z.enum(Object.keys(TYPES) as [string, ...string[]]).default('usecase'),
     templateVersion: z.number().int().optional(),
     topic: z.string().optional(),
+    // Eyebrow topic (28 Nov 2026): 40 characters or fewer, shown after the section name over the title. Optional: left
+    // out, it is derived from topic (eyebrowTopic in src/lib/page-types.mjs). Set it only when the derived one reads badly.
+    shortTopic: z.string().min(2).max(40).optional(),
+    // Role pages: who the reader hands the one-page plan to ("principal", "board"). Default CEO (handoffFor).
+    handoffTo: z.string().min(2).max(30).optional(),
     headings: z.record(z.string()).default({}),
     // Answer-first rule (Russell, 26 Nov 2026): the first sentence under a question heading, keyed by block id
     // ("example", "buy-or-build", "table-1", "offer"...). Rendered before the block's example, table or list.

@@ -18,7 +18,7 @@ import { pageLeadProblems } from '../src/lib/lead-rules.mjs';
 import { staleProblems } from '../src/lib/stale-rules.mjs';
 import { rivalProblems } from '../src/lib/rival-firms.mjs';
 import { acronymProblems } from '../src/lib/acronyms.mjs';
-import { structureProblems } from '../src/lib/structure-rules.mjs';
+import { structureProblems, eyebrowProblems, handoffProblems } from '../src/lib/structure-rules.mjs';
 import { claimProblems } from '../src/lib/source-numbers.mjs';
 import { figureCheckProblems } from '../src/lib/figure-check.mjs';
 import { edgarProblems } from '../src/lib/edgar-hits.mjs';
@@ -134,6 +134,10 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
   // Page structure: description length, footnotes on key numbers, real slugs, headings, answer slots (26 Nov 2026)
   const slugs = siblings.length ? new Set(siblings.map((x) => x._slug)) : null;
   for (const p of structureProblems(d, slugs)) fail.push(`structure: ${p}`);
+  // Eyebrow over the title: section name plus a short topic that fits one line on a phone (28 Nov 2026)
+  for (const p of eyebrowProblems(d)) fail.push(`eyebrow: ${p}`);
+  // Role pages: the template's hand-off audience matches the page's own copy. A warning until family-office-coo sets it.
+  for (const p of handoffProblems(d)) warn.push(`hand-off: ${p}`);
   // No undefined shorthand: every business-jargon acronym is spelled out on the page (src/lib/acronyms.mjs)
   for (const p of acronymProblems(d)) fail.push(`acronym: ${p}`);
 
