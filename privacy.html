@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Privacy policy | Zavient</title><meta name="description" content="How Zavient LLC handles information on zavient.com. Interactive tools run in your browser with no signup and no ad tracking."><link rel="canonical" href="https://zavient.com/privacy.html"><meta property="article:modified_time" content="2026-11-27"><meta property="og:site_name" content="Zavient"><meta property="og:type" content="article"><meta property="og:title" content="Privacy policy | Zavient"><meta property="og:description" content="How Zavient LLC handles information on zavient.com. Interactive tools run in your browser with no signup and no ad tracking."><meta property="og:url" content="https://zavient.com/privacy.html"><meta property="og:image" content="https://zavient.com/og-card.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Privacy policy | Zavient"><meta name="twitter:description" content="How Zavient LLC handles information on zavient.com. Interactive tools run in your browser with no signup and no ad tracking."><meta name="twitter:image" content="https://zavient.com/og-card.png"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Figtree:wght@600;700;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://raw.githack.com/russellmiller3/zavient-site/preview-template-fixes-dist/ai-work/ai-work.css"></head> <body class="theme-blue"> <nav> <a href="/" class="logo">Zavient<em>.</em></a> <div class="nav-links"> <a href="/ai-work.html">AI work</a> <a href="/ai-work.html#tools">Free tools</a> <a href="/ai-readiness-assessment.html">Readiness check</a> <a href="/about.html">About</a> <a href="#diagnostic" class="nav-cta">Free diagnostic</a> </div> </nav>  <header class="article-hero"><div class="wrap"> <div class="label">Privacy</div> <h1>Privacy policy</h1> <span class="bluf-label">Bottom line</span> <div class="bluf"> <ul> <li>Our interactive calculators and readiness check run in your browser.</li> <li>We do not sell your data or run third-party advertising trackers.</li> <li>Information you submit to request a diagnostic is used only to reply to you.</li> </ul> </div> <p class="byline">Zavient LLC &middot; updated 27 November 2026</p> </div></header> <article class="article-body"><div class="wrap"> <h2 id="tools">Interactive tools and assessments</h2> <p>Every calculator, generator and readiness check on zavient.com runs locally in your browser. Your answers stay on your device unless you choose to copy or email them to us.</p> <h2 id="contact-data">When you contact us</h2> <p>When you submit the diagnostic request form, book a call or email <a href="mailto:hello@zavient.com">hello@zavient.com</a>, we receive the details you share. We use them only to prepare for and respond to your inquiry.</p> <p>We never sell, rent or trade your contact details to third parties.</p> <h2 id="analytics">Site traffic and hosting</h2> <p>Our hosting providers (Cloudflare and Vercel) keep standard server logs for security and reliability. Any site traffic measurement we enable uses privacy-first aggregate counts without cross-site ad cookies.</p> <h2 id="rights">Deleting your information</h2> <p>Email <a href="mailto:hello@zavient.com">hello@zavient.com</a> at any time to ask what contact information we hold or to have it deleted.</p> </div></article> <section class="article-cta" id="diagnostic" data-cta="consulting"> <div class="wrap"> <div class="label">Free diagnostic</div> <h2>Questions about privacy or a workflow?</h2> <p>Tell us the work and what it costs you today. In 30 minutes you get our read on how to approach it with AI.</p> <ul class="cta-steps"> <li><strong>Buy or build:</strong> whether a product already does this well enough, or it is worth building.</li> <li><strong>What to benchmark:</strong> the two or three tools and models worth testing on your own files.</li> <li><strong>Rules:</strong> the regulations that shape the build, and what they mean for you.</li> <li><strong>Rough cost:</strong> what it would take to run, and to get built.</li> </ul> <form class="diag-form" method="post" action="/api/lead" data-diag-form data-job="AI in your business"> <div class="diag-grid"> <label class="diag-field"> <span>Your name</span> <input type="text" name="name" required maxlength="120" autocomplete="name" placeholder="Dana Smith"> </label> <label class="diag-field"> <span>Work email</span> <input type="email" name="email" required maxlength="160" autocomplete="email" placeholder="dana@company.com"> </label> </div> <label class="diag-field"> <span>Company and role (optional)</span> <input type="text" name="company" maxlength="160" autocomplete="organization" placeholder="Acme Manufacturing · COO"> </label> <label class="diag-field"> <span>What workflow are you looking at?</span> <textarea name="workflow" rows="2" required maxlength="1000" placeholder="Two sentences on the process and what it costs your team today."></textarea> </label> <input type="text" name="company_fax" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true"> <div class="diag-actions"> <button class="btn-gold" type="submit">Request free 30-minute diagnostic &rarr;</button> <a class="btn-outline" href="https://calendar.app.google/2xXiMLiamRFtfFKH9" target="_blank" rel="noopener">Or pick a calendar time</a> </div> <p class="diag-status" role="status" aria-live="polite" hidden></p> </form> <p class="cta-secondary">Prefer email? Write <a href="mailto:hello@zavient.com">hello@zavient.com</a> with two sentences on the work. Not ready to talk? Take the <a href="/ai-readiness-assessment.html">AI readiness check</a> first. See <a href="/about.html#engagements">how paid work runs</a>.</p> </div> </section> <script>
+  (() => {
+    document.querySelectorAll('form[data-diag-form]').forEach((form) => {
+      if (form.dataset.bound) return;
+      form.dataset.bound = '1';
+      const status = form.querySelector('.diag-status');
+      const btn = form.querySelector('button[type="submit"]');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const fd = new FormData(form);
+        fd.append('page', location.pathname);
+        fd.append('job', form.dataset.job || '');
+        const name = String(fd.get('name') || '').trim();
+        const email = String(fd.get('email') || '').trim();
+        const company = String(fd.get('company') || '').trim();
+        const workflow = String(fd.get('workflow') || '').trim();
+        const brief = [
+          `Name: ${name}`,
+          `Email: ${email}`,
+          company ? `Company/Role: ${company}` : '',
+          `Page: ${location.href}`,
+          `Workflow: ${workflow}`,
+        ].filter(Boolean).join('\n');
+        btn.disabled = true;
+        status.hidden = false;
+        status.className = 'diag-status';
+        status.textContent = 'Sending request...';
+        try {
+          const res = await fetch('/api/lead', { method: 'POST', body: fd });
+          const text = (await res.text()).trim();
+          if (res.ok && text === 'ok') {
+            status.className = 'diag-status is-ok';
+            status.textContent = 'Request received. A person reads every message and replies within one business day.';
+            form.reset();
+            return;
+          }
+        } catch {}
+        // Graceful fallback if the edge form receiver is not wired yet: never lose a lead.
+        const mailto = `mailto:hello@zavient.com?subject=${encodeURIComponent('Free 30-minute diagnostic request')}&body=${encodeURIComponent(brief)}`;
+        status.className = 'diag-status is-fallback';
+        status.innerHTML = '';
+        const msg = document.createElement('span');
+        msg.textContent = 'Direct form delivery is offline right now. Send your brief in one click: ';
+        const a = document.createElement('a');
+        a.href = mailto;
+        a.textContent = 'Open pre-filled email';
+        const sep = document.createTextNode(' · ');
+        const cp = document.createElement('button');
+        cp.type = 'button';
+        cp.className = 'link-btn';
+        cp.textContent = 'Copy brief';
+        cp.addEventListener('click', async () => {
+          try { await navigator.clipboard.writeText(brief); cp.textContent = 'Copied'; }
+          catch { window.prompt('Copy your request:', brief); }
+        });
+        status.append(msg, a, sep, cp);
+        btn.disabled = false;
+      });
+    });
+  })();
+</script>  <footer> <a href="/" class="logo" style="font-size:18px;">Zavient<em>.</em></a> <span>&copy; 2026 Zavient LLC &middot; AI that helps your team do more</span> <span><a href="/ai-work.html#tools">Free tools</a> &middot; <a href="/about.html">About</a> &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="https://www.linkedin.com/in/russellmiller" rel="me">LinkedIn</a> &middot; <a href="mailto:hello@zavient.com">Email us</a></span> </footer> <script>
+    // Mobile reading helpers (26 Nov 2026), on every page:
+    // 1. Wide tables: keyboard-scrollable, with a "scroll for more" cue only while there is more to see (NN/g mobile tables).
+    // 2. Footnotes: a source marker opens the collapsed source list before jumping to the source.
+    (() => {
+      // 2-column prose tables (If/Then, Date/What happens) read as labelled cards on phones instead of scrolling.
+      // Roles keep the table meaning when CSS changes how the cells display (Safari drops it otherwise).
+      document.querySelectorAll('.table-scroll table').forEach((t) => {
+        const heads = [...t.querySelectorAll('thead th')];
+        if (heads.length !== 2) return;
+        t.classList.add('stack-2'); t.setAttribute('role', 'table');
+        t.querySelectorAll('tr').forEach((r) => r.setAttribute('role', 'row'));
+        t.querySelectorAll('th').forEach((c) => c.setAttribute('role', 'columnheader'));
+        t.querySelectorAll('tbody td').forEach((c, i) => { c.setAttribute('role', 'cell'); c.dataset.label = heads[c.cellIndex] ? heads[c.cellIndex].textContent : ''; });
+      });
+      document.querySelectorAll('.table-scroll').forEach((box) => {
+        const t = box.querySelector('table');
+        box.setAttribute('tabindex', '0'); box.setAttribute('role', 'region');
+        const name = t && t.querySelector('th') ? t.querySelector('th').textContent + ' table' : 'Table';
+        const cue = document.createElement('p'); cue.className = 'scroll-cue'; cue.setAttribute('aria-hidden', 'true'); cue.textContent = 'Swipe the table sideways for more \u2192';
+        box.before(cue);
+        const check = () => {
+          const more = box.scrollWidth - box.clientWidth > 4;
+          box.classList.toggle('can-scroll', more);
+          box.classList.toggle('at-end', box.scrollLeft + box.clientWidth >= box.scrollWidth - 4);
+          cue.hidden = !more;
+          box.setAttribute('aria-label', more ? name + ', scrolls sideways' : name);
+        };
+        box.addEventListener('scroll', check, { passive: true }); addEventListener('resize', check); check();
+      });
+      const openFor = (hash) => {
+        const el = hash && hash.length > 1 && document.getElementById(decodeURIComponent(hash.slice(1)));
+        const d = el && el.closest('details'); if (d && !d.open) d.open = true;
+      };
+      document.addEventListener('click', (e) => { const a = e.target.closest('a[href^="#"]'); if (a) openFor(a.getAttribute('href')); });
+      openFor(location.hash);
+    })();
+  </script> <script>
+    // Phones (720px and narrower): the two-row top menu slides away while you scroll down and comes back as soon
+    // as you scroll up, so it never sits on the text you're reading (NN/g sticky headers; Chrome's sticky-UI
+    // guidance; fix of 26 Nov 2026). It stays put near the top of the page, while it has keyboard focus, and
+    // for people who ask for reduced motion.
+    (() => {
+      const nav = document.querySelector('body > nav');
+      const phone = matchMedia('(max-width: 720px)');
+      const still = matchMedia('(prefers-reduced-motion: reduce)');
+      if (!nav) return;
+      let last = scrollY, turn = scrollY, down = false, ticking = false;
+      const update = () => {
+        ticking = false;
+        const y = Math.max(0, scrollY);
+        if (!phone.matches || still.matches || y <= nav.offsetHeight + 8) { nav.classList.remove('nav-away'); last = turn = y; return; }
+        const goingDown = y > last;
+        if (goingDown !== down) { down = goingDown; turn = last; }
+        if (down && y - turn > 8) nav.classList.add('nav-away');
+        if (!down && turn - y > 8) nav.classList.remove('nav-away');
+        last = y;
+      };
+      addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+      phone.addEventListener('change', update);
+    })();
+  </script>  </body> </html>
