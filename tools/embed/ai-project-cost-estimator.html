@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI agent cost estimator: what will an AI agent cost to run?</title>
+<meta name="description" content="Price one AI agent or workflow for a 40 to 500 person firm: set-up, monthly fees, team review time and first-year total, with every default sourced.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://zavient.com/tools/ai-project-cost-estimator.html">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@600;700;800&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Zavient AI agent cost estimator (embed). Same light blue tokens as /ai-readiness-assessment.html, inlined so the
+   file stands alone in an iframe or full screen. One question per screen, then the estimate, answer first. */
+:root {
+  --ink: #15202E; --ink-soft: #3C4A5C; --muted: #5F6B7A;
+  --line: #D8E0EA; --line-strong: #B9C6D6;
+  --paper: #FFFFFF; --paper-alt: #F3F6FA;
+  --blue: #1F5FBF; --blue-dark: #174A96; --blue-wash: #EAF1FB; --blue-grid: rgba(31, 95, 191, 0.075);
+  --amber: #A86A10; --amber-wash: #FBF1DC;
+  --sans: 'Figtree', 'Helvetica Neue', Arial, sans-serif;
+  --serif: 'Crimson Pro', Georgia, serif;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 19px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+a { color: var(--blue); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--blue-dark); }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+
+.top { position: relative; padding: 22px 0 18px; border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--blue-wash) 0%, rgba(234, 241, 251, 0.45) 60%, var(--paper) 100%); }
+.top::before { content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(var(--blue-grid) 1px, transparent 1px), linear-gradient(90deg, var(--blue-grid) 1px, transparent 1px);
+  background-size: 28px 28px; -webkit-mask-image: linear-gradient(180deg, #000, transparent); mask-image: linear-gradient(180deg, #000, transparent); }
+.top .wrap { position: relative; }
+.label, .eyebrow { font-family: var(--mono); font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); }
+h1 { font-family: var(--sans); font-weight: 800; font-size: clamp(26px, 5vw, 36px); line-height: 1.1; letter-spacing: -0.02em; margin: 6px 0 8px; text-wrap: balance; }
+.dek { color: var(--ink-soft); font-size: 18px; max-width: 60ch; }
+body.in-quiz .dek { display: none; }
+
+main { padding: 18px 0 40px; }
+#app { display: flex; flex-direction: column; gap: 16px; }
+h2, h3 { font-family: var(--sans); color: var(--ink); text-wrap: balance; }
+h2 { font-weight: 700; font-size: clamp(21px, 3.6vw, 26px); line-height: 1.2; letter-spacing: -0.01em; }
+h3 { font-weight: 700; font-size: 18px; line-height: 1.3; }
+p { max-width: 66ch; }
+.card { background: var(--paper); border: 1px solid var(--line); padding: clamp(16px, 4vw, 26px); display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.muted { color: var(--muted); }
+.small { font-family: var(--mono); font-size: 14px; color: var(--muted); }
+
+/* One button font: Figtree 600 16px everywhere */
+.btn { appearance: none; border: 0; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--sans); font-weight: 600; font-size: 16px; min-height: 44px; padding: 10px 20px; border-radius: 2px; text-decoration: none; }
+.btn-primary { background: var(--blue); color: #fff; }
+.btn-primary:hover { background: var(--blue-dark); color: #fff; }
+.btn-ghost { background: transparent; color: var(--blue); border: 1.5px solid var(--line-strong); }
+.btn-ghost:hover { border-color: var(--blue); }
+.btn-plain { background: transparent; color: var(--muted); padding: 10px 6px; }
+.btn-plain:hover { color: var(--blue); }
+.btn:focus-visible, .opt:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid rgba(31, 95, 191, 0.45); outline-offset: 2px; }
+.row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+
+.progress { height: 6px; background: var(--blue-wash); overflow: hidden; }
+.progress > div { height: 100%; background: var(--blue); transition: width .3s ease; }
+.qnum { font-family: var(--mono); font-size: 14px; color: var(--muted); }
+.qtext { font-family: var(--sans); font-weight: 700; font-size: clamp(21px, 4vw, 26px); line-height: 1.25; letter-spacing: -0.01em; text-wrap: balance; }
+.qhelp { color: var(--ink-soft); font-size: 17px; }
+.opts { display: flex; flex-direction: column; gap: 8px; }
+.opt { text-align: left; width: 100%; min-height: 48px; background: var(--paper); color: var(--ink); border: 1.5px solid var(--line); border-radius: 2px;
+  padding: 10px 14px; font: 400 18px/1.35 var(--serif); cursor: pointer; }
+.opt:hover { border-color: var(--blue); }
+.opt.sel { border-color: var(--blue); background: var(--blue-wash); }
+.opt small { display: block; font-size: 15px; color: var(--muted); }
+.exact { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; font-size: 17px; color: var(--ink-soft); }
+.exact input { width: 130px; min-height: 44px; font: 500 16px var(--mono); padding: 8px 10px; border-radius: 2px; border: 1.5px solid var(--line-strong); background: var(--paper); color: var(--ink); }
+
+/* Result */
+.bluf { border: 1px solid var(--blue); background: var(--blue-wash); }
+.big { font-family: var(--sans); font-weight: 800; font-size: clamp(30px, 7vw, 44px); line-height: 1.05; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.bluf p { font-size: 18px; }
+.pathtag { font-family: var(--mono); font-size: 14px; color: var(--blue-dark); }
+.grid3 { display: grid; grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, 1fr)); border: 1px solid var(--line); }
+.grid3 > div { padding: 8px 10px; border-top: 1px solid var(--line); font-variant-numeric: tabular-nums; min-width: 0; }
+.grid3 > .h { border-top: 0; font-family: var(--mono); font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); background: var(--paper-alt); }
+.grid3 > .k { font-family: var(--sans); font-weight: 600; font-size: 15px; line-height: 1.3; }
+.grid3 > .v { font-family: var(--mono); font-size: 15px; text-align: right; }
+.grid3 > .ex { font-weight: 600; color: var(--ink); background: var(--blue-wash); }
+.grid3 > .tot { font-weight: 700; }
+.lines { display: flex; flex-direction: column; }
+.line { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; padding: 10px 0; border-top: 1px solid var(--line); }
+.line .nm { font-family: var(--sans); font-weight: 600; font-size: 16px; }
+.line .amt { font-family: var(--mono); font-size: 15px; text-align: right; white-space: nowrap; }
+.line .why { grid-column: 1 / -1; font-size: 16px; color: var(--ink-soft); line-height: 1.45; }
+.tag { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--amber); background: var(--amber-wash); padding: 1px 6px; white-space: nowrap; }
+.pts { list-style: none; display: flex; flex-direction: column; }
+.pts li { position: relative; padding: 8px 0 8px 22px; font-size: 18px; line-height: 1.45; }
+.pts li + li { border-top: 1px solid var(--line); }
+.pts li::before { content: ""; position: absolute; left: 2px; top: 18px; width: 8px; height: 8px; background: var(--blue); }
+.pts strong { font-family: var(--sans); font-weight: 700; font-size: 17px; }
+.paths { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 600px) { .paths { grid-template-columns: 1fr; } }
+.pathcard { border: 1px solid var(--line); padding: 12px 14px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.pathcard.on { border-color: var(--blue); background: var(--blue-wash); }
+.pathcard h3 { font-size: 16px; }
+.pathcard .n { font-family: var(--sans); font-weight: 800; font-size: 24px; font-variant-numeric: tabular-nums; }
+.pathcard p { font-size: 16px; color: var(--ink-soft); }
+.flag { border-left: 3px solid var(--amber); background: var(--amber-wash); padding: 10px 14px; font-size: 17px; }
+.offer { position: relative; border: 1px solid var(--line); padding: clamp(18px, 5vw, 32px) clamp(16px, 4vw, 26px); background: linear-gradient(0deg, var(--blue-wash) 0%, var(--paper) 100%); display: flex; flex-direction: column; gap: 12px; }
+.offer h2 { font-weight: 800; font-size: clamp(22px, 4.4vw, 30px); line-height: 1.15; }
+.offer p { color: var(--ink-soft); }
+details.card > summary { cursor: pointer; list-style: none; min-height: 44px; display: flex; align-items: center; }
+details.card > summary::-webkit-details-marker { display: none; }
+details.card > summary h3::after { content: " +"; color: var(--blue); }
+details.card[open] > summary h3::after { content: " \2212"; }
+.method ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.method li { position: relative; padding-left: 20px; font-size: 17px; color: var(--ink-soft); }
+.method li::before { content: ''; position: absolute; left: 3px; top: 11px; width: 7px; height: 7px; background: var(--blue); }
+sup.fn { font-size: 0.62em; line-height: 0; margin-left: 1px; font-family: var(--mono); }
+sup.fn a { color: var(--blue); text-decoration: none; font-weight: 600; }
+sup.fn .fn-sep { font-family: var(--sans); color: var(--muted); margin: 0 2px 0 0; }
+.srcs ol { margin-left: 24px; display: flex; flex-direction: column; gap: 6px; font-size: 16px; line-height: 1.45; color: var(--ink-soft); }
+.srcs li { overflow-wrap: anywhere; scroll-margin-top: 16px; }
+.srcs li:target { background: var(--blue-wash); }
+footer { border-top: 1px solid var(--line); background: var(--paper-alt); padding: 14px 0; font-family: var(--mono); font-size: 14px; color: var(--muted); }
+@media (max-width: 420px) { .grid3 > div { padding: 7px 6px; } .grid3 > .v { font-size: 14px; } .grid3 > .k { font-size: 14px; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="label">AI agent cost estimator</div>
+    <h1>What will an AI agent cost to run?</h1>
+    <p class="dek">For one workflow at a 40 to 500 person firm. Eight questions, about 2 minutes, no sign-up. You get a low, expected and high cost, where the money goes and what you can skip.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div id="app" aria-live="polite">
+    <noscript><section class="card"><p>This estimator needs JavaScript. Turn it on and reload, or email <a href="mailto:hello@zavient.com">hello@zavient.com</a> with two sentences on the work.</p></section></noscript>
+  </div>
+
+  <details class="card method" id="method" style="margin-top:16px">
+    <summary><h3>How the estimate works</h3></summary>
+    <ul id="method-list"></ul>
+  </details>
+
+  <details class="card srcs" id="footnotes" style="margin-top:16px">
+    <summary><h3>Sources</h3></summary>
+    <p class="small">Prices checked 26 Nov 2026. List prices in US dollars that still apply after 31 Dec 2026; promotions are left out.</p>
+    <ol id="fn-list"></ol>
+  </details>
+</main>
+
+<footer><div class="wrap">Zavient &middot; AI that helps your team do more &middot; <a href="mailto:hello@zavient.com">hello@zavient.com</a></div></footer>
+
+<script>
+/* MODEL START: pure data and math, no DOM. tests can load this block on its own. */
+const M = (() => {
+  // Sources, in the order the Sources list shows them.
+  const SRC = {
+    claude:   ["Anthropic, Models overview: API prices per million tokens (Haiku 5.5 $0.10/$0.50, Sonnet 5.5 $2/$10, Fable 5.2 $8/$40), checked 26 Nov 2026.", "https://platform.claude.com/docs/en/models/overview"],
+    openai:   ["OpenAI, API pricing: gpt-6-luna $0.10/$0.50, gpt-6.2-sol $2/$10, gpt-6.2-astra $8/$40 per million tokens, checked 26 Nov 2026.", "https://developers.openai.com/api/docs/pricing"],
+    ailoitte: ["Ailoitte, AI cost calculator: tokens per task by use case and a 15% overhead for retries and checks.", "https://www.ailoitte.com/ai-cost-calculator/"],
+    msbiz:    ["Microsoft, Copilot for business pricing: Copilot Business $21 a user a month paid yearly ($18 promotion ends 31 Dec 2026).", "https://www.microsoft.com/en-us/copilot/pricing/business"],
+    msent:    ["Microsoft, Copilot enterprise pricing: Microsoft 365 Copilot $30 a user a month paid yearly.", "https://www.microsoft.com/en-us/copilot/pricing/enterprise"],
+    chatgpt:  ["OpenAI Help Center, ChatGPT Business FAQ: $20 a user a month paid yearly, $25 monthly.", "https://help.openai.com/en/articles/8542115-chatgpt-business-general-faq"],
+    claudeteam: ["Anthropic Help Center, Team plan: $20 a member a month paid yearly, $25 monthly.", "https://support.anthropic.com/en/articles/9266767-what-is-the-claude-team-plan"],
+    claudeent: ["Anthropic Help Center, Enterprise billing: every token used is billed at standard API rates on top of the seat fee.", "https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan"],
+    fin:      ["Fin (Intercom), pricing: $0.99 per outcome, at most one per conversation; Copilot add-on $29 a teammate a month.", "https://fin.ai/pricing"],
+    agentforce: ["Salesforce, Agentforce pricing: $2 per conversation; add-ons $125 a user a month; Coworker licence $50 a user a month.", "https://www.salesforce.com/agentforce/pricing"],
+    kapa:     ["kapa.ai, How AI support agents are priced (Nov 2026): Zendesk AI agents $1.50 per resolution committed, $2.00 pay as you go; Zendesk Copilot $50 an agent a month.", "https://kapa.ai/library/how-ai-support-agents-are-priced-2026"],
+    elements: ["Elements Agents, AI project cost calculator: simple 10-20 days, moderate 25-50, complex 60-110; each integration adds 3-5 days.", "https://www.elementsagents.com/tools/ai-project-cost-calculator"],
+    cleveroad: ["Cleveroad, AI cost estimation 2026: chatbots and assistants 200-800 hours; NLP systems 500-1,400 hours.", "https://www.cleveroad.com/blog/artificial-intelligence-cost-estimation"],
+    gsa:      ["AI Services Companies, summary of 2026 GSA CALC+ federal schedule ceiling rates for AI and machine learning work.", "https://aiservicescompanies.com/research/ai-consulting-hourly-rates-2026"],
+    ecec:     ["US Bureau of Labor Statistics, Employer Costs for Employee Compensation, June 2026: $46.89 an hour in private industry, wages 70% of it.", "https://www.bls.gov/news.release/archives/ecec_09092026.htm"],
+    oes:      ["US Bureau of Labor Statistics, Occupational Employment and Wages, May 2025: software developers' median wage $65.38 an hour.", "https://www.bls.gov/news.release/ocwage.t01.htm"],
+    tei_smb:  ["Forrester, Total Economic Impact of Microsoft 365 Copilot for SMB (commissioned by Microsoft), Oct 2024: 10 hours of training per new user; $14,040 initial implementation; one person, 600 hours a year, to run it.", "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/TEI-of-Microsoft-365-Copilot-for-SMB-Oct-2024.pdf"],
+    tei_ent:  ["Forrester, Total Economic Impact of Microsoft 365 Copilot (commissioned by Microsoft), Mar 2025: training cost $6.9M, more than licences at $5.7M.", "https://tei.forrester.com/go/microsoft/M365Copilot/docs/TheTEIOfMicrosoft365Copilot.pdf"],
+    mck:      ["McKinsey, The state of AI, Mar 2025: 27% of firms using gen AI review all of its output before use; a similar share check 20% or less.", "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-state-of-ai-how-organizations-are-rewiring-to-capture-value"],
+    workday:  ["Workday, press release, 14 Jan 2026: nearly 40% of AI time savings are lost to rework; 77% of daily users review AI work as carefully as human work, or more.", "https://investor.workday.com/news-and-events/press-releases/news-details/2026/New-Workday-Research-Companies-Are-Leaving-AI-Gains-on-the-Table/default.aspx"],
+    eltex:    ["EltexSoft, Software maintenance cost per year: 15% to 20% of the build is a rule of thumb; measured cases run 6% to 40%.", "https://eltexsoft.com/blog/software-maintenance-cost"],
+    team400:  ["Team 400, AI maintenance costs after go-live (Apr 2026): 15% to 25% of the initial build a year for mid-market AI systems.", "https://team400.ai/blog/2026-04-05-ai-maintenance-costs-after-go-live"],
+    praxikon: ["Praxikon, What EU AI Act compliance costs (Jul 2026): small deployers 5,000 to 25,000 euros; mid-size firms with high-risk uses 25,000 to 100,000 euros; then 20% to 40% a year.", "https://www.praxikon.com/en/posts/what-does-eu-ai-act-compliance-cost-realistic-numbers"],
+    pinecone: ["Pinecone, pricing: Builder $20 a month; Standard $50 a month minimum; Enterprise $500 minimum.", "https://www.pinecone.io/pricing"],
+    langsmith: ["LangChain, LangSmith pricing: free developer seat; Plus $39 a seat a month.", "https://www.langchain.com/pricing"],
+    timeline: ["AI Services Companies, AI implementation timeline statistics 2026: pilots in 4 to 8 weeks; 51% go from idea to production in 3 to 6 months (Google Cloud); mid-market leaders about 90 days from pilot to rollout (MIT NANDA).", "https://aiservicescompanies.com/research/ai-implementation-timeline-statistics-2026"],
+    gartner_cost: ["Gartner, press release, 21 Oct 2024: a CIO who doesn't know how AI costs scale could be off by 500% to 1,000%.", "https://www.gartner.com/en/newsroom/press-releases/2024-10-21-gartner-identifies-four-emerging-challenges-to-delivering-value-from-ai-safely-and-at-scale"],
+    gartner_data: ["Gartner, Lack of AI-ready data puts AI projects at risk, 26 Feb 2025: through 2026, firms will abandon 60% of AI projects without AI-ready data.", "https://www.gartner.com/en/newsroom/press-releases/2025-02-26-lack-of-ai-ready-data-puts-ai-projects-at-risk"],
+    gartner_agent: ["Gartner, press release, 25 Jun 2025: over 40% of agentic AI projects will be canceled by the end of 2027.", "https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027"],
+    menlo:    ["Menlo Ventures, The state of generative AI in the enterprise, Dec 2025: 76% of AI use cases are bought, not built.", "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise"],
+    mit:      ["Fortune on MIT NANDA, Aug 2025: buying from specialist vendors and partners succeeds about 67% of the time; internal builds a third as often.", "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo"],
+    webby:    ["WebbyButter, AI project cost calculator: data volume adds 10% to 40% to the build.", "https://www.webbybutter.com/tools/ai-project-cost-calculator"],
+    kortex:   ["Kortex Labs, cost calculator: data preparation is usually 30% to 50% of an assistant build.", "https://kortexlabs.dev/cost-calculator"],
+    zdnet:    ["ZDNet on Gartner, Sep 2024: fine-tuning or building custom models costs $5 million to $20 million upfront.", "https://www.zdnet.com/article/a-third-of-all-gen-ai-projects-will-be-abandoned-says-gartner"]
+  };
+  const SRC_ORDER = Object.keys(SRC);
+
+  // Rates. Every figure here has a source; ranges marked est are Zavient estimates around a sourced anchor.
+  const R = {
+    staff: 46.89,                          // BLS ECEC, private industry total compensation per hour [ecec]
+    it: Math.round(65.38 / 0.70 * 100) / 100,  // BLS median developer wage / 70% wage share = $93.40 [oes][ecec]
+    ext: [147.04, 183.05, 234.28],         // GSA CALC+ AI/ML 25th, median, 75th percentile [gsa]
+    tiers: [ { i: 0.10, o: 0.50 }, { i: 2, o: 10 }, { i: 8, o: 40 } ], // small, mid, top model [claude][openai]
+    overhead: 1.15                         // retries and checks [ailoitte]
+  };
+
+  // Workflows: tokens per item [ailoitte]; how a ready-made tool charges; build hours [cleveroad][elements].
+  const WF = [
+    { id: "reply",   label: "Answer customer emails or chats", ex: "Support inbox, order questions, booking changes", tok: [12000, 1500], buy: "outcome", vdb: true,  hrs: [200, 500, 1000] },
+    { id: "extract", label: "Pull data out of documents or forms", ex: "Invoice entry, claims intake, applications", tok: [20000, 2000], buy: "seat", vdb: false, hrs: [200, 500, 1000] },
+    { id: "answer",  label: "Answer staff questions from our documents", ex: "Policies, manuals, contracts, past jobs", tok: [8000, 800], buy: "seat", vdb: true, hrs: [200, 500, 1000] },
+    { id: "draft",   label: "Draft or summarize", ex: "Letters, reports, quotes, case notes", tok: [3000, 2500], buy: "seat", vdb: false, hrs: [200, 500, 1000] },
+    { id: "route",   label: "Sort, route or flag items", ex: "Ticket triage, lead routing, risk flags", tok: [8000, 800], buy: "seat", vdb: false, hrs: [200, 500, 1000], tokEst: true },
+    { id: "agent",   label: "Run a multi-step task across systems", ex: "An agent that reads, checks, updates and sends", tok: [60000, 6000], buy: "seat", vdb: true, hrs: [300, 700, 1400], hrsEst: true }
+  ];
+  const ITEMS = [ { label: "Under 500", v: 250 }, { label: "500 to 2,000", v: 1000 }, { label: "2,000 to 10,000", v: 5000 }, { label: "10,000 to 50,000", v: 25000 }, { label: "Over 50,000", v: 75000 } ];
+  const PEOPLE = [ { label: "1 to 3", v: 2 }, { label: "4 to 10", v: 7 }, { label: "11 to 25", v: 18 }, { label: "26 to 50", v: 38 }, { label: "Over 50", v: 60 } ];
+  const MINUTES = [ { label: "Under 2 minutes", v: 1 }, { label: "2 to 10 minutes", v: 5 }, { label: "10 to 30 minutes", v: 20 }, { label: "Over 30 minutes", v: 45 } ];
+  const SYSTEMS = [ { label: "None: it works on files we hand it", v: 0 }, { label: "1 or 2", v: 1.5 }, { label: "3 to 5", v: 4 }, { label: "6 or more", v: 7 } ];
+  // Data factor on set-up work: 1.0 / 1.25 / 1.5 (est, from [webby] 10-40% and [kortex] 30-50%). Not sure spans all three.
+  const DATA = [ { label: "Clean and in one system", f: [1, 1, 1] }, { label: "Spread over a few systems, but usable", f: [1.25, 1.25, 1.25] },
+                 { label: "Messy: scanned, inconsistent or unknown", f: [1.5, 1.5, 1.5] }, { label: "Not sure", f: [1, 1.25, 1.5], unsure: true } ];
+  // Share of items a person checks, low/expected/high (est around [mck]: 27% check everything, a similar share check 20% or less).
+  const RISK = [ { label: "Low: an internal draft someone edits anyway", share: [0.05, 0.10, 0.20], key: "low" },
+                 { label: "Medium: it reaches customers or the books after a check", share: [0.20, 0.30, 0.50], key: "med" },
+                 { label: "High: money, health, legal or regulated decisions", share: [1, 1, 1], key: "high" },
+                 { label: "Not sure", share: [0.10, 0.30, 1], key: "unsure", unsure: true } ];
+  const PATHS = [ { id: "buy", label: "Buy a ready-made AI tool for this work" },
+                  { id: "platform", label: "Turn on AI in software we already pay for", ex: "Microsoft 365, Google Workspace, ChatGPT or Claude" },
+                  { id: "build", label: "Build our own, with a partner or our team" },
+                  { id: "unsure", label: "Not sure: compare all three" } ];
+  const PATH_NAME = { buy: "Buy a ready-made tool", platform: "Turn on AI you already pay for", build: "Custom build" };
+
+  // Fixed ranges (low / expected / high). est = Zavient estimate.
+  const K = {
+    discoveryHrs: [20, 40, 80],          // est: your team's scoping time
+    configDays: [5, 15, 40],             // est inside [elements] bands
+    platformImpl: [7020, 14040, 28080],  // [tei_smb] $14,040 expected; half and double are est
+    integDays: [3, 4, 5],                // [elements] per system
+    testShare: [0.10, 0.15, 0.25],       // est
+    trainHrs: [5, 10, 15],               // [tei_smb] 10 hours; 5 and 15 est
+    secHrs: { low: [8, 16, 40], med: [16, 40, 80], high: [16, 40, 80], unsure: [8, 40, 80] }, // est, internal IT time
+    compliance: [5000, 25000, 100000],   // [praxikon] small to mid-size, euros at about par
+    complianceYearly: [0.20, 0.30, 0.40],// [praxikon]
+    adminHrs: [5, 10, 20],               // est, scaled down from [tei_smb] 600 hours a year for a firm-wide rollout
+    outcomeFee: [0.99, 1.50, 2.00],      // [fin] [kapa] [agentforce]
+    aiSeat: [29, 50, 125],               // AI add-on seats in business software [fin] [kapa] [agentforce]
+    platformSeat: [20, 21, 30],          // [chatgpt][claudeteam] / [msbiz] / [msent]
+    vdb: [20, 50, 500],                  // [pinecone]
+    monitor: [0, 39, 117],               // [langsmith]; high = 3 seats, est
+    maint: [0.15, 0.20, 0.25],           // [eltex][team400]
+    reviewFactor: [0.15, 0.25, 0.40]     // est: checking an item takes this share of doing it by hand
+  };
+
+  const sum = (a) => a.reduce((x, y) => x + y, 0);
+  const tri = (f) => [0, 1, 2].map(f);
+
+  function apiMonthly(wf, items, tier) {
+    const p = R.tiers[tier];
+    return items * (wf.tok[0] * p.i + wf.tok[1] * p.o) / 1e6 * R.overhead;
+  }
+
+  // a = { wf, items (number), people, minutes, systems, data, risk } as option indexes, items as a count.
+  function estimate(a, path) {
+    const wf = WF[a.wf];
+    const items = a.items, ppl = PEOPLE[a.people].v, mins = MINUTES[a.minutes].v, nSys = SYSTEMS[a.systems].v;
+    const dataF = DATA[a.data].f, risk = RISK[a.risk];
+    const L = [];
+    const add = (o) => { L.push(o); return o; };
+
+    // One-time
+    add({ id: "discovery", kind: "once", name: "Scoping: your team's time", v: tri(i => K.discoveryHrs[i] * R.staff),
+          why: `${K.discoveryHrs[1]} hours of your team's time to pick the workflow, the measure and the vendor or partner, at $${R.staff} an hour.`, src: ["ecec"], est: true });
+    let setup;
+    if (path === "buy") setup = add({ id: "setup", kind: "once", name: "Set-up and configuration", v: tri(i => K.configDays[i] * 8 * R.ext[i]),
+          why: `${K.configDays[1]} days of set-up (Elements' bands run 10 to 50 days), priced at the middle of the federal schedule for outside AI work.`, src: ["elements", "gsa"], est: true });
+    else if (path === "platform") setup = add({ id: "setup", kind: "once", name: "Set-up: permissions, knowledge sources, agent", v: K.platformImpl.slice(),
+          why: "Forrester's small-business Copilot study put initial implementation at $14,040. Low and high are half and double.", src: ["tei_smb"], est: true });
+    else setup = add({ id: "setup", kind: "once", name: "Build, prompts and testing", v: tri(i => wf.hrs[i] * R.ext[i]),
+          why: `${wf.hrs[1]} hours of build work (published ranges run 200 to 1,400 hours), priced at the middle of the federal schedule for outside AI work.`, src: ["cleveroad", "elements", "gsa"], est: !!wf.hrsEst });
+    const integ = add({ id: "integ", kind: "once", name: "Connecting your systems", v: tri(i => nSys * K.integDays[i] * 8 * R.ext[i]),
+          why: nSys ? `3 to 5 days per system, for about ${nSys} system${nSys === 1 ? "" : "s"}.` : "No systems to connect, so no connection work.", src: ["elements", "gsa"] });
+    const data = add({ id: "data", kind: "once", name: "Data cleanup", v: tri(i => (dataF[i] - 1) * (setup.v[i] + integ.v[i])),
+          why: dataF[1] === 1 ? "Your data is clean, so no extra cleanup is added." : `Adds ${Math.round((dataF[1] - 1) * 100)}% to set-up and connections. Data prep is often 30% to 50% of a build.`, src: ["webby", "kortex"], est: true });
+    if (path !== "build") add({ id: "testing", kind: "once", name: "Testing on real past items", v: tri(i => K.testShare[i] * (setup.v[i] + integ.v[i])),
+          why: "15% of set-up and connection cost, to run the tool on past items with known answers.", src: [], est: true });
+    add({ id: "training", kind: "once", name: "Training the people who do the work", v: tri(i => ppl * K.trainHrs[i] * R.staff),
+          why: `${K.trainHrs[1]} hours for each of about ${ppl} people, as in Forrester's Copilot study, at $${R.staff} an hour.`, src: ["tei_smb", "ecec"] });
+    add({ id: "security", kind: "once", name: "Security and privacy review", v: tri(i => K.secHrs[risk.key][i] * R.it),
+          why: `${K.secHrs[risk.key][1]} hours of IT time at $${R.it} an hour (median developer wage plus benefits).`, src: ["oes", "ecec"], est: true });
+    let comp = null;
+    if (risk.key === "high" || risk.key === "unsure") comp = add({ id: "compliance", kind: "once", name: "Outside review for high-stakes work",
+          v: risk.key === "high" ? K.compliance.slice() : [0, 0, K.compliance[2]],
+          why: "Published EU AI Act compliance costs for small and mid-size firms, used as a yardstick for an outside review.", src: ["praxikon"], est: true });
+
+    // Monthly fees and upkeep
+    if (path === "buy") {
+      if (wf.buy === "outcome") add({ id: "fees", kind: "month", name: "Per-conversation fees", v: tri(i => items * K.outcomeFee[i]),
+          why: "$0.99 (Fin) to $2.00 (Zendesk pay as you go, Salesforce) for each conversation the AI handles. We price every item; you pay less if fewer are resolved.", src: ["fin", "kapa", "agentforce"] });
+      else add({ id: "fees", kind: "month", name: "AI seats for the people who do the work", v: tri(i => ppl * K.aiSeat[i]),
+          why: `About ${ppl} seats at $29 to $125 a month, the list prices of AI add-ons in business software. Some document tools charge per page instead.`, src: ["fin", "kapa", "agentforce"] });
+      add({ id: "admin", kind: "month", name: "An owner to tune and watch it", v: tri(i => K.adminHrs[i] * R.staff),
+          why: `${K.adminHrs[1]} hours a month. Forrester found a firm-wide Copilot rollout took 600 hours a year to run.`, src: ["tei_smb", "ecec"], est: true });
+    } else if (path === "platform") {
+      add({ id: "fees", kind: "month", name: "AI seats", v: tri(i => ppl * K.platformSeat[i]),
+          why: `About ${ppl} seats at $20 (ChatGPT Business, Claude Team) to $30 (Microsoft 365 Copilot); $21 for Copilot Business.`, src: ["chatgpt", "claudeteam", "msbiz", "msent"] });
+      add({ id: "api", kind: "month", name: "Usage by the agent", v: tri(i => apiMonthly(wf, items, i)),
+          why: "Agents on these platforms use metered credits or API-rate usage. We price it at API rates: small, mid and top models.", src: ["claudeent", "msbiz", "claude", "openai", "ailoitte"] });
+      add({ id: "admin", kind: "month", name: "An owner to tune and watch it", v: tri(i => K.adminHrs[i] * R.staff),
+          why: `${K.adminHrs[1]} hours a month. Forrester found a firm-wide Copilot rollout took 600 hours a year to run.`, src: ["tei_smb", "ecec"], est: true });
+    } else {
+      add({ id: "api", kind: "month", name: "AI model fees", v: tri(i => apiMonthly(wf, items, i)),
+          why: "Priced on small, mid and top models from Anthropic and OpenAI, with 15% added for retries.", src: ["claude", "openai", "ailoitte"] });
+      if (wf.vdb) add({ id: "hosting", kind: "month", name: "Search index for your documents", v: K.vdb.slice(),
+          why: "A vector database plan: $20 to $500 a month minimum.", src: ["pinecone"] });
+      add({ id: "monitor", kind: "month", name: "Monitoring and logs", v: K.monitor.slice(), why: "A tracing tool: free to $39 a seat a month.", src: ["langsmith"], est: true });
+      const buildBase = tri(i => setup.v[i] + integ.v[i] + data.v[i]);
+      add({ id: "maint", kind: "month", name: "Maintenance and fixes", v: tri(i => buildBase[i] * K.maint[i] / 12),
+          why: "15% to 25% of the build a year. It is a rule of thumb, not a measured law.", src: ["eltex", "team400"] });
+    }
+    if (comp) add({ id: "compyear", kind: "month", name: "Keeping the review current", v: tri(i => comp.v[i] * K.complianceYearly[i] / 12),
+          why: "20% to 40% of the outside review each year.", src: ["praxikon"] });
+
+    // Review: people's time checking the AI's work. Its own line.
+    const revMin = tri(i => Math.max(0.5, mins * K.reviewFactor[i]));
+    const revHrs = tri(i => items * risk.share[i] * revMin[i] / 60);
+    const review = { id: "review", kind: "review", name: "Your team's time checking the AI's work", v: tri(i => revHrs[i] * R.staff), hours: revHrs,
+          why: `${Math.round(risk.share[1] * 100)}% of items checked, about ${fmtMin(revMin[1])} each, at $${R.staff} an hour.`, src: ["mck", "workday", "ecec"], est: true };
+    L.push(review);
+
+    const once = tri(i => sum(L.filter(l => l.kind === "once").map(l => l.v[i])));
+    const month = tri(i => sum(L.filter(l => l.kind === "month").map(l => l.v[i])));
+    const rev = review.v;
+    const year = tri(i => once[i] + 12 * (month[i] + rev[i]));
+    const todayHrs = items * mins / 60;
+    const ttv = timeToValue(path, a);
+    return { path, lines: L, once, month, review: rev, reviewHrs: revHrs, year, todayHrs, ttv };
+  }
+
+  function fmtMin(m) { return m < 1 ? "30 seconds" : `${Math.round(m)} minute${Math.round(m) === 1 ? "" : "s"}`; }
+
+  function timeToValue(path, a) {
+    const messy = DATA[a.data].f[1] > 1.25 || DATA[a.data].unsure;
+    if (path === "build") return { text: messy ? "4 to 8 months to production" : "3 to 6 months to production", src: ["timeline"] };
+    return { text: messy ? "6 to 12 weeks to a working pilot" : "4 to 8 weeks to a working pilot", src: ["timeline"] };
+  }
+
+  // Answers with no single path ("Not sure") get the path with the lowest expected first-year total.
+  function run(ans) {
+    const all = ["buy", "platform", "build"].map(p => estimate(ans, p));
+    const pick = ans.path === 3 ? all.slice().sort((x, y) => x.year[1] - y.year[1])[0] : all[ans.path];
+    return { main: pick, all, auto: ans.path === 3 };
+  }
+
+  // Which answers move the expected first-year total most if they are one step off.
+  const SENS = [ { key: "items", name: "items a month" }, { key: "minutes", name: "minutes per item today" }, { key: "risk", name: "how risky a mistake is" },
+                 { key: "data", name: "how ready your data is" }, { key: "systems", name: "systems to connect" }, { key: "people", name: "people who do the work" } ];
+  function sensitivity(ans, path) {
+    const base = estimate(ans, path).year[1];
+    const opts = { items: ITEMS, minutes: MINUTES, risk: RISK.slice(0, 3), data: DATA.slice(0, 3), systems: SYSTEMS, people: PEOPLE };
+    return SENS.map(s => {
+      const list = opts[s.key];
+      let cur = ans[s.key];
+      let idx;
+      if (s.key === "items") { idx = ITEMS.reduce((b, o, k) => Math.abs(Math.log(o.v / cur)) < Math.abs(Math.log(ITEMS[b].v / cur)) ? k : b, 0); }
+      else idx = cur;
+      const unsure = (s.key === "risk" && RISK[cur].unsure) || (s.key === "data" && DATA[cur].unsure);
+      const tries = unsure ? list.map((_, k) => k) : [idx - 1, idx + 1].filter(k => k >= 0 && k < list.length);
+      let move = 0;
+      tries.forEach(k => {
+        const alt = Object.assign({}, ans, { [s.key]: s.key === "items" ? ITEMS[k].v : k });
+        move = Math.max(move, Math.abs(estimate(alt, path).year[1] - base));
+      });
+      return { key: s.key, name: s.name, move, unsure };
+    }).sort((x, y) => y.move - x.move);
+  }
+
+  const DEFAULTS = { wf: 1, items: 1000, people: 1, minutes: 1, systems: 1, data: 1, risk: 1, path: 3 };
+  return { SRC, SRC_ORDER, R, K, WF, ITEMS, PEOPLE, MINUTES, SYSTEMS, DATA, RISK, PATHS, PATH_NAME, estimate, run, sensitivity, apiMonthly, DEFAULTS };
+})();
+if (typeof module !== "undefined") module.exports = M;
+/* MODEL END */
+</script>
+<script>
+/* UI */
+const BOOK = "https://calendar.app.google/2xXiMLiamRFtfFKH9";
+const ROI = "/tools/ai-roi-calculator.html";
+const app = document.getElementById("app");
+
+const STEPS = [
+  { key: "wf", text: "Which workflow do you want an AI agent to handle?", help: "Pick the closest. You can change it later.", opts: M.WF.map(w => [w.label, w.ex]) },
+  { key: "items", text: "How many items does it handle a month?", help: "One item is one unit of this work: one email, one invoice, one claim, one ticket or one question.", opts: M.ITEMS.map(o => [o.label]), exact: true },
+  { key: "people", text: "How many people do this work today?", help: "They get trained, and on some paths each needs a seat.", opts: M.PEOPLE.map(o => [o.label]) },
+  { key: "minutes", text: "How long does one item take a person today?", help: "This sets how long checking the AI's work takes.", opts: M.MINUTES.map(o => [o.label]) },
+  { key: "systems", text: "How many systems does it need to read from or write to?", help: "For example email, your ERP or CRM, a claims or accounting system.", opts: M.SYSTEMS.map(o => [o.label]) },
+  { key: "data", text: "How ready is the information this work uses?", opts: M.DATA.map(o => [o.label]) },
+  { key: "risk", text: "How bad is a mistake?", help: "This sets how much of the AI's work your team checks.", opts: M.RISK.map(o => [o.label]) },
+  { key: "path", text: "How would you rather get it?", opts: M.PATHS.map(p => [p.label, p.ex]) }
+];
+
+let st = { step: "intro", i: 0, a: Object.assign({}, M.DEFAULTS), touched: {} };
+// A shared link carries the answers in the address after #
+function fromHash() {
+  const m = location.hash.match(/^#e=([\d.,]+)$/);
+  if (!m) return false;
+  const v = m[1].split(",").map(Number);
+  const keys = ["wf", "items", "people", "minutes", "systems", "data", "risk", "path"];
+  if (v.length !== keys.length || v.some(x => !isFinite(x))) return false;
+  const max = { wf: M.WF.length, people: M.PEOPLE.length, minutes: M.MINUTES.length, systems: M.SYSTEMS.length, data: M.DATA.length, risk: M.RISK.length, path: M.PATHS.length };
+  if (keys.some((k, j) => k !== "items" && (v[j] < 0 || v[j] >= max[k] || v[j] % 1))) return false;
+  keys.forEach((k, j) => st.a[k] = v[j]);
+  st.a.items = Math.max(1, Math.min(10000000, Math.round(st.a.items)));
+  st.step = "result";
+  return true;
+}
+function toHash() { return "#e=" + ["wf", "items", "people", "minutes", "systems", "data", "risk", "path"].map(k => st.a[k]).join(","); }
+
+// Footnotes: fixed numbers in Sources-list order.
+const fnNum = (id) => M.SRC_ORDER.indexOf(id) + 1;
+// Back-to-back sources share one superscript, written "3,7" like the page's own footnotes.
+const fns = (ids) => (ids && ids.length) ? `<sup class="fn">${ids.map(id => `<a href="#fn-${fnNum(id)}" aria-label="Source ${fnNum(id)}">${fnNum(id)}</a>`).join('<span class="fn-sep">,</span>')}</sup>` : "";
+document.addEventListener("click", (e) => {
+  const l = e.target.closest && e.target.closest('a[href^="#fn-"]');
+  if (l) { const d = document.getElementById("footnotes"); if (d) d.open = true; }
+});
+
+function money(n) {
+  n = Math.round(n);
+  if (n >= 1e6) return "$" + (n / 1e6).toFixed(n >= 1e7 ? 0 : 1) + "M";
+  if (n >= 1e5) return "$" + Math.round(n / 1000) + "K";
+  if (n >= 1e4) return "$" + (n / 1000).toFixed(1).replace(/\.0$/, "") + "K";
+  if (n >= 1000) return "$" + (Math.round(n / 10) * 10).toLocaleString("en-US");
+  return "$" + n.toLocaleString("en-US");
+}
+function moneyRound(n) { // 3 significant figures, full form, for the bottom line
+  if (n < 1000) return "$" + Math.round(n).toLocaleString("en-US");
+  const p = Math.pow(10, Math.floor(Math.log10(n)) - 2);
+  return "$" + (Math.round(n / p) * p).toLocaleString("en-US");
+}
+const lc = (t) => { t = t.split(":")[0]; return t.charAt(0).toLowerCase() + t.slice(1); };
+const hrs = (h) => h < 10 ? (Math.round(h * 10) / 10) + "" : Math.round(h).toLocaleString("en-US");
+
+function render() {
+  document.body.classList.toggle("in-quiz", st.step === "q");
+  if (st.step === "intro") return renderIntro();
+  if (st.step === "q") return renderQ();
+  return renderResult();
+}
+
+function renderIntro() {
+  app.innerHTML = `
+  <section class="card">
+    <div class="eyebrow">Before you start</div>
+    <p>You'll answer eight plain questions about one piece of work, like invoice entry or customer emails. Every number comes from a published price or study, linked below the result. Where we had to use judgment, it says <span class="tag">Zavient estimate</span>.</p>
+    <div class="row">
+      <button class="btn btn-primary" id="go">Start the estimate</button>
+      <button class="btn btn-ghost" id="ex">See a worked example</button>
+    </div>
+    <p class="small">Your answers stay in your browser. We don't see them.</p>
+  </section>`;
+  document.getElementById("go").onclick = () => { st.step = "q"; st.i = 0; render(); };
+  document.getElementById("ex").onclick = () => { st.a = Object.assign({}, M.DEFAULTS); st.step = "result"; render(); };
+}
+
+function renderQ() {
+  const s = STEPS[st.i];
+  const cur = s.key === "items" ? M.ITEMS.findIndex(o => o.v === st.a.items) : (st.touched[s.key] ? st.a[s.key] : -1);
+  const pct = Math.round((st.i) / STEPS.length * 100);
+  app.innerHTML = `
+  <section class="card">
+    <div class="progress" aria-hidden="true"><div style="width:${pct}%"></div></div>
+    <div class="qnum">Question ${st.i + 1} of ${STEPS.length}</div>
+    <h2 class="qtext" id="qh">${s.text}</h2>
+    ${s.help ? `<p class="qhelp">${s.help}</p>` : ""}
+    <div class="opts" role="group" aria-labelledby="qh">
+      ${s.opts.map((o, k) => `<button class="opt${k === cur ? " sel" : ""}" data-k="${k}">${o[0]}${o[1] ? `<small>${o[1]}</small>` : ""}</button>`).join("")}
+    </div>
+    ${s.exact ? `<label class="exact">Or type the number: <input id="exact" type="number" inputmode="numeric" min="1" step="1" value="${M.ITEMS.some(o => o.v === st.a.items) ? "" : st.a.items}"> <button class="btn btn-ghost" id="exact-go">Next</button></label>` : ""}
+    <div class="row">
+      ${st.i > 0 ? `<button class="btn btn-plain" id="back">Back</button>` : ""}
+    </div>
+  </section>`;
+  app.querySelectorAll(".opt").forEach(b => b.onclick = () => {
+    const k = Number(b.dataset.k);
+    st.a[s.key] = s.key === "items" ? M.ITEMS[k].v : k;
+    st.touched[s.key] = true;
+    next();
+  });
+  const back = document.getElementById("back");
+  if (back) back.onclick = () => { st.i--; render(); };
+  const eg = document.getElementById("exact-go");
+  if (eg) eg.onclick = () => {
+    const n = Math.round(Number(document.getElementById("exact").value));
+    if (n >= 1 && n <= 10000000) { st.a.items = n; st.touched.items = true; next(); }
+    else document.getElementById("exact").focus();
+  };
+  const first = app.querySelector(".opt.sel") || app.querySelector(".opt");
+  if (first) first.focus({ preventScroll: true });
+}
+function next() {
+  if (st.i < STEPS.length - 1) { st.i++; render(); }
+  else { st.step = "result"; render(); }
+  window.scrollTo(0, 0);
+}
+
+function lineHtml(l) {
+  const amt = l.kind === "once" ? money(l.v[1]) : `${money(l.v[1])}/mo`;
+  const range = l.v[0] === l.v[2] ? "" : ` <span class="muted">(${money(l.v[0])} to ${money(l.v[2])})</span>`;
+  return `<div class="line"><div class="nm">${l.name} ${l.est ? '<span class="tag">Zavient estimate</span>' : ""}</div><div class="amt">${amt}</div>
+    <div class="why">${l.why}${fns(l.src)}${range}</div></div>`;
+}
+
+const SHRINK = {
+  review: "Check a sample, not every item, once the AI has proven itself on your own past work.",
+  setup: "Start with one narrow step and the vendor's standard set-up before any custom work.",
+  integ: "Connect one system for the pilot. Add the others once it works.",
+  data: "Clean only the fields this workflow uses, not the whole system.",
+  testing: "Test on 50 real past items with known answers, not a big test plan.",
+  training: "Train the people who do this work first. Everyone else can wait.",
+  security: "Reuse the vendor review checklist you already have.",
+  compliance: "Scope the outside review to this one use, not every AI tool you run.",
+  compyear: "Fold the yearly check into a review you already do.",
+  fees: "Ask for a committed-volume price, and license only the people who touch this work.",
+  api: "Send routine items to a small model. It costs about a twentieth as much per item.",
+  admin: "Name one owner and give them a fixed few hours a week.",
+  maint: "Agree a fixed monthly support scope with whoever builds it.",
+  hosting: "Use the search built into a tool you already pay for, if your documents live there.",
+  monitor: "Start with the free tier of a tracing tool.",
+  discovery: "Timebox scoping to two weeks with one decision-maker."
+};
+
+function renderResult() {
+  const a = st.a;
+  const r = M.run(a);
+  const e = r.main;
+  const wf = M.WF[a.wf];
+  const sens = M.sensitivity(a, e.path).slice(0, 2);
+  const firstYearLine = (l) => l.kind === "once" ? l.v[1] : 12 * l.v[1];
+  const ranked = e.lines.slice().sort((x, y) => firstYearLine(y) - firstYearLine(x));
+  const top = ranked[0];
+  const apiLine = e.lines.find(l => l.id === "api");
+  const aiBill = apiLine ? apiLine.v[1] : 0;
+  const notAi = top.id !== "api";
+  const revHrs = e.reviewHrs[1];
+  const pathName = M.PATH_NAME[e.path];
+  const cheapest = r.all.slice().sort((x, y) => x.year[1] - y.year[1])[0];
+
+  const once = e.lines.filter(l => l.kind === "once");
+  const monthly = e.lines.filter(l => l.kind === "month");
+  const review = e.lines.find(l => l.kind === "review");
+
+  // What you can skip
+  const ppl = M.PEOPLE[a.people].v;
+  const skip = [];
+  if (e.path === "build" && ppl <= 10) skip.push(`<strong>Skip the custom build for now.</strong> With ${M.PEOPLE[a.people].label} people on this work, seats at $20 to $30 a month each cost far less.${fns(["chatgpt", "msbiz", "msent"])}`);
+  if (M.RISK[a.risk].key === "low") skip.push(`<strong>Skip checking everything.</strong> For internal drafts, a 10% spot check is common; a similar share of firms check 20% or less.${fns(["mck"])}`);
+  if (e.path !== "buy" && a.items < 10000) skip.push(`<strong>Skip the top-tier model.</strong> At your volume a small model is about a twentieth of the price per item. Move up only where it gets things wrong.${fns(["claude", "openai"])}`);
+  if (!wf.vdb) skip.push(`<strong>Skip a search database.</strong> This workflow reads the item in front of it, not a library of documents.${fns(["pinecone"])}`);
+  else skip.push(`<strong>Skip a separate search database</strong> if your documents already live in a tool with AI search you pay for.${fns(["msbiz"])}`);
+  skip.push(`<strong>Skip training your own model.</strong> Fine-tuning or custom models start at $5 million at large firms. Off-the-shelf models with your documents cover most first projects.${fns(["zdnet"])}`);
+  if (a.systems >= 2) skip.push(`<strong>Skip connecting every system on day one.</strong> Each one adds 3 to 5 days of work.${fns(["elements"])}`);
+
+  // Risk flags
+  const flags = [];
+  if (M.DATA[a.data].f[1] > 1.25 || M.DATA[a.data].unsure) flags.push(`Messy or unknown data is the most common way these projects die. Gartner expects firms to abandon 60% of AI projects without AI-ready data.${fns(["gartner_data"])}`);
+  if (wf.id === "agent") flags.push(`Start with one step of the chain, not all of it. Gartner expects over 40% of agentic AI projects to be canceled by the end of 2027.${fns(["gartner_agent"])}`);
+  if (e.path === "build") flags.push(`Bought or partner-built tools reach production about twice as often as internal builds.${fns(["mit"])} Most firms now buy.${fns(["menlo"])}`);
+
+  const sensText = sens.map(s => `<strong>${s.name}</strong>${s.unsure ? " (you said not sure)" : ""}: one step off moves the first-year total by about ${money(s.move)}`);
+
+  app.innerHTML = `
+  <section class="card bluf" id="result-top" tabindex="-1">
+    <div class="eyebrow">Your estimate</div>
+    <div class="big">${moneyRound(e.year[1])}</div>
+    <p><strong>Expected first-year cost, all in, including your team's checking time.</strong> That is ${money(e.once[1])} to set up, then ${money(e.month[1])} a month in fees and upkeep, plus about ${hrs(revHrs)} team hours a month checking the AI's work. Range: ${money(e.year[0])} to ${money(e.year[2])}.</p>
+    <p>${notAi ? `The biggest cost here isn't the AI. It's <strong>${lc(top.name)}</strong>.` : `Your biggest cost is <strong>${lc(top.name)}</strong>.`}${aiBill ? ` The AI model itself is about ${money(aiBill)} a month.` : ""}</p>
+    <p class="pathtag">${wf.label} &middot; ${pathName}${r.auto ? " (the lowest-cost path for your answers)" : ""}</p>
+  </section>
+
+  <section class="card">
+    <h2>Low, expected and high</h2>
+    <div class="grid3" role="table" aria-label="Cost range">
+      <div class="h" role="columnheader"></div><div class="h v" role="columnheader">Low</div><div class="h v" role="columnheader">Expected</div><div class="h v" role="columnheader">High</div>
+      <div class="k" role="rowheader">One-time</div>${e.once.map((x, i) => `<div class="v${i === 1 ? " ex" : ""}">${money(x)}</div>`).join("")}
+      <div class="k" role="rowheader">Fees and upkeep a month</div>${e.month.map((x, i) => `<div class="v${i === 1 ? " ex" : ""}">${money(x)}</div>`).join("")}
+      <div class="k" role="rowheader">Team review time a month</div>${e.review.map((x, i) => `<div class="v${i === 1 ? " ex" : ""}">${money(x)}</div>`).join("")}
+      <div class="k tot" role="rowheader">First year</div>${e.year.map((x, i) => `<div class="v tot${i === 1 ? " ex" : ""}">${money(x)}</div>`).join("")}
+    </div>
+    <p class="small">Low uses the cheapest published prices and a small AI model. High uses the top of each range and a top-tier model.</p>
+  </section>
+
+  <section class="card">
+    <h2>Your team stays in charge of the checking</h2>
+    <p>Today this work takes about <strong>${hrs(e.todayHrs)} hours a month</strong>. With AI taking the first pass, your team spends about <strong>${hrs(revHrs)} hours a month</strong> checking its work (${money(e.review[1])} of their time). That is time your current team already has, not a new bill. People keep the final say; the other hours move to exceptions, customers and judgment calls.</p>
+    <p class="muted">Budget for the checking. Nearly 40% of AI time savings go to fixing low-quality output.${fns(["workday"])}</p>
+    <p><a href="${ROI}" target="_top">Will it pay back? Try the AI ROI calculator</a></p>
+  </section>
+
+  <section class="card">
+    <h2>Your three biggest cost drivers</h2>
+    <ul class="pts">${ranked.slice(0, 3).map(l => `<li><strong>${l.name}</strong>: ${money(firstYearLine(l))} in year one. ${SHRINK[l.id] || ""}</li>`).join("")}</ul>
+  </section>
+
+  <section class="card">
+    <h2>Two answers widen your range most</h2>
+    <ul class="pts">${sensText.map(t => `<li>${t}.</li>`).join("")}</ul>
+    <p class="muted">Pin these two down first. AI cost estimates can be off by 500% to 1,000% when nobody checks how costs scale.${fns(["gartner_cost"])}</p>
+  </section>
+
+  <section class="card">
+    <h2>Buy, turn on or build?</h2>
+    <div class="paths">${r.all.map(p => `<div class="pathcard${p.path === e.path ? " on" : ""}"><h3>${M.PATH_NAME[p.path]}</h3>${p === cheapest ? '<span class="tag" style="align-self:flex-start;color:var(--blue-dark);background:var(--paper)">Lowest cost</span>' : ""}
+      <div class="n">${money(p.year[1])}</div><p>first year, expected</p>
+      <p>${money(p.once[1])} set-up, ${money(p.month[1] + p.review[1])}/mo with review time</p><p>${p.ttv.text}${fns(p.ttv.src)}</p></div>`).join("")}</div>
+    <p class="muted">76% of AI use cases are now bought, not built.${fns(["menlo"])}</p>
+  </section>
+
+  <section class="card">
+    <h2>Every line, with its source</h2>
+    <h3>One-time</h3>
+    <div class="lines">${once.map(lineHtml).join("")}</div>
+    <h3>Every month</h3>
+    <div class="lines">${monthly.map(lineHtml).join("")}</div>
+    <h3>Team time</h3>
+    <div class="lines">${lineHtml(review).replace("/mo</div>", `/mo<br><span class="small">${hrs(revHrs)} h/mo</span></div>`)}</div>
+  </section>
+
+  <section class="card">
+    <h2>Time to first value</h2>
+    <p><strong>${e.ttv.text}.</strong>${fns(e.ttv.src)} ${e.path === "build" ? "Half of firms take 3 to 6 months from idea to production." : "Pilots on ready-made tools usually run 4 to 8 weeks; mid-market leaders reach full rollout in about 90 days."}${fns(["timeline"])}</p>
+  </section>
+
+  <section class="card">
+    <h2>What you can skip for now</h2>
+    <ul class="pts">${skip.map(t => `<li>${t}</li>`).join("")}</ul>
+  </section>
+
+  ${flags.length ? `<section class="card"><h2>Watch out</h2>${flags.map(f => `<p class="flag">${f}</p>`).join("")}</section>` : ""}
+
+  <section class="offer">
+    <div class="eyebrow">Free diagnostic</div>
+    <h2>Want the detailed plan behind your result? Book the free 30-minute diagnostic.</h2>
+    <p>In 30 minutes we'll pin down your two widest cost drivers (${sens.map(s => s.name).join(" and ")}), check whether a tool you already pay for can do this, and name the first step to test.</p>
+    <div class="row"><a class="btn btn-primary" href="${BOOK}" target="_blank" rel="noopener">Book the free diagnostic</a></div>
+    <p class="small">Or email <a href="mailto:hello@zavient.com">hello@zavient.com</a> with two sentences on the work.</p>
+  </section>
+
+  <div class="row">
+    <button class="btn btn-ghost" id="edit">Change my answers</button>
+    <button class="btn btn-ghost" id="copy">Copy a link to this estimate</button>
+    <button class="btn btn-plain" id="restart">Start over</button>
+  </div>
+  <p class="small" id="copied" aria-live="polite"></p>`;
+
+  document.getElementById("edit").onclick = () => { st.step = "q"; st.i = 0; STEPS.forEach(s => st.touched[s.key] = true); render(); };
+  document.getElementById("restart").onclick = () => { st = { step: "intro", i: 0, a: Object.assign({}, M.DEFAULTS), touched: {} }; history.replaceState(null, "", location.pathname); render(); };
+  const link = location.href.split("#")[0] + toHash();
+  try { history.replaceState(null, "", toHash()); } catch (err) {}
+  document.getElementById("copy").onclick = () => {
+    const out = document.getElementById("copied");
+    const done = () => { out.textContent = "Link copied. Anyone you send it to sees this estimate."; };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(link).then(done, () => { out.textContent = link; });
+    else out.textContent = link;
+  };
+  const top_ = document.getElementById("result-top");
+  if (top_) top_.focus({ preventScroll: true });
+}
+
+function renderSources() {
+  document.getElementById("fn-list").innerHTML = M.SRC_ORDER.map((id, k) => {
+    const [text, url] = M.SRC[id];
+    const host = url.replace(/^https?:\/\//, "").split("/")[0].replace(/^www\./, "");
+    return `<li id="fn-${k + 1}">${text} <a href="${url}" target="_blank" rel="noopener">${host}</a></li>`;
+  }).join("");
+  const R = M.R, K = M.K;
+  const items = [
+    `Every line is priced three times: low, expected and high. The first-year total is one-time costs plus 12 months of fees, upkeep and review time.`,
+    `Staff time is priced at $${R.staff} an hour, the US private-industry average of wages plus benefits.${fns(["ecec"])} IT time is $${R.it} an hour: the median developer wage of $65.38 divided by the 70% wage share.${fns(["oes", "ecec"])}`,
+    `Outside build and set-up work is priced from GSA federal schedule ceiling rates for AI work: the middle rate for the expected case, the lower and upper quartiles for the low and high cases.${fns(["gsa"])}`,
+    `AI model fees = items a month × (input tokens × input price + output tokens × output price) ÷ 1,000,000 × 1.15 for retries.${fns(["ailoitte"])} Tokens per item come from published per-task profiles.${fns(["ailoitte"])} Low, expected and high use small ($0.10/$0.50), mid ($2/$10) and top ($8/$40) models per million tokens.${fns(["claude", "openai"])}`,
+    `Review time = items × share checked × minutes per check ÷ 60 × $${R.staff}. The share checked is 10%, 30% or 100% by how bad a mistake is. Checking takes a quarter of the time the work takes today. <span class="tag">Zavient estimate</span>${fns(["mck", "workday"])}`,
+    `Connecting systems adds 3 to 5 days each.${fns(["elements"])} Messy data adds 25% to 50% to set-up and connections. <span class="tag">Zavient estimate</span>${fns(["webby", "kortex"])}`,
+    `Training is 10 hours per person who does the work, from Forrester's Copilot studies (commissioned by Microsoft). In one, training cost more than the licences.${fns(["tei_smb", "tei_ent"])}`,
+    `Maintenance for a custom build is 15% to 25% of the build a year, a rule of thumb.${fns(["eltex", "team400"])}`,
+    `Lines marked <span class="tag">Zavient estimate</span> are our judgment around a published anchor. The diagnostic replaces them with your own numbers.`
+  ];
+  document.getElementById("method-list").innerHTML = items.map(t => `<li>${t}</li>`).join("");
+}
+
+renderSources();
+fromHash();
+render();
+</script>
+</body>
+</html>

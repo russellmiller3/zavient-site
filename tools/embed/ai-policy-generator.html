@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI policy generator: your company's AI use policy in 10 minutes</title>
+<meta name="description" content="Free AI policy generator for firms of 40 to 500 people. Answer 10 plain questions and get an editable AI use policy template built for your industry, data and locations.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://zavient.com/tools/ai-policy-generator.html">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@600;700;800&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Zavient AI policy generator. Same light blue system as /ai-readiness-assessment.html, inlined so the tool stands
+   alone in an iframe or full screen. One question per screen; the result is the whole policy, editable on the page. */
+:root {
+  --ink: #15202E; --ink-soft: #3C4A5C; --muted: #5F6B7A;
+  --line: #D8E0EA; --line-strong: #B9C6D6;
+  --paper: #FFFFFF; --paper-alt: #F3F6FA;
+  --blue: #1F5FBF; --blue-dark: #174A96; --blue-wash: #EAF1FB; --blue-grid: rgba(31, 95, 191, 0.075);
+  --red: #B5452F; --red-wash: #F8E9E5;
+  --amber: #A86A10; --amber-wash: #FBF1DC;
+  --green: #2D7650; --green-wash: #E6F3EC;
+  --sans: 'Figtree', 'Helvetica Neue', Arial, sans-serif;
+  --serif: 'Crimson Pro', Georgia, serif;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+::selection { background: rgba(31, 95, 191, 0.18); }
+body { background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 20px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: var(--blue); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--blue-dark); }
+.wrap { max-width: 820px; margin: 0 auto; padding: 0 20px; }
+
+/* Top strip with a faint grid, like the site hero */
+.top { position: relative; padding: 20px 0 16px; background: linear-gradient(180deg, var(--blue-wash) 0%, var(--paper) 100%); border-bottom: 1px solid var(--line); }
+.top::before { content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(var(--blue-grid) 1px, transparent 1px), linear-gradient(90deg, var(--blue-grid) 1px, transparent 1px);
+  background-size: 28px 28px; -webkit-mask-image: linear-gradient(180deg, #000, transparent); mask-image: linear-gradient(180deg, #000, transparent); }
+.top .wrap { position: relative; display: flex; flex-direction: column; gap: 6px; }
+.logo { font-family: var(--sans); font-weight: 800; font-size: 20px; color: var(--ink); text-decoration: none; }
+.logo em { color: var(--blue); font-style: normal; }
+.top h1 { font-family: var(--sans); font-weight: 800; font-size: clamp(24px, 4.4vw, 34px); line-height: 1.12; letter-spacing: -0.02em; text-wrap: balance; }
+
+main { padding: 22px 0 48px; }
+#app { display: flex; flex-direction: column; gap: 20px; }
+h2, h3 { font-family: var(--sans); color: var(--ink); text-wrap: balance; }
+h2 { font-weight: 700; font-size: clamp(22px, 3.2vw, 28px); line-height: 1.22; letter-spacing: -0.01em; }
+h3 { font-weight: 700; font-size: 19px; line-height: 1.3; }
+p { max-width: 68ch; }
+.card { background: var(--paper); border: 1px solid var(--line); padding: clamp(18px, 4vw, 30px); display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.eyebrow { font-family: var(--mono); font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); }
+.facts { list-style: none; display: flex; flex-direction: column; }
+.facts li { position: relative; padding: 7px 0 7px 22px; font-size: 19px; line-height: 1.45; }
+.facts li + li { border-top: 1px solid var(--line); }
+.facts li::before { content: ""; position: absolute; left: 2px; top: 17px; width: 8px; height: 8px; background: var(--blue); }
+.disclose { font-size: 18px; color: var(--ink-soft); border-left: 3px solid var(--blue); background: var(--blue-wash); padding: 12px 16px; max-width: none; }
+.warn { border-left-color: var(--amber); background: var(--amber-wash); }
+
+/* Buttons: one button font everywhere */
+.btn { appearance: none; border: 1.5px solid transparent; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--sans); font-weight: 600; font-size: 16px; line-height: 1.2; min-height: 44px; padding: 11px 18px; border-radius: 2px; text-decoration: none; transition: background .12s, color .12s, border-color .12s; }
+.btn-primary { background: var(--blue); color: #fff; }
+.btn-primary:hover { background: var(--blue-dark); color: #fff; }
+.btn-line { background: var(--paper); color: var(--blue); border-color: var(--line-strong); }
+.btn-line:hover { border-color: var(--blue); }
+.btn-ghost { background: transparent; color: var(--muted); padding: 10px 6px; }
+.btn-ghost:hover { color: var(--blue); }
+.btn[disabled] { opacity: .45; cursor: not-allowed; }
+.btn:focus-visible, .opt:focus-visible, .chip:focus-visible, input:focus-visible, a:focus-visible, .policy:focus-visible { outline: 3px solid rgba(31, 95, 191, 0.45); outline-offset: 2px; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+
+/* Questions */
+.progress { height: 6px; background: var(--blue-wash); overflow: hidden; }
+.progress > div { height: 100%; background: var(--blue); transition: width .3s ease; }
+.qtag { font-family: var(--mono); font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.qtext { font-family: var(--sans); font-weight: 700; font-size: clamp(22px, 3.4vw, 27px); line-height: 1.25; letter-spacing: -0.01em; text-wrap: balance; }
+.qhelp { font-size: 18px; color: var(--ink-soft); }
+.opts { display: flex; flex-direction: column; gap: 9px; }
+.opt { text-align: left; width: 100%; min-height: 48px; background: var(--paper); color: var(--ink); border: 1.5px solid var(--line); border-radius: 2px;
+  padding: 10px 14px; font: 400 19px/1.35 var(--serif); cursor: pointer; display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: center; transition: border-color .12s, background .12s; }
+.opt:hover { border-color: var(--blue); }
+.opt.sel { border-color: var(--blue); background: var(--blue-wash); }
+.opt .key { font-family: var(--mono); font-size: 14px; color: var(--muted); border: 1px solid var(--line-strong); width: 26px; height: 26px; display: grid; place-items: center; }
+.opt.multi .key { border-radius: 0; }
+.opt.sel .key { background: var(--blue); color: #fff; border-color: var(--blue); }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-family: var(--sans); font-weight: 600; font-size: 16px; }
+.field input[type=text] { font: 400 19px var(--serif); padding: 10px 12px; min-height: 48px; border: 1.5px solid var(--line-strong); border-radius: 2px; background: var(--paper); color: var(--ink); width: 100%; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { appearance: none; cursor: pointer; font-family: var(--sans); font-weight: 600; font-size: 16px; min-height: 44px; padding: 10px 14px; border-radius: 2px;
+  border: 1.5px solid var(--line); background: var(--paper); color: var(--ink); }
+.chip.sel { border-color: var(--blue); background: var(--blue-wash); color: var(--blue-dark); }
+.sub { display: flex; flex-direction: column; gap: 8px; border-top: 1px solid var(--line); padding-top: 14px; }
+.sub-q { font-family: var(--sans); font-weight: 700; font-size: 18px; }
+.qnav { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.hint { font-family: var(--mono); font-size: 14px; color: var(--muted); }
+.tag-est { font-family: var(--mono); font-size: 14px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line); padding: 1px 6px; white-space: nowrap; }
+
+/* Result */
+.added { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; }
+.added li { font-family: var(--mono); font-size: 14px; color: var(--blue-dark); background: var(--blue-wash); padding: 3px 8px; }
+.fix { display: flex; flex-direction: column; gap: 10px; counter-reset: fix; list-style: none; }
+.fix li { position: relative; border: 1px solid var(--line); border-left: 3px solid var(--blue); background: var(--paper); padding: 12px 14px 12px 50px; counter-increment: fix; }
+.fix li::before { content: counter(fix); position: absolute; left: 14px; top: 13px; width: 24px; height: 24px; display: grid; place-items: center; background: var(--blue); color: #fff; font: 600 14px var(--mono); }
+.fix strong { display: block; font-family: var(--sans); font-weight: 700; font-size: 18px; line-height: 1.3; margin-bottom: 2px; }
+.fix span { font-size: 18px; color: var(--ink-soft); }
+.diag-line { font-size: 19px; }
+.diag-line a { font-weight: 600; }
+.toolbar { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 0; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); }
+.toolbar .btn { flex: 1 1 auto; }
+.status { font-family: var(--mono); font-size: 14px; color: var(--green); min-height: 20px; }
+
+/* The policy document itself */
+.policy { font-family: var(--serif); font-size: 18px; line-height: 1.55; color: var(--ink); border: 1px solid var(--line-strong); padding: clamp(16px, 4vw, 34px); background: #fff; outline: none; overflow-wrap: break-word; }
+.policy h1 { font-family: var(--sans); font-size: 26px; line-height: 1.2; margin-bottom: 6px; }
+.policy h2 { font-size: 20px; margin: 22px 0 6px; }
+.policy h3 { font-size: 17px; margin: 14px 0 4px; }
+.policy p, .policy li { max-width: none; margin-bottom: 8px; }
+.policy ul, .policy ol { margin: 0 0 8px 24px; }
+.policy .meta { font-family: var(--mono); font-size: 14px; color: var(--muted); }
+.policy .branch { border-left: 3px solid var(--blue); padding-left: 10px; }
+.policy mark.ph { background: #FFF4C2; color: var(--ink); padding: 0 2px; }
+.policy sup { font-family: var(--mono); font-size: 12px; color: var(--blue); }
+.policy sup .fn-sep { font-family: var(--sans); }
+.policy table { border-collapse: collapse; width: 100%; margin: 6px 0 12px; font-size: 16px; }
+.policy th, .policy td { border: 1px solid var(--line-strong); padding: 6px 8px; text-align: left; vertical-align: top; overflow-wrap: normal; word-break: normal; hyphens: manual; }
+.policy th { background: var(--paper-alt); font-family: var(--sans); font-size: 15px; }
+.policy .notes li { font-size: 15px; color: var(--ink-soft); }
+.policy .disclaimer { font-size: 16px; color: var(--ink-soft); border: 1px solid var(--line); background: var(--paper-alt); padding: 10px 12px; }
+.table-scroll { overflow-x: auto; }
+/* Phones: each table row becomes a labelled card, so no column is squeezed into breaking words mid-word (26 Nov 2026).
+   The labels come from data-label, which labelTables() copies from the header row. */
+@media (max-width: 600px) {
+  .policy table, .policy tbody, .policy tr, .policy td { display: block; width: 100%; }
+  .policy thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .policy tr { border: 1px solid var(--line-strong); padding: 8px 12px; margin-bottom: 10px; }
+  .policy td { border: 0; padding: 4px 0; }
+  .policy td + td { border-top: 1px solid var(--line); }
+  .policy td[data-label]::before { content: attr(data-label); display: block; font-family: var(--sans); font-weight: 700; font-size: 14px; color: var(--muted); }
+}
+
+/* Step 2: the risk check */
+.yn { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center; padding: 10px 0; border-top: 1px solid var(--line); }
+.yn span { font-size: 18px; line-height: 1.35; }
+.yn .chips { flex-wrap: nowrap; }
+@media (max-width: 480px) { .yn { grid-template-columns: 1fr; } }
+.tier { display: inline-flex; align-items: center; font-family: var(--mono); font-size: 14px; text-transform: uppercase; letter-spacing: .06em; padding: 4px 10px; font-weight: 600; align-self: flex-start; }
+.t-low { background: var(--green-wash); color: var(--green); }
+.t-med { background: var(--amber-wash); color: var(--amber); }
+.t-high { background: var(--red-wash); color: var(--red); }
+.t-na { background: var(--ink); color: #fff; }
+.uses { display: flex; flex-direction: column; gap: 12px; }
+.use { border: 1px solid var(--line); padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+.use h3 { font-size: 18px; }
+.use ul { margin-left: 22px; font-size: 18px; color: var(--ink-soft); }
+
+/* The offer: same treatment as the site's free-diagnostic block */
+.offer { position: relative; border: 1px solid var(--line); padding: clamp(22px, 5vw, 40px) clamp(18px, 4vw, 30px); background: linear-gradient(0deg, var(--blue-wash) 0%, var(--paper) 100%); overflow: hidden; display: flex; flex-direction: column; gap: 12px; }
+.offer::before { content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(var(--blue-grid) 1px, transparent 1px), linear-gradient(90deg, var(--blue-grid) 1px, transparent 1px);
+  background-size: 28px 28px; -webkit-mask-image: linear-gradient(0deg, #000, transparent); mask-image: linear-gradient(0deg, #000, transparent); }
+.offer > * { position: relative; }
+.offer h2 { font-weight: 800; font-size: clamp(24px, 4vw, 32px); line-height: 1.15; }
+.offer p { color: var(--ink-soft); }
+.offer ul { margin-left: 22px; color: var(--ink-soft); font-size: 18px; }
+.offer .btn { align-self: flex-start; }
+
+/* Method + sources */
+.method, .sources { margin-top: 20px; }
+details > summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; }
+.method ul { list-style: none; margin-top: 8px; }
+.method li { position: relative; padding: 0 0 0 22px; margin-bottom: 10px; font-size: 18px; color: var(--ink-soft); }
+.method li::before { content: ''; position: absolute; left: 4px; top: 12px; width: 7px; height: 7px; background: var(--blue); }
+sup.fn { font-size: 0.62em; line-height: 0; margin-left: 1px; font-family: var(--mono); }
+sup.fn a { color: var(--blue); text-decoration: none; font-weight: 600; }
+sup.fn .fn-sep { font-family: var(--sans); color: var(--muted); margin: 0 2px 0 0; }
+.sources ol { margin: 8px 0 0 26px; display: flex; flex-direction: column; gap: 8px; font-size: 16px; line-height: 1.5; color: var(--ink-soft); }
+.sources li { overflow-wrap: anywhere; scroll-margin-top: 20px; }
+.sources li:target { background: var(--blue-wash); }
+.small { font-family: var(--mono); font-size: 14px; color: var(--muted); }
+.foot { margin-top: 28px; padding-top: 14px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 14px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.foot a { color: var(--muted); }
+
+@media (max-width: 720px) { body { font-size: 19px; } .wrap { padding: 0 16px; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media print {
+  body * { visibility: hidden; }
+  .policy, .policy * { visibility: visible; }
+  .policy { position: absolute; left: 0; top: 0; width: 100%; border: 0; padding: 0; font-size: 11pt; }
+  .policy mark.ph { background: none; }
+  .policy .branch { border-left: 0; padding-left: 0; }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a href="../../" class="logo" target="_top">Zavient<em>.</em></a>
+    <h1>AI policy generator</h1>
+  </div>
+</header>
+
+<main class="wrap">
+  <div id="app" aria-live="polite">
+    <noscript><section class="card"><p>This tool needs JavaScript. Turn it on and reload, or email <a href="mailto:hello@zavient.com">hello@zavient.com</a>.</p></section></noscript>
+  </div>
+
+  <details class="card method" id="method">
+    <summary><h3 style="display:inline">How the generator works</h3></summary>
+    <ul id="method-list">
+      <li>Every policy gets 18 sections: the parts the main frameworks ask for, from scope and owner to training, incidents and review.[^nist_600][^iso42001][^nist_rmf]</li>
+      <li>Your answers switch clauses on. Health data adds the business associate rule, hiring adds bias checks, and so on. Each added clause carries its source in the policy's notes.</li>
+      <li>State and EU clauses come from the law's own text or the regulator's page where we could read it, checked on 26 Nov 2026.[^co_sb189][^nyc_aedt][^eu_lit]</li>
+      <li>The risk check sorts each AI use into Low, Medium, High or Not allowed. It follows the EU AI Act's risk levels and NIST's advice to match review to impact.[^eu_act][^nist_rmf]</li>
+      <li>Defaults we chose ourselves are marked "Zavient estimate": the 5-day answer time, the 24-hour report window and the yearly training refresher. Change them in the policy.</li>
+      <li>Your answers and edits stay in your browser. We don't see them, and there is no sign-up.</li>
+    </ul>
+  </details>
+
+  <details class="card sources" id="footnotes">
+    <summary><h3 style="display:inline">Sources</h3></summary>
+    <p class="small">Law and sources checked 26 Nov 2026.</p>
+    <ol id="fn-list"></ol>
+  </details>
+
+  <div class="foot">
+    <span>&copy; 2026 Zavient LLC</span>
+    <span>A starting draft, not legal advice. Law checked as of 26 Nov 2026.</span>
+    <a href="mailto:hello@zavient.com">hello@zavient.com</a>
+  </div>
+</main>
+
+<script>
+/* LOGIC START: pure functions and content. No DOM here, so tests/scripts can run it in node. */
+const LAW_DATE = "26 Nov 2026";
+const BOOKING = "https://calendar.app.google/2xXiMLiamRFtfFKH9";
+
+// Sources. Vendor sources are marked as such in their "what" line.
+const SRC = {
+  nist_rmf: { name: "NIST, AI RMF Playbook: Govern function", url: "https://airc.nist.gov/airmf-resources/playbook/govern/", what: "Policies for AI incident response, an inventory of AI systems with a named owner, and review. Voluntary framework." },
+  nist_600: { name: "NIST AI 600-1, Generative AI Profile (Jul 2024)", url: "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf", what: "Acceptable use policies for generative AI; risks include made-up answers, data privacy and intellectual property; keep an AI inventory (GOVERN 1.6)." },
+  iso42001: { name: "ISO Managed, ISO 42001 clause 5.2: AI policy", url: "https://isomanaged.com/knowledge-base/iso-standards/iso-42001/iso-42001-clause-5-2-ai-policy", what: "Top management sets an AI policy that fits the organisation, approves it and communicates it." },
+  eu_art4: { name: "European Commission AI Act Service Desk, Article 4: AI literacy", url: "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-4", what: "The AI literacy duty for providers and deployers, as amended in 2026." },
+  eu_lit: { name: "European Commission, AI Literacy: Questions and Answers (updated 26 Nov 2026)", url: "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers", what: "Deployers take measures to support staff AI literacy. Applies since 2 Feb 2025; national authorities supervise from 2 Aug 2026. No AI officer is required." },
+  eu_act: { name: "European Commission, AI Act overview (25 Nov 2026)", url: "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai", what: "Nine banned practices, including emotion recognition at work and social scoring. Chatbot disclosure and labelling of deep fakes from Aug 2026. CV sorting and credit scoring are high risk." },
+  eu_omnibus: { name: "EUR-Lex, Regulation (EU) 2026/1744 (AI Omnibus)", url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng", what: "Moves high-risk duties to 2 Dec 2027 (Annex III uses such as hiring and credit) and 2 Aug 2028 (Annex I)." },
+  co_sb189: { name: "Colorado General Assembly, SB26-189 (signed 14 May 2026)", url: "https://leg.colorado.gov/bills/sb26-189", what: "From 1 Jan 2027, deployers give notice at the point of interaction and a plain-language explanation within 30 days of an adverse outcome." },
+  co_ag: { name: "Colorado Attorney General, ADMT rulemaking", url: "https://coag.gov/ai/", what: "SB 26-189 repealed and re-enacted the 2024 Colorado AI law; the Attorney General is adopting rules to clarify it." },
+  statelaws: { name: "Superintelligence Compliance, US State AI Laws 2026", url: "https://superintelligencecompliance.ai/guides/us-state-ai-laws", what: "Illinois HB 3773 from 1 Jan 2026: no discriminatory effect, no zip-code proxies, notice. A court order holds Colorado enforcement for now. California ADMT duties from 1 Jan 2027." },
+  nyc_aedt: { name: "NYC Department of Consumer and Worker Protection, Automated Employment Decision Tools", url: "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page", what: "Local Law 144: a bias audit within one year of use, a public summary of the audit, and notice to candidates and employees." },
+  ca_sb947: { name: "California Legislature, SB 947 (Chapter 859, 2026)", url: "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB947&version=20250SB94789CHP", what: "From 1 Jul 2027, limits how employers may use automated decision systems." },
+  ca_crowell: { name: "Crowell & Moring, California's No Robo Bosses Act is now law (6 Oct 2026)", url: "https://www.crowell.com/en/insights/client-alerts/californias-no-robo-bosses-act-is-now-law-human-oversight-required-for-ai-driven-discipline-and-termination", what: "Signed 30 Sep 2026, effective 1 Jul 2027. Human review of the underlying data before AI-driven discipline or termination." },
+  ca_crd: { name: "California Civil Rights Department, AI employment regulations (30 Jun 2025)", url: "https://calcivilrights.ca.gov/2025/06/30/civil-rights-council-secures-approval-for-regulations-to-protect-against-employment-discrimination-related-to-artificial-intelligence/", what: "Automated-decision systems can violate state law. Employers keep related records, including automated-decision data, for at least four years." },
+  ca_cppa: { name: "California Privacy Protection Agency, final regulations (23 Sep 2025)", url: "https://cppa.ca.gov/announcements/2025/20250923.html", what: "Businesses that use automated decision-making technology for significant decisions comply from 1 Jan 2027." },
+  eeoc: { name: "Cooley, Federal laws still apply despite AI guidance removal (21 Feb 2025)", url: "https://www.cooley.com/news/insight/2025/2025-02-21-gone-but-not-forgotten-federal-laws-still-apply-despite-guidance-disappearance-act", what: "Federal agencies removed their AI guidance in 2025, but anti-discrimination laws still apply to AI-assisted decisions." },
+  finra_2409: { name: "FINRA, Regulatory Notice 24-09 (27 Jun 2024)", url: "https://www.finra.org/rules-guidance/notices/24-09", what: "FINRA rules apply to generative AI as to any tool, including supervision (Rule 3110) and communications (Rule 2210)." },
+  finra_2026: { name: "FINRA, 2026 Regulatory Oversight Report: GenAI", url: "https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/gen-ai", what: "GenAI use can touch supervision, communications, recordkeeping and fair dealing. Firms use formal review and approval processes." },
+  finra_2614: { name: "FINRA, Regulatory Notice 26-14 (9 Jul 2026)", url: "https://www.finra.org/rules-guidance/notices/26-14", what: "Proposal to replace principal pre-use approval of retail communications with risk-based review, partly because of AI-generated content. Comments closed 11 Sep 2026; not final." },
+  naic: { name: "NAIC, Model Bulletin: Use of AI Systems by Insurers (4 Dec 2023)", url: "https://content.naic.org/sites/default/files/inline-files/2023-12-4%20Model%20Bulletin_Adopted_0.pdf", what: "Insurers are expected to keep a written AI program covering governance, risk controls, testing for errors and bias, and third-party vendors." },
+  naic_map: { name: "NAIC, Model Bulletin adoption map (13 Nov 2026)", url: "https://content.naic.org/sites/default/files/legal-adoption-map-ai-model-bulletin.pdf", what: "Which states have adopted the AI model bulletin." },
+  regb: { name: "eCFR, 12 CFR 1002.9 (Regulation B notifications)", url: "https://www.ecfr.gov/current/title-12/chapter-X/part-1002/section-1002.9", what: "A creditor that takes adverse action gives the specific reasons, or tells the applicant how to ask for them." },
+  cfpb: { name: "MarLuc, CFPB adverse action circulars 2022-03 and 2023-03 (16 Nov 2026)", url: "https://marluc.co.uk/ai-governance/cfpb-adverse-action-circulars-2022-03-2023-03", what: "The CFPB withdrew its AI adverse-action circulars on 12 May 2025. The Regulation B rules they explained still apply." },
+  hhs_1557: { name: "eCFR, 45 CFR 92.210 (patient care decision support tools)", url: "https://www.ecfr.gov/current/title-45/section-92.210", what: "Covered health programs must not discriminate through decision support tools, and must make reasonable efforts to find and reduce that risk." },
+  hhs_ba: { name: "HHS, Business Associates (HIPAA)", url: "https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/business-associates/index.html", what: "A covered entity may share protected health information with a vendor only under a business associate agreement." },
+  bdemerson: { name: "BD Emerson, HIPAA and AI (26 Oct 2026, vendor)", url: "https://www.bdemerson.com/article/hipaa-and-ai", what: "How HIPAA and Section 1557 apply to buying and using AI tools. Vendor that sells compliance services." },
+  ftc: { name: "eCFR, 16 CFR 314.4 (FTC Safeguards Rule)", url: "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-314/section-314.4", what: "Select service providers that can safeguard customer information, and require it by contract." },
+  harmonic: { name: "Harmonic Security, Write an AI acceptable use policy that holds up (vendor)", url: "https://handbook.harmonic.security/reference/governance-and-frameworks/g.6-write-an-ai-acceptable-use-policy-that-holds-up", what: "A data rule for each kind of information, and approval for agents that send messages, change records or run code. Security vendor." },
+  forcepoint: { name: "Forcepoint, AI Acceptable Use Policy Template (14 Sep 2026, vendor)", url: "https://www.forcepoint.com/blog/insights/ai-acceptable-use-policy", what: "Scope should cover AI inside approved software and agents. Agents are listed, get least access, and need human approval for consequential actions. Security vendor." },
+  harvard: { name: "Harvard University IT, Generative AI guidelines", url: "https://huit.harvard.edu/ai/guidelines", what: "Use approved tools with contract protections, risk-assess vendor AI before use, and follow guidance on AI note-takers." },
+  nten: { name: "NTEN, Generative AI Use Policy Template (Jul 2024)", url: "https://word.nten.org/wp-content/uploads/2024/07/GAI-Policy-Template.pdf", what: "Confidentiality and IP policies still apply to AI; work product belongs to the organisation; breaches can lead to discipline." },
+  kpmg: { name: "KPMG and University of Melbourne, Trust in AI global study (Apr 2025)", url: "https://kpmg.com/xx/en/media/press-releases/2025/04/trust-of-ai-remains-a-critical-challenge.html", what: "48,000 people in 47 countries. 58% of employees use AI at work; 40% say there is a policy or guidance; 47% trained; 57% hide their AI use; 66% rely on output without checking." },
+  kpmg_r: { name: "University of Melbourne and KPMG, full report (2025)", url: "https://assets.kpmg.com/content/dam/kpmgsites/kw/pdf/insights/2025/05/Trust-in-AI_Final_Report.pdf.coredownload.inline.pdf", what: "48% uploaded company information to public AI tools. Policy-breaking use was most common where AI was banned (67%) and least where there was no policy (33%)." },
+  littler: { name: "Littler, 14th Annual Employer Survey (May 2026)", url: "https://www.littler.com/press/press-release/employers-brace-ai-driven-workplace-shifts-and-rising-risk-littlers-annual", what: "300+ US executives. 68% have a formal AI policy, 55% a review process for AI tools, 54% limits on what data goes in." },
+  isaca: { name: "ISACA, 2026 AI Pulse Poll (May 2026)", url: "https://www.isaca.org/about-us/newsroom/press-releases/2026/ai-use-accelerates-while-governance-and-roi-lag-says-new-isaca-research", what: "3,400+ digital trust professionals. 38% have a formal, comprehensive AI policy; 25% have none." },
+  shrm: { name: "SHRM, The State of AI in HR 2026 (executive summary)", url: "https://www.shrm.org/content/dam/en/shrm/research/ai-in-hr_executive-summary.pdf", what: "1,908 HR professionals. 49% of organisations using AI have a workforce AI policy; 54% of those say it is too restrictive and tied to today's tools." },
+  msuk: { name: "Microsoft UK, Rise in Shadow AI tools (13 Oct 2025, vendor)", url: "https://ukstories.microsoft.com/features/rise-in-shadow-ai-tools-raising-security-concerns-for-uk", what: "2,003 UK employees. 71% used unapproved consumer AI at work; 28% said their company offers no approved option." },
+  wti: { name: "Microsoft and LinkedIn, 2024 Work Trend Index (vendor)", url: "https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part", what: "31,000 knowledge workers. 78% of AI users bring their own AI tools to work; 80% at small and mid-size companies." }
+};
+
+const Q = [
+  { id: "industry", kind: "single", name: true, text: "What does your company do?",
+    help: "Your industry decides which rules the policy names, such as HIPAA for health care or FINRA for broker-dealers.",
+    options: [["bank", "Banking or lending"], ["insurance", "Insurance"], ["securities", "Securities or investment (broker-dealer, adviser)"], ["health", "Healthcare provider or health plan"], ["healthadj", "Health-adjacent (benefits admin, health tech)"], ["prof", "Professional services (legal, accounting, consulting)"], ["agency", "Marketing, media or creative agency"], ["mfg", "Manufacturing, logistics or construction"], ["retail", "Retail, hospitality or e-commerce"], ["tech", "Software or tech"], ["nonprofit", "Nonprofit or education"], ["other", "Something else"]] },
+  { id: "size", kind: "single", text: "How many people work at your company?",
+    help: "Size sets who owns the policy: one named owner, or a small working group.[^nist_rmf]",
+    options: [["s", "Fewer than 40"], ["m", "40 to 99"], ["l", "100 to 249"], ["xl", "250 to 500"], ["xxl", "More than 500"]] },
+  { id: "data", kind: "multi", text: "What kinds of information does your company hold?",
+    help: "Pick all that apply. Each one adds a rule for what can go into which AI tool.[^harmonic]",
+    options: [["fin", "Customer financial data (accounts, loans, payments)"], ["phi", "Patient or member health information"], ["personal", "Other customer personal data (names, contact details)"], ["employee", "Employee or job applicant records"], ["card", "Payment card numbers"], ["code", "Source code or trade secrets"], ["none", "None of these"]] },
+  { id: "client", kind: "single", text: "Do you handle client or partner information under an NDA or contract?",
+    help: "Client contracts can limit where their information may go, including AI tools.",
+    options: [["lots", "Yes, it's most of our work"], ["some", "Yes, some of it"], ["no", "No"]] },
+  { id: "tools", kind: "multi", text: "Which AI tools do people use for work today, or may use soon?",
+    help: "Business and personal versions of the same tool handle your data differently, so the policy names which one to use.[^forcepoint]",
+    options: [["chatgpt", "ChatGPT (business plan)"], ["copilot", "Microsoft 365 Copilot"], ["gemini", "Google Gemini for Workspace"], ["claude", "Claude (business plan)"], ["coding", "Coding assistants"], ["inapp", "AI features inside apps we already use (CRM, HR, finance)"], ["personal", "Personal or free AI accounts"], ["none", "None yet"]] },
+  { id: "actions", kind: "multi", text: "Do any AI tools join meetings or take actions for people?",
+    help: "Tools that act on their own need a named owner and limits.[^forcepoint][^harmonic]",
+    options: [["notetaker", "AI note-takers in meetings"], ["agent", "AI agents that send messages, change records or run code"], ["connect", "AI connected to email, files or the CRM"], ["none", "None of these"]] },
+  { id: "approver", kind: "single", text: "Who should approve new AI tools?",
+    help: "A named approver is the gap most policies leave open: only 55% of employers have a review process for AI tools.[^littler]",
+    options: [["coo", "COO or head of operations"], ["it", "IT lead"], ["sec", "Security lead"], ["hr", "HR lead"], ["legal", "Legal or compliance lead"], ["group", "A small AI working group"], ["undecided", "Not decided yet"]],
+    sub: { id: "turnaround", text: "How fast should they answer a request?", options: [["5", "5 working days"], ["10", "10 working days"], ["15", "15 working days"]], def: "5", note: "Default: 5 days. Zavient estimate." } },
+  { id: "people", kind: "multi", text: "Does AI help with any decisions about people, now or soon?",
+    help: "Decisions about people carry the most legal rules. Pick everything AI scores, ranks, drafts or flags.[^eeoc]",
+    options: [["hiring", "Hiring or promotion"], ["discipline", "Performance reviews, discipline or firing"], ["credit", "Lending or credit decisions"], ["insurance", "Insurance pricing, underwriting or claims"], ["clinical", "Clinical or care decisions"], ["none", "None of these"]] },
+  { id: "where", kind: "multi", text: "Where are your staff or customers?",
+    help: "Some US states, New York City and the EU have their own AI rules.[^statelaws][^eu_act]",
+    options: [["ca", "California"], ["co", "Colorado"], ["il", "Illinois"], ["nyc", "New York City"], ["tx", "Texas"], ["us", "Other US states"], ["eu", "EU or EEA"], ["other", "Elsewhere"]] },
+  { id: "customer", kind: "multi", text: "Does AI talk to or write for your customers?",
+    help: "Customers should know when they are dealing with AI, and a person should check what goes out.[^eu_act][^nist_600]",
+    options: [["chat", "A customer chat assistant"], ["email", "AI-drafted customer emails or letters"], ["marketing", "Marketing text or images"], ["none", "None of these"]],
+    sub: { id: "review", text: "Before AI-assisted work leaves the company, who checks it?", options: [["all", "A person checks everything external"], ["high", "A person checks high-stakes work; senders check routine messages"]], def: "all", note: "Default: a person checks everything external. Zavient estimate." } }
+];
+
+const ROLE = { coo: "the COO (or head of operations)", it: "the IT lead", sec: "the security lead", hr: "the HR lead", legal: "the legal or compliance lead", group: "the AI working group", undecided: "[[name one role]]" };
+const TOOL_ROWS = {
+  chatgpt: ["ChatGPT", "Company business workspace", "Public and internal information. Customer or client data only after a contract check."],
+  copilot: ["Microsoft 365 Copilot", "Company Microsoft 365 account", "Files you can already open in Microsoft 365."],
+  gemini: ["Google Gemini for Workspace", "Company Google Workspace account", "Files you can already open in Google Workspace."],
+  claude: ["Claude", "Company business workspace", "Public and internal information. Customer or client data only after a contract check."],
+  coding: ["Coding assistant [[name it]]", "Company account, training on our code turned off", "Source code in approved repositories."],
+  inapp: ["AI features in [[app names]]", "Turned on by the app's owner", "The data that app already holds."],
+  personal: ["Personal or free AI accounts", "Personal", "Public information only."],
+  notetaker: ["AI note-taker [[name it]]", "Company account", "Internal meetings. Not sensitive meetings unless approved."]
+};
+const ENCOURAGED = {
+  bank: "Summarising loan files and policies you are allowed to see.", insurance: "Summarising claim files and policy wording you are allowed to see.",
+  securities: "Drafting internal research notes for supervised review.", health: "Drafting patient letters and summaries for clinician review, in tools approved for health information.",
+  healthadj: "Drafting member and client letters for review.", prof: "First drafts of memos and research summaries for a qualified reviewer.",
+  agency: "First drafts of campaign copy, briefs and concepts for a person to edit.", mfg: "Summarising manuals, specs and supplier documents.",
+  retail: "Drafting product descriptions and answers to common customer questions.", tech: "Code help, tests and documentation, reviewed before release.",
+  nonprofit: "Drafting grant reports and donor updates for review.", other: "Summarising long documents you are allowed to see."
+};
+
+const has = (arr, k) => Array.isArray(arr) && arr.includes(k);
+function flags(a) {
+  const f = {};
+  f.health = has(a.data, "phi") || a.industry === "health" || a.industry === "healthadj";
+  f.fin = has(a.data, "fin") || ["bank", "insurance", "securities"].includes(a.industry);
+  f.client = a.client === "lots" || a.client === "some";
+  f.code = has(a.data, "code");
+  f.card = has(a.data, "card");
+  f.personal = has(a.tools, "personal");
+  f.agents = has(a.actions, "agent") || has(a.actions, "connect") || has(a.tools, "inapp");
+  f.notetaker = has(a.actions, "notetaker");
+  for (const k of ["hiring", "discipline", "credit", "clinical"]) f[k] = has(a.people, k);
+  f.insDec = has(a.people, "insurance");
+  f.insurance = a.industry === "insurance" || f.insDec;
+  f.securities = a.industry === "securities";
+  f.peopleAny = f.hiring || f.discipline || f.credit || f.insDec || f.clinical;
+  for (const k of ["ca", "co", "il", "nyc", "tx", "eu"]) f[k] = has(a.where, k);
+  f.chat = has(a.customer, "chat"); f.custEmail = has(a.customer, "email"); f.marketing = has(a.customer, "marketing");
+  f.customer = f.chat || f.custEmail || f.marketing;
+  f.group = a.approver === "group" || a.size === "xl" || a.size === "xxl";
+  f.sensitive = f.health || f.fin || f.client || has(a.data, "personal") || has(a.data, "employee") || f.card;
+  return f;
+}
+
+// Builds the policy as data: sections of blocks. A block is {p}, {ul}, {h3} or {table}; fn lists source ids;
+// branch names the answer that added it (shown in the result summary and marked in the document).
+function buildPolicy(a, today) {
+  const f = flags(a);
+  const C = (a.company || "").trim() || "[[Company]]";
+  const owner = ROLE[a.approver] || ROLE.undecided;
+  const chair = (a.approver && !["group", "undecided"].includes(a.approver)) ? ROLE[a.approver] : "[[chair role]]";
+  const days = a.turnaround || "5";
+  const S = [];
+  const added = [];
+  const sec = (title) => { const s = { title, blocks: [] }; S.push(s); return s; };
+  const br = (label, block) => { block.branch = label; if (!added.includes(label)) added.push(label); return block; };
+
+  let s = sec("Why we have this policy");
+  s.blocks.push({ p: `${C} wants everyone to use AI to do better work: faster first drafts, quicker research and fewer errors. This policy explains how to do that safely, so customers, colleagues and partners can trust what we produce.`, fn: ["iso42001"] });
+  s.blocks.push({ p: "AI helps people do their work. People stay in charge of decisions and of anything we send out.", fn: ["nist_600"] });
+
+  s = sec("Who and what it covers");
+  s.blocks.push({ p: `This policy covers everyone who works for ${C}: employees, contractors and temporary staff. It covers any AI tool used for ${C} work, on any device.`, fn: ["forcepoint"] });
+  s.blocks.push({ p: "That includes AI features inside apps we already use, AI meeting note-takers, and AI agents that can act on our systems.", fn: ["forcepoint", "harmonic"] });
+  s.blocks.push({ p: "**AI tool:** software that writes, summarises, answers, predicts or acts using artificial intelligence. **AI agent:** an AI tool that can take actions, such as sending messages, changing records or running code." });
+
+  s = sec("Who owns this policy");
+  if (f.group) s.blocks.push({ p: `An AI working group owns this policy: ${a.approver && !["group", "undecided"].includes(a.approver) ? ROLE[a.approver] + ", " : ""}[[IT lead]], [[HR lead]] and [[legal or compliance adviser]]. ${chair.charAt(0).toUpperCase() + chair.slice(1)} chairs it. It approves new AI tools and higher-risk uses, and keeps our AI list (Appendix A).`, fn: ["nist_rmf", "iso42001"] });
+  else s.blocks.push({ p: `${owner.charAt(0).toUpperCase() + owner.slice(1)} owns this policy, keeps our AI list (Appendix A) and approves new AI tools. Questions go to ${owner} or [[contact channel]].`, fn: ["nist_rmf", "iso42001"] });
+  s.blocks.push({ p: "Each approved tool and each higher-risk use has a named owner who checks it still works as intended.", fn: ["nist_rmf"] });
+
+  s = sec("Tools you can use");
+  s.blocks.push({ p: "Use the AI tools on our approved list (Appendix A) for work. Each entry says which account to use and what information it may hold.", fn: ["harvard"] });
+  s.blocks.push({ p: `Use your ${C} work account, not a personal or free account, unless the list says otherwise. Business and personal versions of the same tool handle data differently.`, fn: ["forcepoint"] });
+  if (f.personal) s.blocks.push(br("Personal AI accounts in use", { p: `Personal or free AI accounts may be used only for public information. For anything else, use your ${C} account. If you need a tool we don't provide, ask (section 10); that tells us what to buy.`, fn: ["msuk", "wti"] }));
+  s.blocks.push({ p: "If a tool is not on the list, ask before using it for work (section 10)." });
+
+  s = sec("What you can put into AI tools");
+  const dataList = ["**Public information:** any approved tool.", "**Internal work information:** tools approved for internal work.",
+    "**Customer, employee, financial, health or client information:** only tools approved for that kind of information, and only what the task needs.",
+    "**Passwords, keys and access codes:** never."];
+  if (f.card) dataList.push("**Payment card numbers:** never.");
+  s.blocks.push({ ul: dataList, fn: ["harmonic"] });
+  if (f.health) {
+    s.blocks.push(br("Health information (HIPAA)", { p: "Patient or member health information goes only into AI tools approved for it and covered by a signed business associate agreement. Use the least information the task needs. Never put it into a personal or free AI account.", fn: ["hhs_ba", "bdemerson"] }));
+    s.blocks.push(br("Health information (HIPAA)", { p: "Before we approve a tool for health information, we confirm in writing whether the vendor trains its models on our data, how long it keeps it, and who else sees it.", fn: ["hhs_ba"] }));
+  }
+  if (f.fin) s.blocks.push(br("Customer financial data (FTC Safeguards Rule)", { p: "Customer financial information goes only into AI tools approved for it. AI vendors that handle it are reviewed like any other service provider: contract terms, security and regular checks.", fn: ["ftc"] }));
+  if (f.client) s.blocks.push(br("Client-confidential information", { p: `Client information goes into an AI tool only if the client's contract allows it and the tool is approved for confidential information. When in doubt, ask ${owner} first.`, fn: ["harmonic", "nten"] }));
+  if (f.code) s.blocks.push(br("Source code and trade secrets", { p: "Source code and trade secrets go only into coding or AI tools approved for them, with model training on our data turned off.", fn: ["harmonic"] }));
+
+  s = sec("Good uses and uses that are not allowed");
+  s.blocks.push({ p: "**We encourage you to use approved AI for:**" });
+  s.blocks.push({ ul: ["First drafts of documents, emails and reports.", "Summarising documents you are allowed to see.", "Research on public information.", "Brainstorming and checking your own writing.", ENCOURAGED[a.industry] || ENCOURAGED.other] });
+  s.blocks.push({ p: "**Not allowed:**" });
+  s.blocks.push({ ul: ["Making a final decision about a person with no human review.", "Creating misleading content or pretending to be someone else.", "Getting around security controls.", "Anything illegal or against our other policies."], fn: ["nist_600"] });
+
+  s = sec("Check before you rely on it");
+  s.blocks.push({ p: "You own anything you produce with AI. AI can state wrong facts with confidence, so check facts, numbers, names, quotes and sources before you rely on them.", fn: ["nist_600", "kpmg"] });
+  if (a.review === "high") s.blocks.push(br("High-stakes review only", { p: "A qualified person reviews AI-assisted work before it is used for a decision about a person, sent to a regulator, or published. For routine external messages, the sender checks the content." }));
+  else s.blocks.push({ p: "Before AI-assisted work goes to a customer, a regulator or the public, or feeds a decision about a person, a qualified person reviews it.", fn: ["nist_600"] });
+
+  s = sec("Be open about AI use");
+  s.blocks.push({ p: "If AI did a material part of a piece of work, say so to the person who will rely on it.", fn: ["kpmg"] });
+  if (f.chat) s.blocks.push(br("Customer chat assistant", { p: "Customers are told when they are chatting with an AI assistant, and they can always reach a person.", fn: ["eu_act", "nten"] }));
+  if (f.custEmail) s.blocks.push(br("AI-drafted customer messages", { p: "A person reviews AI-drafted customer emails and letters before they are sent, unless Appendix A approves a use for automatic sending.", fn: ["nist_600"] }));
+  if (f.marketing) s.blocks.push(br("AI marketing content", { p: "A person checks AI-made marketing text and images for accuracy, rights and brand before use.", fn: ["nist_600"] }));
+
+  s = sec("Decisions about people");
+  s.blocks.push({ p: "AI can help prepare information, but a person makes and owns any decision about someone's job, pay, credit, insurance, housing or care. Do not use AI to guess anyone's age, race, health, religion or other protected trait.", fn: ["eeoc", "eu_act"] });
+  if (f.hiring) s.blocks.push(br("AI in hiring or promotion", { p: "AI may help draft job posts or organise applications. It does not decide who is hired or promoted. A trained person reviews every AI score or ranking before it affects a candidate. Before using any AI screening tool, we check it for unfair impact on protected groups and keep a record of that check.", fn: ["eeoc"] }));
+  if (f.discipline) s.blocks.push(br("AI in discipline or firing", { p: "AI output alone is never the reason for discipline or dismissal. If AI output plays a main role, a manager checks it against other evidence, such as records, work product or interviews, and does not use it if it cannot be confirmed.", fn: ["ca_crowell"] }));
+
+  s = sec("Asking for a new tool or a new use");
+  s.blocks.push({ p: `To use a new AI tool, or an approved tool in a new way, send a request to ${owner} via [[request channel]]. Say what it is for, what information it will touch and who will use it.`, fn: ["harvard"] });
+  s.blocks.push({ p: `The review covers data, security, contract terms, and whether the vendor trains its models on our data. We aim to answer within ${days} working days.`, fn: ["harvard"] });
+  s.blocks.push({ p: "Each new use is sorted into Low, Medium or High risk (Appendix B). Higher risk means more review. Approvals are reviewed every 12 months, or sooner if the tool or the use changes.", fn: ["nist_rmf"] });
+
+  s = sec("AI agents and connections");
+  s.blocks.push({ p: "Connect an AI tool to our systems (email, files, CRM, code) or let it take actions only if that connection is approved.", fn: ["harmonic"] });
+  if (f.agents) s.blocks.push(br("AI agents or connected AI", { p: "AI agents and connections that can send messages, change records, move money or run code need approval first. Each has a named owner, only the access it needs, and a log we can check. Actions with real consequences, such as payments or messages to customers, need a person's approval.", fn: ["forcepoint", "harmonic"] }));
+  if (f.notetaker) s.blocks.push(br("AI note-takers", { p: "Tell attendees when an AI note-taker is recording. Don't use one in meetings about health, discipline, legal advice or other sensitive matters unless approved. Check the summary before you share it.", fn: ["harvard"] }));
+
+  s = sec("Who owns the work");
+  s.blocks.push({ p: "Don't put other people's confidential or copyrighted material into AI tools unless we have the right to use it that way. Check AI output for copied text or images before you publish it.", fn: ["nist_600"] });
+  s.blocks.push({ p: `Work you create with AI for ${C} belongs to ${C}, like any other work product. Our confidentiality rules still apply.`, fn: ["nten"] });
+
+  s = sec("Training");
+  s.blocks.push({ p: "Everyone who uses AI for work completes our short AI training before using approved tools, and a refresher each year. People in higher-risk roles get extra training for their work.", fn: ["kpmg", "eu_lit"] });
+  if (f.eu) s.blocks.push(br("EU or EEA staff or customers", { p: "Because we use AI in work involving people in the EU, we take steps to build AI skills: training before use, role-specific guidance for higher-risk work, and a record of who completed it.", fn: ["eu_lit", "eu_art4"] }));
+
+  s = sec("When something goes wrong");
+  s.blocks.push({ p: "Report it to [[incident channel]] within 24 hours if you put information into the wrong tool, AI output caused or nearly caused harm, or you see AI being misused. Good-faith reports will not get you in trouble.", fn: ["nist_rmf"] });
+
+  s = sec("Our AI list");
+  s.blocks.push({ p: `${f.group ? "The AI working group" : owner.charAt(0).toUpperCase() + owner.slice(1)} keeps a list of approved AI tools and uses (Appendix A), with an owner and a review date for each.`, fn: ["nist_600", "nist_rmf"] });
+
+  s = sec("Keeping this policy current");
+  s.blocks.push({ p: "We review this policy every 12 months, and sooner when a new law, a major new tool or an incident arrives.", fn: ["nist_rmf", "iso42001"] });
+
+  // 17: industry and location rules, only where an answer calls for them
+  s = sec("Rules for our industry and locations");
+  const sub = (h) => s.blocks.push({ h3: h });
+  if (f.credit) {
+    sub("Lending and credit");
+    s.blocks.push(br("Lending or credit decisions (Regulation B)", { p: "If AI or a model helps decide whether to grant credit or on what terms, we must still give each applicant the specific main reasons for an adverse decision. We don't use a model whose reasons we can't explain. A person reviews every adverse decision before it is sent.", fn: ["regb", "cfpb"] }));
+  }
+  if (f.insurance) {
+    sub("Insurance");
+    s.blocks.push(br("Insurance (NAIC AI bulletin)", { p: "Our use of AI in pricing, underwriting, claims or marketing follows a written AI program. It names who is accountable, how we test models for errors and unfair discrimination, how we oversee AI vendors, and what records we keep for regulators.", fn: ["naic", "naic_map"] }));
+  }
+  if (f.securities) {
+    sub("Securities and investment");
+    s.blocks.push(br("Broker-dealer or investment firm (FINRA)", { p: "AI-assisted communications with customers or the public follow the same supervision, approval and record-keeping rules as any other communication. AI tools used in supervision are tested for accuracy. AI agents cannot send client communications or place orders without a supervised human step.", fn: ["finra_2409", "finra_2026"] }));
+    s.blocks.push(br("Broker-dealer or investment firm (FINRA)", { p: "FINRA has proposed risk-based review of retail communications, including AI-generated ones. Until that change is final, we follow the current approval rule.", fn: ["finra_2614"] }));
+  }
+  if (f.clinical) {
+    sub("Clinical and care decisions");
+    s.blocks.push(br("Clinical or care decisions (Section 1557)", { p: "AI that supports clinical decisions is high risk (Appendix B). Before use, we check whether it uses race, color, national origin, sex, age or disability as inputs, and we record how we reduce the risk of unfair results. A licensed clinician makes the final decision.", fn: ["hhs_1557", "bdemerson"] }));
+  }
+  if (f.hiring && f.nyc) {
+    sub("New York City");
+    s.blocks.push(br("Hiring tools in New York City (Local Law 144)", { p: "If we use an automated employment decision tool for New York City roles, we get an independent bias audit each year, post a summary of the results, and notify candidates and employees before use.", fn: ["nyc_aedt"] }));
+  }
+  if ((f.hiring || f.discipline) && f.il) {
+    sub("Illinois");
+    s.blocks.push(br("AI in employment decisions in Illinois (HB 3773)", { p: "If we use AI for recruiting, hiring, promotion, discipline or firing decisions about Illinois staff or applicants, we tell them. We never use zip code as a stand-in for a protected trait.", fn: ["statelaws"] }));
+  }
+  if ((f.hiring || f.discipline) && f.ca) {
+    sub("California");
+    s.blocks.push(br("AI in employment decisions in California", { p: "For California applicants and staff, we keep records from automated decision systems, including the data they used, for at least four years.", fn: ["ca_crd"] }));
+    s.blocks.push(br("AI in employment decisions in California", { p: "From 1 January 2027, where California's privacy rules apply to us, we give notice before using automated decision-making technology for significant employment decisions, and complete the required risk assessment.", fn: ["ca_cppa", "statelaws"] }));
+    if (f.discipline) s.blocks.push(br("AI in discipline or firing in California (SB 947)", { p: "From 1 July 2027, when an automated decision system plays a main role in discipline or dismissal of a California employee, a person reviews the underlying data first and we give the employee written notice.", fn: ["ca_sb947", "ca_crowell"] }));
+  }
+  if (f.co && f.peopleAny) {
+    sub("Colorado");
+    s.blocks.push(br("Decisions about Colorado residents (SB 26-189)", { p: "From 1 January 2027, if AI materially influences a decision about a Colorado resident's job, credit, housing, insurance, health care or education, we tell them at the point of interaction. If the result is adverse, we explain the AI's role in plain language within 30 days.", fn: ["co_sb189", "co_ag", "statelaws"] }));
+  }
+  if (f.eu) {
+    sub("European Union");
+    s.blocks.push(br("EU or EEA staff or customers", { p: "We do not use AI to read the emotions of staff at work, to score people socially, or for any other practice banned under the EU AI Act.", fn: ["eu_act"] }));
+    if (f.customer) s.blocks.push(br("EU or EEA staff or customers", { p: "We tell people in the EU when they are dealing with an AI system, and we label realistic AI-generated images, audio or video, and AI text published to inform the public, where EU law requires it.", fn: ["eu_act"] }));
+    if (f.hiring || f.credit || f.insDec) s.blocks.push(br("EU or EEA staff or customers", { p: "AI used for hiring, credit scoring or insurance pricing about people in the EU is high risk under the EU AI Act. Its main duties apply from 2 December 2027; we plan for them now.", fn: ["eu_omnibus", "eu_act"] }));
+  }
+  if (s.blocks.length === 0) s.blocks.push({ p: "Your answers added no industry- or location-specific rules. Add any that apply to you here, such as rules from your regulator or your clients' contracts." });
+
+  s = sec("Breaking the policy, and sign-off");
+  s.blocks.push({ p: "Breaking this policy is handled under our normal disciplinary process. Most mistakes are fixed with coaching.", fn: ["nten"] });
+  s.blocks.push({ p: "I have read this policy and will follow it. Name: ______________ Date: ______________" });
+
+  // Appendix A: tools picked
+  const rows = [];
+  for (const k of a.tools || []) if (TOOL_ROWS[k]) rows.push([...TOOL_ROWS[k], owner.replace(/^the /, ""), "[[date]]"]);
+  if (f.notetaker) rows.push([...TOOL_ROWS.notetaker, owner.replace(/^the /, ""), "[[date]]"]);
+  if (!rows.length) rows.push(["[[tool]]", "[[account]]", "[[information it may hold]]", "[[owner]]", "[[date]]"]);
+  const appendixA = { title: "Appendix A: Our approved AI tools", head: ["Tool", "Account to use", "Information it may hold", "Owner", "Next review"], rows };
+
+  return { company: C, today: today || "", sections: S, added, appendixA, flags: f };
+}
+
+// Footnote numbers in order of first use across the policy.
+function noteOrder(p) {
+  const order = [];
+  for (const s of p.sections) for (const b of s.blocks) for (const id of b.fn || []) if (!order.includes(id)) order.push(id);
+  return order;
+}
+
+// Plain text of the whole policy (used for tests and as the clipboard's plain-text copy).
+function policyText(p) {
+  const order = noteOrder(p);
+  const t = (s) => s.replace(/\*\*(.+?)\*\*/g, "$1").replace(/\[\[(.+?)\]\]/g, "[$1]");
+  const marks = (b) => b.fn && b.fn.length ? `[${b.fn.map((id) => order.indexOf(id) + 1).join(", ")}]` : "";
+  const out = [`${t(p.company)} AI use policy`, ""];
+  p.sections.forEach((s, i) => {
+    out.push(`${i + 1}. ${s.title}`);
+    for (const b of s.blocks) {
+      if (b.h3) out.push(b.h3);
+      if (b.p) out.push(t(b.p) + marks(b));
+      if (b.ul) { b.ul.forEach((x) => out.push("- " + t(x))); if (b.fn) out.push(marks(b)); }
+    }
+    out.push("");
+  });
+  out.push(p.appendixA.title);
+  p.appendixA.rows.forEach((r) => out.push(r.map(t).join(" | ")));
+  out.push("", "Notes");
+  order.forEach((id, i) => out.push(`${i + 1}. ${SRC[id].name}. ${SRC[id].url}`));
+  return out.join("\n");
+}
+
+// The three things to fix next, from the answers. Priority order: legal exposure first, then data, then ownership.
+function fixNext(a) {
+  const f = flags(a);
+  const L = [];
+  const add = (title, why) => L.push({ title, why });
+  if (f.hiring && f.nyc) add("Get a bias audit before AI touches New York City hiring.", "Local Law 144 needs an independent audit within a year of use, a public summary, and notice to candidates.");
+  if (f.credit) add("Prove you can explain every adverse credit decision a model touches.", "Regulation B still requires specific reasons, even after the CFPB withdrew its AI circulars.");
+  if (f.clinical) add("List the clinical AI tools that use race, sex, age or disability as inputs.", "Section 1557 asks covered health programs to find and reduce that risk.");
+  if (f.health) add("Confirm a signed business associate agreement with each AI vendor that may see health information.", "Without one, health information can't go into that tool.");
+  if (f.personal && f.sensitive) add("Move work off personal AI accounts.", "You hold sensitive information, and staff use personal accounts. Pick the business plan you will provide, then say so in Appendix A.");
+  if (f.co && f.peopleAny) add("Prepare Colorado notices and adverse-result explanations.", "SB 26-189 applies to decisions from 1 Jan 2027.");
+  if (f.discipline && f.ca) add("Build a human check into AI-assisted discipline for California staff.", "SB 947 applies from 1 Jul 2027.");
+  if (f.hiring && !f.nyc) add("Check your AI hiring tool for unfair impact before use, and keep the record.", "Anti-discrimination law still applies to AI-assisted hiring.");
+  if (a.approver === "undecided") add("Name one person to approve new AI tools.", "Until someone owns approval, every request stalls or skips review.");
+  if (f.agents) add("List every AI agent and connection, with an owner and the least access it needs.", "Agents that send, change or spend need a person's approval for consequential actions.");
+  if (f.eu) add("Set up short AI training and record who completed it.", "The EU AI literacy duty is supervised by national authorities from 2 Aug 2026.");
+  if (f.securities) add("Map AI-drafted client communications to your Rule 2210 approval process.", "FINRA's rules apply to AI output; its risk-based proposal is not final.");
+  if (f.insurance) add("Write down your insurance AI program: owner, testing and vendor checks.", "Many states have adopted the NAIC AI bulletin, and examiners can ask for it.");
+  if (f.notetaker) add("Set a rule for AI note-takers in sensitive meetings.", "Health, discipline and legal meetings need approval before a bot records them.");
+  if (f.chat) add("Tell customers when they're chatting with AI, and give them a route to a person.", "Disclosure keeps trust, and EU law requires it.");
+  add("Fill in Appendix A: each approved tool, its account and the information it may hold.", "A named list is what turns \"use approved tools\" into a rule people can follow.");
+  add("Run the risk check below on your five most common AI uses.", "It shows which uses need sign-off and which can go ahead today.");
+  add("Book the training before you announce the policy.", "Policy alone doesn't stop misuse; clear guidance and training do.");
+  return L.slice(0, 3);
+}
+
+// Step 2: the risk check for one AI use. ans: {banned, q1..q6} booleans.
+const RISK_Q = [
+  ["q1", "Does it affect a decision about a person's job, pay, credit, insurance, housing, education or health care?"],
+  ["q2", "Does it use sensitive information (health, customer financial, card, employee records, client-confidential)?"],
+  ["q3", "Does the output leave the company without a person checking it?"],
+  ["q4", "Can the AI take actions on its own (send, change records, spend, run code)?"],
+  ["q5", "Is the tool or account not yet on the approved list?"],
+  ["q6", "Would a mistake be hard to undo or costly (money, legal, safety, reputation)?"]
+];
+const RISK_SHORT = { q1: "affects a decision about a person", q2: "uses sensitive information", q3: "output leaves without a human check", q4: "the AI acts on its own", q5: "the tool is not approved yet", q6: "mistakes are hard to undo" };
+const TIERS = {
+  na: { name: "Not allowed", cls: "t-na", steps: ["Stop. This use is banned or relies on AI alone for a decision about a person.", "Talk to the policy owner about a version with a person in charge."] },
+  high: { name: "High risk", cls: "t-high", steps: ["Sign-off by the policy owner (or the AI working group) before use.", "A short written check: purpose, data, who is affected, how errors are caught, a bias test where relevant.", "Any notices or explanations the law requires.", "A person makes the final call. Re-review every 6 to 12 months and after any incident."] },
+  med: { name: "Medium risk", cls: "t-med", steps: ["List the tool and use in Appendix A, with an owner.", "A named person reviews output before anything leaves the company.", "Re-check the use every 12 months."] },
+  low: { name: "Low risk", cls: "t-low", steps: ["Use an approved tool.", "Check your own output. No sign-off needed."] }
+};
+function riskTier(ans) {
+  if (ans.banned) return { tier: "na", reasons: ["matches a banned practice"] };
+  const yes = RISK_Q.map((q) => q[0]).filter((k) => ans[k]);
+  if (ans.q1 || (ans.q2 && ans.q4)) return { tier: "high", reasons: (ans.q1 ? ["q1"] : ["q2", "q4"]).map((k) => RISK_SHORT[k]) };
+  if (yes.length) return { tier: "med", reasons: yes.slice(0, 2).map((k) => RISK_SHORT[k]) };
+  return { tier: "low", reasons: ["no risk factors"] };
+}
+
+// Risk summary from the answers alone: each chosen AI use that touches people, money or health, its level, and the control the policy adds.
+function answerRisks(a) {
+  const f = flags(a);
+  const R = [];
+  const add = (use, tier, control, fn) => R.push({ use, tier, control, fn });
+  if (f.hiring) add("AI in hiring or promotion", "high", "A trained person reviews every AI score; bias check and record before use (section 9)." + (f.nyc ? " NYC: yearly independent audit." : ""), f.nyc ? ["eeoc", "nyc_aedt"] : ["eeoc", "eu_act"]);
+  if (f.discipline) add("AI in performance, discipline or firing", "high", "AI output is never the sole reason; a manager confirms it with other evidence (section 9).", ["ca_crowell", "eeoc"]);
+  if (f.credit) add("AI in lending or credit decisions", "high", "Specific reasons for every adverse decision; a person reviews each one (section 17).", ["regb", "cfpb"]);
+  if (f.insDec) add("AI in insurance pricing, underwriting or claims", "high", "A written AI program with an owner, testing for unfair discrimination and vendor checks (section 17).", ["naic", "eu_act"]);
+  if (f.clinical) add("AI in clinical or care decisions", "high", "Check inputs for race, sex, age or disability; a clinician makes the final call (section 17).", ["hhs_1557", "bdemerson"]);
+  if (f.agents) add("AI agents or AI connected to company systems", f.sensitive ? "high" : "med", "Approval first, a named owner, least access, a log, and a person approves consequential actions (section 11).", ["forcepoint", "harmonic"]);
+  if (f.chat) add("Customer chat assistant", "med", "Customers are told it's AI and can reach a person (section 8).", ["eu_act", "nist_600"]);
+  if (f.health && !f.clinical) add("Health information in AI tools", "med", "Only tools with a signed business associate agreement, minimum necessary data (section 5).", ["hhs_ba", "bdemerson"]);
+  return R;
+}
+if (typeof module !== "undefined") module.exports = { SRC, Q, flags, buildPolicy, noteOrder, policyText, fixNext, riskTier, answerRisks, TIERS, RISK_Q };
+/* LOGIC END */
+</script>
+
+<script>
+/* UI */
+const STORE = "zavient-ai-policy-v1";
+const fresh = () => ({ step: "intro", i: 0, a: { turnaround: "5", review: "all" }, uses: [], edited: null });
+const state = fresh();
+try { const s = JSON.parse(localStorage.getItem(STORE) || "null"); if (s && typeof s === "object") Object.assign(state, s); } catch (e) {}
+const save = () => { try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) {} };
+const app = document.getElementById("app");
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const today = () => new Date().toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+
+// Page footnotes: numbered in order of first use, listed in the Sources box.
+const fnOrder = [];
+const fnNum = (id) => { let k = fnOrder.indexOf(id); if (k < 0) { fnOrder.push(id); k = fnOrder.length - 1; } return k + 1; };
+// Back-to-back markers ("[^a][^b]") share one superscript, written "3,7" like the page's own footnotes.
+const rich = (s) => esc(s).replace(/(?:\[\^\w+\]\s*)*\[\^\w+\]/g, (run) => {
+  const ns = [...run.matchAll(/\[\^(\w+)\]/g)].map((m) => m[1]).filter((id) => SRC[id]).map(fnNum);
+  return ns.length ? `<sup class="fn">${ns.map((n) => `<a href="#fn-${n}" aria-label="Source ${n}">${n}</a>`).join('<span class="fn-sep">,</span>')}</sup>` : "";
+});
+function renderFootnotes() {
+  const all = document.getElementById("method-list").textContent + JSON.stringify(Q);
+  all.replace(/\[\^(\w+)\]/g, (m, id) => { if (SRC[id]) fnNum(id); return m; });
+  Object.keys(SRC).forEach(fnNum); // every source the policy can cite is listed too
+  document.querySelectorAll("#method-list li").forEach((li) => (li.innerHTML = rich(li.textContent)));
+  document.getElementById("fn-list").innerHTML = fnOrder.map((id, k) => `<li id="fn-${k + 1}">${esc(SRC[id].name)}. ${esc(SRC[id].what)} <a href="${esc(SRC[id].url)}" target="_blank" rel="noopener">${esc(SRC[id].url.replace(/^https?:\/\//, "").split("/")[0])}</a></li>`).join("");
+}
+document.addEventListener("click", (e) => { const l = e.target.closest && e.target.closest('a[href^="#fn-"]'); if (l) document.getElementById("footnotes").open = true; });
+
+/* ---------- screens ---------- */
+function intro() {
+  app.innerHTML = `
+    <section class="card">
+      <h2>Answer 10 plain questions. Get your company's AI use policy, written for your industry, data and locations.</h2>
+      <div class="row"><button class="btn btn-primary" id="start">${state.i > 0 ? "Pick up where you left off" : "Start: about 10 minutes"}</button></div>
+      <ul class="facts">
+        <li>A full policy with 18 sections, built around using AI well, not banning it.</li>
+        <li>Rules switched on by your answers: health data, hiring, lending, insurance, FINRA, EU, and five US states and cities.</li>
+        <li>Edit it on the page, then copy it, download it for Word or as Markdown, or print it.</li>
+        <li>The three things to fix next, and a risk check showing which AI uses need sign-off.</li>
+      </ul>
+      <p class="disclose">A starting draft, not legal advice. Law checked as of ${LAW_DATE}. No email needed; your answers stay in your browser.</p>
+    </section>`;
+  document.getElementById("start").onclick = () => { state.step = "q"; save(); render(); };
+}
+
+function question() {
+  const q = Q[state.i];
+  const multi = q.kind === "multi";
+  const cur = state.a[q.id];
+  const sel = (k) => (multi ? has(cur, k) : cur === k);
+  const pct = Math.round((state.i / Q.length) * 100);
+  const needsNext = multi || q.name || q.sub;
+  app.innerHTML = `
+    <section class="card">
+      <div class="progress" role="progressbar" aria-label="Progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}"><div style="width:${pct}%"></div></div>
+      <span class="qtag">Question ${state.i + 1} of ${Q.length}${multi ? " · pick all that apply" : ""}</span>
+      ${q.name ? `<div class="field"><label for="co">Company name (optional)</label><input type="text" id="co" autocomplete="organization" maxlength="80" value="${esc(state.a.company || "")}" placeholder="Shown in the policy"></div>` : ""}
+      <div class="qtext" id="qt">${rich(q.text)}</div>
+      <p class="qhelp">${rich(q.help)}</p>
+      <div class="opts" role="${multi ? "group" : "radiogroup"}" aria-labelledby="qt">
+        ${q.options.map(([k, l], n) => `<button class="opt${multi ? " multi" : ""}${sel(k) ? " sel" : ""}" role="${multi ? "checkbox" : "radio"}" aria-checked="${sel(k)}" data-k="${k}"><span class="key">${n + 1}</span><span>${esc(l)}</span></button>`).join("")}
+      </div>
+      ${q.sub ? `<div class="sub"><span class="sub-q" id="sq">${esc(q.sub.text)}</span><div class="chips" role="radiogroup" aria-labelledby="sq">${q.sub.options.map(([k, l]) => `<button class="chip${(state.a[q.sub.id] || q.sub.def) === k ? " sel" : ""}" role="radio" aria-checked="${(state.a[q.sub.id] || q.sub.def) === k}" data-s="${k}">${esc(l)}</button>`).join("")}</div><span class="tag-est" style="align-self:flex-start">${esc(q.sub.note)}</span></div>` : ""}
+      <div class="qnav">
+        <button class="btn btn-ghost" id="back">Back</button>
+        ${needsNext ? `<button class="btn btn-primary" id="next" ${answered(q) ? "" : "disabled"}>${state.i === Q.length - 1 ? "See my policy" : "Next"}</button>` : `<span class="hint">Tip: press 1 to ${q.options.length}</span>`}
+      </div>
+    </section>`;
+  app.querySelectorAll(".opt").forEach((b) => (b.onclick = () => choose(b.dataset.k)));
+  app.querySelectorAll(".chip").forEach((b) => (b.onclick = () => { state.a[q.sub.id] = b.dataset.s; save(); app.querySelectorAll(".chip").forEach((c) => { c.classList.toggle("sel", c === b); c.setAttribute("aria-checked", c === b); }); }));
+  const co = document.getElementById("co");
+  if (co) co.oninput = () => { state.a.company = co.value; save(); };
+  document.getElementById("back").onclick = () => { if (state.i > 0) state.i--; else state.step = "intro"; save(); render(); };
+  const nx = document.getElementById("next");
+  if (nx) nx.onclick = () => advance();
+  const first = app.querySelector(".opt.sel") || app.querySelector(".opt");
+  if (!co && first) first.focus({ preventScroll: true });
+}
+const answered = (q) => (q.kind === "multi" ? (state.a[q.id] || []).length > 0 : !!state.a[q.id]);
+function advance() {
+  if (!answered(Q[state.i])) return;
+  state.i++;
+  if (state.i >= Q.length) { state.step = "result"; state.edited = null; }
+  save(); render();
+}
+let busy = false;
+function choose(k) {
+  const q = Q[state.i];
+  if (q.kind === "multi") {
+    let cur = (state.a[q.id] || []).slice();
+    if (k === "none") cur = has(cur, "none") ? [] : ["none"];
+    else { cur = cur.filter((x) => x !== "none"); cur = has(cur, k) ? cur.filter((x) => x !== k) : [...cur, k]; }
+    state.a[q.id] = cur; save();
+    app.querySelectorAll(".opt").forEach((b) => { const on = has(cur, b.dataset.k); b.classList.toggle("sel", on); b.setAttribute("aria-checked", on); });
+    document.getElementById("next").disabled = !cur.length;
+    return;
+  }
+  state.a[q.id] = k; save();
+  app.querySelectorAll(".opt").forEach((b) => { const on = b.dataset.k === k; b.classList.toggle("sel", on); b.setAttribute("aria-checked", on); });
+  if (q.name || q.sub) { document.getElementById("next").disabled = false; return; }
+  if (busy) return; busy = true;
+  setTimeout(() => { busy = false; advance(); }, 180);
+}
+document.addEventListener("keydown", (e) => {
+  if (state.step !== "q" || e.target.tagName === "INPUT" || e.metaKey || e.ctrlKey || e.altKey) return;
+  const n = parseInt(e.key, 10); const q = Q[state.i];
+  if (n >= 1 && n <= q.options.length) choose(q.options[n - 1][0]);
+});
+
+/* ---------- the policy document ---------- */
+const fmt = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\[\[(.+?)\]\]/g, '<mark class="ph">[$1]</mark>');
+function policyHTML(p) {
+  const order = noteOrder(p);
+  const sup = (b) => b.fn && b.fn.length ? `<sup>[${b.fn.map((id) => order.indexOf(id) + 1).join('<span class="fn-sep">,</span> ')}]</sup>` : "";
+  const disc = `This is a starting draft, not legal advice. Laws on AI change often and differ by state, country and industry. Have your legal or compliance adviser review it before you adopt it. Generated ${esc(p.today)}; law checked as of ${LAW_DATE}.`;
+  let h = `<h1>${fmt(p.company)} AI use policy</h1><p class="meta">Version 1 · Owner: ${fmt(p.flags.group ? "AI working group" : (ROLE[state.a.approver] || ROLE.undecided).replace(/^the /, ""))} · Approved: <mark class="ph">[date]</mark> · Next review: <mark class="ph">[date]</mark></p><p class="disclaimer">${disc}</p>`;
+  p.sections.forEach((s, i) => {
+    h += `<h2>${i + 1}. ${esc(s.title)}</h2>`;
+    for (const b of s.blocks) {
+      const cls = b.branch ? ` class="branch"` : "";
+      if (b.h3) h += `<h3>${esc(b.h3)}</h3>`;
+      if (b.p) h += `<p${cls}>${fmt(b.p)}${sup(b)}</p>`;
+      if (b.ul) h += `<ul${cls}>${b.ul.map((x) => `<li>${fmt(x)}</li>`).join("")}</ul>${b.fn ? `<p>${sup(b)}</p>` : ""}`;
+    }
+  });
+  const A = p.appendixA;
+  h += `<h2>${esc(A.title)}</h2><div class="table-scroll"><table><thead><tr>${A.head.map((x) => `<th>${esc(x)}</th>`).join("")}</tr></thead><tbody>${A.rows.map((r) => `<tr>${r.map((c, k) => `<td data-label="${esc(A.head[k])}">${fmt(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+  h += `<div id="appendix-b">${appendixB()}</div>`;
+  h += `<h2>Notes</h2><ol class="notes">${order.map((id) => `<li>${esc(SRC[id].name)}. ${esc(SRC[id].url)}</li>`).join("")}</ol>`;
+  h += `<p class="disclaimer">${disc}</p>`;
+  return h;
+}
+// Gives every table cell its column name, so phones can show rows as labelled cards. Also fixes policies saved
+// with edits before cells carried labels.
+function labelTables(root) {
+  root.querySelectorAll("table").forEach((tb) => {
+    const head = [...tb.querySelectorAll("thead th")].map((th) => th.textContent.trim());
+    tb.querySelectorAll("tbody tr").forEach((tr) => [...tr.children].forEach((td, k) => { if (head[k] && !td.dataset.label) td.dataset.label = head[k]; }));
+  });
+}
+function appendixB() {
+  const head = `<h2>Appendix B: AI use risk check</h2>`;
+  if (!state.uses.length) return `${head}<p>Low risk: use an approved tool and check your own work. Medium risk: listed in Appendix A, with a named reviewer before anything leaves. High risk: sign-off before use, a short written check, and a person makes the final call. <mark class="ph">[Run the risk check on the tool page to list your uses here.]</mark></p>`;
+  return `${head}<div class="table-scroll"><table><thead><tr><th>AI use</th><th>Risk</th><th>Why</th><th>Review it needs</th></tr></thead><tbody>${state.uses.map((u) => { const r = riskTier(u); const t = TIERS[r.tier]; return `<tr><td data-label="AI use">${esc(u.name)}</td><td data-label="Risk">${t.name}</td><td data-label="Why">${esc(r.reasons.join("; "))}</td><td data-label="Review it needs">${esc(t.steps.join(" "))}</td></tr>`; }).join("")}</tbody></table></div>`;
+}
+
+// Export from the live document, so the user's edits go out with it.
+function toMd(node) {
+  const kids = (n) => [...n.childNodes].map(inline).join("");
+  const inline = (n) => {
+    if (n.nodeType === 3) return n.textContent.replace(/\s+/g, " ");
+    if (n.nodeType !== 1) return "";
+    const tag = n.tagName.toLowerCase();
+    if (tag === "strong" || tag === "b") return `**${kids(n).trim()}**`;
+    if (tag === "em" || tag === "i") return `*${kids(n).trim()}*`;
+    if (tag === "br") return "\n";
+    return kids(n);
+  };
+  const out = [];
+  const block = (n) => {
+    if (n.nodeType === 3) { const t = n.textContent.trim(); if (t) out.push(t, ""); return; }
+    if (n.nodeType !== 1) return;
+    const tag = n.tagName.toLowerCase();
+    if (/^h[1-3]$/.test(tag)) out.push("#".repeat(+tag[1]) + " " + kids(n).trim(), "");
+    else if (tag === "p") { const t = kids(n).trim(); if (t) out.push(t, ""); }
+    else if (tag === "ul" || tag === "ol") { [...n.children].forEach((li, k) => out.push(`${tag === "ol" ? k + 1 + "." : "-"} ${kids(li).trim()}`)); out.push(""); }
+    else if (tag === "table") {
+      const rows = [...n.querySelectorAll("tr")].map((tr) => [...tr.children].map((c) => kids(c).trim().replace(/\|/g, "/")));
+      if (rows.length) { out.push("| " + rows[0].join(" | ") + " |", "|" + rows[0].map(() => " --- |").join("")); rows.slice(1).forEach((r) => out.push("| " + r.join(" | ") + " |")); out.push(""); }
+    } else [...n.childNodes].forEach(block);
+  };
+  [...node.childNodes].forEach(block);
+  return out.join("\n").replace(/\n{3,}/g, "\n\n").trim() + "\n";
+}
+function download(name, type, body) {
+  const url = URL.createObjectURL(new Blob([body], { type }));
+  const l = document.createElement("a"); l.href = url; l.download = name; document.body.appendChild(l); l.click();
+  setTimeout(() => { URL.revokeObjectURL(url); l.remove(); }, 500);
+}
+const fileBase = () => ((state.a.company || "").trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "company") + "-ai-use-policy";
+function docHtml(inner) {
+  return `﻿<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>AI use policy</title>
+<style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.4}h1{font-size:18pt}h2{font-size:13pt;margin-top:14pt}h3{font-size:11.5pt}table{border-collapse:collapse;width:100%}td,th{border:1px solid #999;padding:4pt;vertical-align:top;text-align:left}th{background:#eef2f7}sup{font-size:8pt}mark{background:#fff4c2}.meta,.disclaimer{color:#555}</style></head><body>${inner}</body></html>`;
+}
+function flash(msg) { const s = document.getElementById("status"); if (s) { s.textContent = msg; setTimeout(() => { if (s.textContent === msg) s.textContent = ""; }, 3000); } }
+async function copyPolicy(el) {
+  const html = el.innerHTML; const text = el.innerText;
+  try {
+    if (navigator.clipboard && window.ClipboardItem) {
+      await navigator.clipboard.write([new ClipboardItem({ "text/html": new Blob([html], { type: "text/html" }), "text/plain": new Blob([text], { type: "text/plain" }) })]);
+      return flash("Copied. Paste it into Word or Google Docs.");
+    }
+  } catch (e) {}
+  try {
+    const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+    document.execCommand("copy"); s.removeAllRanges(); flash("Copied. Paste it into Word or Google Docs.");
+  } catch (e) { flash("Copy didn't work here. Use Download instead."); }
+}
+
+/* ---------- result ---------- */
+function result() {
+  const p = buildPolicy(state.a, today());
+  const fixes = fixNext(state.a);
+  const risks = answerRisks(state.a);
+  const nAdded = p.sections.reduce((n, s) => n + s.blocks.filter((b) => b.branch).length, 0);
+  app.innerHTML = `
+    <section class="card">
+      <div class="eyebrow">Your result</div>
+      <h2>Your AI use policy is ready: ${p.sections.length} sections, with ${nAdded} clauses set by your answers.</h2>
+      ${p.added.length ? `<ul class="added" aria-label="Clauses your answers added">${p.added.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
+      <p class="disclose warn">A starting draft, not legal advice. Law checked as of ${LAW_DATE}. Have your legal or compliance adviser review it before you adopt it.</p>
+      <div class="row"><a class="btn btn-primary" href="#policy-card">Read and edit the policy</a><button class="btn btn-ghost" id="redo">Change my answers</button></div>
+    </section>
+
+    <section class="card">
+      <div class="eyebrow">3 things to fix next</div>
+      <ol class="fix">${fixes.map((x) => `<li><strong>${esc(x.title)}</strong><span>${esc(x.why)}</span></li>`).join("")}</ol>
+      <p class="diag-line">Want the detailed plan behind your result? <a href="${BOOKING}" target="_blank" rel="noopener">Book the free 30-minute diagnostic.</a></p>
+    </section>
+
+    <section class="card" id="policy-card">
+      <div class="eyebrow">Your policy · click any text to edit</div>
+      <p class="qhelp">Yellow marks the gaps to fill in, such as channel names and dates. Blue edges mark clauses your answers added; each has its source in the Notes.</p>
+      <div class="toolbar" role="toolbar" aria-label="Policy actions">
+        <button class="btn btn-primary" id="b-copy">Copy</button>
+        <button class="btn btn-line" id="b-doc">Download for Word</button>
+        <button class="btn btn-line" id="b-md">Download .md</button>
+        <button class="btn btn-line" id="b-print">Print</button>
+      </div>
+      <div class="status" id="status" role="status"></div>
+      <div class="policy" id="policy" contenteditable="true" spellcheck="true" aria-label="Your AI use policy, editable">${state.edited || policyHTML(p)}</div>
+      <div class="row"><button class="btn btn-ghost" id="b-reset">Undo my edits</button></div>
+    </section>
+
+    <section class="card" id="risk">
+      <div class="eyebrow">Step 2 · AI risk check</div>
+      <h2>Which of your AI uses need sign-off?</h2>
+      ${risks.length ? `<h3>From your answers</h3><div class="uses">${risks.map((r) => `<div class="use"><span class="tier ${TIERS[r.tier].cls}">${TIERS[r.tier].name}</span><h3>${esc(r.use)}</h3><span>${rich(r.control + r.fn.map((id) => "[^" + id + "]").join(""))}</span></div>`).join("")}</div><h3>Check another use</h3>` : `<p class="qhelp">None of your answers put AI into decisions about people or let it act on its own. Check any use below.</p>`}
+      <p class="qhelp" id="risk-help">Name one way your team uses AI, answer six yes-or-no questions, and get its risk level and the review it needs.[^eu_act][^nist_rmf]</p>
+      <div class="field"><label for="use-name">The AI use</label><input type="text" id="use-name" maxlength="120" placeholder="e.g. draft customer emails in ChatGPT"></div>
+      <div id="yn"></div>
+      <div class="row"><button class="btn btn-primary" id="b-check">Check this use</button></div>
+      <div class="uses" id="uses"></div>
+    </section>
+
+    <section class="offer">
+      <div class="eyebrow">Next step</div>
+      <h2>Want the detailed plan behind your result? Book the free 30-minute diagnostic.</h2>
+      <p>In 30 minutes we go through your answers with you:</p>
+      <ul><li>Your AI uses, sorted by risk, and what each needs.</li><li>The approved tools and data rules that fit your firm.</li><li>A 90-day rollout: training, the approval route and the AI list.</li></ul>
+      <a class="btn btn-primary" href="${BOOKING}" target="_blank" rel="noopener">Book the free 30-minute diagnostic</a>
+      <p class="small">Or email <a href="mailto:hello@zavient.com">hello@zavient.com</a>. Not ready? Take the <a href="../../ai-readiness-assessment.html" target="_top">AI readiness check</a> first.</p>
+    </section>`;
+  document.getElementById("risk-help").innerHTML = rich("Name one way your team uses AI, answer six yes-or-no questions, and get its risk level and the review it needs.[^eu_act][^nist_rmf]");
+  const el = document.getElementById("policy");
+  labelTables(el);
+  let t; el.addEventListener("input", () => { clearTimeout(t); t = setTimeout(() => { state.edited = el.innerHTML; save(); }, 400); });
+  document.getElementById("b-copy").onclick = () => copyPolicy(el);
+  document.getElementById("b-doc").onclick = () => { download(fileBase() + ".doc", "application/msword", docHtml(el.innerHTML)); flash("Downloaded. It opens in Word."); };
+  document.getElementById("b-md").onclick = () => { download(fileBase() + ".md", "text/markdown;charset=utf-8", toMd(el)); flash("Downloaded as Markdown."); };
+  document.getElementById("b-print").onclick = () => window.print();
+  document.getElementById("b-reset").onclick = () => { if (!state.edited || confirm("Undo all your edits to the policy?")) { state.edited = null; save(); el.innerHTML = policyHTML(p); labelTables(el); } };
+  document.getElementById("redo").onclick = () => { if (!state.edited || confirm("Changing your answers rebuilds the policy and replaces your edits. Go on?")) { state.step = "q"; state.i = 0; state.edited = null; save(); render(); } };
+  riskForm(el);
+}
+
+function riskForm(el) {
+  const ans = {};
+  const box = document.getElementById("yn");
+  const rows = [["banned", "Does it read people's emotions at work, guess protected traits, score people socially, or decide discipline or firing with no person involved?"], ...RISK_Q];
+  box.innerHTML = rows.map(([k, text], n) => `<div class="yn"><span id="yq-${k}">${n === 0 ? "First: " : ""}${esc(text)}</span><div class="chips" role="radiogroup" aria-labelledby="yq-${k}"><button class="chip" role="radio" aria-checked="false" data-q="${k}" data-v="1">Yes</button><button class="chip" role="radio" aria-checked="false" data-q="${k}" data-v="0">No</button></div></div>`).join("");
+  box.querySelectorAll(".chip").forEach((c) => (c.onclick = () => {
+    ans[c.dataset.q] = c.dataset.v === "1";
+    box.querySelectorAll(`.chip[data-q="${c.dataset.q}"]`).forEach((x) => { x.classList.toggle("sel", x === c); x.setAttribute("aria-checked", x === c); });
+  }));
+  const list = () => {
+    document.getElementById("uses").innerHTML = state.uses.map((u, k) => {
+      const r = riskTier(u); const t = TIERS[r.tier];
+      return `<div class="use"><span class="tier ${t.cls}">${t.name}</span><h3>${esc(u.name)}</h3><span class="small">Why: ${esc(r.reasons.join("; "))}</span><ul>${t.steps.map((s) => `<li>${esc(s)}</li>`).join("")}</ul><div class="row"><button class="btn btn-ghost" data-del="${k}">Remove</button></div></div>`;
+    }).join("") + (state.uses.length ? `<p class="small">These uses are listed in Appendix B of your policy.</p>` : "");
+    document.querySelectorAll("[data-del]").forEach((b) => (b.onclick = () => { state.uses.splice(+b.dataset.del, 1); sync(); }));
+  };
+  const sync = () => { save(); list(); const ab = el.querySelector("#appendix-b"); if (ab) { ab.innerHTML = appendixB(); state.edited = state.edited ? el.innerHTML : null; save(); } };
+  document.getElementById("b-check").onclick = () => {
+    const name = document.getElementById("use-name").value.trim();
+    const missing = rows.filter(([k]) => ans[k] === undefined).length;
+    if (!name || missing) { flash(""); document.getElementById("uses").insertAdjacentHTML("afterbegin", `<p class="disclose warn" id="need">${!name ? "Name the AI use first." : `Answer all ${rows.length} questions (${missing} left).`}</p>`); setTimeout(() => { const n = document.getElementById("need"); n && n.remove(); }, 3500); return; }
+    state.uses.unshift({ name, ...ans }); document.getElementById("use-name").value = "";
+    Object.keys(ans).forEach((k) => delete ans[k]); box.querySelectorAll(".chip").forEach((x) => { x.classList.remove("sel"); x.setAttribute("aria-checked", "false"); });
+    sync();
+  };
+  list();
+}
+
+function render() {
+  if (state.step === "q") question(); else if (state.step === "result") result(); else intro();
+  if (state.step !== "intro") window.scrollTo({ top: 0 });
+}
+renderFootnotes();
+render();
+</script>
+</body>
+</html>
