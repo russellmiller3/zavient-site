@@ -684,7 +684,7 @@
   {
    "name": "Fortune on the MIT NANDA report (Aug 2025)",
    "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
-   "what": "Purchased AI tools succeed about 67% of the time; internal builds about one-third as often."
+   "what": "Reports MIT NANDA's finding that bought or partnered AI tools succeed about 67% of the time. Its wording that internal builds succeed \"one-third as often\" misreads the report, where internal builds reach deployment about a third of the time; cited here for the 67% only. Read 28 Nov 2026."
   },
   {
    "name": "Celent, Claims Analytics and Claims Modernization in Q2 2026 (Jun 2026)",
@@ -890,7 +890,8 @@
   "checked": 2,
   "fixed": [
    "2026-11-28 padding cleanup, buyVsBuild.buy: [^41] (Fortune) states 67%, not \"twice\": added MIT's 67% (in both notes) so each footnote states a figure",
-   "2026-11-28 padding cleanup, answers.buy-or-build: dropped [^41] (Fortune) from \"twice\": its note gives 67% and \"one-third as often\""
+   "2026-11-28 padding cleanup, answers.buy-or-build: dropped [^41] (Fortune) from \"twice\": its note gives 67% and \"one-third as often\"",
+   "Independent check 28 Nov: source [^41] (Fortune) note: rewritten; \"one-third as often\" contradicted \"twice\"; Fortune now backs only the 67%, MIT [^39] the twice"
   ]
  }
 }

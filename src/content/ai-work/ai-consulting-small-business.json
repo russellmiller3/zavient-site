@@ -42,7 +42,7 @@
   "recipes": [
     {
       "name": "1. About 40 staff: a use rule, then one writing job",
-      "when": "Pick this when the owner still makes most calls and staff use free AI tools. Writing tasks are where small firms use AI most (83% of users)[^12], and AI cut writing time 40% in one trial.[^21]",
+      "when": "Pick this when the owner still makes most calls and staff use free AI tools. Writing or marketing is where small firms use AI most (83% of users)[^12], and AI cut writing time 40% in one trial.[^21]",
       "flow": [
         "Owner-CEO: write a one-page use rule: tools, what data goes in, who checks",
         "Ops lead: pick one writing-heavy job, like quotes or customer replies, and time it for two weeks",
@@ -464,7 +464,8 @@
     "fixed": [
       "2026-11-28 padding cleanup, humanRole[2]: dropped [^12] (Fed SBCS) from 25%: its note doesn't state it",
       "2026-11-28 padding cleanup, recipes[0].when: [^21] (Noy and Zhang) doesn't state 83%: gave it its own clause with the 40% it states",
-      "2026-11-28 padding cleanup, watchOuts[0]: [^28] (Gartner) doesn't state 42%: gave it its own clause with the 50% it states"
+      "2026-11-28 padding cleanup, watchOuts[0]: [^28] (Gartner) doesn't state 42%: gave it its own clause with the 50% it states",
+      "Independent check 28 Nov: recipes[0].when: the Fed's 83% is writing or marketing, not writing alone"
     ]
   }
 }

@@ -56,7 +56,7 @@
      "name": "Zapier",
      "url": "https://zapier.com/pricing",
      "cells": [
-      "Lets non-technical staff build flows across '9,000+ apps', per Zapier; G2 reviewers praise its ease of use[^50][^40].",
+      "Lets non-technical staff build flows across '9,000+ apps', per Zapier; G2 reviewers praise its ease of use[^49][^40].",
       "Free: 100 tasks a month. Pro from $19.99 a month billed yearly for 750 tasks; Team from $69 for 2,000[^1].",
       "A task is one successful action step; triggers, filters, paths and failed steps are free[^1][^2]. Past your limit, tasks cost 1.25× the base rate on yearly plans, 2.5× on monthly[^1]."
      ]
@@ -65,7 +65,7 @@
      "name": "Make",
      "url": "https://www.make.com/en/pricing",
      "cells": [
-      "Visual builder with detailed error handling, across '3,500+' apps, per Make; G2 reviewers praise its price[^49][^15][^40].",
+      "Visual builder with detailed error handling, across '3,500+' apps, per Make; G2 reviewers praise its price[^48][^15][^40].",
       "Make's help example: $9 a month for 10,000 credits[^18]. Zapier, a rival, says Make's Core plan starts at $12 a month, billed yearly[^8].",
       "Most module runs cost one credit, and every trigger check costs one, even when it finds nothing[^11][^13]. Extra credits cost 25% more; at zero, scenarios stop[^18][^11]."
      ]
@@ -94,7 +94,7 @@
     {
      "name": "Built-in approval step",
      "cells": [
-      "Yes, from Pro; each reviewer needs a Zapier login[^4][^5]. AI steps can require approval first, and decisions are logged[^51].",
+      "Yes, from Pro; each reviewer needs a Zapier login[^4][^5]. AI steps can require approval first, and decisions are logged[^50].",
       "Enterprise only, in closed beta for invited customers[^21]. Approval from Slack or Teams is 'coming soon'[^22].",
       "Yes, in Slack or Teams; agents can require business approvals[^34][^32]"
      ]
@@ -285,11 +285,11 @@
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy one of these when your flows join standard apps and no engineer has time to own custom code[^38][^40]. Most firms now buy: US enterprise decision-makers say 76% of their AI use cases were bought in 2025, up from 53% in 2024[^45]. MIT found bought or partnered tools reach deployment about twice as often as internal builds[^46]; Fortune's coverage notes the study's method caveats[^47].",
+  "buy": "Buy one of these when your flows join standard apps and no engineer has time to own custom code[^38][^40]. Most firms now buy: US enterprise decision-makers say 76% of their AI use cases were bought in 2025, up from 53% in 2024[^45]. MIT found bought or partnered tools reach deployment twice as often as internal builds, though the gap may reflect the firms, not the approach.[^46]",
   "build": "Build your own integration code only when the workflow is your edge and an engineer will own it[^46]. Self-hosting means you own uptime and patches, a point Zapier stresses about self-hosted rivals[^8]. MIT found only 5% of custom enterprise AI tools reach production, so start narrow[^46]."
  },
  "pickElse": [
-  "You have an engineer and data must stay on your own servers: n8n's free self-hosted Community Edition fits[^48]. Its cloud plans bill per run, not per step[^48].",
+  "You have an engineer and data must stay on your own servers: n8n's free self-hosted Community Edition fits[^47]. Its cloud plans bill per run, not per step[^47].",
   "You run a large ERP estate and need a full integration platform: compare Gartner's other Leaders, such as Boomi, MuleSoft and SAP[^38].",
   "Your firm lives in Microsoft 365: Microsoft, maker of Power Automate, is also a Gartner Leader[^38].",
   "You run a few two-step flows, under 100 runs a month: Zapier's free plan covers it[^1]."
@@ -577,12 +577,7 @@
   {
    "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025)",
    "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
-   "what": "MIT no longer hosts the report (its link now opens the NANDA project page, checked 26 Nov 2026); copy hosted by MLQ.ai. Sample: 52 organizations interviewed, survey of 153 leaders, and 300+ public AI initiatives reviewed. $30-40 billion of enterprise GenAI investment; 95% of organizations are getting zero return; just 5% of integrated AI pilots extract millions in value. Task-specific tools: 60% of organizations evaluated them, 20% piloted, 5% reached production. Over 80% of organizations explored or piloted ChatGPT or Copilot, and nearly 40% report deployment. External partnerships with customized tools reached deployment about 67% of the time vs about 33% for internal builds: 2x as likely, twice the success rate. Only 40% of companies purchased an official LLM subscription; workers at over 90% of companies surveyed use personal AI tools for work. For mission-critical work, 90% of users prefer humans. Enterprises, defined as firms with over $100 million in annual revenue, lead in pilot count but report the lowest pilot-to-scale conversion. Read 26 Nov 2026."
-  },
-  {
-   "name": "Fortune, MIT report: 95% of generative AI pilots at companies failing (18 Aug 2025)",
-   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
-   "what": "Coverage of the MIT NANDA report and its method caveats."
+   "what": "MIT no longer hosts the report (its link now opens the NANDA project page, checked 26 Nov 2026); copy hosted by MLQ.ai. Sample: 52 organizations interviewed, survey of 153 leaders, and 300+ public AI initiatives reviewed. $30-40 billion of enterprise GenAI investment; 95% of organizations are getting zero return; just 5% of integrated AI pilots extract millions in value. Task-specific tools: 60% of organizations evaluated them, 20% piloted, 5% reached production. Over 80% of organizations explored or piloted ChatGPT or Copilot, and nearly 40% report deployment. External partnerships with customized tools reached deployment about 67% of the time vs about 33% for internal builds: 2x as likely, twice the success rate. Only 40% of companies purchased an official LLM subscription; workers at over 90% of companies surveyed use personal AI tools for work. For mission-critical work, 90% of users prefer humans. Enterprises, defined as firms with over $100 million in annual revenue, lead in pilot count but report the lowest pilot-to-scale conversion. Read 26 Nov 2026. Its Important Limitation (p. 20): the success-rate differences may reflect organizational capabilities rather than implementation approach alone, and the correlation does not necessarily prove causation. Read 28 Nov 2026."
   },
   {
    "name": "n8n, Pricing",
@@ -648,7 +643,7 @@
   "human-role": "People keep control: the controller approves payments above a set amount, a named ops lead owns each workflow, and agents stop to ask a person at set points[^4][^33][^3].",
   "example": "On Zapier, an AI step reads each of an illustrative distributor's 2,000 monthly invoices, and the controller approves each one, at about five tasks per invoice[^4][^1][^2].",
   "what-goes-wrong": "Teams go wrong by missing overage and empty-trigger costs, editing live flows with no test stage, and assuming every platform has an approval step[^1][^13][^28][^21].",
-  "something-else": "Pick neither when you need self-hosting (n8n), a full integration platform for a large ERP estate, or Power Automate because your firm lives in Microsoft 365[^48][^38].",
+  "something-else": "Pick neither when you need self-hosting (n8n), a full integration platform for a large ERP estate, or Power Automate because your firm lives in Microsoft 365[^47][^38].",
   "table-1": "Zapier Pro starts at $19.99 a month billed yearly, Make's help example is $9 for 10,000 credits, and Workato is quote-only[^1][^18][^23]. Zapier bills per task, Make per credit, and Workato in its own credits[^1][^11][^25].",
   "table-2": "Workato gives the most: approvals, dev-test-live stages and a one-year audit log. Zapier adds approvals from Pro, and Make keeps approvals, audit log and SSO on Enterprise[^34][^28][^31][^4][^19][^21].",
   "own-data": "At 2,000 invoices a month, Make costs about $12.38 and Zapier $129 to $193.50. Workato's cost is unclear, since it publishes no credit-to-task rate[^18][^1][^24]."
@@ -659,7 +654,9 @@
   "checked": 2,
   "fixed": [
    "2026-11-28 padding cleanup, buyVsBuild.buy: [^47] (Fortune) note states method caveats, not \"twice\": gave it its own clause on what it states",
-   "2026-11-28 padding cleanup, buyVsBuild.build: dropped [^47] (Fortune) from 5%: its note doesn't state it"
+   "2026-11-28 padding cleanup, buyVsBuild.build: dropped [^47] (Fortune) from 5%: its note doesn't state it",
+   "Independent check 28 Nov: buyVsBuild.buy: dropped [^47] (Fortune): it gives no method caveat; the caveat is MIT's own, now on [^46], whose note records it",
+   "Independent check 28 Nov: removed source 47 (Fortune write-up), now cited nowhere; sources 48-51 renumbered 47-50. MIT [^46] note gains the report's p. 20 limitation, read 28 Nov 2026 from the MLQ.ai copy"
   ]
  }
 }
