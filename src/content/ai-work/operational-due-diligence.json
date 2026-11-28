@@ -1,0 +1,816 @@
+{
+ "title": "Can AI speed up operational due diligence on fund managers?",
+ "description": "How a family office can use AI to line up fund managers' questionnaire answers and flag gaps, while people make every approve or veto call.",
+ "type": "usecase",
+ "templateVersion": 1,
+ "topic": "operational due diligence",
+ "shortTopic": "fund manager diligence",
+ "job": "fund manager operational due diligence",
+ "industry": "family offices",
+ "index": true,
+ "verdict": [
+  "Operational due diligence (ODD) tests whether a fund manager's business is trustworthy, and 30% of investors lack a dedicated team.[^15][^1]",
+  "AI earns its keep lining up each manager's answers and flagging gaps, since every manager answers differently.[^19][^6]",
+  "By our count, only about 40% of the Institutional Limited Partners Association (ILPA) questionnaire lines up without judgment.[^6][^7]",
+  "A questionnaire is the manager's own account, so people still confirm facts and make the veto call.[^14][^7]",
+  "Build a light grid for a few managers a year, and buy a platform when reviews pile up.[^1][^18]"
+ ],
+ "onPage": [
+  {
+   "to": "human-role",
+   "text": "Who makes the approve, condition or veto call on a manager"
+  },
+  {
+   "to": "own-data",
+   "text": "How much of the ILPA questionnaire lines up across managers, section by section"
+  },
+  {
+   "to": "table-1",
+   "text": "AI tools that read manager questionnaires, with the vendors' own claims"
+  },
+  {
+   "to": "benchmark",
+   "text": "How to test AI on a manager review you already finished"
+  },
+  {
+   "to": "faq",
+   "text": "Checklists, timelines, M&A versus fund diligence: the questions offices ask"
+  }
+ ],
+ "headings": {
+  "what-it-is": "What is operational due diligence on a fund manager, and what does AI change?",
+  "human-role": "Who at the office makes the call on a manager?",
+  "team-after": "What does your team do once AI takes the first pass?",
+  "example": "What does an AI-built manager comparison look like?",
+  "recipes": "Which diligence setup fits your office?",
+  "rules": "Which rules shape due diligence on fund managers?",
+  "benchmark": "How do you test AI on a past manager review before you trust it?",
+  "what-goes-wrong": "Where does AI-assisted manager diligence go wrong?",
+  "buy-or-build": "Should you buy a diligence platform or build your own grid?",
+  "something-else": "When should an office pick something else?"
+ },
+ "summary": "Operational due diligence (ODD) checks whether a fund manager's business, not its strategy, can be trusted.[^15][^6] AI pulls each manager's due diligence questionnaire (DDQ) answers into one grid and flags what is missing.[^18][^19] Judgment still decides, because a DDQ is the manager's own account.[^7][^14]",
+ "answers": {
+  "human-role": "People keep every call on the manager: the committee votes, and the chief operating officer (COO) or chief investment officer (CIO) owns the ODD view.[^1][^16] Counsel signs off the legal terms.[^16]",
+  "team-after": "Your team moves from copying answers into spreadsheets to chasing gaps, confirming facts with outside parties and writing the judgment.[^19][^14]",
+  "example": "An illustrative office comparing three private credit managers gets one grid of lined-up answers, a gap list and a list of claims to confirm.[^6][^20]",
+  "table-1": "DiligenceVault, CENTRL, Ping and Penguin Capital read DDQs or fund documents, and every speed figure below is the vendor's own claim.[^18][^19]",
+  "table-2": "Ask private equity managers for the ILPA DDQ 2.0 and hedge fund managers for the Alternative Investment Management Association (AIMA) questionnaire, plus ILPA's reporting and performance templates.[^6][^8]",
+  "recipes": "Offices that vet a handful of managers a year should build a grid on the ILPA template, and busier offices should buy a diligence platform.[^6][^1]",
+  "own-data": "About 40% of the ILPA questionnaire's numbered questions take answers a machine can line up without judgment, by our count of 175 of 436.[^6][^7]",
+  "rules": "No rule tells a single family office how to vet managers, and the rule that would have forced standard quarterly fund statements was vacated in 2024.[^25][^11]",
+  "benchmark": "Rerun one finished manager review with AI, then count the answers it lined up right, the gaps it caught and the gaps it missed.[^19][^24]",
+  "what-goes-wrong": "AI-assisted diligence goes wrong when a tidy grid is taken as proof, because the grid only repeats what the manager wrote.[^7][^13]",
+  "buy-or-build": "Buy a platform when reviews pile up past what one person can read, and build a light grid when you vet only a few managers a year.[^1][^18]",
+  "something-else": "Pick something else when you are buying a company rather than a fund stake, or when an outside adviser already runs manager diligence for you.[^29][^2]"
+ },
+ "humanRole": [
+  "Investment committee: votes on the commitment and its size. In the Standards Board for Alternative Investments (SBAI) survey, the committee is the main reader of ODD findings.[^1]",
+  "COO or CIO: owns the ODD view where there is no dedicated team. In SBAI's survey, 54% of such investors put ODD under the CIO and 23% under the COO.[^1]",
+  "Operations lead: calls the administrator and auditor directly instead of trusting the questionnaire.[^14][^15] In Deutsche Bank's survey, 92% of investors named the administrator the most important provider to contact.[^14]",
+  "Outside counsel: reviews the limited partnership agreement (LPA) and side letters, and signs off the legal terms.[^16][^23]"
+ ],
+ "teamAfter": [
+  "Analysts stop retyping answers and start chasing the gaps the grid shows.[^19][^18]",
+  "The operations lead spends the saved time on confirmations, visits and background checks.[^14][^15]",
+  "The memo writer keeps the judgment: CENTRL's case study says the client kept analyst time for judgment-heavy work.[^19]",
+  "Where AI changed tasks, 66% of US firms use it only to help staff, and AI-related job losses hit only 2% of AI-using firms.[^26]"
+ ],
+ "example": {
+  "input": "Illustrative: a 12-person single family office is weighing three private credit managers for one commitment. Each sends the ILPA DDQ, audited financials, a draft LPA and side letters, about 300 pages apiece. Each answers in its own format.",
+  "output": "One grid: a row per ILPA question, a column per manager, each cell linked to its page. A gap list: Manager B left the key-person questions blank, and Manager C's administrator is an affiliate. A confirm list for the COO: the administrator, the auditor and the fee terms in each side letter."
+ },
+ "tables": [
+  {
+   "title": "Which AI tools read manager questionnaires and fund documents?",
+   "intro": "Vendor pages read on 28 Nov 2026. We did not test these tools.[^18][^20]",
+   "headers": [
+    "Name",
+    "What it does",
+    "Price",
+    "Worth knowing"
+   ],
+   "rows": [
+    {
+     "name": "DiligenceVault",
+     "url": "https://diligencevault.com/spotlight/diligencevault-launches-ai-powered-document-intelligence-engine-to-ease-the-burden-of-fund-due-diligence/",
+     "cells": [
+      "Reads DDQs, offering memos and financial statements, and extracts data points[^18]",
+      "Not published[^18]",
+      "Vendor says review time falls by over 70 percent; each answer carries its source and a confidence score[^18]"
+     ]
+    },
+    {
+     "name": "CENTRL",
+     "url": "https://www.centrl.ai/resources/from-manual-diligence-to-ai-accelerated-odd-cutting-review-cycles-by-40-50-and-unlocking-a-year-of-capacity",
+     "cells": [
+      "Fills an investor's questionnaire from the manager's own DDQ and sends back only the gaps[^19]",
+      "Not published[^19]",
+      "Vendor case: about 80 to 110 of about 200 questions filled, and DDQ cycles cut from 10 weeks to 6[^19]"
+     ]
+    },
+    {
+     "name": "Ping",
+     "url": "https://ping.ai/solutions/asset-management/manager-due-diligence",
+     "cells": [
+      "Checks each DDQ claim against the data room and filings[^20]",
+      "Not published[^20]",
+      "Vendor says mismatches show both sources side by side[^20]"
+     ]
+    },
+    {
+     "name": "Penguin Capital DD Cockpit",
+     "url": "https://www.penguin.capital/dd-cockpit",
+     "cells": [
+      "Screens LPAs for terms that favor the manager, in private beta[^21]",
+      "Not published; waitlist[^21]",
+      "Vendor claims under 4 hours, against 2 to 4 weeks by hand[^21]"
+     ]
+    },
+    {
+     "name": "Harvey",
+     "url": "https://www.harvey.ai/blog/contract-intelligence-benchmark",
+     "cells": [
+      "Review tables for lawyers reading LPAs and side letters[^23]",
+      "Not published[^23]",
+      "Vendor benchmark: lawyers using its tables beat lawyers or the model alone by 5% or more[^23]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Which standard questionnaires and templates can you ask managers for?",
+   "intro": "ILPA wrote its DDQ to stem a spread of long custom questionnaires, yet 59% of investors in SBAI's survey still use their own.[^6][^1]",
+   "headers": [
+    "Name",
+    "What it covers",
+    "Cost",
+    "Worth knowing"
+   ],
+   "rows": [
+    {
+     "name": "ILPA DDQ 2.0",
+     "url": "https://ilpa.org/wp-content/uploads/2021/11/ILPA-DDQ-2.0.pdf",
+     "cells": [
+      "Private equity managers, in 20 sections from firm details to diversity[^6]",
+      "Free[^6]",
+      "Appendix A lists 89 documents to request[^6]"
+     ]
+    },
+    {
+     "name": "AIMA DDQ, 2025 edition",
+     "url": "https://www.aima.org/article/presenting-the-2025-edition.html",
+     "cells": [
+      "Hedge fund managers in modules, with a new private markets module[^8]",
+      "Not in the release we read[^8]",
+      "The 2025 edition added more than 100 questions across modules[^8]"
+     ]
+    },
+    {
+     "name": "ILPA Reporting Template",
+     "url": "https://ilpa.org/news/ilpa-releases-updated-reporting-template-and-new-performance-template-for-industry-adoption",
+     "cells": [
+      "Fees, expenses and carried interest each quarter[^9]",
+      "Voluntary industry standard[^10]",
+      "First delivered after the first quarter of 2026[^10]"
+     ]
+    },
+    {
+     "name": "ILPA Performance Template",
+     "url": "https://ilpa.org/wp-content/uploads/2025/04/ILPA-Templates-FAQs-v1.1.pdf",
+     "cells": [
+      "Returns, gross and net, with and without subscription lines[^9]",
+      "Voluntary industry standard[^10]",
+      "First delivered after the first quarter of 2027[^10]"
+     ]
+    }
+   ]
+  }
+ ],
+ "recipes": [
+  {
+   "name": "1. A few managers a year: a grid on the ILPA template",
+   "when": "Offices with no dedicated ODD team, like many smaller investors in SBAI's survey.[^1] Interest runs ahead of use: 35% of North American offices want AI help choosing managers, and around a quarter use it.[^5]",
+   "flow": [
+    "COO: send every manager the ILPA DDQ 2.0 and its document list",
+    "AI: pull each manager's answers into one grid, each cell linked to its page",
+    "Analyst: check every blank and every 'not found' by hand",
+    "Operations lead: confirm the administrator, auditor and cash controls directly",
+    "COO: write the approve, condition or veto view for the investment committee"
+   ],
+   "cost": "The ILPA DDQ 2.0 is free, so the main cost is staff time on gaps and confirmations.[^6][^14]"
+  },
+  {
+   "name": "2. Many managers a year: a diligence platform",
+   "when": "Offices with a steady flow of private equity, credit and hedge fund reviews, where reading long document packs is the bottleneck.[^19][^3]",
+   "flow": [
+    "COO: load the office's questionnaire and red-flag rules into the platform",
+    "Platform AI: fill answers from each manager's existing DDQ and send back only the gaps",
+    "Analyst: approve each extracted answer against its source page",
+    "AI: check DDQ claims against the data room and filings, and list mismatches",
+    "Operations lead: confirm with the administrator and auditor, and run background checks",
+    "Investment committee: decide, with the ODD view in the memo"
+   ],
+   "cost": "DiligenceVault, CENTRL and Ping publish no price on the pages we read.[^18][^19][^20]"
+  }
+ ],
+ "ownData": {
+  "title": "How much of the ILPA questionnaire lines up across managers?",
+  "intro": "We read ILPA's free DDQ 2.0 on 28 Nov 2026 and sorted every numbered question by the answer it asks for.[^6] A yes/no box, a table or a single fact can be lined up by a machine. A written answer needs a person to weigh it.[^7]",
+  "headers": [
+   "Section",
+   "Numbered questions",
+   "Yes/no, table or single fact",
+   "Written answers",
+   "Lines up without judgment, our count"
+  ],
+  "rows": [
+   [
+    "Fund: general information",
+    "22",
+    "14",
+    "8",
+    "64%"
+   ],
+   [
+    "Co-investments",
+    "14",
+    "9",
+    "5",
+    "64%"
+   ],
+   [
+    "Succession planning and key persons",
+    "20",
+    "12",
+    "8",
+    "60%"
+   ],
+   [
+    "Accounting and valuation",
+    "27",
+    "14",
+    "13",
+    "52%"
+   ],
+   [
+    "Fund terms",
+    "30",
+    "14",
+    "16",
+    "47%"
+   ],
+   [
+    "Track record",
+    "11",
+    "4",
+    "7",
+    "36%"
+   ],
+   [
+    "Investment process",
+    "22",
+    "5",
+    "17",
+    "23%"
+   ],
+   [
+    "Team",
+    "9",
+    "1",
+    "8",
+    "11%"
+   ],
+   [
+    "Environmental, social and governance",
+    "27",
+    "0",
+    "27",
+    "0%"
+   ],
+   [
+    "All 20 sections",
+    "436",
+    "175",
+    "261",
+    "40%"
+   ]
+  ],
+  "note": "Method: we parsed the text and counted 436 numbered questions, with 158 yes/no boxes, 5 tables and 12 hand-picked single facts. Limits: four question numbers were lost in our text copy, and a manager can add prose to any yes/no box. The data templates in Appendices B to H also line up, but we did not count them."
+ },
+ "rules": [
+  {
+   "name": "SEC Private Fund Advisers rules (vacated)",
+   "url": "https://www.sec.gov/announcement-regarding-private-fund-advisers-rules",
+   "status": "Vacated 5 Jun 2024",
+   "what": "The Fifth Circuit struck down the Securities and Exchange Commission (SEC) rules that would have forced quarterly statements on fees and performance.[^11][^12] Standard fund reporting now rests on ILPA's voluntary templates, so ask for them in the side letter.[^10]"
+  },
+  {
+   "name": "Form ADV, 17 CFR 275.204-1",
+   "url": "https://www.ecfr.gov/current/title-17/chapter-II/part-275/section-275.204-1",
+   "status": "In force",
+   "what": "A registered manager files Form ADV, the adviser registration form, and Part 2A Item 9 carries its disciplinary history.[^15] Check that Form ADV, the offering memo and the DDQ answers agree, since a mismatch is a red flag.[^15]"
+  },
+  {
+   "name": "Family office rule, 17 CFR 275.202(a)(11)(G)-1",
+   "url": "https://www.ecfr.gov/current/title-17/chapter-II/part-275/section-275.202(a)(11)(G)-1",
+   "status": "In force",
+   "what": "A single family office that serves only family is not an investment adviser under the rule.[^25] No regulator sets its diligence standard, so the office's written policy is the standard."
+  }
+ ],
+ "howToTest": [
+  "Pick one manager review you finished last year, with the DDQ, the documents and your final memo.",
+  "Record today's numbers: days from DDQ received to decision, and hours spent building the comparison. In SBAI's survey of 44 institutional investors, 41% don't always have enough time for a review.[^1]",
+  "Have AI build the grid from the raw DDQ and documents, without your memo.",
+  "Score every cell against your own grid: right, wrong or missed.",
+  "Check every 'not found' by hand. In the Contract Understanding Atticus Dataset (CUAD) benchmark, 70 to 80% of clause checks have no matching clause, so absence is the usual answer.[^24]",
+  "Test questions that span documents on their own: in the Vals legal test, tools struggled most when answers sat across several documents.[^22]",
+  "Price the lift: hours saved times loaded cost, plus weeks cut from the cycle. CENTRL's client reports DDQ cycles cut from 10 weeks to 6, by the vendor's account.[^19]"
+ ],
+ "watchOuts": [
+  "Taking the grid as proof: ILPA says yes/no answers give only a top-level view, not a basis for investing.[^7] Confirm key facts with the administrator and auditor directly.[^14]",
+  "Missed clauses: in contract benchmarks most clause checks find no clause, so a 'not found' may really sit in an appendix or side letter.[^24] Have a person check every gap.[^22]",
+  "Mixed bases: returns with and without subscription lines, or gross and net, lined up in one column.[^9] Label the basis in every cell, as ILPA's Performance Template does.[^10]",
+  "Missing the costly risk: Capco put half of over 100 hedge fund failures down to operational risk.[^13] Castle Hall counted $80 billion of investor losses across 327 operational failures.[^13]",
+  "Pressure to approve: just under a quarter of SBAI respondents have felt pressed to approve despite known risks.[^1] Write the veto rule down before the review starts.[^15]"
+ ],
+ "faq": [
+  {
+   "q": "What is operational due diligence in private equity?",
+   "a": "Operational due diligence checks a private equity manager's business: its controls, administrator, valuation, compliance and people.[^15][^6] Investment diligence, which judges the strategy and track record, runs beside it.[^15][^16]"
+  },
+  {
+   "q": "Is fund operational due diligence the same as M&A due diligence?",
+   "a": "No, because fund ODD vets a manager you hand money to, while mergers and acquisitions (M&A) diligence vets a company you buy.[^15] For acquisitions, read our AI due diligence guide.[^29]"
+  },
+  {
+   "q": "What goes on an operational due diligence checklist?",
+   "a": "An ODD checklist covers ownership, people, compliance, valuation, cash controls, service providers and legal terms.[^15] ILPA's DDQ 2.0 spreads these over 20 sections and lists 89 documents to request.[^6]"
+  },
+  {
+   "q": "How long does operational due diligence take?",
+   "a": "Most initial ODD reviews take two to eight weeks, says a Deutsche Bank survey of investors.[^14] Family offices take two weeks to twelve months for the whole manager decision.[^16][^17]"
+  },
+  {
+   "q": "Can AI fill in or compare a DDQ for us?",
+   "a": "Yes, AI can pull each manager's answers into one grid and flag blanks, but a person must check every gap.[^19][^7] Vendor tools cite the source page for each answer, so a person can check it against the page.[^18][^20]"
+  },
+  {
+   "q": "Should we use the ILPA DDQ or our own questionnaire?",
+   "a": "Start from the ILPA DDQ so answers line up across managers, then add your own follow-up questions.[^6][^7] In SBAI's survey, 59% of investors use their own questionnaire and 14% use industry templates.[^1]"
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Buy a diligence platform when reviews pile up: SBAI found investors under $5bn use no third-party tools, while larger ones sometimes do.[^1] Vendors such as DiligenceVault claim review time falls by over 70 percent.[^18] Across US enterprise AI decision-makers, 76% of AI use cases are now bought rather than built.[^27]",
+  "build": "Build a light grid when you vet a handful of managers a year.[^6] The ILPA DDQ is free, and about 40% of it lines up without judgment, by our count.[^6] For organizations MIT NANDA studied, partnered builds reached deployment about 67% of the time, against about 33% for internal ones.[^28]"
+ },
+ "pickElse": [
+  "Buying a company, not a fund stake: that is M&A diligence, covered in our AI due diligence guide.[^29]",
+  "An adviser already runs manager selection: 41% of offices using outside investment advisers rely on them for due diligence and manager access.[^2] J.P. Morgan finds 80% of offices outsource part of the portfolio, including manager selection.[^4]",
+  "Your pain starts after you commit: fund statements and quarterly reports belong in our family office reporting guide.[^30]",
+  "You vet only one or two managers a year: a shared spreadsheet on the ILPA template, filled by hand, may be enough.[^6]"
+ ],
+ "resources": [
+  {
+   "name": "ILPA Due Diligence Questionnaire 2.0",
+   "url": "https://ilpa.org/wp-content/uploads/2021/11/ILPA-DDQ-2.0.pdf",
+   "what": "The free standard questionnaire, with the list of documents to request."
+  },
+  {
+   "name": "ILPA DDQ 2.0 User Guide",
+   "url": "https://ilpa.org/wp-content/uploads/2021/11/ILPA-DDQ-2.0-User-Guide.pdf",
+   "what": "How ILPA means the yes/no and written answers to be read."
+  },
+  {
+   "name": "SEC Investment Adviser Public Disclosure",
+   "url": "https://adviserinfo.sec.gov/",
+   "what": "Free search of a registered manager's Form ADV and disciplinary history."
+  },
+  {
+   "name": "SBAI Operational Due Diligence Practices Survey 2024",
+   "url": "https://www.sbai.org/static/f03d5f7c-d906-44c2-95e68b62fdec57f6/SBAI-2024-Operational-Due-Diligence-Practices-Survey.pdf",
+   "what": "How 44 investors staff, run and time their manager reviews."
+  }
+ ],
+ "stats": [
+  {
+   "num": "40%",
+   "label": "of the ILPA questionnaire's numbered questions line up across managers without judgment, by our count[^6]",
+   "source": "Zavient count of ILPA DDQ 2.0, 28 Nov 2026"
+  },
+  {
+   "num": "41%",
+   "label": "of ODD practitioners don't always have enough time to finish a review (survey of 44 investors)[^1]",
+   "source": "SBAI, 2024"
+  },
+  {
+   "num": "35%",
+   "label": "of family offices say AI has sped up due diligence (survey of 351 offices)[^3]",
+   "source": "Citi Private Bank, 2026"
+  },
+  {
+   "num": "89",
+   "label": "documents the ILPA questionnaire asks each manager to send[^6]",
+   "source": "ILPA DDQ 2.0, 2021"
+  },
+  {
+   "num": "$80 billion",
+   "label": "of investor losses across 327 hedge fund operational failures, in Castle Hall's 2009 count[^13]",
+   "source": "SkyBridge Capital, 2016"
+  }
+ ],
+ "sources": [
+  {
+   "name": "Standards Board for Alternative Investments (SBAI), Operational Due Diligence Practices Survey (Apr 2024)",
+   "url": "https://www.sbai.org/static/f03d5f7c-d906-44c2-95e68b62fdec57f6/SBAI-2024-Operational-Due-Diligence-Practices-Survey.pdf",
+   "what": "Survey of 44 institutional investors with over $2tn under management, family offices among SBAI's investor members. 70% have dedicated ODD teams and the remaining 30% do not; teams of 1 to 4 people are most common. Where there is no dedicated team, 54% put ODD under the CIO or investment function, 23% under the COO or operations and 7% under the CRO. External consultants are used by 59%, and by 77% of those without a dedicated team. The Investment Committee is the primary recipient of review findings. 32% of dedicated teams have formal veto rights, and 73% of those with a veto use it rarely, once a year or less. 59% use their own bespoke DDQ; 14% use common industry templates; 18% rely on manager materials. Respondents with less than $5bn under management ($0bn-$5bn) do not use third-party data gathering tools. 41% do not always have enough time to perform an ODD review. Just under a quarter have felt pressured to approve allocations despite the risks identified. Read 28 Nov 2026."
+  },
+  {
+   "name": "Citi Private Bank, 2025 Global Family Office Report",
+   "url": "https://www.privatebank.citibank.com/doc/family-office/2025-global-family-office-report.pdf",
+   "what": "Survey of 346 family office participants. 60% work with external investment advisors; services they rely on those advisors for include due diligence & access to managers (41%). 54% have adopted due diligence of investments as a core practice, 69% of larger offices vs 40% of those under $500 million. Read 28 Nov 2026."
+  },
+  {
+   "name": "Citi Private Bank, 2026 Global Family Office Report",
+   "url": "https://www.privatebank.citibank.com/doc/family-office/2026-global-family-office-report.pdf",
+   "what": "Survey of 351 family offices. Benefits from AI include reducing manual work (35%), accelerating due diligence (35%) and improving decision-support quality (33%); 43% in North America report faster due diligence; 24% report no measurable impact yet. Read 28 Nov 2026."
+  },
+  {
+   "name": "J.P. Morgan Private Bank, 2026 Global Family Office Report",
+   "url": "https://privatebank.jpmorgan.com/content/dam/jpm-pb-aem/global/en/documents/2026-family-office-report/jp-morgan-private-bank-2026-global-family-office-report.pdf",
+   "what": "Survey of 333 single family offices in 30 countries. 80% of global family offices report some degree of portfolio outsourcing, such as outsourced CIOs, due diligence and manager selection. Read 28 Nov 2026."
+  },
+  {
+   "name": "Campden Wealth and RBC, The North America Family Office Report 2026",
+   "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
+   "what": "Survey of 155 single and private multi-family offices across the Americas (123 US). 35% would like to use AI in investment manager selection, \"but only around a quarter are there\". Read 28 Nov 2026."
+  },
+  {
+   "name": "ILPA, Due Diligence Questionnaire 2.0 (updated Nov 2021)",
+   "url": "https://ilpa.org/wp-content/uploads/2021/11/ILPA-DDQ-2.0.pdf",
+   "what": "Free questionnaire from the Institutional Limited Partners Association. Its overview says rising diligence detail led to a proliferation of lengthy, customized due diligence questionnaires. 20 sections, from Firm: General Information to Diversity, Equity and Inclusion, in short form Yes/No and long form questions. Appendix A lists 89 requested documents; Appendices B to H are data templates for team members, references, third parties and technology tools, fund, portfolio investments, GP-led secondaries and credit facilities, to be sent in spreadsheet format. Zavient counted its numbered questions: 436 read, 158 yes/no boxes, 5 tables and 12 single facts, so 175 (40%) line up without judgment and 261 need a written answer, by our count. Read 28 Nov 2026."
+  },
+  {
+   "name": "ILPA, DDQ 2.0 User Guide (9 Nov 2021)",
+   "url": "https://ilpa.org/wp-content/uploads/2021/11/ILPA-DDQ-2.0-User-Guide.pdf",
+   "what": "The Yes/No questions \"are intended to provide LPs with a top-level view\" and a framework to flag issues; LPs should review the expanded answers and their own follow-up questions before making any investment decision. Emerging managers may not have full answers on predecessor funds. Read 28 Nov 2026."
+  },
+  {
+   "name": "AIMA, Presenting the 2025 Edition of AIMA's Illustrative Questionnaire for the Due Diligence of Investment Managers",
+   "url": "https://www.aima.org/article/presenting-the-2025-edition.html",
+   "what": "The Alternative Investment Management Association's DDQ is a template, not a survey. It keeps the modular approach adopted in 2017. The 2025 edition added a batch of more than 100 questions across the modules and a new Private Markets strategy module. Read 28 Nov 2026."
+  },
+  {
+   "name": "ILPA, ILPA Releases Updated Reporting Template and New Performance Template (22 Jan 2025)",
+   "url": "https://ilpa.org/news/ilpa-releases-updated-reporting-template-and-new-performance-template-for-industry-adoption",
+   "what": "The templates should be implemented beginning Q1 2026. The Performance Template standardizes IRRs and TVPI/MOIC, gross and net, with and without the impact of fund-level subscription facilities. Read 28 Nov 2026."
+  },
+  {
+   "name": "ILPA, Templates FAQs v1.1 (Apr 2025)",
+   "url": "https://ilpa.org/wp-content/uploads/2025/04/ILPA-Templates-FAQs-v1.1.pdf",
+   "what": "Industry-driven templates after the SEC Private Fund Advisers rule was vacated. Updated Reporting Template provided for the first time after Q1 2026; Performance Template for the first time after Q1 2027. Suggested delivery for direct funds: 60 days after quarter end. Read 28 Nov 2026."
+  },
+  {
+   "name": "U.S. Court of Appeals for the Fifth Circuit, National Association of Private Fund Managers v. SEC, No. 23-60471 (5 Jun 2024)",
+   "url": "https://www.ca5.uscourts.gov/opinions/pub/23/23-60471CV0.pdf",
+   "what": "Vacates the SEC's Private Fund Advisers final rule, including quarterly statements on performance, adviser pay and fund fees: \"no part of it can stand\". Read 28 Nov 2026."
+  },
+  {
+   "name": "SEC, Announcement Regarding the Private Fund Advisers Rules",
+   "url": "https://www.sec.gov/announcement-regarding-private-fund-advisers-rules",
+   "what": "On June 5, 2024 the Fifth Circuit vacated the Private Fund Advisers rules. Read 28 Nov 2026."
+  },
+  {
+   "name": "SkyBridge Capital, A Guide to Hedge Fund Business & Operational Due Diligence (Mar 2016)",
+   "url": "https://hedgenordic.com/wp-content/uploads/2018/11/White-Paper-A-Guide-to-HF-Business-Operational-Due-Diligence-Mar-2016-High-Quality.pdf",
+   "what": "Summarizes Capco's 2003 study of more than 100 hedge fund failures: 50% were due to operational risk issues and 38% to investment risk. Summarizes Castle Hall's 2009 review of 327 hedge fund operational failures: total investor losses of $80 billion ($15 billion excluding Madoff). Copy hosted by HedgeNordic. Read 28 Nov 2026."
+  },
+  {
+   "name": "Deutsche Bank Global Prime Finance, 2014 Operational Due Diligence Survey",
+   "url": "http://www.mfaalts.org/wp-content/uploads/2014/07/Third-Annual-Deutsche-Bank-Operational-Due-Diligence-Survey-Summer-2014.pdf",
+   "what": "Survey of over 70 hedge fund investor entities managing over $2.72 trillion; family offices sit in the high net worth group. A majority say an initial ODD review takes between two and eight weeks. 92% regard the fund administrator as the most important service provider to contact. Emerging managers received an ODD veto in 9% of reviews and established managers in 6%. The DDQ often serves as an introduction; investors then use on-site visits and calls. Read 28 Nov 2026."
+  },
+  {
+   "name": "One Constellation, Operational Due Diligence (ODD) for Fund Investors: A Guide (vendor, Nov 2026)",
+   "url": "https://one-constellation.com/blog/operational-due-diligence",
+   "what": "ODD asks whether the business around a strategy can be trusted, separate from investment due diligence. Covers ownership, people, compliance, legal and fund terms, service providers and cash controls. Red flags: a single person who can release payments, a related-party administrator or valuation agent, late audits, and Form ADV, offering memo and DDQ answers that do not agree. Form ADV Part 2A Item 9 carries disciplinary information. Read 28 Nov 2026."
+  },
+  {
+   "name": "V7 Labs, LP Due Diligence on GPs (vendor)",
+   "url": "https://www.v7labs.com/blog/lp-due-diligence-gp-evaluation",
+   "what": "Family offices range from two weeks to twelve months for manager due diligence; LP legal teams review the limited partnership agreement for key person, fee offset and waterfall terms. Read 28 Nov 2026."
+  },
+  {
+   "name": "Private Markets Group, Family Office Due Diligence (2026)",
+   "url": "https://privatemarkets-group.com/family-office-due-diligence",
+   "what": "For family offices the process typically spans two to six months from screening to commitment; operational and legal due diligence takes 4 to 12 weeks. Read 28 Nov 2026."
+  },
+  {
+   "name": "DiligenceVault, Document Intelligence Engine launch (vendor, 8 Jul 2025)",
+   "url": "https://diligencevault.com/spotlight/diligencevault-launches-ai-powered-document-intelligence-engine-to-ease-the-burden-of-fund-due-diligence/",
+   "what": "Vendor claims: reads operational DDQs, offering memos and financial statements; extracts data points with a confidence score and source attribution; on average reduces review and response time by over 70 percent. No price on the page. Read 28 Nov 2026."
+  },
+  {
+   "name": "CENTRL, From Manual Diligence to AI-Accelerated ODD (vendor case study, 21 Jan 2026)",
+   "url": "https://www.centrl.ai/resources/from-manual-diligence-to-ai-accelerated-odd-cutting-review-cycles-by-40-50-and-unlocking-a-year-of-capacity",
+   "what": "Vendor case study: out of about 200 questions, the tool auto-populated about 80 to 110 from the manager's own DDQ and sent the rest back; DDQ due dates fell from 10 weeks to 6; analysts still read free-text answers to find exceptions; analyst time preserved for judgment-heavy work. No price on the page. Read 28 Nov 2026."
+  },
+  {
+   "name": "Ping, AI Agent for Manager Due Diligence (vendor)",
+   "url": "https://ping.ai/solutions/asset-management/manager-due-diligence",
+   "what": "Vendor claims: reads manager DDQs and filings, checks every DDQ claim against the data room and prior filings, and flags discrepancies with the source cited on both sides; \"the allocation call is yours\". No price on the page. Read 28 Nov 2026."
+  },
+  {
+   "name": "Penguin Capital, DD Cockpit (vendor, private beta)",
+   "url": "https://www.penguin.capital/dd-cockpit",
+   "what": "Vendor claims: an LPA screener flags GP-friendly clauses, fee structures, key-person provisions and divergence from peer norms; preliminary diligence in under 4 hours against 2 to 4 weeks manual. Waitlist; no price shown. Read 28 Nov 2026."
+  },
+  {
+   "name": "Vals AI, Vals Legal AI Report (Feb 2025)",
+   "url": "https://www.vals.ai/industry-reports/vlair-2-27-25",
+   "what": "Independent test of legal AI tools against a lawyer baseline. Data extraction scores: lawyers 71.1, CoCounsel 73.2, Harvey Assistant 75.1, Vincent AI 69.2, Oliver 64.0. The hardest questions made a tool read more than one document. Read 28 Nov 2026."
+  },
+  {
+   "name": "Harvey, Contract Intelligence: A Scaled Benchmark (vendor, 21 Nov 2025)",
+   "url": "https://www.harvey.ai/blog/contract-intelligence-benchmark",
+   "what": "Vendor benchmark: data points ranged from 22 for side letters to 37 for LPAs; lawyers working with Review tables outperform by 5% or more. No price on the page. Read 28 Nov 2026."
+  },
+  {
+   "name": "TU Delft, LLM-Orchestrated Iterative Retrieval for Contract Clause Extraction (thesis, Jun 2026)",
+   "url": "https://repository.tudelft.nl/file/File_e0c6743a-a0db-46b6-8227-557db173ea98",
+   "what": "In the CUAD benchmark of 510 contracts, approximately 70 to 80% of clause category and contract pairs have no matching clause, so a system must reliably confirm absence; a clause may sit in an appendix or under another heading. Read 28 Nov 2026."
+  },
+  {
+   "name": "eCFR, 17 CFR 275.202(a)(11)(G)-1, family offices",
+   "url": "https://www.ecfr.gov/current/title-17/chapter-II/part-275/section-275.202(a)(11)(G)-1",
+   "what": "A family office \"shall not be considered to be an investment adviser\" if it has no clients other than family clients, is wholly owned and controlled by family, and does not hold itself out to the public. Read 28 Nov 2026."
+  },
+  {
+   "name": "Bonney et al., CES-WP-26-25R, U.S. Census Bureau Center for Economic Studies (Oct 2026)",
+   "url": "https://www2.census.gov/library/working-papers/2026/adrm/ces/CES-WP-26-25R.pdf",
+   "what": "Survey of 117,000 or more US firms (Business Trends and Outlook Survey AI supplement, more than 117,000 distinct firms pooled, Nov 2025 to Jan 2026). Among firms reporting AI-driven task effects, 66% of firms only augment tasks; AI-related employment decreases occur at only 2% of AI-using firms. Read 28 Nov 2026."
+  },
+  {
+   "name": "Menlo Ventures, 2025 State of Generative AI in the Enterprise",
+   "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+   "what": "Survey of 495 US enterprise AI decision-makers: 76% of AI use cases are purchased rather than built, up from 53% in 2024. Read 28 Nov 2026."
+  },
+  {
+   "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025)",
+   "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+   "what": "MIT no longer hosts the report (its link now opens the NANDA project page, checked 26 Nov 2026); copy hosted by MLQ.ai. Sample: 52 organizations interviewed, survey of 153 leaders, and 300+ public AI initiatives reviewed. $30-40 billion of enterprise GenAI investment; 95% of organizations are getting zero return; just 5% of integrated AI pilots extract millions in value. Task-specific tools: 60% of organizations evaluated them, 20% piloted, 5% reached production. Over 80% of organizations explored or piloted ChatGPT or Copilot, and nearly 40% report deployment. External partnerships with customized tools reached deployment about 67% of the time vs about 33% for internal builds: 2x as likely, twice the success rate. Only 40% of companies purchased an official LLM subscription; workers at over 90% of companies surveyed use personal AI tools for work. For mission-critical work, 90% of users prefer humans. Enterprises, defined as firms with over $100 million in annual revenue, lead in pilot count but report the lowest pilot-to-scale conversion. Read 26 Nov 2026."
+  },
+  {
+   "name": "Zavient, Can AI speed up due diligence on add-on acquisitions?",
+   "url": "/ai-work/ai-due-diligence.html",
+   "what": "Zavient guide to AI in M&A due diligence on companies a firm buys."
+  },
+  {
+   "name": "Zavient, Can AI give a family office one true balance sheet across entities?",
+   "url": "/ai-work/family-office-reporting.html",
+   "what": "Zavient guide to family office reporting once fund commitments are made."
+  }
+ ],
+ "related": [
+  "family-offices",
+  "family-office-reporting",
+  "ai-due-diligence"
+ ],
+ "offer": {
+  "heading": "Comparing fund managers this quarter? Get a free diagnostic",
+  "body": "Bring one manager's DDQ and the memo you wrote on it. In 30 minutes you leave with the first step, a before-and-after measure and the questions a grid can't answer. You get it in writing, with no sales pitch."
+ },
+ "keyword": {
+  "phrase": "operational due diligence",
+  "searches": 260,
+  "cpc": 0,
+  "difficulty": 4
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Lead problem is clear: every manager answers differently and someone must line the answers up. The human-role answer read as a comma splice; joined it with 'and'. Cut 'so the check is quick' from the DDQ FAQ, which no source backs; it now says a person checks each answer against its page."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Test plan runs on one finished review with the office's own memo as the answer key. The 'not found' step and the multi-document step match where tools fail. Recipe flows name a role on every step. No change."
+  },
+  {
+   "reader": "GM",
+   "notes": "Bottom line answers the title in five short bullets, and the first bullet now says 'can be trusted' instead of the vaguer 'is safe'. The last pick-else line about enterprise AI buying read off-topic; replaced it with the one-or-two-managers case and moved the Menlo figure into the buy answer."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Read as head of investment operations. The own-data table says which sections line up and which need a person, and the note is honest about four lost question numbers and the uncounted data templates. Confirm list in the example (administrator, auditor, side-letter fees) matches the job. No change."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Answers whether AI can speed manager vetting and what stays with people. The fund-versus-M&A line is plain in the title, the summary and the FAQ. Offer is concrete; no Zavient price, by decision. No change."
+  }
+ ],
+ "updated": "2026-11-28",
+ "figureCheck": {
+  "date": "2026-11-28",
+  "checked": 26,
+  "notFound": [],
+  "byHand": [
+   {
+    "where": "verdict[0]",
+    "figure": "30%",
+    "url": "https://one-constellation.com/blog/operational-due-diligence",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "SBAI 2024 survey, p.4: \"70% of respondents to the survey have dedicated ODD teams, with the remaining 30% either have (non- dedicated) staff in charge of ODD (alongside their other main responsibilities) or have outsourced all ODD matters to external consultants.\""
+   },
+   {
+    "where": "humanRole[1]",
+    "figure": "54%",
+    "url": "https://www.sbai.org/static/f03d5f7c-d906-44c2-95e68b62fdec57f6/SBAI-2024-Operational-Due-Diligence-Practices-Survey.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "There was a preference for ODD matters to be reported to/overseen by a CIO (Chief Investment Officer) / Investment function (54%), with COO (Chief Operating Officer) / Operations (23%) and CRO (Chief Risk Officer) / Risk (7%) functions seen less commonly."
+   },
+   {
+    "where": "humanRole[1]",
+    "figure": "23%",
+    "url": "https://www.sbai.org/static/f03d5f7c-d906-44c2-95e68b62fdec57f6/SBAI-2024-Operational-Due-Diligence-Practices-Survey.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "There was a preference for ODD matters to be reported to/overseen by a CIO (Chief Investment Officer) / Investment function (54%), with COO (Chief Operating Officer) / Operations (23%) and CRO (Chief Risk Officer) / Risk (7%) functions seen less commonly."
+   },
+   {
+    "where": "humanRole[2]",
+    "figure": "92%",
+    "url": "http://www.mfaalts.org/wp-content/uploads/2014/07/Third-Annual-Deutsche-Bank-Operational-Due-Diligence-Survey-Summer-2014.pdf",
+    "why": "couldn't read the source (ENOTFOUND): open it and copy its sentence",
+    "quote": "In the post-Madoff world, the vast majority (92%) of investors regard the fund administrator as the most important external service provider to contact during an ODD review."
+   },
+   {
+    "where": "teamAfter[3]",
+    "figure": "66%",
+    "url": "https://www2.census.gov/library/working-papers/2026/adrm/ces/CES-WP-26-25R.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Most users (66%) rely on AI solely to augment tasks, while AI-related employment decreases are rare, occurring in only 2% of firms."
+   },
+   {
+    "where": "teamAfter[3]",
+    "figure": "2%",
+    "url": "https://www2.census.gov/library/working-papers/2026/adrm/ces/CES-WP-26-25R.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Most users (66%) rely on AI solely to augment tasks, while AI-related employment decreases are rare, occurring in only 2% of firms."
+   },
+   {
+    "where": "tables[0].rows[0].cells[2]",
+    "figure": "70 percent",
+    "url": "https://diligencevault.com/spotlight/diligencevault-launches-ai-powered-document-intelligence-engine-to-ease-the-burden-of-fund-due-diligence/",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Time Back to Think : On average, the engine reduces review and response time by over 70 percent."
+   },
+   {
+    "where": "tables[0].rows[4].cells[2]",
+    "figure": "5%",
+    "url": "https://www.harvey.ai/blog/contract-intelligence-benchmark",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Lawyers Working With Review Tables Outperform by 5% or More"
+   },
+   {
+    "where": "tables[1].intro",
+    "figure": "59%",
+    "url": "https://ilpa.org/wp-content/uploads/2021/11/ILPA-DDQ-2.0.pdf",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "a majority (59%) of respondents use their own bespoke DDQs for initial information gathering."
+   },
+   {
+    "where": "recipes[0].when",
+    "figure": "35%",
+    "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Aspirations are higher still: 45 percent would like to use AI in risk management and 35 percent in investment manager selection, but only around a quarter are there."
+   },
+   {
+    "where": "howToTest[1]",
+    "figure": "41%",
+    "url": "https://www.sbai.org/static/f03d5f7c-d906-44c2-95e68b62fdec57f6/SBAI-2024-Operational-Due-Diligence-Practices-Survey.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "A majority (59%) of overall survey respondents feel that they do always have enough time to perform an ODD review, while a significant minority (41%) indicate that they do not."
+   },
+   {
+    "where": "howToTest[4]",
+    "figure": "70%",
+    "url": "https://repository.tudelft.nl/file/File_e0c6743a-a0db-46b6-8227-557db173ea98",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Absence as the expected outcome. In the CUAD benchmark, approximately 70–80% of clause category and contract pairs have no matching clause (Hendrycks et al., 2021)."
+   },
+   {
+    "where": "howToTest[4]",
+    "figure": "80%",
+    "url": "https://repository.tudelft.nl/file/File_e0c6743a-a0db-46b6-8227-557db173ea98",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Absence as the expected outcome. In the CUAD benchmark, approximately 70–80% of clause category and contract pairs have no matching clause (Hendrycks et al., 2021)."
+   },
+   {
+    "where": "watchOuts[3]",
+    "figure": "$80 billion",
+    "url": "https://hedgenordic.com/wp-content/uploads/2018/11/White-Paper-A-Guide-to-HF-Business-Operational-Due-Diligence-Mar-2016-High-Quality.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Castle Hall came to the following conclusions: Operational failures produced total investor losses of $80 billion ($15 billion excl. Madoff)"
+   },
+   {
+    "where": "faq[5].a",
+    "figure": "59%",
+    "url": "https://www.sbai.org/static/f03d5f7c-d906-44c2-95e68b62fdec57f6/SBAI-2024-Operational-Due-Diligence-Practices-Survey.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "a majority (59%) of respondents use their own bespoke DDQs for initial information gathering. Some (18%) organisations rely on materials provided by the investment manager or on common industry templates (14%) rather than using bespoke DDQs."
+   },
+   {
+    "where": "faq[5].a",
+    "figure": "14%",
+    "url": "https://www.sbai.org/static/f03d5f7c-d906-44c2-95e68b62fdec57f6/SBAI-2024-Operational-Due-Diligence-Practices-Survey.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Some (18%) organisations rely on materials provided by the investment manager or on common industry templates (14%) rather than using bespoke DDQs."
+   },
+   {
+    "where": "buyVsBuild.buy",
+    "figure": "$5bn",
+    "url": "https://www.sbai.org/static/f03d5f7c-d906-44c2-95e68b62fdec57f6/SBAI-2024-Operational-Due-Diligence-Practices-Survey.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Respondents with the smallest pools of assets ($0bn-$5bn) do not utilise third-party tools. Usage of these tools is more common for investors with more than $5bn in AUM, although the majority have not adopted them."
+   },
+   {
+    "where": "buyVsBuild.buy",
+    "figure": "70 percent",
+    "url": "https://diligencevault.com/spotlight/diligencevault-launches-ai-powered-document-intelligence-engine-to-ease-the-burden-of-fund-due-diligence/",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Time Back to Think : On average, the engine reduces review and response time by over 70 percent."
+   },
+   {
+    "where": "buyVsBuild.buy",
+    "figure": "76%",
+    "url": "https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Today, 76% of AI use cases are purchased rather than built internally."
+   },
+   {
+    "where": "buyVsBuild.build",
+    "figure": "67%",
+    "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "In our sample, external partnerships with learning-capable, customized tools reached deployment ~67% of the time, compared to ~33% for internally built tools."
+   },
+   {
+    "where": "buyVsBuild.build",
+    "figure": "33%",
+    "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "In our sample, external partnerships with learning-capable, customized tools reached deployment ~67% of the time, compared to ~33% for internally built tools."
+   },
+   {
+    "where": "pickElse[1]",
+    "figure": "41%",
+    "url": "https://www.privatebank.citibank.com/doc/family-office/2025-global-family-office-report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Asset allocation (46%), performance analysis & reporting (43%), due diligence & access to managers (41%), and risk analysis & reporting (32%) were also mentioned."
+   },
+   {
+    "where": "pickElse[1]",
+    "figure": "80%",
+    "url": "https://privatebank.jpmorgan.com/content/dam/jpm-pb-aem/global/en/documents/2026-family-office-report/jp-morgan-private-bank-2026-global-family-office-report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "On the investment side, 80% of global family offices report incorporating some degree of portfolio outsourcing, such as usage of outsourced CIOs, due diligence and manager selection, trading functions and discretionary oversight of specific investment sleeves (Exhibit 17)."
+   },
+   {
+    "where": "stats[1]",
+    "figure": "41%",
+    "url": "https://www.sbai.org/static/f03d5f7c-d906-44c2-95e68b62fdec57f6/SBAI-2024-Operational-Due-Diligence-Practices-Survey.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "A majority (59%) of overall survey respondents feel that they do always have enough time to perform an ODD review, while a significant minority (41%) indicate that they do not."
+   },
+   {
+    "where": "stats[2]",
+    "figure": "35%",
+    "url": "https://www.privatebank.citibank.com/doc/family-office/2026-global-family-office-report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Respondents also reported benefits from AI in reducing manual work (35%), accelerating due diligence (35%), and improving decision-support quality (33%)."
+   },
+   {
+    "where": "stats[4]",
+    "figure": "$80 billion",
+    "url": "https://hedgenordic.com/wp-content/uploads/2018/11/White-Paper-A-Guide-to-HF-Business-Operational-Due-Diligence-Mar-2016-High-Quality.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Castle Hall came to the following conclusions: Operational failures produced total investor losses of $80 billion ($15 billion excl. Madoff)"
+   }
+  ],
+  "redirects": []
+ },
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "writer agent self-check (no separate agent tool in this session; a fresh-agent check is still owed)",
+  "checked": 40,
+  "fixed": [
+   "Deutsche Bank 2014: research's 7% veto rate and 'lack of transparency' reason not found in the report; replaced with 9% of emerging and 6% of established manager reviews",
+   "Deutsche Bank sample stated as over 70 investor entities with $2.72 trillion",
+   "NEPC 2022 departures and regulator-inquiry figures not found in the summary read; cut",
+   "Goldman Sachs 39% is a share of AI uses, not of offices; cut",
+   "RBC manager-selection figure worded as the report's text: 35% want it, around a quarter use it",
+   "perfORM (an ODD provider) dropped as a source; review length now from Deutsche Bank's survey",
+   "Third-party claim of 300+ questions and 89 documents checked against ILPA's own PDF: 312 top-level numbers (305 questions) and 89 documents"
+  ]
+ }
+}
