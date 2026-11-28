@@ -282,3 +282,13 @@ test('no built page puts punctuation after a footnote marker', () => {
   }
   assert.deepEqual(bad, []);
 });
+
+test('no page hardcodes the number of guides (it must come from the live list)', () => {
+  for (const f of ['src/pages/index.astro', 'src/pages/404.astro']) {
+    const src = readFileSync(join(root, f), 'utf8');
+    assert.ok(!/all \d+ (researched )?guides/i.test(src), `${f}: guide count is typed in; use guideCount`);
+  }
+  const dir = readFileSync(join(root, 'dist/ai-work.html'), 'utf8').match(/All \((\d+)\)/)[1];
+  const home = readFileSync(join(root, 'dist/index.html'), 'utf8').match(/Search all (\d+) guides/)[1];
+  assert.equal(home, dir, 'home page guide count differs from the directory');
+});

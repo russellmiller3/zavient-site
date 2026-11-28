@@ -1,6 +1,11 @@
 ---
 // api-docs-read: static 404 recovery page — no external API surface.
 import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { indexed } from '../lib/publish.mjs';
+// Guide count comes from the same live list the directory shows, so it never goes stale (28 Nov 2026: it read 61 at 73).
+const everyGuide = await getCollection('aiwork');
+const guideCount = everyGuide.filter((p) => indexed(p, everyGuide)).length;
 import ConsultingCta from '../components/ConsultingCta.astro';
 ---
 <Base title="Page not found | Zavient" description="That page could not be found on zavient.com. Browse our AI guides, free tools, or request a free 30-minute diagnostic." noindex>
@@ -11,7 +16,7 @@ import ConsultingCta from '../components/ConsultingCta.astro';
       <span class="bluf-label">Where to go next</span>
       <ul>
         <li>Start on the <a href="/">Zavient home page</a> to pick your role, industry or workflow.</li>
-        <li>Search all 61 researched guides and tools in the <a href="/ai-work.html">AI work directory</a>.</li>
+        <li>Search all {guideCount} researched guides and tools in the <a href="/ai-work.html">AI work directory</a>.</li>
         <li>Run the <a href="/ai-readiness-assessment.html">3-minute AI readiness check</a> in your browser.</li>
       </ul>
     </div>

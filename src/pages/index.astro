@@ -4,6 +4,11 @@
 // industry, role or free tool. Research notes: one main button (the free diagnostic), the readiness check as the quiet
 // second door, no headline stats, firm-level operator proof + method block for trust. Russell is named only on the About page.
 import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { indexed } from '../lib/publish.mjs';
+// Guide count comes from the same live list the directory shows, so it never goes stale (28 Nov 2026: it read 61 at 73).
+const everyGuide = await getCollection('aiwork');
+const guideCount = everyGuide.filter((p) => indexed(p, everyGuide)).length;
 import ConsultingCta from '../components/ConsultingCta.astro';
 
 const BOOK = 'https://calendar.app.google/2xXiMLiamRFtfFKH9';
@@ -132,7 +137,7 @@ const updated = '27 November 2026';
         </a>
       ))}
     </div>
-    <p class="diag-nudge">Looking for another workflow or industry? <a href="/ai-work.html">Search all 61 guides and tools &rarr;</a></p>
+    <p class="diag-nudge">Looking for another workflow or industry? <a href="/ai-work.html">Search all {guideCount} guides and tools &rarr;</a></p>
 
     <h2 id="how">How we work with you</h2>
     <ol>
