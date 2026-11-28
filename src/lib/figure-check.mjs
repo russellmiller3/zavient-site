@@ -1,3 +1,4 @@
+import { wordsToNumbers } from './source-numbers.mjs';
 // Live figure-check record (round 5, 26 Nov 2026). The build thread found figures that passed the note check but were
 // not in the source (an Ivans 98% on the page for another claim, an Accenture case figure cited as a survey figure,
 // a count taken from an exhibit). Russell: "Make it so every fix is structual to templates so it doesnt reoccur".
@@ -25,15 +26,92 @@ export const FIGURE_CHECK_PENDING = new Set(('account-reconciliation-automation 
 const norm = (s) => String(s).toLowerCase().replace(/[\s,]+/g, '');
 export function figureCheckProblems(d, slug) {
   const fc = d.figureCheck;
-  if (!fc) return FIGURE_CHECK_PENDING.has(slug) ? [] : ['no live figure check: run NODE_USE_ENV_PROXY=1 node scripts/check-source-figures.mjs <page> --write'];
+  if (!fc) return FIGURE_CHECK_PENDING.has(slug) ? [] : ['no live figure check: run node scripts/check-source-figures.mjs <page> --write'];
   const out = [];
   if (!/^\d{4}-\d{2}-\d{2}$/.test(fc.date || '') || (d.updated && fc.date < d.updated)) out.push(`live figure check (${fc.date}) is older than the page (${d.updated}): run it again with --write`);
   for (const n of fc.notFound || []) out.push(`figure not on its source's page: ${n}: fix the figure or the source`);
+  for (const p of fc.padded || []) out.push(`footnote doesn't state this figure: ${p}`);
   for (const r of fc.redirects || []) out.push(`source URL redirects (${r}): cite the page it lands on`);
   for (const b of fc.byHand || []) {
-    const fig = String(b.figure).replace(/^(?:about|nearly|over|more than|under|up to)\s+/i, '');
+    // A footnote group with several figures logs them as "54% / 23%": the source's sentence holds one of them.
+    const figs = String(b.figure).split(' / ').map((f) => f.replace(/^(?:about|nearly|over|more than|under|up to)\s+/i, ''));
+    const q = norm(wordsToNumbers(b.quote)); // "Seventy-three percent" holds 73%
+    const inQuote = (fig) => /twice|times|double|triple|to 1/i.test(fig) || q.includes(norm(fig).replace(/^(?:[$€£])/, '')) || q.includes(norm(fig).replace(/%$/, ''));
     if (!b.quote) out.push(`${b.where}: ${b.figure} needs the source's own sentence in figureCheck.byHand quote (${b.why})`);
-    else if (!/twice|times|double|triple|to 1/i.test(fig) && !norm(b.quote).includes(norm(fig).replace(/^(?:[$€£])/, '')) && !norm(b.quote).includes(norm(fig).replace(/%$/, ''))) out.push(`${b.where}: the quote given for ${b.figure} doesn't contain it`);
+    else if (!figs.some(inQuote)) out.push(`${b.where}: the quote given for ${b.figure}${b.footnote ? ` (footnote [^${b.footnote}])` : ''} doesn't contain it: each footnote's own source must state the figure, else move or drop the footnote`);
+  }
+  return out;
+}
+
+// Hand-checked quotes survive a reorder (28 Nov 2026). byHand entries were matched on rerun by position and figure
+// ("watchOuts[1]" + "30%"), so moving a block or a bullet dropped the quote a person had copied from the source. Now
+// a quote is found by figure + source URL first (the claim cites the same source wherever it sits on the page), then
+// by position + figure as before. Among several matches the one at the same position wins.
+const sameFig = (a, b) => norm(a) === norm(b);
+const sameUrl = (a, b) => String(a || '').replace(/^https?:\/\/(?:www\.)?/, '').replace(/\/+$/, '') === String(b || '').replace(/^https?:\/\/(?:www\.)?/, '').replace(/\/+$/, '');
+export function findQuote(byHand, { where, figure, url, urls = [] }) {
+  // Several figures logged together: one quote per figure, joined, so no hand-copied sentence is dropped.
+  const many = String(figure).split(' / ');
+  if (many.length > 1) {
+    const qs = [...new Set(many.map((f) => findQuote(byHand, { where, figure: f, url, urls })).filter(Boolean))];
+    return qs.length ? qs.join(' … ') : undefined;
+  }
+  // A footnote group's figures are logged together ("70% / 80%"); an older entry for any one of them carries over.
+  const parts = (f) => String(f).split(' / ');
+  const all = (byHand || []).filter((b) => b.quote && parts(b.figure).some((x) => parts(figure).some((y) => sameFig(x, y))));
+  const cited = [url, ...urls].filter(Boolean);
+  const byUrl = all.filter((b) => cited.some((u) => sameUrl(b.url, u)));
+  const pick = byUrl.find((b) => b.where === where) || byUrl.find((b) => sameUrl(b.url, url)) || byUrl[0] || all.find((b) => b.where === where);
+  return pick?.quote;
+}
+
+// Moved here from scripts/check-source-figures.mjs (28 Nov 2026) so the per-footnote judgement below can be tested.
+// The ways a source might print one figure: 51%, 51 percent, $1,200, $1.2K, 3x, three times.
+const WORD = { 2: ['twice', 'double', 'two times'], 3: ['three times', 'triple', 'threefold'], 4: ['four times', 'fourfold'], 5: ['five times', 'fivefold'], 10: ['ten times', 'tenfold'] };
+export const variants = (f) => {
+  const n = String(f.value);
+  const withCommas = Number(n).toLocaleString('en-US', { maximumFractionDigits: 2 });
+  const out = [f.raw, withCommas, `${n} percent`, `${n}%`, `${n} %`, `${n}x`, `${n} times`, `${n}-fold`];
+  if (f.kind === 'x') out.push(...(WORD[f.value] || []), `${n}:1`, `${n} to 1`);
+  if (/^[$€£]$/.test(f.kind)) for (const [u, m] of [['billion', 1e9], ['million', 1e6], ['k', 1e3]]) if (f.value >= m) { const v = +(f.value / m).toPrecision(6); out.push(`${f.kind}${v} ${u}`, `${f.kind}${v}${u[0]}`, `${v} ${u}`); }
+  if (/^[$€£]$/.test(f.kind)) out.push(`${f.kind}${withCommas}`);
+  return [...new Set(out.map((v) => v.toLowerCase()))].filter((v) => v.length > 1);
+};
+// The claim's own words, to test that the figure sits near them on the source's page (not elsewhere on it).
+const STOP = new Set('about after also among because before being between both could each from have into just more most other over same some such than that their them then there these they this those through under very what when where which while will with would your said says percent firms companies company'.split(' '));
+export const claimWords = (s) => [...new Set((s.toLowerCase().replace(/\[\^\d+\]/g, '').match(/[a-z]{4,}/g) || []).filter((w) => !STOP.has(w)).map((w) => w.replace(/(?:ies|es|s|ing|ed)$/, '').slice(0, 7)))];
+export const near = (body, v, words) => {
+  for (let i = body.indexOf(v); i >= 0; i = body.indexOf(v, i + 1)) {
+    const win = body.slice(Math.max(0, i - 300), i + v.length + 300);
+    if (words.filter((w) => win.includes(w)).length >= Math.min(2, words.length)) return true;
+  }
+  return false;
+};
+
+
+// Every footnote on a figure is checked (28 Nov 2026). Independent source checks kept finding a figure with two
+// footnotes where the second source never states it (padding to meet "several sources"). The live check used to stop
+// at the first source that held the figure. Now, for one footnote group (figureGroups in src/lib/source-numbers.mjs:
+// the figures written before a run of markers, and those markers):
+// - each figure must be on some cited source's page, near the claim's words (else notFound, or byHand if only far);
+// - each cited source that was read must state one of the group's figures, else it is padded: "move or drop it";
+// - each cited source that couldn't be read gets its own byHand entry, so a person copies that source's sentence.
+// sources: [{ c, u, body }] where body is the page text, or null when it couldn't be read (err says why).
+export function judgeGroup({ where, figs, sources, words }) {
+  const out = { checked: 0, byHand: [], notFound: [], padded: [] };
+  const read = sources.filter((s) => s.body != null);
+  const states = (s, f) => variants(f).some((v) => s.body.includes(v));
+  for (const f of figs) {
+    out.checked++;
+    const hits = read.filter((s) => states(s, f));
+    if (hits.some((s) => variants(f).some((v) => near(s.body, v, words)))) continue;
+    if (hits.length) { out.byHand.push({ where, figure: f.raw, url: hits[0].u, why: 'found on the page, but not near the claim\'s words: confirm it backs this claim' }); continue; }
+    if (read.length) out.notFound.push(`${where}: ${f.raw} not found in ${read.map((s) => s.u).join(', ')}`);
+  }
+  const figList = figs.map((f) => f.raw).join(' / ');
+  for (const s of sources) {
+    if (s.body == null) { out.byHand.push({ where, figure: figList, url: s.u, footnote: s.c, why: `couldn't read the source (${s.err || 'unreadable'}): open it and copy the sentence that states the figure` }); continue; }
+    if (!figs.some((f) => states(s, f)) && figs.some((f) => read.some((o) => o !== s && states(o, f)))) out.padded.push(`${where}: footnote [^${s.c}] (${s.u}) doesn't state ${figList}: move or drop it`);
   }
   return out;
 }

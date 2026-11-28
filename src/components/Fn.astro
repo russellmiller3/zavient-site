@@ -6,10 +6,12 @@
 // words between them, which put stray commas in front of single markers (26 Nov 2026).
 // Rule (26 Nov 2026): every claim is sourced, with several sources where possible. tests/site.test.mjs
 // checks that every marker points at a real source.
+import { placeFootnotes } from '../lib/footnotes.mjs';
 const { s = '' } = Astro.props;
 // Round 6 (26 Nov 2026): "gaps[^1][^48]." rendered "gaps 1,48 ." with a stray space on 29 pages, while others wrote
-// "gaps.[^1]". Punctuation after a marker group moves in front of it, so every page renders "gaps.1,48".
-const text = String(s).replace(/((?:\[\^\d+\])+)([.,;:!?])/g, '$2$1');
+// "gaps.[^1]". Punctuation after a marker group moves in front of it, so every page renders "gaps.1,48". Since
+// 28 Nov 2026 the rule lives in src/lib/footnotes.mjs, shared with the build step that checks hand-written pages.
+const text = placeFootnotes(s);
 const parts = text.split(/((?:\[\^\d+\])+)/g).filter((p) => p !== '');
 ---
 {parts.map((p) => {

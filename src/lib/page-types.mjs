@@ -10,7 +10,7 @@
 // - Answer first (Russell, 26 Nov 2026, "MAKE SURE TO ANSWER THE QUESTIONS"): every question heading is answered in
 //   the first sentence under it, 30 words or fewer, before any example, table or list (answers[blockId]).
 //   Checked by src/lib/answer-first.mjs in the publish gate and on the built site.
-// - Every claim footnoted [^n], with several sources where possible.
+// - Every claim footnoted [^n], with several sources where possible, each one supporting the claim it is attached to.
 // - Augmentation, not replacement: every page says where the team stays in charge.
 // - No Upwork, freelancer or low-end rate content anywhere.
 // - Teach, then earn trust, then win the lead: teaching blocks first, proof next, then buy-or-build,

@@ -13,15 +13,13 @@ import { TYPES, COMMON_REQUIRED, REVIEWERS, MIN, BANNED, BLOCKS, DEMAND } from '
 import { checkPage as readability } from './check-readability.mjs';
 import { pageAnswerProblems } from '../src/lib/answer-first.mjs';
 import { ownPriceProblems, strings } from '../src/lib/no-own-price.mjs';
-import { sourceProblems, searchResultProblems } from '../src/lib/source-rules.mjs';
-import { pageLeadProblems } from '../src/lib/lead-rules.mjs';
-import { staleProblems } from '../src/lib/stale-rules.mjs';
-import { rivalProblems } from '../src/lib/rival-firms.mjs';
-import { acronymProblems } from '../src/lib/acronyms.mjs';
-import { structureProblems, eyebrowProblems, handoffProblems } from '../src/lib/structure-rules.mjs';
-import { claimProblems } from '../src/lib/source-numbers.mjs';
+import { sourceProblems } from '../src/lib/source-rules.mjs';
+import { eyebrowProblems, handoffProblems } from '../src/lib/structure-rules.mjs';
+import { claimProblems, paddingProblems } from '../src/lib/source-numbers.mjs';
 import { figureCheckProblems } from '../src/lib/figure-check.mjs';
 import { edgarProblems } from '../src/lib/edgar-hits.mjs';
+import { schemaProblems } from '../src/lib/page-schema.mjs';
+import { everyPageProblems } from '../src/lib/every-page.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const contentDir = join(root, 'src/content/ai-work');
@@ -34,6 +32,9 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
   const t = TYPES[d.type || 'usecase'];
   if (!d.templateVersion) fail.push('templateVersion missing: not a golden-template page');
   if (!t) { fail.push(`unknown type ${d.type}`); return { fail, warn }; }
+  // The content collection's own schema (src/lib/page-schema.mjs), so a page that would fail astro build fails here
+  // first: a table without its intro, a field of the wrong kind, a link that isn't a URL (28 Nov 2026).
+  for (const p of schemaProblems(d)) fail.push(`schema: ${p}`);
 
   // Leftover skeleton text
   const todo = allText(d).match(/TODO[^"]{0,60}/g);
@@ -74,7 +75,6 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
   if (unused.length) fail.push(`sources never cited: ${unused.join(', ')}; cite each source on the page or drop it from the list`);
   // No forum threads, rival consulting firms or content farms as sources (26 Nov 2026 fixes, made structural)
   for (const p of sourceProblems(d.sources)) fail.push(p);
-  for (const p of searchResultProblems(d.sources)) fail.push(p);
   // Every sentence-bearing prose field should carry a footnote
   const prose = [['summary', d.summary], ...(d.humanRole || []).map((x, i) => [`humanRole ${i + 1}`, x]),
     ...(d.watchOuts || []).map((x, i) => [`watchOut ${i + 1}`, x]), ...(d.pickElse || []).map((x, i) => [`pick-else ${i + 1}`, x]), ...(d.faq || []).map((x, i) => [`faq ${i + 1}`, x.a]),
@@ -104,11 +104,8 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
   // Answer-first rule (Russell, 26 Nov 2026): every question heading answered in the first sentence under it
   for (const p of pageAnswerProblems(d)) fail.push(`answer first: ${p}`);
   // Every lead text says the thing: no meta pointers, no two answers joined by a semicolon, no restated heading (26 Nov 2026)
-  for (const p of pageLeadProblems(d)) fail.push(`lead: ${p}`);
   // Superseded rules (SR 11-7, withdrawn CFPB circulars) never cited as current (26 Nov 2026)
-  for (const p of staleProblems(d)) fail.push(`stale rule: ${p}`);
   // No rival consulting firm offered or priced, no consultant fee ranges (26 Nov 2026)
-  for (const p of rivalProblems(d)) fail.push(`rival firm: ${p}`);
   // Links to our own pages are root-relative ("/about.html"), so previews and a domain move keep working (26 Nov 2026)
   const own = JSON.stringify(d).match(/https?:\/\/(?:www\.)?zavient\.com[^"\s]*/i);
   if (own) fail.push(`absolute link to our own site (${own[0]}): use the root-relative path, e.g. "/about.html"`);
@@ -133,13 +130,14 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
 
   // Page structure: description length, footnotes on key numbers, real slugs, headings, answer slots (26 Nov 2026)
   const slugs = siblings.length ? new Set(siblings.map((x) => x._slug)) : null;
-  for (const p of structureProblems(d, slugs)) fail.push(`structure: ${p}`);
+  // Lead, stale-rule, rival-firm, acronym, structure and search-result checks: the ones every page passes, indexed or
+  // not (src/lib/every-page.mjs, shared with tests/structural-checks.test.mjs).
+  for (const p of everyPageProblems(d, slugs)) fail.push(p);
   // Eyebrow over the title: section name plus a short topic that fits one line on a phone (28 Nov 2026)
   for (const p of eyebrowProblems(d)) fail.push(`eyebrow: ${p}`);
   // Role pages: the template's hand-off audience matches the page's own copy. A warning until family-office-coo sets it.
   for (const p of handoffProblems(d)) warn.push(`hand-off: ${p}`);
   // No undefined shorthand: every business-jargon acronym is spelled out on the page (src/lib/acronyms.mjs)
-  for (const p of acronymProblems(d)) fail.push(`acronym: ${p}`);
 
   // ICP review log, in order
   const readers = (d.reviews || []).map((r) => r.reader);
@@ -151,6 +149,9 @@ export function gate(d, { slug = '', siblings = [] } = {}) {
   // (src/lib/source-numbers.mjs, 26 Nov 2026). Round 6 (26 Nov 2026): every page was fixed to zero, so the baseline
   // that let older pages keep their count is gone. Any claim problem fails, on every page.
   for (const p of claimProblems(d)) fail.push(`claim: ${p}`);
+  // A footnote on a figure whose source note holds other figures but not this one (28 Nov 2026): likely padding to
+  // reach "several sources". A warning from the notes; the live check (check-source-figures) fails it on the source.
+  for (const p of paddingProblems(d)) warn.push(`footnote: ${p}`);
   // Round 5 (26 Nov 2026): the live figure check's record (src/lib/figure-check.mjs) and EDGAR hit lists
   // (src/lib/edgar-hits.mjs). Pages built before each rule are listed there, and those lists only shrink.
   for (const p of figureCheckProblems(d, slug)) fail.push(`figure check: ${p}`);
@@ -166,6 +167,9 @@ if (process.argv[1] === here) {
   const named = process.argv.slice(2).filter((a) => !a.startsWith('--'));
   const onlyIndexed = process.argv.includes('--indexed');
   const args = named.length ? named : siblings.filter((s) => !onlyIndexed || (s.index && s.templateVersion)).map((s) => s._slug);
+  // --indexed (the build) holds noindex pages to the every-page checks too, as the node tests do (28 Nov 2026).
+  const allSlugs = new Set(siblings.map((s) => s._slug));
+  const rest = onlyIndexed && !named.length ? siblings.filter((s) => !args.includes(s._slug)) : [];
   if (!args.length) { console.log('no pages to check'); process.exit(1); }
   let bad = 0;
   for (const a of args) {
@@ -178,7 +182,14 @@ if (process.argv[1] === here) {
     for (const w of warn) console.log(`  ! ${w}`);
     bad += fail.length;
   }
-  console.log(`${args.length} pages checked, ${bad ? `${bad} failures` : 'all pass'}`);
+  for (const s of rest) {
+    const { _slug, ...d } = s;
+    const fail = everyPageProblems(d, allSlugs);
+    if (fail.length) console.log(`${_slug} (noindex): FAIL (${fail.length})`);
+    for (const f of fail) console.log(`  ✗ ${f}`);
+    bad += fail.length;
+  }
+  console.log(`${args.length} pages checked${rest.length ? `, ${rest.length} noindex pages held to the every-page checks` : ''}, ${bad ? `${bad} failures` : 'all pass'}`);
   process.exit(bad ? 1 : 0);
 }
 export { BLOCKS };

@@ -57,7 +57,7 @@ export function structureProblems(d, slugs = null) {
   }
   const [lo, hi] = relatedRange(d.type);
   const nRel = (d.related || []).length;
-  if (nRel < lo || nRel > hi) out.push(`related has ${nRel} links (a ${d.type} page takes ${lo}-${hi})`);
+  if (nRel < lo || nRel > hi) out.push(`related has ${nRel} links (${/^[aeiou]/i.test(d.type) ? 'an' : 'a'} ${d.type} page takes ${lo}-${hi})`);
 
   const t = TYPES[d.type] || TYPES.usecase;
   const topic = (d.topic || String(d.title).split(':')[0]).trim();

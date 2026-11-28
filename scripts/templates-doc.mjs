@@ -22,7 +22,7 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: \
 1. \`node scripts/new-page.mjs --type <type> --slug <slug> --topic "<topic>" --job "<job>"\` writes a skeleton JSON, a research skeleton and a research brief to \`drafts/\`.
 2. A research agent fills \`drafts/<slug>.research.md\`, one line per finding with its URL and read date, until \`node scripts/check-research.mjs\` passes. A separate writer agent fills the JSON from it.
 3. \`node scripts/check-page.mjs drafts/<slug>.json\` until PASS.
-4. Source-claim check: a separate agent runs \`NODE_USE_ENV_PROXY=1 node scripts/check-source-figures.mjs drafts/<slug>.json\`, opens every cited source it couldn't read, confirms each states the claim with the same figure, group and date, reruns it with \`--write\` to record \`figureCheck\` (quoting the source's own sentence for every figure it lists by hand; the page check fails a new page without a current record), and logs \`sourceCheck\`.
+4. Source-claim check: a separate agent runs \`node scripts/check-source-figures.mjs drafts/<slug>.json\`, opens every cited source it couldn't read, confirms each states the claim with the same figure, group and date, reruns it with \`--write\` to record \`figureCheck\` (quoting the source's own sentence for every figure it lists by hand; the page check fails a new page without a current record), and logs \`sourceCheck\`.
 5. ICP review, in order: ${REVIEWERS.join(' → ')}.
 6. Move the JSON to \`src/content/ai-work/\`, \`npm test\`. \`index: true\` only on Russell's yes.
 7. Look at it in a live browser. Screenshot the built page at 1280px and 390px wide and check every block by eye: flows, tables, footnotes, the sticky box, buttons. A visual change is not done until those screenshots look right, and they go with the report (Russell's rule, 26 Nov 2026).
@@ -36,6 +36,7 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: \
 - Every figure inside a tool (public/tools/embed) carries a link, footnote or Zavient-judgment marker (src/lib/tool-claims.mjs).
 - Title and headings are the buyer's question; the title ends in "?".
 - Every claim footnoted; ${MIN.sources}+ sources from ${MIN.domains}+ sites (tool pages ${MIN.toolSources}).
+- Several sources means each source supports the claim it is attached to: every footnote on a figure states that figure on its own page. A second footnote that doesn't is padding; move it to the claim it backs or drop it (scripts/check-source-figures.mjs flags it).
 - Measured demand: ${DEMAND.searches}+ US searches a month, or ${DEMAND.nicheSearches}+ at $${DEMAND.nicheCpc}+ a click (role pages skip it: they are navigation).
 - One fact its siblings don't have, and a real updated date.
 - A page that fails any check renders noindex, follow and stays out of the sitemap, even with \`index: true\`.

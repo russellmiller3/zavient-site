@@ -173,7 +173,7 @@ const a = (d.answers || {})[id];
 </>)}
 {id === 'resources' && d.resources.length > 0 && (<>
   <h2 id="resources">{h}</h2>{a && <p class="answer"><Fn s={a} /></p>}
-  <ul>{d.resources.map((r) => <li><a href={r.url}>{r.name}</a>: {r.what}</li>)}</ul>
+  <ul>{d.resources.map((r) => <li><a href={r.url}>{r.name}</a>: <Fn s={r.what} /></li>)}</ul>
 </>)}
 {id === 'key-numbers' && d.stats.length > 0 && (<>
   <h2 id="key-numbers">{h}</h2>{a && <p class="answer"><Fn s={a} /></p>}

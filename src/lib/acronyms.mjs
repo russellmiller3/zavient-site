@@ -26,9 +26,18 @@ export const JARGON = {
   // Added 28 Nov 2026: the OCC (Bulletin 2026-54) and NCUA now call AI "super intelligence (SI)". Four bank pages used
   // SI with its only spelling-out in a source note, which a reader of the page never sees next to the text.
   SI: 'super intelligence',
+  // Added 28 Nov 2026 for the family office and fund pages: fund metrics, the parties to a fund, and the diligence
+  // paperwork. ILPA is an association's name, but family office readers meet it as shorthand, so it is held here too.
+  // K-1 is spelled out as the form's full name, "Schedule K-1", or explained in brackets after it.
+  TVPI: 'total value to paid-in capital', DPI: 'distributions to paid-in capital', RVPI: 'residual value to paid-in capital',
+  NAV: 'net asset value', PME: 'public market equivalent', MOIC: 'multiple on invested capital', IRR: 'internal rate of return',
+  LP: 'limited partner', GP: 'general partner', LPA: 'limited partnership agreement', DDQ: 'due diligence questionnaire',
+  ODD: 'operational due diligence', ILPA: 'Institutional Limited Partners Association', 'K-1': 'Schedule K-1',
 };
 
 const esc = (s) => s.replace(/[&]/g, '\\&');
+// Other ways a page may say what the shorthand is. "K-1 tax forms" tells the reader what a K-1 is.
+const EXPLAINED = { 'K-1': /\bK-1s? (?:partnership )?(?:tax )?forms?\b/ };
 // Product names that contain a jargon acronym but are names, not shorthand.
 const PRODUCTS = /\bPower BI\b/g;
 // Body text: what a reader sees in the page itself. Not body text (28 Nov 2026, the "SI" miss): the source list and
@@ -50,7 +59,7 @@ export function acronymProblems(d) {
     if (!new RegExp(`(?<![A-Za-z0-9&-])${esc(a)}s?(?![A-Za-z0-9&-])`).test(t)) continue;
     // Spelled out: "full name (ACR)" or "(ACR, ...)" after it, "ACR (full name)", or "ACR measures / means / stands for / , a ..." in a defining phrase.
     const defined = new RegExp(`\\(${esc(a)}s?[),]|(?<![A-Za-z0-9&])${esc(a)}s? \\([a-z]|(?<![A-Za-z0-9&])${esc(a)}s?(?:,? (?:measures|means|is short for|stands for)\\b|, an? [a-z])`);
-    const spelled = defined.test(t) || t.toLowerCase().includes(full.toLowerCase());
+    const spelled = defined.test(t) || t.toLowerCase().includes(full.toLowerCase()) || Boolean(EXPLAINED[a]?.test(t));
     if (!spelled) out.push(`"${a}" is never spelled out on the page: write "${full} (${a})" the first time`);
   }
   return out;

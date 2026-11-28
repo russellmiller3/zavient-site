@@ -392,6 +392,8 @@ document.addEventListener("click", (e) => {
   if (l) { const d = document.getElementById("footnotes"); if (d) d.open = true; }
 });
 function rich(s) {
+  // Footnote after its punctuation, no space before it: the site rule in src/lib/footnotes.mjs (28 Nov 2026).
+  s = String(s).replace(/[ \t]+((?:\[\^\w+\])+)/g, "$1").replace(/((?:\[\^\w+\])+)([.,;:!?]+)/g, "$2$1");
   return esc(s).replace(/\[\^(\w+)\]/g, (m, id) => { const n = fnNum(id); return `<sup class="fn"><a href="#fn-${n}" aria-label="Source ${n}">${n}</a></sup>`; })
     // Adjacent footnotes share one superscript with real commas, like the guide pages (no CSS-generated commas,
     // which screen readers announced as a stray ",," while the section was closed).

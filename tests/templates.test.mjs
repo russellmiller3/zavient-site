@@ -43,6 +43,8 @@ const good = () => ({
   title: 'AI account reconciliation: what can it match on its own?', type: 'usecase', templateVersion: 1,
   description: 'What AI account reconciliation matches on its own, who signs off, and how to test it on your books.',
   related: ['ai-invoice-processing', 'ai-document-processing'],
+  // job and resources: the content schema requires them, and check-page now validates against it (28 Nov 2026).
+  job: 'account reconciliation', resources: [{ name: 'Free guide', url: 'https://site0.example/guide', what: 'A free guide to reconciliation.' }],
   verdict: ['Software matches most lines first, and people review the rest [^1][^2].', 'Measure close days before and after on your own accounts [^2][^3].', 'Keep the controller signing off every reconciliation [^3][^4].'],
   summary: 'AI account reconciliation compares your books with the bank and explains the differences [^1]. People decide the hard ones [^2].',
   answers: {

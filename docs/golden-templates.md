@@ -10,7 +10,7 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: `
 1. `node scripts/new-page.mjs --type <type> --slug <slug> --topic "<topic>" --job "<job>"` writes a skeleton JSON, a research skeleton and a research brief to `drafts/`.
 2. A research agent fills `drafts/<slug>.research.md`, one line per finding with its URL and read date, until `node scripts/check-research.mjs` passes. A separate writer agent fills the JSON from it.
 3. `node scripts/check-page.mjs drafts/<slug>.json` until PASS.
-4. Source-claim check: a separate agent runs `NODE_USE_ENV_PROXY=1 node scripts/check-source-figures.mjs drafts/<slug>.json`, opens every cited source it couldn't read, confirms each states the claim with the same figure, group and date, reruns it with `--write` to record `figureCheck` (quoting the source's own sentence for every figure it lists by hand; the page check fails a new page without a current record), and logs `sourceCheck`.
+4. Source-claim check: a separate agent runs `node scripts/check-source-figures.mjs drafts/<slug>.json`, opens every cited source it couldn't read, confirms each states the claim with the same figure, group and date, reruns it with `--write` to record `figureCheck` (quoting the source's own sentence for every figure it lists by hand; the page check fails a new page without a current record), and logs `sourceCheck`.
 5. ICP review, in order: COO → Head of operations → GM → Division head → Owner-CEO.
 6. Move the JSON to `src/content/ai-work/`, `npm test`. `index: true` only on Russell's yes.
 7. Look at it in a live browser. Screenshot the built page at 1280px and 390px wide and check every block by eye: flows, tables, footnotes, the sticky box, buttons. A visual change is not done until those screenshots look right, and they go with the report (Russell's rule, 26 Nov 2026).
@@ -24,12 +24,13 @@ brief for every slot, so a new page is research plus fill-in. Source of truth: `
 - Every figure inside a tool (public/tools/embed) carries a link, footnote or Zavient-judgment marker (src/lib/tool-claims.mjs).
 - Title and headings are the buyer's question; the title ends in "?".
 - Every claim footnoted; 10+ sources from 4+ sites (tool pages 5).
+- Several sources means each source supports the claim it is attached to: every footnote on a figure states that figure on its own page. A second footnote that doesn't is padding; move it to the claim it backs or drop it (scripts/check-source-figures.mjs flags it).
 - Measured demand: 100+ US searches a month, or 30+ at $20+ a click (role pages skip it: they are navigation).
 - One fact its siblings don't have, and a real updated date.
 - A page that fails any check renders noindex, follow and stays out of the sitemap, even with `index: true`.
 - "Where does your team stay in charge?" on every page. No headcount-cut wording.
 - No Upwork, freelancer marketplaces, hourly rates or rival consulting firms.
-- No forum threads, rival consulting firms or content farms as sources; the page check fails them.
+- No forum threads, rival AI consultancies or agencies, or content farms as sources; the page check fails them. Big-firm surveys and studies (McKinsey, Deloitte, KPMG, Gartner and the like) are fine as evidence (Russell, 28 Nov 2026: "I dont mind citing big firms").
 - Every fix is structural: it goes into the template or a failing page check, so it can't come back on any page.
 - Every lead text says the thing: no meta pointers, no restated heading, no semicolon joining two answers (src/lib/lead-rules.mjs).
 - Superseded rules (SR 11-7, FIL-27-2021, withdrawn CFPB circulars, the OCC's 1998 Loan Portfolio Management booklet) always name their replacement or say withdrawn; the 2023 third-party guidance says a replacement (FIL-58-2026) is proposed (src/lib/stale-rules.mjs).
@@ -134,7 +135,7 @@ Block order:
 - Address: `/for/{slug}.html`.
 - Title shape: "Where should a {role} start with AI?". Example: "Where should a head of lending start with AI?".
 - Division-head reviewer: the role itself is the main reader; the division-head review checks it from a peer function.
-- Free diagnostic offer: "Your top 2 workflows ranked, and a one-page plan you can hand your CEO."
+- Free diagnostic offer: "Your top 2 workflows ranked, and a one-page plan you can hand your {handoffTo}."
 - Skips the demand check (navigation page).
 - Required beyond the common set: decisions, ranked, forward, recipes, howToTest, watchOuts, buyVsBuild, pickElse.
 
@@ -143,8 +144,8 @@ Block order:
 2. Where does your team stay in charge?
 3. Which AI decisions does a <topic> own?
 4. Where does AI pay first for <topic>?
-5. What will your CEO, board or examiner ask?
-6. The one-page brief to hand your CEO
+5. What will your {handoffTo}, board or examiner ask?
+6. The one-page brief to hand your {handoffTo}
 7. What does a 90-day start look like?
 8. What did our own check find?
 9. How do you show it worked?
@@ -193,18 +194,19 @@ Block order:
 2. Does <topic> apply to you?
 3. When does each part of <topic> apply?
 4. Which rules apply to <topic>?
-5. Where does your team stay in charge?
-6. Which of your work does it touch?
-7. What is on your checklist?
-8. Where does <topic> go wrong?
-9. Questions buyers ask about <topic>
-10. Should you buy <topic> or build it?
-11. When should you pick something else?
-12. Useful resources
-13. Key numbers on this page
-14. Sources
-15. Related links
-16. Free diagnostic
+5. What did our own check find?
+6. Where does your team stay in charge?
+7. Which of your work does it touch?
+8. What is on your checklist?
+9. Where does <topic> go wrong?
+10. Questions buyers ask about <topic>
+11. Should you buy <topic> or build it?
+12. When should you pick something else?
+13. Useful resources
+14. Key numbers on this page
+15. Sources
+16. Related links
+17. Free diagnostic
 
 ## Free tool (`tool`)
 - Address: `/tools/{slug}.html`.

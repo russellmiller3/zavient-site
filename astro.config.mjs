@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from './src/integrations/sitemap.mjs';
+import footnotes from './src/integrations/footnotes.mjs';
 
 // zavient.com is served by Vercel, which auto-detects Astro and runs `astro build`.
 // `format: 'file'` outputs /insights/slug.html (not /insights/slug/) so the
@@ -7,5 +8,5 @@ import sitemap from './src/integrations/sitemap.mjs';
 export default defineConfig({
   site: 'https://zavient.com',
   build: { format: 'file' },
-  integrations: [sitemap({ site: 'https://zavient.com' })],
+  integrations: [sitemap({ site: 'https://zavient.com' }), footnotes()],
 });

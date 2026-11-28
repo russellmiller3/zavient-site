@@ -11,6 +11,7 @@ import { leadProblems, pageLeadProblems, restatesHeading } from '../src/lib/lead
 import { staleProblems } from '../src/lib/stale-rules.mjs';
 import { rivalProblems } from '../src/lib/rival-firms.mjs';
 import { gate } from '../scripts/check-page.mjs';
+import { everyPageProblems } from '../src/lib/every-page.mjs';
 
 const root = new URL('../', import.meta.url).pathname;
 const dir = join(root, 'src/content/ai-work');
@@ -81,12 +82,19 @@ test('every root-relative link in page JSON points at a page the build made', ()
   }
 });
 
-test('no live page has a lead, stale-rule or rival-firm problem', () => {
-  for (const [slug, d] of pages) {
-    assert.deepEqual(pageLeadProblems(d), [], `${slug}: lead`);
-    assert.deepEqual(staleProblems(d), [], `${slug}: stale rule`);
-    assert.deepEqual(rivalProblems(d), [], `${slug}: rival firm`);
-  }
+// Lead, stale-rule, rival-firm, acronym, structure and search-result checks on every page, indexed or not: the same
+// list check-page runs (src/lib/every-page.mjs), so a single-page check-page run reports what this test would.
+test('no live page has a lead, stale-rule, rival-firm, acronym, structure or search-result problem', () => {
+  const slugs = new Set(pages.map(([s]) => s));
+  const bad = [];
+  for (const [slug, d] of pages) for (const p of everyPageProblems(d, slugs)) bad.push(`${slug}: ${p}`);
+  assert.deepEqual(bad, []);
+});
+test('check-page reports every-page problems on a noindex page run on its own', () => {
+  const fo = pages.find(([s]) => s === 'family-offices')[1];
+  const slugs = pages.map(([s, d]) => ({ ...d, _slug: s }));
+  const d = { ...fo, related: [...new Set([...fo.related, ...pages.map(([s]) => s).filter((s) => s !== 'family-offices')])].slice(0, 11) };
+  assert.ok(gate(d, { slug: 'family-offices', siblings: slugs }).fail.some((p) => /related has 11 links \(an industry page takes 2-10\)/.test(p)));
 });
 
 // A writer saved a page at a different indent and turned a one-line fix into a whole-file diff. Pages are 1- or
@@ -184,13 +192,7 @@ test('the persona doc lists the same five reviewers, in order, that the page che
   assert.deepEqual(listed.slice(0, REVIEWERS.length), REVIEWERS);
 });
 
-test('no live page has an acronym, structure, bare-answer or search-result problem', () => {
-  const bad = [];
-  for (const [s, d] of pages) {
-    for (const p of [...acronymProblems(d), ...structureProblems(d, slugSet), ...searchResultProblems(d.sources)]) bad.push(`${s}: ${p}`);
-  }
-  assert.deepEqual(bad, []);
-});
+// The every-page acronym, structure and search-result checks run in the shared test above (src/lib/every-page.mjs).
 
 test('the skeleton maker writes no answer slot the page check would fail, at one-space indent', () => {
   const src = readFileSync(join(root, 'scripts/new-page.mjs'), 'utf8');

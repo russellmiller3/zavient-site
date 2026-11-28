@@ -103,7 +103,7 @@ Reader: lower-middle-market firm, 40-500 staff. Division head for this page: ${r
 3. Run \`node scripts/check-page.mjs drafts/${slug}.json\` and fix until it says PASS (the ICP reviews are the last FAILs).
 4. **Source-claim check** (a separate agent from the writer): open every cited source and confirm it states the claim
    its footnote backs, with the same number, date and scope (the group surveyed, the unit, the region). Start with
-   \`NODE_USE_ENV_PROXY=1 node scripts/check-source-figures.mjs drafts/${slug}.json\`, which looks for each footnoted
+   \`node scripts/check-source-figures.mjs drafts/${slug}.json\`, which looks for each footnoted
    figure on its source's live page, near the claim's own words, and fails a cited URL that redirects. Fix or cut what
    it doesn't back, then rerun it with \`--write\`: it records \`figureCheck\` on the page. For every figure it lists
    under byHand (a page it couldn't read, or a figure found away from the claim), open the source and copy its own
@@ -117,7 +117,7 @@ Reader: lower-middle-market firm, 40-500 staff. Division head for this page: ${r
 - **Title** is the buyer's real question (People Also Ask, Reddit, Quora, vendor FAQs). Shape: "${t.titleShape}". Example: "${t.example}".
 - **Answer every question heading first** (Russell, 26 Nov 2026): ${ANSWER_FIRST_BRIEF} Check with \`node scripts/check-answers.mjs drafts/... --show\` after moving the page in, and read every line: the machine checks shape, you check that it truly answers.
 - **Bottom line first**: ${MIN.verdict[0]}-${MIN.verdict[1]} bullets, one idea each, each with ${MIN.verdictFootnotes}+ different sources. No number at the start of the title or a bullet. A bullet can carry at most ${LIMITS.verdictFootnotes} footnotes, so a figure worked out from several inputs says "by our math" in the bullet, cites its two main inputs there, and footnotes every other input where the sum is shown (the table or section it comes from).
-- **Sources**: ${MIN[t.minSources || 'sources']}+ sources from ${MIN.domains}+ different sites; every claim footnoted; several sources per claim where they exist. Vendor claims are labelled as the vendor's.
+- **Sources**: ${MIN[t.minSources || 'sources']}+ sources from ${MIN.domains}+ different sites; every claim footnoted; several sources per claim where they exist, and each source must support the claim it is attached to: every footnote on a figure states that figure, or it moves to the claim it backs or goes (no padding to reach two sources). Vendor claims are labelled as the vendor's.
 - **Augmentation, not replacement**: the "Where does your team stay in charge?" block is required. No headcount-cut language.
 - **No Upwork, freelancer marketplaces, hourly rates or rival consulting firms.**
 - **No forum threads (Reddit, Quora, community forums), rival AI consultancies or agencies, or content farms as sources.** Big-firm surveys and studies (McKinsey, Deloitte, KPMG, Gartner and the like) are fine as evidence (Russell, 28 Nov 2026). Note where a buyer's question was seen in the draft notes, not the source list. The page check fails these (src/lib/source-rules.mjs).

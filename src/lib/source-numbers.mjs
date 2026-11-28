@@ -123,7 +123,51 @@ export function citedSentences(d) {
   }
   return out;
 }
-const noteFigures = (src) => figures(`${src?.name || ''} ${src?.what || ''}`);
+// Numbers written in words (28 Nov 2026): a source's "Seventy-three percent of ..." states 73%, and "nine in ten"
+// states 9 in 10. The figure checks compare digits, so a hand-copied quote or a fetched page goes through this first.
+// Whole numbers from zero to 999 ("one hundred and twelve"), with or without hyphens; "a hundred"; case kept loose.
+const ONES = { zero: 0, one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12, thirteen: 13, fourteen: 14, fifteen: 15, sixteen: 16, seventeen: 17, eighteen: 18, nineteen: 19 };
+const TENS = { twenty: 20, thirty: 30, forty: 40, fifty: 50, sixty: 60, seventy: 70, eighty: 80, ninety: 90 };
+const W1 = `(?:${Object.keys(ONES).join('|')})`; const WT = `(?:${Object.keys(TENS).join('|')})`;
+const UNDER100 = `(?:${WT}(?:[\\s-]+(?:one|two|three|four|five|six|seven|eight|nine))?|${W1})`;
+const WORDS_NUM = new RegExp(`\\b(?:(?:(a|${W1})[\\s-]+hundred)(?:(?:\\s+and)?[\\s-]+(${UNDER100}))?|(${UNDER100}))\\b`, 'gi');
+const under100 = (w) => w.toLowerCase().split(/[\s-]+/).reduce((n, x) => n + (TENS[x] ?? ONES[x] ?? 0), 0);
+export function wordsToNumbers(text) {
+  return String(text).replace(WORDS_NUM, (m, h, rest, small) => {
+    if (small !== undefined) return String(under100(small));
+    return String((h.toLowerCase() === 'a' ? 1 : ONES[h.toLowerCase()]) * 100 + (rest ? under100(rest) : 0));
+  });
+}
+const noteFigures = (src) => figures(wordsToNumbers(`${src?.name || ''} ${src?.what || ''}`));
+// Which footnotes a figure carries (28 Nov 2026). Independent source checks kept finding a figure with two footnotes
+// where the second source never states it: padding to meet "several sources". A figure belongs to the marker group
+// right after it ("54%[^1] of investors, 23%[^4] of ..."); figures after the last group take the last group. Every
+// footnote in a group must state one of that group's figures, so "X%[^1][^2]" needs X in both 1 and 2.
+export function figureGroups(sentence) {
+  const parts = String(sentence).split(/((?:\[\^\d+\])+)/);
+  const groups = [];
+  for (let i = 0; i < parts.length; i += 2) {
+    const cites = parts[i + 1] ? [...new Set([...parts[i + 1].matchAll(/\[\^(\d+)\]/g)].map((m) => +m[1]))] : null;
+    const figs = figures(parts[i]);
+    if (cites) groups.push({ cites, figs });
+    else if (figs.length && groups.length) groups[groups.length - 1].figs.push(...figs);
+  }
+  return groups.filter((g) => g.figs.length);
+}
+// The footnotes in a group that state none of the group's figures, given what each source holds.
+export function paddedFootnotes(group, holds) { return group.cites.filter((c) => !group.figs.some((f) => holds(c, f))); }
+export function paddingProblems(d) {
+  const notes = (d.sources || []).map(noteFigures);
+  const out = [];
+  for (const { where, sentence, own } of citedSentences(d)) {
+    if (own) continue;
+    for (const g of figureGroups(sentence)) {
+      // Only footnotes whose note holds a figure at all are judged here; a note with no figures is the live check's job.
+      for (const c of paddedFootnotes(g, (n, f) => (notes[n - 1] || []).some((q) => backs(f, q)))) if ((notes[c - 1] || []).length && g.cites.length > 1) out.push(`${where}: footnote [^${c}] doesn't state ${g.figs.map((f) => f.raw).join(' or ')}: move or drop it ("${sentence.replace(/\[\^\d+\]/g, '').slice(0, 70)}")`);
+    }
+  }
+  return out;
+}
 
 export function numberProblems(d) {
   const notes = (d.sources || []).map(noteFigures);
@@ -189,7 +233,21 @@ export function twoFigureProblems(d) {
 // companies vs weaknesses, sponsors vs operating partners, global vs US). A survey's note names who answered
 // ("Survey of 200 PE leaders"), and every sentence that cites a survey percentage names that group too, in a word
 // the note uses, so the reader knows whose answer it is.
-export const SURVEY = /\b(?:survey(?:ed)?|poll(?:ed)?|respondents?|questionnaire)\b/i;
+// 28 Nov 2026: a due diligence questionnaire (DDQ) is a form a manager fills in, not a survey, so a note citing the
+// ILPA or AIMA DDQ template was asked for "Survey of N". "Questionnaire" still means a survey ("questionnaire sent to
+// 300 CFOs"), except where the words say it is a DDQ or a template, and "not a survey" never reads as one.
+const SURVEY_WORDS = /\b(?:survey(?:ed)?|poll(?:ed)?|respondents?|questionnaires?)\b/i;
+const NOT_SURVEY = new RegExp([
+  /\b(?:is|are|was|it's|isn't|not)\s+(?:a\s+|an\s+)?(?:template|form),?\s+not\s+an?\s+(?:survey|poll)\b/.source,
+  /\bnot\s+an?\s+(?:survey|poll)\b/.source,
+  /\b(?:due[ -]diligence|diligence|DDQ|ODD|ILPA|AIMA|SIG|CAIQ|vendor|security|standard|standardi[sz]ed|illustrative|model|sample|blank|free|operational)\s+questionnaires?\b/.source,
+  /\bquestionnaires?\s*\(\s*DDQs?\s*\)/.source,
+  /\bquestionnaires?\s+(?:templates?|forms?|such as|like)\b/.source,
+  /\bquestionnaires?\s+(?:for|on)\s+(?:the\s+)?(?:\w+\s+){0,2}?(?:due\s+diligence|investment\s+managers?|managers?|vendors?)\b/.source,
+].join('|'), 'gi');
+export const isSurvey = (text) => SURVEY_WORDS.test(String(text).replace(NOT_SURVEY, ' '));
+// SURVEY.test(text) keeps the old call shape for every caller.
+export const SURVEY = { test: isSurvey };
 // Round 5: a survey that prints no sample size says so in these words, and the page then says it was a survey.
 export const NO_SAMPLE = /\bsample size not (?:published|given|disclosed|stated)\b/i;
 // A note that reads like a survey answer ("62% of CFOs say") but never says survey (agents dropped the word to dodge
