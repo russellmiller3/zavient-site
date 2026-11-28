@@ -1,0 +1,907 @@
+{
+ "title": "TVPI vs DPI: which should a family office trust when comparing funds?",
+ "description": "TVPI vs DPI for family offices comparing private equity funds: how to calculate each, when each misleads, and how much reported value is still paper.",
+ "type": "compare",
+ "templateVersion": 1,
+ "topic": "TVPI vs DPI",
+ "job": "comparing private equity funds on cash returned versus reported value",
+ "industry": "family offices",
+ "index": true,
+ "verdict": [
+  "Distributions to paid-in (DPI) counts only cash returned, while total value to paid-in (TVPI) adds unsold holdings[^1][^2].",
+  "Lean on TVPI early, DPI later: quartile ranks settle in six to eight years[^6], so early calls mislead[^7].",
+  "Ask for internal rate of return (IRR) without the credit line, which lifted IRR 1.9 points in one study[^3][^4].",
+  "Recent funds are mostly paper: 69% of Oregon's 2018-2022 fund value is unsold, by our count[^21]. Payouts run slow[^9].",
+  "Let AI pull and recompute every manager's figures one way, but have people judge the valuations[^15][^17]."
+ ],
+ "onPage": [
+  {
+   "to": "table-1",
+   "text": "DPI, RVPI, TVPI, MOIC, IRR and PME side by side"
+  },
+  {
+   "to": "table-2",
+   "text": "Two funds at the same 1.6x, worked through by our math"
+  },
+  {
+   "to": "recipes",
+   "text": "Which metric to lead with at each stage of a fund's life"
+  },
+  {
+   "to": "own-data",
+   "text": "How much of a big pension's fund value is still unsold, by vintage"
+  },
+  {
+   "to": "what-goes-wrong",
+   "text": "Six ways the numbers mislead, and the fix for each"
+  },
+  {
+   "to": "faq",
+   "text": "Straight answers on DPI, TVPI, MOIC, fees and credit lines"
+  }
+ ],
+ "headings": {
+  "what-it-is": "What is the difference between TVPI and DPI?",
+  "recipes": "Which matters more, TVPI or DPI?",
+  "example": "What does recomputing fund metrics with AI look like?",
+  "what-goes-wrong": "When do TVPI and DPI mislead you?",
+  "faq": "Questions family offices ask about TVPI and DPI",
+  "buy-or-build": "Should you buy fund analytics or build your own?",
+  "something-else": "When should you look past both metrics?"
+ },
+ "summary": "Distributions to paid-in capital (DPI) counts only cash a fund has paid back, while total value to paid-in (TVPI) also counts what it still holds[^1][^2]. The gap is residual value to paid-in (RVPI): TVPI equals DPI plus RVPI[^2]. RVPI is the manager's estimate, not cash[^2][^17].",
+ "tables": [
+  {
+   "title": "How do TVPI, DPI, RVPI, MOIC and IRR compare, side by side?",
+   "intro": "Paid-in capital means money actually called from you, not your commitment[^2]. Calls for management fees count too, which is why young funds start below cost[^20].",
+   "headers": [
+    "Metric",
+    "How it is worked out",
+    "What it tells you",
+    "Where it misleads"
+   ],
+   "rows": [
+    {
+     "name": "DPI (distributions to paid-in)",
+     "cells": [
+      "Cash distributed to you so far, divided by capital paid in[^1][^2]",
+      "Realised proceeds to date: cash back in your account[^2]",
+      "Recallable distributions count in the top line, so some of that cash can be called back[^1]"
+     ]
+    },
+    {
+     "name": "RVPI (residual value to paid-in)",
+     "cells": [
+      "Remaining net asset value (NAV), divided by capital paid in[^1][^2]",
+      "What is still unsold. Invest Europe calls it a measure of unrealised risk[^2]",
+      "NAV is the manager's fair-value estimate. In one study of funds from 1988 to 2016, venture NAVs ran aggressive next to later cash flows, more than buyout, especially after 2000[^17]"
+     ]
+    },
+    {
+     "name": "TVPI (total value to paid-in)",
+     "cells": [
+      "Distributions plus NAV, divided by capital paid in. So TVPI equals DPI plus RVPI[^2]",
+      "Total result so far, cash plus estimate. ILPA calls it perhaps the best measure before a fund ends[^1]",
+      "Two funds can share one TVPI with very different cash back, as the worked example below shows[^2]"
+     ]
+    },
+    {
+     "name": "MOIC (multiple on invested capital)",
+     "cells": [
+      "Usually deal level: proceeds plus value, divided by money invested in the company[^2]",
+      "How the deals did, before fees and carried interest[^2]",
+      "It is gross of fees. Set beside a net TVPI, it makes the fund look better than your stake did[^2]"
+     ]
+    },
+    {
+     "name": "IRR (internal rate of return)",
+     "cells": [
+      "The discount rate at which dated cash flows, plus remaining NAV, net to zero[^1][^2]",
+      "Return per year, so the timing of each call and distribution counts[^1]",
+      "Credit lines that delay calls raise it. Ask for it with and without the line[^3]"
+     ]
+    },
+    {
+     "name": "PME (public market equivalent)",
+     "cells": [
+      "The fund's cash flows, each grown or discounted at a public index's return[^18]",
+      "Above 1, the fund beat the index after fees (the Kaplan-Schoar version)[^18]",
+      "If the fund carries more market risk than the index, PME overstates how well it did[^18]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "How do you calculate TVPI and DPI for two funds at 1.6x?",
+   "intro": "Illustrative, by our math: a family office commits $10 million to each of two funds and pays $8 million into each over three years. The credit-line rows follow the pattern in ILPA's own worked example[^3].",
+   "headers": [
+    "Measure, our math",
+    "Fund A: sells early",
+    "Fund B: holds on"
+   ],
+   "rows": [
+    {
+     "name": "Paid in (calls in years 0 to 2)",
+     "cells": [
+      "$8.0m",
+      "$8.0m"
+     ]
+    },
+    {
+     "name": "Cash distributed by year 6",
+     "cells": [
+      "$8.0m, from year 3 on",
+      "$1.6m, from year 5 on"
+     ]
+    },
+    {
+     "name": "Remaining NAV at year 6",
+     "cells": [
+      "$4.8m",
+      "$11.2m"
+     ]
+    },
+    {
+     "name": "DPI = distributed / paid in",
+     "cells": [
+      "1.00x",
+      "0.20x"
+     ]
+    },
+    {
+     "name": "RVPI = NAV / paid in",
+     "cells": [
+      "0.60x",
+      "1.40x"
+     ]
+    },
+    {
+     "name": "TVPI = DPI + RVPI",
+     "cells": [
+      "1.60x",
+      "1.60x"
+     ]
+    },
+    {
+     "name": "Share of value still an estimate",
+     "cells": [
+      "37.5%",
+      "87.5%"
+     ]
+    },
+    {
+     "name": "Net IRR",
+     "cells": [
+      "11.6%",
+      "9.6%"
+     ]
+    },
+    {
+     "name": "IRR if B delays each call a year with a credit line",
+     "cells": [
+      "Not used",
+      "12.1%, now above Fund A"
+     ]
+    },
+    {
+     "name": "Same, after 6% interest on the line, paid from fund value",
+     "cells": [
+      "Not used",
+      "11.1% IRR, and TVPI falls to 1.54x"
+     ]
+    },
+    {
+     "name": "Kaplan-Schoar PME, index up 8% a year",
+     "cells": [
+      "1.15",
+      "1.08"
+     ]
+    },
+    {
+     "name": "Direct alpha, a yearly excess return",
+     "cells": [
+      "3.3%",
+      "1.5%"
+     ]
+    }
+   ],
+   "note": "Fund A pays out $1.0m, $2.5m, $2.5m and $2.0m in years 3 to 6. Fund B pays out $0.6m and $1.0m in years 5 and 6. The 8% index and 6% interest are our assumptions, not market data."
+  },
+  {
+   "title": "How do you compare two funds fairly?",
+   "intro": "Family office guides list the same toolkit: IRR, DPI, TVPI, MOIC and PME, each read by vintage year and strategy[^14]. The checks below put that into practice.",
+   "headers": [
+    "Check",
+    "Why it matters"
+   ],
+   "rows": [
+    {
+     "name": "Same vintage year and strategy",
+     "cells": [
+      "Rank a fund only against funds raised the same year with a similar strategy[^7][^1]. Use your benchmark's vintage definition, since providers differ[^6]"
+     ]
+    },
+    {
+     "name": "Net figures on one basis",
+     "cells": [
+      "Fund TVPI should be net of fees and carry, while deal MOIC is gross[^2]. Never mix the two in one comparison[^2]"
+     ]
+    },
+    {
+     "name": "IRR without the credit line",
+     "cells": [
+      "In ILPA's example, a two-year line lifts IRR from 6.62% to 7.98% while TVPI falls from 1.45x to 1.35x[^3]"
+     ]
+    },
+    {
+     "name": "A public market equivalent",
+     "cells": [
+      "A Kaplan-Schoar PME above 1 means the fund beat the index[^18]. Direct alpha turns that into a yearly excess return[^19]"
+     ]
+    },
+    {
+     "name": "Age before rank",
+     "cells": [
+      "Funds take six to eight years to settle into a final quartile, and 85% by IRR pass through three or four quartiles first[^6]"
+     ]
+    },
+    {
+     "name": "Your own cash flows",
+     "cells": [
+      "Your IRR can differ from the GP's or another investor's, because of close dates, distributed stock and valuations[^20]"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "How slow are distributions right now?",
+   "intro": "Private credit pays back sooner than buyout or venture, because it collects contractual interest along the way[^12]. So judge each strategy against its own pace.",
+   "headers": [
+    "Measure",
+    "Latest reading"
+   ],
+   "rows": [
+    {
+     "name": "Private equity cash paid out as a share of fund value, 2025",
+     "cells": [
+      "12%, just over half the 20-year average of about 20%[^9]"
+     ]
+    },
+    {
+     "name": "Buyout distributions as a share of NAV, year to Q3 2025",
+     "cells": [
+      "14%, a level not seen since 2008-09. It has held below 15% for four years running, a record[^8]"
+     ]
+    },
+    {
+     "name": "Buyout DPI, 2017 to 2021 vintages",
+     "cells": [
+      "Every vintage trails the historical benchmark, the average median DPI of 2010 to 2017 funds[^8]"
+     ]
+    },
+    {
+     "name": "US private equity cash flows, 2025",
+     "cells": [
+      "$185 billion distributed and $145 billion called. Distribution yield was below average for a fourth year[^10]"
+     ]
+    },
+    {
+     "name": "Median venture DPI by vintage, Q2 2026 (Carta platform data)",
+     "cells": [
+      "0.37x for 2017 funds, 0.15x for 2018 and 0.04x for 2019[^11]"
+     ]
+    },
+    {
+     "name": "Median DPI of 2021-vintage funds (vendor data)",
+     "cells": [
+      "Private credit 0.34x, venture 0.28x, private equity 0.16x[^12]"
+     ]
+    }
+   ]
+  }
+ ],
+ "recipes": [
+  {
+   "name": "1. Young fund, years 0 to 5: watch TVPI and question the marks",
+   "when": "DPI sits near zero by design while the fund calls capital for fees and deals[^20]. TVPI and IRR are the only signals, and both lean on the manager's estimates[^1][^17].",
+   "flow": [
+    "Ops analyst: log every call, distribution and NAV from each capital account statement",
+    "Ops analyst: recompute DPI, RVPI and TVPI from those cash flows, and flag gaps with the GP's figures",
+    "Head of investment operations: ask the GP for net IRR with and without the credit line[^3]",
+    "Principal: hold off on ranking the manager before year six[^7]"
+   ],
+   "cost": "No new tools: the statements you already get, plus a spreadsheet. Ask managers for the ILPA Performance Template, which pairs each metric with its contributions and distributions[^22]."
+  },
+  {
+   "name": "2. Maturing fund, year 6 on: lead with DPI and test the remaining NAV",
+   "when": "Funds take six to eight years to settle into a final quartile, so later ranks mean more[^6]. By then, cash back is the test and unsold value is a question[^2].",
+   "flow": [
+    "Ops analyst: track DPI against funds of the same vintage and strategy[^7]",
+    "Head of investment operations: ask how the remaining NAV was valued and when the GP expects to sell[^13]",
+    "Ops analyst: run a PME against an index that fits the fund's risk[^18]",
+    "Principal: weigh any re-up on cash returned, not on estimates alone"
+   ],
+   "cost": "Staff time each quarter. Public pension tables, such as Oregon's quarterly list of every fund it holds, give a free check on peers[^21]."
+  },
+  {
+   "name": "3. Mixed book of buyout, credit and venture: compare like with like",
+   "when": "Private credit pays back sooner than buyout or venture, so one DPI bar for all three is unfair[^12]. Compare each fund with its own strategy and vintage[^7].",
+   "flow": [
+    "Ops analyst: tag each fund by strategy and vintage, using your benchmark's vintage definition[^6]",
+    "Ops analyst: set DPI and TVPI expectations per strategy from dated benchmark data[^12][^11]",
+    "Head of investment operations: set the family's cash needs beside expected distributions[^13]",
+    "Principal: pace new commitments against that cash plan"
+   ],
+   "cost": "Staff time, plus any benchmark data you license. Date every benchmark figure, because recent vintages move each quarter[^11]."
+  }
+ ],
+ "humanRole": [
+  "Head of investment operations or COO: owns the cash flow ledger and signs off each recomputed figure. Of 155 family offices in the Americas surveyed, 73% call investment reporting too manual[^13].",
+  "Analyst: challenges the valuation behind RVPI before any re-up. In one study of funds from 1988 to 2016, venture NAVs ran aggressive next to later cash flows, more than buyout, especially after 2000[^17].",
+  "Principal or investment committee: picks the peer group and decides when a fund is too young to judge. Funds take six to eight years to settle[^6].",
+  "Whoever owns the manager relationship: calls the general partner (GP) about each flagged mismatch. The Washington State Investment Board notes its IRR can differ from the GP's[^20]."
+ ],
+ "ownData": {
+  "title": "How much of a pension's fund value is still unsold?",
+  "intro": "We parsed all 454 fund rows in Oregon's public pension table as of 30 June 2026, then pooled the dollars by vintage[^21]. Our paid-in total matches the report's $66,293 million to within $0.3 million, by our count. Of 85 funds from 2016 to 2020, 56 are still under 1.0x DPI, by our count.",
+  "headers": [
+   "Vintage",
+   "Funds",
+   "DPI, our math",
+   "TVPI, our math",
+   "Still unsold, our math"
+  ],
+  "rows": [
+   [
+    "2014",
+    "10",
+    "1.39x",
+    "2.07x",
+    "33%"
+   ],
+   [
+    "2015",
+    "18",
+    "1.47x",
+    "1.81x",
+    "19%"
+   ],
+   [
+    "2016",
+    "15",
+    "0.99x",
+    "1.73x",
+    "43%"
+   ],
+   [
+    "2017",
+    "17",
+    "1.23x",
+    "1.82x",
+    "32%"
+   ],
+   [
+    "2018",
+    "13",
+    "0.70x",
+    "1.56x",
+    "55%"
+   ],
+   [
+    "2019",
+    "22",
+    "0.48x",
+    "1.44x",
+    "67%"
+   ],
+   [
+    "2020",
+    "18",
+    "0.56x",
+    "1.44x",
+    "61%"
+   ],
+   [
+    "2021",
+    "23",
+    "0.27x",
+    "1.24x",
+    "79%"
+   ],
+   [
+    "2022",
+    "15",
+    "0.08x",
+    "1.26x",
+    "94%"
+   ],
+   [
+    "2018 to 2022 pooled",
+    "91",
+    "0.44x",
+    "1.39x",
+    "69%"
+   ],
+   [
+    "All vintages",
+    "445",
+    "1.25x",
+    "1.62x",
+    "23%"
+   ]
+  ],
+  "note": "Limits: Oregon's own share of each fund, net of fees, pooled by dollars, so big funds weigh most. Funds Oregon sold on the secondary market count as cash, and leaving them out lifts the 2018 to 2022 share to 72%, by our count. Oregon calls multiples under three years old not meaningful, so 2023 to 2026 get no row but sit in the all-vintages total."
+ },
+ "example": {
+  "input": "Illustrative: a family office holds 40 funds from 25 managers. Each quarter, statements arrive as PDFs with different layouts, dates and labels. An analyst retypes paid-in, distributions and NAV, then copies each manager's TVPI and IRR.",
+  "output": "AI reads every statement and pulls paid-in, distributions, recallable amounts, NAV and as-of date into one ledger[^16]. A plain calculator, not the AI, recomputes DPI, RVPI, TVPI and IRR one way and flags gaps with the managers' figures[^15]. The analyst checks each flag against its source page, and the head of investment operations calls the GP about real mismatches[^20]."
+ },
+ "watchOuts": [
+  "Reading DPI too early: fees and early calls keep a young fund's multiples low, a pattern known as the J-curve[^20]. Hold rankings until year six or later[^7].",
+  "Treating RVPI as cash: NAV is the manager's estimate, and venture NAVs ran higher than buyout ones in a 1988 to 2016 study[^17]. Ask how each large holding was valued[^2].",
+  "Letting a credit line flatter IRR: in ILPA's example, a two-year line lifts IRR from 6.62% to 7.98% while TVPI falls[^3]. MSCI puts the median line's lift near 100 basis points for recent buyout and real estate funds[^5].",
+  "Mixing gross and net: deal-level MOIC is gross of fees, while fund TVPI should be net of fees and carry[^2]. Keep each comparison on one basis.",
+  "Counting recallable money as gone for good: recallable distributions sit in DPI's top line, so the manager can call that cash back[^1]. Track them separately.",
+  "Ranking on one quarter: 85% of funds by IRR pass through three or four quartiles before they settle[^6]. Compare with the same vintage, and expect ranks to move[^7]."
+ ],
+ "faq": [
+  {
+   "q": "What is DPI in private equity?",
+   "a": "DPI is the cash a fund has distributed to its limited partners (LPs), divided by the capital they have paid in[^1][^2]. A DPI of 0.5x means half your paid-in money has come back."
+  },
+  {
+   "q": "What is TVPI?",
+   "a": "TVPI is cash distributed plus the fund's remaining net asset value, divided by paid-in capital[^1][^2]. It adds the manager's estimate of unsold holdings to the cash already returned."
+  },
+  {
+   "q": "Can DPI be higher than TVPI?",
+   "a": "No, not on one consistent basis, because TVPI is DPI plus RVPI[^2]. If a statement shows DPI above TVPI, check for mismatched dates or bases, or a negative NAV."
+  },
+  {
+   "q": "Is TVPI the same as MOIC?",
+   "a": "No, not usually: TVPI is a net multiple of your paid-in capital, while MOIC usually measures deals, gross of fees[^2]. Firms use the terms loosely, so check the label and the denominator."
+  },
+  {
+   "q": "What is a good DPI for a private equity fund?",
+   "a": "A good DPI depends on the fund's age and vintage, because recent funds are paying back slowly[^8][^12]. In one vendor's 2026 data, the median 2021 private equity fund had returned 0.16x[^12]."
+  },
+  {
+   "q": "Does paid-in capital include management fees?",
+   "a": "Yes, capital called for fees counts as paid-in, which is one reason young funds show low multiples[^20][^2]."
+  },
+  {
+   "q": "How do subscription lines change TVPI and DPI?",
+   "a": "Subscription lines delay capital calls, which lifts early IRR and trims the multiple once interest is paid[^3][^4]. One study found IRR up 1.9 points and the multiple down 0.02 on average[^4]."
+  },
+  {
+   "q": "What is a public market equivalent?",
+   "a": "A public market equivalent (PME) asks what a fund's cash flows would have earned in a public index[^18]. A Kaplan-Schoar PME above 1 means the fund beat that index after fees[^18]."
+  },
+  {
+   "q": "When can you trust a fund's quartile rank?",
+   "a": "Trust a quartile rank only after six to eight years, when private equity funds typically settle into their final quartile[^6]. Before then, ranks move a lot[^6]."
+  },
+  {
+   "q": "Do managers have to report TVPI and DPI the same way?",
+   "a": "No, because a US appeals court vacated the Securities and Exchange Commission (SEC) private fund rules, quarterly statements included, on 5 June 2024[^23]. ILPA's Performance Template is industry guidance for funds starting on or after 1 January 2026[^22]."
+  }
+ ],
+ "buyVsBuild": {
+  "buy": "Buy extraction when you hold dozens of funds and have no data team. Tools built for alternatives, such as Canoe, read capital account statements. Canoe reports accuracy consistently above 90%, its own claim[^16].",
+  "build": "Build the calculation layer when you need one method and a page reference for every figure. Even top models fail most complex spreadsheet calculations, so let AI extract and a plain calculator do the maths[^15]. ILPA's template gives the cash flow fields to build around[^22]."
+ },
+ "pickElse": [
+  "The fund is under three years old: neither multiple means much yet, and Oregon labels such figures not meaningful[^21]. Track calls against your plan instead.",
+  "You want to know whether private equity beat stocks: use a PME or direct alpha, not TVPI alone[^18][^19].",
+  "The real question is your family's cash needs: model future calls and distributions instead of ranking funds[^13]."
+ ],
+ "resources": [
+  {
+   "name": "ILPA Performance Template",
+   "url": "https://ilpa.org/industry-guidance/templates-standards-model-documents/ilpa-templates-hub/ilpa-performance-template",
+   "what": "The standard layout to ask managers for: each metric next to its cash flows."
+  },
+  {
+   "name": "Invest Europe, Performance measurement and reporting",
+   "url": "https://www.investeurope.eu/investor-reporting-guidelines/performance-measurement-and-reporting/",
+   "what": "Plain definitions of DPI, RVPI, TVPI, IRR and gross MOIC."
+  },
+  {
+   "name": "ILPA, Enhancing Transparency Around Subscription Lines of Credit",
+   "url": "https://ilpa.org/wp-content/uploads/2020/06/ILPA-Guidance-on-Disclosures-Related-to-Subscription-Lines-of-Credit_2020_FINAL.pdf",
+   "what": "What to ask a manager about its credit line, with a worked IRR example."
+  },
+  {
+   "name": "Oregon State Treasury, OPERF Private Equity Portfolio",
+   "url": "https://www.oregon.gov/treasury/invested-for-oregon/Documents/Invested-for-OR-Performance-and-Holdings/2026/OPERF-Private-Equity-Portfolio-Quarter-2-2026.pdf",
+   "what": "Free fund-by-fund paid-in, distributions and value for 454 funds, updated quarterly."
+  }
+ ],
+ "stats": [
+  {
+   "num": "69%",
+   "label": "Share of value in Oregon's 2018-2022 private equity funds still unsold, by our count[^21].",
+   "source": "Zavient count of Oregon State Treasury data, 30 Jun 2026"
+  },
+  {
+   "num": "1.9 points",
+   "label": "Average IRR lift for funds that use subscription credit lines, in one study[^4].",
+   "source": "Albertus and Denes, JFQA 2026"
+  },
+  {
+   "num": "12%",
+   "label": "Share of fund value private equity funds paid out in 2025, just over half the 20-year average[^9].",
+   "source": "MSCI, Jun 2026"
+  },
+  {
+   "num": "6-8 years",
+   "label": "Time most private equity funds take to settle into their final quartile[^6].",
+   "source": "Cambridge Associates, 2018"
+  },
+  {
+   "num": "73%",
+   "label": "Family offices in the Americas surveyed (155) that call investment reporting too manual[^13].",
+   "source": "Campden Wealth and RBC, 2026"
+  },
+  {
+   "num": "0.16x",
+   "label": "Median DPI of 2021-vintage private equity funds in one vendor's data[^12].",
+   "source": "Dakota, Sep 2026"
+  }
+ ],
+ "sources": [
+  {
+   "name": "ILPA, Private Equity Glossary",
+   "url": "https://ilpa.org/resources-tools/private-equity-101/private-equity-glossary",
+   "what": "DPI: money distributed to LPs relative to contributions; recallable distributions belong in the numerator. RVPI: current value of remaining investments relative to contributions. TVPI: remaining value plus distributions relative to capital paid in; \"perhaps the best available measure of performance before the end of a fund's life\". IRR: the discount rate at which present values of investments and returns are equal. Benchmarking compares funds of the same vintage year and investment focus. Read 28 Nov 2026."
+  },
+  {
+   "name": "Invest Europe, Investor Reporting Guidelines: Performance measurement and reporting",
+   "url": "https://www.investeurope.eu/investor-reporting-guidelines/performance-measurement-and-reporting/",
+   "what": "Paid-in capital is committed capital that has been called, not total commitment. DPI: realised proceeds to date over paid-in. RVPI: current fair value of assets held over paid-in; \"provides a measure on unrealised risk\". TVPI = DPI + RVPI, disclosed net of fees and carry. MOIC is measured at portfolio-investment level, shown gross of all fees and expenses. Read 28 Nov 2026."
+  },
+  {
+   "name": "ILPA, Enhancing Transparency Around Subscription Lines of Credit (Jun 2020)",
+   "url": "https://ilpa.org/wp-content/uploads/2020/06/ILPA-Guidance-on-Disclosures-Related-to-Subscription-Lines-of-Credit_2020_FINAL.pdf",
+   "what": "Notional example: IRR 6.62% without a line, 7.14% with a one-year line and 7.98% with a two-year line; TVPI 1.45x, 1.40x and 1.35x. Recommends GPs disclose net IRR with and without the facility. Read 28 Nov 2026."
+  },
+  {
+   "name": "Albertus and Denes, Private Equity Fund Debt: Agency Costs and Cash Flow Management, Journal of Financial and Quantitative Analysis (2026)",
+   "url": "https://www.cambridge.org/core/journals/journal-of-financial-and-quantitative-analysis/article/private-equity-fund-debt-agency-costs-and-cash-flow-management/0A8E7BE9DE378BC9C276171B256986EF",
+   "what": "Annualized IRR for funds using subscription lines of credit increases by 1.9 percentage points on average; the multiple decreases by 0.02; the IRR increase is 2.3 percentage points larger for funds aged 5 years or less. Read 28 Nov 2026."
+  },
+  {
+   "name": "MSCI, Inflating Returns with Subscription Lines of Credit (9 Jan 2024)",
+   "url": "https://www.msci.com/research-and-insights/blog-post/inflating-returns-with-subscription-lines-of-credit",
+   "what": "For recent vintages of buyout and real-estate funds, the median sub line inflated current IRRs by approximately 100 basis points; sub lines have little effect on venture-capital IRRs. Read 28 Nov 2026."
+  },
+  {
+   "name": "Cambridge Associates, Portfolio Benchmarking: Best Practices for Private Investments (May 2018)",
+   "url": "https://www.cambridgeassociates.com/insight/portfolio-benchmarking-best-practices-for-private-investments",
+   "what": "Funds typically take 6-8 years to settle into their final quartile; early-stage venture and fund of funds 7-9 years. 85% of funds by IRR (87% by TVPI) ranked in three or four different quartiles before settling. Investors should use the same vintage-year method as their benchmark provider. Read 28 Nov 2026."
+  },
+  {
+   "name": "Cambridge Associates, A Framework for Benchmarking Private Investments (2014)",
+   "url": "https://www.cambridgeassociates.com/insight/a-framework-for-benchmarking",
+   "what": "A fund needs about six years to settle into its final quartile; 80% to 90% of funds land in at least three different quartiles. Conclusions earlier than five to six years can mislead. Review IRRs alongside DPI and TVPI. Benchmark funds against peers of the same strategy and vintage year. Read 28 Nov 2026."
+  },
+  {
+   "name": "Bain & Company, Global Private Equity Report 2026 (Feb 2026)",
+   "url": "https://www.bain.com/insights/outlook-gaining-traction-global-private-equity-report-2026",
+   "what": "Buyout distributions as a percentage of NAV remained essentially flat at 14% (MSCI data, 12 months to Q3 2025), a level not seen since 2008-09; below 15% for four years running, an industry record. Every 2017-2021 vintage underdelivered on DPI vs the historical benchmark (average of median DPI for 2010-17 vintages). Read 28 Nov 2026."
+  },
+  {
+   "name": "MSCI, The distribution drought in private equity persists (11 Jun 2026)",
+   "url": "https://www.msci.com/data-and-analytics/private-asset-solutions/visualizations/the-distribution-drought-in-private-equity-persists",
+   "what": "Closed-end private equity funds returned only 12% of asset value to investors in 2025, just over half the 20-year average of roughly 20%. Read 28 Nov 2026."
+  },
+  {
+   "name": "Cambridge Associates, US PE/VC Benchmark Commentary: Calendar Year 2025 (Jul 2026)",
+   "url": "https://www.cambridgeassociates.com/insight/us-pe-vc-benchmark-commentary-calendar-year-2025",
+   "what": "In 2025, US private equity managers distributed $185 billion and called $145 billion; distribution yield (distributions divided by NAV) was below average for the fourth consecutive year. Read 28 Nov 2026."
+  },
+  {
+   "name": "Carta, VC Fund Performance: Q2 2026 (Sep 2026)",
+   "url": "https://carta.com/data/vc-fund-performance-q2-2026-full-report",
+   "what": "Fund administrator data. Median DPI is 0.37x for 2017 venture funds, 0.15x for 2018 funds and 0.04x for 2019 funds. Read 28 Nov 2026."
+  },
+  {
+   "name": "Dakota, Median Private Fund DPI by Asset Class: 2026 Benchmark Data (9 Sep 2026)",
+   "url": "https://www.dakota.com/resources/blog/median-private-fund-dpi-by-asset-class-2026-benchmark-data",
+   "what": "Vendor data. Median DPI for 2021 vintage: private equity 0.16x, venture capital 0.28x, private credit 0.34x. Private credit posted the highest median DPI in 2018-2022 vintages, reflecting contractual cash yield and shorter duration. Read 28 Nov 2026."
+  },
+  {
+   "name": "Campden Wealth and RBC, The North America Family Office Report 2026",
+   "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
+   "what": "Survey of 155 family offices (123 US). 73% of family offices still believe investment reporting is too manual, a top concern three years running. 86% of offices invest in private markets; funds are 36% of the private-markets book. Liquidity is \"the word of the year\"; a fund manager's transparency about exit timelines \"tells you a lot about how they operate\". Read 28 Nov 2026."
+  },
+  {
+   "name": "NEPC, Investing in Private Markets: Best Practices for Family Offices, Selecting Private Market Managers and Evaluating Performance (May 2026)",
+   "url": "https://www.nepc.com/wp-content/uploads/2026/05/Selecting-Private-Market-Managers-and-Evaluating-Performance.pdf",
+   "what": "Standard private markets metrics: IRR, DPI, TVPI, MOIC and PME; performance should be evaluated by vintage year and strategy. Private market indexes suffer reporting lags, survivorship bias and valuation smoothing. Read 28 Nov 2026."
+  },
+  {
+   "name": "FinSheet-Bench: Where LLMs Break on Financial Spreadsheets (arXiv 2603.07316, 2026)",
+   "url": "https://arxiv.org/html/2603.07316",
+   "what": "Private equity fund spreadsheets modelled on real templates. For the top 3 models, accuracy drops from above about 90% on simple lookups to just above 30% on complex calculations; best model 82.4% overall. No standalone model is accurate enough for unsupervised use. Read 28 Nov 2026."
+  },
+  {
+   "name": "Canoe Intelligence, Behind the release: Canoe AI and Hybrid Extraction (21 Oct 2025)",
+   "url": "https://canoeintelligence.com/behind-the-release-our-product-team-talks-canoe-ai-hybrid-extraction",
+   "what": "Vendor claim: out-of-the-box models \"didn't perform well. They're wrong a lot\"; Canoe is \"consistently seeing accuracy above 90%\" after tuning on alternatives documents. Read 28 Nov 2026."
+  },
+  {
+   "name": "Jenkinson, Landsman, Rountree and Soonawalla, Private Equity Net Asset Values and Future Cash Flows (SSRN)",
+   "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2636985",
+   "what": "Compares reported NAVs with later realized cash flows for 384 venture and 195 buyout funds, 1988-2016. Buyout NAVs show little systematic bias; venture NAVs are relatively aggressively biased, especially since 2000. Read 28 Nov 2026."
+  },
+  {
+   "name": "Kaplan and Schoar, Private Equity Performance: Returns, Persistence, and Capital Flows, Journal of Finance (2005)",
+   "url": "https://web.mit.edu/aschoar/www/KaplanSchoar2005.pdf",
+   "what": "PME discounts a fund's cash outflows and inflows at the S&P 500 total return; a PME greater than 1 means the fund outperformed the S&P 500, net of all fees. If fund beta exceeds 1, PME overstates risk-adjusted returns. Read 28 Nov 2026."
+  },
+  {
+   "name": "Gredil, Griffiths and Stucke, Benchmarking private equity: The direct alpha method, Journal of Corporate Finance (2023)",
+   "url": "https://www.sciencedirect.com/science/article/pii/S0929119923000093",
+   "what": "Direct alpha is an annualized excess return of private fund investments over a public benchmark; other PME methods are heuristic or carry approximation errors. Read 28 Nov 2026."
+  },
+  {
+   "name": "Washington State Investment Board, Private Equity IRR report as of 31 Dec 2025",
+   "url": "https://www.sib.wa.gov/docs/reports/quarterly/ir123125.pdf",
+   "what": "WSIB's IRR may differ from the GP's or other LPs' because of date of close, sale of distributed stock, bridge loans and valuations. Management fees in early drawdowns produce low or negative early returns (the J-curve). Read 28 Nov 2026."
+  },
+  {
+   "name": "Oregon State Treasury, OPERF Private Equity Portfolio as of 30 June 2026 (published 8 Oct 2026)",
+   "url": "https://www.oregon.gov/treasury/invested-for-oregon/Documents/Invested-for-OR-Performance-and-Holdings/2026/OPERF-Private-Equity-Portfolio-Quarter-2-2026.pdf",
+   "what": "Every OPERF partnership with vintage, commitment, capital contributed, distributed, fair market value, multiple and IRR, net of fees. Totals: $66,293.2 million contributed, $82,791.3 million distributed, $24,732.4 million fair market value, 1.62x. Investments held under three years are labelled not meaningful. Read 28 Nov 2026."
+  },
+  {
+   "name": "ILPA, Performance Template",
+   "url": "https://ilpa.org/industry-guidance/templates-standards-model-documents/ilpa-templates-hub/ilpa-performance-template",
+   "what": "Standardizes return calculations by capturing performance metrics with their corresponding contributions and distributions; for funds commencing operations on or after 1 January 2026. Read 28 Nov 2026."
+  },
+  {
+   "name": "SEC, Announcement Regarding the Private Fund Advisers Rules",
+   "url": "https://www.sec.gov/announcement-regarding-private-fund-advisers-rules",
+   "what": "On 5 June 2024 the Fifth Circuit vacated the Private Fund Advisers rules, including the private fund quarterly statements rule. Read 28 Nov 2026."
+  }
+ ],
+ "related": [
+  "family-offices",
+  "family-office-reporting",
+  "family-office-coo",
+  "private-credit-portfolio-monitoring",
+  "ai-document-processing"
+ ],
+ "answers": {
+  "table-1": "Three of these multiples share one denominator, paid-in capital, while IRR adds timing and multiple on invested capital (MOIC) usually measures deals, not your stake[^2][^1].",
+  "table-2": "Divide cash paid back by cash paid in for DPI, then add the remaining net asset value to the top line for TVPI[^2][^1].",
+  "table-3": "Compare net figures for funds of the same vintage and strategy, use IRR without the credit line, and add a public market equivalent[^7][^3][^18].",
+  "table-4": "Distributions run at about half their long-run pace, so a low DPI on a 2017 to 2021 fund is common, not alarming on its own[^9][^8].",
+  "recipes": "TVPI matters more while a fund is still investing, DPI matters more from about year six, and neither means much without the vintage beside it[^7][^1].",
+  "human-role": "Your team keeps every judgment: an operations lead signs off the numbers, an analyst challenges the valuations, and the principal decides peers, timing and re-ups[^13][^17][^6].",
+  "own-data": "By our count, 69% of the value Oregon reports for its 2018 to 2022 private equity funds is still unsold holdings, not cash returned[^21].",
+  "example": "AI pulls the figures from every manager's statement into one ledger, a calculator recomputes the metrics one way, and people check each flagged mismatch[^15][^16].",
+  "what-goes-wrong": "TVPI and DPI mislead early in a fund's life, when estimates drive value, when credit lines delay calls, and when gross, net or recallable money gets mixed[^20][^3][^2].",
+  "buy-or-build": "Buy extraction if you hold many funds and have no data team, and build the calculation layer if you need one method and an audit trail[^16][^15].",
+  "something-else": "Look past both metrics when a fund is too young, when the question is whether it beat stocks, or when the real issue is your family's cash plan[^21][^18][^13]."
+ },
+ "offer": {
+  "heading": "Which of your fund figures disagree with the cash?",
+  "body": "A free 30-minute diagnostic finds them: we take one quarter of your capital account statements and recompute TVPI, DPI and IRR from the cash flows. You leave with every mismatch listed and a first fix."
+ },
+ "keyword": {
+  "phrase": "tvpi vs dpi",
+  "searches": 320,
+  "cpc": 70.12,
+  "difficulty": 0
+ },
+ "reviews": [
+  {
+   "reader": "COO",
+   "notes": "Wants to know what to ask the GP and what the team does each quarter. The recipes give a flow per fund stage, each step with a role. The worked example shows why one TVPI hides two different funds. Added the with-and-without credit line ask to the young-fund flow."
+  },
+  {
+   "reader": "Head of operations",
+   "notes": "Head of investment operations reads on a phone. Every acronym is spelled out on first use: DPI, TVPI, RVPI in the summary, NAV, MOIC, IRR and PME in the first table, GP in the human-role block, LP in the FAQ. Table cells cut to one or two short sentences."
+  },
+  {
+   "reader": "GM",
+   "notes": "Asks whether this needs new software. Recipe costs now say no new tools for young funds, and buy-or-build splits extraction (buy) from calculation (build). No Zavient price anywhere."
+  },
+  {
+   "reader": "Division head",
+   "notes": "Read as a head of investment operations. Checked that every table figure has a dated source, that vendor figures (Canoe, Dakota) are labelled as vendor claims or vendor data, and that the Oregon numbers are labelled by our count with their limits, including secondary sales."
+  },
+  {
+   "reader": "Owner-CEO",
+   "notes": "Read as a principal. The bottom line answers in five bullets: what each metric is, when to lean on each, the credit line ask, how much is still paper, and where AI fits. The own data gives a concrete number from a real investor. Example marked illustrative."
+  }
+ ],
+ "updated": "2026-11-28",
+ "figureCheck": {
+  "date": "2026-11-28",
+  "checked": 23,
+  "notFound": [],
+  "byHand": [
+   {
+    "where": "tables[2].rows[2].cells[0]",
+    "figure": "6.62%",
+    "url": "https://ilpa.org/wp-content/uploads/2020/06/ILPA-Guidance-on-Disclosures-Related-to-Subscription-Lines-of-Credit_2020_FINAL.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "IRR 6.62% 7.14% 7.98%"
+   },
+   {
+    "where": "tables[2].rows[2].cells[0]",
+    "figure": "7.98%",
+    "url": "https://ilpa.org/wp-content/uploads/2020/06/ILPA-Guidance-on-Disclosures-Related-to-Subscription-Lines-of-Credit_2020_FINAL.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "IRR 6.62% 7.14% 7.98%"
+   },
+   {
+    "where": "tables[2].rows[2].cells[0]",
+    "figure": "1.45x",
+    "url": "https://ilpa.org/wp-content/uploads/2020/06/ILPA-Guidance-on-Disclosures-Related-to-Subscription-Lines-of-Credit_2020_FINAL.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "TVPI 1.45x 1.40x 1.35x"
+   },
+   {
+    "where": "tables[2].rows[2].cells[0]",
+    "figure": "1.35x",
+    "url": "https://ilpa.org/wp-content/uploads/2020/06/ILPA-Guidance-on-Disclosures-Related-to-Subscription-Lines-of-Credit_2020_FINAL.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "TVPI 1.45x 1.40x 1.35x"
+   },
+   {
+    "where": "tables[2].rows[4].cells[0]",
+    "figure": "85%",
+    "url": "https://www.cambridgeassociates.com/insight/portfolio-benchmarking-best-practices-for-private-investments",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "In fact, 85% of all funds as measured by IRR (or 87% as measured by TVPI) ranked in three or four different quartiles at some point on their journey to maturity."
+   },
+   {
+    "where": "tables[3].rows[0].cells[0]",
+    "figure": "12%",
+    "url": "https://www.msci.com/data-and-analytics/private-asset-solutions/visualizations/the-distribution-drought-in-private-equity-persists",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Closed-end funds returned only 12% of asset value to investors in 2025, just over half the 20-year average, as funds continue to struggle with exits."
+   },
+   {
+    "where": "tables[3].rows[0].cells[0]",
+    "figure": "20%",
+    "url": "https://www.msci.com/data-and-analytics/private-asset-solutions/visualizations/the-distribution-drought-in-private-equity-persists",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "The 20-year average is roughly 20%."
+   },
+   {
+    "where": "tables[3].rows[1].cells[0]",
+    "figure": "15%",
+    "url": "https://www.bain.com/insights/outlook-gaining-traction-global-private-equity-report-2026",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Distributions as a percentage of net asset value (NAV) have now held below 15% for four years running—an industry record."
+   },
+   {
+    "where": "tables[3].rows[4].cells[0]",
+    "figure": "0.37x",
+    "url": "https://carta.com/data/vc-fund-performance-q2-2026-full-report",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "For the 2017 vintage, median DPI sits at 0.37x."
+   },
+   {
+    "where": "tables[3].rows[4].cells[0]",
+    "figure": "0.15x",
+    "url": "https://carta.com/data/vc-fund-performance-q2-2026-full-report",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "That median DPI is 0.15x for 2018 funds, and 0.04x for 2019 funds."
+   },
+   {
+    "where": "tables[3].rows[4].cells[0]",
+    "figure": "0.04x",
+    "url": "https://carta.com/data/vc-fund-performance-q2-2026-full-report",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "That median DPI is 0.15x for 2018 funds, and 0.04x for 2019 funds."
+   },
+   {
+    "where": "tables[3].rows[5].cells[0]",
+    "figure": "0.34x",
+    "url": "https://www.dakota.com/resources/blog/median-private-fund-dpi-by-asset-class-2026-benchmark-data",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "|2021 |0.16x |0.28x |0.34x |0.22x |0.12x | (table columns: private equity, venture capital, private credit, real estate, real assets)"
+   },
+   {
+    "where": "tables[3].rows[5].cells[0]",
+    "figure": "0.28x",
+    "url": "https://www.dakota.com/resources/blog/median-private-fund-dpi-by-asset-class-2026-benchmark-data",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "|2021 |0.16x |0.28x |0.34x |0.22x |0.12x | (table columns: private equity, venture capital, private credit, real estate, real assets)"
+   },
+   {
+    "where": "tables[3].rows[5].cells[0]",
+    "figure": "0.16x",
+    "url": "https://www.dakota.com/resources/blog/median-private-fund-dpi-by-asset-class-2026-benchmark-data",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Median private equity DPI falls from 0.48x for 2019 funds to 0.30x for 2020 funds and 0.16x for 2021 funds."
+   },
+   {
+    "where": "humanRole[0]",
+    "figure": "73%",
+    "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Seventy-three percent [73%] still believe investment reporting is too manual, making it a top concern for three years running."
+   },
+   {
+    "where": "watchOuts[2]",
+    "figure": "6.62%",
+    "url": "https://ilpa.org/wp-content/uploads/2020/06/ILPA-Guidance-on-Disclosures-Related-to-Subscription-Lines-of-Credit_2020_FINAL.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "IRR 6.62% 7.14% 7.98%"
+   },
+   {
+    "where": "watchOuts[2]",
+    "figure": "7.98%",
+    "url": "https://ilpa.org/wp-content/uploads/2020/06/ILPA-Guidance-on-Disclosures-Related-to-Subscription-Lines-of-Credit_2020_FINAL.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "IRR 6.62% 7.14% 7.98%"
+   },
+   {
+    "where": "watchOuts[5]",
+    "figure": "85%",
+    "url": "https://www.cambridgeassociates.com/insight/portfolio-benchmarking-best-practices-for-private-investments",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "In fact, 85% of all funds as measured by IRR (or 87% as measured by TVPI) ranked in three or four different quartiles at some point on their journey to maturity."
+   },
+   {
+    "where": "faq[4].a",
+    "figure": "0.16x",
+    "url": "https://www.dakota.com/resources/blog/median-private-fund-dpi-by-asset-class-2026-benchmark-data",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Median private equity DPI falls from 0.48x for 2019 funds to 0.30x for 2020 funds and 0.16x for 2021 funds."
+   },
+   {
+    "where": "buyVsBuild.buy",
+    "figure": "90%",
+    "url": "https://canoeintelligence.com/behind-the-release-our-product-team-talks-canoe-ai-hybrid-extraction",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Right now, we’re consistently seeing accuracy above 90%, which has made workflows noticeably more efficient for clients."
+   },
+   {
+    "where": "stats[2]",
+    "figure": "12%",
+    "url": "https://www.msci.com/data-and-analytics/private-asset-solutions/visualizations/the-distribution-drought-in-private-equity-persists",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Closed-end funds returned only 12% of asset value to investors in 2025, just over half the 20-year average, as funds continue to struggle with exits."
+   },
+   {
+    "where": "stats[4]",
+    "figure": "73%",
+    "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Seventy-three percent [73%] still believe investment reporting is too manual, making it a top concern for three years running."
+   },
+   {
+    "where": "stats[5]",
+    "figure": "0.16x",
+    "url": "https://www.dakota.com/resources/blog/median-private-fund-dpi-by-asset-class-2026-benchmark-data",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Median private equity DPI falls from 0.48x for 2019 funds to 0.30x for 2020 funds and 0.16x for 2021 funds."
+   }
+  ],
+  "redirects": []
+ },
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "writer agent, self-check: no separate agent tool was available in this session, so each source was re-fetched live (Parallel web_fetch) and read against its claims",
+  "checked": 23,
+  "fixed": [
+   "Bain row: 14% is distributions/NAV flat at a level not seen since 2008-09; the record is four years below 15%, not four years below average",
+   "Bain row: DPI benchmark named as the average median DPI of 2010-17 vintages",
+   "Human-role 73% claim no longer cites the ILPA Performance Template, which does not state it",
+   "IRR row now cites Invest Europe too, since ILPA glossary does not mention remaining NAV",
+   "Example: dropped the claim that Canoe links each figure to its page; Canoe does not say so",
+   "Independent check 28 Nov: dropped MSCI from the 69% claim and Cambridge 2014 from the six-to-eight-years claim, giving each its own clause",
+   "Independent check 28 Nov: venture NAV bias now says one 1988-2016 study, relative to buyout",
+   "Independent check 28 Nov: Carta row labelled as Carta platform data; credit-line interest stated as paid from fund value",
+   "Independent check 28 Nov: RBC/Campden 73% is 155 family offices in the Americas (incl. 11 outside North America); WSIB named in full"
+  ]
+ }
+}
