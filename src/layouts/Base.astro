@@ -38,7 +38,23 @@ const cfBeacon = import.meta.env.PUBLIC_CF_BEACON_TOKEN || '';
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href={fonts} rel="stylesheet" />
   <link rel="stylesheet" href={css} />
-  <link rel="stylesheet" href="/assets/ask-ai-widget.css" />
+  <link rel="stylesheet" href="/assets/ask-ai-widget.css?v=2" />
+  <style is:global>
+    .theme-blue {
+      --ask-accent: var(--blue);
+      --ask-on-accent: var(--paper);
+      --ask-panel: var(--paper);
+      --ask-ink: var(--ink);
+      --ask-ink-soft: var(--ink-soft);
+      --ask-rule: var(--line);
+      --ask-bg-2: var(--paper-alt);
+      --ask-user-bg: var(--blue-wash);
+      --ask-cta-bg: var(--blue-wash);
+      --ask-cta-rule: var(--line);
+      --ask-body: var(--sans);
+      --ask-mono: var(--mono);
+    }
+  </style>
 </head>
 <body class={theme === 'blue' ? 'theme-blue' : undefined}>
   <nav>
@@ -137,7 +153,7 @@ const cfBeacon = import.meta.env.PUBLIC_CF_BEACON_TOKEN || '';
       ]
     };
   </script>
-  <script is:inline src="/assets/ask-ai-widget.js" defer></script>
+  <script is:inline src="/assets/ask-ai-widget.js?v=2" defer></script>
   {cfBeacon && <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: cfBeacon })}></script>}
 </body>
 </html>

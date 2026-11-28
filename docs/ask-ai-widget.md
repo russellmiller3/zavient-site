@@ -21,12 +21,12 @@ The installer refreshes `public/assets/ask-ai-widget.{js,css}`, `worker/ask-ai-k
 ## Cloudflare production setup
 
 1. Run `npm test`. Provision a D1 database named `zavient-ask-ai` with `npx wrangler d1 create zavient-ask-ai`, or reuse the existing database of that name. Record the database's ID in the `ASK_AI_DB` entry in `wrangler.jsonc`. Use a separate database for preview when preview needs data isolation.
-2. Run `npx wrangler d1 migrations apply ASK_AI_DB --remote` to create the usage and email receipt tables before deploying. For local testing, use `--local`.
-3. Add a random reporting secret with `npx wrangler secret put ASK_AI_ADMIN_TOKEN`. Keep the secret out of source and browser assets.
-4. The Worker declares Workers AI, a rate limit for questions and leads, and a dedicated `ASK_AI_EMAIL` binding restricted to `rmiller@zavient.com`. The sender is `tracking@alerts.zavient.com`, the verified domain address already used by Zavient tracking alerts. Coordinating a future inbox change requires updating both the binding restriction and `ASK_AI_EMAIL_TO`.
-5. Deploy through the site's normal Cloudflare Workers workflow. Verify the widget with a site question, unrelated question, highlighted passage, generated diagram and suggested question. Check delivery with a consented test lead only when authorized. Verify the inbox receives one transcript and stays quiet for anonymous chats.
+2. Run `npx wrangler d1 migrations apply ASK_AI_DB --remote` to create the usage and transcript tables before deploying. For local testing, use `--local`.
+3. Add a random owner secret with `npx wrangler secret put ASK_AI_ADMIN_TOKEN`. Keep the secret out of source and browser assets. Open `/api/ask-transcripts` and use `owner` as the username and the secret as the password.
+4. The Worker declares Workers AI, a rate limit for questions and leads, and a dedicated `ASK_AI_EMAIL` binding restricted to the verified sender. The sender is `tracking@alerts.zavient.com`, the verified domain address already used by Zavient tracking alerts. For a sender change, update the binding allowlist and `ASK_AI_EMAIL_FROM` together.
+5. Deploy through the site's normal Cloudflare Workers workflow. Verify the widget with a site question, unrelated question, highlighted passage, generated diagram and suggested question. Verify an anonymous chat appears in the private owner archive. Use an authorized test recipient for **Email me this chat** and verify delivery goes only to that address.
 
-A missing D1 binding or migration leaves chat available without usage counts or lead capture. Missing email settings disable the contact form. Failed delivery or D1 writes appear as named Ask AI events in Worker logs.
+A missing D1 binding or migration leaves chat available without the archive, usage counts or visitor email. Missing email settings disable the contact form. Failed delivery or D1 writes appear as named Ask AI events in Worker logs.
 
 ## View usage
 

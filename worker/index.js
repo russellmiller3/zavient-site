@@ -7,11 +7,13 @@
 import { notifyTrackingEvent } from './tracking-alerts.js';
 import { ask } from './ask-ai-kit/ask.mjs';
 import { lead as askLead } from './ask-ai-kit/lead.mjs';
+import { transcripts as askTranscripts } from './ask-ai-kit/transcripts.mjs';
 import { usage as askUsage } from './ask-ai-kit/usage.mjs';
 
 const askRoutes = {
   '/api/ask': { method: 'POST', handler: ask, limit: 'ASK_AI_QUESTION_LIMIT' },
   '/api/ask-lead': { method: 'POST', handler: askLead },
+  '/api/ask-transcripts': { method: 'GET', handler: askTranscripts },
   '/api/ask-usage': { method: 'GET', handler: askUsage },
 };
 

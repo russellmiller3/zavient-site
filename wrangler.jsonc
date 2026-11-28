@@ -9,7 +9,7 @@
   "preview_urls": true,
   "send_email": [
     { "name": "TRACKING_EMAIL", "destination_address": "rmiller@zavient.com" },
-    { "name": "ASK_AI_EMAIL", "destination_address": "rmiller@zavient.com" }
+    { "name": "ASK_AI_EMAIL", "allowed_sender_addresses": ["tracking@alerts.zavient.com"] }
   ],
   "ai": { "binding": "AI" },
   "d1_databases": [
@@ -21,7 +21,6 @@
   ],
   "vars": {
     "ASK_AI_EMAIL_FROM": "tracking@alerts.zavient.com",
-    "ASK_AI_EMAIL_TO": "rmiller@zavient.com",
     "ASK_AI_SITE_SCOPE": "Zavient's AI consulting services, diagnostics, free tools, published workflow and industry guides, and questions about a visitor's business workflows, role or data when relevant to evaluating an AI project with Zavient. Cite or use site excerpts for claims about Zavient. Refuse unrelated requests, including entertainment, news, general coding exercises and other topics outside these boundaries. For an ambiguous question, ask how it relates to the visitor's AI project."
   },
   "kv_namespaces": [{ "binding": "TRACKING_ALERTS", "id": "2b322a33d8b8400a86c7469b466ffad5" }],

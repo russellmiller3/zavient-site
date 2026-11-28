@@ -35,7 +35,7 @@ The public site for Zavient LLC. Pushing to `master` on GitHub publishes it thro
 
 ## Ask AI widget
 
-Use [the Ask AI handoff](docs/ask-ai-widget.md) to adjust the system instructions, site scope, starter questions, and lead email. It also documents usage reports and the deployment checks.
+Use [the Ask AI handoff](docs/ask-ai-widget.md) to adjust the system instructions, site scope, starter questions, private chat archive, and visitor email. It also documents usage reports and the deployment checks.
 
 ## Change log
 

@@ -1,4 +1,4 @@
-// Customize your site's AI voice & rules here (or override live with the ASK_AI_SYSTEM_PROMPT env var in Cloudflare).
+// Customize the site’s default answer style here. ASK_AI_SYSTEM_PROMPT overrides it.
 export const DEFAULT_SYSTEM_PROMPT =
   'Write in a scannable, ADHD-friendly format: ' +
   '1) Open with a 1-sentence direct answer (put key numbers in **bold**). ' +

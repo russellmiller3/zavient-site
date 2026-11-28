@@ -1,4 +1,4 @@
-/* Standalone Ask AI Widget: "Guided Concierge" look. Calm, one idea per block, ADHD-friendly.
+/* Standalone Ask AI widget.
    Override --ask-accent, --ask-panel, --ask-ink, --ask-rule, --ask-cta-bg on :root to match your site. */
 .ask-ai-fab{
   position:fixed;right:20px;bottom:20px;z-index:90;
@@ -62,16 +62,18 @@
 .ask-ai-fab small{font:500 11px/1.2 var(--ask-body,system-ui,sans-serif)}
 .ask-ai-selection-button{position:fixed;right:20px;bottom:88px;z-index:91;background:var(--ask-panel,#fff);box-shadow:0 3px 12px #0003}
 .ask-ai-selection-button[hidden],.ask-ai-backdrop [hidden]{display:none!important}
-.ask-ai-followups,.ask-ai-voice{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-.ask-ai-followups .ask-ai-chip,.ask-ai-voice .ask-ai-chip,.ask-ai-contact .ask-ai-chip,.ask-ai-quote .ask-ai-chip{font-size:13px;padding:5px 8px}
-.ask-ai-voice :empty{display:none}
-.ask-ai-voice [aria-pressed="true"]{border-color:var(--ask-accent,#0A8F8B);background:var(--ask-bg-2,#F4F7F8);font-weight:700}
-.ask-ai-voice span,.ask-ai-contact{font-size:13px;color:var(--ask-ink-soft,#56666B)}
+.ask-ai-followups{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.ask-ai-followups .ask-ai-chip,.ask-ai-contact .ask-ai-chip,.ask-ai-quote .ask-ai-chip{font-size:13px;padding:5px 8px}
+.ask-ai-head-icon{position:relative;display:grid;place-items:center;flex:none;width:32px;height:32px;padding:0;border:1px solid transparent;border-radius:6px;background:transparent;color:inherit;cursor:pointer}
+.ask-ai-head-icon:hover,.ask-ai-head-icon:focus-visible{background:#fff3}
+.ask-ai-head-icon[aria-pressed="true"]{border-color:currentColor;background:#fff3}
+.ask-ai-head-icon:is(:hover,:focus-visible)::after{content:attr(data-tooltip);position:absolute;z-index:2;top:calc(100% + 6px);right:0;white-space:nowrap;padding:3px 7px;border-radius:4px;background:var(--ask-ink,#1F2A2E);color:var(--ask-panel,#fff);font:500 12px/1.5 var(--ask-body,system-ui,sans-serif);pointer-events:none}
+.ask-ai-voice-status:not(:empty){display:block;margin-top:6px}
+.ask-ai-voice-status,.ask-ai-contact{font-size:13px;color:var(--ask-ink-soft,#56666B)}
 .ask-ai-contact{margin-top:10px}
 .ask-ai-contact summary{cursor:pointer;color:var(--ask-ink,#1F2A2E);font-weight:600}
 .ask-ai-contact form,.ask-ai-contact label{display:grid;gap:6px;margin-top:5px;justify-items:start}
-.ask-ai-contact label:has(input[type="checkbox"]){display:flex;align-items:flex-start}
-.ask-ai-contact input[type="email"]{box-sizing:border-box;max-width:100%;padding:5px;border:1px solid var(--ask-rule,#D9E1E4);border-radius:4px;font:inherit}
+.ask-ai-contact input[type="email"]{box-sizing:border-box;max-width:100%;padding:5px;border:1px solid var(--ask-rule,#D9E1E4);border-radius:4px;font:inherit;background:var(--ask-panel,#fff);color:inherit}
 .ask-ai-contact p:empty{display:none}
 .ask-ai-quote{border-left:2px solid var(--ask-accent,#0A8F8B);padding:0 8px;margin-bottom:8px}
 .ask-ai-quote blockquote{font-size:13px;max-height:4em;overflow:auto;margin:0 0 4px;white-space:pre-wrap}

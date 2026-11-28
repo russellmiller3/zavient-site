@@ -2,7 +2,7 @@
    Configure via window.AskAIWidgetConfig = { siteName, siteOrigin, apiEndpoint, ctaText, ctaHref, starterQuestions }.
    Features:
    - Sticky bottom-right Ask AI button with sparkles icon (plus any [data-ask-ai] triggers)
-   - "Guided Concierge" drawer: teal header, scannable answers, plain source links, paper-airplane send,
+   - Site-themed drawer: chat controls in the header, scannable answers, plain source links, paper-airplane send,
      and a calculator/CTA strip pinned below the composer
    - Full-site RAG over /llms.txt + top 2 matching /slug/index.md pages
    - Persistent multi-turn chat stored in browser IndexedDB (with localStorage fallback)
@@ -13,6 +13,9 @@
   const SPARKLES = '<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12 2l2.1 5.9L20 10l-5.9 2.1L12 18l-2.1-5.9L4 10l5.9-2.1L12 2zm7 12l1.1 2.9L23 18l-2.9 1.1L19 22l-1.1-2.9L15 18l2.9-1.1L19 14zM5 15l.8 2.2L8 18l-2.2.8L5 21l-.8-2.2L2 18l2.2-.8L5 15z"/></svg>';
   const PLANE = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13"></path><path d="M22 2L15 22L11 13L2 9L22 2Z"></path></svg>';
 
+  const MIC = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3m-4 0h8"/></svg>';
+  const SPEAKER = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></svg>';
+
   function getConfig() {
     const cfg = root.AskAIWidgetConfig || {};
     const origin = (cfg.siteOrigin || (typeof location !== 'undefined' ? location.origin : 'https://example.com')).replace(/\/+$/, '');
@@ -20,7 +23,7 @@
       siteName: cfg.siteName || 'this site',
       siteOrigin: origin,
       apiEndpoint: cfg.apiEndpoint || '/api/ask',
-      leadEndpoint: cfg.leadEndpoint || '/api/ask-lead',
+      emailEndpoint: cfg.emailEndpoint || cfg.leadEndpoint || '/api/ask-lead',
       contentMode: cfg.contentMode === 'index' ? 'index' : 'markdown',
       llmsPath: cfg.llmsPath || '/llms.txt',
       collectContext: typeof cfg.collectContext === 'function' ? cfg.collectContext : null,
@@ -334,8 +337,8 @@
     let lastSources = [];
     let ctaHref = cfg.ctaHref;
     let conversationId = root.crypto?.randomUUID?.();
-    let leadEnabled = false;
-    let leadSent = false;
+    let emailAvailable = false;
+    let emailSent = false;
     let busy = false;
     let setSelection;
     let restore;
@@ -371,7 +374,7 @@
     function persist(isOpen) {
       saveChatState({
         open: Boolean(isOpen), messages: savedMessages.slice(-40), history: history.slice(-12), sources: lastSources,
-        conversationId, leadEnabled, leadSent, ctaHref
+        conversationId, emailAvailable, emailSent, ctaHref
       });
     }
 
@@ -384,7 +387,9 @@
         <div class="ask-ai-dialog" role="dialog" aria-modal="true" aria-labelledby="ask-ai-title">
           <div class="ask-ai-head">
             <h2 id="ask-ai-title">${SPARKLES}<span></span></h2>
-            <div class="ask-ai-head-btns">
+            <div class="ask-ai-head-btns" role="group" aria-label="Chat controls">
+              <button type="button" class="ask-ai-head-icon" id="ask-ai-mic" aria-label="Dictate" aria-pressed="false" data-tooltip="Dictate" hidden>${MIC}</button>
+              <button type="button" class="ask-ai-head-icon" id="ask-ai-read" aria-label="Read replies" aria-pressed="false" data-tooltip="Read replies" hidden>${SPEAKER}</button>
               <button type="button" class="ask-ai-reset" id="ask-ai-reset" hidden>New</button>
               <button type="button" class="ask-ai-close" aria-label="Close">&times;</button>
             </div>
@@ -403,18 +408,13 @@
                 <button type="submit" class="ask-ai-primary" id="ask-ai-submit" aria-label="Send">${PLANE}</button>
               </div>
             </form>
-            <div class="ask-ai-voice">
-              <button type="button" class="ask-ai-chip" id="ask-ai-mic" aria-pressed="false" title="Use your browser’s dictation service" hidden>Dictate</button>
-              <button type="button" class="ask-ai-chip" id="ask-ai-read" aria-pressed="false" hidden>Read replies</button>
-              <span id="ask-ai-voice-status" role="status"></span>
-            </div>
+            <span class="ask-ai-voice-status" id="ask-ai-voice-status" role="status"></span>
             <div id="ask-ai-contact" class="ask-ai-contact" hidden>
               <details>
-                <summary>Get a follow-up by email</summary>
+                <summary>Email me this chat</summary>
                 <form>
                   <label>Email <input type="email" name="email" autocomplete="email" maxlength="254" required></label>
-                  <label><input type="checkbox" required> Share this chat with the site team so they can reply.</label>
-                  <button class="ask-ai-chip" type="submit">Send to the team</button>
+                  <button class="ask-ai-chip" type="submit">Send me a copy</button>
                 </form>
               </details>
               <p role="status"></p>
@@ -453,11 +453,11 @@
       const quote = backdrop.querySelector('#ask-ai-quote');
       const contact = backdrop.querySelector('#ask-ai-contact');
       const contactDetails = contact.querySelector('details');
-      const leadForm = contact.querySelector('form');
-      const leadStatus = contact.querySelector('[role="status"]');
+      const emailForm = contact.querySelector('form');
+      const emailStatus = contact.querySelector('[role="status"]');
       const voice = configureVoice(backdrop, input);
       let passage = '';
-      let sendingLead = false;
+      let sendingEmail = false;
 
       setSelection = (value) => {
         passage = value;
@@ -468,33 +468,33 @@
       quote.querySelector('button').addEventListener('click', () => { setSelection(''); input.focus(); });
 
       function renderContact() {
-        contact.hidden = !leadEnabled && !leadSent;
-        contactDetails.hidden = leadSent;
-        if (leadSent) leadStatus.textContent = 'Transcript sent. The team can reply to your email.';
+        contact.hidden = !emailAvailable && !emailSent;
+        contactDetails.hidden = emailSent;
+        if (emailSent) emailStatus.textContent = 'Transcript sent. Check your email for a copy.';
       }
 
-      leadForm.addEventListener('submit', async (event) => {
+      emailForm.addEventListener('submit', async (event) => {
         event.preventDefault();
-        if (leadSent || sendingLead || busy) return;
-        const button = leadForm.querySelector('button');
+        if (emailSent || sendingEmail || busy) return;
+        const button = emailForm.querySelector('button');
         button.disabled = true;
         resetBtn.disabled = true;
-        sendingLead = true;
-        leadStatus.textContent = 'Sending transcript…';
+        sendingEmail = true;
+        emailStatus.textContent = 'Sending transcript…';
         try {
-          const result = await fetch(cfg.leadEndpoint, {
+          const result = await fetch(cfg.emailEndpoint, {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ conversationId, email: leadForm.elements.email.value, consent: true, turns: savedMessages.slice(-40) }),
+            body: JSON.stringify({ conversationId, email: emailForm.elements.email.value, purpose: 'email-my-transcript' }),
           });
           const data = await result.json().catch(() => ({}));
           if (!result.ok || !data.sent) throw new Error(data.error || 'Unable to send. Please try again.');
-          leadSent = true;
-          leadForm.reset();
+          emailSent = true;
+          emailForm.reset();
           renderContact();
         } catch (error) {
-          leadStatus.textContent = error.message;
+          emailStatus.textContent = error.message;
         } finally {
-          sendingLead = false;
+          sendingEmail = false;
           button.disabled = false;
           resetBtn.disabled = busy;
           persist(!backdrop.hidden);
@@ -549,12 +549,12 @@
       document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !backdrop.hidden) close(); });
 
       resetBtn.addEventListener('click', () => {
-        if (busy || sendingLead) return;
+        if (busy || sendingEmail) return;
         conversationId = root.crypto?.randomUUID?.();
-        leadEnabled = leadSent = false;
-        leadForm.reset();
+        emailAvailable = emailSent = false;
+        emailForm.reset();
         contactDetails.open = false;
-        leadStatus.textContent = '';
+        emailStatus.textContent = '';
         setSelection('');
         voice.cancel();
         voice.answer('', false);
@@ -609,7 +609,7 @@
 
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        if (busy || sendingLead) return;
+        if (busy || sendingEmail) return;
         const selected = passage;
         const q = input.value.trim() || (selected ? 'Explain this passage.' : '');
         if (!q) { input.focus(); return; }
@@ -648,12 +648,7 @@
           renderReply(botMsg, message);
           savedMessages.push(message);
           history.push({ role: 'user', content: visitorText }, { role: 'assistant', content: data.answer });
-          leadEnabled = data.leadEnabled === true;
-          const typedEmail = q.match(/[A-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i)?.[0];
-          if (leadEnabled && !leadSent && typedEmail) {
-            leadForm.elements.email.value = typedEmail;
-            contactDetails.open = true;
-          }
+          emailAvailable = data.emailAvailable === true;
           renderContact();
           voice.answer(data.answer, true);
           footerCta.href = ctaHref = context.ctaHref || cfg.ctaHref;
@@ -703,8 +698,8 @@
       if (!Array.isArray(state?.messages) || !state.messages.length) return;
       if (Array.isArray(state.history)) history.push(...state.history);
       conversationId = state.conversationId || conversationId;
-      leadEnabled = state.leadEnabled === true;
-      leadSent = state.leadSent === true;
+      emailAvailable = state.emailAvailable === true;
+      emailSent = state.emailSent === true;
       ctaHref = typeof state.ctaHref === 'string' ? state.ctaHref : cfg.ctaHref;
       ensureDialog();
       restore(state);
