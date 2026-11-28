@@ -499,7 +499,7 @@
   },
   {
    "q": "What does CECL cost a community bank?",
-   "a": "One bank spent $475K to implement CECL and $260K+ a year to run it, a figure Fed Vice Chair Bowman cited in her own op-ed.[^70][^69] Of community banks, 70% pay vendors for CECL, per the ABA; the Risk Management Association (RMA) found 4 in 5 in 2022.[^67][^80] In 2021, RMA found banks typically pay $75K or more to fully validate one vendor model.[^81]"
+   "a": "One bank spent $475K to implement CECL and $260K+ a year to run it, a figure Fed Vice Chair Bowman cited in her own op-ed.[^70][^69] Of community banks, 70% pay vendors for CECL, per the ABA[^67]; the Risk Management Association (RMA) found 4 in 5 in 2022.[^80] In 2021, RMA found banks typically pay $75K or more to fully validate one vendor model.[^81]"
   },
   {
    "q": "Do we need an annual CECL model validation?",
@@ -516,7 +516,7 @@
  ],
  "buyVsBuild": {
   "buy": "Mostly buy, when your core or an established vendor already sells the job, such as fraud triage or memo drafting.[^14][^44] ICBA told the OCC that partnering with a core provider is often the only practical path for community banks.[^46] Most enterprise AI at US firms is now bought: 76% of use cases, up from 53% in 2024.[^62]",
-  "build": "Build only thin layers where your own procedures are the edge, such as a staff knowledge base. MIT research found bought tools succeed about 67% of the time; internal builds about a third as often.[^63][^62] For credit models, buy and validate; you still owe specific denial reasons.[^8]"
+  "build": "Build only thin layers where your own procedures are the edge, such as a staff knowledge base. MIT research found bought tools succeed about 67% of the time; internal builds about a third as often.[^63] For credit models, buy and validate; you still owe specific denial reasons.[^8]"
  },
  "pickElse": [
   "When your core already sells the AI job: check Fiserv agentOS, Jack Henry's Google Cloud tools or FIS before adding a separate vendor.[^14][^44][^46]",
@@ -1063,7 +1063,17 @@
   "ranked": "Fraud and anti-money-laundering alert triage pays first, then commercial credit memo drafts and staff knowledge search.[^2][^15][^10][^3]",
   "rules": "Fair lending law and vendor oversight duties apply to every charter. The April 2026 model risk guidance mostly targets banks over $30B.[^8][^11][^30][^6] OCC-supervised banks also face the OCC's AI framework.[^12] For CECL, the 2023 interagency allowance policy statement applies to every charter.[^72]",
   "what-goes-wrong": "AI goes wrong when staff paste member data into personal accounts, chatbots give wrong answers, or a vendor's credit model can't give the specific reasons a denial needs.[^39][^24][^8]",
-  "something-else": "Pick something else when your core already sells the job, staff only need drafting, a bank under $1B needs a CECL estimate, or credit decisions need a specialist vendor.[^14][^60][^27][^64]",
+  "something-else": "Pick something else when your core already sells the job[^14], staff only need drafting[^60], a bank under $1B needs a CECL estimate[^27], or credit decisions need a specialist vendor.[^64]",
   "table-4": "AI fits the paperwork around your allowance method: data checks, the Q-factor packet, variance notes and the audit index.[^65][^66] People sign: the CFO and chief credit officer set each Q-factor, and the audit committee and board approve the allowance.[^72]"
+ },
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+  "checked": 3,
+  "fixed": [
+   "2026-11-28 padding cleanup, faq[8].a: moved [^80] (RMA 2022) off 70% to the 4-in-5 clause it states",
+   "2026-11-28 padding cleanup, buyVsBuild.build: dropped [^62] (Menlo Ventures) from 67%: its note doesn't state it",
+   "2026-11-28 padding cleanup, answers.something-else: moved [^14], [^60], [^27], [^64] each to the clause it backs; $1B keeps [^27] (SCALE tool)"
+  ]
  }
 }

@@ -112,7 +112,7 @@
      "cells": [
       "Free Community plan; Basic from $25 a month with 2 robots. Standard and Enterprise are quote-only[^1]",
       "Billed per model call: 0.2 Platform Units on a standard model, 0.4 on premium[^2][^3]",
-      "Agents can't run in production on Basic[^2]. No US robot price; UK public-sector list is £9,000 a year[^4][^1]"
+      "Agents can't run in production on Basic[^2]. No US robot price[^1]; UK public-sector list is £9,000 a year[^4]"
      ]
     },
     {
@@ -307,7 +307,7 @@
  },
  "watchOuts": [
   "Buying rebranded bots as agents: Gartner calls this agent washing and counts about 130 real agentic vendors among thousands[^26]. Ask for a demo where different inputs take different paths.",
-  "Trusting one good demo: agents vary from run to run, and complex screen workflows scored 9-19% in a UiPath researchers' test[^30][^9]. Run 20-50 of your real cases several times and measure consistency.",
+  "Trusting one good demo: agents vary from run to run[^30], and complex screen workflows scored 9-19% in a UiPath researchers' test[^9]. Run 20-50 of your real cases several times and measure consistency.",
   "Putting a bot on an unstable screen: 45% of firms dealt with broken bots weekly or more, in a vendor-paid 2020 survey[^29]. Use an API where one exists, and budget for upkeep[^42][^40].",
   "Giving an agent write access with no gate: one agent reportedly deleted a production database during a code freeze[^36][^34]. Give agents accounts that reach only what the task needs and human approval before money moves or records change[^37][^38].",
   "Not counting metered costs: agents bill per call, credit or run, and Gartner names rising costs as a top reason projects get cancelled[^2][^13][^26]. Log calls per run in the trial and set spend alerts.",
@@ -688,7 +688,17 @@
   "something-else": "Pick neither when the app has an API, the process keeps changing, volume is too low to pay back, or one person just needs a lookup or summary[^46][^26][^40].",
   "table-1": "An RPA bot follows a fixed script on an app's screen, while an AI agent reads the input and picks its next step, so its path can differ[^46][^43][^16].",
   "table-2": "Bots mostly cost a flat fee, such as Microsoft's $150 a month, while agents are metered per model call, credit or run[^10][^2][^13][^22].",
-  "table-3": "Bots break when screens change, and agents still vary between runs, finishing complex screen workflows only 9-19% of the time in one vendor-authored test[^29][^42][^30][^9].",
+  "table-3": "Bots break when screens change[^29][^42], and agents still vary between runs[^30], finishing complex screen workflows only 9-19% of the time in one vendor-authored test[^9].",
   "own-data": "One Microsoft bot is $150 a month, one unattended run is $3.00, and one agent action is about $0.04-$0.05 by our math[^10][^11][^13][^14]."
+ },
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+  "checked": 3,
+  "fixed": [
+   "2026-11-28 padding cleanup, tables[1].rows[0].cells[2]: moved [^1] (UiPath US pricing) off £9,000 to the no-US-price clause",
+   "2026-11-28 padding cleanup, watchOuts[1]: moved [^30] (tau-bench) off 9-19% to the run-to-run clause it states",
+   "2026-11-28 padding cleanup, answers.table-3: moved [^29][^42] to bots-break, [^30] to vary-between-runs, off 9-19%"
+  ]
  }
 }

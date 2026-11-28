@@ -176,7 +176,7 @@
     },
     {
       "q": "Should I hire full-time or use outside help?",
-      "a": "Start with outside help on one workflow, and hire once you know what works.[^14] Few firms hire first: 1.3% of AI-using firms hired AI-trained staff.[^2][^1]"
+      "a": "Start with outside help on one workflow, and hire once you know what works.[^14] Few firms hire first[^1]: 1.3% of AI-using firms hired AI-trained staff.[^2]"
     },
     {
       "q": "Consulting firm or an in-house AI team: which makes more sense financially?",
@@ -227,7 +227,7 @@
   "stats": [
     {
       "num": "1.3%",
-      "label": "of AI-using US firms hired AI-trained staff, the least common change they made[^2][^1]",
+      "label": "of AI-using US firms hired AI-trained staff[^2], the least common change they made[^1]",
       "source": "WeWork write-up of the Census BTOS AI supplement, 2026[^2]"
     },
     {
@@ -429,5 +429,14 @@
     "benchmark": "Judge an advisor on your own numbers: record today's baseline, test on real cases they never saw, price the lift, and get the owner and go-or-stop date in writing[^19][^7].",
     "something-else": "Skip outside help when the gain is everyday tool use, when three or more queued use cases justify an AI lead, or when a packaged product does the job[^1][^14][^22].",
     "own-data": "Giants do: non-tech firms of 51 to 500 staff posted about 125 US AI-engineer ads in 30 days, against 1,262 from the largest firms in the same sectors[^3]."
+  },
+  "sourceCheck": {
+    "date": "2026-11-28",
+    "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+    "checked": 2,
+    "fixed": [
+      "2026-11-28 padding cleanup, faq[1].a: moved [^1] (Census CES paper: hiring least common) off 1.3% to the few-hire-first clause",
+      "2026-11-28 padding cleanup, stats[0]: moved [^1] (Census CES paper) off 1.3% to the least-common-change clause it states"
+    ]
   }
 }

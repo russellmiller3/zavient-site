@@ -8,9 +8,9 @@
   "industry": "professional services",
   "index": true,
   "verdict": [
-    "Professional services firms are among the heaviest AI users: 39.1% in mid-2026, against 21.5% of all businesses.[^1][^2]",
+    "Professional services firms are among the heaviest AI users[^2]: 39.1% in mid-2026, against 21.5% of all businesses.[^1]",
     "The main uses are research, summaries, meeting notes and proposals: drafting work a professional reviews before it goes out.[^3][^4]",
-    "Time saved rarely becomes revenue: in a vendor survey of services firms, 84.8% save time but 29.9% earn more.[^5][^3]",
+    "Saved time rarely becomes revenue: 84.8% of services firms save time, 29.9% earn more (vendor survey)[^5]; 18% track return.[^3]",
     "On hourly contracts a saved hour shrinks the bill unless resold; on fixed fees it becomes margin or capacity.[^6][^7]",
     "Licensed engineers keep the seal: boards say they must check, document and be able to reproduce AI output.[^8][^9]"
   ],
@@ -73,7 +73,7 @@
   "ranked": [
     {
       "name": "Proposals and request for proposal (RFP) responses",
-      "why": "Proposals eat unbilled senior time, and Bentley found proposal-style work in AI production at 86.4% of 103 design and engineering firms.[^11][^21] A Loopio vendor survey puts one RFP at 25 hours, down from 30.[^22]",
+      "why": "Architects name proposals an early AI use[^21], and Bentley found proposal work in AI production at 86.4% of 103 design and engineering firms.[^11] A Loopio vendor survey puts one RFP at 25 hours, down from 30.[^22]",
       "payoff": "Senior hours per proposal, and win rate, before and after."
     },
     {
@@ -88,7 +88,7 @@
     },
     {
       "name": "Time capture, timesheets and invoicing",
-      "why": "Missed time is lost revenue on hourly work, and 44% of professionals in a vendor survey lose 4+ hours a week to admin.[^25][^23] Productive fills timesheets from calendar events, and BigTime sells an AI assistant (vendor features).[^26][^15]",
+      "why": "Missed time is lost revenue on hourly work, and 44% of professionals in a vendor survey lose 4+ hours a week to admin.[^25] Productive fills timesheets from calendar events, and BigTime sells an AI assistant (vendor features).[^26][^15]",
       "payoff": "Hours logged per person each week, and time written off at billing."
     },
     {
@@ -99,7 +99,7 @@
     {
       "name": "First drafts of routine reports, specs, briefs and code",
       "slug": "generative-ai-consulting",
-      "why": "At Procter & Gamble, one professional with AI matched a two-person team without it.[^28] Developers with AI completed 26.08% more tasks; a 2025 trial found experienced developers slower, but its authors now think they are likely faster.[^29][^30]",
+      "why": "At Procter & Gamble, one professional with AI matched a two-person team without it.[^28] Developers with AI completed 26.08% more tasks[^29]; a 2025 trial found experienced developers slower, but its authors now think they are likely faster.[^30]",
       "payoff": "Reviewer edit time per draft, and defects found after delivery."
     },
     {
@@ -361,9 +361,9 @@
   "watchOuts": [
     "Invented citations reached clients: an Australian government report was partly refunded, and Newfoundland and Labrador now requires AI-use disclosure in bids.[^13][^48][^18] Have a person check every source before delivery.",
     "On a task outside AI's range, consultants using it were 19 points less likely to be right.[^14][^24] Test AI on your own past work before trusting it on a new kind of task.",
-    "Sloppy AI drafts pass the work to colleagues: 40% of US desk workers got one in a month, at about two hours each to fix.[^49][^50] Make the sender check the draft, not the receiver.",
+    "Sloppy AI drafts pass the work to colleagues: 40% of US desk workers got one in a month, at about two hours each to fix.[^49] That costs about $186 per employee a month, so make the sender check the draft, not the receiver.[^50]",
     "Client data in the wrong tool: an engineering ethics board found putting client data into AI without permission partly unethical.[^41][^39] Get client consent, and use a business plan with training switched off.",
-    "Saving time without capturing it: only 18% of legal, tax and risk professionals surveyed say their organization tracks AI return.[^3][^5] Set the pricing rule for saved hours before rollout, not after."
+    "Saving time without capturing it: only 18% of legal, tax and risk professionals surveyed say their organization tracks AI return.[^3] Set the pricing rule for saved hours before rollout, not after."
   ],
   "faq": [
     {
@@ -766,5 +766,19 @@
       "notes": "Steve (managing partner, 40-500 staff): gets the answer in ten seconds from the bottom line, and the own-data number makes the billable-hour risk concrete for his firm type. 'Responsible charge' in the bottom line was jargon to him; fixed to 'keep the seal', with responsible charge explained lower down. His worries are covered: client data and consent, invented citations, clients asking for discounts, hiring-AI laws for his recruiters. Gap he will notice: no named case from a firm his size, because none had a citable page; none is claimed."
     }
   ],
-  "updated": "2026-11-26"
+  "updated": "2026-11-26",
+  "sourceCheck": {
+    "date": "2026-11-28",
+    "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+    "checked": 7,
+    "fixed": [
+      "2026-11-28 padding cleanup, verdict[0]: moved [^2] (Census BTOS table, 34.2%) off 39.1%/21.5% to the heaviest-users clause",
+      "2026-11-28 padding cleanup, verdict[2]: [^3] (Thomson Reuters) doesn't state 84.8%/29.9%: gave it its own clause with the 18% it states",
+      "2026-11-28 padding cleanup, ranked[0].why: [^21] (AIA Architect) doesn't state 86.4%: reworded the first clause to what it states (proposals an early AI use)",
+      "2026-11-28 padding cleanup, ranked[3].why: dropped [^23] (Unit4/PAC) from 44%: its note doesn't state it",
+      "2026-11-28 padding cleanup, ranked[5].why: moved [^30] (METR) off 26.08% to the 2025-trial clause it states",
+      "2026-11-28 padding cleanup, watchOuts[2]: [^50] (HBR) note states $186, not 40%: gave it its own sentence with the $186 it states",
+      "2026-11-28 padding cleanup, watchOuts[4]: dropped [^5] (SPI Research) from 18%: its note doesn't state it"
+    ]
+  }
 }

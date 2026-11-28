@@ -127,7 +127,7 @@
         "$1,782"
       ],
       [
-        "Mistral Large 4 ($0.70 / $2.10, the higher of two official prices)[^18][^19]",
+        "Mistral Large 4 ($0.70 / $2.10[^18], the higher of two official prices[^19])",
         "$35, or $18 by batch",
         "$217",
         "$7,812"
@@ -140,7 +140,7 @@
     "Building what you could buy. Internal builds reached daily use about half as often as partnered ones, so test the off-the-shelf option on the same cases first.[^1][^4]",
     "Messy or scattered documents. Most firms (63%) lack or are unsure of AI-ready data practices, so test on 50 real records before you build.[^8][^6]",
     "Model retirements and price changes break the build. Two Google prices we checked double, on 1 Dec 2026 and 1 Jan 2027; vendors retire models on 2 to 6 months' notice.[^17][^25][^26][^27]",
-    "Quality slips without anyone noticing. Quality decayed over time in 91% of 128 model and dataset pairs in one study, so rerun your test set monthly.[^28][^29]",
+    "Quality slips without anyone noticing. Quality decayed over time in 91% of 128 model and dataset pairs in one study[^28], so rerun your test set monthly.[^29]",
     "A contract that leaves the build with the vendor. Government buying guides say settle ownership, data rights and exit terms before signing.[^13][^36]",
     "Cost surprises at full volume. Gartner warns cost estimates can be off by 500% to 1,000%, so price the pilot at real volume, not demo volume.[^9]"
   ],
@@ -501,5 +501,14 @@
     "what-goes-wrong": "Pilots stall when firms build what they could buy, start with messy documents, or stop testing as models change and quality slips.[^1][^8][^25][^28]",
     "benchmark": "Judge an advisor by whether they set a pass mark before any demo, test on 20 to 50 of your own cases, and compare against off-the-shelf tools.[^38][^23][^10]",
     "something-else": "Don't hire help when a rule or no-code tool does the job, bought seats cover drafting and search, or your ERP or CRM already has AI built in.[^7][^3][^4]"
+  },
+  "sourceCheck": {
+    "date": "2026-11-28",
+    "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+    "checked": 2,
+    "fixed": [
+      "2026-11-28 padding cleanup, ownData.rows[8][0]: moved [^19] (Mistral pricing page, $0.50/$1.50) off $0.70/$2.10 to the two-official-prices clause",
+      "2026-11-28 padding cleanup, watchOuts[4]: moved [^29] (Chen et al.: calls for monitoring) off 91% to the rerun-monthly clause"
+    ]
   }
 }

@@ -67,7 +67,7 @@
     "Reps call from the top of the list and spend less time on desk research, so more of their day goes to conversations[^1].",
     "Same people, better calls: commercial banking relationship managers with an analytics workbench grew portfolios 9%, against 5% for a control group[^1].",
     "Less desk time: those managers spent 90% less time on account planning and got 5 times more cross-sell ideas[^1].",
-    "Most firms use AI to help staff: of firms reporting AI task effects, 66% only augment and 2% saw AI-related employment fall[^16][^17].",
+    "Most firms use AI to help staff: of firms reporting AI task effects, 66% only augment and 2% saw AI-related employment fall[^16]. About 96% saw no employment change[^17].",
     "New workflows and staff training are the most common changes firms make with AI, at about 15% each[^16]."
   ],
   "example": {
@@ -875,5 +875,13 @@
     "benchmark": "Pilot one product in one branch, back-test the scores on last quarter, keep a random group uncalled to measure lift, and price the gain over 90 days[^6].",
     "what-goes-wrong": "Sales analytics fails when quotas on model lists invite abuse, targeting fields stand in for protected traits, household data is messy, or lists chase people who'd buy anyway[^9][^7][^12][^5].",
     "something-else": "Pick something else when a spreadsheet grid is enough, your CRM already has built-in scoring, an agency can start with a missing-coverage list, or you need pipeline forecasting instead[^24][^29][^2][^40]."
+  },
+  "sourceCheck": {
+    "date": "2026-11-28",
+    "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+    "checked": 1,
+    "fixed": [
+      "2026-11-28 padding cleanup, teamAfter[3]: [^17] (Minneapolis Fed) doesn't state 66%/2%: gave it its own sentence with the 96% it states"
+    ]
   }
 }

@@ -50,7 +50,7 @@
   "Operators and the maintenance lead keep control of the machines. Federal and allied guidance urges caution with AI that acts on machine control, and wants human checkpoints.[^10][^12]",
   "The maintenance planner owns the work order; AI only raises the flag. A trained person still locks out the machine's power under OSHA rules before any AI-suggested repair.[^11][^10]",
   "The quality manager decides what ships, reworks or gets scrapped; the camera only sorts and flags. Medical-device makers must also show that this software works, under FDA rules.[^16][^17]",
-  "Technicians still do the fix, and AI answers their questions faster. In one McKinsey case, technicians gained 40% more capacity because they rarely had to answer simple questions.[^4][^18]"
+  "Technicians still do the fix, and AI answers their questions faster. In one McKinsey case, technicians gained 40% more capacity because they rarely had to answer simple questions.[^4]"
  ],
  "ranked": [
   {
@@ -348,11 +348,11 @@
   },
   {
    "q": "How much does AI visual inspection cost?",
-   "a": "AI visual inspection costs $0 on a free tier and up to six figures for a custom system.[^28][^13] NIST MEP puts simple industrial AI setups at a few thousand dollars and custom ones at hundreds of thousands.[^13] The LandingLens free model download is for non-commercial use only.[^28]"
+   "a": "AI visual inspection costs $0 on a free tier[^28] and up to six figures for a custom system.[^13] NIST MEP puts simple industrial AI setups at a few thousand dollars and custom ones at hundreds of thousands.[^13] The LandingLens free model download is for non-commercial use only.[^28]"
   },
   {
    "q": "How many manufacturers actually use AI?",
-   "a": "Fewer than the hype suggests: about 12% of US manufacturing businesses reported using AI in the Census survey of April 2026.[^41][^20] Hiring runs ahead, with about 11% of manufacturing job postings asking for AI skills.[^23]"
+   "a": "Fewer than the hype suggests: about 12% of US manufacturing businesses reported using AI in the Census survey of April 2026.[^41] Hiring runs ahead, with about 11% of manufacturing job postings asking for AI skills.[^23]"
   },
   {
    "q": "Will AI take jobs on the plant floor?",
@@ -414,7 +414,7 @@
   },
   {
    "num": "About 12%",
-   "label": "of US manufacturing businesses used AI in the Census survey of April 2026[^41][^20]",
+   "label": "of US manufacturing businesses used AI in the Census survey of April 2026[^41]",
    "source": "Federal Reserve Bank of Minneapolis, May 2026"
   },
   {
@@ -743,5 +743,16 @@
   "what-goes-wrong": "AI in manufacturing goes wrong when pilots never reach the line, productivity dips during the ramp, false alarms pile up, or vision models drift when parts or lighting change.[^7][^8][^13][^36] Connected machines also draw cyberattacks, and vendors can lock in your data.[^38][^14]",
   "buy-or-build": "Buy for standard jobs like maintenance software, condition monitoring or one camera station. Build or configure only where your own manuals, repair history or routings are the edge.[^44][^45][^4]",
   "something-else": "Pick something other than AI when preventive work keeps slipping, a check is simple and stable, escapes are rare and cheap, or the problem is plain process variation.[^1][^13][^14][^51] Maintenance software, rule-based machine vision or statistical process control fits those cases better.[^25][^13][^51]"
+ },
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+  "checked": 4,
+  "fixed": [
+   "2026-11-28 padding cleanup, humanRole[3]: dropped [^18] (Microsoft/Rockwell, 33%) from 40%: its note doesn't state it",
+   "2026-11-28 padding cleanup, faq[3].a: moved [^13] (NIST MEP) off $0 to the six-figures clause it states",
+   "2026-11-28 padding cleanup, faq[4].a: dropped [^20] (Census CES paper, 18% overall) from 12%: its note doesn't state it",
+   "2026-11-28 padding cleanup, stats[3]: dropped [^20] (Census CES paper) from 12%: its note doesn't state it"
+  ]
  }
 }

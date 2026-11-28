@@ -11,7 +11,7 @@
   "Pick Business Standard, billed yearly, for most firms under 200 staff: same $20 a seat as Plus, with admin controls[^2][^3].",
   "Pick Plus only for one person's own, non-confidential work; OpenAI may train on those chats unless they opt out[^1][^12].",
   "Pick Enterprise if you need automatic offboarding, audit logs, a BAA (health-data contract) or over 200 seats[^2][^5].",
-  "Pick a monthly Business pilot first if use is unproven; firms leave 36% of software licences unused[^2][^32].",
+  "Pick a monthly Business pilot first if use is unproven[^2]; firms leave 36% of software licences unused[^32].",
   "Pick neither until you check the AI chat already in your Microsoft 365 or Google Workspace plan[^36][^37]."
  ],
  "onPage": [
@@ -643,5 +643,13 @@
   "something-else": "Pick neither if your Microsoft 365 or Google Workspace plan already includes AI chat, or you need one narrow workflow rather than chat for everyone.[^36][^37][^29]",
   "table-1": "Plus is $20 a month on a personal account. Business Standard is $20-25 a seat with company admin; Enterprise has no public price and adds audit-log feeds.[^3][^12][^2][^5][^10] Business Premium seats cost $100-125 a month.[^2][^5]",
   "own-data": "Business Standard billed yearly costs $12,000 a year at 50 seats and $48,000 at 200 by our math, the same cash as Plus.[^2][^3] OpenAI publishes no Enterprise price, so it has no row.[^2]"
+ },
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+  "checked": 1,
+  "fixed": [
+   "2026-11-28 padding cleanup, verdict[3]: moved [^2] (OpenAI Business pricing) off 36% to the monthly-pilot clause it states"
+  ]
  }
 }

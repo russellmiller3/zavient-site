@@ -48,7 +48,7 @@
   "walkAway": [
     "One named decision and the money number it moves, agreed before any build. Google's rules for machine learning say to design the metric first.[^3]",
     "Today's rule, scored, and a held-back test set that you keep. A simple first model sets the baseline; leaked test data makes weak models look strong.[^3][^11]",
-    "A model in your team's weekly routine, not a file on a laptop. Only 32% of analytics professionals surveyed say their models usually get deployed.[^1][^2]",
+    "A model in your team's weekly routine, not a file on a laptop. Only 32% of analytics professionals surveyed say their models usually get deployed.[^1]",
     "The reasons behind each score, as charts your managers can read and correct. Glass-box models (ones whose logic you can read) are often as accurate as black boxes.[^12][^13]",
     "A handover: code, data feed, monitoring and a retrain rule, with a named owner. Google's ML Test Score lists 28 checks to score it against.[^14][^8]"
   ],
@@ -139,7 +139,7 @@
   "watchOuts": [
     "Test scores that look too good. Leakage, where the model glimpses the answers, hit 294 studies in 17 fields; lock a recent holdout yourself before work starts.[^11]",
     "The model never reaches the people who would use it. Studies of Microsoft teams and of 18 ML engineers find deployment and upkeep are the hard part; name the user and screen first.[^28][^29]",
-    "Accuracy decays after launch. One study found decay in 91% of 128 model and dataset pairs; check live accuracy monthly and set a retrain trigger.[^7][^30]",
+    "Accuracy decays after launch, and a vendor survey found 15% of machine learning projects failed once in production.[^30] One study found decay in 91% of 128 model and dataset pairs; check live accuracy monthly and set a retrain trigger.[^7]",
     "The model learns the wrong lesson and nobody sees it. Start glass-box and have the domain lead review every chart; Google's rules say readable models are easier to debug.[^15][^3]",
     "Scores used outside the range they were built for. Zillow wrote down $304 million of homes after its price forecasts missed; cap where scores apply and keep sign-off on big calls.[^31]",
     "A churn score is not a save plan: in two field experiments, the customers most likely to leave were not the best ones to target.[^35] Hold back a small random control group, so you measure customers saved, not just predictions made."
@@ -469,5 +469,14 @@
     "what-goes-wrong": "Most pilots stall because the model never reaches the people who would use it, its accuracy decays without upkeep, or its test scores were too good to be true[^28][^7][^11].",
     "benchmark": "Judge an advisor by whether their model beats your current rule on a holdout you locked, with reasons you can read and a handover your team can run[^3][^11][^14].",
     "something-else": "Skip a consultant when your CRM already scores leads, when a rule or spreadsheet will do, or when an analyst can try InterpretML or Google's AutoML first[^20][^3][^6][^34]."
+  },
+  "sourceCheck": {
+    "date": "2026-11-28",
+    "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+    "checked": 2,
+    "fixed": [
+      "2026-11-28 padding cleanup, walkAway[2]: dropped [^2] (Gartner, 48%) from 32%: its note doesn't state it",
+      "2026-11-28 padding cleanup, watchOuts[2]: [^30] (Comet) doesn't state 91%: gave it its own clause with the 15% it states"
+    ]
   }
 }

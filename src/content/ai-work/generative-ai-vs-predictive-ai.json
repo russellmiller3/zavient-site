@@ -425,7 +425,7 @@
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy when the job is standard, such as document extraction, drafting or a forecast inside your planning tool, and you have no data team[^41]. In a Menlo Ventures survey of US enterprise decision-makers, 76% of AI use cases were bought in 2025, up from 53% in 2024[^41]. MIT NANDA found bought tools succeeded about twice as often as internal builds, though both studies cover generative AI only[^42][^43].",
+  "buy": "Buy when the job is standard, such as document extraction, drafting or a forecast inside your planning tool, and you have no data team[^41]. In a Menlo Ventures survey of US enterprise decision-makers, 76% of AI use cases were bought in 2025, up from 53% in 2024[^41]. MIT NANDA found bought tools succeeded about 67% of the time, twice the rate of internal builds, though both studies cover generative AI only[^42][^43].",
   "build": "Build, or set up a no-code tool on your own data, when your history is the edge, such as a credit or claims score[^17][^21]. No-code options start at $1.90 per session-hour, read 26 Nov 2026[^21]. Either way, validate a vendor's model as you would your own[^13]."
  },
  "pickElse": [
@@ -753,5 +753,13 @@
   "table-2": "On numbers from records, trained predictive models beat the chatbots, while on documents the LLMs did the reading well[^30][^4][^3].",
   "table-3": "The predictive tools are free or bundled, except SageMaker Canvas at $1.90 a session-hour, while mid-tier LLM APIs cost about $2 in and $10 out per million tokens[^34][^35][^21][^22].",
   "own-data": "Of ten common workflows, six need predictive AI, three need generative AI, and one, claims or application triage, needs both[^1][^4]."
+ },
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+  "checked": 1,
+  "fixed": [
+   "2026-11-28 padding cleanup, buyVsBuild.buy: [^43] (Fortune) states 67%, not \"twice\": added MIT's 67% (in both notes) so each footnote states a figure"
+  ]
  }
 }

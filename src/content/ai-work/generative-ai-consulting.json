@@ -24,7 +24,7 @@
     "spokes": "Most firms of 40 to 500 staff need document help first. Get rules help before pilots and strategy help only when leaders cannot agree on a first task.[^1][^8][^6]",
     "human-role": "Your team signs off every output that matters: the person who signs the work checks it, customer-facing answers go through the service lead, and experts keep judgement calls.[^14][^16][^17]",
     "recipes": "Small teams start with one weekly writing task, mid-size firms with document-heavy work, and staff on personal AI tools move to an approved plan first.[^1][^8]",
-    "what-goes-wrong": "Most AI pilots stall because they solve the wrong problem or track the wrong metric. In S&P Global's survey of IT and business professionals, the average firm scrapped 46% of trial projects.[^6][^25]",
+    "what-goes-wrong": "Most AI pilots stall because they solve the wrong problem or track the wrong metric. In S&P Global's survey of IT and business professionals, the average firm scrapped 46% of trial projects.[^25]",
     "benchmark": "Judge any AI advisor by a test on your own past work: hidden known answers, pass criteria set before the demo, and results compared with today's baseline.[^31][^3][^32]",
     "something-else": "Don't hire help when your team just needs a tool and a rule, general business advice, or hands-on training, or when the task should stay with your experts.[^39][^34][^10][^17]"
   },
@@ -32,7 +32,7 @@
     "You should walk away with a ranked list of two or three tasks, each with an owner and a metric. Most AI-using firms limit use to three or fewer tasks.[^1][^6]",
     "Today's numbers, plus a test set of past work with known right answers. NIST says to check AI output against known right answers, not impressions.[^3][^7]",
     "Approved business-tier tools and a one-page rule staff can follow. Most AI users bring their own tools to work, and two-thirds of mid-market firms set rules before pilots.[^8][^9]",
-    "Trained staff with a review habit. In BCG's survey of employees, five or more hours of training raised regular use from 67% to 79%.[^10][^11]",
+    "Trained staff with a review habit.[^11] In BCG's survey of employees, five or more hours of training raised regular use from 67% to 79%.[^10]",
     "A plan your team can run without the advisor, with tool accounts and the test set in your firm's name. In RSM's 2025 survey of middle market decision-makers, 62% found generative AI harder to put in place than expected.[^12][^13]"
   ],
   "spokes": [
@@ -174,7 +174,7 @@
     "Most AI pilots stall because they solve the wrong problem. Misreading the problem or the metric was the top cause in RAND's study, so agree one measured task first.[^6][^26]",
     "Pilots never reach daily use: in S&P Global's survey of IT and business professionals, the average firm scrapped 46% of trial projects. Set a go or no-go date and a production owner before the pilot starts.[^25][^26]",
     "Confident wrong answers: courts have logged over 2,000 decisions on AI-invented content.[^15][^3] A consulting report to a national government drew a partial refund over fake references, so a named reviewer checks every fact.[^28]",
-    "Staff leak data through personal tools: in PagerDuty's survey, 34% had put customer data into public AI.[^30][^29] Give them a business-tier plan and a short rule.[^38][^49]",
+    "Staff leak data through personal tools: in PagerDuty's survey, 34% of office professionals had put customer data into public AI.[^30] Give them a business-tier plan and a short rule.[^38][^49]",
     "AI used outside what it does well: consultants using AI on such a task were 19 points less likely to be right.[^17] Test each task separately and keep experts on judgement calls.[^18]",
     "Leaders keener than staff: in RSM's survey of middle market executives, 85% say leaders are more enthusiastic than employees.[^9] Only 36% of employees feel properly trained, so fund five or more hours of hands-on practice.[^10]"
   ],
@@ -261,8 +261,8 @@
     },
     {
       "num": "2.08%",
-      "label": "Share of all US work hours saved by generative AI, Q3 2026; users alone saved 5.4% in an earlier St. Louis Fed estimate.[^20][^21][^23][^24]",
-      "source": "Federal Reserve Bank of St. Louis, 2025 and 2026"
+      "label": "Share of all US work hours saved by generative AI, Q3 2026; users alone saved 5.4% in an earlier St. Louis Fed estimate.[^21][^23][^24]",
+      "source": "Federal Reserve Bank of St. Louis, 2025 and 2026[^20]"
     },
     {
       "num": "19 points",
@@ -586,5 +586,16 @@
       "notes": "Steve got the answer from the title and bottom line in 10 seconds: a few measured tasks, a business-tier tool, people stay in charge. Wanted payback per person: the mid-size build now sets one $300-a-year seat against about $2,246 a year of time back at the all-worker average, labelled as an average. Data safety is covered by the own-data table. No Zavient price is shown, per the lead's rule."
     }
   ],
-  "updated": "2026-11-26"
+  "updated": "2026-11-26",
+  "sourceCheck": {
+    "date": "2026-11-28",
+    "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+    "checked": 4,
+    "fixed": [
+      "2026-11-28 padding cleanup, answers.what-goes-wrong: dropped [^6] (RAND) from 46%: its note doesn't state it",
+      "2026-11-28 padding cleanup, walkAway[3]: moved [^11] (SBE Council: 43% review AI content) off 67%/79% to the review-habit sentence",
+      "2026-11-28 padding cleanup, watchOuts[3]: dropped [^29] (NCSC, 71%) from 34%: its note doesn't state it",
+      "2026-11-28 padding cleanup, stats[2]: moved [^20] (FRED Blog: 1.6% to 2.2%) off 2.08%/5.4% to the stat's source line (St. Louis Fed, 2026)"
+    ]
+  }
 }

@@ -24,7 +24,7 @@
   "One named AI use, with the fields it needs listed and each one's owner. Gartner's first step is to align data to the use case.[^5][^13]",
   "One subject area live and used, such as orders or invoices, not a full platform plan. Kimball and Microsoft both say build in increments, most important first.[^6][^7]",
   "Written data tests and freshness rules your team can run, such as no blank customer IDs and no duplicate invoices.[^8][^9]",
-  "A data-quality score before and after the work. Among middle-market executives whose AI pilots had moderate or limited success, 53% blamed data quality.[^10][^12]",
+  "A data-quality score before and after the work. Among middle-market executives whose AI pilots had moderate or limited success, 53% blamed data quality.[^10]",
   "A monthly spend cap in the warehouse, with alerts set before anyone runs a query.[^34][^33]"
  ],
  "spokes": [
@@ -190,7 +190,7 @@
   },
   {
    "q": "What does the data software cost a month?",
-   "a": "A small Fabric capacity runs about $263 a month by our math, pay-as-you-go.[^17] A Snowflake X-Small warehouse costs $2.00 an hour while it runs, and BigQuery's first 1 TiB (tebibyte) of queries a month is free.[^23][^27]"
+   "a": "A small Fabric capacity runs about $263 a month by our math, pay-as-you-go.[^17] A Snowflake X-Small warehouse costs $2.00 an hour while it runs[^23], and BigQuery's first 1 TiB (tebibyte) of queries a month is free.[^27]"
   },
   {
    "q": "How long does a data engineering project take?",
@@ -620,7 +620,9 @@
    "how-to-test: side-by-side switch now backed by Databricks (vendor) instead of Kimball, which doesn't say it; handover bullet drops Fivetran cite and matches RAND wording",
    "stats: RAND 30 of 50 relabelled 'raised persistent data quality issues'",
    "sources: RSM web page 'what' dropped the 67% it doesn't state; source notes updated for RAND, Fivetran, NetSuite, Business Central, Databricks",
-   "cloud prices re-read live 28 Nov 2026: Fabric $0.18/CU-hour, overage $0.54, 1-yr reservation $938/CU; Databricks serverless SQL $0.70/DBU; Snowflake Standard $2.00/credit; BigQuery $6.25/TiB, first 1 TiB free; Fivetran $511.15 example: all unchanged"
+   "cloud prices re-read live 28 Nov 2026: Fabric $0.18/CU-hour, overage $0.54, 1-yr reservation $938/CU; Databricks serverless SQL $0.70/DBU; Snowflake Standard $2.00/credit; BigQuery $6.25/TiB, first 1 TiB free; Fivetran $511.15 example: all unchanged",
+   "2026-11-28 padding cleanup, walkAway[3]: dropped [^12] (Gartner data quality) from 53%: its note doesn't state it",
+   "2026-11-28 padding cleanup, faq[2].a: moved [^27] (BigQuery) off $2.00; each clause keeps its own source"
   ]
  }
 }

@@ -64,7 +64,7 @@
     },
     {
       "name": "Demand forecasting and reorder suggestions",
-      "why": "Machine-learning forecasts beat the best statistical method by over 14% in the M5 contest.[^8] McKinsey reports 20-50% fewer forecast errors, if your sales history is clean.[^9][^10]",
+      "why": "Machine-learning forecasts beat the best statistical method by over 14% in the M5 contest.[^8] McKinsey reports 20-50% fewer forecast errors[^9], if your sales history is clean.[^10]",
       "payoff": "Forecast error by SKU (stock-keeping unit), fill rate and inventory turns."
     },
     {
@@ -314,7 +314,7 @@
   ],
   "watchOuts": [
     "Lab wins can fail on the floor. Starbucks dropped an AI shelf-counting tool after about nine months when reflections doubled milk counts; pilot on one real site first.[^28]",
-    "Bad master data sinks the forecast. Nike's 2000-01 planning rollout overbought about $90M of product, so clean your SKU data and launch in phases.[^29][^4]",
+    "Bad master data sinks the forecast. Nike's 2000-01 planning rollout overbought about $90M of product, so clean your SKU data and launch in phases.[^29]",
     "Some 'AI agents' aren't. Gartner expects over 40% of agentic AI projects to be canceled by 2027; ask vendors to prove claims, which the FTC also polices.[^27][^24]",
     "Email-reading agents are a fraud target. Cyber-enabled cargo theft cost about $725M in 2025, so any agent that books carriers or changes payment details needs a person's check.[^25][^26]",
     "Planner corrections can hurt as well as help. Small, upward tweaks make forecasts worse, so track whether each touch improved accuracy.[^12][^13]",
@@ -323,7 +323,7 @@
   "faq": [
     {
       "q": "Is AI actually useful for demand forecasting, or is it mostly hype?",
-      "a": "AI demand forecasting is useful, not hype, if your sales history is clean. Machine learning beat statistical methods by over 14% in the M5 contest.[^8][^9] A 2026 study found data access mattered more than the algorithm.[^10]"
+      "a": "AI demand forecasting is useful, not hype, if your sales history is clean. Machine learning beat statistical methods by over 14% in the M5 contest.[^8] A 2026 study found data access mattered more than the algorithm.[^10]"
     },
     {
       "q": "Are AI purchase order recommendations useful yet for a midsize distributor?",
@@ -339,7 +339,7 @@
     },
     {
       "q": "How is AI changing logistics and supply chain jobs?",
-      "a": "AI adds skills to logistics and supply chain jobs more than it removes jobs. About half of logistics providers expect reskilling, and logistician jobs are projected to grow 18% by 2035.[^1][^35] In our job-ad count above, demand planner ads mention AI most often."
+      "a": "AI adds skills to logistics and supply chain jobs more than it removes jobs. About half of logistics providers expect reskilling[^1], and logistician jobs are projected to grow 18% by 2035.[^35] In our job-ad count above, demand planner ads mention AI most often."
     },
     {
       "q": "Management wants AI in our operations. Where do we start?",
@@ -688,11 +688,24 @@
   "answers": {
     "human-role": "Planners, buyers, dispatchers and warehouse managers keep every decision: the plan, the award, the carrier and the quota. AI only drafts.[^12][^11][^26][^15] A person checks every new carrier and any change to a supplier's bank details.[^25][^44]",
     "ranked": "AI pays first on paperwork: keying emailed orders into your ERP, then demand forecasts and reorder suggestions, then check calls and freight-bill matching.[^5][^8][^6]",
-    "table-1": "Planning tools start around $900 a month, while most others and every freight AI agent are quote only.[^36][^37][^47][^38][^39][^40]",
-    "table-2": "The surveys find most firms trying AI, but few seeing measurable value yet. The M5 contest shows machine learning forecasts beating statistical ones by over 14%.[^2][^1][^8]",
+    "table-1": "Planning tools start around $900 a month[^36], while most others and every freight AI agent are quote only.[^37][^47][^38][^39][^40]",
+    "table-2": "The surveys find most firms trying AI, but few seeing measurable value yet. The M5 contest shows machine learning forecasts beating statistical ones by over 14%.[^8]",
     "rules": "Warehouse quota laws in California, New York, Washington, Minnesota and Oregon cover pick rates an algorithm sets, and federal hours-of-service limits bind any route AI.[^15][^16][^17][^18][^19][^20] Importers also carry forced-labor proof under UFLPA, and the FTC polices vendors' AI claims.[^21][^24]",
     "what-goes-wrong": "Supply chain AI goes wrong when lab results fail on a real site, master data is dirty, vendors oversell agents, or fraudsters target email-reading agents.[^28][^29][^27][^25] Pilots also stall when no one owns the data and the decision.[^30]",
     "buy-or-build": "Buy mature tools for forecasting, routing, visibility and freight audit, and build only the glue, like email-to-ERP order intake and approval steps.[^33][^7][^32]",
     "something-else": "Pick something simpler for lumpy, slow-moving demand like spare parts, where Croston's method works, and for one depot or a regional fleet, where off-the-shelf routing software fits.[^8][^41]"
+  },
+  "sourceCheck": {
+    "date": "2026-11-28",
+    "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+    "checked": 6,
+    "fixed": [
+      "2026-11-28 padding cleanup, ranked[1].why: moved [^10] (Weisz and Prataviera: data access mattered) off 20-50% to the clean-history clause",
+      "2026-11-28 padding cleanup, watchOuts[1]: dropped [^4] (Mecalux/MIT survey) from $90M: its note doesn't state it",
+      "2026-11-28 padding cleanup, faq[0].a: dropped [^9] (McKinsey forecasting) from 14%: its note doesn't state it",
+      "2026-11-28 padding cleanup, faq[4].a: moved [^1] (BCG and Alpega) off 18% to the reskilling clause",
+      "2026-11-28 padding cleanup, answers.table-1: moved [^37][^47][^38][^39][^40] off $900 to the quote-only clause; $900 keeps [^36] (Netstock)",
+      "2026-11-28 padding cleanup, answers.table-2: dropped [^2] (PwC) and [^1] (BCG and Alpega) from 14%: their notes don't state it"
+    ]
   }
 }

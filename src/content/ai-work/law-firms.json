@@ -396,7 +396,7 @@
   "Co-counsel you didn't ask: in a 2025 case against State Farm, two firms paid $31,100 after one never asked whether co-counsel used AI.[^9] Ask co-counsel and staff, and put it in work-sharing terms.[^9][^22]",
   "Client data in a consumer account: a New York federal court held a client's consumer AI chats were not privileged in 2026.[^12][^55] Use a business tier with written no-training and retention terms.[^41][^14]",
   "Billing the hours AI saved: bill actual time, including review, but not time learning the tool.[^46][^50][^56] A quarter of firms already report fewer billable hours on some tasks, so consider flat fees there.[^57]",
-  "No baseline, so no proof: only 18% of professionals say their organization measures AI's return; record hours per task before a pilot.[^3][^4]"
+  "No baseline, so no proof: only 18% of professionals say their organization measures AI's return; record hours per task before a pilot.[^3]"
  ],
  "faq": [
   {
@@ -425,7 +425,7 @@
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy when the work is standard or the data isn't yours: case law research needs licensed databases, and e-discovery platforms have court acceptance.[^36][^24] Most enterprise AI is now bought: 76% of use cases in 2025.[^58] Bought tools succeeded about twice as often as internal builds in MIT's study.[^59][^60]",
+  "buy": "Buy when the work is standard or the data isn't yours: case law research needs licensed databases, and e-discovery platforms have court acceptance.[^36][^24] Most enterprise AI is now bought: 76% of use cases in 2025.[^58] Bought tools succeeded about 67% of the time in MIT's study, twice the rate of internal builds.[^59][^60]",
   "build": "Build a light layer when your edge is your own precedents, playbooks and clause bank. General models matched legal tools on research accuracy in Vals' benchmark.[^42] California's access rule favours setups where the firm controls who sees client data.[^11][^14]"
  },
  "pickElse": [
@@ -847,7 +847,17 @@
   "rules": "ABA Formal Opinion 512 sets the baseline duties and Rule 11 makes every signer check the law. California, New York, Florida, Texas and D.C. add their own.[^10][^20][^11][^49][^30][^51][^52] Some judges also require you to disclose AI use, so check each court's rules before you file.[^53]",
   "what-goes-wrong": "AI goes wrong for law firms through fake citations in filings, client data in consumer accounts, unchecked co-counsel, and billing hours AI saved.[^7][^12][^9][^50] Courts have flagged AI-invented citations in hundreds of decisions involving lawyers.[^7]",
   "faq": "Lawyers ask about client data, telling clients, billing, accuracy, cost and jobs. The short answers: use business tiers only, disclose when ABA 512 calls for it, bill actual time, and check every citation.[^10][^46][^18]",
-  "buy-or-build": "Buy for standard work like case law research and e-discovery, and build only a light layer on your own precedents, playbooks and clause bank.[^36][^24][^42] Bought tools succeeded about twice as often as internal builds in MIT's study.[^59][^60]",
+  "buy-or-build": "Buy for standard work like case law research and e-discovery, and build only a light layer on your own precedents, playbooks and clause bank.[^36][^24][^42] Bought tools succeeded about twice as often as internal builds in MIT's study.[^60]",
   "something-else": "Pick keyword search for small discovery sets, the AI already in your Westlaw, Lexis, Clio or MyCase plan, or a specialist like EvenUp for injury demand letters.[^6][^38][^36][^16][^25]"
+ },
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+  "checked": 3,
+  "fixed": [
+   "2026-11-28 padding cleanup, watchOuts[5]: dropped [^4] (8am report) from 18%: its note doesn't state it",
+   "2026-11-28 padding cleanup, buyVsBuild.buy: [^59] (Fortune) states 67%, not \"twice\": added MIT's 67% (in both notes) so each footnote states a figure",
+   "2026-11-28 padding cleanup, answers.buy-or-build: dropped [^59] (Fortune) from \"twice\": its note gives 67% and \"a third as often\""
+  ]
  }
 }

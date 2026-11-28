@@ -412,7 +412,7 @@
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy when the job is standard, such as submission intake or claims texting, and you have no data team.[^40] Most enterprise AI is now bought: 76% of use cases, up from 53% in 2024.[^40] MIT found vendor partnerships reached production about twice as often as internal builds.[^39][^41]",
+  "buy": "Buy when the job is standard, such as submission intake or claims texting, and you have no data team.[^40] Most enterprise AI is now bought: 76% of use cases, up from 53% in 2024.[^40] MIT found vendor partnerships reached production about 67% of the time, twice the rate of internal builds.[^39][^41]",
   "build": "Build when your guidelines, appetite and loss history are your edge, or you must explain every step to an examiner.[^14][^8] A thin build on your own rules also avoids lock-in while the NAIC vendor registry is still a draft.[^33] A common middle path: buy the reading step, and keep the rules and the decision log yourself."
  },
  "pickElse": [
@@ -880,8 +880,17 @@
   "table-2": "Auto insurers use or plan AI most for claims (80%), life insurers for underwriting (75%), and home insurers about equally for both (60% and 62%).[^18] Among health insurers, 54% use or plan AI for claim decisions.[^18]",
   "rules": "The NAIC AI model bulletin applies in 30 jurisdictions, per the NAIC map of 13 Nov 2026. California, Colorado and New York have their own rules.[^7] A new NAIC supplement sets out what regulators can ask, and the EU AI Act covers life and health pricing from Dec 2027.[^45][^49][^50] The NAIC vendor framework is still a draft.[^47]",
   "what-goes-wrong": "AI in insurance goes wrong when review becomes a rubber stamp, outcomes differ by group, or vendor models go unchecked.[^9][^37][^8] Scattered evidence of controls and pilots that never reach the desk are the other common failures.[^20][^38]",
-  "buy-or-build": "Buy the standard reading step, such as submission intake or claims texting, and build only where your guidelines, appetite and loss history are your edge.[^40][^14][^8] Bought tools reached production about twice as often as internal builds in MIT's study.[^39][^41]",
+  "buy-or-build": "Buy the standard reading step, such as submission intake or claims texting, and build only where your guidelines, appetite and loss history are your edge.[^40][^14][^8] Bought tools reached production about twice as often as internal builds in MIT's study.[^39]",
   "something-else": "Pick something else when your core systems can't take AI output, your Guidewire or Applied stack already includes AI, or simple claims run fine on rules.[^13][^27][^28][^42] For plain writing and summaries, an enterprise plan of ChatGPT, Claude or Microsoft 365 Copilot will do, inside your AI program.[^8]",
   "table-3": "Models predict a number, such as a price factor, lapse risk, claim size or fraud score.[^57][^11] A named person still decides: the actuary sets prices, the underwriter selects risks and the adjuster owns each claim.[^57][^61][^11]"
+ },
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+  "checked": 2,
+  "fixed": [
+   "2026-11-28 padding cleanup, buyVsBuild.buy: [^41] (Fortune) states 67%, not \"twice\": added MIT's 67% (in both notes) so each footnote states a figure",
+   "2026-11-28 padding cleanup, answers.buy-or-build: dropped [^41] (Fortune) from \"twice\": its note gives 67% and \"one-third as often\""
+  ]
  }
 }

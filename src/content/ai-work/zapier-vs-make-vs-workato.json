@@ -285,8 +285,8 @@
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy one of these when your flows join standard apps and no engineer has time to own custom code[^38][^40]. Most firms now buy: US enterprise decision-makers say 76% of their AI use cases were bought in 2025, up from 53% in 2024[^45]. MIT found bought or partnered tools reach deployment about twice as often as internal builds[^46][^47].",
-  "build": "Build your own integration code only when the workflow is your edge and an engineer will own it[^46]. Self-hosting means you own uptime and patches, a point Zapier stresses about self-hosted rivals[^8]. MIT found only 5% of custom enterprise AI tools reach production, so start narrow[^46][^47]."
+  "buy": "Buy one of these when your flows join standard apps and no engineer has time to own custom code[^38][^40]. Most firms now buy: US enterprise decision-makers say 76% of their AI use cases were bought in 2025, up from 53% in 2024[^45]. MIT found bought or partnered tools reach deployment about twice as often as internal builds[^46]; Fortune's coverage notes the study's method caveats[^47].",
+  "build": "Build your own integration code only when the workflow is your edge and an engineer will own it[^46]. Self-hosting means you own uptime and patches, a point Zapier stresses about self-hosted rivals[^8]. MIT found only 5% of custom enterprise AI tools reach production, so start narrow[^46]."
  },
  "pickElse": [
   "You have an engineer and data must stay on your own servers: n8n's free self-hosted Community Edition fits[^48]. Its cloud plans bill per run, not per step[^48].",
@@ -652,5 +652,14 @@
   "table-1": "Zapier Pro starts at $19.99 a month billed yearly, Make's help example is $9 for 10,000 credits, and Workato is quote-only[^1][^18][^23]. Zapier bills per task, Make per credit, and Workato in its own credits[^1][^11][^25].",
   "table-2": "Workato gives the most: approvals, dev-test-live stages and a one-year audit log. Zapier adds approvals from Pro, and Make keeps approvals, audit log and SSO on Enterprise[^34][^28][^31][^4][^19][^21].",
   "own-data": "At 2,000 invoices a month, Make costs about $12.38 and Zapier $129 to $193.50. Workato's cost is unclear, since it publishes no credit-to-task rate[^18][^1][^24]."
+ },
+ "sourceCheck": {
+  "date": "2026-11-28",
+  "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+  "checked": 2,
+  "fixed": [
+   "2026-11-28 padding cleanup, buyVsBuild.buy: [^47] (Fortune) note states method caveats, not \"twice\": gave it its own clause on what it states",
+   "2026-11-28 padding cleanup, buyVsBuild.build: dropped [^47] (Fortune) from 5%: its note doesn't state it"
+  ]
  }
 }

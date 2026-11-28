@@ -24,8 +24,8 @@
   "walkAway": [
     "You should leave with one named weekly decision, a data-quality score, agreed metric definitions, one dashboard used weekly and a handover your team can run.[^1][^5]",
     "One named weekly decision, with an owner and today's number to beat. Firms that scale analytics start from the decision and work back to the data.[^1][^13]",
-    "A data-quality score on 100 of your own recent records. Most firms never measure it, and in one study 47% of new records had a critical error.[^3][^14]",
-    "One agreed definition per metric, signed off by the controller. Inconsistent definitions are a top barrier to quality data (45%).[^4][^3]",
+    "A data-quality score on 100 of your own recent records. Most firms never measure it[^3], and in one study 47% of new records had a critical error.[^14]",
+    "One agreed definition per metric, signed off by the controller. Inconsistent definitions are a top barrier to quality data (45%).[^4]",
     "One dashboard used every week, tracked by active users. Average BI use is 25% of staff; smaller firms reach 44%.[^5][^6]",
     "A handover your team can run: documents, training, and who refreshes what. Lack of proper training was the top obstacle to BI use (50%).[^15]"
   ],
@@ -151,9 +151,9 @@
   "watchOuts": [
     "Most stall because nobody uses the dashboard, the data is wrong, teams fight over definitions, or the budget goes to tools instead of daily use.[^5][^3][^1]",
     "Nobody uses the dashboard. BI use has sat near a quarter of staff for years, so start from one decision, train people and track weekly users.[^5][^6]",
-    "The data is wrong, and nobody checks. Score 100 recent records before building; in one study, only 3% of department scores met a basic standard.[^14][^3]",
-    "Teams argue about whose number is right. Write one list of agreed metric definitions and have the controller sign it; inconsistent definitions are a top barrier (45%).[^4][^3]",
-    "The budget goes to tools, not daily use. About 90% of breakaway firms spend over half their analytics budget on getting it into daily work, against 23% of others.[^1][^34]",
+    "The data is wrong, and nobody checks. Score 100 recent records before building[^3]; in one study, only 3% of department scores met a basic standard.[^14]",
+    "Teams argue about whose number is right. Write one list of agreed metric definitions and have the controller sign it[^3]; inconsistent definitions are a top barrier (45%).[^4]",
+    "The budget goes to tools, not daily use.[^34] About 90% of breakaway firms spend over half their analytics budget on getting it into daily work, against 23% of others.[^1]",
     "Buying a tool without a real trial. Top BI performers ran a formal, competitive evaluation far more often (77% against 43%), so trial two tools on your own data.[^5]",
     "People ignore what they can't see into. A call-center recommendation engine went unused until it explained its reasons, so show why, not just what.[^35]"
   ],
@@ -181,7 +181,7 @@
     },
     {
       "q": "How much does data analytics consulting cost?",
-      "a": "Clutch's published data puts typical BI and analytics projects at $10,000 to $49,999.[^8] Vendor guides price one dashboard at a few thousand dollars and a data warehouse at $25,000 to $80,000.[^18][^19][^20] Most of the cost is data work, not charts.[^21][^22]"
+      "a": "Clutch's published data puts typical BI and analytics projects at $10,000 to $49,999.[^8] Vendor guides price one dashboard at a few thousand dollars[^18] and a data warehouse at $25,000 to $80,000.[^19][^20] Most of the cost is data work, not charts.[^21][^22]"
     },
     {
       "q": "Should we hire an analyst or a consultant?",
@@ -538,5 +538,18 @@
     "what-goes-wrong": "Analytics projects stall when nobody uses the dashboard, the data is wrong and unchecked, or teams argue about whose number is right.[^5][^14][^4]",
     "benchmark": "Judge an advisor by whether they write down today's number first, score 100 of your records, track weekly users and reconcile totals to the books.[^1][^14][^5][^3]",
     "something-else": "Don't hire help when a free or low-cost tool like Power BI Desktop, Looker Studio or Metabase covers your reports, or when the work fills a full-time role for years.[^7][^24][^23][^38]"
+  },
+  "sourceCheck": {
+    "date": "2026-11-28",
+    "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
+    "checked": 6,
+    "fixed": [
+      "2026-11-28 padding cleanup, walkAway[2]: moved [^3] (Gartner: 59% don't measure) off 47% to the never-measure clause",
+      "2026-11-28 padding cleanup, walkAway[3]: dropped [^3] (Gartner) from 45%: its note doesn't state it",
+      "2026-11-28 padding cleanup, watchOuts[2]: moved [^3] (Gartner: measure data quality) off 3% to the score-before-building clause",
+      "2026-11-28 padding cleanup, watchOuts[3]: moved [^3] (Gartner: data quality needs owners) off 45% to the controller-signs clause",
+      "2026-11-28 padding cleanup, watchOuts[4]: moved [^34] (McKinsey insurance: limited frontline adoption) off 90%/23% to the not-daily-use sentence",
+      "2026-11-28 padding cleanup, faq[2].a: moved [^18] (Power BI guide, dashboards only) off $25,000-$80,000 to the dashboard clause"
+    ]
   }
 }
