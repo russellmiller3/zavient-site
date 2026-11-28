@@ -347,7 +347,7 @@
     }
   ],
   "buyVsBuild": {
-    "buy": "Buy when you have no data team and your machines are standard motors, pumps, fans and gearboxes. Most firms buy: 76% of enterprise AI use cases are bought, per Menlo Ventures.[^54] Internal builds succeed about a third as often as bought or partnered tools, in MIT research on AI pilots.[^55]",
+    "buy": "Buy when you have no data team and your machines are standard motors, pumps, fans and gearboxes. Most firms buy: 76% of enterprise AI use cases are bought, per Menlo Ventures.[^54] Bought or partnered tools succeed about 67% of the time[^55], twice the rate of internal builds, in MIT research on AI pilots.[^56]",
     "build": "Build only for fleets of identical machines or a process no vendor knows. McKinsey's offshore case took 10-15 data scientists two years and 500+ models.[^19] The middle path: buy open hardware such as NCD or Monnit, keep the data, and start with thresholds.[^33][^12]"
   },
   "pickElse": [
@@ -687,9 +687,14 @@
       "what": "76% of enterprise AI use cases are purchased rather than built internally. Re-read 26 Nov 2026."
     },
     {
-      "name": "Fortune on MIT NANDA, The GenAI Divide (Aug 2025)",
-      "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
-      "what": "Buying from specialised vendors and partnering succeed about 67% of the time; internal builds succeed one-third as often. Re-read 26 Nov 2026."
+      "name": "Fortune, MIT report: 95% of generative AI pilots at companies are failing (18 Aug 2025)",
+      "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
+      "what": "Fortune's write-up of MIT NANDA's The GenAI Divide report. Headline: 95% of generative AI pilots at companies are failing; about 5% of AI pilot programs achieve rapid revenue acceleration, while the vast majority stall with little to no measurable P&L impact. Purchasing AI tools from specialized vendors and building partnerships succeed about 67% of the time. Its comparison for internal builds misstates the report, where internal builds reach deployment about a third of the time: cite this write-up for the 67% and its headline figures only; MIT's report carries the internal-build rate and the \"twice\" comparison. Read 28 Nov 2026."
+    },
+    {
+      "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025)",
+      "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+      "what": "MIT no longer hosts the report (its link now opens the NANDA project page, checked 26 Nov 2026); copy hosted by MLQ.ai. Sample: 52 organizations interviewed, survey of 153 leaders, and 300+ public AI initiatives reviewed. $30-40 billion of enterprise GenAI investment; 95% of organizations are getting zero return; just 5% of integrated AI pilots extract millions in value. Task-specific tools: 60% of organizations evaluated them, 20% piloted, 5% reached production. Over 80% of organizations explored or piloted ChatGPT or Copilot, and nearly 40% report deployment. External partnerships with customized tools reached deployment about 67% of the time vs about 33% for internal builds: 2x as likely, twice the success rate. Only 40% of companies purchased an official LLM subscription; workers at over 90% of companies surveyed use personal AI tools for work. For mission-critical work, 90% of users prefer humans. Enterprises, defined as firms with over $100 million in annual revenue, lead in pilot count but report the lowest pilot-to-scale conversion. Read 26 Nov 2026."
     }
   ],
   "related": [
@@ -752,7 +757,10 @@
       "2026-11-28 padding cleanup, verdict[1]: moved [^4] (McKinsey false positives) off 8-12% to the false-alarm clause it states",
       "2026-11-28 padding cleanup, teamAfter[3]: moved [^21] (BLS OOH) off 66%/2% to the 14% jobs sentence it states",
       "2026-11-28 padding cleanup, recipes[0].when: moved [^29] (Deloitte) off 39% to the basics-first clause it states",
-      "2026-11-28 padding cleanup, recipes[1].cost: moved [^33] (NCD.io) off $70 to the NCD clause"
+      "2026-11-28 padding cleanup, recipes[1].cost: moved [^33] (NCD.io) off $70 to the NCD clause",
+      "Independent check 28 Nov: source [^55] (Fortune on MIT NANDA) set to the canonical Fortune note (src/lib/canonical-sources.mjs), read 28 Nov 2026: it backs the 67% and its headline figures; MIT carries the ratio. The old note said internal builds succeed \"a third as often\", which contradicts MIT's ~67% vs ~33%",
+      "Independent check 28 Nov: added MIT NANDA's report as source [^56] (canonical copy) to carry the \"twice\" comparison",
+      "Independent check 28 Nov: buyVsBuild.buy: said internal builds succeed \"a third as often\" (Fortune's misreading); now 67% on Fortune [^55] and \"twice\" on MIT [^56], whose report has ~67% vs ~33%"
     ]
   }
 }

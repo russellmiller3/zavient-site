@@ -388,7 +388,7 @@
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy when the work runs inside your agency management system and a vendor module reads your data in place, as with reconciliation and policy checks.[^10][^12] Most enterprise AI is now bought: 76% of use cases, up from 53% in 2024.[^21] MIT found outside partnerships reached deployment about twice as often as internal builds.[^48][^49]",
+  "buy": "Buy when the work runs inside your agency management system and a vendor module reads your data in place, as with reconciliation and policy checks.[^10][^12] Most enterprise AI is now bought: 76% of use cases, up from 53% in 2024.[^21] MIT found outside partnerships reached deployment about 67% of the time[^49], twice as often as internal builds.[^48]",
   "build": "Build or configure when your own process is the edge, such as commercial submissions across niche carriers or data clean-up after acquisitions.[^5][^4] Build also when you need firm control over what a tool may say to clients.[^6] A Big \"I\" AI Labs deck warns that the vendor's contract leaves your agency responsible for what a tool may legally do.[^20]"
  },
  "pickElse": [
@@ -698,9 +698,9 @@
    "what": "MIT no longer hosts the report (its link now opens the NANDA project page, checked 26 Nov 2026); copy hosted by MLQ.ai. Sample: 52 organizations interviewed, survey of 153 leaders, and 300+ public AI initiatives reviewed. $30-40 billion of enterprise GenAI investment; 95% of organizations are getting zero return; just 5% of integrated AI pilots extract millions in value. Task-specific tools: 60% of organizations evaluated them, 20% piloted, 5% reached production. Over 80% of organizations explored or piloted ChatGPT or Copilot, and nearly 40% report deployment. External partnerships with customized tools reached deployment about 67% of the time vs about 33% for internal builds: 2x as likely, twice the success rate. Only 40% of companies purchased an official LLM subscription; workers at over 90% of companies surveyed use personal AI tools for work. For mission-critical work, 90% of users prefer humans. Enterprises, defined as firms with over $100 million in annual revenue, lead in pilot count but report the lowest pilot-to-scale conversion. Read 26 Nov 2026."
   },
   {
-   "name": "Fortune on MIT NANDA's GenAI Divide report (18 Aug 2025)",
-   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
-   "what": "Reports that bought or partnered AI tools succeed about twice as often as internal builds. Read 26 Nov 2026."
+   "name": "Fortune, MIT report: 95% of generative AI pilots at companies are failing (18 Aug 2025)",
+   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
+   "what": "Fortune's write-up of MIT NANDA's The GenAI Divide report. Headline: 95% of generative AI pilots at companies are failing; about 5% of AI pilot programs achieve rapid revenue acceleration, while the vast majority stall with little to no measurable P&L impact. Purchasing AI tools from specialized vendors and building partnerships succeed about 67% of the time. Its comparison for internal builds misstates the report, where internal builds reach deployment about a third of the time: cite this write-up for the 67% and its headline figures only; MIT's report carries the internal-build rate and the \"twice\" comparison. Read 28 Nov 2026."
   },
   {
    "name": "ACORD, Data Standards (P&C XML and AL3)",
@@ -795,7 +795,9 @@
    "ACORD note limited to what the page says",
    "Source notes rewritten with each source's own figures and survey groups (flagged-figure check: 0 flagged)",
    "Shortened one sentence over 25 words",
-   "2026-11-28 padding cleanup, answers.table-1: moved [^10][^12] (Vertafore, Applied) off $100-$500 to the built-in-AI clause; $100-$500 keeps [^13] (Canopy)"
+   "2026-11-28 padding cleanup, answers.table-1: moved [^10][^12] (Vertafore, Applied) off $100-$500 to the built-in-AI clause; $100-$500 keeps [^13] (Canopy)",
+   "Independent check 28 Nov: source [^49] (Fortune on MIT NANDA) set to the canonical Fortune note (src/lib/canonical-sources.mjs), read 28 Nov 2026: it backs the 67% and its headline figures; MIT carries the ratio",
+   "Independent check 28 Nov: buyVsBuild.buy: Fortune [^49] no longer backs \"twice\" (its note is now the canonical one): it now carries the 67% it states; MIT carries \"twice\""
   ]
  }
 }

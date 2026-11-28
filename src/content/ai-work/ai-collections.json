@@ -945,9 +945,9 @@
       "what": "Most enterprise generative AI spend goes to bought applications rather than internal builds."
     },
     {
-      "name": "Fortune, on the MIT NANDA report (18 Aug 2025)",
+      "name": "Fortune, MIT report: 95% of generative AI pilots at companies are failing (18 Aug 2025)",
       "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
-      "what": "95% of generative AI pilots show no measurable return; tools bought from specialist vendors succeed more often than internal builds."
+      "what": "Fortune's write-up of MIT NANDA's The GenAI Divide report. Headline: 95% of generative AI pilots at companies are failing; about 5% of AI pilot programs achieve rapid revenue acceleration, while the vast majority stall with little to no measurable P&L impact. Purchasing AI tools from specialized vendors and building partnerships succeed about 67% of the time. Its comparison for internal builds misstates the report, where internal builds reach deployment about a third of the time: cite this write-up for the 67% and its headline figures only; MIT's report carries the internal-build rate and the \"twice\" comparison. Read 28 Nov 2026."
     }
   ],
   "reviews": [
@@ -982,7 +982,8 @@
       "2026-11-28 padding cleanup, tables[1].rows[0].cells[0]: moved [^38] (NCUA release) off 0.96% to the up-6-basis-points clause it states",
       "2026-11-28 padding cleanup, tables[1].rows[6].cells[0]: dropped [^41] (NY Fed full report) from 5.0%: its note doesn't state it; cited instead in the table note for the 4.9% collection-account figure it states",
       "2026-11-28 padding cleanup, howToTest[7]: dropped [^26] (Retell pricing) from 0.78%: its note doesn't state it",
-      "2026-11-28 padding cleanup, faq[4].a: moved [^7], [^6], [^26][^35] each to the pricing clause it states"
+      "2026-11-28 padding cleanup, faq[4].a: moved [^7], [^6], [^26][^35] each to the pricing clause it states",
+      "Independent check 28 Nov: source [^69] (Fortune on MIT NANDA) set to the canonical Fortune note (src/lib/canonical-sources.mjs), read 28 Nov 2026: it backs the 67% and its headline figures; MIT carries the ratio"
     ]
   }
 }

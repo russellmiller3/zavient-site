@@ -306,7 +306,7 @@
  },
  "watchOuts": [
   "Starting a pilot with no business measure: Gartner names unclear value as a top reason GenAI projects are dropped[^5][^8]. Set one measure and one owner before day one.",
-  "Building for a common job: drafting and search are already inside suites firms pay for[^21][^24]. Check what you license first; in MIT's interviews, bought tools reached deployment about twice as often[^1][^2].",
+  "Building for a common job: drafting and search are already inside suites firms pay for[^21][^24]. Check what you license first; in MIT's interviews, bought tools reached deployment about 67% of the time[^2], twice the internal-build rate[^1].",
   "Data that isn't ready: Gartner expects 60% of projects without AI-ready data to be dropped through 2026[^7]. Test on your real documents before you sign or build[^10].",
   "Forgetting the model will be retired: OpenAI gives as little as 2 weeks' notice on previews and 6 months on stable models[^27]. Track the dates and keep a tested fallback model[^28].",
   "No access controls: 97% of firms with an AI breach lacked them, in an IBM-sponsored study[^30]. Give staff an approved tool, since workers at 90%+ of firms use personal AI anyway[^1].",
@@ -339,7 +339,7 @@
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy when the job is common, you have no build team, and the vendor's data terms meet your rules[^6][^20]. Most firms do: 76% of enterprise AI use cases were bought in 2025, per Menlo Ventures, an AI investor[^3]. MIT found bought tools reached deployment about twice as often, from interviews rather than market data[^1][^2].",
+  "buy": "Buy when the job is common, you have no build team, and the vendor's data terms meet your rules[^6][^20]. Most firms do: 76% of enterprise AI use cases were bought in 2025, per Menlo Ventures, an AI investor[^3]. MIT found bought tools reached deployment about twice as often, from interviews rather than market data[^1].",
   "build": "Build when your own data or process is the edge and you need control of the rules[^6][^1]. Gartner's July 2024 figures, as CACM reports them, put training your own model at $8M-20M upfront[^6]. A firm your size builds a narrow tool on a rented model instead, and budgets for upkeep and model retirements[^16][^27]."
  },
  "pickElse": [
@@ -410,8 +410,8 @@
   },
   {
    "name": "Fortune, MIT report: 95% of generative AI pilots at companies are failing (18 Aug 2025)",
-   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
-   "what": "Press report confirming MIT NANDA's finding that bought tools succeed about twice as often as internal builds."
+   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
+   "what": "Fortune's write-up of MIT NANDA's The GenAI Divide report. Headline: 95% of generative AI pilots at companies are failing; about 5% of AI pilot programs achieve rapid revenue acceleration, while the vast majority stall with little to no measurable P&L impact. Purchasing AI tools from specialized vendors and building partnerships succeed about 67% of the time. Its comparison for internal builds misstates the report, where internal builds reach deployment about a third of the time: cite this write-up for the 67% and its headline figures only; MIT's report carries the internal-build rate and the \"twice\" comparison. Read 28 Nov 2026."
   },
   {
    "name": "Menlo Ventures, 2025: The State of Generative AI in the Enterprise (9 Dec 2025)",
@@ -647,7 +647,10 @@
   "fixed": [
    "2026-11-28 padding cleanup, summary: dropped [^4] (Menlo 2024: 53%) from 76%: its note doesn't state it",
    "2026-11-28 padding cleanup, tables[2].rows[0].cells[0]: dropped [^2] (Fortune) from 67%/33%: its note only says \"about twice as often\"",
-   "2026-11-28 padding cleanup, answers.table-3: dropped [^2] (Fortune) from 67%/33%: its note only says \"about twice as often\""
+   "2026-11-28 padding cleanup, answers.table-3: dropped [^2] (Fortune) from 67%/33%: its note only says \"about twice as often\"",
+   "Independent check 28 Nov: source [^2] (Fortune on MIT NANDA) set to the canonical Fortune note (src/lib/canonical-sources.mjs), read 28 Nov 2026: it backs the 67% and its headline figures; MIT carries the ratio",
+   "Independent check 28 Nov: watchOuts[1]: Fortune [^2] no longer backs \"twice\" (its note is now the canonical one): it now carries the 67% it states; MIT carries \"twice\"",
+   "Independent check 28 Nov: buyVsBuild.buy: dropped Fortune from the \"twice\" claim, which MIT alone states"
   ]
  }
 }

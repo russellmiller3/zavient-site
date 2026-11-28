@@ -293,7 +293,7 @@
         "AI assistant: explains changes in plain words and drafts what-ifs, while the solver checks every schedule[^6][^38]",
         "Operations manager: review schedule stability and on-time delivery monthly[^15]"
       ],
-      "cost": "The solvers are free: OR-Tools and Timefold are Apache 2.0, frePPLe Community is MIT.[^41][^42][^32] The cost is staff time, and internal builds succeed about a third as often as bought tools.[^43][^44]"
+      "cost": "The solvers are free: OR-Tools and Timefold are Apache 2.0, frePPLe Community is MIT.[^41][^42][^32] The cost is staff time, and bought tools reach deployment about 67% of the time[^43], twice the internal-build rate.[^44]"
     }
   ],
   "ownData": {
@@ -698,9 +698,9 @@
       "what": "Open-source solver, Apache 2.0, with a job-shop quickstart."
     },
     {
-      "name": "Fortune on the MIT NANDA report (18 Aug 2025)",
-      "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
-      "what": "Bought tools succeed about 67% of the time; internal builds about one-third as often."
+      "name": "Fortune, MIT report: 95% of generative AI pilots at companies are failing (18 Aug 2025)",
+      "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
+      "what": "Fortune's write-up of MIT NANDA's The GenAI Divide report. Headline: 95% of generative AI pilots at companies are failing; about 5% of AI pilot programs achieve rapid revenue acceleration, while the vast majority stall with little to no measurable P&L impact. Purchasing AI tools from specialized vendors and building partnerships succeed about 67% of the time. Its comparison for internal builds misstates the report, where internal builds reach deployment about a third of the time: cite this write-up for the 67% and its headline figures only; MIT's report carries the internal-build rate and the \"twice\" comparison. Read 28 Nov 2026."
     },
     {
       "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025)",
@@ -832,7 +832,9 @@
     "fixed": [
       "2026-11-28 padding cleanup, watchOuts[5]: moved [^23] (PlanetTogether, no method shown) off +50% to the no-methods clause",
       "2026-11-28 padding cleanup, buyVsBuild.buy: dropped [^43] (Fortune) from \"twice\": its note gives 67% and \"one-third as often\", not twice",
-      "2026-11-28 padding cleanup, answers.table-2: dropped [^3] (NIST MEP case) from 25%: its note doesn't state it"
+      "2026-11-28 padding cleanup, answers.table-2: dropped [^3] (NIST MEP case) from 25%: its note doesn't state it",
+      "Independent check 28 Nov: source [^43] (Fortune on MIT NANDA) set to the canonical Fortune note (src/lib/canonical-sources.mjs), read 28 Nov 2026: it backs the 67% and its headline figures; MIT carries the ratio. The old note said internal builds succeed \"a third as often\", which contradicts MIT's ~67% vs ~33%",
+      "Independent check 28 Nov: recipes[2].cost: said internal builds succeed \"a third as often\" (Fortune's misreading); now 67% on Fortune [^43] and \"twice\" on MIT [^44], whose report has ~67% vs ~33%"
     ]
   }
 }

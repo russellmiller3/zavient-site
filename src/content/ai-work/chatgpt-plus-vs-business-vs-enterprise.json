@@ -328,7 +328,7 @@
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy a ChatGPT plan when the job is everyday writing, research and analysis for many staff[^30]. Most enterprise AI is now bought: 76% of solutions in 2025, up from 53% in 2024[^30]. MIT found bought or partnered tools reached deployment about twice as often as internal builds[^29][^40].",
+  "buy": "Buy a ChatGPT plan when the job is everyday writing, research and analysis for many staff[^30]. Most enterprise AI is now bought: 76% of solutions in 2025, up from 53% in 2024[^30]. MIT found bought or partnered tools reached deployment about 67% of the time[^40], twice as often as internal builds[^29].",
   "build": "Build when your own data or rules are the edge, such as one narrow workflow tied to your systems[^29]. A build runs on OpenAI's API (developer access), billed apart from ChatGPT; Business includes up to $500 a month in API credits, per OpenAI[^5][^2]. Gartner says at least half of GenAI projects were dropped after proof of concept, so start small[^31]."
  },
  "pickElse": [
@@ -594,8 +594,8 @@
   },
   {
    "name": "Fortune, MIT report: 95% of generative AI pilots at companies are failing (18 Aug 2025)",
-   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
-   "what": "Reports MIT's finding that bought or partnered AI succeeds about 67% of the time, about twice the rate of internal builds."
+   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
+   "what": "Fortune's write-up of MIT NANDA's The GenAI Divide report. Headline: 95% of generative AI pilots at companies are failing; about 5% of AI pilot programs achieve rapid revenue acceleration, while the vast majority stall with little to no measurable P&L impact. Purchasing AI tools from specialized vendors and building partnerships succeed about 67% of the time. Its comparison for internal builds misstates the report, where internal builds reach deployment about a third of the time: cite this write-up for the 67% and its headline figures only; MIT's report carries the internal-build rate and the \"twice\" comparison. Read 28 Nov 2026."
   }
  ],
  "related": [
@@ -649,7 +649,9 @@
   "by": "padding cleanup (flagged footnotes only, not a full source-claim check)",
   "checked": 1,
   "fixed": [
-   "2026-11-28 padding cleanup, verdict[3]: moved [^2] (OpenAI Business pricing) off 36% to the monthly-pilot clause it states"
+   "2026-11-28 padding cleanup, verdict[3]: moved [^2] (OpenAI Business pricing) off 36% to the monthly-pilot clause it states",
+   "Independent check 28 Nov: source [^40] (Fortune on MIT NANDA) set to the canonical Fortune note (src/lib/canonical-sources.mjs), read 28 Nov 2026: it backs the 67% and its headline figures; MIT carries the ratio",
+   "Independent check 28 Nov: buyVsBuild.buy: Fortune [^40] no longer backs \"twice\" (its note is now the canonical one): it now carries the 67% it states; MIT carries \"twice\""
   ]
  }
 }

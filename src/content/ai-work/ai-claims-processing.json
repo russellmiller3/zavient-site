@@ -459,7 +459,7 @@
     }
   ],
   "buyVsBuild": {
-    "buy": "Most claims teams should buy if they have no data team, a common core claims system and standard work like reports and photos.[^63] Purchased AI tools succeed about 67% of the time; internal builds about a third as often.[^64][^65]",
+    "buy": "Most claims teams should buy if they have no data team, a common core claims system and standard work like reports and photos.[^63] Purchased AI tools succeed about 67% of the time[^64], twice the rate of internal builds.[^65]",
     "build": "Build, or configure heavily, when your own claims history is the edge or you must show a regulator every rule.[^11] Either way, 45% of senior insurance executives rank access to enough quality data among their top three barriers, so clean the claim data first.[^34] Only 24% of insurance leaders are very confident they'd pass an AI governance review in 90 days.[^66]"
   },
   "pickElse": [
@@ -834,9 +834,9 @@
       "what": "76% of enterprise AI use cases are purchased rather than built."
     },
     {
-      "name": "Fortune on the MIT NANDA report (18 Aug 2025)",
-      "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
-      "what": "Purchased AI tools succeed about 67% of the time; internal builds about a third as often."
+      "name": "Fortune, MIT report: 95% of generative AI pilots at companies are failing (18 Aug 2025)",
+      "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
+      "what": "Fortune's write-up of MIT NANDA's The GenAI Divide report. Headline: 95% of generative AI pilots at companies are failing; about 5% of AI pilot programs achieve rapid revenue acceleration, while the vast majority stall with little to no measurable P&L impact. Purchasing AI tools from specialized vendors and building partnerships succeed about 67% of the time. Its comparison for internal builds misstates the report, where internal builds reach deployment about a third of the time: cite this write-up for the 67% and its headline figures only; MIT's report carries the internal-build rate and the \"twice\" comparison. Read 28 Nov 2026."
     },
     {
       "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025)",
@@ -901,7 +901,9 @@
     "fixed": [
       "2026-11-28 padding cleanup, tables[2].intro: moved [^27][^28] (vendor cases) off 65% to the vendors-measured clause they illustrate",
       "2026-11-28 padding cleanup, howToTest[7]: moved [^1] (BLS OOH adjusters) off 12% to the adjuster-cost clause",
-      "2026-11-28 padding cleanup, watchOuts[6]: moved [^21] (Insurance Business) off 25% to the postings-down-half clause it states"
+      "2026-11-28 padding cleanup, watchOuts[6]: moved [^21] (Insurance Business) off 25% to the postings-down-half clause it states",
+      "Independent check 28 Nov: source [^64] (Fortune on MIT NANDA) set to the canonical Fortune note (src/lib/canonical-sources.mjs), read 28 Nov 2026: it backs the 67% and its headline figures; MIT carries the ratio. The old note said internal builds succeed \"a third as often\", which contradicts MIT's ~67% vs ~33%",
+      "Independent check 28 Nov: buyVsBuild.buy: said internal builds succeed \"a third as often\" (Fortune's misreading); now 67% on Fortune [^64] and \"twice\" on MIT [^65], whose report has ~67% vs ~33%"
     ]
   }
 }

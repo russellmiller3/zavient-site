@@ -785,9 +785,9 @@
    "what": "Survey of 495 US enterprise AI decision-makers: 76% of AI use cases were bought, up from 53% in 2024."
   },
   {
-   "name": "Fortune on MIT NANDA, 18 Aug 2025",
-   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
-   "what": "Reports MIT NANDA's finding that bought or partnered AI tools succeed about 67% of the time. Its wording that internal builds succeed \"one-third as often\" misreads the report, where internal builds reach deployment about a third of the time; cited here for the 67% only. Read 28 Nov 2026."
+   "name": "Fortune, MIT report: 95% of generative AI pilots at companies are failing (18 Aug 2025)",
+   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
+   "what": "Fortune's write-up of MIT NANDA's The GenAI Divide report. Headline: 95% of generative AI pilots at companies are failing; about 5% of AI pilot programs achieve rapid revenue acceleration, while the vast majority stall with little to no measurable P&L impact. Purchasing AI tools from specialized vendors and building partnerships succeed about 67% of the time. Its comparison for internal builds misstates the report, where internal builds reach deployment about a third of the time: cite this write-up for the 67% and its headline figures only; MIT's report carries the internal-build rate and the \"twice\" comparison. Read 28 Nov 2026."
   },
   {
    "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025)",
@@ -858,7 +858,8 @@
    "2026-11-28 padding cleanup, watchOuts[5]: dropped [^4] (8am report) from 18%: its note doesn't state it",
    "2026-11-28 padding cleanup, buyVsBuild.buy: [^59] (Fortune) states 67%, not \"twice\": added MIT's 67% (in both notes) so each footnote states a figure",
    "2026-11-28 padding cleanup, answers.buy-or-build: dropped [^59] (Fortune) from \"twice\": its note gives 67% and \"a third as often\"",
-   "Independent check 28 Nov: source [^59] (Fortune) note: rewritten; \"a third as often\" contradicted \"twice\"; Fortune now backs only the 67%, MIT [^60] the twice"
+   "Independent check 28 Nov: source [^59] (Fortune) note: rewritten; \"a third as often\" contradicted \"twice\"; Fortune now backs only the 67%, MIT [^60] the twice",
+   "Independent check 28 Nov: source [^59] (Fortune on MIT NANDA) set to the canonical Fortune note (src/lib/canonical-sources.mjs), read 28 Nov 2026: it backs the 67% and its headline figures; MIT carries the ratio. The old note said internal builds succeed \"a third as often\", which contradicts MIT's ~67% vs ~33%"
   ]
  }
 }

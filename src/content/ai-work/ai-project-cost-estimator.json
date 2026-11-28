@@ -60,7 +60,7 @@
     },
     {
       "q": "Should we buy a tool, turn on AI we already pay for, or build?",
-      "a": "Most firms buy: 76% of AI use cases are bought, not built[^24]. Bought or partner-built tools succeed about 67% of the time, internal builds about a third as often[^25]. Build only when the work is core and no tool fits."
+      "a": "Most firms buy: 76% of AI use cases are bought, not built[^24]. Bought or partner-built tools succeed about 67% of the time[^25], twice the internal-build rate[^29]. Build only when the work is core and no tool fits."
     },
     {
       "q": "How long does it take to get an AI agent working?",
@@ -248,9 +248,9 @@
       "what": "76% of AI use cases are purchased rather than built internally."
     },
     {
-      "name": "Fortune on MIT NANDA (Aug 2025)",
-      "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
-      "what": "Tools bought from specialist vendors or partners succeed about 67% of the time; internal builds a third as often."
+      "name": "Fortune, MIT report: 95% of generative AI pilots at companies are failing (18 Aug 2025)",
+      "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
+      "what": "Fortune's write-up of MIT NANDA's The GenAI Divide report. Headline: 95% of generative AI pilots at companies are failing; about 5% of AI pilot programs achieve rapid revenue acceleration, while the vast majority stall with little to no measurable P&L impact. Purchasing AI tools from specialized vendors and building partnerships succeed about 67% of the time. Its comparison for internal builds misstates the report, where internal builds reach deployment about a third of the time: cite this write-up for the 67% and its headline figures only; MIT's report carries the internal-build rate and the \"twice\" comparison. Read 28 Nov 2026."
     },
     {
       "name": "ZDNet on Gartner (2024)",
@@ -266,6 +266,11 @@
       "name": "AI Services Companies, AI consulting hourly rates 2026",
       "url": "https://aiservicescompanies.com/research/ai-consulting-hourly-rates-2026",
       "what": "GSA CALC+ federal schedule ceiling rates for AI and machine learning labour categories: median $183.05 an hour."
+    },
+    {
+      "name": "MIT NANDA, The GenAI Divide: State of AI in Business 2025 (Jul 2025)",
+      "url": "https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf",
+      "what": "MIT no longer hosts the report (its link now opens the NANDA project page, checked 26 Nov 2026); copy hosted by MLQ.ai. Sample: 52 organizations interviewed, survey of 153 leaders, and 300+ public AI initiatives reviewed. $30-40 billion of enterprise GenAI investment; 95% of organizations are getting zero return; just 5% of integrated AI pilots extract millions in value. Task-specific tools: 60% of organizations evaluated them, 20% piloted, 5% reached production. Over 80% of organizations explored or piloted ChatGPT or Copilot, and nearly 40% report deployment. External partnerships with customized tools reached deployment about 67% of the time vs about 33% for internal builds: 2x as likely, twice the success rate. Only 40% of companies purchased an official LLM subscription; workers at over 90% of companies surveyed use personal AI tools for work. For mission-critical work, 90% of users prefer humans. Enterprises, defined as firms with over $100 million in annual revenue, lead in pilot count but report the lowest pilot-to-scale conversion. Read 26 Nov 2026."
     }
   ],
   "related": [
@@ -320,7 +325,10 @@
       "2026-11-28 padding cleanup, verdict[4]: [^21] (Gartner Oct 2024) doesn't state 60%: gave it its own clause with the 500% it states",
       "2026-11-28 padding cleanup, tool.method[1]: moved [^16] (McKinsey share reviewed) off $46.89 to the share-checked term",
       "2026-11-28 padding cleanup, tool.method[4]: moved [^14] (Forrester TEI) off 15%-25% to the 10-hours clause it states",
-      "Independent check 28 Nov: verdict[4]: put back Gartner's 60% as a forecast through 2026, not a rate"
+      "Independent check 28 Nov: verdict[4]: put back Gartner's 60% as a forecast through 2026, not a rate",
+      "Independent check 28 Nov: source [^25] (Fortune on MIT NANDA) set to the canonical Fortune note (src/lib/canonical-sources.mjs), read 28 Nov 2026: it backs the 67% and its headline figures; MIT carries the ratio. The old note said internal builds succeed \"a third as often\", which contradicts MIT's ~67% vs ~33%",
+      "Independent check 28 Nov: added MIT NANDA's report as source [^29] (canonical copy) to carry the \"twice\" comparison",
+      "Independent check 28 Nov: faq[4].a: said internal builds succeed \"a third as often\" (Fortune's misreading); now 67% on Fortune [^25] and \"twice\" on MIT [^29], whose report has ~67% vs ~33%"
     ]
   }
 }

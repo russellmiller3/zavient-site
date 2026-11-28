@@ -8,7 +8,7 @@
 // fails one source backing two different figures for the same claim on one page.
 import { splitSentences } from './sentences.mjs';
 import { mirrorProblems } from './source-rules.mjs';
-import { canonicalProblems } from './canonical-sources.mjs';
+import { canonicalProblems, thirdAsOftenProblems } from './canonical-sources.mjs';
 import { stalePriceProblems } from './stale-prices.mjs';
 
 // 56%, 56 percent, 3x, 3-fold, $1.2M, $205,000, €15,000, £40k, $1.5 billion
@@ -385,4 +385,4 @@ export function priceProblems(d) {
 }
 
 // Everything this file checks, one count per page, for the page check (any problem fails).
-export const claimProblems = (d) => [...numberProblems(d), ...twoFigureProblems(d), ...surveyScopeProblems(d), ...priceProblems(d), ...mostProblems(d), ...mirrorProblems(d.sources), ...canonicalProblems(d.sources), ...stalePriceProblems(d, { citedSentences, figures, isPrice })];
+export const claimProblems = (d) => [...numberProblems(d), ...twoFigureProblems(d), ...surveyScopeProblems(d), ...priceProblems(d), ...mostProblems(d), ...mirrorProblems(d.sources), ...canonicalProblems(d.sources), ...thirdAsOftenProblems(d), ...stalePriceProblems(d, { citedSentences, figures, isPrice })];

@@ -750,9 +750,9 @@
    "what": "Survey of 495 US enterprise AI decision-makers (Nov 2025): 76% of AI use cases were purchased in 2025, up from 53% in 2024. Read 26 Nov 2026."
   },
   {
-   "name": "Fortune on the MIT NANDA GenAI Divide study (18 Aug 2025)",
-   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo",
-   "what": "Purchased tools and partnerships succeed about 67% of the time; internal builds about one-third as often. Read 26 Nov 2026."
+   "name": "Fortune, MIT report: 95% of generative AI pilots at companies are failing (18 Aug 2025)",
+   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
+   "what": "Fortune's write-up of MIT NANDA's The GenAI Divide report. Headline: 95% of generative AI pilots at companies are failing; about 5% of AI pilot programs achieve rapid revenue acceleration, while the vast majority stall with little to no measurable P&L impact. Purchasing AI tools from specialized vendors and building partnerships succeed about 67% of the time. Its comparison for internal builds misstates the report, where internal builds reach deployment about a third of the time: cite this write-up for the 67% and its headline figures only; MIT's report carries the internal-build rate and the \"twice\" comparison. Read 28 Nov 2026."
   },
   {
    "name": "ProSight, Statement Studies",
@@ -844,7 +844,8 @@
    "Census and NAB wording matched to source; Uptiq and Kaaj notes corrected",
    "Sources 32 and 52 dropped, footnotes renumbered",
    "2026-11-28 padding cleanup, verdict[2]: moved [^17] (TD) off 20% to the TD clause it states",
-   "2026-11-28 padding cleanup, buyVsBuild.buy: moved [^48] (Menlo Ventures) off \"twice\" to the most-buy clause it states"
+   "2026-11-28 padding cleanup, buyVsBuild.buy: moved [^48] (Menlo Ventures) off \"twice\" to the most-buy clause it states",
+   "Independent check 28 Nov: source [^49] (Fortune on MIT NANDA) set to the canonical Fortune note (src/lib/canonical-sources.mjs), read 28 Nov 2026: it backs the 67% and its headline figures; MIT carries the ratio. The old note said internal builds succeed \"a third as often\", which contradicts MIT's ~67% vs ~33%"
   ]
  }
 }
