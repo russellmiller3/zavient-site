@@ -8,7 +8,7 @@
  "industry": "family offices",
  "index": true,
  "verdict": [
-  "Match each tool to a problem: reporting platforms fix the quarterly report, which 73% of offices surveyed call too manual.[^1][^2]",
+  "Match tools to problems: platforms target the quarterly report, too manual for 73% of 155 family offices in the Americas.[^1][^64]",
   "Document services such as Arch read the fund PDF flood, which lands in waves after each quarter end.[^31][^59]",
   "Lagging books need a partnership ledger such as FundCount or Eton; QuickBooks Online covers one company per subscription.[^57][^4]",
   "Questionnaire platforms such as DiligenceVault line up fund managers' answers with sources; your investment committee still decides.[^60][^62]",
@@ -284,7 +284,7 @@
     {
      "name": "Investment reporting is too manual",
      "cells": [
-      "73% of 155 North American family offices surveyed[^1]",
+      "73% of 155 family offices surveyed in the Americas[^1]",
       "RBC and Campden Wealth, 2026"
      ]
     },
@@ -298,7 +298,7 @@
     {
      "name": "Bill pay kept in-house",
      "cells": [
-      "81% of 155 North American family offices surveyed[^1]",
+      "81% of 155 family offices surveyed in the Americas[^1]",
       "RBC and Campden Wealth, 2026"
      ]
     },
@@ -371,7 +371,7 @@
   },
   {
    "name": "3. Adviser-led office with complex holdings",
-   "when": "Pick an institutional reporting platform and outsource the books when the team is thin.[^1][^9] Expertise is the reason to outsource for 87% of North American family offices surveyed.[^1]",
+   "when": "Pick an institutional reporting platform and outsource the books when the team is thin.[^1][^9] Expertise is the reason to outsource for 87% of family offices surveyed in the Americas.[^1]",
    "flow": [
     "COO: have an adviser run the selection, since Simple found that is when selection is structured",
     "Ops lead: implement Addepar or Masttro for reporting",
@@ -383,7 +383,7 @@
   }
  ],
  "humanRole": [
-  "A second person approves every payment and every change to payee or wire details. Business email compromise drew 24,768 complaints in 2025, and only investment fraud cost more.[^41][^10]",
+  "A second person approves every payment and every change to payee or wire details. Business email compromise drew 24,768 complaints in 2025, and only investment fraud cost more.[^41]",
   "The controller checks extracted capital call and K-1 figures before they post. Arch builds a person into the loop, with 200+ validation checks.[^31][^24]",
   "The COO sets an AI policy first, approves each tool and keeps sensitive data apart from AI, as offices with formal controls do.[^2] ISO/IEC 42001 is a standard to ask vendors about.[^42][^25]",
   "The ops lead decides whether an AI assistant may only read or may also write. Masttro's MCP link is read-only, while Asora's proposes changes a user confirms.[^43][^44]"
@@ -468,10 +468,10 @@
  "watchOuts": [
   "Building your own system of record: home-built views tend to work, but feeds, reconciliation and history break and hang on one person.[^2] Fix: buy the plumbing and build the view.[^9]",
   "Reading the FAQ, not the contract: Masttro's FAQ rules out AI training, but its privacy policy says models train on anonymized data.[^11][^48] Fix: get data terms in writing, since Canoe's FAQ says client data fine-tunes its models.[^5]",
-  "Underinvesting, then patching: of 354 single family offices surveyed, 34% underinvested and 38% only moderately invested in operations technology.[^38] Fix: budget for upgrades, which 51% of North American family offices surveyed call the top long-term risk.[^1]",
+  "Underinvesting, then patching: of 354 single family offices surveyed, 34% underinvested and 38% only moderately invested in operations technology.[^38] Fix: budget for upgrades, which 51% of family offices surveyed in the Americas call the top long-term risk.[^1]",
   "Skipping implementation cost: vendors typically quote two to four months, and Asora's implementation fee is 25% of the yearly subscription.[^2][^8] Fix: price year one, not the subscription alone.",
   "Underplanning capacity: capacity and implementation came up for 37% of offices and 28% of vendors in Simple's study.[^2] Fix: name an internal owner with time set aside before kickoff.",
-  "Personal AI accounts at work: 50% of North American family offices surveyed call AI essential, yet split 43% vs 35% on paying for enterprise-grade AI.[^1] Fix: approve a business plan that doesn't train on your data by default.[^52]"
+  "Personal AI accounts at work: 50% of offices surveyed in the Americas call AI essential, yet split 43% vs 35% on paying for enterprise-grade AI.[^1] Fix: approve a business plan that doesn't train on your data by default.[^52]"
  ],
  "faq": [
   {
@@ -504,7 +504,7 @@
   "build": "Build only the view: a dashboard or assistant on your own data, linked through the MCP connectors Asora, Aleta and Masttro offer.[^44][^18][^43] Keep it narrow: in MIT's study of 52 organizations, internal builds reached deployment about 33% of the time, against about 67% for external partnerships.[^55]"
  },
  "pickElse": [
-  "Your systems work but don't talk to each other: wire the ledger, bill pay and reporting you have. Of single family offices, 54% keep reporting and 64% financial administration wholly in-house.[^7][^2]",
+  "Your systems work but don't talk to each other: wire the ledger, bill pay and reporting you have. Of single family offices, 54% keep reporting and 64% financial administration wholly in-house.[^7]",
   "Vendor terms clash with your AI policy: keep sensitive data in the ledger and use a business AI plan that doesn't train by default.[^52][^2] Privacy came up for 39% of vendors and 32% of offices where AI came up, in Simple's study.[^2]",
   "No time to run a platform: outsourced accounting or a managed service fits, a topic 33% of vendors and 24% of offices raised.[^2]",
   "Few entities, simple assets: stay on QuickBooks Online Advanced at $340 a month, or Sage Intacct, which publishes no price and quotes each deal.[^3][^56]"
@@ -539,8 +539,8 @@
  "stats": [
   {
    "num": "73%",
-   "label": "of North American family offices surveyed call investment reporting too manual.[^1]",
-   "source": "RBC and Campden Wealth, 155 family offices"
+   "label": "of family offices surveyed in the Americas call investment reporting too manual.[^1]",
+   "source": "RBC and Campden Wealth, 155 family offices in the Americas"
   },
   {
    "num": "54%",
@@ -572,7 +572,7 @@
   {
    "name": "RBC Wealth Management and Campden Wealth, North America Family Office Report 2026",
    "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
-   "what": "Survey of 155 family offices (123 US). 73% of family offices: investment reporting is too manual (third year running). 50% call AI embedded and essential, 24% disagree; split 43% vs 35% on paying for enterprise-grade AI. Bill pay 81% in-house; financial accounting about 65% in-house (Figure 4.2). Expertise is the reason to outsource for 87%. Failure to upgrade technology is the top long-term risk at 51%. Read 28 Nov 2026."
+   "what": "Survey of 155 single family offices and private multi-family offices across the Americas: 123 in the US, 21 in Canada, 11 elsewhere in the Americas (Figure 1.1). 73% of family offices: investment reporting is too manual (third year running). 50% call AI embedded and essential, 24% disagree; split 43% vs 35% on paying for enterprise-grade AI. Bill pay 81% in-house; financial accounting about 65% in-house (Figure 4.2). Expertise is the reason to outsource for 87%. Failure to upgrade technology is the top long-term risk at 51%. Read 28 Nov 2026."
   },
   {
    "name": "Simple, Family Office Software & Technology Report 2026 (PDF)",
@@ -762,7 +762,7 @@
   {
    "name": "Campden Wealth and AlTi Tiedemann Global, Family Office Operational Excellence Report 2025 (press release)",
    "url": "https://www.campdenwealth.com/press/new-family-office-research-reveals-cross-border-wealth-rise-and-defining-purpose-unlocks-next",
-   "what": "Survey of 146 family offices (82 North America, 42 Europe, 22 Asia Pacific), Nov 2024 to Mar 2025. Most family offices spend between $100,000 and $500,000 a year on technology; 42% still rely on spreadsheets. Read 28 Nov 2026."
+   "what": "Survey of 146 single family offices (82 North America, 42 Europe, 22 Asia Pacific), Nov 2024 to Mar 2025. Most family offices spend between $100,000 and $500,000 a year on technology; 42% still rely on spreadsheets. Read 28 Nov 2026."
   },
   {
    "name": "UBS Global Family Office Report 2025",
@@ -883,6 +883,11 @@
    "name": "ILPA, DDQ 2.0 User Guide, 9 Nov 2021",
    "url": "https://ilpa.org/wp-content/uploads/2021/11/ILPA-DDQ-2.0-User-Guide.pdf",
    "what": "The Yes/No questions \"provide LPs with a top-level view\" and should not be the sole criteria for an investment decision; LPs should review detailed answers and their own follow-up questions first. Read 28 Nov 2026."
+  },
+  {
+   "name": "RBC Wealth Management newsroom, 2026 RBC and Campden Wealth report release (29 Sep 2026; URL dated 2026-10-01)",
+   "url": "https://www.rbcwealthmanagement.com/en-us/newsroom/2026-10-01/2026-rbc-and-campden-wealth-report-north-american-family-offices-shift-from-caution-to-optimism-amid-great-wealth-transfer-ai-acceleration",
+   "what": "Release for the 2026 North America Family Office Report: 155 survey responses from single-family offices and private multi-family offices across the Americas, 123 in the U.S., 21 in Canada and 11 across the rest of the Americas. \"73 percent still believe investment reporting is too manual, a top concern for three years running.\" Read 28 Nov 2026."
   }
  ],
  "related": [
@@ -895,7 +900,7 @@
  "answers": {
   "table-2": "Published starting prices run from Kubera at $250 a year to FundCount at $35,899 a year, while Addepar, Masttro and Eton publish no price and quote each deal.[^22][^4][^25] Reporting platforms fit consolidation, and FundCount, Eton or Asseta keep multi-entity books.[^9][^4]",
   "table-3": "Canoe and Arch read alternatives documents, Box stores them, BILL pays bills, and Affinity or Salesforce Financial Services Cloud tracks relationships.[^5][^31][^33][^10][^35]",
-  "table-4": "Offices report too much manual work: 73% of North American family offices surveyed call investment reporting too manual, and 81% keep bill pay in-house.[^1]",
+  "table-4": "Offices report too much manual work: 73% of 155 family offices surveyed in the Americas call investment reporting too manual, and 81% keep bill pay in-house.[^1]",
   "recipes": "Lean offices fit QuickBooks plus Kubera or Asora, multi-entity offices add FundCount or Eton, and adviser-led offices fit Addepar or Masttro.[^3][^4][^11]",
   "human-role": "People keep every payment, posting and data-access decision: a second approver releases payments, the controller checks extracted figures, and the COO sets AI data rules.[^41][^2]",
   "example": "Illustrative: an extraction tool reads a capital call PDF, the controller checks it, the ledger posts it, and a second approver releases the wire.[^31][^24][^10]",
@@ -1507,8 +1512,8 @@
  },
  "sourceCheck": {
   "date": "2026-11-28",
-  "by": "writer, live source reads (28 Nov reframe; no separate agent was available for this pass. The earlier pass was a separate source-check agent)",
-  "checked": 68,
+  "by": "separate source-fix agent, live source reads 28 Nov 2026, working from the independent source check of 28 Nov 2026 (SOURCECHECK-2026-11-28)",
+  "checked": 73,
   "fixed": [
    "QuickBooks one-company-per-subscription now cites a QuickBooks support article (new source 57); pricing page doesn't say it",
    "Asseta ledger cell now cites its general ledger page (new source 58); 'AI-native' dropped; zero retention 'where available'",
@@ -1520,7 +1525,13 @@
    "Deloitte source swapped to the Global Edition page, which states the 15-staff average",
    "Reframe pass: DiligenceVault over 70% and CENTRL 80 to 110 of about 200 questions, 10 to 6 weeks, labelled as vendor claims",
    "SBAI 41% lack time for operational review: survey of 44 investors",
-   "ILPA DDQ guide: yes/no answers give a top-level view"
+   "ILPA DDQ guide: yes/no answers give a top-level view",
+   "Source-fix pass vs independent check: verdict 73% dropped Simple [^2] (its manual-reporting figure is 32%); second source is now RBC's release [^64], which states 73% and the sample",
+   "RBC/Campden population: 155 offices across the Americas (123 US, 21 Canada, 11 elsewhere), per the report's Figure 1.1; 'North American' replaced in verdict, tables, recipe, watch-outs, stat and answer",
+   "JPM 54%/64% now cites [^7] alone; IC3 BEC now cites [^41] alone (BILL [^10] dropped from that line)",
+   "Campden/AlTi 146: the press release does state it ('146 single family offices'; 82 North America, 42 Europe, 22 Asia Pacific, Nov 2024 to Mar 2025); kept, confirmed",
+   "Asora 'with an AI assistant': Asora Intelligence page opened, 'Your assistant for family office data'; confirmed",
+   "Wording aligned with the other pages: '73% of 155 family offices in the Americas' (coordinator's second checker; matches the report's 123 US, 21 Canada, 11 other Americas)"
   ]
  }
 }
