@@ -1,6 +1,6 @@
 {
- "title": "Can AI keep a family office's partnership books current?",
- "description": "Capital calls, distributions, statements and K-1s across trusts, LLCs and funds: what AI drafts, what your controller signs, and our modeled entry count.",
+ "title": "Can AI stop a family office's books lagging the calls and K-1s?",
+ "description": "Family office books lag capital calls, distributions and K-1s. What AI drafts, what your controller signs, and our modeled count of entries.",
  "type": "usecase",
  "templateVersion": 1,
  "topic": "AI for family office accounting",
@@ -8,19 +8,23 @@
  "industry": "family offices",
  "index": true,
  "verdict": [
-  "Yes, for the first pass: AI drafts entries to the right entity, and nothing posts until your controller approves[^4][^7].",
-  "Modeled, not measured: one call, distribution and K-1 trigger 17 entries by our math; 40 funds make 524[^31][^20].",
-  "Test first: the best model met 56.4% of accounting task criteria, and at most 46% of balance sheets were exact[^24][^25].",
-  "Confirm changed wire instructions by phone: dual payment authorization fell from 84% to 73% of family offices surveyed[^40][^39].",
-  "Early days: 21% of family offices use AI for reconciliations; 57% of family offices name missing expertise as the barrier[^1][^2]."
+  "The books lag because each event hits several entities: one call, distribution and K-1 trigger 17 entries, by our math.[^31][^20]",
+  "K-1s arrive late and in waves: many funds extend to September, and over half land within three months.[^30][^45]",
+  "AI takes the first pass: it drafts entries to the right entity, and nothing posts until your controller approves.[^4][^7]",
+  "Test first: the best model met 56.4% of accounting task criteria, and at most 46% of balance sheets were exact.[^24][^25]",
+  "Confirm changed wire instructions by phone: dual payment authorization fell from 84% to 73% of family offices surveyed.[^40][^39]"
  ],
  "onPage": [
+  {
+   "to": "table-1",
+   "text": "Five reasons the books fall behind, and what AI does about each"
+  },
   {
    "to": "human-role",
    "text": "What the controller approves, and what AI only drafts"
   },
   {
-   "to": "table-1",
+   "to": "table-2",
    "text": "Who does what on one capital call"
   },
   {
@@ -44,20 +48,21 @@
   "rules": "Which rules shape family office partnership accounting?",
   "benchmark": "How do you test AI on your books before you trust it?",
   "faq": "Questions buyers ask about family office accounting software",
-  "buy-or-build": "Should you buy family office accounting software or build the work around it?"
+  "buy-or-build": "Should you buy family office accounting software or build the work around it?",
+  "what-it-is": "Why do family office books lag the calls and K-1s, and what does AI change?"
  },
- "summary": "Family office partnership accounting records each capital call, distribution, statement and K-1 in every entity it touches, from fund to family trust[^20][^5]. AI reads the documents and drafts the entries, and a person approves before anything posts[^42][^4][^7]. Partnerships report tax-basis capital and must keep federal capital account rules[^20][^21].",
+ "summary": "The books lag because each capital call, distribution and K-1 must be posted to every entity it touches, and K-1s often arrive in September.[^20][^5][^30] AI reads the documents and drafts the entries, and a person approves before anything posts.[^42][^4][^7] Partnerships must keep tax-basis capital accounts.[^20][^21]",
  "humanRole": [
-  "Controller: approves every drafted entry before it posts, and every allocation run across the tiers[^4][^21]. COSO says to treat AI output as an assertion that needs evidence, with review sized to the risk[^7].",
-  "Controller plus a second approver: release each wire only after a person confirms the instructions by phone, on a number looked up independently[^39][^5]. AI only flags changed bank details[^42].",
-  "Separate duties: the person who sets up the AI does not approve its output, and no one person initiates, records and reconciles a transaction[^7][^9].",
-  "Outside certified public accountant (CPA): signs the returns and K-1s, while a named partnership representative handles any IRS audit of a partnership[^16][^10]."
+  "Controller: approves every drafted entry before it posts, and every allocation run across the tiers.[^4][^21] COSO says to treat AI output as an assertion that needs evidence, with review sized to the risk.[^7]",
+  "Controller plus a second approver: release each wire only after a person confirms the instructions by phone, on a number looked up independently.[^39][^5] AI only flags changed bank details.[^42]",
+  "Separate duties: the person who sets up the AI does not approve its output, and no one person initiates, records and reconciles a transaction.[^7][^9]",
+  "Outside certified public accountant (CPA): signs the returns and K-1s, while a named partnership representative handles any IRS audit of a partnership.[^16][^10]"
  ],
  "teamAfter": [
-  "The controller moves from keying notices to reviewing exceptions. At Shade Tree Advisors, statements went from over 8 minutes to about 2, with 3% flagged for review (Eton, vendor)[^13].",
-  "Senior accountants who calculate capital calls and book K-1s today check AI drafts against the notice, the commitment and the bank[^17][^5].",
-  "The office takes on more funds without the same rise in keying: Third Lake runs 9,772 documents a year through automated collection (Canoe, vendor)[^14].",
-  "Headcount isn't the goal: of US firms using AI, 66% use it only to augment tasks, and 2% saw AI-related job decreases[^11]. Family offices still find accounting roles hard to fill[^12]."
+  "The controller moves from keying notices to reviewing exceptions. At Shade Tree Advisors, statements went from over 8 minutes to about 2, with 3% flagged for review (Eton, vendor).[^13]",
+  "Senior accountants who calculate capital calls and book K-1s today check AI drafts against the notice, the commitment and the bank.[^17][^5]",
+  "The office takes on more funds without the same rise in keying: Third Lake runs 9,772 documents a year through automated collection (Canoe, vendor).[^14]",
+  "Headcount isn't the goal: of US firms using AI, 66% use it only to augment tasks, and 2% saw AI-related job decreases.[^11] Family offices still find accounting roles hard to fill.[^12]"
  ],
  "example": {
   "input": "Illustrative: a private equity fund's capital call notice to the family's holding LLC, for $1,000,000. It splits into $850,000 investment, $100,000 management fee and $50,000 fund expenses. Three family trusts own the LLC 60/20/20 and fund each call pro rata, and the PDF's wire instructions match the file.",
@@ -65,8 +70,53 @@
  },
  "tables": [
   {
+   "title": "Why do the books fall behind?",
+   "headers": [
+    "Cause",
+    "What it does to the books",
+    "What AI does, and who checks"
+   ],
+   "rows": [
+    {
+     "name": "Late K-1s",
+     "cells": [
+      "Many funds with separate tax providers extend, so final K-1s reach the office in September[^30][^19]",
+      "Tracks which K-1s are still out and reads each one as it lands; the controller checks it[^43][^42]"
+     ]
+    },
+    {
+     "name": "Documents in waves",
+     "cells": [
+      "The average private investment sends 13 documents a year, and over half of K-1s arrive in three months[^45]",
+      "Collects from portals and inboxes and extracts the fields, with a person reviewing[^42]"
+     ]
+    },
+    {
+     "name": "One event, many entities",
+     "cells": [
+      "One call, distribution and K-1 trigger 17 entries across the tiers in our model office, by our math[^20][^21]",
+      "Drafts each entry and split to the right entity, held for the controller's approval[^4]"
+     ]
+    },
+    {
+     "name": "Manual hours",
+     "cells": [
+      "Family offices spend 20% of working hours on manual tasks, up to 40% in larger offices, in a sponsored survey of 44 offices[^46]",
+      "Takes the keying, so the controller reviews drafts and clears exceptions[^13][^7]"
+     ]
+    },
+    {
+     "name": "Changed wire instructions",
+     "cells": [
+      "A forged notice with new bank details can send a call to a fraudster[^29]",
+      "Flags bank details that differ from past calls; a person confirms by phone[^42][^39]"
+     ]
+    }
+   ]
+  },
+  {
    "title": "Who does what on one capital call?",
-   "intro": "Claims in the AI column are each vendor's own description of its product[^5][^4].",
+   "intro": "Claims in the AI column are each vendor's own description of its product.[^5][^4]",
    "headers": [
     "Step",
     "What AI drafts",
@@ -133,7 +183,7 @@
   },
   {
    "title": "What do published tests of AI on accounting work show?",
-   "intro": "Independent benchmarks and vendor cases both say drafts help and unchecked posting doesn't[^24][^25].",
+   "intro": "Independent benchmarks and vendor cases both say drafts help and unchecked posting doesn't.[^24][^25]",
    "headers": [
     "Study",
     "What was tested",
@@ -186,7 +236,7 @@
   },
   {
    "title": "What does family office accounting software with AI cost?",
-   "intro": "Prices are list starting points from each vendor's own page, read 28 Nov 2026[^32][^33].",
+   "intro": "Prices are list starting points from each vendor's own page, read 28 Nov 2026.[^32][^33]",
    "headers": [
     "Product",
     "What it does",
@@ -227,7 +277,7 @@
  "recipes": [
   {
    "name": "1. Small office on a small-business ledger and spreadsheets",
-   "when": "A handful of entities and funds, run by a team of a few people. In KPMG's Australian survey, most family offices have fewer than 5 employees[^37].",
+   "when": "A handful of entities and funds, run by a team of a few people. In KPMG's Australian survey, most family offices have fewer than 5 employees.[^37]",
    "flow": [
     "Operations lead: collect every notice, statement and K-1 into one inbox",
     "AI assistant: extract amounts and draft entries into a review sheet, citing the notice line",
@@ -235,11 +285,11 @@
     "Controller and a second approver: call back on bank details, then release wires",
     "Bookkeeper: post approved entries and file the evidence"
    ],
-   "cost": "No new platform fee; the cost is controller time to build the ownership table and review sheet. Bill pay tools start at $49 per user a month (BILL Essentials, read 28 Nov 2026)[^33]."
+   "cost": "No new platform fee; the cost is controller time to build the ownership table and review sheet. Bill pay tools start at $49 per user a month (BILL Essentials, read 28 Nov 2026).[^33]"
   },
   {
    "name": "2. Many entities and funds: a family office platform with AI intake",
-   "when": "Dozens of entities, trusts and fund positions, where a small-business ledger breaks on intercompany and private-fund activity[^6].",
+   "when": "Dozens of entities, trusts and fund positions, where a small-business ledger breaks on intercompany and private-fund activity.[^6]",
    "flow": [
     "Platform: pull notices, statements and K-1s from portals and email",
     "AI: extract amounts, draft each entry to the right entity and match it to the bank",
@@ -247,12 +297,12 @@
     "Controller and a second approver: release wires after a callback",
     "Outside CPA: review K-1 workpapers and sign the returns"
    ],
-   "cost": "FundCount starts at $35,899 a year for a single family office, plus transformation and hosting fees, read 28 Nov 2026[^32]. Asseta publishes no price and quotes each deal[^34]."
+   "cost": "FundCount starts at $35,899 a year for a single family office, plus transformation and hosting fees, read 28 Nov 2026.[^32] Asseta publishes no price and quotes each deal.[^34]"
   }
  ],
  "ownData": {
   "title": "How many entries does one capital call, distribution and K-1 trigger?",
-  "intro": "On 28 Nov 2026 we modeled three family trusts that own a holding LLC 60/20/20, which is a limited partner in funds. A script posts each event with tax-basis capital accounts and counts what it triggers[^20][^21]. AI can draft every entry and split, and the controller approves each notice, wire, batch and judgement call[^4][^7].",
+  "intro": "On 28 Nov 2026 we modeled three family trusts that own a holding LLC 60/20/20, which is a limited partner in funds. A script posts each event with tax-basis capital accounts and counts what it triggers.[^20][^21] AI can draft every entry and split, and the controller approves each notice, wire, batch and judgement call.[^4][^7]",
   "headers": [
    "Event in our model office",
    "Journal entries, by our math",
@@ -311,101 +361,101 @@
    "name": "IRS Publication 509: partnership return and K-1 dates",
    "url": "https://www.irs.gov/publications/p509",
    "status": "In force",
-   "what": "Each partnership owes partners their K-1s by the 15th day of the third month after year end, or six months later on extension[^19]. A holding LLC can't finish its own K-1s until the funds' K-1s arrive, often in September (Carta, vendor)[^30]."
+   "what": "Each partnership owes partners their K-1s by the 15th day of the third month after year end, or six months later on extension.[^19] A holding LLC can't finish its own K-1s until the funds' K-1s arrive, often in September (Carta, vendor).[^30]"
   },
   {
    "name": "Schedule K-1 Item L: tax-basis capital accounts",
    "url": "https://www.irs.gov/instructions/i1065sk1",
    "status": "In force",
-   "what": "Every partnership reports each partner's capital account on the tax-basis method[^20]. Your capital roll-forward at each tier has to tie to it, so AI drafts must carry the same basis."
+   "what": "Every partnership reports each partner's capital account on the tax-basis method.[^20] Your capital roll-forward at each tier has to tie to it, so AI drafts must carry the same basis."
   },
   {
    "name": "26 CFR 1.704-1(b)(2)(iv): capital account maintenance",
    "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title26-vol10/xhtml/CFR-2025-title26-vol10-sec1-704-1.html",
    "status": "In force",
-   "what": "Allocations hold up only if capital accounts are kept under these rules[^21]. AI can apply your ownership table, but the controller and outside CPA own the allocation terms."
+   "what": "Allocations hold up only if capital accounts are kept under these rules.[^21] AI can apply your ownership table, but the controller and outside CPA own the allocation terms."
   },
   {
    "name": "BBA centralized partnership audit regime",
    "url": "https://www.irs.gov/businesses/partnerships/bba-centralized-partnership-audit-regime",
    "status": "In force for tax years from 2018",
-   "what": "Each partnership names a partnership representative, and audit adjustments are generally assessed at the partnership level[^10]. Keep evidence for every AI-drafted entry an auditor might trace."
+   "what": "Each partnership names a partnership representative, and audit adjustments are generally assessed at the partnership level.[^10] Keep evidence for every AI-drafted entry an auditor might trace."
   },
   {
    "name": "ILPA Capital Call & Distribution Template v2.0",
    "url": "https://ilpa.org/industry-guidance/templates-standards-model-documents/ilpa-templates-hub/ilpa-capital-call-distribution-template",
    "status": "Released 2025; first delivery Q1 2027",
-   "what": "Newer funds will send call and distribution details in one standard format, which makes extraction easier[^22]. Older funds keep their own layouts, so test AI on those too."
+   "what": "Newer funds will send call and distribution details in one standard format, which makes extraction easier.[^22] Older funds keep their own layouts, so test AI on those too."
   },
   {
    "name": "SEC family office rule, 17 CFR 275.202(a)(11)(G)-1",
    "url": "https://www.ecfr.gov/current/title-17/chapter-II/part-275/section-275.202(a)(11)(G)-1",
    "status": "In force",
-   "what": "The Securities and Exchange Commission (SEC) exclusion turns on serving only family clients and being family-owned and controlled[^44]. Using AI in the books doesn't change it."
+   "what": "The Securities and Exchange Commission (SEC) exclusion turns on serving only family clients and being family-owned and controlled.[^44] Using AI in the books doesn't change it."
   },
   {
    "name": "AICPA practice aid on AI in financial reporting",
    "url": "https://www.aicpa-cima.com/news/article/aicpa-releases-guidance-to-help-auditors-address-the-use-of-ai-in-financial-reporting-and-auditing",
    "status": "Issued 2026",
-   "what": "Auditors will start by asking how far your financial reporting relies on AI[^23]. Keep a record of what the AI drafted and who approved it."
+   "what": "Auditors will start by asking how far your financial reporting relies on AI.[^23] Keep a record of what the AI drafted and who approved it."
   }
  ],
  "howToTest": [
   "Record today's numbers on the last closed quarter: notices processed, hours per notice, days from notice to posted entry, and corrections found later.",
-  "Pick one real capital call, one distribution and one K-1, and ask each vendor to post them from notice to ledger entry before you sign[^6].",
+  "Pick one real capital call, one distribution and one K-1, and ask each vendor to post them from notice to ledger entry before you sign.[^6]",
   "Run one closed month in parallel: AI drafts every entry while your team works as usual.",
   "Score each draft against the controller's own entry: right entity, balanced, right accounts and the right split at every tier.",
-  "Replay the drafted entries through the ledger and compare balances. FinBalance found a 26-41 point gap between models' reported and replayed balance sheets[^25].",
+  "Replay the drafted entries through the ledger and compare balances. FinBalance found a 26-41 point gap between models' reported and replayed balance sheets.[^25]",
   "Plant two traps: a call paid from the wrong entity and a notice with changed wire instructions. The target for missed traps is zero.",
-  "Run the same month three times. In APEX-Accounting, no model was right on all 8 runs more than 2.6% of the time[^24].",
-  "Test extraction on your longest K-1 packages and scanned statements; one model fell from 87.9% on short documents to 27.9% on long ones[^41].",
-  "Price the lift: controller hours moved to review, days to post, and K-1 chasing avoided. One New York senior family office accounting role posts at $200,000 to $230,000 a year[^18].",
-  "Decide with the controller and outside CPA whether you rely on the AI output as a control; if you do, test it like one[^7]."
+  "Run the same month three times. In APEX-Accounting, no model was right on all 8 runs more than 2.6% of the time.[^24]",
+  "Test extraction on your longest K-1 packages and scanned statements; one model fell from 87.9% on short documents to 27.9% on long ones.[^41]",
+  "Price the lift: controller hours moved to review, days to post, and K-1 chasing avoided. One New York senior family office accounting role posts at $200,000 to $230,000 a year.[^18]",
+  "Decide with the controller and outside CPA whether you rely on the AI output as a control; if you do, test it like one.[^7]"
  ],
  "watchOuts": [
-  "Changed wire instructions on a call notice: business email compromise drew 24,768 complaints and $3,046,598,558 in reported losses in 2025[^27][^29]. Confirm by phone on a number you look up yourself, never one in the email[^39].",
-  "Long or scanned documents: one model's extraction accuracy fell from 87.9% on short documents to 27.9% on long ones[^41]. Test on your own full K-1 packages and statements, not on face pages.",
-  "One person controls every step: an accountant acting as chief financial officer of a family's partnerships and trusts embezzled at least $45 million[^28]. Split initiating, approving, recording and reconciling[^9].",
-  "Drift over a long run: in Penrose's test (vendor), models stayed within 1% early, then overstated revenue by 5-30%[^26]. Keep reviewing every period, not only during the pilot.",
-  "Entries that don't tie to documents: models often draft plausible entries but fail to bind them to the source[^25]. Make each draft cite its notice line, and keep that record[^7].",
-  "Inputs arrive late: most funds with separate tax providers extend, pushing K-1s into September (Carta, vendor)[^30]. AI can't post a K-1 that hasn't arrived, so track what's missing.",
-  "Rubber-stamp review: a reviewer who accepts a polished AI output without corroboration isn't performing a control[^8]. Define the evidence each approval needs."
+  "Changed wire instructions on a call notice: business email compromise drew 24,768 complaints and $3,046,598,558 in reported losses in 2025.[^27][^29] Confirm by phone on a number you look up yourself, never one in the email.[^39]",
+  "Long or scanned documents: one model's extraction accuracy fell from 87.9% on short documents to 27.9% on long ones.[^41] Test on your own full K-1 packages and statements, not on face pages.",
+  "One person controls every step: an accountant acting as chief financial officer of a family's partnerships and trusts embezzled at least $45 million.[^28] Split initiating, approving, recording and reconciling.[^9]",
+  "Drift over a long run: in Penrose's test (vendor), models stayed within 1% early, then overstated revenue by 5-30%.[^26] Keep reviewing every period, not only during the pilot.",
+  "Entries that don't tie to documents: models often draft plausible entries but fail to bind them to the source.[^25] Make each draft cite its notice line, and keep that record.[^7]",
+  "Inputs arrive late: most funds with separate tax providers extend, pushing K-1s into September (Carta, vendor).[^30] AI can't post a K-1 that hasn't arrived, so track what's missing.",
+  "Rubber-stamp review: a reviewer who accepts a polished AI output without corroboration isn't performing a control.[^8] Define the evidence each approval needs."
  ],
  "faq": [
   {
+   "q": "Why do our K-1s always arrive so late?",
+   "a": "Because your K-1s wait on the funds' K-1s, which partnerships owe by the 15th day of the third month but can extend six months.[^19] Most funds with separate tax providers extend into September (Carta, vendor).[^30]"
+  },
+  {
    "q": "Can AI post capital calls to the right entity?",
-   "a": "Yes, as a draft: tools can draft a balanced entry, confirm the entity and hold it for approval (Asseta, vendor)[^4]. Models often fail to tie entries to documents, so your controller still approves each one[^25]."
+   "a": "Yes, as a draft: tools can draft a balanced entry, confirm the entity and hold it for approval (Asseta, vendor).[^4] Models often fail to tie entries to documents, so your controller still approves each one.[^25]"
   },
   {
    "q": "Do we need to replace our ledger to use AI?",
-   "a": "No, usually not, because the gap is the manual work between systems, not the ledger[^3]. Replace it only if it can't hold your entities and intercompany activity, where small-business ledgers break[^6]."
+   "a": "No, usually not, because the gap is the manual work between systems, not the ledger.[^3] Replace it only if it can't hold your entities and intercompany activity, where small-business ledgers break.[^6]"
   },
   {
    "q": "Will AI replace our controller?",
-   "a": "No, because the controller's approvals are the control that makes AI drafts safe to post[^7]. Of US firms using AI, 66% use it only to augment tasks[^11]."
-  },
-  {
-   "q": "Why do our K-1s always arrive so late?",
-   "a": "Because your K-1s wait on the funds' K-1s, which partnerships owe by the 15th day of the third month but can extend six months[^19]. Most funds with separate tax providers extend into September (Carta, vendor)[^30]."
+   "a": "No, because the controller's approvals are the control that makes AI drafts safe to post.[^7] Of US firms using AI, 66% use it only to augment tasks.[^11]"
   },
   {
    "q": "Can AI read our K-1s and capital account statements into the books?",
-   "a": "Yes, with a person checking: vendors pair extraction with human review and validation checks (Arch, vendor)[^42]. Accuracy drops on long documents, so test on your own packages[^41]."
+   "a": "Yes, with a person checking: vendors pair extraction with human review and validation checks (Arch, vendor).[^42] Accuracy drops on long documents, so test on your own packages.[^41]"
   },
   {
    "q": "What does family office accounting software cost?",
-   "a": "FundCount starts at $35,899 a year for a single family office, plus transformation and hosting fees, read 28 Nov 2026[^32]. Asseta publishes no price and quotes each deal[^34]."
+   "a": "FundCount starts at $35,899 a year for a single family office, plus transformation and hosting fees, read 28 Nov 2026.[^32] Asseta publishes no price and quotes each deal.[^34]"
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy the ledger and the document intake: in Menlo's survey, 76% of enterprise AI use cases are bought rather than built[^35]. In MIT NANDA's study of organizations, external partnerships reached deployment about 67% of the time vs about 33% for internal builds[^36].",
-  "build": "Build the rules around it yourself: the ownership table, approval thresholds and wire checks are your own[^7]. Simple found builds work for narrow tools and break on data plumbing[^3]. Citi found some offices build only when the efficiency gain is large[^2]."
+  "buy": "Buy the ledger and the document intake: in Menlo's survey, 76% of enterprise AI use cases are bought rather than built.[^35] In MIT NANDA's study of organizations, external partnerships reached deployment about 67% of the time vs about 33% for internal builds.[^36]",
+  "build": "Build the rules around it yourself: the ownership table, approval thresholds and wire checks are your own.[^7] Simple found builds work for narrow tools and break on data plumbing.[^3] Citi found some offices build only when the efficiency gain is large.[^2]"
  },
  "pickElse": [
-  "Bills and approvals are the pain: a bill pay tool with AI coding may be enough, such as BILL on its Team plan and above[^33].",
-  "Only collecting K-1s and statements hurts, and posting is fine: a collection service may be enough. Third Lake cut document processing time by 85% (Canoe, vendor)[^14].",
-  "Your ledger can't hold your entities: fix the ledger first, because small-business ledgers break on intercompany and private-fund activity[^6].",
-  "Consolidated reporting across custodians is the real job: a reporting platform that feeds your ledger fits better than posting automation[^6][^3]."
+  "Bills and approvals are the pain: a bill pay tool with AI coding may be enough, such as BILL on its Team plan and above.[^33]",
+  "Only collecting K-1s and statements hurts, and posting is fine: a collection service may be enough. Third Lake cut document processing time by 85% (Canoe, vendor).[^14]",
+  "Your ledger can't hold your entities: fix the ledger first, because small-business ledgers break on intercompany and private-fund activity.[^6]",
+  "Consolidated reporting across custodians is the real job: a reporting platform that feeds your ledger fits better than posting automation.[^6][^3]"
  ],
  "resources": [
   {
@@ -430,6 +480,11 @@
   }
  ],
  "stats": [
+  {
+   "num": "20%",
+   "label": "of working hours go to manual tasks at family offices, up to 40% in larger ones[^46]",
+   "source": "Family Wealth Report and FundCount, survey of 44 family offices (vendor-sponsored)"
+  },
   {
    "num": "21%",
    "label": "of family offices use AI for automated reconciliations[^1]",
@@ -676,6 +731,16 @@
    "name": "eCFR, 17 CFR 275.202(a)(11)(G)-1, Family offices",
    "url": "https://www.ecfr.gov/current/title-17/chapter-II/part-275/section-275.202(a)(11)(G)-1",
    "what": "A family office is not an investment adviser under the Act if it has no clients other than family clients, is wholly owned and controlled by family, and does not hold itself out to the public as an investment adviser."
+  },
+  {
+   "name": "Arch, The Hidden Costs of Alts: Your Inbox Is About to Grow 5x (vendor platform data)",
+   "url": "https://arch.com/insights/the-hidden-costs-of-alts-your-inbox-is-about-to-grow-5x",
+   "what": "Vendor platform data, Sep 2025 to Aug 2026, covering a sample of 12,800 fund managers: the average private markets investment sends 13 documents a year; the top decile sends 25 or more. Documents arrive in waves after each quarter end, and \"over half of all K-1s arrive in just three months\". Read 28 Nov 2026."
+  },
+  {
+   "name": "FundCount, Study Results: Manual Processes Top List of Family Office Challenges, 8 Aug 2024 (Family Wealth Report study, FundCount-sponsored)",
+   "url": "https://fundcount.com/study-results-manual-processes-top-list-of-family-office-challenges",
+   "what": "Survey of 44 single and multi-family offices plus 20 interviews, vendor-sponsored: family offices spend an average of 20% of working hours a week on manual tasks, up to 40% in larger offices. 80% of offices surveyed have fewer than 20 staff. Read 28 Nov 2026."
   }
  ],
  "related": [
@@ -686,19 +751,20 @@
   "multi-entity-close"
  ],
  "answers": {
-  "human-role": "Your controller stays in charge: AI drafts entries, splits and wire requests, and the controller approves every posting, allocation and wire before books or money move[^4][^7][^8].",
-  "team-after": "Your team moves from keying notices and K-1s to reviewing AI drafts, clearing flagged exceptions and checking wires, while the controller keeps every sign-off[^13][^7].",
-  "example": "A capital call notice goes in, and six draft entries, a three-way capital split and four wire requests come out, all held for the controller's approval[^4][^5].",
-  "table-1": "AI reads the documents and drafts each step from notice to bank match, while your controller approves the entry, split and wires and the outside CPA signs K-1s[^5][^4][^16].",
-  "table-2": "Published tests say AI drafts help but can't post alone: the best model met 56.4% of task criteria, and at most 46% of model balance sheets were exact[^24][^25].",
-  "table-3": "FundCount starts at $35,899 a year for a single family office, BILL at $49 per user a month, and Asseta publishes no price and quotes each deal[^32][^33][^34].",
-  "recipes": "A small office keeps its ledger and adds reviewed AI drafting, while an office with many entities and funds needs a family office platform with AI intake[^37][^6].",
-  "own-data": "In our three-tier model office, not real books, one call, one distribution and one K-1 trigger 17 journal entries, 21 allocation lines and 9 intercompany pairs, by our math[^20][^21].",
-  "rules": "Partnership tax rules set the clock and the test: K-1s by the 15th day of the third month, tax-basis capital in Item L, and capital account maintenance[^19][^20][^21].",
-  "benchmark": "Run one closed month in parallel, score each AI draft against the controller's entry, replay the balances, and plant a wrong-entity call and a changed-wire trap[^6][^25].",
-  "what-goes-wrong": "AI for family office accounting goes wrong when changed wire instructions slip through, long documents get misread, one person controls every step, or review turns into a rubber stamp[^27][^41][^28][^8].",
-  "buy-or-build": "Buy the ledger and the document intake, and build the ownership table, review rules and wire checks around them yourself[^35][^3].",
-  "something-else": "Pick something else when bills are the pain, K-1 collection is the bottleneck, your ledger can't hold your entities, or consolidated reporting is the real job[^33][^14][^6]."
+  "human-role": "Your controller stays in charge: AI drafts entries, splits and wire requests, and the controller approves every posting, allocation and wire before books or money move.[^4][^7][^8]",
+  "team-after": "Your team moves from keying notices and K-1s to reviewing AI drafts, clearing flagged exceptions and checking wires, while the controller keeps every sign-off.[^13][^7]",
+  "example": "A capital call notice goes in, and six draft entries, a three-way capital split and four wire requests come out, all held for the controller's approval.[^4][^5]",
+  "table-2": "AI reads the documents and drafts each step from notice to bank match, while your controller approves the entry, split and wires and the outside CPA signs K-1s.[^5][^4][^16]",
+  "table-3": "Published tests say AI drafts help but can't post alone: the best model met 56.4% of task criteria, and at most 46% of model balance sheets were exact.[^24][^25]",
+  "table-4": "FundCount starts at $35,899 a year for a single family office, BILL at $49 per user a month, and Asseta publishes no price and quotes each deal.[^32][^33][^34]",
+  "recipes": "A small office keeps its ledger and adds reviewed AI drafting, while an office with many entities and funds needs a family office platform with AI intake.[^37][^6]",
+  "own-data": "In our three-tier model office, not real books, one call, one distribution and one K-1 trigger 17 journal entries, 21 allocation lines and 9 intercompany pairs, by our math.[^20][^21]",
+  "rules": "Partnership tax rules set the clock and the test: K-1s by the 15th day of the third month, tax-basis capital in Item L, and capital account maintenance.[^19][^20][^21]",
+  "benchmark": "Run one closed month in parallel, score each AI draft against the controller's entry, replay the balances, and plant a wrong-entity call and a changed-wire trap.[^6][^25]",
+  "what-goes-wrong": "AI for family office accounting goes wrong when changed wire instructions slip through, long documents get misread, one person controls every step, or review turns into a rubber stamp.[^27][^41][^28][^8]",
+  "buy-or-build": "Buy the ledger and the document intake, and build the ownership table, review rules and wire checks around them yourself.[^35][^3]",
+  "something-else": "Pick something else when bills are the pain, K-1 collection is the bottleneck, your ledger can't hold your entities, or consolidated reporting is the real job.[^33][^14][^6]",
+  "table-1": "The books fall behind because K-1s arrive late, documents come in waves, each event touches many entities, staff key by hand, and wire changes need checking.[^30][^45][^46]"
  },
  "offer": {
   "heading": "Are your partnership books a quarter behind? Get a free diagnostic",
@@ -735,50 +801,36 @@
  "updated": "2026-11-28",
  "figureCheck": {
   "date": "2026-11-28",
-  "checked": 49,
+  "checked": 51,
   "notFound": [],
   "byHand": [
    {
-    "where": "verdict[2]",
+    "where": "verdict[3]",
     "figure": "56.4%",
     "url": "https://arxiv.org/abs/2607.27189",
     "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
     "quote": "Across nine frontier models, Claude-Fable-5 (Max) leads with 56.4% Mean Criteria@3, ahead of Muse-Spark-1.1 (xHigh) at 52.6%. No model scores more than 2.6% Pass^8 (GPT-5.6-Sol (Max+Pro))"
    },
    {
-    "where": "verdict[2]",
+    "where": "verdict[3]",
     "figure": "46%",
     "url": "https://arxiv.org/abs/2607.27189",
     "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
     "quote": "reach at most 46% exact final-balance-sheet accuracy."
    },
    {
-    "where": "verdict[3]",
+    "where": "verdict[4]",
     "figure": "84%",
     "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
     "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
     "quote": "two-factor authentication fell from 92 to 83 percent and dual payment authorization from 84 to 73 percent."
    },
    {
-    "where": "verdict[3]",
+    "where": "verdict[4]",
     "figure": "73%",
     "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
     "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
-    "quote": "two-factor authentication fell from 92 to 83 percent and dual payment authorization from 84 to 73 percent."
-   },
-   {
-    "where": "verdict[4]",
-    "figure": "21%",
-    "url": "https://www.privatebank.citibank.com/doc/family-office/2026-global-family-office-report.pdf",
-    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
-    "quote": "Automated reconciliations 21% 15% 16% 41% 22%"
-   },
-   {
-    "where": "verdict[4]",
-    "figure": "57%",
-    "url": "https://www.privatebank.citibank.com/doc/family-office/2026-global-family-office-report.pdf",
-    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
-    "quote": "57% of family offices cite lack of internal expertise as the biggest barrier to AI adoption."
+    "quote": "Seventy-three percent still believe investment reporting is too manual, making it a top concern for three years running. (Seventy-three percent = 73%)"
    },
    {
     "where": "teamAfter[0]",
@@ -802,84 +854,98 @@
     "quote": "Most users (66%) rely on AI solely to augment tasks, while AI-related employment decreases are rare, occurring in only 2% of firms."
    },
    {
-    "where": "tables[1].rows[0].cells[1]",
+    "where": "tables[0].rows[3].cells[0]",
+    "figure": "20%",
+    "url": "https://fundcount.com/study-results-manual-processes-top-list-of-family-office-challenges",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "family offices spend an average of 20 percent of working hours per week on manual tasks."
+   },
+   {
+    "where": "tables[0].rows[3].cells[0]",
+    "figure": "40%",
+    "url": "https://fundcount.com/study-results-manual-processes-top-list-of-family-office-challenges",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "The number of hours can be even greater for larger offices – up to 40 percent – due to more complex investments, allocations, and entities."
+   },
+   {
+    "where": "tables[2].rows[0].cells[1]",
     "figure": "56.4%",
     "url": "https://arxiv.org/abs/2607.27189",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Across nine frontier models, Claude-Fable-5 (Max) leads with 56.4% Mean Criteria@3, ahead of Muse-Spark-1.1 (xHigh) at 52.6%. No model scores more than 2.6% Pass^8 (GPT-5.6-Sol (Max+Pro))"
    },
    {
-    "where": "tables[1].rows[0].cells[1]",
+    "where": "tables[2].rows[0].cells[1]",
     "figure": "2.6%",
     "url": "https://arxiv.org/abs/2607.27189",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Across nine frontier models, Claude-Fable-5 (Max) leads with 56.4% Mean Criteria@3, ahead of Muse-Spark-1.1 (xHigh) at 52.6%. No model scores more than 2.6% Pass^8 (GPT-5.6-Sol (Max+Pro))"
    },
    {
-    "where": "tables[1].rows[1].cells[1]",
+    "where": "tables[2].rows[1].cells[1]",
     "figure": "46%",
     "url": "https://arxiv.org/abs/2606.15949",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "reach at most 46% exact final-balance-sheet accuracy."
    },
    {
-    "where": "tables[1].rows[2].cells[1]",
+    "where": "tables[2].rows[2].cells[1]",
     "figure": "87.9%",
     "url": "https://arxiv.org/html/2607.29677v2",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "For example, Gemini 3.5 Flash accuracy dropped significantly from 87.9% on short documents to 27.9% on long ones"
    },
    {
-    "where": "tables[1].rows[2].cells[1]",
+    "where": "tables[2].rows[2].cells[1]",
     "figure": "27.9%",
     "url": "https://arxiv.org/html/2607.29677v2",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "For example, Gemini 3.5 Flash accuracy dropped significantly from 87.9% on short documents to 27.9% on long ones"
    },
    {
-    "where": "tables[1].rows[3].cells[1]",
+    "where": "tables[2].rows[3].cells[1]",
     "figure": "1%",
     "url": "https://accounting.penrose.com/",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "balances typically within 1% of those calculated by human CPAs"
    },
    {
-    "where": "tables[1].rows[3].cells[1]",
+    "where": "tables[2].rows[3].cells[1]",
     "figure": "5%",
     "url": "https://accounting.penrose.com/",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Subscription revenues (all revenue for the business) was consistently overstated by 5-30%, even for the best model (Sonnet)."
    },
    {
-    "where": "tables[1].rows[3].cells[1]",
+    "where": "tables[2].rows[3].cells[1]",
     "figure": "30%",
     "url": "https://accounting.penrose.com/",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Subscription revenues (all revenue for the business) was consistently overstated by 5-30%, even for the best model (Sonnet)."
    },
    {
-    "where": "tables[1].rows[4].cells[1]",
+    "where": "tables[2].rows[4].cells[1]",
     "figure": "97%",
     "url": "https://eton-solutions.com/case-studies/transforming-family-office-operations-shade-tree-advisors-ai-journey",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Accuracy exceeded 97%, with the remaining 3% flagged for manual review."
    },
    {
-    "where": "tables[1].rows[4].cells[1]",
+    "where": "tables[2].rows[4].cells[1]",
     "figure": "3%",
     "url": "https://eton-solutions.com/case-studies/transforming-family-office-operations-shade-tree-advisors-ai-journey",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Accuracy exceeded 97%, with the remaining 3% flagged for manual review."
    },
    {
-    "where": "tables[2].rows[0].cells[1]",
+    "where": "tables[3].rows[0].cells[1]",
     "figure": "$35,899",
     "url": "https://fundcount.com/pricing",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Single Family Office / Asset Owner Starting from $35,899 / year + digital transformation & hosting fees"
    },
    {
-    "where": "tables[2].rows[2].cells[1]",
+    "where": "tables[3].rows[2].cells[1]",
     "figure": "$49",
     "url": "https://www.bill.com/product/pricing",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
@@ -984,11 +1050,11 @@
     "quote": "Subscription revenues (all revenue for the business) was consistently overstated by 5-30%, even for the best model (Sonnet)."
    },
    {
-    "where": "faq[2].a",
+    "where": "faq[3].a",
     "figure": "66%",
     "url": "https://www.census.gov/library/working-papers/2026/adrm/CES-WP-26-25.html",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
-    "quote": "Most users (66%) rely on AI solely to augment tasks, while AI-related employment decreases are rare, occurring in only 2% of firms."
+    "quote": "Most users (66%) rely on AI solely to augment tasks,"
    },
    {
     "where": "faq[5].a",
@@ -1026,28 +1092,28 @@
     "quote": "Advisor 85% plus reduction in document processing time"
    },
    {
-    "where": "answers.table-2",
+    "where": "answers.table-3",
     "figure": "56.4%",
     "url": "https://arxiv.org/abs/2607.27189",
     "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
     "quote": "Across nine frontier models, Claude-Fable-5 (Max) leads with 56.4% Mean Criteria@3, ahead of Muse-Spark-1.1 (xHigh) at 52.6%. No model scores more than 2.6% Pass^8 (GPT-5.6-Sol (Max+Pro))"
    },
    {
-    "where": "answers.table-2",
+    "where": "answers.table-3",
     "figure": "46%",
     "url": "https://arxiv.org/abs/2607.27189",
     "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
     "quote": "reach at most 46% exact final-balance-sheet accuracy."
    },
    {
-    "where": "answers.table-3",
+    "where": "answers.table-4",
     "figure": "$35,899",
     "url": "https://fundcount.com/pricing",
     "why": "couldn't read the source (Request was cancelled., Request was cancelled., Request was cancelled.): open it and copy its sentence",
     "quote": "Single Family Office / Asset Owner Starting from $35,899 / year + digital transformation & hosting fees"
    },
    {
-    "where": "answers.table-3",
+    "where": "answers.table-4",
     "figure": "$49",
     "url": "https://fundcount.com/pricing",
     "why": "couldn't read the source (Request was cancelled., Request was cancelled., Request was cancelled.): open it and copy its sentence",
@@ -1055,27 +1121,41 @@
    },
    {
     "where": "stats[0]",
+    "figure": "20%",
+    "url": "https://fundcount.com/study-results-manual-processes-top-list-of-family-office-challenges",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "family offices spend an average of 20 percent of working hours per week on manual tasks."
+   },
+   {
+    "where": "stats[0]",
+    "figure": "40%",
+    "url": "https://fundcount.com/study-results-manual-processes-top-list-of-family-office-challenges",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "The number of hours can be even greater for larger offices – up to 40 percent – due to more complex investments, allocations, and entities."
+   },
+   {
+    "where": "stats[1]",
     "figure": "21%",
     "url": "https://www.privatebank.citibank.com/doc/family-office/2026-global-family-office-report.pdf",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Automated reconciliations 21% 15% 16% 41% 22%"
    },
    {
-    "where": "stats[1]",
+    "where": "stats[2]",
     "figure": "57%",
     "url": "https://www.citigroup.com/rcs/citigpa/storage/public/ai_in_the_family_office.pdf",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "57% of family offices cite lack of internal expertise as the biggest barrier to AI adoption."
    },
    {
-    "where": "stats[2]",
+    "where": "stats[3]",
     "figure": "23%",
     "url": "https://andsimple.co/reports/family-office-software",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Task: AI completes a defined job and a person checks it | 23% | 47%"
    },
    {
-    "where": "stats[3]",
+    "where": "stats[4]",
     "figure": "56.4%",
     "url": "https://arxiv.org/abs/2607.27189",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",

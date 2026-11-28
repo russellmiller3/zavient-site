@@ -1,6 +1,6 @@
 {
- "title": "Family office software: which stack fits an office of 5 to 20?",
- "description": "Family office software compared for small offices: reporting, accounting, documents, bill pay and CRM, with prices and each vendor's AI data terms.",
+ "title": "Family office software: which tool fixes which problem?",
+ "description": "Family office software mapped to the problem each tool fixes: the manual quarterly report, fund PDFs, lagging books, bills and manager diligence.",
  "type": "compare",
  "templateVersion": 1,
  "topic": "family office software",
@@ -8,15 +8,19 @@
  "industry": "family offices",
  "index": true,
  "verdict": [
-  "Pick a reporting platform first if reporting hurts: 73% of North American family offices surveyed call theirs too manual[^1][^2].",
-  "Add partnership accounting, such as FundCount or Eton, once entities multiply, because QuickBooks Online Advanced covers one company per subscription[^57][^4].",
-  "Ask whether each vendor's AI trains on client data: by our count, 10 of 16 say no, Canoe says yes[^5][^6].",
-  "Wire the stack before buying more: 54% of single family offices keep reporting wholly in-house, and home-built plumbing breaks[^7][^2].",
-  "Budget two to four months to go live; Asora adds an implementation fee of 25% of the yearly subscription[^2][^8]."
+  "Match each tool to a problem: reporting platforms fix the quarterly report, which 73% of offices surveyed call too manual.[^1][^2]",
+  "Document services such as Arch read the fund PDF flood, which lands in waves after each quarter end.[^31][^59]",
+  "Lagging books need a partnership ledger such as FundCount or Eton; QuickBooks Online covers one company per subscription.[^57][^4]",
+  "Questionnaire platforms such as DiligenceVault line up fund managers' answers with sources; your investment committee still decides.[^60][^62]",
+  "Ask whether each vendor's AI trains on client data: by our count, 10 of 16 say no, Canoe says yes.[^5][^6]"
  ],
  "onPage": [
   {
    "to": "table-1",
+   "text": "Each office problem mapped to the kind of tool that fixes it"
+  },
+  {
+   "to": "table-2",
    "text": "Reporting and accounting platforms, with prices read 28 Nov 2026"
   },
   {
@@ -34,18 +38,66 @@
   {
    "to": "what-goes-wrong",
    "text": "Mistakes offices make when they choose, and the fix for each"
-  },
-  {
-   "to": "faq",
-   "text": "Straight answers on cost, timing, Addepar alternatives and audit reports"
   }
  ],
  "headings": {},
- "summary": "A reporting platform rolls up investments across custodians and funds, while a ledger keeps each entity's books[^9][^4]. Document, bill pay and customer relationship management (CRM) tools sit around both; the plumbing between them is what breaks[^2][^10]. By our count, 15 of 16 products name AI features, with differing client-data terms[^5][^11].",
+ "summary": "A reporting platform fixes the quarterly report by rolling up custodians and funds, while a partnership ledger fixes lagging books by keeping each entity's accounts.[^9][^4] Document services read fund PDFs and questionnaire platforms line up managers' answers; the plumbing between tools is what breaks.[^31][^60][^2]",
  "tables": [
   {
+   "title": "Which kind of tool fixes which problem?",
+   "intro": "Product claims in the third column are each vendor's own, read 28 Nov 2026.[^15][^60] Where two problems share a tool, fix the one that costs the most hours first.[^1]",
+   "headers": [
+    "Problem",
+    "Kind of tool",
+    "Products named (vendor claims)",
+    "Who still signs off"
+   ],
+   "rows": [
+    {
+     "name": "The quarterly report is too manual",
+     "cells": [
+      "Reporting and aggregation platform",
+      "Addepar, Masttro, Asora, Aleta, Kubera[^15][^11][^12][^18][^22]",
+      "Controller clears breaks, and the COO signs the family's report[^2]"
+     ]
+    },
+    {
+     "name": "Fund PDFs flood in every quarter",
+     "cells": [
+      "Alternatives document service",
+      "Arch, Canoe Intelligence[^31][^5]",
+      "An analyst checks each extracted figure against its page[^31]"
+     ]
+    },
+    {
+     "name": "The books lag the calls and K-1s",
+     "cells": [
+      "Partnership accounting ledger",
+      "FundCount, Eton AtlasFive, Asset Vantage, Asseta[^4][^25][^26][^27]",
+      "The controller checks extracted figures before they post[^31][^24]"
+     ]
+    },
+    {
+     "name": "Bills and wires pile up",
+     "cells": [
+      "Bill pay",
+      "BILL[^10][^29]",
+      "A second person approves every payment and wire change[^41]"
+     ]
+    },
+    {
+     "name": "Comparing fund managers takes too long",
+     "cells": [
+      "Due diligence questionnaire (DDQ) platform",
+      "DiligenceVault, CENTRL[^60][^61]",
+      "The investment committee decides; yes/no answers give only a top-level view[^62][^63]"
+     ]
+    }
+   ]
+  },
+  {
    "title": "What does each reporting and accounting platform cost?",
-   "intro": "Prices are as each vendor's own page showed them on 28 Nov 2026, and every claim in the last column is the vendor's own[^12][^4]. A family office that meets the Securities and Exchange Commission (SEC) rule is not an investment adviser, so no regulator vets these vendors for you[^13][^14].",
+   "intro": "Prices are as each vendor's own page showed them on 28 Nov 2026, and every claim in the last column is the vendor's own.[^12][^4] A family office that meets the Securities and Exchange Commission (SEC) rule is not an investment adviser, so no regulator vets these vendors for you.[^13][^14]",
    "headers": [
     "Product",
     "What it does",
@@ -156,7 +208,7 @@
   },
   {
    "title": "Which tools handle documents, bill pay and relationships?",
-   "intro": "Prices and claims are each vendor's own, read 28 Nov 2026[^29][^30].",
+   "intro": "Prices and claims are each vendor's own, read 28 Nov 2026.[^29][^30]",
    "headers": [
     "Product",
     "What it does",
@@ -222,7 +274,7 @@
   },
   {
    "title": "What do family offices and vendors report?",
-   "intro": "Each figure names the group that answered[^1][^7].",
+   "intro": "Each figure names the group that answered.[^1][^7]",
    "headers": [
     "Finding",
     "Figure and group",
@@ -291,7 +343,7 @@
  "recipes": [
   {
    "name": "1. Lean office, one or two entities, mostly custodied assets",
-   "when": "Pick a general ledger plus light reporting while entities are few, since QuickBooks covers one company per subscription[^57][^3]. Kubera or Asora adds the net-worth view[^22][^12].",
+   "when": "Pick a general ledger plus light reporting while entities are few, since QuickBooks covers one company per subscription.[^57][^3] Kubera or Asora adds the net-worth view.[^22][^12]",
    "flow": [
     "Controller: keep the books in QuickBooks Online Advanced",
     "Controller: tie ledger cash to custodian statements before each report goes out",
@@ -301,11 +353,11 @@
     "COO: give staff one approved business AI plan, not personal accounts",
     "Principal: review the monthly net-worth report"
    ],
-   "cost": "QuickBooks Online Advanced is $340 a month, BILL Team $65 per user per month and Kubera Black $2,500 a year[^3][^29][^22]. With two BILL users that is about $8,140 a year by our math; Asora instead of Kubera starts at $900 a month[^12][^8]."
+   "cost": "QuickBooks Online Advanced is $340 a month, BILL Team $65 per user per month and Kubera Black $2,500 a year.[^3][^29][^22] With two BILL users that is about $8,140 a year by our math; Asora instead of Kubera starts at $900 a month.[^12][^8]"
   },
   {
    "name": "2. Office of 10 to 20 staff, many entities and private funds",
-   "when": "Pick partnership accounting plus a reporting platform once partnerships, trusts and funds multiply[^4][^9]. A UBS survey puts the average family office at 12 staff, and Deloitte's at 15[^40][^38].",
+   "when": "Pick partnership accounting plus a reporting platform once partnerships, trusts and funds multiply.[^4][^9] A UBS survey puts the average family office at 12 staff, and Deloitte's at 15.[^40][^38]",
    "flow": [
     "Ops lead: time this quarter's report from close to the principal's desk, as the before number",
     "Controller: run partnership accounting in FundCount or Eton",
@@ -315,11 +367,11 @@
     "Controller: check every extracted amount and wire detail before it posts",
     "COO: approve which tools may use AI, and on what data terms"
    ],
-   "cost": "FundCount starts at $35,899 a year for a single family office, Aleta at $1,000 a month, while Eton, Canoe and Arch publish no price[^4][^18][^25][^5]. FundCount plus Aleta comes to about $47,899 a year by our math, before fees, document tools and onboarding[^4][^18]."
+   "cost": "FundCount starts at $35,899 a year for a single family office, Aleta at $1,000 a month, while Eton, Canoe and Arch publish no price.[^4][^18][^25][^5] FundCount plus Aleta comes to about $47,899 a year by our math, before fees, document tools and onboarding.[^4][^18]"
   },
   {
    "name": "3. Adviser-led office with complex holdings",
-   "when": "Pick an institutional reporting platform and outsource the books when the team is thin[^1][^9]. Expertise is the reason to outsource for 87% of North American family offices surveyed[^1].",
+   "when": "Pick an institutional reporting platform and outsource the books when the team is thin.[^1][^9] Expertise is the reason to outsource for 87% of North American family offices surveyed.[^1]",
    "flow": [
     "COO: have an adviser run the selection, since Simple found that is when selection is structured",
     "Ops lead: implement Addepar or Masttro for reporting",
@@ -327,18 +379,18 @@
     "Ops lead: connect an approved AI assistant through a read-only MCP link, such as Masttro's",
     "Principal: sign off the quarterly report"
    ],
-   "cost": "Addepar publishes no price and quotes each deal, and Masttro quotes a flat annual fee[^15][^11]. For scale, published reporting prices start at $900 a month for Asora and $1,000 for Aleta[^8][^18]."
+   "cost": "Addepar publishes no price and quotes each deal, and Masttro quotes a flat annual fee.[^15][^11] For scale, published reporting prices start at $900 a month for Asora and $1,000 for Aleta.[^8][^18]"
   }
  ],
  "humanRole": [
-  "A second person approves every payment and every change to payee or wire details. Business email compromise drew 24,768 complaints in 2025, and only investment fraud cost more[^41][^10].",
-  "The controller checks extracted capital call and K-1 figures before they post. Arch builds a person into the loop, with 200+ validation checks[^31][^24].",
-  "The COO sets an AI policy first, approves each tool and keeps sensitive data apart from AI, as offices with formal controls do[^2]. ISO/IEC 42001 is a standard to ask vendors about[^42][^25].",
-  "The ops lead decides whether an AI assistant may only read or may also write. Masttro's MCP link is read-only, while Asora's proposes changes a user confirms[^43][^44]."
+  "A second person approves every payment and every change to payee or wire details. Business email compromise drew 24,768 complaints in 2025, and only investment fraud cost more.[^41][^10]",
+  "The controller checks extracted capital call and K-1 figures before they post. Arch builds a person into the loop, with 200+ validation checks.[^31][^24]",
+  "The COO sets an AI policy first, approves each tool and keeps sensitive data apart from AI, as offices with formal controls do.[^2] ISO/IEC 42001 is a standard to ask vendors about.[^42][^25]",
+  "The ops lead decides whether an AI assistant may only read or may also write. Masttro's MCP link is read-only, while Asora's proposes changes a user confirms.[^43][^44]"
  ],
  "ownData": {
   "title": "What do family office platforms do with your data when their AI reads it?",
-  "intro": "By our count, 10 of 16 products say client data never trains their models, Canoe says it fine-tunes its own, and 5 say nothing[^5][^6]. By our count, 6 offer an MCP link for outside assistants, and 5 name an outside model provider[^43][^23][^45]. On 28 Nov 2026 we read each vendor's AI, trust, privacy and pricing pages and logged what it states[^11][^10].",
+  "intro": "By our count, 10 of 16 products say client data never trains their models, Canoe says it fine-tunes its own, and 5 say nothing.[^5][^6] By our count, 6 offer an MCP link for outside assistants, and 5 name an outside model provider.[^43][^23][^45] On 28 Nov 2026 we read each vendor's AI, trust, privacy and pricing pages and logged what it states.[^11][^10]",
   "headers": [
    "Product (category)",
    "Does client data train models? (vendor's words)",
@@ -407,55 +459,55 @@
     "Writes back[^35]"
    ]
   ],
-  "note": "Zavient check of 16 products' public pages, read 28 Nov 2026; the table shows 10, and the counts cover all 16[^23][^32]. Limits: vendor statements only, not contracts, data processing agreements or audit reports, and 'no statement found' does not mean a vendor trains on data[^48]. Box and Salesforce connectors were not checked, and Asset Vantage's AI is not live yet[^26][^33]."
+  "note": "Zavient check of 16 products' public pages, read 28 Nov 2026; the table shows 10, and the counts cover all 16.[^23][^32] Limits: vendor statements only, not contracts, data processing agreements or audit reports, and 'no statement found' does not mean a vendor trains on data.[^48] Box and Salesforce connectors were not checked, and Asset Vantage's AI is not live yet.[^26][^33]"
  },
  "example": {
   "input": "Illustrative: a capital call notice arrives as a PDF by email. The controller retypes the fund, amount, due date and wire details into the ledger. Then the controller emails the principal for approval.",
-  "output": "After: an extraction tool such as Canoe or Arch reads the fields, and the controller checks them against the fund portal and the last notice[^31][^5]. The ledger posts the entry, and bill pay queues the wire for a second approver[^24][^10]. Any change to wire details stops for a call-back to a known number[^41]."
+  "output": "After: an extraction tool such as Canoe or Arch reads the fields, and the controller checks them against the fund portal and the last notice.[^31][^5] The ledger posts the entry, and bill pay queues the wire for a second approver.[^24][^10] Any change to wire details stops for a call-back to a known number.[^41]"
  },
  "watchOuts": [
-  "Building your own system of record: home-built views tend to work, but feeds, reconciliation and history break and hang on one person[^2]. Fix: buy the plumbing and build the view[^9].",
-  "Reading the FAQ, not the contract: Masttro's FAQ rules out AI training, but its privacy policy says models train on anonymized data[^11][^48]. Fix: get data terms in writing, since Canoe's FAQ says client data fine-tunes its models[^5].",
-  "Underinvesting, then patching: of 354 single family offices surveyed, 34% underinvested and 38% only moderately invested in operations technology[^38]. Fix: budget for upgrades, which 51% of North American family offices surveyed call the top long-term risk[^1].",
-  "Skipping implementation cost: vendors typically quote two to four months, and Asora's implementation fee is 25% of the yearly subscription[^2][^8]. Fix: price year one, not the subscription alone.",
-  "Underplanning capacity: capacity and implementation came up for 37% of offices and 28% of vendors in Simple's study[^2]. Fix: name an internal owner with time set aside before kickoff.",
-  "Personal AI accounts at work: 50% of North American family offices surveyed call AI essential, yet split 43% vs 35% on paying for enterprise-grade AI[^1]. Fix: approve a business plan that doesn't train on your data by default[^52]."
+  "Building your own system of record: home-built views tend to work, but feeds, reconciliation and history break and hang on one person.[^2] Fix: buy the plumbing and build the view.[^9]",
+  "Reading the FAQ, not the contract: Masttro's FAQ rules out AI training, but its privacy policy says models train on anonymized data.[^11][^48] Fix: get data terms in writing, since Canoe's FAQ says client data fine-tunes its models.[^5]",
+  "Underinvesting, then patching: of 354 single family offices surveyed, 34% underinvested and 38% only moderately invested in operations technology.[^38] Fix: budget for upgrades, which 51% of North American family offices surveyed call the top long-term risk.[^1]",
+  "Skipping implementation cost: vendors typically quote two to four months, and Asora's implementation fee is 25% of the yearly subscription.[^2][^8] Fix: price year one, not the subscription alone.",
+  "Underplanning capacity: capacity and implementation came up for 37% of offices and 28% of vendors in Simple's study.[^2] Fix: name an internal owner with time set aside before kickoff.",
+  "Personal AI accounts at work: 50% of North American family offices surveyed call AI essential, yet split 43% vs 35% on paying for enterprise-grade AI.[^1] Fix: approve a business plan that doesn't train on your data by default.[^52]"
  ],
  "faq": [
   {
    "q": "How much does family office software cost?",
-   "a": "Published starting prices run from $250 a year for Kubera Essentials to $35,899 a year for FundCount's single family office plan[^22][^4]. Addepar publishes no price and quotes each deal, while Asora starts at $900 a month and Aleta at $1,000[^15][^8][^18]. Most of 146 family offices surveyed spend $100,000 to $500,000 a year on all technology[^39]."
+   "a": "Published starting prices run from $250 a year for Kubera Essentials to $35,899 a year for FundCount's single family office plan.[^22][^4] Addepar publishes no price and quotes each deal, while Asora starts at $900 a month and Aleta at $1,000.[^15][^8][^18] Most of 146 family offices surveyed spend $100,000 to $500,000 a year on all technology.[^39]"
   },
   {
    "q": "What are the alternatives to Addepar?",
-   "a": "Masttro, Asora, Aleta and Landytech Sesame are the reporting platforms we checked besides Addepar[^11][^12]. Asora and Aleta publish prices from $900 and $1,000 a month, and Landytech from £20k a year plus custodial feeds[^8][^18][^20]."
+   "a": "Masttro, Asora, Aleta and Landytech Sesame are the reporting platforms we checked besides Addepar.[^11][^12] Asora and Aleta publish prices from $900 and $1,000 a month, and Landytech from £20k a year plus custodial feeds.[^8][^18][^20]"
   },
   {
    "q": "Can we stay on QuickBooks and spreadsheets?",
-   "a": "Yes, while entities are few: QuickBooks Online Advanced is $340 a month for up to 25 users, but covers one company per subscription[^57][^3]. Of 146 family offices surveyed, 42% still rely on spreadsheets[^39]. With many entities, partnership accounting such as FundCount fits better[^4]."
+   "a": "Yes, while entities are few: QuickBooks Online Advanced is $340 a month for up to 25 users, but covers one company per subscription.[^57][^3] Of 146 family offices surveyed, 42% still rely on spreadsheets.[^39] With many entities, partnership accounting such as FundCount fits better.[^4]"
   },
   {
    "q": "Does the vendor's AI train on our data?",
-   "a": "Not for most products we checked: by our count, 10 of 16 say client data never trains their models, but Canoe says it does[^5][^6]. Five publish no statement, so ask for the training terms in the contract[^15][^10]."
+   "a": "Not for most products we checked: by our count, 10 of 16 say client data never trains their models, but Canoe says it does.[^5][^6] Five publish no statement, so ask for the training terms in the contract.[^15][^10]"
   },
   {
    "q": "How long does implementation take?",
-   "a": "Two to four months is typical, per vendors' quotes in Simple's study, and longer with much history or many banks[^2]. Aleta says 4 to 8 weeks, and Masttro 12 to 14 weeks[^18][^11]."
+   "a": "Two to four months is typical, per vendors' quotes in Simple's study, and longer with much history or many banks.[^2] Aleta says 4 to 8 weeks, and Masttro 12 to 14 weeks.[^18][^11]"
   },
   {
    "q": "Do we need a vendor's SOC 2 report?",
-   "a": "Yes, ask for the System and Organization Controls (SOC) 2 Type 2 report, because it tests whether controls worked over a set period[^53]. Addepar publishes a SOC 3 report covering 1 Sep 2025 to 31 Aug 2026[^16][^53]."
+   "a": "Yes, ask for the System and Organization Controls (SOC) 2 Type 2 report, because it tests whether controls worked over a set period.[^53] Addepar publishes a SOC 3 report covering 1 Sep 2025 to 31 Aug 2026.[^16][^53]"
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy the system of record, because vendors warn against building your own and the pattern is 'buy the plumbing, build the view'[^9][^2]. US enterprise AI decision-makers say 76% of their AI use cases were bought in 2025, up from 53% in 2024[^54].",
-  "build": "Build only the view: a dashboard or assistant on your own data, linked through the MCP connectors Asora, Aleta and Masttro offer[^44][^18][^43]. Keep it narrow: in MIT's study of 52 organizations, internal builds reached deployment about 33% of the time, against about 67% for external partnerships[^55]."
+  "buy": "Buy the system of record, because vendors warn against building your own and the pattern is 'buy the plumbing, build the view'.[^9][^2] US enterprise AI decision-makers say 76% of their AI use cases were bought in 2025, up from 53% in 2024.[^54]",
+  "build": "Build only the view: a dashboard or assistant on your own data, linked through the MCP connectors Asora, Aleta and Masttro offer.[^44][^18][^43] Keep it narrow: in MIT's study of 52 organizations, internal builds reached deployment about 33% of the time, against about 67% for external partnerships.[^55]"
  },
  "pickElse": [
-  "Your systems work but don't talk to each other: wire the ledger, bill pay and reporting you have. Of single family offices, 54% keep reporting and 64% financial administration wholly in-house[^7][^2].",
-  "Vendor terms clash with your AI policy: keep sensitive data in the ledger and use a business AI plan that doesn't train by default[^52][^2]. Privacy came up for 39% of vendors and 32% of offices where AI came up, in Simple's study[^2].",
-  "No time to run a platform: outsourced accounting or a managed service fits, a topic 33% of vendors and 24% of offices raised[^2].",
-  "Few entities, simple assets: stay on QuickBooks Online Advanced at $340 a month, or Sage Intacct, which publishes no price and quotes each deal[^3][^56]."
+  "Your systems work but don't talk to each other: wire the ledger, bill pay and reporting you have. Of single family offices, 54% keep reporting and 64% financial administration wholly in-house.[^7][^2]",
+  "Vendor terms clash with your AI policy: keep sensitive data in the ledger and use a business AI plan that doesn't train by default.[^52][^2] Privacy came up for 39% of vendors and 32% of offices where AI came up, in Simple's study.[^2]",
+  "No time to run a platform: outsourced accounting or a managed service fits, a topic 33% of vendors and 24% of offices raised.[^2]",
+  "Few entities, simple assets: stay on QuickBooks Online Advanced at $340 a month, or Sage Intacct, which publishes no price and quotes each deal.[^3][^56]"
  ],
  "resources": [
   {
@@ -487,32 +539,32 @@
  "stats": [
   {
    "num": "73%",
-   "label": "of North American family offices surveyed call investment reporting too manual[^1].",
+   "label": "of North American family offices surveyed call investment reporting too manual.[^1]",
    "source": "RBC and Campden Wealth, 155 family offices"
   },
   {
    "num": "54%",
-   "label": "of single family offices keep reporting wholly in-house[^7].",
+   "label": "of single family offices keep reporting wholly in-house.[^7]",
    "source": "J.P. Morgan, 333 single family offices"
   },
   {
    "num": "10 of 16",
-   "label": "products we checked say client data never trains their models, by our count[^5].",
+   "label": "products we checked say client data never trains their models, by our count.[^5]",
    "source": "Zavient check, 28 Nov 2026"
   },
   {
    "num": "$900",
-   "label": "a month is where Asora's published price starts[^8][^12].",
+   "label": "a month is where Asora's published price starts.[^8][^12]",
    "source": "Asora pricing, read 28 Nov 2026"
   },
   {
    "num": "7%",
-   "label": "of the pure cost of running the office goes to IT and technology, across UBS family office clients[^40].",
+   "label": "of the pure cost of running the office goes to IT and technology, across UBS family office clients.[^40]",
    "source": "UBS, 317 family office clients"
   },
   {
    "num": "76%",
-   "label": "of AI use cases were bought, not built, per US enterprise AI decision-makers in 2025[^54].",
+   "label": "of AI use cases were bought, not built, per US enterprise AI decision-makers in 2025.[^54]",
    "source": "Menlo Ventures, 495 decision-makers"
   }
  ],
@@ -806,6 +858,31 @@
    "name": "Asseta, General ledger",
    "url": "https://www.asseta.ai/platform/products/general-ledger",
    "what": "Vendor's page: general ledger built for family offices, multi-entity, with global consolidations. Read 28 Nov 2026."
+  },
+  {
+   "name": "Arch, The Hidden Costs of Alts: Your Inbox Is About to Grow 5x (vendor platform data)",
+   "url": "https://arch.com/insights/the-hidden-costs-of-alts-your-inbox-is-about-to-grow-5x",
+   "what": "Vendor platform data, Sep 2025 to Aug 2026, covering a sample of 12,800 fund managers: the average private markets investment sends 13 documents a year; the top decile sends 25 or more. Documents arrive in waves after each quarter end, and \"over half of all K-1s arrive in just three months\". Read 28 Nov 2026."
+  },
+  {
+   "name": "DiligenceVault, Document Intelligence Engine launch, 8 Jul 2025 (vendor)",
+   "url": "https://diligencevault.com/spotlight/diligencevault-launches-ai-powered-document-intelligence-engine-to-ease-the-burden-of-fund-due-diligence/",
+   "what": "Vendor claims: reads operational DDQs, PPMs and financial statements, answers questionnaires such as ILPA and AIMA, extracts data points with a confidence score and source attribution, and \"on average... reduces review and response time by over 70 percent\". Read 28 Nov 2026."
+  },
+  {
+   "name": "CENTRL, From Manual Diligence to AI-Accelerated ODD, 21 Jan 2026 (vendor case study)",
+   "url": "https://www.centrl.ai/resources/from-manual-diligence-to-ai-accelerated-odd-cutting-review-cycles-by-40-50-and-unlocking-a-year-of-capacity",
+   "what": "Vendor case: of about 200 questions, the tool auto-filled about 80 to 110 from the manager's own DDQ and documents; DDQ due dates fell from 10 weeks to 6 weeks; 3 to 4 weeks saved per manager. Read 28 Nov 2026."
+  },
+  {
+   "name": "Standards Board for Alternative Investments (SBAI), 2024 Operational Due Diligence Practices Survey",
+   "url": "https://www.sbai.org/static/f03d5f7c-d906-44c2-95e68b62fdec57f6/SBAI-2024-Operational-Due-Diligence-Practices-Survey.pdf",
+   "what": "Survey of 44 investors with over $2tn under management, including pension schemes, endowments, private banks and family offices. 41% of investors say they do not always have adequate time to complete an operational due diligence review. 70% of investors have dedicated teams; where there is none, 54% report to the CIO and 23% to the COO or operations. External consultants used by 59% of investors. The Investment Committee is the primary recipient of review findings. Investors with $0 to $5bn use no third-party tools. Read 28 Nov 2026."
+  },
+  {
+   "name": "ILPA, DDQ 2.0 User Guide, 9 Nov 2021",
+   "url": "https://ilpa.org/wp-content/uploads/2021/11/ILPA-DDQ-2.0-User-Guide.pdf",
+   "what": "The Yes/No questions \"provide LPs with a top-level view\" and should not be the sole criteria for an investment decision; LPs should review detailed answers and their own follow-up questions first. Read 28 Nov 2026."
   }
  ],
  "related": [
@@ -816,15 +893,16 @@
   "ai-integration-services"
  ],
  "answers": {
-  "table-1": "Published starting prices run from Kubera at $250 a year to FundCount at $35,899 a year, while Addepar, Masttro and Eton publish no price and quote each deal[^22][^4][^25]. Reporting platforms fit consolidation, and FundCount, Eton or Asseta keep multi-entity books[^9][^4].",
-  "table-2": "Canoe and Arch read alternatives documents, Box stores them, BILL pays bills, and Affinity or Salesforce Financial Services Cloud tracks relationships[^5][^31][^33][^10][^35].",
-  "table-3": "Offices report too much manual work: 73% of North American family offices surveyed call investment reporting too manual, and 81% keep bill pay in-house[^1].",
-  "recipes": "Lean offices fit QuickBooks plus Kubera or Asora, multi-entity offices add FundCount or Eton, and adviser-led offices fit Addepar or Masttro[^3][^4][^11].",
-  "human-role": "People keep every payment, posting and data-access decision: a second approver releases payments, the controller checks extracted figures, and the COO sets AI data rules[^41][^2].",
-  "example": "Illustrative: an extraction tool reads a capital call PDF, the controller checks it, the ledger posts it, and a second approver releases the wire[^31][^24][^10].",
-  "what-goes-wrong": "Offices go wrong by building their own system of record, trusting an FAQ over the contract, and skipping implementation cost and capacity[^2][^48].",
-  "buy-or-build": "Buy the system of record and build only the view on top, because home-built data plumbing tends to break[^9][^2].",
-  "something-else": "Pick neither when the gap is between systems you already own, when vendor data terms clash with your AI policy, or when no one has time to run a platform[^7][^2]."
+  "table-2": "Published starting prices run from Kubera at $250 a year to FundCount at $35,899 a year, while Addepar, Masttro and Eton publish no price and quote each deal.[^22][^4][^25] Reporting platforms fit consolidation, and FundCount, Eton or Asseta keep multi-entity books.[^9][^4]",
+  "table-3": "Canoe and Arch read alternatives documents, Box stores them, BILL pays bills, and Affinity or Salesforce Financial Services Cloud tracks relationships.[^5][^31][^33][^10][^35]",
+  "table-4": "Offices report too much manual work: 73% of North American family offices surveyed call investment reporting too manual, and 81% keep bill pay in-house.[^1]",
+  "recipes": "Lean offices fit QuickBooks plus Kubera or Asora, multi-entity offices add FundCount or Eton, and adviser-led offices fit Addepar or Masttro.[^3][^4][^11]",
+  "human-role": "People keep every payment, posting and data-access decision: a second approver releases payments, the controller checks extracted figures, and the COO sets AI data rules.[^41][^2]",
+  "example": "Illustrative: an extraction tool reads a capital call PDF, the controller checks it, the ledger posts it, and a second approver releases the wire.[^31][^24][^10]",
+  "what-goes-wrong": "Offices go wrong by building their own system of record, trusting an FAQ over the contract, and skipping implementation cost and capacity.[^2][^48]",
+  "buy-or-build": "Buy the system of record and build only the view on top, because home-built data plumbing tends to break.[^9][^2]",
+  "something-else": "Pick neither when the gap is between systems you already own, when vendor data terms clash with your AI policy, or when no one has time to run a platform.[^7][^2]",
+  "table-1": "Each problem has its own kind of tool: reporting platforms for the quarterly report, document services for fund PDFs, partnership ledgers for the books, and questionnaire platforms for manager diligence.[^1][^31][^4][^60]"
  },
  "offer": {
   "heading": "Not sure whether you need another platform or better wiring?",
@@ -861,7 +939,7 @@
  "updated": "2026-11-28",
  "figureCheck": {
   "date": "2026-11-28",
-  "checked": 82,
+  "checked": 80,
   "notFound": [],
   "byHand": [
    {
@@ -872,231 +950,217 @@
     "quote": "Seventy-three percent [73%] still believe investment reporting is too manual, making it a top concern for three years running."
    },
    {
-    "where": "verdict[3]",
-    "figure": "54%",
-    "url": "https://privatebank.jpmorgan.com/content/dam/jpm-pb-aem/global/en/documents/2026-family-office-report/jp-morgan-private-bank-2026-global-family-office-report.pdf",
-    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
-    "quote": "In contrast, administrative services are most likely to be wholly insourced: Family office staffing and compensation (72%); Financial administration (64%); Balance sheet aggregation and reporting (54%)"
-   },
-   {
-    "where": "verdict[4]",
-    "figure": "25%",
-    "url": "https://media.andsimple.co/family-office-software-technology-report-2026.pdf",
-    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
-    "quote": "Managed by Asora, with a one-time implementation fee of 25% of the annual subscription."
-   },
-   {
-    "where": "tables[0].rows[2].cells[1]",
+    "where": "tables[1].rows[2].cells[1]",
     "figure": "$900",
     "url": "https://www.asora.com/pricing",
     "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
     "quote": "An annual subscription in tiers set by net worth under management, from €800, $900, or £700 per month."
    },
    {
-    "where": "tables[0].rows[2].cells[1]",
+    "where": "tables[1].rows[2].cells[1]",
     "figure": "$15,600",
     "url": "https://www.asora.com/pricing",
     "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
-    "quote": "Family office size $50–100M · Bracket 3 of 9 ... Your quote USD $15,600 /year, Equivalent to $1,300/month · billed annually"
+    "quote": "Your quote 🇺🇸 USD $15,600 /year Equivalent to $1,300/month · billed annually"
    },
    {
-    "where": "tables[0].rows[2].cells[2]",
+    "where": "tables[1].rows[2].cells[2]",
     "figure": "25%",
     "url": "https://www.asora.com/ai-info",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Managed by Asora, with a one-time implementation fee of 25% of the annual subscription."
    },
    {
-    "where": "tables[0].rows[3].cells[1]",
+    "where": "tables[1].rows[3].cells[1]",
     "figure": "$1,000",
     "url": "https://aleta.io/family-office-software",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Pricing: From $1,000 per month, based on platform scope and not on assets under management"
    },
    {
-    "where": "tables[0].rows[4].cells[1]",
+    "where": "tables[1].rows[4].cells[1]",
     "figure": "£20k",
     "url": "https://www.landytech.com/for-uhnw",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "£ 20k / year base fee + £3,000 / year per custodial feed e.g. 3 custodians = £29,000/yr total"
    },
    {
-    "where": "tables[0].rows[4].cells[1]",
+    "where": "tables[1].rows[4].cells[1]",
     "figure": "£3,000",
     "url": "https://www.landytech.com/for-uhnw",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "£ 20k / year base fee + £3,000 / year per custodial feed e.g. 3 custodians = £29,000/yr total"
    },
    {
-    "where": "tables[0].rows[4].cells[1]",
+    "where": "tables[1].rows[4].cells[1]",
     "figure": "£100m",
     "url": "https://www.landytech.com/for-uhnw",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Everything you need to run a professional, efficient family office under £100m AUM."
    },
    {
-    "where": "tables[0].rows[4].cells[2]",
+    "where": "tables[1].rows[4].cells[2]",
     "figure": "£29,000",
     "url": "https://www.landytech.com/for-uhnw",
     "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
     "quote": "£ 20k / year base fee + £3,000 / year per custodial feed e.g. 3 custodians = £29,000/yr total"
    },
    {
-    "where": "tables[0].rows[5].cells[1]",
+    "where": "tables[1].rows[5].cells[1]",
     "figure": "$250",
     "url": "https://www.kubera.com/compare/kubera-vs-aleta",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Price: Essentials $250 a year; Black $2,500 a year."
    },
    {
-    "where": "tables[0].rows[5].cells[1]",
+    "where": "tables[1].rows[5].cells[1]",
     "figure": "$2,500",
     "url": "https://www.kubera.com/compare/kubera-vs-aleta",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Price: Essentials $250 a year; Black $2,500 a year."
    },
    {
-    "where": "tables[0].rows[6].cells[1]",
+    "where": "tables[1].rows[6].cells[1]",
     "figure": "$35,899",
     "url": "https://fundcount.com/pricing",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Single Family Office / Asset Owner Starting from $35,899 / year + digital transformation & hosting fees"
    },
    {
-    "where": "tables[0].rows[8].cells[1]",
+    "where": "tables[1].rows[8].cells[1]",
     "figure": "$30,000",
     "url": "https://www.assetvantage.com/av-pricing/",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "SFO $30,000 US$/year Billed annually 10 Entities"
    },
    {
-    "where": "tables[0].rows[10].cells[1]",
+    "where": "tables[1].rows[10].cells[1]",
     "figure": "$340",
     "url": "https://quickbooks.intuit.com/pricing",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Advanced All-in-one financial solution $340 ... 25 users"
    },
    {
-    "where": "tables[1].rows[3].cells[1]",
+    "where": "tables[2].rows[3].cells[1]",
     "figure": "$65",
     "url": "https://www.bill.com/product/pricing",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Team $ 65 user/ month"
    },
    {
-    "where": "tables[1].rows[3].cells[1]",
+    "where": "tables[2].rows[3].cells[1]",
     "figure": "$89",
     "url": "https://www.bill.com/product/pricing",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Corporate $ 89 user/ month"
    },
    {
-    "where": "tables[1].rows[4].cells[1]",
+    "where": "tables[2].rows[4].cells[1]",
     "figure": "$2,000",
     "url": "https://www.affinity.co/product/affinity-pricing",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Affinity is priced per user per year, billed annually, across four tiers. Essential is $2,000 per user per year, Scale is $2,300, and Advanced is $2,700."
    },
    {
-    "where": "tables[1].rows[4].cells[1]",
+    "where": "tables[2].rows[4].cells[1]",
     "figure": "$2,700",
     "url": "https://www.affinity.co/product/affinity-pricing",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Affinity is priced per user per year, billed annually, across four tiers. Essential is $2,000 per user per year, Scale is $2,300, and Advanced is $2,700."
    },
    {
-    "where": "tables[1].rows[5].cells[1]",
+    "where": "tables[2].rows[5].cells[1]",
     "figure": "$325",
     "url": "https://www.salesforce.com/financial-services/pricing",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Financial Services Cloud Sales Core: Foundational Financial Services CRM with AI and Slack for Sales. $ 325 USD/User/Month (Billed annually)"
    },
    {
-    "where": "tables[1].rows[5].cells[1]",
+    "where": "tables[2].rows[5].cells[1]",
     "figure": "$700",
     "url": "https://www.salesforce.com/financial-services/pricing",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Financial Services Cloud Sales Max: The most comprehensive Financial Services CRM for Sales. $ 700 USD/User/Month (Billed annually)"
    },
    {
-    "where": "tables[2].rows[0].cells[0]",
+    "where": "tables[3].rows[0].cells[0]",
     "figure": "73%",
     "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
-    "quote": "Seventy-three percent [73%] still believe investment reporting is too manual, making it a top concern for three years running."
+    "quote": "Seventy-three percent still believe investment reporting is too manual, making it a top concern for three years running. (Seventy-three percent = 73%)"
    },
    {
-    "where": "tables[2].rows[1].cells[0]",
+    "where": "tables[3].rows[1].cells[0]",
     "figure": "54%",
     "url": "https://privatebank.jpmorgan.com/content/dam/jpm-pb-aem/global/en/documents/2026-family-office-report/jp-morgan-private-bank-2026-global-family-office-report.pdf",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "In contrast, administrative services are most likely to be wholly insourced: Family office staffing and compensation (72%); Financial administration (64%); Balance sheet aggregation and reporting (54%)"
    },
    {
-    "where": "tables[2].rows[2].cells[0]",
+    "where": "tables[3].rows[2].cells[0]",
     "figure": "81%",
     "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Figure 4.2: How family offices provide services. Bill pay, in-house: 81%"
    },
    {
-    "where": "tables[2].rows[3].cells[0]",
+    "where": "tables[3].rows[3].cells[0]",
     "figure": "34%",
     "url": "https://www.deloitte.com/global/en/services/deloitte-private/research/family-office-insights-series-global-edition.html",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "nearly three-quarters admit they are either underinvested (34%) or only moderately invested (38%) in the operational technology needed to run a modern business."
    },
    {
-    "where": "tables[2].rows[3].cells[0]",
+    "where": "tables[3].rows[3].cells[0]",
     "figure": "38%",
     "url": "https://www.deloitte.com/global/en/services/deloitte-private/research/family-office-insights-series-global-edition.html",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "nearly three-quarters admit they are either underinvested (34%) or only moderately invested (38%) in the operational technology needed to run a modern business."
    },
    {
-    "where": "tables[2].rows[4].cells[0]",
+    "where": "tables[3].rows[4].cells[0]",
     "figure": "$100,000",
     "url": "https://www.campdenwealth.com/press/new-family-office-research-reveals-cross-border-wealth-rise-and-defining-purpose-unlocks-next",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Most family offices spend between $100,000 to $500,000 annually on tech, and 42% still rely on spreadsheets."
    },
    {
-    "where": "tables[2].rows[4].cells[0]",
+    "where": "tables[3].rows[4].cells[0]",
     "figure": "$500,000",
     "url": "https://www.campdenwealth.com/press/new-family-office-research-reveals-cross-border-wealth-rise-and-defining-purpose-unlocks-next",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Most family offices spend between $100,000 to $500,000 annually on tech, and 42% still rely on spreadsheets."
    },
    {
-    "where": "tables[2].rows[5].cells[0]",
+    "where": "tables[3].rows[5].cells[0]",
     "figure": "7%",
     "url": "https://www.ubs.com/content/dam/assets/wma/static/documents/ubs-gfo-report.pdf",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Split of overall and operating costs in 2025: Pure cost of running the family office 57%; Staff costs 67%; Legal and/or compliance 10%; Physical infrastructure 8%; IT/technology 7%"
    },
    {
-    "where": "tables[2].rows[6].cells[0]",
+    "where": "tables[3].rows[6].cells[0]",
     "figure": "32%",
     "url": "https://media.andsimple.co/family-office-software-technology-report-2026.pdf",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "What vendors say and what offices say. Software vendors (n=36) Family offices (n=41): 75% Manual reporting and data plumbing 32%; 28% Capacity and implementation 37%; 39% Privacy (AI) 32%*; 58% Security 46%; 33% Outsourcing and managed service 24%."
    },
    {
-    "where": "tables[2].rows[6].cells[0]",
+    "where": "tables[3].rows[6].cells[0]",
     "figure": "75%",
     "url": "https://media.andsimple.co/family-office-software-technology-report-2026.pdf",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "What vendors say and what offices say. Software vendors (n=36) Family offices (n=41): 75% Manual reporting and data plumbing 32%; 28% Capacity and implementation 37%; 39% Privacy (AI) 32%*; 58% Security 46%; 33% Outsourcing and managed service 24%."
    },
    {
-    "where": "tables[2].rows[7].cells[0]",
+    "where": "tables[3].rows[7].cells[0]",
     "figure": "55%",
     "url": "https://media.andsimple.co/family-office-software-technology-report-2026.pdf",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Where AI sits today. Assistant: A person prompts each step. Offices 55%, Vendors 22%"
    },
    {
-    "where": "tables[2].rows[7].cells[0]",
+    "where": "tables[3].rows[7].cells[0]",
     "figure": "22%",
     "url": "https://media.andsimple.co/family-office-software-technology-report-2026.pdf",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
@@ -1376,28 +1440,28 @@
     "quote": "Advanced All-in-one financial solution $340 ... 25 users"
    },
    {
-    "where": "answers.table-1",
+    "where": "answers.table-2",
     "figure": "$250",
     "url": "https://www.kubera.com/compare/kubera-vs-aleta",
     "why": "couldn't read the source (Request was cancelled., Request was cancelled., Request was cancelled.): open it and copy its sentence",
     "quote": "Price: Essentials $250 a year; Black $2,500 a year."
    },
    {
-    "where": "answers.table-1",
+    "where": "answers.table-2",
     "figure": "$35,899",
     "url": "https://www.kubera.com/compare/kubera-vs-aleta",
     "why": "couldn't read the source (Request was cancelled., Request was cancelled., Request was cancelled.): open it and copy its sentence",
     "quote": "Single Family Office / Asset Owner Starting from $35,899 / year + digital transformation & hosting fees"
    },
    {
-    "where": "answers.table-3",
+    "where": "answers.table-4",
     "figure": "73%",
     "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
-    "quote": "Seventy-three percent [73%] still believe investment reporting is too manual, making it a top concern for three years running."
+    "quote": "Seventy-three percent still believe investment reporting is too manual, making it a top concern for three years running. (Seventy-three percent = 73%)"
    },
    {
-    "where": "answers.table-3",
+    "where": "answers.table-4",
     "figure": "81%",
     "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",

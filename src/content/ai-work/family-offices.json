@@ -1,6 +1,6 @@
 {
- "title": "What are family offices actually using AI for?",
- "description": "For family office COOs: where AI pays first in reporting, documents and accounting, what peers hire for, and how to keep family data in the office.",
+ "title": "Which family office problems can AI fix first?",
+ "description": "For family office COOs: five problems AI helps with first, ranked by peer surveys, from the manual quarterly report to comparing fund managers.",
  "type": "industry",
  "templateVersion": 1,
  "topic": "AI for family offices",
@@ -8,20 +8,20 @@
  "industry": "family offices",
  "index": false,
  "verdict": [
-  "Most offices are early: AI mostly drafts and summarizes as an assistant, with a person prompting each step.[^6][^3]",
-  "Reporting pays first: 72% of family offices use or pilot AI for reporting automation; some still assemble reports by hand.[^1][^6]",
-  "Expertise is the gap: 57% of family offices name it the top technology barrier, so peers post AI duties.[^4][^30]",
-  "Keep family data inside the office: approved tools only, and a person checks output before it reaches the books.[^13][^16]",
-  "Most family offices own operating companies: 67% hold controlling stakes (Citi); 77% of families run an operating business (UBS).[^3][^8]"
+  "Five problems fill a family office's week: the quarterly report, fund documents, partnership books, comparing managers and the deadline calendar.[^34][^35]",
+  "The quarterly report hurts most: 73% of 155 North American family offices call investment reporting too manual, three years running.[^34][^1]",
+  "Fund documents feed it: the average private markets investment sends 13 a year, in waves after quarter end.[^35][^36]",
+  "Comparing managers before committing strains small teams: 41% of investors in one due diligence survey lack time to finish reviews.[^37][^4]",
+  "AI reads and matches; your people keep every sign-off, payment and fund commitment.[^13][^14]"
  ],
  "onPage": [
   {
-   "to": "human-role",
-   "text": "Who signs off: controller, payments, principal"
+   "to": "ranked",
+   "text": "Five problems ranked, each linked to the guide that fixes it"
   },
   {
-   "to": "ranked",
-   "text": "Six jobs ranked, each with the number to measure"
+   "to": "human-role",
+   "text": "Who signs off: controller, payments, investment committee"
   },
   {
    "to": "own-data",
@@ -41,50 +41,56 @@
   }
  ],
  "headings": {
-  "ranked": "Where does AI pay first in a family office?",
+  "ranked": "Which problems should a family office hand to AI first?",
   "rules": "Which rules shape AI in a family office?",
   "what-goes-wrong": "Where does AI go wrong in a family office?",
   "faq": "Questions operators ask about AI in a family office",
   "buy-or-build": "Should a family office buy AI or build it?"
  },
- "summary": "AI for family offices is software that reads documents, drafts reports and summarizes meetings inside the office's daily operations.[^13][^5] For most offices the aim is a leaner office, not better returns, and privacy comes first.[^5][^12] Clean data plumbing and a person who signs off make or break it.[^6][^13]",
+ "summary": "AI for family offices reads fund documents, matches them to the books and drafts reports, so staff check instead of key.[^13][^5] Most offices want a leaner office, not better returns, and privacy comes first.[^5][^12] Clean data plumbing and a person who signs off make or break it.[^6][^13]",
  "humanRole": [
   "Your controller signs off before anything AI extracts reaches the general ledger or the reporting system. Review AI output before it enters a system of record.[^6][^16][^13]",
   "A person reviews, authorizes and releases every payment, even when AI queues the bill.[^14] In one vendor's statement workflow (Risclarity, writing for FOX), an analyst reviews and maps AI-read data before import.[^16]",
   "Investment, tax, legal and family decisions stay with qualified professionals. AI output informs them and a professional reviews it.[^12][^5]",
   "The COO owns the AI policy and the list of approved tools. Offices Simple interviewed put policy first, then approved tools, data segmentation and human review.[^6][^26]",
-  "Keep a decision log when AI informs a trust or investment call, with the source behind each point. AI prompts and logs may be discoverable records.[^15][^17]"
+  "The investment committee keeps the vote on every fund commitment, and AI only lines up the managers' answers.[^37][^42] Keep a decision log with the source behind each point, because AI prompts and logs may be discoverable records.[^15][^17]"
  ],
  "ranked": [
   {
-   "name": "Investment reporting and aggregation",
+   "name": "The quarterly report is too manual",
    "slug": "family-office-reporting",
-   "why": "72% of offices use or pilot AI for reporting automation.[^1] 54% of single family offices keep aggregation and reporting wholly in-house, so the hours sit with your staff.[^9]",
-   "payoff": "Days from month end to the family's report, and hours of manual entry per report."
+   "why": "73% of 155 North American family offices say investment reporting is too manual, a top concern three years running.[^34] 72% of family offices use or pilot AI for reporting automation.[^1]",
+   "payoff": "Days from quarter end to the family's report, and hours keyed per report."
   },
   {
-   "name": "Capital calls, K-1s, bill pay and the close",
+   "name": "Fund documents flood in every quarter",
+   "slug": "family-office-reporting",
+   "why": "The average private markets investment sends 13 documents a year, and the top decile 25 or more, by Arch's platform data.[^35] In a vendor's poll of 70+ family offices, collecting documents was the top challenge, at 36%.[^36]",
+   "payoff": "Minutes per document from portal to filed, and documents still keyed by hand."
+  },
+  {
+   "name": "The books lag the capital calls and K-1s",
    "slug": "family-office-accounting",
-   "why": "Document intake is a common first target, and RSM names capital call notices, bill pay and ledger coding.[^6][^13] Controllers are the most-posted role in our sample, at a median posted pay of $137,000 by our math.[^30]",
+   "why": "Family offices spend 20% of working hours on manual tasks, up to 40% in larger offices, in a sponsored survey of 44 offices.[^38] One New York family office posted a senior controller role whose duties start with capital calls and K-1 support.[^33]",
    "payoff": "Minutes per notice from inbox to booked entry, and days to close each entity."
   },
   {
-   "name": "Meeting notes, knowledge and office admin",
+   "name": "Comparing fund managers takes too long",
    "slug": "family-office-coo",
-   "why": "38% of family offices use AI for meeting notes and 32% for knowledge management.[^3] Heidrick & Struggles finds technology and AI are widening the operating models open to family offices.[^29]",
-   "payoff": "Hours spent on minutes, follow-ups and finding past decisions."
+   "why": "41% of 44 investors in an operational due diligence survey say they lack time to finish reviews, and family offices were among them.[^37] 39% of family offices use or plan to use AI for investment due diligence.[^41]",
+   "payoff": "Weeks from the first questionnaire to the committee memo, and answers checked against evidence."
   },
   {
-   "name": "Choosing the software stack AI runs on",
+   "name": "Something is always due",
+   "slug": "family-office-coo",
+   "why": "Partnership K-1s are due by the 15th day of the third month after year end, and an extension adds six months.[^39] By our count, a model 30-filer office faces 159 filing deadlines a year.[^40]",
+   "payoff": "Deadlines met without a scramble, and hours spent chasing documents."
+  },
+  {
+   "name": "Choosing the software that fixes each problem",
    "slug": "family-office-software",
    "why": "The average family office tech stack costs $100,000 to $500,000 a year, per Campden Wealth and AlTi Tiedemann.[^11] Most AI features are narrow and tied to one platform, so the stack decides what AI can reach.[^13]",
    "payoff": "Manual re-keys between systems each month, and reports built from one data set."
-  },
-  {
-   "name": "Research and diligence summaries",
-   "slug": "ai-due-diligence",
-   "why": "72% of family offices use or pilot AI for investment research and 71% for market summaries.[^1] 61% of family offices say AI improved investment outcomes.[^1]",
-   "payoff": "Hours per investment memo, with every figure traced to its source."
   },
   {
    "name": "The operating companies the family owns",
@@ -95,7 +101,7 @@
  ],
  "ownData": {
   "title": "What are your peers hiring for?",
-  "intro": "We read 26 US family office job postings by hand on 28 Nov 2026, and tallied the work each one names.[^30] Ten name AI or automation, mostly controller, finance-head and analytics roles.[^30][^32][^31] Entities or consolidation lead the duties at 11 of 26, then reconciliation and reporting at 8 each.[^30]",
+  "intro": "We read 26 US family office job postings by hand on 28 Nov 2026, and tallied the work each one names.[^29] Ten name AI or automation, mostly controller, finance-head and analytics roles.[^29][^31][^30] Entities or consolidation lead the duties at 11 of 26, then reconciliation and reporting at 8 each.[^29]",
   "headers": [
    "Role group",
    "Postings",
@@ -147,7 +153,7 @@
     "Operations, vendors, Addepar and Canoe"
    ]
   ],
-  "note": "Zavient hand-read of 26 US family office postings dated Sep 2025 to Nov 2026, read 28 Nov 2026 on each original page.[^30] A duty counts only if named; pay is the median of posted-range midpoints, with pay-site estimates left out.[^34] Limits: small, hand-read, US-only and not random; many are recruiter posts, and two New York tech posts may be one role."
+  "note": "Zavient hand-read of 26 US family office postings dated Sep 2025 to Nov 2026, read 28 Nov 2026 on each original page.[^29] A duty counts only if named; pay is the median of posted-range midpoints, with pay-site estimates left out.[^33] Limits: small, hand-read, US-only and not random; many are recruiter posts, and two New York tech posts may be one role."
  },
  "tables": [
   {
@@ -308,11 +314,15 @@
   },
   {
    "q": "Where should a family office start with AI?",
-   "a": "Start with one document-heavy workflow, such as capital call intake or monthly reporting.[^6][^1] PwC sets guidelines and training in the first 3 months, then scales proven workflows over 3 to 12 months.[^12]"
+   "a": "Start with the problem that eats the most hours, usually the quarterly report or fund document intake.[^34][^6] PwC sets guidelines and training in the first 3 months, then scales proven workflows over 3 to 12 months.[^12]"
+  },
+  {
+   "q": "Can AI compare fund managers for us?",
+   "a": "Only as a first pass: AI can line up each manager's questionnaire answers, but people must check them.[^37][^42] The Institutional Limited Partners Association (ILPA) says yes/no answers give only a top-level view, never the sole basis for a decision.[^42]"
   },
   {
    "q": "Do we need to hire an AI person?",
-   "a": "Not usually, because offices add AI duties to finance and operations roles: 10 of 26 postings we read ask for it.[^30] Only one was an AI engineer.[^33] Lack of internal expertise is still the top barrier, named by 57% of family offices.[^4]"
+   "a": "Not usually, because offices add AI duties to finance and operations roles: 10 of 26 postings we read ask for it.[^29] Only one was an AI engineer.[^32] Lack of internal expertise is still the top barrier, named by 57% of family offices.[^4]"
   },
   {
    "q": "Does the SEC regulate how a family office uses AI?",
@@ -366,9 +376,19 @@
  ],
  "stats": [
   {
+   "num": "73%",
+   "label": "of North American family offices say investment reporting is too manual.[^34]",
+   "source": "RBC and Campden Wealth 2026, survey of 155 family offices"
+  },
+  {
    "num": "72%",
    "label": "of family offices use or pilot AI for reporting automation.[^1]",
    "source": "BNY Wealth 2026, survey of 290 family offices"
+  },
+  {
+   "num": "41%",
+   "label": "of investors in an operational due diligence survey lack time to finish reviews.[^37]",
+   "source": "SBAI 2024, survey of 44 investors"
   },
   {
    "num": "57%",
@@ -376,18 +396,8 @@
    "source": "Citi Private Bank 2025, survey of 346 family offices"
   },
   {
-   "num": "67%",
-   "label": "of family offices hold controlling stakes in operating businesses.[^3]",
-   "source": "Citi Private Bank 2026, survey of 351 family offices"
-  },
-  {
-   "num": "12",
-   "label": "staff work at the average family office.[^7]",
-   "source": "UBS 2025, survey of 317 family offices"
-  },
-  {
    "num": "10 of 26",
-   "label": "US family office postings we read name AI or automation.[^30]",
+   "label": "US family office postings we read name AI or automation.[^29]",
    "source": "Zavient hand-read, 28 Nov 2026"
   },
   {
@@ -415,7 +425,7 @@
   {
    "name": "Citi Private Bank, 2025 Global Family Office Report",
    "url": "https://www.privatebank.citibank.com/doc/family-office/2025-global-family-office-report.pdf",
-   "what": "Survey of 346 family offices. Barriers to technology adoption: lack of internal expertise 57%, lack of awareness 34% (42% at smaller offices), cybersecurity or privacy concerns 28%, return-on-investment uncertainty 25%; only 48% felt cybersecurity was well managed. Technology priorities: investment and data analytics platforms 50%, consolidated reporting 39%, cybersecurity 37%, AI and machine learning 28%. About four in ten use third-party consolidated reporting software."
+   "what": "Survey of 346 family offices. Barriers to technology adoption: lack of internal expertise 57%, lack of awareness 34% (42% at smaller offices), cybersecurity or privacy concerns 28%, return-on-investment uncertainty 25%; only 48% felt cybersecurity was well managed. Technology priorities: investment and data analytics platforms 50%, consolidated reporting 39%, cybersecurity 37%, AI and machine learning 28%. About four in ten use third-party consolidated reporting software. Of the services family offices get from external investment advisors, due diligence and access to managers is named by 41% of family offices (read 28 Nov 2026)."
   },
   {
    "name": "Citi Institute, AI in the Family Office, 11 May 2026",
@@ -440,7 +450,7 @@
   {
    "name": "J.P. Morgan Private Bank, 2026 Global Family Office Report",
    "url": "https://privatebank.jpmorgan.com/content/dam/jpm-pb-aem/global/en/documents/2026-family-office-report/jp-morgan-private-bank-2026-global-family-office-report.pdf",
-   "what": "Survey of 333 single family offices (197 US). Kept wholly in-house: balance-sheet aggregation and reporting 54%, financial administration 64%. 38% outsource cybersecurity wholly, and it is the greatest service need at 32%. 40% spend under $1 million a year to run the office; average operating cost just over $3 million, $6.6 million at $1 billion+."
+   "what": "Survey of 333 single family offices (197 US). Kept wholly in-house: balance-sheet aggregation and reporting 54%, financial administration 64%. 38% outsource cybersecurity wholly, and it is the greatest service need at 32%. 40% spend under $1 million a year to run the office; average operating cost just over $3 million, $6.6 million at $1 billion+. 80% of global family offices report some portfolio outsourcing, such as outsourced CIOs, due diligence and manager selection (read 28 Nov 2026)."
   },
   {
    "name": "RBC and Campden Wealth, North America Family Office Report 2025, press release, 16 Oct 2025",
@@ -538,11 +548,6 @@
    "what": "Criminals use generative AI for voice cloning and fake video to push fraudulent transfers; create a secret word or phrase with your family, and verify a caller by hanging up and calling the organization's number directly."
   },
   {
-   "name": "Heidrick & Struggles, 2026 Family Offices Compensation Report, 10 Nov 2026",
-   "url": "https://www.heidrick.com/en/insights/compensation-trends/2026-family-offices-compensation-report",
-   "what": "Survey of 318 family office investors. Heidrick's market context: technology and AI are widening the range of operating models available; US respondents most often cite technology and infrastructure as a concern."
-  },
-  {
    "name": "Zavient hand-read of 26 US family office job postings, read 28 Nov 2026",
    "url": "/industries/family-offices.html#own-data",
    "what": "Our count of 26 US postings dated Sep 2025 to Nov 2026, read on the employer's or job board's own page: AI or automation named in 10 of 26; multiple entities or consolidation 11; reconciliation 8; reporting 8; capital calls 5; bill pay or wires 5; K-1s 4; 22 post pay. Median posted-pay midpoints by our math: controllers $137,000; CFOs and finance heads $352,500; staff accounting and operations $115,000; analytics, planning and risk $215,000."
@@ -566,6 +571,51 @@
    "name": "CareerBuilder, Senior Controller, boutique family office, New York",
    "url": "https://www.careerbuilder.com/job-details/senior-controller-boutique-family-office-new-york-ny--da3a8619-d8e7-452f-b0dc-a0041bafd49a",
    "what": "\"$202,500 to $230,000 USD annually\" (header shows $210,000-$230,000 per year); capital calls, K-1 support, multi-entity accounting, reconciliations, reporting."
+  },
+  {
+   "name": "RBC Wealth Management and Campden Wealth, The North America Family Office Report 2026",
+   "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
+   "what": "Survey of 155 family offices in North America (single family offices and private multi-family offices). \"Seventy-three percent still believe investment reporting is too manual, making it a top concern for three years running.\" 73% of family offices. Median IT spend $100,000; offices split 43/35 on paying for enterprise-grade AI. Dual payment authorization fell from 84% to 73%. Read 28 Nov 2026."
+  },
+  {
+   "name": "Arch, The Hidden Costs of Alts: Your Inbox Is About to Grow 5x (vendor platform data)",
+   "url": "https://arch.com/insights/the-hidden-costs-of-alts-your-inbox-is-about-to-grow-5x",
+   "what": "Vendor platform data, Sep 2025 to Aug 2026, covering a sample of 12,800 fund managers: the average private markets investment sends 13 documents a year; the top decile sends 25 or more. Documents arrive in waves after each quarter end, and \"over half of all K-1s arrive in just three months\". Read 28 Nov 2026."
+  },
+  {
+   "name": "Canoe Intelligence, The Future-Ready Family Office, 18 Mar 2026 (vendor poll)",
+   "url": "https://canoeintelligence.com/the-future-ready-family-office-navigating-alts-data-with-ai-powered-precision",
+   "what": "Poll of 70+ family offices at a conference, run by a vendor. Biggest issue in processing alternatives documents: collection, 36% of family offices voting; extracting key metrics from documents 27%; data accuracy and consistency 9%. Read 28 Nov 2026."
+  },
+  {
+   "name": "Standards Board for Alternative Investments (SBAI), 2024 Operational Due Diligence Practices Survey",
+   "url": "https://www.sbai.org/static/f03d5f7c-d906-44c2-95e68b62fdec57f6/SBAI-2024-Operational-Due-Diligence-Practices-Survey.pdf",
+   "what": "Survey of 44 investors with over $2tn under management, including pension schemes, endowments, private banks and family offices. 41% of investors say they do not always have adequate time to complete an operational due diligence review. 70% of investors have dedicated teams; where there is none, 54% report to the CIO and 23% to the COO or operations. External consultants used by 59% of investors. The Investment Committee is the primary recipient of review findings. Investors with $0 to $5bn use no third-party tools. Read 28 Nov 2026."
+  },
+  {
+   "name": "FundCount, Study Results: Manual Processes Top List of Family Office Challenges, 8 Aug 2024 (Family Wealth Report study, FundCount-sponsored)",
+   "url": "https://fundcount.com/study-results-manual-processes-top-list-of-family-office-challenges",
+   "what": "Survey of 44 single and multi-family offices plus 20 interviews, vendor-sponsored: family offices spend an average of 20% of working hours a week on manual tasks, up to 40% in larger offices. 80% of offices surveyed have fewer than 20 staff. Read 28 Nov 2026."
+  },
+  {
+   "name": "IRS, Publication 509, Tax Calendars (2026)",
+   "url": "https://www.irs.gov/publications/p509",
+   "what": "Form 1065 is due the 15th day of the 3rd month after the partnership's tax year ends; partners get Schedule K-1 by the same date; Form 7004 requests an automatic 6-month extension. Read 28 Nov 2026."
+  },
+  {
+   "name": "Zavient, Which problems should a family office COO hand to AI first?",
+   "url": "/for/family-office-coo.html",
+   "what": "Zavient role guide with our count of 159 federal, SEC and Delaware filing deadlines a year for a model 30-filer family office."
+  },
+  {
+   "name": "Goldman Sachs, Family Office Investment Insights 2025: Adapting to the Terrain",
+   "url": "https://www.goldmansachs.com/pdfs/insights/articles/adapting-to-the-terrain/family-office-investment-insights-report.pdf",
+   "what": "Survey of 245 family offices, May to June 2025. Ways family offices use or look to use AI: data analysis 85%, research 82%, automation of manual tasks 70%, investment due diligence and decision support 39% of family offices. Read 28 Nov 2026."
+  },
+  {
+   "name": "ILPA, DDQ 2.0 User Guide, 9 Nov 2021",
+   "url": "https://ilpa.org/wp-content/uploads/2021/11/ILPA-DDQ-2.0-User-Guide.pdf",
+   "what": "The Yes/No questions \"provide LPs with a top-level view\" and should not be the sole criteria for an investment decision; LPs should review detailed answers and their own follow-up questions first. Read 28 Nov 2026."
   }
  ],
  "related": [
@@ -580,9 +630,9 @@
   "ai-document-processing"
  ],
  "answers": {
-  "human-role": "Your people keep every decision: the controller signs off what reaches the books, a person releases every payment, and professionals own investment, tax and family calls.[^16][^14][^12]",
-  "ranked": "AI pays first in investment reporting, then capital call and K-1 intake with bill pay and the close, then meeting notes and knowledge work.[^1][^6][^13]",
-  "own-data": "Peers mostly hire controllers and finance staff for entity accounting, reconciliation and reporting, and 10 of the 26 postings we read ask for AI or automation.[^30]",
+  "human-role": "Your people keep every decision: the controller signs off what reaches the books, a person releases every payment, and the investment committee votes on every commitment.[^16][^14][^37]",
+  "ranked": "Hand AI the manual quarterly report first, then the fund-document flood, the lagging books, manager comparison and the deadline calendar, in order of reported pain.[^34][^35][^37]",
+  "own-data": "Peers mostly hire controllers and finance staff for entity accounting, reconciliation and reporting, and 10 of the 26 postings we read ask for AI or automation.[^29]",
   "table-1": "The surveys agree family offices are early: only 8% of 290 say AI is extensively integrated, and most use sits at assistant level.[^1][^6]",
   "table-2": "A family office spends most of its budget on people: staff are 67% of pure cost and technology is 7%, per UBS.[^7]",
   "rules": "No AI-specific rule applies, but the SEC family office exclusion, Regulation S-P for registered offices and Form 13F shape what AI may touch.[^18][^20][^22]",
@@ -591,8 +641,8 @@
   "something-else": "Pick something else when your platform already has the AI feature, the gap is cybersecurity, or the problem is data plumbing rather than judgment.[^13][^9][^6]"
  },
  "offer": {
-  "heading": "Which family office workflow should AI take first?",
-  "body": "Usually reporting or document intake: capital calls, K-1s and statements. In a free 30-minute call we map one workflow end to end. You leave knowing who signs off, the number to track and where family data stays."
+  "heading": "Which family office problem should AI take first?",
+  "body": "Usually the quarterly report or fund document intake. In a free 30-minute call we map one problem end to end. You leave knowing who signs off, the number to track and where family data stays."
  },
  "keyword": {
   "phrase": "ai for family offices",
@@ -625,36 +675,29 @@
  "updated": "2026-11-28",
  "figureCheck": {
   "date": "2026-11-28",
-  "checked": 54,
+  "checked": 55,
   "notFound": [],
   "byHand": [
    {
     "where": "verdict[1]",
-    "figure": "72%",
-    "url": "https://www.bny.com/wealth/global/en/insights/are-family-offices-really-using-ai.html",
+    "figure": "73%",
+    "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
     "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
-    "quote": "Reporting Automation — 72%"
+    "quote": "Seventy-three percent still believe investment reporting is too manual, making it a top concern for three years running. (Seventy-three percent = 73%)"
    },
    {
-    "where": "verdict[2]",
-    "figure": "57%",
-    "url": "https://www.privatebank.citibank.com/doc/family-office/2025-global-family-office-report.pdf",
+    "where": "verdict[3]",
+    "figure": "41%",
+    "url": "https://www.sbai.org/static/f03d5f7c-d906-44c2-95e68b62fdec57f6/SBAI-2024-Operational-Due-Diligence-Practices-Survey.pdf",
+    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
+    "quote": "A majority (59%) of overall survey respondents feel that they do always have enough time to perform an ODD review, while a significant minority (41%) indicate that they do not."
+   },
+   {
+    "where": "ranked[0].why",
+    "figure": "73%",
+    "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
-    "quote": "Lack of internal expertise is chief among these (57%) as well as a lack of awareness of available options (34%)."
-   },
-   {
-    "where": "verdict[4]",
-    "figure": "67%",
-    "url": "https://www.privatebank.citibank.com/doc/family-office/2026-global-family-office-report.pdf",
-    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
-    "quote": "Two-thirds (67%) of respondents reported owning controlling stakes in one or more operating businesses."
-   },
-   {
-    "where": "verdict[4]",
-    "figure": "77%",
-    "url": "https://www.privatebank.citibank.com/doc/family-office/2026-global-family-office-report.pdf",
-    "why": "couldn't read the source (Request was cancelled., Request was cancelled.): open it and copy its sentence",
-    "quote": "The vast majority (77%) of families surveyed had an active operating business."
+    "quote": "Seventy-three percent still believe investment reporting is too manual, making it a top concern for three years running. (Seventy-three percent = 73%)"
    },
    {
     "where": "ranked[0].why",
@@ -664,70 +707,75 @@
     "quote": "Reporting Automation — 72%"
    },
    {
-    "where": "ranked[0].why",
-    "figure": "54%",
-    "url": "https://privatebank.jpmorgan.com/content/dam/jpm-pb-aem/global/en/documents/2026-family-office-report/jp-morgan-private-bank-2026-global-family-office-report.pdf",
+    "where": "ranked[1].why",
+    "figure": "36%",
+    "url": "https://canoeintelligence.com/the-future-ready-family-office-navigating-alts-data-with-ai-powered-precision",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
-    "quote": "Balance sheet aggregation and reporting (54%)"
+    "quote": "Though collection was cited most frequently (36% of the vote), extracting key performance metrics and insights from disparate documents (27%) and ensuring data accuracy and consistency (9%) also pose material challenges."
    },
    {
     "where": "ranked[2].why",
-    "figure": "38%",
-    "url": "https://www.privatebank.citibank.com/doc/family-office/2026-global-family-office-report.pdf",
+    "figure": "20%",
+    "url": "https://fundcount.com/study-results-manual-processes-top-list-of-family-office-challenges",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
-    "quote": "Al-generated meeting notes and summaries 38% 25% 44% 45% 40%"
+    "quote": "family offices spend an average of 20 percent of working hours per week on manual tasks."
    },
    {
     "where": "ranked[2].why",
-    "figure": "32%",
-    "url": "https://www.privatebank.citibank.com/doc/family-office/2026-global-family-office-report.pdf",
+    "figure": "40%",
+    "url": "https://fundcount.com/study-results-manual-processes-top-list-of-family-office-challenges",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
-    "quote": "Internal knowledge management and research assistance 32% 19% 37% 33% 37%"
+    "quote": "The number of hours can be even greater for larger offices – up to 40 percent – due to more complex investments, allocations, and entities."
+   },
+   {
+    "where": "ranked[2].why",
+    "figure": "$202,500",
+    "url": "https://www.careerbuilder.com/job-details/senior-controller-boutique-family-office-new-york-ny--da3a8619-d8e7-452f-b0dc-a0041bafd49a",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence"
+   },
+   {
+    "where": "ranked[2].why",
+    "figure": "$230,000",
+    "url": "https://www.careerbuilder.com/job-details/senior-controller-boutique-family-office-new-york-ny--da3a8619-d8e7-452f-b0dc-a0041bafd49a",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence"
    },
    {
     "where": "ranked[3].why",
+    "figure": "41%",
+    "url": "https://www.sbai.org/static/f03d5f7c-d906-44c2-95e68b62fdec57f6/SBAI-2024-Operational-Due-Diligence-Practices-Survey.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "A majority (59%) of overall survey respondents feel that they do always have enough time to perform an ODD review, while a significant minority (41%) indicate that they do not."
+   },
+   {
+    "where": "ranked[3].why",
+    "figure": "39%",
+    "url": "https://www.goldmansachs.com/pdfs/insights/articles/adapting-to-the-terrain/family-office-investment-insights-report.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "Which of the following are ways in which you are utilizing or looking to utilize AI functionality in your organization? (% of Respondents) ... 39 Investment due diligence and assistance with decision making"
+   },
+   {
+    "where": "ranked[5].why",
     "figure": "$100,000",
     "url": "https://www.campdenwealth.com/sites/default/files/FO_Op_Exc_2025_report_digital.pdf",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "According to the data, the average costs range is between US $100,000 to US $500,000 annually (Fig 5.17)."
    },
    {
-    "where": "ranked[3].why",
+    "where": "ranked[5].why",
     "figure": "$500,000",
     "url": "https://www.campdenwealth.com/sites/default/files/FO_Op_Exc_2025_report_digital.pdf",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "According to the data, the average costs range is between US $100,000 to US $500,000 annually (Fig 5.17)."
    },
    {
-    "where": "ranked[4].why",
-    "figure": "72%",
-    "url": "https://www.bny.com/wealth/global/en/insights/are-family-offices-really-using-ai.html",
-    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
-    "quote": "Investment Research — 72%"
-   },
-   {
-    "where": "ranked[4].why",
-    "figure": "71%",
-    "url": "https://www.bny.com/wealth/global/en/insights/are-family-offices-really-using-ai.html",
-    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
-    "quote": "Market Insights and Summarization — 71%"
-   },
-   {
-    "where": "ranked[4].why",
-    "figure": "61%",
-    "url": "https://www.bny.com/wealth/global/en/insights/are-family-offices-really-using-ai.html",
-    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
-    "quote": "Sixty-one percent of family office respondents believe AI integration has improved investment outcomes (61%)."
-   },
-   {
-    "where": "ranked[5].why",
+    "where": "ranked[6].why",
     "figure": "77%",
     "url": "https://www.ubs.com/global/en/media/display-page-ndp/en-20260528-global-family-office-report-2026.html",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "The vast majority (77%) of families surveyed had an active operating business."
    },
    {
-    "where": "ranked[5].why",
+    "where": "ranked[6].why",
     "figure": "67%",
     "url": "https://www.privatebank.citibank.com/doc/family-office/2026-global-family-office-report.pdf",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
@@ -902,32 +950,32 @@
     "quote": "Smaller organizations are more likely to report no measurable impact from AI than larger offices (31%"
    },
    {
-    "where": "faq[2].a",
+    "where": "faq[3].a",
     "figure": "57%",
     "url": "https://www.privatebank.citibank.com/doc/family-office/2025-global-family-office-report.pdf",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Lack of internal expertise is chief among these (57%) as well as a lack of awareness of available options (34%)."
    },
    {
-    "where": "faq[5].a",
+    "where": "faq[6].a",
     "figure": "$100,000",
     "url": "https://www.campdenwealth.com/sites/default/files/FO_Op_Exc_2025_report_digital.pdf",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "According to the data, the average costs range is between US $100,000 to US $500,000 annually (Fig 5.17)."
    },
    {
-    "where": "faq[5].a",
+    "where": "faq[6].a",
     "figure": "$500,000",
     "url": "https://www.campdenwealth.com/sites/default/files/FO_Op_Exc_2025_report_digital.pdf",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "According to the data, the average costs range is between US $100,000 to US $500,000 annually (Fig 5.17)."
    },
    {
-    "where": "faq[5].a",
+    "where": "faq[6].a",
     "figure": "7%",
     "url": "https://www.ubs.com/content/dam/assets/wma/static/documents/ubs-gfo-report.pdf",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
-    "quote": "IT/technology 7%"
+    "quote": "Split of overall and operating costs in 2025: Pure cost of running the family office 57%; Staff costs 67%; Legal and/or compliance 10%; Physical infrastructure 8%; IT/technology 7%"
    },
    {
     "where": "buyVsBuild.build",
@@ -980,24 +1028,31 @@
    },
    {
     "where": "stats[0]",
-    "figure": "72%",
-    "url": "https://www.bny.com/wealth/global/en/insights/are-family-offices-really-using-ai.html",
+    "figure": "73%",
+    "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
-    "quote": "Reporting Automation — 72%"
+    "quote": "Seventy-three percent still believe investment reporting is too manual, making it a top concern for three years running. (Seventy-three percent = 73%)"
    },
    {
     "where": "stats[1]",
+    "figure": "72%",
+    "url": "https://www.bny.com/wealth/global/en/insights/are-family-offices-really-using-ai.html",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "The Top Tech-Enabled Processes: Reporting Automation — 72%"
+   },
+   {
+    "where": "stats[2]",
+    "figure": "41%",
+    "url": "https://www.sbai.org/static/f03d5f7c-d906-44c2-95e68b62fdec57f6/SBAI-2024-Operational-Due-Diligence-Practices-Survey.pdf",
+    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
+    "quote": "A majority (59%) of overall survey respondents feel that they do always have enough time to perform an ODD review, while a significant minority (41%) indicate that they do not."
+   },
+   {
+    "where": "stats[3]",
     "figure": "57%",
     "url": "https://www.privatebank.citibank.com/doc/family-office/2025-global-family-office-report.pdf",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "Lack of internal expertise is chief among these (57%) as well as a lack of awareness of available options (34%)."
-   },
-   {
-    "where": "stats[2]",
-    "figure": "67%",
-    "url": "https://www.privatebank.citibank.com/doc/family-office/2026-global-family-office-report.pdf",
-    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
-    "quote": "Two-thirds (67%) of respondents reported owning controlling stakes in one or more operating businesses."
    },
    {
     "where": "stats[5]",
