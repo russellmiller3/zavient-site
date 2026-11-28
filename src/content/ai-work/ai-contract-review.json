@@ -9,11 +9,11 @@
  "industry": "any industry",
  "index": true,
  "verdict": [
-  "In a vendor survey, in-house teams spend 3.1 hours per contract[^4], so contracts queue behind a few reviewers.[^5]",
+  "In vendor surveys, in-house teams spend 3.1 hours per contract,[^4] and 500 contracts take about 188 working days.[^5]",
   "AI can do the first read, checking each clause against your playbook and suggesting tracked changes.[^13][^17]",
-  "AI tools matched or beat lawyers at pulling terms out of contracts, but lawyers still won at redlining.[^1][^2]",
+  "Two of four AI tools edged past lawyers at pulling out contract terms, but lawyers won at redlining.[^1][^2]",
   "Your lawyer or owner keeps every risk call, the negotiation and the signature.[^6][^14]",
-  "By our count, 11 of 12 contract AI vendors say they don't train on your contracts by default.[^33][^43]"
+  "Most contract AI vendors we read, LegalOn and Harvey among them, say they don't train on your contracts.[^33][^43]"
  ],
  "onPage": [
   {
@@ -54,28 +54,28 @@
   "human-role": "Your head of legal or owner keeps the playbook, every yellow and red flag, the negotiation and the signature, while AI does the first read.[^6][^17]",
   "team-after": "Reviewers stop reading routine contracts line by line and spend the time on flagged clauses, negotiation and keeping the playbook current.[^17][^13]",
   "example": "An illustrative first read marks each clause green, yellow or red with a suggested redline, and counsel decides the yellows and reds.[^17][^13]",
-  "table-1": "AI tools beat lawyers at pulling terms out, 75.1% to 71.1% in one benchmark, but lawyers won redlining with 79.7%.[^1]",
-  "table-2": "Gavel Exec lists $160 a user a month.[^19] goHeather lists $200 a month, billed yearly.[^20] Microsoft's legal skills come with a Copilot licence.[^13]",
+  "table-1": "The best tool edged past lawyers at pulling terms out, 75.1% to 71.1%, within the margin of error, but lawyers won redlining with 79.7%.[^1]",
+  "table-2": "Gavel Exec lists $160 a user a month.[^19] goHeather's one-seat Starter plan is $200 a month, billed yearly.[^20] Microsoft's legal skills come with a Copilot licence.[^13]",
   "recipes": "Start on inbound NDAs with the AI you already pay for, add a Word review tool for weekly vendor paper, and move to a full contract platform last.[^17][^19]",
-  "own-data": "By our count, 11 of 12 vendors say they don't train shared models on your contracts by default, and only Genie AI's terms let it train unless you opt out.[^45][^33]",
-  "rules": "Lawyers using AI must check its work under ABA Formal Opinion 512, and a consumer AI chat can cost you privilege after the 2026 Heppner case.[^6][^8]",
-  "benchmark": "Run the AI blind on 20 to 50 closed contracts your lawyer already marked, then count what it caught, missed and invented, and time both.[^6][^3]",
+  "own-data": "By our count, 11 of 12 vendors' terms say they don't train shared models on your contracts by default, and only Genie AI's terms allow it unless you opt out.[^45]",
+  "rules": "ABA Formal Opinion 512 says lawyers using AI must check its work, and a consumer AI chat can cost you privilege after the 2026 Heppner case.[^6][^8]",
+  "benchmark": "Run the AI blind on closed contracts your lawyer already marked, then count what it caught, missed and invented.[^6][^3] We suggest 20 to 50 contracts, and timing both runs.",
   "what-goes-wrong": "AI contract review goes wrong when people trust a clean report, because models invent terms, miss exceptions and can leak privilege on consumer plans.[^3][^8]",
-  "buy-or-build": "Buy a review tool when third-party paper arrives every week, and use the AI you already pay for when contracts are few and standard.[^19][^13]",
-  "something-else": "Pick something else when you are buying a company, when your problem is finding signed contracts, or when a deal is bespoke and high-stakes.[^50][^1]"
+  "buy-or-build": "In our judgment, buy a review tool when third-party paper arrives every week, and use the AI you already pay for when contracts are few and standard.",
+  "something-else": "Pick something else when you are buying a company, when your problem is finding signed contracts, or when a deal is bespoke and high-stakes.[^52][^1]"
  },
  "humanRole": [
   "Head of legal or general counsel: writes the playbook and approves every exception. Microsoft's legal tool can only review against a playbook you supply.[^13]",
   "Reviewer: decides every yellow and red flag. The American Bar Association (ABA) says AI cannot replace the judgment needed to craft legal documents.[^6]",
   "Negotiator: answers the other side's pushback. ABA Formal Opinion 512 says lawyers may not leave negotiating a client's claims to AI tools alone.[^6]",
   "Signer: whoever holds signature authority still signs. Microsoft calls its legal output advisory only and not legal advice.[^14]",
-  "Chief operating officer (COO) or procurement head: routes contracts in and tracks turnaround. Gartner, citing 101 procurement leaders, expects 50% of organizations to use AI contract risk tools in supplier talks by 2027.[^21]"
+  "Chief operating officer (COO) or procurement head: routes contracts in and tracks turnaround. Gartner predicts that by 2027, 50% of organizations will use AI contract risk tools in supplier negotiations.[^21]"
  ],
  "teamAfter": [
   "Reviewers stop reading routine non-disclosure agreements (NDAs) line by line and work the yellow and red flags.[^17][^13]",
   "The head of legal keeps the playbook current, since the AI applies only the rules it is given.[^13][^17]",
   "In a vendor survey of 452 in-house legal professionals, 78% would hand the first-pass review to AI under attorney supervision.[^4]",
-  "Where AI changed tasks, 66% of US firms use it only to help staff, and AI-related job losses hit only 2% of AI-using firms.[^23]"
+  "Among AI-using US firms whose tasks changed, 66% use AI only to help staff, and AI-related job losses hit only 2% of AI-using firms.[^23]"
  ],
  "example": {
   "input": "Illustrative: a 150-person software firm receives a customer's mutual non-disclosure agreement. Its one-page playbook allows a two-year term and covers oral disclosures only if confirmed in writing. It also bans non-solicit clauses in NDAs.",
@@ -97,8 +97,8 @@
      "url": "https://www.vals.ai/industry-reports/vlair-2-27-25",
      "cells": [
       "Pulling terms out of contracts",
-      "Harvey Assistant 75.1%, CoCounsel 73.2%[^1]",
-      "71.1%[^1]"
+      "Harvey Assistant 75.1%, CoCounsel 73.2%, Vincent AI 69.2%, Oliver 64.0%[^1]",
+      "71.1%, with a margin of about 3.2 points either way[^1]"
      ]
     },
     {
@@ -125,7 +125,7 @@
      "cells": [
       "Reading 2,091 NDA questions from the ContractNLI set",
       "GPT-5.5 80.2%, Gemini 2.5 Flash-Lite 75.3%[^3]",
-      "Not tested: labels were set by experts beforehand[^3]"
+      "Not tested: scored against ContractNLI's curated answer labels[^3]"
      ]
     },
     {
@@ -163,7 +163,7 @@
      "url": "https://claude.com/marketplace/plugins/legal",
      "cells": [
       "Claude Cowork, with green, yellow and red flags against your playbook[^17]",
-      "Plugin is free and open source[^18]",
+      "Plugin is free and open source.[^18] It runs in Cowork, which needs a paid Claude plan.[^50]",
       "Has an NDA triage command. Anthropic says a licensed attorney should review all output.[^17]"
      ]
     },
@@ -172,8 +172,8 @@
      "url": "https://www.gavel.io/exec-pricing",
      "cells": [
       "Word add-in that runs playbooks[^19]",
-      "$160 a user a month, or $1,740 a year[^19]",
-      "Starts with 25 free queries per user[^19]"
+      "$160 a user a month, or $1,740 per user a year[^19]",
+      "Free trial of 25 queries per user.[^19] Relativity has acquired Gavel, so terms may change.[^48]"
      ]
     },
     {
@@ -181,7 +181,7 @@
      "url": "https://www.goheather.io/pricing",
      "cells": [
       "Drafting, review and contract management[^20]",
-      "$200 a month billed yearly ($2,400), or $400 month to month[^20]",
+      "Starter, one seat: $200 a month billed yearly ($2,400), or $400 month to month. Team plans are by quote.[^20]",
       "Annual plan includes a lawyer building your playbooks[^20]"
      ]
     }
@@ -199,7 +199,7 @@
     "Head of legal: decide every yellow and red, and redline",
     "COO: log turnaround and issues found after signing each month"
    ],
-   "cost": "Nothing extra if you already pay for Microsoft 365 Copilot or a Claude business plan, since the legal skills come with them.[^13][^17]"
+   "cost": "Microsoft's legal skills need no licence beyond Microsoft 365 Copilot.[^13] Claude's plugin runs in Cowork on a paid plan, and Claude Enterprise bills that usage at API rates on top of the seat.[^50][^51]"
   },
   {
    "name": "2. Weekly vendor paper: a Word add-in with playbooks",
@@ -211,7 +211,7 @@
     "Head of legal: approve exceptions above the set limit",
     "Signer: sign under the existing approval matrix"
    ],
-   "cost": "Gavel Exec is $160 a user a month.[^19] goHeather is $200 a month billed yearly.[^20]"
+   "cost": "Gavel Exec is $160 a user a month.[^19] goHeather's one-seat Starter plan is $200 a month billed yearly.[^20]"
   },
   {
    "name": "3. Contracts across the business: a contract lifecycle platform",
@@ -293,13 +293,13 @@
    [
     "Genie AI[^45]",
     "Yes, unless you opt out. An opt-out doesn't undo models already trained.[^45]",
-    "Not stated on the pages we read.",
+    "Personal data deleted within 30 days after the agreement ends, except de-identified data and models already trained.[^46]",
     "Yes, its model sub-processors run under zero retention terms.[^46]"
    ],
    [
     "Gavel Exec[^48]",
     "No: not customer data, prompts or documents.[^48]",
-    "Deleted after the account closes or on request.[^48]",
+    "Doesn't store documents sent to its AI, and you can delete stored workflow data at any time.[^48]",
     "Yes, including with OpenAI.[^48]"
    ],
    [
@@ -309,26 +309,26 @@
     "No: those 30-day logs are kept.[^49]"
    ]
   ],
-  "note": "Method: all 12 vendors' terms were readable, so none was left out. By our count, 7 of 9 legal AI specialists state zero retention, and no general AI maker offers it on chat plans. Genie AI and Ironclad help pages contradict their binding terms, so read the contract, not the FAQ.[^47][^40]"
+  "note": "Method: all 12 vendors' terms were readable, so none was left out. By our count, 7 of 9 legal AI specialists state zero retention, and none of the three general AI makers states it on chat plans. Genie AI and Ironclad help pages contradict their binding terms, so read the contract, not the FAQ.[^47][^40]"
  },
  "rules": [
   {
    "name": "ABA Formal Opinion 512",
    "url": "https://www.americanbar.org/content/dam/aba/administrative/professional_responsibility/ethics-opinions/aba-formal-opinion-512.pdf",
    "status": "Issued 29 Jul 2024",
-   "what": "Lawyers using AI must stay competent, protect client information and check the output.[^6] Testing a tool on a smaller set of contracts checked by hand can justify lighter review later.[^6]"
+   "what": "ABA Formal Opinion 512 says lawyers using AI must stay competent, protect client information and check the output.[^6] Testing a tool on a smaller set of contracts checked by hand can justify lighter review later.[^6]"
   },
   {
    "name": "United States v. Heppner, a New York federal court case",
    "url": "https://bostonbar.org/journal/attorney-client-privilege-and-work-product-protection-when-lawyers-and-clients-use-ai/",
    "status": "Decided 17 Feb 2026",
-   "what": "A defendant's 31 documents made with consumer Claude, without counsel directing it, were not privileged.[^7][^8] Later decisions treat counsel's direction as the dividing line, so use a business plan at counsel's direction.[^8][^9]"
+   "what": "A defendant's 31 documents made with consumer Claude, without counsel directing it, were not privileged.[^7][^8] A Massachusetts trial court ruling, Shealy (June 2026), also turned on whether counsel directed the AI use.[^8] A business plan used at counsel's direction is more likely to keep privilege.[^9]"
   },
   {
    "name": "EU AI Act, Article 4 (AI literacy)",
    "url": "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers",
    "status": "Applies since 2 Feb 2025; enforced from 2 Aug 2026",
-   "what": "Firms that use AI in the European Union (EU) must help the staff who use it understand it.[^11] National market authorities enforce the duty.[^11]"
+   "what": "Firms that use AI in the European Union (EU) must help the staff who use it understand it.[^11] National market authorities enforce the duty, and the July 2026 Digital Omnibus kept it without setting a required level.[^11]"
   },
   {
    "name": "EU AI Act, Annex III point 8",
@@ -339,23 +339,23 @@
   {
    "name": "FTC order against DoNotPay",
    "url": "https://www.ftc.gov/news-events/news/press-releases/2025/02/ftc-finalizes-order-donotpay-prohibits-deceptive-ai-lawyer-claims-imposes-monetary-relief-requires",
-   "status": "Final order 11 Feb 2025",
+   "status": "Final order approved 16 Jan 2025, announced 11 Feb 2025",
    "what": "The Federal Trade Commission (FTC) ordered DoNotPay to pay $193,000 over its robot lawyer claims.[^12] Treat any vendor that says its tool works like a lawyer as a warning sign.[^12]"
   }
  ],
  "howToTest": [
-  "Pick 20 to 50 contracts you already closed, of the types you want AI to read first.[^6]",
+  "Test on a sample of contracts you already closed, as ABA Formal Opinion 512 describes.[^6] We suggest 20 to 50, of the types you want AI to read first.",
   "Have your head of legal mark every issue in each one before the test. That is your answer key.[^6]",
   "Record today's numbers: hours per contract, days to signature and issues found after signing. Only 12% of in-house teams track technology returns, in a survey of 284 in-house legal leaders.[^22]",
   "Run the AI blind on the same contracts with your playbook. Do not show it the answer key.",
   "Count what it caught, missed and invented. In a 2026 study, 49.8% of GPT-5.5's errors were NDA terms that were never there.[^3]",
   "Check exception clauses by hand, such as \"other than\" or \"only\". GPT-5.5 fell to 73.52% on them.[^3]",
-  "Time both runs, and scale up only on contract types where the misses are ones you can live with.[^6]"
+  "Time both runs, and scale up only where you can live with the misses. ABA Formal Opinion 512 lets a lawyer rely on a tool already tested on a hand-checked sample.[^6]"
  ],
  "watchOuts": [
   "Invented terms: 49.8% of GPT-5.5's errors in a 2026 NDA study were provisions the contract never had.[^3] Check each red flag against the clause it cites.",
   "Missed clauses: Gemini 2.5 Flash-Lite caught only 22.3% of contradictions in the same study.[^3] Microsoft warns its tool may miss clauses in long documents.[^14]",
-  "Lost privilege: a consumer chat used without counsel's direction was not protected in the Heppner case.[^8] Use a business plan, at counsel's direction.[^9]",
+  "Lost privilege: a consumer chat used without counsel's direction was not protected in the Heppner case.[^8] A business plan used at counsel's direction is more likely to keep privilege.[^9]",
   "Training on your contracts: Genie AI's terms allow training unless you opt out, though its help page says it never trains.[^45][^47]",
   "Over-claiming vendors: the FTC ordered DoNotPay to pay $193,000 over claims it worked like a lawyer.[^12]"
  ],
@@ -366,7 +366,7 @@
   },
   {
    "q": "Is AI contract review accurate?",
-   "a": "Not evenly, because tools beat lawyers at pulling terms out, 75.1% to 71.1%, but lawyers won redlining at 79.7%.[^1] Test it on your own contracts first.[^6]"
+   "a": "Not evenly, because the best tool only edged past lawyers at pulling terms out, 75.1% to 71.1%, within the margin of error.[^1] Lawyers won redlining at 79.7%.[^1] Test it on your own contracts first.[^6]"
   },
   {
    "q": "Can ChatGPT review contracts?",
@@ -374,7 +374,7 @@
   },
   {
    "q": "Is there a free AI contract review tool?",
-   "a": "Yes, Anthropic's legal plugin for Claude is free and open source, and Gavel Exec starts with 25 free queries per user.[^18][^19] Read a free tool's terms on training before you upload anything.[^6]"
+   "a": "No, not one we would trust: Anthropic's free, open-source legal plugin runs in Claude Cowork, which needs a paid Claude plan.[^18][^50] Gavel Exec's 25 free queries per user are a trial.[^19]"
   },
   {
    "q": "Does AI contract review replace our lawyer?",
@@ -382,7 +382,7 @@
   },
   {
    "q": "Will uploading a contract to AI waive privilege?",
-   "a": "Not by itself, but it can: a consumer chat used without counsel's direction lost protection in the Heppner case.[^8][^9] Use a business plan at counsel's direction.[^9]"
+   "a": "Not by itself, but it can: a consumer chat used without counsel's direction lost protection in the Heppner case.[^8][^9] A business plan used at counsel's direction is more likely to keep privilege.[^9]"
   },
   {
    "q": "Which contracts should we start with?",
@@ -394,7 +394,7 @@
   },
   {
    "q": "How much does AI contract review software cost?",
-   "a": "Gavel Exec lists $160 a user a month.[^19] goHeather lists $200 a month, billed yearly.[^20] Review platforms such as LegalOn and Luminance showed no list price on the pages we checked."
+   "a": "Gavel Exec lists $160 a user a month.[^19] goHeather lists $200 a month for one seat, billed yearly, and quotes team plans.[^20] Review platforms such as LegalOn and Luminance showed no list price on the pages we checked."
   },
   {
    "q": "Is AI contract review high-risk under the EU AI Act?",
@@ -402,11 +402,11 @@
   }
  ],
  "buyVsBuild": {
-  "buy": "Buy a review tool when third-party paper arrives every week and you want playbooks in Word.[^19][^20] By our count, 7 of 9 legal AI specialists state zero retention at their model makers.[^48]",
-  "build": "Use the AI you already pay for when contracts are few and standard.[^13] Copilot reviews against a playbook you write, and the Claude legal plugin is free.[^13][^18]"
+  "buy": "In our judgment, buy a review tool when third-party paper arrives every week. Word add-ins such as Gavel Exec run your playbooks.[^19] By our count, 7 of the 9 legal AI specialists in our table state zero retention at their model makers.",
+  "build": "Use the AI you already pay for when contracts are few and standard. Copilot reviews against a playbook you write.[^13] The Claude legal plugin is free and open source, and runs on a paid Claude plan.[^18][^50]"
  },
  "pickElse": [
-  "You are buying a company and need its contracts read: that is mergers and acquisitions (M&A) diligence, in our AI due diligence guide.[^50]",
+  "You are buying a company and need its contracts read: that is mergers and acquisitions (M&A) diligence, in our AI due diligence guide.[^52]",
   "Your problem is finding signed contracts and renewal dates: start with obligation tracking, which Microsoft lists as a separate skill.[^14]",
   "A bespoke, high-stakes deal: lawyers still beat AI tools at redlining to a set standard.[^1]"
  ],
@@ -463,7 +463,7 @@
   {
    "name": "Vals AI, Vals Legal AI Report (VLAIR) (27 Feb 2025)",
    "url": "https://www.vals.ai/industry-reports/vlair-2-27-25",
-   "what": "Independent benchmark of four legal AI tools (CoCounsel, Vincent AI, Harvey Assistant, Oliver) against a lawyer control group on seven tasks; each vendor chose which tasks to enter, and LexisNexis withdrew. Data extraction: lawyers 71.1%, Harvey Assistant 75.1%, CoCounsel 73.2%. Document Q&A: lawyers 70.1%, Harvey Assistant 94.8%. Redlining: lawyers 79.7%; only Harvey Assistant and Vincent AI entered, and both scored below the lawyers. Vals has a customer relationship with one or more participants. Read 28 Nov 2026."
+   "what": "Independent benchmark of four legal AI tools (CoCounsel, Vincent AI, Harvey Assistant, Oliver) against a lawyer control group on seven tasks; each vendor chose which tasks to enter, and LexisNexis withdrew. Data extraction: lawyers 71.1%, Harvey Assistant 75.1%, CoCounsel 73.2%, Vincent AI 69.2%, Oliver 64.0%; each score carries a margin of about plus or minus 3.2 points, so Harvey's lead is within it. Document Q&A: lawyers 70.1%, Harvey Assistant 94.8%. Redlining: lawyers 79.7%; only Harvey Assistant and Vincent AI entered, and both scored below the lawyers. Vals has a customer relationship with one or more participants. Read 28 Nov 2026."
   },
   {
    "name": "LawSites (Bob Ambrogi), Legal AI Tools Show Promise in First-of-its-Kind Benchmark Study (28 Feb 2025)",
@@ -473,7 +473,7 @@
   {
    "name": "Mathur and Sayer, Terms and Conditions Apply: Evaluating Consumer LLM Reliability in NDA Interpretation, Proceedings of NLLP 2026 (27 Sep 2026)",
    "url": "https://aclanthology.org/2026.nllp-1.20.pdf",
-   "what": "Peer-reviewed workshop paper. GPT-5.5 and Gemini 2.5 Flash-Lite labelled 2,091 NDA-hypothesis pairs from the ContractNLI test set. Accuracy: GPT-5.5 80.20%, Gemini 75.27%. Of GPT-5.5's errors, 206 (49.8%) were hallucinated provisions (contract silent, model said otherwise); 59.2% of Gemini's errors were omitted provisions. Gemini's contradiction recall was 22.3%. On seven exception-associated hypotheses, GPT-5.5 accuracy fell to 73.52%. Read 28 Nov 2026."
+   "what": "Peer-reviewed workshop paper. GPT-5.5 and Gemini 2.5 Flash-Lite labelled 2,091 NDA-hypothesis pairs from the ContractNLI test set. Accuracy: GPT-5.5 80.20%, Gemini 75.27%. Of GPT-5.5's errors, 206 (49.8%) were hallucinated provisions (contract silent, model said otherwise); 59.2% of Gemini's errors were omitted provisions. Gemini's contradiction recall was 22.3%. On seven exception-associated hypotheses, GPT-5.5 accuracy fell to 73.52%. Models were scored against ContractNLI's curated gold labels. Read 28 Nov 2026."
   },
   {
    "name": "LegalOn, AI Adoption in Contract Review Doubles Year-Over-Year (Jan 2026), vendor survey",
@@ -498,7 +498,7 @@
   {
    "name": "Boston Bar Association Journal, Attorney-Client Privilege and Work-Product Protection: When Lawyers and Clients Use AI (18 Sep 2026)",
    "url": "https://bostonbar.org/journal/attorney-client-privilege-and-work-product-protection-when-lawyers-and-clients-use-ai/",
-   "what": "In Heppner a represented defendant used the consumer version of Claude on his own initiative, not at counsel's direction; the court held the exchanges were not privileged and not work product, and sharing them with counsel later did not help. Later 2026 decisions make counsel's direction a central dividing line, and say it should be concrete and documented. Read 28 Nov 2026."
+   "what": "In Heppner a represented defendant used the consumer version of Claude on his own initiative, not at counsel's direction; the court held the exchanges were not privileged and not work product, and sharing them with counsel later did not help. In Shealy v. Seaside Investments (Massachusetts Superior Court, 16 Jun 2026), AI work done without counsel's direction was also not protected; the article says Shealy makes direction of counsel a central dividing line, and that direction should be concrete and documented. Read 28 Nov 2026."
   },
   {
    "name": "White & Case, Attorney-client privilege and work product in the age of generative AI (23 Apr 2026)",
@@ -513,12 +513,12 @@
   {
    "name": "European Commission, AI Literacy - Questions & Answers (updated 26 Nov 2026)",
    "url": "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers",
-   "what": "Article 4 requires providers and deployers of AI systems to support the AI literacy of staff who use them. It has applied since 2 Feb 2025; national market surveillance authorities supervise and enforce it from 2 Aug 2026. The Digital Omnibus on AI amended Article 4 in mid-July 2026. Read 28 Nov 2026."
+   "what": "Article 4 requires providers and deployers of AI systems to support the AI literacy of staff who use them. It has applied since 2 Feb 2025; national market surveillance authorities supervise and enforce it from 2 Aug 2026. The Digital Omnibus on AI amended Article 4 in mid-July 2026; the duty stays, and no specific level of literacy is mandated. Read 28 Nov 2026."
   },
   {
    "name": "Federal Trade Commission, FTC Finalizes Order with DoNotPay That Prohibits Deceptive AI Lawyer Claims (11 Feb 2025)",
    "url": "https://www.ftc.gov/news-events/news/press-releases/2025/02/ftc-finalizes-order-donotpay-prohibits-deceptive-ai-lawyer-claims-imposes-monetary-relief-requires",
-   "what": "Final order requires DoNotPay, sold as \"the world's first robot lawyer\", to pay $193,000 and bars it from advertising that its service performs like a real lawyer without evidence. Read 28 Nov 2026."
+   "what": "The Commission voted 5-0 on 16 Jan 2025 to approve the final order, announced 11 Feb 2025. The order requires DoNotPay, sold as \"the world's first robot lawyer\", to pay $193,000 and bars it from advertising that its service performs like a real lawyer without evidence. Read 28 Nov 2026."
   },
   {
    "name": "Microsoft Support, Get started with Copilot for Legal (Oct 2026)",
@@ -553,17 +553,17 @@
   {
    "name": "Gavel, Gavel Exec pricing",
    "url": "https://www.gavel.io/exec-pricing",
-   "what": "Gavel Exec: $160 per user per month billed month to month, or $1,740 per user billed annually; 25 free queries per user to start, then 1,000 queries per user per month; runs playbooks in Word. Read 28 Nov 2026."
+   "what": "Gavel Exec: $160 per user per month billed month to month, or $1,740 per user billed annually; 25 free queries per user during the free trial, then 1,000 queries per user per month; runs playbooks in Word. Read 28 Nov 2026."
   },
   {
    "name": "goHeather, Pricing",
    "url": "https://www.goheather.io/pricing",
-   "what": "Starter: $200 USD a month billed annually ($2,400 a year), half the $400 monthly rate. The annual plan includes a lawyer building your custom playbooks. Read 28 Nov 2026."
+   "what": "Starter, 1 seat: $200 USD a month billed annually ($2,400 a year), half the $400 monthly rate. The Team plan (2 seats or more) has a custom agreement and pricing. The annual plan includes a lawyer building your custom playbooks. Read 28 Nov 2026."
   },
   {
    "name": "Gartner, Gartner Predicts Half of Procurement Contract Management Will Be AI-Enabled by 2027 (8 May 2024)",
    "url": "https://www.gartner.com/en/newsroom/press-releases/2024-05-08-gartner-predicts-half-of-procurement-contract-management-will-be-ai-enabled-by-2027",
-   "what": "Forecast: by 2027, 50% of organizations will support supplier contract negotiations with AI contract risk analysis and editing tools. Based on a survey of 101 procurement leaders (Nov 2023). Advice: use current contract templates to find the main negotiated terms, and partner with legal on defining risk. Read 28 Nov 2026."
+   "what": "Gartner's own prediction: by 2027, 50% of organizations will support supplier contract negotiations with AI contract risk analysis and editing tools. Advice: use current contract templates to find the main negotiated terms, and partner with legal on defining risk. Read 28 Nov 2026."
   },
   {
    "name": "Association of Corporate Counsel with Everlaw, The Role of Generative AI in Proving Corporate Law Department Value (17 Nov 2025)",
@@ -688,7 +688,7 @@
   {
    "name": "Genie AI, Data Processing Agreement",
    "url": "https://www.genieai.co/data-processing-agreement",
-   "what": "Vendor's own published terms, clause 3.7: processing includes language models run by its sub-processors under zero data retention terms. Read 28 Nov 2026."
+   "what": "Vendor's own published terms. Schedule 1, 3.7: processing includes language models run by its sub-processors under zero data retention terms. Clause 13.2: when the agreement ends, Genie deletes the personal data it processes for you within 30 calendar days; clause 13.4 excludes de-identified data and models trained before termination or opt-out. Read 28 Nov 2026."
   },
   {
    "name": "Genie AI Help Center, What compliance standards does Genie AI meet? (25 Feb 2026)",
@@ -698,12 +698,22 @@
   {
    "name": "Gavel, Security",
    "url": "https://www.gavel.io/security",
-   "what": "Vendor's own published terms: Gavel does not use customer data, prompts or document content to train AI models; it has zero data retention agreements with AI providers including OpenAI, and deletes customer data after an account is closed or on request. Read 28 Nov 2026."
+   "what": "Vendor's own published terms: Gavel does not use customer data, prompts or document content to train AI models; it has zero data retention agreements with AI providers including OpenAI. For customers who opt in to AI features, Gavel does not store any documents, and customers can immediately delete any data stored in their account. The page also says Relativity has acquired Gavel. Read 28 Nov 2026."
   },
   {
    "name": "goHeather, Privacy Policy",
    "url": "https://www.goheather.io/privacy-policy",
    "what": "Vendor's own published terms: goHeather does not train its AI on customer data, and neither do its AI providers, which may keep limited request logs for up to 30 days for abuse monitoring. Read 28 Nov 2026."
+  },
+  {
+   "name": "Claude Help Center, Get started with Claude Cowork",
+   "url": "https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork",
+   "what": "Vendor's own help page: Cowork is available to paid Claude plans (Pro, Max, Ultra, Team, Enterprise) only. Read 28 Nov 2026."
+  },
+  {
+   "name": "Claude Help Center, What is the Enterprise plan?",
+   "url": "https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan",
+   "what": "Vendor's own help page: the Enterprise seat fee covers access only; all usage across Claude, Claude Code and Cowork is billed separately at standard API rates, on top of the seat cost. Read 28 Nov 2026."
   },
   {
    "name": "Zavient, Can AI speed up due diligence on add-on acquisitions?",
@@ -741,7 +751,7 @@
    {
     "phrase": "ai document review",
     "searches": 260,
-    "cpc": 24.0
+    "cpc": 24
    },
    {
     "phrase": "ai legal document review",
@@ -775,7 +785,7 @@
  "updated": "2026-11-28",
  "figureCheck": {
   "date": "2026-11-28",
-  "checked": 40,
+  "checked": 39,
   "notFound": [],
   "padded": [],
   "byHand": [
@@ -784,7 +794,7 @@
     "figure": "75.1% / 71.1% / 79.7%",
     "url": "https://www.vals.ai/industry-reports/vlair-2-27-25",
     "footnote": 1,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "Scores for the Lawyer Baseline were set reasonably high for Document Extraction (71.1%) and Document Q&A (70.1%), but some AI tools still managed to surpass them. ... Data Extraction | 71.1 ± 3.2 | 73.2 ± 3.1* | 69.2 ± 3.2 | 75.1 ± 3.2* | 64.0 ± 3.4 | 70.5 ... The lawyers performed better than the generative AI tools with 79.7% accuracy, in contrast to Harvey Assistant's 59.4% and Vincent AI's 53.6%."
    },
    {
@@ -792,7 +802,7 @@
     "figure": "$160",
     "url": "https://www.gavel.io/exec-pricing",
     "footnote": 19,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "$160 /mo per user billed month to month, or $1,740/user billed annually"
    },
    {
@@ -800,7 +810,7 @@
     "figure": "$200",
     "url": "https://www.goheather.io/pricing",
     "footnote": 20,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "Annual billing is $200 a month ($2,400 a year), half the $400 monthly rate, and it includes lawyer onboarding: a lawyer builds your custom playbooks"
    },
    {
@@ -808,7 +818,7 @@
     "figure": "50%",
     "url": "https://www.gartner.com/en/newsroom/press-releases/2024-05-08-gartner-predicts-half-of-procurement-contract-management-will-be-ai-enabled-by-2027",
     "footnote": 21,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "By 2027, 50% of organizations will support supplier contract negotiations through the use of Artificial Intelligence (AI)-enabled contract risk analysis and editing tools, according to Gartner, Inc."
    },
    {
@@ -816,7 +826,7 @@
     "figure": "78%",
     "url": "https://www.legalontech.com/press-releases/ai-adoption-in-contract-review-doubles-year-over-year",
     "footnote": 4,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "80% have adopted, evaluated, or are learning about AI agents; 78% are comfortable delegating first-pass contract review to an agent under attorney supervision."
    },
    {
@@ -824,15 +834,15 @@
     "figure": "66% / 2%",
     "url": "https://www2.census.gov/library/working-papers/2026/adrm/ces/CES-WP-26-25R.pdf",
     "footnote": 23,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "Most users (66%) rely on AI solely to augment tasks, while AI-related employment decreases are rare, occurring in only 2% of firms."
    },
    {
     "where": "tables[0].rows[0].cells[1]",
-    "figure": "75.1% / 73.2%",
+    "figure": "75.1% / 73.2% / 69.2% / 64.0%",
     "url": "https://www.vals.ai/industry-reports/vlair-2-27-25",
     "footnote": 1,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "Data Extraction | 71.1 ± 3.2 | 73.2 ± 3.1* | 69.2 ± 3.2 | 75.1 ± 3.2* | 64.0 ± 3.4 | 70.5"
    },
    {
@@ -840,7 +850,7 @@
     "figure": "71.1%",
     "url": "https://www.vals.ai/industry-reports/vlair-2-27-25",
     "footnote": 1,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "Scores for the Lawyer Baseline were set reasonably high for Document Extraction (71.1%) and Document Q&A (70.1%), but some AI tools still managed to surpass them. ... Data Extraction | 71.1 ± 3.2 | 73.2 ± 3.1* | 69.2 ± 3.2 | 75.1 ± 3.2* | 64.0 ± 3.4 | 70.5"
    },
    {
@@ -848,7 +858,7 @@
     "figure": "79.7%",
     "url": "https://www.vals.ai/industry-reports/vlair-2-27-25",
     "footnote": 1,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "The lawyers performed better than the generative AI tools with 79.7% accuracy, in contrast to Harvey Assistant's 59.4% and Vincent AI's 53.6%."
    },
    {
@@ -856,7 +866,7 @@
     "figure": "94.8%",
     "url": "https://www.vals.ai/industry-reports/vlair-2-27-25",
     "footnote": 1,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "Harvey also had the highest score of any respondent in any one task, achieving a 94.8% for Document Q&A, and received two of the top three scores awarded overall."
    },
    {
@@ -864,7 +874,7 @@
     "figure": "70.1%",
     "url": "https://www.vals.ai/industry-reports/vlair-2-27-25",
     "footnote": 1,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "Scores for the Lawyer Baseline were set reasonably high for Document Extraction (71.1%) and Document Q&A (70.1%), but some AI tools still managed to surpass them."
    },
    {
@@ -872,7 +882,7 @@
     "figure": "80.2% / 75.3%",
     "url": "https://aclanthology.org/2026.nllp-1.20.pdf",
     "footnote": 3,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "It achieved 80.20% accuracy, a macro F1 of 0.757, and higher weighted F1 and balanced accuracy than Gemini, which achieved 75.27% accuracy and a macro F1 of 0.625."
    },
    {
@@ -880,23 +890,15 @@
     "figure": "$160 / $1,740",
     "url": "https://www.gavel.io/exec-pricing",
     "footnote": 19,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "$160 /mo per user billed month to month, or $1,740/user billed annually"
-   },
-   {
-    "where": "tables[1].rows[3].cells[1]",
-    "figure": "$200 / $2,400 / $400",
-    "url": "https://www.goheather.io/pricing",
-    "footnote": 20,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
-    "quote": "Annual billing is $200 a month ($2,400 a year), half the $400 monthly rate, and it includes lawyer onboarding: a lawyer builds your custom playbooks"
    },
    {
     "where": "recipes[1].when",
     "figure": "52%",
     "url": "https://www.legalontech.com/press-releases/2025-survey",
     "footnote": 5,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "The survey found that 52% of organizations handle between 101 to 1,000 contracts annually, with most spending 2-4 hours per contract."
    },
    {
@@ -904,7 +906,7 @@
     "figure": "$160",
     "url": "https://www.gavel.io/exec-pricing",
     "footnote": 19,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "$160 /mo per user billed month to month, or $1,740/user billed annually"
    },
    {
@@ -912,7 +914,7 @@
     "figure": "$200",
     "url": "https://www.goheather.io/pricing",
     "footnote": 20,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "Annual billing is $200 a month ($2,400 a year), half the $400 monthly rate, and it includes lawyer onboarding: a lawyer builds your custom playbooks"
    },
    {
@@ -920,7 +922,7 @@
     "figure": "$193,000",
     "url": "https://www.ftc.gov/news-events/news/press-releases/2025/02/ftc-finalizes-order-donotpay-prohibits-deceptive-ai-lawyer-claims-imposes-monetary-relief-requires",
     "footnote": 12,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "The final order requires DoNotPay to pay $193,000 in monetary relief and notify consumers who subscribed to the service between 2021 and 2023 about the FTC settlement."
    },
    {
@@ -928,7 +930,7 @@
     "figure": "12%",
     "url": "https://www.acc.com/about/newsroom/news/81-chief-legal-officers-say-genai-accelerates-legal-work-and-helps-demonstrate",
     "footnote": 22,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "only 12% of in-house teams track technology return on investment, and just 16% track outcomes relative to cost."
    },
    {
@@ -936,7 +938,7 @@
     "figure": "49.8%",
     "url": "https://aclanthology.org/2026.nllp-1.20.pdf",
     "footnote": 3,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "Hallucinated provision: Gold NotMentioned → Entailment or Contradiction: GPT-5.5 206 (49.8%), Gemini 2.5 Flash-Lite 154 (29.8%)"
    },
    {
@@ -944,7 +946,7 @@
     "figure": "73.52%",
     "url": "https://aclanthology.org/2026.nllp-1.20.pdf",
     "footnote": 3,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "Across seven exception-associated hypotheses, both systems became less reliable. GPT's accuracy fell to 73.52%, essentially eliminating its aggregate accuracy advantage over Gemini at 73.75%"
    },
    {
@@ -952,7 +954,7 @@
     "figure": "49.8%",
     "url": "https://aclanthology.org/2026.nllp-1.20.pdf",
     "footnote": 3,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "Hallucinated provision: Gold NotMentioned → Entailment or Contradiction: GPT-5.5 206 (49.8%), Gemini 2.5 Flash-Lite 154 (29.8%)"
    },
    {
@@ -960,7 +962,7 @@
     "figure": "22.3%",
     "url": "https://aclanthology.org/2026.nllp-1.20.pdf",
     "footnote": 3,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "Gemini's dominant error was to classify 151 of the 220 gold Contradiction cases as NotMentioned, leaving Contradiction recall at 22.3%."
    },
    {
@@ -968,23 +970,31 @@
     "figure": "$193,000",
     "url": "https://www.ftc.gov/news-events/news/press-releases/2025/02/ftc-finalizes-order-donotpay-prohibits-deceptive-ai-lawyer-claims-imposes-monetary-relief-requires",
     "footnote": 12,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "The final order requires DoNotPay to pay $193,000 in monetary relief and notify consumers who subscribed to the service between 2021 and 2023 about the FTC settlement."
    },
    {
     "where": "faq[1].a",
-    "figure": "75.1% / 71.1% / 79.7%",
+    "figure": "75.1% / 71.1%",
     "url": "https://www.vals.ai/industry-reports/vlair-2-27-25",
     "footnote": 1,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
-    "quote": "Scores for the Lawyer Baseline were set reasonably high for Document Extraction (71.1%) and Document Q&A (70.1%), but some AI tools still managed to surpass them. ... Data Extraction | 71.1 ± 3.2 | 73.2 ± 3.1* | 69.2 ± 3.2 | 75.1 ± 3.2* | 64.0 ± 3.4 | 70.5 ... The lawyers performed better than the generative AI tools with 79.7% accuracy, in contrast to Harvey Assistant's 59.4% and Vincent AI's 53.6%."
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
+    "quote": "Scores for the Lawyer Baseline were set reasonably high for Document Extraction (71.1%) and Document Q&A (70.1%), but some AI tools still managed to surpass them. ... Data Extraction | 71.1 ± 3.2 | 73.2 ± 3.1* | 69.2 ± 3.2 | 75.1 ± 3.2* | 64.0 ± 3.4 | 70.5"
+   },
+   {
+    "where": "faq[1].a",
+    "figure": "79.7%",
+    "url": "https://www.vals.ai/industry-reports/vlair-2-27-25",
+    "footnote": 1,
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
+    "quote": "The lawyers performed better than the generative AI tools with 79.7% accuracy, in contrast to Harvey Assistant's 59.4% and Vincent AI's 53.6%."
    },
    {
     "where": "faq[8].a",
     "figure": "$160",
     "url": "https://www.gavel.io/exec-pricing",
     "footnote": 19,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "$160 /mo per user billed month to month, or $1,740/user billed annually"
    },
    {
@@ -992,7 +1002,7 @@
     "figure": "$200",
     "url": "https://www.goheather.io/pricing",
     "footnote": 20,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "Annual billing is $200 a month ($2,400 a year), half the $400 monthly rate, and it includes lawyer onboarding: a lawyer builds your custom playbooks"
    },
    {
@@ -1000,7 +1010,7 @@
     "figure": "79.7%",
     "url": "https://www.vals.ai/industry-reports/vlair-2-27-25",
     "footnote": 1,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "The lawyers performed better than the generative AI tools with 79.7% accuracy, in contrast to Harvey Assistant's 59.4% and Vincent AI's 53.6%."
    },
    {
@@ -1008,7 +1018,7 @@
     "figure": "80 times",
     "url": "https://www.lawnext.com/2025/02/legal-ai-tools-show-promise-in-first-of-its-kind-benchmark-study-with-harvey-and-cocounsel-leading-the-pack.html",
     "footnote": 2,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "The report found that AI tools were \"six times faster than the lawyers at the lowest end, and 80 times faster at the highest end,\" making a strong case for AI tools as efficiency drivers in legal workflows."
    },
    {
@@ -1016,7 +1026,7 @@
     "figure": "49.8%",
     "url": "https://aclanthology.org/2026.nllp-1.20.pdf",
     "footnote": 3,
-    "why": "couldn't read the source (the egress proxy refused this host (403): open it with a fetch tool by hand): open it and copy the sentence that states the figure",
+    "why": "the egress proxy refused this host (403); opened with web_fetch on 28 Nov 2026 and the source sentence copied",
     "quote": "Hallucinated provision: Gold NotMentioned → Entailment or Contradiction: GPT-5.5 206 (49.8%), Gemini 2.5 Flash-Lite 154 (29.8%)"
    }
   ],
@@ -1025,13 +1035,30 @@
  "sourceCheck": {
   "date": "2026-11-28",
   "by": "writer agent self-check: each cited source opened with web_fetch on 28 Nov 2026 (ABA PDF via a search excerpt of the same URL, as americanbar.org showed a maintenance page); byHand quotes copied from those fetches",
-  "checked": 49,
+  "checked": 51,
   "fixed": [
    "Vals reports Harvey's redlining score as 65.0 in its table and 59.4% in its text, so the page states only the lawyers' 79.7% and that both tools that entered scored below it.",
    "Microsoft's Copilot Business price ($18, list $21) is rendered by script, so the live check found no figure; the price was dropped from the page and the Copilot row now says the legal skills come with a Copilot licence.",
    "Ironclad's AI Assist FAQ says data trains the model for other customers while its AI Addendum says opt-in only; the own-data row shows both.",
    "Genie AI's help page says it never trains on customer data while clause 8.4 of its product terms allows training unless the customer opts out; the row and watchOuts state the binding terms and flag the conflict.",
-   "Verdict and stats on the 11 of 12 count no longer cite Genie AI, the exception, as support for vendors that do not train."
+   "Verdict and stats on the 11 of 12 count no longer cite Genie AI, the exception, as support for vendors that do not train.",
+   "Independent check 28 Nov: Vals extraction overstated; verdict, table-1 answer and FAQ now say two of four tools edged past lawyers, with Harvey's 75.1% vs 71.1% within the ±3.2 margin.",
+   "Independent check 28 Nov: extraction cell now lists all four tools (Harvey 75.1%, CoCounsel 73.2%, Vincent AI 69.2%, Oliver 64.0%).",
+   "Independent check 28 Nov: NLLP lawyers cell now reads 'scored against ContractNLI's curated answer labels', not expert labels.",
+   "Independent check 28 Nov: free-tool FAQ changed from Yes to No; the legal plugin runs in Cowork, which needs a paid Claude plan (Claude Help Center), and Gavel's 25 queries are a trial.",
+   "Independent check 28 Nov: goHeather $200/$400 now named as the one-seat Starter plan; Team plans are by quote.",
+   "Independent check 28 Nov: recipe 1 cost now says Claude Enterprise bills Cowork usage at API rates on top of the seat, citing Anthropic's Enterprise plan help page.",
+   "Independent check 28 Nov: Gavel price cell says $1,740 per user a year.",
+   "Independent check 28 Nov: Gartner 50% is now stated as Gartner's own prediction, not the view of the 101 procurement leaders.",
+   "Independent check 28 Nov: Census 66% now based on AI-using US firms whose tasks changed.",
+   "Independent check 28 Nov: Heppner rule now names Shealy (Massachusetts Superior Court, 16 Jun 2026) and says a business plan at counsel's direction is more likely to keep privilege; same hedge in watchOuts and FAQ.",
+   "Independent check 28 Nov: FTC status now 'approved 16 Jan 2025, announced 11 Feb 2025'.",
+   "Independent check 28 Nov: ABA 512 statements now read 'ABA Formal Opinion 512 says lawyers using AI must...'.",
+   "Independent check 28 Nov: Genie AI retention now from DPA clause 13.2 (personal data deleted within 30 days after the agreement ends, except de-identified data and trained models).",
+   "Independent check 28 Nov: Gavel retention now says it doesn't store documents sent to its AI and customers can delete stored data at any time; the account-closure claim was not on its security page.",
+   "Independent check 28 Nov: own-data note now says none of the three general AI makers states zero retention on chat plans.",
+   "Independent check 28 Nov: padding removed from the verdict queue line (now cites 188 working days for 500 contracts), the 11-of-12 count, the 20-to-50 sample (now our suggestion, in two places), buy-if-weekly (our judgment), howToTest timing and the 7-of-9 count.",
+   "Independent check 28 Nov: added Relativity's acquisition of Gavel and the Digital Omnibus note on Article 4."
   ]
  }
 }
