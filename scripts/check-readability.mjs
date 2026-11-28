@@ -30,6 +30,9 @@ export function checkPage(d) {
     const fns = (String(b).match(/\[\^\d+\]/g) || []).length;
     if (fns > L.verdictFootnotes) out.push(`verdict[${i}]: ${fns} footnotes (max ${L.verdictFootnotes})`);
   });
+  // The description is the hub card's text (src/pages/ai-work/index.astro) and the search snippet. Only checkHtml on the
+  // built hub caught a long one, inside npm run build; now check-page reports it, with the same limits and counting.
+  if (d.description) block('description', d.description, L.paraSentences);
   block('summary', d.summary, L.paraSentences);
   if (words(clean(d.summary || '')) > L.summaryWords) out.push(`summary: ${words(clean(d.summary))} words (max ${L.summaryWords})`);
   (d.onPage || []).forEach((o, i) => block(`onPage[${i}]`, o.text, 1));

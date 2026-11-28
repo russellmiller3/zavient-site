@@ -13,13 +13,16 @@
 //   sentence into byHand[].quote, which the page check requires;
 // - a cited URL that redirects to another page fails: cite the page it lands on (a vendor's moved pricing page);
 // - ranges, hedges and word figures ("twice as") come from src/lib/source-numbers.mjs, as in the page check.
+// Round 2 (28 Nov 2026): a source page that reads as empty, or holds none of the claim's words (prices filled in by
+// script), is reported "needs byHand", not "not found"; a byHand quote logged for the figure and URL clears a figure
+// the script couldn't find (judgeGroup in src/lib/figure-check.mjs). A figure missing from a page with real text fails.
 // Usage: node scripts/check-source-figures.mjs <slug | path.json> [--prices] [--write]
 //   --prices: only price sentences.  --write: save the result on the page as figureCheck (keeps quotes already given).
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { citedSentences, figureGroups, isPrice, wordsToNumbers } from '../src/lib/source-numbers.mjs';
-import { findQuote, judgeGroup, claimWords } from '../src/lib/figure-check.mjs';
+import { findQuote, quoteByUrl, judgeGroup, claimWords } from '../src/lib/figure-check.mjs';
 import { fetchSource } from '../src/lib/fetch-source.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -68,7 +71,8 @@ for (const { where, sentence, own } of citedSentences(d)) {
       sources.push({ c, u, body: r.body ?? null, err: r.err });
     }
     const urls = sources.map((s) => s.u);
-    const j = judgeGroup({ where, figs: g.figs, sources, words });
+    // A figure the script can't find on a page it read is cleared only by a quote logged for that figure and URL.
+    const j = judgeGroup({ where, figs: g.figs, sources, words, quote: (fig, url) => quoteByUrl(old.byHand, fig, url) });
     checked += j.checked;
     for (const b of j.byHand) {
       byHand.push({ ...b, quote: quoteFor(where, b.figure, b.url, urls) });
