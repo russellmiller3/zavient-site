@@ -11,7 +11,7 @@
  "verdict": [
   "Operational due diligence (ODD) tests whether a fund manager's business is trustworthy, and 30% of investors lack a dedicated team.[^15][^1]",
   "AI earns its keep lining up each manager's answers and flagging gaps, since every manager answers differently.[^19][^6]",
-  "By our count, only about 40% of the Institutional Limited Partners Association (ILPA) questionnaire lines up without judgment.[^6][^7]",
+  "By our count, only about 39% of the Institutional Limited Partners Association (ILPA) questionnaire lines up without judgment.[^6][^7]",
   "A questionnaire is the manager's own account, so people still confirm facts and make the veto call.[^14][^7]",
   "Build a light grid for a few managers a year, and buy a platform when reviews pile up.[^1][^18]"
  ],
@@ -51,13 +51,13 @@
  },
  "summary": "Operational due diligence (ODD) checks whether a fund manager's business, not its strategy, can be trusted.[^15][^6] AI pulls each manager's due diligence questionnaire (DDQ) answers into one grid and flags what is missing.[^18][^19] Judgment still decides, because a DDQ is the manager's own account.[^7][^14]",
  "answers": {
-  "human-role": "People keep every call on the manager: the committee votes, and the chief operating officer (COO) or chief investment officer (CIO) owns the ODD view.[^1][^16] Counsel signs off the legal terms.[^16]",
+  "human-role": "People keep every call on the manager: the committee votes, and the chief operating officer (COO) or chief investment officer (CIO) owns the ODD view.[^1][^16] Counsel reviews the limited partnership agreement and side letters and flags off-market terms.[^16][^23]",
   "team-after": "Your team moves from copying answers into spreadsheets to chasing gaps, confirming facts with outside parties and writing the judgment.[^19][^14]",
   "example": "An illustrative office comparing three private credit managers gets one grid of lined-up answers, a gap list and a list of claims to confirm.[^6][^20]",
   "table-1": "DiligenceVault, CENTRL, Ping and Penguin Capital read DDQs or fund documents, and every speed figure below is the vendor's own claim.[^18][^19]",
   "table-2": "Ask private equity managers for the ILPA DDQ 2.0 and hedge fund managers for the Alternative Investment Management Association (AIMA) questionnaire, plus ILPA's reporting and performance templates.[^6][^8]",
   "recipes": "Offices that vet a handful of managers a year should build a grid on the ILPA template, and busier offices should buy a diligence platform.[^6][^1]",
-  "own-data": "About 40% of the ILPA questionnaire's numbered questions take answers a machine can line up without judgment, by our count of 175 of 436.[^6][^7]",
+  "own-data": "About 39% of the ILPA questionnaire's numbered questions and sub-questions take answers a machine can line up without judgment, by our count of 171 of 436.[^6][^7]",
   "rules": "No rule tells a single family office how to vet managers, and the rule that would have forced standard quarterly fund statements was vacated in 2024.[^25][^11]",
   "benchmark": "Rerun one finished manager review with AI, then count the answers it lined up right, the gaps it caught and the gaps it missed.[^19][^24]",
   "what-goes-wrong": "AI-assisted diligence goes wrong when a tidy grid is taken as proof, because the grid only repeats what the manager wrote.[^7][^13]",
@@ -67,8 +67,8 @@
  "humanRole": [
   "Investment committee: votes on the commitment and its size. In the Standards Board for Alternative Investments (SBAI) survey, the committee is the main reader of ODD findings.[^1]",
   "COO or CIO: owns the ODD view where there is no dedicated team. In SBAI's survey, 54% of such investors put ODD under the CIO and 23% under the COO.[^1]",
-  "Operations lead: calls the administrator and auditor directly instead of trusting the questionnaire.[^14][^15] In Deutsche Bank's survey, 92% of investors named the administrator the most important provider to contact.[^14]",
-  "Outside counsel: reviews the limited partnership agreement (LPA) and side letters, and signs off the legal terms.[^16][^23]"
+  "Operations lead: calls the administrator and auditor directly instead of trusting the questionnaire.[^14][^15] In Deutsche Bank's 2014 survey of hedge fund investors, 92% named the fund administrator the most important outside provider to contact.[^14]",
+  "Counsel: reviews the limited partnership agreement (LPA) and side letters, and flags terms that stray from market standard.[^16][^23]"
  ],
  "teamAfter": [
   "Analysts stop retyping answers and start chasing the gaps the grid shows.[^19][^18]",
@@ -123,7 +123,7 @@
      "url": "https://www.penguin.capital/dd-cockpit",
      "cells": [
       "Screens LPAs for terms that favor the manager, in private beta[^21]",
-      "Not published; waitlist[^21]",
+      "Not published; vendor's page says private beta, with a waitlist[^21]",
       "Vendor claims under 4 hours, against 2 to 4 weeks by hand[^21]"
      ]
     },
@@ -154,7 +154,7 @@
      "cells": [
       "Private equity managers, in 20 sections from firm details to diversity[^6]",
       "Free[^6]",
-      "Appendix A lists 89 documents to request[^6]"
+      "Appendix A asks for 80 distinct documents, each if applicable; it numbers 89, but nine repeat[^6]"
      ]
     },
     {
@@ -190,7 +190,7 @@
  "recipes": [
   {
    "name": "1. A few managers a year: a grid on the ILPA template",
-   "when": "Offices with no dedicated ODD team, like many smaller investors in SBAI's survey.[^1] Interest runs ahead of use: 35% of North American offices want AI help choosing managers, and around a quarter use it.[^5]",
+   "when": "Offices with no dedicated ODD team, like 30% of the investors in SBAI's survey.[^1] In Campden Wealth and RBC's 2026 survey of 155 offices across the Americas, 35% would like AI help choosing managers.[^5]",
    "flow": [
     "COO: send every manager the ILPA DDQ 2.0 and its document list",
     "AI: pull each manager's answers into one grid, each cell linked to its page",
@@ -226,13 +226,6 @@
   ],
   "rows": [
    [
-    "Fund: general information",
-    "22",
-    "14",
-    "8",
-    "64%"
-   ],
-   [
     "Co-investments",
     "14",
     "9",
@@ -247,6 +240,13 @@
     "60%"
    ],
    [
+    "Fund: general information",
+    "22",
+    "13",
+    "9",
+    "59%"
+   ],
+   [
     "Accounting and valuation",
     "27",
     "14",
@@ -256,9 +256,9 @@
    [
     "Fund terms",
     "30",
-    "14",
-    "16",
-    "47%"
+    "12",
+    "18",
+    "40%"
    ],
    [
     "Track record",
@@ -270,9 +270,9 @@
    [
     "Investment process",
     "22",
-    "5",
-    "17",
-    "23%"
+    "4",
+    "18",
+    "18%"
    ],
    [
     "Team",
@@ -291,12 +291,12 @@
    [
     "All 20 sections",
     "436",
-    "175",
-    "261",
-    "40%"
+    "171",
+    "265",
+    "39%"
    ]
   ],
-  "note": "Method: we parsed the text and counted 436 numbered questions, with 158 yes/no boxes, 5 tables and 12 hand-picked single facts. Limits: four question numbers were lost in our text copy, and a manager can add prose to any yes/no box. The data templates in Appendices B to H also line up, but we did not count them."
+  "note": "Method: we parsed 436 numbered questions and sub-questions, finding 158 yes/no boxes, 5 tables and 8 single facts. A question that also asks for description, such as 8.15 or 12.18, counts as written, and ILPA sets every ESG question as a free-text box. Limits: four numbers were lost in our copy, managers can add prose to any box, and we skipped the Appendix B to H data templates."
  },
  "rules": [
   {
@@ -306,16 +306,16 @@
    "what": "The Fifth Circuit struck down the Securities and Exchange Commission (SEC) rules that would have forced quarterly statements on fees and performance.[^11][^12] Standard fund reporting now rests on ILPA's voluntary templates, so ask for them in the side letter.[^10]"
   },
   {
-   "name": "Form ADV, 17 CFR 275.204-1",
+   "name": "Form ADV, 17 CFR 275.203-1 and 275.204-1",
    "url": "https://www.ecfr.gov/current/title-17/chapter-II/part-275/section-275.204-1",
    "status": "In force",
-   "what": "A registered manager files Form ADV, the adviser registration form, and Part 2A Item 9 carries its disciplinary history.[^15] Check that Form ADV, the offering memo and the DDQ answers agree, since a mismatch is a red flag.[^15]"
+   "what": "A registered manager files Form ADV, the adviser registration form, and amends it at least once a year.[^31][^32] Part 2A Item 9 of the form carries its disciplinary information.[^33] Check that Form ADV, the offering memo and the DDQ answers agree, since a mismatch is a red flag.[^15]"
   },
   {
    "name": "Family office rule, 17 CFR 275.202(a)(11)(G)-1",
    "url": "https://www.ecfr.gov/current/title-17/chapter-II/part-275/section-275.202(a)(11)(G)-1",
    "status": "In force",
-   "what": "A single family office that serves only family is not an investment adviser under the rule.[^25] No regulator sets its diligence standard, so the office's written policy is the standard."
+   "what": "A family office is not an investment adviser if it advises only family clients and is wholly owned and controlled by the family.[^25] It must also not hold itself out to the public as an investment adviser.[^25] No regulator sets its diligence standard, so the office's written policy is the standard."
   }
  ],
  "howToTest": [
@@ -345,11 +345,11 @@
   },
   {
    "q": "What goes on an operational due diligence checklist?",
-   "a": "An ODD checklist covers ownership, people, compliance, valuation, cash controls, service providers and legal terms.[^15] ILPA's DDQ 2.0 spreads these over 20 sections and lists 89 documents to request.[^6]"
+   "a": "An ODD checklist covers ownership, people, compliance, valuation, cash controls, service providers and legal terms.[^15] ILPA's DDQ 2.0 spreads these over 20 sections and asks for 80 distinct documents, each if applicable.[^6]"
   },
   {
    "q": "How long does operational due diligence take?",
-   "a": "Most initial ODD reviews take two to eight weeks, says a Deutsche Bank survey of investors.[^14] Family offices take two weeks to twelve months for the whole manager decision.[^16][^17]"
+   "a": "For family offices, operational and legal due diligence takes 4 to 12 weeks, says Private Markets Group.[^17] The whole manager decision runs from two weeks to twelve months.[^16][^17] An older benchmark: in Deutsche Bank's 2014 survey of hedge fund investors, most said an initial ODD review takes two to eight weeks.[^14]"
   },
   {
    "q": "Can AI fill in or compare a DDQ for us?",
@@ -362,11 +362,11 @@
  ],
  "buyVsBuild": {
   "buy": "Buy a diligence platform when reviews pile up: SBAI found investors under $5bn use no third-party tools, while larger ones sometimes do.[^1] Vendors such as DiligenceVault claim review time falls by over 70 percent.[^18] Across US enterprise AI decision-makers, 76% of AI use cases are now bought rather than built.[^27]",
-  "build": "Build a light grid when you vet a handful of managers a year.[^6] The ILPA DDQ is free, and about 40% of it lines up without judgment, by our count.[^6] For organizations MIT NANDA studied, partnered builds reached deployment about 67% of the time, against about 33% for internal ones.[^28]"
+  "build": "Build a light grid when you vet a handful of managers a year.[^6] The ILPA DDQ is free, and about 39% of it lines up without judgment, by our count.[^6] For organizations MIT NANDA studied, partnered builds reached deployment about 67% of the time, against about 33% for internal ones.[^28]"
  },
  "pickElse": [
   "Buying a company, not a fund stake: that is M&A diligence, covered in our AI due diligence guide.[^29]",
-  "An adviser already runs manager selection: 41% of offices using outside investment advisers rely on them for due diligence and manager access.[^2] J.P. Morgan finds 80% of offices outsource part of the portfolio, including manager selection.[^4]",
+  "An adviser already runs manager selection: 41% of offices using outside investment advisers rely on them for due diligence and manager access.[^2] J.P. Morgan finds 80% of 333 single family offices outsource some of their portfolio, for example to outsourced CIOs or for manager selection.[^4]",
   "Your pain starts after you commit: fund statements and quarterly reports belong in our family office reporting guide.[^30]",
   "You vet only one or two managers a year: a shared spreadsheet on the ILPA template, filled by hand, may be enough.[^6]"
  ],
@@ -394,8 +394,8 @@
  ],
  "stats": [
   {
-   "num": "40%",
-   "label": "of the ILPA questionnaire's numbered questions line up across managers without judgment, by our count[^6]",
+   "num": "39%",
+   "label": "of the ILPA questionnaire's numbered questions and sub-questions line up across managers without judgment, by our count[^6]",
    "source": "Zavient count of ILPA DDQ 2.0, 28 Nov 2026"
   },
   {
@@ -409,8 +409,8 @@
    "source": "Citi Private Bank, 2026"
   },
   {
-   "num": "89",
-   "label": "documents the ILPA questionnaire asks each manager to send[^6]",
+   "num": "80",
+   "label": "distinct documents the ILPA questionnaire asks each manager to send, if applicable (89 numbered, nine repeats)[^6]",
    "source": "ILPA DDQ 2.0, 2021"
   },
   {
@@ -438,17 +438,17 @@
   {
    "name": "J.P. Morgan Private Bank, 2026 Global Family Office Report",
    "url": "https://privatebank.jpmorgan.com/content/dam/jpm-pb-aem/global/en/documents/2026-family-office-report/jp-morgan-private-bank-2026-global-family-office-report.pdf",
-   "what": "Survey of 333 single family offices in 30 countries. 80% of global family offices report some degree of portfolio outsourcing, such as outsourced CIOs, due diligence and manager selection. Read 28 Nov 2026."
+   "what": "Survey of 333 single family offices in 30 countries. \"80% of global family offices report incorporating some degree of portfolio outsourcing, such as usage of outsourced CIOs, due diligence and manager selection, trading functions and discretionary oversight of specific investment sleeves.\" Manager selection is one example, not something all 80% do. Read 28 Nov 2026."
   },
   {
    "name": "Campden Wealth and RBC, The North America Family Office Report 2026",
    "url": "https://www.rbcwealthmanagement.com/assets/wp-content/uploads/documents/campaign/the-north-america-family-office-report-2026.pdf",
-   "what": "Survey of 155 single and private multi-family offices across the Americas (123 US). 35% would like to use AI in investment manager selection, \"but only around a quarter are there\". Read 28 Nov 2026."
+   "what": "Survey of 155 single and private multi-family offices across the Americas (123 in the United States, 21 in Canada, 11 in the other Americas). \"45 percent would like to use AI in risk management and 35 percent in investment manager selection, but only around a quarter are there\"; the quarter covers both uses, so the page does not use it. Read 28 Nov 2026."
   },
   {
    "name": "ILPA, Due Diligence Questionnaire 2.0 (updated Nov 2021)",
    "url": "https://ilpa.org/wp-content/uploads/2021/11/ILPA-DDQ-2.0.pdf",
-   "what": "Free questionnaire from the Institutional Limited Partners Association. Its overview says rising diligence detail led to a proliferation of lengthy, customized due diligence questionnaires. 20 sections, from Firm: General Information to Diversity, Equity and Inclusion, in short form Yes/No and long form questions. Appendix A lists 89 requested documents; Appendices B to H are data templates for team members, references, third parties and technology tools, fund, portfolio investments, GP-led secondaries and credit facilities, to be sent in spreadsheet format. Zavient counted its numbered questions: 436 read, 158 yes/no boxes, 5 tables and 12 single facts, so 175 (40%) line up without judgment and 261 need a written answer, by our count. Read 28 Nov 2026."
+   "what": "Free questionnaire from the Institutional Limited Partners Association. Its overview says rising diligence detail led to a proliferation of lengthy, customized due diligence questionnaires. 20 sections, from Firm: General Information to Diversity, Equity and Inclusion, in short form Yes/No and long form questions. Appendix A, headed \"Requested Documents (if applicable)\", numbers 89 items, but items 60 to 68 repeat items 51 to 59, so it asks for 80 distinct documents; Appendices B to H are data templates for team members, references, third parties and technology tools, fund, portfolio investments, GP-led secondaries and credit facilities, to be sent in spreadsheet format. Zavient counted its numbered questions: 436 numbered questions and sub-questions, 158 yes/no boxes, 5 tables and 8 single facts, so 171 (39%) line up without judgment and 265 need a written answer, by our count. Read 28 Nov 2026."
   },
   {
    "name": "ILPA, DDQ 2.0 User Guide (9 Nov 2021)",
@@ -498,12 +498,12 @@
   {
    "name": "V7 Labs, LP Due Diligence on GPs (vendor)",
    "url": "https://www.v7labs.com/blog/lp-due-diligence-gp-evaluation",
-   "what": "Family offices range from two weeks to twelve months for manager due diligence; LP legal teams review the limited partnership agreement for key person, fee offset and waterfall terms. Read 28 Nov 2026."
+   "what": "Family offices range from two weeks to twelve months for manager due diligence; LP legal teams review limited partnership agreements, flagging provisions that deviate from market standard: key person definitions, LPAC composition, management fee offsets and waterfall structures. Read 28 Nov 2026."
   },
   {
    "name": "Private Markets Group, Family Office Due Diligence (2026)",
    "url": "https://privatemarkets-group.com/family-office-due-diligence",
-   "what": "For family offices the process typically spans two to six months from screening to commitment; operational and legal due diligence takes 4 to 12 weeks. Read 28 Nov 2026."
+   "what": "For family offices the process typically spans two to six months from screening to commitment; operational and legal due diligence takes 4 to 12 weeks. Publisher of a private markets directory and newswire, not a diligence provider. Read 28 Nov 2026."
   },
   {
    "name": "DiligenceVault, Document Intelligence Engine launch (vendor, 8 Jul 2025)",
@@ -523,7 +523,7 @@
   {
    "name": "Penguin Capital, DD Cockpit (vendor, private beta)",
    "url": "https://www.penguin.capital/dd-cockpit",
-   "what": "Vendor claims: an LPA screener flags GP-friendly clauses, fee structures, key-person provisions and divergence from peer norms; preliminary diligence in under 4 hours against 2 to 4 weeks manual. Waitlist; no price shown. Read 28 Nov 2026."
+   "what": "Vendor claims: an LPA screener flags GP-friendly clauses, fee structures, key-person provisions and divergence from peer norms; preliminary diligence in under 4 hours against 2 to 4 weeks manual. The page says \"Now in Private Beta\", \"opening to a small cohort of allocator partners\" and \"Join the Waitlist\"; no price shown. Read 28 Nov 2026."
   },
   {
    "name": "Vals AI, Vals Legal AI Report (Feb 2025)",
@@ -533,7 +533,7 @@
   {
    "name": "Harvey, Contract Intelligence: A Scaled Benchmark (vendor, 21 Nov 2025)",
    "url": "https://www.harvey.ai/blog/contract-intelligence-benchmark",
-   "what": "Vendor benchmark: data points ranged from 22 for side letters to 37 for LPAs; lawyers working with Review tables outperform by 5% or more. No price on the page. Read 28 Nov 2026."
+   "what": "Vendor benchmark of contract review, including LPAs and side letters reviewed by lawyers: data points ranged from 22 for side letters to 37 for LPAs; lawyers working with Review tables outperform by 5% or more. No price on the page. Read 28 Nov 2026."
   },
   {
    "name": "TU Delft, LLM-Orchestrated Iterative Retrieval for Contract Clause Extraction (thesis, Jun 2026)",
@@ -543,7 +543,7 @@
   {
    "name": "eCFR, 17 CFR 275.202(a)(11)(G)-1, family offices",
    "url": "https://www.ecfr.gov/current/title-17/chapter-II/part-275/section-275.202(a)(11)(G)-1",
-   "what": "A family office \"shall not be considered to be an investment adviser\" if it has no clients other than family clients, is wholly owned and controlled by family, and does not hold itself out to the public. Read 28 Nov 2026."
+   "what": "Paragraph (b): a family office \"shall not be considered to be an investment adviser\" if it (1) has no clients other than family clients, (2) is wholly owned by family clients and exclusively controlled by one or more family members and/or family entities, and (3) does not hold itself out to the public as an investment adviser. Read 28 Nov 2026."
   },
   {
    "name": "Bonney et al., CES-WP-26-25R, U.S. Census Bureau Center for Economic Studies (Oct 2026)",
@@ -569,6 +569,21 @@
    "name": "Zavient, Can AI give a family office one true balance sheet across entities?",
    "url": "/ai-work/family-office-reporting.html",
    "what": "Zavient guide to family office reporting once fund commitments are made."
+  },
+  {
+   "name": "eCFR, 17 CFR 275.203-1, Application for investment adviser registration",
+   "url": "https://www.ecfr.gov/current/title-17/chapter-II/part-275/section-275.203-1",
+   "what": "To apply for SEC registration as an investment adviser, a firm must complete Form ADV and file Part 1A, its Part 2A firm brochure and Form CRS electronically with the IARD. Read 28 Nov 2026."
+  },
+  {
+   "name": "eCFR, 17 CFR 275.204-1, Amendments to Form ADV",
+   "url": "https://www.ecfr.gov/current/title-17/chapter-II/part-275/section-275.204-1",
+   "what": "An adviser must amend Parts 1 and 2 of Form ADV at least annually, within 90 days of the end of its fiscal year, and more often if the form's instructions require. Read 28 Nov 2026."
+  },
+  {
+   "name": "SEC, Form ADV Part 2: Uniform Requirements for the Investment Adviser Brochure and Brochure Supplements",
+   "url": "https://www.sec.gov/about/forms/formadv-part2.pdf",
+   "what": "The SEC's own form. Part 2A is the firm brochure; Item 9 of Part 2A is Disciplinary Information, and an interim amendment must be delivered to clients when it includes information in response to Item 9. Read 28 Nov 2026."
   }
  ],
  "related": [
@@ -801,8 +816,8 @@
  },
  "sourceCheck": {
   "date": "2026-11-28",
-  "by": "writer agent self-check (no separate agent tool in this session; a fresh-agent check is still owed)",
-  "checked": 40,
+  "by": "writer agent self-check, then an independent checker agent (report SOURCECHECK-odd-2026-11-28); fixes applied by a separate agent",
+  "checked": 58,
   "fixed": [
    "Deutsche Bank 2014: research's 7% veto rate and 'lack of transparency' reason not found in the report; replaced with 9% of emerging and 6% of established manager reviews",
    "Deutsche Bank sample stated as over 70 investor entities with $2.72 trillion",
@@ -810,7 +825,17 @@
    "Goldman Sachs 39% is a share of AI uses, not of offices; cut",
    "RBC manager-selection figure worded as the report's text: 35% want it, around a quarter use it",
    "perfORM (an ODD provider) dropped as a source; review length now from Deutsche Bank's survey",
-   "Third-party claim of 300+ questions and 89 documents checked against ILPA's own PDF: 312 top-level numbers (305 questions) and 89 documents"
+   "Third-party claim of 300+ questions and 89 documents checked against ILPA's own PDF: 312 top-level numbers (305 questions) and 89 documents",
+   "Family office rule now states all three conditions from 17 CFR 275.202(a)(11)(G)-1(b): family clients only, wholly owned and controlled by family, not held out to the public",
+   "Deutsche Bank 92% and two-to-eight weeks labelled as its 2014 survey of hedge fund investors; review length now led by Private Markets Group's 4 to 12 weeks for family offices",
+   "'Counsel signs off' cut: no source says it; counsel now reviews the LPA and side letters and flags off-market terms (V7, Harvey); 'Outside counsel' made 'Counsel'",
+   "SBAI 'many smaller investors' cut; now 30% of the investors surveyed, as the text says",
+   "ILPA Appendix A: 89 numbered items include nine repeats (60 to 68 repeat 51 to 59), so 80 distinct documents, each if applicable; table, FAQ and stat updated",
+   "J.P. Morgan 80% now reads as some portfolio outsourcing, with manager selection as one example, among 333 single family offices",
+   "RBC: 'the Americas', 155 offices; 'around a quarter' cut because the report applies it to risk management and manager selection together",
+   "Form ADV rule renamed 17 CFR 275.203-1 and 275.204-1; filing, annual amendment and Item 9 now cite eCFR and the SEC's own Form ADV Part 2, not the vendor blog",
+   "Penguin Capital price cell now quotes the vendor's page: private beta, with a waitlist",
+   "Own count: 2.6, 8.15, 12.1 and 12.18 ask for description or context, so moved from single fact to written; 171 of 436 (39%) now line up, 265 written; section rows, stat, verdict, answer, build case and CSV updated; note says ESG items are free-text boxes in ILPA's format"
   ]
  }
 }
