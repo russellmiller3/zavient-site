@@ -653,29 +653,29 @@
  "reviews": [
   {
    "reader": "COO",
-   "notes": "Reads as the office's COO. The ranked jobs and payoff measures are usable. The single all-in operations pay figure skewed the table; labelled it an outlier. Offer gives a clear first step."
+   "notes": "Reads as the office's COO. The ranked jobs and payoff measures are usable. The single all-in operations pay figure skewed the table; labelled it an outlier. Offer gives a clear first step. Reframe pass: the five problems now open the page in the order I feel them; the fund-manager row points to my COO page for now."
   },
   {
    "reader": "Head of operations",
-   "notes": "Checked each payoff can be measured from today's process. The software-stack payoff was vague; changed to manual re-keys a month and reports from one data set. Human-role bullets name who signs off."
+   "notes": "Checked each payoff can be measured from today's process. The software-stack payoff was vague; changed to manual re-keys a month and reports from one data set. Human-role bullets name who signs off. Reframe pass: each problem names the page that fixes it, so I can send one link per owner."
   },
   {
    "reader": "GM",
-   "notes": "Read as the principal's chief of staff in a single family office. The operating-company row and links to holding companies, multi-entity close and private equity carry the business side. No changes."
+   "notes": "Read as the principal's chief of staff in a single family office. The operating-company row and links to holding companies, multi-entity close and private equity carry the business side. No changes. Reframe pass: the holding companies row still routes the operating business to its own playbook. No changes."
   },
   {
    "reader": "Division head",
-   "notes": "Read as the controller. EY backs human release of payments but not a K-1 check, so the K-1 claim was cut; the import review now cites FOX's analyst review before import. Capital call and K-1 work routes to the accounting guide."
+   "notes": "Read as the controller. EY backs human release of payments but not a K-1 check, so the K-1 claim was cut; the import review now cites FOX's analyst review before import. Capital call and K-1 work routes to the accounting guide. Reframe pass: the books row now says why they lag, late K-1s and calls, before it says what AI does."
   },
   {
    "reader": "Owner-CEO",
-   "notes": "Bottom line reads first and plain: early adoption, reporting first, expertise gap, data stays in the office. Wire-fraud watch-out is the one a principal will act on. No changes."
+   "notes": "Bottom line reads first and plain: early adoption, reporting first, expertise gap, data stays in the office. Wire-fraud watch-out is the one a principal will act on. No changes. Reframe pass: the investment committee keeps the vote on any fund commitment. No price added."
   }
  ],
  "updated": "2026-11-28",
  "figureCheck": {
   "date": "2026-11-28",
-  "checked": 55,
+  "checked": 53,
   "notFound": [],
   "byHand": [
    {
@@ -726,18 +726,6 @@
     "url": "https://fundcount.com/study-results-manual-processes-top-list-of-family-office-challenges",
     "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence",
     "quote": "The number of hours can be even greater for larger offices – up to 40 percent – due to more complex investments, allocations, and entities."
-   },
-   {
-    "where": "ranked[2].why",
-    "figure": "$202,500",
-    "url": "https://www.careerbuilder.com/job-details/senior-controller-boutique-family-office-new-york-ny--da3a8619-d8e7-452f-b0dc-a0041bafd49a",
-    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence"
-   },
-   {
-    "where": "ranked[2].why",
-    "figure": "$230,000",
-    "url": "https://www.careerbuilder.com/job-details/senior-controller-boutique-family-office-new-york-ny--da3a8619-d8e7-452f-b0dc-a0041bafd49a",
-    "why": "couldn't read the source (Request was cancelled.): open it and copy its sentence"
    },
    {
     "where": "ranked[3].why",
@@ -1066,8 +1054,8 @@
  },
  "sourceCheck": {
   "date": "2026-11-28",
-  "by": "source-check agent (separate from writer)",
-  "checked": 34,
+  "by": "writer, live source reads (28 Nov reframe; no separate agent was available for this pass. The earlier pass was a separate source-check agent)",
+  "checked": 46,
   "fixed": [
    "Citi 2025 57% is the top barrier to technology adoption, not to AI: fixed in verdict, stats and survey table",
    "UBS 2026 77% counts families with an active operating business, not offices: fixed in verdict and ranked",
@@ -1080,7 +1068,11 @@
    "Campden tech stack $100k-$500k is an average range, survey of 146 offices: ranked, table and FAQ fixed",
    "SEC family office rule wording now 'hold itself out' as the eCFR text says",
    "Citi Institute article date corrected to 11 May 2026; NIST revision wording quoted; human-review row also cites Simple",
-   "Personal name dropped from one job-posting source title"
+   "Personal name dropped from one job-posting source title",
+   "Reframe pass: Citi 2025 41% is due diligence and access to managers, survey of 346 offices; source note updated",
+   "J.P. Morgan 80% outsourcing figure added to the source note from the live report",
+   "Senior controller posting: salary range dropped from the copy because the posting could not be reopened to quote it",
+   "Uncited Heidrick source removed"
   ]
  }
 }

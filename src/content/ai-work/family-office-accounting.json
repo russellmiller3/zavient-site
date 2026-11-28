@@ -71,6 +71,7 @@
  "tables": [
   {
    "title": "Why do the books fall behind?",
+   "intro": "Each row pairs one cause with the work AI can take on and the person who still checks it.",
    "headers": [
     "Cause",
     "What it does to the books",
@@ -779,23 +780,23 @@
  "reviews": [
   {
    "reader": "COO",
-   "notes": "Wanted to know what lands on the team's desk first. The intake step now names statements as well as notices and K-1s in the small-office recipe, matching the capital-call table, and the test plan starts from last quarter's own numbers."
+   "notes": "Wanted to know what lands on the team's desk first. The intake step now names statements as well as notices and K-1s in the small-office recipe, matching the capital-call table, and the test plan starts from last quarter's own numbers. Reframe pass: now leads with why the books lag, which is the question I get asked."
   },
   {
    "reader": "Head of operations",
-   "notes": "Walked the capital call table row by row. The statement tie-out row named no vendor; it now says Arch (vendor). Wire release reads clearly: phone confirmation on an independently found number, then two approvers."
+   "notes": "Walked the capital call table row by row. The statement tie-out row named no vendor; it now says Arch (vendor). Wire release reads clearly: phone confirmation on an independently found number, then two approvers. Reframe pass: the why-they-lag table lists causes I can staff against."
   },
   {
    "reader": "GM",
-   "notes": "Looked for the payoff without a headcount cut. Found it in hours moved to review, days to post and more funds without more keying, priced in the last test step against posted salaries. No change."
+   "notes": "Looked for the payoff without a headcount cut. Found it in hours moved to review, days to post and more funds without more keying, priced in the last test step against posted salaries. No change. Reframe pass: no changes."
   },
   {
    "reader": "Division head",
-   "notes": "The controller checked the entry counts and the tax rules. Asked that the own-data limits say book-basis capital kept beside tax basis would change the counts; the note now does. K-1 dates, Item L and 1.704-1 match the IRS and CFR text."
+   "notes": "The controller checked the entry counts and the tax rules. Asked that the own-data limits say book-basis capital kept beside tax basis would change the counts; the note now does. K-1 dates, Item L and 1.704-1 match the IRS and CFR text. Reframe pass: read as the controller. Late K-1s come first in the questions, and posting still needs my sign-off."
   },
   {
    "reader": "Owner-CEO",
-   "notes": "Read the bottom line and the wire-fraud watch-out first. No consulting fee, software prices dated, AI drafts and people approve. The offer promises a first step and a measure in writing. No change."
+   "notes": "Read the bottom line and the wire-fraud watch-out first. No consulting fee, software prices dated, AI drafts and people approve. The offer promises a first step and a measure in writing. No change. Reframe pass: wire changes still need a second person. No price added."
   }
  ],
  "updated": "2026-11-28",
@@ -1166,8 +1167,8 @@
  },
  "sourceCheck": {
   "date": "2026-11-28",
-  "by": "source-check agent (separate from writer)",
-  "checked": 44,
+  "by": "writer, live source reads (28 Nov reframe; no separate agent was available for this pass. The earlier pass was a separate source-check agent)",
+  "checked": 52,
   "fixed": [
    "Own-data model labelled as a model, not measured results, in description, verdict, onPage, answer, stat and note; note now says the 40-fund row adds one year-end LLC allocation run",
    "Verdict model bullet: swapped [^5] (Masttro, does not back the count) for [^20] (tax-basis method the model uses)",
@@ -1178,7 +1179,9 @@
    "Masttro [^5]: intake and classification, dropped unsourced email/portal detail",
    "Arch [^42]: page says extract and check with figures linked to source, not compare statement with your books; cell and note fixed",
    "K1x [^43]: dropped 'drafts the basis entry', not on the page",
-   "FAQ ledger answer: cut [^37] (KPMG does not state it)"
+   "FAQ ledger answer: cut [^37] (KPMG does not state it)",
+   "Reframe pass: FundCount 20% and up to 40% of working hours, sponsored survey of 44 offices, matched to the live study",
+   "Arch K-1 timing matched to the live article; entry count stated as by our math"
   ]
  }
 }
