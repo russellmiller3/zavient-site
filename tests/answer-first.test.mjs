@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { parse } from 'parse5';
-import { answerProblems } from '../src/lib/answer-first.mjs';
+import { answerProblems, restatedLeads } from '../src/lib/answer-first.mjs';
 
 const dist = new URL('../dist/', import.meta.url).pathname;
 const files = (dir) => readdirSync(dir).flatMap((f) => { const p = join(dir, f); return statSync(p).isDirectory() ? files(p) : p.endsWith('.html') ? [p] : []; });
@@ -45,4 +45,15 @@ test('every question heading is answered in the first sentence under it', { skip
     }
   }
   assert.equal(bad.length, 0, `${bad.length} question headings not answered first:\n${bad.join('\n')}`);
+});
+
+// 28 Nov 2026: answers[id] and the block's own lead (ownData.intro, a table intro) both render. On 5 pages the lead
+// repeated the answer in other words, so readers saw the same sentence twice. The check must catch a restated lead
+// and leave a lead that adds the next fact alone.
+test('a lead that restates its answer fails; a lead that adds a fact passes', () => {
+  const answer = 'Our count found 159 federal, SEC and Delaware filing deadlines a year for a model 30-filer office.[^1]';
+  const bad = { answers: { 'own-data': answer }, ownData: { intro: 'By our count, a model office of 30 filers faces 159 federal, SEC and Delaware filing deadlines a year.[^1] More text.' } };
+  const good = { answers: { 'own-data': answer }, ownData: { intro: 'The office is a model we built, not a real one, and we counted on 28 Nov 2026.[^1]' } };
+  assert.equal(restatedLeads(bad).length, 1);
+  assert.equal(restatedLeads(good).length, 0);
 });

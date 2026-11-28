@@ -115,6 +115,31 @@ export function pageQuestions(d) {
   if (d.offer?.heading) out.push({ where: 'offer', q: d.offer.heading, a: d.offer.body || '' });
   return out.filter((x) => String(x.q).trim().endsWith('?'));
 }
+// 28 Nov 2026: answers[id] renders first, then the block's own lead paragraph (ownData.intro, a table's intro, the
+// summary) renders right under it. On 6 pages the lead said the answer again in other words ("Our count found 159
+// deadlines..." then "By our count ... 159 deadlines"). The reader gets the same sentence twice. So when answers[id]
+// is set, the lead's first sentence must add something: it fails when most of its content words, or all the answer's
+// figures plus a good share of its words, are already in the answer.
+const STOP = new Set('a an and are as at be by for from in is it its of on or our the their they this to was we were with your you that which than then these those has have had not no none most more less each per a'.split(' '));
+const contentWords = (s) => new Set((firstSentence(s).toLowerCase().match(/[a-z0-9$%][a-z0-9$%,.'-]*/g) || []).map((w) => w.replace(/[.,]$/, '')).filter((w) => !STOP.has(w)));
+const figures = (s) => firstSentence(s).match(/\$?\d[\d,.]*%?/g)?.map((n) => n.replace(/[.,]$/, '')) || [];
+export function restatesAnswer(answer, lead) {
+  const a = contentWords(answer), b = contentWords(lead);
+  if (!a.size || !b.size) return false;
+  const shared = [...b].filter((w) => a.has(w)).length / b.size;
+  const fa = figures(answer), fb = figures(lead);
+  return shared >= 0.6 || (fa.length > 0 && fa.every((n) => fb.includes(n)) && shared >= 0.4);
+}
+export function restatedLeads(d) {
+  const A = d.answers || {};
+  const leads = [['own-data', 'ownData.intro', d.ownData?.intro], ['what-it-is', 'summary', d.summary]];
+  (d.tables || []).forEach((t, i) => leads.push([`table-${i + 1}`, `tables[${i}].intro`, t.intro]));
+  return leads.filter(([id, , lead]) => A[id] && lead && restatesAnswer(A[id], lead))
+    .map(([id, field, lead]) => `${id}: ${field} opens by restating answers["${id}"], and both render, so the reader sees it twice. Cut that sentence or make it add the next fact: "${firstSentence(lead).slice(0, 90)}"`);
+}
 export function pageAnswerProblems(d) {
-  return pageQuestions(d).flatMap(({ where, q, a }) => answerProblems(q, a).map((p) => `${where} "${q}": ${p}`));
+  return [
+    ...pageQuestions(d).flatMap(({ where, q, a }) => answerProblems(q, a).map((p) => `${where} "${q}": ${p}`)),
+    ...restatedLeads(d),
+  ];
 }
