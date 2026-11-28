@@ -60,7 +60,7 @@
  ],
  "teamAfter": [
   "The controller moves from keying notices to reviewing exceptions. At Shade Tree Advisors, statements went from over 8 minutes to about 2, with 3% flagged for review (Eton, vendor).[^13]",
-  "Senior accountants who calculate capital calls and book K-1s today check AI drafts against the notice, the commitment and the bank.[^17][^5]",
+  "Senior accountants who calculate capital calls and book K-1s today check AI drafts against the notice and the bank match.[^17][^5]",
   "The office takes on more funds without the same rise in keying: Third Lake runs 9,772 documents a year through automated collection (Canoe, vendor).[^14]",
   "Headcount isn't the goal: of US firms using AI, 66% use it only to augment tasks, and 2% saw AI-related job decreases.[^11] Family offices still find accounting roles hard to fill.[^12]"
  ],
@@ -403,7 +403,7 @@
  ],
  "howToTest": [
   "Record today's numbers on the last closed quarter: notices processed, hours per notice, days from notice to posted entry, and corrections found later.",
-  "Pick one real capital call, one distribution and one K-1, and ask each vendor to post them from notice to ledger entry before you sign.[^6]",
+  "Ask each vendor to post one of your real capital calls from notice to ledger entry before you sign.[^6]",
   "Run one closed month in parallel: AI drafts every entry while your team works as usual.",
   "Score each draft against the controller's own entry: right entity, balanced, right accounts and the right split at every tier.",
   "Replay the drafted entries through the ledger and compare balances. FinBalance found a 26-41 point gap between models' reported and replayed balance sheets.[^25]",
@@ -414,7 +414,7 @@
   "Decide with the controller and outside CPA whether you rely on the AI output as a control; if you do, test it like one.[^7]"
  ],
  "watchOuts": [
-  "Changed wire instructions on a call notice: business email compromise drew 24,768 complaints and $3,046,598,558 in reported losses in 2025.[^27][^29] Confirm by phone on a number you look up yourself, never one in the email.[^39]",
+  "Changed wire instructions on a call notice: business email compromise drew 24,768 complaints and $3,046,598,558 in reported losses in 2025.[^27] Confirm by phone on a number you look up yourself, never one in the email.[^39]",
   "Long or scanned documents: one model's extraction accuracy fell from 87.9% on short documents to 27.9% on long ones.[^41] Test on your own full K-1 packages and statements, not on face pages.",
   "One person controls every step: an accountant acting as chief financial officer of a family's partnerships and trusts embezzled at least $45 million.[^28] Split initiating, approving, recording and reconciling.[^9]",
   "Drift over a long run: in Penrose's test (vendor), models stayed within 1% early, then overstated revenue by 5-30%.[^26] Keep reviewing every period, not only during the pilot.",
@@ -456,7 +456,7 @@
   "Bills and approvals are the pain: a bill pay tool with AI coding may be enough, such as BILL on its Team plan and above.[^33]",
   "Only collecting K-1s and statements hurts, and posting is fine: a collection service may be enough. Third Lake cut document processing time by 85% (Canoe, vendor).[^14]",
   "Your ledger can't hold your entities: fix the ledger first, because small-business ledgers break on intercompany and private-fund activity.[^6]",
-  "Consolidated reporting across custodians is the real job: a reporting platform that feeds your ledger fits better than posting automation.[^6][^3]"
+  "Consolidated reporting across custodians is the real job: a reporting platform that feeds your ledger fits better than posting automation.[^6]"
  ],
  "resources": [
   {
@@ -755,7 +755,7 @@
   "human-role": "Your controller stays in charge: AI drafts entries, splits and wire requests, and the controller approves every posting, allocation and wire before books or money move.[^4][^7][^8]",
   "team-after": "Your team moves from keying notices and K-1s to reviewing AI drafts, clearing flagged exceptions and checking wires, while the controller keeps every sign-off.[^13][^7]",
   "example": "A capital call notice goes in, and six draft entries, a three-way capital split and four wire requests come out, all held for the controller's approval.[^4][^5]",
-  "table-2": "AI reads the documents and drafts each step from notice to bank match, while your controller approves the entry, split and wires and the outside CPA signs K-1s.[^5][^4][^16]",
+  "table-2": "AI reads the documents and drafts each step from notice to bank match.[^5][^4] Your controller approves the entry and the wires, and the outside CPA reviews K-1s.[^4][^16]",
   "table-3": "Published tests say AI drafts help but can't post alone: the best model met 56.4% of task criteria, and at most 46% of model balance sheets were exact.[^24][^25]",
   "table-4": "FundCount starts at $35,899 a year for a single family office, BILL at $49 per user a month, and Asseta publishes no price and quotes each deal.[^32][^33][^34]",
   "recipes": "A small office keeps its ledger and adds reviewed AI drafting, while an office with many entities and funds needs a family office platform with AI intake.[^37][^6]",
@@ -1167,8 +1167,8 @@
  },
  "sourceCheck": {
   "date": "2026-11-28",
-  "by": "writer, live source reads (28 Nov reframe; no separate agent was available for this pass. The earlier pass was a separate source-check agent)",
-  "checked": 52,
+  "by": "separate source-fix agent, live source reads 28 Nov 2026, working from the independent source check of 28 Nov 2026 (SOURCECHECK-2026-11-28)",
+  "checked": 59,
   "fixed": [
    "Own-data model labelled as a model, not measured results, in description, verdict, onPage, answer, stat and note; note now says the 40-fund row adds one year-end LLC allocation run",
    "Verdict model bullet: swapped [^5] (Masttro, does not back the count) for [^20] (tax-basis method the model uses)",
@@ -1181,7 +1181,12 @@
    "K1x [^43]: dropped 'drafts the basis entry', not on the page",
    "FAQ ledger answer: cut [^37] (KPMG does not state it)",
    "Reframe pass: FundCount 20% and up to 40% of working hours, sponsored survey of 44 offices, matched to the live study",
-   "Arch K-1 timing matched to the live article; entry count stated as by our math"
+   "Arch K-1 timing matched to the live article; entry count stated as by our math",
+   "Source-fix pass vs independent check: IC3 BEC figures now cite [^27] alone; the DOJ $182,201.80 case [^29] stays as the table's example of a forged bank-change notice",
+   "Unverified claims opened and resolved: Atlas posting confirms senior accountants calculate capital calls and book K-1s; Masttro's guide checks net amount and bank match but not the commitment, so 'the commitment' cut",
+   "Masttro accounting guide asks vendors to post one real capital call from notice to ledger; test reworded to that (distribution and K-1 cut)",
+   "pickElse reporting-platform-plus-ledger: Masttro [^6] lists it as a setup; Simple [^3] dropped from that bullet as it doesn't say it",
+   "Answer table-2: Asseta drafts and waits for approval; controller posting names wire approvals and K-1 reviews with outside CPAs, so 'CPA signs K-1s' now 'reviews K-1s'"
   ]
  }
 }
