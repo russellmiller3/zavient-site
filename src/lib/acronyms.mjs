@@ -27,12 +27,12 @@ export const JARGON = {
   // SI with its only spelling-out in a source note, which a reader of the page never sees next to the text.
   SI: 'super intelligence',
   // Added 28 Nov 2026 for the family office and fund pages: fund metrics, the parties to a fund, and the diligence
-  // paperwork. ILPA is an association's name, but family office readers meet it as shorthand, so it is held here too.
-  // K-1 is spelled out as the form's full name, "Schedule K-1", or explained in brackets after it.
+  // paperwork. ILPA is left out: it is an association's name, like NIST, and names are the reviewers' call.
+  // K-1 is spelled out as the form's full name, "Schedule K-1", explained in brackets, or called a "K-1 tax form".
   TVPI: 'total value to paid-in capital', DPI: 'distributions to paid-in capital', RVPI: 'residual value to paid-in capital',
   NAV: 'net asset value', PME: 'public market equivalent', MOIC: 'multiple on invested capital', IRR: 'internal rate of return',
   LP: 'limited partner', GP: 'general partner', LPA: 'limited partnership agreement', DDQ: 'due diligence questionnaire',
-  ODD: 'operational due diligence', ILPA: 'Institutional Limited Partners Association', 'K-1': 'Schedule K-1',
+  ODD: 'operational due diligence', 'K-1': 'Schedule K-1',
 };
 
 const esc = (s) => s.replace(/[&]/g, '\\&');
